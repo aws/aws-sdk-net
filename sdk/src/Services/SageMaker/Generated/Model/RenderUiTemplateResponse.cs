@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class RenderUiTemplateResponse : AmazonWebServiceResponse
     {
-        private List<RenderingError> _errors = new List<RenderingError>();
+        private List<RenderingError> _errors = AWSConfigs.InitializeCollections ? new List<RenderingError>() : null;
         private string _renderedContent;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

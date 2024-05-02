@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LicenseManager.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.LicenseManager.Model
     public partial class ListLicenseManagerReportGeneratorsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ReportGenerator> _reportGenerators = new List<ReportGenerator>();
+        private List<ReportGenerator> _reportGenerators = AWSConfigs.InitializeCollections ? new List<ReportGenerator>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +70,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if ReportGenerators property is set
         internal bool IsSetReportGenerators()
         {
-            return this._reportGenerators != null && this._reportGenerators.Count > 0; 
+            return this._reportGenerators != null && (this._reportGenerators.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// The details of a document within an Amazon Q index.
+    /// The details of a document within an Amazon Q Business index.
     /// </summary>
     public partial class DocumentDetails
     {

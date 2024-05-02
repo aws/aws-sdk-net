@@ -24,6 +24,11 @@ namespace Amazon.EC2.Internal
     /// </summary>
     public static class CustomMarshallTransformations
     {
+        /// <summary>
+        /// Convert the DateTime to ISO8601DateFormatNoMS
+        /// </summary>
+        /// <param name="dateTime"></param>
+        /// <returns></returns>
         [Obsolete("This method doesn't handle correctly non-UTC DateTimes. Use ConvertDateTimeISOWithoutMillisecondsUtc instead.", false)]
         public static String ConvertDateTimeISOWithoutMilliseconds(DateTime dateTime)
         {

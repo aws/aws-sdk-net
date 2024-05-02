@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class RealTimeContactAnalysisIssueDetected
     {
-        private List<RealTimeContactAnalysisTranscriptItemWithContent> _transcriptItems = new List<RealTimeContactAnalysisTranscriptItemWithContent>();
+        private List<RealTimeContactAnalysisTranscriptItemWithContent> _transcriptItems = AWSConfigs.InitializeCollections ? new List<RealTimeContactAnalysisTranscriptItemWithContent>() : null;
 
         /// <summary>
         /// Gets and sets the property TranscriptItems. 
@@ -52,7 +53,7 @@ namespace Amazon.Connect.Model
         // Check to see if TranscriptItems property is set
         internal bool IsSetTranscriptItems()
         {
-            return this._transcriptItems != null && this._transcriptItems.Count > 0; 
+            return this._transcriptItems != null && (this._transcriptItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

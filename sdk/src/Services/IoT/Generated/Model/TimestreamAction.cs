@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.IoT.Model
     public partial class TimestreamAction
     {
         private string _databaseName;
-        private List<TimestreamDimension> _dimensions = new List<TimestreamDimension>();
+        private List<TimestreamDimension> _dimensions = AWSConfigs.InitializeCollections ? new List<TimestreamDimension>() : null;
         private string _roleArn;
         private string _tableName;
         private TimestreamTimestamp _timestamp;
@@ -76,7 +77,7 @@ namespace Amazon.IoT.Model
         // Check to see if Dimensions property is set
         internal bool IsSetDimensions()
         {
-            return this._dimensions != null && this._dimensions.Count > 0; 
+            return this._dimensions != null && (this._dimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

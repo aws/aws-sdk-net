@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchPutDocument operation.
-    /// Adds one or more documents to an Amazon Q index.
+    /// Adds one or more documents to an Amazon Q Business index.
     /// 
     ///  
     /// <para>
@@ -39,15 +40,15 @@ namespace Amazon.QBusiness.Model
     ///  <ul> <li> 
     /// <para>
     /// ingest your structured and unstructured documents and documents stored in an Amazon
-    /// S3 bucket into an Amazon Q index.
+    /// S3 bucket into an Amazon Q Business index.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// add custom attributes to documents in an Amazon Q index.
+    /// add custom attributes to documents in an Amazon Q Business index.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// attach an access control list to the documents added to an Amazon Q index.
+    /// attach an access control list to the documents added to an Amazon Q Business index.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -59,14 +60,14 @@ namespace Amazon.QBusiness.Model
     {
         private string _applicationId;
         private string _dataSourceSyncId;
-        private List<Document> _documents = new List<Document>();
+        private List<Document> _documents = AWSConfigs.InitializeCollections ? new List<Document>() : null;
         private string _indexId;
         private string _roleArn;
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The identifier of the Amazon Q application.
+        /// The identifier of the Amazon Q Business application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -117,13 +118,13 @@ namespace Amazon.QBusiness.Model
         // Check to see if Documents property is set
         internal bool IsSetDocuments()
         {
-            return this._documents != null && this._documents.Count > 0; 
+            return this._documents != null && (this._documents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier of the Amazon Q index to add the documents to. 
+        /// The identifier of the Amazon Q Business index to add the documents to. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

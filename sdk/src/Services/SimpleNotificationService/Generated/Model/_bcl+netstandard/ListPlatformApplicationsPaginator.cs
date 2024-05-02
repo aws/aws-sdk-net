@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// Enumerable containing all of the PlatformApplications
         /// </summary>
         public IPaginatedEnumerable<PlatformApplication> PlatformApplications => 
-            new PaginatedResultKeyResponse<ListPlatformApplicationsResponse, PlatformApplication>(this, (i) => i.PlatformApplications);
+            new PaginatedResultKeyResponse<ListPlatformApplicationsResponse, PlatformApplication>(this, (i) => i.PlatformApplications ?? new List<PlatformApplication>());
 
         internal ListPlatformApplicationsPaginator(IAmazonSimpleNotificationService client, ListPlatformApplicationsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.SimpleNotificationService.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListPlatformApplicationsResponse> IPaginator<ListPlatformApplicationsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListPlatformApplicationsResponse> IPaginator<ListPlatformApplicationsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

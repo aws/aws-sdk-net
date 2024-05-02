@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Budgets.Model
 {
     /// <summary>
@@ -33,10 +34,10 @@ namespace Amazon.Budgets.Model
     /// </summary>
     public partial class BudgetPerformanceHistory
     {
-        private List<BudgetedAndActualAmounts> _budgetedAndActualAmountsList = new List<BudgetedAndActualAmounts>();
+        private List<BudgetedAndActualAmounts> _budgetedAndActualAmountsList = AWSConfigs.InitializeCollections ? new List<BudgetedAndActualAmounts>() : null;
         private string _budgetName;
         private BudgetType _budgetType;
-        private Dictionary<string, List<string>> _costFilters = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _costFilters = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private CostTypes _costTypes;
         private TimeUnit _timeUnit;
 
@@ -56,7 +57,7 @@ namespace Amazon.Budgets.Model
         // Check to see if BudgetedAndActualAmountsList property is set
         internal bool IsSetBudgetedAndActualAmountsList()
         {
-            return this._budgetedAndActualAmountsList != null && this._budgetedAndActualAmountsList.Count > 0; 
+            return this._budgetedAndActualAmountsList != null && (this._budgetedAndActualAmountsList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -105,7 +106,7 @@ namespace Amazon.Budgets.Model
         // Check to see if CostFilters property is set
         internal bool IsSetCostFilters()
         {
-            return this._costFilters != null && this._costFilters.Count > 0; 
+            return this._costFilters != null && (this._costFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

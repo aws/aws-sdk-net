@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the ModelCardSummaries
         /// </summary>
         public IPaginatedEnumerable<ModelCardSummary> ModelCardSummaries => 
-            new PaginatedResultKeyResponse<ListModelCardsResponse, ModelCardSummary>(this, (i) => i.ModelCardSummaries);
+            new PaginatedResultKeyResponse<ListModelCardsResponse, ModelCardSummary>(this, (i) => i.ModelCardSummaries ?? new List<ModelCardSummary>());
 
         internal ListModelCardsPaginator(IAmazonSageMaker client, ListModelCardsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.SageMaker.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListModelCardsResponse> IPaginator<ListModelCardsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListModelCardsResponse> IPaginator<ListModelCardsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.OpenSearchService.Model
     /// </summary>
     public partial class UpgradeDomainResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, string> _advancedOptions = new Dictionary<string, string>();
+        private Dictionary<string, string> _advancedOptions = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ChangeProgressDetails _changeProgressDetails;
         private string _domainName;
         private bool? _performCheckOnly;
@@ -55,7 +56,7 @@ namespace Amazon.OpenSearchService.Model
         // Check to see if AdvancedOptions property is set
         internal bool IsSetAdvancedOptions()
         {
-            return this._advancedOptions != null && this._advancedOptions.Count > 0; 
+            return this._advancedOptions != null && (this._advancedOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

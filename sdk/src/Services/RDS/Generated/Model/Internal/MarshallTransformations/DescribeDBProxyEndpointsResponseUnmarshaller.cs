@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -84,6 +85,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DBProxyEndpoints/member", targetDepth))
                     {
                         var unmarshaller = DBProxyEndpointUnmarshaller.Instance;
+                        if (response.DBProxyEndpoints == null)
+                        {
+                            response.DBProxyEndpoints = new List<DBProxyEndpoint>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.DBProxyEndpoints.Add(item);
                         continue;

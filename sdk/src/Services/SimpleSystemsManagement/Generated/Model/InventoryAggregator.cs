@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class InventoryAggregator
     {
-        private List<InventoryAggregator> _aggregators = new List<InventoryAggregator>();
+        private List<InventoryAggregator> _aggregators = AWSConfigs.InitializeCollections ? new List<InventoryAggregator>() : null;
         private string _expression;
-        private List<InventoryGroup> _groups = new List<InventoryGroup>();
+        private List<InventoryGroup> _groups = AWSConfigs.InitializeCollections ? new List<InventoryGroup>() : null;
 
         /// <summary>
         /// Gets and sets the property Aggregators. 
@@ -53,7 +54,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Aggregators property is set
         internal bool IsSetAggregators()
         {
-            return this._aggregators != null && this._aggregators.Count > 0; 
+            return this._aggregators != null && (this._aggregators.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Groups property is set
         internal bool IsSetGroups()
         {
-            return this._groups != null && this._groups.Count > 0; 
+            return this._groups != null && (this._groups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

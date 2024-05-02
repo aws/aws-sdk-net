@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FSx.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.FSx.Model
     /// </summary>
     public partial class SelfManagedActiveDirectoryAttributes
     {
-        private List<string> _dnsIps = new List<string>();
+        private List<string> _dnsIps = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _domainName;
         private string _fileSystemAdministratorsGroup;
         private string _organizationalUnitDistinguishedName;
@@ -57,7 +58,7 @@ namespace Amazon.FSx.Model
         // Check to see if DnsIps property is set
         internal bool IsSetDnsIps()
         {
-            return this._dnsIps != null && this._dnsIps.Count > 0; 
+            return this._dnsIps != null && (this._dnsIps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

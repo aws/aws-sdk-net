@@ -218,7 +218,7 @@ namespace Amazon.S3.Util
                 try
                 {
                     listVersionsResponse = await s3Client.ListVersionsAsync(listVersionsRequest, token).ConfigureAwait(false);
-                    if (listVersionsResponse.Versions.Count == 0)
+                    if (listVersionsResponse.Versions == null || listVersionsResponse.Versions.Count == 0)
                     {
                         // If the bucket has no objects break the loop.
                         break;
@@ -239,7 +239,7 @@ namespace Amazon.S3.Util
                     if (ex.StatusCode != HttpStatusCode.NotImplemented)
                         throw;
                     listObjectsV2Response = await s3Client.ListObjectsV2Async(listObjectsV2Request).ConfigureAwait(false);
-                    if (listObjectsV2Response.S3Objects.Count == 0)
+                    if (listObjectsV2Response.S3Objects == null || listObjectsV2Response.S3Objects.Count == 0)
                     {
                         // If the bucket has no objects break the loop.
                         break;

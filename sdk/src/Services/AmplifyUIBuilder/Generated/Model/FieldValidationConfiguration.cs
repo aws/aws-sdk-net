@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.AmplifyUIBuilder.Model
     /// </summary>
     public partial class FieldValidationConfiguration
     {
-        private List<int> _numValues = new List<int>();
-        private List<string> _strValues = new List<string>();
+        private List<int> _numValues = AWSConfigs.InitializeCollections ? new List<int>() : null;
+        private List<string> _strValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _type;
         private string _validationMessage;
 
@@ -53,7 +54,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if NumValues property is set
         internal bool IsSetNumValues()
         {
-            return this._numValues != null && this._numValues.Count > 0; 
+            return this._numValues != null && (this._numValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if StrValues property is set
         internal bool IsSetStrValues()
         {
-            return this._strValues != null && this._strValues.Count > 0; 
+            return this._strValues != null && (this._strValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataExchange.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.DataExchange.Model
     public partial class Details
     {
         private ImportAssetFromSignedUrlJobErrorDetails _importAssetFromSignedUrlJobErrorDetails;
-        private List<AssetSourceEntry> _importAssetsFromS3JobErrorDetails = new List<AssetSourceEntry>();
+        private List<AssetSourceEntry> _importAssetsFromS3JobErrorDetails = AWSConfigs.InitializeCollections ? new List<AssetSourceEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property ImportAssetFromSignedUrlJobErrorDetails. 
@@ -69,7 +70,7 @@ namespace Amazon.DataExchange.Model
         // Check to see if ImportAssetsFromS3JobErrorDetails property is set
         internal bool IsSetImportAssetsFromS3JobErrorDetails()
         {
-            return this._importAssetsFromS3JobErrorDetails != null && this._importAssetsFromS3JobErrorDetails.Count > 0; 
+            return this._importAssetsFromS3JobErrorDetails != null && (this._importAssetsFromS3JobErrorDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

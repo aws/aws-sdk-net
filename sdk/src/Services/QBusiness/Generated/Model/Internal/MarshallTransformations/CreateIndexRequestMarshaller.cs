@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -66,6 +67,7 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetCapacityConfiguration())
@@ -116,6 +118,12 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetType())
+                {
+                    context.Writer.WritePropertyName("type");
+                    context.Writer.Write(publicRequest.Type);
                 }
 
                 writer.WriteObjectEnd();

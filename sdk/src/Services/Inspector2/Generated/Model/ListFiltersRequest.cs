@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Inspector2.Model
     public partial class ListFiltersRequest : AmazonInspector2Request
     {
         private FilterAction _action;
-        private List<string> _arns = new List<string>();
+        private List<string> _arns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -72,7 +73,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if Arns property is set
         internal bool IsSetArns()
         {
-            return this._arns != null && this._arns.Count > 0; 
+            return this._arns != null && (this._arns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

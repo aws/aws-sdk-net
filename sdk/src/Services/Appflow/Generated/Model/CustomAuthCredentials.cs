@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Appflow.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Appflow.Model
     /// </summary>
     public partial class CustomAuthCredentials
     {
-        private Dictionary<string, string> _credentialsMap = new Dictionary<string, string>();
+        private Dictionary<string, string> _credentialsMap = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _customAuthenticationType;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.Appflow.Model
         // Check to see if CredentialsMap property is set
         internal bool IsSetCredentialsMap()
         {
-            return this._credentialsMap != null && this._credentialsMap.Count > 0; 
+            return this._credentialsMap != null && (this._credentialsMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

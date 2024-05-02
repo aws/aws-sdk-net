@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -90,6 +91,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("TrafficSources/member", targetDepth))
                     {
                         var unmarshaller = TrafficSourceStateUnmarshaller.Instance;
+                        if (response.TrafficSources == null)
+                        {
+                            response.TrafficSources = new List<TrafficSourceState>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.TrafficSources.Add(item);
                         continue;

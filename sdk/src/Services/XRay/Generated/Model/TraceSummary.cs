@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.XRay.Model
 {
     /// <summary>
@@ -33,27 +34,27 @@ namespace Amazon.XRay.Model
     /// </summary>
     public partial class TraceSummary
     {
-        private Dictionary<string, List<ValueWithServiceIds>> _annotations = new Dictionary<string, List<ValueWithServiceIds>>();
-        private List<AvailabilityZoneDetail> _availabilityZones = new List<AvailabilityZoneDetail>();
+        private Dictionary<string, List<ValueWithServiceIds>> _annotations = AWSConfigs.InitializeCollections ? new Dictionary<string, List<ValueWithServiceIds>>() : null;
+        private List<AvailabilityZoneDetail> _availabilityZones = AWSConfigs.InitializeCollections ? new List<AvailabilityZoneDetail>() : null;
         private double? _duration;
         private ServiceId _entryPoint;
-        private List<ErrorRootCause> _errorRootCauses = new List<ErrorRootCause>();
-        private List<FaultRootCause> _faultRootCauses = new List<FaultRootCause>();
+        private List<ErrorRootCause> _errorRootCauses = AWSConfigs.InitializeCollections ? new List<ErrorRootCause>() : null;
+        private List<FaultRootCause> _faultRootCauses = AWSConfigs.InitializeCollections ? new List<FaultRootCause>() : null;
         private bool? _hasError;
         private bool? _hasFault;
         private bool? _hasThrottle;
         private Http _http;
         private string _id;
-        private List<InstanceIdDetail> _instanceIds = new List<InstanceIdDetail>();
+        private List<InstanceIdDetail> _instanceIds = AWSConfigs.InitializeCollections ? new List<InstanceIdDetail>() : null;
         private bool? _isPartial;
         private DateTime? _matchedEventTime;
-        private List<ResourceARNDetail> _resourceARNs = new List<ResourceARNDetail>();
+        private List<ResourceARNDetail> _resourceARNs = AWSConfigs.InitializeCollections ? new List<ResourceARNDetail>() : null;
         private double? _responseTime;
-        private List<ResponseTimeRootCause> _responseTimeRootCauses = new List<ResponseTimeRootCause>();
+        private List<ResponseTimeRootCause> _responseTimeRootCauses = AWSConfigs.InitializeCollections ? new List<ResponseTimeRootCause>() : null;
         private int? _revision;
-        private List<ServiceId> _serviceIds = new List<ServiceId>();
+        private List<ServiceId> _serviceIds = AWSConfigs.InitializeCollections ? new List<ServiceId>() : null;
         private DateTime? _startTime;
-        private List<TraceUser> _users = new List<TraceUser>();
+        private List<TraceUser> _users = AWSConfigs.InitializeCollections ? new List<TraceUser>() : null;
 
         /// <summary>
         /// Gets and sets the property Annotations. 
@@ -70,7 +71,7 @@ namespace Amazon.XRay.Model
         // Check to see if Annotations property is set
         internal bool IsSetAnnotations()
         {
-            return this._annotations != null && this._annotations.Count > 0; 
+            return this._annotations != null && (this._annotations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -88,7 +89,7 @@ namespace Amazon.XRay.Model
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+            return this._availabilityZones != null && (this._availabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -143,7 +144,7 @@ namespace Amazon.XRay.Model
         // Check to see if ErrorRootCauses property is set
         internal bool IsSetErrorRootCauses()
         {
-            return this._errorRootCauses != null && this._errorRootCauses.Count > 0; 
+            return this._errorRootCauses != null && (this._errorRootCauses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -161,7 +162,7 @@ namespace Amazon.XRay.Model
         // Check to see if FaultRootCauses property is set
         internal bool IsSetFaultRootCauses()
         {
-            return this._faultRootCauses != null && this._faultRootCauses.Count > 0; 
+            return this._faultRootCauses != null && (this._faultRootCauses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -270,7 +271,7 @@ namespace Amazon.XRay.Model
         // Check to see if InstanceIds property is set
         internal bool IsSetInstanceIds()
         {
-            return this._instanceIds != null && this._instanceIds.Count > 0; 
+            return this._instanceIds != null && (this._instanceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -324,7 +325,7 @@ namespace Amazon.XRay.Model
         // Check to see if ResourceARNs property is set
         internal bool IsSetResourceARNs()
         {
-            return this._resourceARNs != null && this._resourceARNs.Count > 0; 
+            return this._resourceARNs != null && (this._resourceARNs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -363,7 +364,7 @@ namespace Amazon.XRay.Model
         // Check to see if ResponseTimeRootCauses property is set
         internal bool IsSetResponseTimeRootCauses()
         {
-            return this._responseTimeRootCauses != null && this._responseTimeRootCauses.Count > 0; 
+            return this._responseTimeRootCauses != null && (this._responseTimeRootCauses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -399,7 +400,7 @@ namespace Amazon.XRay.Model
         // Check to see if ServiceIds property is set
         internal bool IsSetServiceIds()
         {
-            return this._serviceIds != null && this._serviceIds.Count > 0; 
+            return this._serviceIds != null && (this._serviceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -435,7 +436,7 @@ namespace Amazon.XRay.Model
         // Check to see if Users property is set
         internal bool IsSetUsers()
         {
-            return this._users != null && this._users.Count > 0; 
+            return this._users != null && (this._users.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

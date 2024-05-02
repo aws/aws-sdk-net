@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.SageMaker.Model
     public partial class MonitoringJobDefinition
     {
         private MonitoringBaselineConfig _baselineConfig;
-        private Dictionary<string, string> _environment = new Dictionary<string, string>();
+        private Dictionary<string, string> _environment = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private MonitoringAppSpecification _monitoringAppSpecification;
-        private List<MonitoringInput> _monitoringInputs = new List<MonitoringInput>();
+        private List<MonitoringInput> _monitoringInputs = AWSConfigs.InitializeCollections ? new List<MonitoringInput>() : null;
         private MonitoringOutputConfig _monitoringOutputConfig;
         private MonitoringResources _monitoringResources;
         private NetworkConfig _networkConfig;
@@ -78,7 +79,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Environment property is set
         internal bool IsSetEnvironment()
         {
-            return this._environment != null && this._environment.Count > 0; 
+            return this._environment != null && (this._environment.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -117,7 +118,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if MonitoringInputs property is set
         internal bool IsSetMonitoringInputs()
         {
-            return this._monitoringInputs != null && this._monitoringInputs.Count > 0; 
+            return this._monitoringInputs != null && (this._monitoringInputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

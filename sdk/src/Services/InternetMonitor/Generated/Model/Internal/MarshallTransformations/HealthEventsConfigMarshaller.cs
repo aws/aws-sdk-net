@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HealthEventsConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAvailabilityLocalHealthEventsConfig())
             {
                 context.Writer.WritePropertyName("AvailabilityLocalHealthEventsConfig");
@@ -59,7 +62,14 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAvailabilityScoreThreshold())
             {
                 context.Writer.WritePropertyName("AvailabilityScoreThreshold");
-                context.Writer.Write(requestObject.AvailabilityScoreThreshold.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.AvailabilityScoreThreshold.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.AvailabilityScoreThreshold.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.AvailabilityScoreThreshold.Value);
+                }
             }
 
             if(requestObject.IsSetPerformanceLocalHealthEventsConfig())
@@ -76,7 +86,14 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPerformanceScoreThreshold())
             {
                 context.Writer.WritePropertyName("PerformanceScoreThreshold");
-                context.Writer.Write(requestObject.PerformanceScoreThreshold.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.PerformanceScoreThreshold.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PerformanceScoreThreshold.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.PerformanceScoreThreshold.Value);
+                }
             }
 
         }

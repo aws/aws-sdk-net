@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppStream.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AppStream.Model
     /// </summary>
     public partial class ImageBuilder
     {
-        private List<AccessEndpoint> _accessEndpoints = new List<AccessEndpoint>();
+        private List<AccessEndpoint> _accessEndpoints = AWSConfigs.InitializeCollections ? new List<AccessEndpoint>() : null;
         private string _appstreamAgentVersion;
         private string _arn;
         private DateTime? _createdTime;
@@ -43,7 +44,7 @@ namespace Amazon.AppStream.Model
         private bool? _enableDefaultInternetAccess;
         private string _iamRoleArn;
         private string _imageArn;
-        private List<ResourceError> _imageBuilderErrors = new List<ResourceError>();
+        private List<ResourceError> _imageBuilderErrors = AWSConfigs.InitializeCollections ? new List<ResourceError>() : null;
         private string _instanceType;
         private string _name;
         private NetworkAccessConfiguration _networkAccessConfiguration;
@@ -69,7 +70,7 @@ namespace Amazon.AppStream.Model
         // Check to see if AccessEndpoints property is set
         internal bool IsSetAccessEndpoints()
         {
-            return this._accessEndpoints != null && this._accessEndpoints.Count > 0; 
+            return this._accessEndpoints != null && (this._accessEndpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -264,7 +265,7 @@ namespace Amazon.AppStream.Model
         // Check to see if ImageBuilderErrors property is set
         internal bool IsSetImageBuilderErrors()
         {
-            return this._imageBuilderErrors != null && this._imageBuilderErrors.Count > 0; 
+            return this._imageBuilderErrors != null && (this._imageBuilderErrors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

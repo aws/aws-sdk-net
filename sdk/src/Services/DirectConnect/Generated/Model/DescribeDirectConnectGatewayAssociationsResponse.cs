@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DirectConnect.Model
     /// </summary>
     public partial class DescribeDirectConnectGatewayAssociationsResponse : AmazonWebServiceResponse
     {
-        private List<DirectConnectGatewayAssociation> _directConnectGatewayAssociations = new List<DirectConnectGatewayAssociation>();
+        private List<DirectConnectGatewayAssociation> _directConnectGatewayAssociations = AWSConfigs.InitializeCollections ? new List<DirectConnectGatewayAssociation>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if DirectConnectGatewayAssociations property is set
         internal bool IsSetDirectConnectGatewayAssociations()
         {
-            return this._directConnectGatewayAssociations != null && this._directConnectGatewayAssociations.Count > 0; 
+            return this._directConnectGatewayAssociations != null && (this._directConnectGatewayAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

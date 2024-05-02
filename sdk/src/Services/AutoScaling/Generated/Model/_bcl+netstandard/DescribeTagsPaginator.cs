@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.AutoScaling.Model
         /// Enumerable containing all of the Tags
         /// </summary>
         public IPaginatedEnumerable<TagDescription> Tags => 
-            new PaginatedResultKeyResponse<DescribeTagsResponse, TagDescription>(this, (i) => i.Tags);
+            new PaginatedResultKeyResponse<DescribeTagsResponse, TagDescription>(this, (i) => i.Tags ?? new List<TagDescription>());
 
         internal DescribeTagsPaginator(IAmazonAutoScaling client, DescribeTagsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.AutoScaling.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeTagsResponse> IPaginator<DescribeTagsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeTagsResponse> IPaginator<DescribeTagsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

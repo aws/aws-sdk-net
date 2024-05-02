@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class ContributionAnalysisDefault
     {
-        private List<ColumnIdentifier> _contributorDimensions = new List<ColumnIdentifier>();
+        private List<ColumnIdentifier> _contributorDimensions = AWSConfigs.InitializeCollections ? new List<ColumnIdentifier>() : null;
         private string _measureFieldId;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if ContributorDimensions property is set
         internal bool IsSetContributorDimensions()
         {
-            return this._contributorDimensions != null && this._contributorDimensions.Count > 0; 
+            return this._contributorDimensions != null && (this._contributorDimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

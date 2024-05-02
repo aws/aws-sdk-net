@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class GetAwsNetworkPerformanceDataRequest : AmazonEC2Request
     {
-        private List<DataQuery> _dataQueries = new List<DataQuery>();
+        private List<DataQuery> _dataQueries = AWSConfigs.InitializeCollections ? new List<DataQuery>() : null;
         private DateTime? _endTime;
         private int? _maxResults;
         private string _nextToken;
@@ -55,7 +56,7 @@ namespace Amazon.EC2.Model
         // Check to see if DataQueries property is set
         internal bool IsSetDataQueries()
         {
-            return this._dataQueries != null && this._dataQueries.Count > 0; 
+            return this._dataQueries != null && (this._dataQueries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

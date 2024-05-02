@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Batch.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class DescribeComputeEnvironmentsRequest : AmazonBatchRequest
     {
-        private List<string> _computeEnvironments = new List<string>();
+        private List<string> _computeEnvironments = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -60,7 +61,7 @@ namespace Amazon.Batch.Model
         // Check to see if ComputeEnvironments property is set
         internal bool IsSetComputeEnvironments()
         {
-            return this._computeEnvironments != null && this._computeEnvironments.Count > 0; 
+            return this._computeEnvironments != null && (this._computeEnvironments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

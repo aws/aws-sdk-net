@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
@@ -110,8 +111,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// The username of the user that you want to query or modify. The value of this parameter
         /// is typically your user's username, but it can be any of their alias attributes. If
-        /// <c>username</c> isn't an alias attribute in your user pool, you can also use their
-        /// <c>sub</c> in this request.
+        /// <c>username</c> isn't an alias attribute in your user pool, this value must be the
+        /// <c>sub</c> of a local user or the username of a user from a third-party IdP.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]

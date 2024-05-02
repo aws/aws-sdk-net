@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
@@ -51,9 +52,10 @@ namespace Amazon.TranscribeService.Model
     /// </summary>
     public partial class CallAnalyticsJob
     {
+        private CallAnalyticsJobDetails _callAnalyticsJobDetails;
         private string _callAnalyticsJobName;
         private CallAnalyticsJobStatus _callAnalyticsJobStatus;
-        private List<ChannelDefinition> _channelDefinitions = new List<ChannelDefinition>();
+        private List<ChannelDefinition> _channelDefinitions = AWSConfigs.InitializeCollections ? new List<ChannelDefinition>() : null;
         private DateTime? _completionTime;
         private DateTime? _creationTime;
         private string _dataAccessRoleArn;
@@ -66,6 +68,25 @@ namespace Amazon.TranscribeService.Model
         private CallAnalyticsJobSettings _settings;
         private DateTime? _startTime;
         private Transcript _transcript;
+
+        /// <summary>
+        /// Gets and sets the property CallAnalyticsJobDetails. 
+        /// <para>
+        /// Provides detailed information about a call analytics job, including information about
+        /// skipped analytics features.
+        /// </para>
+        /// </summary>
+        public CallAnalyticsJobDetails CallAnalyticsJobDetails
+        {
+            get { return this._callAnalyticsJobDetails; }
+            set { this._callAnalyticsJobDetails = value; }
+        }
+
+        // Check to see if CallAnalyticsJobDetails property is set
+        internal bool IsSetCallAnalyticsJobDetails()
+        {
+            return this._callAnalyticsJobDetails != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CallAnalyticsJobName. 
@@ -128,7 +149,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if ChannelDefinitions property is set
         internal bool IsSetChannelDefinitions()
         {
-            return this._channelDefinitions != null && this._channelDefinitions.Count > 0; 
+            return this._channelDefinitions != null && (this._channelDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

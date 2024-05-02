@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.VoiceID.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.VoiceID.Model
         /// Enumerable containing all of the SpeakerSummaries
         /// </summary>
         public IPaginatedEnumerable<SpeakerSummary> SpeakerSummaries => 
-            new PaginatedResultKeyResponse<ListSpeakersResponse, SpeakerSummary>(this, (i) => i.SpeakerSummaries);
+            new PaginatedResultKeyResponse<ListSpeakersResponse, SpeakerSummary>(this, (i) => i.SpeakerSummaries ?? new List<SpeakerSummary>());
 
         internal ListSpeakersPaginator(IAmazonVoiceID client, ListSpeakersRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.VoiceID.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListSpeakersResponse> IPaginator<ListSpeakersResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListSpeakersResponse> IPaginator<ListSpeakersResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkDocs.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.WorkDocs.Model
     public partial class Principal
     {
         private string _id;
-        private List<PermissionInfo> _roles = new List<PermissionInfo>();
+        private List<PermissionInfo> _roles = AWSConfigs.InitializeCollections ? new List<PermissionInfo>() : null;
         private PrincipalType _type;
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.WorkDocs.Model
         // Check to see if Roles property is set
         internal bool IsSetRoles()
         {
-            return this._roles != null && this._roles.Count > 0; 
+            return this._roles != null && (this._roles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

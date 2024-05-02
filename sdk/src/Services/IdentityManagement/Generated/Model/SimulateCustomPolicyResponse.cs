@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IdentityManagement.Model
     /// </summary>
     public partial class SimulateCustomPolicyResponse : AmazonWebServiceResponse
     {
-        private List<EvaluationResult> _evaluationResults = new List<EvaluationResult>();
+        private List<EvaluationResult> _evaluationResults = AWSConfigs.InitializeCollections ? new List<EvaluationResult>() : null;
         private bool? _isTruncated;
         private string _marker;
 
@@ -53,7 +54,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if EvaluationResults property is set
         internal bool IsSetEvaluationResults()
         {
-            return this._evaluationResults != null && this._evaluationResults.Count > 0; 
+            return this._evaluationResults != null && (this._evaluationResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

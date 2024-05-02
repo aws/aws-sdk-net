@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class UpdateCertificateProviderRequest : AmazonIoTRequest
     {
-        private List<string> _accountDefaultForOperations = new List<string>();
+        private List<string> _accountDefaultForOperations = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _certificateProviderName;
         private string _lambdaFunctionArn;
 
@@ -61,7 +62,7 @@ namespace Amazon.IoT.Model
         // Check to see if AccountDefaultForOperations property is set
         internal bool IsSetAccountDefaultForOperations()
         {
-            return this._accountDefaultForOperations != null && this._accountDefaultForOperations.Count > 0; 
+            return this._accountDefaultForOperations != null && (this._accountDefaultForOperations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

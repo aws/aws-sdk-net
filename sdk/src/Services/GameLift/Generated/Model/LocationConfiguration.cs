@@ -26,10 +26,18 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GameLift.Model
 {
     /// <summary>
+    /// <b>This data type has been expanded to use with the Amazon GameLift containers feature,
+    /// which is currently in public preview.</b> 
+    /// 
+    ///  
+    /// <para>
     /// A remote location where a multi-location fleet can deploy game servers for game hosting.
+    /// 
+    /// </para>
     /// </summary>
     public partial class LocationConfiguration
     {

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class ListDefaultVocabulariesResponse : AmazonWebServiceResponse
     {
-        private List<DefaultVocabulary> _defaultVocabularyList = new List<DefaultVocabulary>();
+        private List<DefaultVocabulary> _defaultVocabularyList = AWSConfigs.InitializeCollections ? new List<DefaultVocabulary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.Connect.Model
         // Check to see if DefaultVocabularyList property is set
         internal bool IsSetDefaultVocabularyList()
         {
-            return this._defaultVocabularyList != null && this._defaultVocabularyList.Count > 0; 
+            return this._defaultVocabularyList != null && (this._defaultVocabularyList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

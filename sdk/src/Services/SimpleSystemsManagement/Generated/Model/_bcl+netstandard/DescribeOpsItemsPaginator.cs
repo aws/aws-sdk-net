@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Enumerable containing all of the OpsItemSummaries
         /// </summary>
         public IPaginatedEnumerable<OpsItemSummary> OpsItemSummaries => 
-            new PaginatedResultKeyResponse<DescribeOpsItemsResponse, OpsItemSummary>(this, (i) => i.OpsItemSummaries);
+            new PaginatedResultKeyResponse<DescribeOpsItemsResponse, OpsItemSummary>(this, (i) => i.OpsItemSummaries ?? new List<OpsItemSummary>());
 
         internal DescribeOpsItemsPaginator(IAmazonSimpleSystemsManagement client, DescribeOpsItemsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeOpsItemsResponse> IPaginator<DescribeOpsItemsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeOpsItemsResponse> IPaginator<DescribeOpsItemsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

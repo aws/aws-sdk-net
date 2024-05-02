@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Textract.Model
 {
     /// <summary>
@@ -37,13 +38,13 @@ namespace Amazon.Textract.Model
         private string _adapterVersion;
         private DateTime? _creationTime;
         private AdapterVersionDatasetConfig _datasetConfig;
-        private List<AdapterVersionEvaluationMetric> _evaluationMetrics = new List<AdapterVersionEvaluationMetric>();
-        private List<string> _featureTypes = new List<string>();
+        private List<AdapterVersionEvaluationMetric> _evaluationMetrics = AWSConfigs.InitializeCollections ? new List<AdapterVersionEvaluationMetric>() : null;
+        private List<string> _featureTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _kmsKeyId;
         private OutputConfig _outputConfig;
         private AdapterVersionStatus _status;
         private string _statusMessage;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AdapterId. 
@@ -136,7 +137,7 @@ namespace Amazon.Textract.Model
         // Check to see if EvaluationMetrics property is set
         internal bool IsSetEvaluationMetrics()
         {
-            return this._evaluationMetrics != null && this._evaluationMetrics.Count > 0; 
+            return this._evaluationMetrics != null && (this._evaluationMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -154,7 +155,7 @@ namespace Amazon.Textract.Model
         // Check to see if FeatureTypes property is set
         internal bool IsSetFeatureTypes()
         {
-            return this._featureTypes != null && this._featureTypes.Count > 0; 
+            return this._featureTypes != null && (this._featureTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -245,7 +246,7 @@ namespace Amazon.Textract.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

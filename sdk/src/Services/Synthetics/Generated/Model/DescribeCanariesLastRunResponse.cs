@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Synthetics.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Synthetics.Model
     /// </summary>
     public partial class DescribeCanariesLastRunResponse : AmazonWebServiceResponse
     {
-        private List<CanaryLastRun> _canariesLastRun = new List<CanaryLastRun>();
+        private List<CanaryLastRun> _canariesLastRun = AWSConfigs.InitializeCollections ? new List<CanaryLastRun>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Synthetics.Model
         // Check to see if CanariesLastRun property is set
         internal bool IsSetCanariesLastRun()
         {
-            return this._canariesLastRun != null && this._canariesLastRun.Count > 0; 
+            return this._canariesLastRun != null && (this._canariesLastRun.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

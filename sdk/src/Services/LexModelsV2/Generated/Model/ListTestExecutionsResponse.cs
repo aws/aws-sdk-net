@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.LexModelsV2.Model
     public partial class ListTestExecutionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TestExecutionSummary> _testExecutions = new List<TestExecutionSummary>();
+        private List<TestExecutionSummary> _testExecutions = AWSConfigs.InitializeCollections ? new List<TestExecutionSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if TestExecutions property is set
         internal bool IsSetTestExecutions()
         {
-            return this._testExecutions != null && this._testExecutions.Count > 0; 
+            return this._testExecutions != null && (this._testExecutions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

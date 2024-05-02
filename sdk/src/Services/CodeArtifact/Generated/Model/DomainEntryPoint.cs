@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeArtifact.Model
 {
     /// <summary>
@@ -34,6 +35,14 @@ namespace Amazon.CodeArtifact.Model
     /// to. For packages ingested from an external repository, the entry point is the external
     /// connection that it was ingested from. An external connection is a CodeArtifact repository
     /// that is connected to an external repository such as the npm registry or NuGet gallery.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// If a package version exists in a repository and is updated, for example if a package
+    /// of the same version is added with additional assets, the package version's <c>DomainEntryPoint</c>
+    /// will not change from the original package version's value.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DomainEntryPoint
     {

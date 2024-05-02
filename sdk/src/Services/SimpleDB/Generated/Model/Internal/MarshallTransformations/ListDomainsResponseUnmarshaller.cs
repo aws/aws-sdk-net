@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -84,6 +85,10 @@ namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DomainName", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (response.DomainNames == null)
+                        {
+                            response.DomainNames = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.DomainNames.Add(item);
                         continue;

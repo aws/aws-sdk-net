@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RedshiftServerless.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.RedshiftServerless.Model
         /// Enumerable containing all of the Associations
         /// </summary>
         public IPaginatedEnumerable<Association> Associations => 
-            new PaginatedResultKeyResponse<ListCustomDomainAssociationsResponse, Association>(this, (i) => i.Associations);
+            new PaginatedResultKeyResponse<ListCustomDomainAssociationsResponse, Association>(this, (i) => i.Associations ?? new List<Association>());
 
         internal ListCustomDomainAssociationsPaginator(IAmazonRedshiftServerless client, ListCustomDomainAssociationsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.RedshiftServerless.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListCustomDomainAssociationsResponse> IPaginator<ListCustomDomainAssociationsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListCustomDomainAssociationsResponse> IPaginator<ListCustomDomainAssociationsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

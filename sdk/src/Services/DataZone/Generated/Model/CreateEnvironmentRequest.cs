@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
@@ -37,10 +38,10 @@ namespace Amazon.DataZone.Model
         private string _description;
         private string _domainIdentifier;
         private string _environmentProfileIdentifier;
-        private List<string> _glossaryTerms = new List<string>();
+        private List<string> _glossaryTerms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private string _projectIdentifier;
-        private List<EnvironmentParameter> _userParameters = new List<EnvironmentParameter>();
+        private List<EnvironmentParameter> _userParameters = AWSConfigs.InitializeCollections ? new List<EnvironmentParameter>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -115,7 +116,7 @@ namespace Amazon.DataZone.Model
         // Check to see if GlossaryTerms property is set
         internal bool IsSetGlossaryTerms()
         {
-            return this._glossaryTerms != null && this._glossaryTerms.Count > 0; 
+            return this._glossaryTerms != null && (this._glossaryTerms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -171,7 +172,7 @@ namespace Amazon.DataZone.Model
         // Check to see if UserParameters property is set
         internal bool IsSetUserParameters()
         {
-            return this._userParameters != null && this._userParameters.Count > 0; 
+            return this._userParameters != null && (this._userParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -91,6 +92,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = HlsConfigurationUnmarshaller.Instance;
                     response.HlsConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("InsertionMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.InsertionMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("LivePreRollConfiguration", targetDepth))

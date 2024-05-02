@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Personalize.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Personalize.Model
         /// Enumerable containing all of the Datasets
         /// </summary>
         public IPaginatedEnumerable<DatasetSummary> Datasets => 
-            new PaginatedResultKeyResponse<ListDatasetsResponse, DatasetSummary>(this, (i) => i.Datasets);
+            new PaginatedResultKeyResponse<ListDatasetsResponse, DatasetSummary>(this, (i) => i.Datasets ?? new List<DatasetSummary>());
 
         internal ListDatasetsPaginator(IAmazonPersonalize client, ListDatasetsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Personalize.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListDatasetsResponse> IPaginator<ListDatasetsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListDatasetsResponse> IPaginator<ListDatasetsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

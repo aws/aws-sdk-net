@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
     {
         private string _configurationId;
         private int? _maxResults;
-        private List<string> _neighborConfigurationIds = new List<string>();
+        private List<string> _neighborConfigurationIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
         private bool? _portInformationNeeded;
 
@@ -92,7 +93,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         // Check to see if NeighborConfigurationIds property is set
         internal bool IsSetNeighborConfigurationIds()
         {
-            return this._neighborConfigurationIds != null && this._neighborConfigurationIds.Count > 0; 
+            return this._neighborConfigurationIds != null && (this._neighborConfigurationIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

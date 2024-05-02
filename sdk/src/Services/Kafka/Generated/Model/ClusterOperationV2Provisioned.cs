@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kafka.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Kafka.Model
     /// </summary>
     public partial class ClusterOperationV2Provisioned
     {
-        private List<ClusterOperationStep> _operationSteps = new List<ClusterOperationStep>();
+        private List<ClusterOperationStep> _operationSteps = AWSConfigs.InitializeCollections ? new List<ClusterOperationStep>() : null;
         private MutableClusterInfo _sourceClusterInfo;
         private MutableClusterInfo _targetClusterInfo;
         private VpcConnectionInfo _vpcConnectionInfo;
@@ -53,7 +54,7 @@ namespace Amazon.Kafka.Model
         // Check to see if OperationSteps property is set
         internal bool IsSetOperationSteps()
         {
-            return this._operationSteps != null && this._operationSteps.Count > 0; 
+            return this._operationSteps != null && (this._operationSteps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

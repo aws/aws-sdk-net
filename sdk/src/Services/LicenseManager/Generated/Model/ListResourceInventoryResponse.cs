@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LicenseManager.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.LicenseManager.Model
     public partial class ListResourceInventoryResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ResourceInventory> _resourceInventoryList = new List<ResourceInventory>();
+        private List<ResourceInventory> _resourceInventoryList = AWSConfigs.InitializeCollections ? new List<ResourceInventory>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +70,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if ResourceInventoryList property is set
         internal bool IsSetResourceInventoryList()
         {
-            return this._resourceInventoryList != null && this._resourceInventoryList.Count > 0; 
+            return this._resourceInventoryList != null && (this._resourceInventoryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

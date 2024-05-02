@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -51,6 +52,12 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ec2Configuration", targetDepth))
+                {
+                    var unmarshaller = Ec2ConfigurationStateUnmarshaller.Instance;
+                    response.Ec2Configuration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ecrConfiguration", targetDepth))
                 {
                     var unmarshaller = EcrConfigurationStateUnmarshaller.Instance;

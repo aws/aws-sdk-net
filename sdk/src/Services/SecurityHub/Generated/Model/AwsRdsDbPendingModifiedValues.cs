@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -46,7 +47,7 @@ namespace Amazon.SecurityHub.Model
         private bool? _multiAZ;
         private AwsRdsPendingCloudWatchLogsExports _pendingCloudWatchLogsExports;
         private int? _port;
-        private List<AwsRdsDbProcessorFeature> _processorFeatures = new List<AwsRdsDbProcessorFeature>();
+        private List<AwsRdsDbProcessorFeature> _processorFeatures = AWSConfigs.InitializeCollections ? new List<AwsRdsDbProcessorFeature>() : null;
         private string _storageType;
 
         /// <summary>
@@ -299,7 +300,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ProcessorFeatures property is set
         internal bool IsSetProcessorFeatures()
         {
-            return this._processorFeatures != null && this._processorFeatures.Count > 0; 
+            return this._processorFeatures != null && (this._processorFeatures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

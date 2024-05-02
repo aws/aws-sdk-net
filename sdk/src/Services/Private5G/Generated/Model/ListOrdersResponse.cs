@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Private5G.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Private5G.Model
     public partial class ListOrdersResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Order> _orders = new List<Order>();
+        private List<Order> _orders = AWSConfigs.InitializeCollections ? new List<Order>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +70,7 @@ namespace Amazon.Private5G.Model
         // Check to see if Orders property is set
         internal bool IsSetOrders()
         {
-            return this._orders != null && this._orders.Count > 0; 
+            return this._orders != null && (this._orders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

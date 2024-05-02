@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DescribeDBClusterBacktracksResponse : AmazonWebServiceResponse
     {
-        private List<DBClusterBacktrack> _dbClusterBacktracks = new List<DBClusterBacktrack>();
+        private List<DBClusterBacktrack> _dbClusterBacktracks = AWSConfigs.InitializeCollections ? new List<DBClusterBacktrack>() : null;
         private string _marker;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBClusterBacktracks property is set
         internal bool IsSetDBClusterBacktracks()
         {
-            return this._dbClusterBacktracks != null && this._dbClusterBacktracks.Count > 0; 
+            return this._dbClusterBacktracks != null && (this._dbClusterBacktracks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.ElastiCache.Model
     public partial class ReshardingConfiguration
     {
         private string _nodeGroupId;
-        private List<string> _preferredAvailabilityZones = new List<string>();
+        private List<string> _preferredAvailabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NodeGroupId. 
@@ -72,7 +73,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if PreferredAvailabilityZones property is set
         internal bool IsSetPreferredAvailabilityZones()
         {
-            return this._preferredAvailabilityZones != null && this._preferredAvailabilityZones.Count > 0; 
+            return this._preferredAvailabilityZones != null && (this._preferredAvailabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

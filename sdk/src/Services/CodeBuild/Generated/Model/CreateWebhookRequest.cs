@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
@@ -50,7 +51,7 @@ namespace Amazon.CodeBuild.Model
     {
         private string _branchFilter;
         private WebhookBuildType _buildType;
-        private List<List<WebhookFilter>> _filterGroups = new List<List<WebhookFilter>>();
+        private List<List<WebhookFilter>> _filterGroups = AWSConfigs.InitializeCollections ? new List<List<WebhookFilter>>() : null;
         private string _projectName;
 
         /// <summary>
@@ -119,7 +120,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if FilterGroups property is set
         internal bool IsSetFilterGroups()
         {
-            return this._filterGroups != null && this._filterGroups.Count > 0; 
+            return this._filterGroups != null && (this._filterGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Textract.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.Textract.Model
         private string _adapterId;
         private string _adapterVersion;
         private DateTime? _creationTime;
-        private List<string> _featureTypes = new List<string>();
+        private List<string> _featureTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AdapterVersionStatus _status;
         private string _statusMessage;
 
@@ -112,7 +113,7 @@ namespace Amazon.Textract.Model
         // Check to see if FeatureTypes property is set
         internal bool IsSetFeatureTypes()
         {
-            return this._featureTypes != null && this._featureTypes.Count > 0; 
+            return this._featureTypes != null && (this._featureTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

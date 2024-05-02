@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the sso-2019-06-10.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SSO.Model
 {
     /// <summary>

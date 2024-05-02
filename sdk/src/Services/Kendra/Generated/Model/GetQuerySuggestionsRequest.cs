@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -44,7 +45,7 @@ namespace Amazon.Kendra.Model
         private string _indexId;
         private int? _maxSuggestionsCount;
         private string _queryText;
-        private List<string> _suggestionTypes = new List<string>();
+        private List<string> _suggestionTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AttributeSuggestionsConfig. 
@@ -158,7 +159,7 @@ namespace Amazon.Kendra.Model
         // Check to see if SuggestionTypes property is set
         internal bool IsSetSuggestionTypes()
         {
-            return this._suggestionTypes != null && this._suggestionTypes.Count > 0; 
+            return this._suggestionTypes != null && (this._suggestionTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ModelPackageContainerDefinition requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAdditionalS3DataSource())
             {
                 context.Writer.WritePropertyName("AdditionalS3DataSource");
@@ -98,6 +101,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ImageDigest");
                 context.Writer.Write(requestObject.ImageDigest);
+            }
+
+            if(requestObject.IsSetModelDataSource())
+            {
+                context.Writer.WritePropertyName("ModelDataSource");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ModelDataSourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.ModelDataSource, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetModelDataUrl())

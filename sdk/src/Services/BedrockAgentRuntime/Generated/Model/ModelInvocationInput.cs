@@ -26,10 +26,27 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Trace Part which contains information used to call Invoke Model
+    /// The input for the pre-processing step.
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// The <c>type</c> matches the agent step.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The <c>text</c> contains the prompt.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The <c>inferenceConfiguration</c>, <c>parserMode</c>, and <c>overrideLambda</c> values
+    /// are set in the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptOverrideConfiguration.html">PromptOverrideConfiguration</a>
+    /// object that was set when the agent was created or updated.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class ModelInvocationInput
     {
@@ -42,7 +59,14 @@ namespace Amazon.BedrockAgentRuntime.Model
         private PromptType _type;
 
         /// <summary>
-        /// Gets and sets the property InferenceConfiguration.
+        /// Gets and sets the property InferenceConfiguration. 
+        /// <para>
+        /// Specifications about the inference parameters that were provided alongside the prompt.
+        /// These are specified in the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptOverrideConfiguration.html">PromptOverrideConfiguration</a>
+        /// object that was set when the agent was created or updated. For more information, see
+        /// <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference
+        /// parameters for foundation models</a>.
+        /// </para>
         /// </summary>
         public InferenceConfiguration InferenceConfiguration
         {
@@ -57,7 +81,11 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OverrideLambda.
+        /// Gets and sets the property OverrideLambda. 
+        /// <para>
+        /// The ARN of the Lambda function to use when parsing the raw foundation model output
+        /// in parts of the agent sequence.
+        /// </para>
         /// </summary>
         public string OverrideLambda
         {
@@ -72,7 +100,11 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ParserMode.
+        /// Gets and sets the property ParserMode. 
+        /// <para>
+        /// Specifies whether to override the default parser Lambda function when parsing the
+        /// raw foundation model output in the part of the agent sequence defined by the <c>promptType</c>.
+        /// </para>
         /// </summary>
         public CreationMode ParserMode
         {
@@ -87,7 +119,12 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PromptCreationMode.
+        /// Gets and sets the property PromptCreationMode. 
+        /// <para>
+        /// Specifies whether the default prompt template was <c>OVERRIDDEN</c>. If it was, the
+        /// <c>basePromptTemplate</c> that was set in the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptOverrideConfiguration.html">PromptOverrideConfiguration</a>
+        /// object when the agent was created or updated is used instead.
+        /// </para>
         /// </summary>
         public CreationMode PromptCreationMode
         {
@@ -102,7 +139,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Text.
+        /// Gets and sets the property Text. 
+        /// <para>
+        /// The text that prompted the agent at this step.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string Text
@@ -118,7 +158,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TraceId.
+        /// Gets and sets the property TraceId. 
+        /// <para>
+        /// The unique identifier of the trace.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=16)]
         public string TraceId
@@ -134,7 +177,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The step in the agent sequence.
+        /// </para>
         /// </summary>
         public PromptType Type
         {

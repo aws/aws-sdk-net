@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LocationService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.LocationService.Model
     /// </summary>
     public partial class ListGeofenceCollectionsResponse : AmazonWebServiceResponse
     {
-        private List<ListGeofenceCollectionsResponseEntry> _entries = new List<ListGeofenceCollectionsResponseEntry>();
+        private List<ListGeofenceCollectionsResponseEntry> _entries = AWSConfigs.InitializeCollections ? new List<ListGeofenceCollectionsResponseEntry>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.LocationService.Model
         // Check to see if Entries property is set
         internal bool IsSetEntries()
         {
-            return this._entries != null && this._entries.Count > 0; 
+            return this._entries != null && (this._entries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

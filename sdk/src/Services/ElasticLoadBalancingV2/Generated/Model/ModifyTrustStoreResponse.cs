@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class ModifyTrustStoreResponse : AmazonWebServiceResponse
     {
-        private List<TrustStore> _trustStores = new List<TrustStore>();
+        private List<TrustStore> _trustStores = AWSConfigs.InitializeCollections ? new List<TrustStore>() : null;
 
         /// <summary>
         /// Gets and sets the property TrustStores. 
@@ -50,7 +51,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if TrustStores property is set
         internal bool IsSetTrustStores()
         {
-            return this._trustStores != null && this._trustStores.Count > 0; 
+            return this._trustStores != null && (this._trustStores.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

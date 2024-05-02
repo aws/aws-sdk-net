@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.CodeCommit.Model
     public partial class TestRepositoryTriggersRequest : AmazonCodeCommitRequest
     {
         private string _repositoryName;
-        private List<RepositoryTrigger> _triggers = new List<RepositoryTrigger>();
+        private List<RepositoryTrigger> _triggers = AWSConfigs.InitializeCollections ? new List<RepositoryTrigger>() : null;
 
         /// <summary>
         /// Gets and sets the property RepositoryName. 
@@ -74,7 +75,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if Triggers property is set
         internal bool IsSetTriggers()
         {
-            return this._triggers != null && this._triggers.Count > 0; 
+            return this._triggers != null && (this._triggers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

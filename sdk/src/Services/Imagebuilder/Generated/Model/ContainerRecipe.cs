@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Imagebuilder.Model
     public partial class ContainerRecipe
     {
         private string _arn;
-        private List<ComponentConfiguration> _components = new List<ComponentConfiguration>();
+        private List<ComponentConfiguration> _components = AWSConfigs.InitializeCollections ? new List<ComponentConfiguration>() : null;
         private ContainerType _containerType;
         private string _dateCreated;
         private string _description;
@@ -46,7 +47,7 @@ namespace Amazon.Imagebuilder.Model
         private string _owner;
         private string _parentImage;
         private Platform _platform;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private TargetContainerRepository _targetRepository;
         private string _version;
         private string _workingDirectory;
@@ -108,7 +109,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if Components property is set
         internal bool IsSetComponents()
         {
-            return this._components != null && this._components.Count > 0; 
+            return this._components != null && (this._components.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -334,7 +335,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

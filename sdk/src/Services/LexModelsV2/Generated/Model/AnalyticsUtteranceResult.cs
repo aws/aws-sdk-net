@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -34,10 +35,10 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class AnalyticsUtteranceResult
     {
-        private List<AnalyticsUtteranceAttributeResult> _attributeResults = new List<AnalyticsUtteranceAttributeResult>();
-        private List<AnalyticsBinKey> _binKeys = new List<AnalyticsBinKey>();
-        private List<AnalyticsUtteranceGroupByKey> _groupByKeys = new List<AnalyticsUtteranceGroupByKey>();
-        private List<AnalyticsUtteranceMetricResult> _metricsResults = new List<AnalyticsUtteranceMetricResult>();
+        private List<AnalyticsUtteranceAttributeResult> _attributeResults = AWSConfigs.InitializeCollections ? new List<AnalyticsUtteranceAttributeResult>() : null;
+        private List<AnalyticsBinKey> _binKeys = AWSConfigs.InitializeCollections ? new List<AnalyticsBinKey>() : null;
+        private List<AnalyticsUtteranceGroupByKey> _groupByKeys = AWSConfigs.InitializeCollections ? new List<AnalyticsUtteranceGroupByKey>() : null;
+        private List<AnalyticsUtteranceMetricResult> _metricsResults = AWSConfigs.InitializeCollections ? new List<AnalyticsUtteranceMetricResult>() : null;
 
         /// <summary>
         /// Gets and sets the property AttributeResults. 
@@ -55,7 +56,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if AttributeResults property is set
         internal bool IsSetAttributeResults()
         {
-            return this._attributeResults != null && this._attributeResults.Count > 0; 
+            return this._attributeResults != null && (this._attributeResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if BinKeys property is set
         internal bool IsSetBinKeys()
         {
-            return this._binKeys != null && this._binKeys.Count > 0; 
+            return this._binKeys != null && (this._binKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -94,7 +95,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if GroupByKeys property is set
         internal bool IsSetGroupByKeys()
         {
-            return this._groupByKeys != null && this._groupByKeys.Count > 0; 
+            return this._groupByKeys != null && (this._groupByKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -113,7 +114,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if MetricsResults property is set
         internal bool IsSetMetricsResults()
         {
-            return this._metricsResults != null && this._metricsResults.Count > 0; 
+            return this._metricsResults != null && (this._metricsResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

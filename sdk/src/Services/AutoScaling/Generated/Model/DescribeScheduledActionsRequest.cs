@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.AutoScaling.Model
         private DateTime? _endTimeUtc;
         private int? _maxRecords;
         private string _nextToken;
-        private List<string> _scheduledActionNames = new List<string>();
+        private List<string> _scheduledActionNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _startTimeUtc;
 
         /// <summary>
@@ -145,7 +146,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if ScheduledActionNames property is set
         internal bool IsSetScheduledActionNames()
         {
-            return this._scheduledActionNames != null && this._scheduledActionNames.Count > 0; 
+            return this._scheduledActionNames != null && (this._scheduledActionNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

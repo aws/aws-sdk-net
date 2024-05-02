@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.OpenSearchService.Model
     /// </summary>
     public partial class LogPublishingOptionsStatus
     {
-        private Dictionary<string, LogPublishingOption> _options = new Dictionary<string, LogPublishingOption>();
+        private Dictionary<string, LogPublishingOption> _options = AWSConfigs.InitializeCollections ? new Dictionary<string, LogPublishingOption>() : null;
         private OptionStatus _status;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.OpenSearchService.Model
         // Check to see if Options property is set
         internal bool IsSetOptions()
         {
-            return this._options != null && this._options.Count > 0; 
+            return this._options != null && (this._options.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

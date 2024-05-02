@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class DeleteParametersResponse : AmazonWebServiceResponse
     {
-        private List<string> _deletedParameters = new List<string>();
-        private List<string> _invalidParameters = new List<string>();
+        private List<string> _deletedParameters = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _invalidParameters = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DeletedParameters. 
@@ -52,7 +53,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if DeletedParameters property is set
         internal bool IsSetDeletedParameters()
         {
-            return this._deletedParameters != null && this._deletedParameters.Count > 0; 
+            return this._deletedParameters != null && (this._deletedParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if InvalidParameters property is set
         internal bool IsSetInvalidParameters()
         {
-            return this._invalidParameters != null && this._invalidParameters.Count > 0; 
+            return this._invalidParameters != null && (this._invalidParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

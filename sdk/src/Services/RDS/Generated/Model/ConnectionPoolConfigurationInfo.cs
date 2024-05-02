@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.RDS.Model
         private string _initQuery;
         private int? _maxConnectionsPercent;
         private int? _maxIdleConnectionsPercent;
-        private List<string> _sessionPinningFilters = new List<string>();
+        private List<string> _sessionPinningFilters = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ConnectionBorrowTimeout. 
@@ -143,7 +144,7 @@ namespace Amazon.RDS.Model
         // Check to see if SessionPinningFilters property is set
         internal bool IsSetSessionPinningFilters()
         {
-            return this._sessionPinningFilters != null && this._sessionPinningFilters.Count > 0; 
+            return this._sessionPinningFilters != null && (this._sessionPinningFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

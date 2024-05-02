@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.QuickSight.Model
         private AssetBundleImportSourceDescription _assetBundleImportSource;
         private string _awsAccountId;
         private DateTime? _createdTime;
-        private List<AssetBundleImportJobError> _errors = new List<AssetBundleImportJobError>();
+        private List<AssetBundleImportJobError> _errors = AWSConfigs.InitializeCollections ? new List<AssetBundleImportJobError>() : null;
         private AssetBundleImportFailureAction _failureAction;
         private AssetBundleImportJobStatus _jobStatus;
         private AssetBundleImportJobOverrideParameters _overrideParameters;
@@ -46,8 +47,9 @@ namespace Amazon.QuickSight.Model
         private AssetBundleImportJobOverrideTags _overrideTags;
         private AssetBundleImportJobOverrideValidationStrategy _overrideValidationStrategy;
         private string _requestId;
-        private List<AssetBundleImportJobError> _rollbackErrors = new List<AssetBundleImportJobError>();
+        private List<AssetBundleImportJobError> _rollbackErrors = AWSConfigs.InitializeCollections ? new List<AssetBundleImportJobError>() : null;
         private int? _status;
+        private List<AssetBundleImportJobWarning> _warnings = AWSConfigs.InitializeCollections ? new List<AssetBundleImportJobWarning>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -164,7 +166,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -338,7 +340,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if RollbackErrors property is set
         internal bool IsSetRollbackErrors()
         {
-            return this._rollbackErrors != null && this._rollbackErrors.Count > 0; 
+            return this._rollbackErrors != null && (this._rollbackErrors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -357,6 +359,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetStatus()
         {
             return this._status.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Warnings. 
+        /// <para>
+        /// An array of warning records that describe all permitted errors that are encountered
+        /// during the import job.
+        /// </para>
+        /// </summary>
+        public List<AssetBundleImportJobWarning> Warnings
+        {
+            get { return this._warnings; }
+            set { this._warnings = value; }
+        }
+
+        // Check to see if Warnings property is set
+        internal bool IsSetWarnings()
+        {
+            return this._warnings != null && (this._warnings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

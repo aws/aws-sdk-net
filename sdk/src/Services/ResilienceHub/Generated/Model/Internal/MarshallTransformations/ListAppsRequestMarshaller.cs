@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -63,7 +64,7 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                 request.Parameters.Add("appArn", StringUtils.FromString(publicRequest.AppArn));
             
             if (publicRequest.IsSetFromLastAssessmentTime())
-                request.Parameters.Add("fromLastAssessmentTime", StringUtils.FromDateTimeToISO8601(publicRequest.FromLastAssessmentTime));
+                request.Parameters.Add("fromLastAssessmentTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.FromLastAssessmentTime));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
@@ -78,7 +79,7 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                 request.Parameters.Add("reverseOrder", StringUtils.FromBool(publicRequest.ReverseOrder));
             
             if (publicRequest.IsSetToLastAssessmentTime())
-                request.Parameters.Add("toLastAssessmentTime", StringUtils.FromDateTimeToISO8601(publicRequest.ToLastAssessmentTime));
+                request.Parameters.Add("toLastAssessmentTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ToLastAssessmentTime));
             request.ResourcePath = "/list-apps";
             request.UseQueryString = true;
 

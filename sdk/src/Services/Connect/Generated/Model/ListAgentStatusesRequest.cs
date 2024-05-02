@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class ListAgentStatusesRequest : AmazonConnectRequest
     {
-        private List<string> _agentStatusTypes = new List<string>();
+        private List<string> _agentStatusTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _instanceId;
         private int? _maxResults;
         private string _nextToken;
@@ -60,7 +61,7 @@ namespace Amazon.Connect.Model
         // Check to see if AgentStatusTypes property is set
         internal bool IsSetAgentStatusTypes()
         {
-            return this._agentStatusTypes != null && this._agentStatusTypes.Count > 0; 
+            return this._agentStatusTypes != null && (this._agentStatusTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

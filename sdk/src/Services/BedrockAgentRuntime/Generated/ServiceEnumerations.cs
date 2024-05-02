@@ -75,6 +75,56 @@ namespace Amazon.BedrockAgentRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type ExternalSourceType.
+    /// </summary>
+    public class ExternalSourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BYTE_CONTENT for ExternalSourceType
+        /// </summary>
+        public static readonly ExternalSourceType BYTE_CONTENT = new ExternalSourceType("BYTE_CONTENT");
+        /// <summary>
+        /// Constant S3 for ExternalSourceType
+        /// </summary>
+        public static readonly ExternalSourceType S3 = new ExternalSourceType("S3");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExternalSourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExternalSourceType FindValue(string value)
+        {
+            return FindValue<ExternalSourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExternalSourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type InvocationType.
     /// </summary>
     public class InvocationType : ConstantClass
@@ -187,6 +237,56 @@ namespace Amazon.BedrockAgentRuntime
 
 
     /// <summary>
+    /// Constants used for properties of type ResponseState.
+    /// </summary>
+    public class ResponseState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILURE for ResponseState
+        /// </summary>
+        public static readonly ResponseState FAILURE = new ResponseState("FAILURE");
+        /// <summary>
+        /// Constant REPROMPT for ResponseState
+        /// </summary>
+        public static readonly ResponseState REPROMPT = new ResponseState("REPROMPT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResponseState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResponseState FindValue(string value)
+        {
+            return FindValue<ResponseState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResponseState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RetrievalResultLocationType.
     /// </summary>
     public class RetrievalResultLocationType : ConstantClass
@@ -239,6 +339,10 @@ namespace Amazon.BedrockAgentRuntime
     {
 
         /// <summary>
+        /// Constant EXTERNAL_SOURCES for RetrieveAndGenerateType
+        /// </summary>
+        public static readonly RetrieveAndGenerateType EXTERNAL_SOURCES = new RetrieveAndGenerateType("EXTERNAL_SOURCES");
+        /// <summary>
         /// Constant KNOWLEDGE_BASE for RetrieveAndGenerateType
         /// </summary>
         public static readonly RetrieveAndGenerateType KNOWLEDGE_BASE = new RetrieveAndGenerateType("KNOWLEDGE_BASE");
@@ -272,6 +376,56 @@ namespace Amazon.BedrockAgentRuntime
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RetrieveAndGenerateType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SearchType.
+    /// </summary>
+    public class SearchType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HYBRID for SearchType
+        /// </summary>
+        public static readonly SearchType HYBRID = new SearchType("HYBRID");
+        /// <summary>
+        /// Constant SEMANTIC for SearchType
+        /// </summary>
+        public static readonly SearchType SEMANTIC = new SearchType("SEMANTIC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SearchType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SearchType FindValue(string value)
+        {
+            return FindValue<SearchType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SearchType(string value)
         {
             return FindValue(value);
         }

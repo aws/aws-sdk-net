@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.DirectConnect.Model
         private string _authKey;
         private string _awsDeviceV2;
         private string _awsLogicalDeviceId;
-        private List<BGPPeer> _bgpPeers = new List<BGPPeer>();
+        private List<BGPPeer> _bgpPeers = AWSConfigs.InitializeCollections ? new List<BGPPeer>() : null;
         private string _connectionId;
         private string _customerAddress;
         private string _customerRouterConfig;
@@ -50,9 +51,9 @@ namespace Amazon.DirectConnect.Model
         private int? _mtu;
         private string _ownerAccount;
         private string _region;
-        private List<RouteFilterPrefix> _routeFilterPrefixes = new List<RouteFilterPrefix>();
+        private List<RouteFilterPrefix> _routeFilterPrefixes = AWSConfigs.InitializeCollections ? new List<RouteFilterPrefix>() : null;
         private bool? _siteLinkEnabled;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _virtualGatewayId;
         private string _virtualInterfaceId;
         private string _virtualInterfaceName;
@@ -207,7 +208,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if BgpPeers property is set
         internal bool IsSetBgpPeers()
         {
-            return this._bgpPeers != null && this._bgpPeers.Count > 0; 
+            return this._bgpPeers != null && (this._bgpPeers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -389,7 +390,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if RouteFilterPrefixes property is set
         internal bool IsSetRouteFilterPrefixes()
         {
-            return this._routeFilterPrefixes != null && this._routeFilterPrefixes.Count > 0; 
+            return this._routeFilterPrefixes != null && (this._routeFilterPrefixes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -426,7 +427,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

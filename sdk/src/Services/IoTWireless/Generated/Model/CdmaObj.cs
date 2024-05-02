@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.IoTWireless.Model
         private float? _baseLng;
         private int? _baseStationId;
         private CdmaLocalId _cdmaLocalId;
-        private List<CdmaNmrObj> _cdmaNmr = new List<CdmaNmrObj>();
+        private List<CdmaNmrObj> _cdmaNmr = AWSConfigs.InitializeCollections ? new List<CdmaNmrObj>() : null;
         private int? _networkId;
         private int? _pilotPower;
         private int? _registrationZone;
@@ -134,7 +135,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if CdmaNmr property is set
         internal bool IsSetCdmaNmr()
         {
-            return this._cdmaNmr != null && this._cdmaNmr.Count > 0; 
+            return this._cdmaNmr != null && (this._cdmaNmr.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

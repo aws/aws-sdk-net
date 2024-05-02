@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.DataZone.Model
         private string _entityId;
         private string _entityRevision;
         private string _entityType;
-        private List<DetailedGlossaryTerm> _glossaryTerms = new List<DetailedGlossaryTerm>();
+        private List<DetailedGlossaryTerm> _glossaryTerms = AWSConfigs.InitializeCollections ? new List<DetailedGlossaryTerm>() : null;
         private string _listingCreatedBy;
         private string _listingId;
         private string _listingRevision;
@@ -173,7 +174,7 @@ namespace Amazon.DataZone.Model
         // Check to see if GlossaryTerms property is set
         internal bool IsSetGlossaryTerms()
         {
-            return this._glossaryTerms != null && this._glossaryTerms.Count > 0; 
+            return this._glossaryTerms != null && (this._glossaryTerms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

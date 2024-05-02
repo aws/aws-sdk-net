@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DLM.Model
 {
     /// <summary>
@@ -37,14 +38,14 @@ namespace Amazon.DLM.Model
         private ArchiveRule _archiveRule;
         private bool? _copyTags;
         private CreateRule _createRule;
-        private List<CrossRegionCopyRule> _crossRegionCopyRules = new List<CrossRegionCopyRule>();
+        private List<CrossRegionCopyRule> _crossRegionCopyRules = AWSConfigs.InitializeCollections ? new List<CrossRegionCopyRule>() : null;
         private DeprecateRule _deprecateRule;
         private FastRestoreRule _fastRestoreRule;
         private string _name;
         private RetainRule _retainRule;
-        private List<ShareRule> _shareRules = new List<ShareRule>();
-        private List<Tag> _tagsToAdd = new List<Tag>();
-        private List<Tag> _variableTags = new List<Tag>();
+        private List<ShareRule> _shareRules = AWSConfigs.InitializeCollections ? new List<ShareRule>() : null;
+        private List<Tag> _tagsToAdd = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<Tag> _variableTags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ArchiveRule. 
@@ -133,7 +134,7 @@ namespace Amazon.DLM.Model
         // Check to see if CrossRegionCopyRules property is set
         internal bool IsSetCrossRegionCopyRules()
         {
-            return this._crossRegionCopyRules != null && this._crossRegionCopyRules.Count > 0; 
+            return this._crossRegionCopyRules != null && (this._crossRegionCopyRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -226,7 +227,7 @@ namespace Amazon.DLM.Model
         // Check to see if ShareRules property is set
         internal bool IsSetShareRules()
         {
-            return this._shareRules != null && this._shareRules.Count > 0; 
+            return this._shareRules != null && (this._shareRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -246,7 +247,7 @@ namespace Amazon.DLM.Model
         // Check to see if TagsToAdd property is set
         internal bool IsSetTagsToAdd()
         {
-            return this._tagsToAdd != null && this._tagsToAdd.Count > 0; 
+            return this._tagsToAdd != null && (this._tagsToAdd.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -269,7 +270,7 @@ namespace Amazon.DLM.Model
         // Check to see if VariableTags property is set
         internal bool IsSetVariableTags()
         {
-            return this._variableTags != null && this._variableTags.Count > 0; 
+            return this._variableTags != null && (this._variableTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.SSOAdmin.Model
         /// Enumerable containing all of the Grants
         /// </summary>
         public IPaginatedEnumerable<GrantItem> Grants => 
-            new PaginatedResultKeyResponse<ListApplicationGrantsResponse, GrantItem>(this, (i) => i.Grants);
+            new PaginatedResultKeyResponse<ListApplicationGrantsResponse, GrantItem>(this, (i) => i.Grants ?? new List<GrantItem>());
 
         internal ListApplicationGrantsPaginator(IAmazonSSOAdmin client, ListApplicationGrantsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.SSOAdmin.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListApplicationGrantsResponse> IPaginator<ListApplicationGrantsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListApplicationGrantsResponse> IPaginator<ListApplicationGrantsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

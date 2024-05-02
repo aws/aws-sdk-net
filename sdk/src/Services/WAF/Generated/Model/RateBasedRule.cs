@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAF.Model
 {
     /// <summary>
@@ -68,7 +69,7 @@ namespace Amazon.WAF.Model
     /// </summary>
     public partial class RateBasedRule
     {
-        private List<Predicate> _matchPredicates = new List<Predicate>();
+        private List<Predicate> _matchPredicates = AWSConfigs.InitializeCollections ? new List<Predicate>() : null;
         private string _metricName;
         private string _name;
         private RateKey _rateKey;
@@ -93,7 +94,7 @@ namespace Amazon.WAF.Model
         // Check to see if MatchPredicates property is set
         internal bool IsSetMatchPredicates()
         {
-            return this._matchPredicates != null && this._matchPredicates.Count > 0; 
+            return this._matchPredicates != null && (this._matchPredicates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

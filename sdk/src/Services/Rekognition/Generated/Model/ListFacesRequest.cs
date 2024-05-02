@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
@@ -43,7 +44,7 @@ namespace Amazon.Rekognition.Model
     public partial class ListFacesRequest : AmazonRekognitionRequest
     {
         private string _collectionId;
-        private List<string> _faceIds = new List<string>();
+        private List<string> _faceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
         private string _userId;
@@ -83,7 +84,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if FaceIds property is set
         internal bool IsSetFaceIds()
         {
-            return this._faceIds != null && this._faceIds.Count > 0; 
+            return this._faceIds != null && (this._faceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

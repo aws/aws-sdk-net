@@ -26,22 +26,23 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DocDBElastic.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateClusterSnapshot operation.
-    /// Creates a snapshot of a cluster.
+    /// Creates a snapshot of an elastic cluster.
     /// </summary>
     public partial class CreateClusterSnapshotRequest : AmazonDocDBElasticRequest
     {
         private string _clusterArn;
         private string _snapshotName;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ClusterArn. 
         /// <para>
-        /// The arn of the Elastic DocumentDB cluster that the snapshot will be taken from.
+        /// The ARN identifier of the elastic cluster of which you want to create a snapshot.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +61,7 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property SnapshotName. 
         /// <para>
-        /// The name of the Elastic DocumentDB snapshot.
+        /// The name of the new elastic cluster snapshot.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]
@@ -79,7 +80,7 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags to be assigned to the new Elastic DocumentDB snapshot.
+        /// The tags to be assigned to the new elastic cluster snapshot.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
@@ -91,7 +92,7 @@ namespace Amazon.DocDBElastic.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

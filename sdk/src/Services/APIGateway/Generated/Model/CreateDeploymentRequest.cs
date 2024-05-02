@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.APIGateway.Model
         private string _stageDescription;
         private string _stageName;
         private bool? _tracingEnabled;
-        private Dictionary<string, string> _variables = new Dictionary<string, string>();
+        private Dictionary<string, string> _variables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property CacheClusterEnabled. 
@@ -209,7 +210,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if Variables property is set
         internal bool IsSetVariables()
         {
-            return this._variables != null && this._variables.Count > 0; 
+            return this._variables != null && (this._variables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

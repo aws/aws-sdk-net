@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.Kendra.Model
     #endif
     public partial class FeaturedResultsConflictException : AmazonKendraException
     {
-        private List<ConflictingItem> _conflictingItems = new List<ConflictingItem>();
+        private List<ConflictingItem> _conflictingItems = AWSConfigs.InitializeCollections ? new List<ConflictingItem>() : null;
 
         /// <summary>
         /// Constructs a new FeaturedResultsConflictException with the specified error
@@ -137,7 +138,7 @@ namespace Amazon.Kendra.Model
         // Check to see if ConflictingItems property is set
         internal bool IsSetConflictingItems()
         {
-            return this._conflictingItems != null && this._conflictingItems.Count > 0; 
+            return this._conflictingItems != null && (this._conflictingItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

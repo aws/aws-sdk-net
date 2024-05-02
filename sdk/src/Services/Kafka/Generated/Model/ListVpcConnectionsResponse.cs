@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kafka.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Kafka.Model
     public partial class ListVpcConnectionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<VpcConnection> _vpcConnections = new List<VpcConnection>();
+        private List<VpcConnection> _vpcConnections = AWSConfigs.InitializeCollections ? new List<VpcConnection>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken.             
@@ -71,7 +72,7 @@ namespace Amazon.Kafka.Model
         // Check to see if VpcConnections property is set
         internal bool IsSetVpcConnections()
         {
-            return this._vpcConnections != null && this._vpcConnections.Count > 0; 
+            return this._vpcConnections != null && (this._vpcConnections.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
@@ -49,10 +50,10 @@ namespace Amazon.ElastiCache.Model
         private bool? _clusterEnabled;
         private string _engine;
         private string _engineVersion;
-        private List<GlobalNodeGroup> _globalNodeGroups = new List<GlobalNodeGroup>();
+        private List<GlobalNodeGroup> _globalNodeGroups = AWSConfigs.InitializeCollections ? new List<GlobalNodeGroup>() : null;
         private string _globalReplicationGroupDescription;
         private string _globalReplicationGroupId;
-        private List<GlobalReplicationGroupMember> _members = new List<GlobalReplicationGroupMember>();
+        private List<GlobalReplicationGroupMember> _members = AWSConfigs.InitializeCollections ? new List<GlobalReplicationGroupMember>() : null;
         private string _status;
         private bool? _transitEncryptionEnabled;
 
@@ -213,7 +214,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if GlobalNodeGroups property is set
         internal bool IsSetGlobalNodeGroups()
         {
-            return this._globalNodeGroups != null && this._globalNodeGroups.Count > 0; 
+            return this._globalNodeGroups != null && (this._globalNodeGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -267,7 +268,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if Members property is set
         internal bool IsSetMembers()
         {
-            return this._members != null && this._members.Count > 0; 
+            return this._members != null && (this._members.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

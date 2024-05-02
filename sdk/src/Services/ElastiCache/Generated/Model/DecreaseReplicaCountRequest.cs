@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
@@ -39,8 +40,8 @@ namespace Amazon.ElastiCache.Model
     {
         private bool? _applyImmediately;
         private int? _newReplicaCount;
-        private List<ConfigureShard> _replicaConfiguration = new List<ConfigureShard>();
-        private List<string> _replicasToRemove = new List<string>();
+        private List<ConfigureShard> _replicaConfiguration = AWSConfigs.InitializeCollections ? new List<ConfigureShard>() : null;
+        private List<string> _replicasToRemove = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _replicationGroupId;
 
         /// <summary>
@@ -123,7 +124,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if ReplicaConfiguration property is set
         internal bool IsSetReplicaConfiguration()
         {
-            return this._replicaConfiguration != null && this._replicaConfiguration.Count > 0; 
+            return this._replicaConfiguration != null && (this._replicaConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -141,7 +142,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if ReplicasToRemove property is set
         internal bool IsSetReplicasToRemove()
         {
-            return this._replicasToRemove != null && this._replicasToRemove.Count > 0; 
+            return this._replicasToRemove != null && (this._replicasToRemove.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

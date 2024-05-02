@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECRPublic.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.ECRPublic.Model
         private string _imageManifestMediaType;
         private DateTime? _imagePushedAt;
         private long? _imageSizeInBytes;
-        private List<string> _imageTags = new List<string>();
+        private List<string> _imageTags = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _registryId;
         private string _repositoryName;
 
@@ -160,7 +161,7 @@ namespace Amazon.ECRPublic.Model
         // Check to see if ImageTags property is set
         internal bool IsSetImageTags()
         {
-            return this._imageTags != null && this._imageTags.Count > 0; 
+            return this._imageTags != null && (this._imageTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

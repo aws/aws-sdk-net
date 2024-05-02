@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.DataSync.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.DataSync.Model
         /// Enumerable containing all of the Metrics
         /// </summary>
         public IPaginatedEnumerable<ResourceMetrics> Metrics => 
-            new PaginatedResultKeyResponse<DescribeStorageSystemResourceMetricsResponse, ResourceMetrics>(this, (i) => i.Metrics);
+            new PaginatedResultKeyResponse<DescribeStorageSystemResourceMetricsResponse, ResourceMetrics>(this, (i) => i.Metrics ?? new List<ResourceMetrics>());
 
         internal DescribeStorageSystemResourceMetricsPaginator(IAmazonDataSync client, DescribeStorageSystemResourceMetricsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.DataSync.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeStorageSystemResourceMetricsResponse> IPaginator<DescribeStorageSystemResourceMetricsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeStorageSystemResourceMetricsResponse> IPaginator<DescribeStorageSystemResourceMetricsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

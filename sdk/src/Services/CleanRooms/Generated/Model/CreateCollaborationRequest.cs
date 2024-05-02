@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
@@ -35,14 +36,14 @@ namespace Amazon.CleanRooms.Model
     public partial class CreateCollaborationRequest : AmazonCleanRoomsRequest
     {
         private string _creatorDisplayName;
-        private List<string> _creatorMemberAbilities = new List<string>();
+        private List<string> _creatorMemberAbilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private PaymentConfiguration _creatorPaymentConfiguration;
         private DataEncryptionMetadata _dataEncryptionMetadata;
         private string _description;
-        private List<MemberSpecification> _members = new List<MemberSpecification>();
+        private List<MemberSpecification> _members = AWSConfigs.InitializeCollections ? new List<MemberSpecification>() : null;
         private string _name;
         private CollaborationQueryLogStatus _queryLogStatus;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property CreatorDisplayName. 
@@ -79,7 +80,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if CreatorMemberAbilities property is set
         internal bool IsSetCreatorMemberAbilities()
         {
-            return this._creatorMemberAbilities != null && this._creatorMemberAbilities.Count > 0; 
+            return this._creatorMemberAbilities != null && (this._creatorMemberAbilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -159,7 +160,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if Members property is set
         internal bool IsSetMembers()
         {
-            return this._members != null && this._members.Count > 0; 
+            return this._members != null && (this._members.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -218,7 +219,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

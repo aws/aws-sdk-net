@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.SageMakerGeospatial.Model
         /// Enumerable containing all of the RasterDataCollectionSummaries
         /// </summary>
         public IPaginatedEnumerable<RasterDataCollectionMetadata> RasterDataCollectionSummaries => 
-            new PaginatedResultKeyResponse<ListRasterDataCollectionsResponse, RasterDataCollectionMetadata>(this, (i) => i.RasterDataCollectionSummaries);
+            new PaginatedResultKeyResponse<ListRasterDataCollectionsResponse, RasterDataCollectionMetadata>(this, (i) => i.RasterDataCollectionSummaries ?? new List<RasterDataCollectionMetadata>());
 
         internal ListRasterDataCollectionsPaginator(IAmazonSageMakerGeospatial client, ListRasterDataCollectionsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListRasterDataCollectionsResponse> IPaginator<ListRasterDataCollectionsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListRasterDataCollectionsResponse> IPaginator<ListRasterDataCollectionsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Route53Resolver.Model
         /// Enumerable containing all of the FirewallRuleGroupAssociations
         /// </summary>
         public IPaginatedEnumerable<FirewallRuleGroupAssociation> FirewallRuleGroupAssociations => 
-            new PaginatedResultKeyResponse<ListFirewallRuleGroupAssociationsResponse, FirewallRuleGroupAssociation>(this, (i) => i.FirewallRuleGroupAssociations);
+            new PaginatedResultKeyResponse<ListFirewallRuleGroupAssociationsResponse, FirewallRuleGroupAssociation>(this, (i) => i.FirewallRuleGroupAssociations ?? new List<FirewallRuleGroupAssociation>());
 
         internal ListFirewallRuleGroupAssociationsPaginator(IAmazonRoute53Resolver client, ListFirewallRuleGroupAssociationsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Route53Resolver.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListFirewallRuleGroupAssociationsResponse> IPaginator<ListFirewallRuleGroupAssociationsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListFirewallRuleGroupAssociationsResponse> IPaginator<ListFirewallRuleGroupAssociationsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

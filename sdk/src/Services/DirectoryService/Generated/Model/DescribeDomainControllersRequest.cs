@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.DirectoryService.Model
     public partial class DescribeDomainControllersRequest : AmazonDirectoryServiceRequest
     {
         private string _directoryId;
-        private List<string> _domainControllerIds = new List<string>();
+        private List<string> _domainControllerIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _limit;
         private string _nextToken;
 
@@ -73,7 +74,7 @@ namespace Amazon.DirectoryService.Model
         // Check to see if DomainControllerIds property is set
         internal bool IsSetDomainControllerIds()
         {
-            return this._domainControllerIds != null && this._domainControllerIds.Count > 0; 
+            return this._domainControllerIds != null && (this._domainControllerIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

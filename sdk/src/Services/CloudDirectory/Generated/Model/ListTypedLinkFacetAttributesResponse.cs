@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CloudDirectory.Model
     /// </summary>
     public partial class ListTypedLinkFacetAttributesResponse : AmazonWebServiceResponse
     {
-        private List<TypedLinkAttributeDefinition> _attributes = new List<TypedLinkAttributeDefinition>();
+        private List<TypedLinkAttributeDefinition> _attributes = AWSConfigs.InitializeCollections ? new List<TypedLinkAttributeDefinition>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

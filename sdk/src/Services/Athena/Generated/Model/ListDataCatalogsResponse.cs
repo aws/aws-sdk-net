@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Athena.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Athena.Model
     /// </summary>
     public partial class ListDataCatalogsResponse : AmazonWebServiceResponse
     {
-        private List<DataCatalogSummary> _dataCatalogsSummary = new List<DataCatalogSummary>();
+        private List<DataCatalogSummary> _dataCatalogsSummary = AWSConfigs.InitializeCollections ? new List<DataCatalogSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Athena.Model
         // Check to see if DataCatalogsSummary property is set
         internal bool IsSetDataCatalogsSummary()
         {
-            return this._dataCatalogsSummary != null && this._dataCatalogsSummary.Count > 0; 
+            return this._dataCatalogsSummary != null && (this._dataCatalogsSummary.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

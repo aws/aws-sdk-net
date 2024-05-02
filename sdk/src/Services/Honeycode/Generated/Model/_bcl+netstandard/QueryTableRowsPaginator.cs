@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Honeycode.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Honeycode.Model
         /// Enumerable containing all of the Rows
         /// </summary>
         public IPaginatedEnumerable<TableRow> Rows => 
-            new PaginatedResultKeyResponse<QueryTableRowsResponse, TableRow>(this, (i) => i.Rows);
+            new PaginatedResultKeyResponse<QueryTableRowsResponse, TableRow>(this, (i) => i.Rows ?? new List<TableRow>());
 
         internal QueryTableRowsPaginator(IAmazonHoneycode client, QueryTableRowsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Honeycode.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<QueryTableRowsResponse> IPaginator<QueryTableRowsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<QueryTableRowsResponse> IPaginator<QueryTableRowsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

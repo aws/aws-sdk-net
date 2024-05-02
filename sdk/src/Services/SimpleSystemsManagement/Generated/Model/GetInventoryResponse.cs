@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class GetInventoryResponse : AmazonWebServiceResponse
     {
-        private List<InventoryResultEntity> _entities = new List<InventoryResultEntity>();
+        private List<InventoryResultEntity> _entities = AWSConfigs.InitializeCollections ? new List<InventoryResultEntity>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Entities property is set
         internal bool IsSetEntities()
         {
-            return this._entities != null && this._entities.Count > 0; 
+            return this._entities != null && (this._entities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

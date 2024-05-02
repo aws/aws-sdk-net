@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class ChatParticipantRoleConfig
     {
-        private List<ParticipantTimerConfiguration> _participantTimerConfigList = new List<ParticipantTimerConfiguration>();
+        private List<ParticipantTimerConfiguration> _participantTimerConfigList = AWSConfigs.InitializeCollections ? new List<ParticipantTimerConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property ParticipantTimerConfigList. 
@@ -52,7 +53,7 @@ namespace Amazon.Connect.Model
         // Check to see if ParticipantTimerConfigList property is set
         internal bool IsSetParticipantTimerConfigList()
         {
-            return this._participantTimerConfigList != null && this._participantTimerConfigList.Count > 0; 
+            return this._participantTimerConfigList != null && (this._participantTimerConfigList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

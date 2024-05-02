@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
@@ -79,9 +80,9 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
         private AnalyticsMetadataType _analyticsMetadata;
         private AuthFlowType _authFlow;
-        private Dictionary<string, string> _authParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _authParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _clientId;
-        private Dictionary<string, string> _clientMetadata = new Dictionary<string, string>();
+        private Dictionary<string, string> _clientMetadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ContextDataType _contextData;
         private string _userPoolId;
 
@@ -213,7 +214,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if AuthParameters property is set
         internal bool IsSetAuthParameters()
         {
-            return this._authParameters != null && this._authParameters.Count > 0; 
+            return this._authParameters != null && (this._authParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -329,7 +330,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if ClientMetadata property is set
         internal bool IsSetClientMetadata()
         {
-            return this._clientMetadata != null && this._clientMetadata.Count > 0; 
+            return this._clientMetadata != null && (this._clientMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

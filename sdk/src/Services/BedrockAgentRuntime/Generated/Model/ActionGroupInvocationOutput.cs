@@ -26,17 +26,21 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// output from lambda used in action group
+    /// Contains the JSON-formatted string returned by the API invoked by the action group.
     /// </summary>
     public partial class ActionGroupInvocationOutput
     {
         private string _text;
 
         /// <summary>
-        /// Gets and sets the property Text.
+        /// Gets and sets the property Text. 
+        /// <para>
+        /// The JSON-formatted string returned by the API invoked by the action group.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string Text

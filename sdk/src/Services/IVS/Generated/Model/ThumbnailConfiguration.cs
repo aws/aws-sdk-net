@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IVS.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.IVS.Model
     {
         private RecordingMode _recordingMode;
         private ThumbnailConfigurationResolution _resolution;
-        private List<string> _storage = new List<string>();
+        private List<string> _storage = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private long? _targetIntervalSeconds;
 
         /// <summary>
@@ -97,7 +98,7 @@ namespace Amazon.IVS.Model
         // Check to see if Storage property is set
         internal bool IsSetStorage()
         {
-            return this._storage != null && this._storage.Count > 0; 
+            return this._storage != null && (this._storage.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

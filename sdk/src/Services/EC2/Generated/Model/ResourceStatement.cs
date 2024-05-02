@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ResourceStatement
     {
-        private List<string> _resources = new List<string>();
-        private List<string> _resourceTypes = new List<string>();
+        private List<string> _resources = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _resourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Resources. 
@@ -51,7 +52,7 @@ namespace Amazon.EC2.Model
         // Check to see if Resources property is set
         internal bool IsSetResources()
         {
-            return this._resources != null && this._resources.Count > 0; 
+            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.EC2.Model
         // Check to see if ResourceTypes property is set
         internal bool IsSetResourceTypes()
         {
-            return this._resourceTypes != null && this._resourceTypes.Count > 0; 
+            return this._resourceTypes != null && (this._resourceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

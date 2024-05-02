@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -102,7 +103,7 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class PutOrganizationConfigRuleRequest : AmazonConfigServiceRequest
     {
-        private List<string> _excludedAccounts = new List<string>();
+        private List<string> _excludedAccounts = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _organizationConfigRuleName;
         private OrganizationCustomPolicyRuleMetadata _organizationCustomPolicyRuleMetadata;
         private OrganizationCustomRuleMetadata _organizationCustomRuleMetadata;
@@ -125,7 +126,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if ExcludedAccounts property is set
         internal bool IsSetExcludedAccounts()
         {
-            return this._excludedAccounts != null && this._excludedAccounts.Count > 0; 
+            return this._excludedAccounts != null && (this._excludedAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

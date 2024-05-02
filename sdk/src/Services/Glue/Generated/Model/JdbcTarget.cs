@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.Glue.Model
     public partial class JdbcTarget
     {
         private string _connectionName;
-        private List<string> _enableAdditionalMetadata = new List<string>();
-        private List<string> _exclusions = new List<string>();
+        private List<string> _enableAdditionalMetadata = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _exclusions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _path;
 
         /// <summary>
@@ -77,7 +78,7 @@ namespace Amazon.Glue.Model
         // Check to see if EnableAdditionalMetadata property is set
         internal bool IsSetEnableAdditionalMetadata()
         {
-            return this._enableAdditionalMetadata != null && this._enableAdditionalMetadata.Count > 0; 
+            return this._enableAdditionalMetadata != null && (this._enableAdditionalMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -97,7 +98,7 @@ namespace Amazon.Glue.Model
         // Check to see if Exclusions property is set
         internal bool IsSetExclusions()
         {
-            return this._exclusions != null && this._exclusions.Count > 0; 
+            return this._exclusions != null && (this._exclusions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

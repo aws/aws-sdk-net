@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Macie2.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Macie2.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<ManagedDataIdentifierSummary> Items => 
-            new PaginatedResultKeyResponse<ListManagedDataIdentifiersResponse, ManagedDataIdentifierSummary>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListManagedDataIdentifiersResponse, ManagedDataIdentifierSummary>(this, (i) => i.Items ?? new List<ManagedDataIdentifierSummary>());
 
         internal ListManagedDataIdentifiersPaginator(IAmazonMacie2 client, ListManagedDataIdentifiersRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Macie2.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListManagedDataIdentifiersResponse> IPaginator<ListManagedDataIdentifiersResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListManagedDataIdentifiersResponse> IPaginator<ListManagedDataIdentifiersResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

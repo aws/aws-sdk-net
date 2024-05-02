@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimSpaceWeaver.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SimSpaceWeaver.Model
     /// </summary>
     public partial class LaunchOverrides
     {
-        private List<string> _launchCommands = new List<string>();
+        private List<string> _launchCommands = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property LaunchCommands. 
@@ -51,7 +52,7 @@ namespace Amazon.SimSpaceWeaver.Model
         // Check to see if LaunchCommands property is set
         internal bool IsSetLaunchCommands()
         {
-            return this._launchCommands != null && this._launchCommands.Count > 0; 
+            return this._launchCommands != null && (this._launchCommands.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

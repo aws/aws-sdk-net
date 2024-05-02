@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Chime.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.Chime.Model
         private DateTime? _updatedTimestamp;
         private string _voiceConnectorGroupArn;
         private string _voiceConnectorGroupId;
-        private List<VoiceConnectorItem> _voiceConnectorItems = new List<VoiceConnectorItem>();
+        private List<VoiceConnectorItem> _voiceConnectorItems = AWSConfigs.InitializeCollections ? new List<VoiceConnectorItem>() : null;
 
         /// <summary>
         /// Gets and sets the property CreatedTimestamp. 
@@ -149,7 +150,7 @@ namespace Amazon.Chime.Model
         // Check to see if VoiceConnectorItems property is set
         internal bool IsSetVoiceConnectorItems()
         {
-            return this._voiceConnectorItems != null && this._voiceConnectorItems.Count > 0; 
+            return this._voiceConnectorItems != null && (this._voiceConnectorItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

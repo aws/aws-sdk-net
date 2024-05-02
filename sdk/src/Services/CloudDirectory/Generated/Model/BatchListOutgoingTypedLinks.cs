@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.CloudDirectory.Model
     /// </summary>
     public partial class BatchListOutgoingTypedLinks
     {
-        private List<TypedLinkAttributeRange> _filterAttributeRanges = new List<TypedLinkAttributeRange>();
+        private List<TypedLinkAttributeRange> _filterAttributeRanges = AWSConfigs.InitializeCollections ? new List<TypedLinkAttributeRange>() : null;
         private TypedLinkSchemaAndFacetName _filterTypedLink;
         private int? _maxResults;
         private string _nextToken;
@@ -58,7 +59,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if FilterAttributeRanges property is set
         internal bool IsSetFilterAttributeRanges()
         {
-            return this._filterAttributeRanges != null && this._filterAttributeRanges.Count > 0; 
+            return this._filterAttributeRanges != null && (this._filterAttributeRanges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

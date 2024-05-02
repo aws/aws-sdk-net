@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMakerFeatureStoreRuntime.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
     {
         private string _expiresAt;
         private string _featureGroupName;
-        private List<FeatureValue> _record = new List<FeatureValue>();
+        private List<FeatureValue> _record = AWSConfigs.InitializeCollections ? new List<FeatureValue>() : null;
         private string _recordIdentifierValueAsString;
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         // Check to see if Record property is set
         internal bool IsSetRecord()
         {
-            return this._record != null && this._record.Count > 0; 
+            return this._record != null && (this._record.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,10 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A dataset parameter.
+    /// A parameter that is created in a dataset. The parameter can be a string, integer,
+    /// decimal, or datetime data type.
     /// </summary>
     public partial class DatasetParameter
     {

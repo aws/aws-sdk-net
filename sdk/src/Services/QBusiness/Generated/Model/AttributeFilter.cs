@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.QBusiness.Model
     /// </summary>
     public partial class AttributeFilter
     {
-        private List<AttributeFilter> _andAllFilters = new List<AttributeFilter>();
+        private List<AttributeFilter> _andAllFilters = AWSConfigs.InitializeCollections ? new List<AttributeFilter>() : null;
         private DocumentAttribute _containsAll;
         private DocumentAttribute _containsAny;
         private DocumentAttribute _equalsTo;
@@ -42,7 +43,7 @@ namespace Amazon.QBusiness.Model
         private DocumentAttribute _lessThan;
         private DocumentAttribute _lessThanOrEquals;
         private AttributeFilter _notFilter;
-        private List<AttributeFilter> _orAllFilters = new List<AttributeFilter>();
+        private List<AttributeFilter> _orAllFilters = AWSConfigs.InitializeCollections ? new List<AttributeFilter>() : null;
 
         /// <summary>
         /// Gets and sets the property AndAllFilters. 
@@ -59,14 +60,15 @@ namespace Amazon.QBusiness.Model
         // Check to see if AndAllFilters property is set
         internal bool IsSetAndAllFilters()
         {
-            return this._andAllFilters != null && this._andAllFilters.Count > 0; 
+            return this._andAllFilters != null && (this._andAllFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property ContainsAll. 
         /// <para>
         /// Returns <c>true</c> when a document contains all the specified document attributes
-        /// or metadata fields.
+        /// or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document
+        /// attribute value types</a>: <c>stringListValue</c>.
         /// </para>
         /// </summary>
         public DocumentAttribute ContainsAll
@@ -85,7 +87,9 @@ namespace Amazon.QBusiness.Model
         /// Gets and sets the property ContainsAny. 
         /// <para>
         /// Returns <c>true</c> when a document contains any of the specified document attributes
-        /// or metadata fields.
+        /// or metadata fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document
+        /// attribute value types</a>: <c>dateValue</c>, <c>longValue</c>, <c>stringListValue</c>
+        /// and <c>stringValue</c>.
         /// </para>
         /// </summary>
         public DocumentAttribute ContainsAny
@@ -103,7 +107,10 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property EqualsTo. 
         /// <para>
-        /// Performs an equals operation on two document attributes or metadata fields.
+        /// Performs an equals operation on two document attributes or metadata fields. Supported
+        /// for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document
+        /// attribute value types</a>: <c>dateValue</c>, <c>longValue</c>, <c>stringListValue</c>
+        /// and <c>stringValue</c>.
         /// </para>
         /// </summary>
         public DocumentAttribute EqualsTo
@@ -121,8 +128,9 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property GreaterThan. 
         /// <para>
-        /// Performs a greater than operation on two document attributes or metadata fields. Use
-        /// with a document attribute of type <c>Date</c> or <c>Long</c>.
+        /// Performs a greater than operation on two document attributes or metadata fields. Supported
+        /// for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document
+        /// attribute value types</a>: <c>dateValue</c> and <c>longValue</c>.
         /// </para>
         /// </summary>
         public DocumentAttribute GreaterThan
@@ -141,7 +149,8 @@ namespace Amazon.QBusiness.Model
         /// Gets and sets the property GreaterThanOrEquals. 
         /// <para>
         /// Performs a greater or equals than operation on two document attributes or metadata
-        /// fields. Use with a document attribute of type <c>Date</c> or <c>Long</c>. 
+        /// fields. Supported for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document
+        /// attribute value types</a>: <c>dateValue</c> and <c>longValue</c>. 
         /// </para>
         /// </summary>
         public DocumentAttribute GreaterThanOrEquals
@@ -159,8 +168,9 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property LessThan. 
         /// <para>
-        /// Performs a less than operation on two document attributes or metadata fields. Use
-        /// with a document attribute of type <c>Date</c> or <c>Long</c>.
+        /// Performs a less than operation on two document attributes or metadata fields. Supported
+        /// for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document
+        /// attribute value types</a>: <c>dateValue</c> and <c>longValue</c>.
         /// </para>
         /// </summary>
         public DocumentAttribute LessThan
@@ -178,8 +188,9 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property LessThanOrEquals. 
         /// <para>
-        /// Performs a less than or equals operation on two document attributes or metadata fields.
-        /// Use with a document attribute of type <c>Date</c> or <c>Long</c>. 
+        /// Performs a less than or equals operation on two document attributes or metadata fields.Supported
+        /// for the following <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentAttributeValue.html">document
+        /// attribute value type</a>: <c>dateValue</c> and <c>longValue</c>. 
         /// </para>
         /// </summary>
         public DocumentAttribute LessThanOrEquals
@@ -227,7 +238,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if OrAllFilters property is set
         internal bool IsSetOrAllFilters()
         {
-            return this._orAllFilters != null && this._orAllFilters.Count > 0; 
+            return this._orAllFilters != null && (this._orAllFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

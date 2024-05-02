@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ElastiCache.Model
         /// Enumerable containing all of the ReservedCacheNodes
         /// </summary>
         public IPaginatedEnumerable<ReservedCacheNode> ReservedCacheNodes => 
-            new PaginatedResultKeyResponse<DescribeReservedCacheNodesResponse, ReservedCacheNode>(this, (i) => i.ReservedCacheNodes);
+            new PaginatedResultKeyResponse<DescribeReservedCacheNodesResponse, ReservedCacheNode>(this, (i) => i.ReservedCacheNodes ?? new List<ReservedCacheNode>());
 
         internal DescribeReservedCacheNodesPaginator(IAmazonElastiCache client, DescribeReservedCacheNodesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ElastiCache.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeReservedCacheNodesResponse> IPaginator<DescribeReservedCacheNodesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeReservedCacheNodesResponse> IPaginator<DescribeReservedCacheNodesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

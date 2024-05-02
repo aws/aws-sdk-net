@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class GetIpamDiscoveredResourceCidrsResponse : AmazonWebServiceResponse
     {
-        private List<IpamDiscoveredResourceCidr> _ipamDiscoveredResourceCidrs = new List<IpamDiscoveredResourceCidr>();
+        private List<IpamDiscoveredResourceCidr> _ipamDiscoveredResourceCidrs = AWSConfigs.InitializeCollections ? new List<IpamDiscoveredResourceCidr>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.EC2.Model
         // Check to see if IpamDiscoveredResourceCidrs property is set
         internal bool IsSetIpamDiscoveredResourceCidrs()
         {
-            return this._ipamDiscoveredResourceCidrs != null && this._ipamDiscoveredResourceCidrs.Count > 0; 
+            return this._ipamDiscoveredResourceCidrs != null && (this._ipamDiscoveredResourceCidrs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

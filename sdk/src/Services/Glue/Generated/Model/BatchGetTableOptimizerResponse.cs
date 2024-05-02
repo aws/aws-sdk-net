@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class BatchGetTableOptimizerResponse : AmazonWebServiceResponse
     {
-        private List<BatchGetTableOptimizerError> _failures = new List<BatchGetTableOptimizerError>();
-        private List<BatchTableOptimizer> _tableOptimizers = new List<BatchTableOptimizer>();
+        private List<BatchGetTableOptimizerError> _failures = AWSConfigs.InitializeCollections ? new List<BatchGetTableOptimizerError>() : null;
+        private List<BatchTableOptimizer> _tableOptimizers = AWSConfigs.InitializeCollections ? new List<BatchTableOptimizer>() : null;
 
         /// <summary>
         /// Gets and sets the property Failures. 
@@ -51,7 +52,7 @@ namespace Amazon.Glue.Model
         // Check to see if Failures property is set
         internal bool IsSetFailures()
         {
-            return this._failures != null && this._failures.Count > 0; 
+            return this._failures != null && (this._failures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.Glue.Model
         // Check to see if TableOptimizers property is set
         internal bool IsSetTableOptimizers()
         {
-            return this._tableOptimizers != null && this._tableOptimizers.Count > 0; 
+            return this._tableOptimizers != null && (this._tableOptimizers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

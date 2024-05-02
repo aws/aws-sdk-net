@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class ListDatasetsResponse : AmazonWebServiceResponse
     {
-        private List<DatasetProperties> _datasetPropertiesList = new List<DatasetProperties>();
+        private List<DatasetProperties> _datasetPropertiesList = AWSConfigs.InitializeCollections ? new List<DatasetProperties>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if DatasetPropertiesList property is set
         internal bool IsSetDatasetPropertiesList()
         {
-            return this._datasetPropertiesList != null && this._datasetPropertiesList.Count > 0; 
+            return this._datasetPropertiesList != null && (this._datasetPropertiesList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

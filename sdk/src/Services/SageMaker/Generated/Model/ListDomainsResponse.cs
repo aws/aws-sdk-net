@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListDomainsResponse : AmazonWebServiceResponse
     {
-        private List<DomainDetails> _domains = new List<DomainDetails>();
+        private List<DomainDetails> _domains = AWSConfigs.InitializeCollections ? new List<DomainDetails>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Domains property is set
         internal bool IsSetDomains()
         {
-            return this._domains != null && this._domains.Count > 0; 
+            return this._domains != null && (this._domains.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

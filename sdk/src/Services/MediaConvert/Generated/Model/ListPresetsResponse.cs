@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.MediaConvert.Model
     public partial class ListPresetsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Preset> _presets = new List<Preset>();
+        private List<Preset> _presets = AWSConfigs.InitializeCollections ? new List<Preset>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. Use this string to request the next batch of
@@ -64,7 +65,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if Presets property is set
         internal bool IsSetPresets()
         {
-            return this._presets != null && this._presets.Count > 0; 
+            return this._presets != null && (this._presets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

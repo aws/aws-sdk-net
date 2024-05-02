@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PinpointEmail.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.PinpointEmail.Model
     /// </summary>
     public partial class Destination
     {
-        private List<string> _bccAddresses = new List<string>();
-        private List<string> _ccAddresses = new List<string>();
-        private List<string> _toAddresses = new List<string>();
+        private List<string> _bccAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _ccAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _toAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property BccAddresses. 
@@ -53,7 +54,7 @@ namespace Amazon.PinpointEmail.Model
         // Check to see if BccAddresses property is set
         internal bool IsSetBccAddresses()
         {
-            return this._bccAddresses != null && this._bccAddresses.Count > 0; 
+            return this._bccAddresses != null && (this._bccAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.PinpointEmail.Model
         // Check to see if CcAddresses property is set
         internal bool IsSetCcAddresses()
         {
-            return this._ccAddresses != null && this._ccAddresses.Count > 0; 
+            return this._ccAddresses != null && (this._ccAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -90,7 +91,7 @@ namespace Amazon.PinpointEmail.Model
         // Check to see if ToAddresses property is set
         internal bool IsSetToAddresses()
         {
-            return this._toAddresses != null && this._toAddresses.Count > 0; 
+            return this._toAddresses != null && (this._toAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

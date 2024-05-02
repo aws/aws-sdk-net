@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,10 +46,19 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FindMatchesParameters requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAccuracyCostTradeoff())
             {
                 context.Writer.WritePropertyName("AccuracyCostTradeoff");
-                context.Writer.Write(requestObject.AccuracyCostTradeoff.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.AccuracyCostTradeoff.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.AccuracyCostTradeoff.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.AccuracyCostTradeoff.Value);
+                }
             }
 
             if(requestObject.IsSetEnforceProvidedLabels())
@@ -60,7 +70,14 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPrecisionRecallTradeoff())
             {
                 context.Writer.WritePropertyName("PrecisionRecallTradeoff");
-                context.Writer.Write(requestObject.PrecisionRecallTradeoff.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.PrecisionRecallTradeoff.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PrecisionRecallTradeoff.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.PrecisionRecallTradeoff.Value);
+                }
             }
 
             if(requestObject.IsSetPrimaryKeyColumnName())

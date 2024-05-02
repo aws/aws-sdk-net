@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Proton.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Proton.Model
     public partial class ListEnvironmentTemplateVersionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<EnvironmentTemplateVersionSummary> _templateVersions = new List<EnvironmentTemplateVersionSummary>();
+        private List<EnvironmentTemplateVersionSummary> _templateVersions = AWSConfigs.InitializeCollections ? new List<EnvironmentTemplateVersionSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.Proton.Model
         // Check to see if TemplateVersions property is set
         internal bool IsSetTemplateVersions()
         {
-            return this._templateVersions != null && this._templateVersions.Count > 0; 
+            return this._templateVersions != null && (this._templateVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

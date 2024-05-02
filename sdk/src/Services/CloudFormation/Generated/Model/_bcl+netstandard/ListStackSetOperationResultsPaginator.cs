@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.CloudFormation.Model
         /// Enumerable containing all of the Summaries
         /// </summary>
         public IPaginatedEnumerable<StackSetOperationResultSummary> Summaries => 
-            new PaginatedResultKeyResponse<ListStackSetOperationResultsResponse, StackSetOperationResultSummary>(this, (i) => i.Summaries);
+            new PaginatedResultKeyResponse<ListStackSetOperationResultsResponse, StackSetOperationResultSummary>(this, (i) => i.Summaries ?? new List<StackSetOperationResultSummary>());
 
         internal ListStackSetOperationResultsPaginator(IAmazonCloudFormation client, ListStackSetOperationResultsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.CloudFormation.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListStackSetOperationResultsResponse> IPaginator<ListStackSetOperationResultsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListStackSetOperationResultsResponse> IPaginator<ListStackSetOperationResultsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

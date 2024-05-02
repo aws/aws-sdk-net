@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LicenseManagerUserSubscriptions.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
     public partial class ListProductSubscriptionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ProductUserSummary> _productUserSummaries = new List<ProductUserSummary>();
+        private List<ProductUserSummary> _productUserSummaries = AWSConfigs.InitializeCollections ? new List<ProductUserSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +70,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         // Check to see if ProductUserSummaries property is set
         internal bool IsSetProductUserSummaries()
         {
-            return this._productUserSummaries != null && this._productUserSummaries.Count > 0; 
+            return this._productUserSummaries != null && (this._productUserSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -57,6 +58,10 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DimensionConfigurations/member", targetDepth))
                     {
                         var unmarshaller = CloudWatchDimensionConfigurationUnmarshaller.Instance;
+                        if (unmarshalledObject.DimensionConfigurations == null)
+                        {
+                            unmarshalledObject.DimensionConfigurations = new List<CloudWatchDimensionConfiguration>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.DimensionConfigurations.Add(item);
                         continue;

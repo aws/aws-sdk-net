@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CleanRoomsML.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.CleanRoomsML.Model
         private string _startedBy;
         private AudienceGenerationJobStatus _status;
         private StatusDetails _statusDetails;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DateTime? _updateTime;
 
         /// <summary>
@@ -170,7 +171,8 @@ namespace Amazon.CleanRoomsML.Model
         /// <summary>
         /// Gets and sets the property Metrics. 
         /// <para>
-        /// The relevance scores for different audience sizes. 
+        /// The relevance scores for different audience sizes and the recall score of the generated
+        /// audience. 
         /// </para>
         /// </summary>
         public AudienceQualityMetrics Metrics
@@ -296,7 +298,7 @@ namespace Amazon.CleanRoomsML.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

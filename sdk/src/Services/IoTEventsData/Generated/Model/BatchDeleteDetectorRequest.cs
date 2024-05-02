@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTEventsData.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.IoTEventsData.Model
     /// </summary>
     public partial class BatchDeleteDetectorRequest : AmazonIoTEventsDataRequest
     {
-        private List<DeleteDetectorRequest> _detectors = new List<DeleteDetectorRequest>();
+        private List<DeleteDetectorRequest> _detectors = AWSConfigs.InitializeCollections ? new List<DeleteDetectorRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property Detectors. 
@@ -55,7 +56,7 @@ namespace Amazon.IoTEventsData.Model
         // Check to see if Detectors property is set
         internal bool IsSetDetectors()
         {
-            return this._detectors != null && this._detectors.Count > 0; 
+            return this._detectors != null && (this._detectors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

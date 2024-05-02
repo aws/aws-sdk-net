@@ -307,7 +307,7 @@ namespace Amazon.S3.Util
                 MaxKeys = 1
             });
 
-            if (listObjectResponse.S3Objects.Count != 1)
+            if (listObjectResponse.S3Objects?.Count != 1)
             {
                 throw new InvalidOperationException("No object exists with this bucket name and key.");
             }

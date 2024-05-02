@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Batch.Model
 {
     /// <summary>
     /// The platform configuration for jobs that are running on Fargate resources. Jobs that
-    /// run on EC2 resources must not specify this parameter.
+    /// run on Amazon EC2 resources must not specify this parameter.
     /// </summary>
     public partial class FargatePlatformConfiguration
     {

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the Images
         /// </summary>
         public IPaginatedEnumerable<Image> Images => 
-            new PaginatedResultKeyResponse<ListImagesResponse, Image>(this, (i) => i.Images);
+            new PaginatedResultKeyResponse<ListImagesResponse, Image>(this, (i) => i.Images ?? new List<Image>());
 
         internal ListImagesPaginator(IAmazonSageMaker client, ListImagesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.SageMaker.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListImagesResponse> IPaginator<ListImagesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListImagesResponse> IPaginator<ListImagesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

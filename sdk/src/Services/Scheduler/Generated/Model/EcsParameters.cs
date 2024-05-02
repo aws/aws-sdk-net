@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Scheduler.Model
 {
     /// <summary>
@@ -34,18 +35,18 @@ namespace Amazon.Scheduler.Model
     /// </summary>
     public partial class EcsParameters
     {
-        private List<CapacityProviderStrategyItem> _capacityProviderStrategy = new List<CapacityProviderStrategyItem>();
+        private List<CapacityProviderStrategyItem> _capacityProviderStrategy = AWSConfigs.InitializeCollections ? new List<CapacityProviderStrategyItem>() : null;
         private bool? _enableECSManagedTags;
         private bool? _enableExecuteCommand;
         private string _group;
         private LaunchType _launchType;
         private NetworkConfiguration _networkConfiguration;
-        private List<PlacementConstraint> _placementConstraints = new List<PlacementConstraint>();
-        private List<PlacementStrategy> _placementStrategy = new List<PlacementStrategy>();
+        private List<PlacementConstraint> _placementConstraints = AWSConfigs.InitializeCollections ? new List<PlacementConstraint>() : null;
+        private List<PlacementStrategy> _placementStrategy = AWSConfigs.InitializeCollections ? new List<PlacementStrategy>() : null;
         private string _platformVersion;
         private PropagateTags _propagateTags;
         private string _referenceId;
-        private List<Dictionary<string, string>> _tags = new List<Dictionary<string, string>>();
+        private List<Dictionary<string, string>> _tags = AWSConfigs.InitializeCollections ? new List<Dictionary<string, string>>() : null;
         private int? _taskCount;
         private string _taskDefinitionArn;
 
@@ -65,7 +66,7 @@ namespace Amazon.Scheduler.Model
         // Check to see if CapacityProviderStrategy property is set
         internal bool IsSetCapacityProviderStrategy()
         {
-            return this._capacityProviderStrategy != null && this._capacityProviderStrategy.Count > 0; 
+            return this._capacityProviderStrategy != null && (this._capacityProviderStrategy.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -185,7 +186,7 @@ namespace Amazon.Scheduler.Model
         // Check to see if PlacementConstraints property is set
         internal bool IsSetPlacementConstraints()
         {
-            return this._placementConstraints != null && this._placementConstraints.Count > 0; 
+            return this._placementConstraints != null && (this._placementConstraints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -204,7 +205,7 @@ namespace Amazon.Scheduler.Model
         // Check to see if PlacementStrategy property is set
         internal bool IsSetPlacementStrategy()
         {
-            return this._placementStrategy != null && this._placementStrategy.Count > 0; 
+            return this._placementStrategy != null && (this._placementStrategy.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -287,7 +288,7 @@ namespace Amazon.Scheduler.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

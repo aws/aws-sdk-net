@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -35,24 +36,24 @@ namespace Amazon.SecurityHub.Model
     {
         private string _activityStreamStatus;
         private int? _allocatedStorage;
-        private List<AwsRdsDbClusterAssociatedRole> _associatedRoles = new List<AwsRdsDbClusterAssociatedRole>();
+        private List<AwsRdsDbClusterAssociatedRole> _associatedRoles = AWSConfigs.InitializeCollections ? new List<AwsRdsDbClusterAssociatedRole>() : null;
         private bool? _autoMinorVersionUpgrade;
-        private List<string> _availabilityZones = new List<string>();
+        private List<string> _availabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _backupRetentionPeriod;
         private string _clusterCreateTime;
         private bool? _copyTagsToSnapshot;
         private bool? _crossAccountClone;
-        private List<string> _customEndpoints = new List<string>();
+        private List<string> _customEndpoints = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _databaseName;
         private string _dbClusterIdentifier;
-        private List<AwsRdsDbClusterMember> _dbClusterMembers = new List<AwsRdsDbClusterMember>();
-        private List<AwsRdsDbClusterOptionGroupMembership> _dbClusterOptionGroupMemberships = new List<AwsRdsDbClusterOptionGroupMembership>();
+        private List<AwsRdsDbClusterMember> _dbClusterMembers = AWSConfigs.InitializeCollections ? new List<AwsRdsDbClusterMember>() : null;
+        private List<AwsRdsDbClusterOptionGroupMembership> _dbClusterOptionGroupMemberships = AWSConfigs.InitializeCollections ? new List<AwsRdsDbClusterOptionGroupMembership>() : null;
         private string _dbClusterParameterGroup;
         private string _dbClusterResourceId;
         private string _dbSubnetGroup;
         private bool? _deletionProtection;
-        private List<AwsRdsDbDomainMembership> _domainMemberships = new List<AwsRdsDbDomainMembership>();
-        private List<string> _enabledCloudWatchLogsExports = new List<string>();
+        private List<AwsRdsDbDomainMembership> _domainMemberships = AWSConfigs.InitializeCollections ? new List<AwsRdsDbDomainMembership>() : null;
+        private List<string> _enabledCloudWatchLogsExports = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _endpoint;
         private string _engine;
         private string _engineMode;
@@ -67,10 +68,10 @@ namespace Amazon.SecurityHub.Model
         private string _preferredBackupWindow;
         private string _preferredMaintenanceWindow;
         private string _readerEndpoint;
-        private List<string> _readReplicaIdentifiers = new List<string>();
+        private List<string> _readReplicaIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _status;
         private bool? _storageEncrypted;
-        private List<AwsRdsDbInstanceVpcSecurityGroup> _vpcSecurityGroups = new List<AwsRdsDbInstanceVpcSecurityGroup>();
+        private List<AwsRdsDbInstanceVpcSecurityGroup> _vpcSecurityGroups = AWSConfigs.InitializeCollections ? new List<AwsRdsDbInstanceVpcSecurityGroup>() : null;
 
         /// <summary>
         /// Gets and sets the property ActivityStreamStatus. 
@@ -141,7 +142,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if AssociatedRoles property is set
         internal bool IsSetAssociatedRoles()
         {
-            return this._associatedRoles != null && this._associatedRoles.Count > 0; 
+            return this._associatedRoles != null && (this._associatedRoles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -177,7 +178,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+            return this._availabilityZones != null && (this._availabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -205,10 +206,32 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
-        /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
+        /// This field accepts only the specified formats. Timestamps can end with <c>Z</c> or
+        /// <c>("+" / "-") time-hour [":" time-minute]</c>. The time-secfrac after seconds is
+        /// limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
+        /// timestamp formats with examples:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SSZ</c> (for example, <c>2019-01-31T23:00:00Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</c> (for example, <c>2019-01-31T23:00:00.123456789Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS+HH:MM</c> (for example, <c>2024-01-04T15:25:10+17:59</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS-HHMM</c> (for example, <c>2024-01-04T15:25:10-1759</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</c> (for example, <c>2024-01-04T15:25:10.123456789+17:59</c>)
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string ClusterCreateTime
         {
@@ -274,7 +297,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if CustomEndpoints property is set
         internal bool IsSetCustomEndpoints()
         {
-            return this._customEndpoints != null && this._customEndpoints.Count > 0; 
+            return this._customEndpoints != null && (this._customEndpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -329,7 +352,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if DbClusterMembers property is set
         internal bool IsSetDbClusterMembers()
         {
-            return this._dbClusterMembers != null && this._dbClusterMembers.Count > 0; 
+            return this._dbClusterMembers != null && (this._dbClusterMembers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -347,7 +370,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if DbClusterOptionGroupMemberships property is set
         internal bool IsSetDbClusterOptionGroupMemberships()
         {
-            return this._dbClusterOptionGroupMemberships != null && this._dbClusterOptionGroupMemberships.Count > 0; 
+            return this._dbClusterOptionGroupMemberships != null && (this._dbClusterOptionGroupMemberships.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -439,7 +462,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if DomainMemberships property is set
         internal bool IsSetDomainMemberships()
         {
-            return this._domainMemberships != null && this._domainMemberships.Count > 0; 
+            return this._domainMemberships != null && (this._domainMemberships.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -457,7 +480,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if EnabledCloudWatchLogsExports property is set
         internal bool IsSetEnabledCloudWatchLogsExports()
         {
-            return this._enabledCloudWatchLogsExports != null && this._enabledCloudWatchLogsExports.Count > 0; 
+            return this._enabledCloudWatchLogsExports != null && (this._enabledCloudWatchLogsExports.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -780,7 +803,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ReadReplicaIdentifiers property is set
         internal bool IsSetReadReplicaIdentifiers()
         {
-            return this._readReplicaIdentifiers != null && this._readReplicaIdentifiers.Count > 0; 
+            return this._readReplicaIdentifiers != null && (this._readReplicaIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -834,7 +857,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if VpcSecurityGroups property is set
         internal bool IsSetVpcSecurityGroups()
         {
-            return this._vpcSecurityGroups != null && this._vpcSecurityGroups.Count > 0; 
+            return this._vpcSecurityGroups != null && (this._vpcSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

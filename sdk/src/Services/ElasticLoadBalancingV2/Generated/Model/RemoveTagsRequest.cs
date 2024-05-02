@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
@@ -36,8 +37,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class RemoveTagsRequest : AmazonElasticLoadBalancingV2Request
     {
-        private List<string> _resourceArns = new List<string>();
-        private List<string> _tagKeys = new List<string>();
+        private List<string> _resourceArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _tagKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceArns. 
@@ -55,7 +56,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if ResourceArns property is set
         internal bool IsSetResourceArns()
         {
-            return this._resourceArns != null && this._resourceArns.Count > 0; 
+            return this._resourceArns != null && (this._resourceArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if TagKeys property is set
         internal bool IsSetTagKeys()
         {
-            return this._tagKeys != null && this._tagKeys.Count > 0; 
+            return this._tagKeys != null && (this._tagKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

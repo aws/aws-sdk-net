@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
@@ -35,13 +36,20 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
         private string _identifier;
         private string _name;
-        private List<ResourceServerScopeType> _scopes = new List<ResourceServerScopeType>();
+        private List<ResourceServerScopeType> _scopes = AWSConfigs.InitializeCollections ? new List<ResourceServerScopeType>() : null;
         private string _userPoolId;
 
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        /// The identifier for the resource server.
+        /// A unique resource server identifier for the resource server. The identifier can be
+        /// an API friendly name like <c>solar-system-data</c>. You can also set an API URL like
+        /// <c>https://solar-system-data-api.example.com</c> as your identifier.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Cognito represents scopes in the access token in the format <c>$resource-server-identifier/$scope</c>.
+        /// Longer scope-identifier strings increase the size of your access tokens.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -92,7 +100,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if Scopes property is set
         internal bool IsSetScopes()
         {
-            return this._scopes != null && this._scopes.Count > 0; 
+            return this._scopes != null && (this._scopes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

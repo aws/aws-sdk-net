@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.KeyManagementService.Model
         /// Enumerable containing all of the Aliases
         /// </summary>
         public IPaginatedEnumerable<AliasListEntry> Aliases => 
-            new PaginatedResultKeyResponse<ListAliasesResponse, AliasListEntry>(this, (i) => i.Aliases);
+            new PaginatedResultKeyResponse<ListAliasesResponse, AliasListEntry>(this, (i) => i.Aliases ?? new List<AliasListEntry>());
 
         internal ListAliasesPaginator(IAmazonKeyManagementService client, ListAliasesRequest request)
         {
@@ -69,11 +70,11 @@ namespace Amazon.KeyManagementService.Model
                 marker = response.NextMarker;
                 yield return response;
             }
-            while (!string.IsNullOrEmpty(marker));
+            while (response.Truncated.GetValueOrDefault());
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListAliasesResponse> IPaginator<ListAliasesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListAliasesResponse> IPaginator<ListAliasesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
@@ -90,7 +91,7 @@ namespace Amazon.KeyManagementService.Model
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;
             }
-            while (!string.IsNullOrEmpty(marker));
+            while (response.Truncated.GetValueOrDefault());
         }
 #endif
     }

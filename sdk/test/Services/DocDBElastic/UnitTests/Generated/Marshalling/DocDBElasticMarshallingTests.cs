@@ -45,6 +45,260 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("DocDBElastic")]
+        public void CopyClusterSnapshotMarshallTest()
+        {
+            var operation = service_model.FindOperation("CopyClusterSnapshot");
+
+            var request = InstantiateClassGenerator.Execute<CopyClusterSnapshotRequest>(operation);
+            var marshaller = new CopyClusterSnapshotRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CopyClusterSnapshot", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CopyClusterSnapshotResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as CopyClusterSnapshotResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("DocDBElastic")]
+        public void CopyClusterSnapshot_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CopyClusterSnapshot");
+
+            var request = InstantiateClassGenerator.Execute<CopyClusterSnapshotRequest>(operation);
+            var marshaller = new CopyClusterSnapshotRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CopyClusterSnapshot", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CopyClusterSnapshotResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("DocDBElastic")]
+        public void CopyClusterSnapshot_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CopyClusterSnapshot");
+
+            var request = InstantiateClassGenerator.Execute<CopyClusterSnapshotRequest>(operation);
+            var marshaller = new CopyClusterSnapshotRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CopyClusterSnapshot", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CopyClusterSnapshotResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("DocDBElastic")]
+        public void CopyClusterSnapshot_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CopyClusterSnapshot");
+
+            var request = InstantiateClassGenerator.Execute<CopyClusterSnapshotRequest>(operation);
+            var marshaller = new CopyClusterSnapshotRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CopyClusterSnapshot", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CopyClusterSnapshotResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("DocDBElastic")]
+        public void CopyClusterSnapshot_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CopyClusterSnapshot");
+
+            var request = InstantiateClassGenerator.Execute<CopyClusterSnapshotRequest>(operation);
+            var marshaller = new CopyClusterSnapshotRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CopyClusterSnapshot", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CopyClusterSnapshotResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("DocDBElastic")]
+        public void CopyClusterSnapshot_ServiceQuotaExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CopyClusterSnapshot");
+
+            var request = InstantiateClassGenerator.Execute<CopyClusterSnapshotRequest>(operation);
+            var marshaller = new CopyClusterSnapshotRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CopyClusterSnapshot", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceQuotaExceededException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceQuotaExceededException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CopyClusterSnapshotResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("DocDBElastic")]
+        public void CopyClusterSnapshot_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CopyClusterSnapshot");
+
+            var request = InstantiateClassGenerator.Execute<CopyClusterSnapshotRequest>(operation);
+            var marshaller = new CopyClusterSnapshotRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CopyClusterSnapshot", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CopyClusterSnapshotResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("DocDBElastic")]
+        public void CopyClusterSnapshot_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CopyClusterSnapshot");
+
+            var request = InstantiateClassGenerator.Execute<CopyClusterSnapshotRequest>(operation);
+            var marshaller = new CopyClusterSnapshotRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CopyClusterSnapshot", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CopyClusterSnapshotResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("DocDBElastic")]
         public void CreateClusterMarshallTest()
         {
             var operation = service_model.FindOperation("CreateCluster");
@@ -58,8 +312,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -89,9 +343,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccessDeniedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"AccessDeniedException"},
                 }
             };
 
@@ -121,9 +375,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ConflictException"},
                 }
             };
 
@@ -153,9 +407,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalServerException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalServerException"},
                 }
             };
 
@@ -185,9 +439,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceQuotaExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceQuotaExceededException"},
                 }
             };
 
@@ -217,9 +471,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -249,9 +503,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ValidationException"},
                 }
             };
 
@@ -280,8 +534,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -311,9 +565,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccessDeniedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"AccessDeniedException"},
                 }
             };
 
@@ -343,9 +597,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ConflictException"},
                 }
             };
 
@@ -375,9 +629,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalServerException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalServerException"},
                 }
             };
 
@@ -407,9 +661,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -439,9 +693,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceQuotaExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceQuotaExceededException"},
                 }
             };
 
@@ -471,9 +725,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -503,9 +757,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ValidationException"},
                 }
             };
 
@@ -534,8 +788,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -565,9 +819,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccessDeniedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"AccessDeniedException"},
                 }
             };
 
@@ -597,9 +851,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ConflictException"},
                 }
             };
 
@@ -629,9 +883,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalServerException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalServerException"},
                 }
             };
 
@@ -661,9 +915,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -693,9 +947,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -725,9 +979,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ValidationException"},
                 }
             };
 
@@ -756,8 +1010,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -787,9 +1041,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccessDeniedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"AccessDeniedException"},
                 }
             };
 
@@ -819,9 +1073,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ConflictException"},
                 }
             };
 
@@ -851,9 +1105,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalServerException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalServerException"},
                 }
             };
 
@@ -883,9 +1137,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -915,9 +1169,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -947,9 +1201,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ValidationException"},
                 }
             };
 
@@ -978,8 +1232,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -1009,9 +1263,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccessDeniedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"AccessDeniedException"},
                 }
             };
 
@@ -1041,9 +1295,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalServerException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalServerException"},
                 }
             };
 
@@ -1073,9 +1327,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -1105,9 +1359,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -1137,9 +1391,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ValidationException"},
                 }
             };
 
@@ -1168,8 +1422,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -1199,9 +1453,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccessDeniedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"AccessDeniedException"},
                 }
             };
 
@@ -1231,9 +1485,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalServerException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalServerException"},
                 }
             };
 
@@ -1263,9 +1517,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -1295,9 +1549,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -1327,9 +1581,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ValidationException"},
                 }
             };
 
@@ -1358,8 +1612,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -1389,9 +1643,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccessDeniedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"AccessDeniedException"},
                 }
             };
 
@@ -1421,9 +1675,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalServerException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalServerException"},
                 }
             };
 
@@ -1453,9 +1707,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -1485,9 +1739,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ValidationException"},
                 }
             };
 
@@ -1516,8 +1770,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -1547,9 +1801,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccessDeniedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"AccessDeniedException"},
                 }
             };
 
@@ -1579,9 +1833,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalServerException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalServerException"},
                 }
             };
 
@@ -1611,9 +1865,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -1643,9 +1897,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ValidationException"},
                 }
             };
 
@@ -1674,8 +1928,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -1705,9 +1959,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalServerException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalServerException"},
                 }
             };
 
@@ -1737,9 +1991,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -1769,9 +2023,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -1801,9 +2055,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ValidationException"},
                 }
             };
 
@@ -1832,8 +2086,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -1863,9 +2117,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccessDeniedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"AccessDeniedException"},
                 }
             };
 
@@ -1895,9 +2149,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ConflictException"},
                 }
             };
 
@@ -1927,9 +2181,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalServerException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalServerException"},
                 }
             };
 
@@ -1959,9 +2213,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -1991,9 +2245,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceQuotaExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceQuotaExceededException"},
                 }
             };
 
@@ -2023,9 +2277,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -2055,9 +2309,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ValidationException"},
                 }
             };
 
@@ -2065,6 +2319,386 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
             var response = RestoreClusterFromSnapshotResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("DocDBElastic")]
+        public void StartClusterMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartCluster");
+
+            var request = InstantiateClassGenerator.Execute<StartClusterRequest>(operation);
+            var marshaller = new StartClusterRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("StartCluster", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = StartClusterResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as StartClusterResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("DocDBElastic")]
+        public void StartCluster_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartCluster");
+
+            var request = InstantiateClassGenerator.Execute<StartClusterRequest>(operation);
+            var marshaller = new StartClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartCluster", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("DocDBElastic")]
+        public void StartCluster_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartCluster");
+
+            var request = InstantiateClassGenerator.Execute<StartClusterRequest>(operation);
+            var marshaller = new StartClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartCluster", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("DocDBElastic")]
+        public void StartCluster_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartCluster");
+
+            var request = InstantiateClassGenerator.Execute<StartClusterRequest>(operation);
+            var marshaller = new StartClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartCluster", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("DocDBElastic")]
+        public void StartCluster_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartCluster");
+
+            var request = InstantiateClassGenerator.Execute<StartClusterRequest>(operation);
+            var marshaller = new StartClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartCluster", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("DocDBElastic")]
+        public void StartCluster_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartCluster");
+
+            var request = InstantiateClassGenerator.Execute<StartClusterRequest>(operation);
+            var marshaller = new StartClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartCluster", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("DocDBElastic")]
+        public void StopClusterMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopCluster");
+
+            var request = InstantiateClassGenerator.Execute<StopClusterRequest>(operation);
+            var marshaller = new StopClusterRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("StopCluster", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = StopClusterResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as StopClusterResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("DocDBElastic")]
+        public void StopCluster_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopCluster");
+
+            var request = InstantiateClassGenerator.Execute<StopClusterRequest>(operation);
+            var marshaller = new StopClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StopCluster", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StopClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("DocDBElastic")]
+        public void StopCluster_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopCluster");
+
+            var request = InstantiateClassGenerator.Execute<StopClusterRequest>(operation);
+            var marshaller = new StopClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StopCluster", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StopClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("DocDBElastic")]
+        public void StopCluster_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopCluster");
+
+            var request = InstantiateClassGenerator.Execute<StopClusterRequest>(operation);
+            var marshaller = new StopClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StopCluster", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StopClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("DocDBElastic")]
+        public void StopCluster_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopCluster");
+
+            var request = InstantiateClassGenerator.Execute<StopClusterRequest>(operation);
+            var marshaller = new StopClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StopCluster", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StopClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("DocDBElastic")]
+        public void StopCluster_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopCluster");
+
+            var request = InstantiateClassGenerator.Execute<StopClusterRequest>(operation);
+            var marshaller = new StopClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StopCluster", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StopClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -2086,8 +2720,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -2117,9 +2751,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalServerException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalServerException"},
                 }
             };
 
@@ -2149,9 +2783,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -2181,9 +2815,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -2213,9 +2847,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ValidationException"},
                 }
             };
 
@@ -2244,8 +2878,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -2275,9 +2909,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalServerException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalServerException"},
                 }
             };
 
@@ -2307,9 +2941,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -2339,9 +2973,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -2371,9 +3005,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ValidationException"},
                 }
             };
 
@@ -2402,8 +3036,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -2433,9 +3067,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccessDeniedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"AccessDeniedException"},
                 }
             };
 
@@ -2465,9 +3099,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ConflictException"},
                 }
             };
 
@@ -2497,9 +3131,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalServerException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalServerException"},
                 }
             };
 
@@ -2529,9 +3163,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -2561,9 +3195,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -2593,9 +3227,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ValidationException"},
                 }
             };
 

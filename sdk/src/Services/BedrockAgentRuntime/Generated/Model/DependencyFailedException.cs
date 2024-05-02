@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// This exception is thrown when a request fails due to dependency like Lambda, Bedrock,
-    /// STS resource due to a customer fault (i.e. bad configuration)
+    /// There was an issue with a dependency. Check the resource configurations and retry
+    /// the request.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
@@ -120,7 +121,11 @@ namespace Amazon.BedrockAgentRuntime.Model
 #endif
 
         /// <summary>
-        /// Gets and sets the property ResourceName.
+        /// Gets and sets the property ResourceName. 
+        /// <para>
+        /// The name of the dependency that caused the issue, such as Amazon Bedrock, Lambda,
+        /// or STS.
+        /// </para>
         /// </summary>
         public string ResourceName
         {

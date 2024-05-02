@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Budgets.Model
 {
     /// <summary>
@@ -33,10 +34,10 @@ namespace Amazon.Budgets.Model
     /// </summary>
     public partial class IamActionDefinition
     {
-        private List<string> _groups = new List<string>();
+        private List<string> _groups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _policyArn;
-        private List<string> _roles = new List<string>();
-        private List<string> _users = new List<string>();
+        private List<string> _roles = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _users = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Groups. 
@@ -54,7 +55,7 @@ namespace Amazon.Budgets.Model
         // Check to see if Groups property is set
         internal bool IsSetGroups()
         {
-            return this._groups != null && this._groups.Count > 0; 
+            return this._groups != null && (this._groups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.Budgets.Model
         // Check to see if Roles property is set
         internal bool IsSetRoles()
         {
-            return this._roles != null && this._roles.Count > 0; 
+            return this._roles != null && (this._roles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -111,7 +112,7 @@ namespace Amazon.Budgets.Model
         // Check to see if Users property is set
         internal bool IsSetUsers()
         {
-            return this._users != null && this._users.Count > 0; 
+            return this._users != null && (this._users.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

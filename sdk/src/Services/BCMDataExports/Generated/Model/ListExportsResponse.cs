@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BCMDataExports.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.BCMDataExports.Model
     /// </summary>
     public partial class ListExportsResponse : AmazonWebServiceResponse
     {
-        private List<ExportReference> _exports = new List<ExportReference>();
+        private List<ExportReference> _exports = AWSConfigs.InitializeCollections ? new List<ExportReference>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.BCMDataExports.Model
         // Check to see if Exports property is set
         internal bool IsSetExports()
         {
-            return this._exports != null && this._exports.Count > 0; 
+            return this._exports != null && (this._exports.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

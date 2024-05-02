@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// Maps a batch delete document request to a specific Amazon Q data source connector
+    /// Maps a batch delete document request to a specific Amazon Q Business data source connector
     /// sync job.
     /// </summary>
     public partial class DataSourceSyncJobMetrics

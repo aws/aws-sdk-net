@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ResourceExplorer2.Model
 {
     /// <summary>
@@ -36,10 +37,10 @@ namespace Amazon.ResourceExplorer2.Model
         private string _arn;
         private DateTime? _createdAt;
         private DateTime? _lastUpdatedAt;
-        private List<string> _replicatingFrom = new List<string>();
-        private List<string> _replicatingTo = new List<string>();
+        private List<string> _replicatingFrom = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _replicatingTo = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private IndexState _state;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private IndexType _type;
 
         /// <summary>
@@ -117,7 +118,7 @@ namespace Amazon.ResourceExplorer2.Model
         // Check to see if ReplicatingFrom property is set
         internal bool IsSetReplicatingFrom()
         {
-            return this._replicatingFrom != null && this._replicatingFrom.Count > 0; 
+            return this._replicatingFrom != null && (this._replicatingFrom.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -141,7 +142,7 @@ namespace Amazon.ResourceExplorer2.Model
         // Check to see if ReplicatingTo property is set
         internal bool IsSetReplicatingTo()
         {
-            return this._replicatingTo != null && this._replicatingTo.Count > 0; 
+            return this._replicatingTo != null && (this._replicatingTo.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -178,7 +179,7 @@ namespace Amazon.ResourceExplorer2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Tnb.Model
 {
     /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Tnb.Model
         private NsdOperationalState _nsdOperationalState;
         private NsdUsageState _nsdUsageState;
         private string _nsdVersion;
-        private List<string> _vnfPkgIds = new List<string>();
+        private List<string> _vnfPkgIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -273,7 +274,7 @@ namespace Amazon.Tnb.Model
         // Check to see if VnfPkgIds property is set
         internal bool IsSetVnfPkgIds()
         {
-            return this._vnfPkgIds != null && this._vnfPkgIds.Count > 0; 
+            return this._vnfPkgIds != null && (this._vnfPkgIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

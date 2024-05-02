@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.SageMaker.Model
         private DateTime? _lastModifiedTime;
         private string _lineageGroupArn;
         private MetadataProperties _metadataProperties;
-        private Dictionary<string, string> _properties = new Dictionary<string, string>();
+        private Dictionary<string, string> _properties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ArtifactSource _source;
 
         /// <summary>
@@ -218,7 +219,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Properties property is set
         internal bool IsSetProperties()
         {
-            return this._properties != null && this._properties.Count > 0; 
+            return this._properties != null && (this._properties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

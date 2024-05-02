@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EC2.Model
     public partial class DescribeVolumeStatusResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<VolumeStatusItem> _volumeStatuses = new List<VolumeStatusItem>();
+        private List<VolumeStatusItem> _volumeStatuses = AWSConfigs.InitializeCollections ? new List<VolumeStatusItem>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.EC2.Model
         // Check to see if VolumeStatuses property is set
         internal bool IsSetVolumeStatuses()
         {
-            return this._volumeStatuses != null && this._volumeStatuses.Count > 0; 
+            return this._volumeStatuses != null && (this._volumeStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

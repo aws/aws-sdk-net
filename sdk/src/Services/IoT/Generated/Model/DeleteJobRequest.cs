@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -126,7 +127,9 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <c>namespaceId</c> feature is in public preview.
+        /// The <c>namespaceId</c> feature is only supported by IoT Greengrass at this time. For
+        /// more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/setting-up.html">Setting
+        /// up IoT Greengrass core devices.</a> 
         /// </para>
         ///  </note>
         /// </summary>

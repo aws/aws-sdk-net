@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppSync.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.AppSync.Model
     /// </summary>
     public partial class CreateGraphqlApiRequest : AmazonAppSyncRequest
     {
-        private List<AdditionalAuthenticationProvider> _additionalAuthenticationProviders = new List<AdditionalAuthenticationProvider>();
+        private List<AdditionalAuthenticationProvider> _additionalAuthenticationProviders = AWSConfigs.InitializeCollections ? new List<AdditionalAuthenticationProvider>() : null;
         private GraphQLApiType _apiType;
         private AuthenticationType _authenticationType;
         private EnhancedMetricsConfig _enhancedMetricsConfig;
@@ -47,7 +48,7 @@ namespace Amazon.AppSync.Model
         private string _ownerContact;
         private int? _queryDepthLimit;
         private int? _resolverCountLimit;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private UserPoolConfig _userPoolConfig;
         private GraphQLApiVisibility _visibility;
         private bool? _xrayEnabled;
@@ -67,7 +68,7 @@ namespace Amazon.AppSync.Model
         // Check to see if AdditionalAuthenticationProviders property is set
         internal bool IsSetAdditionalAuthenticationProviders()
         {
-            return this._additionalAuthenticationProviders != null && this._additionalAuthenticationProviders.Count > 0; 
+            return this._additionalAuthenticationProviders != null && (this._additionalAuthenticationProviders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -335,7 +336,7 @@ namespace Amazon.AppSync.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

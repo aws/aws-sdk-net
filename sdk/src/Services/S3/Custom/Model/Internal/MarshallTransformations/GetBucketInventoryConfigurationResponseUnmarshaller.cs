@@ -27,6 +27,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>
     public class GetBucketInventoryConfigurationResponseUnmarshaller : S3ReponseUnmarshaller
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             GetBucketInventoryConfigurationResponse response = new GetBucketInventoryConfigurationResponse();
@@ -91,8 +96,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Field", targetDepth + 1))
                     {
+                        if (response.InventoryConfiguration.InventoryOptionalFields == null)
+                        {
+                            response.InventoryConfiguration.InventoryOptionalFields = new List<InventoryOptionalField>();
+                        }
                         response.InventoryConfiguration.InventoryOptionalFields.Add(StringUnmarshaller.Instance.Unmarshall(context));
-
                         continue;
                     }
                     if (context.TestExpression("Schedule", targetDepth))
@@ -113,6 +121,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static GetBucketInventoryConfigurationResponseUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static GetBucketInventoryConfigurationResponseUnmarshaller Instance
         {
             get

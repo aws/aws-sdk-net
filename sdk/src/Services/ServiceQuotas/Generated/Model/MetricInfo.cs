@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ServiceQuotas.Model
     /// </summary>
     public partial class MetricInfo
     {
-        private Dictionary<string, string> _metricDimensions = new Dictionary<string, string>();
+        private Dictionary<string, string> _metricDimensions = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _metricName;
         private string _metricNamespace;
         private string _metricStatisticRecommendation;
@@ -55,7 +56,7 @@ namespace Amazon.ServiceQuotas.Model
         // Check to see if MetricDimensions property is set
         internal bool IsSetMetricDimensions()
         {
-            return this._metricDimensions != null && this._metricDimensions.Count > 0; 
+            return this._metricDimensions != null && (this._metricDimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

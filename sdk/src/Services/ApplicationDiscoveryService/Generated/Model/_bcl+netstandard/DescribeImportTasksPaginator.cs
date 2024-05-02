@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Enumerable containing all of the Tasks
         /// </summary>
         public IPaginatedEnumerable<ImportTask> Tasks => 
-            new PaginatedResultKeyResponse<DescribeImportTasksResponse, ImportTask>(this, (i) => i.Tasks);
+            new PaginatedResultKeyResponse<DescribeImportTasksResponse, ImportTask>(this, (i) => i.Tasks ?? new List<ImportTask>());
 
         internal DescribeImportTasksPaginator(IAmazonApplicationDiscoveryService client, DescribeImportTasksRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeImportTasksResponse> IPaginator<DescribeImportTasksResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeImportTasksResponse> IPaginator<DescribeImportTasksResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

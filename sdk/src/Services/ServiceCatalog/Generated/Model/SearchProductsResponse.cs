@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.ServiceCatalog.Model
     public partial class SearchProductsResponse : AmazonWebServiceResponse
     {
         private string _nextPageToken;
-        private Dictionary<string, List<ProductViewAggregationValue>> _productViewAggregations = new Dictionary<string, List<ProductViewAggregationValue>>();
-        private List<ProductViewSummary> _productViewSummaries = new List<ProductViewSummary>();
+        private Dictionary<string, List<ProductViewAggregationValue>> _productViewAggregations = AWSConfigs.InitializeCollections ? new Dictionary<string, List<ProductViewAggregationValue>>() : null;
+        private List<ProductViewSummary> _productViewSummaries = AWSConfigs.InitializeCollections ? new List<ProductViewSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextPageToken. 
@@ -72,7 +73,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if ProductViewAggregations property is set
         internal bool IsSetProductViewAggregations()
         {
-            return this._productViewAggregations != null && this._productViewAggregations.Count > 0; 
+            return this._productViewAggregations != null && (this._productViewAggregations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -90,7 +91,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if ProductViewSummaries property is set
         internal bool IsSetProductViewSummaries()
         {
-            return this._productViewSummaries != null && this._productViewSummaries.Count > 0; 
+            return this._productViewSummaries != null && (this._productViewSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

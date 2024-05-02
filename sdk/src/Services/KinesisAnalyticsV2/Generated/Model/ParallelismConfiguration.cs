@@ -26,12 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes parameters for how a Flink-based Kinesis Data Analytics application executes
-    /// multiple tasks simultaneously. For more information about parallelism, see <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/dev/parallel.html">Parallel
-    /// Execution</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache
+    /// Describes parameters for how a Managed Service for Apache Flink application executes
+    /// multiple tasks simultaneously. For more information about parallelism, see <a href="https://nightlies.apache.org/flink/flink-docs-release-1.18/dev/parallel.html">Parallel
+    /// Execution</a> in the <a href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache
     /// Flink Documentation</a>.
     /// </summary>
     public partial class ParallelismConfiguration
@@ -44,7 +45,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property AutoScalingEnabled. 
         /// <para>
-        /// Describes whether the Kinesis Data Analytics service can increase the parallelism
+        /// Describes whether the Managed Service for Apache Flink service can increase the parallelism
         /// of the application in response to increased throughput.
         /// </para>
         /// </summary>
@@ -63,9 +64,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ConfigurationType. 
         /// <para>
-        /// Describes whether the application uses the default parallelism for the Kinesis Data
-        /// Analytics service. You must set this property to <c>CUSTOM</c> in order to change
-        /// your application's <c>AutoScalingEnabled</c>, <c>Parallelism</c>, or <c>ParallelismPerKPU</c>
+        /// Describes whether the application uses the default parallelism for the Managed Service
+        /// for Apache Flink service. You must set this property to <c>CUSTOM</c> in order to
+        /// change your application's <c>AutoScalingEnabled</c>, <c>Parallelism</c>, or <c>ParallelismPerKPU</c>
         /// properties.
         /// </para>
         /// </summary>
@@ -85,9 +86,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property Parallelism. 
         /// <para>
-        /// Describes the initial number of parallel tasks that a Flink-based Kinesis Data Analytics
-        /// application can perform. If <c>AutoScalingEnabled</c> is set to True, Kinesis Data
-        /// Analytics increases the <c>CurrentParallelism</c> value in response to application
+        /// Describes the initial number of parallel tasks that a Managed Service for Apache Flink
+        /// application can perform. If <c>AutoScalingEnabled</c> is set to True, Managed Service
+        /// for Apache Flink increases the <c>CurrentParallelism</c> value in response to application
         /// load. The service can increase the <c>CurrentParallelism</c> value up to the maximum
         /// parallelism, which is <c>ParalellismPerKPU</c> times the maximum KPUs for the application.
         /// The maximum KPUs for an application is 32 by default, and can be increased by requesting
@@ -111,10 +112,10 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ParallelismPerKPU. 
         /// <para>
-        /// Describes the number of parallel tasks that a Flink-based Kinesis Data Analytics application
+        /// Describes the number of parallel tasks that a Managed Service for Apache Flink application
         /// can perform per Kinesis Processing Unit (KPU) used by the application. For more information
         /// about KPUs, see <a href="http://aws.amazon.com/kinesis/data-analytics/pricing/">Amazon
-        /// Kinesis Data Analytics Pricing</a>.
+        /// Managed Service for Apache Flink Pricing</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IoT.Model
     public partial class ManagedJobTemplateSummary
     {
         private string _description;
-        private List<string> _environments = new List<string>();
+        private List<string> _environments = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _templateArn;
         private string _templateName;
         private string _templateVersion;
@@ -73,7 +74,7 @@ namespace Amazon.IoT.Model
         // Check to see if Environments property is set
         internal bool IsSetEnvironments()
         {
-            return this._environments != null && this._environments.Count > 0; 
+            return this._environments != null && (this._environments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

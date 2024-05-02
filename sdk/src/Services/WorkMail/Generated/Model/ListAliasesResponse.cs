@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkMail.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.WorkMail.Model
     /// </summary>
     public partial class ListAliasesResponse : AmazonWebServiceResponse
     {
-        private List<string> _aliases = new List<string>();
+        private List<string> _aliases = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.WorkMail.Model
         // Check to see if Aliases property is set
         internal bool IsSetAliases()
         {
-            return this._aliases != null && this._aliases.Count > 0; 
+            return this._aliases != null && (this._aliases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

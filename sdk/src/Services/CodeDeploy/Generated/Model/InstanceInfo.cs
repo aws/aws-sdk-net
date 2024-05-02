@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.CodeDeploy.Model
         private string _instanceArn;
         private string _instanceName;
         private DateTime? _registerTime;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property DeregisterTime. 
@@ -165,7 +166,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

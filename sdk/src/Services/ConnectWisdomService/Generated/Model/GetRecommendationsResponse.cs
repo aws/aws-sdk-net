@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConnectWisdomService.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.ConnectWisdomService.Model
     /// </summary>
     public partial class GetRecommendationsResponse : AmazonWebServiceResponse
     {
-        private List<RecommendationData> _recommendations = new List<RecommendationData>();
-        private List<RecommendationTrigger> _triggers = new List<RecommendationTrigger>();
+        private List<RecommendationData> _recommendations = AWSConfigs.InitializeCollections ? new List<RecommendationData>() : null;
+        private List<RecommendationTrigger> _triggers = AWSConfigs.InitializeCollections ? new List<RecommendationTrigger>() : null;
 
         /// <summary>
         /// Gets and sets the property Recommendations. 
@@ -52,7 +53,7 @@ namespace Amazon.ConnectWisdomService.Model
         // Check to see if Recommendations property is set
         internal bool IsSetRecommendations()
         {
-            return this._recommendations != null && this._recommendations.Count > 0; 
+            return this._recommendations != null && (this._recommendations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.ConnectWisdomService.Model
         // Check to see if Triggers property is set
         internal bool IsSetTriggers()
         {
-            return this._triggers != null && this._triggers.Count > 0; 
+            return this._triggers != null && (this._triggers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

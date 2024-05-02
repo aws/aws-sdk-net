@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.LexModelsV2.Model
         private string _roleArn;
         private TestSetStorageLocation _storageLocation;
         private string _testSetName;
-        private Dictionary<string, string> _testSetTags = new Dictionary<string, string>();
+        private Dictionary<string, string> _testSetTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -174,7 +175,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if TestSetTags property is set
         internal bool IsSetTestSetTags()
         {
-            return this._testSetTags != null && this._testSetTags.Count > 0; 
+            return this._testSetTags != null && (this._testSetTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

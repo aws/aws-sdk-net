@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DocDBElastic.Model
 {
     /// <summary>
     /// Container for the parameters to the GetClusterSnapshot operation.
-    /// Returns information about a specific Elastic DocumentDB snapshot
+    /// Returns information about a specific elastic cluster snapshot
     /// </summary>
     public partial class GetClusterSnapshotRequest : AmazonDocDBElasticRequest
     {
@@ -39,7 +40,7 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property SnapshotArn. 
         /// <para>
-        /// The arn of the Elastic DocumentDB snapshot.
+        /// The ARN identifier of the elastic cluster snapshot.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

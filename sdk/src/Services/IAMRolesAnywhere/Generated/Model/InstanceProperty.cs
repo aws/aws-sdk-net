@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IAMRolesAnywhere.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IAMRolesAnywhere.Model
     public partial class InstanceProperty
     {
         private bool? _failed;
-        private Dictionary<string, string> _properties = new Dictionary<string, string>();
+        private Dictionary<string, string> _properties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DateTime? _seenAt;
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         // Check to see if Properties property is set
         internal bool IsSetProperties()
         {
-            return this._properties != null && this._properties.Count > 0; 
+            return this._properties != null && (this._properties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

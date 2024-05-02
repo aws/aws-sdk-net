@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Macie2.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Macie2.Model
         /// Enumerable containing all of the SensitivityInspectionTemplates
         /// </summary>
         public IPaginatedEnumerable<SensitivityInspectionTemplatesEntry> SensitivityInspectionTemplates => 
-            new PaginatedResultKeyResponse<ListSensitivityInspectionTemplatesResponse, SensitivityInspectionTemplatesEntry>(this, (i) => i.SensitivityInspectionTemplates);
+            new PaginatedResultKeyResponse<ListSensitivityInspectionTemplatesResponse, SensitivityInspectionTemplatesEntry>(this, (i) => i.SensitivityInspectionTemplates ?? new List<SensitivityInspectionTemplatesEntry>());
 
         internal ListSensitivityInspectionTemplatesPaginator(IAmazonMacie2 client, ListSensitivityInspectionTemplatesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Macie2.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListSensitivityInspectionTemplatesResponse> IPaginator<ListSensitivityInspectionTemplatesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListSensitivityInspectionTemplatesResponse> IPaginator<ListSensitivityInspectionTemplatesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

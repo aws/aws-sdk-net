@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticInference.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.ElasticInference.Model
     {
         private string _acceleratorTypeName;
         private MemoryInfo _memoryInfo;
-        private List<KeyValuePair> _throughputInfo = new List<KeyValuePair>();
+        private List<KeyValuePair> _throughputInfo = AWSConfigs.InitializeCollections ? new List<KeyValuePair>() : null;
 
         /// <summary>
         /// Gets and sets the property AcceleratorTypeName. 
@@ -90,7 +91,7 @@ namespace Amazon.ElasticInference.Model
         // Check to see if ThroughputInfo property is set
         internal bool IsSetThroughputInfo()
         {
-            return this._throughputInfo != null && this._throughputInfo.Count > 0; 
+            return this._throughputInfo != null && (this._throughputInfo.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

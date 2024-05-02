@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.DatabaseMigrationService.Model
     {
         private string _marker;
         private string _replicationInstanceArn;
-        private List<ReplicationInstanceTaskLog> _replicationInstanceTaskLogs = new List<ReplicationInstanceTaskLog>();
+        private List<ReplicationInstanceTaskLog> _replicationInstanceTaskLogs = AWSConfigs.InitializeCollections ? new List<ReplicationInstanceTaskLog>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -91,7 +92,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if ReplicationInstanceTaskLogs property is set
         internal bool IsSetReplicationInstanceTaskLogs()
         {
-            return this._replicationInstanceTaskLogs != null && this._replicationInstanceTaskLogs.Count > 0; 
+            return this._replicationInstanceTaskLogs != null && (this._replicationInstanceTaskLogs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

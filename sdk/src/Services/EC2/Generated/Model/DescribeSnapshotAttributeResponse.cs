@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeSnapshotAttributeResponse : AmazonWebServiceResponse
     {
-        private List<CreateVolumePermission> _createVolumePermissions = new List<CreateVolumePermission>();
-        private List<ProductCode> _productCodes = new List<ProductCode>();
+        private List<CreateVolumePermission> _createVolumePermissions = AWSConfigs.InitializeCollections ? new List<CreateVolumePermission>() : null;
+        private List<ProductCode> _productCodes = AWSConfigs.InitializeCollections ? new List<ProductCode>() : null;
         private string _snapshotId;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.EC2.Model
         // Check to see if CreateVolumePermissions property is set
         internal bool IsSetCreateVolumePermissions()
         {
-            return this._createVolumePermissions != null && this._createVolumePermissions.Count > 0; 
+            return this._createVolumePermissions != null && (this._createVolumePermissions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.EC2.Model
         // Check to see if ProductCodes property is set
         internal bool IsSetProductCodes()
         {
-            return this._productCodes != null && this._productCodes.Count > 0; 
+            return this._productCodes != null && (this._productCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

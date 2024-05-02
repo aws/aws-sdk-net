@@ -56,8 +56,8 @@ namespace Amazon.S3.Model
     /// <para>
     ///  <b>Directory buckets </b> - For directory buckets, you must make requests for this
     /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-    /// requests in the format <code>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-    /// </code>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+    /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
+    /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
     /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
     ///  </li> </ul> </note> <dl> <dt>Request signing</dt> <dd> 
@@ -78,7 +78,7 @@ namespace Amazon.S3.Model
     ///  
     /// <para>
     /// To perform a multipart upload with encryption by using an Amazon Web Services KMS
-    /// key, the requester must have permission to the <code>kms:Decrypt</code> and <code>kms:GenerateDataKey*</code>
+    /// key, the requester must have permission to the <c>kms:Decrypt</c> and <c>kms:GenerateDataKey*</c>
     /// actions on the key. These permissions are required because Amazon S3 must decrypt
     /// and read data from the encrypted file parts before it completes the multipart upload.
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
@@ -90,16 +90,16 @@ namespace Amazon.S3.Model
     /// <para>
     ///  <b>Directory bucket permissions</b> - To grant access to this API operation on a
     /// directory bucket, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
-    /// <code>CreateSession</code> </a> API operation for session-based authorization. Specifically,
-    /// you grant the <code>s3express:CreateSession</code> permission to the directory bucket
-    /// in a bucket policy or an IAM identity-based policy. Then, you make the <code>CreateSession</code>
+    /// <c>CreateSession</c> </a> API operation for session-based authorization. Specifically,
+    /// you grant the <c>s3express:CreateSession</c> permission to the directory bucket in
+    /// a bucket policy or an IAM identity-based policy. Then, you make the <c>CreateSession</c>
     /// API call on the bucket to obtain a session token. With the session token in your request
     /// header, you can make API requests to this operation. After the session token expires,
-    /// you make another <code>CreateSession</code> API call to generate a new session token
-    /// for use. Amazon Web Services CLI or SDKs create session and refresh the session token
+    /// you make another <c>CreateSession</c> API call to generate a new session token for
+    /// use. Amazon Web Services CLI or SDKs create session and refresh the session token
     /// automatically to avoid service interruptions when a session expires. For more information
     /// about authorization, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
-    /// <code>CreateSession</code> </a>.
+    /// <c>CreateSession</c> </a>.
     /// </para>
     ///  </li> </ul> </dd> <dt>Encryption</dt> <dd> <ul> <li> 
     /// <para>
@@ -122,38 +122,37 @@ namespace Amazon.S3.Model
     /// in your request takes precedence. If you choose to provide your own encryption key,
     /// the request headers you provide in <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
     /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>
-    /// requests must match the headers you used in the <code>CreateMultipartUpload</code>
-    /// request.
+    /// requests must match the headers you used in the <c>CreateMultipartUpload</c> request.
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Use KMS keys (SSE-KMS) that include the Amazon Web Services managed key (<code>aws/s3</code>)
+    /// Use KMS keys (SSE-KMS) that include the Amazon Web Services managed key (<c>aws/s3</c>)
     /// and KMS customer managed keys stored in Key Management Service (KMS) – If you want
     /// Amazon Web Services to manage the keys used to encrypt data, specify the following
     /// headers in the request.
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>x-amz-server-side-encryption</code> 
+    ///  <c>x-amz-server-side-encryption</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>x-amz-server-side-encryption-aws-kms-key-id</code> 
+    ///  <c>x-amz-server-side-encryption-aws-kms-key-id</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>x-amz-server-side-encryption-context</code> 
+    ///  <c>x-amz-server-side-encryption-context</c> 
     /// </para>
     ///  </li> </ul> <note> <ul> <li> 
     /// <para>
-    /// If you specify <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
-    /// <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
-    /// Web Services managed key (<code>aws/s3</code> key) in KMS to protect the data.
+    /// If you specify <c>x-amz-server-side-encryption:aws:kms</c>, but don't provide <c>x-amz-server-side-encryption-aws-kms-key-id</c>,
+    /// Amazon S3 uses the Amazon Web Services managed key (<c>aws/s3</c> key) in KMS to protect
+    /// the data.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// To perform a multipart upload with encryption by using an Amazon Web Services KMS
-    /// key, the requester must have permission to the <code>kms:Decrypt</code> and <code>kms:GenerateDataKey*</code>
+    /// key, the requester must have permission to the <c>kms:Decrypt</c> and <c>kms:GenerateDataKey*</c>
     /// actions on the key. These permissions are required because Amazon S3 must decrypt
     /// and read data from the encrypted file parts before it completes the multipart upload.
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
@@ -170,10 +169,10 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// All <code>GET</code> and <code>PUT</code> requests for an object protected by KMS
-    /// fail if you don't make them by using Secure Sockets Layer (SSL), Transport Layer Security
-    /// (TLS), or Signature Version 4. For information about configuring any of the officially
-    /// supported Amazon Web Services SDKs and Amazon Web Services CLI, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
+    /// All <c>GET</c> and <c>PUT</c> requests for an object protected by KMS fail if you
+    /// don't make them by using Secure Sockets Layer (SSL), Transport Layer Security (TLS),
+    /// or Signature Version 4. For information about configuring any of the officially supported
+    /// Amazon Web Services SDKs and Amazon Web Services CLI, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#specify-signature-version">Specifying
     /// the Signature Version in Request Authentication</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
     ///  </li> </ul> </note> 
@@ -189,15 +188,15 @@ namespace Amazon.S3.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>x-amz-server-side-encryption-customer-algorithm</code> 
+    ///  <c>x-amz-server-side-encryption-customer-algorithm</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>x-amz-server-side-encryption-customer-key</code> 
+    ///  <c>x-amz-server-side-encryption-customer-key</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>x-amz-server-side-encryption-customer-key-MD5</code> 
+    ///  <c>x-amz-server-side-encryption-customer-key-MD5</c> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -209,15 +208,15 @@ namespace Amazon.S3.Model
     ///  </li> </ul> </li> <li> 
     /// <para>
     ///  <b>Directory buckets</b> -For directory buckets, only server-side encryption with
-    /// Amazon S3 managed keys (SSE-S3) (<code>AES256</code>) is supported.
+    /// Amazon S3 managed keys (SSE-S3) (<c>AES256</c>) is supported.
     /// </para>
     ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
     /// <para>
-    ///  <b>Directory buckets </b> - The HTTP Host header syntax is <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>.
+    ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
     /// </para>
     ///  </dd> </dl> 
     /// <para>
-    /// The following operations are related to <code>CreateMultipartUpload</code>:
+    /// The following operations are related to <c>CreateMultipartUpload</c>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -266,7 +265,7 @@ namespace Amazon.S3.Model
         private string serverSideEncryptionKeyManagementServiceKeyId;
         private string serverSideEncryptionKeyManagementServiceEncryptionContext;
         private S3StorageClass storageClass;
-        private List<Tag> tagset = new List<Tag>();
+        private List<Tag> tagset = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string websiteRedirectLocation;
         private ChecksumAlgorithm _checksumAlgorithm;
 
@@ -299,7 +298,7 @@ namespace Amazon.S3.Model
         /// Gets and sets the property BucketKeyEnabled. 
         /// <para>
         /// Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with
-        /// server-side encryption using AWS KMS (SSE-KMS). Setting this header to <code>true</code>
+        /// server-side encryption using AWS KMS (SSE-KMS). Setting this header to <c>true</c>
         /// causes Amazon S3 to use an S3 Bucket Key for object encryption with SSE-KMS.
         /// </para>
         ///  
@@ -334,11 +333,11 @@ namespace Amazon.S3.Model
         ///  
         /// <para>
         ///  <b>Directory buckets</b> - When you use this operation with a directory bucket, you
-        /// must use virtual-hosted-style requests in the format <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>.
+        /// must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
         /// Path-style requests are not supported. Directory bucket names must be unique in the
-        /// chosen Availability Zone. Bucket names must follow the format <code> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code>
-        /// (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For
-        /// information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
+        /// chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c>
+        /// (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information
+        /// about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
         /// bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
@@ -360,7 +359,7 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you
         /// must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes
-        /// the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+        /// the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>.
         /// When you use this action with S3 on Outposts through the Amazon Web Services SDKs,
         /// you provide the Outposts access point ARN in place of the bucket name. For more information
         /// about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
@@ -393,7 +392,7 @@ namespace Amazon.S3.Model
         /// <para>
         /// The account ID of the expected bucket owner. If the account ID that you provide does
         /// not match the actual owner of the bucket, the request fails with the HTTP status code
-        /// <code>403 Forbidden</code> (access denied).
+        /// <c>403 Forbidden</c> (access denied).
         /// </para>
         /// </summary>
         public string ExpectedBucketOwner
@@ -544,12 +543,12 @@ namespace Amazon.S3.Model
         /// Gets and sets the property ServerSideEncryptionMethod. 
         /// <para>
         /// The server-side encryption algorithm used when you store this object in Amazon S3
-        /// (for example, <code>AES256</code>, <code>aws:kms</code>).
+        /// (for example, <c>AES256</c>, <c>aws:kms</c>).
         /// </para>
         ///  <note> 
         /// <para>
         /// For directory buckets, only server-side encryption with Amazon S3 managed keys (SSE-S3)
-        /// (<code>AES256</code>) is supported.
+        /// (<c>AES256</c>) is supported.
         /// </para>
         ///  </note>
         /// </summary>
@@ -764,7 +763,7 @@ namespace Amazon.S3.Model
         /// <returns>true if Tagging is set.</returns>
         internal bool IsSetTagSet()
         {
-            return (this.tagset != null) && (this.tagset.Count > 0);
+            return this.tagset != null && (this.tagset.Count > 0 || !AWSConfigs.InitializeCollections);
         }
 
         /// <summary>

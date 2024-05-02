@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.QuickSight.Model
     public partial class UpdateDashboardLinksResponse : AmazonWebServiceResponse
     {
         private string _dashboardArn;
-        private List<string> _linkEntities = new List<string>();
+        private List<string> _linkEntities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _requestId;
         private int? _status;
 
@@ -72,7 +73,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if LinkEntities property is set
         internal bool IsSetLinkEntities()
         {
-            return this._linkEntities != null && this._linkEntities.Count > 0; 
+            return this._linkEntities != null && (this._linkEntities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ResilienceHub.Model
     public partial class ResourceErrorsDetails
     {
         private bool? _hasMoreErrors;
-        private List<ResourceError> _resourceErrors = new List<ResourceError>();
+        private List<ResourceError> _resourceErrors = AWSConfigs.InitializeCollections ? new List<ResourceError>() : null;
 
         /// <summary>
         /// Gets and sets the property HasMoreErrors. 
@@ -69,7 +70,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if ResourceErrors property is set
         internal bool IsSetResourceErrors()
         {
-            return this._resourceErrors != null && this._resourceErrors.Count > 0; 
+            return this._resourceErrors != null && (this._resourceErrors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

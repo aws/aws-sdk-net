@@ -87,7 +87,7 @@ namespace Amazon.DNXCore.IntegrationTests
             });
             Assert.NotNull(response);
             Assert.NotNull(response.QueueUrls);
-            Assert.Equal(1, response.QueueUrls.Count);
+            Assert.Single(response.QueueUrls);
             var metadata = response.ResponseMetadata;
             Assert.NotNull(metadata);
             Assert.NotNull(metadata.RequestId);
@@ -140,7 +140,7 @@ namespace Amazon.DNXCore.IntegrationTests
                     },
                 });
 
-                var count = (await Client.ReceiveMessageAsync(mainQueueURL)).Messages.Count;
+                var count = (await Client.ReceiveMessageAsync(mainQueueURL)).Messages?.Count;
 
                 await s3Client.PutObjectAsync(new PutObjectRequest {
                     ContentBody = "Hello World",
@@ -155,11 +155,14 @@ namespace Amazon.DNXCore.IntegrationTests
                 {
                     var messages = (await Client.ReceiveMessageAsync(mainQueueURL)).Messages;
 
-                    foreach (var message in messages)
+                    if ( messages != null)
                     {
-                        objectCreaedMessageReceived = message.Body.Contains("ObjectCreated:Put");
-                        if (objectCreaedMessageReceived)
-                            return;
+                        foreach (var message in messages)
+                        {
+                            objectCreaedMessageReceived = message.Body.Contains("ObjectCreated:Put");
+                            if (objectCreaedMessageReceived)
+                                return;
+                        }
                     }
 
                     UtilityMethods.Sleep(TimeSpan.FromSeconds(2));
@@ -332,7 +335,7 @@ namespace Amazon.DNXCore.IntegrationTests
                 AttributeNames = new List<string>() { SQSConstants.ATTRIBUTE_VISIBILITY_TIMEOUT }
             });
 
-            Assert.Equal(1, attrResults.Attributes.Count);
+            Assert.Single(attrResults.Attributes);
             Assert.Equal(int.Parse(defaultTimeout), int.Parse(attrResults.Attributes[SQSConstants.ATTRIBUTE_VISIBILITY_TIMEOUT]));
 
             for (int i = 0; i < 30; i++)

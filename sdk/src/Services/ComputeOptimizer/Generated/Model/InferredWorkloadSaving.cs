@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.ComputeOptimizer.Model
     public partial class InferredWorkloadSaving
     {
         private EstimatedMonthlySavings _estimatedMonthlySavings;
-        private List<string> _inferredWorkloadTypes = new List<string>();
+        private List<string> _inferredWorkloadTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property EstimatedMonthlySavings. 
@@ -116,7 +117,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if InferredWorkloadTypes property is set
         internal bool IsSetInferredWorkloadTypes()
         {
-            return this._inferredWorkloadTypes != null && this._inferredWorkloadTypes.Count > 0; 
+            return this._inferredWorkloadTypes != null && (this._inferredWorkloadTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

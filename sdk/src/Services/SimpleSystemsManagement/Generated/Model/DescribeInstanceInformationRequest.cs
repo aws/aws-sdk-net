@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -51,8 +52,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class DescribeInstanceInformationRequest : AmazonSimpleSystemsManagementRequest
     {
-        private List<InstanceInformationStringFilter> _filters = new List<InstanceInformationStringFilter>();
-        private List<InstanceInformationFilter> _instanceInformationFilterList = new List<InstanceInformationFilter>();
+        private List<InstanceInformationStringFilter> _filters = AWSConfigs.InitializeCollections ? new List<InstanceInformationStringFilter>() : null;
+        private List<InstanceInformationFilter> _instanceInformationFilterList = AWSConfigs.InitializeCollections ? new List<InstanceInformationFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -75,7 +76,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -102,7 +103,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if InstanceInformationFilterList property is set
         internal bool IsSetInstanceInformationFilterList()
         {
-            return this._instanceInformationFilterList != null && this._instanceInformationFilterList.Count > 0; 
+            return this._instanceInformationFilterList != null && (this._instanceInformationFilterList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

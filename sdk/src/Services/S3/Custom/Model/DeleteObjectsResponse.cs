@@ -31,8 +31,8 @@ namespace Amazon.S3.Model
 #endif
 
     {
-        private List<DeletedObject> deleted = new List<DeletedObject>();
-        private List<DeleteError> errors = new List<DeleteError>();
+        private List<DeletedObject> deleted = AWSConfigs.InitializeCollections ? new List<DeletedObject>() : null;
+        private List<DeleteError> errors = AWSConfigs.InitializeCollections ? new List<DeleteError>() : null;
         private RequestCharged requestCharged;
 
         /// <summary>
@@ -56,7 +56,7 @@ namespace Amazon.S3.Model
         // Check to see if Deleted property is set
         internal bool IsSetDeletedObjects()
         {
-            return this.deleted.Count > 0;
+            return this.deleted != null && (this.deleted.Count > 0 || !AWSConfigs.InitializeCollections);
         }
 
         /// <summary>
@@ -72,7 +72,7 @@ namespace Amazon.S3.Model
         // Check to see if DeleteErrors property is set
         internal bool IsSetDeleteErrors()
         {
-            return this.errors.Count > 0;
+            return this.errors != null && (this.errors.Count > 0 || !AWSConfigs.InitializeCollections);
         }
 
         /// <summary>

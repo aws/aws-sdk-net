@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ConfigService.Model
         /// Enumerable containing all of the AggregatedSourceStatusList
         /// </summary>
         public IPaginatedEnumerable<AggregatedSourceStatus> AggregatedSourceStatusList => 
-            new PaginatedResultKeyResponse<DescribeConfigurationAggregatorSourcesStatusResponse, AggregatedSourceStatus>(this, (i) => i.AggregatedSourceStatusList);
+            new PaginatedResultKeyResponse<DescribeConfigurationAggregatorSourcesStatusResponse, AggregatedSourceStatus>(this, (i) => i.AggregatedSourceStatusList ?? new List<AggregatedSourceStatus>());
 
         internal DescribeConfigurationAggregatorSourcesStatusPaginator(IAmazonConfigService client, DescribeConfigurationAggregatorSourcesStatusRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ConfigService.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeConfigurationAggregatorSourcesStatusResponse> IPaginator<DescribeConfigurationAggregatorSourcesStatusResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeConfigurationAggregatorSourcesStatusResponse> IPaginator<DescribeConfigurationAggregatorSourcesStatusResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

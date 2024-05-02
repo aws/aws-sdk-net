@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.CodeBuild.Model
     /// </summary>
     public partial class BatchGetFleetsResponse : AmazonWebServiceResponse
     {
-        private List<Fleet> _fleets = new List<Fleet>();
-        private List<string> _fleetsNotFound = new List<string>();
+        private List<Fleet> _fleets = AWSConfigs.InitializeCollections ? new List<Fleet>() : null;
+        private List<string> _fleetsNotFound = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Fleets. 
@@ -52,7 +53,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if Fleets property is set
         internal bool IsSetFleets()
         {
-            return this._fleets != null && this._fleets.Count > 0; 
+            return this._fleets != null && (this._fleets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if FleetsNotFound property is set
         internal bool IsSetFleetsNotFound()
         {
-            return this._fleetsNotFound != null && this._fleetsNotFound.Count > 0; 
+            return this._fleetsNotFound != null && (this._fleetsNotFound.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

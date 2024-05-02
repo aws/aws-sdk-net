@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CloudWatchEvents.Model
     /// </summary>
     public partial class RemoveTargetsResponse : AmazonWebServiceResponse
     {
-        private List<RemoveTargetsResultEntry> _failedEntries = new List<RemoveTargetsResultEntry>();
+        private List<RemoveTargetsResultEntry> _failedEntries = AWSConfigs.InitializeCollections ? new List<RemoveTargetsResultEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property FailedEntries. 
@@ -50,7 +51,7 @@ namespace Amazon.CloudWatchEvents.Model
         // Check to see if FailedEntries property is set
         internal bool IsSetFailedEntries()
         {
-            return this._failedEntries != null && this._failedEntries.Count > 0; 
+            return this._failedEntries != null && (this._failedEntries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

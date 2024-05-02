@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EKS.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EKS.Model
     /// </summary>
     public partial class ListInsightsResponse : AmazonWebServiceResponse
     {
-        private List<InsightSummary> _insights = new List<InsightSummary>();
+        private List<InsightSummary> _insights = AWSConfigs.InitializeCollections ? new List<InsightSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.EKS.Model
         // Check to see if Insights property is set
         internal bool IsSetInsights()
         {
-            return this._insights != null && this._insights.Count > 0; 
+            return this._insights != null && (this._insights.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

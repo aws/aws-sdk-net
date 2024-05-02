@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
@@ -48,7 +49,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     {
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _optOutListNames = new List<string>();
+        private List<string> _optOutListNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -106,7 +107,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if OptOutListNames property is set
         internal bool IsSetOptOutListNames()
         {
-            return this._optOutListNames != null && this._optOutListNames.Count > 0; 
+            return this._optOutListNames != null && (this._optOutListNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

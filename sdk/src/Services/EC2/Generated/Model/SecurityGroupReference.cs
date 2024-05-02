@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -75,12 +76,13 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TransitGatewayId. 
+        /// Gets and sets the property TransitGatewayId. <note> 
         /// <para>
-        /// The ID of the transit gateway (if applicable). For more information about security
-        /// group referencing for transit gateways, see <a href="https://docs.aws.amazon.com/tgw/tgw-vpc-attachments.html#create-vpc-attachment">Create
-        /// a transit gateway attachment to a VPC</a> in the <i>Amazon Web Services Transit Gateway
-        /// Guide</i>.
+        /// This parameter is in preview and may not be available for your account.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// The ID of the transit gateway (if applicable).
         /// </para>
         /// </summary>
         public string TransitGatewayId
@@ -99,7 +101,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property VpcPeeringConnectionId. 
         /// <para>
         /// The ID of the VPC peering connection (if applicable). For more information about security
-        /// group referencing for peering connections, see <a href="https://docs.aws.amazon.com/peering/vpc-peering-security-groups.html">Update
+        /// group referencing for peering connections, see <a href="https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-security-groups.html">Update
         /// your security groups to reference peer security groups</a> in the <i>VPC Peering Guide</i>.
         /// </para>
         /// </summary>

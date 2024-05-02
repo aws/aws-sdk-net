@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.CodeDeploy.Model
         private string _instanceId;
         private InstanceType _instanceType;
         private DateTime? _lastUpdatedAt;
-        private List<LifecycleEvent> _lifecycleEvents = new List<LifecycleEvent>();
+        private List<LifecycleEvent> _lifecycleEvents = AWSConfigs.InitializeCollections ? new List<LifecycleEvent>() : null;
         private InstanceStatus _status;
 
         /// <summary>
@@ -137,7 +138,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if LifecycleEvents property is set
         internal bool IsSetLifecycleEvents()
         {
-            return this._lifecycleEvents != null && this._lifecycleEvents.Count > 0; 
+            return this._lifecycleEvents != null && (this._lifecycleEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

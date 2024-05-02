@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.WorkSpaces.Model
     public partial class DescribeWorkspaceImagePermissionsResponse : AmazonWebServiceResponse
     {
         private string _imageId;
-        private List<ImagePermission> _imagePermissions = new List<ImagePermission>();
+        private List<ImagePermission> _imagePermissions = AWSConfigs.InitializeCollections ? new List<ImagePermission>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if ImagePermissions property is set
         internal bool IsSetImagePermissions()
         {
-            return this._imagePermissions != null && this._imagePermissions.Count > 0; 
+            return this._imagePermissions != null && (this._imagePermissions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

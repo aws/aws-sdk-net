@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
@@ -37,10 +38,10 @@ namespace Amazon.MediaConnect.Model
         private AddEgressGatewayBridgeRequest _egressGatewayBridge;
         private AddIngressGatewayBridgeRequest _ingressGatewayBridge;
         private string _name;
-        private List<AddBridgeOutputRequest> _outputs = new List<AddBridgeOutputRequest>();
+        private List<AddBridgeOutputRequest> _outputs = AWSConfigs.InitializeCollections ? new List<AddBridgeOutputRequest>() : null;
         private string _placementArn;
         private FailoverConfig _sourceFailoverConfig;
-        private List<AddBridgeSourceRequest> _sources = new List<AddBridgeSourceRequest>();
+        private List<AddBridgeSourceRequest> _sources = AWSConfigs.InitializeCollections ? new List<AddBridgeSourceRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property EgressGatewayBridge. Create a bridge with the egress bridge
@@ -105,7 +106,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if Outputs property is set
         internal bool IsSetOutputs()
         {
-            return this._outputs != null && this._outputs.Count > 0; 
+            return this._outputs != null && (this._outputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -153,7 +154,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if Sources property is set
         internal bool IsSetSources()
         {
-            return this._sources != null && this._sources.Count > 0; 
+            return this._sources != null && (this._sources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

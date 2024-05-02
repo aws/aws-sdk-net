@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Inspector.Model
     #endif
     public partial class AssessmentRunInProgressException : AmazonInspectorException
     {
-        private List<string> _assessmentRunArns = new List<string>();
+        private List<string> _assessmentRunArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _assessmentRunArnsTruncated;
         private bool? _canRetry;
 
@@ -140,7 +141,7 @@ namespace Amazon.Inspector.Model
         // Check to see if AssessmentRunArns property is set
         internal bool IsSetAssessmentRunArns()
         {
-            return this._assessmentRunArns != null && this._assessmentRunArns.Count > 0; 
+            return this._assessmentRunArns != null && (this._assessmentRunArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

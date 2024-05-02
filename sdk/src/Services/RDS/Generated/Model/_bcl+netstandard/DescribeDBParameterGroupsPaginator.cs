@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.RDS.Model
         /// Enumerable containing all of the DBParameterGroups
         /// </summary>
         public IPaginatedEnumerable<DBParameterGroup> DBParameterGroups => 
-            new PaginatedResultKeyResponse<DescribeDBParameterGroupsResponse, DBParameterGroup>(this, (i) => i.DBParameterGroups);
+            new PaginatedResultKeyResponse<DescribeDBParameterGroupsResponse, DBParameterGroup>(this, (i) => i.DBParameterGroups ?? new List<DBParameterGroup>());
 
         internal DescribeDBParameterGroupsPaginator(IAmazonRDS client, DescribeDBParameterGroupsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.RDS.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeDBParameterGroupsResponse> IPaginator<DescribeDBParameterGroupsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeDBParameterGroupsResponse> IPaginator<DescribeDBParameterGroupsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

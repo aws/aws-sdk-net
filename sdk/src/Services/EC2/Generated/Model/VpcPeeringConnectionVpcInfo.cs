@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.EC2.Model
     public partial class VpcPeeringConnectionVpcInfo
     {
         private string _cidrBlock;
-        private List<CidrBlock> _cidrBlockSet = new List<CidrBlock>();
-        private List<Ipv6CidrBlock> _ipv6CidrBlockSet = new List<Ipv6CidrBlock>();
+        private List<CidrBlock> _cidrBlockSet = AWSConfigs.InitializeCollections ? new List<CidrBlock>() : null;
+        private List<Ipv6CidrBlock> _ipv6CidrBlockSet = AWSConfigs.InitializeCollections ? new List<Ipv6CidrBlock>() : null;
         private string _ownerId;
         private VpcPeeringConnectionOptionsDescription _peeringOptions;
         private string _region;
@@ -74,7 +75,7 @@ namespace Amazon.EC2.Model
         // Check to see if CidrBlockSet property is set
         internal bool IsSetCidrBlockSet()
         {
-            return this._cidrBlockSet != null && this._cidrBlockSet.Count > 0; 
+            return this._cidrBlockSet != null && (this._cidrBlockSet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.EC2.Model
         // Check to see if Ipv6CidrBlockSet property is set
         internal bool IsSetIpv6CidrBlockSet()
         {
-            return this._ipv6CidrBlockSet != null && this._ipv6CidrBlockSet.Count > 0; 
+            return this._ipv6CidrBlockSet != null && (this._ipv6CidrBlockSet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

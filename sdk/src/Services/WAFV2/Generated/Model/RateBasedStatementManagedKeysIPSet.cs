@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.WAFV2.Model
     /// </summary>
     public partial class RateBasedStatementManagedKeysIPSet
     {
-        private List<string> _addresses = new List<string>();
+        private List<string> _addresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private IPAddressVersion _ipAddressVersion;
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if Addresses property is set
         internal bool IsSetAddresses()
         {
-            return this._addresses != null && this._addresses.Count > 0; 
+            return this._addresses != null && (this._addresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

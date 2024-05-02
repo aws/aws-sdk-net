@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.MediaConvert.Model
         /// Enumerable containing all of the JobTemplates
         /// </summary>
         public IPaginatedEnumerable<JobTemplate> JobTemplates => 
-            new PaginatedResultKeyResponse<ListJobTemplatesResponse, JobTemplate>(this, (i) => i.JobTemplates);
+            new PaginatedResultKeyResponse<ListJobTemplatesResponse, JobTemplate>(this, (i) => i.JobTemplates ?? new List<JobTemplate>());
 
         internal ListJobTemplatesPaginator(IAmazonMediaConvert client, ListJobTemplatesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.MediaConvert.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListJobTemplatesResponse> IPaginator<ListJobTemplatesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListJobTemplatesResponse> IPaginator<ListJobTemplatesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

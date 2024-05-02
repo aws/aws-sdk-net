@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -77,7 +78,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     ///  
     /// <para>
     /// For more information about using tags with Amazon Elastic Compute Cloud (Amazon EC2)
-    /// instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
+    /// instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag
     /// your Amazon EC2 resources</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     /// </summary>
@@ -85,7 +86,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
         private string _resourceId;
         private ResourceTypeForTagging _resourceType;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceId. 
@@ -193,7 +194,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

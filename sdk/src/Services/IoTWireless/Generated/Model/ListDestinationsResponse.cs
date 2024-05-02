@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoTWireless.Model
     /// </summary>
     public partial class ListDestinationsResponse : AmazonWebServiceResponse
     {
-        private List<Destinations> _destinationList = new List<Destinations>();
+        private List<Destinations> _destinationList = AWSConfigs.InitializeCollections ? new List<Destinations>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if DestinationList property is set
         internal bool IsSetDestinationList()
         {
-            return this._destinationList != null && this._destinationList.Count > 0; 
+            return this._destinationList != null && (this._destinationList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

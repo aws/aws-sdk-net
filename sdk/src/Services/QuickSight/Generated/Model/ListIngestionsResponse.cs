@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class ListIngestionsResponse : AmazonWebServiceResponse
     {
-        private List<Ingestion> _ingestions = new List<Ingestion>();
+        private List<Ingestion> _ingestions = AWSConfigs.InitializeCollections ? new List<Ingestion>() : null;
         private string _nextToken;
         private string _requestId;
         private int? _status;
@@ -53,7 +54,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Ingestions property is set
         internal bool IsSetIngestions()
         {
-            return this._ingestions != null && this._ingestions.Count > 0; 
+            return this._ingestions != null && (this._ingestions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

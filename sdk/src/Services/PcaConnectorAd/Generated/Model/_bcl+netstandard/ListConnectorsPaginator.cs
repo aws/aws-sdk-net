@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.PcaConnectorAd.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.PcaConnectorAd.Model
         /// Enumerable containing all of the Connectors
         /// </summary>
         public IPaginatedEnumerable<ConnectorSummary> Connectors => 
-            new PaginatedResultKeyResponse<ListConnectorsResponse, ConnectorSummary>(this, (i) => i.Connectors);
+            new PaginatedResultKeyResponse<ListConnectorsResponse, ConnectorSummary>(this, (i) => i.Connectors ?? new List<ConnectorSummary>());
 
         internal ListConnectorsPaginator(IAmazonPcaConnectorAd client, ListConnectorsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.PcaConnectorAd.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListConnectorsResponse> IPaginator<ListConnectorsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListConnectorsResponse> IPaginator<ListConnectorsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

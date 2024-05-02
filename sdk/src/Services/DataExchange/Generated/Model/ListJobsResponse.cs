@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataExchange.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DataExchange.Model
     /// </summary>
     public partial class ListJobsResponse : AmazonWebServiceResponse
     {
-        private List<JobEntry> _jobs = new List<JobEntry>();
+        private List<JobEntry> _jobs = AWSConfigs.InitializeCollections ? new List<JobEntry>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.DataExchange.Model
         // Check to see if Jobs property is set
         internal bool IsSetJobs()
         {
-            return this._jobs != null && this._jobs.Count > 0; 
+            return this._jobs != null && (this._jobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

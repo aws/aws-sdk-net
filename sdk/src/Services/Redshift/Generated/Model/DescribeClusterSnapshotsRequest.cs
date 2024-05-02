@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -61,10 +62,10 @@ namespace Amazon.Redshift.Model
         private string _snapshotArn;
         private string _snapshotIdentifier;
         private string _snapshotType;
-        private List<SnapshotSortingEntity> _sortingEntities = new List<SnapshotSortingEntity>();
+        private List<SnapshotSortingEntity> _sortingEntities = AWSConfigs.InitializeCollections ? new List<SnapshotSortingEntity>() : null;
         private DateTime? _startTimeUtc;
-        private List<string> _tagKeys = new List<string>();
-        private List<string> _tagValues = new List<string>();
+        private List<string> _tagKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _tagValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ClusterExists. 
@@ -301,7 +302,7 @@ namespace Amazon.Redshift.Model
         // Check to see if SortingEntities property is set
         internal bool IsSetSortingEntities()
         {
-            return this._sortingEntities != null && this._sortingEntities.Count > 0; 
+            return this._sortingEntities != null && (this._sortingEntities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -347,7 +348,7 @@ namespace Amazon.Redshift.Model
         // Check to see if TagKeys property is set
         internal bool IsSetTagKeys()
         {
-            return this._tagKeys != null && this._tagKeys.Count > 0; 
+            return this._tagKeys != null && (this._tagKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -370,7 +371,7 @@ namespace Amazon.Redshift.Model
         // Check to see if TagValues property is set
         internal bool IsSetTagValues()
         {
-            return this._tagValues != null && this._tagValues.Count > 0; 
+            return this._tagValues != null && (this._tagValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
 #region Backwards compatible properties

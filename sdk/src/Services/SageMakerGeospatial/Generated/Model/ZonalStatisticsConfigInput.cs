@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.SageMakerGeospatial.Model
     /// </summary>
     public partial class ZonalStatisticsConfigInput
     {
-        private List<string> _statistics = new List<string>();
-        private List<string> _targetBands = new List<string>();
+        private List<string> _statistics = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _targetBands = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _zoneS3Path;
         private string _zoneS3PathKmsKeyId;
 
@@ -54,7 +55,7 @@ namespace Amazon.SageMakerGeospatial.Model
         // Check to see if Statistics property is set
         internal bool IsSetStatistics()
         {
-            return this._statistics != null && this._statistics.Count > 0; 
+            return this._statistics != null && (this._statistics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.SageMakerGeospatial.Model
         // Check to see if TargetBands property is set
         internal bool IsSetTargetBands()
         {
-            return this._targetBands != null && this._targetBands.Count > 0; 
+            return this._targetBands != null && (this._targetBands.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

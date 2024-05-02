@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class RegisterDBProxyTargetsResponse : AmazonWebServiceResponse
     {
-        private List<DBProxyTarget> _dbProxyTargets = new List<DBProxyTarget>();
+        private List<DBProxyTarget> _dbProxyTargets = AWSConfigs.InitializeCollections ? new List<DBProxyTarget>() : null;
 
         /// <summary>
         /// Gets and sets the property DBProxyTargets. 
@@ -51,7 +52,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBProxyTargets property is set
         internal bool IsSetDBProxyTargets()
         {
-            return this._dbProxyTargets != null && this._dbProxyTargets.Count > 0; 
+            return this._dbProxyTargets != null && (this._dbProxyTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

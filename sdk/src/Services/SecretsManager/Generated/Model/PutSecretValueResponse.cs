@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecretsManager.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.SecretsManager.Model
         private string _arn;
         private string _name;
         private string _versionId;
-        private List<string> _versionStages = new List<string>();
+        private List<string> _versionStages = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ARN. 
@@ -113,7 +114,7 @@ namespace Amazon.SecretsManager.Model
         // Check to see if VersionStages property is set
         internal bool IsSetVersionStages()
         {
-            return this._versionStages != null && this._versionStages.Count > 0; 
+            return this._versionStages != null && (this._versionStages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

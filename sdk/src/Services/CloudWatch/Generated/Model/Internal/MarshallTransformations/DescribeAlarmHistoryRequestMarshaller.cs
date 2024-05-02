@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetEndDateUtc())
                 {
-                    request.Parameters.Add("EndDate", StringUtils.FromDateTimeToISO8601(publicRequest.EndDateUtc));
+                    request.Parameters.Add("EndDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndDateUtc));
                 }
                 if(publicRequest.IsSetHistoryItemType())
                 {
@@ -93,7 +94,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                 }
                 if(publicRequest.IsSetStartDateUtc())
                 {
-                    request.Parameters.Add("StartDate", StringUtils.FromDateTimeToISO8601(publicRequest.StartDateUtc));
+                    request.Parameters.Add("StartDate", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartDateUtc));
                 }
             }
             return request;

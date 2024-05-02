@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class DifferentialPrivacyPrivacyBudget
     {
-        private List<DifferentialPrivacyPrivacyBudgetAggregation> _aggregations = new List<DifferentialPrivacyPrivacyBudgetAggregation>();
+        private List<DifferentialPrivacyPrivacyBudgetAggregation> _aggregations = AWSConfigs.InitializeCollections ? new List<DifferentialPrivacyPrivacyBudgetAggregation>() : null;
         private int? _epsilon;
 
         /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if Aggregations property is set
         internal bool IsSetAggregations()
         {
-            return this._aggregations != null && this._aggregations.Count > 0; 
+            return this._aggregations != null && (this._aggregations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

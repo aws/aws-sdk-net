@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.GuardDuty.Model
         private bool? _autoEnable;
         private AutoEnableMembers _autoEnableOrganizationMembers;
         private OrganizationDataSourceConfigurationsResult _dataSources;
-        private List<OrganizationFeatureConfigurationResult> _features = new List<OrganizationFeatureConfigurationResult>();
+        private List<OrganizationFeatureConfigurationResult> _features = AWSConfigs.InitializeCollections ? new List<OrganizationFeatureConfigurationResult>() : null;
         private bool? _memberAccountLimitReached;
         private string _nextToken;
 
@@ -67,25 +68,34 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property AutoEnableOrganizationMembers. 
         /// <para>
-        /// Indicates the auto-enablement configuration of GuardDuty for the member accounts in
-        /// the organization.
+        /// Indicates the auto-enablement configuration of GuardDuty or any of the corresponding
+        /// protection plans for the member accounts in the organization.
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <c>NEW</c>: Indicates that when a new account joins the organization, they will have
-        /// GuardDuty enabled automatically. 
+        /// GuardDuty or any of the corresponding protection plans enabled automatically. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ALL</c>: Indicates that all accounts in the organization have GuardDuty enabled
-        /// automatically. This includes <c>NEW</c> accounts that join the organization and accounts
-        /// that may have been suspended or removed from the organization in GuardDuty.
+        ///  <c>ALL</c>: Indicates that all accounts in the organization have GuardDuty and any
+        /// of the corresponding protection plans enabled automatically. This includes <c>NEW</c>
+        /// accounts that join the organization and accounts that may have been suspended or removed
+        /// from the organization in GuardDuty.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>NONE</c>: Indicates that GuardDuty will not be automatically enabled for any account
-        /// in the organization. The administrator must manage GuardDuty for each account in the
-        /// organization individually.
+        ///  <c>NONE</c>: Indicates that GuardDuty or any of the corresponding protection plans
+        /// will not be automatically enabled for any account in the organization. The administrator
+        /// must manage GuardDuty for each account in the organization individually.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you update the auto-enable setting from <c>ALL</c> or <c>NEW</c> to <c>NONE</c>,
+        /// this action doesn't disable the corresponding option for your existing accounts. This
+        /// configuration will apply to the new accounts that join the organization. After you
+        /// update the auto-enable settings, no new account will have the corresponding option
+        /// as enabled.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -135,7 +145,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if Features property is set
         internal bool IsSetFeatures()
         {
-            return this._features != null && this._features.Count > 0; 
+            return this._features != null && (this._features.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

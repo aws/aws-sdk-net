@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// </summary>
     public partial class CreateLoadBalancerListenersRequest : AmazonElasticLoadBalancingRequest
     {
-        private List<Listener> _listeners = new List<Listener>();
+        private List<Listener> _listeners = AWSConfigs.InitializeCollections ? new List<Listener>() : null;
         private string _loadBalancerName;
 
         /// <summary>
@@ -77,7 +78,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if Listeners property is set
         internal bool IsSetListeners()
         {
-            return this._listeners != null && this._listeners.Count > 0; 
+            return this._listeners != null && (this._listeners.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

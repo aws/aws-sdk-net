@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Transfer.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.Transfer.Model
         private string _description;
         private DateTime? _inactiveDate;
         private string _privateKey;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private CertificateUsageType _usage;
 
         /// <summary>
@@ -188,7 +189,7 @@ namespace Amazon.Transfer.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

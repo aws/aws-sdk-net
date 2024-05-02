@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ResilienceHub.Model
     /// </summary>
     public partial class ListAppAssessmentComplianceDriftsResponse : AmazonWebServiceResponse
     {
-        private List<ComplianceDrift> _complianceDrifts = new List<ComplianceDrift>();
+        private List<ComplianceDrift> _complianceDrifts = AWSConfigs.InitializeCollections ? new List<ComplianceDrift>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if ComplianceDrifts property is set
         internal bool IsSetComplianceDrifts()
         {
-            return this._complianceDrifts != null && this._complianceDrifts.Count > 0; 
+            return this._complianceDrifts != null && (this._complianceDrifts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DatabaseMigrationService.Model
     /// </summary>
     public partial class DeleteFleetAdvisorDatabasesResponse : AmazonWebServiceResponse
     {
-        private List<string> _databaseIds = new List<string>();
+        private List<string> _databaseIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DatabaseIds. 
@@ -50,7 +51,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if DatabaseIds property is set
         internal bool IsSetDatabaseIds()
         {
-            return this._databaseIds != null && this._databaseIds.Count > 0; 
+            return this._databaseIds != null && (this._databaseIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

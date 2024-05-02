@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.ComputeOptimizer.Model
     /// </summary>
     public partial class GetAutoScalingGroupRecommendationsResponse : AmazonWebServiceResponse
     {
-        private List<AutoScalingGroupRecommendation> _autoScalingGroupRecommendations = new List<AutoScalingGroupRecommendation>();
-        private List<GetRecommendationError> _errors = new List<GetRecommendationError>();
+        private List<AutoScalingGroupRecommendation> _autoScalingGroupRecommendations = AWSConfigs.InitializeCollections ? new List<AutoScalingGroupRecommendation>() : null;
+        private List<GetRecommendationError> _errors = AWSConfigs.InitializeCollections ? new List<GetRecommendationError>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if AutoScalingGroupRecommendations property is set
         internal bool IsSetAutoScalingGroupRecommendations()
         {
-            return this._autoScalingGroupRecommendations != null && this._autoScalingGroupRecommendations.Count > 0; 
+            return this._autoScalingGroupRecommendations != null && (this._autoScalingGroupRecommendations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

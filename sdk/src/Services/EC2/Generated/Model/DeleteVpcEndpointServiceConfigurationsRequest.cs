@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DeleteVpcEndpointServiceConfigurationsRequest : AmazonEC2Request
     {
-        private List<string> _serviceIds = new List<string>();
+        private List<string> _serviceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ServiceIds. 
@@ -54,7 +55,7 @@ namespace Amazon.EC2.Model
         // Check to see if ServiceIds property is set
         internal bool IsSetServiceIds()
         {
-            return this._serviceIds != null && this._serviceIds.Count > 0; 
+            return this._serviceIds != null && (this._serviceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

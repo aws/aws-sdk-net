@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaPackage.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MediaPackage.Model
     /// </summary>
     public partial class ListHarvestJobsResponse : AmazonWebServiceResponse
     {
-        private List<HarvestJob> _harvestJobs = new List<HarvestJob>();
+        private List<HarvestJob> _harvestJobs = AWSConfigs.InitializeCollections ? new List<HarvestJob>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -48,7 +49,7 @@ namespace Amazon.MediaPackage.Model
         // Check to see if HarvestJobs property is set
         internal bool IsSetHarvestJobs()
         {
-            return this._harvestJobs != null && this._harvestJobs.Count > 0; 
+            return this._harvestJobs != null && (this._harvestJobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

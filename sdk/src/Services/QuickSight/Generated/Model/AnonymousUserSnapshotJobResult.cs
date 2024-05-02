@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class AnonymousUserSnapshotJobResult
     {
-        private List<SnapshotJobResultFileGroup> _fileGroups = new List<SnapshotJobResultFileGroup>();
+        private List<SnapshotJobResultFileGroup> _fileGroups = AWSConfigs.InitializeCollections ? new List<SnapshotJobResultFileGroup>() : null;
 
         /// <summary>
         /// Gets and sets the property FileGroups. 
@@ -55,7 +56,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if FileGroups property is set
         internal bool IsSetFileGroups()
         {
-            return this._fileGroups != null && this._fileGroups.Count > 0; 
+            return this._fileGroups != null && (this._fileGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

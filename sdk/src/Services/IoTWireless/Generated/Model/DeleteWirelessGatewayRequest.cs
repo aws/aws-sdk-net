@@ -26,11 +26,33 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteWirelessGateway operation.
     /// Deletes a wireless gateway.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// When deleting a wireless gateway, you might run into duplication errors for the following
+    /// reasons.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// If you specify a <c>GatewayEui</c> value that already exists.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If you used a <c>ClientRequestToken</c> with the same parameters within the last 10
+    /// minutes.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// To avoid this error, make sure that you use unique identifiers and parameters for
+    /// each request within the specified time period.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DeleteWirelessGatewayRequest : AmazonIoTWirelessRequest
     {

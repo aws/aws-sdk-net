@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
@@ -54,8 +55,8 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _environmentId;
         private string _environmentName;
         private string _groupName;
-        private List<ConfigurationOptionSetting> _optionSettings = new List<ConfigurationOptionSetting>();
-        private List<OptionSpecification> _optionsToRemove = new List<OptionSpecification>();
+        private List<ConfigurationOptionSetting> _optionSettings = AWSConfigs.InitializeCollections ? new List<ConfigurationOptionSetting>() : null;
+        private List<OptionSpecification> _optionsToRemove = AWSConfigs.InitializeCollections ? new List<OptionSpecification>() : null;
         private string _platformArn;
         private string _solutionStackName;
         private string _templateName;
@@ -200,7 +201,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if OptionSettings property is set
         internal bool IsSetOptionSettings()
         {
-            return this._optionSettings != null && this._optionSettings.Count > 0; 
+            return this._optionSettings != null && (this._optionSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -219,7 +220,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if OptionsToRemove property is set
         internal bool IsSetOptionsToRemove()
         {
-            return this._optionsToRemove != null && this._optionsToRemove.Count > 0; 
+            return this._optionsToRemove != null && (this._optionsToRemove.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.ResilienceHub.Model
     /// </summary>
     public partial class UpdateAppVersionAppComponentRequest : AmazonResilienceHubRequest
     {
-        private Dictionary<string, List<string>> _additionalInfo = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _additionalInfo = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private string _appArn;
         private string _id;
         private string _name;
@@ -63,7 +64,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if AdditionalInfo property is set
         internal bool IsSetAdditionalInfo()
         {
-            return this._additionalInfo != null && this._additionalInfo.Count > 0; 
+            return this._additionalInfo != null && (this._additionalInfo.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

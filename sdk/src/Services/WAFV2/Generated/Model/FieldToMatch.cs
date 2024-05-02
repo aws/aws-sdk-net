@@ -26,15 +26,21 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// The part of the web request that you want WAF to inspect. Include the single <c>FieldToMatch</c>
-    /// type that you want to inspect, with additional specifications as needed, according
-    /// to the type. You specify a single request component in <c>FieldToMatch</c> for each
-    /// rule statement that requires it. To inspect more than one component of the web request,
-    /// create a separate rule statement for each component.
+    /// Specifies a web request component to be used in a rule match statement or in a logging
+    /// configuration. 
     /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// In a rule statement, this is the part of the web request that you want WAF to inspect.
+    /// Include the single <c>FieldToMatch</c> type that you want to inspect, with additional
+    /// specifications as needed, according to the type. You specify a single request component
+    /// in <c>FieldToMatch</c> for each rule statement that requires it. To inspect more than
+    /// one component of the web request, create a separate rule statement for each component.
+    /// </para>
     ///  
     /// <para>
     /// Example JSON for a <c>QueryString</c> field to match: 
@@ -51,6 +57,25 @@ namespace Amazon.WAFV2.Model
     /// <para>
     ///  <c> "FieldToMatch": { "Method": { "Name": "DELETE" } }</c> 
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// In a logging configuration, this is used in the <c>RedactedFields</c> property to
+    /// specify a field to redact from the logging records. For this use case, note the following:
+    /// 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Even though all <c>FieldToMatch</c> settings are available, the only valid settings
+    /// for field redaction are <c>UriPath</c>, <c>QueryString</c>, <c>SingleHeader</c>, and
+    /// <c>Method</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// In this documentation, the descriptions of the individual fields talk about specifying
+    /// the web request component to inspect, but for field redaction, you are specifying
+    /// the component type to redact from the logs. 
+    /// </para>
+    ///  </li> </ul> </li> </ul>
     /// </summary>
     public partial class FieldToMatch
     {
@@ -95,13 +120,22 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// A limited amount of the request body is forwarded to WAF for inspection by the underlying
-        /// host service. For regional resources, the limit is 8 KB (8,192 bytes) and for CloudFront
-        /// distributions, the limit is 16 KB (16,384 bytes). For CloudFront distributions, you
-        /// can increase the limit in the web ACL's <c>AssociationConfig</c>, for additional processing
-        /// fees. 
+        /// WAF does not support inspecting the entire contents of the web request body if the
+        /// body exceeds the limit for the resource type. When a web request body is larger than
+        /// the limit, the underlying host service only forwards the contents that are within
+        /// the limit to WAF for inspection. 
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        /// For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the
+        /// default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource
+        /// type in the web ACL <c>AssociationConfig</c>, for additional processing fees. 
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// For information about how to handle oversized request bodies, see the <c>Body</c>
         /// object configuration. 
@@ -245,13 +279,22 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// A limited amount of the request body is forwarded to WAF for inspection by the underlying
-        /// host service. For regional resources, the limit is 8 KB (8,192 bytes) and for CloudFront
-        /// distributions, the limit is 16 KB (16,384 bytes). For CloudFront distributions, you
-        /// can increase the limit in the web ACL's <c>AssociationConfig</c>, for additional processing
-        /// fees. 
+        /// WAF does not support inspecting the entire contents of the web request body if the
+        /// body exceeds the limit for the resource type. When a web request body is larger than
+        /// the limit, the underlying host service only forwards the contents that are within
+        /// the limit to WAF for inspection. 
         /// </para>
-        ///  
+        ///  <ul> <li> 
+        /// <para>
+        /// For Application Load Balancer and AppSync, the limit is fixed at 8 KB (8,192 bytes).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For CloudFront, API Gateway, Amazon Cognito, App Runner, and Verified Access, the
+        /// default limit is 16 KB (16,384 bytes), and you can increase the limit for each resource
+        /// type in the web ACL <c>AssociationConfig</c>, for additional processing fees. 
+        /// </para>
+        ///  </li> </ul> 
         /// <para>
         /// For information about how to handle oversized request bodies, see the <c>JsonBody</c>
         /// object configuration. 

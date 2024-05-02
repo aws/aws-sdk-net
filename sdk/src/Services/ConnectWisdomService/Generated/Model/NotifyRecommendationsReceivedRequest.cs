@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConnectWisdomService.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.ConnectWisdomService.Model
     public partial class NotifyRecommendationsReceivedRequest : AmazonConnectWisdomServiceRequest
     {
         private string _assistantId;
-        private List<string> _recommendationIds = new List<string>();
+        private List<string> _recommendationIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _sessionId;
 
         /// <summary>
@@ -77,7 +78,7 @@ namespace Amazon.ConnectWisdomService.Model
         // Check to see if RecommendationIds property is set
         internal bool IsSetRecommendationIds()
         {
-            return this._recommendationIds != null && this._recommendationIds.Count > 0; 
+            return this._recommendationIds != null && (this._recommendationIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -49,7 +50,7 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class BatchGetDocumentStatusRequest : AmazonKendraRequest
     {
-        private List<DocumentInfo> _documentInfoList = new List<DocumentInfo>();
+        private List<DocumentInfo> _documentInfoList = AWSConfigs.InitializeCollections ? new List<DocumentInfo>() : null;
         private string _indexId;
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.Kendra.Model
         // Check to see if DocumentInfoList property is set
         internal bool IsSetDocumentInfoList()
         {
-            return this._documentInfoList != null && this._documentInfoList.Count > 0; 
+            return this._documentInfoList != null && (this._documentInfoList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

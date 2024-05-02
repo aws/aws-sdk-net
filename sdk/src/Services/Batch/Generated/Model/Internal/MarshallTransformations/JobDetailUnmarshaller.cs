@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -91,6 +92,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<JobDependency, JobDependencyUnmarshaller>(JobDependencyUnmarshaller.Instance);
                     unmarshalledObject.DependsOn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ecsProperties", targetDepth))
+                {
+                    var unmarshaller = EcsPropertiesDetailUnmarshaller.Instance;
+                    unmarshalledObject.EcsProperties = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("eksAttempts", targetDepth))

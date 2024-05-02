@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AutoScalingPlans.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AutoScalingPlans.Model
     /// </summary>
     public partial class GetScalingPlanResourceForecastDataResponse : AmazonWebServiceResponse
     {
-        private List<Datapoint> _datapoints = new List<Datapoint>();
+        private List<Datapoint> _datapoints = AWSConfigs.InitializeCollections ? new List<Datapoint>() : null;
 
         /// <summary>
         /// Gets and sets the property Datapoints. 
@@ -51,7 +52,7 @@ namespace Amazon.AutoScalingPlans.Model
         // Check to see if Datapoints property is set
         internal bool IsSetDatapoints()
         {
-            return this._datapoints != null && this._datapoints.Count > 0; 
+            return this._datapoints != null && (this._datapoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

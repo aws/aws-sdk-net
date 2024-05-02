@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.EC2.Model
     public partial class RegisterInstanceTagAttributeRequest
     {
         private bool? _includeAllTagsOfInstance;
-        private List<string> _instanceTagKeys = new List<string>();
+        private List<string> _instanceTagKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property IncludeAllTagsOfInstance. 
@@ -72,7 +73,7 @@ namespace Amazon.EC2.Model
         // Check to see if InstanceTagKeys property is set
         internal bool IsSetInstanceTagKeys()
         {
-            return this._instanceTagKeys != null && this._instanceTagKeys.Count > 0; 
+            return this._instanceTagKeys != null && (this._instanceTagKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

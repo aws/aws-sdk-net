@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RoboMaker.Model
 {
     /// <summary>
@@ -37,14 +38,14 @@ namespace Amazon.RoboMaker.Model
         private BatchPolicy _batchPolicy;
         private string _clientRequestToken;
         private DateTime? _createdAt;
-        private List<SimulationJobSummary> _createdRequests = new List<SimulationJobSummary>();
-        private List<FailedCreateSimulationJobRequest> _failedRequests = new List<FailedCreateSimulationJobRequest>();
+        private List<SimulationJobSummary> _createdRequests = AWSConfigs.InitializeCollections ? new List<SimulationJobSummary>() : null;
+        private List<FailedCreateSimulationJobRequest> _failedRequests = AWSConfigs.InitializeCollections ? new List<FailedCreateSimulationJobRequest>() : null;
         private SimulationJobBatchErrorCode _failureCode;
         private string _failureReason;
         private DateTime? _lastUpdatedAt;
-        private List<SimulationJobRequest> _pendingRequests = new List<SimulationJobRequest>();
+        private List<SimulationJobRequest> _pendingRequests = AWSConfigs.InitializeCollections ? new List<SimulationJobRequest>() : null;
         private SimulationJobBatchStatus _status;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -137,7 +138,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if CreatedRequests property is set
         internal bool IsSetCreatedRequests()
         {
-            return this._createdRequests != null && this._createdRequests.Count > 0; 
+            return this._createdRequests != null && (this._createdRequests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -156,7 +157,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if FailedRequests property is set
         internal bool IsSetFailedRequests()
         {
-            return this._failedRequests != null && this._failedRequests.Count > 0; 
+            return this._failedRequests != null && (this._failedRequests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -232,7 +233,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if PendingRequests property is set
         internal bool IsSetPendingRequests()
         {
-            return this._pendingRequests != null && this._pendingRequests.Count > 0; 
+            return this._pendingRequests != null && (this._pendingRequests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -318,7 +319,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

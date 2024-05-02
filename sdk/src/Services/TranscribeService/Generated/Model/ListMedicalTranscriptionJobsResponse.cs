@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.TranscribeService.Model
     /// </summary>
     public partial class ListMedicalTranscriptionJobsResponse : AmazonWebServiceResponse
     {
-        private List<MedicalTranscriptionJobSummary> _medicalTranscriptionJobSummaries = new List<MedicalTranscriptionJobSummary>();
+        private List<MedicalTranscriptionJobSummary> _medicalTranscriptionJobSummaries = AWSConfigs.InitializeCollections ? new List<MedicalTranscriptionJobSummary>() : null;
         private string _nextToken;
         private TranscriptionJobStatus _status;
 
@@ -52,7 +53,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if MedicalTranscriptionJobSummaries property is set
         internal bool IsSetMedicalTranscriptionJobSummaries()
         {
-            return this._medicalTranscriptionJobSummaries != null && this._medicalTranscriptionJobSummaries.Count > 0; 
+            return this._medicalTranscriptionJobSummaries != null && (this._medicalTranscriptionJobSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

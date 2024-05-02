@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchRUM.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.CloudWatchRUM.Model
     /// </summary>
     public partial class BatchDeleteRumMetricDefinitionsResponse : AmazonWebServiceResponse
     {
-        private List<BatchDeleteRumMetricDefinitionsError> _errors = new List<BatchDeleteRumMetricDefinitionsError>();
-        private List<string> _metricDefinitionIds = new List<string>();
+        private List<BatchDeleteRumMetricDefinitionsError> _errors = AWSConfigs.InitializeCollections ? new List<BatchDeleteRumMetricDefinitionsError>() : null;
+        private List<string> _metricDefinitionIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. 
@@ -52,7 +53,7 @@ namespace Amazon.CloudWatchRUM.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.CloudWatchRUM.Model
         // Check to see if MetricDefinitionIds property is set
         internal bool IsSetMetricDefinitionIds()
         {
-            return this._metricDefinitionIds != null && this._metricDefinitionIds.Count > 0; 
+            return this._metricDefinitionIds != null && (this._metricDefinitionIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

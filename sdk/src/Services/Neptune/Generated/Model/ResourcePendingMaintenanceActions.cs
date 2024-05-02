@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Neptune.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Neptune.Model
     /// </summary>
     public partial class ResourcePendingMaintenanceActions
     {
-        private List<PendingMaintenanceAction> _pendingMaintenanceActionDetails = new List<PendingMaintenanceAction>();
+        private List<PendingMaintenanceAction> _pendingMaintenanceActionDetails = AWSConfigs.InitializeCollections ? new List<PendingMaintenanceAction>() : null;
         private string _resourceIdentifier;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Neptune.Model
         // Check to see if PendingMaintenanceActionDetails property is set
         internal bool IsSetPendingMaintenanceActionDetails()
         {
-            return this._pendingMaintenanceActionDetails != null && this._pendingMaintenanceActionDetails.Count > 0; 
+            return this._pendingMaintenanceActionDetails != null && (this._pendingMaintenanceActionDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

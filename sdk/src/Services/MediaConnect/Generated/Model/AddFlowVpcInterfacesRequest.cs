@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.MediaConnect.Model
     public partial class AddFlowVpcInterfacesRequest : AmazonMediaConnectRequest
     {
         private string _flowArn;
-        private List<VpcInterfaceRequest> _vpcInterfaces = new List<VpcInterfaceRequest>();
+        private List<VpcInterfaceRequest> _vpcInterfaces = AWSConfigs.InitializeCollections ? new List<VpcInterfaceRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property FlowArn. The flow that you want to mutate.
@@ -67,7 +68,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if VpcInterfaces property is set
         internal bool IsSetVpcInterfaces()
         {
-            return this._vpcInterfaces != null && this._vpcInterfaces.Count > 0; 
+            return this._vpcInterfaces != null && (this._vpcInterfaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

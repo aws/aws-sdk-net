@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RedshiftDataAPIService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.RedshiftDataAPIService.Model
     /// </summary>
     public partial class ListDatabasesResponse : AmazonWebServiceResponse
     {
-        private List<string> _databases = new List<string>();
+        private List<string> _databases = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         // Check to see if Databases property is set
         internal bool IsSetDatabases()
         {
-            return this._databases != null && this._databases.Count > 0; 
+            return this._databases != null && (this._databases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

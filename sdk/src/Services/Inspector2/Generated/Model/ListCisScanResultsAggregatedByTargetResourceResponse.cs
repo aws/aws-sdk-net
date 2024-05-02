@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Inspector2.Model
     public partial class ListCisScanResultsAggregatedByTargetResourceResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<CisTargetResourceAggregation> _targetResourceAggregations = new List<CisTargetResourceAggregation>();
+        private List<CisTargetResourceAggregation> _targetResourceAggregations = AWSConfigs.InitializeCollections ? new List<CisTargetResourceAggregation>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if TargetResourceAggregations property is set
         internal bool IsSetTargetResourceAggregations()
         {
-            return this._targetResourceAggregations != null && this._targetResourceAggregations.Count > 0; 
+            return this._targetResourceAggregations != null && (this._targetResourceAggregations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

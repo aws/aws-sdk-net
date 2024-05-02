@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
@@ -35,10 +36,10 @@ namespace Amazon.DataPipeline.Model
     /// </summary>
     public partial class ValidatePipelineDefinitionRequest : AmazonDataPipelineRequest
     {
-        private List<ParameterObject> _parameterObjects = new List<ParameterObject>();
-        private List<ParameterValue> _parameterValues = new List<ParameterValue>();
+        private List<ParameterObject> _parameterObjects = AWSConfigs.InitializeCollections ? new List<ParameterObject>() : null;
+        private List<ParameterValue> _parameterValues = AWSConfigs.InitializeCollections ? new List<ParameterValue>() : null;
         private string _pipelineId;
-        private List<PipelineObject> _pipelineObjects = new List<PipelineObject>();
+        private List<PipelineObject> _pipelineObjects = AWSConfigs.InitializeCollections ? new List<PipelineObject>() : null;
 
         /// <summary>
         /// Gets and sets the property ParameterObjects. 
@@ -55,7 +56,7 @@ namespace Amazon.DataPipeline.Model
         // Check to see if ParameterObjects property is set
         internal bool IsSetParameterObjects()
         {
-            return this._parameterObjects != null && this._parameterObjects.Count > 0; 
+            return this._parameterObjects != null && (this._parameterObjects.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.DataPipeline.Model
         // Check to see if ParameterValues property is set
         internal bool IsSetParameterValues()
         {
-            return this._parameterValues != null && this._parameterValues.Count > 0; 
+            return this._parameterValues != null && (this._parameterValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -111,7 +112,7 @@ namespace Amazon.DataPipeline.Model
         // Check to see if PipelineObjects property is set
         internal bool IsSetPipelineObjects()
         {
-            return this._pipelineObjects != null && this._pipelineObjects.Count > 0; 
+            return this._pipelineObjects != null && (this._pipelineObjects.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

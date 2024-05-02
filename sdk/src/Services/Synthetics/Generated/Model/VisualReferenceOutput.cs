@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Synthetics.Model
 {
     /// <summary>
@@ -43,7 +44,7 @@ namespace Amazon.Synthetics.Model
     public partial class VisualReferenceOutput
     {
         private string _baseCanaryRunId;
-        private List<BaseScreenshot> _baseScreenshots = new List<BaseScreenshot>();
+        private List<BaseScreenshot> _baseScreenshots = AWSConfigs.InitializeCollections ? new List<BaseScreenshot>() : null;
 
         /// <summary>
         /// Gets and sets the property BaseCanaryRunId. 
@@ -81,7 +82,7 @@ namespace Amazon.Synthetics.Model
         // Check to see if BaseScreenshots property is set
         internal bool IsSetBaseScreenshots()
         {
-            return this._baseScreenshots != null && this._baseScreenshots.Count > 0; 
+            return this._baseScreenshots != null && (this._baseScreenshots.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

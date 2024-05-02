@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LookoutEquipment.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.LookoutEquipment.Model
     public partial class ListSensorStatisticsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SensorStatisticsSummary> _sensorStatisticsSummaries = new List<SensorStatisticsSummary>();
+        private List<SensorStatisticsSummary> _sensorStatisticsSummaries = AWSConfigs.InitializeCollections ? new List<SensorStatisticsSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +74,7 @@ namespace Amazon.LookoutEquipment.Model
         // Check to see if SensorStatisticsSummaries property is set
         internal bool IsSetSensorStatisticsSummaries()
         {
-            return this._sensorStatisticsSummaries != null && this._sensorStatisticsSummaries.Count > 0; 
+            return this._sensorStatisticsSummaries != null && (this._sensorStatisticsSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

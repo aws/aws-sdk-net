@@ -58,7 +58,7 @@ namespace Amazon.DNXCore.IntegrationTests
         public async static Task<string> CreateBucketAsync(IAmazonS3 s3Client, string testName, bool setPublicACLs = false)
         {
             string bucketName = string.Format("{0}-{1}-{2}", UtilityMethods.SDK_TEST_PREFIX, testName, DateTime.Now.Ticks).ToLower().Replace('_','-');
-            await s3Client.PutBucketAsync(new PutBucketRequest { BucketName = bucketName }).ConfigureAwait(false);
+            await s3Client.PutBucketAsync(new PutBucketRequest { BucketName = bucketName });
             if (setPublicACLs)
             {
                 await SetPublicBucketACLs(s3Client, bucketName);
@@ -160,7 +160,7 @@ namespace Amazon.DNXCore.IntegrationTests
                 cancellationToken.ThrowIfCancellationRequested();
                 
                 // List all the versions of all the objects in the bucket.
-                listVersionsResponse = await s3Client.ListVersionsAsync(listVersionsRequest).ConfigureAwait(false);
+                listVersionsResponse = await s3Client.ListVersionsAsync(listVersionsRequest);
 
                 // Silverlight uses HTTP caching, so avoid an infinite loop by throwing an exception
                 if (string.Equals(lastRequestId, listVersionsResponse.ResponseMetadata.RequestId, StringComparison.OrdinalIgnoreCase))
@@ -169,7 +169,7 @@ namespace Amazon.DNXCore.IntegrationTests
                 }
                 lastRequestId = listVersionsResponse.ResponseMetadata.RequestId;
 
-                if (listVersionsResponse.Versions.Count == 0)
+                if (listVersionsResponse.Versions == null || listVersionsResponse.Versions.Count == 0)
                 {
                     // If the bucket has no objects break the loop.
                     break;
@@ -193,7 +193,7 @@ namespace Amazon.DNXCore.IntegrationTests
                         BucketName = bucketName,
                         Objects = keyVersionList,
                         Quiet = true
-                    }).ConfigureAwait(false);
+                    });
 
                     //if (!deleteOptions.QuietMode)
                     //{
@@ -249,7 +249,7 @@ namespace Amazon.DNXCore.IntegrationTests
                     await s3Client.DeleteBucketAsync(new DeleteBucketRequest
                     {
                         BucketName = bucketName
-                    }).ConfigureAwait(false);
+                    });
                     break;
                 }
                 catch (AmazonS3Exception e)
@@ -363,7 +363,7 @@ namespace Amazon.DNXCore.IntegrationTests
         }
         public static async Task SleepAsync(TimeSpan ts)
         {
-            await Task.Delay(ts).ConfigureAwait(false);
+            await Task.Delay(ts);
         }
 
         public static void RunAsSync(Func<Task> asyncFunc)

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class GetResourcePoliciesResponse : AmazonWebServiceResponse
     {
-        private List<GluePolicy> _getResourcePoliciesResponseList = new List<GluePolicy>();
+        private List<GluePolicy> _getResourcePoliciesResponseList = AWSConfigs.InitializeCollections ? new List<GluePolicy>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Glue.Model
         // Check to see if GetResourcePoliciesResponseList property is set
         internal bool IsSetGetResourcePoliciesResponseList()
         {
-            return this._getResourcePoliciesResponseList != null && this._getResourcePoliciesResponseList.Count > 0; 
+            return this._getResourcePoliciesResponseList != null && (this._getResourcePoliciesResponseList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

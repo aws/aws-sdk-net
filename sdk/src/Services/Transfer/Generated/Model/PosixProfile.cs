@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Transfer.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.Transfer.Model
     public partial class PosixProfile
     {
         private long? _gid;
-        private List<long> _secondaryGids = new List<long>();
+        private List<long> _secondaryGids = AWSConfigs.InitializeCollections ? new List<long>() : null;
         private long? _uid;
 
         /// <summary>
@@ -76,7 +77,7 @@ namespace Amazon.Transfer.Model
         // Check to see if SecondaryGids property is set
         internal bool IsSetSecondaryGids()
         {
-            return this._secondaryGids != null && this._secondaryGids.Count > 0; 
+            return this._secondaryGids != null && (this._secondaryGids.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

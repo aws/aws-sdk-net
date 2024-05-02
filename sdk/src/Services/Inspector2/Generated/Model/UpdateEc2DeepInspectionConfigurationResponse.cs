@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.Inspector2.Model
     public partial class UpdateEc2DeepInspectionConfigurationResponse : AmazonWebServiceResponse
     {
         private string _errorMessage;
-        private List<string> _orgPackagePaths = new List<string>();
-        private List<string> _packagePaths = new List<string>();
+        private List<string> _orgPackagePaths = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _packagePaths = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Ec2DeepInspectionStatus _status;
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if OrgPackagePaths property is set
         internal bool IsSetOrgPackagePaths()
         {
-            return this._orgPackagePaths != null && this._orgPackagePaths.Count > 0; 
+            return this._orgPackagePaths != null && (this._orgPackagePaths.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -93,7 +94,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if PackagePaths property is set
         internal bool IsSetPackagePaths()
         {
-            return this._packagePaths != null && this._packagePaths.Count > 0; 
+            return this._packagePaths != null && (this._packagePaths.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

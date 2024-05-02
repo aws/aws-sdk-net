@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
@@ -33,16 +34,16 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class MultiplexProgramPacketIdentifiersMap
     {
-        private List<int> _audioPids = new List<int>();
-        private List<int> _dvbSubPids = new List<int>();
+        private List<int> _audioPids = AWSConfigs.InitializeCollections ? new List<int>() : null;
+        private List<int> _dvbSubPids = AWSConfigs.InitializeCollections ? new List<int>() : null;
         private int? _dvbTeletextPid;
         private int? _etvPlatformPid;
         private int? _etvSignalPid;
-        private List<int> _klvDataPids = new List<int>();
+        private List<int> _klvDataPids = AWSConfigs.InitializeCollections ? new List<int>() : null;
         private int? _pcrPid;
         private int? _pmtPid;
         private int? _privateMetadataPid;
-        private List<int> _scte27Pids = new List<int>();
+        private List<int> _scte27Pids = AWSConfigs.InitializeCollections ? new List<int>() : null;
         private int? _scte35Pid;
         private int? _timedMetadataPid;
         private int? _videoPid;
@@ -59,7 +60,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if AudioPids property is set
         internal bool IsSetAudioPids()
         {
-            return this._audioPids != null && this._audioPids.Count > 0; 
+            return this._audioPids != null && (this._audioPids.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if DvbSubPids property is set
         internal bool IsSetDvbSubPids()
         {
-            return this._dvbSubPids != null && this._dvbSubPids.Count > 0; 
+            return this._dvbSubPids != null && (this._dvbSubPids.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -134,7 +135,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if KlvDataPids property is set
         internal bool IsSetKlvDataPids()
         {
-            return this._klvDataPids != null && this._klvDataPids.Count > 0; 
+            return this._klvDataPids != null && (this._klvDataPids.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -194,7 +195,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if Scte27Pids property is set
         internal bool IsSetScte27Pids()
         {
-            return this._scte27Pids != null && this._scte27Pids.Count > 0; 
+            return this._scte27Pids != null && (this._scte27Pids.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

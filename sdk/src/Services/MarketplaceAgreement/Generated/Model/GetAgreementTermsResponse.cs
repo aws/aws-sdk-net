@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MarketplaceAgreement.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MarketplaceAgreement.Model
     /// </summary>
     public partial class GetAgreementTermsResponse : AmazonWebServiceResponse
     {
-        private List<AcceptedTerm> _acceptedTerms = new List<AcceptedTerm>();
+        private List<AcceptedTerm> _acceptedTerms = AWSConfigs.InitializeCollections ? new List<AcceptedTerm>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.MarketplaceAgreement.Model
         // Check to see if AcceptedTerms property is set
         internal bool IsSetAcceptedTerms()
         {
-            return this._acceptedTerms != null && this._acceptedTerms.Count > 0; 
+            return this._acceptedTerms != null && (this._acceptedTerms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

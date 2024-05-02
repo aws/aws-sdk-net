@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.CloudFormation.Model
     /// </summary>
     public partial class DescribeChangeSetResponse : AmazonWebServiceResponse
     {
-        private List<string> _capabilities = new List<string>();
-        private List<Change> _changes = new List<Change>();
+        private List<string> _capabilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Change> _changes = AWSConfigs.InitializeCollections ? new List<Change>() : null;
         private string _changeSetId;
         private string _changeSetName;
         private DateTime? _creationTime;
@@ -43,9 +44,9 @@ namespace Amazon.CloudFormation.Model
         private bool? _importExistingResources;
         private bool? _includeNestedStacks;
         private string _nextToken;
-        private List<string> _notificationARNs = new List<string>();
+        private List<string> _notificationARNs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private OnStackFailure _onStackFailure;
-        private List<Parameter> _parameters = new List<Parameter>();
+        private List<Parameter> _parameters = AWSConfigs.InitializeCollections ? new List<Parameter>() : null;
         private string _parentChangeSetId;
         private RollbackConfiguration _rollbackConfiguration;
         private string _rootChangeSetId;
@@ -53,7 +54,7 @@ namespace Amazon.CloudFormation.Model
         private string _stackName;
         private ChangeSetStatus _status;
         private string _statusReason;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Capabilities. 
@@ -71,7 +72,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Capabilities property is set
         internal bool IsSetCapabilities()
         {
-            return this._capabilities != null && this._capabilities.Count > 0; 
+            return this._capabilities != null && (this._capabilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -90,7 +91,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Changes property is set
         internal bool IsSetChanges()
         {
-            return this._changes != null && this._changes.Count > 0; 
+            return this._changes != null && (this._changes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -270,7 +271,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if NotificationARNs property is set
         internal bool IsSetNotificationARNs()
         {
-            return this._notificationARNs != null && this._notificationARNs.Count > 0; 
+            return this._notificationARNs != null && (this._notificationARNs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -329,7 +330,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -481,7 +482,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

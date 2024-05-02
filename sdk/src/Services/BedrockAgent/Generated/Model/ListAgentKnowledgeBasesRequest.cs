@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAgentKnowledgeBases operation.
-    /// List of Knowledge Bases associated to an existing Amazon Bedrock Agent Version
+    /// Lists knowledge bases associated with an agent and information about each one.
     /// </summary>
     public partial class ListAgentKnowledgeBasesRequest : AmazonBedrockAgentRequest
     {
@@ -42,7 +43,8 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property AgentId. 
         /// <para>
-        /// Id generated at the server side when an Agent is created
+        /// The unique identifier of the agent for which to return information about knowledge
+        /// bases associated with it.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +63,8 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property AgentVersion. 
         /// <para>
-        /// Version number generated when a version is created
+        /// The version of the agent for which to return information about knowledge bases associated
+        /// with it.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]
@@ -78,7 +81,12 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return in the response. If the total number of results
+        /// is greater than this value, use the token returned in the response in the <c>nextToken</c>
+        /// field when making another request to return the next batch of results.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
         public int? MaxResults
@@ -94,7 +102,12 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// If the total number of results is greater than the <c>maxResults</c> value provided
+        /// in the request, enter the token returned in the <c>nextToken</c> field in the response
+        /// in this field to return the next batch of results.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
         public string NextToken

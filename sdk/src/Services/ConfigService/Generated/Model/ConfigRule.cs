@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.ConfigService.Model
         private ConfigRuleState _configRuleState;
         private string _createdBy;
         private string _description;
-        private List<EvaluationModeConfiguration> _evaluationModes = new List<EvaluationModeConfiguration>();
+        private List<EvaluationModeConfiguration> _evaluationModes = AWSConfigs.InitializeCollections ? new List<EvaluationModeConfiguration>() : null;
         private string _inputParameters;
         private MaximumExecutionFrequency _maximumExecutionFrequency;
         private Scope _scope;
@@ -231,7 +232,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if EvaluationModes property is set
         internal bool IsSetEvaluationModes()
         {
-            return this._evaluationModes != null && this._evaluationModes.Count > 0; 
+            return this._evaluationModes != null && (this._evaluationModes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

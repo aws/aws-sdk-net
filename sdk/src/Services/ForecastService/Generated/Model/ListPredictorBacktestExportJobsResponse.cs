@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ForecastService.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ForecastService.Model
     public partial class ListPredictorBacktestExportJobsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PredictorBacktestExportJobSummary> _predictorBacktestExportJobs = new List<PredictorBacktestExportJobSummary>();
+        private List<PredictorBacktestExportJobSummary> _predictorBacktestExportJobs = AWSConfigs.InitializeCollections ? new List<PredictorBacktestExportJobSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if PredictorBacktestExportJobs property is set
         internal bool IsSetPredictorBacktestExportJobs()
         {
-            return this._predictorBacktestExportJobs != null && this._predictorBacktestExportJobs.Count > 0; 
+            return this._predictorBacktestExportJobs != null && (this._predictorBacktestExportJobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

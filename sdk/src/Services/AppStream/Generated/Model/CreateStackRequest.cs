@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppStream.Model
 {
     /// <summary>
@@ -35,18 +36,18 @@ namespace Amazon.AppStream.Model
     /// </summary>
     public partial class CreateStackRequest : AmazonAppStreamRequest
     {
-        private List<AccessEndpoint> _accessEndpoints = new List<AccessEndpoint>();
+        private List<AccessEndpoint> _accessEndpoints = AWSConfigs.InitializeCollections ? new List<AccessEndpoint>() : null;
         private ApplicationSettings _applicationSettings;
         private string _description;
         private string _displayName;
-        private List<string> _embedHostDomains = new List<string>();
+        private List<string> _embedHostDomains = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _feedbackURL;
         private string _name;
         private string _redirectURL;
-        private List<StorageConnector> _storageConnectors = new List<StorageConnector>();
+        private List<StorageConnector> _storageConnectors = AWSConfigs.InitializeCollections ? new List<StorageConnector>() : null;
         private StreamingExperienceSettings _streamingExperienceSettings;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
-        private List<UserSetting> _userSettings = new List<UserSetting>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<UserSetting> _userSettings = AWSConfigs.InitializeCollections ? new List<UserSetting>() : null;
 
         /// <summary>
         /// Gets and sets the property AccessEndpoints. 
@@ -65,7 +66,7 @@ namespace Amazon.AppStream.Model
         // Check to see if AccessEndpoints property is set
         internal bool IsSetAccessEndpoints()
         {
-            return this._accessEndpoints != null && this._accessEndpoints.Count > 0; 
+            return this._accessEndpoints != null && (this._accessEndpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -144,7 +145,7 @@ namespace Amazon.AppStream.Model
         // Check to see if EmbedHostDomains property is set
         internal bool IsSetEmbedHostDomains()
         {
-            return this._embedHostDomains != null && this._embedHostDomains.Count > 0; 
+            return this._embedHostDomains != null && (this._embedHostDomains.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -220,7 +221,7 @@ namespace Amazon.AppStream.Model
         // Check to see if StorageConnectors property is set
         internal bool IsSetStorageConnectors()
         {
-            return this._storageConnectors != null && this._storageConnectors.Count > 0; 
+            return this._storageConnectors != null && (this._storageConnectors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -278,7 +279,7 @@ namespace Amazon.AppStream.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -298,7 +299,7 @@ namespace Amazon.AppStream.Model
         // Check to see if UserSettings property is set
         internal bool IsSetUserSettings()
         {
-            return this._userSettings != null && this._userSettings.Count > 0; 
+            return this._userSettings != null && (this._userSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

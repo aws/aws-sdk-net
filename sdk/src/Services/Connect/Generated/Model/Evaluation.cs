@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -33,16 +34,16 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class Evaluation
     {
-        private Dictionary<string, EvaluationAnswerOutput> _answers = new Dictionary<string, EvaluationAnswerOutput>();
+        private Dictionary<string, EvaluationAnswerOutput> _answers = AWSConfigs.InitializeCollections ? new Dictionary<string, EvaluationAnswerOutput>() : null;
         private DateTime? _createdTime;
         private string _evaluationArn;
         private string _evaluationId;
         private DateTime? _lastModifiedTime;
         private EvaluationMetadata _metadata;
-        private Dictionary<string, EvaluationNote> _notes = new Dictionary<string, EvaluationNote>();
-        private Dictionary<string, EvaluationScore> _scores = new Dictionary<string, EvaluationScore>();
+        private Dictionary<string, EvaluationNote> _notes = AWSConfigs.InitializeCollections ? new Dictionary<string, EvaluationNote>() : null;
+        private Dictionary<string, EvaluationScore> _scores = AWSConfigs.InitializeCollections ? new Dictionary<string, EvaluationScore>() : null;
         private EvaluationStatus _status;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Answers. 
@@ -60,7 +61,7 @@ namespace Amazon.Connect.Model
         // Check to see if Answers property is set
         internal bool IsSetAnswers()
         {
-            return this._answers != null && this._answers.Count > 0; 
+            return this._answers != null && (this._answers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -174,7 +175,7 @@ namespace Amazon.Connect.Model
         // Check to see if Notes property is set
         internal bool IsSetNotes()
         {
-            return this._notes != null && this._notes.Count > 0; 
+            return this._notes != null && (this._notes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -193,7 +194,7 @@ namespace Amazon.Connect.Model
         // Check to see if Scores property is set
         internal bool IsSetScores()
         {
-            return this._scores != null && this._scores.Count > 0; 
+            return this._scores != null && (this._scores.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -232,7 +233,7 @@ namespace Amazon.Connect.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

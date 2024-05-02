@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LookoutforVision.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.LookoutforVision.Model
     public partial class ProjectDescription
     {
         private DateTime? _creationTimestamp;
-        private List<DatasetMetadata> _datasets = new List<DatasetMetadata>();
+        private List<DatasetMetadata> _datasets = AWSConfigs.InitializeCollections ? new List<DatasetMetadata>() : null;
         private string _projectArn;
         private string _projectName;
 
@@ -71,7 +72,7 @@ namespace Amazon.LookoutforVision.Model
         // Check to see if Datasets property is set
         internal bool IsSetDatasets()
         {
-            return this._datasets != null && this._datasets.Count > 0; 
+            return this._datasets != null && (this._datasets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

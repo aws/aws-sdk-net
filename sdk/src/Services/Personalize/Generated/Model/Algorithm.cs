@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Personalize.Model
 {
     /// <summary>
@@ -37,8 +38,8 @@ namespace Amazon.Personalize.Model
         private AlgorithmImage _algorithmImage;
         private DateTime? _creationDateTime;
         private DefaultHyperParameterRanges _defaultHyperParameterRanges;
-        private Dictionary<string, string> _defaultHyperParameters = new Dictionary<string, string>();
-        private Dictionary<string, string> _defaultResourceConfig = new Dictionary<string, string>();
+        private Dictionary<string, string> _defaultHyperParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, string> _defaultResourceConfig = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DateTime? _lastUpdatedDateTime;
         private string _name;
         private string _roleArn;
@@ -135,7 +136,7 @@ namespace Amazon.Personalize.Model
         // Check to see if DefaultHyperParameters property is set
         internal bool IsSetDefaultHyperParameters()
         {
-            return this._defaultHyperParameters != null && this._defaultHyperParameters.Count > 0; 
+            return this._defaultHyperParameters != null && (this._defaultHyperParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -154,7 +155,7 @@ namespace Amazon.Personalize.Model
         // Check to see if DefaultResourceConfig property is set
         internal bool IsSetDefaultResourceConfig()
         {
-            return this._defaultResourceConfig != null && this._defaultResourceConfig.Count > 0; 
+            return this._defaultResourceConfig != null && (this._defaultResourceConfig.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

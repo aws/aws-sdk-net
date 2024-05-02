@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Chatbot.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Chatbot.Model
     /// </summary>
     public partial class ListMicrosoftTeamsConfiguredTeamsResponse : AmazonWebServiceResponse
     {
-        private List<ConfiguredTeam> _configuredTeams = new List<ConfiguredTeam>();
+        private List<ConfiguredTeam> _configuredTeams = AWSConfigs.InitializeCollections ? new List<ConfiguredTeam>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -49,7 +50,7 @@ namespace Amazon.Chatbot.Model
         // Check to see if ConfiguredTeams property is set
         internal bool IsSetConfiguredTeams()
         {
-            return this._configuredTeams != null && this._configuredTeams.Count > 0; 
+            return this._configuredTeams != null && (this._configuredTeams.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

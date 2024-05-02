@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,16 +46,32 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CdmaObj requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBaseLat())
             {
                 context.Writer.WritePropertyName("BaseLat");
-                context.Writer.Write(requestObject.BaseLat.Value);
+                if(StringUtils.IsSpecialFloatValue(requestObject.BaseLat.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.BaseLat.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.BaseLat.Value);
+                }
             }
 
             if(requestObject.IsSetBaseLng())
             {
                 context.Writer.WritePropertyName("BaseLng");
-                context.Writer.Write(requestObject.BaseLng.Value);
+                if(StringUtils.IsSpecialFloatValue(requestObject.BaseLng.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.BaseLng.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.BaseLng.Value);
+                }
             }
 
             if(requestObject.IsSetBaseStationId())

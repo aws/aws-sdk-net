@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudTrailData.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.CloudTrailData.Model
     /// </summary>
     public partial class PutAuditEventsResponse : AmazonWebServiceResponse
     {
-        private List<ResultErrorEntry> _failed = new List<ResultErrorEntry>();
-        private List<AuditEventResultEntry> _successful = new List<AuditEventResultEntry>();
+        private List<ResultErrorEntry> _failed = AWSConfigs.InitializeCollections ? new List<ResultErrorEntry>() : null;
+        private List<AuditEventResultEntry> _successful = AWSConfigs.InitializeCollections ? new List<AuditEventResultEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property Failed. 
@@ -54,7 +55,7 @@ namespace Amazon.CloudTrailData.Model
         // Check to see if Failed property is set
         internal bool IsSetFailed()
         {
-            return this._failed != null && this._failed.Count > 0; 
+            return this._failed != null && (this._failed.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.CloudTrailData.Model
         // Check to see if Successful property is set
         internal bool IsSetSuccessful()
         {
-            return this._successful != null && this._successful.Count > 0; 
+            return this._successful != null && (this._successful.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

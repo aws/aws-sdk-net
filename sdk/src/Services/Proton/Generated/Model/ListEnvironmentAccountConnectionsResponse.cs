@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Proton.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Proton.Model
     /// </summary>
     public partial class ListEnvironmentAccountConnectionsResponse : AmazonWebServiceResponse
     {
-        private List<EnvironmentAccountConnectionSummary> _environmentAccountConnections = new List<EnvironmentAccountConnectionSummary>();
+        private List<EnvironmentAccountConnectionSummary> _environmentAccountConnections = AWSConfigs.InitializeCollections ? new List<EnvironmentAccountConnectionSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.Proton.Model
         // Check to see if EnvironmentAccountConnections property is set
         internal bool IsSetEnvironmentAccountConnections()
         {
-            return this._environmentAccountConnections != null && this._environmentAccountConnections.Count > 0; 
+            return this._environmentAccountConnections != null && (this._environmentAccountConnections.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

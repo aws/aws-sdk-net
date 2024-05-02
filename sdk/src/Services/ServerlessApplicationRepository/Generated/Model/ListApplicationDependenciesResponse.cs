@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServerlessApplicationRepository.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
     /// </summary>
     public partial class ListApplicationDependenciesResponse : AmazonWebServiceResponse
     {
-        private List<ApplicationDependencySummary> _dependencies = new List<ApplicationDependencySummary>();
+        private List<ApplicationDependencySummary> _dependencies = AWSConfigs.InitializeCollections ? new List<ApplicationDependencySummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         // Check to see if Dependencies property is set
         internal bool IsSetDependencies()
         {
-            return this._dependencies != null && this._dependencies.Count > 0; 
+            return this._dependencies != null && (this._dependencies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

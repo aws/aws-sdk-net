@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.FIS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -67,6 +68,12 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.AccountTargeting = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("actionsMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ActionsMode = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("emptyTargetResolutionMode", targetDepth))

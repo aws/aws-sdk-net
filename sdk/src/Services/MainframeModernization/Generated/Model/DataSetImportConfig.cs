@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MainframeModernization.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.MainframeModernization.Model
     /// </summary>
     public partial class DataSetImportConfig
     {
-        private List<DataSetImportItem> _dataSets = new List<DataSetImportItem>();
+        private List<DataSetImportItem> _dataSets = AWSConfigs.InitializeCollections ? new List<DataSetImportItem>() : null;
         private string _s3Location;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.MainframeModernization.Model
         // Check to see if DataSets property is set
         internal bool IsSetDataSets()
         {
-            return this._dataSets != null && this._dataSets.Count > 0; 
+            return this._dataSets != null && (this._dataSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

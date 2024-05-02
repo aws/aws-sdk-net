@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeFastLaunchImagesResponse : AmazonWebServiceResponse
     {
-        private List<DescribeFastLaunchImagesSuccessItem> _fastLaunchImages = new List<DescribeFastLaunchImagesSuccessItem>();
+        private List<DescribeFastLaunchImagesSuccessItem> _fastLaunchImages = AWSConfigs.InitializeCollections ? new List<DescribeFastLaunchImagesSuccessItem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.EC2.Model
         // Check to see if FastLaunchImages property is set
         internal bool IsSetFastLaunchImages()
         {
-            return this._fastLaunchImages != null && this._fastLaunchImages.Count > 0; 
+            return this._fastLaunchImages != null && (this._fastLaunchImages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

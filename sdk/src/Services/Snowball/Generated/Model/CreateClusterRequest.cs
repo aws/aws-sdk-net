@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Snowball.Model
 {
     /// <summary>
@@ -43,7 +44,7 @@ namespace Amazon.Snowball.Model
         private int? _initialClusterSize;
         private JobType _jobType;
         private string _kmsKeyARN;
-        private List<string> _longTermPricingIds = new List<string>();
+        private List<string> _longTermPricingIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Notification _notification;
         private OnDeviceServiceConfiguration _onDeviceServiceConfiguration;
         private RemoteManagement _remoteManagement;
@@ -216,7 +217,7 @@ namespace Amazon.Snowball.Model
         // Check to see if LongTermPricingIds property is set
         internal bool IsSetLongTermPricingIds()
         {
-            return this._longTermPricingIds != null && this._longTermPricingIds.Count > 0; 
+            return this._longTermPricingIds != null && (this._longTermPricingIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

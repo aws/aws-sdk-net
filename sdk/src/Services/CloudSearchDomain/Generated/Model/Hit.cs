@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudSearchDomain.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.CloudSearchDomain.Model
     /// </summary>
     public partial class Hit
     {
-        private Dictionary<string, string> _exprs = new Dictionary<string, string>();
-        private Dictionary<string, List<string>> _fields = new Dictionary<string, List<string>>();
-        private Dictionary<string, string> _highlights = new Dictionary<string, string>();
+        private Dictionary<string, string> _exprs = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, List<string>> _fields = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
+        private Dictionary<string, string> _highlights = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _id;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.CloudSearchDomain.Model
         // Check to see if Exprs property is set
         internal bool IsSetExprs()
         {
-            return this._exprs != null && this._exprs.Count > 0; 
+            return this._exprs != null && (this._exprs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.CloudSearchDomain.Model
         // Check to see if Fields property is set
         internal bool IsSetFields()
         {
-            return this._fields != null && this._fields.Count > 0; 
+            return this._fields != null && (this._fields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -89,7 +90,7 @@ namespace Amazon.CloudSearchDomain.Model
         // Check to see if Highlights property is set
         internal bool IsSetHighlights()
         {
-            return this._highlights != null && this._highlights.Count > 0; 
+            return this._highlights != null && (this._highlights.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

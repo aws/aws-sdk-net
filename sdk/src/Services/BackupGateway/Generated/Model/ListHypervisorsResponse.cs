@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BackupGateway.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.BackupGateway.Model
     /// </summary>
     public partial class ListHypervisorsResponse : AmazonWebServiceResponse
     {
-        private List<Hypervisor> _hypervisors = new List<Hypervisor>();
+        private List<Hypervisor> _hypervisors = AWSConfigs.InitializeCollections ? new List<Hypervisor>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.BackupGateway.Model
         // Check to see if Hypervisors property is set
         internal bool IsSetHypervisors()
         {
-            return this._hypervisors != null && this._hypervisors.Count > 0; 
+            return this._hypervisors != null && (this._hypervisors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

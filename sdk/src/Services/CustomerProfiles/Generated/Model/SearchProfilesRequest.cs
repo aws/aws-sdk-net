@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
@@ -43,13 +44,13 @@ namespace Amazon.CustomerProfiles.Model
     /// </summary>
     public partial class SearchProfilesRequest : AmazonCustomerProfilesRequest
     {
-        private List<AdditionalSearchKey> _additionalSearchKeys = new List<AdditionalSearchKey>();
+        private List<AdditionalSearchKey> _additionalSearchKeys = AWSConfigs.InitializeCollections ? new List<AdditionalSearchKey>() : null;
         private string _domainName;
         private string _keyName;
         private LogicalOperator _logicalOperator;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _values = new List<string>();
+        private List<string> _values = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AdditionalSearchKeys. 
@@ -72,7 +73,7 @@ namespace Amazon.CustomerProfiles.Model
         // Check to see if AdditionalSearchKeys property is set
         internal bool IsSetAdditionalSearchKeys()
         {
-            return this._additionalSearchKeys != null && this._additionalSearchKeys.Count > 0; 
+            return this._additionalSearchKeys != null && (this._additionalSearchKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -214,7 +215,7 @@ namespace Amazon.CustomerProfiles.Model
         // Check to see if Values property is set
         internal bool IsSetValues()
         {
-            return this._values != null && this._values.Count > 0; 
+            return this._values != null && (this._values.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

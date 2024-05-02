@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class BatchGetCollaborationAnalysisTemplateRequest : AmazonCleanRoomsRequest
     {
-        private List<string> _analysisTemplateArns = new List<string>();
+        private List<string> _analysisTemplateArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _collaborationIdentifier;
 
         /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if AnalysisTemplateArns property is set
         internal bool IsSetAnalysisTemplateArns()
         {
-            return this._analysisTemplateArns != null && this._analysisTemplateArns.Count > 0; 
+            return this._analysisTemplateArns != null && (this._analysisTemplateArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

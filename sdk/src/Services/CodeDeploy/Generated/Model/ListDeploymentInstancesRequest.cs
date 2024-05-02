@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
@@ -45,8 +46,8 @@ namespace Amazon.CodeDeploy.Model
     public partial class ListDeploymentInstancesRequest : AmazonCodeDeployRequest
     {
         private string _deploymentId;
-        private List<string> _instanceStatusFilter = new List<string>();
-        private List<string> _instanceTypeFilter = new List<string>();
+        private List<string> _instanceStatusFilter = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _instanceTypeFilter = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -108,7 +109,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if InstanceStatusFilter property is set
         internal bool IsSetInstanceStatusFilter()
         {
-            return this._instanceStatusFilter != null && this._instanceStatusFilter.Count > 0; 
+            return this._instanceStatusFilter != null && (this._instanceStatusFilter.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -128,7 +129,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if InstanceTypeFilter property is set
         internal bool IsSetInstanceTypeFilter()
         {
-            return this._instanceTypeFilter != null && this._instanceTypeFilter.Count > 0; 
+            return this._instanceTypeFilter != null && (this._instanceTypeFilter.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

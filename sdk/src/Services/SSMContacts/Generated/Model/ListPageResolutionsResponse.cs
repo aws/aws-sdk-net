@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SSMContacts.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SSMContacts.Model
     public partial class ListPageResolutionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ResolutionContact> _pageResolutions = new List<ResolutionContact>();
+        private List<ResolutionContact> _pageResolutions = AWSConfigs.InitializeCollections ? new List<ResolutionContact>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.SSMContacts.Model
         // Check to see if PageResolutions property is set
         internal bool IsSetPageResolutions()
         {
-            return this._pageResolutions != null && this._pageResolutions.Count > 0; 
+            return this._pageResolutions != null && (this._pageResolutions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

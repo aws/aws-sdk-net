@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -34,11 +35,11 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class CreateWorkflowRequest : AmazonGlueRequest
     {
-        private Dictionary<string, string> _defaultRunProperties = new Dictionary<string, string>();
+        private Dictionary<string, string> _defaultRunProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _description;
         private int? _maxConcurrentRuns;
         private string _name;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property DefaultRunProperties. 
@@ -55,7 +56,7 @@ namespace Amazon.Glue.Model
         // Check to see if DefaultRunProperties property is set
         internal bool IsSetDefaultRunProperties()
         {
-            return this._defaultRunProperties != null && this._defaultRunProperties.Count > 0; 
+            return this._defaultRunProperties != null && (this._defaultRunProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -132,7 +133,7 @@ namespace Amazon.Glue.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

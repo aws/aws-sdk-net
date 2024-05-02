@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
     /// Container for the parameters to the ListCrossAccountResources operation.
-    /// List the cross-account endpoints available to add to an accelerator.
+    /// List the cross-account resources available to work with.
     /// </summary>
     public partial class ListCrossAccountResourcesRequest : AmazonGlobalAcceleratorRequest
     {
@@ -61,7 +62,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The number of cross-account endpoints objects that you want to return with this call.
+        /// The number of cross-account resource objects that you want to return with this call.
         /// The default value is 10.
         /// </para>
         /// </summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Athena.Model
 {
     /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.Athena.Model
         private QueryStagePlanNode _queryStagePlan;
         private long? _stageId;
         private string _state;
-        private List<QueryStage> _subStages = new List<QueryStage>();
+        private List<QueryStage> _subStages = AWSConfigs.InitializeCollections ? new List<QueryStage>() : null;
 
         /// <summary>
         /// Gets and sets the property ExecutionTime. 
@@ -203,7 +204,7 @@ namespace Amazon.Athena.Model
         // Check to see if SubStages property is set
         internal bool IsSetSubStages()
         {
-            return this._subStages != null && this._subStages.Count > 0; 
+            return this._subStages != null && (this._subStages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

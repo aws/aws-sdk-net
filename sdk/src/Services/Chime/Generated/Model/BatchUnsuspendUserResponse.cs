@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Chime.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Chime.Model
     /// </summary>
     public partial class BatchUnsuspendUserResponse : AmazonWebServiceResponse
     {
-        private List<UserError> _userErrors = new List<UserError>();
+        private List<UserError> _userErrors = AWSConfigs.InitializeCollections ? new List<UserError>() : null;
 
         /// <summary>
         /// Gets and sets the property UserErrors. 
@@ -51,7 +52,7 @@ namespace Amazon.Chime.Model
         // Check to see if UserErrors property is set
         internal bool IsSetUserErrors()
         {
-            return this._userErrors != null && this._userErrors.Count > 0; 
+            return this._userErrors != null && (this._userErrors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

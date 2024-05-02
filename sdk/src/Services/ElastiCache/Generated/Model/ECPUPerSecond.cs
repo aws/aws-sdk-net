@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
@@ -35,6 +36,7 @@ namespace Amazon.ElastiCache.Model
     public partial class ECPUPerSecond
     {
         private int? _maximum;
+        private int? _minimum;
 
         /// <summary>
         /// Gets and sets the property Maximum. 
@@ -42,7 +44,6 @@ namespace Amazon.ElastiCache.Model
         /// The configuration for the maximum number of ECPUs the cache can consume per second.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public int? Maximum
         {
             get { return this._maximum; }
@@ -53,6 +54,25 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetMaximum()
         {
             return this._maximum.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Minimum. 
+        /// <para>
+        /// The configuration for the minimum number of ECPUs the cache should be able consume
+        /// per second.
+        /// </para>
+        /// </summary>
+        public int? Minimum
+        {
+            get { return this._minimum; }
+            set { this._minimum = value; }
+        }
+
+        // Check to see if Minimum property is set
+        internal bool IsSetMinimum()
+        {
+            return this._minimum.HasValue; 
         }
 
     }

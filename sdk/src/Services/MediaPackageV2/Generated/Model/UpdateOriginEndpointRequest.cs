@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaPackageV2.Model
 {
     /// <summary>
@@ -43,9 +44,11 @@ namespace Amazon.MediaPackageV2.Model
         private string _channelGroupName;
         private string _channelName;
         private ContainerType _containerType;
+        private List<CreateDashManifestConfiguration> _dashManifests = AWSConfigs.InitializeCollections ? new List<CreateDashManifestConfiguration>() : null;
         private string _description;
-        private List<CreateHlsManifestConfiguration> _hlsManifests = new List<CreateHlsManifestConfiguration>();
-        private List<CreateLowLatencyHlsManifestConfiguration> _lowLatencyHlsManifests = new List<CreateLowLatencyHlsManifestConfiguration>();
+        private string _eTag;
+        private List<CreateHlsManifestConfiguration> _hlsManifests = AWSConfigs.InitializeCollections ? new List<CreateHlsManifestConfiguration>() : null;
+        private List<CreateLowLatencyHlsManifestConfiguration> _lowLatencyHlsManifests = AWSConfigs.InitializeCollections ? new List<CreateLowLatencyHlsManifestConfiguration>() : null;
         private string _originEndpointName;
         private Segment _segment;
         private int? _startoverWindowSeconds;
@@ -112,6 +115,24 @@ namespace Amazon.MediaPackageV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DashManifests. 
+        /// <para>
+        /// A DASH manifest configuration.
+        /// </para>
+        /// </summary>
+        public List<CreateDashManifestConfiguration> DashManifests
+        {
+            get { return this._dashManifests; }
+            set { this._dashManifests = value; }
+        }
+
+        // Check to see if DashManifests property is set
+        internal bool IsSetDashManifests()
+        {
+            return this._dashManifests != null && (this._dashManifests.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// Any descriptive information that you want to add to the origin endpoint for future
@@ -132,6 +153,26 @@ namespace Amazon.MediaPackageV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ETag. 
+        /// <para>
+        /// The expected current Entity Tag (ETag) for the resource. If the specified ETag does
+        /// not match the resource's current entity tag, the update request will be rejected.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string ETag
+        {
+            get { return this._eTag; }
+            set { this._eTag = value; }
+        }
+
+        // Check to see if ETag property is set
+        internal bool IsSetETag()
+        {
+            return this._eTag != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property HlsManifests. 
         /// <para>
         /// An HTTP live streaming (HLS) manifest configuration.
@@ -146,7 +187,7 @@ namespace Amazon.MediaPackageV2.Model
         // Check to see if HlsManifests property is set
         internal bool IsSetHlsManifests()
         {
-            return this._hlsManifests != null && this._hlsManifests.Count > 0; 
+            return this._hlsManifests != null && (this._hlsManifests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -164,7 +205,7 @@ namespace Amazon.MediaPackageV2.Model
         // Check to see if LowLatencyHlsManifests property is set
         internal bool IsSetLowLatencyHlsManifests()
         {
-            return this._lowLatencyHlsManifests != null && this._lowLatencyHlsManifests.Count > 0; 
+            return this._lowLatencyHlsManifests != null && (this._lowLatencyHlsManifests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

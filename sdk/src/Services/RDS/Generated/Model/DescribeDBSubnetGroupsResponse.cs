@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DescribeDBSubnetGroupsResponse : AmazonWebServiceResponse
     {
-        private List<DBSubnetGroup> _dbSubnetGroups = new List<DBSubnetGroup>();
+        private List<DBSubnetGroup> _dbSubnetGroups = AWSConfigs.InitializeCollections ? new List<DBSubnetGroup>() : null;
         private string _marker;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBSubnetGroups property is set
         internal bool IsSetDBSubnetGroups()
         {
-            return this._dbSubnetGroups != null && this._dbSubnetGroups.Count > 0; 
+            return this._dbSubnetGroups != null && (this._dbSubnetGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

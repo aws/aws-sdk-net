@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CodeGuruProfiler.Model
     public partial class ListProfileTimesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ProfileTime> _profileTimes = new List<ProfileTime>();
+        private List<ProfileTime> _profileTimes = AWSConfigs.InitializeCollections ? new List<ProfileTime>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -75,7 +76,7 @@ namespace Amazon.CodeGuruProfiler.Model
         // Check to see if ProfileTimes property is set
         internal bool IsSetProfileTimes()
         {
-            return this._profileTimes != null && this._profileTimes.Count > 0; 
+            return this._profileTimes != null && (this._profileTimes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

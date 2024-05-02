@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class PivotTableFieldCollapseStateTarget
     {
-        private List<DataPathValue> _fieldDataPathValues = new List<DataPathValue>();
+        private List<DataPathValue> _fieldDataPathValues = AWSConfigs.InitializeCollections ? new List<DataPathValue>() : null;
         private string _fieldId;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if FieldDataPathValues property is set
         internal bool IsSetFieldDataPathValues()
         {
-            return this._fieldDataPathValues != null && this._fieldDataPathValues.Count > 0; 
+            return this._fieldDataPathValues != null && (this._fieldDataPathValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

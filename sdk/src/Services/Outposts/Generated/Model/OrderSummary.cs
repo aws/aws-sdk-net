@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Outposts.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Outposts.Model
     /// </summary>
     public partial class OrderSummary
     {
-        private Dictionary<string, int> _lineItemCountsByStatus = new Dictionary<string, int>();
+        private Dictionary<string, int> _lineItemCountsByStatus = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
         private DateTime? _orderFulfilledDate;
         private string _orderId;
         private DateTime? _orderSubmissionDate;
@@ -56,7 +57,7 @@ namespace Amazon.Outposts.Model
         // Check to see if LineItemCountsByStatus property is set
         internal bool IsSetLineItemCountsByStatus()
         {
-            return this._lineItemCountsByStatus != null && this._lineItemCountsByStatus.Count > 0; 
+            return this._lineItemCountsByStatus != null && (this._lineItemCountsByStatus.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

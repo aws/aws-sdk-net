@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
@@ -48,19 +49,19 @@ namespace Amazon.KeyManagementService.Model
         private DateTime? _deletionDate;
         private string _description;
         private bool? _enabled;
-        private List<string> _encryptionAlgorithms = new List<string>();
+        private List<string> _encryptionAlgorithms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ExpirationModelType _expirationModel;
         private string _keyId;
         private KeyManagerType _keyManager;
         private KeySpec _keySpec;
         private KeyState _keyState;
         private KeyUsageType _keyUsage;
-        private List<string> _macAlgorithms = new List<string>();
+        private List<string> _macAlgorithms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _multiRegion;
         private MultiRegionConfiguration _multiRegionConfiguration;
         private OriginType _origin;
         private int? _pendingDeletionWindowInDays;
-        private List<string> _signingAlgorithms = new List<string>();
+        private List<string> _signingAlgorithms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _validTo;
         private XksKeyConfigurationType _xksKeyConfiguration;
 
@@ -273,7 +274,7 @@ namespace Amazon.KeyManagementService.Model
         // Check to see if EncryptionAlgorithms property is set
         internal bool IsSetEncryptionAlgorithms()
         {
-            return this._encryptionAlgorithms != null && this._encryptionAlgorithms.Count > 0; 
+            return this._encryptionAlgorithms != null && (this._encryptionAlgorithms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -414,7 +415,7 @@ namespace Amazon.KeyManagementService.Model
         // Check to see if MacAlgorithms property is set
         internal bool IsSetMacAlgorithms()
         {
-            return this._macAlgorithms != null && this._macAlgorithms.Count > 0; 
+            return this._macAlgorithms != null && (this._macAlgorithms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -556,7 +557,7 @@ namespace Amazon.KeyManagementService.Model
         // Check to see if SigningAlgorithms property is set
         internal bool IsSetSigningAlgorithms()
         {
-            return this._signingAlgorithms != null && this._signingAlgorithms.Count > 0; 
+            return this._signingAlgorithms != null && (this._signingAlgorithms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.DeviceFarm.Model
     {
         private bool? _compatible;
         private Device _device;
-        private List<IncompatibilityMessage> _incompatibilityMessages = new List<IncompatibilityMessage>();
+        private List<IncompatibilityMessage> _incompatibilityMessages = AWSConfigs.InitializeCollections ? new List<IncompatibilityMessage>() : null;
 
         /// <summary>
         /// Gets and sets the property Compatible. 
@@ -88,7 +89,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if IncompatibilityMessages property is set
         internal bool IsSetIncompatibilityMessages()
         {
-            return this._incompatibilityMessages != null && this._incompatibilityMessages.Count > 0; 
+            return this._incompatibilityMessages != null && (this._incompatibilityMessages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

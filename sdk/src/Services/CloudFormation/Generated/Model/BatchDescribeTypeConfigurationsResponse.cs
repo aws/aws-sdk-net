@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.CloudFormation.Model
     /// </summary>
     public partial class BatchDescribeTypeConfigurationsResponse : AmazonWebServiceResponse
     {
-        private List<BatchDescribeTypeConfigurationsError> _errors = new List<BatchDescribeTypeConfigurationsError>();
-        private List<TypeConfigurationDetails> _typeConfigurations = new List<TypeConfigurationDetails>();
-        private List<TypeConfigurationIdentifier> _unprocessedTypeConfigurations = new List<TypeConfigurationIdentifier>();
+        private List<BatchDescribeTypeConfigurationsError> _errors = AWSConfigs.InitializeCollections ? new List<BatchDescribeTypeConfigurationsError>() : null;
+        private List<TypeConfigurationDetails> _typeConfigurations = AWSConfigs.InitializeCollections ? new List<TypeConfigurationDetails>() : null;
+        private List<TypeConfigurationIdentifier> _unprocessedTypeConfigurations = AWSConfigs.InitializeCollections ? new List<TypeConfigurationIdentifier>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. 
@@ -53,7 +54,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if TypeConfigurations property is set
         internal bool IsSetTypeConfigurations()
         {
-            return this._typeConfigurations != null && this._typeConfigurations.Count > 0; 
+            return this._typeConfigurations != null && (this._typeConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -90,7 +91,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if UnprocessedTypeConfigurations property is set
         internal bool IsSetUnprocessedTypeConfigurations()
         {
-            return this._unprocessedTypeConfigurations != null && this._unprocessedTypeConfigurations.Count > 0; 
+            return this._unprocessedTypeConfigurations != null && (this._unprocessedTypeConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

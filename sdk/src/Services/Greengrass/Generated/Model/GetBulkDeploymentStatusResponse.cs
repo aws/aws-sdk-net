@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
@@ -36,9 +37,9 @@ namespace Amazon.Greengrass.Model
         private BulkDeploymentMetrics _bulkDeploymentMetrics;
         private BulkDeploymentStatus _bulkDeploymentStatus;
         private string _createdAt;
-        private List<ErrorDetail> _errorDetails = new List<ErrorDetail>();
+        private List<ErrorDetail> _errorDetails = AWSConfigs.InitializeCollections ? new List<ErrorDetail>() : null;
         private string _errorMessage;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property BulkDeploymentMetrics. Relevant metrics on input records
@@ -99,7 +100,7 @@ namespace Amazon.Greengrass.Model
         // Check to see if ErrorDetails property is set
         internal bool IsSetErrorDetails()
         {
-            return this._errorDetails != null && this._errorDetails.Count > 0; 
+            return this._errorDetails != null && (this._errorDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -129,7 +130,7 @@ namespace Amazon.Greengrass.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

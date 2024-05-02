@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -35,9 +36,9 @@ namespace Amazon.EC2.Model
     {
         private string _description;
         private string _fpgaImageId;
-        private List<LoadPermission> _loadPermissions = new List<LoadPermission>();
+        private List<LoadPermission> _loadPermissions = AWSConfigs.InitializeCollections ? new List<LoadPermission>() : null;
         private string _name;
-        private List<ProductCode> _productCodes = new List<ProductCode>();
+        private List<ProductCode> _productCodes = AWSConfigs.InitializeCollections ? new List<ProductCode>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -90,7 +91,7 @@ namespace Amazon.EC2.Model
         // Check to see if LoadPermissions property is set
         internal bool IsSetLoadPermissions()
         {
-            return this._loadPermissions != null && this._loadPermissions.Count > 0; 
+            return this._loadPermissions != null && (this._loadPermissions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -126,7 +127,7 @@ namespace Amazon.EC2.Model
         // Check to see if ProductCodes property is set
         internal bool IsSetProductCodes()
         {
-            return this._productCodes != null && this._productCodes.Count > 0; 
+            return this._productCodes != null && (this._productCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.ServiceCatalog.Model
     {
         private string _nextPageToken;
         private ProvisionedProductPlanDetails _provisionedProductPlanDetails;
-        private List<ResourceChange> _resourceChanges = new List<ResourceChange>();
+        private List<ResourceChange> _resourceChanges = AWSConfigs.InitializeCollections ? new List<ResourceChange>() : null;
 
         /// <summary>
         /// Gets and sets the property NextPageToken. 
@@ -90,7 +91,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if ResourceChanges property is set
         internal bool IsSetResourceChanges()
         {
-            return this._resourceChanges != null && this._resourceChanges.Count > 0; 
+            return this._resourceChanges != null && (this._resourceChanges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

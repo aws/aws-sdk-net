@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class AssetBundleImportJobAnalysisOverridePermissions
     {
-        private List<string> _analysisIds = new List<string>();
+        private List<string> _analysisIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AssetBundleResourcePermissions _permissions;
 
         /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if AnalysisIds property is set
         internal bool IsSetAnalysisIds()
         {
-            return this._analysisIds != null && this._analysisIds.Count > 0; 
+            return this._analysisIds != null && (this._analysisIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

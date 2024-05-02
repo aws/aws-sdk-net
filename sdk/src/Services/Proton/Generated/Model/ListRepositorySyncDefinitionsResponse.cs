@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Proton.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Proton.Model
     public partial class ListRepositorySyncDefinitionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RepositorySyncDefinition> _syncDefinitions = new List<RepositorySyncDefinition>();
+        private List<RepositorySyncDefinition> _syncDefinitions = AWSConfigs.InitializeCollections ? new List<RepositorySyncDefinition>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +74,7 @@ namespace Amazon.Proton.Model
         // Check to see if SyncDefinitions property is set
         internal bool IsSetSyncDefinitions()
         {
-            return this._syncDefinitions != null && this._syncDefinitions.Count > 0; 
+            return this._syncDefinitions != null && (this._syncDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

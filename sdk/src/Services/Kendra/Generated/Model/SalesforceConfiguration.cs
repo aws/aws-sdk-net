@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -35,13 +36,13 @@ namespace Amazon.Kendra.Model
     {
         private SalesforceChatterFeedConfiguration _chatterFeedConfiguration;
         private bool? _crawlAttachments;
-        private List<string> _excludeAttachmentFilePatterns = new List<string>();
-        private List<string> _includeAttachmentFilePatterns = new List<string>();
+        private List<string> _excludeAttachmentFilePatterns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _includeAttachmentFilePatterns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SalesforceKnowledgeArticleConfiguration _knowledgeArticleConfiguration;
         private string _secretArn;
         private string _serverUrl;
         private SalesforceStandardObjectAttachmentConfiguration _standardObjectAttachmentConfiguration;
-        private List<SalesforceStandardObjectConfiguration> _standardObjectConfigurations = new List<SalesforceStandardObjectConfiguration>();
+        private List<SalesforceStandardObjectConfiguration> _standardObjectConfigurations = AWSConfigs.InitializeCollections ? new List<SalesforceStandardObjectConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property ChatterFeedConfiguration. 
@@ -103,7 +104,7 @@ namespace Amazon.Kendra.Model
         // Check to see if ExcludeAttachmentFilePatterns property is set
         internal bool IsSetExcludeAttachmentFilePatterns()
         {
-            return this._excludeAttachmentFilePatterns != null && this._excludeAttachmentFilePatterns.Count > 0; 
+            return this._excludeAttachmentFilePatterns != null && (this._excludeAttachmentFilePatterns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -130,7 +131,7 @@ namespace Amazon.Kendra.Model
         // Check to see if IncludeAttachmentFilePatterns property is set
         internal bool IsSetIncludeAttachmentFilePatterns()
         {
-            return this._includeAttachmentFilePatterns != null && this._includeAttachmentFilePatterns.Count > 0; 
+            return this._includeAttachmentFilePatterns != null && (this._includeAttachmentFilePatterns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -256,7 +257,7 @@ namespace Amazon.Kendra.Model
         // Check to see if StandardObjectConfigurations property is set
         internal bool IsSetStandardObjectConfigurations()
         {
-            return this._standardObjectConfigurations != null && this._standardObjectConfigurations.Count > 0; 
+            return this._standardObjectConfigurations != null && (this._standardObjectConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

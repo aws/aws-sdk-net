@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.DataZone.Model
         private bool? _managed;
         private int? _maxResults;
         private string _nextToken;
-        private List<SearchInItem> _searchIn = new List<SearchInItem>();
+        private List<SearchInItem> _searchIn = AWSConfigs.InitializeCollections ? new List<SearchInItem>() : null;
         private TypesSearchScope _searchScope;
         private string _searchText;
         private SearchSort _sort;
@@ -83,7 +84,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Managed.
+        /// Gets and sets the property Managed. 
+        /// <para>
+        /// Specifies whether the search is managed.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public bool? Managed
@@ -144,7 +148,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SearchIn.
+        /// Gets and sets the property SearchIn. 
+        /// <para>
+        /// The details of the search.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
         public List<SearchInItem> SearchIn
@@ -156,7 +163,7 @@ namespace Amazon.DataZone.Model
         // Check to see if SearchIn property is set
         internal bool IsSetSearchIn()
         {
-            return this._searchIn != null && this._searchIn.Count > 0; 
+            return this._searchIn != null && (this._searchIn.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.ElasticMapReduce.Model
     public partial class CloudWatchAlarmDefinition
     {
         private ComparisonOperator _comparisonOperator;
-        private List<MetricDimension> _dimensions = new List<MetricDimension>();
+        private List<MetricDimension> _dimensions = AWSConfigs.InitializeCollections ? new List<MetricDimension>() : null;
         private int? _evaluationPeriods;
         private string _metricName;
         private string _awsNamespace;
@@ -80,7 +81,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Dimensions property is set
         internal bool IsSetDimensions()
         {
-            return this._dimensions != null && this._dimensions.Count > 0; 
+            return this._dimensions != null && (this._dimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

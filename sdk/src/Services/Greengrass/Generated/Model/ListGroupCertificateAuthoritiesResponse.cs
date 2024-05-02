@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Greengrass.Model
     /// </summary>
     public partial class ListGroupCertificateAuthoritiesResponse : AmazonWebServiceResponse
     {
-        private List<GroupCertificateAuthorityProperties> _groupCertificateAuthorities = new List<GroupCertificateAuthorityProperties>();
+        private List<GroupCertificateAuthorityProperties> _groupCertificateAuthorities = AWSConfigs.InitializeCollections ? new List<GroupCertificateAuthorityProperties>() : null;
 
         /// <summary>
         /// Gets and sets the property GroupCertificateAuthorities. A list of certificate authorities
@@ -48,7 +49,7 @@ namespace Amazon.Greengrass.Model
         // Check to see if GroupCertificateAuthorities property is set
         internal bool IsSetGroupCertificateAuthorities()
         {
-            return this._groupCertificateAuthorities != null && this._groupCertificateAuthorities.Count > 0; 
+            return this._groupCertificateAuthorities != null && (this._groupCertificateAuthorities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -191,7 +191,7 @@ namespace Amazon.Kendra
         /// <summary>
         /// Constant Equals for ConditionOperator
         /// </summary>
-        public static readonly ConditionOperator Equals = new ConditionOperator("Equals");
+        public new static readonly ConditionOperator Equals = new ConditionOperator("Equals");
         /// <summary>
         /// Constant Exists for ConditionOperator
         /// </summary>

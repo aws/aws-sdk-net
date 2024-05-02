@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EKS.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EKS.Model
     /// </summary>
     public partial class ListIdentityProviderConfigsResponse : AmazonWebServiceResponse
     {
-        private List<IdentityProviderConfig> _identityProviderConfigs = new List<IdentityProviderConfig>();
+        private List<IdentityProviderConfig> _identityProviderConfigs = AWSConfigs.InitializeCollections ? new List<IdentityProviderConfig>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.EKS.Model
         // Check to see if IdentityProviderConfigs property is set
         internal bool IsSetIdentityProviderConfigs()
         {
-            return this._identityProviderConfigs != null && this._identityProviderConfigs.Count > 0; 
+            return this._identityProviderConfigs != null && (this._identityProviderConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

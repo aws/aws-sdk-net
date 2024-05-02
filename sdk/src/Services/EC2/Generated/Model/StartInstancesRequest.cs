@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -68,7 +69,7 @@ namespace Amazon.EC2.Model
     public partial class StartInstancesRequest : AmazonEC2Request
     {
         private string _additionalInfo;
-        private List<string> _instanceIds = new List<string>();
+        private List<string> _instanceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -118,7 +119,7 @@ namespace Amazon.EC2.Model
         // Check to see if InstanceIds property is set
         internal bool IsSetInstanceIds()
         {
-            return this._instanceIds != null && this._instanceIds.Count > 0; 
+            return this._instanceIds != null && (this._instanceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

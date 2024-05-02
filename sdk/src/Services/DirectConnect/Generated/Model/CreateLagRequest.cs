@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
@@ -65,7 +66,7 @@ namespace Amazon.DirectConnect.Model
     /// </summary>
     public partial class CreateLagRequest : AmazonDirectConnectRequest
     {
-        private List<Tag> _childConnectionTags = new List<Tag>();
+        private List<Tag> _childConnectionTags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _connectionId;
         private string _connectionsBandwidth;
         private string _lagName;
@@ -73,7 +74,7 @@ namespace Amazon.DirectConnect.Model
         private int? _numberOfConnections;
         private string _providerName;
         private bool? _requestmacSec;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ChildConnectionTags. 
@@ -91,7 +92,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if ChildConnectionTags property is set
         internal bool IsSetChildConnectionTags()
         {
-            return this._childConnectionTags != null && this._childConnectionTags.Count > 0; 
+            return this._childConnectionTags != null && (this._childConnectionTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -250,7 +251,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

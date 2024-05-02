@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Omics.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Omics.Model
         /// Enumerable containing all of the AnnotationStores
         /// </summary>
         public IPaginatedEnumerable<AnnotationStoreItem> AnnotationStores => 
-            new PaginatedResultKeyResponse<ListAnnotationStoresResponse, AnnotationStoreItem>(this, (i) => i.AnnotationStores);
+            new PaginatedResultKeyResponse<ListAnnotationStoresResponse, AnnotationStoreItem>(this, (i) => i.AnnotationStores ?? new List<AnnotationStoreItem>());
 
         internal ListAnnotationStoresPaginator(IAmazonOmics client, ListAnnotationStoresRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Omics.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListAnnotationStoresResponse> IPaginator<ListAnnotationStoresResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListAnnotationStoresResponse> IPaginator<ListAnnotationStoresResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

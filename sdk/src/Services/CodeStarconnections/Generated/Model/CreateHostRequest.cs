@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeStarconnections.Model
 {
     /// <summary>
@@ -47,7 +48,7 @@ namespace Amazon.CodeStarconnections.Model
         private string _name;
         private string _providerEndpoint;
         private ProviderType _providerType;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private VpcConfiguration _vpcConfiguration;
 
         /// <summary>
@@ -125,7 +126,7 @@ namespace Amazon.CodeStarconnections.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

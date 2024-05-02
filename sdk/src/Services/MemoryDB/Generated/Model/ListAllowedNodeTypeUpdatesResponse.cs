@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.MemoryDB.Model
     /// </summary>
     public partial class ListAllowedNodeTypeUpdatesResponse : AmazonWebServiceResponse
     {
-        private List<string> _scaleDownNodeTypes = new List<string>();
-        private List<string> _scaleUpNodeTypes = new List<string>();
+        private List<string> _scaleDownNodeTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _scaleUpNodeTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ScaleDownNodeTypes. 
@@ -51,7 +52,7 @@ namespace Amazon.MemoryDB.Model
         // Check to see if ScaleDownNodeTypes property is set
         internal bool IsSetScaleDownNodeTypes()
         {
-            return this._scaleDownNodeTypes != null && this._scaleDownNodeTypes.Count > 0; 
+            return this._scaleDownNodeTypes != null && (this._scaleDownNodeTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.MemoryDB.Model
         // Check to see if ScaleUpNodeTypes property is set
         internal bool IsSetScaleUpNodeTypes()
         {
-            return this._scaleUpNodeTypes != null && this._scaleUpNodeTypes.Count > 0; 
+            return this._scaleUpNodeTypes != null && (this._scaleUpNodeTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

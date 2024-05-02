@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GameLift.Model
 {
     /// <summary>
@@ -48,11 +49,11 @@ namespace Amazon.GameLift.Model
     public partial class UpdateGameSessionQueueRequest : AmazonGameLiftRequest
     {
         private string _customEventData;
-        private List<GameSessionQueueDestination> _destinations = new List<GameSessionQueueDestination>();
+        private List<GameSessionQueueDestination> _destinations = AWSConfigs.InitializeCollections ? new List<GameSessionQueueDestination>() : null;
         private FilterConfiguration _filterConfiguration;
         private string _name;
         private string _notificationTarget;
-        private List<PlayerLatencyPolicy> _playerLatencyPolicies = new List<PlayerLatencyPolicy>();
+        private List<PlayerLatencyPolicy> _playerLatencyPolicies = AWSConfigs.InitializeCollections ? new List<PlayerLatencyPolicy>() : null;
         private PriorityConfiguration _priorityConfiguration;
         private int? _timeoutInSeconds;
 

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
@@ -35,10 +36,10 @@ namespace Amazon.ComputeOptimizer.Model
     {
         private string _accountId;
         private CurrentPerformanceRiskRatings _currentPerformanceRiskRatings;
-        private List<InferredWorkloadSaving> _inferredWorkloadSavings = new List<InferredWorkloadSaving>();
+        private List<InferredWorkloadSaving> _inferredWorkloadSavings = AWSConfigs.InitializeCollections ? new List<InferredWorkloadSaving>() : null;
         private RecommendationSourceType _recommendationResourceType;
         private SavingsOpportunity _savingsOpportunity;
-        private List<Summary> _summaries = new List<Summary>();
+        private List<Summary> _summaries = AWSConfigs.InitializeCollections ? new List<Summary>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -93,7 +94,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if InferredWorkloadSavings property is set
         internal bool IsSetInferredWorkloadSavings()
         {
-            return this._inferredWorkloadSavings != null && this._inferredWorkloadSavings.Count > 0; 
+            return this._inferredWorkloadSavings != null && (this._inferredWorkloadSavings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -148,7 +149,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if Summaries property is set
         internal bool IsSetSummaries()
         {
-            return this._summaries != null && this._summaries.Count > 0; 
+            return this._summaries != null && (this._summaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

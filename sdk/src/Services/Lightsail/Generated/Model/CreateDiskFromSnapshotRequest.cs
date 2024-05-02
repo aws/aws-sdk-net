@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
@@ -44,14 +45,14 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class CreateDiskFromSnapshotRequest : AmazonLightsailRequest
     {
-        private List<AddOnRequest> _addOns = new List<AddOnRequest>();
+        private List<AddOnRequest> _addOns = AWSConfigs.InitializeCollections ? new List<AddOnRequest>() : null;
         private string _availabilityZone;
         private string _diskName;
         private string _diskSnapshotName;
         private string _restoreDate;
         private int? _sizeInGb;
         private string _sourceDiskName;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private bool? _useLatestRestorableAutoSnapshot;
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if AddOns property is set
         internal bool IsSetAddOns()
         {
-            return this._addOns != null && this._addOns.Count > 0; 
+            return this._addOns != null && (this._addOns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -260,7 +261,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

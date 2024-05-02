@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.ElasticBeanstalk.Model
     /// </summary>
     public partial class ListAvailableSolutionStacksResponse : AmazonWebServiceResponse
     {
-        private List<SolutionStackDescription> _solutionStackDetails = new List<SolutionStackDescription>();
-        private List<string> _solutionStacks = new List<string>();
+        private List<SolutionStackDescription> _solutionStackDetails = AWSConfigs.InitializeCollections ? new List<SolutionStackDescription>() : null;
+        private List<string> _solutionStacks = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property SolutionStackDetails. 
@@ -51,7 +52,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if SolutionStackDetails property is set
         internal bool IsSetSolutionStackDetails()
         {
-            return this._solutionStackDetails != null && this._solutionStackDetails.Count > 0; 
+            return this._solutionStackDetails != null && (this._solutionStackDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if SolutionStacks property is set
         internal bool IsSetSolutionStacks()
         {
-            return this._solutionStacks != null && this._solutionStacks.Count > 0; 
+            return this._solutionStacks != null && (this._solutionStacks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

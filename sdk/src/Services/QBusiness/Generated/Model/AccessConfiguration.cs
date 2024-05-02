@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.QBusiness.Model
     /// </summary>
     public partial class AccessConfiguration
     {
-        private List<AccessControl> _accessControls = new List<AccessControl>();
+        private List<AccessControl> _accessControls = AWSConfigs.InitializeCollections ? new List<AccessControl>() : null;
         private MemberRelation _memberRelation;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if AccessControls property is set
         internal bool IsSetAccessControls()
         {
-            return this._accessControls != null && this._accessControls.Count > 0; 
+            return this._accessControls != null && (this._accessControls.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

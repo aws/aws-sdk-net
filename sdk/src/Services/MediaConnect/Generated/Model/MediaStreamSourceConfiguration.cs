@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.MediaConnect.Model
     public partial class MediaStreamSourceConfiguration
     {
         private EncodingName _encodingName;
-        private List<InputConfiguration> _inputConfigurations = new List<InputConfiguration>();
+        private List<InputConfiguration> _inputConfigurations = AWSConfigs.InitializeCollections ? new List<InputConfiguration>() : null;
         private string _mediaStreamName;
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if InputConfigurations property is set
         internal bool IsSetInputConfigurations()
         {
-            return this._inputConfigurations != null && this._inputConfigurations.Count > 0; 
+            return this._inputConfigurations != null && (this._inputConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

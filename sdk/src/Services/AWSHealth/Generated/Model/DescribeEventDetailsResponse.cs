@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.AWSHealth.Model
     /// </summary>
     public partial class DescribeEventDetailsResponse : AmazonWebServiceResponse
     {
-        private List<EventDetailsErrorItem> _failedSet = new List<EventDetailsErrorItem>();
-        private List<EventDetails> _successfulSet = new List<EventDetails>();
+        private List<EventDetailsErrorItem> _failedSet = AWSConfigs.InitializeCollections ? new List<EventDetailsErrorItem>() : null;
+        private List<EventDetails> _successfulSet = AWSConfigs.InitializeCollections ? new List<EventDetails>() : null;
 
         /// <summary>
         /// Gets and sets the property FailedSet. 
@@ -51,7 +52,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if FailedSet property is set
         internal bool IsSetFailedSet()
         {
-            return this._failedSet != null && this._failedSet.Count > 0; 
+            return this._failedSet != null && (this._failedSet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if SuccessfulSet property is set
         internal bool IsSetSuccessfulSet()
         {
-            return this._successfulSet != null && this._successfulSet.Count > 0; 
+            return this._successfulSet != null && (this._successfulSet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

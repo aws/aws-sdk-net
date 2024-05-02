@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
@@ -34,11 +35,11 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// </summary>
     public partial class DescribeRegistrationVersionsRequest : AmazonPinpointSMSVoiceV2Request
     {
-        private List<RegistrationVersionFilter> _filters = new List<RegistrationVersionFilter>();
+        private List<RegistrationVersionFilter> _filters = AWSConfigs.InitializeCollections ? new List<RegistrationVersionFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
         private string _registrationId;
-        private List<long> _versionNumbers = new List<long>();
+        private List<long> _versionNumbers = AWSConfigs.InitializeCollections ? new List<long>() : null;
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -56,7 +57,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -133,7 +134,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if VersionNumbers property is set
         internal bool IsSetVersionNumbers()
         {
-            return this._versionNumbers != null && this._versionNumbers.Count > 0; 
+            return this._versionNumbers != null && (this._versionNumbers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

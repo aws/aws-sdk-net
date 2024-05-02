@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Finspace.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Finspace.Model
     public partial class GetKxChangesetResponse : AmazonWebServiceResponse
     {
         private DateTime? _activeFromTimestamp;
-        private List<ChangeRequest> _changeRequests = new List<ChangeRequest>();
+        private List<ChangeRequest> _changeRequests = AWSConfigs.InitializeCollections ? new List<ChangeRequest>() : null;
         private string _changesetId;
         private DateTime? _createdTimestamp;
         private string _databaseName;
@@ -79,7 +80,7 @@ namespace Amazon.Finspace.Model
         // Check to see if ChangeRequests property is set
         internal bool IsSetChangeRequests()
         {
-            return this._changeRequests != null && this._changeRequests.Count > 0; 
+            return this._changeRequests != null && (this._changeRequests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

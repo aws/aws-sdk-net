@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class ListJobTemplatesResponse : AmazonWebServiceResponse
     {
-        private List<JobTemplate> _jobTemplates = new List<JobTemplate>();
+        private List<JobTemplate> _jobTemplates = AWSConfigs.InitializeCollections ? new List<JobTemplate>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -48,7 +49,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if JobTemplates property is set
         internal bool IsSetJobTemplates()
         {
-            return this._jobTemplates != null && this._jobTemplates.Count > 0; 
+            return this._jobTemplates != null && (this._jobTemplates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

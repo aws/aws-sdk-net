@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class ListDatasetLabelsResponse : AmazonWebServiceResponse
     {
-        private List<DatasetLabelDescription> _datasetLabelDescriptions = new List<DatasetLabelDescription>();
+        private List<DatasetLabelDescription> _datasetLabelDescriptions = AWSConfigs.InitializeCollections ? new List<DatasetLabelDescription>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if DatasetLabelDescriptions property is set
         internal bool IsSetDatasetLabelDescriptions()
         {
-            return this._datasetLabelDescriptions != null && this._datasetLabelDescriptions.Count > 0; 
+            return this._datasetLabelDescriptions != null && (this._datasetLabelDescriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -40,14 +41,14 @@ namespace Amazon.EC2.Model
         private string _imageId;
         private string _importTaskId;
         private string _kmsKeyId;
-        private List<ImportImageLicenseConfigurationResponse> _licenseSpecifications = new List<ImportImageLicenseConfigurationResponse>();
+        private List<ImportImageLicenseConfigurationResponse> _licenseSpecifications = AWSConfigs.InitializeCollections ? new List<ImportImageLicenseConfigurationResponse>() : null;
         private string _licenseType;
         private string _platform;
         private string _progress;
-        private List<SnapshotDetail> _snapshotDetails = new List<SnapshotDetail>();
+        private List<SnapshotDetail> _snapshotDetails = AWSConfigs.InitializeCollections ? new List<SnapshotDetail>() : null;
         private string _status;
         private string _statusMessage;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _usageOperation;
 
         /// <summary>
@@ -191,7 +192,7 @@ namespace Amazon.EC2.Model
         // Check to see if LicenseSpecifications property is set
         internal bool IsSetLicenseSpecifications()
         {
-            return this._licenseSpecifications != null && this._licenseSpecifications.Count > 0; 
+            return this._licenseSpecifications != null && (this._licenseSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -263,7 +264,7 @@ namespace Amazon.EC2.Model
         // Check to see if SnapshotDetails property is set
         internal bool IsSetSnapshotDetails()
         {
-            return this._snapshotDetails != null && this._snapshotDetails.Count > 0; 
+            return this._snapshotDetails != null && (this._snapshotDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -317,7 +318,7 @@ namespace Amazon.EC2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaTailor.Model
 {
     /// <summary>
@@ -33,8 +34,9 @@ namespace Amazon.MediaTailor.Model
     /// </summary>
     public partial class UpdateProgramResponse : AmazonWebServiceResponse
     {
-        private List<AdBreak> _adBreaks = new List<AdBreak>();
+        private List<AdBreak> _adBreaks = AWSConfigs.InitializeCollections ? new List<AdBreak>() : null;
         private string _arn;
+        private List<AudienceMedia> _audienceMedia = AWSConfigs.InitializeCollections ? new List<AudienceMedia>() : null;
         private string _channelName;
         private ClipRange _clipRange;
         private DateTime? _creationTime;
@@ -60,7 +62,7 @@ namespace Amazon.MediaTailor.Model
         // Check to see if AdBreaks property is set
         internal bool IsSetAdBreaks()
         {
-            return this._adBreaks != null && this._adBreaks.Count > 0; 
+            return this._adBreaks != null && (this._adBreaks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -79,6 +81,24 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AudienceMedia. 
+        /// <para>
+        /// The list of AudienceMedia defined in program.
+        /// </para>
+        /// </summary>
+        public List<AudienceMedia> AudienceMedia
+        {
+            get { return this._audienceMedia; }
+            set { this._audienceMedia = value; }
+        }
+
+        // Check to see if AudienceMedia property is set
+        internal bool IsSetAudienceMedia()
+        {
+            return this._audienceMedia != null && (this._audienceMedia.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -48,17 +49,19 @@ namespace Amazon.EC2.Model
         private InstanceStorageInfo _instanceStorageInfo;
         private bool? _instanceStorageSupported;
         private InstanceType _instanceType;
+        private MediaAcceleratorInfo _mediaAcceleratorInfo;
         private MemoryInfo _memoryInfo;
         private NetworkInfo _networkInfo;
+        private NeuronInfo _neuronInfo;
         private NitroEnclavesSupport _nitroEnclavesSupport;
         private NitroTpmInfo _nitroTpmInfo;
         private NitroTpmSupport _nitroTpmSupport;
         private PlacementGroupInfo _placementGroupInfo;
         private ProcessorInfo _processorInfo;
-        private List<string> _supportedBootModes = new List<string>();
-        private List<string> _supportedRootDeviceTypes = new List<string>();
-        private List<string> _supportedUsageClasses = new List<string>();
-        private List<string> _supportedVirtualizationTypes = new List<string>();
+        private List<string> _supportedBootModes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _supportedRootDeviceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _supportedUsageClasses = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _supportedVirtualizationTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private VCpuInfo _vCpuInfo;
 
         /// <summary>
@@ -335,6 +338,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MediaAcceleratorInfo. 
+        /// <para>
+        /// Describes the media accelerator settings for the instance type.
+        /// </para>
+        /// </summary>
+        public MediaAcceleratorInfo MediaAcceleratorInfo
+        {
+            get { return this._mediaAcceleratorInfo; }
+            set { this._mediaAcceleratorInfo = value; }
+        }
+
+        // Check to see if MediaAcceleratorInfo property is set
+        internal bool IsSetMediaAcceleratorInfo()
+        {
+            return this._mediaAcceleratorInfo != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MemoryInfo. 
         /// <para>
         /// Describes the memory for the instance type.
@@ -368,6 +389,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetNetworkInfo()
         {
             return this._networkInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NeuronInfo. 
+        /// <para>
+        /// Describes the Neuron accelerator settings for the instance type.
+        /// </para>
+        /// </summary>
+        public NeuronInfo NeuronInfo
+        {
+            get { return this._neuronInfo; }
+            set { this._neuronInfo = value; }
+        }
+
+        // Check to see if NeuronInfo property is set
+        internal bool IsSetNeuronInfo()
+        {
+            return this._neuronInfo != null;
         }
 
         /// <summary>
@@ -476,7 +515,7 @@ namespace Amazon.EC2.Model
         // Check to see if SupportedBootModes property is set
         internal bool IsSetSupportedBootModes()
         {
-            return this._supportedBootModes != null && this._supportedBootModes.Count > 0; 
+            return this._supportedBootModes != null && (this._supportedBootModes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -494,7 +533,7 @@ namespace Amazon.EC2.Model
         // Check to see if SupportedRootDeviceTypes property is set
         internal bool IsSetSupportedRootDeviceTypes()
         {
-            return this._supportedRootDeviceTypes != null && this._supportedRootDeviceTypes.Count > 0; 
+            return this._supportedRootDeviceTypes != null && (this._supportedRootDeviceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -512,7 +551,7 @@ namespace Amazon.EC2.Model
         // Check to see if SupportedUsageClasses property is set
         internal bool IsSetSupportedUsageClasses()
         {
-            return this._supportedUsageClasses != null && this._supportedUsageClasses.Count > 0; 
+            return this._supportedUsageClasses != null && (this._supportedUsageClasses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -530,7 +569,7 @@ namespace Amazon.EC2.Model
         // Check to see if SupportedVirtualizationTypes property is set
         internal bool IsSetSupportedVirtualizationTypes()
         {
-            return this._supportedVirtualizationTypes != null && this._supportedVirtualizationTypes.Count > 0; 
+            return this._supportedVirtualizationTypes != null && (this._supportedVirtualizationTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

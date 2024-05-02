@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class DescribePatchPropertiesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Dictionary<string, string>> _properties = new List<Dictionary<string, string>>();
+        private List<Dictionary<string, string>> _properties = AWSConfigs.InitializeCollections ? new List<Dictionary<string, string>>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +70,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Properties property is set
         internal bool IsSetProperties()
         {
-            return this._properties != null && this._properties.Count > 0; 
+            return this._properties != null && (this._properties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

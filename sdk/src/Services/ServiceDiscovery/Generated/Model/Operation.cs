@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.ServiceDiscovery.Model
         private string _errorMessage;
         private string _id;
         private OperationStatus _status;
-        private Dictionary<string, string> _targets = new Dictionary<string, string>();
+        private Dictionary<string, string> _targets = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private OperationType _type;
         private DateTime? _updateDate;
 
@@ -211,7 +212,7 @@ namespace Amazon.ServiceDiscovery.Model
         // Check to see if Targets property is set
         internal bool IsSetTargets()
         {
-            return this._targets != null && this._targets.Count > 0; 
+            return this._targets != null && (this._targets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

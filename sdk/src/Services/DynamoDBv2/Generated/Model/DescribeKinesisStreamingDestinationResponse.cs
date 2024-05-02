@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class DescribeKinesisStreamingDestinationResponse : AmazonWebServiceResponse
     {
-        private List<KinesisDataStreamDestination> _kinesisDataStreamDestinations = new List<KinesisDataStreamDestination>();
+        private List<KinesisDataStreamDestination> _kinesisDataStreamDestinations = AWSConfigs.InitializeCollections ? new List<KinesisDataStreamDestination>() : null;
         private string _tableName;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if KinesisDataStreamDestinations property is set
         internal bool IsSetKinesisDataStreamDestinations()
         {
-            return this._kinesisDataStreamDestinations != null && this._kinesisDataStreamDestinations.Count > 0; 
+            return this._kinesisDataStreamDestinations != null && (this._kinesisDataStreamDestinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IVSRealTime.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IVSRealTime.Model
     public partial class ListStagesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<StageSummary> _stages = new List<StageSummary>();
+        private List<StageSummary> _stages = AWSConfigs.InitializeCollections ? new List<StageSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.IVSRealTime.Model
         // Check to see if Stages property is set
         internal bool IsSetStages()
         {
-            return this._stages != null && this._stages.Count > 0; 
+            return this._stages != null && (this._stages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

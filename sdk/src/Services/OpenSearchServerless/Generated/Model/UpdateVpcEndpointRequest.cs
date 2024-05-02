@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpenSearchServerless.Model
 {
     /// <summary>
@@ -36,12 +37,12 @@ namespace Amazon.OpenSearchServerless.Model
     /// </summary>
     public partial class UpdateVpcEndpointRequest : AmazonOpenSearchServerlessRequest
     {
-        private List<string> _addSecurityGroupIds = new List<string>();
-        private List<string> _addSubnetIds = new List<string>();
+        private List<string> _addSecurityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _addSubnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _clientToken;
         private string _id;
-        private List<string> _removeSecurityGroupIds = new List<string>();
-        private List<string> _removeSubnetIds = new List<string>();
+        private List<string> _removeSecurityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _removeSubnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AddSecurityGroupIds. 
@@ -61,7 +62,7 @@ namespace Amazon.OpenSearchServerless.Model
         // Check to see if AddSecurityGroupIds property is set
         internal bool IsSetAddSecurityGroupIds()
         {
-            return this._addSecurityGroupIds != null && this._addSecurityGroupIds.Count > 0; 
+            return this._addSecurityGroupIds != null && (this._addSecurityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -80,7 +81,7 @@ namespace Amazon.OpenSearchServerless.Model
         // Check to see if AddSubnetIds property is set
         internal bool IsSetAddSubnetIds()
         {
-            return this._addSubnetIds != null && this._addSubnetIds.Count > 0; 
+            return this._addSubnetIds != null && (this._addSubnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -137,7 +138,7 @@ namespace Amazon.OpenSearchServerless.Model
         // Check to see if RemoveSecurityGroupIds property is set
         internal bool IsSetRemoveSecurityGroupIds()
         {
-            return this._removeSecurityGroupIds != null && this._removeSecurityGroupIds.Count > 0; 
+            return this._removeSecurityGroupIds != null && (this._removeSecurityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -156,7 +157,7 @@ namespace Amazon.OpenSearchServerless.Model
         // Check to see if RemoveSubnetIds property is set
         internal bool IsSetRemoveSubnetIds()
         {
-            return this._removeSubnetIds != null && this._removeSubnetIds.Count > 0; 
+            return this._removeSubnetIds != null && (this._removeSubnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

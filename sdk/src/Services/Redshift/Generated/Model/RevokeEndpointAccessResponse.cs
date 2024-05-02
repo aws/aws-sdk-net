@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Redshift.Model
     public partial class RevokeEndpointAccessResponse : AmazonWebServiceResponse
     {
         private bool? _allowedAllVPCs;
-        private List<string> _allowedVPCs = new List<string>();
+        private List<string> _allowedVPCs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _authorizeTime;
         private string _clusterIdentifier;
         private string _clusterStatus;
@@ -77,7 +78,7 @@ namespace Amazon.Redshift.Model
         // Check to see if AllowedVPCs property is set
         internal bool IsSetAllowedVPCs()
         {
-            return this._allowedVPCs != null && this._allowedVPCs.Count > 0; 
+            return this._allowedVPCs != null && (this._allowedVPCs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

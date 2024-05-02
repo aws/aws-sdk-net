@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListCandidatesForAutoMLJobResponse : AmazonWebServiceResponse
     {
-        private List<AutoMLCandidate> _candidates = new List<AutoMLCandidate>();
+        private List<AutoMLCandidate> _candidates = AWSConfigs.InitializeCollections ? new List<AutoMLCandidate>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Candidates property is set
         internal bool IsSetCandidates()
         {
-            return this._candidates != null && this._candidates.Count > 0; 
+            return this._candidates != null && (this._candidates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

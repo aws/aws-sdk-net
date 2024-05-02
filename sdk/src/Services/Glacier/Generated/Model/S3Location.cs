@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glacier.Model
 {
     /// <summary>
@@ -34,14 +35,14 @@ namespace Amazon.Glacier.Model
     /// </summary>
     public partial class S3Location
     {
-        private List<Grant> _accessControlList = new List<Grant>();
+        private List<Grant> _accessControlList = AWSConfigs.InitializeCollections ? new List<Grant>() : null;
         private string _bucketName;
         private CannedACL _cannedACL;
         private Encryption _encryption;
         private string _prefix;
         private StorageClass _storageClass;
-        private Dictionary<string, string> _tagging = new Dictionary<string, string>();
-        private Dictionary<string, string> _userMetadata = new Dictionary<string, string>();
+        private Dictionary<string, string> _tagging = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, string> _userMetadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AccessControlList. 
@@ -58,7 +59,7 @@ namespace Amazon.Glacier.Model
         // Check to see if AccessControlList property is set
         internal bool IsSetAccessControlList()
         {
-            return this._accessControlList != null && this._accessControlList.Count > 0; 
+            return this._accessControlList != null && (this._accessControlList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -167,7 +168,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Tagging property is set
         internal bool IsSetTagging()
         {
-            return this._tagging != null && this._tagging.Count > 0; 
+            return this._tagging != null && (this._tagging.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -185,7 +186,7 @@ namespace Amazon.Glacier.Model
         // Check to see if UserMetadata property is set
         internal bool IsSetUserMetadata()
         {
-            return this._userMetadata != null && this._userMetadata.Count > 0; 
+            return this._userMetadata != null && (this._userMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

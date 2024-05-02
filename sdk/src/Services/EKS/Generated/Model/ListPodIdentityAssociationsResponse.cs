@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EKS.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EKS.Model
     /// </summary>
     public partial class ListPodIdentityAssociationsResponse : AmazonWebServiceResponse
     {
-        private List<PodIdentityAssociationSummary> _associations = new List<PodIdentityAssociationSummary>();
+        private List<PodIdentityAssociationSummary> _associations = AWSConfigs.InitializeCollections ? new List<PodIdentityAssociationSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace Amazon.EKS.Model
         // Check to see if Associations property is set
         internal bool IsSetAssociations()
         {
-            return this._associations != null && this._associations.Count > 0; 
+            return this._associations != null && (this._associations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

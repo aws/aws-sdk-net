@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.ServerMigrationService.Model
     {
         private string _nextToken;
         private ReplicationJob _replicationJob;
-        private List<ReplicationRun> _replicationRunList = new List<ReplicationRun>();
+        private List<ReplicationRun> _replicationRunList = AWSConfigs.InitializeCollections ? new List<ReplicationRun>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -89,7 +90,7 @@ namespace Amazon.ServerMigrationService.Model
         // Check to see if ReplicationRunList property is set
         internal bool IsSetReplicationRunList()
         {
-            return this._replicationRunList != null && this._replicationRunList.Count > 0; 
+            return this._replicationRunList != null && (this._replicationRunList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

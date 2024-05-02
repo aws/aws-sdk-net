@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsElbLoadBalancerPolicies
     {
-        private List<AwsElbAppCookieStickinessPolicy> _appCookieStickinessPolicies = new List<AwsElbAppCookieStickinessPolicy>();
-        private List<AwsElbLbCookieStickinessPolicy> _lbCookieStickinessPolicies = new List<AwsElbLbCookieStickinessPolicy>();
-        private List<string> _otherPolicies = new List<string>();
+        private List<AwsElbAppCookieStickinessPolicy> _appCookieStickinessPolicies = AWSConfigs.InitializeCollections ? new List<AwsElbAppCookieStickinessPolicy>() : null;
+        private List<AwsElbLbCookieStickinessPolicy> _lbCookieStickinessPolicies = AWSConfigs.InitializeCollections ? new List<AwsElbLbCookieStickinessPolicy>() : null;
+        private List<string> _otherPolicies = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AppCookieStickinessPolicies. 
@@ -52,7 +53,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if AppCookieStickinessPolicies property is set
         internal bool IsSetAppCookieStickinessPolicies()
         {
-            return this._appCookieStickinessPolicies != null && this._appCookieStickinessPolicies.Count > 0; 
+            return this._appCookieStickinessPolicies != null && (this._appCookieStickinessPolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if LbCookieStickinessPolicies property is set
         internal bool IsSetLbCookieStickinessPolicies()
         {
-            return this._lbCookieStickinessPolicies != null && this._lbCookieStickinessPolicies.Count > 0; 
+            return this._lbCookieStickinessPolicies != null && (this._lbCookieStickinessPolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -88,7 +89,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if OtherPolicies property is set
         internal bool IsSetOtherPolicies()
         {
-            return this._otherPolicies != null && this._otherPolicies.Count > 0; 
+            return this._otherPolicies != null && (this._otherPolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

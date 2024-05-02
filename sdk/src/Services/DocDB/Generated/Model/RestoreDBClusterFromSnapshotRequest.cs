@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DocDB.Model
 {
     /// <summary>
@@ -46,20 +47,20 @@ namespace Amazon.DocDB.Model
     /// </summary>
     public partial class RestoreDBClusterFromSnapshotRequest : AmazonDocDBRequest
     {
-        private List<string> _availabilityZones = new List<string>();
+        private List<string> _availabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _dbClusterIdentifier;
         private string _dbClusterParameterGroupName;
         private string _dbSubnetGroupName;
         private bool? _deletionProtection;
-        private List<string> _enableCloudwatchLogsExports = new List<string>();
+        private List<string> _enableCloudwatchLogsExports = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _engine;
         private string _engineVersion;
         private string _kmsKeyId;
         private int? _port;
         private string _snapshotIdentifier;
         private string _storageType;
-        private List<Tag> _tags = new List<Tag>();
-        private List<string> _vpcSecurityGroupIds = new List<string>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<string> _vpcSecurityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
@@ -77,7 +78,7 @@ namespace Amazon.DocDB.Model
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+            return this._availabilityZones != null && (this._availabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -210,7 +211,7 @@ namespace Amazon.DocDB.Model
         // Check to see if EnableCloudwatchLogsExports property is set
         internal bool IsSetEnableCloudwatchLogsExports()
         {
-            return this._enableCloudwatchLogsExports != null && this._enableCloudwatchLogsExports.Count > 0; 
+            return this._enableCloudwatchLogsExports != null && (this._enableCloudwatchLogsExports.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -406,7 +407,7 @@ namespace Amazon.DocDB.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -425,7 +426,7 @@ namespace Amazon.DocDB.Model
         // Check to see if VpcSecurityGroupIds property is set
         internal bool IsSetVpcSecurityGroupIds()
         {
-            return this._vpcSecurityGroupIds != null && this._vpcSecurityGroupIds.Count > 0; 
+            return this._vpcSecurityGroupIds != null && (this._vpcSecurityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

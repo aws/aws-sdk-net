@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.NimbleStudio.Model
     public partial class ListStreamingImagesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<StreamingImage> _streamingImages = new List<StreamingImage>();
+        private List<StreamingImage> _streamingImages = AWSConfigs.InitializeCollections ? new List<StreamingImage>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +70,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if StreamingImages property is set
         internal bool IsSetStreamingImages()
         {
-            return this._streamingImages != null && this._streamingImages.Count > 0; 
+            return this._streamingImages != null && (this._streamingImages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

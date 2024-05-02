@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.StorageGateway.Model
     public partial class SMBFileShareInfo
     {
         private bool? _accessBasedEnumeration;
-        private List<string> _adminUserList = new List<string>();
+        private List<string> _adminUserList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _auditDestinationARN;
         private string _authentication;
         private string _bucketRegion;
@@ -49,7 +50,7 @@ namespace Amazon.StorageGateway.Model
         private string _fileShareStatus;
         private string _gatewayARN;
         private bool? _guessMIMETypeEnabled;
-        private List<string> _invalidUserList = new List<string>();
+        private List<string> _invalidUserList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _kmsEncrypted;
         private string _kmsKey;
         private string _locationARN;
@@ -61,8 +62,8 @@ namespace Amazon.StorageGateway.Model
         private bool? _requesterPays;
         private string _role;
         private bool? _smbaclEnabled;
-        private List<Tag> _tags = new List<Tag>();
-        private List<string> _validUserList = new List<string>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<string> _validUserList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _vpcEndpointDNSName;
 
         /// <summary>
@@ -102,7 +103,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if AdminUserList property is set
         internal bool IsSetAdminUserList()
         {
-            return this._adminUserList != null && this._adminUserList.Count > 0; 
+            return this._adminUserList != null && (this._adminUserList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -361,7 +362,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if InvalidUserList property is set
         internal bool IsSetInvalidUserList()
         {
-            return this._invalidUserList != null && this._invalidUserList.Count > 0; 
+            return this._invalidUserList != null && (this._invalidUserList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -637,7 +638,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -659,7 +660,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if ValidUserList property is set
         internal bool IsSetValidUserList()
         {
-            return this._validUserList != null && this._validUserList.Count > 0; 
+            return this._validUserList != null && (this._validUserList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

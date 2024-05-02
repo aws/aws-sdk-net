@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class TableAutoScalingDescription
     {
-        private List<ReplicaAutoScalingDescription> _replicas = new List<ReplicaAutoScalingDescription>();
+        private List<ReplicaAutoScalingDescription> _replicas = AWSConfigs.InitializeCollections ? new List<ReplicaAutoScalingDescription>() : null;
         private string _tableName;
         private TableStatus _tableStatus;
 
@@ -52,7 +53,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if Replicas property is set
         internal bool IsSetReplicas()
         {
-            return this._replicas != null && this._replicas.Count > 0; 
+            return this._replicas != null && (this._replicas.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

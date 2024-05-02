@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.WellArchitected.Model
     /// </summary>
     public partial class CheckSummary
     {
-        private Dictionary<string, int> _accountSummary = new Dictionary<string, int>();
+        private Dictionary<string, int> _accountSummary = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
         private string _choiceId;
         private string _description;
         private string _id;
@@ -60,7 +61,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if AccountSummary property is set
         internal bool IsSetAccountSummary()
         {
-            return this._accountSummary != null && this._accountSummary.Count > 0; 
+            return this._accountSummary != null && (this._accountSummary.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

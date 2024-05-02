@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FraudDetector.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.FraudDetector.Model
     public partial class TrainingMetrics
     {
         private float? _auc;
-        private List<MetricDataPoint> _metricDataPoints = new List<MetricDataPoint>();
+        private List<MetricDataPoint> _metricDataPoints = AWSConfigs.InitializeCollections ? new List<MetricDataPoint>() : null;
 
         /// <summary>
         /// Gets and sets the property Auc. 
@@ -71,7 +72,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if MetricDataPoints property is set
         internal bool IsSetMetricDataPoints()
         {
-            return this._metricDataPoints != null && this._metricDataPoints.Count > 0; 
+            return this._metricDataPoints != null && (this._metricDataPoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

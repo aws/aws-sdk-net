@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ForecastService.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ForecastService.Model
     public partial class ListMonitorEvaluationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PredictorMonitorEvaluation> _predictorMonitorEvaluations = new List<PredictorMonitorEvaluation>();
+        private List<PredictorMonitorEvaluation> _predictorMonitorEvaluations = AWSConfigs.InitializeCollections ? new List<PredictorMonitorEvaluation>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -79,7 +80,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if PredictorMonitorEvaluations property is set
         internal bool IsSetPredictorMonitorEvaluations()
         {
-            return this._predictorMonitorEvaluations != null && this._predictorMonitorEvaluations.Count > 0; 
+            return this._predictorMonitorEvaluations != null && (this._predictorMonitorEvaluations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

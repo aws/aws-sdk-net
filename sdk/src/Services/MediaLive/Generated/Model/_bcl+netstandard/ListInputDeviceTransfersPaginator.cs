@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.MediaLive.Model
         /// Enumerable containing all of the InputDeviceTransfers
         /// </summary>
         public IPaginatedEnumerable<TransferringInputDeviceSummary> InputDeviceTransfers => 
-            new PaginatedResultKeyResponse<ListInputDeviceTransfersResponse, TransferringInputDeviceSummary>(this, (i) => i.InputDeviceTransfers);
+            new PaginatedResultKeyResponse<ListInputDeviceTransfersResponse, TransferringInputDeviceSummary>(this, (i) => i.InputDeviceTransfers ?? new List<TransferringInputDeviceSummary>());
 
         internal ListInputDeviceTransfersPaginator(IAmazonMediaLive client, ListInputDeviceTransfersRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.MediaLive.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListInputDeviceTransfersResponse> IPaginator<ListInputDeviceTransfersResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListInputDeviceTransfersResponse> IPaginator<ListInputDeviceTransfersResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

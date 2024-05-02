@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class GetDataQualityRulesetEvaluationRunResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, DataSource> _additionalDataSources = new Dictionary<string, DataSource>();
+        private Dictionary<string, DataSource> _additionalDataSources = AWSConfigs.InitializeCollections ? new Dictionary<string, DataSource>() : null;
         private DataQualityEvaluationRunAdditionalRunOptions _additionalRunOptions;
         private DateTime? _completedOn;
         private DataSource _dataSource;
@@ -41,9 +42,9 @@ namespace Amazon.Glue.Model
         private int? _executionTime;
         private DateTime? _lastModifiedOn;
         private int? _numberOfWorkers;
-        private List<string> _resultIds = new List<string>();
+        private List<string> _resultIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _role;
-        private List<string> _rulesetNames = new List<string>();
+        private List<string> _rulesetNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _runId;
         private DateTime? _startedOn;
         private TaskStatusType _status;
@@ -65,7 +66,7 @@ namespace Amazon.Glue.Model
         // Check to see if AdditionalDataSources property is set
         internal bool IsSetAdditionalDataSources()
         {
-            return this._additionalDataSources != null && this._additionalDataSources.Count > 0; 
+            return this._additionalDataSources != null && (this._additionalDataSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -211,7 +212,7 @@ namespace Amazon.Glue.Model
         // Check to see if ResultIds property is set
         internal bool IsSetResultIds()
         {
-            return this._resultIds != null && this._resultIds.Count > 0; 
+            return this._resultIds != null && (this._resultIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -248,7 +249,7 @@ namespace Amazon.Glue.Model
         // Check to see if RulesetNames property is set
         internal bool IsSetRulesetNames()
         {
-            return this._rulesetNames != null && this._rulesetNames.Count > 0; 
+            return this._rulesetNames != null && (this._rulesetNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class WordCloudAggregatedFieldWells
     {
-        private List<DimensionField> _groupBy = new List<DimensionField>();
-        private List<MeasureField> _size = new List<MeasureField>();
+        private List<DimensionField> _groupBy = AWSConfigs.InitializeCollections ? new List<DimensionField>() : null;
+        private List<MeasureField> _size = AWSConfigs.InitializeCollections ? new List<MeasureField>() : null;
 
         /// <summary>
         /// Gets and sets the property GroupBy. 
@@ -52,7 +53,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if GroupBy property is set
         internal bool IsSetGroupBy()
         {
-            return this._groupBy != null && this._groupBy.Count > 0; 
+            return this._groupBy != null && (this._groupBy.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Size property is set
         internal bool IsSetSize()
         {
-            return this._size != null && this._size.Count > 0; 
+            return this._size != null && (this._size.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

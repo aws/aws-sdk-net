@@ -26,13 +26,14 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
     /// Container for the parameters to the ListApplications operation.
-    /// Returns a list of Kinesis Data Analytics applications in your account. For each application,
-    /// the response includes the application name, Amazon Resource Name (ARN), and status.
-    /// 
+    /// Returns a list of Managed Service for Apache Flink applications in your account. For
+    /// each application, the response includes the application name, Amazon Resource Name
+    /// (ARN), and status. 
     /// 
     ///  
     /// <para>

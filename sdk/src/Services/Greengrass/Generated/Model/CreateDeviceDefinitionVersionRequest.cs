@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Greengrass.Model
     {
         private string _amznClientToken;
         private string _deviceDefinitionId;
-        private List<Device> _devices = new List<Device>();
+        private List<Device> _devices = AWSConfigs.InitializeCollections ? new List<Device>() : null;
 
         /// <summary>
         /// Gets and sets the property AmznClientToken. A client token used to correlate requests
@@ -82,7 +83,7 @@ namespace Amazon.Greengrass.Model
         // Check to see if Devices property is set
         internal bool IsSetDevices()
         {
-            return this._devices != null && this._devices.Count > 0; 
+            return this._devices != null && (this._devices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

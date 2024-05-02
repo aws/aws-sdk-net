@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -58,19 +59,17 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  Regression: <c>InferenceLatency</c>, <c>MAE</c>, <c>MSE</c>, <c>R2</c>, <c>RMSE</c>
-        /// 
+        ///  Regression: <c>MAE</c>, <c>MSE</c>, <c>R2</c>, <c>RMSE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  Binary classification: <c>Accuracy</c>, <c>AUC</c>, <c>BalancedAccuracy</c>, <c>F1</c>,
-        /// <c>InferenceLatency</c>, <c>LogLoss</c>, <c>Precision</c>, <c>Recall</c> 
+        /// <c>Precision</c>, <c>Recall</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  Multiclass classification: <c>Accuracy</c>, <c>BalancedAccuracy</c>, <c>F1macro</c>,
-        /// <c>InferenceLatency</c>, <c>LogLoss</c>, <c>PrecisionMacro</c>, <c>RecallMacro</c>
-        /// 
+        /// <c>PrecisionMacro</c>, <c>RecallMacro</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>

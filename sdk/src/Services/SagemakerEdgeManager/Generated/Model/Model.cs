@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SagemakerEdgeManager.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.SagemakerEdgeManager.Model
     {
         private DateTime? _latestInference;
         private DateTime? _latestSampleTime;
-        private List<EdgeMetric> _modelMetrics = new List<EdgeMetric>();
+        private List<EdgeMetric> _modelMetrics = AWSConfigs.InitializeCollections ? new List<EdgeMetric>() : null;
         private string _modelName;
         private string _modelVersion;
 
@@ -91,7 +92,7 @@ namespace Amazon.SagemakerEdgeManager.Model
         // Check to see if ModelMetrics property is set
         internal bool IsSetModelMetrics()
         {
-            return this._modelMetrics != null && this._modelMetrics.Count > 0; 
+            return this._modelMetrics != null && (this._modelMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

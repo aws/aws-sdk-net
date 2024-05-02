@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.EntityResolution.Model
     public partial class RuleBasedProperties
     {
         private AttributeMatchingModel _attributeMatchingModel;
-        private List<Rule> _rules = new List<Rule>();
+        private List<Rule> _rules = AWSConfigs.InitializeCollections ? new List<Rule>() : null;
 
         /// <summary>
         /// Gets and sets the property AttributeMatchingModel. 
@@ -70,7 +71,7 @@ namespace Amazon.EntityResolution.Model
         /// A list of <c>Rule</c> objects, each of which have fields <c>RuleName</c> and <c>MatchingKeys</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=15)]
+        [AWSProperty(Required=true, Min=1, Max=25)]
         public List<Rule> Rules
         {
             get { return this._rules; }
@@ -80,7 +81,7 @@ namespace Amazon.EntityResolution.Model
         // Check to see if Rules property is set
         internal bool IsSetRules()
         {
-            return this._rules != null && this._rules.Count > 0; 
+            return this._rules != null && (this._rules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

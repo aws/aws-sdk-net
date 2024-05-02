@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Snowball.Model
 {
     /// <summary>
@@ -44,7 +45,7 @@ namespace Amazon.Snowball.Model
     public partial class Notification
     {
         private string _devicePickupSnsTopicARN;
-        private List<string> _jobStatesToNotify = new List<string>();
+        private List<string> _jobStatesToNotify = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _notifyAll;
         private string _snsTopicARN;
 
@@ -83,7 +84,7 @@ namespace Amazon.Snowball.Model
         // Check to see if JobStatesToNotify property is set
         internal bool IsSetJobStatesToNotify()
         {
-            return this._jobStatesToNotify != null && this._jobStatesToNotify.Count > 0; 
+            return this._jobStatesToNotify != null && (this._jobStatesToNotify.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

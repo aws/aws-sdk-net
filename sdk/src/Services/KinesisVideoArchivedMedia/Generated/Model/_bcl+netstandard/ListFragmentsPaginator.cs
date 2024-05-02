@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisVideoArchivedMedia.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// Enumerable containing all of the Fragments
         /// </summary>
         public IPaginatedEnumerable<Fragment> Fragments => 
-            new PaginatedResultKeyResponse<ListFragmentsResponse, Fragment>(this, (i) => i.Fragments);
+            new PaginatedResultKeyResponse<ListFragmentsResponse, Fragment>(this, (i) => i.Fragments ?? new List<Fragment>());
 
         internal ListFragmentsPaginator(IAmazonKinesisVideoArchivedMedia client, ListFragmentsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListFragmentsResponse> IPaginator<ListFragmentsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListFragmentsResponse> IPaginator<ListFragmentsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

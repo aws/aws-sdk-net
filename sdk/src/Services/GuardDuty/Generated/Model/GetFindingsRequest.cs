@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.GuardDuty.Model
     public partial class GetFindingsRequest : AmazonGuardDutyRequest
     {
         private string _detectorId;
-        private List<string> _findingIds = new List<string>();
+        private List<string> _findingIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SortCriteria _sortCriteria;
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if FindingIds property is set
         internal bool IsSetFindingIds()
         {
-            return this._findingIds != null && this._findingIds.Count > 0; 
+            return this._findingIds != null && (this._findingIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

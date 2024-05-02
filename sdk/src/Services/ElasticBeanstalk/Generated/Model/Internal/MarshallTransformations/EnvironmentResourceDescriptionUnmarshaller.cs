@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -57,6 +58,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AutoScalingGroups/member", targetDepth))
                     {
                         var unmarshaller = AutoScalingGroupUnmarshaller.Instance;
+                        if (unmarshalledObject.AutoScalingGroups == null)
+                        {
+                            unmarshalledObject.AutoScalingGroups = new List<AutoScalingGroup>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AutoScalingGroups.Add(item);
                         continue;
@@ -70,6 +75,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Instances/member", targetDepth))
                     {
                         var unmarshaller = InstanceUnmarshaller.Instance;
+                        if (unmarshalledObject.Instances == null)
+                        {
+                            unmarshalledObject.Instances = new List<Instance>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Instances.Add(item);
                         continue;
@@ -77,6 +86,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     if (context.TestExpression("LaunchConfigurations/member", targetDepth))
                     {
                         var unmarshaller = LaunchConfigurationUnmarshaller.Instance;
+                        if (unmarshalledObject.LaunchConfigurations == null)
+                        {
+                            unmarshalledObject.LaunchConfigurations = new List<LaunchConfiguration>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.LaunchConfigurations.Add(item);
                         continue;
@@ -84,6 +97,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     if (context.TestExpression("LaunchTemplates/member", targetDepth))
                     {
                         var unmarshaller = LaunchTemplateUnmarshaller.Instance;
+                        if (unmarshalledObject.LaunchTemplates == null)
+                        {
+                            unmarshalledObject.LaunchTemplates = new List<LaunchTemplate>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.LaunchTemplates.Add(item);
                         continue;
@@ -91,6 +108,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     if (context.TestExpression("LoadBalancers/member", targetDepth))
                     {
                         var unmarshaller = LoadBalancerUnmarshaller.Instance;
+                        if (unmarshalledObject.LoadBalancers == null)
+                        {
+                            unmarshalledObject.LoadBalancers = new List<LoadBalancer>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.LoadBalancers.Add(item);
                         continue;
@@ -98,6 +119,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Queues/member", targetDepth))
                     {
                         var unmarshaller = QueueUnmarshaller.Instance;
+                        if (unmarshalledObject.Queues == null)
+                        {
+                            unmarshalledObject.Queues = new List<Queue>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Queues.Add(item);
                         continue;
@@ -105,6 +130,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Triggers/member", targetDepth))
                     {
                         var unmarshaller = TriggerUnmarshaller.Instance;
+                        if (unmarshalledObject.Triggers == null)
+                        {
+                            unmarshalledObject.Triggers = new List<Trigger>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Triggers.Add(item);
                         continue;

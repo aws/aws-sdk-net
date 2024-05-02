@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ManagedBlockchainQuery.Model
 {
     /// <summary>
@@ -41,6 +42,14 @@ namespace Amazon.ManagedBlockchainQuery.Model
         public IListAssetContractsPaginator ListAssetContracts(ListAssetContractsRequest request) 
         {
             return new ListAssetContractsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListFilteredTransactionEvents operation
+        ///</summary>
+        public IListFilteredTransactionEventsPaginator ListFilteredTransactionEvents(ListFilteredTransactionEventsRequest request) 
+        {
+            return new ListFilteredTransactionEventsPaginator(this.client, request);
         }
 
         /// <summary>

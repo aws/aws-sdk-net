@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EC2.Model
     public partial class SearchLocalGatewayRoutesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<LocalGatewayRoute> _routes = new List<LocalGatewayRoute>();
+        private List<LocalGatewayRoute> _routes = AWSConfigs.InitializeCollections ? new List<LocalGatewayRoute>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.EC2.Model
         // Check to see if Routes property is set
         internal bool IsSetRoutes()
         {
-            return this._routes != null && this._routes.Count > 0; 
+            return this._routes != null && (this._routes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

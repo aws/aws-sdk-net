@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.QBusiness.Model
     /// Property Teams" includes sub groups "Research" and "Engineering". These sub groups
     /// include their own list of users or people who work in these teams. Only users who
     /// work in research and engineering, and therefore belong in the intellectual property
-    /// group, can see top-secret company documents in their Amazon Q chat results.
+    /// group, can see top-secret company documents in their Amazon Q Business chat results.
     /// </para>
     /// </summary>
     public partial class PutGroupRequest : AmazonQBusinessRequest

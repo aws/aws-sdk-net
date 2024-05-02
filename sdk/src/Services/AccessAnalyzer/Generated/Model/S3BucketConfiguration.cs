@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
@@ -43,8 +44,8 @@ namespace Amazon.AccessAnalyzer.Model
     /// </summary>
     public partial class S3BucketConfiguration
     {
-        private Dictionary<string, S3AccessPointConfiguration> _accessPoints = new Dictionary<string, S3AccessPointConfiguration>();
-        private List<S3BucketAclGrantConfiguration> _bucketAclGrants = new List<S3BucketAclGrantConfiguration>();
+        private Dictionary<string, S3AccessPointConfiguration> _accessPoints = AWSConfigs.InitializeCollections ? new Dictionary<string, S3AccessPointConfiguration>() : null;
+        private List<S3BucketAclGrantConfiguration> _bucketAclGrants = AWSConfigs.InitializeCollections ? new List<S3BucketAclGrantConfiguration>() : null;
         private string _bucketPolicy;
         private S3PublicAccessBlockConfiguration _bucketPublicAccessBlock;
 
@@ -64,7 +65,7 @@ namespace Amazon.AccessAnalyzer.Model
         // Check to see if AccessPoints property is set
         internal bool IsSetAccessPoints()
         {
-            return this._accessPoints != null && this._accessPoints.Count > 0; 
+            return this._accessPoints != null && (this._accessPoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -85,7 +86,7 @@ namespace Amazon.AccessAnalyzer.Model
         // Check to see if BucketAclGrants property is set
         internal bool IsSetBucketAclGrants()
         {
-            return this._bucketAclGrants != null && this._bucketAclGrants.Count > 0; 
+            return this._bucketAclGrants != null && (this._bucketAclGrants.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

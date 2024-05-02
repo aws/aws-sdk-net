@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisVideoSignalingChannels.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.KinesisVideoSignalingChannels.Model
     {
         private string _password;
         private int? _ttl;
-        private List<string> _uris = new List<string>();
+        private List<string> _uris = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _username;
 
         /// <summary>
@@ -93,7 +94,7 @@ namespace Amazon.KinesisVideoSignalingChannels.Model
         // Check to see if Uris property is set
         internal bool IsSetUris()
         {
-            return this._uris != null && this._uris.Count > 0; 
+            return this._uris != null && (this._uris.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

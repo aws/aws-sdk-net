@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FraudDetector.Model
 {
     /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class AggregatedVariablesImportanceMetrics
     {
-        private List<AggregatedLogOddsMetric> _logOddsMetrics = new List<AggregatedLogOddsMetric>();
+        private List<AggregatedLogOddsMetric> _logOddsMetrics = AWSConfigs.InitializeCollections ? new List<AggregatedLogOddsMetric>() : null;
 
         /// <summary>
         /// Gets and sets the property LogOddsMetrics. 
@@ -59,7 +60,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if LogOddsMetrics property is set
         internal bool IsSetLogOddsMetrics()
         {
-            return this._logOddsMetrics != null && this._logOddsMetrics.Count > 0; 
+            return this._logOddsMetrics != null && (this._logOddsMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

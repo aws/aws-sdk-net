@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GameLift.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class CreatePlayerSessionsResponse : AmazonWebServiceResponse
     {
-        private List<PlayerSession> _playerSessions = new List<PlayerSession>();
+        private List<PlayerSession> _playerSessions = AWSConfigs.InitializeCollections ? new List<PlayerSession>() : null;
 
         /// <summary>
         /// Gets and sets the property PlayerSessions. 
@@ -50,7 +51,7 @@ namespace Amazon.GameLift.Model
         // Check to see if PlayerSessions property is set
         internal bool IsSetPlayerSessions()
         {
-            return this._playerSessions != null && this._playerSessions.Count > 0; 
+            return this._playerSessions != null && (this._playerSessions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

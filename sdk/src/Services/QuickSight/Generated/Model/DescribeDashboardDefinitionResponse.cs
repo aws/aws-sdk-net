@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.QuickSight.Model
         private string _dashboardId;
         private DashboardPublishOptions _dashboardPublishOptions;
         private DashboardVersionDefinition _definition;
-        private List<DashboardError> _errors = new List<DashboardError>();
+        private List<DashboardError> _errors = AWSConfigs.InitializeCollections ? new List<DashboardError>() : null;
         private string _name;
         private string _requestId;
         private ResourceStatus _resourceStatus;
@@ -139,7 +140,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

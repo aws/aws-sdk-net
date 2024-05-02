@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
@@ -45,11 +46,11 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class CreateRuleRequest : AmazonElasticLoadBalancingV2Request
     {
-        private List<Action> _actions = new List<Action>();
-        private List<RuleCondition> _conditions = new List<RuleCondition>();
+        private List<Action> _actions = AWSConfigs.InitializeCollections ? new List<Action>() : null;
+        private List<RuleCondition> _conditions = AWSConfigs.InitializeCollections ? new List<RuleCondition>() : null;
         private string _listenerArn;
         private int? _priority;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Actions. 
@@ -67,7 +68,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if Actions property is set
         internal bool IsSetActions()
         {
-            return this._actions != null && this._actions.Count > 0; 
+            return this._actions != null && (this._actions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -86,7 +87,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if Conditions property is set
         internal bool IsSetConditions()
         {
-            return this._conditions != null && this._conditions.Count > 0; 
+            return this._conditions != null && (this._conditions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -143,7 +144,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

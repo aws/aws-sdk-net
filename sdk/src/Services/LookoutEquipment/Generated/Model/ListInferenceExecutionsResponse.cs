@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LookoutEquipment.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.LookoutEquipment.Model
     /// </summary>
     public partial class ListInferenceExecutionsResponse : AmazonWebServiceResponse
     {
-        private List<InferenceExecutionSummary> _inferenceExecutionSummaries = new List<InferenceExecutionSummary>();
+        private List<InferenceExecutionSummary> _inferenceExecutionSummaries = AWSConfigs.InitializeCollections ? new List<InferenceExecutionSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -60,7 +61,7 @@ namespace Amazon.LookoutEquipment.Model
         // Check to see if InferenceExecutionSummaries property is set
         internal bool IsSetInferenceExecutionSummaries()
         {
-            return this._inferenceExecutionSummaries != null && this._inferenceExecutionSummaries.Count > 0; 
+            return this._inferenceExecutionSummaries != null && (this._inferenceExecutionSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

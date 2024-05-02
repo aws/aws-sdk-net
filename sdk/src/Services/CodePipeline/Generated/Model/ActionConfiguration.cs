@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CodePipeline.Model
     /// </summary>
     public partial class ActionConfiguration
     {
-        private Dictionary<string, string> _configuration = new Dictionary<string, string>();
+        private Dictionary<string, string> _configuration = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Configuration. 
@@ -50,7 +51,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if Configuration property is set
         internal bool IsSetConfiguration()
         {
-            return this._configuration != null && this._configuration.Count > 0; 
+            return this._configuration != null && (this._configuration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

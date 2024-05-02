@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MigrationHubStrategyRecommendations.Model
 {
     /// <summary>
@@ -44,17 +45,17 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         private string _id;
         private InclusionStatus _inclusionStatus;
         private DateTime? _lastAnalyzedTimestamp;
-        private List<AntipatternSeveritySummary> _listAntipatternSeveritySummary = new List<AntipatternSeveritySummary>();
+        private List<AntipatternSeveritySummary> _listAntipatternSeveritySummary = AWSConfigs.InitializeCollections ? new List<AntipatternSeveritySummary>() : null;
         private bool? _moreServerAssociationExists;
         private string _name;
         private string _osDriver;
         private string _osVersion;
         private RecommendationSet _recommendationSet;
         private ResourceSubType _resourceSubType;
-        private List<Result> _resultList = new List<Result>();
+        private List<Result> _resultList = AWSConfigs.InitializeCollections ? new List<Result>() : null;
         private RuntimeAnalysisStatus _runtimeStatus;
         private string _runtimeStatusMessage;
-        private List<SourceCodeRepository> _sourceCodeRepositories = new List<SourceCodeRepository>();
+        private List<SourceCodeRepository> _sourceCodeRepositories = AWSConfigs.InitializeCollections ? new List<SourceCodeRepository>() : null;
         private string _statusMessage;
 
         /// <summary>
@@ -276,7 +277,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         // Check to see if ListAntipatternSeveritySummary property is set
         internal bool IsSetListAntipatternSeveritySummary()
         {
-            return this._listAntipatternSeveritySummary != null && this._listAntipatternSeveritySummary.Count > 0; 
+            return this._listAntipatternSeveritySummary != null && (this._listAntipatternSeveritySummary.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -404,7 +405,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         // Check to see if ResultList property is set
         internal bool IsSetResultList()
         {
-            return this._resultList != null && this._resultList.Count > 0; 
+            return this._resultList != null && (this._resultList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -460,7 +461,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         // Check to see if SourceCodeRepositories property is set
         internal bool IsSetSourceCodeRepositories()
         {
-            return this._sourceCodeRepositories != null && this._sourceCodeRepositories.Count > 0; 
+            return this._sourceCodeRepositories != null && (this._sourceCodeRepositories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

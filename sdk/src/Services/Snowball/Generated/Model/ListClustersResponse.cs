@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Snowball.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Snowball.Model
     /// </summary>
     public partial class ListClustersResponse : AmazonWebServiceResponse
     {
-        private List<ClusterListEntry> _clusterListEntries = new List<ClusterListEntry>();
+        private List<ClusterListEntry> _clusterListEntries = AWSConfigs.InitializeCollections ? new List<ClusterListEntry>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.Snowball.Model
         // Check to see if ClusterListEntries property is set
         internal bool IsSetClusterListEntries()
         {
-            return this._clusterListEntries != null && this._clusterListEntries.Count > 0; 
+            return this._clusterListEntries != null && (this._clusterListEntries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

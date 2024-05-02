@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoTWireless.Model
     /// </summary>
     public partial class SidewalkGetStartImportInfo
     {
-        private List<string> _deviceCreationFileList = new List<string>();
+        private List<string> _deviceCreationFileList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _role;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if DeviceCreationFileList property is set
         internal bool IsSetDeviceCreationFileList()
         {
-            return this._deviceCreationFileList != null && this._deviceCreationFileList.Count > 0; 
+            return this._deviceCreationFileList != null && (this._deviceCreationFileList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

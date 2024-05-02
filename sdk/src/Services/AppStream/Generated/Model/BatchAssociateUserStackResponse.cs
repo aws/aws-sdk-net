@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppStream.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AppStream.Model
     /// </summary>
     public partial class BatchAssociateUserStackResponse : AmazonWebServiceResponse
     {
-        private List<UserStackAssociationError> _errors = new List<UserStackAssociationError>();
+        private List<UserStackAssociationError> _errors = AWSConfigs.InitializeCollections ? new List<UserStackAssociationError>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. 
@@ -50,7 +51,7 @@ namespace Amazon.AppStream.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

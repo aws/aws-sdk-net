@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Appflow.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.Appflow.Model
     /// </summary>
     public partial class SalesforceMetadata
     {
-        private List<string> _dataTransferApis = new List<string>();
-        private List<string> _oauth2GrantTypesSupported = new List<string>();
-        private List<string> _oAuthScopes = new List<string>();
+        private List<string> _dataTransferApis = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _oauth2GrantTypesSupported = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _oAuthScopes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DataTransferApis. 
@@ -53,7 +54,7 @@ namespace Amazon.Appflow.Model
         // Check to see if DataTransferApis property is set
         internal bool IsSetDataTransferApis()
         {
-            return this._dataTransferApis != null && this._dataTransferApis.Count > 0; 
+            return this._dataTransferApis != null && (this._dataTransferApis.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -93,7 +94,7 @@ namespace Amazon.Appflow.Model
         // Check to see if Oauth2GrantTypesSupported property is set
         internal bool IsSetOauth2GrantTypesSupported()
         {
-            return this._oauth2GrantTypesSupported != null && this._oauth2GrantTypesSupported.Count > 0; 
+            return this._oauth2GrantTypesSupported != null && (this._oauth2GrantTypesSupported.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -111,7 +112,7 @@ namespace Amazon.Appflow.Model
         // Check to see if OAuthScopes property is set
         internal bool IsSetOAuthScopes()
         {
-            return this._oAuthScopes != null && this._oAuthScopes.Count > 0; 
+            return this._oAuthScopes != null && (this._oAuthScopes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

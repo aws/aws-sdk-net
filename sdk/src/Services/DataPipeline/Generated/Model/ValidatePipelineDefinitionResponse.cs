@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.DataPipeline.Model
     public partial class ValidatePipelineDefinitionResponse : AmazonWebServiceResponse
     {
         private bool? _errored;
-        private List<ValidationError> _validationErrors = new List<ValidationError>();
-        private List<ValidationWarning> _validationWarnings = new List<ValidationWarning>();
+        private List<ValidationError> _validationErrors = AWSConfigs.InitializeCollections ? new List<ValidationError>() : null;
+        private List<ValidationWarning> _validationWarnings = AWSConfigs.InitializeCollections ? new List<ValidationWarning>() : null;
 
         /// <summary>
         /// Gets and sets the property Errored. 
@@ -71,7 +72,7 @@ namespace Amazon.DataPipeline.Model
         // Check to see if ValidationErrors property is set
         internal bool IsSetValidationErrors()
         {
-            return this._validationErrors != null && this._validationErrors.Count > 0; 
+            return this._validationErrors != null && (this._validationErrors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -89,7 +90,7 @@ namespace Amazon.DataPipeline.Model
         // Check to see if ValidationWarnings property is set
         internal bool IsSetValidationWarnings()
         {
-            return this._validationWarnings != null && this._validationWarnings.Count > 0; 
+            return this._validationWarnings != null && (this._validationWarnings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

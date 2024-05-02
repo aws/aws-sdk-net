@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MainframeModernization.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MainframeModernization.Model
     /// </summary>
     public partial class ListDataSetImportHistoryResponse : AmazonWebServiceResponse
     {
-        private List<DataSetImportTask> _dataSetImportTasks = new List<DataSetImportTask>();
+        private List<DataSetImportTask> _dataSetImportTasks = AWSConfigs.InitializeCollections ? new List<DataSetImportTask>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.MainframeModernization.Model
         // Check to see if DataSetImportTasks property is set
         internal bool IsSetDataSetImportTasks()
         {
-            return this._dataSetImportTasks != null && this._dataSetImportTasks.Count > 0; 
+            return this._dataSetImportTasks != null && (this._dataSetImportTasks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

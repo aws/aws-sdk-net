@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.WorkSpacesThinClient.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -66,18 +67,13 @@ namespace Amazon.WorkSpacesThinClient.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetDesiredSoftwareSetId())
                 {
                     context.Writer.WritePropertyName("desiredSoftwareSetId");
                     context.Writer.Write(publicRequest.DesiredSoftwareSetId);
-                }
-
-                if(publicRequest.IsSetKmsKeyArn())
-                {
-                    context.Writer.WritePropertyName("kmsKeyArn");
-                    context.Writer.Write(publicRequest.KmsKeyArn);
                 }
 
                 if(publicRequest.IsSetName())

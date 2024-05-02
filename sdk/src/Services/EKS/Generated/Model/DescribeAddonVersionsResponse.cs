@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EKS.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EKS.Model
     /// </summary>
     public partial class DescribeAddonVersionsResponse : AmazonWebServiceResponse
     {
-        private List<AddonInfo> _addons = new List<AddonInfo>();
+        private List<AddonInfo> _addons = AWSConfigs.InitializeCollections ? new List<AddonInfo>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.EKS.Model
         // Check to see if Addons property is set
         internal bool IsSetAddons()
         {
-            return this._addons != null && this._addons.Count > 0; 
+            return this._addons != null && (this._addons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

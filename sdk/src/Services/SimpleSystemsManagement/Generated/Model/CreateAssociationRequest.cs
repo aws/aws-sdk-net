@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -48,7 +49,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private bool? _applyOnlyAtCronInterval;
         private string _associationName;
         private string _automationTargetParameterName;
-        private List<string> _calendarNames = new List<string>();
+        private List<string> _calendarNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AssociationComplianceSeverity _complianceSeverity;
         private string _documentVersion;
         private int? _duration;
@@ -57,14 +58,14 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _maxErrors;
         private string _name;
         private InstanceAssociationOutputLocation _outputLocation;
-        private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private string _scheduleExpression;
         private int? _scheduleOffset;
         private AssociationSyncCompliance _syncCompliance;
-        private List<Tag> _tags = new List<Tag>();
-        private List<TargetLocation> _targetLocations = new List<TargetLocation>();
-        private List<Dictionary<string, List<string>>> _targetMaps = new List<Dictionary<string, List<string>>>();
-        private List<Target> _targets = new List<Target>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<TargetLocation> _targetLocations = AWSConfigs.InitializeCollections ? new List<TargetLocation>() : null;
+        private List<Dictionary<string, List<string>>> _targetMaps = AWSConfigs.InitializeCollections ? new List<Dictionary<string, List<string>>>() : null;
+        private List<Target> _targets = AWSConfigs.InitializeCollections ? new List<Target>() : null;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -175,7 +176,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if CalendarNames property is set
         internal bool IsSetCalendarNames()
         {
-            return this._calendarNames != null && this._calendarNames.Count > 0; 
+            return this._calendarNames != null && (this._calendarNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -199,7 +200,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentVersion. 
         /// <para>
-        /// The document version you want to associate with the target(s). Can be a specific version
+        /// The document version you want to associate with the targets. Can be a specific version
         /// or the default version.
         /// </para>
         ///  <important> 
@@ -439,13 +440,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property ScheduleExpression. 
         /// <para>
-        /// A cron expression when the association will be applied to the target(s).
+        /// A cron expression when the association will be applied to the targets.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -545,7 +546,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -566,7 +567,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if TargetLocations property is set
         internal bool IsSetTargetLocations()
         {
-            return this._targetLocations != null && this._targetLocations.Count > 0; 
+            return this._targetLocations != null && (this._targetLocations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -586,7 +587,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if TargetMaps property is set
         internal bool IsSetTargetMaps()
         {
-            return this._targetMaps != null && this._targetMaps.Count > 0; 
+            return this._targetMaps != null && (this._targetMaps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -596,9 +597,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Web Services resource groups, all managed nodes in an Amazon Web Services account,
         /// or individual managed node IDs. You can target all managed nodes in an Amazon Web
         /// Services account by specifying the <c>InstanceIds</c> key with a value of <c>*</c>.
-        /// For more information about choosing targets for an association, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">Using
-        /// targets and rate controls with State Manager associations</a> in the <i>Amazon Web
-        /// Services Systems Manager User Guide</i>.
+        /// For more information about choosing targets for an association, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-state-manager-targets-and-rate-controls.html">About
+        /// targets and rate controls in State Manager associations</a> in the <i>Amazon Web Services
+        /// Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
@@ -611,7 +612,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Targets property is set
         internal bool IsSetTargets()
         {
-            return this._targets != null && this._targets.Count > 0; 
+            return this._targets != null && (this._targets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

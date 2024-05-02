@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.CodeCommit.Model
     /// </summary>
     public partial class ConflictResolution
     {
-        private List<DeleteFileEntry> _deleteFiles = new List<DeleteFileEntry>();
-        private List<ReplaceContentEntry> _replaceContents = new List<ReplaceContentEntry>();
-        private List<SetFileModeEntry> _setFileModes = new List<SetFileModeEntry>();
+        private List<DeleteFileEntry> _deleteFiles = AWSConfigs.InitializeCollections ? new List<DeleteFileEntry>() : null;
+        private List<ReplaceContentEntry> _replaceContents = AWSConfigs.InitializeCollections ? new List<ReplaceContentEntry>() : null;
+        private List<SetFileModeEntry> _setFileModes = AWSConfigs.InitializeCollections ? new List<SetFileModeEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property DeleteFiles. 
@@ -53,7 +54,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if DeleteFiles property is set
         internal bool IsSetDeleteFiles()
         {
-            return this._deleteFiles != null && this._deleteFiles.Count > 0; 
+            return this._deleteFiles != null && (this._deleteFiles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if ReplaceContents property is set
         internal bool IsSetReplaceContents()
         {
-            return this._replaceContents != null && this._replaceContents.Count > 0; 
+            return this._replaceContents != null && (this._replaceContents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -89,7 +90,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if SetFileModes property is set
         internal bool IsSetSetFileModes()
         {
-            return this._setFileModes != null && this._setFileModes.Count > 0; 
+            return this._setFileModes != null && (this._setFileModes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

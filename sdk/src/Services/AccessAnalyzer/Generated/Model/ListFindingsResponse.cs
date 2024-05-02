@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AccessAnalyzer.Model
     /// </summary>
     public partial class ListFindingsResponse : AmazonWebServiceResponse
     {
-        private List<FindingSummary> _findings = new List<FindingSummary>();
+        private List<FindingSummary> _findings = AWSConfigs.InitializeCollections ? new List<FindingSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.AccessAnalyzer.Model
         // Check to see if Findings property is set
         internal bool IsSetFindings()
         {
-            return this._findings != null && this._findings.Count > 0; 
+            return this._findings != null && (this._findings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

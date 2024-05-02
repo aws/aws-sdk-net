@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Proton.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Proton.Model
         /// Enumerable containing all of the EnvironmentAccountConnections
         /// </summary>
         public IPaginatedEnumerable<EnvironmentAccountConnectionSummary> EnvironmentAccountConnections => 
-            new PaginatedResultKeyResponse<ListEnvironmentAccountConnectionsResponse, EnvironmentAccountConnectionSummary>(this, (i) => i.EnvironmentAccountConnections);
+            new PaginatedResultKeyResponse<ListEnvironmentAccountConnectionsResponse, EnvironmentAccountConnectionSummary>(this, (i) => i.EnvironmentAccountConnections ?? new List<EnvironmentAccountConnectionSummary>());
 
         internal ListEnvironmentAccountConnectionsPaginator(IAmazonProton client, ListEnvironmentAccountConnectionsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Proton.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListEnvironmentAccountConnectionsResponse> IPaginator<ListEnvironmentAccountConnectionsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListEnvironmentAccountConnectionsResponse> IPaginator<ListEnvironmentAccountConnectionsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

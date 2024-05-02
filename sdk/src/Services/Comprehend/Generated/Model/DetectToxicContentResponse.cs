@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class DetectToxicContentResponse : AmazonWebServiceResponse
     {
-        private List<ToxicLabels> _resultList = new List<ToxicLabels>();
+        private List<ToxicLabels> _resultList = AWSConfigs.InitializeCollections ? new List<ToxicLabels>() : null;
 
         /// <summary>
         /// Gets and sets the property ResultList. 
@@ -53,7 +54,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if ResultList property is set
         internal bool IsSetResultList()
         {
-            return this._resultList != null && this._resultList.Count > 0; 
+            return this._resultList != null && (this._resultList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

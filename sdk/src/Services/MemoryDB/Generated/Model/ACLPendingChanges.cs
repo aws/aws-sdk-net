@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.MemoryDB.Model
     /// </summary>
     public partial class ACLPendingChanges
     {
-        private List<string> _userNamesToAdd = new List<string>();
-        private List<string> _userNamesToRemove = new List<string>();
+        private List<string> _userNamesToAdd = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _userNamesToRemove = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property UserNamesToAdd. 
@@ -51,7 +52,7 @@ namespace Amazon.MemoryDB.Model
         // Check to see if UserNamesToAdd property is set
         internal bool IsSetUserNamesToAdd()
         {
-            return this._userNamesToAdd != null && this._userNamesToAdd.Count > 0; 
+            return this._userNamesToAdd != null && (this._userNamesToAdd.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.MemoryDB.Model
         // Check to see if UserNamesToRemove property is set
         internal bool IsSetUserNamesToRemove()
         {
-            return this._userNamesToRemove != null && this._userNamesToRemove.Count > 0; 
+            return this._userNamesToRemove != null && (this._userNamesToRemove.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

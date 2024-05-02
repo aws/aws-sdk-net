@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ApplicationInsights.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ApplicationInsights.Model
     public partial class ListWorkloadsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Workload> _workloadList = new List<Workload>();
+        private List<Workload> _workloadList = AWSConfigs.InitializeCollections ? new List<Workload>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.ApplicationInsights.Model
         // Check to see if WorkloadList property is set
         internal bool IsSetWorkloadList()
         {
-            return this._workloadList != null && this._workloadList.Count > 0; 
+            return this._workloadList != null && (this._workloadList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

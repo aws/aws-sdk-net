@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CostExplorer.Model
     /// </summary>
     public partial class ListSavingsPlansPurchaseRecommendationGenerationResponse : AmazonWebServiceResponse
     {
-        private List<GenerationSummary> _generationSummaryList = new List<GenerationSummary>();
+        private List<GenerationSummary> _generationSummaryList = AWSConfigs.InitializeCollections ? new List<GenerationSummary>() : null;
         private string _nextPageToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if GenerationSummaryList property is set
         internal bool IsSetGenerationSummaryList()
         {
-            return this._generationSummaryList != null && this._generationSummaryList.Count > 0; 
+            return this._generationSummaryList != null && (this._generationSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

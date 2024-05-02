@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class ListPolicyVersionsResponse : AmazonWebServiceResponse
     {
-        private List<PolicyVersion> _policyVersions = new List<PolicyVersion>();
+        private List<PolicyVersion> _policyVersions = AWSConfigs.InitializeCollections ? new List<PolicyVersion>() : null;
 
         /// <summary>
         /// Gets and sets the property PolicyVersions. 
@@ -50,7 +51,7 @@ namespace Amazon.IoT.Model
         // Check to see if PolicyVersions property is set
         internal bool IsSetPolicyVersions()
         {
-            return this._policyVersions != null && this._policyVersions.Count > 0; 
+            return this._policyVersions != null && (this._policyVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

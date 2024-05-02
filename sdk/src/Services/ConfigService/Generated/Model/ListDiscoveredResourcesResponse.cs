@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ConfigService.Model
     public partial class ListDiscoveredResourcesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ResourceIdentifier> _resourceIdentifiers = new List<ResourceIdentifier>();
+        private List<ResourceIdentifier> _resourceIdentifiers = AWSConfigs.InitializeCollections ? new List<ResourceIdentifier>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if ResourceIdentifiers property is set
         internal bool IsSetResourceIdentifiers()
         {
-            return this._resourceIdentifiers != null && this._resourceIdentifiers.Count > 0; 
+            return this._resourceIdentifiers != null && (this._resourceIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

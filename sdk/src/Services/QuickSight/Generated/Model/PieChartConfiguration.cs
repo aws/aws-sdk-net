@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.QuickSight.Model
     public partial class PieChartConfiguration
     {
         private ChartAxisLabelOptions _categoryLabelOptions;
-        private List<ContributionAnalysisDefault> _contributionAnalysisDefaults = new List<ContributionAnalysisDefault>();
+        private List<ContributionAnalysisDefault> _contributionAnalysisDefaults = AWSConfigs.InitializeCollections ? new List<ContributionAnalysisDefault>() : null;
         private DataLabelOptions _dataLabels;
         private DonutOptions _donutOptions;
         private PieChartFieldWells _fieldWells;
@@ -80,7 +81,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if ContributionAnalysisDefaults property is set
         internal bool IsSetContributionAnalysisDefaults()
         {
-            return this._contributionAnalysisDefaults != null && this._contributionAnalysisDefaults.Count > 0; 
+            return this._contributionAnalysisDefaults != null && (this._contributionAnalysisDefaults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

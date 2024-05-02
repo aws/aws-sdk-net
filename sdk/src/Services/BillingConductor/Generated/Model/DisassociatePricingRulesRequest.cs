@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BillingConductor.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.BillingConductor.Model
     public partial class DisassociatePricingRulesRequest : AmazonBillingConductorRequest
     {
         private string _arn;
-        private List<string> _pricingRuleArns = new List<string>();
+        private List<string> _pricingRuleArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -73,7 +74,7 @@ namespace Amazon.BillingConductor.Model
         // Check to see if PricingRuleArns property is set
         internal bool IsSetPricingRuleArns()
         {
-            return this._pricingRuleArns != null && this._pricingRuleArns.Count > 0; 
+            return this._pricingRuleArns != null && (this._pricingRuleArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

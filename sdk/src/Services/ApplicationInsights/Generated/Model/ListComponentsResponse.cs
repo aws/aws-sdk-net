@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ApplicationInsights.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ApplicationInsights.Model
     /// </summary>
     public partial class ListComponentsResponse : AmazonWebServiceResponse
     {
-        private List<ApplicationComponent> _applicationComponentList = new List<ApplicationComponent>();
+        private List<ApplicationComponent> _applicationComponentList = AWSConfigs.InitializeCollections ? new List<ApplicationComponent>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ApplicationInsights.Model
         // Check to see if ApplicationComponentList property is set
         internal bool IsSetApplicationComponentList()
         {
-            return this._applicationComponentList != null && this._applicationComponentList.Count > 0; 
+            return this._applicationComponentList != null && (this._applicationComponentList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

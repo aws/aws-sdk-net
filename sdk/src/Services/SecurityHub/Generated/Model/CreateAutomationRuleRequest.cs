@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -34,14 +35,14 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class CreateAutomationRuleRequest : AmazonSecurityHubRequest
     {
-        private List<AutomationRulesAction> _actions = new List<AutomationRulesAction>();
+        private List<AutomationRulesAction> _actions = AWSConfigs.InitializeCollections ? new List<AutomationRulesAction>() : null;
         private AutomationRulesFindingFilters _criteria;
         private string _description;
         private bool? _isTerminal;
         private string _ruleName;
         private int? _ruleOrder;
         private RuleStatus _ruleStatus;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Actions. 
@@ -60,7 +61,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Actions property is set
         internal bool IsSetActions()
         {
-            return this._actions != null && this._actions.Count > 0; 
+            return this._actions != null && (this._actions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -203,7 +204,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

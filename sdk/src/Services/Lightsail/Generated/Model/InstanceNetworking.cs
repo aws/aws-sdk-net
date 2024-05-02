@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Lightsail.Model
     public partial class InstanceNetworking
     {
         private MonthlyTransfer _monthlyTransfer;
-        private List<InstancePortInfo> _ports = new List<InstancePortInfo>();
+        private List<InstancePortInfo> _ports = AWSConfigs.InitializeCollections ? new List<InstancePortInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property MonthlyTransfer. 
@@ -69,7 +70,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Ports property is set
         internal bool IsSetPorts()
         {
-            return this._ports != null && this._ports.Count > 0; 
+            return this._ports != null && (this._ports.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

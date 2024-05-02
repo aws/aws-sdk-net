@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Omics.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.Omics.Model
     public partial class TsvVersionOptions
     {
         private AnnotationType _annotationType;
-        private Dictionary<string, string> _formatToHeader = new Dictionary<string, string>();
-        private List<Dictionary<string, string>> _schema = new List<Dictionary<string, string>>();
+        private Dictionary<string, string> _formatToHeader = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<Dictionary<string, string>> _schema = AWSConfigs.InitializeCollections ? new List<Dictionary<string, string>>() : null;
 
         /// <summary>
         /// Gets and sets the property AnnotationType. 
@@ -70,7 +71,7 @@ namespace Amazon.Omics.Model
         // Check to see if FormatToHeader property is set
         internal bool IsSetFormatToHeader()
         {
-            return this._formatToHeader != null && this._formatToHeader.Count > 0; 
+            return this._formatToHeader != null && (this._formatToHeader.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -89,7 +90,7 @@ namespace Amazon.Omics.Model
         // Check to see if Schema property is set
         internal bool IsSetSchema()
         {
-            return this._schema != null && this._schema.Count > 0; 
+            return this._schema != null && (this._schema.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

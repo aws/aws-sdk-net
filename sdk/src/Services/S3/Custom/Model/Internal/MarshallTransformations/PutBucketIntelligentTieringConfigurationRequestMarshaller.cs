@@ -30,13 +30,22 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 	/// </summary>   
 	public class PutBucketIntelligentTieringConfigurationRequestMarshaller : IMarshaller<IRequest, PutBucketIntelligentTieringConfigurationRequest>, IMarshaller<IRequest, Amazon.Runtime.AmazonWebServiceRequest>
 	{
-		
+        /// <summary>
+        /// Marshall the public request to the internal IRequest structure.
+        /// </summary>
+        /// <param name="input"></param>
+        /// <returns></returns>
 		public IRequest Marshall(Amazon.Runtime.AmazonWebServiceRequest input)
 		{
 			return this.Marshall((PutBucketIntelligentTieringConfigurationRequest)input);
 		}
 
-		public IRequest Marshall(PutBucketIntelligentTieringConfigurationRequest PutBucketIntelligentTieringConfigurationRequest)
+        /// <summary>
+        /// Marshall the public request to the internal IRequest structure.
+        /// </summary>
+        /// <param name="PutBucketIntelligentTieringConfigurationRequest"></param>
+        /// <returns></returns>
+        public IRequest Marshall(PutBucketIntelligentTieringConfigurationRequest PutBucketIntelligentTieringConfigurationRequest)
 		{
 			IRequest request = new DefaultRequest(PutBucketIntelligentTieringConfigurationRequest, "AmazonS3");
 			var intelligentTieringConfiguration = PutBucketIntelligentTieringConfigurationRequest.IntelligentTieringConfiguration;
@@ -131,7 +140,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 		private static PutBucketIntelligentTieringConfigurationRequestMarshaller _instance;
 
-		public static PutBucketIntelligentTieringConfigurationRequestMarshaller Instance
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
+        public static PutBucketIntelligentTieringConfigurationRequestMarshaller Instance
 		{
 			get
 			{

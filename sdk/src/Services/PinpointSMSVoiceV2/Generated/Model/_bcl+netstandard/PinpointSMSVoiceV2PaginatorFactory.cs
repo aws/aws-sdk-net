@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
@@ -97,6 +98,14 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         public IDescribePoolsPaginator DescribePools(DescribePoolsRequest request) 
         {
             return new DescribePoolsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeProtectConfigurations operation
+        ///</summary>
+        public IDescribeProtectConfigurationsPaginator DescribeProtectConfigurations(DescribeProtectConfigurationsRequest request) 
+        {
+            return new DescribeProtectConfigurationsPaginator(this.client, request);
         }
 
         /// <summary>

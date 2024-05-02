@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Artifact.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Artifact.Model
     #endif
     public partial class ValidationException : AmazonArtifactException
     {
-        private List<ValidationExceptionField> _fieldList = new List<ValidationExceptionField>();
+        private List<ValidationExceptionField> _fieldList = AWSConfigs.InitializeCollections ? new List<ValidationExceptionField>() : null;
         private ValidationExceptionReason _reason;
 
         /// <summary>
@@ -136,7 +137,7 @@ namespace Amazon.Artifact.Model
         // Check to see if FieldList property is set
         internal bool IsSetFieldList()
         {
-            return this._fieldList != null && this._fieldList.Count > 0; 
+            return this._fieldList != null && (this._fieldList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

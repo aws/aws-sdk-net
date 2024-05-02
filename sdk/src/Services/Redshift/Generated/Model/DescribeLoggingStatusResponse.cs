@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.Redshift.Model
         private DateTime? _lastFailureTime;
         private DateTime? _lastSuccessfulDeliveryTime;
         private LogDestinationType _logDestinationType;
-        private List<string> _logExports = new List<string>();
+        private List<string> _logExports = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _loggingEnabled;
         private string _s3KeyPrefix;
 
@@ -150,7 +151,7 @@ namespace Amazon.Redshift.Model
         // Check to see if LogExports property is set
         internal bool IsSetLogExports()
         {
-            return this._logExports != null && this._logExports.Count > 0; 
+            return this._logExports != null && (this._logExports.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

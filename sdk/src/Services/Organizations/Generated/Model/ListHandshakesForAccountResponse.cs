@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Organizations.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Organizations.Model
     /// </summary>
     public partial class ListHandshakesForAccountResponse : AmazonWebServiceResponse
     {
-        private List<Handshake> _handshakes = new List<Handshake>();
+        private List<Handshake> _handshakes = AWSConfigs.InitializeCollections ? new List<Handshake>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.Organizations.Model
         // Check to see if Handshakes property is set
         internal bool IsSetHandshakes()
         {
-            return this._handshakes != null && this._handshakes.Count > 0; 
+            return this._handshakes != null && (this._handshakes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

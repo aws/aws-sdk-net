@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.GuardDuty.Model
         /// Enumerable containing all of the ThreatIntelSetIds
         /// </summary>
         public IPaginatedEnumerable<string> ThreatIntelSetIds => 
-            new PaginatedResultKeyResponse<ListThreatIntelSetsResponse, string>(this, (i) => i.ThreatIntelSetIds);
+            new PaginatedResultKeyResponse<ListThreatIntelSetsResponse, string>(this, (i) => i.ThreatIntelSetIds ?? new List<string>());
 
         internal ListThreatIntelSetsPaginator(IAmazonGuardDuty client, ListThreatIntelSetsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.GuardDuty.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListThreatIntelSetsResponse> IPaginator<ListThreatIntelSetsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListThreatIntelSetsResponse> IPaginator<ListThreatIntelSetsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

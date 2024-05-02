@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -57,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("destinationAddressSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.DestinationAddresses == null)
+                        {
+                            unmarshalledObject.DestinationAddresses = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.DestinationAddresses.Add(item);
                         continue;
@@ -64,6 +69,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("destinationPortRangeSet/item", targetDepth))
                     {
                         var unmarshaller = PortRangeUnmarshaller.Instance;
+                        if (unmarshalledObject.DestinationPortRanges == null)
+                        {
+                            unmarshalledObject.DestinationPortRanges = new List<PortRange>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.DestinationPortRanges.Add(item);
                         continue;
@@ -77,6 +86,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("sourceAddressSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.SourceAddresses == null)
+                        {
+                            unmarshalledObject.SourceAddresses = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SourceAddresses.Add(item);
                         continue;
@@ -84,6 +97,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("sourcePortRangeSet/item", targetDepth))
                     {
                         var unmarshaller = PortRangeUnmarshaller.Instance;
+                        if (unmarshalledObject.SourcePortRanges == null)
+                        {
+                            unmarshalledObject.SourcePortRanges = new List<PortRange>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SourcePortRanges.Add(item);
                         continue;

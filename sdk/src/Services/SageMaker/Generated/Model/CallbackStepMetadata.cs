@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class CallbackStepMetadata
     {
         private string _callbackToken;
-        private List<OutputParameter> _outputParameters = new List<OutputParameter>();
+        private List<OutputParameter> _outputParameters = AWSConfigs.InitializeCollections ? new List<OutputParameter>() : null;
         private string _sqsQueueUrl;
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if OutputParameters property is set
         internal bool IsSetOutputParameters()
         {
-            return this._outputParameters != null && this._outputParameters.Count > 0; 
+            return this._outputParameters != null && (this._outputParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

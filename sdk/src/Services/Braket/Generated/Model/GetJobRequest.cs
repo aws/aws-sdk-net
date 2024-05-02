@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Braket.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Braket.Model
     /// </summary>
     public partial class GetJobRequest : AmazonBraketRequest
     {
-        private List<string> _additionalAttributeNames = new List<string>();
+        private List<string> _additionalAttributeNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _jobArn;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.Braket.Model
         // Check to see if AdditionalAttributeNames property is set
         internal bool IsSetAdditionalAttributeNames()
         {
-            return this._additionalAttributeNames != null && this._additionalAttributeNames.Count > 0; 
+            return this._additionalAttributeNames != null && (this._additionalAttributeNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

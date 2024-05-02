@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.SageMaker.Model
     {
         private DirectDeploySettings _directDeploySettings;
         private GenerativeAiSettings _generativeAiSettings;
-        private List<IdentityProviderOAuthSetting> _identityProviderOAuthSettings = new List<IdentityProviderOAuthSetting>();
+        private List<IdentityProviderOAuthSetting> _identityProviderOAuthSettings = AWSConfigs.InitializeCollections ? new List<IdentityProviderOAuthSetting>() : null;
         private KendraSettings _kendraSettings;
         private ModelRegisterSettings _modelRegisterSettings;
         private TimeSeriesForecastingSettings _timeSeriesForecastingSettings;
@@ -93,7 +94,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if IdentityProviderOAuthSettings property is set
         internal bool IsSetIdentityProviderOAuthSettings()
         {
-            return this._identityProviderOAuthSettings != null && this._identityProviderOAuthSettings.Count > 0; 
+            return this._identityProviderOAuthSettings != null && (this._identityProviderOAuthSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

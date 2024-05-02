@@ -26,24 +26,25 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SavingsPlans.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSavingsPlansOfferingRates operation.
-    /// Describes the specified Savings Plans offering rates.
+    /// Describes the offering rates for the specified Savings Plans.
     /// </summary>
     public partial class DescribeSavingsPlansOfferingRatesRequest : AmazonSavingsPlansRequest
     {
-        private List<SavingsPlanOfferingRateFilterElement> _filters = new List<SavingsPlanOfferingRateFilterElement>();
+        private List<SavingsPlanOfferingRateFilterElement> _filters = AWSConfigs.InitializeCollections ? new List<SavingsPlanOfferingRateFilterElement>() : null;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _operations = new List<string>();
-        private List<string> _products = new List<string>();
-        private List<string> _savingsPlanOfferingIds = new List<string>();
-        private List<string> _savingsPlanPaymentOptions = new List<string>();
-        private List<string> _savingsPlanTypes = new List<string>();
-        private List<string> _serviceCodes = new List<string>();
-        private List<string> _usageTypes = new List<string>();
+        private List<string> _operations = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _products = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _savingsPlanOfferingIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _savingsPlanPaymentOptions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _savingsPlanTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _serviceCodes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _usageTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -60,7 +61,7 @@ namespace Amazon.SavingsPlans.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -105,7 +106,7 @@ namespace Amazon.SavingsPlans.Model
         /// <summary>
         /// Gets and sets the property Operations. 
         /// <para>
-        /// The specific AWS operation for the line item in the billing report.
+        /// The specific Amazon Web Services operation for the line item in the billing report.
         /// </para>
         /// </summary>
         public List<string> Operations
@@ -117,13 +118,13 @@ namespace Amazon.SavingsPlans.Model
         // Check to see if Operations property is set
         internal bool IsSetOperations()
         {
-            return this._operations != null && this._operations.Count > 0; 
+            return this._operations != null && (this._operations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property Products. 
         /// <para>
-        /// The AWS products.
+        /// The Amazon Web Services products.
         /// </para>
         /// </summary>
         public List<string> Products
@@ -135,7 +136,7 @@ namespace Amazon.SavingsPlans.Model
         // Check to see if Products property is set
         internal bool IsSetProducts()
         {
-            return this._products != null && this._products.Count > 0; 
+            return this._products != null && (this._products.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -153,7 +154,7 @@ namespace Amazon.SavingsPlans.Model
         // Check to see if SavingsPlanOfferingIds property is set
         internal bool IsSetSavingsPlanOfferingIds()
         {
-            return this._savingsPlanOfferingIds != null && this._savingsPlanOfferingIds.Count > 0; 
+            return this._savingsPlanOfferingIds != null && (this._savingsPlanOfferingIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -171,7 +172,7 @@ namespace Amazon.SavingsPlans.Model
         // Check to see if SavingsPlanPaymentOptions property is set
         internal bool IsSetSavingsPlanPaymentOptions()
         {
-            return this._savingsPlanPaymentOptions != null && this._savingsPlanPaymentOptions.Count > 0; 
+            return this._savingsPlanPaymentOptions != null && (this._savingsPlanPaymentOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -189,7 +190,7 @@ namespace Amazon.SavingsPlans.Model
         // Check to see if SavingsPlanTypes property is set
         internal bool IsSetSavingsPlanTypes()
         {
-            return this._savingsPlanTypes != null && this._savingsPlanTypes.Count > 0; 
+            return this._savingsPlanTypes != null && (this._savingsPlanTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -207,7 +208,7 @@ namespace Amazon.SavingsPlans.Model
         // Check to see if ServiceCodes property is set
         internal bool IsSetServiceCodes()
         {
-            return this._serviceCodes != null && this._serviceCodes.Count > 0; 
+            return this._serviceCodes != null && (this._serviceCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -225,7 +226,7 @@ namespace Amazon.SavingsPlans.Model
         // Check to see if UsageTypes property is set
         internal bool IsSetUsageTypes()
         {
-            return this._usageTypes != null && this._usageTypes.Count > 0; 
+            return this._usageTypes != null && (this._usageTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

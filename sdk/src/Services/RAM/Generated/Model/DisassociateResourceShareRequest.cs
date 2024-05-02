@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RAM.Model
 {
     /// <summary>
@@ -36,10 +37,10 @@ namespace Amazon.RAM.Model
     public partial class DisassociateResourceShareRequest : AmazonRAMRequest
     {
         private string _clientToken;
-        private List<string> _principals = new List<string>();
-        private List<string> _resourceArns = new List<string>();
+        private List<string> _principals = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _resourceArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _resourceShareArn;
-        private List<string> _sources = new List<string>();
+        private List<string> _sources = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -124,7 +125,7 @@ namespace Amazon.RAM.Model
         // Check to see if Principals property is set
         internal bool IsSetPrincipals()
         {
-            return this._principals != null && this._principals.Count > 0; 
+            return this._principals != null && (this._principals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -145,7 +146,7 @@ namespace Amazon.RAM.Model
         // Check to see if ResourceArns property is set
         internal bool IsSetResourceArns()
         {
-            return this._resourceArns != null && this._resourceArns.Count > 0; 
+            return this._resourceArns != null && (this._resourceArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -185,7 +186,7 @@ namespace Amazon.RAM.Model
         // Check to see if Sources property is set
         internal bool IsSetSources()
         {
-            return this._sources != null && this._sources.Count > 0; 
+            return this._sources != null && (this._sources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

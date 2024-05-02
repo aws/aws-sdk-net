@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.TranscribeService.Model
     {
         private string _dataAccessRoleArn;
         private LanguageCode _languageCode;
-        private List<string> _phrases = new List<string>();
+        private List<string> _phrases = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _vocabularyFileUri;
         private string _vocabularyName;
 
@@ -138,7 +139,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if Phrases property is set
         internal bool IsSetPhrases()
         {
-            return this._phrases != null && this._phrases.Count > 0; 
+            return this._phrases != null && (this._phrases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

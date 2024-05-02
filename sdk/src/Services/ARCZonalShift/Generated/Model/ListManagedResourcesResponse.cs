@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ARCZonalShift.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ARCZonalShift.Model
     /// </summary>
     public partial class ListManagedResourcesResponse : AmazonWebServiceResponse
     {
-        private List<ManagedResourceSummary> _items = new List<ManagedResourceSummary>();
+        private List<ManagedResourceSummary> _items = AWSConfigs.InitializeCollections ? new List<ManagedResourceSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.ARCZonalShift.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

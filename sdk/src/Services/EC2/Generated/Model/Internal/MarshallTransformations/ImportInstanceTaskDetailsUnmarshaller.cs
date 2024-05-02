@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -75,6 +76,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("volumes/item", targetDepth))
                     {
                         var unmarshaller = ImportInstanceVolumeDetailItemUnmarshaller.Instance;
+                        if (unmarshalledObject.Volumes == null)
+                        {
+                            unmarshalledObject.Volumes = new List<ImportInstanceVolumeDetailItem>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Volumes.Add(item);
                         continue;

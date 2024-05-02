@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Appflow.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Appflow.Model
     /// </summary>
     public partial class SnowflakeMetadata
     {
-        private List<string> _supportedRegions = new List<string>();
+        private List<string> _supportedRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property SupportedRegions. 
@@ -50,7 +51,7 @@ namespace Amazon.Appflow.Model
         // Check to see if SupportedRegions property is set
         internal bool IsSetSupportedRegions()
         {
-            return this._supportedRegions != null && this._supportedRegions.Count > 0; 
+            return this._supportedRegions != null && (this._supportedRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

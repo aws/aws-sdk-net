@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListExperimentsResponse : AmazonWebServiceResponse
     {
-        private List<ExperimentSummary> _experimentSummaries = new List<ExperimentSummary>();
+        private List<ExperimentSummary> _experimentSummaries = AWSConfigs.InitializeCollections ? new List<ExperimentSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ExperimentSummaries property is set
         internal bool IsSetExperimentSummaries()
         {
-            return this._experimentSummaries != null && this._experimentSummaries.Count > 0; 
+            return this._experimentSummaries != null && (this._experimentSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

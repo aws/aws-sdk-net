@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.SecurityHub.Model
         private string _defaultAction;
         private string _metricName;
         private string _name;
-        private List<AwsWafRegionalWebAclRulesListDetails> _rulesList = new List<AwsWafRegionalWebAclRulesListDetails>();
+        private List<AwsWafRegionalWebAclRulesListDetails> _rulesList = AWSConfigs.InitializeCollections ? new List<AwsWafRegionalWebAclRulesListDetails>() : null;
         private string _webAclId;
 
         /// <summary>
@@ -110,7 +111,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if RulesList property is set
         internal bool IsSetRulesList()
         {
-            return this._rulesList != null && this._rulesList.Count > 0; 
+            return this._rulesList != null && (this._rulesList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

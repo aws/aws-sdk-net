@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMakerFeatureStoreRuntime.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
     {
         private string _featureName;
         private string _valueAsString;
-        private List<string> _valueAsStringList = new List<string>();
+        private List<string> _valueAsStringList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property FeatureName. 
@@ -96,7 +97,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         // Check to see if ValueAsStringList property is set
         internal bool IsSetValueAsStringList()
         {
-            return this._valueAsStringList != null && this._valueAsStringList.Count > 0; 
+            return this._valueAsStringList != null && (this._valueAsStringList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchEvidently.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CloudWatchEvidently.Model
     /// </summary>
     public partial class PutProjectEventsResponse : AmazonWebServiceResponse
     {
-        private List<PutProjectEventsResultEntry> _eventResults = new List<PutProjectEventsResultEntry>();
+        private List<PutProjectEventsResultEntry> _eventResults = AWSConfigs.InitializeCollections ? new List<PutProjectEventsResultEntry>() : null;
         private int? _failedEventCount;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if EventResults property is set
         internal bool IsSetEventResults()
         {
-            return this._eventResults != null && this._eventResults.Count > 0; 
+            return this._eventResults != null && (this._eventResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

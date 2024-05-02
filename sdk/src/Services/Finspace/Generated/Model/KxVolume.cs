@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Finspace.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Finspace.Model
     /// </summary>
     public partial class KxVolume
     {
-        private List<string> _availabilityZoneIds = new List<string>();
+        private List<string> _availabilityZoneIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private KxAzMode _azMode;
         private DateTime? _createdTimestamp;
         private string _description;
@@ -58,14 +59,14 @@ namespace Amazon.Finspace.Model
         // Check to see if AvailabilityZoneIds property is set
         internal bool IsSetAvailabilityZoneIds()
         {
-            return this._availabilityZoneIds != null && this._availabilityZoneIds.Count > 0; 
+            return this._availabilityZoneIds != null && (this._availabilityZoneIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property AzMode. 
         /// <para>
-        ///  The number of availability zones assigned to the volume. Currently, only <c>SINGLE</c>
-        /// is supported. 
+        /// The number of availability zones you want to assign per volume. Currently, FinSpace
+        /// only supports <c>SINGLE</c> for volumes. This places dataview in a single AZ.
         /// </para>
         /// </summary>
         public KxAzMode AzMode

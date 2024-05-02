@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Schemas.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.Schemas.Model
         private string _schemaArn;
         private string _schemaName;
         private string _schemaVersion;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _type;
         private DateTime? _versionCreatedDate;
 
@@ -144,7 +145,7 @@ namespace Amazon.Schemas.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

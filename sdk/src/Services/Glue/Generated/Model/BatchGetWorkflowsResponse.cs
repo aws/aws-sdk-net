@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class BatchGetWorkflowsResponse : AmazonWebServiceResponse
     {
-        private List<string> _missingWorkflows = new List<string>();
-        private List<Workflow> _workflows = new List<Workflow>();
+        private List<string> _missingWorkflows = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Workflow> _workflows = AWSConfigs.InitializeCollections ? new List<Workflow>() : null;
 
         /// <summary>
         /// Gets and sets the property MissingWorkflows. 
@@ -52,7 +53,7 @@ namespace Amazon.Glue.Model
         // Check to see if MissingWorkflows property is set
         internal bool IsSetMissingWorkflows()
         {
-            return this._missingWorkflows != null && this._missingWorkflows.Count > 0; 
+            return this._missingWorkflows != null && (this._missingWorkflows.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.Glue.Model
         // Check to see if Workflows property is set
         internal bool IsSetWorkflows()
         {
-            return this._workflows != null && this._workflows.Count > 0; 
+            return this._workflows != null && (this._workflows.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

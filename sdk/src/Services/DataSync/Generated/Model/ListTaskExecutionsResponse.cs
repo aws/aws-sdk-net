@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataSync.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.DataSync.Model
     public partial class ListTaskExecutionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TaskExecutionListEntry> _taskExecutions = new List<TaskExecutionListEntry>();
+        private List<TaskExecutionListEntry> _taskExecutions = AWSConfigs.InitializeCollections ? new List<TaskExecutionListEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.DataSync.Model
         // Check to see if TaskExecutions property is set
         internal bool IsSetTaskExecutions()
         {
-            return this._taskExecutions != null && this._taskExecutions.Count > 0; 
+            return this._taskExecutions != null && (this._taskExecutions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

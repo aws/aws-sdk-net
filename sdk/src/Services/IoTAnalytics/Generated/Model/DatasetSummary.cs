@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
@@ -33,12 +34,12 @@ namespace Amazon.IoTAnalytics.Model
     /// </summary>
     public partial class DatasetSummary
     {
-        private List<DatasetActionSummary> _actions = new List<DatasetActionSummary>();
+        private List<DatasetActionSummary> _actions = AWSConfigs.InitializeCollections ? new List<DatasetActionSummary>() : null;
         private DateTime? _creationTime;
         private string _datasetName;
         private DateTime? _lastUpdateTime;
         private DatasetStatus _status;
-        private List<DatasetTrigger> _triggers = new List<DatasetTrigger>();
+        private List<DatasetTrigger> _triggers = AWSConfigs.InitializeCollections ? new List<DatasetTrigger>() : null;
 
         /// <summary>
         /// Gets and sets the property Actions. 
@@ -56,7 +57,7 @@ namespace Amazon.IoTAnalytics.Model
         // Check to see if Actions property is set
         internal bool IsSetActions()
         {
-            return this._actions != null && this._actions.Count > 0; 
+            return this._actions != null && (this._actions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -150,7 +151,7 @@ namespace Amazon.IoTAnalytics.Model
         // Check to see if Triggers property is set
         internal bool IsSetTriggers()
         {
-            return this._triggers != null && this._triggers.Count > 0; 
+            return this._triggers != null && (this._triggers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class ListFeaturedResultsSetsResponse : AmazonWebServiceResponse
     {
-        private List<FeaturedResultsSetSummary> _featuredResultsSetSummaryItems = new List<FeaturedResultsSetSummary>();
+        private List<FeaturedResultsSetSummary> _featuredResultsSetSummaryItems = AWSConfigs.InitializeCollections ? new List<FeaturedResultsSetSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Kendra.Model
         // Check to see if FeaturedResultsSetSummaryItems property is set
         internal bool IsSetFeaturedResultsSetSummaryItems()
         {
-            return this._featuredResultsSetSummaryItems != null && this._featuredResultsSetSummaryItems.Count > 0; 
+            return this._featuredResultsSetSummaryItems != null && (this._featuredResultsSetSummaryItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

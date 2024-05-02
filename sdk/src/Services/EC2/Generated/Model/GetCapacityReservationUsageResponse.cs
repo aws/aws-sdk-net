@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.EC2.Model
         private int? _availableInstanceCount;
         private string _capacityReservationId;
         private string _instanceType;
-        private List<InstanceUsage> _instanceUsages = new List<InstanceUsage>();
+        private List<InstanceUsage> _instanceUsages = AWSConfigs.InitializeCollections ? new List<InstanceUsage>() : null;
         private string _nextToken;
         private CapacityReservationState _state;
         private int? _totalInstanceCount;
@@ -111,7 +112,7 @@ namespace Amazon.EC2.Model
         // Check to see if InstanceUsages property is set
         internal bool IsSetInstanceUsages()
         {
-            return this._instanceUsages != null && this._instanceUsages.Count > 0; 
+            return this._instanceUsages != null && (this._instanceUsages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

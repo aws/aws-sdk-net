@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
@@ -47,11 +48,15 @@ namespace Amazon.WorkSpaces.Model
     /// You don't need to specify the <c>PCOIP</c> protocol for Linux bundles because <c>WSP</c>
     /// is the default protocol for those bundles.
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// User-decoupled WorkSpaces are only supported by Amazon WorkSpaces Core.
+    /// </para>
     ///  </li> </ul> </note>
     /// </summary>
     public partial class CreateWorkspacesRequest : AmazonWorkSpacesRequest
     {
-        private List<WorkspaceRequest> _workspaces = new List<WorkspaceRequest>();
+        private List<WorkspaceRequest> _workspaces = AWSConfigs.InitializeCollections ? new List<WorkspaceRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property Workspaces. 
@@ -69,7 +74,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if Workspaces property is set
         internal bool IsSetWorkspaces()
         {
-            return this._workspaces != null && this._workspaces.Count > 0; 
+            return this._workspaces != null && (this._workspaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

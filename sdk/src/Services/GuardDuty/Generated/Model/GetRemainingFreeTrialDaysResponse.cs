@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class GetRemainingFreeTrialDaysResponse : AmazonWebServiceResponse
     {
-        private List<AccountFreeTrialInfo> _accounts = new List<AccountFreeTrialInfo>();
-        private List<UnprocessedAccount> _unprocessedAccounts = new List<UnprocessedAccount>();
+        private List<AccountFreeTrialInfo> _accounts = AWSConfigs.InitializeCollections ? new List<AccountFreeTrialInfo>() : null;
+        private List<UnprocessedAccount> _unprocessedAccounts = AWSConfigs.InitializeCollections ? new List<UnprocessedAccount>() : null;
 
         /// <summary>
         /// Gets and sets the property Accounts. 
@@ -51,7 +52,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if Accounts property is set
         internal bool IsSetAccounts()
         {
-            return this._accounts != null && this._accounts.Count > 0; 
+            return this._accounts != null && (this._accounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if UnprocessedAccounts property is set
         internal bool IsSetUnprocessedAccounts()
         {
-            return this._unprocessedAccounts != null && this._unprocessedAccounts.Count > 0; 
+            return this._unprocessedAccounts != null && (this._unprocessedAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

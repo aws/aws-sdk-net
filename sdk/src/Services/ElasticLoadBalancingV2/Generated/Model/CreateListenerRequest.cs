@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
@@ -60,15 +61,15 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class CreateListenerRequest : AmazonElasticLoadBalancingV2Request
     {
-        private List<string> _alpnPolicy = new List<string>();
-        private List<Certificate> _certificates = new List<Certificate>();
-        private List<Action> _defaultActions = new List<Action>();
+        private List<string> _alpnPolicy = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Certificate> _certificates = AWSConfigs.InitializeCollections ? new List<Certificate>() : null;
+        private List<Action> _defaultActions = AWSConfigs.InitializeCollections ? new List<Action>() : null;
         private string _loadBalancerArn;
         private MutualAuthenticationAttributes _mutualAuthentication;
         private int? _port;
         private ProtocolEnum _protocol;
         private string _sslPolicy;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AlpnPolicy. 
@@ -111,7 +112,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if AlpnPolicy property is set
         internal bool IsSetAlpnPolicy()
         {
-            return this._alpnPolicy != null && this._alpnPolicy.Count > 0; 
+            return this._alpnPolicy != null && (this._alpnPolicy.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -131,7 +132,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if Certificates property is set
         internal bool IsSetCertificates()
         {
-            return this._certificates != null && this._certificates.Count > 0; 
+            return this._certificates != null && (this._certificates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -150,7 +151,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if DefaultActions property is set
         internal bool IsSetDefaultActions()
         {
-            return this._defaultActions != null && this._defaultActions.Count > 0; 
+            return this._defaultActions != null && (this._defaultActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -273,7 +274,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

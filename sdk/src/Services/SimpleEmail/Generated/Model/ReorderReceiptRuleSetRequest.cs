@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
@@ -49,7 +50,7 @@ namespace Amazon.SimpleEmail.Model
     /// </summary>
     public partial class ReorderReceiptRuleSetRequest : AmazonSimpleEmailServiceRequest
     {
-        private List<string> _ruleNames = new List<string>();
+        private List<string> _ruleNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _ruleSetName;
 
         /// <summary>
@@ -68,7 +69,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if RuleNames property is set
         internal bool IsSetRuleNames()
         {
-            return this._ruleNames != null && this._ruleNames.Count > 0; 
+            return this._ruleNames != null && (this._ruleNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Drs.Model
 {
     /// <summary>
@@ -38,8 +39,9 @@ namespace Amazon.Drs.Model
         private DataReplicationState _dataReplicationState;
         private string _etaDateTime;
         private string _lagDuration;
-        private List<DataReplicationInfoReplicatedDisk> _replicatedDisks = new List<DataReplicationInfoReplicatedDisk>();
+        private List<DataReplicationInfoReplicatedDisk> _replicatedDisks = AWSConfigs.InitializeCollections ? new List<DataReplicationInfoReplicatedDisk>() : null;
         private string _stagingAvailabilityZone;
+        private string _stagingOutpostArn;
 
         /// <summary>
         /// Gets and sets the property DataReplicationError. 
@@ -149,7 +151,7 @@ namespace Amazon.Drs.Model
         // Check to see if ReplicatedDisks property is set
         internal bool IsSetReplicatedDisks()
         {
-            return this._replicatedDisks != null && this._replicatedDisks.Count > 0; 
+            return this._replicatedDisks != null && (this._replicatedDisks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -169,6 +171,25 @@ namespace Amazon.Drs.Model
         internal bool IsSetStagingAvailabilityZone()
         {
             return this._stagingAvailabilityZone != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StagingOutpostArn. 
+        /// <para>
+        /// The ARN of the staging Outpost
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=255)]
+        public string StagingOutpostArn
+        {
+            get { return this._stagingOutpostArn; }
+            set { this._stagingOutpostArn = value; }
+        }
+
+        // Check to see if StagingOutpostArn property is set
+        internal bool IsSetStagingOutpostArn()
+        {
+            return this._stagingOutpostArn != null;
         }
 
     }

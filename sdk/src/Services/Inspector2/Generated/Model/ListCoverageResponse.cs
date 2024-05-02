@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class ListCoverageResponse : AmazonWebServiceResponse
     {
-        private List<CoveredResource> _coveredResources = new List<CoveredResource>();
+        private List<CoveredResource> _coveredResources = AWSConfigs.InitializeCollections ? new List<CoveredResource>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if CoveredResources property is set
         internal bool IsSetCoveredResources()
         {
-            return this._coveredResources != null && this._coveredResources.Count > 0; 
+            return this._coveredResources != null && (this._coveredResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -17,12 +17,6 @@ namespace Amazon.DNXCore.IntegrationTests.S3
     //Test cases have been commented out as they require a proxy to be set.
     public class WebProxyTest 
     {
-
-        private static string basePath = @"c:\temp\test\transferutility\";
-        private static string bucketName;
-        private static string fullPath;
-        private const string testContent = "This is the content body!";
-        private const string testFile = "PutObjectFile.txt";
         public AmazonS3Client client = null;
 
         //[Fact]

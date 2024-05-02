@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     public partial class ListResourceServersResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ResourceServerType> _resourceServers = new List<ResourceServerType>();
+        private List<ResourceServerType> _resourceServers = AWSConfigs.InitializeCollections ? new List<ResourceServerType>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if ResourceServers property is set
         internal bool IsSetResourceServers()
         {
-            return this._resourceServers != null && this._resourceServers.Count > 0; 
+            return this._resourceServers != null && (this._resourceServers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

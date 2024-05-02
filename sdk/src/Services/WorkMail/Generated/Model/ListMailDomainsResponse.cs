@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkMail.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.WorkMail.Model
     /// </summary>
     public partial class ListMailDomainsResponse : AmazonWebServiceResponse
     {
-        private List<MailDomainSummary> _mailDomains = new List<MailDomainSummary>();
+        private List<MailDomainSummary> _mailDomains = AWSConfigs.InitializeCollections ? new List<MailDomainSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.WorkMail.Model
         // Check to see if MailDomains property is set
         internal bool IsSetMailDomains()
         {
-            return this._mailDomains != null && this._mailDomains.Count > 0; 
+            return this._mailDomains != null && (this._mailDomains.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

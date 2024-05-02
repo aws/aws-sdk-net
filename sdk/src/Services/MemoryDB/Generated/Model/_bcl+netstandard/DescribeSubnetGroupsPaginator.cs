@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.MemoryDB.Model
         /// Enumerable containing all of the SubnetGroups
         /// </summary>
         public IPaginatedEnumerable<SubnetGroup> SubnetGroups => 
-            new PaginatedResultKeyResponse<DescribeSubnetGroupsResponse, SubnetGroup>(this, (i) => i.SubnetGroups);
+            new PaginatedResultKeyResponse<DescribeSubnetGroupsResponse, SubnetGroup>(this, (i) => i.SubnetGroups ?? new List<SubnetGroup>());
 
         internal DescribeSubnetGroupsPaginator(IAmazonMemoryDB client, DescribeSubnetGroupsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.MemoryDB.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeSubnetGroupsResponse> IPaginator<DescribeSubnetGroupsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeSubnetGroupsResponse> IPaginator<DescribeSubnetGroupsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

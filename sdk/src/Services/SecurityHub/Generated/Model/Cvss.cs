@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class Cvss
     {
-        private List<Adjustment> _adjustments = new List<Adjustment>();
+        private List<Adjustment> _adjustments = AWSConfigs.InitializeCollections ? new List<Adjustment>() : null;
         private double? _baseScore;
         private string _baseVector;
         private string _source;
@@ -54,7 +55,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Adjustments property is set
         internal bool IsSetAdjustments()
         {
-            return this._adjustments != null && this._adjustments.Count > 0; 
+            return this._adjustments != null && (this._adjustments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

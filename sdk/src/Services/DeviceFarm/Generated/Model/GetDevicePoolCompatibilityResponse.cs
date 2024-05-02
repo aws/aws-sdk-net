@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.DeviceFarm.Model
     /// </summary>
     public partial class GetDevicePoolCompatibilityResponse : AmazonWebServiceResponse
     {
-        private List<DevicePoolCompatibilityResult> _compatibleDevices = new List<DevicePoolCompatibilityResult>();
-        private List<DevicePoolCompatibilityResult> _incompatibleDevices = new List<DevicePoolCompatibilityResult>();
+        private List<DevicePoolCompatibilityResult> _compatibleDevices = AWSConfigs.InitializeCollections ? new List<DevicePoolCompatibilityResult>() : null;
+        private List<DevicePoolCompatibilityResult> _incompatibleDevices = AWSConfigs.InitializeCollections ? new List<DevicePoolCompatibilityResult>() : null;
 
         /// <summary>
         /// Gets and sets the property CompatibleDevices. 
@@ -51,7 +52,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if CompatibleDevices property is set
         internal bool IsSetCompatibleDevices()
         {
-            return this._compatibleDevices != null && this._compatibleDevices.Count > 0; 
+            return this._compatibleDevices != null && (this._compatibleDevices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if IncompatibleDevices property is set
         internal bool IsSetIncompatibleDevices()
         {
-            return this._incompatibleDevices != null && this._incompatibleDevices.Count > 0; 
+            return this._incompatibleDevices != null && (this._incompatibleDevices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

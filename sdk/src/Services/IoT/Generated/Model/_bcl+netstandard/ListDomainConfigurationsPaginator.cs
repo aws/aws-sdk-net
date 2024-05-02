@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the DomainConfigurations
         /// </summary>
         public IPaginatedEnumerable<DomainConfigurationSummary> DomainConfigurations => 
-            new PaginatedResultKeyResponse<ListDomainConfigurationsResponse, DomainConfigurationSummary>(this, (i) => i.DomainConfigurations);
+            new PaginatedResultKeyResponse<ListDomainConfigurationsResponse, DomainConfigurationSummary>(this, (i) => i.DomainConfigurations ?? new List<DomainConfigurationSummary>());
 
         internal ListDomainConfigurationsPaginator(IAmazonIoT client, ListDomainConfigurationsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.IoT.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListDomainConfigurationsResponse> IPaginator<ListDomainConfigurationsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListDomainConfigurationsResponse> IPaginator<ListDomainConfigurationsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

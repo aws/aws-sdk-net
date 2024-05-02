@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTFleetWise.Model
 {
     /// <summary>
@@ -37,8 +38,8 @@ namespace Amazon.IoTFleetWise.Model
         private CollectionScheme _collectionScheme;
         private Compression _compression;
         private DateTime? _creationTime;
-        private List<DataDestinationConfig> _dataDestinationConfigs = new List<DataDestinationConfig>();
-        private List<string> _dataExtraDimensions = new List<string>();
+        private List<DataDestinationConfig> _dataDestinationConfigs = AWSConfigs.InitializeCollections ? new List<DataDestinationConfig>() : null;
+        private List<string> _dataExtraDimensions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _description;
         private DiagnosticsMode _diagnosticsMode;
         private DateTime? _expiryTime;
@@ -47,7 +48,7 @@ namespace Amazon.IoTFleetWise.Model
         private long? _postTriggerCollectionDuration;
         private int? _priority;
         private string _signalCatalogArn;
-        private List<SignalInformation> _signalsToCollect = new List<SignalInformation>();
+        private List<SignalInformation> _signalsToCollect = AWSConfigs.InitializeCollections ? new List<SignalInformation>() : null;
         private SpoolingMode _spoolingMode;
         private DateTime? _startTime;
         private CampaignStatus _status;
@@ -156,7 +157,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if DataDestinationConfigs property is set
         internal bool IsSetDataDestinationConfigs()
         {
-            return this._dataDestinationConfigs != null && this._dataDestinationConfigs.Count > 0; 
+            return this._dataDestinationConfigs != null && (this._dataDestinationConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -175,7 +176,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if DataExtraDimensions property is set
         internal bool IsSetDataExtraDimensions()
         {
-            return this._dataExtraDimensions != null && this._dataExtraDimensions.Count > 0; 
+            return this._dataExtraDimensions != null && (this._dataExtraDimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -347,7 +348,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if SignalsToCollect property is set
         internal bool IsSetSignalsToCollect()
         {
-            return this._signalsToCollect != null && this._signalsToCollect.Count > 0; 
+            return this._signalsToCollect != null && (this._signalsToCollect.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,12 +26,14 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCapacityBlockOfferings operation.
-    /// Describes Capacity Block offerings available for purchase. With Capacity Blocks, you
-    /// purchase a specific instance type for a period of time.
+    /// Describes Capacity Block offerings available for purchase in the Amazon Web Services
+    /// Region that you're currently using. With Capacity Blocks, you purchase a specific
+    /// instance type for a period of time.
     /// </summary>
     public partial class DescribeCapacityBlockOfferingsRequest : AmazonEC2Request
     {

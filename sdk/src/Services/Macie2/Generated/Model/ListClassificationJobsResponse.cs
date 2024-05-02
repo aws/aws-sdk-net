@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Macie2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Macie2.Model
     /// </summary>
     public partial class ListClassificationJobsResponse : AmazonWebServiceResponse
     {
-        private List<JobSummary> _items = new List<JobSummary>();
+        private List<JobSummary> _items = AWSConfigs.InitializeCollections ? new List<JobSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.Macie2.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

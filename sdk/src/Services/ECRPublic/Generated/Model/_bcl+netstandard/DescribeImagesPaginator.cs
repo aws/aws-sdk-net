@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ECRPublic.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ECRPublic.Model
         /// Enumerable containing all of the ImageDetails
         /// </summary>
         public IPaginatedEnumerable<ImageDetail> ImageDetails => 
-            new PaginatedResultKeyResponse<DescribeImagesResponse, ImageDetail>(this, (i) => i.ImageDetails);
+            new PaginatedResultKeyResponse<DescribeImagesResponse, ImageDetail>(this, (i) => i.ImageDetails ?? new List<ImageDetail>());
 
         internal DescribeImagesPaginator(IAmazonECRPublic client, DescribeImagesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ECRPublic.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeImagesResponse> IPaginator<DescribeImagesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeImagesResponse> IPaginator<DescribeImagesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

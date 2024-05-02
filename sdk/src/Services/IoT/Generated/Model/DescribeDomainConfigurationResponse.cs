@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.IoT.Model
         private DomainType _domainType;
         private DateTime? _lastStatusChangeDate;
         private ServerCertificateConfig _serverCertificateConfig;
-        private List<ServerCertificateSummary> _serverCertificates = new List<ServerCertificateSummary>();
+        private List<ServerCertificateSummary> _serverCertificates = AWSConfigs.InitializeCollections ? new List<ServerCertificateSummary>() : null;
         private ServiceType _serviceType;
         private TlsConfig _tlsConfig;
 
@@ -207,7 +208,7 @@ namespace Amazon.IoT.Model
         // Check to see if ServerCertificates property is set
         internal bool IsSetServerCertificates()
         {
-            return this._serverCertificates != null && this._serverCertificates.Count > 0; 
+            return this._serverCertificates != null && (this._serverCertificates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IdentityStore.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.IdentityStore.Model
     {
         private string _description;
         private string _displayName;
-        private List<ExternalId> _externalIds = new List<ExternalId>();
+        private List<ExternalId> _externalIds = AWSConfigs.InitializeCollections ? new List<ExternalId>() : null;
         private string _groupId;
         private string _identityStoreId;
 
@@ -98,7 +99,7 @@ namespace Amazon.IdentityStore.Model
         // Check to see if ExternalIds property is set
         internal bool IsSetExternalIds()
         {
-            return this._externalIds != null && this._externalIds.Count > 0; 
+            return this._externalIds != null && (this._externalIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

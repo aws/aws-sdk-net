@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTFleetWise.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.IoTFleetWise.Model
     /// </summary>
     public partial class CanDbcDefinition
     {
-        private List<MemoryStream> _canDbcFiles = new List<MemoryStream>();
+        private List<MemoryStream> _canDbcFiles = AWSConfigs.InitializeCollections ? new List<MemoryStream>() : null;
         private string _networkInterface;
-        private Dictionary<string, string> _signalsMap = new Dictionary<string, string>();
+        private Dictionary<string, string> _signalsMap = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property CanDbcFiles. 
@@ -55,7 +56,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if CanDbcFiles property is set
         internal bool IsSetCanDbcFiles()
         {
-            return this._canDbcFiles != null && this._canDbcFiles.Count > 0; 
+            return this._canDbcFiles != null && (this._canDbcFiles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if SignalsMap property is set
         internal bool IsSetSignalsMap()
         {
-            return this._signalsMap != null && this._signalsMap.Count > 0; 
+            return this._signalsMap != null && (this._signalsMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

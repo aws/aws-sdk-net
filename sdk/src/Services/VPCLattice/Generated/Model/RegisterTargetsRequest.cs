@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VPCLattice.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.VPCLattice.Model
     public partial class RegisterTargetsRequest : AmazonVPCLatticeRequest
     {
         private string _targetGroupIdentifier;
-        private List<Target> _targets = new List<Target>();
+        private List<Target> _targets = AWSConfigs.InitializeCollections ? new List<Target>() : null;
 
         /// <summary>
         /// Gets and sets the property TargetGroupIdentifier. 
@@ -73,7 +74,7 @@ namespace Amazon.VPCLattice.Model
         // Check to see if Targets property is set
         internal bool IsSetTargets()
         {
-            return this._targets != null && this._targets.Count > 0; 
+            return this._targets != null && (this._targets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

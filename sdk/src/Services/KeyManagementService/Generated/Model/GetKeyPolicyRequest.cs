@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
@@ -102,11 +103,12 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property PolicyName. 
         /// <para>
-        /// Specifies the name of the key policy. The only valid name is <c>default</c>. To get
-        /// the names of key policies, use <a>ListKeyPolicies</a>.
+        /// Specifies the name of the key policy. If no policy name is specified, the default
+        /// value is <c>default</c>. The only valid name is <c>default</c>. To get the names of
+        /// key policies, use <a>ListKeyPolicies</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Min=1, Max=128)]
         public string PolicyName
         {
             get { return this._policyName; }

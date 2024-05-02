@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
@@ -48,7 +49,7 @@ namespace Amazon.CloudFormation.Model
         private string _operationId;
         private string _stackInstanceAccount;
         private string _stackInstanceRegion;
-        private List<string> _stackInstanceResourceDriftStatuses = new List<string>();
+        private List<string> _stackInstanceResourceDriftStatuses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _stackSetName;
 
         /// <summary>
@@ -230,7 +231,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if StackInstanceResourceDriftStatuses property is set
         internal bool IsSetStackInstanceResourceDriftStatuses()
         {
-            return this._stackInstanceResourceDriftStatuses != null && this._stackInstanceResourceDriftStatuses.Count > 0; 
+            return this._stackInstanceResourceDriftStatuses != null && (this._stackInstanceResourceDriftStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

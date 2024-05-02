@@ -279,12 +279,12 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateDomainRequest.HomeEfsFileSystemKmsKeyId</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateDomainRequest.KmsKeyId</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateDomainRequest.VpcId</property>
@@ -350,7 +350,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateEdgePackagingJobRequest.ResourceKey</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateEdgePackagingJobRequest.RoleArn</property>
@@ -388,7 +388,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateEndpointConfigRequest.KmsKeyId</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateEndpointConfigResponse.EndpointConfigArn</property>
@@ -613,7 +613,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateInferenceExperimentRequest.KmsKey</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateInferenceExperimentRequest.Name</property>
@@ -795,6 +795,12 @@
     <pattern>^(https|s3)://([^/]+)/?(.*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.CreateModelPackageRequest.SourceUri</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\p{L}\p{M}\p{Z}\p{N}\p{P}]{0,1024}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateModelPackageResponse.ModelPackageArn</property>
     <min>1</min>
     <max>2048</max>
@@ -854,7 +860,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateNotebookInstanceRequest.KmsKeyId</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.CreateNotebookInstanceRequest.LifecycleConfigName</property>
@@ -2051,12 +2057,12 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeDomainResponse.HomeEfsFileSystemKmsKeyId</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeDomainResponse.KmsKeyId</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeDomainResponse.SecurityGroupIdForDomainBoundary</property>
@@ -2161,7 +2167,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeEdgePackagingJobResponse.ResourceKey</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeEdgePackagingJobResponse.RoleArn</property>
@@ -2219,7 +2225,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeEndpointConfigResponse.KmsKeyId</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeExperimentRequest.ExperimentName</property>
@@ -2659,7 +2665,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeInferenceExperimentResponse.KmsKey</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeInferenceExperimentResponse.Name</property>
@@ -2936,6 +2942,12 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.DescribeModelPackageResponse.SourceUri</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\p{L}\p{M}\p{Z}\p{N}\p{P}]{0,1024}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeModelPackageGroupRequest.ModelPackageGroupName</property>
     <min>1</min>
     <max>170</max>
@@ -3025,7 +3037,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeNotebookInstanceResponse.KmsKeyId</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DescribeNotebookInstanceResponse.NotebookInstanceArn</property>
@@ -6035,6 +6047,12 @@
     <pattern>^arn:aws(-cn|-us-gov)?:sagemaker:[a-z0-9\-]{9,16}:[0-9]{12}:model-package/[\S]{1,2048}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.UpdateModelPackageRequest.SourceUri</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\p{L}\p{M}\p{Z}\p{N}\p{P}]{0,1024}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.UpdateModelPackageResponse.ModelPackageArn</property>
     <min>1</min>
     <max>2048</max>
@@ -6503,7 +6521,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.AsyncInferenceOutputConfig.KmsKeyId</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.AsyncInferenceOutputConfig.S3FailurePath</property>
@@ -6529,7 +6547,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.AthenaDatasetDefinition.KmsKeyId</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.AthenaDatasetDefinition.OutputS3Uri</property>
@@ -6654,7 +6672,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.AutoMLOutputDataConfig.KmsKeyId</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.AutoMLOutputDataConfig.S3OutputPath</property>
@@ -6673,7 +6691,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.AutoMLSecurityConfig.VolumeKmsKeyId</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.AutoParameter.Name</property>
@@ -6693,7 +6711,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.BatchDataCaptureConfig.KmsKeyId</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.BatchDescribeModelPackageSummary.ModelPackageArn</property>
@@ -7187,7 +7205,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DataCaptureConfig.KmsKeyId</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DataCaptureConfigSummary.CurrentSamplingPercentage</property>
@@ -7202,7 +7220,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DataCaptureConfigSummary.KmsKeyId</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.DataCatalogConfig.Catalog</property>
@@ -7582,7 +7600,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.EdgeOutputConfig.KmsKeyId</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.EdgeOutputConfig.S3OutputLocation</property>
@@ -7981,7 +7999,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.FlowDefinitionOutputConfig.KmsKeyId</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.FlowDefinitionOutputConfig.S3OutputPath</property>
@@ -8320,7 +8338,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.HyperParameterTuningResourceConfig.VolumeKmsKeyId</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.HyperParameterTuningResourceConfig.VolumeSizeInGB</property>
@@ -8470,7 +8488,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.InferenceExperimentDataStorageConfig.KmsKey</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.InferenceExperimentSummary.Description</property>
@@ -8685,7 +8703,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.LabelingJobOutputConfig.KmsKeyId</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.LabelingJobOutputConfig.S3OutputPath</property>
@@ -8700,7 +8718,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.LabelingJobResourceConfig.VolumeKmsKeyId</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.LabelingJobS3DataSource.ManifestS3Uri</property>
@@ -8914,7 +8932,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ModelCardSecurityConfig.KmsKeyId</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ModelCardSummary.ModelCardArn</property>
@@ -9077,6 +9095,12 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ModelPackage.ModelPackageVersion</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ModelPackage.SourceUri</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\p{L}\p{M}\p{Z}\p{N}\p{P}]{0,1024}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ModelPackageContainerDefinition.ContainerHostname</property>
@@ -9307,7 +9331,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.MonitoringClusterConfig.VolumeKmsKeyId</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.MonitoringClusterConfig.VolumeSizeInGB</property>
@@ -9375,7 +9399,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.MonitoringOutputConfig.KmsKeyId</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.MonitoringS3Output.LocalPath</property>
@@ -9587,7 +9611,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.OnlineStoreSecurityConfig.KmsKeyId</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.OutputConfig.CompilerOptions</property>
@@ -9598,7 +9622,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.OutputConfig.KmsKeyId</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.OutputConfig.S3OutputLocation</property>
@@ -9608,7 +9632,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.OutputDataConfig.KmsKeyId</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.OutputDataConfig.S3OutputPath</property>
@@ -9868,7 +9892,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ProcessingClusterConfig.VolumeKmsKeyId</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ProcessingClusterConfig.VolumeSizeInGB</property>
@@ -9951,7 +9975,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ProcessingOutputConfig.KmsKeyId</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ProcessingS3Input.LocalPath</property>
@@ -10019,7 +10043,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ProductionVariantCoreDumpConfig.KmsKeyId</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ProductionVariantManagedInstanceScaling.MaxInstanceCount</property>
@@ -10270,12 +10294,12 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.RecommendationJobInputConfig.VolumeKmsKeyId</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.RecommendationJobOutputConfig.KmsKeyId</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.RecommendationJobPayloadConfig.SamplePayloadUrl</property>
@@ -10329,7 +10353,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.RedshiftDatasetDefinition.KmsKeyId</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.RedshiftDatasetDefinition.OutputS3Uri</property>
@@ -10384,7 +10408,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ResourceConfig.VolumeKmsKeyId</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ResourceConfig.VolumeSizeInGB</property>
@@ -10469,7 +10493,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.S3StorageConfig.KmsKeyId</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.S3StorageConfig.ResolvedOutputS3Uri</property>
@@ -10551,7 +10575,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.SharingSettings.S3KmsKeyId</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.SharingSettings.S3OutputPath</property>
@@ -10942,7 +10966,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.TransformOutput.KmsKeyId</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.TransformOutput.S3OutputPath</property>
@@ -10956,7 +10980,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.TransformResources.VolumeKmsKeyId</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.TransformS3DataSource.S3Uri</property>
@@ -11260,7 +11284,7 @@
   <property-value-rule>
     <property>Amazon.SageMaker.Model.WorkspaceSettings.S3KmsKeyId</property>
     <max>2048</max>
-    <pattern>.*</pattern>
+    <pattern>^[a-zA-Z0-9:/_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.Workteam.Description</property>

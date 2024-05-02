@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class GetAssociatedIpv6PoolCidrsResponse : AmazonWebServiceResponse
     {
-        private List<Ipv6CidrAssociation> _ipv6CidrAssociations = new List<Ipv6CidrAssociation>();
+        private List<Ipv6CidrAssociation> _ipv6CidrAssociations = AWSConfigs.InitializeCollections ? new List<Ipv6CidrAssociation>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.EC2.Model
         // Check to see if Ipv6CidrAssociations property is set
         internal bool IsSetIpv6CidrAssociations()
         {
-            return this._ipv6CidrAssociations != null && this._ipv6CidrAssociations.Count > 0; 
+            return this._ipv6CidrAssociations != null && (this._ipv6CidrAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

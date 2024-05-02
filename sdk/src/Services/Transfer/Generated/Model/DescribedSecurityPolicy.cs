@@ -26,26 +26,32 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// Describes the properties of a security policy that was specified. For more information
+    /// Describes the properties of a security policy that you specify. For more information
     /// about security policies, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html">Working
-    /// with security policies</a>.
+    /// with security policies for servers</a> or <a href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies-connectors.html">Working
+    /// with security policies for SFTP connectors</a>.
     /// </summary>
     public partial class DescribedSecurityPolicy
     {
         private bool? _fips;
+        private List<string> _protocols = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _securityPolicyName;
-        private List<string> _sshCiphers = new List<string>();
-        private List<string> _sshKexs = new List<string>();
-        private List<string> _sshMacs = new List<string>();
-        private List<string> _tlsCiphers = new List<string>();
+        private List<string> _sshCiphers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _sshHostKeyAlgorithms = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _sshKexs = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _sshMacs = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _tlsCiphers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private SecurityPolicyResourceType _type;
 
         /// <summary>
         /// Gets and sets the property Fips. 
         /// <para>
         /// Specifies whether this policy enables Federal Information Processing Standards (FIPS).
+        /// This parameter applies to both server and connector security policies.
         /// </para>
         /// </summary>
         public bool? Fips
@@ -61,9 +67,28 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Protocols. 
+        /// <para>
+        /// Lists the file transfer protocols that the security policy applies to.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<string> Protocols
+        {
+            get { return this._protocols; }
+            set { this._protocols = value; }
+        }
+
+        // Check to see if Protocols property is set
+        internal bool IsSetProtocols()
+        {
+            return this._protocols != null && (this._protocols.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property SecurityPolicyName. 
         /// <para>
-        /// Specifies the name of the security policy that is attached to the server.
+        /// The text name of the specified security policy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=100)]
@@ -82,8 +107,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property SshCiphers. 
         /// <para>
-        /// Specifies the enabled Secure Shell (SSH) cipher encryption algorithms in the security
-        /// policy that is attached to the server.
+        /// Lists the enabled Secure Shell (SSH) cipher encryption algorithms in the security
+        /// policy that is attached to the server or connector. This parameter applies to both
+        /// server and connector security policies.
         /// </para>
         /// </summary>
         public List<string> SshCiphers
@@ -95,14 +121,38 @@ namespace Amazon.Transfer.Model
         // Check to see if SshCiphers property is set
         internal bool IsSetSshCiphers()
         {
-            return this._sshCiphers != null && this._sshCiphers.Count > 0; 
+            return this._sshCiphers != null && (this._sshCiphers.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SshHostKeyAlgorithms. 
+        /// <para>
+        /// Lists the host key algorithms for the security policy.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter only applies to security policies for connectors.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public List<string> SshHostKeyAlgorithms
+        {
+            get { return this._sshHostKeyAlgorithms; }
+            set { this._sshHostKeyAlgorithms = value; }
+        }
+
+        // Check to see if SshHostKeyAlgorithms property is set
+        internal bool IsSetSshHostKeyAlgorithms()
+        {
+            return this._sshHostKeyAlgorithms != null && (this._sshHostKeyAlgorithms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property SshKexs. 
         /// <para>
-        /// Specifies the enabled SSH key exchange (KEX) encryption algorithms in the security
-        /// policy that is attached to the server.
+        /// Lists the enabled SSH key exchange (KEX) encryption algorithms in the security policy
+        /// that is attached to the server or connector. This parameter applies to both server
+        /// and connector security policies.
         /// </para>
         /// </summary>
         public List<string> SshKexs
@@ -114,14 +164,15 @@ namespace Amazon.Transfer.Model
         // Check to see if SshKexs property is set
         internal bool IsSetSshKexs()
         {
-            return this._sshKexs != null && this._sshKexs.Count > 0; 
+            return this._sshKexs != null && (this._sshKexs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property SshMacs. 
         /// <para>
-        /// Specifies the enabled SSH message authentication code (MAC) encryption algorithms
-        /// in the security policy that is attached to the server.
+        /// Lists the enabled SSH message authentication code (MAC) encryption algorithms in the
+        /// security policy that is attached to the server or connector. This parameter applies
+        /// to both server and connector security policies.
         /// </para>
         /// </summary>
         public List<string> SshMacs
@@ -133,15 +184,20 @@ namespace Amazon.Transfer.Model
         // Check to see if SshMacs property is set
         internal bool IsSetSshMacs()
         {
-            return this._sshMacs != null && this._sshMacs.Count > 0; 
+            return this._sshMacs != null && (this._sshMacs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property TlsCiphers. 
         /// <para>
-        /// Specifies the enabled Transport Layer Security (TLS) cipher encryption algorithms
-        /// in the security policy that is attached to the server.
+        /// Lists the enabled Transport Layer Security (TLS) cipher encryption algorithms in the
+        /// security policy that is attached to the server.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter only applies to security policies for servers.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<string> TlsCiphers
         {
@@ -152,7 +208,25 @@ namespace Amazon.Transfer.Model
         // Check to see if TlsCiphers property is set
         internal bool IsSetTlsCiphers()
         {
-            return this._tlsCiphers != null && this._tlsCiphers.Count > 0; 
+            return this._tlsCiphers != null && (this._tlsCiphers.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The resource type to which the security policy applies, either server or connector.
+        /// </para>
+        /// </summary>
+        public SecurityPolicyResourceType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

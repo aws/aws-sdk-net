@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTThingsGraph.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.IoTThingsGraph.Model
         private MetricsConfiguration _metricsConfiguration;
         private string _s3BucketName;
         private SystemInstanceSummary _summary;
-        private List<DependencyRevision> _validatedDependencyRevisions = new List<DependencyRevision>();
+        private List<DependencyRevision> _validatedDependencyRevisions = AWSConfigs.InitializeCollections ? new List<DependencyRevision>() : null;
         private long? _validatedNamespaceVersion;
 
         /// <summary>
@@ -145,7 +146,7 @@ namespace Amazon.IoTThingsGraph.Model
         // Check to see if ValidatedDependencyRevisions property is set
         internal bool IsSetValidatedDependencyRevisions()
         {
-            return this._validatedDependencyRevisions != null && this._validatedDependencyRevisions.Count > 0; 
+            return this._validatedDependencyRevisions != null && (this._validatedDependencyRevisions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

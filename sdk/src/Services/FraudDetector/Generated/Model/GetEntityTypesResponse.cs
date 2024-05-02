@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FraudDetector.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class GetEntityTypesResponse : AmazonWebServiceResponse
     {
-        private List<EntityType> _entityTypes = new List<EntityType>();
+        private List<EntityType> _entityTypes = AWSConfigs.InitializeCollections ? new List<EntityType>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if EntityTypes property is set
         internal bool IsSetEntityTypes()
         {
-            return this._entityTypes != null && this._entityTypes.Count > 0; 
+            return this._entityTypes != null && (this._entityTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

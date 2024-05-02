@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.IoTWireless.Model
         private Gnss _gnss;
         private Ip _ip;
         private DateTime? _timestamp;
-        private List<WiFiAccessPoint> _wiFiAccessPoints = new List<WiFiAccessPoint>();
+        private List<WiFiAccessPoint> _wiFiAccessPoints = AWSConfigs.InitializeCollections ? new List<WiFiAccessPoint>() : null;
 
         /// <summary>
         /// Gets and sets the property CellTowers. 
@@ -135,7 +136,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if WiFiAccessPoints property is set
         internal bool IsSetWiFiAccessPoints()
         {
-            return this._wiFiAccessPoints != null && this._wiFiAccessPoints.Count > 0; 
+            return this._wiFiAccessPoints != null && (this._wiFiAccessPoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

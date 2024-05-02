@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Route53.Model
     /// </summary>
     public partial class ListTrafficPolicyVersionsResponse : AmazonWebServiceResponse
     {
-        private List<TrafficPolicy> _trafficPolicies = new List<TrafficPolicy>();
+        private List<TrafficPolicy> _trafficPolicies = AWSConfigs.InitializeCollections ? new List<TrafficPolicy>() : null;
         private bool? _isTruncated;
         private string _trafficPolicyVersionMarker;
         private string _maxItems;
@@ -55,7 +56,7 @@ namespace Amazon.Route53.Model
         // Check to see if TrafficPolicies property is set
         internal bool IsSetTrafficPolicies()
         {
-            return this._trafficPolicies != null && this._trafficPolicies.Count > 0; 
+            return this._trafficPolicies != null && (this._trafficPolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Translate.Model
 {
     /// <summary>
@@ -42,12 +43,12 @@ namespace Amazon.Translate.Model
         private JobStatus _jobStatus;
         private string _message;
         private OutputDataConfig _outputDataConfig;
-        private List<string> _parallelDataNames = new List<string>();
+        private List<string> _parallelDataNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TranslationSettings _settings;
         private string _sourceLanguageCode;
         private DateTime? _submittedTime;
-        private List<string> _targetLanguageCodes = new List<string>();
-        private List<string> _terminologyNames = new List<string>();
+        private List<string> _targetLanguageCodes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _terminologyNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
@@ -232,7 +233,7 @@ namespace Amazon.Translate.Model
         // Check to see if ParallelDataNames property is set
         internal bool IsSetParallelDataNames()
         {
-            return this._parallelDataNames != null && this._parallelDataNames.Count > 0; 
+            return this._parallelDataNames != null && (this._parallelDataNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -308,7 +309,7 @@ namespace Amazon.Translate.Model
         // Check to see if TargetLanguageCodes property is set
         internal bool IsSetTargetLanguageCodes()
         {
-            return this._targetLanguageCodes != null && this._targetLanguageCodes.Count > 0; 
+            return this._targetLanguageCodes != null && (this._targetLanguageCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -328,7 +329,7 @@ namespace Amazon.Translate.Model
         // Check to see if TerminologyNames property is set
         internal bool IsSetTerminologyNames()
         {
-            return this._terminologyNames != null && this._terminologyNames.Count > 0; 
+            return this._terminologyNames != null && (this._terminologyNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

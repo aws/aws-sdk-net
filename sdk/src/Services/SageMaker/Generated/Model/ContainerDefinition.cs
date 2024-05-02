@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class ContainerDefinition
     {
         private string _containerHostname;
-        private Dictionary<string, string> _environment = new Dictionary<string, string>();
+        private Dictionary<string, string> _environment = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _image;
         private ImageConfig _imageConfig;
         private string _inferenceSpecificationName;
@@ -78,12 +79,17 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Environment. 
         /// <para>
-        /// The environment variables to set in the Docker container. Each key and value in the
-        /// <c>Environment</c> string to string map can have length of up to 1024. We support
-        /// up to 16 entries in the map. 
+        /// The environment variables to set in the Docker container.
+        /// </para>
+        ///  
+        /// <para>
+        /// The maximum length of each key and value in the <c>Environment</c> map is 1024 bytes.
+        /// The maximum length of all keys and values in the map, combined, is 32 KB. If you pass
+        /// multiple containers to a <c>CreateModel</c> request, then the maximum length of all
+        /// of their maps, combined, is also 32 KB.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=16)]
+        [AWSProperty(Max=100)]
         public Dictionary<string, string> Environment
         {
             get { return this._environment; }
@@ -93,7 +99,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Environment property is set
         internal bool IsSetEnvironment()
         {
-            return this._environment != null && this._environment.Count > 0; 
+            return this._environment != null && (this._environment.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

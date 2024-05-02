@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppRegistry.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.AppRegistry.Model
     {
         private string _arn;
         private string _name;
-        private List<string> _options = new List<string>();
+        private List<string> _options = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ResourceDetails _resourceDetails;
         private ResourceType _resourceType;
 
@@ -92,7 +93,7 @@ namespace Amazon.AppRegistry.Model
         // Check to see if Options property is set
         internal bool IsSetOptions()
         {
-            return this._options != null && this._options.Count > 0; 
+            return this._options != null && (this._options.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

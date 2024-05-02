@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EMRContainers.Model
 {
     /// <summary>
@@ -38,8 +39,8 @@ namespace Amazon.EMRContainers.Model
     public partial class Configuration
     {
         private string _classification;
-        private List<Configuration> _configurations = new List<Configuration>();
-        private Dictionary<string, string> _properties = new Dictionary<string, string>();
+        private List<Configuration> _configurations = AWSConfigs.InitializeCollections ? new List<Configuration>() : null;
+        private Dictionary<string, string> _properties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Classification. 
@@ -76,7 +77,7 @@ namespace Amazon.EMRContainers.Model
         // Check to see if Configurations property is set
         internal bool IsSetConfigurations()
         {
-            return this._configurations != null && this._configurations.Count > 0; 
+            return this._configurations != null && (this._configurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -95,7 +96,7 @@ namespace Amazon.EMRContainers.Model
         // Check to see if Properties property is set
         internal bool IsSetProperties()
         {
-            return this._properties != null && this._properties.Count > 0; 
+            return this._properties != null && (this._properties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

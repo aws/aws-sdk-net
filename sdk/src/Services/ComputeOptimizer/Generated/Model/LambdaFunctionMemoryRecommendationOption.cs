@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ComputeOptimizer.Model
     public partial class LambdaFunctionMemoryRecommendationOption
     {
         private int? _memorySize;
-        private List<LambdaFunctionMemoryProjectedMetric> _projectedUtilizationMetrics = new List<LambdaFunctionMemoryProjectedMetric>();
+        private List<LambdaFunctionMemoryProjectedMetric> _projectedUtilizationMetrics = AWSConfigs.InitializeCollections ? new List<LambdaFunctionMemoryProjectedMetric>() : null;
         private int? _rank;
         private SavingsOpportunity _savingsOpportunity;
         private LambdaSavingsOpportunityAfterDiscounts _savingsOpportunityAfterDiscounts;
@@ -73,7 +74,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if ProjectedUtilizationMetrics property is set
         internal bool IsSetProjectedUtilizationMetrics()
         {
-            return this._projectedUtilizationMetrics != null && this._projectedUtilizationMetrics.Count > 0; 
+            return this._projectedUtilizationMetrics != null && (this._projectedUtilizationMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

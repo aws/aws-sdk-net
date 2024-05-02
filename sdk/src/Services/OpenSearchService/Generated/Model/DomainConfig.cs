@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
@@ -46,7 +47,7 @@ namespace Amazon.OpenSearchService.Model
         private VersionStatus _engineVersion;
         private IPAddressTypeStatus _ipAddressType;
         private LogPublishingOptionsStatus _logPublishingOptions;
-        private List<ModifyingProperties> _modifyingProperties = new List<ModifyingProperties>();
+        private List<ModifyingProperties> _modifyingProperties = AWSConfigs.InitializeCollections ? new List<ModifyingProperties>() : null;
         private NodeToNodeEncryptionOptionsStatus _nodeToNodeEncryptionOptions;
         private OffPeakWindowOptionsStatus _offPeakWindowOptions;
         private SnapshotOptionsStatus _snapshotOptions;
@@ -308,7 +309,7 @@ namespace Amazon.OpenSearchService.Model
         // Check to see if ModifyingProperties property is set
         internal bool IsSetModifyingProperties()
         {
-            return this._modifyingProperties != null && this._modifyingProperties.Count > 0; 
+            return this._modifyingProperties != null && (this._modifyingProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

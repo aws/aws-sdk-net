@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkManager.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.NetworkManager.Model
     public partial class RouteAnalysisPath
     {
         private RouteAnalysisCompletion _completionStatus;
-        private List<PathComponent> _path = new List<PathComponent>();
+        private List<PathComponent> _path = AWSConfigs.InitializeCollections ? new List<PathComponent>() : null;
 
         /// <summary>
         /// Gets and sets the property CompletionStatus. 
@@ -69,7 +70,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if Path property is set
         internal bool IsSetPath()
         {
-            return this._path != null && this._path.Count > 0; 
+            return this._path != null && (this._path.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

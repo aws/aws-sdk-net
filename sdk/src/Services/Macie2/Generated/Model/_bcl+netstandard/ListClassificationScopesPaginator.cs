@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Macie2.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Macie2.Model
         /// Enumerable containing all of the ClassificationScopes
         /// </summary>
         public IPaginatedEnumerable<ClassificationScopeSummary> ClassificationScopes => 
-            new PaginatedResultKeyResponse<ListClassificationScopesResponse, ClassificationScopeSummary>(this, (i) => i.ClassificationScopes);
+            new PaginatedResultKeyResponse<ListClassificationScopesResponse, ClassificationScopeSummary>(this, (i) => i.ClassificationScopes ?? new List<ClassificationScopeSummary>());
 
         internal ListClassificationScopesPaginator(IAmazonMacie2 client, ListClassificationScopesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Macie2.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListClassificationScopesResponse> IPaginator<ListClassificationScopesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListClassificationScopesResponse> IPaginator<ListClassificationScopesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

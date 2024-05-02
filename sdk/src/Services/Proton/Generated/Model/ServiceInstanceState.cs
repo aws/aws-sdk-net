@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Proton.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Proton.Model
     /// </summary>
     public partial class ServiceInstanceState
     {
-        private List<string> _lastSuccessfulComponentDeploymentIds = new List<string>();
+        private List<string> _lastSuccessfulComponentDeploymentIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _lastSuccessfulEnvironmentDeploymentId;
         private string _lastSuccessfulServicePipelineDeploymentId;
         private string _spec;
@@ -57,7 +58,7 @@ namespace Amazon.Proton.Model
         // Check to see if LastSuccessfulComponentDeploymentIds property is set
         internal bool IsSetLastSuccessfulComponentDeploymentIds()
         {
-            return this._lastSuccessfulComponentDeploymentIds != null && this._lastSuccessfulComponentDeploymentIds.Count > 0; 
+            return this._lastSuccessfulComponentDeploymentIds != null && (this._lastSuccessfulComponentDeploymentIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

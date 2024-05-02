@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.SecurityHub.Model
         private string _owner;
         private string _sqsFailureFeedbackRoleArn;
         private string _sqsSuccessFeedbackRoleArn;
-        private List<AwsSnsTopicSubscription> _subscription = new List<AwsSnsTopicSubscription>();
+        private List<AwsSnsTopicSubscription> _subscription = AWSConfigs.InitializeCollections ? new List<AwsSnsTopicSubscription>() : null;
         private string _topicName;
 
         /// <summary>
@@ -231,7 +232,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Subscription property is set
         internal bool IsSetSubscription()
         {
-            return this._subscription != null && this._subscription.Count > 0; 
+            return this._subscription != null && (this._subscription.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class MetricV2
     {
-        private List<MetricFilterV2> _metricFilters = new List<MetricFilterV2>();
+        private List<MetricFilterV2> _metricFilters = AWSConfigs.InitializeCollections ? new List<MetricFilterV2>() : null;
         private string _name;
-        private List<ThresholdV2> _threshold = new List<ThresholdV2>();
+        private List<ThresholdV2> _threshold = AWSConfigs.InitializeCollections ? new List<ThresholdV2>() : null;
 
         /// <summary>
         /// Gets and sets the property MetricFilters. 
@@ -53,7 +54,7 @@ namespace Amazon.Connect.Model
         // Check to see if MetricFilters property is set
         internal bool IsSetMetricFilters()
         {
-            return this._metricFilters != null && this._metricFilters.Count > 0; 
+            return this._metricFilters != null && (this._metricFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -95,7 +96,7 @@ namespace Amazon.Connect.Model
         // Check to see if Threshold property is set
         internal bool IsSetThreshold()
         {
-            return this._threshold != null && this._threshold.Count > 0; 
+            return this._threshold != null && (this._threshold.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

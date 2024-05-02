@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Inspector.Model
     /// </summary>
     public partial class DescribeFindingsResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, FailedItemDetails> _failedItems = new Dictionary<string, FailedItemDetails>();
-        private List<Finding> _findings = new List<Finding>();
+        private Dictionary<string, FailedItemDetails> _failedItems = AWSConfigs.InitializeCollections ? new Dictionary<string, FailedItemDetails>() : null;
+        private List<Finding> _findings = AWSConfigs.InitializeCollections ? new List<Finding>() : null;
 
         /// <summary>
         /// Gets and sets the property FailedItems. 
@@ -53,7 +54,7 @@ namespace Amazon.Inspector.Model
         // Check to see if FailedItems property is set
         internal bool IsSetFailedItems()
         {
-            return this._failedItems != null && this._failedItems.Count > 0; 
+            return this._failedItems != null && (this._failedItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.Inspector.Model
         // Check to see if Findings property is set
         internal bool IsSetFindings()
         {
-            return this._findings != null && this._findings.Count > 0; 
+            return this._findings != null && (this._findings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

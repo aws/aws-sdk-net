@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class BatchDescribeModelPackageResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, BatchDescribeModelPackageError> _batchDescribeModelPackageErrorMap = new Dictionary<string, BatchDescribeModelPackageError>();
-        private Dictionary<string, BatchDescribeModelPackageSummary> _modelPackageSummaries = new Dictionary<string, BatchDescribeModelPackageSummary>();
+        private Dictionary<string, BatchDescribeModelPackageError> _batchDescribeModelPackageErrorMap = AWSConfigs.InitializeCollections ? new Dictionary<string, BatchDescribeModelPackageError>() : null;
+        private Dictionary<string, BatchDescribeModelPackageSummary> _modelPackageSummaries = AWSConfigs.InitializeCollections ? new Dictionary<string, BatchDescribeModelPackageSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property BatchDescribeModelPackageErrorMap. 
@@ -52,7 +53,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if BatchDescribeModelPackageErrorMap property is set
         internal bool IsSetBatchDescribeModelPackageErrorMap()
         {
-            return this._batchDescribeModelPackageErrorMap != null && this._batchDescribeModelPackageErrorMap.Count > 0; 
+            return this._batchDescribeModelPackageErrorMap != null && (this._batchDescribeModelPackageErrorMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ModelPackageSummaries property is set
         internal bool IsSetModelPackageSummaries()
         {
-            return this._modelPackageSummaries != null && this._modelPackageSummaries.Count > 0; 
+            return this._modelPackageSummaries != null && (this._modelPackageSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

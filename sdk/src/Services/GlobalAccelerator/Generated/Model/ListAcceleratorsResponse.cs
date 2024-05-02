@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.GlobalAccelerator.Model
     /// </summary>
     public partial class ListAcceleratorsResponse : AmazonWebServiceResponse
     {
-        private List<Accelerator> _accelerators = new List<Accelerator>();
+        private List<Accelerator> _accelerators = AWSConfigs.InitializeCollections ? new List<Accelerator>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if Accelerators property is set
         internal bool IsSetAccelerators()
         {
-            return this._accelerators != null && this._accelerators.Count > 0; 
+            return this._accelerators != null && (this._accelerators.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

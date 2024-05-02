@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes updates to the checkpointing parameters for a Flink-based Kinesis Data Analytics
-    /// application.
+    /// Describes updates to the checkpointing parameters for a Managed Service for Apache
+    /// Flink application.
     /// </summary>
     public partial class CheckpointConfigurationUpdate
     {
@@ -94,8 +95,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Gets and sets the property ConfigurationTypeUpdate. 
         /// <para>
         /// Describes updates to whether the application uses the default checkpointing behavior
-        /// of Kinesis Data Analytics. You must set this property to <c>CUSTOM</c> in order to
-        /// set the <c>CheckpointingEnabled</c>, <c>CheckpointInterval</c>, or <c>MinPauseBetweenCheckpoints</c>
+        /// of Managed Service for Apache Flink. You must set this property to <c>CUSTOM</c> in
+        /// order to set the <c>CheckpointingEnabled</c>, <c>CheckpointInterval</c>, or <c>MinPauseBetweenCheckpoints</c>
         /// parameters. 
         /// </para>
         ///  <note> 

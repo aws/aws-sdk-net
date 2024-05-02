@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.DynamoDBv2.Model
     public partial class CsvOptions
     {
         private string _delimiter;
-        private List<string> _headerList = new List<string>();
+        private List<string> _headerList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Delimiter. 
@@ -74,7 +75,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if HeaderList property is set
         internal bool IsSetHeaderList()
         {
-            return this._headerList != null && this._headerList.Count > 0; 
+            return this._headerList != null && (this._headerList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -36,8 +37,8 @@ namespace Amazon.EC2.Model
         private int? _defaultCores;
         private int? _defaultThreadsPerCore;
         private int? _defaultVCpus;
-        private List<int> _validCores = new List<int>();
-        private List<int> _validThreadsPerCore = new List<int>();
+        private List<int> _validCores = AWSConfigs.InitializeCollections ? new List<int>() : null;
+        private List<int> _validThreadsPerCore = AWSConfigs.InitializeCollections ? new List<int>() : null;
 
         /// <summary>
         /// Gets and sets the property DefaultCores. 
@@ -108,7 +109,7 @@ namespace Amazon.EC2.Model
         // Check to see if ValidCores property is set
         internal bool IsSetValidCores()
         {
-            return this._validCores != null && this._validCores.Count > 0; 
+            return this._validCores != null && (this._validCores.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -126,7 +127,7 @@ namespace Amazon.EC2.Model
         // Check to see if ValidThreadsPerCore property is set
         internal bool IsSetValidThreadsPerCore()
         {
-            return this._validThreadsPerCore != null && this._validThreadsPerCore.Count > 0; 
+            return this._validThreadsPerCore != null && (this._validThreadsPerCore.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

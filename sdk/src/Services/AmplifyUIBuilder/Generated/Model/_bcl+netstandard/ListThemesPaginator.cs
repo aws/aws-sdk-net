@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// Enumerable containing all of the Entities
         /// </summary>
         public IPaginatedEnumerable<ThemeSummary> Entities => 
-            new PaginatedResultKeyResponse<ListThemesResponse, ThemeSummary>(this, (i) => i.Entities);
+            new PaginatedResultKeyResponse<ListThemesResponse, ThemeSummary>(this, (i) => i.Entities ?? new List<ThemeSummary>());
 
         internal ListThemesPaginator(IAmazonAmplifyUIBuilder client, ListThemesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListThemesResponse> IPaginator<ListThemesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListThemesResponse> IPaginator<ListThemesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

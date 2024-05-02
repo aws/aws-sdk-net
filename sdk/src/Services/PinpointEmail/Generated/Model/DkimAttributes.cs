@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PinpointEmail.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.PinpointEmail.Model
     {
         private bool? _signingEnabled;
         private DkimStatus _status;
-        private List<string> _tokens = new List<string>();
+        private List<string> _tokens = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property SigningEnabled. 
@@ -122,7 +123,7 @@ namespace Amazon.PinpointEmail.Model
         // Check to see if Tokens property is set
         internal bool IsSetTokens()
         {
-            return this._tokens != null && this._tokens.Count > 0; 
+            return this._tokens != null && (this._tokens.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

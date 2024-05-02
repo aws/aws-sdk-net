@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Mgn.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Mgn.Model
     /// </summary>
     public partial class DescribeLaunchConfigurationTemplatesRequest : AmazonMgnRequest
     {
-        private List<string> _launchConfigurationTemplateIDs = new List<string>();
+        private List<string> _launchConfigurationTemplateIDs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -56,7 +57,7 @@ namespace Amazon.Mgn.Model
         // Check to see if LaunchConfigurationTemplateIDs property is set
         internal bool IsSetLaunchConfigurationTemplateIDs()
         {
-            return this._launchConfigurationTemplateIDs != null && this._launchConfigurationTemplateIDs.Count > 0; 
+            return this._launchConfigurationTemplateIDs != null && (this._launchConfigurationTemplateIDs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

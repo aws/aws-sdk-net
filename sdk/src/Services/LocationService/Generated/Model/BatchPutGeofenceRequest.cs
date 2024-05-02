@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LocationService.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.LocationService.Model
     public partial class BatchPutGeofenceRequest : AmazonLocationServiceRequest
     {
         private string _collectionName;
-        private List<BatchPutGeofenceRequestEntry> _entries = new List<BatchPutGeofenceRequestEntry>();
+        private List<BatchPutGeofenceRequestEntry> _entries = AWSConfigs.InitializeCollections ? new List<BatchPutGeofenceRequestEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property CollectionName. 
@@ -74,7 +75,7 @@ namespace Amazon.LocationService.Model
         // Check to see if Entries property is set
         internal bool IsSetEntries()
         {
-            return this._entries != null && this._entries.Count > 0; 
+            return this._entries != null && (this._entries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

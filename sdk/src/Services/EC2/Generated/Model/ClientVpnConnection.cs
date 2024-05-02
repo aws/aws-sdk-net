@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -43,7 +44,7 @@ namespace Amazon.EC2.Model
         private string _egressPackets;
         private string _ingressBytes;
         private string _ingressPackets;
-        private List<string> _postureComplianceStatuses = new List<string>();
+        private List<string> _postureComplianceStatuses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ClientVpnConnectionStatus _status;
         private string _timestamp;
         private string _username;
@@ -244,7 +245,7 @@ namespace Amazon.EC2.Model
         // Check to see if PostureComplianceStatuses property is set
         internal bool IsSetPostureComplianceStatuses()
         {
-            return this._postureComplianceStatuses != null && this._postureComplianceStatuses.Count > 0; 
+            return this._postureComplianceStatuses != null && (this._postureComplianceStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

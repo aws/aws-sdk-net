@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -57,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("supportedVersions/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.SupportedVersions == null)
+                        {
+                            unmarshalledObject.SupportedVersions = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SupportedVersions.Add(item);
                         continue;

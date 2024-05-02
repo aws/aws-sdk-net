@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class DescribeConfigurationRecorderStatusResponse : AmazonWebServiceResponse
     {
-        private List<ConfigurationRecorderStatus> _configurationRecordersStatus = new List<ConfigurationRecorderStatus>();
+        private List<ConfigurationRecorderStatus> _configurationRecordersStatus = AWSConfigs.InitializeCollections ? new List<ConfigurationRecorderStatus>() : null;
 
         /// <summary>
         /// Gets and sets the property ConfigurationRecordersStatus. 
@@ -50,7 +51,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if ConfigurationRecordersStatus property is set
         internal bool IsSetConfigurationRecordersStatus()
         {
-            return this._configurationRecordersStatus != null && this._configurationRecordersStatus.Count > 0; 
+            return this._configurationRecordersStatus != null && (this._configurationRecordersStatus.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ControlTower.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.ControlTower.Model
     public partial class CreateLandingZoneRequest : AmazonControlTowerRequest
     {
         private Amazon.Runtime.Documents.Document _manifest;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _version;
 
         /// <summary>
@@ -77,7 +78,7 @@ namespace Amazon.ControlTower.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

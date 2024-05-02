@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.BillingConductor.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.BillingConductor.Model
         /// Enumerable containing all of the CustomLineItemVersions
         /// </summary>
         public IPaginatedEnumerable<CustomLineItemVersionListElement> CustomLineItemVersions => 
-            new PaginatedResultKeyResponse<ListCustomLineItemVersionsResponse, CustomLineItemVersionListElement>(this, (i) => i.CustomLineItemVersions);
+            new PaginatedResultKeyResponse<ListCustomLineItemVersionsResponse, CustomLineItemVersionListElement>(this, (i) => i.CustomLineItemVersions ?? new List<CustomLineItemVersionListElement>());
 
         internal ListCustomLineItemVersionsPaginator(IAmazonBillingConductor client, ListCustomLineItemVersionsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.BillingConductor.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListCustomLineItemVersionsResponse> IPaginator<ListCustomLineItemVersionsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListCustomLineItemVersionsResponse> IPaginator<ListCustomLineItemVersionsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CloudSearch.Model
     /// </summary>
     public partial class DescribeExpressionsResponse : AmazonWebServiceResponse
     {
-        private List<ExpressionStatus> _expressions = new List<ExpressionStatus>();
+        private List<ExpressionStatus> _expressions = AWSConfigs.InitializeCollections ? new List<ExpressionStatus>() : null;
 
         /// <summary>
         /// Gets and sets the property Expressions. 
@@ -52,7 +53,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if Expressions property is set
         internal bool IsSetExpressions()
         {
-            return this._expressions != null && this._expressions.Count > 0; 
+            return this._expressions != null && (this._expressions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

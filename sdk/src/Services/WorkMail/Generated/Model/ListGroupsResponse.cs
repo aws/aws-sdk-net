@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkMail.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.WorkMail.Model
     /// </summary>
     public partial class ListGroupsResponse : AmazonWebServiceResponse
     {
-        private List<Group> _groups = new List<Group>();
+        private List<Group> _groups = AWSConfigs.InitializeCollections ? new List<Group>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.WorkMail.Model
         // Check to see if Groups property is set
         internal bool IsSetGroups()
         {
-            return this._groups != null && this._groups.Count > 0; 
+            return this._groups != null && (this._groups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

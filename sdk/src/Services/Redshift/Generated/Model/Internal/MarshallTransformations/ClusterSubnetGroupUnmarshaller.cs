@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -75,6 +76,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Subnets/Subnet", targetDepth))
                     {
                         var unmarshaller = SubnetUnmarshaller.Instance;
+                        if (unmarshalledObject.Subnets == null)
+                        {
+                            unmarshalledObject.Subnets = new List<Subnet>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Subnets.Add(item);
                         continue;
@@ -82,6 +87,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("SupportedClusterIpAddressTypes/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.SupportedClusterIpAddressTypes == null)
+                        {
+                            unmarshalledObject.SupportedClusterIpAddressTypes = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SupportedClusterIpAddressTypes.Add(item);
                         continue;
@@ -89,6 +98,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Tags/Tag", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tags.Add(item);
                         continue;

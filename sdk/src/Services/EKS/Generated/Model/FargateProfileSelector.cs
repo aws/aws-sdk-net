@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EKS.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EKS.Model
     /// </summary>
     public partial class FargateProfileSelector
     {
-        private Dictionary<string, string> _labels = new Dictionary<string, string>();
+        private Dictionary<string, string> _labels = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _awsNamespace;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.EKS.Model
         // Check to see if Labels property is set
         internal bool IsSetLabels()
         {
-            return this._labels != null && this._labels.Count > 0; 
+            return this._labels != null && (this._labels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

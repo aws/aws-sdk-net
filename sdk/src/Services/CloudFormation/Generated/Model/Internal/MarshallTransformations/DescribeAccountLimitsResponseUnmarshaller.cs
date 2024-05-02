@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -84,6 +85,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AccountLimits/member", targetDepth))
                     {
                         var unmarshaller = AccountLimitUnmarshaller.Instance;
+                        if (response.AccountLimits == null)
+                        {
+                            response.AccountLimits = new List<AccountLimit>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.AccountLimits.Add(item);
                         continue;

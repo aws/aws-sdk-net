@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MainframeModernization.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MainframeModernization.Model
     /// </summary>
     public partial class ListEngineVersionsResponse : AmazonWebServiceResponse
     {
-        private List<EngineVersionsSummary> _engineVersions = new List<EngineVersionsSummary>();
+        private List<EngineVersionsSummary> _engineVersions = AWSConfigs.InitializeCollections ? new List<EngineVersionsSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.MainframeModernization.Model
         // Check to see if EngineVersions property is set
         internal bool IsSetEngineVersions()
         {
-            return this._engineVersions != null && this._engineVersions.Count > 0; 
+            return this._engineVersions != null && (this._engineVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

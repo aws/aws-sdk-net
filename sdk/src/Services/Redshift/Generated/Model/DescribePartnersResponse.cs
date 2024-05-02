@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class DescribePartnersResponse : AmazonWebServiceResponse
     {
-        private List<PartnerIntegrationInfo> _partnerIntegrationInfoList = new List<PartnerIntegrationInfo>();
+        private List<PartnerIntegrationInfo> _partnerIntegrationInfoList = AWSConfigs.InitializeCollections ? new List<PartnerIntegrationInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property PartnerIntegrationInfoList. 
@@ -50,7 +51,7 @@ namespace Amazon.Redshift.Model
         // Check to see if PartnerIntegrationInfoList property is set
         internal bool IsSetPartnerIntegrationInfoList()
         {
-            return this._partnerIntegrationInfoList != null && this._partnerIntegrationInfoList.Count > 0; 
+            return this._partnerIntegrationInfoList != null && (this._partnerIntegrationInfoList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

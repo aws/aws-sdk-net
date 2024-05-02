@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SecurityHub.Model
     public partial class AwsElbLoadBalancerAttributes
     {
         private AwsElbLoadBalancerAccessLog _accessLog;
-        private List<AwsElbLoadBalancerAdditionalAttribute> _additionalAttributes = new List<AwsElbLoadBalancerAdditionalAttribute>();
+        private List<AwsElbLoadBalancerAdditionalAttribute> _additionalAttributes = AWSConfigs.InitializeCollections ? new List<AwsElbLoadBalancerAdditionalAttribute>() : null;
         private AwsElbLoadBalancerConnectionDraining _connectionDraining;
         private AwsElbLoadBalancerConnectionSettings _connectionSettings;
         private AwsElbLoadBalancerCrossZoneLoadBalancing _crossZoneLoadBalancing;
@@ -77,7 +78,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if AdditionalAttributes property is set
         internal bool IsSetAdditionalAttributes()
         {
-            return this._additionalAttributes != null && this._additionalAttributes.Count > 0; 
+            return this._additionalAttributes != null && (this._additionalAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

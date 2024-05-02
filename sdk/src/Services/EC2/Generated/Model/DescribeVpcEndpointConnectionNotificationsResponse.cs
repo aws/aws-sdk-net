@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeVpcEndpointConnectionNotificationsResponse : AmazonWebServiceResponse
     {
-        private List<ConnectionNotification> _connectionNotificationSet = new List<ConnectionNotification>();
+        private List<ConnectionNotification> _connectionNotificationSet = AWSConfigs.InitializeCollections ? new List<ConnectionNotification>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.EC2.Model
         // Check to see if ConnectionNotificationSet property is set
         internal bool IsSetConnectionNotificationSet()
         {
-            return this._connectionNotificationSet != null && this._connectionNotificationSet.Count > 0; 
+            return this._connectionNotificationSet != null && (this._connectionNotificationSet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

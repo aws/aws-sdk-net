@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Chime.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Chime.Model
     /// </summary>
     public partial class EmergencyCallingConfiguration
     {
-        private List<DNISEmergencyCallingConfiguration> _dnis = new List<DNISEmergencyCallingConfiguration>();
+        private List<DNISEmergencyCallingConfiguration> _dnis = AWSConfigs.InitializeCollections ? new List<DNISEmergencyCallingConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property DNIS. 
@@ -51,7 +52,7 @@ namespace Amazon.Chime.Model
         // Check to see if DNIS property is set
         internal bool IsSetDNIS()
         {
-            return this._dnis != null && this._dnis.Count > 0; 
+            return this._dnis != null && (this._dnis.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.IoTWireless.Model
     public partial class ListPositionConfigurationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PositionConfigurationItem> _positionConfigurationList = new List<PositionConfigurationItem>();
+        private List<PositionConfigurationItem> _positionConfigurationList = AWSConfigs.InitializeCollections ? new List<PositionConfigurationItem>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if PositionConfigurationList property is set
         internal bool IsSetPositionConfigurationList()
         {
-            return this._positionConfigurationList != null && this._positionConfigurationList.Count > 0; 
+            return this._positionConfigurationList != null && (this._positionConfigurationList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

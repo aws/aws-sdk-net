@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.DataZone.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<GroupProfileSummary> Items => 
-            new PaginatedResultKeyResponse<SearchGroupProfilesResponse, GroupProfileSummary>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<SearchGroupProfilesResponse, GroupProfileSummary>(this, (i) => i.Items ?? new List<GroupProfileSummary>());
 
         internal SearchGroupProfilesPaginator(IAmazonDataZone client, SearchGroupProfilesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.DataZone.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<SearchGroupProfilesResponse> IPaginator<SearchGroupProfilesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<SearchGroupProfilesResponse> IPaginator<SearchGroupProfilesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

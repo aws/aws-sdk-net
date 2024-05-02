@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Connect.Model
     public partial class ListSecurityProfilesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SecurityProfileSummary> _securityProfileSummaryList = new List<SecurityProfileSummary>();
+        private List<SecurityProfileSummary> _securityProfileSummaryList = AWSConfigs.InitializeCollections ? new List<SecurityProfileSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +70,7 @@ namespace Amazon.Connect.Model
         // Check to see if SecurityProfileSummaryList property is set
         internal bool IsSetSecurityProfileSummaryList()
         {
-            return this._securityProfileSummaryList != null && this._securityProfileSummaryList.Count > 0; 
+            return this._securityProfileSummaryList != null && (this._securityProfileSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

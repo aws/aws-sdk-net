@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class WorkflowGraph
     {
-        private List<Edge> _edges = new List<Edge>();
-        private List<Node> _nodes = new List<Node>();
+        private List<Edge> _edges = AWSConfigs.InitializeCollections ? new List<Edge>() : null;
+        private List<Node> _nodes = AWSConfigs.InitializeCollections ? new List<Node>() : null;
 
         /// <summary>
         /// Gets and sets the property Edges. 
@@ -52,7 +53,7 @@ namespace Amazon.Glue.Model
         // Check to see if Edges property is set
         internal bool IsSetEdges()
         {
-            return this._edges != null && this._edges.Count > 0; 
+            return this._edges != null && (this._edges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.Glue.Model
         // Check to see if Nodes property is set
         internal bool IsSetNodes()
         {
-            return this._nodes != null && this._nodes.Count > 0; 
+            return this._nodes != null && (this._nodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

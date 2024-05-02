@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.MemoryDB.Model
         /// Enumerable containing all of the EngineVersions
         /// </summary>
         public IPaginatedEnumerable<EngineVersionInfo> EngineVersions => 
-            new PaginatedResultKeyResponse<DescribeEngineVersionsResponse, EngineVersionInfo>(this, (i) => i.EngineVersions);
+            new PaginatedResultKeyResponse<DescribeEngineVersionsResponse, EngineVersionInfo>(this, (i) => i.EngineVersions ?? new List<EngineVersionInfo>());
 
         internal DescribeEngineVersionsPaginator(IAmazonMemoryDB client, DescribeEngineVersionsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.MemoryDB.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeEngineVersionsResponse> IPaginator<DescribeEngineVersionsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeEngineVersionsResponse> IPaginator<DescribeEngineVersionsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

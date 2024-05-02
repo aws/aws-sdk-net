@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MediaConnect.Model
     /// </summary>
     public partial class TransportMediaInfo
     {
-        private List<TransportStreamProgram> _programs = new List<TransportStreamProgram>();
+        private List<TransportStreamProgram> _programs = AWSConfigs.InitializeCollections ? new List<TransportStreamProgram>() : null;
 
         /// <summary>
         /// Gets and sets the property Programs. The list of transport stream programs in the
@@ -49,7 +50,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if Programs property is set
         internal bool IsSetPrograms()
         {
-            return this._programs != null && this._programs.Count > 0; 
+            return this._programs != null && (this._programs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

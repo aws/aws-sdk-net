@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -33,10 +34,10 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class Parameters
     {
-        private List<DateTimeParameter> _dateTimeParameters = new List<DateTimeParameter>();
-        private List<DecimalParameter> _decimalParameters = new List<DecimalParameter>();
-        private List<IntegerParameter> _integerParameters = new List<IntegerParameter>();
-        private List<StringParameter> _stringParameters = new List<StringParameter>();
+        private List<DateTimeParameter> _dateTimeParameters = AWSConfigs.InitializeCollections ? new List<DateTimeParameter>() : null;
+        private List<DecimalParameter> _decimalParameters = AWSConfigs.InitializeCollections ? new List<DecimalParameter>() : null;
+        private List<IntegerParameter> _integerParameters = AWSConfigs.InitializeCollections ? new List<IntegerParameter>() : null;
+        private List<StringParameter> _stringParameters = AWSConfigs.InitializeCollections ? new List<StringParameter>() : null;
 
         /// <summary>
         /// Gets and sets the property DateTimeParameters. 
@@ -54,7 +55,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if DateTimeParameters property is set
         internal bool IsSetDateTimeParameters()
         {
-            return this._dateTimeParameters != null && this._dateTimeParameters.Count > 0; 
+            return this._dateTimeParameters != null && (this._dateTimeParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if DecimalParameters property is set
         internal bool IsSetDecimalParameters()
         {
-            return this._decimalParameters != null && this._decimalParameters.Count > 0; 
+            return this._decimalParameters != null && (this._decimalParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if IntegerParameters property is set
         internal bool IsSetIntegerParameters()
         {
-            return this._integerParameters != null && this._integerParameters.Count > 0; 
+            return this._integerParameters != null && (this._integerParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -111,7 +112,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if StringParameters property is set
         internal bool IsSetStringParameters()
         {
-            return this._stringParameters != null && this._stringParameters.Count > 0; 
+            return this._stringParameters != null && (this._stringParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

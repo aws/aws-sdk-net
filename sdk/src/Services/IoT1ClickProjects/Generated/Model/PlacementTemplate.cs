@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT1ClickProjects.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.IoT1ClickProjects.Model
     /// </summary>
     public partial class PlacementTemplate
     {
-        private Dictionary<string, string> _defaultAttributes = new Dictionary<string, string>();
-        private Dictionary<string, DeviceTemplate> _deviceTemplates = new Dictionary<string, DeviceTemplate>();
+        private Dictionary<string, string> _defaultAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, DeviceTemplate> _deviceTemplates = AWSConfigs.InitializeCollections ? new Dictionary<string, DeviceTemplate>() : null;
 
         /// <summary>
         /// Gets and sets the property DefaultAttributes. 
@@ -52,7 +53,7 @@ namespace Amazon.IoT1ClickProjects.Model
         // Check to see if DefaultAttributes property is set
         internal bool IsSetDefaultAttributes()
         {
-            return this._defaultAttributes != null && this._defaultAttributes.Count > 0; 
+            return this._defaultAttributes != null && (this._defaultAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.IoT1ClickProjects.Model
         // Check to see if DeviceTemplates property is set
         internal bool IsSetDeviceTemplates()
         {
-            return this._deviceTemplates != null && this._deviceTemplates.Count > 0; 
+            return this._deviceTemplates != null && (this._deviceTemplates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

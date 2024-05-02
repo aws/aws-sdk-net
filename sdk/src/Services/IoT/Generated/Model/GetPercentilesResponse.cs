@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class GetPercentilesResponse : AmazonWebServiceResponse
     {
-        private List<PercentPair> _percentiles = new List<PercentPair>();
+        private List<PercentPair> _percentiles = AWSConfigs.InitializeCollections ? new List<PercentPair>() : null;
 
         /// <summary>
         /// Gets and sets the property Percentiles. 
@@ -50,7 +51,7 @@ namespace Amazon.IoT.Model
         // Check to see if Percentiles property is set
         internal bool IsSetPercentiles()
         {
-            return this._percentiles != null && this._percentiles.Count > 0; 
+            return this._percentiles != null && (this._percentiles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

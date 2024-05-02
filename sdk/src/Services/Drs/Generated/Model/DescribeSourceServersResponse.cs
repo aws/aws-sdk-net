@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Drs.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Drs.Model
     /// </summary>
     public partial class DescribeSourceServersResponse : AmazonWebServiceResponse
     {
-        private List<SourceServer> _items = new List<SourceServer>();
+        private List<SourceServer> _items = AWSConfigs.InitializeCollections ? new List<SourceServer>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Drs.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.CloudFormation.Model
         /// Enumerable containing all of the RelatedResources
         /// </summary>
         public IPaginatedEnumerable<ScannedResource> RelatedResources => 
-            new PaginatedResultKeyResponse<ListResourceScanRelatedResourcesResponse, ScannedResource>(this, (i) => i.RelatedResources);
+            new PaginatedResultKeyResponse<ListResourceScanRelatedResourcesResponse, ScannedResource>(this, (i) => i.RelatedResources ?? new List<ScannedResource>());
 
         internal ListResourceScanRelatedResourcesPaginator(IAmazonCloudFormation client, ListResourceScanRelatedResourcesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.CloudFormation.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListResourceScanRelatedResourcesResponse> IPaginator<ListResourceScanRelatedResourcesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListResourceScanRelatedResourcesResponse> IPaginator<ListResourceScanRelatedResourcesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

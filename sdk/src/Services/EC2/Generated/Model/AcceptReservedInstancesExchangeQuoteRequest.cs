@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -35,8 +36,8 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class AcceptReservedInstancesExchangeQuoteRequest : AmazonEC2Request
     {
-        private List<string> _reservedInstanceIds = new List<string>();
-        private List<TargetConfigurationRequest> _targetConfigurations = new List<TargetConfigurationRequest>();
+        private List<string> _reservedInstanceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<TargetConfigurationRequest> _targetConfigurations = AWSConfigs.InitializeCollections ? new List<TargetConfigurationRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property ReservedInstanceIds. 
@@ -55,7 +56,7 @@ namespace Amazon.EC2.Model
         // Check to see if ReservedInstanceIds property is set
         internal bool IsSetReservedInstanceIds()
         {
-            return this._reservedInstanceIds != null && this._reservedInstanceIds.Count > 0; 
+            return this._reservedInstanceIds != null && (this._reservedInstanceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.EC2.Model
         // Check to see if TargetConfigurations property is set
         internal bool IsSetTargetConfigurations()
         {
-            return this._targetConfigurations != null && this._targetConfigurations.Count > 0; 
+            return this._targetConfigurations != null && (this._targetConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

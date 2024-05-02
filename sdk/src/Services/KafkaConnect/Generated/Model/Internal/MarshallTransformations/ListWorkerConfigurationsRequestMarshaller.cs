@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -61,6 +62,9 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
+            
+            if (publicRequest.IsSetNamePrefix())
+                request.Parameters.Add("namePrefix", StringUtils.FromString(publicRequest.NamePrefix));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));

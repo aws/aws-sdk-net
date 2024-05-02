@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the DhcpOptions
         /// </summary>
         public IPaginatedEnumerable<DhcpOptions> DhcpOptions => 
-            new PaginatedResultKeyResponse<DescribeDhcpOptionsResponse, DhcpOptions>(this, (i) => i.DhcpOptions);
+            new PaginatedResultKeyResponse<DescribeDhcpOptionsResponse, DhcpOptions>(this, (i) => i.DhcpOptions ?? new List<DhcpOptions>());
 
         internal DescribeDhcpOptionsPaginator(IAmazonEC2 client, DescribeDhcpOptionsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.EC2.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeDhcpOptionsResponse> IPaginator<DescribeDhcpOptionsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeDhcpOptionsResponse> IPaginator<DescribeDhcpOptionsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Account.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Account.Model
         /// Enumerable containing all of the Regions
         /// </summary>
         public IPaginatedEnumerable<Region> Regions => 
-            new PaginatedResultKeyResponse<ListRegionsResponse, Region>(this, (i) => i.Regions);
+            new PaginatedResultKeyResponse<ListRegionsResponse, Region>(this, (i) => i.Regions ?? new List<Region>());
 
         internal ListRegionsPaginator(IAmazonAccount client, ListRegionsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Account.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListRegionsResponse> IPaginator<ListRegionsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListRegionsResponse> IPaginator<ListRegionsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

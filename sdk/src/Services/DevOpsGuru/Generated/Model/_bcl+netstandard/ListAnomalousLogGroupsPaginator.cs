@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.DevOpsGuru.Model
         /// Enumerable containing all of the AnomalousLogGroups
         /// </summary>
         public IPaginatedEnumerable<AnomalousLogGroup> AnomalousLogGroups => 
-            new PaginatedResultKeyResponse<ListAnomalousLogGroupsResponse, AnomalousLogGroup>(this, (i) => i.AnomalousLogGroups);
+            new PaginatedResultKeyResponse<ListAnomalousLogGroupsResponse, AnomalousLogGroup>(this, (i) => i.AnomalousLogGroups ?? new List<AnomalousLogGroup>());
 
         internal ListAnomalousLogGroupsPaginator(IAmazonDevOpsGuru client, ListAnomalousLogGroupsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.DevOpsGuru.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListAnomalousLogGroupsResponse> IPaginator<ListAnomalousLogGroupsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListAnomalousLogGroupsResponse> IPaginator<ListAnomalousLogGroupsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

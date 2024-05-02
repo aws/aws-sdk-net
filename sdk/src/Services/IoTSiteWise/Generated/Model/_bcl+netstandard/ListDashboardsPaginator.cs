@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.IoTSiteWise.Model
         /// Enumerable containing all of the DashboardSummaries
         /// </summary>
         public IPaginatedEnumerable<DashboardSummary> DashboardSummaries => 
-            new PaginatedResultKeyResponse<ListDashboardsResponse, DashboardSummary>(this, (i) => i.DashboardSummaries);
+            new PaginatedResultKeyResponse<ListDashboardsResponse, DashboardSummary>(this, (i) => i.DashboardSummaries ?? new List<DashboardSummary>());
 
         internal ListDashboardsPaginator(IAmazonIoTSiteWise client, ListDashboardsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.IoTSiteWise.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListDashboardsResponse> IPaginator<ListDashboardsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListDashboardsResponse> IPaginator<ListDashboardsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

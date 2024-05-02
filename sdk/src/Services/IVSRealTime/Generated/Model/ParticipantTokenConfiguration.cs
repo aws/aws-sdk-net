@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IVSRealTime.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.IVSRealTime.Model
     /// </summary>
     public partial class ParticipantTokenConfiguration
     {
-        private Dictionary<string, string> _attributes = new Dictionary<string, string>();
-        private List<string> _capabilities = new List<string>();
+        private Dictionary<string, string> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<string> _capabilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _duration;
         private string _userId;
 
@@ -57,7 +58,7 @@ namespace Amazon.IVSRealTime.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -76,7 +77,7 @@ namespace Amazon.IVSRealTime.Model
         // Check to see if Capabilities property is set
         internal bool IsSetCapabilities()
         {
-            return this._capabilities != null && this._capabilities.Count > 0; 
+            return this._capabilities != null && (this._capabilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

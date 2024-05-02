@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CostOptimizationHub.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CostOptimizationHub.Model
     public partial class ListEnrollmentStatusesResponse : AmazonWebServiceResponse
     {
         private bool? _includeMemberAccounts;
-        private List<AccountEnrollmentStatus> _items = new List<AccountEnrollmentStatus>();
+        private List<AccountEnrollmentStatus> _items = AWSConfigs.InitializeCollections ? new List<AccountEnrollmentStatus>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.CostOptimizationHub.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

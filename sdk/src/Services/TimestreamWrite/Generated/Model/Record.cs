@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.TimestreamWrite.Model
 {
     /// <summary>
@@ -50,10 +51,10 @@ namespace Amazon.TimestreamWrite.Model
     /// </summary>
     public partial class Record
     {
-        private List<Dimension> _dimensions = new List<Dimension>();
+        private List<Dimension> _dimensions = AWSConfigs.InitializeCollections ? new List<Dimension>() : null;
         private string _measureName;
         private string _measureValue;
-        private List<MeasureValue> _measureValues = new List<MeasureValue>();
+        private List<MeasureValue> _measureValues = AWSConfigs.InitializeCollections ? new List<MeasureValue>() : null;
         private MeasureValueType _measureValueType;
         private string _time;
         private TimeUnit _timeUnit;
@@ -75,7 +76,7 @@ namespace Amazon.TimestreamWrite.Model
         // Check to see if Dimensions property is set
         internal bool IsSetDimensions()
         {
-            return this._dimensions != null && this._dimensions.Count > 0; 
+            return this._dimensions != null && (this._dimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -137,7 +138,7 @@ namespace Amazon.TimestreamWrite.Model
         // Check to see if MeasureValues property is set
         internal bool IsSetMeasureValues()
         {
-            return this._measureValues != null && this._measureValues.Count > 0; 
+            return this._measureValues != null && (this._measureValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

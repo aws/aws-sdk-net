@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -35,13 +36,13 @@ namespace Amazon.SecurityHub.Model
     {
         private string _iamInstanceProfileArn;
         private string _imageId;
-        private List<string> _ipV4Addresses = new List<string>();
-        private List<string> _ipV6Addresses = new List<string>();
+        private List<string> _ipV4Addresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _ipV6Addresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _keyName;
         private string _launchedAt;
         private AwsEc2InstanceMetadataOptions _metadataOptions;
         private AwsEc2InstanceMonitoringDetails _monitoring;
-        private List<AwsEc2InstanceNetworkInterfacesDetails> _networkInterfaces = new List<AwsEc2InstanceNetworkInterfacesDetails>();
+        private List<AwsEc2InstanceNetworkInterfacesDetails> _networkInterfaces = AWSConfigs.InitializeCollections ? new List<AwsEc2InstanceNetworkInterfacesDetails>() : null;
         private string _subnetId;
         private string _type;
         private string _virtualizationType;
@@ -98,7 +99,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if IpV4Addresses property is set
         internal bool IsSetIpV4Addresses()
         {
-            return this._ipV4Addresses != null && this._ipV4Addresses.Count > 0; 
+            return this._ipV4Addresses != null && (this._ipV4Addresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -116,7 +117,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if IpV6Addresses property is set
         internal bool IsSetIpV6Addresses()
         {
-            return this._ipV6Addresses != null && this._ipV6Addresses.Count > 0; 
+            return this._ipV6Addresses != null && (this._ipV6Addresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -144,10 +145,32 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
-        /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
+        /// This field accepts only the specified formats. Timestamps can end with <c>Z</c> or
+        /// <c>("+" / "-") time-hour [":" time-minute]</c>. The time-secfrac after seconds is
+        /// limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
+        /// timestamp formats with examples:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SSZ</c> (for example, <c>2019-01-31T23:00:00Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</c> (for example, <c>2019-01-31T23:00:00.123456789Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS+HH:MM</c> (for example, <c>2024-01-04T15:25:10+17:59</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS-HHMM</c> (for example, <c>2024-01-04T15:25:10-1759</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</c> (for example, <c>2024-01-04T15:25:10.123456789+17:59</c>)
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string LaunchedAt
         {
@@ -213,7 +236,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if NetworkInterfaces property is set
         internal bool IsSetNetworkInterfaces()
         {
-            return this._networkInterfaces != null && this._networkInterfaces.Count > 0; 
+            return this._networkInterfaces != null && (this._networkInterfaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

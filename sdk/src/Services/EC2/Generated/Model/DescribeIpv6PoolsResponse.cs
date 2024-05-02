@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeIpv6PoolsResponse : AmazonWebServiceResponse
     {
-        private List<Ipv6Pool> _ipv6Pools = new List<Ipv6Pool>();
+        private List<Ipv6Pool> _ipv6Pools = AWSConfigs.InitializeCollections ? new List<Ipv6Pool>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.EC2.Model
         // Check to see if Ipv6Pools property is set
         internal bool IsSetIpv6Pools()
         {
-            return this._ipv6Pools != null && this._ipv6Pools.Count > 0; 
+            return this._ipv6Pools != null && (this._ipv6Pools.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

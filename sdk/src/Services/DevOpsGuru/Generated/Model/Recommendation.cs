@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
@@ -39,8 +40,8 @@ namespace Amazon.DevOpsGuru.Model
         private string _link;
         private string _name;
         private string _reason;
-        private List<RecommendationRelatedAnomaly> _relatedAnomalies = new List<RecommendationRelatedAnomaly>();
-        private List<RecommendationRelatedEvent> _relatedEvents = new List<RecommendationRelatedEvent>();
+        private List<RecommendationRelatedAnomaly> _relatedAnomalies = AWSConfigs.InitializeCollections ? new List<RecommendationRelatedAnomaly>() : null;
+        private List<RecommendationRelatedEvent> _relatedEvents = AWSConfigs.InitializeCollections ? new List<RecommendationRelatedEvent>() : null;
 
         /// <summary>
         /// Gets and sets the property Category. 
@@ -148,7 +149,7 @@ namespace Amazon.DevOpsGuru.Model
         // Check to see if RelatedAnomalies property is set
         internal bool IsSetRelatedAnomalies()
         {
-            return this._relatedAnomalies != null && this._relatedAnomalies.Count > 0; 
+            return this._relatedAnomalies != null && (this._relatedAnomalies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -167,7 +168,7 @@ namespace Amazon.DevOpsGuru.Model
         // Check to see if RelatedEvents property is set
         internal bool IsSetRelatedEvents()
         {
-            return this._relatedEvents != null && this._relatedEvents.Count > 0; 
+            return this._relatedEvents != null && (this._relatedEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

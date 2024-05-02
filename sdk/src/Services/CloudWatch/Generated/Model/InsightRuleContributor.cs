@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
@@ -46,8 +47,8 @@ namespace Amazon.CloudWatch.Model
     public partial class InsightRuleContributor
     {
         private double? _approximateAggregateValue;
-        private List<InsightRuleContributorDatapoint> _datapoints = new List<InsightRuleContributorDatapoint>();
-        private List<string> _keys = new List<string>();
+        private List<InsightRuleContributorDatapoint> _datapoints = AWSConfigs.InitializeCollections ? new List<InsightRuleContributorDatapoint>() : null;
+        private List<string> _keys = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ApproximateAggregateValue. 
@@ -85,7 +86,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if Datapoints property is set
         internal bool IsSetDatapoints()
         {
-            return this._datapoints != null && this._datapoints.Count > 0; 
+            return this._datapoints != null && (this._datapoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -104,7 +105,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if Keys property is set
         internal bool IsSetKeys()
         {
-            return this._keys != null && this._keys.Count > 0; 
+            return this._keys != null && (this._keys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.APIGateway.Model
     /// </summary>
     public partial class SdkType
     {
-        private List<SdkConfigurationProperty> _configurationProperties = new List<SdkConfigurationProperty>();
+        private List<SdkConfigurationProperty> _configurationProperties = AWSConfigs.InitializeCollections ? new List<SdkConfigurationProperty>() : null;
         private string _description;
         private string _friendlyName;
         private string _id;
@@ -53,7 +54,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if ConfigurationProperties property is set
         internal bool IsSetConfigurationProperties()
         {
-            return this._configurationProperties != null && this._configurationProperties.Count > 0; 
+            return this._configurationProperties != null && (this._configurationProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

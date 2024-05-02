@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class ListEndpointsResponse : AmazonWebServiceResponse
     {
-        private List<EndpointProperties> _endpointPropertiesList = new List<EndpointProperties>();
+        private List<EndpointProperties> _endpointPropertiesList = AWSConfigs.InitializeCollections ? new List<EndpointProperties>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if EndpointPropertiesList property is set
         internal bool IsSetEndpointPropertiesList()
         {
-            return this._endpointPropertiesList != null && this._endpointPropertiesList.Count > 0; 
+            return this._endpointPropertiesList != null && (this._endpointPropertiesList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyBackend.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.AmplifyBackend.Model
         /// Enumerable containing all of the Jobs
         /// </summary>
         public IPaginatedEnumerable<BackendJobRespObj> Jobs => 
-            new PaginatedResultKeyResponse<ListBackendJobsResponse, BackendJobRespObj>(this, (i) => i.Jobs);
+            new PaginatedResultKeyResponse<ListBackendJobsResponse, BackendJobRespObj>(this, (i) => i.Jobs ?? new List<BackendJobRespObj>());
 
         internal ListBackendJobsPaginator(IAmazonAmplifyBackend client, ListBackendJobsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.AmplifyBackend.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListBackendJobsResponse> IPaginator<ListBackendJobsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListBackendJobsResponse> IPaginator<ListBackendJobsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

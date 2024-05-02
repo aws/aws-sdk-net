@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AWSHealth.Model
     /// </summary>
     public partial class DescribeAffectedEntitiesResponse : AmazonWebServiceResponse
     {
-        private List<AffectedEntity> _entities = new List<AffectedEntity>();
+        private List<AffectedEntity> _entities = AWSConfigs.InitializeCollections ? new List<AffectedEntity>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if Entities property is set
         internal bool IsSetEntities()
         {
-            return this._entities != null && this._entities.Count > 0; 
+            return this._entities != null && (this._entities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

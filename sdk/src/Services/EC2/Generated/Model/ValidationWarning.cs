@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ValidationWarning
     {
-        private List<ValidationError> _errors = new List<ValidationError>();
+        private List<ValidationError> _errors = AWSConfigs.InitializeCollections ? new List<ValidationError>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. 
@@ -52,7 +53,7 @@ namespace Amazon.EC2.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

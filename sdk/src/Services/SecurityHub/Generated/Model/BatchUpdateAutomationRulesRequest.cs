@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class BatchUpdateAutomationRulesRequest : AmazonSecurityHubRequest
     {
-        private List<UpdateAutomationRulesRequestItem> _updateAutomationRulesRequestItems = new List<UpdateAutomationRulesRequestItem>();
+        private List<UpdateAutomationRulesRequestItem> _updateAutomationRulesRequestItems = AWSConfigs.InitializeCollections ? new List<UpdateAutomationRulesRequestItem>() : null;
 
         /// <summary>
         /// Gets and sets the property UpdateAutomationRulesRequestItems. 
@@ -54,7 +55,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if UpdateAutomationRulesRequestItems property is set
         internal bool IsSetUpdateAutomationRulesRequestItems()
         {
-            return this._updateAutomationRulesRequestItems != null && this._updateAutomationRulesRequestItems.Count > 0; 
+            return this._updateAutomationRulesRequestItems != null && (this._updateAutomationRulesRequestItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

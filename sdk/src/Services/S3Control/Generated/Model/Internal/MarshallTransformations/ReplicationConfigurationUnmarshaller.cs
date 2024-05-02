@@ -30,12 +30,13 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ReplicationConfiguration Object
     /// </summary>  
-    public class ReplicationConfigurationUnmarshaller : IUnmarshaller<ReplicationConfiguration, XmlUnmarshallerContext>
+    public class ReplicationConfigurationUnmarshaller : IUnmarshaller<ReplicationConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ReplicationConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -63,6 +64,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Rules/Rule", targetDepth))
                     {
+                        if (unmarshalledObject.Rules == null)
+                        {
+                            unmarshalledObject.Rules = new List<ReplicationRule>();
+                        }
                         var unmarshaller = ReplicationRuleUnmarshaller.Instance;
                         unmarshalledObject.Rules.Add(unmarshaller.Unmarshall(context));
                         continue;
@@ -74,6 +79,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public ReplicationConfiguration Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static ReplicationConfigurationUnmarshaller _instance = new ReplicationConfigurationUnmarshaller();        

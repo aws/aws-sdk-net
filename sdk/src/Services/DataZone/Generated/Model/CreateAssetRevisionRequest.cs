@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
@@ -37,8 +38,8 @@ namespace Amazon.DataZone.Model
         private string _clientToken;
         private string _description;
         private string _domainIdentifier;
-        private List<FormInput> _formsInput = new List<FormInput>();
-        private List<string> _glossaryTerms = new List<string>();
+        private List<FormInput> _formsInput = AWSConfigs.InitializeCollections ? new List<FormInput>() : null;
+        private List<string> _glossaryTerms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _identifier;
         private string _name;
         private PredictionConfiguration _predictionConfiguration;
@@ -118,7 +119,7 @@ namespace Amazon.DataZone.Model
         // Check to see if FormsInput property is set
         internal bool IsSetFormsInput()
         {
-            return this._formsInput != null && this._formsInput.Count > 0; 
+            return this._formsInput != null && (this._formsInput.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -137,7 +138,7 @@ namespace Amazon.DataZone.Model
         // Check to see if GlossaryTerms property is set
         internal bool IsSetGlossaryTerms()
         {
-            return this._glossaryTerms != null && this._glossaryTerms.Count > 0; 
+            return this._glossaryTerms != null && (this._glossaryTerms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

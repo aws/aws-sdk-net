@@ -18,7 +18,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+    #line 1 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class ServiceInterfaceNetFramework : BaseGenerator
     {
@@ -29,7 +29,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
         public override string TransformText()
         {
             
-            #line 6 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 6 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
 
 	AddLicenseHeader();
 
@@ -39,35 +39,35 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write("\r\n\r\nusing System;\r\nusing System.Threading;\r\nusing System.Threading.Tasks;\r\nusing " +
                     "System.Collections.Generic;\r\n\r\nusing Amazon.Runtime;\r\nusing ");
             
-            #line 17 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 17 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
-            this.Write(".Model;\r\n\r\nnamespace ");
+            this.Write(".Model;\r\n\r\n#pragma warning disable CS1570\r\nnamespace ");
             
-            #line 19 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 20 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write("\r\n{\r\n");
             
-            #line 21 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 22 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
     this.FormatServiceInterfaceDocumentation(this.Config.ServiceModel.Documentation); 
             
             #line default
             #line hidden
             this.Write("\tpublic partial interface IAmazon");
             
-            #line 22 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 23 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
             this.Write(" : IAmazonService, IDisposable\r\n\t{\r\n\r\n");
             
-            #line 25 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 26 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
 
 // Creates paginators for service if available
 if (this.Config.ServiceModel.HasPaginators)
@@ -79,14 +79,14 @@ if (this.Config.ServiceModel.HasPaginators)
             this.Write("        /// <summary>\r\n        /// Paginators for the service\r\n        /// </summ" +
                     "ary>\r\n        I");
             
-            #line 33 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 34 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceNameRoot));
             
             #line default
             #line hidden
             this.Write("PaginatorFactory Paginators { get; }\r\n");
             
-            #line 34 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 35 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
 
     }
 
@@ -95,7 +95,7 @@ if (this.Config.ServiceModel.HasPaginators)
             #line hidden
             this.Write("\r\n\t\t");
             
-            #line 38 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 39 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
 
     // Generates definitions for each operation in the service model
 		foreach(var operation in this.Config.ServiceModel.Operations)
@@ -108,14 +108,14 @@ if (this.Config.ServiceModel.HasPaginators)
             #line hidden
             this.Write("\r\n\t\t#region  ");
             
-            #line 46 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 47 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("\r\n\r\n");
             
-            #line 48 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 49 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
 
         // Creates a parameterless definition of the operation if specified in the customizations file
         if (this.Config.ServiceModel.Customizations.CreateNoArgOverload(operation.Name))
@@ -125,7 +125,7 @@ if (this.Config.ServiceModel.HasPaginators)
             #line default
             #line hidden
             
-            #line 53 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 54 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
 
 this.FormatOperationDocumentationSync(operation, false);
 		if(operation.IsDeprecated)
@@ -136,14 +136,14 @@ this.FormatOperationDocumentationSync(operation, false);
             #line hidden
             this.Write("\t\t[Obsolete(\"");
             
-            #line 58 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 59 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
             
             #line default
             #line hidden
             this.Write("\")]\r\n");
             
-            #line 59 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 60 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
 		
 		}
 
@@ -152,21 +152,21 @@ this.FormatOperationDocumentationSync(operation, false);
             #line hidden
             this.Write("        ");
             
-            #line 62 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 63 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response ");
             
-            #line 62 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 63 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("();\r\n\r\n");
             
-            #line 64 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 65 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
 
         }
         // Adds simple method forms defined in the customizations file
@@ -176,7 +176,7 @@ this.FormatOperationDocumentationSync(operation, false);
             #line default
             #line hidden
             
-            #line 69 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 70 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
 
 this.FormatOperationDocumentationSync(operation, true);
 		if(operation.IsDeprecated)
@@ -187,14 +187,14 @@ this.FormatOperationDocumentationSync(operation, true);
             #line hidden
             this.Write("\t\t[Obsolete(\"");
             
-            #line 74 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 75 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
             
             #line default
             #line hidden
             this.Write("\")]\r\n");
             
-            #line 75 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 76 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
 		
 		}
 
@@ -203,28 +203,28 @@ this.FormatOperationDocumentationSync(operation, true);
             #line hidden
             this.Write("        ");
             
-            #line 78 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 79 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response ");
             
-            #line 78 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 79 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 78 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 79 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request request);\r\n\r\n");
             
-            #line 80 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 81 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
 
         // Creates a parameterless definition of the operation if specified in the customizations file
         if (this.Config.ServiceModel.Customizations.CreateNoArgOverload(operation.Name))
@@ -234,7 +234,7 @@ this.FormatOperationDocumentationSync(operation, true);
             #line default
             #line hidden
             
-            #line 85 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 86 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
 
 			this.FormatOperationDocumentationAsync(operation, false);
 			if(operation.IsDeprecated)
@@ -245,14 +245,14 @@ this.FormatOperationDocumentationSync(operation, true);
             #line hidden
             this.Write("\t\t[Obsolete(\"");
             
-            #line 90 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 91 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
             
             #line default
             #line hidden
             this.Write("\")]\r\n");
             
-            #line 91 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 92 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
 		
 			}
 
@@ -261,14 +261,14 @@ this.FormatOperationDocumentationSync(operation, true);
             #line hidden
             this.Write("        Task<");
             
-            #line 94 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 95 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response> ");
             
-            #line 94 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 95 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -276,7 +276,7 @@ this.FormatOperationDocumentationSync(operation, true);
             this.Write("Async(System.Threading.CancellationToken cancellationToken = default(Cancellation" +
                     "Token));\r\n\r\n");
             
-            #line 96 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 97 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
 
         }
 
@@ -287,7 +287,7 @@ this.FormatOperationDocumentationSync(operation, true);
             #line hidden
             this.Write("\r\n");
             
-            #line 102 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 103 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
 
 			this.FormatOperationDocumentationAsync(operation, true);
 			if(operation.IsDeprecated)
@@ -298,14 +298,14 @@ this.FormatOperationDocumentationSync(operation, true);
             #line hidden
             this.Write("\t\t[Obsolete(\"");
             
-            #line 107 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 108 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.DeprecationMessage));
             
             #line default
             #line hidden
             this.Write("\")]\r\n");
             
-            #line 108 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 109 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
 		
 			}
 
@@ -314,21 +314,21 @@ this.FormatOperationDocumentationSync(operation, true);
             #line hidden
             this.Write("        Task<");
             
-            #line 111 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 112 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Response> ");
             
-            #line 111 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 112 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Async(");
             
-            #line 111 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 112 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -336,7 +336,7 @@ this.FormatOperationDocumentationSync(operation, true);
             this.Write("Request request, CancellationToken cancellationToken = default(CancellationToken)" +
                     ");\r\n\r\n\t\t#endregion\r\n\t\t");
             
-            #line 114 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 115 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
 
 		}
 		
@@ -344,7 +344,7 @@ this.FormatOperationDocumentationSync(operation, true);
             #line default
             #line hidden
             
-            #line 117 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 118 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
  if (this.Config.EndpointsRuleSet != null) { 
             
             #line default
@@ -362,7 +362,7 @@ this.FormatOperationDocumentationSync(operation, true);
         #endregion
 ");
             
-            #line 129 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
+            #line 130 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\ServiceInterfaceNetFramework.tt"
  } 
             
             #line default

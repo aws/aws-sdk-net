@@ -56,8 +56,8 @@ namespace Amazon.DNXCore.IntegrationTests
                             return r.TopicConfigurations.Count > 0;
                         });
 
-                    Assert.Equal(1, getResponse.TopicConfigurations.Count);
-                    Assert.Equal(1, getResponse.TopicConfigurations[0].Events.Count);
+                    Assert.Single(getResponse.TopicConfigurations);
+                    Assert.Single(getResponse.TopicConfigurations[0].Events);
                     Assert.Equal(EventType.ObjectCreatedPut, getResponse.TopicConfigurations[0].Events[0]);
 
 #pragma warning disable 618
@@ -97,7 +97,7 @@ namespace Amazon.DNXCore.IntegrationTests
                             {
                                 Id = "the-queue-test",
                                 Queue = queueArn,
-                                Events = {EventType.ObjectCreatedPut},
+                                Events = new List<EventType>{EventType.ObjectCreatedPut},
                                 Filter = new Filter
                                 {
                                     S3KeyFilter = new S3KeyFilter
@@ -123,14 +123,14 @@ namespace Amazon.DNXCore.IntegrationTests
                             return r.QueueConfigurations.Count > 0;
                         });
 
-                    Assert.Equal(1, getResponse.QueueConfigurations.Count);
-                    Assert.Equal(1, getResponse.QueueConfigurations[0].Events.Count);
+                    Assert.Single(getResponse.QueueConfigurations);
+                    Assert.Single(getResponse.QueueConfigurations[0].Events);
                     Assert.Equal(EventType.ObjectCreatedPut, getResponse.QueueConfigurations[0].Events[0]);
 
                     Assert.NotNull(getResponse.QueueConfigurations[0].Filter);
                     Assert.NotNull(getResponse.QueueConfigurations[0].Filter.S3KeyFilter);
                     Assert.NotNull(getResponse.QueueConfigurations[0].Filter.S3KeyFilter.FilterRules);
-                    Assert.Equal(1, getResponse.QueueConfigurations[0].Filter.S3KeyFilter.FilterRules.Count);
+                    Assert.Single(getResponse.QueueConfigurations[0].Filter.S3KeyFilter.FilterRules);
                     Assert.Equal(filterRule.Name, getResponse.QueueConfigurations[0].Filter.S3KeyFilter.FilterRules[0].Name);
                     Assert.Equal(filterRule.Value, getResponse.QueueConfigurations[0].Filter.S3KeyFilter.FilterRules[0].Value);
 
@@ -152,7 +152,7 @@ namespace Amazon.DNXCore.IntegrationTests
                         },
                         (r) =>
                         {
-                            return r.Messages.Count == 0;
+                            return r.Messages == null || r.Messages.Count == 0;
                         });
 
                     var putObjectRequest = new PutObjectRequest
@@ -174,12 +174,12 @@ namespace Amazon.DNXCore.IntegrationTests
                         },
                         (r) =>
                         {
-                            return r.Messages.Count > 0;
+                            return r.Messages != null && r.Messages.Count > 0;
                         });
 
                     var evnt = S3EventNotification.ParseJson(response.Messages[0].Body);
 
-                    Assert.Equal(1, evnt.Records.Count);
+                    Assert.Single(evnt.Records);
                     Assert.Equal(putObjectRequest.BucketName, evnt.Records[0].S3.Bucket.Name);
                     Assert.Equal(putObjectRequest.Key, evnt.Records[0].S3.Object.Key);
                     Assert.Equal(putObjectRequest.ContentBody.Length, evnt.Records[0].S3.Object.Size);

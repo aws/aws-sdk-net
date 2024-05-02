@@ -26,20 +26,22 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePlugin operation.
-    /// Creates an Amazon Q plugin.
+    /// Creates an Amazon Q Business plugin.
     /// </summary>
     public partial class CreatePluginRequest : AmazonQBusinessRequest
     {
         private string _applicationId;
         private PluginAuthConfiguration _authConfiguration;
         private string _clientToken;
+        private CustomPluginConfiguration _customPluginConfiguration;
         private string _displayName;
         private string _serverUrl;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private PluginType _type;
 
         /// <summary>
@@ -80,7 +82,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A token that you provide to identify the request to create your Amazon Q plugin.
+        /// A token that you provide to identify the request to create your Amazon Q Business
+        /// plugin.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -94,6 +97,24 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomPluginConfiguration. 
+        /// <para>
+        /// Contains configuration for a custom plugin.
+        /// </para>
+        /// </summary>
+        public CustomPluginConfiguration CustomPluginConfiguration
+        {
+            get { return this._customPluginConfiguration; }
+            set { this._customPluginConfiguration = value; }
+        }
+
+        // Check to see if CustomPluginConfiguration property is set
+        internal bool IsSetCustomPluginConfiguration()
+        {
+            return this._customPluginConfiguration != null;
         }
 
         /// <summary>
@@ -121,7 +142,7 @@ namespace Amazon.QBusiness.Model
         /// The source URL used for plugin configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
+        [AWSProperty(Min=1, Max=2048)]
         public string ServerUrl
         {
             get { return this._serverUrl; }
@@ -153,7 +174,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

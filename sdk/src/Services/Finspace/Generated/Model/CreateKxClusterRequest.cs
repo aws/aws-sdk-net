@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Finspace.Model
 {
     /// <summary>
@@ -37,22 +38,22 @@ namespace Amazon.Finspace.Model
         private AutoScalingConfiguration _autoScalingConfiguration;
         private string _availabilityZoneId;
         private KxAzMode _azMode;
-        private List<KxCacheStorageConfiguration> _cacheStorageConfigurations = new List<KxCacheStorageConfiguration>();
+        private List<KxCacheStorageConfiguration> _cacheStorageConfigurations = AWSConfigs.InitializeCollections ? new List<KxCacheStorageConfiguration>() : null;
         private CapacityConfiguration _capacityConfiguration;
         private string _clientToken;
         private string _clusterDescription;
         private string _clusterName;
         private KxClusterType _clusterType;
         private CodeConfiguration _code;
-        private List<KxCommandLineArgument> _commandLineArguments = new List<KxCommandLineArgument>();
-        private List<KxDatabaseConfiguration> _databases = new List<KxDatabaseConfiguration>();
+        private List<KxCommandLineArgument> _commandLineArguments = AWSConfigs.InitializeCollections ? new List<KxCommandLineArgument>() : null;
+        private List<KxDatabaseConfiguration> _databases = AWSConfigs.InitializeCollections ? new List<KxDatabaseConfiguration>() : null;
         private string _environmentId;
         private string _executionRole;
         private string _initializationScript;
         private string _releaseLabel;
         private KxSavedownStorageConfiguration _savedownStorageConfiguration;
         private KxScalingGroupConfiguration _scalingGroupConfiguration;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private TickerplantLogConfiguration _tickerplantLogConfiguration;
         private VpcConfiguration _vpcConfiguration;
 
@@ -81,6 +82,7 @@ namespace Amazon.Finspace.Model
         /// The availability zone identifiers for the requested regions.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=8, Max=12)]
         public string AvailabilityZoneId
         {
             get { return this._availabilityZoneId; }
@@ -138,7 +140,7 @@ namespace Amazon.Finspace.Model
         // Check to see if CacheStorageConfigurations property is set
         internal bool IsSetCacheStorageConfigurations()
         {
-            return this._cacheStorageConfigurations != null && this._cacheStorageConfigurations.Count > 0; 
+            return this._cacheStorageConfigurations != null && (this._cacheStorageConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -307,7 +309,7 @@ namespace Amazon.Finspace.Model
         // Check to see if CommandLineArguments property is set
         internal bool IsSetCommandLineArguments()
         {
-            return this._commandLineArguments != null && this._commandLineArguments.Count > 0; 
+            return this._commandLineArguments != null && (this._commandLineArguments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -325,7 +327,7 @@ namespace Amazon.Finspace.Model
         // Check to see if Databases property is set
         internal bool IsSetDatabases()
         {
-            return this._databases != null && this._databases.Count > 0; 
+            return this._databases != null && (this._databases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -461,7 +463,7 @@ namespace Amazon.Finspace.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

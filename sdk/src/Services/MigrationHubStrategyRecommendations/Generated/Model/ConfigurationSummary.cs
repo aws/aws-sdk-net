@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MigrationHubStrategyRecommendations.Model
 {
     /// <summary>
@@ -33,11 +34,11 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
     /// </summary>
     public partial class ConfigurationSummary
     {
-        private List<IPAddressBasedRemoteInfo> _ipAddressBasedRemoteInfoList = new List<IPAddressBasedRemoteInfo>();
-        private List<PipelineInfo> _pipelineInfoList = new List<PipelineInfo>();
+        private List<IPAddressBasedRemoteInfo> _ipAddressBasedRemoteInfoList = AWSConfigs.InitializeCollections ? new List<IPAddressBasedRemoteInfo>() : null;
+        private List<PipelineInfo> _pipelineInfoList = AWSConfigs.InitializeCollections ? new List<PipelineInfo>() : null;
         private RemoteSourceCodeAnalysisServerInfo _remoteSourceCodeAnalysisServerInfo;
-        private List<VcenterBasedRemoteInfo> _vcenterBasedRemoteInfoList = new List<VcenterBasedRemoteInfo>();
-        private List<VersionControlInfo> _versionControlInfoList = new List<VersionControlInfo>();
+        private List<VcenterBasedRemoteInfo> _vcenterBasedRemoteInfoList = AWSConfigs.InitializeCollections ? new List<VcenterBasedRemoteInfo>() : null;
+        private List<VersionControlInfo> _versionControlInfoList = AWSConfigs.InitializeCollections ? new List<VersionControlInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property IpAddressBasedRemoteInfoList. 
@@ -54,7 +55,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         // Check to see if IpAddressBasedRemoteInfoList property is set
         internal bool IsSetIpAddressBasedRemoteInfoList()
         {
-            return this._ipAddressBasedRemoteInfoList != null && this._ipAddressBasedRemoteInfoList.Count > 0; 
+            return this._ipAddressBasedRemoteInfoList != null && (this._ipAddressBasedRemoteInfoList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         // Check to see if PipelineInfoList property is set
         internal bool IsSetPipelineInfoList()
         {
-            return this._pipelineInfoList != null && this._pipelineInfoList.Count > 0; 
+            return this._pipelineInfoList != null && (this._pipelineInfoList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -108,7 +109,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         // Check to see if VcenterBasedRemoteInfoList property is set
         internal bool IsSetVcenterBasedRemoteInfoList()
         {
-            return this._vcenterBasedRemoteInfoList != null && this._vcenterBasedRemoteInfoList.Count > 0; 
+            return this._vcenterBasedRemoteInfoList != null && (this._vcenterBasedRemoteInfoList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -126,7 +127,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         // Check to see if VersionControlInfoList property is set
         internal bool IsSetVersionControlInfoList()
         {
-            return this._versionControlInfoList != null && this._versionControlInfoList.Count > 0; 
+            return this._versionControlInfoList != null && (this._versionControlInfoList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

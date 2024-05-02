@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.LakeFormation.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.LakeFormation.Model
         /// Enumerable containing all of the TableList
         /// </summary>
         public IPaginatedEnumerable<TaggedTable> TableList => 
-            new PaginatedResultKeyResponse<SearchTablesByLFTagsResponse, TaggedTable>(this, (i) => i.TableList);
+            new PaginatedResultKeyResponse<SearchTablesByLFTagsResponse, TaggedTable>(this, (i) => i.TableList ?? new List<TaggedTable>());
 
         internal SearchTablesByLFTagsPaginator(IAmazonLakeFormation client, SearchTablesByLFTagsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.LakeFormation.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<SearchTablesByLFTagsResponse> IPaginator<SearchTablesByLFTagsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<SearchTablesByLFTagsResponse> IPaginator<SearchTablesByLFTagsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

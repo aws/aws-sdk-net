@@ -26,16 +26,39 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Contains the information of an ingestion job.
+    /// Contains details about an ingestion job, which converts a data source to embeddings
+    /// for a vector store in knowledge base.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is used in the following API operations:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_StartIngestionJob.html#API_agent_StartIngestionJob_ResponseSyntax">StartIngestionJob
+    /// response</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_GetIngestionJob.html#API_agent_GetIngestionJob_ResponseSyntax">GetIngestionJob
+    /// response</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_ListIngestionJobs.html#API_agent_ListIngestionJobs_ResponseSyntax">ListIngestionJob
+    /// response</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class IngestionJob
     {
         private string _dataSourceId;
         private string _description;
-        private List<string> _failureReasons = new List<string>();
+        private List<string> _failureReasons = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _ingestionJobId;
         private string _knowledgeBaseId;
         private DateTime? _startedAt;
@@ -44,7 +67,10 @@ namespace Amazon.BedrockAgent.Model
         private DateTime? _updatedAt;
 
         /// <summary>
-        /// Gets and sets the property DataSourceId.
+        /// Gets and sets the property DataSourceId. 
+        /// <para>
+        /// The unique identifier of the ingested data source.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string DataSourceId
@@ -60,7 +86,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description of the ingestion job.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
         public string Description
@@ -76,7 +105,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FailureReasons.
+        /// Gets and sets the property FailureReasons. 
+        /// <para>
+        /// A list of reasons that the ingestion job failed.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
         public List<string> FailureReasons
@@ -88,11 +120,14 @@ namespace Amazon.BedrockAgent.Model
         // Check to see if FailureReasons property is set
         internal bool IsSetFailureReasons()
         {
-            return this._failureReasons != null && this._failureReasons.Count > 0; 
+            return this._failureReasons != null && (this._failureReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
-        /// Gets and sets the property IngestionJobId.
+        /// Gets and sets the property IngestionJobId. 
+        /// <para>
+        /// The unique identifier of the ingestion job.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string IngestionJobId
@@ -108,7 +143,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KnowledgeBaseId.
+        /// Gets and sets the property KnowledgeBaseId. 
+        /// <para>
+        /// The unique identifier of the knowledge base to which the data source is being added.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string KnowledgeBaseId
@@ -124,7 +162,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StartedAt.
+        /// Gets and sets the property StartedAt. 
+        /// <para>
+        /// The time at which the ingestion job started.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DateTime? StartedAt
@@ -140,7 +181,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Statistics.
+        /// Gets and sets the property Statistics. 
+        /// <para>
+        /// Contains statistics about the ingestion job.
+        /// </para>
         /// </summary>
         public IngestionJobStatistics Statistics
         {
@@ -155,7 +199,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the ingestion job.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public IngestionJobStatus Status
@@ -171,7 +218,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UpdatedAt.
+        /// Gets and sets the property UpdatedAt. 
+        /// <para>
+        /// The time at which the ingestion job was last updated.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DateTime? UpdatedAt

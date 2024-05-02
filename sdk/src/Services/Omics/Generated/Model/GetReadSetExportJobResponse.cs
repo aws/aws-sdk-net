@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Omics.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.Omics.Model
         private DateTime? _creationTime;
         private string _destination;
         private string _id;
-        private List<ExportReadSetDetail> _readSets = new List<ExportReadSetDetail>();
+        private List<ExportReadSetDetail> _readSets = AWSConfigs.InitializeCollections ? new List<ExportReadSetDetail>() : null;
         private string _sequenceStoreId;
         private ReadSetExportJobStatus _status;
         private string _statusMessage;
@@ -132,7 +133,7 @@ namespace Amazon.Omics.Model
         // Check to see if ReadSets property is set
         internal bool IsSetReadSets()
         {
-            return this._readSets != null && this._readSets.Count > 0; 
+            return this._readSets != null && (this._readSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

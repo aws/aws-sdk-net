@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkManager.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.NetworkManager.Model
     /// </summary>
     public partial class DescribeGlobalNetworksResponse : AmazonWebServiceResponse
     {
-        private List<GlobalNetwork> _globalNetworks = new List<GlobalNetwork>();
+        private List<GlobalNetwork> _globalNetworks = AWSConfigs.InitializeCollections ? new List<GlobalNetwork>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if GlobalNetworks property is set
         internal bool IsSetGlobalNetworks()
         {
-            return this._globalNetworks != null && this._globalNetworks.Count > 0; 
+            return this._globalNetworks != null && (this._globalNetworks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

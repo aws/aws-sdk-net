@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.MediaConnect.Model
     public partial class AddFlowMediaStreamsResponse : AmazonWebServiceResponse
     {
         private string _flowArn;
-        private List<MediaStream> _mediaStreams = new List<MediaStream>();
+        private List<MediaStream> _mediaStreams = AWSConfigs.InitializeCollections ? new List<MediaStream>() : null;
 
         /// <summary>
         /// Gets and sets the property FlowArn. The ARN of the flow that you added media streams
@@ -64,7 +65,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if MediaStreams property is set
         internal bool IsSetMediaStreams()
         {
-            return this._mediaStreams != null && this._mediaStreams.Count > 0; 
+            return this._mediaStreams != null && (this._mediaStreams.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

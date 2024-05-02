@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lambda.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class ListCodeSigningConfigsResponse : AmazonWebServiceResponse
     {
-        private List<CodeSigningConfig> _codeSigningConfigs = new List<CodeSigningConfig>();
+        private List<CodeSigningConfig> _codeSigningConfigs = AWSConfigs.InitializeCollections ? new List<CodeSigningConfig>() : null;
         private string _nextMarker;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Lambda.Model
         // Check to see if CodeSigningConfigs property is set
         internal bool IsSetCodeSigningConfigs()
         {
-            return this._codeSigningConfigs != null && this._codeSigningConfigs.Count > 0; 
+            return this._codeSigningConfigs != null && (this._codeSigningConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

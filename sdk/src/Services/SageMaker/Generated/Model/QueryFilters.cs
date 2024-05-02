@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -36,11 +37,11 @@ namespace Amazon.SageMaker.Model
     {
         private DateTime? _createdAfter;
         private DateTime? _createdBefore;
-        private List<string> _lineageTypes = new List<string>();
+        private List<string> _lineageTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _modifiedAfter;
         private DateTime? _modifiedBefore;
-        private Dictionary<string, string> _properties = new Dictionary<string, string>();
-        private List<string> _types = new List<string>();
+        private Dictionary<string, string> _properties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<string> _types = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CreatedAfter. 
@@ -95,7 +96,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if LineageTypes property is set
         internal bool IsSetLineageTypes()
         {
-            return this._lineageTypes != null && this._lineageTypes.Count > 0; 
+            return this._lineageTypes != null && (this._lineageTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -154,7 +155,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Properties property is set
         internal bool IsSetProperties()
         {
-            return this._properties != null && this._properties.Count > 0; 
+            return this._properties != null && (this._properties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -174,7 +175,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Types property is set
         internal bool IsSetTypes()
         {
-            return this._types != null && this._types.Count > 0; 
+            return this._types != null && (this._types.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchEvidently.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.CloudWatchEvidently.Model
         /// Enumerable containing all of the Segments
         /// </summary>
         public IPaginatedEnumerable<Segment> Segments => 
-            new PaginatedResultKeyResponse<ListSegmentsResponse, Segment>(this, (i) => i.Segments);
+            new PaginatedResultKeyResponse<ListSegmentsResponse, Segment>(this, (i) => i.Segments ?? new List<Segment>());
 
         internal ListSegmentsPaginator(IAmazonCloudWatchEvidently client, ListSegmentsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.CloudWatchEvidently.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListSegmentsResponse> IPaginator<ListSegmentsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListSegmentsResponse> IPaginator<ListSegmentsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

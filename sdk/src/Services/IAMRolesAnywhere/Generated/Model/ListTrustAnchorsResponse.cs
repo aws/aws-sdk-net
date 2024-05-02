@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IAMRolesAnywhere.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IAMRolesAnywhere.Model
     public partial class ListTrustAnchorsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TrustAnchorDetail> _trustAnchors = new List<TrustAnchorDetail>();
+        private List<TrustAnchorDetail> _trustAnchors = AWSConfigs.InitializeCollections ? new List<TrustAnchorDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         // Check to see if TrustAnchors property is set
         internal bool IsSetTrustAnchors()
         {
-            return this._trustAnchors != null && this._trustAnchors.Count > 0; 
+            return this._trustAnchors != null && (this._trustAnchors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Panorama.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Panorama.Model
     /// </summary>
     public partial class NodeInterface
     {
-        private List<NodeInputPort> _inputs = new List<NodeInputPort>();
-        private List<NodeOutputPort> _outputs = new List<NodeOutputPort>();
+        private List<NodeInputPort> _inputs = AWSConfigs.InitializeCollections ? new List<NodeInputPort>() : null;
+        private List<NodeOutputPort> _outputs = AWSConfigs.InitializeCollections ? new List<NodeOutputPort>() : null;
 
         /// <summary>
         /// Gets and sets the property Inputs. 
@@ -52,7 +53,7 @@ namespace Amazon.Panorama.Model
         // Check to see if Inputs property is set
         internal bool IsSetInputs()
         {
-            return this._inputs != null && this._inputs.Count > 0; 
+            return this._inputs != null && (this._inputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.Panorama.Model
         // Check to see if Outputs property is set
         internal bool IsSetOutputs()
         {
-            return this._outputs != null && this._outputs.Count > 0; 
+            return this._outputs != null && (this._outputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

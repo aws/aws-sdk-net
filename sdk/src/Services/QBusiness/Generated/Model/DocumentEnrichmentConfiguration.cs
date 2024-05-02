@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.QBusiness.Model
     /// </summary>
     public partial class DocumentEnrichmentConfiguration
     {
-        private List<InlineDocumentEnrichmentConfiguration> _inlineConfigurations = new List<InlineDocumentEnrichmentConfiguration>();
+        private List<InlineDocumentEnrichmentConfiguration> _inlineConfigurations = AWSConfigs.InitializeCollections ? new List<InlineDocumentEnrichmentConfiguration>() : null;
         private HookConfiguration _postExtractionHookConfiguration;
         private HookConfiguration _preExtractionHookConfiguration;
 
@@ -48,7 +49,7 @@ namespace Amazon.QBusiness.Model
         /// Gets and sets the property InlineConfigurations. 
         /// <para>
         /// Configuration information to alter document attributes or metadata fields and content
-        /// when ingesting documents into Amazon Q.
+        /// when ingesting documents into Amazon Q Business.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -61,7 +62,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if InlineConfigurations property is set
         internal bool IsSetInlineConfigurations()
         {
-            return this._inlineConfigurations != null && this._inlineConfigurations.Count > 0; 
+            return this._inlineConfigurations != null && (this._inlineConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

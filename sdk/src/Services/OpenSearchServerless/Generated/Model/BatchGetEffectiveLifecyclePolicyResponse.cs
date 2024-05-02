@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpenSearchServerless.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.OpenSearchServerless.Model
     /// </summary>
     public partial class BatchGetEffectiveLifecyclePolicyResponse : AmazonWebServiceResponse
     {
-        private List<EffectiveLifecyclePolicyDetail> _effectiveLifecyclePolicyDetails = new List<EffectiveLifecyclePolicyDetail>();
-        private List<EffectiveLifecyclePolicyErrorDetail> _effectiveLifecyclePolicyErrorDetails = new List<EffectiveLifecyclePolicyErrorDetail>();
+        private List<EffectiveLifecyclePolicyDetail> _effectiveLifecyclePolicyDetails = AWSConfigs.InitializeCollections ? new List<EffectiveLifecyclePolicyDetail>() : null;
+        private List<EffectiveLifecyclePolicyErrorDetail> _effectiveLifecyclePolicyErrorDetails = AWSConfigs.InitializeCollections ? new List<EffectiveLifecyclePolicyErrorDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property EffectiveLifecyclePolicyDetails. 
@@ -51,7 +52,7 @@ namespace Amazon.OpenSearchServerless.Model
         // Check to see if EffectiveLifecyclePolicyDetails property is set
         internal bool IsSetEffectiveLifecyclePolicyDetails()
         {
-            return this._effectiveLifecyclePolicyDetails != null && this._effectiveLifecyclePolicyDetails.Count > 0; 
+            return this._effectiveLifecyclePolicyDetails != null && (this._effectiveLifecyclePolicyDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.OpenSearchServerless.Model
         // Check to see if EffectiveLifecyclePolicyErrorDetails property is set
         internal bool IsSetEffectiveLifecyclePolicyErrorDetails()
         {
-            return this._effectiveLifecyclePolicyErrorDetails != null && this._effectiveLifecyclePolicyErrorDetails.Count > 0; 
+            return this._effectiveLifecyclePolicyErrorDetails != null && (this._effectiveLifecyclePolicyErrorDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

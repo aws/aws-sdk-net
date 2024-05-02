@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.XRay.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.XRay.Model
         /// Enumerable containing all of the Services
         /// </summary>
         public IPaginatedEnumerable<Service> Services => 
-            new PaginatedResultKeyResponse<GetServiceGraphResponse, Service>(this, (i) => i.Services);
+            new PaginatedResultKeyResponse<GetServiceGraphResponse, Service>(this, (i) => i.Services ?? new List<Service>());
 
         internal GetServiceGraphPaginator(IAmazonXRay client, GetServiceGraphRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.XRay.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<GetServiceGraphResponse> IPaginator<GetServiceGraphResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<GetServiceGraphResponse> IPaginator<GetServiceGraphResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

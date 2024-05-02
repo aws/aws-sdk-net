@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Chime.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Chime.Model
     /// </summary>
     public partial class BatchCreateRoomMembershipResponse : AmazonWebServiceResponse
     {
-        private List<MemberError> _errors = new List<MemberError>();
+        private List<MemberError> _errors = AWSConfigs.InitializeCollections ? new List<MemberError>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. 
@@ -51,7 +52,7 @@ namespace Amazon.Chime.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

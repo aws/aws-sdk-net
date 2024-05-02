@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.DirectConnect.Model
     /// </summary>
     public partial class Location
     {
-        private List<string> _availableMacSecPortSpeeds = new List<string>();
-        private List<string> _availablePortSpeeds = new List<string>();
-        private List<string> _availableProviders = new List<string>();
+        private List<string> _availableMacSecPortSpeeds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _availablePortSpeeds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _availableProviders = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _locationCode;
         private string _locationName;
         private string _region;
@@ -55,7 +56,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if AvailableMacSecPortSpeeds property is set
         internal bool IsSetAvailableMacSecPortSpeeds()
         {
-            return this._availableMacSecPortSpeeds != null && this._availableMacSecPortSpeeds.Count > 0; 
+            return this._availableMacSecPortSpeeds != null && (this._availableMacSecPortSpeeds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if AvailablePortSpeeds property is set
         internal bool IsSetAvailablePortSpeeds()
         {
-            return this._availablePortSpeeds != null && this._availablePortSpeeds.Count > 0; 
+            return this._availablePortSpeeds != null && (this._availablePortSpeeds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if AvailableProviders property is set
         internal bool IsSetAvailableProviders()
         {
-            return this._availableProviders != null && this._availableProviders.Count > 0; 
+            return this._availableProviders != null && (this._availableProviders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RoboMaker.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.RoboMaker.Model
         private string _arn;
         private string _clientRequestToken;
         private ComputeResponse _compute;
-        private List<DataSource> _dataSources = new List<DataSource>();
+        private List<DataSource> _dataSources = AWSConfigs.InitializeCollections ? new List<DataSource>() : null;
         private FailureBehavior _failureBehavior;
         private SimulationJobErrorCode _failureCode;
         private string _failureReason;
@@ -48,11 +49,11 @@ namespace Amazon.RoboMaker.Model
         private string _name;
         private NetworkInterface _networkInterface;
         private OutputLocation _outputLocation;
-        private List<RobotApplicationConfig> _robotApplications = new List<RobotApplicationConfig>();
-        private List<SimulationApplicationConfig> _simulationApplications = new List<SimulationApplicationConfig>();
+        private List<RobotApplicationConfig> _robotApplications = AWSConfigs.InitializeCollections ? new List<RobotApplicationConfig>() : null;
+        private List<SimulationApplicationConfig> _simulationApplications = AWSConfigs.InitializeCollections ? new List<SimulationApplicationConfig>() : null;
         private long? _simulationTimeMillis;
         private SimulationJobStatus _status;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private VPCConfigResponse _vpcConfig;
 
         /// <summary>
@@ -127,7 +128,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if DataSources property is set
         internal bool IsSetDataSources()
         {
-            return this._dataSources != null && this._dataSources.Count > 0; 
+            return this._dataSources != null && (this._dataSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -407,7 +408,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if RobotApplications property is set
         internal bool IsSetRobotApplications()
         {
-            return this._robotApplications != null && this._robotApplications.Count > 0; 
+            return this._robotApplications != null && (this._robotApplications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -426,7 +427,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if SimulationApplications property is set
         internal bool IsSetSimulationApplications()
         {
-            return this._simulationApplications != null && this._simulationApplications.Count > 0; 
+            return this._simulationApplications != null && (this._simulationApplications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -481,7 +482,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

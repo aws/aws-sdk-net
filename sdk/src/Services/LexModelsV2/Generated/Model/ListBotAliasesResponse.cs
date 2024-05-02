@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class ListBotAliasesResponse : AmazonWebServiceResponse
     {
-        private List<BotAliasSummary> _botAliasSummaries = new List<BotAliasSummary>();
+        private List<BotAliasSummary> _botAliasSummaries = AWSConfigs.InitializeCollections ? new List<BotAliasSummary>() : null;
         private string _botId;
         private string _nextToken;
 
@@ -55,7 +56,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if BotAliasSummaries property is set
         internal bool IsSetBotAliasSummaries()
         {
-            return this._botAliasSummaries != null && this._botAliasSummaries.Count > 0; 
+            return this._botAliasSummaries != null && (this._botAliasSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

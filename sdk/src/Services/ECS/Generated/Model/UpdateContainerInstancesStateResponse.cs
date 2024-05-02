@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECS.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class UpdateContainerInstancesStateResponse : AmazonWebServiceResponse
     {
-        private List<ContainerInstance> _containerInstances = new List<ContainerInstance>();
-        private List<Failure> _failures = new List<Failure>();
+        private List<ContainerInstance> _containerInstances = AWSConfigs.InitializeCollections ? new List<ContainerInstance>() : null;
+        private List<Failure> _failures = AWSConfigs.InitializeCollections ? new List<Failure>() : null;
 
         /// <summary>
         /// Gets and sets the property ContainerInstances. 
@@ -51,7 +52,7 @@ namespace Amazon.ECS.Model
         // Check to see if ContainerInstances property is set
         internal bool IsSetContainerInstances()
         {
-            return this._containerInstances != null && this._containerInstances.Count > 0; 
+            return this._containerInstances != null && (this._containerInstances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.ECS.Model
         // Check to see if Failures property is set
         internal bool IsSetFailures()
         {
-            return this._failures != null && this._failures.Count > 0; 
+            return this._failures != null && (this._failures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

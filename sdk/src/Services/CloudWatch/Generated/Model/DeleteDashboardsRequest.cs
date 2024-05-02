@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class DeleteDashboardsRequest : AmazonCloudWatchRequest
     {
-        private List<string> _dashboardNames = new List<string>();
+        private List<string> _dashboardNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DashboardNames. 
@@ -53,7 +54,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if DashboardNames property is set
         internal bool IsSetDashboardNames()
         {
-            return this._dashboardNames != null && this._dashboardNames.Count > 0; 
+            return this._dashboardNames != null && (this._dashboardNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

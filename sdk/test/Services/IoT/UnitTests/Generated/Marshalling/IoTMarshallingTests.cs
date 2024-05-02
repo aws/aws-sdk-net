@@ -75,9 +75,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -107,9 +107,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -139,9 +139,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -171,9 +171,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -203,9 +203,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -235,9 +235,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","TransferAlreadyCompletedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"TransferAlreadyCompletedException"},
                 }
             };
 
@@ -267,9 +267,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -298,8 +298,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -329,9 +329,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -361,9 +361,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -393,9 +393,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -425,9 +425,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -456,8 +456,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -487,9 +487,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -519,9 +519,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -551,9 +551,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -583,9 +583,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -614,8 +614,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -645,9 +645,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -677,9 +677,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -709,9 +709,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -741,9 +741,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -773,9 +773,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -821,9 +821,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -853,9 +853,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -885,9 +885,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -917,9 +917,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -949,9 +949,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -981,9 +981,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -1013,9 +1013,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -1061,9 +1061,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -1093,9 +1093,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -1125,9 +1125,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -1157,9 +1157,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -1189,9 +1189,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -1221,9 +1221,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -1253,9 +1253,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -1284,8 +1284,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -1315,9 +1315,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -1347,9 +1347,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -1379,9 +1379,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -1411,9 +1411,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -1443,9 +1443,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -1475,9 +1475,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","VersionConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"VersionConflictException"},
                 }
             };
 
@@ -1506,8 +1506,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -1537,9 +1537,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -1569,9 +1569,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -1601,9 +1601,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -1633,9 +1633,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -1665,9 +1665,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -1697,9 +1697,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -1728,8 +1728,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -1759,9 +1759,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -1791,9 +1791,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -1823,9 +1823,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -1855,9 +1855,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -1886,8 +1886,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -1917,9 +1917,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -1949,9 +1949,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -1981,9 +1981,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -2013,9 +2013,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -2061,9 +2061,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -2093,9 +2093,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -2125,9 +2125,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -2157,9 +2157,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -2189,9 +2189,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -2221,9 +2221,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","TransferAlreadyCompletedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"TransferAlreadyCompletedException"},
                 }
             };
 
@@ -2253,9 +2253,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -2284,8 +2284,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -2315,9 +2315,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -2347,9 +2347,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -2379,9 +2379,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -2411,9 +2411,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -2442,8 +2442,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -2473,9 +2473,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -2505,9 +2505,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -2537,9 +2537,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -2569,9 +2569,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -2601,9 +2601,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -2649,9 +2649,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -2681,9 +2681,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidStateTransitionException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidStateTransitionException"},
                 }
             };
 
@@ -2713,9 +2713,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -2745,9 +2745,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -2777,9 +2777,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -2809,9 +2809,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","VersionConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"VersionConflictException"},
                 }
             };
 
@@ -2840,8 +2840,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -2871,9 +2871,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -2903,9 +2903,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -2935,9 +2935,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -2967,9 +2967,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -2999,9 +2999,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -3031,9 +3031,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -3062,8 +3062,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -3093,9 +3093,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConflictingResourceUpdateException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ConflictingResourceUpdateException"},
                 }
             };
 
@@ -3125,9 +3125,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalException"},
                 }
             };
 
@@ -3157,9 +3157,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -3189,9 +3189,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -3221,9 +3221,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -3252,8 +3252,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -3283,9 +3283,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -3315,9 +3315,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -3347,9 +3347,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -3379,9 +3379,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceAlreadyExistsException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceAlreadyExistsException"},
                 }
             };
 
@@ -3411,9 +3411,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -3442,8 +3442,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -3473,9 +3473,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -3505,9 +3505,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -3537,9 +3537,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -3569,9 +3569,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceAlreadyExistsException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceAlreadyExistsException"},
                 }
             };
 
@@ -3601,9 +3601,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -3633,9 +3633,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -3665,9 +3665,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -3696,8 +3696,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -3727,9 +3727,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -3759,9 +3759,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -3791,9 +3791,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceAlreadyExistsException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceAlreadyExistsException"},
                 }
             };
 
@@ -3823,9 +3823,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -3854,8 +3854,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -3885,9 +3885,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -3917,9 +3917,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -3949,9 +3949,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -3981,9 +3981,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -4013,9 +4013,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -4044,8 +4044,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -4075,9 +4075,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -4107,9 +4107,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -4139,9 +4139,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -4171,9 +4171,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceAlreadyExistsException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceAlreadyExistsException"},
                 }
             };
 
@@ -4203,9 +4203,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -4235,9 +4235,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -4267,9 +4267,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -4298,8 +4298,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -4329,9 +4329,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -4361,9 +4361,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -4393,9 +4393,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -4425,9 +4425,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceAlreadyExistsException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceAlreadyExistsException"},
                 }
             };
 
@@ -4457,9 +4457,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -4488,8 +4488,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -4519,9 +4519,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -4551,9 +4551,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -4583,9 +4583,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -4615,9 +4615,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceAlreadyExistsException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceAlreadyExistsException"},
                 }
             };
 
@@ -4647,9 +4647,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -4678,8 +4678,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -4709,9 +4709,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","CertificateValidationException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"CertificateValidationException"},
                 }
             };
 
@@ -4741,9 +4741,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -4773,9 +4773,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -4805,9 +4805,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -4837,9 +4837,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceAlreadyExistsException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceAlreadyExistsException"},
                 }
             };
 
@@ -4869,9 +4869,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -4901,9 +4901,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -4933,9 +4933,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -4964,8 +4964,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -4995,9 +4995,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -5027,9 +5027,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidQueryException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidQueryException"},
                 }
             };
 
@@ -5059,9 +5059,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -5091,9 +5091,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -5123,9 +5123,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceAlreadyExistsException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceAlreadyExistsException"},
                 }
             };
 
@@ -5155,9 +5155,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -5187,9 +5187,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -5218,8 +5218,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -5249,9 +5249,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","IndexNotReadyException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"IndexNotReadyException"},
                 }
             };
 
@@ -5281,9 +5281,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -5313,9 +5313,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidAggregationException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidAggregationException"},
                 }
             };
 
@@ -5345,9 +5345,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidQueryException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidQueryException"},
                 }
             };
 
@@ -5377,9 +5377,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -5409,9 +5409,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -5441,9 +5441,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceAlreadyExistsException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceAlreadyExistsException"},
                 }
             };
 
@@ -5473,9 +5473,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -5505,9 +5505,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -5537,9 +5537,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -5569,9 +5569,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -5600,8 +5600,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -5631,9 +5631,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -5663,9 +5663,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -5695,9 +5695,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceAlreadyExistsException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceAlreadyExistsException"},
                 }
             };
 
@@ -5727,9 +5727,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -5759,9 +5759,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -5791,9 +5791,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -5822,8 +5822,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -5853,9 +5853,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ConflictException"},
                 }
             };
 
@@ -5885,9 +5885,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -5917,9 +5917,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -5949,9 +5949,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -5981,9 +5981,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -6013,9 +6013,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -6044,8 +6044,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -6075,9 +6075,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -6107,9 +6107,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -6139,9 +6139,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -6171,9 +6171,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -6203,9 +6203,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -6234,8 +6234,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -6265,9 +6265,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -6297,9 +6297,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -6329,9 +6329,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -6361,9 +6361,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceAlreadyExistsException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceAlreadyExistsException"},
                 }
             };
 
@@ -6393,9 +6393,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -6424,8 +6424,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -6455,9 +6455,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -6487,9 +6487,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -6519,9 +6519,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -6551,9 +6551,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceAlreadyExistsException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceAlreadyExistsException"},
                 }
             };
 
@@ -6583,9 +6583,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -6615,9 +6615,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -6647,9 +6647,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -6679,9 +6679,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -6710,8 +6710,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -6741,9 +6741,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ConflictException"},
                 }
             };
 
@@ -6773,9 +6773,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalServerException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalServerException"},
                 }
             };
 
@@ -6805,9 +6805,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceQuotaExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceQuotaExceededException"},
                 }
             };
 
@@ -6837,9 +6837,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -6869,9 +6869,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ValidationException"},
                 }
             };
 
@@ -6900,8 +6900,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -6931,9 +6931,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ConflictException"},
                 }
             };
 
@@ -6963,9 +6963,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalServerException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalServerException"},
                 }
             };
 
@@ -6995,9 +6995,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceQuotaExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceQuotaExceededException"},
                 }
             };
 
@@ -7027,9 +7027,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -7059,9 +7059,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ValidationException"},
                 }
             };
 
@@ -7090,8 +7090,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -7121,9 +7121,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -7153,9 +7153,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -7185,9 +7185,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","MalformedPolicyException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"MalformedPolicyException"},
                 }
             };
 
@@ -7217,9 +7217,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceAlreadyExistsException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceAlreadyExistsException"},
                 }
             };
 
@@ -7249,9 +7249,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -7281,9 +7281,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -7313,9 +7313,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -7344,8 +7344,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -7375,9 +7375,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -7407,9 +7407,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -7439,9 +7439,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","MalformedPolicyException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"MalformedPolicyException"},
                 }
             };
 
@@ -7471,9 +7471,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -7503,9 +7503,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -7535,9 +7535,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -7567,9 +7567,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -7599,9 +7599,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","VersionsLimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"VersionsLimitExceededException"},
                 }
             };
 
@@ -7630,8 +7630,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -7661,9 +7661,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -7693,9 +7693,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -7725,9 +7725,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -7757,9 +7757,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -7789,9 +7789,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -7821,9 +7821,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -7852,8 +7852,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -7883,9 +7883,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -7915,9 +7915,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -7947,9 +7947,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -7979,9 +7979,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceAlreadyExistsException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceAlreadyExistsException"},
                 }
             };
 
@@ -8011,9 +8011,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -8043,9 +8043,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -8074,8 +8074,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -8105,9 +8105,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConflictingResourceUpdateException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ConflictingResourceUpdateException"},
                 }
             };
 
@@ -8137,9 +8137,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -8169,9 +8169,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -8201,9 +8201,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -8233,9 +8233,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -8265,9 +8265,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -8297,9 +8297,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","VersionsLimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"VersionsLimitExceededException"},
                 }
             };
 
@@ -8328,8 +8328,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -8359,9 +8359,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -8391,9 +8391,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -8423,9 +8423,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -8455,9 +8455,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceAlreadyExistsException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceAlreadyExistsException"},
                 }
             };
 
@@ -8487,9 +8487,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -8519,9 +8519,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -8551,9 +8551,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -8582,8 +8582,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -8613,9 +8613,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -8645,9 +8645,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -8677,9 +8677,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -8709,9 +8709,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceAlreadyExistsException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceAlreadyExistsException"},
                 }
             };
 
@@ -8741,9 +8741,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -8772,8 +8772,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -8803,9 +8803,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -8835,9 +8835,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -8867,9 +8867,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceAlreadyExistsException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceAlreadyExistsException"},
                 }
             };
 
@@ -8899,9 +8899,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -8930,8 +8930,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -8961,9 +8961,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -8993,9 +8993,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -9025,9 +9025,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -9057,9 +9057,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceAlreadyExistsException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceAlreadyExistsException"},
                 }
             };
 
@@ -9089,9 +9089,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -9121,9 +9121,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -9153,9 +9153,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -9185,9 +9185,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -9216,8 +9216,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -9247,9 +9247,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -9279,9 +9279,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -9311,9 +9311,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceAlreadyExistsException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceAlreadyExistsException"},
                 }
             };
 
@@ -9343,9 +9343,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -9375,9 +9375,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -9407,9 +9407,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -9439,9 +9439,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -9470,8 +9470,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -9501,9 +9501,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -9533,9 +9533,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -9565,9 +9565,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceAlreadyExistsException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceAlreadyExistsException"},
                 }
             };
 
@@ -9597,9 +9597,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -9628,8 +9628,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -9659,9 +9659,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -9691,9 +9691,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -9723,9 +9723,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceAlreadyExistsException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceAlreadyExistsException"},
                 }
             };
 
@@ -9755,9 +9755,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -9787,9 +9787,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -9819,9 +9819,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -9867,9 +9867,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConflictingResourceUpdateException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ConflictingResourceUpdateException"},
                 }
             };
 
@@ -9899,9 +9899,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalException"},
                 }
             };
 
@@ -9931,9 +9931,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -9963,9 +9963,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceAlreadyExistsException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceAlreadyExistsException"},
                 }
             };
 
@@ -9995,9 +9995,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -10027,9 +10027,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","SqlParseException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"SqlParseException"},
                 }
             };
 
@@ -10058,8 +10058,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -10089,9 +10089,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConflictingResourceUpdateException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ConflictingResourceUpdateException"},
                 }
             };
 
@@ -10121,9 +10121,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalException"},
                 }
             };
 
@@ -10153,9 +10153,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -10185,9 +10185,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceAlreadyExistsException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceAlreadyExistsException"},
                 }
             };
 
@@ -10217,9 +10217,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -10248,8 +10248,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -10279,9 +10279,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -10311,9 +10311,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -10343,9 +10343,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -10375,9 +10375,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -10406,8 +10406,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -10437,9 +10437,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -10469,9 +10469,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -10501,9 +10501,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -10532,8 +10532,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -10563,9 +10563,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","DeleteConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"DeleteConflictException"},
                 }
             };
 
@@ -10595,9 +10595,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -10627,9 +10627,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -10659,9 +10659,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -10691,9 +10691,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -10723,9 +10723,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -10755,9 +10755,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -10786,8 +10786,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -10817,9 +10817,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -10849,9 +10849,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -10881,9 +10881,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -10913,9 +10913,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","VersionConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"VersionConflictException"},
                 }
             };
 
@@ -10944,8 +10944,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -10975,9 +10975,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","CertificateStateException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"CertificateStateException"},
                 }
             };
 
@@ -11007,9 +11007,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -11039,9 +11039,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -11071,9 +11071,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -11103,9 +11103,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -11135,9 +11135,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -11167,9 +11167,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -11215,9 +11215,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","CertificateStateException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"CertificateStateException"},
                 }
             };
 
@@ -11247,9 +11247,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","DeleteConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"DeleteConflictException"},
                 }
             };
 
@@ -11279,9 +11279,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -11311,9 +11311,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -11343,9 +11343,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -11375,9 +11375,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -11407,9 +11407,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -11439,9 +11439,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -11470,8 +11470,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -11501,9 +11501,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","DeleteConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"DeleteConflictException"},
                 }
             };
 
@@ -11533,9 +11533,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -11565,9 +11565,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -11597,9 +11597,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -11629,9 +11629,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -11661,9 +11661,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -11693,9 +11693,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -11724,8 +11724,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -11755,9 +11755,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -11787,9 +11787,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -11819,9 +11819,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -11850,8 +11850,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -11881,9 +11881,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -11913,9 +11913,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -11945,9 +11945,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -11976,8 +11976,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -12007,9 +12007,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -12039,9 +12039,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -12071,9 +12071,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -12103,9 +12103,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -12135,9 +12135,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -12167,9 +12167,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -12198,8 +12198,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -12229,9 +12229,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -12261,9 +12261,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -12293,9 +12293,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -12325,9 +12325,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","VersionConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"VersionConflictException"},
                 }
             };
 
@@ -12373,9 +12373,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -12405,9 +12405,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -12437,9 +12437,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -12469,9 +12469,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -12501,9 +12501,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -12533,9 +12533,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","VersionConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"VersionConflictException"},
                 }
             };
 
@@ -12581,9 +12581,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -12613,9 +12613,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidStateTransitionException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidStateTransitionException"},
                 }
             };
 
@@ -12645,9 +12645,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -12677,9 +12677,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -12709,9 +12709,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -12741,9 +12741,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -12789,9 +12789,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -12821,9 +12821,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidStateTransitionException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidStateTransitionException"},
                 }
             };
 
@@ -12853,9 +12853,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -12885,9 +12885,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -12917,9 +12917,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -12965,9 +12965,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -12997,9 +12997,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -13029,9 +13029,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -13061,9 +13061,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -13092,8 +13092,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -13123,9 +13123,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -13155,9 +13155,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -13187,9 +13187,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -13218,8 +13218,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -13249,9 +13249,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -13281,9 +13281,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -13313,9 +13313,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -13345,9 +13345,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -13377,9 +13377,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -13409,9 +13409,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -13441,9 +13441,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","VersionConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"VersionConflictException"},
                 }
             };
 
@@ -13472,8 +13472,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -13503,9 +13503,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalServerException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalServerException"},
                 }
             };
 
@@ -13535,9 +13535,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -13567,9 +13567,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ValidationException"},
                 }
             };
 
@@ -13598,8 +13598,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -13629,9 +13629,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalServerException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalServerException"},
                 }
             };
 
@@ -13661,9 +13661,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -13693,9 +13693,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ValidationException"},
                 }
             };
 
@@ -13741,9 +13741,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","DeleteConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"DeleteConflictException"},
                 }
             };
 
@@ -13773,9 +13773,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -13805,9 +13805,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -13837,9 +13837,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -13869,9 +13869,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -13901,9 +13901,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -13933,9 +13933,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -13981,9 +13981,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","DeleteConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"DeleteConflictException"},
                 }
             };
 
@@ -14013,9 +14013,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -14045,9 +14045,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -14077,9 +14077,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -14109,9 +14109,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -14141,9 +14141,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -14173,9 +14173,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -14204,8 +14204,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -14235,9 +14235,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConflictingResourceUpdateException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ConflictingResourceUpdateException"},
                 }
             };
 
@@ -14267,9 +14267,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","DeleteConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"DeleteConflictException"},
                 }
             };
 
@@ -14299,9 +14299,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -14331,9 +14331,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -14363,9 +14363,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -14395,9 +14395,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -14427,9 +14427,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -14458,8 +14458,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -14489,9 +14489,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConflictingResourceUpdateException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ConflictingResourceUpdateException"},
                 }
             };
 
@@ -14521,9 +14521,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","DeleteConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"DeleteConflictException"},
                 }
             };
 
@@ -14553,9 +14553,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -14585,9 +14585,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -14617,9 +14617,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -14649,9 +14649,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -14681,9 +14681,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -14712,8 +14712,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -14743,9 +14743,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -14775,9 +14775,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -14807,9 +14807,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -14839,9 +14839,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -14871,9 +14871,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -14902,8 +14902,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -14933,9 +14933,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","DeleteConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"DeleteConflictException"},
                 }
             };
 
@@ -14965,9 +14965,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -14997,9 +14997,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -15029,9 +15029,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -15061,9 +15061,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -15093,9 +15093,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -15125,9 +15125,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -15156,8 +15156,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -15187,9 +15187,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -15219,9 +15219,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -15251,9 +15251,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -15283,9 +15283,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -15314,8 +15314,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -15345,9 +15345,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -15377,9 +15377,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -15409,9 +15409,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -15441,9 +15441,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","VersionConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"VersionConflictException"},
                 }
             };
 
@@ -15472,8 +15472,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -15503,9 +15503,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","DeleteConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"DeleteConflictException"},
                 }
             };
 
@@ -15535,9 +15535,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -15567,9 +15567,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -15599,9 +15599,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -15631,9 +15631,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -15663,9 +15663,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -15695,9 +15695,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -15726,8 +15726,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -15757,9 +15757,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -15789,9 +15789,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -15821,9 +15821,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -15853,9 +15853,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -15885,9 +15885,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -15917,9 +15917,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -15949,9 +15949,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","VersionConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"VersionConflictException"},
                 }
             };
 
@@ -15980,8 +15980,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -16011,9 +16011,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -16043,9 +16043,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -16075,9 +16075,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -16107,9 +16107,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","VersionConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"VersionConflictException"},
                 }
             };
 
@@ -16138,8 +16138,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -16169,9 +16169,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -16201,9 +16201,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -16233,9 +16233,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -16265,9 +16265,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -16297,9 +16297,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -16329,9 +16329,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -16377,9 +16377,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConflictingResourceUpdateException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ConflictingResourceUpdateException"},
                 }
             };
 
@@ -16409,9 +16409,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalException"},
                 }
             };
 
@@ -16441,9 +16441,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -16473,9 +16473,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -16505,9 +16505,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -16536,8 +16536,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -16567,9 +16567,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConflictingResourceUpdateException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ConflictingResourceUpdateException"},
                 }
             };
 
@@ -16599,9 +16599,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalException"},
                 }
             };
 
@@ -16631,9 +16631,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -16663,9 +16663,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -16695,9 +16695,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -16743,9 +16743,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalException"},
                 }
             };
 
@@ -16775,9 +16775,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -16807,9 +16807,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -16838,8 +16838,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -16869,9 +16869,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -16901,9 +16901,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -16933,9 +16933,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -16965,9 +16965,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -16997,9 +16997,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -17029,9 +17029,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -17060,8 +17060,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -17091,9 +17091,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -17123,9 +17123,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -17154,8 +17154,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -17185,9 +17185,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -17217,9 +17217,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -17249,9 +17249,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -17281,9 +17281,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -17312,8 +17312,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -17343,9 +17343,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -17375,9 +17375,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -17407,9 +17407,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -17439,9 +17439,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -17470,8 +17470,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -17501,9 +17501,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -17533,9 +17533,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -17565,9 +17565,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -17597,9 +17597,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -17628,8 +17628,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -17659,9 +17659,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -17691,9 +17691,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -17723,9 +17723,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -17755,9 +17755,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -17786,8 +17786,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -17817,9 +17817,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -17849,9 +17849,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -17881,9 +17881,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -17913,9 +17913,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -17945,9 +17945,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -17977,9 +17977,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -18008,8 +18008,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -18039,9 +18039,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -18071,9 +18071,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -18103,9 +18103,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -18135,9 +18135,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -18166,8 +18166,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -18197,9 +18197,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -18229,9 +18229,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -18261,9 +18261,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -18293,9 +18293,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -18325,9 +18325,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -18357,9 +18357,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -18388,8 +18388,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -18419,9 +18419,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -18451,9 +18451,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -18483,9 +18483,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -18515,9 +18515,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -18547,9 +18547,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -18579,9 +18579,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -18610,8 +18610,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -18641,9 +18641,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -18673,9 +18673,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -18705,9 +18705,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -18737,9 +18737,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -18769,9 +18769,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -18801,9 +18801,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -18832,8 +18832,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -18863,9 +18863,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -18895,9 +18895,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -18927,9 +18927,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -18959,9 +18959,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -18990,8 +18990,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -19021,9 +19021,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -19053,9 +19053,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -19085,9 +19085,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -19117,9 +19117,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -19149,9 +19149,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -19181,9 +19181,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -19212,8 +19212,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -19243,9 +19243,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -19275,9 +19275,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -19307,9 +19307,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -19339,9 +19339,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -19370,8 +19370,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -19401,9 +19401,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -19433,9 +19433,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -19465,9 +19465,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -19497,9 +19497,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -19528,8 +19528,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -19559,9 +19559,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -19591,9 +19591,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -19623,9 +19623,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -19655,9 +19655,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -19687,9 +19687,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -19719,9 +19719,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -19750,8 +19750,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -19781,9 +19781,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -19813,9 +19813,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -19845,9 +19845,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -19877,9 +19877,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -19908,8 +19908,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -19939,9 +19939,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -19971,9 +19971,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -20002,8 +20002,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -20033,9 +20033,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -20065,9 +20065,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -20097,9 +20097,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -20129,9 +20129,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -20161,9 +20161,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -20193,9 +20193,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -20224,8 +20224,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -20255,9 +20255,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -20287,9 +20287,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -20319,9 +20319,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -20351,9 +20351,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -20383,9 +20383,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -20415,9 +20415,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -20446,8 +20446,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -20477,9 +20477,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -20509,9 +20509,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -20541,9 +20541,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -20573,9 +20573,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -20604,8 +20604,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -20635,9 +20635,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -20667,9 +20667,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -20699,9 +20699,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -20731,9 +20731,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -20762,8 +20762,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -20793,9 +20793,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -20825,9 +20825,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -20857,9 +20857,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -20889,9 +20889,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -20920,8 +20920,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -20951,9 +20951,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalServerException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalServerException"},
                 }
             };
 
@@ -20983,9 +20983,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -21015,9 +21015,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -21047,9 +21047,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -21078,8 +21078,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -21109,9 +21109,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -21141,9 +21141,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -21173,9 +21173,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -21205,9 +21205,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -21236,8 +21236,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -21267,9 +21267,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -21299,9 +21299,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -21331,9 +21331,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -21363,9 +21363,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -21395,9 +21395,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -21426,8 +21426,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -21457,9 +21457,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -21489,9 +21489,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -21521,9 +21521,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -21553,9 +21553,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -21585,9 +21585,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -21616,8 +21616,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -21647,9 +21647,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -21679,9 +21679,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -21711,9 +21711,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -21743,9 +21743,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -21775,9 +21775,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -21807,9 +21807,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -21838,8 +21838,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -21869,9 +21869,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -21901,9 +21901,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -21933,9 +21933,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -21965,9 +21965,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -21996,8 +21996,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -22027,9 +22027,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -22059,9 +22059,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -22091,9 +22091,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -22123,9 +22123,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -22154,8 +22154,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -22185,9 +22185,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -22217,9 +22217,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -22249,9 +22249,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -22281,9 +22281,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -22313,9 +22313,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -22345,9 +22345,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -22376,8 +22376,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -22407,9 +22407,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -22439,9 +22439,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -22471,9 +22471,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -22503,9 +22503,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -22535,9 +22535,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -22567,9 +22567,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -22598,8 +22598,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -22629,9 +22629,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -22661,9 +22661,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -22693,9 +22693,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -22725,9 +22725,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -22756,8 +22756,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -22787,9 +22787,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -22819,9 +22819,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -22851,9 +22851,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -22883,9 +22883,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -22915,9 +22915,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -22946,8 +22946,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -22977,9 +22977,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -23009,9 +23009,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -23041,9 +23041,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -23073,9 +23073,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -23105,9 +23105,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -23137,9 +23137,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -23185,9 +23185,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -23217,9 +23217,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -23249,9 +23249,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -23281,9 +23281,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -23313,9 +23313,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -23345,9 +23345,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -23393,9 +23393,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -23425,9 +23425,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -23457,9 +23457,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -23489,9 +23489,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -23521,9 +23521,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -23553,9 +23553,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -23584,8 +23584,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -23615,9 +23615,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -23647,9 +23647,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -23679,9 +23679,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -23711,9 +23711,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -23742,8 +23742,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -23773,9 +23773,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -23805,9 +23805,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -23837,9 +23837,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -23869,9 +23869,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -23901,9 +23901,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -23933,9 +23933,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -23981,9 +23981,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConflictingResourceUpdateException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ConflictingResourceUpdateException"},
                 }
             };
 
@@ -24013,9 +24013,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalException"},
                 }
             };
 
@@ -24045,9 +24045,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -24077,9 +24077,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -24109,9 +24109,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -24157,9 +24157,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConflictingResourceUpdateException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ConflictingResourceUpdateException"},
                 }
             };
 
@@ -24189,9 +24189,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalException"},
                 }
             };
 
@@ -24221,9 +24221,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -24253,9 +24253,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -24285,9 +24285,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -24316,8 +24316,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -24347,9 +24347,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -24379,9 +24379,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -24411,9 +24411,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -24443,9 +24443,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -24474,8 +24474,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -24505,9 +24505,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","IndexNotReadyException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"IndexNotReadyException"},
                 }
             };
 
@@ -24537,9 +24537,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -24569,9 +24569,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidAggregationException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidAggregationException"},
                 }
             };
 
@@ -24601,9 +24601,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidQueryException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidQueryException"},
                 }
             };
 
@@ -24633,9 +24633,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -24665,9 +24665,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -24697,9 +24697,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -24729,9 +24729,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -24761,9 +24761,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -24792,8 +24792,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -24823,9 +24823,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","IndexNotReadyException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"IndexNotReadyException"},
                 }
             };
 
@@ -24855,9 +24855,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -24887,9 +24887,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidAggregationException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidAggregationException"},
                 }
             };
 
@@ -24919,9 +24919,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidQueryException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidQueryException"},
                 }
             };
 
@@ -24951,9 +24951,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -24983,9 +24983,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -25015,9 +25015,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -25047,9 +25047,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -25079,9 +25079,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -25110,8 +25110,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -25141,9 +25141,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -25173,9 +25173,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -25205,9 +25205,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -25237,9 +25237,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -25269,9 +25269,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -25301,9 +25301,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -25333,9 +25333,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -25364,8 +25364,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -25395,9 +25395,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -25427,9 +25427,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -25459,9 +25459,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -25491,9 +25491,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -25523,9 +25523,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -25554,8 +25554,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -25585,9 +25585,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -25617,9 +25617,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -25649,9 +25649,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -25681,9 +25681,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -25712,8 +25712,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -25743,9 +25743,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalException"},
                 }
             };
 
@@ -25775,9 +25775,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -25807,9 +25807,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -25838,8 +25838,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -25869,9 +25869,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -25901,9 +25901,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -25933,9 +25933,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -25965,9 +25965,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -25997,9 +25997,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -26029,9 +26029,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -26060,8 +26060,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -26091,9 +26091,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalServerException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalServerException"},
                 }
             };
 
@@ -26123,9 +26123,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -26155,9 +26155,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -26187,9 +26187,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ValidationException"},
                 }
             };
 
@@ -26218,8 +26218,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -26249,9 +26249,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalServerException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalServerException"},
                 }
             };
 
@@ -26281,9 +26281,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -26312,8 +26312,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -26343,9 +26343,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalServerException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalServerException"},
                 }
             };
 
@@ -26375,9 +26375,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -26407,9 +26407,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -26439,9 +26439,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ValidationException"},
                 }
             };
 
@@ -26470,8 +26470,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -26501,9 +26501,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","IndexNotReadyException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"IndexNotReadyException"},
                 }
             };
 
@@ -26533,9 +26533,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -26565,9 +26565,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidAggregationException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidAggregationException"},
                 }
             };
 
@@ -26597,9 +26597,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidQueryException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidQueryException"},
                 }
             };
 
@@ -26629,9 +26629,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -26661,9 +26661,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -26693,9 +26693,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -26725,9 +26725,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -26757,9 +26757,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -26788,8 +26788,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -26819,9 +26819,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -26851,9 +26851,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -26883,9 +26883,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -26915,9 +26915,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -26947,9 +26947,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -26979,9 +26979,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -27010,8 +27010,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -27041,9 +27041,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -27073,9 +27073,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -27105,9 +27105,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -27137,9 +27137,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -27169,9 +27169,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -27201,9 +27201,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -27232,8 +27232,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -27263,9 +27263,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -27295,9 +27295,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -27327,9 +27327,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -27359,9 +27359,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -27391,9 +27391,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -27422,8 +27422,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -27453,9 +27453,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","IndexNotReadyException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"IndexNotReadyException"},
                 }
             };
 
@@ -27485,9 +27485,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -27517,9 +27517,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidAggregationException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidAggregationException"},
                 }
             };
 
@@ -27549,9 +27549,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidQueryException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidQueryException"},
                 }
             };
 
@@ -27581,9 +27581,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -27613,9 +27613,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -27645,9 +27645,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -27677,9 +27677,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -27709,9 +27709,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -27740,8 +27740,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -27771,9 +27771,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalException"},
                 }
             };
 
@@ -27803,9 +27803,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -27835,9 +27835,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -27867,9 +27867,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -27898,8 +27898,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -27929,9 +27929,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalException"},
                 }
             };
 
@@ -27961,9 +27961,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -27993,9 +27993,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -28025,9 +28025,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -28056,8 +28056,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -28087,9 +28087,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalException"},
                 }
             };
 
@@ -28119,9 +28119,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","NotConfiguredException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"NotConfiguredException"},
                 }
             };
 
@@ -28151,9 +28151,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -28182,8 +28182,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -28213,9 +28213,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -28245,9 +28245,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -28277,9 +28277,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -28309,9 +28309,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -28340,8 +28340,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -28371,9 +28371,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -28403,9 +28403,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -28435,9 +28435,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -28467,9 +28467,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -28499,9 +28499,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -28531,9 +28531,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -28563,9 +28563,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -28594,8 +28594,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -28625,9 +28625,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -28657,9 +28657,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -28689,9 +28689,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -28720,8 +28720,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -28751,9 +28751,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -28783,9 +28783,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -28815,9 +28815,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -28846,8 +28846,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -28877,9 +28877,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -28909,9 +28909,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -28941,9 +28941,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -28972,8 +28972,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -29003,9 +29003,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -29035,9 +29035,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -29067,9 +29067,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -29098,8 +29098,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -29129,9 +29129,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -29161,9 +29161,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -29193,9 +29193,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -29224,8 +29224,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -29255,9 +29255,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -29287,9 +29287,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -29319,9 +29319,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -29351,9 +29351,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -29383,9 +29383,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -29414,8 +29414,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -29445,9 +29445,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -29477,9 +29477,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -29509,9 +29509,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -29541,9 +29541,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -29572,8 +29572,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -29603,9 +29603,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -29635,9 +29635,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -29667,9 +29667,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -29699,9 +29699,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -29731,9 +29731,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -29762,8 +29762,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -29793,9 +29793,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -29825,9 +29825,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -29857,9 +29857,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -29889,9 +29889,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -29921,9 +29921,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -29952,8 +29952,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -29983,9 +29983,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -30015,9 +30015,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -30047,9 +30047,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -30079,9 +30079,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -30111,9 +30111,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -30142,8 +30142,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -30173,9 +30173,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -30205,9 +30205,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -30237,9 +30237,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -30269,9 +30269,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -30301,9 +30301,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -30332,8 +30332,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -30363,9 +30363,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -30395,9 +30395,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -30427,9 +30427,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -30458,8 +30458,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -30489,9 +30489,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -30521,9 +30521,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -30553,9 +30553,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -30584,8 +30584,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -30615,9 +30615,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -30647,9 +30647,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -30679,9 +30679,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -30710,8 +30710,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -30741,9 +30741,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -30773,9 +30773,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -30805,9 +30805,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -30836,8 +30836,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -30867,9 +30867,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -30899,9 +30899,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -30931,9 +30931,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -30963,9 +30963,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -30995,9 +30995,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -31026,8 +31026,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -31057,9 +31057,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -31089,9 +31089,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -31121,9 +31121,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -31153,9 +31153,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -31185,9 +31185,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -31216,8 +31216,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -31247,9 +31247,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -31279,9 +31279,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -31311,9 +31311,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -31343,9 +31343,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -31375,9 +31375,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -31406,8 +31406,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -31437,9 +31437,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -31469,9 +31469,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -31501,9 +31501,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -31533,9 +31533,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -31564,8 +31564,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -31595,9 +31595,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -31627,9 +31627,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -31659,9 +31659,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -31691,9 +31691,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -31722,8 +31722,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -31753,9 +31753,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -31785,9 +31785,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -31817,9 +31817,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -31849,9 +31849,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -31880,8 +31880,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -31911,9 +31911,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -31943,9 +31943,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -31975,9 +31975,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -32006,8 +32006,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -32037,9 +32037,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalServerException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalServerException"},
                 }
             };
 
@@ -32069,9 +32069,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -32101,9 +32101,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -32133,9 +32133,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -32164,8 +32164,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -32195,9 +32195,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -32227,9 +32227,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -32259,9 +32259,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -32291,9 +32291,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -32322,8 +32322,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -32353,9 +32353,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -32385,9 +32385,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -32417,9 +32417,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -32448,8 +32448,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -32479,9 +32479,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -32511,9 +32511,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -32543,9 +32543,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -32575,9 +32575,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -32607,9 +32607,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -32638,8 +32638,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -32669,9 +32669,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -32701,9 +32701,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -32733,9 +32733,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -32765,9 +32765,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -32797,9 +32797,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -32828,8 +32828,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -32859,9 +32859,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalServerException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalServerException"},
                 }
             };
 
@@ -32891,9 +32891,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -32923,9 +32923,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ValidationException"},
                 }
             };
 
@@ -32954,8 +32954,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -32985,9 +32985,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalServerException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalServerException"},
                 }
             };
 
@@ -33017,9 +33017,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -33049,9 +33049,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ValidationException"},
                 }
             };
 
@@ -33080,8 +33080,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -33111,9 +33111,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -33143,9 +33143,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -33175,9 +33175,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -33207,9 +33207,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -33239,9 +33239,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -33270,8 +33270,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -33301,9 +33301,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -33333,9 +33333,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -33365,9 +33365,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -33397,9 +33397,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -33429,9 +33429,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -33461,9 +33461,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -33492,8 +33492,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -33523,9 +33523,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -33555,9 +33555,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -33587,9 +33587,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -33619,9 +33619,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -33651,9 +33651,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -33683,9 +33683,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -33714,8 +33714,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -33745,9 +33745,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -33777,9 +33777,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -33809,9 +33809,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -33841,9 +33841,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -33873,9 +33873,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -33905,9 +33905,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -33936,8 +33936,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -33967,9 +33967,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -33999,9 +33999,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -34031,9 +34031,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -34063,9 +34063,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -34095,9 +34095,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -34127,9 +34127,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -34158,8 +34158,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -34189,9 +34189,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -34221,9 +34221,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -34253,9 +34253,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -34285,9 +34285,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -34316,8 +34316,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -34347,9 +34347,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -34379,9 +34379,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -34411,9 +34411,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -34443,9 +34443,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -34475,9 +34475,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -34506,8 +34506,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -34537,9 +34537,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -34569,9 +34569,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -34601,9 +34601,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -34633,9 +34633,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -34664,8 +34664,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -34695,9 +34695,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -34727,9 +34727,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -34759,9 +34759,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -34791,9 +34791,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -34823,9 +34823,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -34854,8 +34854,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -34885,9 +34885,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -34917,9 +34917,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -34949,9 +34949,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -34980,8 +34980,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -35011,9 +35011,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -35043,9 +35043,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -35075,9 +35075,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -35107,9 +35107,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -35138,8 +35138,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -35169,9 +35169,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -35201,9 +35201,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -35233,9 +35233,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -35265,9 +35265,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -35296,8 +35296,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -35327,9 +35327,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -35359,9 +35359,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -35391,9 +35391,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -35423,9 +35423,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -35455,9 +35455,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -35486,8 +35486,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -35517,9 +35517,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -35549,9 +35549,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -35581,9 +35581,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -35613,9 +35613,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -35644,8 +35644,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -35675,9 +35675,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -35707,9 +35707,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -35739,9 +35739,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -35771,9 +35771,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -35803,9 +35803,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -35835,9 +35835,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -35867,9 +35867,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -35898,8 +35898,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -35929,9 +35929,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -35961,9 +35961,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -35993,9 +35993,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -36025,9 +36025,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -36056,8 +36056,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -36087,9 +36087,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -36119,9 +36119,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -36151,9 +36151,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -36183,9 +36183,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -36214,8 +36214,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -36245,9 +36245,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -36277,9 +36277,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -36309,9 +36309,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -36341,9 +36341,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -36372,8 +36372,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -36403,9 +36403,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -36435,9 +36435,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -36467,9 +36467,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -36499,9 +36499,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -36531,9 +36531,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -36563,9 +36563,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -36594,8 +36594,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -36625,9 +36625,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -36657,9 +36657,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -36689,9 +36689,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -36721,9 +36721,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -36752,8 +36752,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -36783,9 +36783,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -36815,9 +36815,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -36847,9 +36847,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -36879,9 +36879,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -36910,8 +36910,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -36941,9 +36941,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -36973,9 +36973,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -37005,9 +37005,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -37037,9 +37037,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -37069,9 +37069,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -37100,8 +37100,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -37131,9 +37131,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -37163,9 +37163,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -37195,9 +37195,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -37227,9 +37227,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -37258,8 +37258,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -37289,9 +37289,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -37321,9 +37321,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -37353,9 +37353,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -37385,9 +37385,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -37416,8 +37416,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -37447,9 +37447,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -37479,9 +37479,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -37511,9 +37511,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -37543,9 +37543,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -37575,9 +37575,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -37606,8 +37606,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -37637,9 +37637,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalException"},
                 }
             };
 
@@ -37669,9 +37669,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -37701,9 +37701,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -37733,9 +37733,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -37764,8 +37764,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -37795,9 +37795,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalException"},
                 }
             };
 
@@ -37827,9 +37827,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -37859,9 +37859,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -37890,8 +37890,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -37921,9 +37921,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalException"},
                 }
             };
 
@@ -37953,9 +37953,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -37985,9 +37985,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","NotConfiguredException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"NotConfiguredException"},
                 }
             };
 
@@ -38017,9 +38017,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -38048,8 +38048,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -38079,9 +38079,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -38111,9 +38111,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -38143,9 +38143,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -38174,8 +38174,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -38205,9 +38205,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -38237,9 +38237,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -38269,9 +38269,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -38300,8 +38300,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -38331,9 +38331,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","CertificateValidationException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"CertificateValidationException"},
                 }
             };
 
@@ -38363,9 +38363,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -38395,9 +38395,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -38427,9 +38427,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -38459,9 +38459,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","RegistrationCodeValidationException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"RegistrationCodeValidationException"},
                 }
             };
 
@@ -38491,9 +38491,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceAlreadyExistsException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceAlreadyExistsException"},
                 }
             };
 
@@ -38523,9 +38523,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -38555,9 +38555,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -38587,9 +38587,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -38619,9 +38619,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -38650,8 +38650,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -38681,9 +38681,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","CertificateConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"CertificateConflictException"},
                 }
             };
 
@@ -38713,9 +38713,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","CertificateStateException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"CertificateStateException"},
                 }
             };
 
@@ -38745,9 +38745,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","CertificateValidationException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"CertificateValidationException"},
                 }
             };
 
@@ -38777,9 +38777,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -38809,9 +38809,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -38841,9 +38841,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceAlreadyExistsException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceAlreadyExistsException"},
                 }
             };
 
@@ -38873,9 +38873,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -38905,9 +38905,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -38937,9 +38937,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -38968,8 +38968,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -38999,9 +38999,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","CertificateStateException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"CertificateStateException"},
                 }
             };
 
@@ -39031,9 +39031,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","CertificateValidationException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"CertificateValidationException"},
                 }
             };
 
@@ -39063,9 +39063,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -39095,9 +39095,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -39127,9 +39127,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceAlreadyExistsException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceAlreadyExistsException"},
                 }
             };
 
@@ -39159,9 +39159,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -39191,9 +39191,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -39223,9 +39223,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -39254,8 +39254,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -39285,9 +39285,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConflictingResourceUpdateException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ConflictingResourceUpdateException"},
                 }
             };
 
@@ -39317,9 +39317,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -39349,9 +39349,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -39381,9 +39381,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceRegistrationFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceRegistrationFailureException"},
                 }
             };
 
@@ -39413,9 +39413,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -39445,9 +39445,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -39477,9 +39477,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -39525,9 +39525,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -39557,9 +39557,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -39589,9 +39589,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -39621,9 +39621,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -39653,9 +39653,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -39685,9 +39685,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","TransferAlreadyCompletedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"TransferAlreadyCompletedException"},
                 }
             };
 
@@ -39717,9 +39717,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -39748,8 +39748,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -39779,9 +39779,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -39811,9 +39811,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -39843,9 +39843,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -39875,9 +39875,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -39906,8 +39906,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -39937,9 +39937,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -39969,9 +39969,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -40001,9 +40001,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -40033,9 +40033,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -40081,9 +40081,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConflictingResourceUpdateException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ConflictingResourceUpdateException"},
                 }
             };
 
@@ -40113,9 +40113,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalException"},
                 }
             };
 
@@ -40145,9 +40145,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -40177,9 +40177,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -40209,9 +40209,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","SqlParseException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"SqlParseException"},
                 }
             };
 
@@ -40241,9 +40241,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -40272,8 +40272,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -40303,9 +40303,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","IndexNotReadyException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"IndexNotReadyException"},
                 }
             };
 
@@ -40335,9 +40335,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -40367,9 +40367,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidQueryException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidQueryException"},
                 }
             };
 
@@ -40399,9 +40399,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -40431,9 +40431,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -40463,9 +40463,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -40495,9 +40495,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -40527,9 +40527,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -40558,8 +40558,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -40589,9 +40589,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -40621,9 +40621,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -40653,9 +40653,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceAlreadyExistsException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceAlreadyExistsException"},
                 }
             };
 
@@ -40685,9 +40685,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -40717,9 +40717,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -40749,9 +40749,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -40781,9 +40781,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -40829,9 +40829,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -40861,9 +40861,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -40893,9 +40893,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -40925,9 +40925,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -40957,9 +40957,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -40989,9 +40989,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -41037,9 +41037,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalException"},
                 }
             };
 
@@ -41069,9 +41069,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -41101,9 +41101,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -41149,9 +41149,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalException"},
                 }
             };
 
@@ -41181,9 +41181,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -41213,9 +41213,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -41245,9 +41245,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","NotConfiguredException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"NotConfiguredException"},
                 }
             };
 
@@ -41277,9 +41277,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -41325,9 +41325,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalException"},
                 }
             };
 
@@ -41357,9 +41357,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -41389,9 +41389,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -41420,8 +41420,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -41451,9 +41451,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -41483,9 +41483,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -41515,9 +41515,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -41547,9 +41547,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","TaskAlreadyExistsException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"TaskAlreadyExistsException"},
                 }
             };
 
@@ -41579,9 +41579,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -41610,8 +41610,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -41641,9 +41641,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -41673,9 +41673,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -41705,9 +41705,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -41737,9 +41737,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","TaskAlreadyExistsException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"TaskAlreadyExistsException"},
                 }
             };
 
@@ -41769,9 +41769,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -41800,8 +41800,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -41831,9 +41831,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -41863,9 +41863,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -41895,9 +41895,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -41927,9 +41927,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -41958,8 +41958,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -41989,9 +41989,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -42021,9 +42021,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -42053,9 +42053,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -42085,9 +42085,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -42116,8 +42116,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -42147,9 +42147,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -42179,9 +42179,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -42211,9 +42211,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -42243,9 +42243,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -42275,9 +42275,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -42306,8 +42306,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -42337,9 +42337,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -42369,9 +42369,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -42401,9 +42401,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -42433,9 +42433,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -42465,9 +42465,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -42496,8 +42496,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -42527,9 +42527,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -42559,9 +42559,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -42591,9 +42591,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -42623,9 +42623,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -42655,9 +42655,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -42687,9 +42687,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -42719,9 +42719,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -42750,8 +42750,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -42781,9 +42781,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -42813,9 +42813,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -42845,9 +42845,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidResponseException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidResponseException"},
                 }
             };
 
@@ -42877,9 +42877,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -42909,9 +42909,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -42941,9 +42941,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -42973,9 +42973,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -43004,8 +43004,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -43035,9 +43035,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","CertificateStateException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"CertificateStateException"},
                 }
             };
 
@@ -43067,9 +43067,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -43099,9 +43099,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -43131,9 +43131,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -43163,9 +43163,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -43195,9 +43195,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -43227,9 +43227,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","TransferConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"TransferConflictException"},
                 }
             };
 
@@ -43259,9 +43259,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -43290,8 +43290,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -43321,9 +43321,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -43353,9 +43353,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -43385,9 +43385,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -43417,9 +43417,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -43448,8 +43448,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -43479,9 +43479,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -43511,9 +43511,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -43543,9 +43543,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -43574,8 +43574,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -43605,9 +43605,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -43637,9 +43637,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -43669,9 +43669,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -43701,9 +43701,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -43732,8 +43732,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -43763,9 +43763,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -43795,9 +43795,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -43827,9 +43827,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","LimitExceededException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"LimitExceededException"},
                 }
             };
 
@@ -43859,9 +43859,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -43891,9 +43891,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -43923,9 +43923,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -43955,9 +43955,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -43986,8 +43986,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -44017,9 +44017,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -44049,9 +44049,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -44081,9 +44081,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -44113,9 +44113,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -44145,9 +44145,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","VersionConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"VersionConflictException"},
                 }
             };
 
@@ -44193,9 +44193,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -44225,9 +44225,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -44257,9 +44257,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -44289,9 +44289,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -44321,9 +44321,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -44353,9 +44353,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -44401,9 +44401,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","CertificateStateException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"CertificateStateException"},
                 }
             };
 
@@ -44433,9 +44433,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -44465,9 +44465,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -44497,9 +44497,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -44529,9 +44529,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -44561,9 +44561,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -44593,9 +44593,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -44624,8 +44624,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -44655,9 +44655,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -44687,9 +44687,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -44719,9 +44719,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -44751,9 +44751,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -44783,9 +44783,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -44815,9 +44815,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -44846,8 +44846,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -44877,9 +44877,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -44909,9 +44909,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -44941,9 +44941,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -44973,9 +44973,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -45004,8 +45004,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -45035,9 +45035,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -45067,9 +45067,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -45099,9 +45099,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -45131,9 +45131,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -45162,8 +45162,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -45193,9 +45193,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","CertificateValidationException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"CertificateValidationException"},
                 }
             };
 
@@ -45225,9 +45225,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -45257,9 +45257,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -45289,9 +45289,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -45321,9 +45321,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -45353,9 +45353,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -45385,9 +45385,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -45416,8 +45416,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -45447,9 +45447,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -45479,9 +45479,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidQueryException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidQueryException"},
                 }
             };
 
@@ -45511,9 +45511,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -45543,9 +45543,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -45575,9 +45575,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -45607,9 +45607,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","VersionConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"VersionConflictException"},
                 }
             };
 
@@ -45638,8 +45638,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -45669,9 +45669,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -45701,9 +45701,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -45733,9 +45733,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -45781,9 +45781,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","IndexNotReadyException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"IndexNotReadyException"},
                 }
             };
 
@@ -45813,9 +45813,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -45845,9 +45845,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidAggregationException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidAggregationException"},
                 }
             };
 
@@ -45877,9 +45877,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidQueryException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidQueryException"},
                 }
             };
 
@@ -45909,9 +45909,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -45941,9 +45941,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -45973,9 +45973,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -46005,9 +46005,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -46037,9 +46037,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -46069,9 +46069,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","VersionConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"VersionConflictException"},
                 }
             };
 
@@ -46100,8 +46100,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -46131,9 +46131,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -46163,9 +46163,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -46195,9 +46195,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -46227,9 +46227,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -46259,9 +46259,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -46307,9 +46307,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -46339,9 +46339,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -46371,9 +46371,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -46403,9 +46403,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -46434,8 +46434,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -46465,9 +46465,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -46497,9 +46497,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -46529,9 +46529,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -46561,9 +46561,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -46592,8 +46592,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -46623,9 +46623,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ConflictException"},
                 }
             };
 
@@ -46655,9 +46655,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalServerException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalServerException"},
                 }
             };
 
@@ -46687,9 +46687,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -46719,9 +46719,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -46751,9 +46751,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ValidationException"},
                 }
             };
 
@@ -46782,8 +46782,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -46813,9 +46813,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ConflictException"},
                 }
             };
 
@@ -46845,9 +46845,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalServerException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalServerException"},
                 }
             };
 
@@ -46877,9 +46877,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -46909,9 +46909,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ValidationException"},
                 }
             };
 
@@ -46940,8 +46940,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -46971,9 +46971,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ConflictException"},
                 }
             };
 
@@ -47003,9 +47003,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalServerException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalServerException"},
                 }
             };
 
@@ -47035,9 +47035,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -47067,9 +47067,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -47099,9 +47099,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ValidationException"},
                 }
             };
 
@@ -47130,8 +47130,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -47161,9 +47161,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConflictingResourceUpdateException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ConflictingResourceUpdateException"},
                 }
             };
 
@@ -47193,9 +47193,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -47225,9 +47225,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -47257,9 +47257,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -47289,9 +47289,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -47320,8 +47320,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -47351,9 +47351,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -47383,9 +47383,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -47415,9 +47415,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -47447,9 +47447,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -47479,9 +47479,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -47511,9 +47511,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -47542,8 +47542,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -47573,9 +47573,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -47605,9 +47605,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -47637,9 +47637,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -47669,9 +47669,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -47700,8 +47700,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -47731,9 +47731,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -47763,9 +47763,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -47795,9 +47795,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -47827,9 +47827,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -47859,9 +47859,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","VersionConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"VersionConflictException"},
                 }
             };
 
@@ -47890,8 +47890,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -47921,9 +47921,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -47953,9 +47953,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -47985,9 +47985,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -48017,9 +48017,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -48049,9 +48049,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -48081,9 +48081,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -48112,8 +48112,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -48143,9 +48143,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -48175,9 +48175,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -48207,9 +48207,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -48239,9 +48239,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -48271,9 +48271,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -48303,9 +48303,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -48335,9 +48335,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","VersionConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"VersionConflictException"},
                 }
             };
 
@@ -48366,8 +48366,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -48397,9 +48397,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -48429,9 +48429,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -48461,9 +48461,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -48493,9 +48493,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -48525,9 +48525,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","VersionConflictException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"VersionConflictException"},
                 }
             };
 
@@ -48556,8 +48556,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -48587,9 +48587,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -48619,9 +48619,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -48651,9 +48651,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
                 }
             };
 
@@ -48683,9 +48683,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 
@@ -48714,8 +48714,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -48745,9 +48745,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConflictingResourceUpdateException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ConflictingResourceUpdateException"},
                 }
             };
 
@@ -48777,9 +48777,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalException"},
                 }
             };
 
@@ -48809,9 +48809,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -48841,9 +48841,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ServiceUnavailableException"},
                 }
             };
 
@@ -48873,9 +48873,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","UnauthorizedException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"UnauthorizedException"},
                 }
             };
 
@@ -48904,8 +48904,8 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
                 }
             };
             
@@ -48935,9 +48935,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalFailureException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalFailureException"},
                 }
             };
 
@@ -48967,9 +48967,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidRequestException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InvalidRequestException"},
                 }
             };
 
@@ -48999,9 +48999,9 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             var webResponse = new WebResponseData
             {
                 Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ThrottlingException"},
                 }
             };
 

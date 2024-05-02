@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MWAA.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MWAA.Model
     /// </summary>
     public partial class ListEnvironmentsResponse : AmazonWebServiceResponse
     {
-        private List<string> _environments = new List<string>();
+        private List<string> _environments = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.MWAA.Model
         // Check to see if Environments property is set
         internal bool IsSetEnvironments()
         {
-            return this._environments != null && this._environments.Count > 0; 
+            return this._environments != null && (this._environments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

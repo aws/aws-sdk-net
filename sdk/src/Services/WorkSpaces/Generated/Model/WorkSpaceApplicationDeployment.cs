@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.WorkSpaces.Model
     /// </summary>
     public partial class WorkSpaceApplicationDeployment
     {
-        private List<WorkspaceResourceAssociation> _associations = new List<WorkspaceResourceAssociation>();
+        private List<WorkspaceResourceAssociation> _associations = AWSConfigs.InitializeCollections ? new List<WorkspaceResourceAssociation>() : null;
 
         /// <summary>
         /// Gets and sets the property Associations. 
@@ -50,7 +51,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if Associations property is set
         internal bool IsSetAssociations()
         {
-            return this._associations != null && this._associations.Count > 0; 
+            return this._associations != null && (this._associations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

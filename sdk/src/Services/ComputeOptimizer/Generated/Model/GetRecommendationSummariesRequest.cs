@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
@@ -62,7 +63,7 @@ namespace Amazon.ComputeOptimizer.Model
     /// </summary>
     public partial class GetRecommendationSummariesRequest : AmazonComputeOptimizerRequest
     {
-        private List<string> _accountIds = new List<string>();
+        private List<string> _accountIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -90,7 +91,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if AccountIds property is set
         internal bool IsSetAccountIds()
         {
-            return this._accountIds != null && this._accountIds.Count > 0; 
+            return this._accountIds != null && (this._accountIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

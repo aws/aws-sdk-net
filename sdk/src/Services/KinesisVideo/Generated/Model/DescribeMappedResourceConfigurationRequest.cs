@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
@@ -65,7 +66,7 @@ namespace Amazon.KinesisVideo.Model
         /// The token to provide in your next request, to get another batch of results.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=512)]
+        [AWSProperty(Min=0, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }

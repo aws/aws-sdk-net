@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class HistogramVisual
     {
-        private List<VisualCustomAction> _actions = new List<VisualCustomAction>();
+        private List<VisualCustomAction> _actions = AWSConfigs.InitializeCollections ? new List<VisualCustomAction>() : null;
         private HistogramConfiguration _chartConfiguration;
         private VisualSubtitleLabelOptions _subtitle;
         private VisualTitleLabelOptions _title;
@@ -61,7 +62,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Actions property is set
         internal bool IsSetActions()
         {
-            return this._actions != null && this._actions.Count > 0; 
+            return this._actions != null && (this._actions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

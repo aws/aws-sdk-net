@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.OpsWorksCM.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.OpsWorksCM.Model
         /// Enumerable containing all of the Backups
         /// </summary>
         public IPaginatedEnumerable<Backup> Backups => 
-            new PaginatedResultKeyResponse<DescribeBackupsResponse, Backup>(this, (i) => i.Backups);
+            new PaginatedResultKeyResponse<DescribeBackupsResponse, Backup>(this, (i) => i.Backups ?? new List<Backup>());
 
         internal DescribeBackupsPaginator(IAmazonOpsWorksCM client, DescribeBackupsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.OpsWorksCM.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeBackupsResponse> IPaginator<DescribeBackupsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeBackupsResponse> IPaginator<DescribeBackupsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

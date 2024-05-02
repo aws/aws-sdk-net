@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EC2.Model
     public partial class TerminateClientVpnConnectionsResponse : AmazonWebServiceResponse
     {
         private string _clientVpnEndpointId;
-        private List<TerminateConnectionStatus> _connectionStatuses = new List<TerminateConnectionStatus>();
+        private List<TerminateConnectionStatus> _connectionStatuses = AWSConfigs.InitializeCollections ? new List<TerminateConnectionStatus>() : null;
         private string _username;
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.EC2.Model
         // Check to see if ConnectionStatuses property is set
         internal bool IsSetConnectionStatuses()
         {
-            return this._connectionStatuses != null && this._connectionStatuses.Count > 0; 
+            return this._connectionStatuses != null && (this._connectionStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

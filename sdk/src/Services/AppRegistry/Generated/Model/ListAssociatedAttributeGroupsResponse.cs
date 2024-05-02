@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppRegistry.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AppRegistry.Model
     /// </summary>
     public partial class ListAssociatedAttributeGroupsResponse : AmazonWebServiceResponse
     {
-        private List<string> _attributeGroups = new List<string>();
+        private List<string> _attributeGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.AppRegistry.Model
         // Check to see if AttributeGroups property is set
         internal bool IsSetAttributeGroups()
         {
-            return this._attributeGroups != null && this._attributeGroups.Count > 0; 
+            return this._attributeGroups != null && (this._attributeGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

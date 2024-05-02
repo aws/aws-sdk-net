@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class IpamPublicAddressTags
     {
-        private List<IpamPublicAddressTag> _eipTags = new List<IpamPublicAddressTag>();
+        private List<IpamPublicAddressTag> _eipTags = AWSConfigs.InitializeCollections ? new List<IpamPublicAddressTag>() : null;
 
         /// <summary>
         /// Gets and sets the property EipTags. 
@@ -50,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if EipTags property is set
         internal bool IsSetEipTags()
         {
-            return this._eipTags != null && this._eipTags.Count > 0; 
+            return this._eipTags != null && (this._eipTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

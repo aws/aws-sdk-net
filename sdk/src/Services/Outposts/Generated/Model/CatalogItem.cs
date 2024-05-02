@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Outposts.Model
 {
     /// <summary>
@@ -34,11 +35,11 @@ namespace Amazon.Outposts.Model
     public partial class CatalogItem
     {
         private string _catalogItemId;
-        private List<EC2Capacity> _ec2Capacities = new List<EC2Capacity>();
+        private List<EC2Capacity> _ec2Capacities = AWSConfigs.InitializeCollections ? new List<EC2Capacity>() : null;
         private CatalogItemStatus _itemStatus;
         private float? _powerKva;
-        private List<string> _supportedStorage = new List<string>();
-        private List<int> _supportedUplinkGbps = new List<int>();
+        private List<string> _supportedStorage = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<int> _supportedUplinkGbps = AWSConfigs.InitializeCollections ? new List<int>() : null;
         private int? _weightLbs;
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace Amazon.Outposts.Model
         // Check to see if EC2Capacities property is set
         internal bool IsSetEC2Capacities()
         {
-            return this._ec2Capacities != null && this._ec2Capacities.Count > 0; 
+            return this._ec2Capacities != null && (this._ec2Capacities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -129,7 +130,7 @@ namespace Amazon.Outposts.Model
         // Check to see if SupportedStorage property is set
         internal bool IsSetSupportedStorage()
         {
-            return this._supportedStorage != null && this._supportedStorage.Count > 0; 
+            return this._supportedStorage != null && (this._supportedStorage.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -147,7 +148,7 @@ namespace Amazon.Outposts.Model
         // Check to see if SupportedUplinkGbps property is set
         internal bool IsSetSupportedUplinkGbps()
         {
-            return this._supportedUplinkGbps != null && this._supportedUplinkGbps.Count > 0; 
+            return this._supportedUplinkGbps != null && (this._supportedUplinkGbps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

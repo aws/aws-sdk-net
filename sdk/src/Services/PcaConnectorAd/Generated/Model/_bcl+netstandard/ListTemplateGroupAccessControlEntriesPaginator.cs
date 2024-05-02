@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.PcaConnectorAd.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.PcaConnectorAd.Model
         /// Enumerable containing all of the AccessControlEntries
         /// </summary>
         public IPaginatedEnumerable<AccessControlEntrySummary> AccessControlEntries => 
-            new PaginatedResultKeyResponse<ListTemplateGroupAccessControlEntriesResponse, AccessControlEntrySummary>(this, (i) => i.AccessControlEntries);
+            new PaginatedResultKeyResponse<ListTemplateGroupAccessControlEntriesResponse, AccessControlEntrySummary>(this, (i) => i.AccessControlEntries ?? new List<AccessControlEntrySummary>());
 
         internal ListTemplateGroupAccessControlEntriesPaginator(IAmazonPcaConnectorAd client, ListTemplateGroupAccessControlEntriesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.PcaConnectorAd.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListTemplateGroupAccessControlEntriesResponse> IPaginator<ListTemplateGroupAccessControlEntriesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListTemplateGroupAccessControlEntriesResponse> IPaginator<ListTemplateGroupAccessControlEntriesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

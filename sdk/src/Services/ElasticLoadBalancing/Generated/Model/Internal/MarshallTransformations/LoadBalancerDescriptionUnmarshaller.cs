@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -57,6 +58,10 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AvailabilityZones/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.AvailabilityZones == null)
+                        {
+                            unmarshalledObject.AvailabilityZones = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AvailabilityZones.Add(item);
                         continue;
@@ -64,6 +69,10 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     if (context.TestExpression("BackendServerDescriptions/member", targetDepth))
                     {
                         var unmarshaller = BackendServerDescriptionUnmarshaller.Instance;
+                        if (unmarshalledObject.BackendServerDescriptions == null)
+                        {
+                            unmarshalledObject.BackendServerDescriptions = new List<BackendServerDescription>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.BackendServerDescriptions.Add(item);
                         continue;
@@ -101,6 +110,10 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Instances/member", targetDepth))
                     {
                         var unmarshaller = InstanceUnmarshaller.Instance;
+                        if (unmarshalledObject.Instances == null)
+                        {
+                            unmarshalledObject.Instances = new List<Instance>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Instances.Add(item);
                         continue;
@@ -108,6 +121,10 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ListenerDescriptions/member", targetDepth))
                     {
                         var unmarshaller = ListenerDescriptionUnmarshaller.Instance;
+                        if (unmarshalledObject.ListenerDescriptions == null)
+                        {
+                            unmarshalledObject.ListenerDescriptions = new List<ListenerDescription>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ListenerDescriptions.Add(item);
                         continue;
@@ -133,6 +150,10 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     if (context.TestExpression("SecurityGroups/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.SecurityGroups == null)
+                        {
+                            unmarshalledObject.SecurityGroups = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SecurityGroups.Add(item);
                         continue;
@@ -146,6 +167,10 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Subnets/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.Subnets == null)
+                        {
+                            unmarshalledObject.Subnets = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Subnets.Add(item);
                         continue;

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Finspace.Model
 {
     /// <summary>
@@ -44,7 +45,7 @@ namespace Amazon.Finspace.Model
     {
         private string _clientToken;
         private string _clusterName;
-        private List<KxDatabaseConfiguration> _databases = new List<KxDatabaseConfiguration>();
+        private List<KxDatabaseConfiguration> _databases = AWSConfigs.InitializeCollections ? new List<KxDatabaseConfiguration>() : null;
         private KxDeploymentConfiguration _deploymentConfiguration;
         private string _environmentId;
 
@@ -102,7 +103,7 @@ namespace Amazon.Finspace.Model
         // Check to see if Databases property is set
         internal bool IsSetDatabases()
         {
-            return this._databases != null && this._databases.Count > 0; 
+            return this._databases != null && (this._databases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

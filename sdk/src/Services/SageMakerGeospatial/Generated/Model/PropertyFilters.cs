@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SageMakerGeospatial.Model
     public partial class PropertyFilters
     {
         private LogicalOperator _logicalOperator;
-        private List<PropertyFilter> _properties = new List<PropertyFilter>();
+        private List<PropertyFilter> _properties = AWSConfigs.InitializeCollections ? new List<PropertyFilter>() : null;
 
         /// <summary>
         /// Gets and sets the property LogicalOperator. 
@@ -69,7 +70,7 @@ namespace Amazon.SageMakerGeospatial.Model
         // Check to see if Properties property is set
         internal bool IsSetProperties()
         {
-            return this._properties != null && this._properties.Count > 0; 
+            return this._properties != null && (this._properties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

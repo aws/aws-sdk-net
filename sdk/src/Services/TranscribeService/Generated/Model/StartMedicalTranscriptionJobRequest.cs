@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
@@ -91,7 +92,7 @@ namespace Amazon.TranscribeService.Model
     public partial class StartMedicalTranscriptionJobRequest : AmazonTranscribeServiceRequest
     {
         private MedicalContentIdentificationType _contentIdentificationType;
-        private Dictionary<string, string> _kmsEncryptionContext = new Dictionary<string, string>();
+        private Dictionary<string, string> _kmsEncryptionContext = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private LanguageCode _languageCode;
         private Media _media;
         private MediaFormat _mediaFormat;
@@ -102,7 +103,7 @@ namespace Amazon.TranscribeService.Model
         private string _outputKey;
         private MedicalTranscriptionSetting _settings;
         private Specialty _specialty;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private Type _type;
 
         /// <summary>
@@ -145,7 +146,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if KMSEncryptionContext property is set
         internal bool IsSetKMSEncryptionContext()
         {
-            return this._kmsEncryptionContext != null && this._kmsEncryptionContext.Count > 0; 
+            return this._kmsEncryptionContext != null && (this._kmsEncryptionContext.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -481,7 +482,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

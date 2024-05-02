@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IoT.Model
     public partial class ListOutgoingCertificatesResponse : AmazonWebServiceResponse
     {
         private string _nextMarker;
-        private List<OutgoingCertificate> _outgoingCertificates = new List<OutgoingCertificate>();
+        private List<OutgoingCertificate> _outgoingCertificates = AWSConfigs.InitializeCollections ? new List<OutgoingCertificate>() : null;
 
         /// <summary>
         /// Gets and sets the property NextMarker. 
@@ -70,7 +71,7 @@ namespace Amazon.IoT.Model
         // Check to see if OutgoingCertificates property is set
         internal bool IsSetOutgoingCertificates()
         {
-            return this._outgoingCertificates != null && this._outgoingCertificates.Count > 0; 
+            return this._outgoingCertificates != null && (this._outgoingCertificates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

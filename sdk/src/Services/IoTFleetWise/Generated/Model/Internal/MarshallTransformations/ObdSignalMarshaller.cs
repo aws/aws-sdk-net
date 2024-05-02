@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ObdSignal requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBitMaskLength())
             {
                 context.Writer.WritePropertyName("bitMaskLength");
@@ -66,7 +69,14 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOffset())
             {
                 context.Writer.WritePropertyName("offset");
-                context.Writer.Write(requestObject.Offset.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Offset.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Offset.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Offset.Value);
+                }
             }
 
             if(requestObject.IsSetPid())
@@ -84,7 +94,14 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetScaling())
             {
                 context.Writer.WritePropertyName("scaling");
-                context.Writer.Write(requestObject.Scaling.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Scaling.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Scaling.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Scaling.Value);
+                }
             }
 
             if(requestObject.IsSetServiceMode())

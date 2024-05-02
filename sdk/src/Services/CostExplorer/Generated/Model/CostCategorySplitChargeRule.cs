@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
@@ -35,9 +36,9 @@ namespace Amazon.CostExplorer.Model
     public partial class CostCategorySplitChargeRule
     {
         private CostCategorySplitChargeMethod _method;
-        private List<CostCategorySplitChargeRuleParameter> _parameters = new List<CostCategorySplitChargeRuleParameter>();
+        private List<CostCategorySplitChargeRuleParameter> _parameters = AWSConfigs.InitializeCollections ? new List<CostCategorySplitChargeRuleParameter>() : null;
         private string _source;
-        private List<string> _targets = new List<string>();
+        private List<string> _targets = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Method. 
@@ -90,7 +91,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -131,7 +132,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if Targets property is set
         internal bool IsSetTargets()
         {
-            return this._targets != null && this._targets.Count > 0; 
+            return this._targets != null && (this._targets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

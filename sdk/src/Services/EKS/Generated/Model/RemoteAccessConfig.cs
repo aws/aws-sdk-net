@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EKS.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EKS.Model
     public partial class RemoteAccessConfig
     {
         private string _ec2SshKey;
-        private List<string> _sourceSecurityGroups = new List<string>();
+        private List<string> _sourceSecurityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Ec2SshKey. 
@@ -79,7 +80,7 @@ namespace Amazon.EKS.Model
         // Check to see if SourceSecurityGroups property is set
         internal bool IsSetSourceSecurityGroups()
         {
-            return this._sourceSecurityGroups != null && this._sourceSecurityGroups.Count > 0; 
+            return this._sourceSecurityGroups != null && (this._sourceSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

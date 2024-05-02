@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsAppSyncGraphQlApiDetails
     {
-        private List<AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails> _additionalAuthenticationProviders = new List<AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails>();
+        private List<AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails> _additionalAuthenticationProviders = AWSConfigs.InitializeCollections ? new List<AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails>() : null;
         private string _apiId;
         private string _arn;
         private string _authenticationType;
@@ -62,7 +63,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if AdditionalAuthenticationProviders property is set
         internal bool IsSetAdditionalAuthenticationProviders()
         {
-            return this._additionalAuthenticationProviders != null && this._additionalAuthenticationProviders.Count > 0; 
+            return this._additionalAuthenticationProviders != null && (this._additionalAuthenticationProviders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

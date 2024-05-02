@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class ListHoursOfOperationsResponse : AmazonWebServiceResponse
     {
-        private List<HoursOfOperationSummary> _hoursOfOperationSummaryList = new List<HoursOfOperationSummary>();
+        private List<HoursOfOperationSummary> _hoursOfOperationSummaryList = AWSConfigs.InitializeCollections ? new List<HoursOfOperationSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Connect.Model
         // Check to see if HoursOfOperationSummaryList property is set
         internal bool IsSetHoursOfOperationSummaryList()
         {
-            return this._hoursOfOperationSummaryList != null && this._hoursOfOperationSummaryList.Count > 0; 
+            return this._hoursOfOperationSummaryList != null && (this._hoursOfOperationSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

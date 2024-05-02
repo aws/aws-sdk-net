@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class MonitorInstancesResponse : AmazonWebServiceResponse
     {
-        private List<InstanceMonitoring> _instanceMonitorings = new List<InstanceMonitoring>();
+        private List<InstanceMonitoring> _instanceMonitorings = AWSConfigs.InitializeCollections ? new List<InstanceMonitoring>() : null;
 
         /// <summary>
         /// Gets and sets the property InstanceMonitorings. 
@@ -50,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if InstanceMonitorings property is set
         internal bool IsSetInstanceMonitorings()
         {
-            return this._instanceMonitorings != null && this._instanceMonitorings.Count > 0; 
+            return this._instanceMonitorings != null && (this._instanceMonitorings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IVS.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// Channel ARN.
+        /// ARN of an IVS resource; e.g., channel.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

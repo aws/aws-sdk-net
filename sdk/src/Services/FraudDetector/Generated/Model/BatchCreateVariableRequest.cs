@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FraudDetector.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class BatchCreateVariableRequest : AmazonFraudDetectorRequest
     {
-        private List<Tag> _tags = new List<Tag>();
-        private List<VariableEntry> _variableEntries = new List<VariableEntry>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<VariableEntry> _variableEntries = AWSConfigs.InitializeCollections ? new List<VariableEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property Tags. 
@@ -53,7 +54,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if VariableEntries property is set
         internal bool IsSetVariableEntries()
         {
-            return this._variableEntries != null && this._variableEntries.Count > 0; 
+            return this._variableEntries != null && (this._variableEntries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

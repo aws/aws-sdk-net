@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kafka.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Kafka.Model
     /// </summary>
     public partial class ConsumerGroupReplicationUpdate
     {
-        private List<string> _consumerGroupsToExclude = new List<string>();
-        private List<string> _consumerGroupsToReplicate = new List<string>();
+        private List<string> _consumerGroupsToExclude = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _consumerGroupsToReplicate = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _detectAndCopyNewConsumerGroups;
         private bool? _synchroniseConsumerGroupOffsets;
 
@@ -55,7 +56,7 @@ namespace Amazon.Kafka.Model
         // Check to see if ConsumerGroupsToExclude property is set
         internal bool IsSetConsumerGroupsToExclude()
         {
-            return this._consumerGroupsToExclude != null && this._consumerGroupsToExclude.Count > 0; 
+            return this._consumerGroupsToExclude != null && (this._consumerGroupsToExclude.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.Kafka.Model
         // Check to see if ConsumerGroupsToReplicate property is set
         internal bool IsSetConsumerGroupsToReplicate()
         {
-            return this._consumerGroupsToReplicate != null && this._consumerGroupsToReplicate.Count > 0; 
+            return this._consumerGroupsToReplicate != null && (this._consumerGroupsToReplicate.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

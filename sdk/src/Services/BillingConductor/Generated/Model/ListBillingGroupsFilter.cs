@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BillingConductor.Model
 {
     /// <summary>
@@ -34,10 +35,10 @@ namespace Amazon.BillingConductor.Model
     /// </summary>
     public partial class ListBillingGroupsFilter
     {
-        private List<string> _arns = new List<string>();
+        private List<string> _arns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _autoAssociate;
         private string _pricingPlan;
-        private List<string> _statuses = new List<string>();
+        private List<string> _statuses = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Arns. 
@@ -55,7 +56,7 @@ namespace Amazon.BillingConductor.Model
         // Check to see if Arns property is set
         internal bool IsSetArns()
         {
-            return this._arns != null && this._arns.Count > 0; 
+            return this._arns != null && (this._arns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -112,7 +113,7 @@ namespace Amazon.BillingConductor.Model
         // Check to see if Statuses property is set
         internal bool IsSetStatuses()
         {
-            return this._statuses != null && this._statuses.Count > 0; 
+            return this._statuses != null && (this._statuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

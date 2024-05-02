@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// </summary>
     public partial class SolutionStackDescription
     {
-        private List<string> _permittedFileTypes = new List<string>();
+        private List<string> _permittedFileTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _solutionStackName;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if PermittedFileTypes property is set
         internal bool IsSetPermittedFileTypes()
         {
-            return this._permittedFileTypes != null && this._permittedFileTypes.Count > 0; 
+            return this._permittedFileTypes != null && (this._permittedFileTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

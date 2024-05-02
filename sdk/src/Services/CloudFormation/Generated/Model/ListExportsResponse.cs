@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CloudFormation.Model
     /// </summary>
     public partial class ListExportsResponse : AmazonWebServiceResponse
     {
-        private List<Export> _exports = new List<Export>();
+        private List<Export> _exports = AWSConfigs.InitializeCollections ? new List<Export>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Exports property is set
         internal bool IsSetExports()
         {
-            return this._exports != null && this._exports.Count > 0; 
+            return this._exports != null && (this._exports.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

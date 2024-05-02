@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Braket.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Braket.Model
     /// </summary>
     public partial class GetQuantumTaskResponse : AmazonWebServiceResponse
     {
-        private List<Association> _associations = new List<Association>();
+        private List<Association> _associations = AWSConfigs.InitializeCollections ? new List<Association>() : null;
         private DateTime? _createdAt;
         private string _deviceArn;
         private string _deviceParameters;
@@ -46,7 +47,7 @@ namespace Amazon.Braket.Model
         private QuantumTaskQueueInfo _queueInfo;
         private long? _shots;
         private QuantumTaskStatus _status;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Associations. 
@@ -63,7 +64,7 @@ namespace Amazon.Braket.Model
         // Check to see if Associations property is set
         internal bool IsSetAssociations()
         {
-            return this._associations != null && this._associations.Count > 0; 
+            return this._associations != null && (this._associations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -307,7 +308,7 @@ namespace Amazon.Braket.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

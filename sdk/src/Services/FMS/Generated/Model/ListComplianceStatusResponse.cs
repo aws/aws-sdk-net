@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FMS.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.FMS.Model
     public partial class ListComplianceStatusResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PolicyComplianceStatus> _policyComplianceStatusList = new List<PolicyComplianceStatus>();
+        private List<PolicyComplianceStatus> _policyComplianceStatusList = AWSConfigs.InitializeCollections ? new List<PolicyComplianceStatus>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -74,7 +75,7 @@ namespace Amazon.FMS.Model
         // Check to see if PolicyComplianceStatusList property is set
         internal bool IsSetPolicyComplianceStatusList()
         {
-            return this._policyComplianceStatusList != null && this._policyComplianceStatusList.Count > 0; 
+            return this._policyComplianceStatusList != null && (this._policyComplianceStatusList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

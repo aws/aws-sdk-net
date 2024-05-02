@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Backup.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Backup.Model
         /// Enumerable containing all of the BackupPlanTemplatesList
         /// </summary>
         public IPaginatedEnumerable<BackupPlanTemplatesListMember> BackupPlanTemplatesList => 
-            new PaginatedResultKeyResponse<ListBackupPlanTemplatesResponse, BackupPlanTemplatesListMember>(this, (i) => i.BackupPlanTemplatesList);
+            new PaginatedResultKeyResponse<ListBackupPlanTemplatesResponse, BackupPlanTemplatesListMember>(this, (i) => i.BackupPlanTemplatesList ?? new List<BackupPlanTemplatesListMember>());
 
         internal ListBackupPlanTemplatesPaginator(IAmazonBackup client, ListBackupPlanTemplatesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Backup.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListBackupPlanTemplatesResponse> IPaginator<ListBackupPlanTemplatesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListBackupPlanTemplatesResponse> IPaginator<ListBackupPlanTemplatesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
@@ -35,13 +36,13 @@ namespace Amazon.SecurityLake.Model
     /// </summary>
     public partial class SubscriberResource
     {
-        private List<string> _accessTypes = new List<string>();
+        private List<string> _accessTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _createdAt;
         private string _resourceShareArn;
         private string _resourceShareName;
         private string _roleArn;
         private string _s3BucketArn;
-        private List<LogSourceResource> _sources = new List<LogSourceResource>();
+        private List<LogSourceResource> _sources = AWSConfigs.InitializeCollections ? new List<LogSourceResource>() : null;
         private string _subscriberArn;
         private string _subscriberDescription;
         private string _subscriberEndpoint;
@@ -73,7 +74,7 @@ namespace Amazon.SecurityLake.Model
         // Check to see if AccessTypes property is set
         internal bool IsSetAccessTypes()
         {
-            return this._accessTypes != null && this._accessTypes.Count > 0; 
+            return this._accessTypes != null && (this._accessTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -191,7 +192,7 @@ namespace Amazon.SecurityLake.Model
         // Check to see if Sources property is set
         internal bool IsSetSources()
         {
-            return this._sources != null && this._sources.Count > 0; 
+            return this._sources != null && (this._sources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

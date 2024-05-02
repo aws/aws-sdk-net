@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class TopicDetails
     {
-        private List<DatasetMetadata> _dataSets = new List<DatasetMetadata>();
+        private List<DatasetMetadata> _dataSets = AWSConfigs.InitializeCollections ? new List<DatasetMetadata>() : null;
         private string _description;
         private string _name;
         private TopicUserExperienceVersion _userExperienceVersion;
@@ -54,7 +55,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if DataSets property is set
         internal bool IsSetDataSets()
         {
-            return this._dataSets != null && this._dataSets.Count > 0; 
+            return this._dataSets != null && (this._dataSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

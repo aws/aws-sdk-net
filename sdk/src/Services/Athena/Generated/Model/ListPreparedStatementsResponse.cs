@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Athena.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Athena.Model
     public partial class ListPreparedStatementsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PreparedStatementSummary> _preparedStatements = new List<PreparedStatementSummary>();
+        private List<PreparedStatementSummary> _preparedStatements = AWSConfigs.InitializeCollections ? new List<PreparedStatementSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +74,7 @@ namespace Amazon.Athena.Model
         // Check to see if PreparedStatements property is set
         internal bool IsSetPreparedStatements()
         {
-            return this._preparedStatements != null && this._preparedStatements.Count > 0; 
+            return this._preparedStatements != null && (this._preparedStatements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

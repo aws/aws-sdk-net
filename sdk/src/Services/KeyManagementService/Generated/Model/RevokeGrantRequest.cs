@@ -26,12 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the RevokeGrant operation.
     /// Deletes the specified grant. You revoke a grant to terminate the permissions that
-    /// the grant allows. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/managing-grants.html#grant-delete">Retiring
+    /// the grant allows. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#grant-delete">Retiring
     /// and revoking grants</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
     /// 
     ///  

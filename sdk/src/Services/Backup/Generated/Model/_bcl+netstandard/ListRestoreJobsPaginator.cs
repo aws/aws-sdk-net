@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Backup.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Backup.Model
         /// Enumerable containing all of the RestoreJobs
         /// </summary>
         public IPaginatedEnumerable<RestoreJobsListMember> RestoreJobs => 
-            new PaginatedResultKeyResponse<ListRestoreJobsResponse, RestoreJobsListMember>(this, (i) => i.RestoreJobs);
+            new PaginatedResultKeyResponse<ListRestoreJobsResponse, RestoreJobsListMember>(this, (i) => i.RestoreJobs ?? new List<RestoreJobsListMember>());
 
         internal ListRestoreJobsPaginator(IAmazonBackup client, ListRestoreJobsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Backup.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListRestoreJobsResponse> IPaginator<ListRestoreJobsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListRestoreJobsResponse> IPaginator<ListRestoreJobsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

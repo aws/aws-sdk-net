@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class StartInstancesResponse : AmazonWebServiceResponse
     {
-        private List<InstanceStateChange> _startingInstances = new List<InstanceStateChange>();
+        private List<InstanceStateChange> _startingInstances = AWSConfigs.InitializeCollections ? new List<InstanceStateChange>() : null;
 
         /// <summary>
         /// Gets and sets the property StartingInstances. 
@@ -50,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if StartingInstances property is set
         internal bool IsSetStartingInstances()
         {
-            return this._startingInstances != null && this._startingInstances.Count > 0; 
+            return this._startingInstances != null && (this._startingInstances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

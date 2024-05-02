@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTEventsData.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoTEventsData.Model
     /// </summary>
     public partial class BatchPutMessageResponse : AmazonWebServiceResponse
     {
-        private List<BatchPutMessageErrorEntry> _batchPutMessageErrorEntries = new List<BatchPutMessageErrorEntry>();
+        private List<BatchPutMessageErrorEntry> _batchPutMessageErrorEntries = AWSConfigs.InitializeCollections ? new List<BatchPutMessageErrorEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property BatchPutMessageErrorEntries. 
@@ -50,7 +51,7 @@ namespace Amazon.IoTEventsData.Model
         // Check to see if BatchPutMessageErrorEntries property is set
         internal bool IsSetBatchPutMessageErrorEntries()
         {
-            return this._batchPutMessageErrorEntries != null && this._batchPutMessageErrorEntries.Count > 0; 
+            return this._batchPutMessageErrorEntries != null && (this._batchPutMessageErrorEntries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

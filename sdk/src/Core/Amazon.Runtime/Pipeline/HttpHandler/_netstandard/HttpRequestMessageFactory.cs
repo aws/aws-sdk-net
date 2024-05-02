@@ -34,7 +34,6 @@ namespace Amazon.Runtime
     /// <summary>
     /// A factory which creates HTTP clients.
     /// </summary>
-    [CLSCompliant(false)]
     public abstract class HttpClientFactory
     {
         /// <summary>
@@ -90,7 +89,6 @@ namespace Amazon.Runtime
     /// <summary>
     /// A factory which creates HTTP requests which uses System.Net.Http.HttpClient.
     /// </summary>
-    [CLSCompliant(false)]
     public class HttpRequestMessageFactory : IHttpRequestFactory<HttpContent>
     {
         // This is the global cache of HttpClient for service clients that are using 
@@ -373,7 +371,6 @@ namespace Amazon.Runtime
     /// <summary>
     /// HTTP request wrapper for System.Net.Http.HttpRequestMessage.
     /// </summary>    
-    [CLSCompliant(false)]
     public class HttpWebRequestMessage : IHttpRequest<HttpContent>
     {
 

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.MediaConnect.Model
     /// </summary>
     public partial class GrantFlowEntitlementsRequest : AmazonMediaConnectRequest
     {
-        private List<GrantEntitlementRequest> _entitlements = new List<GrantEntitlementRequest>();
+        private List<GrantEntitlementRequest> _entitlements = AWSConfigs.InitializeCollections ? new List<GrantEntitlementRequest>() : null;
         private string _flowArn;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if Entitlements property is set
         internal bool IsSetEntitlements()
         {
-            return this._entitlements != null && this._entitlements.Count > 0; 
+            return this._entitlements != null && (this._entitlements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

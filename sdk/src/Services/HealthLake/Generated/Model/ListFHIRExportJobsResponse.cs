@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.HealthLake.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.HealthLake.Model
     /// </summary>
     public partial class ListFHIRExportJobsResponse : AmazonWebServiceResponse
     {
-        private List<ExportJobProperties> _exportJobPropertiesList = new List<ExportJobProperties>();
+        private List<ExportJobProperties> _exportJobPropertiesList = AWSConfigs.InitializeCollections ? new List<ExportJobProperties>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.HealthLake.Model
         // Check to see if ExportJobPropertiesList property is set
         internal bool IsSetExportJobPropertiesList()
         {
-            return this._exportJobPropertiesList != null && this._exportJobPropertiesList.Count > 0; 
+            return this._exportJobPropertiesList != null && (this._exportJobPropertiesList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

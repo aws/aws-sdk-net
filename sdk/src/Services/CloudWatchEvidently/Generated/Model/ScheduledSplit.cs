@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchEvidently.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.CloudWatchEvidently.Model
     /// </summary>
     public partial class ScheduledSplit
     {
-        private Dictionary<string, long> _groupWeights = new Dictionary<string, long>();
-        private List<SegmentOverride> _segmentOverrides = new List<SegmentOverride>();
+        private Dictionary<string, long> _groupWeights = AWSConfigs.InitializeCollections ? new Dictionary<string, long>() : null;
+        private List<SegmentOverride> _segmentOverrides = AWSConfigs.InitializeCollections ? new List<SegmentOverride>() : null;
         private DateTime? _startTime;
 
         /// <summary>
@@ -68,7 +69,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if GroupWeights property is set
         internal bool IsSetGroupWeights()
         {
-            return this._groupWeights != null && this._groupWeights.Count > 0; 
+            return this._groupWeights != null && (this._groupWeights.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -96,7 +97,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if SegmentOverrides property is set
         internal bool IsSetSegmentOverrides()
         {
-            return this._segmentOverrides != null && this._segmentOverrides.Count > 0; 
+            return this._segmentOverrides != null && (this._segmentOverrides.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

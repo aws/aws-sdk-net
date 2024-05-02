@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CleanRoomsML.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CleanRoomsML.Model
     /// </summary>
     public partial class ListAudienceExportJobsResponse : AmazonWebServiceResponse
     {
-        private List<AudienceExportJobSummary> _audienceExportJobs = new List<AudienceExportJobSummary>();
+        private List<AudienceExportJobSummary> _audienceExportJobs = AWSConfigs.InitializeCollections ? new List<AudienceExportJobSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.CleanRoomsML.Model
         // Check to see if AudienceExportJobs property is set
         internal bool IsSetAudienceExportJobs()
         {
-            return this._audienceExportJobs != null && this._audienceExportJobs.Count > 0; 
+            return this._audienceExportJobs != null && (this._audienceExportJobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

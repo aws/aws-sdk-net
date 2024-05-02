@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
@@ -57,10 +58,10 @@ namespace Amazon.Imagebuilder.Model
         private string _sourcePipelineArn;
         private string _sourcePipelineName;
         private ImageState _state;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ImageType _type;
         private string _version;
-        private List<WorkflowConfiguration> _workflows = new List<WorkflowConfiguration>();
+        private List<WorkflowConfiguration> _workflows = AWSConfigs.InitializeCollections ? new List<WorkflowConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -519,7 +520,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -598,7 +599,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if Workflows property is set
         internal bool IsSetWorkflows()
         {
-            return this._workflows != null && this._workflows.Count > 0; 
+            return this._workflows != null && (this._workflows.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

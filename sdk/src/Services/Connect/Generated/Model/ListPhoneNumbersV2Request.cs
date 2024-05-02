@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -58,9 +59,9 @@ namespace Amazon.Connect.Model
         private string _instanceId;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _phoneNumberCountryCodes = new List<string>();
+        private List<string> _phoneNumberCountryCodes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _phoneNumberPrefix;
-        private List<string> _phoneNumberTypes = new List<string>();
+        private List<string> _phoneNumberTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _targetArn;
 
         /// <summary>
@@ -141,7 +142,7 @@ namespace Amazon.Connect.Model
         // Check to see if PhoneNumberCountryCodes property is set
         internal bool IsSetPhoneNumberCountryCodes()
         {
-            return this._phoneNumberCountryCodes != null && this._phoneNumberCountryCodes.Count > 0; 
+            return this._phoneNumberCountryCodes != null && (this._phoneNumberCountryCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -179,7 +180,7 @@ namespace Amazon.Connect.Model
         // Check to see if PhoneNumberTypes property is set
         internal bool IsSetPhoneNumberTypes()
         {
-            return this._phoneNumberTypes != null && this._phoneNumberTypes.Count > 0; 
+            return this._phoneNumberTypes != null && (this._phoneNumberTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

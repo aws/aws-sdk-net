@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.ServiceCatalog.Model
     {
         private string _failureReason;
         private string _idempotencyToken;
-        private List<RecordOutput> _outputs = new List<RecordOutput>();
+        private List<RecordOutput> _outputs = AWSConfigs.InitializeCollections ? new List<RecordOutput>() : null;
         private string _recordId;
         private EngineWorkflowResourceIdentifier _resourceIdentifier;
         private EngineWorkflowStatus _status;
@@ -95,7 +96,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if Outputs property is set
         internal bool IsSetOutputs()
         {
-            return this._outputs != null && this._outputs.Count > 0; 
+            return this._outputs != null && (this._outputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

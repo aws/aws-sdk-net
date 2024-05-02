@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTTwinMaker.Model
 {
     /// <summary>
@@ -37,9 +38,9 @@ namespace Amazon.IoTTwinMaker.Model
         private double? _doubleValue;
         private string _expression;
         private int? _integerValue;
-        private List<DataValue> _listValue = new List<DataValue>();
+        private List<DataValue> _listValue = AWSConfigs.InitializeCollections ? new List<DataValue>() : null;
         private long? _longValue;
-        private Dictionary<string, DataValue> _mapValue = new Dictionary<string, DataValue>();
+        private Dictionary<string, DataValue> _mapValue = AWSConfigs.InitializeCollections ? new Dictionary<string, DataValue>() : null;
         private RelationshipValue _relationshipValue;
         private string _stringValue;
 
@@ -132,7 +133,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if ListValue property is set
         internal bool IsSetListValue()
         {
-            return this._listValue != null && this._listValue.Count > 0; 
+            return this._listValue != null && (this._listValue.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -169,7 +170,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if MapValue property is set
         internal bool IsSetMapValue()
         {
-            return this._mapValue != null && this._mapValue.Count > 0; 
+            return this._mapValue != null && (this._mapValue.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

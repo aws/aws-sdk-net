@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DirectoryService.Model
     /// </summary>
     public partial class DescribeDirectoriesResponse : AmazonWebServiceResponse
     {
-        private List<DirectoryDescription> _directoryDescriptions = new List<DirectoryDescription>();
+        private List<DirectoryDescription> _directoryDescriptions = AWSConfigs.InitializeCollections ? new List<DirectoryDescription>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -58,7 +59,7 @@ namespace Amazon.DirectoryService.Model
         // Check to see if DirectoryDescriptions property is set
         internal bool IsSetDirectoryDescriptions()
         {
-            return this._directoryDescriptions != null && this._directoryDescriptions.Count > 0; 
+            return this._directoryDescriptions != null && (this._directoryDescriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

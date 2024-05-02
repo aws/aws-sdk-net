@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.OpenSearchService.Model
     public partial class AutoTuneOptionsInput
     {
         private AutoTuneDesiredState _desiredState;
-        private List<AutoTuneMaintenanceSchedule> _maintenanceSchedules = new List<AutoTuneMaintenanceSchedule>();
+        private List<AutoTuneMaintenanceSchedule> _maintenanceSchedules = AWSConfigs.InitializeCollections ? new List<AutoTuneMaintenanceSchedule>() : null;
         private bool? _useOffPeakWindow;
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.OpenSearchService.Model
         // Check to see if MaintenanceSchedules property is set
         internal bool IsSetMaintenanceSchedules()
         {
-            return this._maintenanceSchedules != null && this._maintenanceSchedules.Count > 0; 
+            return this._maintenanceSchedules != null && (this._maintenanceSchedules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

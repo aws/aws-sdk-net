@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Inspector2.Model
     public partial class ListUsageTotalsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<UsageTotal> _totals = new List<UsageTotal>();
+        private List<UsageTotal> _totals = AWSConfigs.InitializeCollections ? new List<UsageTotal>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if Totals property is set
         internal bool IsSetTotals()
         {
-            return this._totals != null && this._totals.Count > 0; 
+            return this._totals != null && (this._totals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

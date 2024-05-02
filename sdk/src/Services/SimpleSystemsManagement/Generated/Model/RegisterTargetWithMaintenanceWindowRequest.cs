@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _name;
         private string _ownerInformation;
         private MaintenanceWindowResourceType _resourceType;
-        private List<Target> _targets = new List<Target>();
+        private List<Target> _targets = AWSConfigs.InitializeCollections ? new List<Target>() : null;
         private string _windowId;
 
         /// <summary>
@@ -227,7 +228,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Targets property is set
         internal bool IsSetTargets()
         {
-            return this._targets != null && this._targets.Count > 0; 
+            return this._targets != null && (this._targets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

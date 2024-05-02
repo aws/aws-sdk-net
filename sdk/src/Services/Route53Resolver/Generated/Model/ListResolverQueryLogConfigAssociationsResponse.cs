@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Route53Resolver.Model
     public partial class ListResolverQueryLogConfigAssociationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ResolverQueryLogConfigAssociation> _resolverQueryLogConfigAssociations = new List<ResolverQueryLogConfigAssociation>();
+        private List<ResolverQueryLogConfigAssociation> _resolverQueryLogConfigAssociations = AWSConfigs.InitializeCollections ? new List<ResolverQueryLogConfigAssociation>() : null;
         private int? _totalCount;
         private int? _totalFilteredCount;
 
@@ -75,7 +76,7 @@ namespace Amazon.Route53Resolver.Model
         // Check to see if ResolverQueryLogConfigAssociations property is set
         internal bool IsSetResolverQueryLogConfigAssociations()
         {
-            return this._resolverQueryLogConfigAssociations != null && this._resolverQueryLogConfigAssociations.Count > 0; 
+            return this._resolverQueryLogConfigAssociations != null && (this._resolverQueryLogConfigAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

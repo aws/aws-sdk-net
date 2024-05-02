@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class SetRulePrioritiesRequest : AmazonElasticLoadBalancingV2Request
     {
-        private List<RulePriorityPair> _rulePriorities = new List<RulePriorityPair>();
+        private List<RulePriorityPair> _rulePriorities = AWSConfigs.InitializeCollections ? new List<RulePriorityPair>() : null;
 
         /// <summary>
         /// Gets and sets the property RulePriorities. 
@@ -58,7 +59,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if RulePriorities property is set
         internal bool IsSetRulePriorities()
         {
-            return this._rulePriorities != null && this._rulePriorities.Count > 0; 
+            return this._rulePriorities != null && (this._rulePriorities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

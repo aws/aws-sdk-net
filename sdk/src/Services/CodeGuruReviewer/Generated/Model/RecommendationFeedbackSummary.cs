@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeGuruReviewer.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CodeGuruReviewer.Model
     /// </summary>
     public partial class RecommendationFeedbackSummary
     {
-        private List<string> _reactions = new List<string>();
+        private List<string> _reactions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _recommendationId;
         private string _userId;
 
@@ -53,7 +54,7 @@ namespace Amazon.CodeGuruReviewer.Model
         // Check to see if Reactions property is set
         internal bool IsSetReactions()
         {
-            return this._reactions != null && this._reactions.Count > 0; 
+            return this._reactions != null && (this._reactions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

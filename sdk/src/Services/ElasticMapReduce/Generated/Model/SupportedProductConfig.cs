@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     public partial class SupportedProductConfig
     {
-        private List<string> _args = new List<string>();
+        private List<string> _args = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Args property is set
         internal bool IsSetArgs()
         {
-            return this._args != null && this._args.Count > 0; 
+            return this._args != null && (this._args.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

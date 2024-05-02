@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IoTWireless.Model
     public partial class SidewalkListDevice
     {
         private string _amazonId;
-        private List<CertificateList> _deviceCertificates = new List<CertificateList>();
+        private List<CertificateList> _deviceCertificates = AWSConfigs.InitializeCollections ? new List<CertificateList>() : null;
         private string _deviceProfileId;
         private string _sidewalkId;
         private string _sidewalkManufacturingSn;
@@ -74,7 +75,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if DeviceCertificates property is set
         internal bool IsSetDeviceCertificates()
         {
-            return this._deviceCertificates != null && this._deviceCertificates.Count > 0; 
+            return this._deviceCertificates != null && (this._deviceCertificates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

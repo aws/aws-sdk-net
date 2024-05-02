@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkDocs.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.WorkDocs.Model
     /// </summary>
     public partial class SearchResourcesResponse : AmazonWebServiceResponse
     {
-        private List<ResponseItem> _items = new List<ResponseItem>();
+        private List<ResponseItem> _items = AWSConfigs.InitializeCollections ? new List<ResponseItem>() : null;
         private string _marker;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.WorkDocs.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

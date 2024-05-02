@@ -26,12 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.InternetMonitor.Model
 {
     /// <summary>
     /// Container for the parameters to the ListHealthEvents operation.
     /// Lists all health events for a monitor in Amazon CloudWatch Internet Monitor. Returns
-    /// information for health events including the event start and end time and the status.
+    /// information for health events including the event start and end times, and the status.
     /// 
     ///  <note> 
     /// <para>
@@ -44,6 +45,7 @@ namespace Amazon.InternetMonitor.Model
     {
         private DateTime? _endTime;
         private HealthEventStatus _eventStatus;
+        private string _linkedAccountId;
         private int? _maxResults;
         private string _monitorName;
         private string _nextToken;
@@ -84,6 +86,29 @@ namespace Amazon.InternetMonitor.Model
         internal bool IsSetEventStatus()
         {
             return this._eventStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LinkedAccountId. 
+        /// <para>
+        /// The account ID for an account that you've set up cross-account sharing for in Amazon
+        /// CloudWatch Internet Monitor. You configure cross-account sharing by using Amazon CloudWatch
+        /// Observability Access Manager. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cwim-cross-account.html">Internet
+        /// Monitor cross-account observability</a> in the Amazon CloudWatch Internet Monitor
+        /// User Guide.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=12, Max=12)]
+        public string LinkedAccountId
+        {
+            get { return this._linkedAccountId; }
+            set { this._linkedAccountId = value; }
+        }
+
+        // Check to see if LinkedAccountId property is set
+        internal bool IsSetLinkedAccountId()
+        {
+            return this._linkedAccountId != null;
         }
 
         /// <summary>

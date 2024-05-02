@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ServiceCatalog.Model
     public partial class ListStackInstancesForProvisionedProductResponse : AmazonWebServiceResponse
     {
         private string _nextPageToken;
-        private List<StackInstance> _stackInstances = new List<StackInstance>();
+        private List<StackInstance> _stackInstances = AWSConfigs.InitializeCollections ? new List<StackInstance>() : null;
 
         /// <summary>
         /// Gets and sets the property NextPageToken. 
@@ -71,7 +72,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if StackInstances property is set
         internal bool IsSetStackInstances()
         {
-            return this._stackInstances != null && this._stackInstances.Count > 0; 
+            return this._stackInstances != null && (this._stackInstances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

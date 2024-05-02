@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lambda.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class ListEventSourceMappingsResponse : AmazonWebServiceResponse
     {
-        private List<EventSourceMappingConfiguration> _eventSourceMappings = new List<EventSourceMappingConfiguration>();
+        private List<EventSourceMappingConfiguration> _eventSourceMappings = AWSConfigs.InitializeCollections ? new List<EventSourceMappingConfiguration>() : null;
         private string _nextMarker;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Lambda.Model
         // Check to see if EventSourceMappings property is set
         internal bool IsSetEventSourceMappings()
         {
-            return this._eventSourceMappings != null && this._eventSourceMappings.Count > 0; 
+            return this._eventSourceMappings != null && (this._eventSourceMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

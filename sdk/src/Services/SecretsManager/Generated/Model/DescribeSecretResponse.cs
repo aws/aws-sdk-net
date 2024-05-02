@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecretsManager.Model
 {
     /// <summary>
@@ -45,12 +46,12 @@ namespace Amazon.SecretsManager.Model
         private DateTime? _nextRotationDate;
         private string _owningService;
         private string _primaryRegion;
-        private List<ReplicationStatusType> _replicationStatus = new List<ReplicationStatusType>();
+        private List<ReplicationStatusType> _replicationStatus = AWSConfigs.InitializeCollections ? new List<ReplicationStatusType>() : null;
         private bool? _rotationEnabled;
         private string _rotationLambdaARN;
         private RotationRulesType _rotationRules;
-        private List<Tag> _tags = new List<Tag>();
-        private Dictionary<string, List<string>> _versionIdsToStages = new Dictionary<string, List<string>>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private Dictionary<string, List<string>> _versionIdsToStages = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
 
         /// <summary>
         /// Gets and sets the property ARN. 
@@ -239,6 +240,12 @@ namespace Amazon.SecretsManager.Model
         /// If rotation fails, Secrets Manager retries the entire rotation process multiple times.
         /// If rotation is unsuccessful, this date may be in the past.
         /// </para>
+        ///  
+        /// <para>
+        /// This date represents the latest date that rotation will occur, but it is not an approximate
+        /// rotation date. In some cases, for example if you turn off automatic rotation and then
+        /// turn it back on, the next rotation may occur much sooner than this date.
+        /// </para>
         /// </summary>
         public DateTime? NextRotationDate
         {
@@ -321,7 +328,7 @@ namespace Amazon.SecretsManager.Model
         // Check to see if ReplicationStatus property is set
         internal bool IsSetReplicationStatus()
         {
-            return this._replicationStatus != null && this._replicationStatus.Count > 0; 
+            return this._replicationStatus != null && (this._replicationStatus.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -403,7 +410,7 @@ namespace Amazon.SecretsManager.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -452,7 +459,7 @@ namespace Amazon.SecretsManager.Model
         // Check to see if VersionIdsToStages property is set
         internal bool IsSetVersionIdsToStages()
         {
-            return this._versionIdsToStages != null && this._versionIdsToStages.Count > 0; 
+            return this._versionIdsToStages != null && (this._versionIdsToStages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Personalize.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Personalize.Model
     /// </summary>
     public partial class ListBatchInferenceJobsResponse : AmazonWebServiceResponse
     {
-        private List<BatchInferenceJobSummary> _batchInferenceJobs = new List<BatchInferenceJobSummary>();
+        private List<BatchInferenceJobSummary> _batchInferenceJobs = AWSConfigs.InitializeCollections ? new List<BatchInferenceJobSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.Personalize.Model
         // Check to see if BatchInferenceJobs property is set
         internal bool IsSetBatchInferenceJobs()
         {
-            return this._batchInferenceJobs != null && this._batchInferenceJobs.Count > 0; 
+            return this._batchInferenceJobs != null && (this._batchInferenceJobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

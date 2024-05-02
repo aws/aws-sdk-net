@@ -26,11 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Batch.Model
 {
     /// <summary>
     /// An object that represents any node overrides to a job definition that's used in a
-    /// <a>SubmitJob</a> API operation.
+    /// <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_SubmitJob.html">SubmitJob</a>
+    /// API operation.
     /// 
     ///  <note> 
     /// <para>
@@ -41,7 +43,7 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class NodeOverrides
     {
-        private List<NodePropertyOverride> _nodePropertyOverrides = new List<NodePropertyOverride>();
+        private List<NodePropertyOverride> _nodePropertyOverrides = AWSConfigs.InitializeCollections ? new List<NodePropertyOverride>() : null;
         private int? _numNodes;
 
         /// <summary>
@@ -59,7 +61,7 @@ namespace Amazon.Batch.Model
         // Check to see if NodePropertyOverrides property is set
         internal bool IsSetNodePropertyOverrides()
         {
-            return this._nodePropertyOverrides != null && this._nodePropertyOverrides.Count > 0; 
+            return this._nodePropertyOverrides != null && (this._nodePropertyOverrides.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

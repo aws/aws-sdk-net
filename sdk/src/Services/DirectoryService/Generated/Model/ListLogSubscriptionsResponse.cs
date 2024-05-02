@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DirectoryService.Model
     /// </summary>
     public partial class ListLogSubscriptionsResponse : AmazonWebServiceResponse
     {
-        private List<LogSubscription> _logSubscriptions = new List<LogSubscription>();
+        private List<LogSubscription> _logSubscriptions = AWSConfigs.InitializeCollections ? new List<LogSubscription>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.DirectoryService.Model
         // Check to see if LogSubscriptions property is set
         internal bool IsSetLogSubscriptions()
         {
-            return this._logSubscriptions != null && this._logSubscriptions.Count > 0; 
+            return this._logSubscriptions != null && (this._logSubscriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

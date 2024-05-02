@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppIntegrationsService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AppIntegrationsService.Model
     /// </summary>
     public partial class ListEventIntegrationAssociationsResponse : AmazonWebServiceResponse
     {
-        private List<EventIntegrationAssociation> _eventIntegrationAssociations = new List<EventIntegrationAssociation>();
+        private List<EventIntegrationAssociation> _eventIntegrationAssociations = AWSConfigs.InitializeCollections ? new List<EventIntegrationAssociation>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.AppIntegrationsService.Model
         // Check to see if EventIntegrationAssociations property is set
         internal bool IsSetEventIntegrationAssociations()
         {
-            return this._eventIntegrationAssociations != null && this._eventIntegrationAssociations.Count > 0; 
+            return this._eventIntegrationAssociations != null && (this._eventIntegrationAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

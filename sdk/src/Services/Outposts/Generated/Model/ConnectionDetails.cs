@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Outposts.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Outposts.Model
     /// </summary>
     public partial class ConnectionDetails
     {
-        private List<string> _allowedIps = new List<string>();
+        private List<string> _allowedIps = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _clientPublicKey;
         private string _clientTunnelAddress;
         private string _serverEndpoint;
@@ -55,7 +56,7 @@ namespace Amazon.Outposts.Model
         // Check to see if AllowedIps property is set
         internal bool IsSetAllowedIps()
         {
-            return this._allowedIps != null && this._allowedIps.Count > 0; 
+            return this._allowedIps != null && (this._allowedIps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

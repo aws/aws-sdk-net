@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -44,7 +45,7 @@ namespace Amazon.EC2.Model
         private bool? _ipv6Supported;
         private int? _maximumNetworkCards;
         private int? _maximumNetworkInterfaces;
-        private List<NetworkCardInfo> _networkCards = new List<NetworkCardInfo>();
+        private List<NetworkCardInfo> _networkCards = AWSConfigs.InitializeCollections ? new List<NetworkCardInfo>() : null;
         private string _networkPerformance;
 
         /// <summary>
@@ -263,7 +264,7 @@ namespace Amazon.EC2.Model
         // Check to see if NetworkCards property is set
         internal bool IsSetNetworkCards()
         {
-            return this._networkCards != null && this._networkCards.Count > 0; 
+            return this._networkCards != null && (this._networkCards.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

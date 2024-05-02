@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFrontKeyValueStore.Model
 {
     /// <summary>
@@ -34,10 +35,10 @@ namespace Amazon.CloudFrontKeyValueStore.Model
     /// </summary>
     public partial class UpdateKeysRequest : AmazonCloudFrontKeyValueStoreRequest
     {
-        private List<DeleteKeyRequestListItem> _deletes = new List<DeleteKeyRequestListItem>();
+        private List<DeleteKeyRequestListItem> _deletes = AWSConfigs.InitializeCollections ? new List<DeleteKeyRequestListItem>() : null;
         private string _ifMatch;
         private string _kvsARN;
-        private List<PutKeyRequestListItem> _puts = new List<PutKeyRequestListItem>();
+        private List<PutKeyRequestListItem> _puts = AWSConfigs.InitializeCollections ? new List<PutKeyRequestListItem>() : null;
 
         /// <summary>
         /// Gets and sets the property Deletes. 
@@ -54,7 +55,7 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         // Check to see if Deletes property is set
         internal bool IsSetDeletes()
         {
-            return this._deletes != null && this._deletes.Count > 0; 
+            return this._deletes != null && (this._deletes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -111,7 +112,7 @@ namespace Amazon.CloudFrontKeyValueStore.Model
         // Check to see if Puts property is set
         internal bool IsSetPuts()
         {
-            return this._puts != null && this._puts.Count > 0; 
+            return this._puts != null && (this._puts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

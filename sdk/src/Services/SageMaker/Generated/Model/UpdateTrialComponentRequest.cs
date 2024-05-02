@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -36,12 +37,12 @@ namespace Amazon.SageMaker.Model
     {
         private string _displayName;
         private DateTime? _endTime;
-        private Dictionary<string, TrialComponentArtifact> _inputArtifacts = new Dictionary<string, TrialComponentArtifact>();
-        private List<string> _inputArtifactsToRemove = new List<string>();
-        private Dictionary<string, TrialComponentArtifact> _outputArtifacts = new Dictionary<string, TrialComponentArtifact>();
-        private List<string> _outputArtifactsToRemove = new List<string>();
-        private Dictionary<string, TrialComponentParameterValue> _parameters = new Dictionary<string, TrialComponentParameterValue>();
-        private List<string> _parametersToRemove = new List<string>();
+        private Dictionary<string, TrialComponentArtifact> _inputArtifacts = AWSConfigs.InitializeCollections ? new Dictionary<string, TrialComponentArtifact>() : null;
+        private List<string> _inputArtifactsToRemove = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, TrialComponentArtifact> _outputArtifacts = AWSConfigs.InitializeCollections ? new Dictionary<string, TrialComponentArtifact>() : null;
+        private List<string> _outputArtifactsToRemove = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, TrialComponentParameterValue> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, TrialComponentParameterValue>() : null;
+        private List<string> _parametersToRemove = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _startTime;
         private TrialComponentStatus _status;
         private string _trialComponentName;
@@ -102,7 +103,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if InputArtifacts property is set
         internal bool IsSetInputArtifacts()
         {
-            return this._inputArtifacts != null && this._inputArtifacts.Count > 0; 
+            return this._inputArtifacts != null && (this._inputArtifacts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -120,7 +121,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if InputArtifactsToRemove property is set
         internal bool IsSetInputArtifactsToRemove()
         {
-            return this._inputArtifactsToRemove != null && this._inputArtifactsToRemove.Count > 0; 
+            return this._inputArtifactsToRemove != null && (this._inputArtifactsToRemove.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -141,7 +142,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if OutputArtifacts property is set
         internal bool IsSetOutputArtifacts()
         {
-            return this._outputArtifacts != null && this._outputArtifacts.Count > 0; 
+            return this._outputArtifacts != null && (this._outputArtifacts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -159,7 +160,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if OutputArtifactsToRemove property is set
         internal bool IsSetOutputArtifactsToRemove()
         {
-            return this._outputArtifactsToRemove != null && this._outputArtifactsToRemove.Count > 0; 
+            return this._outputArtifactsToRemove != null && (this._outputArtifactsToRemove.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -180,7 +181,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -198,7 +199,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ParametersToRemove property is set
         internal bool IsSetParametersToRemove()
         {
-            return this._parametersToRemove != null && this._parametersToRemove.Count > 0; 
+            return this._parametersToRemove != null && (this._parametersToRemove.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

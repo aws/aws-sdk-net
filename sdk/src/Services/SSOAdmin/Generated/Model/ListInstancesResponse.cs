@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SSOAdmin.Model
     /// </summary>
     public partial class ListInstancesResponse : AmazonWebServiceResponse
     {
-        private List<InstanceMetadata> _instances = new List<InstanceMetadata>();
+        private List<InstanceMetadata> _instances = AWSConfigs.InitializeCollections ? new List<InstanceMetadata>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.SSOAdmin.Model
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this._instances != null && this._instances.Count > 0; 
+            return this._instances != null && (this._instances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

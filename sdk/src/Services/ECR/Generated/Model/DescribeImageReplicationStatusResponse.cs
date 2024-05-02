@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECR.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ECR.Model
     public partial class DescribeImageReplicationStatusResponse : AmazonWebServiceResponse
     {
         private ImageIdentifier _imageId;
-        private List<ImageReplicationStatus> _replicationStatuses = new List<ImageReplicationStatus>();
+        private List<ImageReplicationStatus> _replicationStatuses = AWSConfigs.InitializeCollections ? new List<ImageReplicationStatus>() : null;
         private string _repositoryName;
 
         /// <summary>
@@ -67,7 +68,7 @@ namespace Amazon.ECR.Model
         // Check to see if ReplicationStatuses property is set
         internal bool IsSetReplicationStatuses()
         {
-            return this._replicationStatuses != null && this._replicationStatuses.Count > 0; 
+            return this._replicationStatuses != null && (this._replicationStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

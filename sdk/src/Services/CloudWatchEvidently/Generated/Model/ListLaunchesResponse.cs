@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchEvidently.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CloudWatchEvidently.Model
     /// </summary>
     public partial class ListLaunchesResponse : AmazonWebServiceResponse
     {
-        private List<Launch> _launches = new List<Launch>();
+        private List<Launch> _launches = AWSConfigs.InitializeCollections ? new List<Launch>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if Launches property is set
         internal bool IsSetLaunches()
         {
-            return this._launches != null && this._launches.Count > 0; 
+            return this._launches != null && (this._launches.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

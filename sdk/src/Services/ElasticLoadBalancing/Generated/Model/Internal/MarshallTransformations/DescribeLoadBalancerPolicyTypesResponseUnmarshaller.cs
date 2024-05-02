@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -84,6 +85,10 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
                     if (context.TestExpression("PolicyTypeDescriptions/member", targetDepth))
                     {
                         var unmarshaller = PolicyTypeDescriptionUnmarshaller.Instance;
+                        if (response.PolicyTypeDescriptions == null)
+                        {
+                            response.PolicyTypeDescriptions = new List<PolicyTypeDescription>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.PolicyTypeDescriptions.Add(item);
                         continue;

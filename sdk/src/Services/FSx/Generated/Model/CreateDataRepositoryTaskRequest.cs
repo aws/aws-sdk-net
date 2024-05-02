@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FSx.Model
 {
     /// <summary>
@@ -61,10 +62,10 @@ namespace Amazon.FSx.Model
         private long? _capacityToRelease;
         private string _clientRequestToken;
         private string _fileSystemId;
-        private List<string> _paths = new List<string>();
+        private List<string> _paths = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ReleaseConfiguration _releaseConfiguration;
         private CompletionReport _report;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private DataRepositoryTaskType _type;
 
         /// <summary>
@@ -169,7 +170,7 @@ namespace Amazon.FSx.Model
         // Check to see if Paths property is set
         internal bool IsSetPaths()
         {
-            return this._paths != null && this._paths.Count > 0; 
+            return this._paths != null && (this._paths.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -227,7 +228,7 @@ namespace Amazon.FSx.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

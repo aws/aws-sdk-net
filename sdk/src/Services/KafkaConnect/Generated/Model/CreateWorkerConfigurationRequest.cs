@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KafkaConnect.Model
 {
     /// <summary>
@@ -37,6 +38,7 @@ namespace Amazon.KafkaConnect.Model
         private string _description;
         private string _name;
         private string _propertiesFileContent;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -93,6 +95,25 @@ namespace Amazon.KafkaConnect.Model
         internal bool IsSetPropertiesFileContent()
         {
             return this._propertiesFileContent != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags you want to attach to the worker configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

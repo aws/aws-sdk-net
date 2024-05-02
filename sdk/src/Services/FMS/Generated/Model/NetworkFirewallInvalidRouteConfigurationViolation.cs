@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FMS.Model
 {
     /// <summary>
@@ -37,15 +38,15 @@ namespace Amazon.FMS.Model
     {
         private string _actualFirewallEndpoint;
         private string _actualFirewallSubnetId;
-        private List<Route> _actualFirewallSubnetRoutes = new List<Route>();
-        private List<Route> _actualInternetGatewayRoutes = new List<Route>();
-        private List<string> _affectedSubnets = new List<string>();
+        private List<Route> _actualFirewallSubnetRoutes = AWSConfigs.InitializeCollections ? new List<Route>() : null;
+        private List<Route> _actualInternetGatewayRoutes = AWSConfigs.InitializeCollections ? new List<Route>() : null;
+        private List<string> _affectedSubnets = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _currentFirewallSubnetRouteTable;
         private string _currentInternetGatewayRouteTable;
         private string _expectedFirewallEndpoint;
         private string _expectedFirewallSubnetId;
-        private List<ExpectedRoute> _expectedFirewallSubnetRoutes = new List<ExpectedRoute>();
-        private List<ExpectedRoute> _expectedInternetGatewayRoutes = new List<ExpectedRoute>();
+        private List<ExpectedRoute> _expectedFirewallSubnetRoutes = AWSConfigs.InitializeCollections ? new List<ExpectedRoute>() : null;
+        private List<ExpectedRoute> _expectedInternetGatewayRoutes = AWSConfigs.InitializeCollections ? new List<ExpectedRoute>() : null;
         private string _internetGatewayId;
         private bool? _isRouteTableUsedInDifferentAZ;
         private string _routeTableId;
@@ -105,7 +106,7 @@ namespace Amazon.FMS.Model
         // Check to see if ActualFirewallSubnetRoutes property is set
         internal bool IsSetActualFirewallSubnetRoutes()
         {
-            return this._actualFirewallSubnetRoutes != null && this._actualFirewallSubnetRoutes.Count > 0; 
+            return this._actualFirewallSubnetRoutes != null && (this._actualFirewallSubnetRoutes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -123,7 +124,7 @@ namespace Amazon.FMS.Model
         // Check to see if ActualInternetGatewayRoutes property is set
         internal bool IsSetActualInternetGatewayRoutes()
         {
-            return this._actualInternetGatewayRoutes != null && this._actualInternetGatewayRoutes.Count > 0; 
+            return this._actualInternetGatewayRoutes != null && (this._actualInternetGatewayRoutes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -141,7 +142,7 @@ namespace Amazon.FMS.Model
         // Check to see if AffectedSubnets property is set
         internal bool IsSetAffectedSubnets()
         {
-            return this._affectedSubnets != null && this._affectedSubnets.Count > 0; 
+            return this._affectedSubnets != null && (this._affectedSubnets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -235,7 +236,7 @@ namespace Amazon.FMS.Model
         // Check to see if ExpectedFirewallSubnetRoutes property is set
         internal bool IsSetExpectedFirewallSubnetRoutes()
         {
-            return this._expectedFirewallSubnetRoutes != null && this._expectedFirewallSubnetRoutes.Count > 0; 
+            return this._expectedFirewallSubnetRoutes != null && (this._expectedFirewallSubnetRoutes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -253,7 +254,7 @@ namespace Amazon.FMS.Model
         // Check to see if ExpectedInternetGatewayRoutes property is set
         internal bool IsSetExpectedInternetGatewayRoutes()
         {
-            return this._expectedInternetGatewayRoutes != null && this._expectedInternetGatewayRoutes.Count > 0; 
+            return this._expectedInternetGatewayRoutes != null && (this._expectedInternetGatewayRoutes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

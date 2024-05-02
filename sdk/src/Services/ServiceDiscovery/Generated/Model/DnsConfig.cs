@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.ServiceDiscovery.Model
     /// </summary>
     public partial class DnsConfig
     {
-        private List<DnsRecord> _dnsRecords = new List<DnsRecord>();
+        private List<DnsRecord> _dnsRecords = AWSConfigs.InitializeCollections ? new List<DnsRecord>() : null;
         private string _namespaceId;
         private RoutingPolicy _routingPolicy;
 
@@ -62,7 +63,7 @@ namespace Amazon.ServiceDiscovery.Model
         // Check to see if DnsRecords property is set
         internal bool IsSetDnsRecords()
         {
-            return this._dnsRecords != null && this._dnsRecords.Count > 0; 
+            return this._dnsRecords != null && (this._dnsRecords.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

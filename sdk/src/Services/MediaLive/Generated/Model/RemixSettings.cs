@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class RemixSettings
     {
-        private List<AudioChannelMapping> _channelMappings = new List<AudioChannelMapping>();
+        private List<AudioChannelMapping> _channelMappings = AWSConfigs.InitializeCollections ? new List<AudioChannelMapping>() : null;
         private int? _channelsIn;
         private int? _channelsOut;
 
@@ -51,7 +52,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if ChannelMappings property is set
         internal bool IsSetChannelMappings()
         {
-            return this._channelMappings != null && this._channelMappings.Count > 0; 
+            return this._channelMappings != null && (this._channelMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

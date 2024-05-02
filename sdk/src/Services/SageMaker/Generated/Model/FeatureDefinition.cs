@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -97,6 +98,20 @@ namespace Amazon.SageMaker.Model
         /// The name of a feature. The type must be a string. <c>FeatureName</c> cannot be any
         /// of the following: <c>is_deleted</c>, <c>write_time</c>, <c>api_invocation_time</c>.
         /// </para>
+        ///  
+        /// <para>
+        /// The name:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Must start with an alphanumeric character.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Can only include alphanumeric characters, underscores, and hyphens. Spaces are not
+        /// allowed.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
         public string FeatureName

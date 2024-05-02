@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.EC2.Model
     public partial class UnassignIpv6AddressesResponse : AmazonWebServiceResponse
     {
         private string _networkInterfaceId;
-        private List<string> _unassignedIpv6Addresses = new List<string>();
-        private List<string> _unassignedIpv6Prefixes = new List<string>();
+        private List<string> _unassignedIpv6Addresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _unassignedIpv6Prefixes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NetworkInterfaceId. 
@@ -70,7 +71,7 @@ namespace Amazon.EC2.Model
         // Check to see if UnassignedIpv6Addresses property is set
         internal bool IsSetUnassignedIpv6Addresses()
         {
-            return this._unassignedIpv6Addresses != null && this._unassignedIpv6Addresses.Count > 0; 
+            return this._unassignedIpv6Addresses != null && (this._unassignedIpv6Addresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -88,7 +89,7 @@ namespace Amazon.EC2.Model
         // Check to see if UnassignedIpv6Prefixes property is set
         internal bool IsSetUnassignedIpv6Prefixes()
         {
-            return this._unassignedIpv6Prefixes != null && this._unassignedIpv6Prefixes.Count > 0; 
+            return this._unassignedIpv6Prefixes != null && (this._unassignedIpv6Prefixes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

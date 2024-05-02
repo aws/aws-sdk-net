@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.GuardDuty.Model
         private string _imagePrefix;
         private string _name;
         private SecurityContext _securityContext;
-        private List<VolumeMount> _volumeMounts = new List<VolumeMount>();
+        private List<VolumeMount> _volumeMounts = AWSConfigs.InitializeCollections ? new List<VolumeMount>() : null;
 
         /// <summary>
         /// Gets and sets the property ContainerRuntime. 
@@ -166,7 +167,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if VolumeMounts property is set
         internal bool IsSetVolumeMounts()
         {
-            return this._volumeMounts != null && this._volumeMounts.Count > 0; 
+            return this._volumeMounts != null && (this._volumeMounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GameLift.Model
 {
     /// <summary>
@@ -61,7 +62,7 @@ namespace Amazon.GameLift.Model
     public partial class ResumeGameServerGroupRequest : AmazonGameLiftRequest
     {
         private string _gameServerGroupName;
-        private List<string> _resumeActions = new List<string>();
+        private List<string> _resumeActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property GameServerGroupName. 
@@ -98,7 +99,7 @@ namespace Amazon.GameLift.Model
         // Check to see if ResumeActions property is set
         internal bool IsSetResumeActions()
         {
-            return this._resumeActions != null && this._resumeActions.Count > 0; 
+            return this._resumeActions != null && (this._resumeActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

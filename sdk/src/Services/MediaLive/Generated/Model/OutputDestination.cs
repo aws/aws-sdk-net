@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.MediaLive.Model
     public partial class OutputDestination
     {
         private string _id;
-        private List<MediaPackageOutputDestinationSettings> _mediaPackageSettings = new List<MediaPackageOutputDestinationSettings>();
+        private List<MediaPackageOutputDestinationSettings> _mediaPackageSettings = AWSConfigs.InitializeCollections ? new List<MediaPackageOutputDestinationSettings>() : null;
         private MultiplexProgramChannelDestinationSettings _multiplexSettings;
-        private List<OutputDestinationSettings> _settings = new List<OutputDestinationSettings>();
+        private List<OutputDestinationSettings> _settings = AWSConfigs.InitializeCollections ? new List<OutputDestinationSettings>() : null;
 
         /// <summary>
         /// Gets and sets the property Id. User-specified id. This is used in an output group
@@ -67,7 +68,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if MediaPackageSettings property is set
         internal bool IsSetMediaPackageSettings()
         {
-            return this._mediaPackageSettings != null && this._mediaPackageSettings.Count > 0; 
+            return this._mediaPackageSettings != null && (this._mediaPackageSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -99,7 +100,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if Settings property is set
         internal bool IsSetSettings()
         {
-            return this._settings != null && this._settings.Count > 0; 
+            return this._settings != null && (this._settings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

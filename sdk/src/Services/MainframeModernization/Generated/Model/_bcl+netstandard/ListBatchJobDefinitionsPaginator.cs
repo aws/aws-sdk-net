@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MainframeModernization.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.MainframeModernization.Model
         /// Enumerable containing all of the BatchJobDefinitions
         /// </summary>
         public IPaginatedEnumerable<BatchJobDefinition> BatchJobDefinitions => 
-            new PaginatedResultKeyResponse<ListBatchJobDefinitionsResponse, BatchJobDefinition>(this, (i) => i.BatchJobDefinitions);
+            new PaginatedResultKeyResponse<ListBatchJobDefinitionsResponse, BatchJobDefinition>(this, (i) => i.BatchJobDefinitions ?? new List<BatchJobDefinition>());
 
         internal ListBatchJobDefinitionsPaginator(IAmazonMainframeModernization client, ListBatchJobDefinitionsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.MainframeModernization.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListBatchJobDefinitionsResponse> IPaginator<ListBatchJobDefinitionsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListBatchJobDefinitionsResponse> IPaginator<ListBatchJobDefinitionsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

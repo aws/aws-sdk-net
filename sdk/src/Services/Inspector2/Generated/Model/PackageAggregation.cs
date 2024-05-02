@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class PackageAggregation
     {
-        private List<StringFilter> _packageNames = new List<StringFilter>();
+        private List<StringFilter> _packageNames = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
         private PackageSortBy _sortBy;
         private SortOrder _sortOrder;
 
@@ -53,7 +54,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if PackageNames property is set
         internal bool IsSetPackageNames()
         {
-            return this._packageNames != null && this._packageNames.Count > 0; 
+            return this._packageNames != null && (this._packageNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

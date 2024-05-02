@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KafkaConnect.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.KafkaConnect.Model
     public partial class CreateConnectorRequest : AmazonKafkaConnectRequest
     {
         private Capacity _capacity;
-        private Dictionary<string, string> _connectorConfiguration = new Dictionary<string, string>();
+        private Dictionary<string, string> _connectorConfiguration = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _connectorDescription;
         private string _connectorName;
         private KafkaCluster _kafkaCluster;
@@ -43,8 +44,9 @@ namespace Amazon.KafkaConnect.Model
         private KafkaClusterEncryptionInTransit _kafkaClusterEncryptionInTransit;
         private string _kafkaConnectVersion;
         private LogDelivery _logDelivery;
-        private List<Plugin> _plugins = new List<Plugin>();
+        private List<Plugin> _plugins = AWSConfigs.InitializeCollections ? new List<Plugin>() : null;
         private string _serviceExecutionRoleArn;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private WorkerConfiguration _workerConfiguration;
 
         /// <summary>
@@ -83,7 +85,7 @@ namespace Amazon.KafkaConnect.Model
         // Check to see if ConnectorConfiguration property is set
         internal bool IsSetConnectorConfiguration()
         {
-            return this._connectorConfiguration != null && this._connectorConfiguration.Count > 0; 
+            return this._connectorConfiguration != null && (this._connectorConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -220,9 +222,16 @@ namespace Amazon.KafkaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Plugins. 
+        /// Gets and sets the property Plugins. <important> 
         /// <para>
-        /// Specifies which plugins to use for the connector.
+        /// Amazon MSK Connect does not currently support specifying multiple plugins as a list.
+        /// To use more than one plugin for your connector, you can create a single custom plugin
+        /// using a ZIP file that bundles multiple plugins together.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// Specifies which plugin to use for the connector. You must specify a single-element
+        /// list containing one <c>customPlugin</c> object.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -235,7 +244,7 @@ namespace Amazon.KafkaConnect.Model
         // Check to see if Plugins property is set
         internal bool IsSetPlugins()
         {
-            return this._plugins != null && this._plugins.Count > 0; 
+            return this._plugins != null && (this._plugins.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -258,6 +267,25 @@ namespace Amazon.KafkaConnect.Model
         internal bool IsSetServiceExecutionRoleArn()
         {
             return this._serviceExecutionRoleArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags you want to attach to the connector.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

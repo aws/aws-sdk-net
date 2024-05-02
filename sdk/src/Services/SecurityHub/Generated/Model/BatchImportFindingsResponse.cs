@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SecurityHub.Model
     public partial class BatchImportFindingsResponse : AmazonWebServiceResponse
     {
         private int? _failedCount;
-        private List<ImportFindingsError> _failedFindings = new List<ImportFindingsError>();
+        private List<ImportFindingsError> _failedFindings = AWSConfigs.InitializeCollections ? new List<ImportFindingsError>() : null;
         private int? _successCount;
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if FailedFindings property is set
         internal bool IsSetFailedFindings()
         {
-            return this._failedFindings != null && this._failedFindings.Count > 0; 
+            return this._failedFindings != null && (this._failedFindings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

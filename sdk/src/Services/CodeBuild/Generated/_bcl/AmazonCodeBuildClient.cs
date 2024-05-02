@@ -33,6 +33,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.CodeBuild
 {
     /// <summary>
@@ -2413,7 +2414,16 @@ namespace Amazon.CodeBuild
 
 
         /// <summary>
-        /// Starts running a build.
+        /// Starts running a build with the settings defined in the project. These setting include:
+        /// how to run a build, where to get the source code, which build environment to use,
+        /// which build commands to run, and where to store the build output.
+        /// 
+        ///  
+        /// <para>
+        /// You can also start a build run by overriding some of the build settings in the project.
+        /// The overrides only apply for that specific start build request. The settings in the
+        /// project are unaltered.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartBuild service method.</param>
         /// 
@@ -2440,7 +2450,16 @@ namespace Amazon.CodeBuild
 
 
         /// <summary>
-        /// Starts running a build.
+        /// Starts running a build with the settings defined in the project. These setting include:
+        /// how to run a build, where to get the source code, which build environment to use,
+        /// which build commands to run, and where to store the build output.
+        /// 
+        ///  
+        /// <para>
+        /// You can also start a build run by overriding some of the build settings in the project.
+        /// The overrides only apply for that specific start build request. The settings in the
+        /// project are unaltered.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartBuild service method.</param>
         /// <param name="cancellationToken">

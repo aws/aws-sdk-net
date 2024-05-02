@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
@@ -41,9 +42,9 @@ namespace Amazon.ComputeOptimizer.Model
     /// </summary>
     public partial class GetLambdaFunctionRecommendationsRequest : AmazonComputeOptimizerRequest
     {
-        private List<string> _accountIds = new List<string>();
-        private List<LambdaFunctionRecommendationFilter> _filters = new List<LambdaFunctionRecommendationFilter>();
-        private List<string> _functionArns = new List<string>();
+        private List<string> _accountIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<LambdaFunctionRecommendationFilter> _filters = AWSConfigs.InitializeCollections ? new List<LambdaFunctionRecommendationFilter>() : null;
+        private List<string> _functionArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -71,7 +72,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if AccountIds property is set
         internal bool IsSetAccountIds()
         {
-            return this._accountIds != null && this._accountIds.Count > 0; 
+            return this._accountIds != null && (this._accountIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -90,7 +91,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -117,7 +118,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if FunctionArns property is set
         internal bool IsSetFunctionArns()
         {
-            return this._functionArns != null && this._functionArns.Count > 0; 
+            return this._functionArns != null && (this._functionArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

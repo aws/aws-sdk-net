@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.DatabaseMigrationService.Model
     public partial class DescribeRecommendationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Recommendation> _recommendations = new List<Recommendation>();
+        private List<Recommendation> _recommendations = AWSConfigs.InitializeCollections ? new List<Recommendation>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +74,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if Recommendations property is set
         internal bool IsSetRecommendations()
         {
-            return this._recommendations != null && this._recommendations.Count > 0; 
+            return this._recommendations != null && (this._recommendations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

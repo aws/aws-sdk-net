@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LoRaWANMulticastSession requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDlDr())
             {
                 context.Writer.WritePropertyName("DlDr");
@@ -66,7 +69,7 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSessionStartTime())
             {
                 context.Writer.WritePropertyName("SessionStartTime");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601(requestObject.SessionStartTime));
+                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.SessionStartTime));
             }
 
             if(requestObject.IsSetSessionTimeout())

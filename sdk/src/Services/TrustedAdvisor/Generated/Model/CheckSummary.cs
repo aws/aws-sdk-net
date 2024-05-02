@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.TrustedAdvisor.Model
 {
     /// <summary>
@@ -34,12 +35,12 @@ namespace Amazon.TrustedAdvisor.Model
     public partial class CheckSummary
     {
         private string _arn;
-        private List<string> _awsServices = new List<string>();
+        private List<string> _awsServices = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _description;
         private string _id;
-        private Dictionary<string, string> _metadata = new Dictionary<string, string>();
+        private Dictionary<string, string> _metadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _name;
-        private List<string> _pillars = new List<string>();
+        private List<string> _pillars = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private RecommendationSource _source;
 
         /// <summary>
@@ -77,7 +78,7 @@ namespace Amazon.TrustedAdvisor.Model
         // Check to see if AwsServices property is set
         internal bool IsSetAwsServices()
         {
-            return this._awsServices != null && this._awsServices.Count > 0; 
+            return this._awsServices != null && (this._awsServices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -134,7 +135,7 @@ namespace Amazon.TrustedAdvisor.Model
         // Check to see if Metadata property is set
         internal bool IsSetMetadata()
         {
-            return this._metadata != null && this._metadata.Count > 0; 
+            return this._metadata != null && (this._metadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -172,7 +173,7 @@ namespace Amazon.TrustedAdvisor.Model
         // Check to see if Pillars property is set
         internal bool IsSetPillars()
         {
-            return this._pillars != null && this._pillars.Count > 0; 
+            return this._pillars != null && (this._pillars.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

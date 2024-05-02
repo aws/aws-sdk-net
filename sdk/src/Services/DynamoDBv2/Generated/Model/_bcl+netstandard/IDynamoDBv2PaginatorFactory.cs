@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the dynamodb-2012-08-10.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>

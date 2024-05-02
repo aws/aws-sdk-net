@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class UpdateAutomaticTapeCreationPolicyRequest : AmazonStorageGatewayRequest
     {
-        private List<AutomaticTapeCreationRule> _automaticTapeCreationRules = new List<AutomaticTapeCreationRule>();
+        private List<AutomaticTapeCreationRule> _automaticTapeCreationRules = AWSConfigs.InitializeCollections ? new List<AutomaticTapeCreationRule>() : null;
         private string _gatewayARN;
 
         /// <summary>
@@ -65,7 +66,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if AutomaticTapeCreationRules property is set
         internal bool IsSetAutomaticTapeCreationRules()
         {
-            return this._automaticTapeCreationRules != null && this._automaticTapeCreationRules.Count > 0; 
+            return this._automaticTapeCreationRules != null && (this._automaticTapeCreationRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

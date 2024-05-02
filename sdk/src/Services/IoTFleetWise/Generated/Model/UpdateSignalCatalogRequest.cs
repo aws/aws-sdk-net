@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTFleetWise.Model
 {
     /// <summary>
@@ -36,9 +37,9 @@ namespace Amazon.IoTFleetWise.Model
     {
         private string _description;
         private string _name;
-        private List<Node> _nodesToAdd = new List<Node>();
-        private List<string> _nodesToRemove = new List<string>();
-        private List<Node> _nodesToUpdate = new List<Node>();
+        private List<Node> _nodesToAdd = AWSConfigs.InitializeCollections ? new List<Node>() : null;
+        private List<string> _nodesToRemove = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Node> _nodesToUpdate = AWSConfigs.InitializeCollections ? new List<Node>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -94,7 +95,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if NodesToAdd property is set
         internal bool IsSetNodesToAdd()
         {
-            return this._nodesToAdd != null && this._nodesToAdd.Count > 0; 
+            return this._nodesToAdd != null && (this._nodesToAdd.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -113,7 +114,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if NodesToRemove property is set
         internal bool IsSetNodesToRemove()
         {
-            return this._nodesToRemove != null && this._nodesToRemove.Count > 0; 
+            return this._nodesToRemove != null && (this._nodesToRemove.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -132,7 +133,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if NodesToUpdate property is set
         internal bool IsSetNodesToUpdate()
         {
-            return this._nodesToUpdate != null && this._nodesToUpdate.Count > 0; 
+            return this._nodesToUpdate != null && (this._nodesToUpdate.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

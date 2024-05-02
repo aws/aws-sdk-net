@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -84,6 +85,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AnomalyDetectors/member", targetDepth))
                     {
                         var unmarshaller = AnomalyDetectorUnmarshaller.Instance;
+                        if (response.AnomalyDetectors == null)
+                        {
+                            response.AnomalyDetectors = new List<AnomalyDetector>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.AnomalyDetectors.Add(item);
                         continue;

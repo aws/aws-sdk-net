@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class MetricResultV2
     {
-        private List<MetricDataV2> _collections = new List<MetricDataV2>();
-        private Dictionary<string, string> _dimensions = new Dictionary<string, string>();
+        private List<MetricDataV2> _collections = AWSConfigs.InitializeCollections ? new List<MetricDataV2>() : null;
+        private Dictionary<string, string> _dimensions = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private MetricInterval _metricInterval;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.Connect.Model
         // Check to see if Collections property is set
         internal bool IsSetCollections()
         {
-            return this._collections != null && this._collections.Count > 0; 
+            return this._collections != null && (this._collections.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.Connect.Model
         // Check to see if Dimensions property is set
         internal bool IsSetDimensions()
         {
-            return this._dimensions != null && this._dimensions.Count > 0; 
+            return this._dimensions != null && (this._dimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

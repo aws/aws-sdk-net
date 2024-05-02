@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EKS.Model
 {
     /// <summary>
@@ -39,10 +40,10 @@ namespace Amazon.EKS.Model
         private string _accessEntryArn;
         private string _clusterName;
         private DateTime? _createdAt;
-        private List<string> _kubernetesGroups = new List<string>();
+        private List<string> _kubernetesGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _modifiedAt;
         private string _principalArn;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _type;
         private string _username;
 
@@ -116,7 +117,7 @@ namespace Amazon.EKS.Model
         // Check to see if KubernetesGroups property is set
         internal bool IsSetKubernetesGroups()
         {
-            return this._kubernetesGroups != null && this._kubernetesGroups.Count > 0; 
+            return this._kubernetesGroups != null && (this._kubernetesGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -182,7 +183,7 @@ namespace Amazon.EKS.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

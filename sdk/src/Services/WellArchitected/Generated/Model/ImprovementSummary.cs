@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
@@ -33,8 +34,9 @@ namespace Amazon.WellArchitected.Model
     /// </summary>
     public partial class ImprovementSummary
     {
-        private List<ChoiceImprovementPlan> _improvementPlans = new List<ChoiceImprovementPlan>();
+        private List<ChoiceImprovementPlan> _improvementPlans = AWSConfigs.InitializeCollections ? new List<ChoiceImprovementPlan>() : null;
         private string _improvementPlanUrl;
+        private JiraConfiguration _jiraConfiguration;
         private string _pillarId;
         private string _questionId;
         private string _questionTitle;
@@ -55,7 +57,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if ImprovementPlans property is set
         internal bool IsSetImprovementPlans()
         {
-            return this._improvementPlans != null && this._improvementPlans.Count > 0; 
+            return this._improvementPlans != null && (this._improvementPlans.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,6 +74,24 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetImprovementPlanUrl()
         {
             return this._improvementPlanUrl != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JiraConfiguration. 
+        /// <para>
+        /// Configuration of the Jira integration.
+        /// </para>
+        /// </summary>
+        public JiraConfiguration JiraConfiguration
+        {
+            get { return this._jiraConfiguration; }
+            set { this._jiraConfiguration = value; }
+        }
+
+        // Check to see if JiraConfiguration property is set
+        internal bool IsSetJiraConfiguration()
+        {
+            return this._jiraConfiguration != null;
         }
 
         /// <summary>

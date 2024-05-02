@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class CompositeSlotTypeSetting
     {
-        private List<SubSlotTypeComposition> _subSlots = new List<SubSlotTypeComposition>();
+        private List<SubSlotTypeComposition> _subSlots = AWSConfigs.InitializeCollections ? new List<SubSlotTypeComposition>() : null;
 
         /// <summary>
         /// Gets and sets the property SubSlots. 
@@ -52,7 +53,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if SubSlots property is set
         internal bool IsSetSubSlots()
         {
-            return this._subSlots != null && this._subSlots.Count > 0; 
+            return this._subSlots != null && (this._subSlots.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

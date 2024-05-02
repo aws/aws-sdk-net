@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Chime.Model
 {
     /// <summary>
@@ -40,8 +41,8 @@ namespace Amazon.Chime.Model
         private DateTime? _createdTimestamp;
         private License _defaultLicense;
         private string _name;
-        private List<SigninDelegateGroup> _signinDelegateGroups = new List<SigninDelegateGroup>();
-        private List<string> _supportedLicenses = new List<string>();
+        private List<SigninDelegateGroup> _signinDelegateGroups = AWSConfigs.InitializeCollections ? new List<SigninDelegateGroup>() : null;
+        private List<string> _supportedLicenses = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -189,7 +190,7 @@ namespace Amazon.Chime.Model
         // Check to see if SigninDelegateGroups property is set
         internal bool IsSetSigninDelegateGroups()
         {
-            return this._signinDelegateGroups != null && this._signinDelegateGroups.Count > 0; 
+            return this._signinDelegateGroups != null && (this._signinDelegateGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -207,7 +208,7 @@ namespace Amazon.Chime.Model
         // Check to see if SupportedLicenses property is set
         internal bool IsSetSupportedLicenses()
         {
-            return this._supportedLicenses != null && this._supportedLicenses.Count > 0; 
+            return this._supportedLicenses != null && (this._supportedLicenses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

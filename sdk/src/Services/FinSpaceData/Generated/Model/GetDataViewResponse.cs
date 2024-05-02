@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FinSpaceData.Model
 {
     /// <summary>
@@ -43,8 +44,8 @@ namespace Amazon.FinSpaceData.Model
         private DataViewDestinationTypeParams _destinationTypeParams;
         private DataViewErrorInfo _errorInfo;
         private long? _lastModifiedTime;
-        private List<string> _partitionColumns = new List<string>();
-        private List<string> _sortColumns = new List<string>();
+        private List<string> _partitionColumns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _sortColumns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DataViewStatus _status;
 
         /// <summary>
@@ -232,7 +233,7 @@ namespace Amazon.FinSpaceData.Model
         // Check to see if PartitionColumns property is set
         internal bool IsSetPartitionColumns()
         {
-            return this._partitionColumns != null && this._partitionColumns.Count > 0; 
+            return this._partitionColumns != null && (this._partitionColumns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -250,7 +251,7 @@ namespace Amazon.FinSpaceData.Model
         // Check to see if SortColumns property is set
         internal bool IsSetSortColumns()
         {
-            return this._sortColumns != null && this._sortColumns.Count > 0; 
+            return this._sortColumns != null && (this._sortColumns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

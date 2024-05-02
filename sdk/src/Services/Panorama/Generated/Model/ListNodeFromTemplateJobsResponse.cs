@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Panorama.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Panorama.Model
     public partial class ListNodeFromTemplateJobsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<NodeFromTemplateJob> _nodeFromTemplateJobs = new List<NodeFromTemplateJob>();
+        private List<NodeFromTemplateJob> _nodeFromTemplateJobs = AWSConfigs.InitializeCollections ? new List<NodeFromTemplateJob>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.Panorama.Model
         // Check to see if NodeFromTemplateJobs property is set
         internal bool IsSetNodeFromTemplateJobs()
         {
-            return this._nodeFromTemplateJobs != null && this._nodeFromTemplateJobs.Count > 0; 
+            return this._nodeFromTemplateJobs != null && (this._nodeFromTemplateJobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

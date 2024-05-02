@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.SageMaker.Model
         private string _failureReason;
         private DateTime? _lastModifiedTime;
         private MonitoringExecutionSummary _lastMonitoringExecutionSummary;
-        private List<MonitoringAlertSummary> _monitoringAlertSummaries = new List<MonitoringAlertSummary>();
+        private List<MonitoringAlertSummary> _monitoringAlertSummaries = AWSConfigs.InitializeCollections ? new List<MonitoringAlertSummary>() : null;
         private string _monitoringScheduleArn;
         private MonitoringScheduleConfig _monitoringScheduleConfig;
         private string _monitoringScheduleName;
@@ -166,7 +167,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if MonitoringAlertSummaries property is set
         internal bool IsSetMonitoringAlertSummaries()
         {
-            return this._monitoringAlertSummaries != null && this._monitoringAlertSummaries.Count > 0; 
+            return this._monitoringAlertSummaries != null && (this._monitoringAlertSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

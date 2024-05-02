@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
@@ -36,10 +37,10 @@ namespace Amazon.EntityResolution.Model
         private DateTime? _createdAt;
         private string _description;
         private IdMappingTechniques _idMappingTechniques;
-        private List<IdMappingWorkflowInputSource> _inputSourceConfig = new List<IdMappingWorkflowInputSource>();
-        private List<IdMappingWorkflowOutputSource> _outputSourceConfig = new List<IdMappingWorkflowOutputSource>();
+        private List<IdMappingWorkflowInputSource> _inputSourceConfig = AWSConfigs.InitializeCollections ? new List<IdMappingWorkflowInputSource>() : null;
+        private List<IdMappingWorkflowOutputSource> _outputSourceConfig = AWSConfigs.InitializeCollections ? new List<IdMappingWorkflowOutputSource>() : null;
         private string _roleArn;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DateTime? _updatedAt;
         private string _workflowArn;
         private string _workflowName;
@@ -118,7 +119,7 @@ namespace Amazon.EntityResolution.Model
         // Check to see if InputSourceConfig property is set
         internal bool IsSetInputSourceConfig()
         {
-            return this._inputSourceConfig != null && this._inputSourceConfig.Count > 0; 
+            return this._inputSourceConfig != null && (this._inputSourceConfig.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -128,7 +129,7 @@ namespace Amazon.EntityResolution.Model
         /// and <c>KMSArn</c>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1)]
+        [AWSProperty(Min=1, Max=1)]
         public List<IdMappingWorkflowOutputSource> OutputSourceConfig
         {
             get { return this._outputSourceConfig; }
@@ -138,17 +139,17 @@ namespace Amazon.EntityResolution.Model
         // Check to see if OutputSourceConfig property is set
         internal bool IsSetOutputSourceConfig()
         {
-            return this._outputSourceConfig != null && this._outputSourceConfig.Count > 0; 
+            return this._outputSourceConfig != null && (this._outputSourceConfig.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role. Entity Resolution assumes this role
-        /// to access resources on your behalf.
+        /// to access Amazon Web Services resources on your behalf.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=32, Max=512)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -177,7 +178,7 @@ namespace Amazon.EntityResolution.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

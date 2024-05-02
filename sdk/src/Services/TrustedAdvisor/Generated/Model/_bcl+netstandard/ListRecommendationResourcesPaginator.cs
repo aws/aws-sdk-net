@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.TrustedAdvisor.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.TrustedAdvisor.Model
         /// Enumerable containing all of the RecommendationResourceSummaries
         /// </summary>
         public IPaginatedEnumerable<RecommendationResourceSummary> RecommendationResourceSummaries => 
-            new PaginatedResultKeyResponse<ListRecommendationResourcesResponse, RecommendationResourceSummary>(this, (i) => i.RecommendationResourceSummaries);
+            new PaginatedResultKeyResponse<ListRecommendationResourcesResponse, RecommendationResourceSummary>(this, (i) => i.RecommendationResourceSummaries ?? new List<RecommendationResourceSummary>());
 
         internal ListRecommendationResourcesPaginator(IAmazonTrustedAdvisor client, ListRecommendationResourcesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.TrustedAdvisor.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListRecommendationResourcesResponse> IPaginator<ListRecommendationResourcesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListRecommendationResourcesResponse> IPaginator<ListRecommendationResourcesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

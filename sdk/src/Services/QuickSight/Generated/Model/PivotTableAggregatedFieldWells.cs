@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class PivotTableAggregatedFieldWells
     {
-        private List<DimensionField> _columns = new List<DimensionField>();
-        private List<DimensionField> _rows = new List<DimensionField>();
-        private List<MeasureField> _values = new List<MeasureField>();
+        private List<DimensionField> _columns = AWSConfigs.InitializeCollections ? new List<DimensionField>() : null;
+        private List<DimensionField> _rows = AWSConfigs.InitializeCollections ? new List<DimensionField>() : null;
+        private List<MeasureField> _values = AWSConfigs.InitializeCollections ? new List<MeasureField>() : null;
 
         /// <summary>
         /// Gets and sets the property Columns. 
@@ -53,7 +54,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Columns property is set
         internal bool IsSetColumns()
         {
-            return this._columns != null && this._columns.Count > 0; 
+            return this._columns != null && (this._columns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Rows property is set
         internal bool IsSetRows()
         {
-            return this._rows != null && this._rows.Count > 0; 
+            return this._rows != null && (this._rows.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Values property is set
         internal bool IsSetValues()
         {
-            return this._values != null && this._values.Count > 0; 
+            return this._values != null && (this._values.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

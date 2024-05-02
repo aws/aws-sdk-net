@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaPackageV2.Model
 {
     /// <summary>
@@ -38,9 +39,10 @@ namespace Amazon.MediaPackageV2.Model
         private string _channelName;
         private ContainerType _containerType;
         private DateTime? _createdAt;
+        private List<ListDashManifestConfiguration> _dashManifests = AWSConfigs.InitializeCollections ? new List<ListDashManifestConfiguration>() : null;
         private string _description;
-        private List<ListHlsManifestConfiguration> _hlsManifests = new List<ListHlsManifestConfiguration>();
-        private List<ListLowLatencyHlsManifestConfiguration> _lowLatencyHlsManifests = new List<ListLowLatencyHlsManifestConfiguration>();
+        private List<ListHlsManifestConfiguration> _hlsManifests = AWSConfigs.InitializeCollections ? new List<ListHlsManifestConfiguration>() : null;
+        private List<ListLowLatencyHlsManifestConfiguration> _lowLatencyHlsManifests = AWSConfigs.InitializeCollections ? new List<ListLowLatencyHlsManifestConfiguration>() : null;
         private DateTime? _modifiedAt;
         private string _originEndpointName;
 
@@ -143,6 +145,24 @@ namespace Amazon.MediaPackageV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DashManifests. 
+        /// <para>
+        /// A DASH manifest configuration.
+        /// </para>
+        /// </summary>
+        public List<ListDashManifestConfiguration> DashManifests
+        {
+            get { return this._dashManifests; }
+            set { this._dashManifests = value; }
+        }
+
+        // Check to see if DashManifests property is set
+        internal bool IsSetDashManifests()
+        {
+            return this._dashManifests != null && (this._dashManifests.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// Any descriptive information that you want to add to the origin endpoint for future
@@ -177,7 +197,7 @@ namespace Amazon.MediaPackageV2.Model
         // Check to see if HlsManifests property is set
         internal bool IsSetHlsManifests()
         {
-            return this._hlsManifests != null && this._hlsManifests.Count > 0; 
+            return this._hlsManifests != null && (this._hlsManifests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -195,7 +215,7 @@ namespace Amazon.MediaPackageV2.Model
         // Check to see if LowLatencyHlsManifests property is set
         internal bool IsSetLowLatencyHlsManifests()
         {
-            return this._lowLatencyHlsManifests != null && this._lowLatencyHlsManifests.Count > 0; 
+            return this._lowLatencyHlsManifests != null && (this._lowLatencyHlsManifests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

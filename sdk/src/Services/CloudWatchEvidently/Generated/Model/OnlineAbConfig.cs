@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchEvidently.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.CloudWatchEvidently.Model
     public partial class OnlineAbConfig
     {
         private string _controlTreatmentName;
-        private Dictionary<string, long> _treatmentWeights = new Dictionary<string, long>();
+        private Dictionary<string, long> _treatmentWeights = AWSConfigs.InitializeCollections ? new Dictionary<string, long>() : null;
 
         /// <summary>
         /// Gets and sets the property ControlTreatmentName. 
@@ -76,7 +77,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if TreatmentWeights property is set
         internal bool IsSetTreatmentWeights()
         {
-            return this._treatmentWeights != null && this._treatmentWeights.Count > 0; 
+            return this._treatmentWeights != null && (this._treatmentWeights.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

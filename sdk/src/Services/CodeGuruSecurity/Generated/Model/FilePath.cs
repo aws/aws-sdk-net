@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeGuruSecurity.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CodeGuruSecurity.Model
     /// </summary>
     public partial class FilePath
     {
-        private List<CodeLine> _codeSnippet = new List<CodeLine>();
+        private List<CodeLine> _codeSnippet = AWSConfigs.InitializeCollections ? new List<CodeLine>() : null;
         private int? _endLine;
         private string _name;
         private string _path;
@@ -56,7 +57,7 @@ namespace Amazon.CodeGuruSecurity.Model
         // Check to see if CodeSnippet property is set
         internal bool IsSetCodeSnippet()
         {
-            return this._codeSnippet != null && this._codeSnippet.Count > 0; 
+            return this._codeSnippet != null && (this._codeSnippet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

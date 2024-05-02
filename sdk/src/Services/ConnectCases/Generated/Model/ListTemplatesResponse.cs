@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConnectCases.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ConnectCases.Model
     public partial class ListTemplatesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TemplateSummary> _templates = new List<TemplateSummary>();
+        private List<TemplateSummary> _templates = AWSConfigs.InitializeCollections ? new List<TemplateSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.ConnectCases.Model
         // Check to see if Templates property is set
         internal bool IsSetTemplates()
         {
-            return this._templates != null && this._templates.Count > 0; 
+            return this._templates != null && (this._templates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FIS.Model
 {
     /// <summary>
@@ -35,8 +36,9 @@ namespace Amazon.FIS.Model
     public partial class StartExperimentRequest : AmazonFISRequest
     {
         private string _clientToken;
+        private StartExperimentExperimentOptionsInput _experimentOptions;
         private string _experimentTemplateId;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -56,6 +58,24 @@ namespace Amazon.FIS.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExperimentOptions. 
+        /// <para>
+        /// The experiment options for running the experiment.
+        /// </para>
+        /// </summary>
+        public StartExperimentExperimentOptionsInput ExperimentOptions
+        {
+            get { return this._experimentOptions; }
+            set { this._experimentOptions = value; }
+        }
+
+        // Check to see if ExperimentOptions property is set
+        internal bool IsSetExperimentOptions()
+        {
+            return this._experimentOptions != null;
         }
 
         /// <summary>
@@ -93,7 +113,7 @@ namespace Amazon.FIS.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

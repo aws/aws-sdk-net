@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkManager.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.NetworkManager.Model
     /// </summary>
     public partial class CoreNetworkSegment
     {
-        private List<string> _edgeLocations = new List<string>();
+        private List<string> _edgeLocations = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
-        private List<string> _sharedSegments = new List<string>();
+        private List<string> _sharedSegments = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property EdgeLocations. 
@@ -53,7 +54,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if EdgeLocations property is set
         internal bool IsSetEdgeLocations()
         {
-            return this._edgeLocations != null && this._edgeLocations.Count > 0; 
+            return this._edgeLocations != null && (this._edgeLocations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -90,7 +91,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if SharedSegments property is set
         internal bool IsSetSharedSegments()
         {
-            return this._sharedSegments != null && this._sharedSegments.Count > 0; 
+            return this._sharedSegments != null && (this._sharedSegments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
     /// </summary>
     public partial class ListMediaCapturePipelinesResponse : AmazonWebServiceResponse
     {
-        private List<MediaCapturePipelineSummary> _mediaCapturePipelines = new List<MediaCapturePipelineSummary>();
+        private List<MediaCapturePipelineSummary> _mediaCapturePipelines = AWSConfigs.InitializeCollections ? new List<MediaCapturePipelineSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         // Check to see if MediaCapturePipelines property is set
         internal bool IsSetMediaCapturePipelines()
         {
-            return this._mediaCapturePipelines != null && this._mediaCapturePipelines.Count > 0; 
+            return this._mediaCapturePipelines != null && (this._mediaCapturePipelines.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

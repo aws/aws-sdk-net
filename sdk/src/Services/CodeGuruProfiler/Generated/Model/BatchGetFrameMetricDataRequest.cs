@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.CodeGuruProfiler.Model
     public partial class BatchGetFrameMetricDataRequest : AmazonCodeGuruProfilerRequest
     {
         private DateTime? _endTime;
-        private List<FrameMetric> _frameMetrics = new List<FrameMetric>();
+        private List<FrameMetric> _frameMetrics = AWSConfigs.InitializeCollections ? new List<FrameMetric>() : null;
         private string _period;
         private string _profilingGroupName;
         private DateTime? _startTime;
@@ -80,7 +81,7 @@ namespace Amazon.CodeGuruProfiler.Model
         // Check to see if FrameMetrics property is set
         internal bool IsSetFrameMetrics()
         {
-            return this._frameMetrics != null && this._frameMetrics.Count > 0; 
+            return this._frameMetrics != null && (this._frameMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

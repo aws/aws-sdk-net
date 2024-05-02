@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -66,13 +67,13 @@ namespace Amazon.LookoutforVision.Model.Internal.MarshallTransformations
             request.AddPathResource("{projectName}", StringUtils.FromString(publicRequest.ProjectName));
             
             if (publicRequest.IsSetAfterCreationDate())
-                request.Parameters.Add("createdAfter", StringUtils.FromDateTimeToISO8601(publicRequest.AfterCreationDate));
+                request.Parameters.Add("createdAfter", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.AfterCreationDate));
             
             if (publicRequest.IsSetAnomalyClass())
                 request.Parameters.Add("anomalyClass", StringUtils.FromString(publicRequest.AnomalyClass));
             
             if (publicRequest.IsSetBeforeCreationDate())
-                request.Parameters.Add("createdBefore", StringUtils.FromDateTimeToISO8601(publicRequest.BeforeCreationDate));
+                request.Parameters.Add("createdBefore", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.BeforeCreationDate));
             
             if (publicRequest.IsSetLabeled())
                 request.Parameters.Add("labeled", StringUtils.FromBool(publicRequest.Labeled));

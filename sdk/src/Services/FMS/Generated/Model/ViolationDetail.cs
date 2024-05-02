@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FMS.Model
 {
     /// <summary>
@@ -38,9 +39,9 @@ namespace Amazon.FMS.Model
         private string _policyId;
         private string _resourceDescription;
         private string _resourceId;
-        private List<Tag> _resourceTags = new List<Tag>();
+        private List<Tag> _resourceTags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _resourceType;
-        private List<ResourceViolation> _resourceViolations = new List<ResourceViolation>();
+        private List<ResourceViolation> _resourceViolations = AWSConfigs.InitializeCollections ? new List<ResourceViolation>() : null;
 
         /// <summary>
         /// Gets and sets the property MemberAccount. 
@@ -134,7 +135,7 @@ namespace Amazon.FMS.Model
         // Check to see if ResourceTags property is set
         internal bool IsSetResourceTags()
         {
-            return this._resourceTags != null && this._resourceTags.Count > 0; 
+            return this._resourceTags != null && (this._resourceTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -172,7 +173,7 @@ namespace Amazon.FMS.Model
         // Check to see if ResourceViolations property is set
         internal bool IsSetResourceViolations()
         {
-            return this._resourceViolations != null && this._resourceViolations.Count > 0; 
+            return this._resourceViolations != null && (this._resourceViolations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

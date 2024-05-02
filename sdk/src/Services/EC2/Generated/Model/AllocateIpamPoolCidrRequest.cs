@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -49,11 +50,11 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class AllocateIpamPoolCidrRequest : AmazonEC2Request
     {
-        private List<string> _allowedCidrs = new List<string>();
+        private List<string> _allowedCidrs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _cidr;
         private string _clientToken;
         private string _description;
-        private List<string> _disallowedCidrs = new List<string>();
+        private List<string> _disallowedCidrs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _ipamPoolId;
         private int? _netmaskLength;
         private bool? _previewNextCidr;
@@ -74,7 +75,7 @@ namespace Amazon.EC2.Model
         // Check to see if AllowedCidrs property is set
         internal bool IsSetAllowedCidrs()
         {
-            return this._allowedCidrs != null && this._allowedCidrs.Count > 0; 
+            return this._allowedCidrs != null && (this._allowedCidrs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -164,7 +165,7 @@ namespace Amazon.EC2.Model
         // Check to see if DisallowedCidrs property is set
         internal bool IsSetDisallowedCidrs()
         {
-            return this._disallowedCidrs != null && this._disallowedCidrs.Count > 0; 
+            return this._disallowedCidrs != null && (this._disallowedCidrs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.Rekognition.Model
     public partial class IndexFacesResponse : AmazonWebServiceResponse
     {
         private string _faceModelVersion;
-        private List<FaceRecord> _faceRecords = new List<FaceRecord>();
+        private List<FaceRecord> _faceRecords = AWSConfigs.InitializeCollections ? new List<FaceRecord>() : null;
         private OrientationCorrection _orientationCorrection;
-        private List<UnindexedFace> _unindexedFaces = new List<UnindexedFace>();
+        private List<UnindexedFace> _unindexedFaces = AWSConfigs.InitializeCollections ? new List<UnindexedFace>() : null;
 
         /// <summary>
         /// Gets and sets the property FaceModelVersion. 
@@ -73,7 +74,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if FaceRecords property is set
         internal bool IsSetFaceRecords()
         {
-            return this._faceRecords != null && this._faceRecords.Count > 0; 
+            return this._faceRecords != null && (this._faceRecords.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -140,7 +141,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if UnindexedFaces property is set
         internal bool IsSetUnindexedFaces()
         {
-            return this._unindexedFaces != null && this._unindexedFaces.Count > 0; 
+            return this._unindexedFaces != null && (this._unindexedFaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

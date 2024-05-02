@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class GetInsightsRequest : AmazonSecurityHubRequest
     {
-        private List<string> _insightArns = new List<string>();
+        private List<string> _insightArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -55,7 +56,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if InsightArns property is set
         internal bool IsSetInsightArns()
         {
-            return this._insightArns != null && this._insightArns.Count > 0; 
+            return this._insightArns != null && (this._insightArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DeviceFarm.Model
     /// </summary>
     public partial class ListInstanceProfilesResponse : AmazonWebServiceResponse
     {
-        private List<InstanceProfile> _instanceProfiles = new List<InstanceProfile>();
+        private List<InstanceProfile> _instanceProfiles = AWSConfigs.InitializeCollections ? new List<InstanceProfile>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if InstanceProfiles property is set
         internal bool IsSetInstanceProfiles()
         {
-            return this._instanceProfiles != null && this._instanceProfiles.Count > 0; 
+            return this._instanceProfiles != null && (this._instanceProfiles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

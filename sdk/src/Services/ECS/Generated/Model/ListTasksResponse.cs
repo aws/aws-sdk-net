@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECS.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ECS.Model
     public partial class ListTasksResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<string> _taskArns = new List<string>();
+        private List<string> _taskArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.ECS.Model
         // Check to see if TaskArns property is set
         internal bool IsSetTaskArns()
         {
-            return this._taskArns != null && this._taskArns.Count > 0; 
+            return this._taskArns != null && (this._taskArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

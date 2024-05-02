@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.ConfigService.Model
         private bool? _includeDeletedResources;
         private int? _limit;
         private string _nextToken;
-        private List<string> _resourceIds = new List<string>();
+        private List<string> _resourceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _resourceName;
         private ResourceType _resourceType;
 
@@ -133,7 +134,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if ResourceIds property is set
         internal bool IsSetResourceIds()
         {
-            return this._resourceIds != null && this._resourceIds.Count > 0; 
+            return this._resourceIds != null && (this._resourceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

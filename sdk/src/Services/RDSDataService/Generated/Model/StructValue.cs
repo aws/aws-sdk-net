@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDSDataService.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.RDSDataService.Model
     /// </summary>
     public partial class StructValue
     {
-        private List<Value> _attributes = new List<Value>();
+        private List<Value> _attributes = AWSConfigs.InitializeCollections ? new List<Value>() : null;
 
         /// <summary>
         /// Gets and sets the property Attributes. 
@@ -57,7 +58,7 @@ namespace Amazon.RDSDataService.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

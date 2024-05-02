@@ -25,7 +25,7 @@ namespace Amazon.S3.Model
     /// </summary>
     public class S3KeyFilter
     {
-        private List<FilterRule> filterRules;
+        private List<FilterRule> filterRules = AWSConfigs.InitializeCollections ? new List<FilterRule>() : null;
 
         /// <summary>
         /// Gets and sets the filterRules property.
@@ -33,21 +33,14 @@ namespace Amazon.S3.Model
         /// </summary>
         public List<FilterRule> FilterRules
         {
-            get
-            {
-                if (this.filterRules == null)
-                    this.filterRules = new List<FilterRule>();
-
-                return this.filterRules;
-            }
+            get { return this.filterRules; }
             set { this.filterRules = value; }
         }
 
         // Check to see if FilterRules property is set
         internal bool IsSetFilterRules()
         {
-            return this.filterRules != null && this.filterRules.Count > 0;
+            return this.filterRules != null && (this.filterRules.Count > 0 || !AWSConfigs.InitializeCollections);
         }
-
     }
 }

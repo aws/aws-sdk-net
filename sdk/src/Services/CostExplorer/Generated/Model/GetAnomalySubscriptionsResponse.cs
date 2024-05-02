@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CostExplorer.Model
     /// </summary>
     public partial class GetAnomalySubscriptionsResponse : AmazonWebServiceResponse
     {
-        private List<AnomalySubscription> _anomalySubscriptions = new List<AnomalySubscription>();
+        private List<AnomalySubscription> _anomalySubscriptions = AWSConfigs.InitializeCollections ? new List<AnomalySubscription>() : null;
         private string _nextPageToken;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if AnomalySubscriptions property is set
         internal bool IsSetAnomalySubscriptions()
         {
-            return this._anomalySubscriptions != null && this._anomalySubscriptions.Count > 0; 
+            return this._anomalySubscriptions != null && (this._anomalySubscriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

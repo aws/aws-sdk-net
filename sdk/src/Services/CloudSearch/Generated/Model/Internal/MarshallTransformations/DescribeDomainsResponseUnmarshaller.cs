@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -84,6 +85,10 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DomainStatusList/member", targetDepth))
                     {
                         var unmarshaller = DomainStatusUnmarshaller.Instance;
+                        if (response.DomainStatusList == null)
+                        {
+                            response.DomainStatusList = new List<DomainStatus>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.DomainStatusList.Add(item);
                         continue;

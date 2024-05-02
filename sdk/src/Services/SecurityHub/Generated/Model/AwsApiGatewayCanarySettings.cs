@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.SecurityHub.Model
     {
         private string _deploymentId;
         private double? _percentTraffic;
-        private Dictionary<string, string> _stageVariableOverrides = new Dictionary<string, string>();
+        private Dictionary<string, string> _stageVariableOverrides = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private bool? _useStageCache;
 
         /// <summary>
@@ -95,7 +96,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if StageVariableOverrides property is set
         internal bool IsSetStageVariableOverrides()
         {
-            return this._stageVariableOverrides != null && this._stageVariableOverrides.Count > 0; 
+            return this._stageVariableOverrides != null && (this._stageVariableOverrides.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

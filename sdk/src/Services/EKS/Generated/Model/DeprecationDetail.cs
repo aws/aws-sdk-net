@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EKS.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EKS.Model
     /// </summary>
     public partial class DeprecationDetail
     {
-        private List<ClientStat> _clientStats = new List<ClientStat>();
+        private List<ClientStat> _clientStats = AWSConfigs.InitializeCollections ? new List<ClientStat>() : null;
         private string _replacedWith;
         private string _startServingReplacementVersion;
         private string _stopServingVersion;
@@ -55,7 +56,7 @@ namespace Amazon.EKS.Model
         // Check to see if ClientStats property is set
         internal bool IsSetClientStats()
         {
-            return this._clientStats != null && this._clientStats.Count > 0; 
+            return this._clientStats != null && (this._clientStats.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

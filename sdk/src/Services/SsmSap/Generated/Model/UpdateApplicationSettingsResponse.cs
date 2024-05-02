@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SsmSap.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SsmSap.Model
     public partial class UpdateApplicationSettingsResponse : AmazonWebServiceResponse
     {
         private string _message;
-        private List<string> _operationIds = new List<string>();
+        private List<string> _operationIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Message. 
@@ -69,7 +70,7 @@ namespace Amazon.SsmSap.Model
         // Check to see if OperationIds property is set
         internal bool IsSetOperationIds()
         {
-            return this._operationIds != null && this._operationIds.Count > 0; 
+            return this._operationIds != null && (this._operationIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
@@ -98,15 +99,15 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class AdminCreateUserRequest : AmazonCognitoIdentityProviderRequest
     {
-        private Dictionary<string, string> _clientMetadata = new Dictionary<string, string>();
-        private List<string> _desiredDeliveryMediums = new List<string>();
+        private Dictionary<string, string> _clientMetadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<string> _desiredDeliveryMediums = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _forceAliasCreation;
         private MessageActionType _messageAction;
         private string _temporaryPassword;
-        private List<AttributeType> _userAttributes = new List<AttributeType>();
+        private List<AttributeType> _userAttributes = AWSConfigs.InitializeCollections ? new List<AttributeType>() : null;
         private string _username;
         private string _userPoolId;
-        private List<AttributeType> _validationData = new List<AttributeType>();
+        private List<AttributeType> _validationData = AWSConfigs.InitializeCollections ? new List<AttributeType>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientMetadata. 
@@ -161,7 +162,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if ClientMetadata property is set
         internal bool IsSetClientMetadata()
         {
-            return this._clientMetadata != null && this._clientMetadata.Count > 0; 
+            return this._clientMetadata != null && (this._clientMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -181,7 +182,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if DesiredDeliveryMediums property is set
         internal bool IsSetDesiredDeliveryMediums()
         {
-            return this._desiredDeliveryMediums != null && this._desiredDeliveryMediums.Count > 0; 
+            return this._desiredDeliveryMediums != null && (this._desiredDeliveryMediums.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -325,7 +326,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if UserAttributes property is set
         internal bool IsSetUserAttributes()
         {
-            return this._userAttributes != null && this._userAttributes.Count > 0; 
+            return this._userAttributes != null && (this._userAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -414,7 +415,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if ValidationData property is set
         internal bool IsSetValidationData()
         {
-            return this._validationData != null && this._validationData.Count > 0; 
+            return this._validationData != null && (this._validationData.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

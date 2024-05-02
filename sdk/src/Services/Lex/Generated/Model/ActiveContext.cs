@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lex.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.Lex.Model
     public partial class ActiveContext
     {
         private string _name;
-        private Dictionary<string, string> _parameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ActiveContextTimeToLive _timeToLive;
 
         /// <summary>
@@ -76,7 +77,7 @@ namespace Amazon.Lex.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,14 +26,15 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// The role name can't contain invalid characters. Also verify that you specified an
     /// IAM role for notifications that includes the required trust policy. For information
-    /// about configuring the IAM role for Run Command notifications, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/rc-sns-notifications.html">Configuring
-    /// Amazon SNS Notifications for Run Command</a> in the <i>Amazon Web Services Systems
-    /// Manager User Guide</i>.
+    /// about configuring the IAM role for Run Command notifications, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+    /// Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon
+    /// Web Services Systems Manager User Guide</i>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
@@ -35,9 +36,9 @@ namespace Amazon.DynamoDBv2.Model
     public partial class StreamRecord
     {
         private DateTime? _approximateCreationDateTime;
-        private Dictionary<string, AttributeValue> _keys = new Dictionary<string, AttributeValue>();
-        private Dictionary<string, AttributeValue> _newImage = new Dictionary<string, AttributeValue>();
-        private Dictionary<string, AttributeValue> _oldImage = new Dictionary<string, AttributeValue>();
+        private Dictionary<string, AttributeValue> _keys = AWSConfigs.InitializeCollections ? new Dictionary<string, AttributeValue>() : null;
+        private Dictionary<string, AttributeValue> _newImage = AWSConfigs.InitializeCollections ? new Dictionary<string, AttributeValue>() : null;
+        private Dictionary<string, AttributeValue> _oldImage = AWSConfigs.InitializeCollections ? new Dictionary<string, AttributeValue>() : null;
         private string _sequenceNumber;
         private long? _sizeBytes;
         private StreamViewType _streamViewType;
@@ -76,7 +77,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if Keys property is set
         internal bool IsSetKeys()
         {
-            return this._keys != null && this._keys.Count > 0; 
+            return this._keys != null && (this._keys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -94,7 +95,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if NewImage property is set
         internal bool IsSetNewImage()
         {
-            return this._newImage != null && this._newImage.Count > 0; 
+            return this._newImage != null && (this._newImage.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -112,7 +113,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if OldImage property is set
         internal bool IsSetOldImage()
         {
-            return this._oldImage != null && this._oldImage.Count > 0; 
+            return this._oldImage != null && (this._oldImage.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

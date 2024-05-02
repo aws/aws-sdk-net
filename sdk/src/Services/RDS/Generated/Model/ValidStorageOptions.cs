@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -35,11 +36,11 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class ValidStorageOptions
     {
-        private List<DoubleRange> _iopsToStorageRatio = new List<DoubleRange>();
-        private List<Range> _provisionedIops = new List<Range>();
-        private List<Range> _provisionedStorageThroughput = new List<Range>();
-        private List<Range> _storageSize = new List<Range>();
-        private List<DoubleRange> _storageThroughputToIopsRatio = new List<DoubleRange>();
+        private List<DoubleRange> _iopsToStorageRatio = AWSConfigs.InitializeCollections ? new List<DoubleRange>() : null;
+        private List<Range> _provisionedIops = AWSConfigs.InitializeCollections ? new List<Range>() : null;
+        private List<Range> _provisionedStorageThroughput = AWSConfigs.InitializeCollections ? new List<Range>() : null;
+        private List<Range> _storageSize = AWSConfigs.InitializeCollections ? new List<Range>() : null;
+        private List<DoubleRange> _storageThroughputToIopsRatio = AWSConfigs.InitializeCollections ? new List<DoubleRange>() : null;
         private string _storageType;
         private bool? _supportsStorageAutoscaling;
 
@@ -59,7 +60,7 @@ namespace Amazon.RDS.Model
         // Check to see if IopsToStorageRatio property is set
         internal bool IsSetIopsToStorageRatio()
         {
-            return this._iopsToStorageRatio != null && this._iopsToStorageRatio.Count > 0; 
+            return this._iopsToStorageRatio != null && (this._iopsToStorageRatio.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -77,7 +78,7 @@ namespace Amazon.RDS.Model
         // Check to see if ProvisionedIops property is set
         internal bool IsSetProvisionedIops()
         {
-            return this._provisionedIops != null && this._provisionedIops.Count > 0; 
+            return this._provisionedIops != null && (this._provisionedIops.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -96,7 +97,7 @@ namespace Amazon.RDS.Model
         // Check to see if ProvisionedStorageThroughput property is set
         internal bool IsSetProvisionedStorageThroughput()
         {
-            return this._provisionedStorageThroughput != null && this._provisionedStorageThroughput.Count > 0; 
+            return this._provisionedStorageThroughput != null && (this._provisionedStorageThroughput.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -114,7 +115,7 @@ namespace Amazon.RDS.Model
         // Check to see if StorageSize property is set
         internal bool IsSetStorageSize()
         {
-            return this._storageSize != null && this._storageSize.Count > 0; 
+            return this._storageSize != null && (this._storageSize.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -132,13 +133,13 @@ namespace Amazon.RDS.Model
         // Check to see if StorageThroughputToIopsRatio property is set
         internal bool IsSetStorageThroughputToIopsRatio()
         {
-            return this._storageThroughputToIopsRatio != null && this._storageThroughputToIopsRatio.Count > 0; 
+            return this._storageThroughputToIopsRatio != null && (this._storageThroughputToIopsRatio.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        /// The valid storage types for your DB instance. For example: gp2, gp3, io1.
+        /// The valid storage types for your DB instance. For example: gp2, gp3, io1, io2.
         /// </para>
         /// </summary>
         public string StorageType

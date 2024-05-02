@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SSOAdmin.Model
     /// </summary>
     public partial class ListApplicationGrantsResponse : AmazonWebServiceResponse
     {
-        private List<GrantItem> _grants = new List<GrantItem>();
+        private List<GrantItem> _grants = AWSConfigs.InitializeCollections ? new List<GrantItem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.SSOAdmin.Model
         // Check to see if Grants property is set
         internal bool IsSetGrants()
         {
-            return this._grants != null && this._grants.Count > 0; 
+            return this._grants != null && (this._grants.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

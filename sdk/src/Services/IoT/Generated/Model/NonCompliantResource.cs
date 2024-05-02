@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class NonCompliantResource
     {
-        private Dictionary<string, string> _additionalInfo = new Dictionary<string, string>();
+        private Dictionary<string, string> _additionalInfo = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ResourceIdentifier _resourceIdentifier;
         private ResourceType _resourceType;
 
@@ -52,7 +53,7 @@ namespace Amazon.IoT.Model
         // Check to see if AdditionalInfo property is set
         internal bool IsSetAdditionalInfo()
         {
-            return this._additionalInfo != null && this._additionalInfo.Count > 0; 
+            return this._additionalInfo != null && (this._additionalInfo.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
@@ -45,9 +46,9 @@ namespace Amazon.GlueDataBrew.Model
         private string _name;
         private S3Location _outputLocation;
         private string _roleArn;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private int? _timeout;
-        private List<ValidationConfiguration> _validationConfigurations = new List<ValidationConfiguration>();
+        private List<ValidationConfiguration> _validationConfigurations = AWSConfigs.InitializeCollections ? new List<ValidationConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property Configuration. 
@@ -283,7 +284,7 @@ namespace Amazon.GlueDataBrew.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -322,7 +323,7 @@ namespace Amazon.GlueDataBrew.Model
         // Check to see if ValidationConfigurations property is set
         internal bool IsSetValidationConfigurations()
         {
-            return this._validationConfigurations != null && this._validationConfigurations.Count > 0; 
+            return this._validationConfigurations != null && (this._validationConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

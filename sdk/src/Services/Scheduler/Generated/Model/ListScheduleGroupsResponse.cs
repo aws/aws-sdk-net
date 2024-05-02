@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Scheduler.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Scheduler.Model
     public partial class ListScheduleGroupsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ScheduleGroupSummary> _scheduleGroups = new List<ScheduleGroupSummary>();
+        private List<ScheduleGroupSummary> _scheduleGroups = AWSConfigs.InitializeCollections ? new List<ScheduleGroupSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.Scheduler.Model
         // Check to see if ScheduleGroups property is set
         internal bool IsSetScheduleGroups()
         {
-            return this._scheduleGroups != null && this._scheduleGroups.Count > 0; 
+            return this._scheduleGroups != null && (this._scheduleGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

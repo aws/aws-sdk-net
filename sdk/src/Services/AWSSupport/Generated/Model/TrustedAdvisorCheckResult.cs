@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.AWSSupport.Model
     {
         private TrustedAdvisorCategorySpecificSummary _categorySpecificSummary;
         private string _checkId;
-        private List<TrustedAdvisorResourceDetail> _flaggedResources = new List<TrustedAdvisorResourceDetail>();
+        private List<TrustedAdvisorResourceDetail> _flaggedResources = AWSConfigs.InitializeCollections ? new List<TrustedAdvisorResourceDetail>() : null;
         private TrustedAdvisorResourcesSummary _resourcesSummary;
         private string _status;
         private string _timestamp;
@@ -95,7 +96,7 @@ namespace Amazon.AWSSupport.Model
         // Check to see if FlaggedResources property is set
         internal bool IsSetFlaggedResources()
         {
-            return this._flaggedResources != null && this._flaggedResources.Count > 0; 
+            return this._flaggedResources != null && (this._flaggedResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

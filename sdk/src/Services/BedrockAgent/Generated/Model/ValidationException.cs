@@ -26,17 +26,18 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// This exception is thrown when the request's input validation fails
+    /// Input validation failed. Check your request parameters and retry the request.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class ValidationException : AmazonBedrockAgentException
     {
-        private List<ValidationExceptionField> _fieldList = new List<ValidationExceptionField>();
+        private List<ValidationExceptionField> _fieldList = AWSConfigs.InitializeCollections ? new List<ValidationExceptionField>() : null;
 
         /// <summary>
         /// Constructs a new ValidationException with the specified error
@@ -119,7 +120,11 @@ namespace Amazon.BedrockAgent.Model
 #endif
 
         /// <summary>
-        /// Gets and sets the property FieldList.
+        /// Gets and sets the property FieldList. 
+        /// <para>
+        /// A list of objects containing fields that caused validation errors and their corresponding
+        /// validation error messages.
+        /// </para>
         /// </summary>
         public List<ValidationExceptionField> FieldList
         {
@@ -130,7 +135,7 @@ namespace Amazon.BedrockAgent.Model
         // Check to see if FieldList property is set
         internal bool IsSetFieldList()
         {
-            return this._fieldList != null && this._fieldList.Count > 0; 
+            return this._fieldList != null && (this._fieldList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

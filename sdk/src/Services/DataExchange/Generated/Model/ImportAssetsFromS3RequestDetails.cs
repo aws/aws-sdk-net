@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataExchange.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DataExchange.Model
     /// </summary>
     public partial class ImportAssetsFromS3RequestDetails
     {
-        private List<AssetSourceEntry> _assetSources = new List<AssetSourceEntry>();
+        private List<AssetSourceEntry> _assetSources = AWSConfigs.InitializeCollections ? new List<AssetSourceEntry>() : null;
         private string _dataSetId;
         private string _revisionId;
 
@@ -53,7 +54,7 @@ namespace Amazon.DataExchange.Model
         // Check to see if AssetSources property is set
         internal bool IsSetAssetSources()
         {
-            return this._assetSources != null && this._assetSources.Count > 0; 
+            return this._assetSources != null && (this._assetSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

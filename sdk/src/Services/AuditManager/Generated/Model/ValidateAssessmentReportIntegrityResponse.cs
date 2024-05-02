@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.AuditManager.Model
         private string _signatureDateTime;
         private string _signatureKeyId;
         private bool? _signatureValid;
-        private List<string> _validationErrors = new List<string>();
+        private List<string> _validationErrors = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property SignatureAlgorithm. 
@@ -130,7 +131,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if ValidationErrors property is set
         internal bool IsSetValidationErrors()
         {
-            return this._validationErrors != null && this._validationErrors.Count > 0; 
+            return this._validationErrors != null && (this._validationErrors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

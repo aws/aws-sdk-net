@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -44,7 +45,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeHostReservationOfferingsRequest : AmazonEC2Request
     {
-        private List<Filter> _filter = new List<Filter>();
+        private List<Filter> _filter = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
         private int? _maxDuration;
         private int? _maxResults;
         private int? _minDuration;
@@ -76,7 +77,7 @@ namespace Amazon.EC2.Model
         // Check to see if Filter property is set
         internal bool IsSetFilter()
         {
-            return this._filter != null && this._filter.Count > 0; 
+            return this._filter != null && (this._filter.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

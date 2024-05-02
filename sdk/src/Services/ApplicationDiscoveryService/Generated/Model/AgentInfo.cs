@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
     public partial class AgentInfo
     {
         private string _agentId;
-        private List<AgentNetworkInfo> _agentNetworkInfoList = new List<AgentNetworkInfo>();
+        private List<AgentNetworkInfo> _agentNetworkInfoList = AWSConfigs.InitializeCollections ? new List<AgentNetworkInfo>() : null;
         private string _agentType;
         private string _collectionStatus;
         private string _connectorId;
@@ -80,7 +81,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         // Check to see if AgentNetworkInfoList property is set
         internal bool IsSetAgentNetworkInfoList()
         {
-            return this._agentNetworkInfoList != null && this._agentNetworkInfoList.Count > 0; 
+            return this._agentNetworkInfoList != null && (this._agentNetworkInfoList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

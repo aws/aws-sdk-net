@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ChimeSDKMeetings.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ChimeSDKMeetings.Model
     /// </summary>
     public partial class ListAttendeesResponse : AmazonWebServiceResponse
     {
-        private List<Attendee> _attendees = new List<Attendee>();
+        private List<Attendee> _attendees = AWSConfigs.InitializeCollections ? new List<Attendee>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         // Check to see if Attendees property is set
         internal bool IsSetAttendees()
         {
-            return this._attendees != null && this._attendees.Count > 0; 
+            return this._attendees != null && (this._attendees.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

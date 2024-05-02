@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsEc2VpcDetails
     {
-        private List<CidrBlockAssociation> _cidrBlockAssociationSet = new List<CidrBlockAssociation>();
+        private List<CidrBlockAssociation> _cidrBlockAssociationSet = AWSConfigs.InitializeCollections ? new List<CidrBlockAssociation>() : null;
         private string _dhcpOptionsId;
-        private List<Ipv6CidrBlockAssociation> _ipv6CidrBlockAssociationSet = new List<Ipv6CidrBlockAssociation>();
+        private List<Ipv6CidrBlockAssociation> _ipv6CidrBlockAssociationSet = AWSConfigs.InitializeCollections ? new List<Ipv6CidrBlockAssociation>() : null;
         private string _state;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if CidrBlockAssociationSet property is set
         internal bool IsSetCidrBlockAssociationSet()
         {
-            return this._cidrBlockAssociationSet != null && this._cidrBlockAssociationSet.Count > 0; 
+            return this._cidrBlockAssociationSet != null && (this._cidrBlockAssociationSet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Ipv6CidrBlockAssociationSet property is set
         internal bool IsSetIpv6CidrBlockAssociationSet()
         {
-            return this._ipv6CidrBlockAssociationSet != null && this._ipv6CidrBlockAssociationSet.Count > 0; 
+            return this._ipv6CidrBlockAssociationSet != null && (this._ipv6CidrBlockAssociationSet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkSpacesWeb.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.WorkSpacesWeb.Model
     public partial class ListUserSettingsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<UserSettingsSummary> _userSettings = new List<UserSettingsSummary>();
+        private List<UserSettingsSummary> _userSettings = AWSConfigs.InitializeCollections ? new List<UserSettingsSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.WorkSpacesWeb.Model
         // Check to see if UserSettings property is set
         internal bool IsSetUserSettings()
         {
-            return this._userSettings != null && this._userSettings.Count > 0; 
+            return this._userSettings != null && (this._userSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

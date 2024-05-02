@@ -26,19 +26,20 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppConfig.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateExtension operation.
-    /// Updates an AppConfig extension. For more information about extensions, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
-    /// with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+    /// Updates an AppConfig extension. For more information about extensions, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Extending
+    /// workflows</a> in the <i>AppConfig User Guide</i>.
     /// </summary>
     public partial class UpdateExtensionRequest : AmazonAppConfigRequest
     {
-        private Dictionary<string, List<Action>> _actions = new Dictionary<string, List<Action>>();
+        private Dictionary<string, List<Action>> _actions = AWSConfigs.InitializeCollections ? new Dictionary<string, List<Action>>() : null;
         private string _description;
         private string _extensionIdentifier;
-        private Dictionary<string, Parameter> _parameters = new Dictionary<string, Parameter>();
+        private Dictionary<string, Parameter> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, Parameter>() : null;
         private int? _versionNumber;
 
         /// <summary>
@@ -57,7 +58,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if Actions property is set
         internal bool IsSetActions()
         {
-            return this._actions != null && this._actions.Count > 0; 
+            return this._actions != null && (this._actions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -104,7 +105,7 @@ namespace Amazon.AppConfig.Model
         /// One or more parameters for the actions called by the extension.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=5)]
+        [AWSProperty(Min=1, Max=10)]
         public Dictionary<string, Parameter> Parameters
         {
             get { return this._parameters; }
@@ -114,7 +115,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

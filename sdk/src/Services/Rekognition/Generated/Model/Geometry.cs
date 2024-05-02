@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Rekognition.Model
     public partial class Geometry
     {
         private BoundingBox _boundingBox;
-        private List<Point> _polygon = new List<Point>();
+        private List<Point> _polygon = AWSConfigs.InitializeCollections ? new List<Point>() : null;
 
         /// <summary>
         /// Gets and sets the property BoundingBox. 
@@ -70,7 +71,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if Polygon property is set
         internal bool IsSetPolygon()
         {
-            return this._polygon != null && this._polygon.Count > 0; 
+            return this._polygon != null && (this._polygon.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

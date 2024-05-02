@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -37,8 +38,8 @@ namespace Amazon.EC2.Model
     {
         private string _clientToken;
         private string _description;
-        private List<AddIpamOperatingRegion> _operatingRegions = new List<AddIpamOperatingRegion>();
-        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
+        private List<AddIpamOperatingRegion> _operatingRegions = AWSConfigs.InitializeCollections ? new List<AddIpamOperatingRegion>() : null;
+        private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -95,7 +96,7 @@ namespace Amazon.EC2.Model
         // Check to see if OperatingRegions property is set
         internal bool IsSetOperatingRegions()
         {
-            return this._operatingRegions != null && this._operatingRegions.Count > 0; 
+            return this._operatingRegions != null && (this._operatingRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -113,7 +114,7 @@ namespace Amazon.EC2.Model
         // Check to see if TagSpecifications property is set
         internal bool IsSetTagSpecifications()
         {
-            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
+            return this._tagSpecifications != null && (this._tagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

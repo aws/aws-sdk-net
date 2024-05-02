@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Neptunedata.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.Neptunedata.Model
     public partial class GetSparqlStreamResponse : AmazonWebServiceResponse
     {
         private string _format;
-        private Dictionary<string, string> _lastEventId = new Dictionary<string, string>();
+        private Dictionary<string, string> _lastEventId = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private long? _lastTrxTimestampInMillis;
-        private List<SparqlRecord> _records = new List<SparqlRecord>();
+        private List<SparqlRecord> _records = AWSConfigs.InitializeCollections ? new List<SparqlRecord>() : null;
         private int? _totalRecords;
 
         /// <summary>
@@ -81,7 +82,7 @@ namespace Amazon.Neptunedata.Model
         // Check to see if LastEventId property is set
         internal bool IsSetLastEventId()
         {
-            return this._lastEventId != null && this._lastEventId.Count > 0; 
+            return this._lastEventId != null && (this._lastEventId.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -120,7 +121,7 @@ namespace Amazon.Neptunedata.Model
         // Check to see if Records property is set
         internal bool IsSetRecords()
         {
-            return this._records != null && this._records.Count > 0; 
+            return this._records != null && (this._records.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
@@ -33,48 +34,48 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class FilterCriteria
     {
-        private List<StringFilter> _awsAccountId = new List<StringFilter>();
-        private List<StringFilter> _codeVulnerabilityDetectorName = new List<StringFilter>();
-        private List<StringFilter> _codeVulnerabilityDetectorTags = new List<StringFilter>();
-        private List<StringFilter> _codeVulnerabilityFilePath = new List<StringFilter>();
-        private List<StringFilter> _componentId = new List<StringFilter>();
-        private List<StringFilter> _componentType = new List<StringFilter>();
-        private List<StringFilter> _ec2InstanceImageId = new List<StringFilter>();
-        private List<StringFilter> _ec2InstanceSubnetId = new List<StringFilter>();
-        private List<StringFilter> _ec2InstanceVpcId = new List<StringFilter>();
-        private List<StringFilter> _ecrImageArchitecture = new List<StringFilter>();
-        private List<StringFilter> _ecrImageHash = new List<StringFilter>();
-        private List<DateFilter> _ecrImagePushedAt = new List<DateFilter>();
-        private List<StringFilter> _ecrImageRegistry = new List<StringFilter>();
-        private List<StringFilter> _ecrImageRepositoryName = new List<StringFilter>();
-        private List<StringFilter> _ecrImageTags = new List<StringFilter>();
-        private List<NumberFilter> _epssScore = new List<NumberFilter>();
-        private List<StringFilter> _exploitAvailable = new List<StringFilter>();
-        private List<StringFilter> _findingArn = new List<StringFilter>();
-        private List<StringFilter> _findingStatus = new List<StringFilter>();
-        private List<StringFilter> _findingType = new List<StringFilter>();
-        private List<DateFilter> _firstObservedAt = new List<DateFilter>();
-        private List<StringFilter> _fixAvailable = new List<StringFilter>();
-        private List<NumberFilter> _inspectorScore = new List<NumberFilter>();
-        private List<StringFilter> _lambdaFunctionExecutionRoleArn = new List<StringFilter>();
-        private List<DateFilter> _lambdaFunctionLastModifiedAt = new List<DateFilter>();
-        private List<StringFilter> _lambdaFunctionLayers = new List<StringFilter>();
-        private List<StringFilter> _lambdaFunctionName = new List<StringFilter>();
-        private List<StringFilter> _lambdaFunctionRuntime = new List<StringFilter>();
-        private List<DateFilter> _lastObservedAt = new List<DateFilter>();
-        private List<StringFilter> _networkProtocol = new List<StringFilter>();
-        private List<PortRangeFilter> _portRange = new List<PortRangeFilter>();
-        private List<StringFilter> _relatedVulnerabilities = new List<StringFilter>();
-        private List<StringFilter> _resourceId = new List<StringFilter>();
-        private List<MapFilter> _resourceTags = new List<MapFilter>();
-        private List<StringFilter> _resourceType = new List<StringFilter>();
-        private List<StringFilter> _severity = new List<StringFilter>();
-        private List<StringFilter> _title = new List<StringFilter>();
-        private List<DateFilter> _updatedAt = new List<DateFilter>();
-        private List<StringFilter> _vendorSeverity = new List<StringFilter>();
-        private List<StringFilter> _vulnerabilityId = new List<StringFilter>();
-        private List<StringFilter> _vulnerabilitySource = new List<StringFilter>();
-        private List<PackageFilter> _vulnerablePackages = new List<PackageFilter>();
+        private List<StringFilter> _awsAccountId = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _codeVulnerabilityDetectorName = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _codeVulnerabilityDetectorTags = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _codeVulnerabilityFilePath = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _componentId = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _componentType = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _ec2InstanceImageId = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _ec2InstanceSubnetId = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _ec2InstanceVpcId = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _ecrImageArchitecture = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _ecrImageHash = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<DateFilter> _ecrImagePushedAt = AWSConfigs.InitializeCollections ? new List<DateFilter>() : null;
+        private List<StringFilter> _ecrImageRegistry = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _ecrImageRepositoryName = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _ecrImageTags = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<NumberFilter> _epssScore = AWSConfigs.InitializeCollections ? new List<NumberFilter>() : null;
+        private List<StringFilter> _exploitAvailable = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _findingArn = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _findingStatus = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _findingType = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<DateFilter> _firstObservedAt = AWSConfigs.InitializeCollections ? new List<DateFilter>() : null;
+        private List<StringFilter> _fixAvailable = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<NumberFilter> _inspectorScore = AWSConfigs.InitializeCollections ? new List<NumberFilter>() : null;
+        private List<StringFilter> _lambdaFunctionExecutionRoleArn = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<DateFilter> _lambdaFunctionLastModifiedAt = AWSConfigs.InitializeCollections ? new List<DateFilter>() : null;
+        private List<StringFilter> _lambdaFunctionLayers = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _lambdaFunctionName = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _lambdaFunctionRuntime = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<DateFilter> _lastObservedAt = AWSConfigs.InitializeCollections ? new List<DateFilter>() : null;
+        private List<StringFilter> _networkProtocol = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<PortRangeFilter> _portRange = AWSConfigs.InitializeCollections ? new List<PortRangeFilter>() : null;
+        private List<StringFilter> _relatedVulnerabilities = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _resourceId = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<MapFilter> _resourceTags = AWSConfigs.InitializeCollections ? new List<MapFilter>() : null;
+        private List<StringFilter> _resourceType = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _severity = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _title = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<DateFilter> _updatedAt = AWSConfigs.InitializeCollections ? new List<DateFilter>() : null;
+        private List<StringFilter> _vendorSeverity = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _vulnerabilityId = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _vulnerabilitySource = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<PackageFilter> _vulnerablePackages = AWSConfigs.InitializeCollections ? new List<PackageFilter>() : null;
 
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
@@ -92,7 +93,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if AwsAccountId property is set
         internal bool IsSetAwsAccountId()
         {
-            return this._awsAccountId != null && this._awsAccountId.Count > 0; 
+            return this._awsAccountId != null && (this._awsAccountId.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -112,7 +113,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if CodeVulnerabilityDetectorName property is set
         internal bool IsSetCodeVulnerabilityDetectorName()
         {
-            return this._codeVulnerabilityDetectorName != null && this._codeVulnerabilityDetectorName.Count > 0; 
+            return this._codeVulnerabilityDetectorName != null && (this._codeVulnerabilityDetectorName.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -135,7 +136,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if CodeVulnerabilityDetectorTags property is set
         internal bool IsSetCodeVulnerabilityDetectorTags()
         {
-            return this._codeVulnerabilityDetectorTags != null && this._codeVulnerabilityDetectorTags.Count > 0; 
+            return this._codeVulnerabilityDetectorTags != null && (this._codeVulnerabilityDetectorTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -155,7 +156,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if CodeVulnerabilityFilePath property is set
         internal bool IsSetCodeVulnerabilityFilePath()
         {
-            return this._codeVulnerabilityFilePath != null && this._codeVulnerabilityFilePath.Count > 0; 
+            return this._codeVulnerabilityFilePath != null && (this._codeVulnerabilityFilePath.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -174,7 +175,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if ComponentId property is set
         internal bool IsSetComponentId()
         {
-            return this._componentId != null && this._componentId.Count > 0; 
+            return this._componentId != null && (this._componentId.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -193,7 +194,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if ComponentType property is set
         internal bool IsSetComponentType()
         {
-            return this._componentType != null && this._componentType.Count > 0; 
+            return this._componentType != null && (this._componentType.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -212,7 +213,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if Ec2InstanceImageId property is set
         internal bool IsSetEc2InstanceImageId()
         {
-            return this._ec2InstanceImageId != null && this._ec2InstanceImageId.Count > 0; 
+            return this._ec2InstanceImageId != null && (this._ec2InstanceImageId.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -231,7 +232,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if Ec2InstanceSubnetId property is set
         internal bool IsSetEc2InstanceSubnetId()
         {
-            return this._ec2InstanceSubnetId != null && this._ec2InstanceSubnetId.Count > 0; 
+            return this._ec2InstanceSubnetId != null && (this._ec2InstanceSubnetId.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -250,7 +251,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if Ec2InstanceVpcId property is set
         internal bool IsSetEc2InstanceVpcId()
         {
-            return this._ec2InstanceVpcId != null && this._ec2InstanceVpcId.Count > 0; 
+            return this._ec2InstanceVpcId != null && (this._ec2InstanceVpcId.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -269,7 +270,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if EcrImageArchitecture property is set
         internal bool IsSetEcrImageArchitecture()
         {
-            return this._ecrImageArchitecture != null && this._ecrImageArchitecture.Count > 0; 
+            return this._ecrImageArchitecture != null && (this._ecrImageArchitecture.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -288,7 +289,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if EcrImageHash property is set
         internal bool IsSetEcrImageHash()
         {
-            return this._ecrImageHash != null && this._ecrImageHash.Count > 0; 
+            return this._ecrImageHash != null && (this._ecrImageHash.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -307,7 +308,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if EcrImagePushedAt property is set
         internal bool IsSetEcrImagePushedAt()
         {
-            return this._ecrImagePushedAt != null && this._ecrImagePushedAt.Count > 0; 
+            return this._ecrImagePushedAt != null && (this._ecrImagePushedAt.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -326,7 +327,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if EcrImageRegistry property is set
         internal bool IsSetEcrImageRegistry()
         {
-            return this._ecrImageRegistry != null && this._ecrImageRegistry.Count > 0; 
+            return this._ecrImageRegistry != null && (this._ecrImageRegistry.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -345,7 +346,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if EcrImageRepositoryName property is set
         internal bool IsSetEcrImageRepositoryName()
         {
-            return this._ecrImageRepositoryName != null && this._ecrImageRepositoryName.Count > 0; 
+            return this._ecrImageRepositoryName != null && (this._ecrImageRepositoryName.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -364,7 +365,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if EcrImageTags property is set
         internal bool IsSetEcrImageTags()
         {
-            return this._ecrImageTags != null && this._ecrImageTags.Count > 0; 
+            return this._ecrImageTags != null && (this._ecrImageTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -383,7 +384,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if EpssScore property is set
         internal bool IsSetEpssScore()
         {
-            return this._epssScore != null && this._epssScore.Count > 0; 
+            return this._epssScore != null && (this._epssScore.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -402,7 +403,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if ExploitAvailable property is set
         internal bool IsSetExploitAvailable()
         {
-            return this._exploitAvailable != null && this._exploitAvailable.Count > 0; 
+            return this._exploitAvailable != null && (this._exploitAvailable.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -421,7 +422,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if FindingArn property is set
         internal bool IsSetFindingArn()
         {
-            return this._findingArn != null && this._findingArn.Count > 0; 
+            return this._findingArn != null && (this._findingArn.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -440,7 +441,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if FindingStatus property is set
         internal bool IsSetFindingStatus()
         {
-            return this._findingStatus != null && this._findingStatus.Count > 0; 
+            return this._findingStatus != null && (this._findingStatus.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -459,7 +460,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if FindingType property is set
         internal bool IsSetFindingType()
         {
-            return this._findingType != null && this._findingType.Count > 0; 
+            return this._findingType != null && (this._findingType.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -478,7 +479,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if FirstObservedAt property is set
         internal bool IsSetFirstObservedAt()
         {
-            return this._firstObservedAt != null && this._firstObservedAt.Count > 0; 
+            return this._firstObservedAt != null && (this._firstObservedAt.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -500,7 +501,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if FixAvailable property is set
         internal bool IsSetFixAvailable()
         {
-            return this._fixAvailable != null && this._fixAvailable.Count > 0; 
+            return this._fixAvailable != null && (this._fixAvailable.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -519,7 +520,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if InspectorScore property is set
         internal bool IsSetInspectorScore()
         {
-            return this._inspectorScore != null && this._inspectorScore.Count > 0; 
+            return this._inspectorScore != null && (this._inspectorScore.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -538,7 +539,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if LambdaFunctionExecutionRoleArn property is set
         internal bool IsSetLambdaFunctionExecutionRoleArn()
         {
-            return this._lambdaFunctionExecutionRoleArn != null && this._lambdaFunctionExecutionRoleArn.Count > 0; 
+            return this._lambdaFunctionExecutionRoleArn != null && (this._lambdaFunctionExecutionRoleArn.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -559,7 +560,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if LambdaFunctionLastModifiedAt property is set
         internal bool IsSetLambdaFunctionLastModifiedAt()
         {
-            return this._lambdaFunctionLastModifiedAt != null && this._lambdaFunctionLastModifiedAt.Count > 0; 
+            return this._lambdaFunctionLastModifiedAt != null && (this._lambdaFunctionLastModifiedAt.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -579,7 +580,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if LambdaFunctionLayers property is set
         internal bool IsSetLambdaFunctionLayers()
         {
-            return this._lambdaFunctionLayers != null && this._lambdaFunctionLayers.Count > 0; 
+            return this._lambdaFunctionLayers != null && (this._lambdaFunctionLayers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -598,7 +599,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if LambdaFunctionName property is set
         internal bool IsSetLambdaFunctionName()
         {
-            return this._lambdaFunctionName != null && this._lambdaFunctionName.Count > 0; 
+            return this._lambdaFunctionName != null && (this._lambdaFunctionName.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -618,7 +619,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if LambdaFunctionRuntime property is set
         internal bool IsSetLambdaFunctionRuntime()
         {
-            return this._lambdaFunctionRuntime != null && this._lambdaFunctionRuntime.Count > 0; 
+            return this._lambdaFunctionRuntime != null && (this._lambdaFunctionRuntime.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -637,7 +638,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if LastObservedAt property is set
         internal bool IsSetLastObservedAt()
         {
-            return this._lastObservedAt != null && this._lastObservedAt.Count > 0; 
+            return this._lastObservedAt != null && (this._lastObservedAt.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -656,7 +657,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if NetworkProtocol property is set
         internal bool IsSetNetworkProtocol()
         {
-            return this._networkProtocol != null && this._networkProtocol.Count > 0; 
+            return this._networkProtocol != null && (this._networkProtocol.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -675,7 +676,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if PortRange property is set
         internal bool IsSetPortRange()
         {
-            return this._portRange != null && this._portRange.Count > 0; 
+            return this._portRange != null && (this._portRange.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -694,7 +695,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if RelatedVulnerabilities property is set
         internal bool IsSetRelatedVulnerabilities()
         {
-            return this._relatedVulnerabilities != null && this._relatedVulnerabilities.Count > 0; 
+            return this._relatedVulnerabilities != null && (this._relatedVulnerabilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -713,7 +714,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if ResourceId property is set
         internal bool IsSetResourceId()
         {
-            return this._resourceId != null && this._resourceId.Count > 0; 
+            return this._resourceId != null && (this._resourceId.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -732,7 +733,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if ResourceTags property is set
         internal bool IsSetResourceTags()
         {
-            return this._resourceTags != null && this._resourceTags.Count > 0; 
+            return this._resourceTags != null && (this._resourceTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -751,7 +752,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if ResourceType property is set
         internal bool IsSetResourceType()
         {
-            return this._resourceType != null && this._resourceType.Count > 0; 
+            return this._resourceType != null && (this._resourceType.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -770,7 +771,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if Severity property is set
         internal bool IsSetSeverity()
         {
-            return this._severity != null && this._severity.Count > 0; 
+            return this._severity != null && (this._severity.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -789,7 +790,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if Title property is set
         internal bool IsSetTitle()
         {
-            return this._title != null && this._title.Count > 0; 
+            return this._title != null && (this._title.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -808,7 +809,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if UpdatedAt property is set
         internal bool IsSetUpdatedAt()
         {
-            return this._updatedAt != null && this._updatedAt.Count > 0; 
+            return this._updatedAt != null && (this._updatedAt.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -827,7 +828,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if VendorSeverity property is set
         internal bool IsSetVendorSeverity()
         {
-            return this._vendorSeverity != null && this._vendorSeverity.Count > 0; 
+            return this._vendorSeverity != null && (this._vendorSeverity.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -846,7 +847,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if VulnerabilityId property is set
         internal bool IsSetVulnerabilityId()
         {
-            return this._vulnerabilityId != null && this._vulnerabilityId.Count > 0; 
+            return this._vulnerabilityId != null && (this._vulnerabilityId.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -865,7 +866,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if VulnerabilitySource property is set
         internal bool IsSetVulnerabilitySource()
         {
-            return this._vulnerabilitySource != null && this._vulnerabilitySource.Count > 0; 
+            return this._vulnerabilitySource != null && (this._vulnerabilitySource.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -884,7 +885,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if VulnerablePackages property is set
         internal bool IsSetVulnerablePackages()
         {
-            return this._vulnerablePackages != null && this._vulnerablePackages.Count > 0; 
+            return this._vulnerablePackages != null && (this._vulnerablePackages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RestJsonTest.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -58,12 +59,14 @@ namespace Amazon.RestJsonTest.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-05-13";
             request.HttpMethod = "GET";
 
-            
             if (publicRequest.IsSetQueryParamsMapOfIntegerList())
             {
                 foreach(var kvp in publicRequest.QueryParamsMapOfIntegerList)
                 {
-                    request.ParameterCollection.Add(kvp.Key, kvp.Value.ConvertAll<string>(item => StringUtils.FromInt(item)));
+                    if(request.ParameterCollection.ContainsKey(kvp.Key))
+                       continue;
+                    else
+                       request.ParameterCollection.Add(kvp.Key, kvp.Value.ConvertAll<string>(item => StringUtils.FromInt(item)));
                 }
             }
             request.ResourcePath = "/path";

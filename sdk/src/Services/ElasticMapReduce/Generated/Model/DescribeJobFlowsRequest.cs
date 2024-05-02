@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
@@ -68,8 +69,8 @@ namespace Amazon.ElasticMapReduce.Model
     {
         private DateTime? _createdAfter;
         private DateTime? _createdBefore;
-        private List<string> _jobFlowIds = new List<string>();
-        private List<string> _jobFlowStates = new List<string>();
+        private List<string> _jobFlowIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _jobFlowStates = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -136,7 +137,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if JobFlowIds property is set
         internal bool IsSetJobFlowIds()
         {
-            return this._jobFlowIds != null && this._jobFlowIds.Count > 0; 
+            return this._jobFlowIds != null && (this._jobFlowIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -154,7 +155,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if JobFlowStates property is set
         internal bool IsSetJobFlowStates()
         {
-            return this._jobFlowStates != null && this._jobFlowStates.Count > 0; 
+            return this._jobFlowStates != null && (this._jobFlowStates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

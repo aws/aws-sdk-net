@@ -27,6 +27,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>
     public class GetACLResponseUnmarshaller : S3ReponseUnmarshaller
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {   
             GetACLResponse response = new GetACLResponse();
@@ -68,9 +73,15 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Grant", targetDepth + 1))
                     {
                         if (null == response.AccessControlList)
+                        {
                             response.AccessControlList = new S3AccessControlList();
+                        }
+                        if (null == response.AccessControlList.Grants)
+                        {
+                            response.AccessControlList.Grants = new List<S3Grant>();
+                        }
+
                         response.AccessControlList.Grants.Add(GrantUnmarshaller.Instance.Unmarshall(context));
-                            
                         continue;
                     }
                 }
@@ -87,6 +98,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static GetACLResponseUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static GetACLResponseUnmarshaller Instance
         {
             get

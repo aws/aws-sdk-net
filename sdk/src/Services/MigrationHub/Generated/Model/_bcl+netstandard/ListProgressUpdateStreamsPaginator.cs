@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MigrationHub.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.MigrationHub.Model
         /// Enumerable containing all of the ProgressUpdateStreamSummaryList
         /// </summary>
         public IPaginatedEnumerable<ProgressUpdateStreamSummary> ProgressUpdateStreamSummaryList => 
-            new PaginatedResultKeyResponse<ListProgressUpdateStreamsResponse, ProgressUpdateStreamSummary>(this, (i) => i.ProgressUpdateStreamSummaryList);
+            new PaginatedResultKeyResponse<ListProgressUpdateStreamsResponse, ProgressUpdateStreamSummary>(this, (i) => i.ProgressUpdateStreamSummaryList ?? new List<ProgressUpdateStreamSummary>());
 
         internal ListProgressUpdateStreamsPaginator(IAmazonMigrationHub client, ListProgressUpdateStreamsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.MigrationHub.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListProgressUpdateStreamsResponse> IPaginator<ListProgressUpdateStreamsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListProgressUpdateStreamsResponse> IPaginator<ListProgressUpdateStreamsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

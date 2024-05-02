@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.ResilienceHub.Model
         private AppAssessmentScheduleType _assessmentSchedule;
         private bool? _clearResiliencyPolicyArn;
         private string _description;
-        private List<EventSubscription> _eventSubscriptions = new List<EventSubscription>();
+        private List<EventSubscription> _eventSubscriptions = AWSConfigs.InitializeCollections ? new List<EventSubscription>() : null;
         private PermissionModel _permissionModel;
         private string _policyArn;
 
@@ -138,7 +139,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if EventSubscriptions property is set
         internal bool IsSetEventSubscriptions()
         {
-            return this._eventSubscriptions != null && this._eventSubscriptions.Count > 0; 
+            return this._eventSubscriptions != null && (this._eventSubscriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

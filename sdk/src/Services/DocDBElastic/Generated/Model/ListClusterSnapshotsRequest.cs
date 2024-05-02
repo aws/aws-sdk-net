@@ -26,22 +26,24 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DocDBElastic.Model
 {
     /// <summary>
     /// Container for the parameters to the ListClusterSnapshots operation.
-    /// Returns information about Elastic DocumentDB snapshots for a specified cluster.
+    /// Returns information about snapshots for a specified elastic cluster.
     /// </summary>
     public partial class ListClusterSnapshotsRequest : AmazonDocDBElasticRequest
     {
         private string _clusterArn;
         private int? _maxResults;
         private string _nextToken;
+        private string _snapshotType;
 
         /// <summary>
         /// Gets and sets the property ClusterArn. 
         /// <para>
-        /// The arn of the Elastic DocumentDB cluster.
+        /// The ARN identifier of the elastic cluster.
         /// </para>
         /// </summary>
         public string ClusterArn
@@ -59,7 +61,7 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of entries to recieve in the response.
+        /// The maximum number of elastic cluster snapshot results to receive in the response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=100)]
@@ -78,7 +80,13 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The nextToken which is used the get the next page of data.
+        /// A pagination token provided by a previous request. If this parameter is specified,
+        /// the response includes only records beyond this token, up to the value specified by
+        /// <c>max-results</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If there is no more data in the responce, the <c>nextToken</c> will not be returned.
         /// </para>
         /// </summary>
         public string NextToken
@@ -91,6 +99,36 @@ namespace Amazon.DocDBElastic.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnapshotType. 
+        /// <para>
+        /// The type of cluster snapshots to be returned. You can specify one of the following
+        /// values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>automated</c> - Return all cluster snapshots that Amazon DocumentDB has automatically
+        /// created for your Amazon Web Services account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>manual</c> - Return all cluster snapshots that you have manually created for your
+        /// Amazon Web Services account.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string SnapshotType
+        {
+            get { return this._snapshotType; }
+            set { this._snapshotType = value; }
+        }
+
+        // Check to see if SnapshotType property is set
+        internal bool IsSetSnapshotType()
+        {
+            return this._snapshotType != null;
         }
 
     }

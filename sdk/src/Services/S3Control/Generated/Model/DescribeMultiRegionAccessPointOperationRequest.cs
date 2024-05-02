@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3Control.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.S3Control.Model
     /// <para>
     /// Retrieves the status of an asynchronous request to manage a Multi-Region Access Point.
     /// For more information about managing Multi-Region Access Points and how asynchronous
-    /// requests work, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ManagingMultiRegionAccessPoints.html">Managing
+    /// requests work, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/MrapOperations.html">Using
     /// Multi-Region Access Points</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
     ///  

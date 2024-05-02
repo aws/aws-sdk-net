@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Batch.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class EksContainerDetail
     {
-        private List<string> _args = new List<string>();
-        private List<string> _command = new List<string>();
-        private List<EksContainerEnvironmentVariable> _env = new List<EksContainerEnvironmentVariable>();
+        private List<string> _args = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _command = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<EksContainerEnvironmentVariable> _env = AWSConfigs.InitializeCollections ? new List<EksContainerEnvironmentVariable>() : null;
         private int? _exitCode;
         private string _image;
         private string _imagePullPolicy;
@@ -44,7 +45,7 @@ namespace Amazon.Batch.Model
         private string _reason;
         private EksContainerResourceRequirements _resources;
         private EksContainerSecurityContext _securityContext;
-        private List<EksContainerVolumeMount> _volumeMounts = new List<EksContainerVolumeMount>();
+        private List<EksContainerVolumeMount> _volumeMounts = AWSConfigs.InitializeCollections ? new List<EksContainerVolumeMount>() : null;
 
         /// <summary>
         /// Gets and sets the property Args. 
@@ -63,8 +64,8 @@ namespace Amazon.Batch.Model
         /// environment variable doesn't exist, the command string will remain "<c>$(NAME1)</c>".
         /// <c>$$</c> is replaced with <c>$</c> and the resulting string isn't expanded. For example,
         /// <c>$$(VAR_NAME)</c> is passed as <c>$(VAR_NAME)</c> whether or not the <c>VAR_NAME</c>
-        /// environment variable exists. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a>
-        /// in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define
+        /// environment variable exists. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">Dockerfile
+        /// reference: CMD</a> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define
         /// a command and arguments for a pod</a> in the <i>Kubernetes documentation</i>.
         /// </para>
         /// </summary>
@@ -77,7 +78,7 @@ namespace Amazon.Batch.Model
         // Check to see if Args property is set
         internal bool IsSetArgs()
         {
-            return this._args != null && this._args.Count > 0; 
+            return this._args != null && (this._args.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -96,7 +97,7 @@ namespace Amazon.Batch.Model
         // Check to see if Command property is set
         internal bool IsSetCommand()
         {
-            return this._command != null && this._command.Count > 0; 
+            return this._command != null && (this._command.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -120,13 +121,13 @@ namespace Amazon.Batch.Model
         // Check to see if Env property is set
         internal bool IsSetEnv()
         {
-            return this._env != null && this._env.Count > 0; 
+            return this._env != null && (this._env.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property ExitCode. 
         /// <para>
-        /// The exit code for the job attempt. A non-zero exit code is considered failed.
+        /// The exit code returned for the job attempt. A non-zero exit code is considered failed.
         /// </para>
         /// </summary>
         public int? ExitCode
@@ -276,7 +277,7 @@ namespace Amazon.Batch.Model
         // Check to see if VolumeMounts property is set
         internal bool IsSetVolumeMounts()
         {
-            return this._volumeMounts != null && this._volumeMounts.Count > 0; 
+            return this._volumeMounts != null && (this._volumeMounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

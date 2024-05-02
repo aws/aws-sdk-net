@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -36,6 +37,7 @@ namespace Amazon.SageMaker.Model
     public partial class SourceAlgorithm
     {
         private string _algorithmName;
+        private ModelDataSource _modelDataSource;
         private string _modelDataUrl;
 
         /// <summary>
@@ -57,6 +59,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetAlgorithmName()
         {
             return this._algorithmName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelDataSource. 
+        /// <para>
+        /// Specifies the location of ML model data to deploy during endpoint creation.
+        /// </para>
+        /// </summary>
+        public ModelDataSource ModelDataSource
+        {
+            get { return this._modelDataSource; }
+            set { this._modelDataSource = value; }
+        }
+
+        // Check to see if ModelDataSource property is set
+        internal bool IsSetModelDataSource()
+        {
+            return this._modelDataSource != null;
         }
 
         /// <summary>

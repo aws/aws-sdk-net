@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ServiceDiscovery.Model
     /// </summary>
     public partial class DiscoverInstancesResponse : AmazonWebServiceResponse
     {
-        private List<HttpInstanceSummary> _instances = new List<HttpInstanceSummary>();
+        private List<HttpInstanceSummary> _instances = AWSConfigs.InitializeCollections ? new List<HttpInstanceSummary>() : null;
         private long? _instancesRevision;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ServiceDiscovery.Model
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this._instances != null && this._instances.Count > 0; 
+            return this._instances != null && (this._instances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

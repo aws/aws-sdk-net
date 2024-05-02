@@ -26,6 +26,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 	/// </summary>
 	public class ListBucketIntelligentTieringConfigurationsResponseUnmarshaller : S3ReponseUnmarshaller
 	{
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             ListBucketIntelligentTieringConfigurationsResponse response = new ListBucketIntelligentTieringConfigurationsResponse();
@@ -63,8 +68,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("IntelligentTieringConfiguration", targetDepth))
                     {
+                        if (response.IntelligentTieringConfigurationList == null)
+                        {
+                            response.IntelligentTieringConfigurationList = new List<IntelligentTieringConfiguration>();
+                        }
                         response.IntelligentTieringConfigurationList.Add(IntelligentTieringConfigurationUnmarshaller.Instance.Unmarshall(context));
-
                         continue;
                     }
                     if (context.TestExpression("IsTruncated", targetDepth))
@@ -90,6 +98,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static ListBucketIntelligentTieringConfigurationsResponseUnmarshaller _instance = new ListBucketIntelligentTieringConfigurationsResponseUnmarshaller();
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static ListBucketIntelligentTieringConfigurationsResponseUnmarshaller Instance
         {
             get

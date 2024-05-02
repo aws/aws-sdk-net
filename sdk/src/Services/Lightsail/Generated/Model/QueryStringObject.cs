@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.Lightsail.Model
     public partial class QueryStringObject
     {
         private bool? _option;
-        private List<string> _queryStringsAllowList = new List<string>();
+        private List<string> _queryStringsAllowList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Option. 
@@ -85,7 +86,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if QueryStringsAllowList property is set
         internal bool IsSetQueryStringsAllowList()
         {
-            return this._queryStringsAllowList != null && this._queryStringsAllowList.Count > 0; 
+            return this._queryStringsAllowList != null && (this._queryStringsAllowList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

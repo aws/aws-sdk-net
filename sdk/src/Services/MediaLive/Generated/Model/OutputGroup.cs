@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.MediaLive.Model
     {
         private string _name;
         private OutputGroupSettings _outputGroupSettings;
-        private List<Output> _outputs = new List<Output>();
+        private List<Output> _outputs = AWSConfigs.InitializeCollections ? new List<Output>() : null;
 
         /// <summary>
         /// Gets and sets the property Name. Custom output group name optionally defined by the
@@ -85,7 +86,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if Outputs property is set
         internal bool IsSetOutputs()
         {
-            return this._outputs != null && this._outputs.Count > 0; 
+            return this._outputs != null && (this._outputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

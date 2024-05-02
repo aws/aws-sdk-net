@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeLocalGatewaysResponse : AmazonWebServiceResponse
     {
-        private List<LocalGateway> _localGateways = new List<LocalGateway>();
+        private List<LocalGateway> _localGateways = AWSConfigs.InitializeCollections ? new List<LocalGateway>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.EC2.Model
         // Check to see if LocalGateways property is set
         internal bool IsSetLocalGateways()
         {
-            return this._localGateways != null && this._localGateways.Count > 0; 
+            return this._localGateways != null && (this._localGateways.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

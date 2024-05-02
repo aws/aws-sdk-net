@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,19 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PolicyOption requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
+            if(requestObject.IsSetNetworkAclCommonPolicy())
+            {
+                context.Writer.WritePropertyName("NetworkAclCommonPolicy");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = NetworkAclCommonPolicyMarshaller.Instance;
+                marshaller.Marshall(requestObject.NetworkAclCommonPolicy, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetNetworkFirewallPolicy())
             {
                 context.Writer.WritePropertyName("NetworkFirewallPolicy");

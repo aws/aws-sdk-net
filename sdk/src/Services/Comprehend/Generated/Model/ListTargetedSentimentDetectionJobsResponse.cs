@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Comprehend.Model
     public partial class ListTargetedSentimentDetectionJobsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TargetedSentimentDetectionJobProperties> _targetedSentimentDetectionJobPropertiesList = new List<TargetedSentimentDetectionJobProperties>();
+        private List<TargetedSentimentDetectionJobProperties> _targetedSentimentDetectionJobPropertiesList = AWSConfigs.InitializeCollections ? new List<TargetedSentimentDetectionJobProperties>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if TargetedSentimentDetectionJobPropertiesList property is set
         internal bool IsSetTargetedSentimentDetectionJobPropertiesList()
         {
-            return this._targetedSentimentDetectionJobPropertiesList != null && this._targetedSentimentDetectionJobPropertiesList.Count > 0; 
+            return this._targetedSentimentDetectionJobPropertiesList != null && (this._targetedSentimentDetectionJobPropertiesList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

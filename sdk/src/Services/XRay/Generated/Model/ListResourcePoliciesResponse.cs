@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.XRay.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.XRay.Model
     public partial class ListResourcePoliciesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ResourcePolicy> _resourcePolicies = new List<ResourcePolicy>();
+        private List<ResourcePolicy> _resourcePolicies = AWSConfigs.InitializeCollections ? new List<ResourcePolicy>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.XRay.Model
         // Check to see if ResourcePolicies property is set
         internal bool IsSetResourcePolicies()
         {
-            return this._resourcePolicies != null && this._resourcePolicies.Count > 0; 
+            return this._resourcePolicies != null && (this._resourcePolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

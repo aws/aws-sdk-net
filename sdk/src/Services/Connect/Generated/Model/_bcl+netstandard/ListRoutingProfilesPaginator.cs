@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the RoutingProfileSummaryList
         /// </summary>
         public IPaginatedEnumerable<RoutingProfileSummary> RoutingProfileSummaryList => 
-            new PaginatedResultKeyResponse<ListRoutingProfilesResponse, RoutingProfileSummary>(this, (i) => i.RoutingProfileSummaryList);
+            new PaginatedResultKeyResponse<ListRoutingProfilesResponse, RoutingProfileSummary>(this, (i) => i.RoutingProfileSummaryList ?? new List<RoutingProfileSummary>());
 
         internal ListRoutingProfilesPaginator(IAmazonConnect client, ListRoutingProfilesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Connect.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListRoutingProfilesResponse> IPaginator<ListRoutingProfilesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListRoutingProfilesResponse> IPaginator<ListRoutingProfilesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

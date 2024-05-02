@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class BatchGetItemResponse : AmazonWebServiceResponse
     {
-        private List<ConsumedCapacity> _consumedCapacity = new List<ConsumedCapacity>();
-        private Dictionary<string, List<Dictionary<string, AttributeValue>>> _responses = new Dictionary<string, List<Dictionary<string, AttributeValue>>>();
-        private Dictionary<string, KeysAndAttributes> _unprocessedKeys = new Dictionary<string, KeysAndAttributes>();
+        private List<ConsumedCapacity> _consumedCapacity = AWSConfigs.InitializeCollections ? new List<ConsumedCapacity>() : null;
+        private Dictionary<string, List<Dictionary<string, AttributeValue>>> _responses = AWSConfigs.InitializeCollections ? new Dictionary<string, List<Dictionary<string, AttributeValue>>>() : null;
+        private Dictionary<string, KeysAndAttributes> _unprocessedKeys = AWSConfigs.InitializeCollections ? new Dictionary<string, KeysAndAttributes>() : null;
 
         /// <summary>
         /// Gets and sets the property ConsumedCapacity. 
@@ -65,15 +66,15 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if ConsumedCapacity property is set
         internal bool IsSetConsumedCapacity()
         {
-            return this._consumedCapacity != null && this._consumedCapacity.Count > 0; 
+            return this._consumedCapacity != null && (this._consumedCapacity.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property Responses. 
         /// <para>
-        /// A map of table name to a list of items. Each object in <c>Responses</c> consists of
-        /// a table name, along with a map of attribute data consisting of the data type and attribute
-        /// value.
+        /// A map of table name or table ARN to a list of items. Each object in <c>Responses</c>
+        /// consists of a table name or ARN, along with a map of attribute data consisting of
+        /// the data type and attribute value.
         /// </para>
         /// </summary>
         public Dictionary<string, List<Dictionary<string, AttributeValue>>> Responses
@@ -85,7 +86,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if Responses property is set
         internal bool IsSetResponses()
         {
-            return this._responses != null && this._responses.Count > 0; 
+            return this._responses != null && (this._responses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -133,7 +134,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if UnprocessedKeys property is set
         internal bool IsSetUnprocessedKeys()
         {
-            return this._unprocessedKeys != null && this._unprocessedKeys.Count > 0; 
+            return this._unprocessedKeys != null && (this._unprocessedKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -43,8 +44,8 @@ namespace Amazon.RDS.Model
         private string _dbSubnetGroupDescription;
         private string _dbSubnetGroupName;
         private string _subnetGroupStatus;
-        private List<Subnet> _subnets = new List<Subnet>();
-        private List<string> _supportedNetworkTypes = new List<string>();
+        private List<Subnet> _subnets = AWSConfigs.InitializeCollections ? new List<Subnet>() : null;
+        private List<string> _supportedNetworkTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _vpcId;
 
         /// <summary>
@@ -134,7 +135,7 @@ namespace Amazon.RDS.Model
         // Check to see if Subnets property is set
         internal bool IsSetSubnets()
         {
-            return this._subnets != null && this._subnets.Count > 0; 
+            return this._subnets != null && (this._subnets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -174,7 +175,7 @@ namespace Amazon.RDS.Model
         // Check to see if SupportedNetworkTypes property is set
         internal bool IsSetSupportedNetworkTypes()
         {
-            return this._supportedNetworkTypes != null && this._supportedNetworkTypes.Count > 0; 
+            return this._supportedNetworkTypes != null && (this._supportedNetworkTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

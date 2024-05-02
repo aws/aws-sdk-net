@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the VerifiedAccessInstances
         /// </summary>
         public IPaginatedEnumerable<VerifiedAccessInstance> VerifiedAccessInstances => 
-            new PaginatedResultKeyResponse<DescribeVerifiedAccessInstancesResponse, VerifiedAccessInstance>(this, (i) => i.VerifiedAccessInstances);
+            new PaginatedResultKeyResponse<DescribeVerifiedAccessInstancesResponse, VerifiedAccessInstance>(this, (i) => i.VerifiedAccessInstances ?? new List<VerifiedAccessInstance>());
 
         internal DescribeVerifiedAccessInstancesPaginator(IAmazonEC2 client, DescribeVerifiedAccessInstancesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.EC2.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeVerifiedAccessInstancesResponse> IPaginator<DescribeVerifiedAccessInstancesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeVerifiedAccessInstancesResponse> IPaginator<DescribeVerifiedAccessInstancesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

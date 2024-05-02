@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FMS.Model
 {
     /// <summary>
@@ -36,14 +37,14 @@ namespace Amazon.FMS.Model
         private string _currentFirewallSubnetRouteTable;
         private string _currentInternetGatewayRouteTable;
         private string _firewallSubnetId;
-        private List<Route> _firewallSubnetRoutes = new List<Route>();
+        private List<Route> _firewallSubnetRoutes = AWSConfigs.InitializeCollections ? new List<Route>() : null;
         private string _internetGatewayId;
-        private List<Route> _internetGatewayRoutes = new List<Route>();
+        private List<Route> _internetGatewayRoutes = AWSConfigs.InitializeCollections ? new List<Route>() : null;
         private string _routeTableId;
         private string _subnetAvailabilityZone;
         private string _subnetAvailabilityZoneId;
         private string _subnetId;
-        private List<Route> _violatingRoutes = new List<Route>();
+        private List<Route> _violatingRoutes = AWSConfigs.InitializeCollections ? new List<Route>() : null;
         private string _vpcId;
 
         /// <summary>
@@ -118,7 +119,7 @@ namespace Amazon.FMS.Model
         // Check to see if FirewallSubnetRoutes property is set
         internal bool IsSetFirewallSubnetRoutes()
         {
-            return this._firewallSubnetRoutes != null && this._firewallSubnetRoutes.Count > 0; 
+            return this._firewallSubnetRoutes != null && (this._firewallSubnetRoutes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -155,7 +156,7 @@ namespace Amazon.FMS.Model
         // Check to see if InternetGatewayRoutes property is set
         internal bool IsSetInternetGatewayRoutes()
         {
-            return this._internetGatewayRoutes != null && this._internetGatewayRoutes.Count > 0; 
+            return this._internetGatewayRoutes != null && (this._internetGatewayRoutes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -249,7 +250,7 @@ namespace Amazon.FMS.Model
         // Check to see if ViolatingRoutes property is set
         internal bool IsSetViolatingRoutes()
         {
-            return this._violatingRoutes != null && this._violatingRoutes.Count > 0; 
+            return this._violatingRoutes != null && (this._violatingRoutes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.WorkSpaces.Model
     public partial class DescribeIpGroupsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<WorkspacesIpGroup> _result = new List<WorkspacesIpGroup>();
+        private List<WorkspacesIpGroup> _result = AWSConfigs.InitializeCollections ? new List<WorkspacesIpGroup>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if Result property is set
         internal bool IsSetResult()
         {
-            return this._result != null && this._result.Count > 0; 
+            return this._result != null && (this._result.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

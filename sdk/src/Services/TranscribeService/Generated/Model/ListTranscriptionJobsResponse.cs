@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.TranscribeService.Model
     {
         private string _nextToken;
         private TranscriptionJobStatus _status;
-        private List<TranscriptionJobSummary> _transcriptionJobSummaries = new List<TranscriptionJobSummary>();
+        private List<TranscriptionJobSummary> _transcriptionJobSummaries = AWSConfigs.InitializeCollections ? new List<TranscriptionJobSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -94,7 +95,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if TranscriptionJobSummaries property is set
         internal bool IsSetTranscriptionJobSummaries()
         {
-            return this._transcriptionJobSummaries != null && this._transcriptionJobSummaries.Count > 0; 
+            return this._transcriptionJobSummaries != null && (this._transcriptionJobSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

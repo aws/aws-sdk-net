@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.SageMaker.Model
         private int? _taskAvailabilityLifetimeInSeconds;
         private int? _taskCount;
         private string _taskDescription;
-        private List<string> _taskKeywords = new List<string>();
+        private List<string> _taskKeywords = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _taskTimeLimitInSeconds;
         private string _taskTitle;
         private string _workteamArn;
@@ -169,7 +170,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if TaskKeywords property is set
         internal bool IsSetTaskKeywords()
         {
-            return this._taskKeywords != null && this._taskKeywords.Count > 0; 
+            return this._taskKeywords != null && (this._taskKeywords.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECS.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class Deployment
     {
-        private List<CapacityProviderStrategyItem> _capacityProviderStrategy = new List<CapacityProviderStrategyItem>();
+        private List<CapacityProviderStrategyItem> _capacityProviderStrategy = AWSConfigs.InitializeCollections ? new List<CapacityProviderStrategyItem>() : null;
         private DateTime? _createdAt;
         private int? _desiredCount;
         private int? _failedTasks;
@@ -48,11 +49,11 @@ namespace Amazon.ECS.Model
         private string _rolloutStateReason;
         private int? _runningCount;
         private ServiceConnectConfiguration _serviceConnectConfiguration;
-        private List<ServiceConnectServiceResource> _serviceConnectResources = new List<ServiceConnectServiceResource>();
+        private List<ServiceConnectServiceResource> _serviceConnectResources = AWSConfigs.InitializeCollections ? new List<ServiceConnectServiceResource>() : null;
         private string _status;
         private string _taskDefinition;
         private DateTime? _updatedAt;
-        private List<ServiceVolumeConfiguration> _volumeConfigurations = new List<ServiceVolumeConfiguration>();
+        private List<ServiceVolumeConfiguration> _volumeConfigurations = AWSConfigs.InitializeCollections ? new List<ServiceVolumeConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property CapacityProviderStrategy. 
@@ -69,7 +70,7 @@ namespace Amazon.ECS.Model
         // Check to see if CapacityProviderStrategy property is set
         internal bool IsSetCapacityProviderStrategy()
         {
-            return this._capacityProviderStrategy != null && this._capacityProviderStrategy.Count > 0; 
+            return this._capacityProviderStrategy != null && (this._capacityProviderStrategy.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -369,7 +370,7 @@ namespace Amazon.ECS.Model
         // Check to see if ServiceConnectResources property is set
         internal bool IsSetServiceConnectResources()
         {
-            return this._serviceConnectResources != null && this._serviceConnectResources.Count > 0; 
+            return this._serviceConnectResources != null && (this._serviceConnectResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -458,7 +459,7 @@ namespace Amazon.ECS.Model
         // Check to see if VolumeConfigurations property is set
         internal bool IsSetVolumeConfigurations()
         {
-            return this._volumeConfigurations != null && this._volumeConfigurations.Count > 0; 
+            return this._volumeConfigurations != null && (this._volumeConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

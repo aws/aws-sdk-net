@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AccessAnalyzer.Model
     /// </summary>
     public partial class ListAnalyzersResponse : AmazonWebServiceResponse
     {
-        private List<AnalyzerSummary> _analyzers = new List<AnalyzerSummary>();
+        private List<AnalyzerSummary> _analyzers = AWSConfigs.InitializeCollections ? new List<AnalyzerSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.AccessAnalyzer.Model
         // Check to see if Analyzers property is set
         internal bool IsSetAnalyzers()
         {
-            return this._analyzers != null && this._analyzers.Count > 0; 
+            return this._analyzers != null && (this._analyzers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT1ClickProjects.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoT1ClickProjects.Model
     /// </summary>
     public partial class GetDevicesInPlacementResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, string> _devices = new Dictionary<string, string>();
+        private Dictionary<string, string> _devices = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Devices. 
@@ -51,7 +52,7 @@ namespace Amazon.IoT1ClickProjects.Model
         // Check to see if Devices property is set
         internal bool IsSetDevices()
         {
-            return this._devices != null && this._devices.Count > 0; 
+            return this._devices != null && (this._devices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

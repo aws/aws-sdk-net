@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTFleetWise.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.IoTFleetWise.Model
     {
         private string _description;
         private string _name;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private FormattedVss _vss;
 
         /// <summary>
@@ -94,7 +95,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,6 +33,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.ManagedBlockchainQuery
 {
     /// <summary>
@@ -587,6 +588,64 @@ namespace Amazon.ManagedBlockchainQuery
 
         #endregion
         
+        #region  ListFilteredTransactionEvents
+
+        internal virtual ListFilteredTransactionEventsResponse ListFilteredTransactionEvents(ListFilteredTransactionEventsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFilteredTransactionEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFilteredTransactionEventsResponseUnmarshaller.Instance;
+
+            return Invoke<ListFilteredTransactionEventsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all the transaction events for an address on the blockchain.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This operation is only supported on the Bitcoin networks.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFilteredTransactionEvents service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListFilteredTransactionEvents service method, as returned by ManagedBlockchainQuery.</returns>
+        /// <exception cref="Amazon.ManagedBlockchainQuery.Model.AccessDeniedException">
+        /// The Amazon Web Services account doesn’t have access to this resource.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchainQuery.Model.InternalServerException">
+        /// The request processing has failed because of an internal error in the service.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchainQuery.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded for this resource.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchainQuery.Model.ThrottlingException">
+        /// The request or operation couldn't be performed because a service is throttling requests.
+        /// The most common source of throttling errors is when you create resources that exceed
+        /// your service limit for this resource type. Request a limit increase or delete unused
+        /// resources, if possible.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchainQuery.Model.ValidationException">
+        /// The resource passed is invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-query-2023-05-04/ListFilteredTransactionEvents">REST API Reference for ListFilteredTransactionEvents Operation</seealso>
+        public virtual Task<ListFilteredTransactionEventsResponse> ListFilteredTransactionEventsAsync(ListFilteredTransactionEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFilteredTransactionEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFilteredTransactionEventsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListFilteredTransactionEventsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTokenBalances
 
         internal virtual ListTokenBalancesResponse ListTokenBalances(ListTokenBalancesRequest request)
@@ -673,8 +732,7 @@ namespace Amazon.ManagedBlockchainQuery
 
 
         /// <summary>
-        /// An array of <c>TransactionEvent</c> objects. Each object contains details about the
-        /// transaction event.
+        /// Lists all the transaction events for a transaction 
         /// 
         ///  <note> 
         /// <para>
@@ -734,7 +792,7 @@ namespace Amazon.ManagedBlockchainQuery
 
 
         /// <summary>
-        /// Lists all of the transactions on a given wallet address or to a specific contract.
+        /// Lists all the transaction events for a transaction.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTransactions service method.</param>
         /// <param name="cancellationToken">

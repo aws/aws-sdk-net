@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class DescribeEffectivePatchesForPatchBaselineResponse : AmazonWebServiceResponse
     {
-        private List<EffectivePatch> _effectivePatches = new List<EffectivePatch>();
+        private List<EffectivePatch> _effectivePatches = AWSConfigs.InitializeCollections ? new List<EffectivePatch>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if EffectivePatches property is set
         internal bool IsSetEffectivePatches()
         {
-            return this._effectivePatches != null && this._effectivePatches.Count > 0; 
+            return this._effectivePatches != null && (this._effectivePatches.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

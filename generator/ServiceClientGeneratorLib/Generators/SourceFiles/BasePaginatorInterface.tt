@@ -8,6 +8,7 @@
 #>
 using Amazon.Runtime;
 
+#pragma warning disable CS0612,CS0618
 namespace <#=this.Config.Namespace#>.Model
 {
     /// <summary>

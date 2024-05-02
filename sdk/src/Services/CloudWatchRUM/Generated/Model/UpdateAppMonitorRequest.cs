@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchRUM.Model
 {
     /// <summary>
@@ -66,7 +67,7 @@ namespace Amazon.CloudWatchRUM.Model
         /// are using Amazon Cognito for authorization, you must include this structure in your
         /// request, and it must include the ID of the Amazon Cognito identity pool to use for
         /// authorization. If you don't include <c>AppMonitorConfiguration</c>, you must set up
-        /// your own authorization method. For more information, see <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize
+        /// your own authorization method. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize
         /// your application to send data to Amazon Web Services</a>.
         /// </para>
         /// </summary>

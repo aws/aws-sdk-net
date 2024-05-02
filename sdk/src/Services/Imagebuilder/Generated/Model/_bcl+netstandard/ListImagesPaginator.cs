@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Imagebuilder.Model
         /// Enumerable containing all of the ImageVersionList
         /// </summary>
         public IPaginatedEnumerable<ImageVersion> ImageVersionList => 
-            new PaginatedResultKeyResponse<ListImagesResponse, ImageVersion>(this, (i) => i.ImageVersionList);
+            new PaginatedResultKeyResponse<ListImagesResponse, ImageVersion>(this, (i) => i.ImageVersionList ?? new List<ImageVersion>());
 
         internal ListImagesPaginator(IAmazonImagebuilder client, ListImagesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Imagebuilder.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListImagesResponse> IPaginator<ListImagesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListImagesResponse> IPaginator<ListImagesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
@@ -71,14 +72,14 @@ namespace Amazon.IdentityManagement.Model
     /// </summary>
     public partial class SimulateCustomPolicyRequest : AmazonIdentityManagementServiceRequest
     {
-        private List<string> _actionNames = new List<string>();
+        private List<string> _actionNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _callerArn;
-        private List<ContextEntry> _contextEntries = new List<ContextEntry>();
+        private List<ContextEntry> _contextEntries = AWSConfigs.InitializeCollections ? new List<ContextEntry>() : null;
         private string _marker;
         private int? _maxItems;
-        private List<string> _permissionsBoundaryPolicyInputList = new List<string>();
-        private List<string> _policyInputList = new List<string>();
-        private List<string> _resourceArns = new List<string>();
+        private List<string> _permissionsBoundaryPolicyInputList = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _policyInputList = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _resourceArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _resourceHandlingOption;
         private string _resourceOwner;
         private string _resourcePolicy;
@@ -102,7 +103,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if ActionNames property is set
         internal bool IsSetActionNames()
         {
-            return this._actionNames != null && this._actionNames.Count > 0; 
+            return this._actionNames != null && (this._actionNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -148,7 +149,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if ContextEntries property is set
         internal bool IsSetContextEntries()
         {
-            return this._contextEntries != null && this._contextEntries.Count > 0; 
+            return this._contextEntries != null && (this._contextEntries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -250,7 +251,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if PermissionsBoundaryPolicyInputList property is set
         internal bool IsSetPermissionsBoundaryPolicyInputList()
         {
-            return this._permissionsBoundaryPolicyInputList != null && this._permissionsBoundaryPolicyInputList.Count > 0; 
+            return this._permissionsBoundaryPolicyInputList != null && (this._permissionsBoundaryPolicyInputList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -304,7 +305,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if PolicyInputList property is set
         internal bool IsSetPolicyInputList()
         {
-            return this._policyInputList != null && this._policyInputList.Count > 0; 
+            return this._policyInputList != null && (this._policyInputList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -348,7 +349,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if ResourceArns property is set
         internal bool IsSetResourceArns()
         {
-            return this._resourceArns != null && this._resourceArns.Count > 0; 
+            return this._resourceArns != null && (this._resourceArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -364,11 +365,12 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// Each of the EC2 scenarios requires that you specify instance, image, and security
+        /// Each of the Amazon EC2 scenarios requires that you specify instance, image, and security
         /// group resources. If your scenario includes an EBS volume, then you must specify that
-        /// volume as a resource. If the EC2 scenario includes VPC, then you must supply the network
-        /// interface resource. If it includes an IP subnet, then you must specify the subnet
-        /// resource. For more information on the EC2 scenario options, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
+        /// volume as a resource. If the Amazon EC2 scenario includes VPC, then you must supply
+        /// the network interface resource. If it includes an IP subnet, then you must specify
+        /// the subnet resource. For more information on the Amazon EC2 scenario options, see
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
         /// platforms</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  <ul> <li> 

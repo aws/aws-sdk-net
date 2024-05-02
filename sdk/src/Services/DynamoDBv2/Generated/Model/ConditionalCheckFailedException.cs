@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.DynamoDBv2.Model
     #endif
     public partial class ConditionalCheckFailedException : AmazonDynamoDBException
     {
-        private Dictionary<string, AttributeValue> _item = new Dictionary<string, AttributeValue>();
+        private Dictionary<string, AttributeValue> _item = AWSConfigs.InitializeCollections ? new Dictionary<string, AttributeValue>() : null;
 
         /// <summary>
         /// Constructs a new ConditionalCheckFailedException with the specified error
@@ -133,7 +134,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if Item property is set
         internal bool IsSetItem()
         {
-            return this._item != null && this._item.Count > 0; 
+            return this._item != null && (this._item.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// Enumerable containing all of the CrossAccountResources
         /// </summary>
         public IPaginatedEnumerable<CrossAccountResource> CrossAccountResources => 
-            new PaginatedResultKeyResponse<ListCrossAccountResourcesResponse, CrossAccountResource>(this, (i) => i.CrossAccountResources);
+            new PaginatedResultKeyResponse<ListCrossAccountResourcesResponse, CrossAccountResource>(this, (i) => i.CrossAccountResources ?? new List<CrossAccountResource>());
 
         internal ListCrossAccountResourcesPaginator(IAmazonGlobalAccelerator client, ListCrossAccountResourcesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.GlobalAccelerator.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListCrossAccountResourcesResponse> IPaginator<ListCrossAccountResourcesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListCrossAccountResourcesResponse> IPaginator<ListCrossAccountResourcesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

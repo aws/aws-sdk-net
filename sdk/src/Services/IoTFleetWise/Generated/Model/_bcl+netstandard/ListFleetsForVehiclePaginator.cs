@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IoTFleetWise.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.IoTFleetWise.Model
         /// Enumerable containing all of the Fleets
         /// </summary>
         public IPaginatedEnumerable<string> Fleets => 
-            new PaginatedResultKeyResponse<ListFleetsForVehicleResponse, string>(this, (i) => i.Fleets);
+            new PaginatedResultKeyResponse<ListFleetsForVehicleResponse, string>(this, (i) => i.Fleets ?? new List<string>());
 
         internal ListFleetsForVehiclePaginator(IAmazonIoTFleetWise client, ListFleetsForVehicleRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.IoTFleetWise.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListFleetsForVehicleResponse> IPaginator<ListFleetsForVehicleResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListFleetsForVehicleResponse> IPaginator<ListFleetsForVehicleResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

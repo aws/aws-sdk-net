@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ARCZonalShift.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ARCZonalShift.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<ZonalShiftSummary> Items => 
-            new PaginatedResultKeyResponse<ListZonalShiftsResponse, ZonalShiftSummary>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListZonalShiftsResponse, ZonalShiftSummary>(this, (i) => i.Items ?? new List<ZonalShiftSummary>());
 
         internal ListZonalShiftsPaginator(IAmazonARCZonalShift client, ListZonalShiftsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ARCZonalShift.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListZonalShiftsResponse> IPaginator<ListZonalShiftsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListZonalShiftsResponse> IPaginator<ListZonalShiftsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

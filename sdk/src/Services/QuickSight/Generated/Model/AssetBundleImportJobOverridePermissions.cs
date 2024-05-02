@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -34,11 +35,11 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class AssetBundleImportJobOverridePermissions
     {
-        private List<AssetBundleImportJobAnalysisOverridePermissions> _analyses = new List<AssetBundleImportJobAnalysisOverridePermissions>();
-        private List<AssetBundleImportJobDashboardOverridePermissions> _dashboards = new List<AssetBundleImportJobDashboardOverridePermissions>();
-        private List<AssetBundleImportJobDataSetOverridePermissions> _dataSets = new List<AssetBundleImportJobDataSetOverridePermissions>();
-        private List<AssetBundleImportJobDataSourceOverridePermissions> _dataSources = new List<AssetBundleImportJobDataSourceOverridePermissions>();
-        private List<AssetBundleImportJobThemeOverridePermissions> _themes = new List<AssetBundleImportJobThemeOverridePermissions>();
+        private List<AssetBundleImportJobAnalysisOverridePermissions> _analyses = AWSConfigs.InitializeCollections ? new List<AssetBundleImportJobAnalysisOverridePermissions>() : null;
+        private List<AssetBundleImportJobDashboardOverridePermissions> _dashboards = AWSConfigs.InitializeCollections ? new List<AssetBundleImportJobDashboardOverridePermissions>() : null;
+        private List<AssetBundleImportJobDataSetOverridePermissions> _dataSets = AWSConfigs.InitializeCollections ? new List<AssetBundleImportJobDataSetOverridePermissions>() : null;
+        private List<AssetBundleImportJobDataSourceOverridePermissions> _dataSources = AWSConfigs.InitializeCollections ? new List<AssetBundleImportJobDataSourceOverridePermissions>() : null;
+        private List<AssetBundleImportJobThemeOverridePermissions> _themes = AWSConfigs.InitializeCollections ? new List<AssetBundleImportJobThemeOverridePermissions>() : null;
 
         /// <summary>
         /// Gets and sets the property Analyses. 
@@ -57,7 +58,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Analyses property is set
         internal bool IsSetAnalyses()
         {
-            return this._analyses != null && this._analyses.Count > 0; 
+            return this._analyses != null && (this._analyses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -77,7 +78,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Dashboards property is set
         internal bool IsSetDashboards()
         {
-            return this._dashboards != null && this._dashboards.Count > 0; 
+            return this._dashboards != null && (this._dashboards.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -97,7 +98,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if DataSets property is set
         internal bool IsSetDataSets()
         {
-            return this._dataSets != null && this._dataSets.Count > 0; 
+            return this._dataSets != null && (this._dataSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -117,7 +118,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if DataSources property is set
         internal bool IsSetDataSources()
         {
-            return this._dataSources != null && this._dataSources.Count > 0; 
+            return this._dataSources != null && (this._dataSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -137,7 +138,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Themes property is set
         internal bool IsSetThemes()
         {
-            return this._themes != null && this._themes.Count > 0; 
+            return this._themes != null && (this._themes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

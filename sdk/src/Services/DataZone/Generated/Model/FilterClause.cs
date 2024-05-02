@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class FilterClause
     {
-        private List<FilterClause> _and = new List<FilterClause>();
+        private List<FilterClause> _and = AWSConfigs.InitializeCollections ? new List<FilterClause>() : null;
         private Filter _filter;
-        private List<FilterClause> _or = new List<FilterClause>();
+        private List<FilterClause> _or = AWSConfigs.InitializeCollections ? new List<FilterClause>() : null;
 
         /// <summary>
         /// Gets and sets the property And. 
@@ -53,7 +54,7 @@ namespace Amazon.DataZone.Model
         // Check to see if And property is set
         internal bool IsSetAnd()
         {
-            return this._and != null && this._and.Count > 0; 
+            return this._and != null && (this._and.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -90,7 +91,7 @@ namespace Amazon.DataZone.Model
         // Check to see if Or property is set
         internal bool IsSetOr()
         {
-            return this._or != null && this._or.Count > 0; 
+            return this._or != null && (this._or.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

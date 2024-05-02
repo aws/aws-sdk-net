@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.CodePipeline.Model
     /// </summary>
     public partial class JobWorkerExecutorConfiguration
     {
-        private List<string> _pollingAccounts = new List<string>();
-        private List<string> _pollingServicePrincipals = new List<string>();
+        private List<string> _pollingAccounts = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _pollingServicePrincipals = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property PollingAccounts. 
@@ -54,7 +55,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if PollingAccounts property is set
         internal bool IsSetPollingAccounts()
         {
-            return this._pollingAccounts != null && this._pollingAccounts.Count > 0; 
+            return this._pollingAccounts != null && (this._pollingAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if PollingServicePrincipals property is set
         internal bool IsSetPollingServicePrincipals()
         {
-            return this._pollingServicePrincipals != null && this._pollingServicePrincipals.Count > 0; 
+            return this._pollingServicePrincipals != null && (this._pollingServicePrincipals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

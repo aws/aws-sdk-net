@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -58,6 +59,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("spotInstanceRequestSet/item", targetDepth))
                     {
                         var unmarshaller = CancelledSpotInstanceRequestUnmarshaller.Instance;
+                        if (response.CancelledSpotInstanceRequests == null)
+                        {
+                            response.CancelledSpotInstanceRequests = new List<CancelledSpotInstanceRequest>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.CancelledSpotInstanceRequests.Add(item);
                         continue;

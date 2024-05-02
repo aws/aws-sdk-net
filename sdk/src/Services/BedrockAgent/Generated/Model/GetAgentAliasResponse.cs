@@ -26,17 +26,21 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Get Agent Alias Response
+    /// This is the response object from the GetAgentAlias operation.
     /// </summary>
     public partial class GetAgentAliasResponse : AmazonWebServiceResponse
     {
         private AgentAlias _agentAlias;
 
         /// <summary>
-        /// Gets and sets the property AgentAlias.
+        /// Gets and sets the property AgentAlias. 
+        /// <para>
+        /// Contains information about the alias.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public AgentAlias AgentAlias

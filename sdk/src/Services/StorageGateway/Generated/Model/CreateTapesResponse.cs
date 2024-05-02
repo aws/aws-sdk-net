@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class CreateTapesResponse : AmazonWebServiceResponse
     {
-        private List<string> _tapeARNs = new List<string>();
+        private List<string> _tapeARNs = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property TapeARNs. 
@@ -51,7 +52,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if TapeARNs property is set
         internal bool IsSetTapeARNs()
         {
-            return this._tapeARNs != null && this._tapeARNs.Count > 0; 
+            return this._tapeARNs != null && (this._tapeARNs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

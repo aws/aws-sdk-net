@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
@@ -52,8 +53,8 @@ namespace Amazon.WorkSpaces.Model
     {
         private string _groupDesc;
         private string _groupName;
-        private List<Tag> _tags = new List<Tag>();
-        private List<IpRuleItem> _userRules = new List<IpRuleItem>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<IpRuleItem> _userRules = AWSConfigs.InitializeCollections ? new List<IpRuleItem>() : null;
 
         /// <summary>
         /// Gets and sets the property GroupDesc. 
@@ -107,7 +108,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -125,7 +126,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if UserRules property is set
         internal bool IsSetUserRules()
         {
-            return this._userRules != null && this._userRules.Count > 0; 
+            return this._userRules != null && (this._userRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

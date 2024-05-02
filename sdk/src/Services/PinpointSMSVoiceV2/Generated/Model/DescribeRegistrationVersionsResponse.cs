@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         private string _nextToken;
         private string _registrationArn;
         private string _registrationId;
-        private List<RegistrationVersionInformation> _registrationVersions = new List<RegistrationVersionInformation>();
+        private List<RegistrationVersionInformation> _registrationVersions = AWSConfigs.InitializeCollections ? new List<RegistrationVersionInformation>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -112,7 +113,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if RegistrationVersions property is set
         internal bool IsSetRegistrationVersions()
         {
-            return this._registrationVersions != null && this._registrationVersions.Count > 0; 
+            return this._registrationVersions != null && (this._registrationVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

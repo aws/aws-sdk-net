@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FMS.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.FMS.Model
     public partial class ListResourceSetsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ResourceSetSummary> _resourceSets = new List<ResourceSetSummary>();
+        private List<ResourceSetSummary> _resourceSets = AWSConfigs.InitializeCollections ? new List<ResourceSetSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -74,7 +75,7 @@ namespace Amazon.FMS.Model
         // Check to see if ResourceSets property is set
         internal bool IsSetResourceSets()
         {
-            return this._resourceSets != null && this._resourceSets.Count > 0; 
+            return this._resourceSets != null && (this._resourceSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

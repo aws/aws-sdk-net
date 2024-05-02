@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53Domains.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Route53Domains.Model
     {
         private string _domainName;
         private string _fiAuthKey;
-        private List<Nameserver> _nameservers = new List<Nameserver>();
+        private List<Nameserver> _nameservers = AWSConfigs.InitializeCollections ? new List<Nameserver>() : null;
 
         /// <summary>
         /// Gets and sets the property DomainName. 
@@ -102,7 +103,7 @@ namespace Amazon.Route53Domains.Model
         // Check to see if Nameservers property is set
         internal bool IsSetNameservers()
         {
-            return this._nameservers != null && this._nameservers.Count > 0; 
+            return this._nameservers != null && (this._nameservers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

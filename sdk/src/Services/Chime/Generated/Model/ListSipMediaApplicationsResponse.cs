@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Chime.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Chime.Model
     public partial class ListSipMediaApplicationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SipMediaApplication> _sipMediaApplications = new List<SipMediaApplication>();
+        private List<SipMediaApplication> _sipMediaApplications = AWSConfigs.InitializeCollections ? new List<SipMediaApplication>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.Chime.Model
         // Check to see if SipMediaApplications property is set
         internal bool IsSetSipMediaApplications()
         {
-            return this._sipMediaApplications != null && this._sipMediaApplications.Count > 0; 
+            return this._sipMediaApplications != null && (this._sipMediaApplications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

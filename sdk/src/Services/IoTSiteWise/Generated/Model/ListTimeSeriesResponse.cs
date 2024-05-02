@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IoTSiteWise.Model
     public partial class ListTimeSeriesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TimeSeriesSummary> _timeSeriesSummaries = new List<TimeSeriesSummary>();
+        private List<TimeSeriesSummary> _timeSeriesSummaries = AWSConfigs.InitializeCollections ? new List<TimeSeriesSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if TimeSeriesSummaries property is set
         internal bool IsSetTimeSeriesSummaries()
         {
-            return this._timeSeriesSummaries != null && this._timeSeriesSummaries.Count > 0; 
+            return this._timeSeriesSummaries != null && (this._timeSeriesSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

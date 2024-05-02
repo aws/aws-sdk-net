@@ -27,6 +27,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CognitoIdentity.Model
 {
     /// <summary>
@@ -47,7 +48,7 @@ namespace Amazon.CognitoIdentity.Model
     public partial class GetOpenIdTokenRequest : AmazonCognitoIdentityRequest
     {
         private string _identityId;
-        private Dictionary<string, string> _logins = new Dictionary<string, string>();
+        private Dictionary<string, string> _logins = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property IdentityId. 
@@ -87,7 +88,7 @@ namespace Amazon.CognitoIdentity.Model
         // Check to see if Logins property is set
         internal bool IsSetLogins()
         {
-            return this._logins != null && this._logins.Count > 0; 
+            return this._logins != null && (this._logins.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

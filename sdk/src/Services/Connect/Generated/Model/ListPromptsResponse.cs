@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Connect.Model
     public partial class ListPromptsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PromptSummary> _promptSummaryList = new List<PromptSummary>();
+        private List<PromptSummary> _promptSummaryList = AWSConfigs.InitializeCollections ? new List<PromptSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +70,7 @@ namespace Amazon.Connect.Model
         // Check to see if PromptSummaryList property is set
         internal bool IsSetPromptSummaryList()
         {
-            return this._promptSummaryList != null && this._promptSummaryList.Count > 0; 
+            return this._promptSummaryList != null && (this._promptSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

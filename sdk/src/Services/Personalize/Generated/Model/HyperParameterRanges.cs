@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Personalize.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.Personalize.Model
     /// </summary>
     public partial class HyperParameterRanges
     {
-        private List<CategoricalHyperParameterRange> _categoricalHyperParameterRanges = new List<CategoricalHyperParameterRange>();
-        private List<ContinuousHyperParameterRange> _continuousHyperParameterRanges = new List<ContinuousHyperParameterRange>();
-        private List<IntegerHyperParameterRange> _integerHyperParameterRanges = new List<IntegerHyperParameterRange>();
+        private List<CategoricalHyperParameterRange> _categoricalHyperParameterRanges = AWSConfigs.InitializeCollections ? new List<CategoricalHyperParameterRange>() : null;
+        private List<ContinuousHyperParameterRange> _continuousHyperParameterRanges = AWSConfigs.InitializeCollections ? new List<ContinuousHyperParameterRange>() : null;
+        private List<IntegerHyperParameterRange> _integerHyperParameterRanges = AWSConfigs.InitializeCollections ? new List<IntegerHyperParameterRange>() : null;
 
         /// <summary>
         /// Gets and sets the property CategoricalHyperParameterRanges. 
@@ -54,7 +55,7 @@ namespace Amazon.Personalize.Model
         // Check to see if CategoricalHyperParameterRanges property is set
         internal bool IsSetCategoricalHyperParameterRanges()
         {
-            return this._categoricalHyperParameterRanges != null && this._categoricalHyperParameterRanges.Count > 0; 
+            return this._categoricalHyperParameterRanges != null && (this._categoricalHyperParameterRanges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.Personalize.Model
         // Check to see if ContinuousHyperParameterRanges property is set
         internal bool IsSetContinuousHyperParameterRanges()
         {
-            return this._continuousHyperParameterRanges != null && this._continuousHyperParameterRanges.Count > 0; 
+            return this._continuousHyperParameterRanges != null && (this._continuousHyperParameterRanges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.Personalize.Model
         // Check to see if IntegerHyperParameterRanges property is set
         internal bool IsSetIntegerHyperParameterRanges()
         {
-            return this._integerHyperParameterRanges != null && this._integerHyperParameterRanges.Count > 0; 
+            return this._integerHyperParameterRanges != null && (this._integerHyperParameterRanges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

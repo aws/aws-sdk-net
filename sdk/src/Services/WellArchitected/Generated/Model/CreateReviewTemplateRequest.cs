@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
@@ -51,9 +52,9 @@ namespace Amazon.WellArchitected.Model
     {
         private string _clientRequestToken;
         private string _description;
-        private List<string> _lenses = new List<string>();
+        private List<string> _lenses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _notes;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _templateName;
 
         /// <summary>
@@ -107,7 +108,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if Lenses property is set
         internal bool IsSetLenses()
         {
-            return this._lenses != null && this._lenses.Count > 0; 
+            return this._lenses != null && (this._lenses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -142,7 +143,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

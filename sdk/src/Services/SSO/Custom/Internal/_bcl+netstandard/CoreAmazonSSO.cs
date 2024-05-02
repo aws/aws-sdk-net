@@ -24,9 +24,21 @@ using Amazon.Util.Internal;
 
 namespace Amazon.SSO.Internal
 {
+    /// <summary>
+    /// Utilities methods for working with SSO
+    /// </summary>
     public static class CoreAmazonSSO
     {
 #if BCL
+        /// <summary>
+        /// Create credentials from SSO access token
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="accountId"></param>
+        /// <param name="roleName"></param>
+        /// <param name="accessToken"></param>
+        /// <param name="additionalProperties"></param>
+        /// <returns></returns>
         public static ImmutableCredentials CredentialsFromSsoAccessToken(IAmazonSSO client, string accountId,
             string roleName, string accessToken,
             IDictionary<string, object> additionalProperties)
@@ -51,6 +63,11 @@ namespace Amazon.SSO.Internal
                 credentialsExpiration);
         }
 
+        /// <summary>
+        /// Logout access token
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="accessToken"></param>
         public static void Logout(IAmazonSSO client, string accessToken)
         {
             client.Logout(new LogoutRequest() { AccessToken = accessToken });
@@ -58,6 +75,15 @@ namespace Amazon.SSO.Internal
 #endif
 
 #if AWS_ASYNC_API
+        /// <summary>
+        /// Create credentials from SSO access token
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="accountId"></param>
+        /// <param name="roleName"></param>
+        /// <param name="accessToken"></param>
+        /// <param name="additionalProperties"></param>
+        /// <returns></returns>
         public static async Task<ImmutableCredentials> CredentialsFromSsoAccessTokenAsync(IAmazonSSO client, string accountId,
             string roleName, string accessToken,
             IDictionary<string, object> additionalProperties)
@@ -82,6 +108,13 @@ namespace Amazon.SSO.Internal
                 credentialsExpiration);
         }
 
+        /// <summary>
+        /// Logout access token
+        /// </summary>
+        /// <param name="client"></param>
+        /// <param name="accessToken"></param>
+        /// <param name="cancellationToken"></param>
+        /// <returns></returns>
         public static async Task LogoutAsync(IAmazonSSO client, string accessToken, CancellationToken cancellationToken = default)
         {
             await client.LogoutAsync(new LogoutRequest() { AccessToken = accessToken }, cancellationToken).ConfigureAwait(false);

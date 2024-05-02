@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.SSOAdmin.Model
         /// Enumerable containing all of the ApplicationProviders
         /// </summary>
         public IPaginatedEnumerable<ApplicationProvider> ApplicationProviders => 
-            new PaginatedResultKeyResponse<ListApplicationProvidersResponse, ApplicationProvider>(this, (i) => i.ApplicationProviders);
+            new PaginatedResultKeyResponse<ListApplicationProvidersResponse, ApplicationProvider>(this, (i) => i.ApplicationProviders ?? new List<ApplicationProvider>());
 
         internal ListApplicationProvidersPaginator(IAmazonSSOAdmin client, ListApplicationProvidersRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.SSOAdmin.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListApplicationProvidersResponse> IPaginator<ListApplicationProvidersResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListApplicationProvidersResponse> IPaginator<ListApplicationProvidersResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

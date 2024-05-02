@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GameLift.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.GameLift.Model
         private DateTime? _endTime;
         private int? _estimatedWaitTime;
         private GameSessionConnectionInfo _gameSessionConnectionInfo;
-        private List<Player> _players = new List<Player>();
+        private List<Player> _players = AWSConfigs.InitializeCollections ? new List<Player>() : null;
         private DateTime? _startTime;
         private MatchmakingConfigurationStatus _status;
         private string _statusMessage;
@@ -167,7 +168,7 @@ namespace Amazon.GameLift.Model
         // Check to see if Players property is set
         internal bool IsSetPlayers()
         {
-            return this._players != null && this._players.Count > 0; 
+            return this._players != null && (this._players.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTSecureTunneling.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoTSecureTunneling.Model
     /// </summary>
     public partial class DestinationConfig
     {
-        private List<string> _services = new List<string>();
+        private List<string> _services = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _thingName;
 
         /// <summary>
@@ -55,7 +56,7 @@ namespace Amazon.IoTSecureTunneling.Model
         // Check to see if Services property is set
         internal bool IsSetServices()
         {
-            return this._services != null && this._services.Count > 0; 
+            return this._services != null && (this._services.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

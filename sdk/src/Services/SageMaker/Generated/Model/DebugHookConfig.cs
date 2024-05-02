@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -37,8 +38,8 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class DebugHookConfig
     {
-        private List<CollectionConfiguration> _collectionConfigurations = new List<CollectionConfiguration>();
-        private Dictionary<string, string> _hookParameters = new Dictionary<string, string>();
+        private List<CollectionConfiguration> _collectionConfigurations = AWSConfigs.InitializeCollections ? new List<CollectionConfiguration>() : null;
+        private Dictionary<string, string> _hookParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _localPath;
         private string _s3OutputPath;
 
@@ -61,7 +62,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if CollectionConfigurations property is set
         internal bool IsSetCollectionConfigurations()
         {
-            return this._collectionConfigurations != null && this._collectionConfigurations.Count > 0; 
+            return this._collectionConfigurations != null && (this._collectionConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -80,7 +81,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if HookParameters property is set
         internal bool IsSetHookParameters()
         {
-            return this._hookParameters != null && this._hookParameters.Count > 0; 
+            return this._hookParameters != null && (this._hookParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

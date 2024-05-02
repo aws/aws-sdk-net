@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Finspace.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Finspace.Model
     /// </summary>
     public partial class ListKxVolumesResponse : AmazonWebServiceResponse
     {
-        private List<KxVolume> _kxVolumeSummaries = new List<KxVolume>();
+        private List<KxVolume> _kxVolumeSummaries = AWSConfigs.InitializeCollections ? new List<KxVolume>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Finspace.Model
         // Check to see if KxVolumeSummaries property is set
         internal bool IsSetKxVolumeSummaries()
         {
-            return this._kxVolumeSummaries != null && this._kxVolumeSummaries.Count > 0; 
+            return this._kxVolumeSummaries != null && (this._kxVolumeSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

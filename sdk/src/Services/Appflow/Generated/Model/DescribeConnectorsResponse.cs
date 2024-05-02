@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Appflow.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Appflow.Model
     /// </summary>
     public partial class DescribeConnectorsResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, ConnectorConfiguration> _connectorConfigurations = new Dictionary<string, ConnectorConfiguration>();
-        private List<ConnectorDetail> _connectors = new List<ConnectorDetail>();
+        private Dictionary<string, ConnectorConfiguration> _connectorConfigurations = AWSConfigs.InitializeCollections ? new Dictionary<string, ConnectorConfiguration>() : null;
+        private List<ConnectorDetail> _connectors = AWSConfigs.InitializeCollections ? new List<ConnectorDetail>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.Appflow.Model
         // Check to see if ConnectorConfigurations property is set
         internal bool IsSetConnectorConfigurations()
         {
-            return this._connectorConfigurations != null && this._connectorConfigurations.Count > 0; 
+            return this._connectorConfigurations != null && (this._connectorConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.Appflow.Model
         // Check to see if Connectors property is set
         internal bool IsSetConnectors()
         {
-            return this._connectors != null && this._connectors.Count > 0; 
+            return this._connectors != null && (this._connectors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

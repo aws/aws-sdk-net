@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -58,6 +59,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("successfulInstanceCreditSpecificationSet/item", targetDepth))
                     {
                         var unmarshaller = SuccessfulInstanceCreditSpecificationItemUnmarshaller.Instance;
+                        if (response.SuccessfulInstanceCreditSpecifications == null)
+                        {
+                            response.SuccessfulInstanceCreditSpecifications = new List<SuccessfulInstanceCreditSpecificationItem>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.SuccessfulInstanceCreditSpecifications.Add(item);
                         continue;
@@ -65,6 +70,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("unsuccessfulInstanceCreditSpecificationSet/item", targetDepth))
                     {
                         var unmarshaller = UnsuccessfulInstanceCreditSpecificationItemUnmarshaller.Instance;
+                        if (response.UnsuccessfulInstanceCreditSpecifications == null)
+                        {
+                            response.UnsuccessfulInstanceCreditSpecifications = new List<UnsuccessfulInstanceCreditSpecificationItem>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.UnsuccessfulInstanceCreditSpecifications.Add(item);
                         continue;

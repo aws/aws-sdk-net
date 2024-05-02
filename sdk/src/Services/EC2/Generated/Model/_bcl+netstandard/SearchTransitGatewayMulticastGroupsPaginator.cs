@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the MulticastGroups
         /// </summary>
         public IPaginatedEnumerable<TransitGatewayMulticastGroup> MulticastGroups => 
-            new PaginatedResultKeyResponse<SearchTransitGatewayMulticastGroupsResponse, TransitGatewayMulticastGroup>(this, (i) => i.MulticastGroups);
+            new PaginatedResultKeyResponse<SearchTransitGatewayMulticastGroupsResponse, TransitGatewayMulticastGroup>(this, (i) => i.MulticastGroups ?? new List<TransitGatewayMulticastGroup>());
 
         internal SearchTransitGatewayMulticastGroupsPaginator(IAmazonEC2 client, SearchTransitGatewayMulticastGroupsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.EC2.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<SearchTransitGatewayMulticastGroupsResponse> IPaginator<SearchTransitGatewayMulticastGroupsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<SearchTransitGatewayMulticastGroupsResponse> IPaginator<SearchTransitGatewayMulticastGroupsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

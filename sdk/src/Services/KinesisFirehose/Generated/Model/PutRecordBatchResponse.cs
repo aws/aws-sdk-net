@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.KinesisFirehose.Model
     {
         private bool? _encrypted;
         private int? _failedPutCount;
-        private List<PutRecordBatchResponseEntry> _requestResponses = new List<PutRecordBatchResponseEntry>();
+        private List<PutRecordBatchResponseEntry> _requestResponses = AWSConfigs.InitializeCollections ? new List<PutRecordBatchResponseEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property Encrypted. 
@@ -93,7 +94,7 @@ namespace Amazon.KinesisFirehose.Model
         // Check to see if RequestResponses property is set
         internal bool IsSetRequestResponses()
         {
-            return this._requestResponses != null && this._requestResponses.Count > 0; 
+            return this._requestResponses != null && (this._requestResponses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -70,6 +71,10 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Enables or disables the IPv6 endpoint for the instance metadata service.
         /// </para>
+        ///  
+        /// <para>
+        /// Default: <c>disabled</c> 
+        /// </para>
         /// </summary>
         public InstanceMetadataProtocolState HttpProtocolIpv6
         {
@@ -86,12 +91,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property HttpPutResponseHopLimit. 
         /// <para>
-        /// The desired HTTP PUT response hop limit for instance metadata requests. The larger
-        /// the number, the further instance metadata requests can travel.
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: 1
+        /// The maximum number of hops that the metadata token can travel.
         /// </para>
         ///  
         /// <para>
@@ -117,21 +117,35 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>optional</c> - IMDSv2 is optional. You can choose whether to send a session token
-        /// in your instance metadata retrieval requests. If you retrieve IAM role credentials
-        /// without a session token, you receive the IMDSv1 role credentials. If you retrieve
-        /// IAM role credentials using a valid session token, you receive the IMDSv2 role credentials.
+        ///  <c>optional</c> - IMDSv2 is optional, which means that you can use either IMDSv2
+        /// or IMDSv1.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>required</c> - IMDSv2 is required. You must send a session token in your instance
-        /// metadata retrieval requests. With this option, retrieving the IAM role credentials
-        /// always returns IMDSv2 credentials; IMDSv1 credentials are not available.
+        ///  <c>required</c> - IMDSv2 is required, which means that IMDSv1 is disabled, and you
+        /// must use IMDSv2.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Default: If the value of <c>ImdsSupport</c> for the Amazon Machine Image (AMI) for
-        /// your instance is <c>v2.0</c>, the default is <c>required</c>.
+        /// Default:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If the value of <c>ImdsSupport</c> for the Amazon Machine Image (AMI) for your instance
+        /// is <c>v2.0</c> and the account level default is set to <c>no-preference</c>, the default
+        /// is <c>required</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the value of <c>ImdsSupport</c> for the Amazon Machine Image (AMI) for your instance
+        /// is <c>v2.0</c>, but the account level default is set to <c>V1 or V2</c>, the default
+        /// is <c>optional</c>.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The default value can also be affected by other combinations of parameters. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-instance-metadata-options.html#instance-metadata-options-order-of-precedence">Order
+        /// of precedence for instance metadata options</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
         public HttpTokensState HttpTokens

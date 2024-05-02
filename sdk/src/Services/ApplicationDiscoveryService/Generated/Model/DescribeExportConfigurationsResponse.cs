@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
     /// </summary>
     public partial class DescribeExportConfigurationsResponse : AmazonWebServiceResponse
     {
-        private List<ExportInfo> _exportsInfo = new List<ExportInfo>();
+        private List<ExportInfo> _exportsInfo = AWSConfigs.InitializeCollections ? new List<ExportInfo>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -48,7 +49,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         // Check to see if ExportsInfo property is set
         internal bool IsSetExportsInfo()
         {
-            return this._exportsInfo != null && this._exportsInfo.Count > 0; 
+            return this._exportsInfo != null && (this._exportsInfo.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CodePipeline.Model
     public partial class ListWebhooksResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ListWebhookItem> _webhooks = new List<ListWebhookItem>();
+        private List<ListWebhookItem> _webhooks = AWSConfigs.InitializeCollections ? new List<ListWebhookItem>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +74,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if Webhooks property is set
         internal bool IsSetWebhooks()
         {
-            return this._webhooks != null && this._webhooks.Count > 0; 
+            return this._webhooks != null && (this._webhooks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

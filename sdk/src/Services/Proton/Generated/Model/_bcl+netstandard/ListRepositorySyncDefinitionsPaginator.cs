@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Proton.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Proton.Model
         /// Enumerable containing all of the SyncDefinitions
         /// </summary>
         public IPaginatedEnumerable<RepositorySyncDefinition> SyncDefinitions => 
-            new PaginatedResultKeyResponse<ListRepositorySyncDefinitionsResponse, RepositorySyncDefinition>(this, (i) => i.SyncDefinitions);
+            new PaginatedResultKeyResponse<ListRepositorySyncDefinitionsResponse, RepositorySyncDefinition>(this, (i) => i.SyncDefinitions ?? new List<RepositorySyncDefinition>());
 
         internal ListRepositorySyncDefinitionsPaginator(IAmazonProton client, ListRepositorySyncDefinitionsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Proton.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListRepositorySyncDefinitionsResponse> IPaginator<ListRepositorySyncDefinitionsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListRepositorySyncDefinitionsResponse> IPaginator<ListRepositorySyncDefinitionsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

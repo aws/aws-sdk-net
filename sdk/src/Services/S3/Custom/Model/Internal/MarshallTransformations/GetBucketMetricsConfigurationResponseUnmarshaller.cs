@@ -27,6 +27,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>
     public class GetBucketMetricsConfigurationResponseUnmarshaller : S3ReponseUnmarshaller
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             GetBucketMetricsConfigurationResponse response = new GetBucketMetricsConfigurationResponse();
@@ -86,6 +91,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static GetBucketMetricsConfigurationResponseUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static GetBucketMetricsConfigurationResponseUnmarshaller Instance
         {
             get

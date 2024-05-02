@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EC2.Model
     public partial class AvailabilityZone
     {
         private string _groupName;
-        private List<AvailabilityZoneMessage> _messages = new List<AvailabilityZoneMessage>();
+        private List<AvailabilityZoneMessage> _messages = AWSConfigs.InitializeCollections ? new List<AvailabilityZoneMessage>() : null;
         private string _networkBorderGroup;
         private AvailabilityZoneOptInStatus _optInStatus;
         private string _parentZoneId;
@@ -86,7 +87,7 @@ namespace Amazon.EC2.Model
         // Check to see if Messages property is set
         internal bool IsSetMessages()
         {
-            return this._messages != null && this._messages.Count > 0; 
+            return this._messages != null && (this._messages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

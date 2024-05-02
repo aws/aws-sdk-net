@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.AppMesh.Model
     /// </summary>
     public partial class AwsCloudMapServiceDiscovery
     {
-        private List<AwsCloudMapInstanceAttribute> _attributes = new List<AwsCloudMapInstanceAttribute>();
+        private List<AwsCloudMapInstanceAttribute> _attributes = AWSConfigs.InitializeCollections ? new List<AwsCloudMapInstanceAttribute>() : null;
         private IpPreference _ipPreference;
         private string _namespaceName;
         private string _serviceName;
@@ -62,7 +63,7 @@ namespace Amazon.AppMesh.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.DataZone.Model
         private string _createdBy;
         private string _description;
         private string _domainId;
-        private Dictionary<string, FormEntryOutput> _formsOutput = new Dictionary<string, FormEntryOutput>();
+        private Dictionary<string, FormEntryOutput> _formsOutput = AWSConfigs.InitializeCollections ? new Dictionary<string, FormEntryOutput>() : null;
         private string _name;
         private string _originDomainId;
         private string _originProjectId;
@@ -136,7 +137,7 @@ namespace Amazon.DataZone.Model
         // Check to see if FormsOutput property is set
         internal bool IsSetFormsOutput()
         {
-            return this._formsOutput != null && this._formsOutput.Count > 0; 
+            return this._formsOutput != null && (this._formsOutput.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

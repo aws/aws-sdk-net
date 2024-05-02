@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
@@ -34,6 +35,14 @@ namespace Amazon.GuardDuty.Model
     /// provide a value for either <c>autoEnableOrganizationMembers</c> or <c>autoEnable</c>,
     /// but not both. 
     /// 
+    ///  
+    /// <para>
+    /// Specifying both EKS Runtime Monitoring (<c>EKS_RUNTIME_MONITORING</c>) and Runtime
+    /// Monitoring (<c>RUNTIME_MONITORING</c>) will cause an error. You can add only one of
+    /// these two features because Runtime Monitoring already includes the threat detection
+    /// for Amazon EKS resources. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/runtime-monitoring.html">Runtime
+    /// Monitoring</a>.
+    /// </para>
     ///  
     /// <para>
     /// There might be regional differences because some data sources might not be available
@@ -48,7 +57,7 @@ namespace Amazon.GuardDuty.Model
         private AutoEnableMembers _autoEnableOrganizationMembers;
         private OrganizationDataSourceConfigurations _dataSources;
         private string _detectorId;
-        private List<OrganizationFeatureConfiguration> _features = new List<OrganizationFeatureConfiguration>();
+        private List<OrganizationFeatureConfiguration> _features = AWSConfigs.InitializeCollections ? new List<OrganizationFeatureConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property AutoEnable. 
@@ -106,6 +115,14 @@ namespace Amazon.GuardDuty.Model
         ///  <c>NONE</c>: Indicates that GuardDuty will not be automatically enabled for any account
         /// in the organization. The administrator must manage GuardDuty for each account in the
         /// organization individually.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you update the auto-enable setting from <c>ALL</c> or <c>NEW</c> to <c>NONE</c>,
+        /// this action doesn't disable the corresponding option for your existing accounts. This
+        /// configuration will apply to the new accounts that join the organization. After you
+        /// update the auto-enable settings, no new account will have the corresponding option
+        /// as enabled.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -174,7 +191,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if Features property is set
         internal bool IsSetFeatures()
         {
-            return this._features != null && this._features.Count > 0; 
+            return this._features != null && (this._features.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

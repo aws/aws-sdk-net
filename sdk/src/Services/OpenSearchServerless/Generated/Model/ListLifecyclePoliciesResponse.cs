@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpenSearchServerless.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.OpenSearchServerless.Model
     /// </summary>
     public partial class ListLifecyclePoliciesResponse : AmazonWebServiceResponse
     {
-        private List<LifecyclePolicySummary> _lifecyclePolicySummaries = new List<LifecyclePolicySummary>();
+        private List<LifecyclePolicySummary> _lifecyclePolicySummaries = AWSConfigs.InitializeCollections ? new List<LifecyclePolicySummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.OpenSearchServerless.Model
         // Check to see if LifecyclePolicySummaries property is set
         internal bool IsSetLifecyclePolicySummaries()
         {
-            return this._lifecyclePolicySummaries != null && this._lifecyclePolicySummaries.Count > 0; 
+            return this._lifecyclePolicySummaries != null && (this._lifecyclePolicySummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

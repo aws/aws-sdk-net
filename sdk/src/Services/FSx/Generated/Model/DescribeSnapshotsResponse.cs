@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FSx.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.FSx.Model
     public partial class DescribeSnapshotsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Snapshot> _snapshots = new List<Snapshot>();
+        private List<Snapshot> _snapshots = AWSConfigs.InitializeCollections ? new List<Snapshot>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken.
@@ -68,7 +69,7 @@ namespace Amazon.FSx.Model
         // Check to see if Snapshots property is set
         internal bool IsSetSnapshots()
         {
-            return this._snapshots != null && this._snapshots.Count > 0; 
+            return this._snapshots != null && (this._snapshots.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

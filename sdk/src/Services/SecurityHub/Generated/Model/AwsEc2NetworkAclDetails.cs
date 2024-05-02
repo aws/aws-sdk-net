@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsEc2NetworkAclDetails
     {
-        private List<AwsEc2NetworkAclAssociation> _associations = new List<AwsEc2NetworkAclAssociation>();
-        private List<AwsEc2NetworkAclEntry> _entries = new List<AwsEc2NetworkAclEntry>();
+        private List<AwsEc2NetworkAclAssociation> _associations = AWSConfigs.InitializeCollections ? new List<AwsEc2NetworkAclAssociation>() : null;
+        private List<AwsEc2NetworkAclEntry> _entries = AWSConfigs.InitializeCollections ? new List<AwsEc2NetworkAclEntry>() : null;
         private bool? _isDefault;
         private string _networkAclId;
         private string _ownerId;
@@ -55,7 +56,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Associations property is set
         internal bool IsSetAssociations()
         {
-            return this._associations != null && this._associations.Count > 0; 
+            return this._associations != null && (this._associations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Entries property is set
         internal bool IsSetEntries()
         {
-            return this._entries != null && this._entries.Count > 0; 
+            return this._entries != null && (this._entries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

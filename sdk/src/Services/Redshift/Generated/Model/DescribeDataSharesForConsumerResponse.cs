@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class DescribeDataSharesForConsumerResponse : AmazonWebServiceResponse
     {
-        private List<DataShare> _dataShares = new List<DataShare>();
+        private List<DataShare> _dataShares = AWSConfigs.InitializeCollections ? new List<DataShare>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Redshift.Model
         // Check to see if DataShares property is set
         internal bool IsSetDataShares()
         {
-            return this._dataShares != null && this._dataShares.Count > 0; 
+            return this._dataShares != null && (this._dataShares.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

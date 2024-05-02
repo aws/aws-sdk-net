@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LicenseManager.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.LicenseManager.Model
     /// </summary>
     public partial class ListAssociationsForLicenseConfigurationResponse : AmazonWebServiceResponse
     {
-        private List<LicenseConfigurationAssociation> _licenseConfigurationAssociations = new List<LicenseConfigurationAssociation>();
+        private List<LicenseConfigurationAssociation> _licenseConfigurationAssociations = AWSConfigs.InitializeCollections ? new List<LicenseConfigurationAssociation>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if LicenseConfigurationAssociations property is set
         internal bool IsSetLicenseConfigurationAssociations()
         {
-            return this._licenseConfigurationAssociations != null && this._licenseConfigurationAssociations.Count > 0; 
+            return this._licenseConfigurationAssociations != null && (this._licenseConfigurationAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

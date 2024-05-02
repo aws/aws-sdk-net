@@ -26,17 +26,17 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSecurityGroupReferences operation.
-    /// Describes the VPCs on the other side of a VPC peering connection or the VPCs attached
-    /// to a transit gateway that are referencing the security groups you've specified in
-    /// this request.
+    /// Describes the VPCs on the other side of a VPC peering connection that are referencing
+    /// the security groups you've specified in this request.
     /// </summary>
     public partial class DescribeSecurityGroupReferencesRequest : AmazonEC2Request
     {
-        private List<string> _groupId = new List<string>();
+        private List<string> _groupId = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property GroupId. 
@@ -54,7 +54,7 @@ namespace Amazon.EC2.Model
         // Check to see if GroupId property is set
         internal bool IsSetGroupId()
         {
-            return this._groupId != null && this._groupId.Count > 0; 
+            return this._groupId != null && (this._groupId.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

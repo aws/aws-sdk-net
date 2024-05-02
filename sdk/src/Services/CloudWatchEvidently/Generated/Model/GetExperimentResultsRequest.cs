@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchEvidently.Model
 {
     /// <summary>
@@ -48,13 +49,13 @@ namespace Amazon.CloudWatchEvidently.Model
         private ExperimentBaseStat _baseStat;
         private DateTime? _endTime;
         private string _experiment;
-        private List<string> _metricNames = new List<string>();
+        private List<string> _metricNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private long? _period;
         private string _project;
-        private List<string> _reportNames = new List<string>();
-        private List<string> _resultStats = new List<string>();
+        private List<string> _reportNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _resultStats = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _startTime;
-        private List<string> _treatmentNames = new List<string>();
+        private List<string> _treatmentNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property BaseStat. 
@@ -129,7 +130,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if MetricNames property is set
         internal bool IsSetMetricNames()
         {
-            return this._metricNames != null && this._metricNames.Count > 0; 
+            return this._metricNames != null && (this._metricNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -188,7 +189,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if ReportNames property is set
         internal bool IsSetReportNames()
         {
-            return this._reportNames != null && this._reportNames.Count > 0; 
+            return this._reportNames != null && (this._reportNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -234,7 +235,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if ResultStats property is set
         internal bool IsSetResultStats()
         {
-            return this._resultStats != null && this._resultStats.Count > 0; 
+            return this._resultStats != null && (this._resultStats.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -271,7 +272,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if TreatmentNames property is set
         internal bool IsSetTreatmentNames()
         {
-            return this._treatmentNames != null && this._treatmentNames.Count > 0; 
+            return this._treatmentNames != null && (this._treatmentNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

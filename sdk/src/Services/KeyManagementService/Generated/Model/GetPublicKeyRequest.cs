@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
@@ -113,7 +114,7 @@ namespace Amazon.KeyManagementService.Model
     /// </summary>
     public partial class GetPublicKeyRequest : AmazonKeyManagementServiceRequest
     {
-        private List<string> _grantTokens = new List<string>();
+        private List<string> _grantTokens = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _keyId;
 
         /// <summary>
@@ -140,7 +141,7 @@ namespace Amazon.KeyManagementService.Model
         // Check to see if GrantTokens property is set
         internal bool IsSetGrantTokens()
         {
-            return this._grantTokens != null && this._grantTokens.Count > 0; 
+            return this._grantTokens != null && (this._grantTokens.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

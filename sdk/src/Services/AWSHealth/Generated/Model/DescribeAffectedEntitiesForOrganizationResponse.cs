@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.AWSHealth.Model
     /// </summary>
     public partial class DescribeAffectedEntitiesForOrganizationResponse : AmazonWebServiceResponse
     {
-        private List<AffectedEntity> _entities = new List<AffectedEntity>();
-        private List<OrganizationAffectedEntitiesErrorItem> _failedSet = new List<OrganizationAffectedEntitiesErrorItem>();
+        private List<AffectedEntity> _entities = AWSConfigs.InitializeCollections ? new List<AffectedEntity>() : null;
+        private List<OrganizationAffectedEntitiesErrorItem> _failedSet = AWSConfigs.InitializeCollections ? new List<OrganizationAffectedEntitiesErrorItem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if Entities property is set
         internal bool IsSetEntities()
         {
-            return this._entities != null && this._entities.Count > 0; 
+            return this._entities != null && (this._entities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if FailedSet property is set
         internal bool IsSetFailedSet()
         {
-            return this._failedSet != null && this._failedSet.Count > 0; 
+            return this._failedSet != null && (this._failedSet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

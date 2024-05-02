@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Route53RecoveryCluster.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Route53RecoveryCluster.Model
         /// Enumerable containing all of the RoutingControls
         /// </summary>
         public IPaginatedEnumerable<RoutingControl> RoutingControls => 
-            new PaginatedResultKeyResponse<ListRoutingControlsResponse, RoutingControl>(this, (i) => i.RoutingControls);
+            new PaginatedResultKeyResponse<ListRoutingControlsResponse, RoutingControl>(this, (i) => i.RoutingControls ?? new List<RoutingControl>());
 
         internal ListRoutingControlsPaginator(IAmazonRoute53RecoveryCluster client, ListRoutingControlsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Route53RecoveryCluster.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListRoutingControlsResponse> IPaginator<ListRoutingControlsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListRoutingControlsResponse> IPaginator<ListRoutingControlsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

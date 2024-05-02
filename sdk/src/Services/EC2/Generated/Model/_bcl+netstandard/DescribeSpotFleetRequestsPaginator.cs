@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the SpotFleetRequestConfigs
         /// </summary>
         public IPaginatedEnumerable<SpotFleetRequestConfig> SpotFleetRequestConfigs => 
-            new PaginatedResultKeyResponse<DescribeSpotFleetRequestsResponse, SpotFleetRequestConfig>(this, (i) => i.SpotFleetRequestConfigs);
+            new PaginatedResultKeyResponse<DescribeSpotFleetRequestsResponse, SpotFleetRequestConfig>(this, (i) => i.SpotFleetRequestConfigs ?? new List<SpotFleetRequestConfig>());
 
         internal DescribeSpotFleetRequestsPaginator(IAmazonEC2 client, DescribeSpotFleetRequestsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.EC2.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeSpotFleetRequestsResponse> IPaginator<DescribeSpotFleetRequestsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeSpotFleetRequestsResponse> IPaginator<DescribeSpotFleetRequestsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

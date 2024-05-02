@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -63,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("availabilityZoneSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.AvailabilityZones == null)
+                        {
+                            unmarshalledObject.AvailabilityZones = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AvailabilityZones.Add(item);
                         continue;
@@ -70,6 +75,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("baseEndpointDnsNameSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.BaseEndpointDnsNames == null)
+                        {
+                            unmarshalledObject.BaseEndpointDnsNames = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.BaseEndpointDnsNames.Add(item);
                         continue;
@@ -101,6 +110,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("privateDnsNameSet/item", targetDepth))
                     {
                         var unmarshaller = PrivateDnsDetailsUnmarshaller.Instance;
+                        if (unmarshalledObject.PrivateDnsNames == null)
+                        {
+                            unmarshalledObject.PrivateDnsNames = new List<PrivateDnsDetails>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.PrivateDnsNames.Add(item);
                         continue;
@@ -126,6 +139,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("serviceType/item", targetDepth))
                     {
                         var unmarshaller = ServiceTypeDetailUnmarshaller.Instance;
+                        if (unmarshalledObject.ServiceType == null)
+                        {
+                            unmarshalledObject.ServiceType = new List<ServiceTypeDetail>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ServiceType.Add(item);
                         continue;
@@ -133,6 +150,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("supportedIpAddressTypeSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.SupportedIpAddressTypes == null)
+                        {
+                            unmarshalledObject.SupportedIpAddressTypes = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SupportedIpAddressTypes.Add(item);
                         continue;
@@ -140,6 +161,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tags.Add(item);
                         continue;

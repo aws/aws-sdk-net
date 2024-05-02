@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
@@ -58,7 +59,13 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property AttributeValue. 
         /// <para>
-        /// Specifies a value for the specified AttributeKey.
+        /// Specifies a value for the specified <c>AttributeKey</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The maximum length for the <c>AttributeValue</c> is 2000 characters. The following
+        /// characters ('<c>_</c>', '<c> </c>', '<c>,</c>', '<c>\\n</c>') count as two characters
+        /// towards the 2000 character limit.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2000)]

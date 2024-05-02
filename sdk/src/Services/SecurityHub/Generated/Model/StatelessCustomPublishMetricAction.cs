@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class StatelessCustomPublishMetricAction
     {
-        private List<StatelessCustomPublishMetricActionDimension> _dimensions = new List<StatelessCustomPublishMetricActionDimension>();
+        private List<StatelessCustomPublishMetricActionDimension> _dimensions = AWSConfigs.InitializeCollections ? new List<StatelessCustomPublishMetricActionDimension>() : null;
 
         /// <summary>
         /// Gets and sets the property Dimensions. 
@@ -50,7 +51,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Dimensions property is set
         internal bool IsSetDimensions()
         {
-            return this._dimensions != null && this._dimensions.Count > 0; 
+            return this._dimensions != null && (this._dimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

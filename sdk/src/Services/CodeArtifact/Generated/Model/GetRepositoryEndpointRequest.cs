@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeArtifact.Model
 {
     /// <summary>
@@ -34,6 +35,10 @@ namespace Amazon.CodeArtifact.Model
     /// has one endpoint for each package format: 
     /// 
     ///  <ul> <li> 
+    /// <para>
+    ///  <c>generic</c> 
+    /// </para>
+    ///  </li> <li> 
     /// <para>
     ///  <c>maven</c> 
     /// </para>
@@ -48,6 +53,14 @@ namespace Amazon.CodeArtifact.Model
     ///  </li> <li> 
     /// <para>
     ///  <c>pypi</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>ruby</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>swift</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

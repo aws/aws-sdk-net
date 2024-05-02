@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
@@ -37,12 +38,11 @@ namespace Amazon.WAFV2.Model
     ///  
     /// <para>
     /// If you configure WAF to inspect the request body, WAF inspects only the number of
-    /// bytes of the body up to the limit for the web ACL. By default, for regional web ACLs,
-    /// this limit is 8 KB (8,192 bytes) and for CloudFront web ACLs, this limit is 16 KB
-    /// (16,384 bytes). For CloudFront web ACLs, you can increase the limit in the web ACL
-    /// <c>AssociationConfig</c>, for additional fees. If you know that the request body for
-    /// your web requests should never exceed the inspection limit, you could use a size constraint
-    /// statement to block requests that have a larger request body size.
+    /// bytes in the body up to the limit for the web ACL and protected resource type. If
+    /// you know that the request body for your web requests should never exceed the inspection
+    /// limit, you can use a size constraint statement to block requests that have a larger
+    /// request body size. For more information about the inspection limits, see <c>Body</c>
+    /// and <c>JsonBody</c> settings for the <c>FieldToMatch</c> data type. 
     /// </para>
     ///  
     /// <para>
@@ -56,7 +56,7 @@ namespace Amazon.WAFV2.Model
         private ComparisonOperator _comparisonOperator;
         private FieldToMatch _fieldToMatch;
         private long? _size;
-        private List<TextTransformation> _textTransformations = new List<TextTransformation>();
+        private List<TextTransformation> _textTransformations = AWSConfigs.InitializeCollections ? new List<TextTransformation>() : null;
 
         /// <summary>
         /// Gets and sets the property ComparisonOperator. 
@@ -137,7 +137,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if TextTransformations property is set
         internal bool IsSetTextTransformations()
         {
-            return this._textTransformations != null && this._textTransformations.Count > 0; 
+            return this._textTransformations != null && (this._textTransformations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

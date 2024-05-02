@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Textract.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Textract.Model
     /// </summary>
     public partial class ListAdapterVersionsResponse : AmazonWebServiceResponse
     {
-        private List<AdapterVersionOverview> _adapterVersions = new List<AdapterVersionOverview>();
+        private List<AdapterVersionOverview> _adapterVersions = AWSConfigs.InitializeCollections ? new List<AdapterVersionOverview>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Textract.Model
         // Check to see if AdapterVersions property is set
         internal bool IsSetAdapterVersions()
         {
-            return this._adapterVersions != null && this._adapterVersions.Count > 0; 
+            return this._adapterVersions != null && (this._adapterVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

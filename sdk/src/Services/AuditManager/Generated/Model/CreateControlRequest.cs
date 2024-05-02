@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
@@ -36,10 +37,10 @@ namespace Amazon.AuditManager.Model
     {
         private string _actionPlanInstructions;
         private string _actionPlanTitle;
-        private List<CreateControlMappingSource> _controlMappingSources = new List<CreateControlMappingSource>();
+        private List<CreateControlMappingSource> _controlMappingSources = AWSConfigs.InitializeCollections ? new List<CreateControlMappingSource>() : null;
         private string _description;
         private string _name;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _testingInformation;
 
         /// <summary>
@@ -96,7 +97,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if ControlMappingSources property is set
         internal bool IsSetControlMappingSources()
         {
-            return this._controlMappingSources != null && this._controlMappingSources.Count > 0; 
+            return this._controlMappingSources != null && (this._controlMappingSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -153,7 +154,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

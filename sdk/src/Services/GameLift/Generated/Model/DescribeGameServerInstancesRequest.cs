@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GameLift.Model
 {
     /// <summary>
@@ -67,7 +68,7 @@ namespace Amazon.GameLift.Model
     public partial class DescribeGameServerInstancesRequest : AmazonGameLiftRequest
     {
         private string _gameServerGroupName;
-        private List<string> _instanceIds = new List<string>();
+        private List<string> _instanceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _limit;
         private string _nextToken;
 
@@ -108,7 +109,7 @@ namespace Amazon.GameLift.Model
         // Check to see if InstanceIds property is set
         internal bool IsSetInstanceIds()
         {
-            return this._instanceIds != null && this._instanceIds.Count > 0; 
+            return this._instanceIds != null && (this._instanceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

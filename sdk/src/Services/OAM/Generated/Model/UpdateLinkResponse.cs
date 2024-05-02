@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OAM.Model
 {
     /// <summary>
@@ -37,9 +38,10 @@ namespace Amazon.OAM.Model
         private string _id;
         private string _label;
         private string _labelTemplate;
-        private List<string> _resourceTypes = new List<string>();
+        private LinkConfiguration _linkConfiguration;
+        private List<string> _resourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _sinkArn;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -116,6 +118,25 @@ namespace Amazon.OAM.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LinkConfiguration. 
+        /// <para>
+        /// This structure includes filters that specify which metric namespaces and which log
+        /// groups are shared from the source account to the monitoring account.
+        /// </para>
+        /// </summary>
+        public LinkConfiguration LinkConfiguration
+        {
+            get { return this._linkConfiguration; }
+            set { this._linkConfiguration = value; }
+        }
+
+        // Check to see if LinkConfiguration property is set
+        internal bool IsSetLinkConfiguration()
+        {
+            return this._linkConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourceTypes. 
         /// <para>
         /// The resource types now supported by this link.
@@ -130,7 +151,7 @@ namespace Amazon.OAM.Model
         // Check to see if ResourceTypes property is set
         internal bool IsSetResourceTypes()
         {
-            return this._resourceTypes != null && this._resourceTypes.Count > 0; 
+            return this._resourceTypes != null && (this._resourceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -166,7 +187,7 @@ namespace Amazon.OAM.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

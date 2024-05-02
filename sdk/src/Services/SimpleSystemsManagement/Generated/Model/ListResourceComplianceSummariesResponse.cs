@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class ListResourceComplianceSummariesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ResourceComplianceSummaryItem> _resourceComplianceSummaryItems = new List<ResourceComplianceSummaryItem>();
+        private List<ResourceComplianceSummaryItem> _resourceComplianceSummaryItems = AWSConfigs.InitializeCollections ? new List<ResourceComplianceSummaryItem>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if ResourceComplianceSummaryItems property is set
         internal bool IsSetResourceComplianceSummaryItems()
         {
-            return this._resourceComplianceSummaryItems != null && this._resourceComplianceSummaryItems.Count > 0; 
+            return this._resourceComplianceSummaryItems != null && (this._resourceComplianceSummaryItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

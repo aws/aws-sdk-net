@@ -32,7 +32,7 @@ namespace Amazon.SecurityToken
     public partial class AmazonSecurityTokenServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("STS", "3.7.300.53");
+            InternalSDKUtils.BuildUserAgentString("STS", "3.7.300.85");
 
         private string _userAgent = UserAgentString;
         ///<summary>
@@ -53,8 +53,6 @@ namespace Amazon.SecurityToken
         {
             base.ServiceId = "STS";
             this.AuthenticationServiceName = "sts";
-            var region = FallbackRegionFactory.GetRegionEndpoint(false);
-            this.RegionEndpoint = region ?? RegionEndpoint.USEast1;
             this.EndpointProvider = new AmazonSecurityTokenServiceEndpointProvider();
         }
 

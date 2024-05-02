@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Pinpoint.Model
     /// </summary>
     public partial class Condition
     {
-        private List<SimpleCondition> _conditions = new List<SimpleCondition>();
+        private List<SimpleCondition> _conditions = AWSConfigs.InitializeCollections ? new List<SimpleCondition>() : null;
         private Operator _operator;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Conditions property is set
         internal bool IsSetConditions()
         {
-            return this._conditions != null && this._conditions.Count > 0; 
+            return this._conditions != null && (this._conditions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

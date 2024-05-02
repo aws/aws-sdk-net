@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
@@ -345,9 +346,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specified a <c>TypeNameAlias</c> when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate
-        /// this extension</a> in your account and Region, CloudFormation considers that alias
-        /// as the type name.
+        /// If you specified a <c>TypeNameAlias</c> when you call the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">ActivateType</a>
+        /// API operation in your account and Region, CloudFormation considers that alias as the
+        /// type name.
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=204)]

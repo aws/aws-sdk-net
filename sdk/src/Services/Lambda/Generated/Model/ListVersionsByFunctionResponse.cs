@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lambda.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Lambda.Model
     public partial class ListVersionsByFunctionResponse : AmazonWebServiceResponse
     {
         private string _nextMarker;
-        private List<FunctionConfiguration> _versions = new List<FunctionConfiguration>();
+        private List<FunctionConfiguration> _versions = AWSConfigs.InitializeCollections ? new List<FunctionConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property NextMarker. 
@@ -69,7 +70,7 @@ namespace Amazon.Lambda.Model
         // Check to see if Versions property is set
         internal bool IsSetVersions()
         {
-            return this._versions != null && this._versions.Count > 0; 
+            return this._versions != null && (this._versions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

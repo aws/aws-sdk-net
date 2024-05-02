@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.DirectoryService.Model
     public partial class ListSchemaExtensionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SchemaExtensionInfo> _schemaExtensionsInfo = new List<SchemaExtensionInfo>();
+        private List<SchemaExtensionInfo> _schemaExtensionsInfo = AWSConfigs.InitializeCollections ? new List<SchemaExtensionInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.DirectoryService.Model
         // Check to see if SchemaExtensionsInfo property is set
         internal bool IsSetSchemaExtensionsInfo()
         {
-            return this._schemaExtensionsInfo != null && this._schemaExtensionsInfo.Count > 0; 
+            return this._schemaExtensionsInfo != null && (this._schemaExtensionsInfo.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

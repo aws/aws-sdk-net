@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Synthetics.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Synthetics.Model
     public partial class DescribeRuntimeVersionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RuntimeVersion> _runtimeVersions = new List<RuntimeVersion>();
+        private List<RuntimeVersion> _runtimeVersions = AWSConfigs.InitializeCollections ? new List<RuntimeVersion>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +74,7 @@ namespace Amazon.Synthetics.Model
         // Check to see if RuntimeVersions property is set
         internal bool IsSetRuntimeVersions()
         {
-            return this._runtimeVersions != null && this._runtimeVersions.Count > 0; 
+            return this._runtimeVersions != null && (this._runtimeVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

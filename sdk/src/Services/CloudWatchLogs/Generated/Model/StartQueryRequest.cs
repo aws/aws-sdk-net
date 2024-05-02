@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
@@ -75,9 +76,9 @@ namespace Amazon.CloudWatchLogs.Model
     {
         private long? _endTime;
         private int? _limit;
-        private List<string> _logGroupIdentifiers = new List<string>();
+        private List<string> _logGroupIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _logGroupName;
-        private List<string> _logGroupNames = new List<string>();
+        private List<string> _logGroupNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _queryString;
         private long? _startTime;
 
@@ -154,7 +155,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if LogGroupIdentifiers property is set
         internal bool IsSetLogGroupIdentifiers()
         {
-            return this._logGroupIdentifiers != null && this._logGroupIdentifiers.Count > 0; 
+            return this._logGroupIdentifiers != null && (this._logGroupIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -203,7 +204,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if LogGroupNames property is set
         internal bool IsSetLogGroupNames()
         {
-            return this._logGroupNames != null && this._logGroupNames.Count > 0; 
+            return this._logGroupNames != null && (this._logGroupNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

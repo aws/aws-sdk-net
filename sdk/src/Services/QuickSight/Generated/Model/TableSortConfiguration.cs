@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.QuickSight.Model
     public partial class TableSortConfiguration
     {
         private PaginationConfiguration _paginationConfiguration;
-        private List<FieldSortOptions> _rowSort = new List<FieldSortOptions>();
+        private List<FieldSortOptions> _rowSort = AWSConfigs.InitializeCollections ? new List<FieldSortOptions>() : null;
 
         /// <summary>
         /// Gets and sets the property PaginationConfiguration. 
@@ -70,7 +71,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if RowSort property is set
         internal bool IsSetRowSort()
         {
-            return this._rowSort != null && this._rowSort.Count > 0; 
+            return this._rowSort != null && (this._rowSort.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

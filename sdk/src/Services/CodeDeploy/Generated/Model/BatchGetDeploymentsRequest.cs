@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.CodeDeploy.Model
     /// </summary>
     public partial class BatchGetDeploymentsRequest : AmazonCodeDeployRequest
     {
-        private List<string> _deploymentIds = new List<string>();
+        private List<string> _deploymentIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DeploymentIds. 
@@ -54,7 +55,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if DeploymentIds property is set
         internal bool IsSetDeploymentIds()
         {
-            return this._deploymentIds != null && this._deploymentIds.Count > 0; 
+            return this._deploymentIds != null && (this._deploymentIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

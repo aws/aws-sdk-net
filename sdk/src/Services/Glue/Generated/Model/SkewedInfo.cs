@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class SkewedInfo
     {
-        private List<string> _skewedColumnNames = new List<string>();
-        private Dictionary<string, string> _skewedColumnValueLocationMaps = new Dictionary<string, string>();
-        private List<string> _skewedColumnValues = new List<string>();
+        private List<string> _skewedColumnNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _skewedColumnValueLocationMaps = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<string> _skewedColumnValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property SkewedColumnNames. 
@@ -53,7 +54,7 @@ namespace Amazon.Glue.Model
         // Check to see if SkewedColumnNames property is set
         internal bool IsSetSkewedColumnNames()
         {
-            return this._skewedColumnNames != null && this._skewedColumnNames.Count > 0; 
+            return this._skewedColumnNames != null && (this._skewedColumnNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.Glue.Model
         // Check to see if SkewedColumnValueLocationMaps property is set
         internal bool IsSetSkewedColumnValueLocationMaps()
         {
-            return this._skewedColumnValueLocationMaps != null && this._skewedColumnValueLocationMaps.Count > 0; 
+            return this._skewedColumnValueLocationMaps != null && (this._skewedColumnValueLocationMaps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -89,7 +90,7 @@ namespace Amazon.Glue.Model
         // Check to see if SkewedColumnValues property is set
         internal bool IsSetSkewedColumnValues()
         {
-            return this._skewedColumnValues != null && this._skewedColumnValues.Count > 0; 
+            return this._skewedColumnValues != null && (this._skewedColumnValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

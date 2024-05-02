@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkManager.Model
 {
     /// <summary>
@@ -34,10 +35,10 @@ namespace Amazon.NetworkManager.Model
     /// </summary>
     public partial class UpdateVpcAttachmentRequest : AmazonNetworkManagerRequest
     {
-        private List<string> _addSubnetArns = new List<string>();
+        private List<string> _addSubnetArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _attachmentId;
         private VpcOptions _options;
-        private List<string> _removeSubnetArns = new List<string>();
+        private List<string> _removeSubnetArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AddSubnetArns. 
@@ -54,7 +55,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if AddSubnetArns property is set
         internal bool IsSetAddSubnetArns()
         {
-            return this._addSubnetArns != null && this._addSubnetArns.Count > 0; 
+            return this._addSubnetArns != null && (this._addSubnetArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -109,7 +110,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if RemoveSubnetArns property is set
         internal bool IsSetRemoveSubnetArns()
         {
-            return this._removeSubnetArns != null && this._removeSubnetArns.Count > 0; 
+            return this._removeSubnetArns != null && (this._removeSubnetArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

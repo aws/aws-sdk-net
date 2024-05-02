@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MTurk.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MTurk.Model
     /// </summary>
     public partial class ListAssignmentsForHITResponse : AmazonWebServiceResponse
     {
-        private List<Assignment> _assignments = new List<Assignment>();
+        private List<Assignment> _assignments = AWSConfigs.InitializeCollections ? new List<Assignment>() : null;
         private string _nextToken;
         private int? _numResults;
 
@@ -52,7 +53,7 @@ namespace Amazon.MTurk.Model
         // Check to see if Assignments property is set
         internal bool IsSetAssignments()
         {
-            return this._assignments != null && this._assignments.Count > 0; 
+            return this._assignments != null && (this._assignments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
@@ -42,15 +43,15 @@ namespace Amazon.APIGateway.Model
     public partial class PutMethodResponse : AmazonWebServiceResponse
     {
         private bool? _apiKeyRequired;
-        private List<string> _authorizationScopes = new List<string>();
+        private List<string> _authorizationScopes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _authorizationType;
         private string _authorizerId;
         private string _httpMethod;
         private Integration _methodIntegration;
-        private Dictionary<string, MethodResponse> _methodResponses = new Dictionary<string, MethodResponse>();
+        private Dictionary<string, MethodResponse> _methodResponses = AWSConfigs.InitializeCollections ? new Dictionary<string, MethodResponse>() : null;
         private string _operationName;
-        private Dictionary<string, string> _requestModels = new Dictionary<string, string>();
-        private Dictionary<string, bool> _requestParameters = new Dictionary<string, bool>();
+        private Dictionary<string, string> _requestModels = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, bool> _requestParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, bool>() : null;
         private string _requestValidatorId;
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if AuthorizationScopes property is set
         internal bool IsSetAuthorizationScopes()
         {
-            return this._authorizationScopes != null && this._authorizationScopes.Count > 0; 
+            return this._authorizationScopes != null && (this._authorizationScopes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -187,7 +188,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if MethodResponses property is set
         internal bool IsSetMethodResponses()
         {
-            return this._methodResponses != null && this._methodResponses.Count > 0; 
+            return this._methodResponses != null && (this._methodResponses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -226,7 +227,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if RequestModels property is set
         internal bool IsSetRequestModels()
         {
-            return this._requestModels != null && this._requestModels.Count > 0; 
+            return this._requestModels != null && (this._requestModels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -251,7 +252,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if RequestParameters property is set
         internal bool IsSetRequestParameters()
         {
-            return this._requestParameters != null && this._requestParameters.Count > 0; 
+            return this._requestParameters != null && (this._requestParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

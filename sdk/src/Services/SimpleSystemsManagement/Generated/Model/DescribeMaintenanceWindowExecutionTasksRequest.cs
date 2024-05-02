@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class DescribeMaintenanceWindowExecutionTasksRequest : AmazonSimpleSystemsManagementRequest
     {
-        private List<MaintenanceWindowFilter> _filters = new List<MaintenanceWindowFilter>();
+        private List<MaintenanceWindowFilter> _filters = AWSConfigs.InitializeCollections ? new List<MaintenanceWindowFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
         private string _windowExecutionId;
@@ -57,7 +58,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

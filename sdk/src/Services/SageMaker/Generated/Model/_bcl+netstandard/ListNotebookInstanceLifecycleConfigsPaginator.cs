@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the NotebookInstanceLifecycleConfigs
         /// </summary>
         public IPaginatedEnumerable<NotebookInstanceLifecycleConfigSummary> NotebookInstanceLifecycleConfigs => 
-            new PaginatedResultKeyResponse<ListNotebookInstanceLifecycleConfigsResponse, NotebookInstanceLifecycleConfigSummary>(this, (i) => i.NotebookInstanceLifecycleConfigs);
+            new PaginatedResultKeyResponse<ListNotebookInstanceLifecycleConfigsResponse, NotebookInstanceLifecycleConfigSummary>(this, (i) => i.NotebookInstanceLifecycleConfigs ?? new List<NotebookInstanceLifecycleConfigSummary>());
 
         internal ListNotebookInstanceLifecycleConfigsPaginator(IAmazonSageMaker client, ListNotebookInstanceLifecycleConfigsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.SageMaker.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListNotebookInstanceLifecycleConfigsResponse> IPaginator<ListNotebookInstanceLifecycleConfigsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListNotebookInstanceLifecycleConfigsResponse> IPaginator<ListNotebookInstanceLifecycleConfigsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

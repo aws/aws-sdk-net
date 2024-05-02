@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoTSiteWise.Model
     /// </summary>
     public partial class Datum
     {
-        private List<Datum> _arrayValue = new List<Datum>();
+        private List<Datum> _arrayValue = AWSConfigs.InitializeCollections ? new List<Datum>() : null;
         private bool? _nullValue;
         private Row _rowValue;
         private string _scalarValue;
@@ -53,7 +54,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if ArrayValue property is set
         internal bool IsSetArrayValue()
         {
-            return this._arrayValue != null && this._arrayValue.Count > 0; 
+            return this._arrayValue != null && (this._arrayValue.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

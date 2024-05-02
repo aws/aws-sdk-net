@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ServiceCatalog.Model
     /// </summary>
     public partial class ExecutionParameter
     {
-        private List<string> _defaultValues = new List<string>();
+        private List<string> _defaultValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private string _type;
 
@@ -54,7 +55,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if DefaultValues property is set
         internal bool IsSetDefaultValues()
         {
-            return this._defaultValues != null && this._defaultValues.Count > 0; 
+            return this._defaultValues != null && (this._defaultValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

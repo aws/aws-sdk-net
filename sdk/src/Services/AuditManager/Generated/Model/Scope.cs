@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.AuditManager.Model
     /// </summary>
     public partial class Scope
     {
-        private List<AWSAccount> _awsAccounts = new List<AWSAccount>();
-        private List<AWSService> _awsServices = new List<AWSService>();
+        private List<AWSAccount> _awsAccounts = AWSConfigs.InitializeCollections ? new List<AWSAccount>() : null;
+        private List<AWSService> _awsServices = AWSConfigs.InitializeCollections ? new List<AWSService>() : null;
 
         /// <summary>
         /// Gets and sets the property AwsAccounts. 
@@ -54,7 +55,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if AwsAccounts property is set
         internal bool IsSetAwsAccounts()
         {
-            return this._awsAccounts != null && this._awsAccounts.Count > 0; 
+            return this._awsAccounts != null && (this._awsAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if AwsServices property is set
         internal bool IsSetAwsServices()
         {
-            return this._awsServices != null && this._awsServices.Count > 0; 
+            return this._awsServices != null && (this._awsServices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

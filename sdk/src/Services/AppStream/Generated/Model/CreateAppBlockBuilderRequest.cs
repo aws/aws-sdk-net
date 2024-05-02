@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppStream.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.AppStream.Model
     /// </summary>
     public partial class CreateAppBlockBuilderRequest : AmazonAppStreamRequest
     {
-        private List<AccessEndpoint> _accessEndpoints = new List<AccessEndpoint>();
+        private List<AccessEndpoint> _accessEndpoints = AWSConfigs.InitializeCollections ? new List<AccessEndpoint>() : null;
         private string _description;
         private string _displayName;
         private bool? _enableDefaultInternetAccess;
@@ -42,7 +43,7 @@ namespace Amazon.AppStream.Model
         private string _instanceType;
         private string _name;
         private AppBlockBuilderPlatformType _platform;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private VpcConfig _vpcConfig;
 
         /// <summary>
@@ -62,7 +63,7 @@ namespace Amazon.AppStream.Model
         // Check to see if AccessEndpoints property is set
         internal bool IsSetAccessEndpoints()
         {
-            return this._accessEndpoints != null && this._accessEndpoints.Count > 0; 
+            return this._accessEndpoints != null && (this._accessEndpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -269,7 +270,7 @@ namespace Amazon.AppStream.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

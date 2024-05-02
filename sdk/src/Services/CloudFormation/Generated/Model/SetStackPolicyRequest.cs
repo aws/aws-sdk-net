@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
@@ -84,8 +85,9 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Location of a file containing the stack policy. The URL must point to a policy (maximum
         /// size: 16 KB) located in an Amazon S3 bucket in the same Amazon Web Services Region
-        /// as the stack. You can specify either the <c>StackPolicyBody</c> or the <c>StackPolicyURL</c>
-        /// parameter, but not both.
+        /// as the stack. The location for an Amazon S3 bucket must start with <c>https://</c>.
+        /// You can specify either the <c>StackPolicyBody</c> or the <c>StackPolicyURL</c> parameter,
+        /// but not both.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1350)]

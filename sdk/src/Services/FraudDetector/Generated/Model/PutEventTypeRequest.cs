@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FraudDetector.Model
 {
     /// <summary>
@@ -40,13 +41,13 @@ namespace Amazon.FraudDetector.Model
     public partial class PutEventTypeRequest : AmazonFraudDetectorRequest
     {
         private string _description;
-        private List<string> _entityTypes = new List<string>();
+        private List<string> _entityTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private EventIngestion _eventIngestion;
         private EventOrchestration _eventOrchestration;
-        private List<string> _eventVariables = new List<string>();
-        private List<string> _labels = new List<string>();
+        private List<string> _eventVariables = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _labels = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -83,7 +84,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if EntityTypes property is set
         internal bool IsSetEntityTypes()
         {
-            return this._entityTypes != null && this._entityTypes.Count > 0; 
+            return this._entityTypes != null && (this._entityTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -139,7 +140,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if EventVariables property is set
         internal bool IsSetEventVariables()
         {
-            return this._eventVariables != null && this._eventVariables.Count > 0; 
+            return this._eventVariables != null && (this._eventVariables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -157,7 +158,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if Labels property is set
         internal bool IsSetLabels()
         {
-            return this._labels != null && this._labels.Count > 0; 
+            return this._labels != null && (this._labels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -195,7 +196,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3Control.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.S3Control.Model
     /// </summary>
     public partial class GetJobTaggingResponse : AmazonWebServiceResponse
     {
-        private List<S3Tag> _tags = new List<S3Tag>();
+        private List<S3Tag> _tags = AWSConfigs.InitializeCollections ? new List<S3Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Tags. 
@@ -50,7 +51,7 @@ namespace Amazon.S3Control.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

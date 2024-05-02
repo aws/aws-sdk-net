@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataExchange.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DataExchange.Model
     /// </summary>
     public partial class ListRevisionAssetsResponse : AmazonWebServiceResponse
     {
-        private List<AssetEntry> _assets = new List<AssetEntry>();
+        private List<AssetEntry> _assets = AWSConfigs.InitializeCollections ? new List<AssetEntry>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.DataExchange.Model
         // Check to see if Assets property is set
         internal bool IsSetAssets()
         {
-            return this._assets != null && this._assets.Count > 0; 
+            return this._assets != null && (this._assets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

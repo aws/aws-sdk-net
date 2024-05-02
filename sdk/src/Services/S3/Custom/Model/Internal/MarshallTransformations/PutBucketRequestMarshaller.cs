@@ -140,22 +140,25 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         protected internal static void ConvertPutWithACLRequest(PutWithACLRequest request, IRequest irequest)
         {
             Dictionary<S3Permission, string> protoHeaders = new Dictionary<S3Permission, string>();
-            foreach (var grant in request.Grants)
+            if (request.Grants != null)
             {
-                string grantee = null;
-                if (grant.Grantee.CanonicalUser != null && !string.IsNullOrEmpty(grant.Grantee.CanonicalUser))
-                    grantee = string.Format(CultureInfo.InvariantCulture, "id=\"{0}\"", grant.Grantee.CanonicalUser);
-                else if (grant.Grantee.IsSetEmailAddress())
-                    grantee = string.Format(CultureInfo.InvariantCulture, "emailAddress=\"{0}\"", grant.Grantee.EmailAddress);
-                else if (grant.Grantee.IsSetURI())
-                    grantee = string.Format(CultureInfo.InvariantCulture, "uri=\"{0}\"", grant.Grantee.URI);
-                else continue;
+                foreach (var grant in request.Grants)
+                {
+                    string grantee = null;
+                    if (grant.Grantee.CanonicalUser != null && !string.IsNullOrEmpty(grant.Grantee.CanonicalUser))
+                        grantee = string.Format(CultureInfo.InvariantCulture, "id=\"{0}\"", grant.Grantee.CanonicalUser);
+                    else if (grant.Grantee.IsSetEmailAddress())
+                        grantee = string.Format(CultureInfo.InvariantCulture, "emailAddress=\"{0}\"", grant.Grantee.EmailAddress);
+                    else if (grant.Grantee.IsSetURI())
+                        grantee = string.Format(CultureInfo.InvariantCulture, "uri=\"{0}\"", grant.Grantee.URI);
+                    else continue;
 
-                string glist = null;
-                if (protoHeaders.TryGetValue(grant.Permission, out glist))
-                    protoHeaders[grant.Permission] = string.Format(CultureInfo.InvariantCulture, "{0}, {1}", glist, grantee);
-                else
-                    protoHeaders.Add(grant.Permission, grantee);
+                    string glist = null;
+                    if (protoHeaders.TryGetValue(grant.Permission, out glist))
+                        protoHeaders[grant.Permission] = string.Format(CultureInfo.InvariantCulture, "{0}, {1}", glist, grantee);
+                    else
+                        protoHeaders.Add(grant.Permission, grantee);
+                }
             }
 
             foreach (var permission in protoHeaders.Keys)
@@ -177,7 +180,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 	    private static PutBucketRequestMarshaller _instance;
 
-	    public static PutBucketRequestMarshaller Instance
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
+        public static PutBucketRequestMarshaller Instance
 	    {
 	        get
 	        {

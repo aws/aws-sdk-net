@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EMRServerless.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.EMRServerless.Model
         private string _encryptionKeyArn;
         private string _logGroupName;
         private string _logStreamNamePrefix;
-        private Dictionary<string, List<string>> _logTypes = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _logTypes = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
 
         /// <summary>
         /// Gets and sets the property Enabled. 
@@ -149,7 +150,7 @@ namespace Amazon.EMRServerless.Model
         // Check to see if LogTypes property is set
         internal bool IsSetLogTypes()
         {
-            return this._logTypes != null && this._logTypes.Count > 0; 
+            return this._logTypes != null && (this._logTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

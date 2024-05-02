@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -37,11 +38,11 @@ namespace Amazon.SecurityHub.Model
         private bool? _boolean;
         private double? _double;
         private string _enum;
-        private List<string> _enumList = new List<string>();
+        private List<string> _enumList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _integer;
-        private List<int> _integerList = new List<int>();
+        private List<int> _integerList = AWSConfigs.InitializeCollections ? new List<int>() : null;
         private string _string;
-        private List<string> _stringList = new List<string>();
+        private List<string> _stringList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Boolean. 
@@ -112,7 +113,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if EnumList property is set
         internal bool IsSetEnumList()
         {
-            return this._enumList != null && this._enumList.Count > 0; 
+            return this._enumList != null && (this._enumList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -148,7 +149,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if IntegerList property is set
         internal bool IsSetIntegerList()
         {
-            return this._integerList != null && this._integerList.Count > 0; 
+            return this._integerList != null && (this._integerList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -184,7 +185,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if StringList property is set
         internal bool IsSetStringList()
         {
-            return this._stringList != null && this._stringList.Count > 0; 
+            return this._stringList != null && (this._stringList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

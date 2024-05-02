@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.DynamoDBv2.Model
     public partial class DescribeGlobalTableSettingsResponse : AmazonWebServiceResponse
     {
         private string _globalTableName;
-        private List<ReplicaSettingsDescription> _replicaSettings = new List<ReplicaSettingsDescription>();
+        private List<ReplicaSettingsDescription> _replicaSettings = AWSConfigs.InitializeCollections ? new List<ReplicaSettingsDescription>() : null;
 
         /// <summary>
         /// Gets and sets the property GlobalTableName. 
@@ -70,7 +71,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if ReplicaSettings property is set
         internal bool IsSetReplicaSettings()
         {
-            return this._replicaSettings != null && this._replicaSettings.Count > 0; 
+            return this._replicaSettings != null && (this._replicaSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FSx.Model
 {
     /// <summary>
@@ -34,14 +35,14 @@ namespace Amazon.FSx.Model
     public partial class WindowsFileSystemConfiguration
     {
         private string _activeDirectoryId;
-        private List<Alias> _aliases = new List<Alias>();
+        private List<Alias> _aliases = AWSConfigs.InitializeCollections ? new List<Alias>() : null;
         private WindowsAuditLogConfiguration _auditLogConfiguration;
         private int? _automaticBackupRetentionDays;
         private bool? _copyTagsToBackups;
         private string _dailyAutomaticBackupStartTime;
         private WindowsDeploymentType _deploymentType;
         private DiskIopsConfiguration _diskIopsConfiguration;
-        private List<string> _maintenanceOperationsInProgress = new List<string>();
+        private List<string> _maintenanceOperationsInProgress = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _preferredFileServerIp;
         private string _preferredSubnetId;
         private string _remoteAdministrationEndpoint;
@@ -82,7 +83,7 @@ namespace Amazon.FSx.Model
         // Check to see if Aliases property is set
         internal bool IsSetAliases()
         {
-            return this._aliases != null && this._aliases.Count > 0; 
+            return this._aliases != null && (this._aliases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -244,7 +245,7 @@ namespace Amazon.FSx.Model
         // Check to see if MaintenanceOperationsInProgress property is set
         internal bool IsSetMaintenanceOperationsInProgress()
         {
-            return this._maintenanceOperationsInProgress != null && this._maintenanceOperationsInProgress.Count > 0; 
+            return this._maintenanceOperationsInProgress != null && (this._maintenanceOperationsInProgress.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Omics.Model
 {
     /// <summary>
@@ -43,7 +44,7 @@ namespace Amazon.Omics.Model
         private string _sequenceStoreId;
         private FileType _sourceFileType;
         private string _subjectId;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _uploadId;
 
         /// <summary>
@@ -232,7 +233,7 @@ namespace Amazon.Omics.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

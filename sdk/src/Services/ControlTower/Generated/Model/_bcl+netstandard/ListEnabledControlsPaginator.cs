@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ControlTower.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ControlTower.Model
         /// Enumerable containing all of the EnabledControls
         /// </summary>
         public IPaginatedEnumerable<EnabledControlSummary> EnabledControls => 
-            new PaginatedResultKeyResponse<ListEnabledControlsResponse, EnabledControlSummary>(this, (i) => i.EnabledControls);
+            new PaginatedResultKeyResponse<ListEnabledControlsResponse, EnabledControlSummary>(this, (i) => i.EnabledControls ?? new List<EnabledControlSummary>());
 
         internal ListEnabledControlsPaginator(IAmazonControlTower client, ListEnabledControlsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ControlTower.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListEnabledControlsResponse> IPaginator<ListEnabledControlsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListEnabledControlsResponse> IPaginator<ListEnabledControlsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

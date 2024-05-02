@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelBuildingService.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.LexModelBuildingService.Model
         private ObfuscationSetting _obfuscationSetting;
         private int? _priority;
         private string _responseCard;
-        private List<string> _sampleUtterances = new List<string>();
+        private List<string> _sampleUtterances = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SlotConstraint _slotConstraint;
         private string _slotType;
         private string _slotTypeVersion;
@@ -189,7 +190,7 @@ namespace Amazon.LexModelBuildingService.Model
         // Check to see if SampleUtterances property is set
         internal bool IsSetSampleUtterances()
         {
-            return this._sampleUtterances != null && this._sampleUtterances.Count > 0; 
+            return this._sampleUtterances != null && (this._sampleUtterances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

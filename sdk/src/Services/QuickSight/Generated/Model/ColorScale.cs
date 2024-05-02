@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.QuickSight.Model
     public partial class ColorScale
     {
         private ColorFillType _colorFillType;
-        private List<DataColor> _colors = new List<DataColor>();
+        private List<DataColor> _colors = AWSConfigs.InitializeCollections ? new List<DataColor>() : null;
         private DataColor _nullValueColor;
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Colors property is set
         internal bool IsSetColors()
         {
-            return this._colors != null && this._colors.Count > 0; 
+            return this._colors != null && (this._colors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

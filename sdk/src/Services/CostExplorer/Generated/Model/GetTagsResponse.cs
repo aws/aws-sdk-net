@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.CostExplorer.Model
     {
         private string _nextPageToken;
         private int? _returnSize;
-        private List<string> _tags = new List<string>();
+        private List<string> _tags = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _totalSize;
 
         /// <summary>
@@ -94,7 +95,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

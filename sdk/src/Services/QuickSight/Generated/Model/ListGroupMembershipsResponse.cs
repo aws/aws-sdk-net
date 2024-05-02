@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class ListGroupMembershipsResponse : AmazonWebServiceResponse
     {
-        private List<GroupMember> _groupMemberList = new List<GroupMember>();
+        private List<GroupMember> _groupMemberList = AWSConfigs.InitializeCollections ? new List<GroupMember>() : null;
         private string _nextToken;
         private string _requestId;
         private int? _status;
@@ -53,7 +54,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if GroupMemberList property is set
         internal bool IsSetGroupMemberList()
         {
-            return this._groupMemberList != null && this._groupMemberList.Count > 0; 
+            return this._groupMemberList != null && (this._groupMemberList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

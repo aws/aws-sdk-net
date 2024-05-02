@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
@@ -33,11 +34,14 @@ namespace Amazon.BedrockAgent.Model
     /// </summary>
     public partial class ListDataSourcesResponse : AmazonWebServiceResponse
     {
-        private List<DataSourceSummary> _dataSourceSummaries = new List<DataSourceSummary>();
+        private List<DataSourceSummary> _dataSourceSummaries = AWSConfigs.InitializeCollections ? new List<DataSourceSummary>() : null;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property DataSourceSummaries.
+        /// Gets and sets the property DataSourceSummaries. 
+        /// <para>
+        /// A list of objects, each of which contains information about a data source.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<DataSourceSummary> DataSourceSummaries
@@ -49,11 +53,16 @@ namespace Amazon.BedrockAgent.Model
         // Check to see if DataSourceSummaries property is set
         internal bool IsSetDataSourceSummaries()
         {
-            return this._dataSourceSummaries != null && this._dataSourceSummaries.Count > 0; 
+            return this._dataSourceSummaries != null && (this._dataSourceSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// If the total number of results is greater than the <c>maxResults</c> value provided
+        /// in the request, use this token when making another request in the <c>nextToken</c>
+        /// field to return the next batch of results.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
         public string NextToken

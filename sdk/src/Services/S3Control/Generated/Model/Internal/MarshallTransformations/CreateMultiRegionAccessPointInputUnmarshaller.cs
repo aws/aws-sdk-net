@@ -30,12 +30,13 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CreateMultiRegionAccessPointInput Object
     /// </summary>  
-    public class CreateMultiRegionAccessPointInputUnmarshaller : IUnmarshaller<CreateMultiRegionAccessPointInput, XmlUnmarshallerContext>
+    public class CreateMultiRegionAccessPointInputUnmarshaller : IUnmarshaller<CreateMultiRegionAccessPointInput, XmlUnmarshallerContext>, IUnmarshaller<CreateMultiRegionAccessPointInput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -69,6 +70,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Regions/Region", targetDepth))
                     {
+                        if (unmarshalledObject.Regions == null)
+                        {
+                            unmarshalledObject.Regions = new List<Region>();
+                        }
                         var unmarshaller = RegionUnmarshaller.Instance;
                         unmarshalledObject.Regions.Add(unmarshaller.Unmarshall(context));
                         continue;
@@ -80,6 +85,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public CreateMultiRegionAccessPointInput Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static CreateMultiRegionAccessPointInputUnmarshaller _instance = new CreateMultiRegionAccessPointInputUnmarshaller();        

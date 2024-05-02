@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// Enumerable containing all of the RecommendationPreferencesDetails
         /// </summary>
         public IPaginatedEnumerable<RecommendationPreferencesDetail> RecommendationPreferencesDetails => 
-            new PaginatedResultKeyResponse<GetRecommendationPreferencesResponse, RecommendationPreferencesDetail>(this, (i) => i.RecommendationPreferencesDetails);
+            new PaginatedResultKeyResponse<GetRecommendationPreferencesResponse, RecommendationPreferencesDetail>(this, (i) => i.RecommendationPreferencesDetails ?? new List<RecommendationPreferencesDetail>());
 
         internal GetRecommendationPreferencesPaginator(IAmazonComputeOptimizer client, GetRecommendationPreferencesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ComputeOptimizer.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<GetRecommendationPreferencesResponse> IPaginator<GetRecommendationPreferencesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<GetRecommendationPreferencesResponse> IPaginator<GetRecommendationPreferencesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

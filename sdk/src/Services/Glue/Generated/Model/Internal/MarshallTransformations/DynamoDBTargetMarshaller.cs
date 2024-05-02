@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DynamoDBTarget requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPath())
             {
                 context.Writer.WritePropertyName("Path");
@@ -60,7 +63,14 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetScanRate())
             {
                 context.Writer.WritePropertyName("scanRate");
-                context.Writer.Write(requestObject.ScanRate.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ScanRate.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ScanRate.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.ScanRate.Value);
+                }
             }
 
         }

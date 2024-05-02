@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Panorama.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Panorama.Model
     /// </summary>
     public partial class CreateJobForDevicesRequest : AmazonPanoramaRequest
     {
-        private List<string> _deviceIds = new List<string>();
+        private List<string> _deviceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DeviceJobConfig _deviceJobConfig;
         private JobType _jobType;
 
@@ -54,7 +55,7 @@ namespace Amazon.Panorama.Model
         // Check to see if DeviceIds property is set
         internal bool IsSetDeviceIds()
         {
-            return this._deviceIds != null && this._deviceIds.Count > 0; 
+            return this._deviceIds != null && (this._deviceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.CleanRooms.Model
         private string _collaborationName;
         private DateTime? _createTime;
         private string _id;
-        private List<string> _memberAbilities = new List<string>();
+        private List<string> _memberAbilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private MembershipPaymentConfiguration _paymentConfiguration;
         private MembershipStatus _status;
         private DateTime? _updateTime;
@@ -215,7 +216,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if MemberAbilities property is set
         internal bool IsSetMemberAbilities()
         {
-            return this._memberAbilities != null && this._memberAbilities.Count > 0; 
+            return this._memberAbilities != null && (this._memberAbilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

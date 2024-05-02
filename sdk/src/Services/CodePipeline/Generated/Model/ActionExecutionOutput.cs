@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.CodePipeline.Model
     public partial class ActionExecutionOutput
     {
         private ActionExecutionResult _executionResult;
-        private List<ArtifactDetail> _outputArtifacts = new List<ArtifactDetail>();
-        private Dictionary<string, string> _outputVariables = new Dictionary<string, string>();
+        private List<ArtifactDetail> _outputArtifacts = AWSConfigs.InitializeCollections ? new List<ArtifactDetail>() : null;
+        private Dictionary<string, string> _outputVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ExecutionResult. 
@@ -70,7 +71,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if OutputArtifacts property is set
         internal bool IsSetOutputArtifacts()
         {
-            return this._outputArtifacts != null && this._outputArtifacts.Count > 0; 
+            return this._outputArtifacts != null && (this._outputArtifacts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -89,7 +90,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if OutputVariables property is set
         internal bool IsSetOutputVariables()
         {
-            return this._outputVariables != null && this._outputVariables.Count > 0; 
+            return this._outputVariables != null && (this._outputVariables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

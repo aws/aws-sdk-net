@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.Glue.Model
     public partial class ConnectorDataSource
     {
         private string _connectionType;
-        private Dictionary<string, string> _data = new Dictionary<string, string>();
+        private Dictionary<string, string> _data = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _name;
-        private List<GlueSchema> _outputSchemas = new List<GlueSchema>();
+        private List<GlueSchema> _outputSchemas = AWSConfigs.InitializeCollections ? new List<GlueSchema>() : null;
 
         /// <summary>
         /// Gets and sets the property ConnectionType. 
@@ -105,7 +106,7 @@ namespace Amazon.Glue.Model
         // Check to see if Data property is set
         internal bool IsSetData()
         {
-            return this._data != null && this._data.Count > 0; 
+            return this._data != null && (this._data.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -142,7 +143,7 @@ namespace Amazon.Glue.Model
         // Check to see if OutputSchemas property is set
         internal bool IsSetOutputSchemas()
         {
-            return this._outputSchemas != null && this._outputSchemas.Count > 0; 
+            return this._outputSchemas != null && (this._outputSchemas.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

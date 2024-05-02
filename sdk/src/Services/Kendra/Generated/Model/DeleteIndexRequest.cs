@@ -26,12 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteIndex operation.
-    /// Deletes an existing Amazon Kendra index. An exception is not thrown if the index is
-    /// already being deleted. While the index is being deleted, the <c>Status</c> field returned
+    /// Deletes an Amazon Kendra index. An exception is not thrown if the index is already
+    /// being deleted. While the index is being deleted, the <c>Status</c> field returned
     /// by a call to the <c>DescribeIndex</c> API is set to <c>DELETING</c>.
     /// </summary>
     public partial class DeleteIndexRequest : AmazonKendraRequest

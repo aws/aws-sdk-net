@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -51,12 +52,12 @@ namespace Amazon.EC2.Model
     public partial class ModifyInstanceAttributeRequest : AmazonEC2Request
     {
         private InstanceAttributeName _attribute;
-        private List<InstanceBlockDeviceMappingSpecification> _blockDeviceMappings = new List<InstanceBlockDeviceMappingSpecification>();
+        private List<InstanceBlockDeviceMappingSpecification> _blockDeviceMappings = AWSConfigs.InitializeCollections ? new List<InstanceBlockDeviceMappingSpecification>() : null;
         private bool? _disableApiStop;
         private bool? _disableApiTermination;
         private bool? _ebsOptimized;
         private bool? _enaSupport;
-        private List<string> _groups = new List<string>();
+        private List<string> _groups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _instanceId;
         private string _instanceInitiatedShutdownBehavior;
         private string _instanceType;
@@ -136,7 +137,7 @@ namespace Amazon.EC2.Model
         // Check to see if BlockDeviceMappings property is set
         internal bool IsSetBlockDeviceMappings()
         {
-            return this._blockDeviceMappings != null && this._blockDeviceMappings.Count > 0; 
+            return this._blockDeviceMappings != null && (this._blockDeviceMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -239,7 +240,7 @@ namespace Amazon.EC2.Model
         // Check to see if Groups property is set
         internal bool IsSetGroups()
         {
-            return this._groups != null && this._groups.Count > 0; 
+            return this._groups != null && (this._groups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

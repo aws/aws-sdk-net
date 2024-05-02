@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EncryptionDecryptionAttributes requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAsymmetric())
             {
                 context.Writer.WritePropertyName("Asymmetric");
@@ -63,6 +66,17 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
 
                 var marshaller = DukptEncryptionAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Dukpt, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetEmv())
+            {
+                context.Writer.WritePropertyName("Emv");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EmvEncryptionAttributesMarshaller.Instance;
+                marshaller.Marshall(requestObject.Emv, context);
 
                 context.Writer.WriteObjectEnd();
             }

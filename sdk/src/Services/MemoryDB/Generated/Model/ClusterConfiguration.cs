@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.MemoryDB.Model
         private int? _numShards;
         private string _parameterGroupName;
         private int? _port;
-        private List<ShardDetail> _shards = new List<ShardDetail>();
+        private List<ShardDetail> _shards = AWSConfigs.InitializeCollections ? new List<ShardDetail>() : null;
         private int? _snapshotRetentionLimit;
         private string _snapshotWindow;
         private string _subnetGroupName;
@@ -207,7 +208,7 @@ namespace Amazon.MemoryDB.Model
         // Check to see if Shards property is set
         internal bool IsSetShards()
         {
-            return this._shards != null && this._shards.Count > 0; 
+            return this._shards != null && (this._shards.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.WAFV2.Model
     /// </summary>
     public partial class AndStatement
     {
-        private List<Statement> _statements = new List<Statement>();
+        private List<Statement> _statements = AWSConfigs.InitializeCollections ? new List<Statement>() : null;
 
         /// <summary>
         /// Gets and sets the property Statements. 
@@ -53,7 +54,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if Statements property is set
         internal bool IsSetStatements()
         {
-            return this._statements != null && this._statements.Count > 0; 
+            return this._statements != null && (this._statements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

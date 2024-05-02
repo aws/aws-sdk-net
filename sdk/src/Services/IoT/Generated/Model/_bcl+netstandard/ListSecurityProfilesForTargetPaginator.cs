@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the SecurityProfileTargetMappings
         /// </summary>
         public IPaginatedEnumerable<SecurityProfileTargetMapping> SecurityProfileTargetMappings => 
-            new PaginatedResultKeyResponse<ListSecurityProfilesForTargetResponse, SecurityProfileTargetMapping>(this, (i) => i.SecurityProfileTargetMappings);
+            new PaginatedResultKeyResponse<ListSecurityProfilesForTargetResponse, SecurityProfileTargetMapping>(this, (i) => i.SecurityProfileTargetMappings ?? new List<SecurityProfileTargetMapping>());
 
         internal ListSecurityProfilesForTargetPaginator(IAmazonIoT client, ListSecurityProfilesForTargetRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.IoT.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListSecurityProfilesForTargetResponse> IPaginator<ListSecurityProfilesForTargetResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListSecurityProfilesForTargetResponse> IPaginator<ListSecurityProfilesForTargetResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

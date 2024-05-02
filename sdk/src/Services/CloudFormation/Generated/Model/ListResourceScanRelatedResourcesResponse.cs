@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CloudFormation.Model
     public partial class ListResourceScanRelatedResourcesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ScannedResource> _relatedResources = new List<ScannedResource>();
+        private List<ScannedResource> _relatedResources = AWSConfigs.InitializeCollections ? new List<ScannedResource>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -74,7 +75,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if RelatedResources property is set
         internal bool IsSetRelatedResources()
         {
-            return this._relatedResources != null && this._relatedResources.Count > 0; 
+            return this._relatedResources != null && (this._relatedResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DocDB.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DocDB.Model
     /// </summary>
     public partial class DescribeDBEngineVersionsResponse : AmazonWebServiceResponse
     {
-        private List<DBEngineVersion> _dbEngineVersions = new List<DBEngineVersion>();
+        private List<DBEngineVersion> _dbEngineVersions = AWSConfigs.InitializeCollections ? new List<DBEngineVersion>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.DocDB.Model
         // Check to see if DBEngineVersions property is set
         internal bool IsSetDBEngineVersions()
         {
-            return this._dbEngineVersions != null && this._dbEngineVersions.Count > 0; 
+            return this._dbEngineVersions != null && (this._dbEngineVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

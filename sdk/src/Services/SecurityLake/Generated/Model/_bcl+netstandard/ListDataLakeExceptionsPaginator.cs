@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.SecurityLake.Model
         /// Enumerable containing all of the Exceptions
         /// </summary>
         public IPaginatedEnumerable<DataLakeException> Exceptions => 
-            new PaginatedResultKeyResponse<ListDataLakeExceptionsResponse, DataLakeException>(this, (i) => i.Exceptions);
+            new PaginatedResultKeyResponse<ListDataLakeExceptionsResponse, DataLakeException>(this, (i) => i.Exceptions ?? new List<DataLakeException>());
 
         internal ListDataLakeExceptionsPaginator(IAmazonSecurityLake client, ListDataLakeExceptionsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.SecurityLake.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListDataLakeExceptionsResponse> IPaginator<ListDataLakeExceptionsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListDataLakeExceptionsResponse> IPaginator<ListDataLakeExceptionsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

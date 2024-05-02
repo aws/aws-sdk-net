@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GameLift.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class ClaimFilterOption
     {
-        private List<string> _instanceStatuses = new List<string>();
+        private List<string> _instanceStatuses = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property InstanceStatuses. 
@@ -57,7 +58,7 @@ namespace Amazon.GameLift.Model
         // Check to see if InstanceStatuses property is set
         internal bool IsSetInstanceStatuses()
         {
-            return this._instanceStatuses != null && this._instanceStatuses.Count > 0; 
+            return this._instanceStatuses != null && (this._instanceStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

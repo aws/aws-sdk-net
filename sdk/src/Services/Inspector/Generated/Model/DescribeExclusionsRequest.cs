@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Inspector.Model
     /// </summary>
     public partial class DescribeExclusionsRequest : AmazonInspectorRequest
     {
-        private List<string> _exclusionArns = new List<string>();
+        private List<string> _exclusionArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Locale _locale;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.Inspector.Model
         // Check to see if ExclusionArns property is set
         internal bool IsSetExclusionArns()
         {
-            return this._exclusionArns != null && this._exclusionArns.Count > 0; 
+            return this._exclusionArns != null && (this._exclusionArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

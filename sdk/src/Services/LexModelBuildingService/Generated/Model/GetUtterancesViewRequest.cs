@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelBuildingService.Model
 {
     /// <summary>
@@ -68,7 +69,7 @@ namespace Amazon.LexModelBuildingService.Model
     public partial class GetUtterancesViewRequest : AmazonLexModelBuildingServiceRequest
     {
         private string _botName;
-        private List<string> _botVersions = new List<string>();
+        private List<string> _botVersions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private StatusType _statusType;
 
         /// <summary>
@@ -107,7 +108,7 @@ namespace Amazon.LexModelBuildingService.Model
         // Check to see if BotVersions property is set
         internal bool IsSetBotVersions()
         {
-            return this._botVersions != null && this._botVersions.Count > 0; 
+            return this._botVersions != null && (this._botVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
@@ -39,8 +40,8 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class DescribeAnomalyDetectorsRequest : AmazonCloudWatchRequest
     {
-        private List<string> _anomalyDetectorTypes = new List<string>();
-        private List<Dimension> _dimensions = new List<Dimension>();
+        private List<string> _anomalyDetectorTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Dimension> _dimensions = AWSConfigs.InitializeCollections ? new List<Dimension>() : null;
         private int? _maxResults;
         private string _metricName;
         private string _awsNamespace;
@@ -63,7 +64,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if AnomalyDetectorTypes property is set
         internal bool IsSetAnomalyDetectorTypes()
         {
-            return this._anomalyDetectorTypes != null && this._anomalyDetectorTypes.Count > 0; 
+            return this._anomalyDetectorTypes != null && (this._anomalyDetectorTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -84,7 +85,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if Dimensions property is set
         internal bool IsSetDimensions()
         {
-            return this._dimensions != null && this._dimensions.Count > 0; 
+            return this._dimensions != null && (this._dimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

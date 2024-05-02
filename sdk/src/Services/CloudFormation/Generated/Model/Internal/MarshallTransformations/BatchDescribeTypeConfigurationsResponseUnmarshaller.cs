@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -84,6 +85,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Errors/member", targetDepth))
                     {
                         var unmarshaller = BatchDescribeTypeConfigurationsErrorUnmarshaller.Instance;
+                        if (response.Errors == null)
+                        {
+                            response.Errors = new List<BatchDescribeTypeConfigurationsError>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Errors.Add(item);
                         continue;
@@ -91,6 +96,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("TypeConfigurations/member", targetDepth))
                     {
                         var unmarshaller = TypeConfigurationDetailsUnmarshaller.Instance;
+                        if (response.TypeConfigurations == null)
+                        {
+                            response.TypeConfigurations = new List<TypeConfigurationDetails>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.TypeConfigurations.Add(item);
                         continue;
@@ -98,6 +107,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("UnprocessedTypeConfigurations/member", targetDepth))
                     {
                         var unmarshaller = TypeConfigurationIdentifierUnmarshaller.Instance;
+                        if (response.UnprocessedTypeConfigurations == null)
+                        {
+                            response.UnprocessedTypeConfigurations = new List<TypeConfigurationIdentifier>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.UnprocessedTypeConfigurations.Add(item);
                         continue;

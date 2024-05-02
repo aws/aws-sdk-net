@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.ComputeOptimizer.Model
     /// </summary>
     public partial class DeleteRecommendationPreferencesRequest : AmazonComputeOptimizerRequest
     {
-        private List<string> _recommendationPreferenceNames = new List<string>();
+        private List<string> _recommendationPreferenceNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ResourceType _resourceType;
         private Scope _scope;
 
@@ -60,7 +61,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if RecommendationPreferenceNames property is set
         internal bool IsSetRecommendationPreferenceNames()
         {
-            return this._recommendationPreferenceNames != null && this._recommendationPreferenceNames.Count > 0; 
+            return this._recommendationPreferenceNames != null && (this._recommendationPreferenceNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

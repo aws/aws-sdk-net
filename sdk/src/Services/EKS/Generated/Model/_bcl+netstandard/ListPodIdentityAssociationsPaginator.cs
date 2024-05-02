@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EKS.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.EKS.Model
         /// Enumerable containing all of the Associations
         /// </summary>
         public IPaginatedEnumerable<PodIdentityAssociationSummary> Associations => 
-            new PaginatedResultKeyResponse<ListPodIdentityAssociationsResponse, PodIdentityAssociationSummary>(this, (i) => i.Associations);
+            new PaginatedResultKeyResponse<ListPodIdentityAssociationsResponse, PodIdentityAssociationSummary>(this, (i) => i.Associations ?? new List<PodIdentityAssociationSummary>());
 
         internal ListPodIdentityAssociationsPaginator(IAmazonEKS client, ListPodIdentityAssociationsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.EKS.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListPodIdentityAssociationsResponse> IPaginator<ListPodIdentityAssociationsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListPodIdentityAssociationsResponse> IPaginator<ListPodIdentityAssociationsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

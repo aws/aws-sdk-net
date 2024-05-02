@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LookoutMetrics.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.LookoutMetrics.Model
     /// </summary>
     public partial class MetricSetDataQualityMetric
     {
-        private List<DataQualityMetric> _dataQualityMetricList = new List<DataQualityMetric>();
+        private List<DataQualityMetric> _dataQualityMetricList = AWSConfigs.InitializeCollections ? new List<DataQualityMetric>() : null;
         private string _metricSetArn;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.LookoutMetrics.Model
         // Check to see if DataQualityMetricList property is set
         internal bool IsSetDataQualityMetricList()
         {
-            return this._dataQualityMetricList != null && this._dataQualityMetricList.Count > 0; 
+            return this._dataQualityMetricList != null && (this._dataQualityMetricList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IoTWireless.Model
     /// </summary>
     public partial class WirelessDeviceLogOption
     {
-        private List<WirelessDeviceEventLogOption> _events = new List<WirelessDeviceEventLogOption>();
+        private List<WirelessDeviceEventLogOption> _events = AWSConfigs.InitializeCollections ? new List<WirelessDeviceEventLogOption>() : null;
         private LogLevel _logLevel;
         private WirelessDeviceType _type;
 
@@ -50,7 +51,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if Events property is set
         internal bool IsSetEvents()
         {
-            return this._events != null && this._events.Count > 0; 
+            return this._events != null && (this._events.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

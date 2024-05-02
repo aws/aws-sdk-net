@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.QuickSight.Model
         private string _nextToken;
         private string _requestId;
         private int? _status;
-        private List<TemplateVersionSummary> _templateVersionSummaryList = new List<TemplateVersionSummary>();
+        private List<TemplateVersionSummary> _templateVersionSummaryList = AWSConfigs.InitializeCollections ? new List<TemplateVersionSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -108,7 +109,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if TemplateVersionSummaryList property is set
         internal bool IsSetTemplateVersionSummaryList()
         {
-            return this._templateVersionSummaryList != null && this._templateVersionSummaryList.Count > 0; 
+            return this._templateVersionSummaryList != null && (this._templateVersionSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

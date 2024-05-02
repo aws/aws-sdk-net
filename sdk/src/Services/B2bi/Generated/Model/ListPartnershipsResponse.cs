@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.B2bi.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.B2bi.Model
     public partial class ListPartnershipsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PartnershipSummary> _partnerships = new List<PartnershipSummary>();
+        private List<PartnershipSummary> _partnerships = AWSConfigs.InitializeCollections ? new List<PartnershipSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +74,7 @@ namespace Amazon.B2bi.Model
         // Check to see if Partnerships property is set
         internal bool IsSetPartnerships()
         {
-            return this._partnerships != null && this._partnerships.Count > 0; 
+            return this._partnerships != null && (this._partnerships.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

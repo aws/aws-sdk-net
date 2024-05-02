@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class ListBackupsResponse : AmazonWebServiceResponse
     {
-        private List<BackupSummary> _backupSummaries = new List<BackupSummary>();
+        private List<BackupSummary> _backupSummaries = AWSConfigs.InitializeCollections ? new List<BackupSummary>() : null;
         private string _lastEvaluatedBackupArn;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if BackupSummaries property is set
         internal bool IsSetBackupSummaries()
         {
-            return this._backupSummaries != null && this._backupSummaries.Count > 0; 
+            return this._backupSummaries != null && (this._backupSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

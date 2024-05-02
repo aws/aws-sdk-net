@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.EC2.Model
         private string _destination;
         private string _id;
         private MetricType _metric;
-        private List<MetricPoint> _metricPoints = new List<MetricPoint>();
+        private List<MetricPoint> _metricPoints = AWSConfigs.InitializeCollections ? new List<MetricPoint>() : null;
         private PeriodType _period;
         private string _source;
         private StatisticType _statistic;
@@ -112,7 +113,7 @@ namespace Amazon.EC2.Model
         // Check to see if MetricPoints property is set
         internal bool IsSetMetricPoints()
         {
-            return this._metricPoints != null && this._metricPoints.Count > 0; 
+            return this._metricPoints != null && (this._metricPoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

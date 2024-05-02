@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkDocs.Model
 {
     /// <summary>
@@ -33,16 +34,16 @@ namespace Amazon.WorkDocs.Model
     /// </summary>
     public partial class Filters
     {
-        private List<string> _ancestorIds = new List<string>();
-        private List<string> _contentCategories = new List<string>();
+        private List<string> _ancestorIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _contentCategories = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateRangeType _createdRange;
-        private List<string> _labels = new List<string>();
+        private List<string> _labels = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateRangeType _modifiedRange;
-        private List<SearchPrincipalType> _principals = new List<SearchPrincipalType>();
-        private List<string> _resourceTypes = new List<string>();
-        private List<string> _searchCollectionTypes = new List<string>();
+        private List<SearchPrincipalType> _principals = AWSConfigs.InitializeCollections ? new List<SearchPrincipalType>() : null;
+        private List<string> _resourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _searchCollectionTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private LongRangeType _sizeRange;
-        private List<string> _textLocales = new List<string>();
+        private List<string> _textLocales = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AncestorIds. 
@@ -60,7 +61,7 @@ namespace Amazon.WorkDocs.Model
         // Check to see if AncestorIds property is set
         internal bool IsSetAncestorIds()
         {
-            return this._ancestorIds != null && this._ancestorIds.Count > 0; 
+            return this._ancestorIds != null && (this._ancestorIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -79,7 +80,7 @@ namespace Amazon.WorkDocs.Model
         // Check to see if ContentCategories property is set
         internal bool IsSetContentCategories()
         {
-            return this._contentCategories != null && this._contentCategories.Count > 0; 
+            return this._contentCategories != null && (this._contentCategories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -116,7 +117,7 @@ namespace Amazon.WorkDocs.Model
         // Check to see if Labels property is set
         internal bool IsSetLabels()
         {
-            return this._labels != null && this._labels.Count > 0; 
+            return this._labels != null && (this._labels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -153,7 +154,7 @@ namespace Amazon.WorkDocs.Model
         // Check to see if Principals property is set
         internal bool IsSetPrincipals()
         {
-            return this._principals != null && this._principals.Count > 0; 
+            return this._principals != null && (this._principals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -172,7 +173,7 @@ namespace Amazon.WorkDocs.Model
         // Check to see if ResourceTypes property is set
         internal bool IsSetResourceTypes()
         {
-            return this._resourceTypes != null && this._resourceTypes.Count > 0; 
+            return this._resourceTypes != null && (this._resourceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -191,7 +192,7 @@ namespace Amazon.WorkDocs.Model
         // Check to see if SearchCollectionTypes property is set
         internal bool IsSetSearchCollectionTypes()
         {
-            return this._searchCollectionTypes != null && this._searchCollectionTypes.Count > 0; 
+            return this._searchCollectionTypes != null && (this._searchCollectionTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -228,7 +229,7 @@ namespace Amazon.WorkDocs.Model
         // Check to see if TextLocales property is set
         internal bool IsSetTextLocales()
         {
-            return this._textLocales != null && this._textLocales.Count > 0; 
+            return this._textLocales != null && (this._textLocales.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

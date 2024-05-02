@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ServerMigrationService.Model
         /// Enumerable containing all of the ConnectorList
         /// </summary>
         public IPaginatedEnumerable<Connector> ConnectorList => 
-            new PaginatedResultKeyResponse<GetConnectorsResponse, Connector>(this, (i) => i.ConnectorList);
+            new PaginatedResultKeyResponse<GetConnectorsResponse, Connector>(this, (i) => i.ConnectorList ?? new List<Connector>());
 
         internal GetConnectorsPaginator(IAmazonServerMigrationService client, GetConnectorsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ServerMigrationService.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<GetConnectorsResponse> IPaginator<GetConnectorsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<GetConnectorsResponse> IPaginator<GetConnectorsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

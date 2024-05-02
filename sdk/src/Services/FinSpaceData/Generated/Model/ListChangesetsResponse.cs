@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FinSpaceData.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.FinSpaceData.Model
     /// </summary>
     public partial class ListChangesetsResponse : AmazonWebServiceResponse
     {
-        private List<ChangesetSummary> _changesets = new List<ChangesetSummary>();
+        private List<ChangesetSummary> _changesets = AWSConfigs.InitializeCollections ? new List<ChangesetSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.FinSpaceData.Model
         // Check to see if Changesets property is set
         internal bool IsSetChangesets()
         {
-            return this._changesets != null && this._changesets.Count > 0; 
+            return this._changesets != null && (this._changesets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

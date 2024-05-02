@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.OpenSearchService.Model
     public partial class CompatibleVersionsMap
     {
         private string _sourceVersion;
-        private List<string> _targetVersions = new List<string>();
+        private List<string> _targetVersions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property SourceVersion. 
@@ -71,7 +72,7 @@ namespace Amazon.OpenSearchService.Model
         // Check to see if TargetVersions property is set
         internal bool IsSetTargetVersions()
         {
-            return this._targetVersions != null && this._targetVersions.Count > 0; 
+            return this._targetVersions != null && (this._targetVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

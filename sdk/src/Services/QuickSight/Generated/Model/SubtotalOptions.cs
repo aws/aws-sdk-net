@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -35,9 +36,9 @@ namespace Amazon.QuickSight.Model
     {
         private string _customLabel;
         private PivotTableSubtotalLevel _fieldLevel;
-        private List<PivotTableFieldSubtotalOptions> _fieldLevelOptions = new List<PivotTableFieldSubtotalOptions>();
+        private List<PivotTableFieldSubtotalOptions> _fieldLevelOptions = AWSConfigs.InitializeCollections ? new List<PivotTableFieldSubtotalOptions>() : null;
         private TableCellStyle _metricHeaderCellStyle;
-        private List<TableStyleTarget> _styleTargets = new List<TableStyleTarget>();
+        private List<TableStyleTarget> _styleTargets = AWSConfigs.InitializeCollections ? new List<TableStyleTarget>() : null;
         private TableCellStyle _totalCellStyle;
         private Visibility _totalsVisibility;
         private TableCellStyle _valueCellStyle;
@@ -94,7 +95,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if FieldLevelOptions property is set
         internal bool IsSetFieldLevelOptions()
         {
-            return this._fieldLevelOptions != null && this._fieldLevelOptions.Count > 0; 
+            return this._fieldLevelOptions != null && (this._fieldLevelOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -131,7 +132,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if StyleTargets property is set
         internal bool IsSetStyleTargets()
         {
-            return this._styleTargets != null && this._styleTargets.Count > 0; 
+            return this._styleTargets != null && (this._styleTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

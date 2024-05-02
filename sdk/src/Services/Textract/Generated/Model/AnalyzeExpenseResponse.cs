@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Textract.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Textract.Model
     public partial class AnalyzeExpenseResponse : AmazonWebServiceResponse
     {
         private DocumentMetadata _documentMetadata;
-        private List<ExpenseDocument> _expenseDocuments = new List<ExpenseDocument>();
+        private List<ExpenseDocument> _expenseDocuments = AWSConfigs.InitializeCollections ? new List<ExpenseDocument>() : null;
 
         /// <summary>
         /// Gets and sets the property DocumentMetadata.
@@ -66,7 +67,7 @@ namespace Amazon.Textract.Model
         // Check to see if ExpenseDocuments property is set
         internal bool IsSetExpenseDocuments()
         {
-            return this._expenseDocuments != null && this._expenseDocuments.Count > 0; 
+            return this._expenseDocuments != null && (this._expenseDocuments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

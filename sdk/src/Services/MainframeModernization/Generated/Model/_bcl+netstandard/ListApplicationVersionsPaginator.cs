@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MainframeModernization.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.MainframeModernization.Model
         /// Enumerable containing all of the ApplicationVersions
         /// </summary>
         public IPaginatedEnumerable<ApplicationVersionSummary> ApplicationVersions => 
-            new PaginatedResultKeyResponse<ListApplicationVersionsResponse, ApplicationVersionSummary>(this, (i) => i.ApplicationVersions);
+            new PaginatedResultKeyResponse<ListApplicationVersionsResponse, ApplicationVersionSummary>(this, (i) => i.ApplicationVersions ?? new List<ApplicationVersionSummary>());
 
         internal ListApplicationVersionsPaginator(IAmazonMainframeModernization client, ListApplicationVersionsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.MainframeModernization.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListApplicationVersionsResponse> IPaginator<ListApplicationVersionsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListApplicationVersionsResponse> IPaginator<ListApplicationVersionsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

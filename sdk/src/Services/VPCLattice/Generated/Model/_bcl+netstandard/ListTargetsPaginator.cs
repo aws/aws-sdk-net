@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.VPCLattice.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.VPCLattice.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<TargetSummary> Items => 
-            new PaginatedResultKeyResponse<ListTargetsResponse, TargetSummary>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListTargetsResponse, TargetSummary>(this, (i) => i.Items ?? new List<TargetSummary>());
 
         internal ListTargetsPaginator(IAmazonVPCLattice client, ListTargetsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.VPCLattice.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListTargetsResponse> IPaginator<ListTargetsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListTargetsResponse> IPaginator<ListTargetsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

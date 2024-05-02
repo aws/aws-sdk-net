@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchEvidently.Model
 {
     /// <summary>
@@ -55,15 +56,15 @@ namespace Amazon.CloudWatchEvidently.Model
     public partial class CreateExperimentRequest : AmazonCloudWatchEvidentlyRequest
     {
         private string _description;
-        private List<MetricGoalConfig> _metricGoals = new List<MetricGoalConfig>();
+        private List<MetricGoalConfig> _metricGoals = AWSConfigs.InitializeCollections ? new List<MetricGoalConfig>() : null;
         private string _name;
         private OnlineAbConfig _onlineAbConfig;
         private string _project;
         private string _randomizationSalt;
         private long? _samplingRate;
         private string _segment;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
-        private List<TreatmentConfig> _treatments = new List<TreatmentConfig>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<TreatmentConfig> _treatments = AWSConfigs.InitializeCollections ? new List<TreatmentConfig>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -101,7 +102,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if MetricGoals property is set
         internal bool IsSetMetricGoals()
         {
-            return this._metricGoals != null && this._metricGoals.Count > 0; 
+            return this._metricGoals != null && (this._metricGoals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -266,7 +267,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -286,7 +287,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if Treatments property is set
         internal bool IsSetTreatments()
         {
-            return this._treatments != null && this._treatments.Count > 0; 
+            return this._treatments != null && (this._treatments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

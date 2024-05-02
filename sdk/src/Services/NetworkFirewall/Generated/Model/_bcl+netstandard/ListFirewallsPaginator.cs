@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.NetworkFirewall.Model
         /// Enumerable containing all of the Firewalls
         /// </summary>
         public IPaginatedEnumerable<FirewallMetadata> Firewalls => 
-            new PaginatedResultKeyResponse<ListFirewallsResponse, FirewallMetadata>(this, (i) => i.Firewalls);
+            new PaginatedResultKeyResponse<ListFirewallsResponse, FirewallMetadata>(this, (i) => i.Firewalls ?? new List<FirewallMetadata>());
 
         internal ListFirewallsPaginator(IAmazonNetworkFirewall client, ListFirewallsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.NetworkFirewall.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListFirewallsResponse> IPaginator<ListFirewallsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListFirewallsResponse> IPaginator<ListFirewallsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

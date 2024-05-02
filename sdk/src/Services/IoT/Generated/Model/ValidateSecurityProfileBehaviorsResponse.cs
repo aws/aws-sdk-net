@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IoT.Model
     public partial class ValidateSecurityProfileBehaviorsResponse : AmazonWebServiceResponse
     {
         private bool? _valid;
-        private List<ValidationError> _validationErrors = new List<ValidationError>();
+        private List<ValidationError> _validationErrors = AWSConfigs.InitializeCollections ? new List<ValidationError>() : null;
 
         /// <summary>
         /// Gets and sets the property Valid. 
@@ -69,7 +70,7 @@ namespace Amazon.IoT.Model
         // Check to see if ValidationErrors property is set
         internal bool IsSetValidationErrors()
         {
-            return this._validationErrors != null && this._validationErrors.Count > 0; 
+            return this._validationErrors != null && (this._validationErrors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

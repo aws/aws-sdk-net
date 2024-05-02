@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.MediaConnect.Model
     public partial class Output
     {
         private string _bridgeArn;
-        private List<int> _bridgePorts = new List<int>();
+        private List<int> _bridgePorts = AWSConfigs.InitializeCollections ? new List<int>() : null;
         private int? _dataTransferSubscriberFeePercent;
         private string _description;
         private string _destination;
@@ -42,7 +43,7 @@ namespace Amazon.MediaConnect.Model
         private string _entitlementArn;
         private string _listenerAddress;
         private string _mediaLiveInputArn;
-        private List<MediaStreamOutputConfiguration> _mediaStreamOutputConfigurations = new List<MediaStreamOutputConfiguration>();
+        private List<MediaStreamOutputConfiguration> _mediaStreamOutputConfigurations = AWSConfigs.InitializeCollections ? new List<MediaStreamOutputConfiguration>() : null;
         private string _name;
         private string _outputArn;
         private int? _port;
@@ -76,7 +77,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if BridgePorts property is set
         internal bool IsSetBridgePorts()
         {
-            return this._bridgePorts != null && this._bridgePorts.Count > 0; 
+            return this._bridgePorts != null && (this._bridgePorts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -206,7 +207,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if MediaStreamOutputConfigurations property is set
         internal bool IsSetMediaStreamOutputConfigurations()
         {
-            return this._mediaStreamOutputConfigurations != null && this._mediaStreamOutputConfigurations.Count > 0; 
+            return this._mediaStreamOutputConfigurations != null && (this._mediaStreamOutputConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

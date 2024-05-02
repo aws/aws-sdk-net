@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DescribeDBRecommendationsRequest : AmazonRDSRequest
     {
-        private List<Filter> _filters = new List<Filter>();
+        private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
         private DateTime? _lastUpdatedAfter;
         private DateTime? _lastUpdatedBefore;
         private string _locale;
@@ -148,7 +149,7 @@ namespace Amazon.RDS.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

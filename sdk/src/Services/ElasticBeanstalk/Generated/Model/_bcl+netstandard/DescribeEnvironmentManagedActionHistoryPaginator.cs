@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Enumerable containing all of the ManagedActionHistoryItems
         /// </summary>
         public IPaginatedEnumerable<ManagedActionHistoryItem> ManagedActionHistoryItems => 
-            new PaginatedResultKeyResponse<DescribeEnvironmentManagedActionHistoryResponse, ManagedActionHistoryItem>(this, (i) => i.ManagedActionHistoryItems);
+            new PaginatedResultKeyResponse<DescribeEnvironmentManagedActionHistoryResponse, ManagedActionHistoryItem>(this, (i) => i.ManagedActionHistoryItems ?? new List<ManagedActionHistoryItem>());
 
         internal DescribeEnvironmentManagedActionHistoryPaginator(IAmazonElasticBeanstalk client, DescribeEnvironmentManagedActionHistoryRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ElasticBeanstalk.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeEnvironmentManagedActionHistoryResponse> IPaginator<DescribeEnvironmentManagedActionHistoryResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeEnvironmentManagedActionHistoryResponse> IPaginator<DescribeEnvironmentManagedActionHistoryResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.AutoScaling.Model
     public partial class DescribeLifecycleHooksRequest : AmazonAutoScalingRequest
     {
         private string _autoScalingGroupName;
-        private List<string> _lifecycleHookNames = new List<string>();
+        private List<string> _lifecycleHookNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
@@ -73,7 +74,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if LifecycleHookNames property is set
         internal bool IsSetLifecycleHookNames()
         {
-            return this._lifecycleHookNames != null && this._lifecycleHookNames.Count > 0; 
+            return this._lifecycleHookNames != null && (this._lifecycleHookNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

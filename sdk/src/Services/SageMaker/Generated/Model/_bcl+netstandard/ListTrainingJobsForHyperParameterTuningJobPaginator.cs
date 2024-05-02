@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the TrainingJobSummaries
         /// </summary>
         public IPaginatedEnumerable<HyperParameterTrainingJobSummary> TrainingJobSummaries => 
-            new PaginatedResultKeyResponse<ListTrainingJobsForHyperParameterTuningJobResponse, HyperParameterTrainingJobSummary>(this, (i) => i.TrainingJobSummaries);
+            new PaginatedResultKeyResponse<ListTrainingJobsForHyperParameterTuningJobResponse, HyperParameterTrainingJobSummary>(this, (i) => i.TrainingJobSummaries ?? new List<HyperParameterTrainingJobSummary>());
 
         internal ListTrainingJobsForHyperParameterTuningJobPaginator(IAmazonSageMaker client, ListTrainingJobsForHyperParameterTuningJobRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.SageMaker.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListTrainingJobsForHyperParameterTuningJobResponse> IPaginator<ListTrainingJobsForHyperParameterTuningJobResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListTrainingJobsForHyperParameterTuningJobResponse> IPaginator<ListTrainingJobsForHyperParameterTuningJobResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class DescribeRemediationConfigurationsResponse : AmazonWebServiceResponse
     {
-        private List<RemediationConfiguration> _remediationConfigurations = new List<RemediationConfiguration>();
+        private List<RemediationConfiguration> _remediationConfigurations = AWSConfigs.InitializeCollections ? new List<RemediationConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property RemediationConfigurations. 
@@ -51,7 +52,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if RemediationConfigurations property is set
         internal bool IsSetRemediationConfigurations()
         {
-            return this._remediationConfigurations != null && this._remediationConfigurations.Count > 0; 
+            return this._remediationConfigurations != null && (this._remediationConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

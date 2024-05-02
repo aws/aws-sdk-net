@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
@@ -41,19 +42,19 @@ namespace Amazon.ElastiCache.Model
         private bool? _autoMinorVersionUpgrade;
         private AZMode _azMode;
         private string _cacheClusterId;
-        private List<string> _cacheNodeIdsToRemove = new List<string>();
+        private List<string> _cacheNodeIdsToRemove = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _cacheNodeType;
         private string _cacheParameterGroupName;
-        private List<string> _cacheSecurityGroupNames = new List<string>();
+        private List<string> _cacheSecurityGroupNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _engineVersion;
         private IpDiscovery _ipDiscovery;
-        private List<LogDeliveryConfigurationRequest> _logDeliveryConfigurations = new List<LogDeliveryConfigurationRequest>();
-        private List<string> _newAvailabilityZones = new List<string>();
+        private List<LogDeliveryConfigurationRequest> _logDeliveryConfigurations = AWSConfigs.InitializeCollections ? new List<LogDeliveryConfigurationRequest>() : null;
+        private List<string> _newAvailabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _notificationTopicArn;
         private string _notificationTopicStatus;
         private int? _numCacheNodes;
         private string _preferredMaintenanceWindow;
-        private List<string> _securityGroupIds = new List<string>();
+        private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _snapshotRetentionLimit;
         private string _snapshotWindow;
 
@@ -280,7 +281,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheNodeIdsToRemove property is set
         internal bool IsSetCacheNodeIdsToRemove()
         {
-            return this._cacheNodeIdsToRemove != null && this._cacheNodeIdsToRemove.Count > 0; 
+            return this._cacheNodeIdsToRemove != null && (this._cacheNodeIdsToRemove.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -346,7 +347,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheSecurityGroupNames property is set
         internal bool IsSetCacheSecurityGroupNames()
         {
-            return this._cacheSecurityGroupNames != null && this._cacheSecurityGroupNames.Count > 0; 
+            return this._cacheSecurityGroupNames != null && (this._cacheSecurityGroupNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -410,7 +411,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if LogDeliveryConfigurations property is set
         internal bool IsSetLogDeliveryConfigurations()
         {
-            return this._logDeliveryConfigurations != null && this._logDeliveryConfigurations.Count > 0; 
+            return this._logDeliveryConfigurations != null && (this._logDeliveryConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -548,7 +549,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if NewAvailabilityZones property is set
         internal bool IsSetNewAvailabilityZones()
         {
-            return this._newAvailabilityZones != null && this._newAvailabilityZones.Count > 0; 
+            return this._newAvailabilityZones != null && (this._newAvailabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -729,7 +730,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if SecurityGroupIds property is set
         internal bool IsSetSecurityGroupIds()
         {
-            return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+            return this._securityGroupIds != null && (this._securityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

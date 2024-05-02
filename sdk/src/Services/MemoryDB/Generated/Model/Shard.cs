@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.MemoryDB.Model
     public partial class Shard
     {
         private string _name;
-        private List<Node> _nodes = new List<Node>();
+        private List<Node> _nodes = AWSConfigs.InitializeCollections ? new List<Node>() : null;
         private int? _numberOfNodes;
         private string _slots;
         private string _status;
@@ -73,7 +74,7 @@ namespace Amazon.MemoryDB.Model
         // Check to see if Nodes property is set
         internal bool IsSetNodes()
         {
-            return this._nodes != null && this._nodes.Count > 0; 
+            return this._nodes != null && (this._nodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

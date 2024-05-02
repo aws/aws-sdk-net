@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NeptuneGraph.Model
 {
     /// <summary>
@@ -208,6 +209,9 @@ namespace Amazon.NeptuneGraph.Model
         /// Gets and sets the property ProvisionedMemory. 
         /// <para>
         /// The provisioned memory-optimized Neptune Capacity Units (m-NCUs) to use for the graph.
+        /// </para>
+        ///  
+        /// <para>
         /// Min = 128
         /// </para>
         /// </summary>
@@ -230,6 +234,12 @@ namespace Amazon.NeptuneGraph.Model
         /// Specifies whether or not the graph can be reachable over the internet. All access
         /// to graphs is IAM authenticated.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If enabling public connectivity for the first time, there will be a delay while it
+        /// is enabled.
+        /// </para>
+        ///  </note>
         /// </summary>
         public bool? PublicConnectivity
         {
@@ -247,6 +257,10 @@ namespace Amazon.NeptuneGraph.Model
         /// Gets and sets the property ReplicaCount. 
         /// <para>
         /// The number of replicas in other AZs.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: If not specified, the default value is 1.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2)]

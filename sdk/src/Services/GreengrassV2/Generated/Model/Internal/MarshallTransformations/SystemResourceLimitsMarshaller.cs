@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,10 +46,19 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SystemResourceLimits requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCpus())
             {
                 context.Writer.WritePropertyName("cpus");
-                context.Writer.Write(requestObject.Cpus.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Cpus.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Cpus.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Cpus.Value);
+                }
             }
 
             if(requestObject.IsSetMemory())

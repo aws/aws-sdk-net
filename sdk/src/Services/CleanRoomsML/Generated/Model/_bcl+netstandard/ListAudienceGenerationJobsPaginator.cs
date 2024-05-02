@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRoomsML.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.CleanRoomsML.Model
         /// Enumerable containing all of the AudienceGenerationJobs
         /// </summary>
         public IPaginatedEnumerable<AudienceGenerationJobSummary> AudienceGenerationJobs => 
-            new PaginatedResultKeyResponse<ListAudienceGenerationJobsResponse, AudienceGenerationJobSummary>(this, (i) => i.AudienceGenerationJobs);
+            new PaginatedResultKeyResponse<ListAudienceGenerationJobsResponse, AudienceGenerationJobSummary>(this, (i) => i.AudienceGenerationJobs ?? new List<AudienceGenerationJobSummary>());
 
         internal ListAudienceGenerationJobsPaginator(IAmazonCleanRoomsML client, ListAudienceGenerationJobsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.CleanRoomsML.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListAudienceGenerationJobsResponse> IPaginator<ListAudienceGenerationJobsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListAudienceGenerationJobsResponse> IPaginator<ListAudienceGenerationJobsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

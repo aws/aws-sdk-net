@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class Projection
     {
-        private List<string> _nonKeyAttributes = new List<string>();
+        private List<string> _nonKeyAttributes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ProjectionType _projectionType;
 
         /// <summary>
@@ -61,7 +62,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if NonKeyAttributes property is set
         internal bool IsSetNonKeyAttributes()
         {
-            return this._nonKeyAttributes != null && this._nonKeyAttributes.Count > 0; 
+            return this._nonKeyAttributes != null && (this._nonKeyAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -82,7 +83,10 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         ///  <c>ALL</c> - All of the table attributes are projected into the index.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// When using the DynamoDB console, <c>ALL</c> is selected by default.
+        /// </para>
         /// </summary>
         public ProjectionType ProjectionType
         {

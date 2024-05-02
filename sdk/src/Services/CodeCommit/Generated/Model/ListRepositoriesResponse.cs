@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CodeCommit.Model
     public partial class ListRepositoriesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RepositoryNameIdPair> _repositories = new List<RepositoryNameIdPair>();
+        private List<RepositoryNameIdPair> _repositories = AWSConfigs.InitializeCollections ? new List<RepositoryNameIdPair>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if Repositories property is set
         internal bool IsSetRepositories()
         {
-            return this._repositories != null && this._repositories.Count > 0; 
+            return this._repositories != null && (this._repositories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.ElasticBeanstalk.Model
     {
         private string _attribute;
         private string _operator;
-        private List<string> _values = new List<string>();
+        private List<string> _values = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Attribute. 
@@ -110,7 +111,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Values property is set
         internal bool IsSetValues()
         {
-            return this._values != null && this._values.Count > 0; 
+            return this._values != null && (this._values.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

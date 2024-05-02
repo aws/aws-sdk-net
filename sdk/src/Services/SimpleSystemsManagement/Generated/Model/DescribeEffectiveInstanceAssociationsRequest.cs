@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEffectiveInstanceAssociations operation.
-    /// All associations for the managed node(s).
+    /// All associations for the managed nodes.
     /// </summary>
     public partial class DescribeEffectiveInstanceAssociationsRequest : AmazonSimpleSystemsManagementRequest
     {

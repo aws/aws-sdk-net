@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataSync.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DataSync.Model
     /// </summary>
     public partial class ListAgentsResponse : AmazonWebServiceResponse
     {
-        private List<AgentListEntry> _agents = new List<AgentListEntry>();
+        private List<AgentListEntry> _agents = AWSConfigs.InitializeCollections ? new List<AgentListEntry>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.DataSync.Model
         // Check to see if Agents property is set
         internal bool IsSetAgents()
         {
-            return this._agents != null && this._agents.Count > 0; 
+            return this._agents != null && (this._agents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

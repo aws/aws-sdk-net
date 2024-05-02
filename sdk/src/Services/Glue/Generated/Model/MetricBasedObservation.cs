@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Glue.Model
     {
         private string _metricName;
         private DataQualityMetricValues _metricValues;
-        private List<string> _newRules = new List<string>();
+        private List<string> _newRules = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property MetricName. 
@@ -91,7 +92,7 @@ namespace Amazon.Glue.Model
         // Check to see if NewRules property is set
         internal bool IsSetNewRules()
         {
-            return this._newRules != null && this._newRules.Count > 0; 
+            return this._newRules != null && (this._newRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

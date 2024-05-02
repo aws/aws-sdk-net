@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EKS.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.EKS.Model
     {
         private string _clientRequestToken;
         private string _clusterName;
-        private List<string> _kubernetesGroups = new List<string>();
+        private List<string> _kubernetesGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _principalArn;
         private string _username;
 
@@ -114,7 +115,7 @@ namespace Amazon.EKS.Model
         // Check to see if KubernetesGroups property is set
         internal bool IsSetKubernetesGroups()
         {
-            return this._kubernetesGroups != null && this._kubernetesGroups.Count > 0; 
+            return this._kubernetesGroups != null && (this._kubernetesGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

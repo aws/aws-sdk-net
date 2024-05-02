@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
@@ -65,7 +66,7 @@ namespace Amazon.Comprehend.Model
     {
         private DocumentReadAction _documentReadAction;
         private DocumentReadMode _documentReadMode;
-        private List<string> _featureTypes = new List<string>();
+        private List<string> _featureTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DocumentReadAction. 
@@ -154,7 +155,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if FeatureTypes property is set
         internal bool IsSetFeatureTypes()
         {
-            return this._featureTypes != null && this._featureTypes.Count > 0; 
+            return this._featureTypes != null && (this._featureTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

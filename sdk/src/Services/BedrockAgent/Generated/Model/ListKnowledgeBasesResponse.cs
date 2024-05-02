@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
@@ -33,11 +34,14 @@ namespace Amazon.BedrockAgent.Model
     /// </summary>
     public partial class ListKnowledgeBasesResponse : AmazonWebServiceResponse
     {
-        private List<KnowledgeBaseSummary> _knowledgeBaseSummaries = new List<KnowledgeBaseSummary>();
+        private List<KnowledgeBaseSummary> _knowledgeBaseSummaries = AWSConfigs.InitializeCollections ? new List<KnowledgeBaseSummary>() : null;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property KnowledgeBaseSummaries.
+        /// Gets and sets the property KnowledgeBaseSummaries. 
+        /// <para>
+        /// A list of objects, each of which contains information about a knowledge base.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<KnowledgeBaseSummary> KnowledgeBaseSummaries
@@ -49,11 +53,16 @@ namespace Amazon.BedrockAgent.Model
         // Check to see if KnowledgeBaseSummaries property is set
         internal bool IsSetKnowledgeBaseSummaries()
         {
-            return this._knowledgeBaseSummaries != null && this._knowledgeBaseSummaries.Count > 0; 
+            return this._knowledgeBaseSummaries != null && (this._knowledgeBaseSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// If the total number of results is greater than the <c>maxResults</c> value provided
+        /// in the request, use this token when making another request in the <c>nextToken</c>
+        /// field to return the next batch of results.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
         public string NextToken

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the Routes
         /// </summary>
         public IPaginatedEnumerable<LocalGatewayRoute> Routes => 
-            new PaginatedResultKeyResponse<SearchLocalGatewayRoutesResponse, LocalGatewayRoute>(this, (i) => i.Routes);
+            new PaginatedResultKeyResponse<SearchLocalGatewayRoutesResponse, LocalGatewayRoute>(this, (i) => i.Routes ?? new List<LocalGatewayRoute>());
 
         internal SearchLocalGatewayRoutesPaginator(IAmazonEC2 client, SearchLocalGatewayRoutesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.EC2.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<SearchLocalGatewayRoutesResponse> IPaginator<SearchLocalGatewayRoutesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<SearchLocalGatewayRoutesResponse> IPaginator<SearchLocalGatewayRoutesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes code configuration updates for an application. This is supported for a Flink-based
-    /// Kinesis Data Analytics application or a SQL-based Kinesis Data Analytics application.
+    /// Describes code configuration updates for an application. This is supported for a Managed
+    /// Service for Apache Flink application or a SQL-based Kinesis Data Analytics application.
     /// </summary>
     public partial class ApplicationCodeConfigurationUpdate
     {

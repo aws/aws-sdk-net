@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Kendra.Model
     public partial class AttributeSuggestionsDescribeConfig
     {
         private AttributeSuggestionsMode _attributeSuggestionsMode;
-        private List<SuggestableConfig> _suggestableConfigList = new List<SuggestableConfig>();
+        private List<SuggestableConfig> _suggestableConfigList = AWSConfigs.InitializeCollections ? new List<SuggestableConfig>() : null;
 
         /// <summary>
         /// Gets and sets the property AttributeSuggestionsMode. 
@@ -75,7 +76,7 @@ namespace Amazon.Kendra.Model
         // Check to see if SuggestableConfigList property is set
         internal bool IsSetSuggestableConfigList()
         {
-            return this._suggestableConfigList != null && this._suggestableConfigList.Count > 0; 
+            return this._suggestableConfigList != null && (this._suggestableConfigList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

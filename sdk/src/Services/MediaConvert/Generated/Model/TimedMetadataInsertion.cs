@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class TimedMetadataInsertion
     {
-        private List<Id3Insertion> _id3Insertions = new List<Id3Insertion>();
+        private List<Id3Insertion> _id3Insertions = AWSConfigs.InitializeCollections ? new List<Id3Insertion>() : null;
 
         /// <summary>
         /// Gets and sets the property Id3Insertions. Id3Insertions contains the array of Id3Insertion
@@ -49,7 +50,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if Id3Insertions property is set
         internal bool IsSetId3Insertions()
         {
-            return this._id3Insertions != null && this._id3Insertions.Count > 0; 
+            return this._id3Insertions != null && (this._id3Insertions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

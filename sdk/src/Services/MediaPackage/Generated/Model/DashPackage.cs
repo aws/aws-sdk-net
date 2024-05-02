@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaPackage.Model
 {
     /// <summary>
@@ -34,14 +35,14 @@ namespace Amazon.MediaPackage.Model
     public partial class DashPackage
     {
         private AdsOnDeliveryRestrictions _adsOnDeliveryRestrictions;
-        private List<string> _adTriggers = new List<string>();
+        private List<string> _adTriggers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DashEncryption _encryption;
         private bool? _includeIframeOnlyStream;
         private ManifestLayout _manifestLayout;
         private int? _manifestWindowSeconds;
         private int? _minBufferTimeSeconds;
         private int? _minUpdatePeriodSeconds;
-        private List<string> _periodTriggers = new List<string>();
+        private List<string> _periodTriggers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Profile _profile;
         private int? _segmentDurationSeconds;
         private SegmentTemplateFormat _segmentTemplateFormat;
@@ -77,7 +78,7 @@ namespace Amazon.MediaPackage.Model
         // Check to see if AdTriggers property is set
         internal bool IsSetAdTriggers()
         {
-            return this._adTriggers != null && this._adTriggers.Count > 0; 
+            return this._adTriggers != null && (this._adTriggers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -196,7 +197,7 @@ namespace Amazon.MediaPackage.Model
         // Check to see if PeriodTriggers property is set
         internal bool IsSetPeriodTriggers()
         {
-            return this._periodTriggers != null && this._periodTriggers.Count > 0; 
+            return this._periodTriggers != null && (this._periodTriggers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

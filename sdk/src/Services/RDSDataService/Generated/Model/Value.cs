@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDSDataService.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.RDSDataService.Model
     /// </summary>
     public partial class Value
     {
-        private List<Value> _arrayValues = new List<Value>();
+        private List<Value> _arrayValues = AWSConfigs.InitializeCollections ? new List<Value>() : null;
         private long? _bigIntValue;
         private bool? _bitValue;
         private MemoryStream _blobValue;
@@ -66,7 +67,7 @@ namespace Amazon.RDSDataService.Model
         // Check to see if ArrayValues property is set
         internal bool IsSetArrayValues()
         {
-            return this._arrayValues != null && this._arrayValues.Count > 0; 
+            return this._arrayValues != null && (this._arrayValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

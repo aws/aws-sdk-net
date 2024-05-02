@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Inspector.Model
     /// </summary>
     public partial class DescribeRulesPackagesResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, FailedItemDetails> _failedItems = new Dictionary<string, FailedItemDetails>();
-        private List<RulesPackage> _rulesPackages = new List<RulesPackage>();
+        private Dictionary<string, FailedItemDetails> _failedItems = AWSConfigs.InitializeCollections ? new Dictionary<string, FailedItemDetails>() : null;
+        private List<RulesPackage> _rulesPackages = AWSConfigs.InitializeCollections ? new List<RulesPackage>() : null;
 
         /// <summary>
         /// Gets and sets the property FailedItems. 
@@ -53,7 +54,7 @@ namespace Amazon.Inspector.Model
         // Check to see if FailedItems property is set
         internal bool IsSetFailedItems()
         {
-            return this._failedItems != null && this._failedItems.Count > 0; 
+            return this._failedItems != null && (this._failedItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.Inspector.Model
         // Check to see if RulesPackages property is set
         internal bool IsSetRulesPackages()
         {
-            return this._rulesPackages != null && this._rulesPackages.Count > 0; 
+            return this._rulesPackages != null && (this._rulesPackages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

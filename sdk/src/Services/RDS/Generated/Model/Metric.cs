@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.RDS.Model
     {
         private MetricQuery _metricQuery;
         private string _name;
-        private List<MetricReference> _references = new List<MetricReference>();
+        private List<MetricReference> _references = AWSConfigs.InitializeCollections ? new List<MetricReference>() : null;
         private string _statisticsDetails;
 
         /// <summary>
@@ -89,7 +90,7 @@ namespace Amazon.RDS.Model
         // Check to see if References property is set
         internal bool IsSetReferences()
         {
-            return this._references != null && this._references.Count > 0; 
+            return this._references != null && (this._references.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

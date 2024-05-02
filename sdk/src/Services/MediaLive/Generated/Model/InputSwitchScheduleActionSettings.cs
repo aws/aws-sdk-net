@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.MediaLive.Model
     {
         private string _inputAttachmentNameReference;
         private InputClippingSettings _inputClippingSettings;
-        private List<string> _urlPath = new List<string>();
+        private List<string> _urlPath = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property InputAttachmentNameReference. The name of the input attachment
@@ -86,7 +87,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if UrlPath property is set
         internal bool IsSetUrlPath()
         {
-            return this._urlPath != null && this._urlPath.Count > 0; 
+            return this._urlPath != null && (this._urlPath.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

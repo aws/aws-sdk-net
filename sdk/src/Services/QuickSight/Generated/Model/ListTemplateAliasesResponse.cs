@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.QuickSight.Model
         private string _nextToken;
         private string _requestId;
         private int? _status;
-        private List<TemplateAlias> _templateAliasList = new List<TemplateAlias>();
+        private List<TemplateAlias> _templateAliasList = AWSConfigs.InitializeCollections ? new List<TemplateAlias>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -108,7 +109,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if TemplateAliasList property is set
         internal bool IsSetTemplateAliasList()
         {
-            return this._templateAliasList != null && this._templateAliasList.Count > 0; 
+            return this._templateAliasList != null && (this._templateAliasList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

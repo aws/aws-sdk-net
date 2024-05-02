@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Comprehend.Model
     public partial class ListTopicsDetectionJobsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TopicsDetectionJobProperties> _topicsDetectionJobPropertiesList = new List<TopicsDetectionJobProperties>();
+        private List<TopicsDetectionJobProperties> _topicsDetectionJobPropertiesList = AWSConfigs.InitializeCollections ? new List<TopicsDetectionJobProperties>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if TopicsDetectionJobPropertiesList property is set
         internal bool IsSetTopicsDetectionJobPropertiesList()
         {
-            return this._topicsDetectionJobPropertiesList != null && this._topicsDetectionJobPropertiesList.Count > 0; 
+            return this._topicsDetectionJobPropertiesList != null && (this._topicsDetectionJobPropertiesList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

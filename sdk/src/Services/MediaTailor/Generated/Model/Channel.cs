@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaTailor.Model
 {
     /// <summary>
@@ -36,15 +37,16 @@ namespace Amazon.MediaTailor.Model
     public partial class Channel
     {
         private string _arn;
+        private List<string> _audiences = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _channelName;
         private string _channelState;
         private DateTime? _creationTime;
         private SlateSource _fillerSlate;
         private DateTime? _lastModifiedTime;
         private LogConfigurationForChannel _logConfiguration;
-        private List<ResponseOutputItem> _outputs = new List<ResponseOutputItem>();
+        private List<ResponseOutputItem> _outputs = AWSConfigs.InitializeCollections ? new List<ResponseOutputItem>() : null;
         private string _playbackMode;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _tier;
 
         /// <summary>
@@ -64,6 +66,24 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Audiences. 
+        /// <para>
+        /// The list of audiences defined in channel.
+        /// </para>
+        /// </summary>
+        public List<string> Audiences
+        {
+            get { return this._audiences; }
+            set { this._audiences = value; }
+        }
+
+        // Check to see if Audiences property is set
+        internal bool IsSetAudiences()
+        {
+            return this._audiences != null && (this._audiences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -195,7 +215,7 @@ namespace Amazon.MediaTailor.Model
         // Check to see if Outputs property is set
         internal bool IsSetOutputs()
         {
-            return this._outputs != null && this._outputs.Count > 0; 
+            return this._outputs != null && (this._outputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -244,7 +264,7 @@ namespace Amazon.MediaTailor.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DocumentTypesTest.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.DocumentTypesTest.Model
     public partial class ExecuteQueryResponse : AmazonWebServiceResponse
     {
         private Amazon.Runtime.Documents.Document _queryDocument;
-        private List<Amazon.Runtime.Documents.Document> _queryList = new List<Amazon.Runtime.Documents.Document>();
-        private List<Dictionary<string, Amazon.Runtime.Documents.Document>> _queryListOfMap = new List<Dictionary<string, Amazon.Runtime.Documents.Document>>();
-        private Dictionary<string, Amazon.Runtime.Documents.Document> _queryMap = new Dictionary<string, Amazon.Runtime.Documents.Document>();
+        private List<Amazon.Runtime.Documents.Document> _queryList = AWSConfigs.InitializeCollections ? new List<Amazon.Runtime.Documents.Document>() : null;
+        private List<Dictionary<string, Amazon.Runtime.Documents.Document>> _queryListOfMap = AWSConfigs.InitializeCollections ? new List<Dictionary<string, Amazon.Runtime.Documents.Document>>() : null;
+        private Dictionary<string, Amazon.Runtime.Documents.Document> _queryMap = AWSConfigs.InitializeCollections ? new Dictionary<string, Amazon.Runtime.Documents.Document>() : null;
 
         /// <summary>
         /// Gets and sets the property QueryDocument.
@@ -65,7 +66,7 @@ namespace Amazon.DocumentTypesTest.Model
         // Check to see if QueryList property is set
         internal bool IsSetQueryList()
         {
-            return this._queryList != null && this._queryList.Count > 0; 
+            return this._queryList != null && (this._queryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -80,7 +81,7 @@ namespace Amazon.DocumentTypesTest.Model
         // Check to see if QueryListOfMap property is set
         internal bool IsSetQueryListOfMap()
         {
-            return this._queryListOfMap != null && this._queryListOfMap.Count > 0; 
+            return this._queryListOfMap != null && (this._queryListOfMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -95,7 +96,7 @@ namespace Amazon.DocumentTypesTest.Model
         // Check to see if QueryMap property is set
         internal bool IsSetQueryMap()
         {
-            return this._queryMap != null && this._queryMap.Count > 0; 
+            return this._queryMap != null && (this._queryMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

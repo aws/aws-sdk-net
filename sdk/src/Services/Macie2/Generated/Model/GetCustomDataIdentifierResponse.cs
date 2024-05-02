@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Macie2.Model
 {
     /// <summary>
@@ -38,13 +39,13 @@ namespace Amazon.Macie2.Model
         private bool? _deleted;
         private string _description;
         private string _id;
-        private List<string> _ignoreWords = new List<string>();
-        private List<string> _keywords = new List<string>();
+        private List<string> _ignoreWords = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _keywords = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maximumMatchDistance;
         private string _name;
         private string _regex;
-        private List<SeverityLevel> _severityLevels = new List<SeverityLevel>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<SeverityLevel> _severityLevels = AWSConfigs.InitializeCollections ? new List<SeverityLevel>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -156,7 +157,7 @@ namespace Amazon.Macie2.Model
         // Check to see if IgnoreWords property is set
         internal bool IsSetIgnoreWords()
         {
-            return this._ignoreWords != null && this._ignoreWords.Count > 0; 
+            return this._ignoreWords != null && (this._ignoreWords.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -176,7 +177,7 @@ namespace Amazon.Macie2.Model
         // Check to see if Keywords property is set
         internal bool IsSetKeywords()
         {
-            return this._keywords != null && this._keywords.Count > 0; 
+            return this._keywords != null && (this._keywords.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -256,7 +257,7 @@ namespace Amazon.Macie2.Model
         // Check to see if SeverityLevels property is set
         internal bool IsSetSeverityLevels()
         {
-            return this._severityLevels != null && this._severityLevels.Count > 0; 
+            return this._severityLevels != null && (this._severityLevels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -275,7 +276,7 @@ namespace Amazon.Macie2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

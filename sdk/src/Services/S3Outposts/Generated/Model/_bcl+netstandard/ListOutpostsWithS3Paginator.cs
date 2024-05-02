@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3Outposts.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.S3Outposts.Model
         /// Enumerable containing all of the Outposts
         /// </summary>
         public IPaginatedEnumerable<Outpost> Outposts => 
-            new PaginatedResultKeyResponse<ListOutpostsWithS3Response, Outpost>(this, (i) => i.Outposts);
+            new PaginatedResultKeyResponse<ListOutpostsWithS3Response, Outpost>(this, (i) => i.Outposts ?? new List<Outpost>());
 
         internal ListOutpostsWithS3Paginator(IAmazonS3Outposts client, ListOutpostsWithS3Request request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.S3Outposts.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListOutpostsWithS3Response> IPaginator<ListOutpostsWithS3Response>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListOutpostsWithS3Response> IPaginator<ListOutpostsWithS3Response>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

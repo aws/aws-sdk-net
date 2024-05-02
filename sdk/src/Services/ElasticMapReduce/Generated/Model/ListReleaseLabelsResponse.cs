@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ElasticMapReduce.Model
     public partial class ListReleaseLabelsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<string> _releaseLabels = new List<string>();
+        private List<string> _releaseLabels = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if ReleaseLabels property is set
         internal bool IsSetReleaseLabels()
         {
-            return this._releaseLabels != null && this._releaseLabels.Count > 0; 
+            return this._releaseLabels != null && (this._releaseLabels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

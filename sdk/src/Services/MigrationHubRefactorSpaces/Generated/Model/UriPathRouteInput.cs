@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MigrationHubRefactorSpaces.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         private RouteActivationState _activationState;
         private bool? _appendSourcePath;
         private bool? _includeChildPaths;
-        private List<string> _methods = new List<string>();
+        private List<string> _methods = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _sourcePath;
 
         /// <summary>
@@ -114,7 +115,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         // Check to see if Methods property is set
         internal bool IsSetMethods()
         {
-            return this._methods != null && this._methods.Count > 0; 
+            return this._methods != null && (this._methods.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

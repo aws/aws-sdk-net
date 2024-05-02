@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.IoT.Model
         private DateTime? _creationDate;
         private DateTime? _lastModifiedDate;
         private string _name;
-        private List<string> _stringValues = new List<string>();
+        private List<string> _stringValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DimensionType _type;
 
         /// <summary>
@@ -130,7 +131,7 @@ namespace Amazon.IoT.Model
         // Check to see if StringValues property is set
         internal bool IsSetStringValues()
         {
-            return this._stringValues != null && this._stringValues.Count > 0; 
+            return this._stringValues != null && (this._stringValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

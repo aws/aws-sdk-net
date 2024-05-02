@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Lightsail.Model
     {
         private string _nextBackwardToken;
         private string _nextForwardToken;
-        private List<LogEvent> _resourceLogEvents = new List<LogEvent>();
+        private List<LogEvent> _resourceLogEvents = AWSConfigs.InitializeCollections ? new List<LogEvent>() : null;
 
         /// <summary>
         /// Gets and sets the property NextBackwardToken. 
@@ -90,7 +91,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if ResourceLogEvents property is set
         internal bool IsSetResourceLogEvents()
         {
-            return this._resourceLogEvents != null && this._resourceLogEvents.Count > 0; 
+            return this._resourceLogEvents != null && (this._resourceLogEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

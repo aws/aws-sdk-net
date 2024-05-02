@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.ResilienceHub.Model
     {
         private string _appArn;
         private string _assessmentName;
-        private List<string> _assessmentStatus = new List<string>();
+        private List<string> _assessmentStatus = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ComplianceStatus _complianceStatus;
         private AssessmentInvoker _invoker;
         private int? _maxResults;
@@ -100,7 +101,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if AssessmentStatus property is set
         internal bool IsSetAssessmentStatus()
         {
-            return this._assessmentStatus != null && this._assessmentStatus.Count > 0; 
+            return this._assessmentStatus != null && (this._assessmentStatus.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

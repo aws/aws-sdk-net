@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class ListDetectorsResponse : AmazonWebServiceResponse
     {
-        private List<string> _detectorIds = new List<string>();
+        private List<string> _detectorIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if DetectorIds property is set
         internal bool IsSetDetectorIds()
         {
-            return this._detectorIds != null && this._detectorIds.Count > 0; 
+            return this._detectorIds != null && (this._detectorIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

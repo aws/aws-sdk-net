@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoTSiteWise.Model
     /// </summary>
     public partial class ListDashboardsResponse : AmazonWebServiceResponse
     {
-        private List<DashboardSummary> _dashboardSummaries = new List<DashboardSummary>();
+        private List<DashboardSummary> _dashboardSummaries = AWSConfigs.InitializeCollections ? new List<DashboardSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if DashboardSummaries property is set
         internal bool IsSetDashboardSummaries()
         {
-            return this._dashboardSummaries != null && this._dashboardSummaries.Count > 0; 
+            return this._dashboardSummaries != null && (this._dashboardSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

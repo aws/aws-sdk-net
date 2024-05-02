@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.LexModelsV2.Model
     public partial class MessageGroup
     {
         private Message _message;
-        private List<Message> _variations = new List<Message>();
+        private List<Message> _variations = AWSConfigs.InitializeCollections ? new List<Message>() : null;
 
         /// <summary>
         /// Gets and sets the property Message. 
@@ -72,7 +73,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if Variations property is set
         internal bool IsSetVariations()
         {
-            return this._variations != null && this._variations.Count > 0; 
+            return this._variations != null && (this._variations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

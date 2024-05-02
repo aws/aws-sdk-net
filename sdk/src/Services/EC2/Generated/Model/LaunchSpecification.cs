@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.EC2.Model
     public partial class LaunchSpecification
     {
         private string _addressingType;
-        private List<GroupIdentifier> _allSecurityGroups = new List<GroupIdentifier>();
-        private List<BlockDeviceMapping> _blockDeviceMappings = new List<BlockDeviceMapping>();
+        private List<GroupIdentifier> _allSecurityGroups = AWSConfigs.InitializeCollections ? new List<GroupIdentifier>() : null;
+        private List<BlockDeviceMapping> _blockDeviceMappings = AWSConfigs.InitializeCollections ? new List<BlockDeviceMapping>() : null;
         private bool? _ebsOptimized;
         private IamInstanceProfileSpecification _iamInstanceProfile;
         private string _imageId;
@@ -43,10 +44,10 @@ namespace Amazon.EC2.Model
         private string _kernelId;
         private string _keyName;
         private bool? _monitoringEnabled;
-        private List<InstanceNetworkInterfaceSpecification> _networkInterfaces = new List<InstanceNetworkInterfaceSpecification>();
+        private List<InstanceNetworkInterfaceSpecification> _networkInterfaces = AWSConfigs.InitializeCollections ? new List<InstanceNetworkInterfaceSpecification>() : null;
         private SpotPlacement _placement;
         private string _ramdiskId;
-        private List<string> _securityGroups = new List<string>();
+        private List<string> _securityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _subnetId;
         private string _userData;
 
@@ -83,7 +84,7 @@ namespace Amazon.EC2.Model
         // Check to see if AllSecurityGroups property is set
         internal bool IsSetAllSecurityGroups()
         {
-            return this._allSecurityGroups != null && this._allSecurityGroups.Count > 0; 
+            return this._allSecurityGroups != null && (this._allSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -101,7 +102,7 @@ namespace Amazon.EC2.Model
         // Check to see if BlockDeviceMappings property is set
         internal bool IsSetBlockDeviceMappings()
         {
-            return this._blockDeviceMappings != null && this._blockDeviceMappings.Count > 0; 
+            return this._blockDeviceMappings != null && (this._blockDeviceMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -250,7 +251,7 @@ namespace Amazon.EC2.Model
         // Check to see if NetworkInterfaces property is set
         internal bool IsSetNetworkInterfaces()
         {
-            return this._networkInterfaces != null && this._networkInterfaces.Count > 0; 
+            return this._networkInterfaces != null && (this._networkInterfaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -304,7 +305,7 @@ namespace Amazon.EC2.Model
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this._securityGroups != null && this._securityGroups.Count > 0; 
+            return this._securityGroups != null && (this._securityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

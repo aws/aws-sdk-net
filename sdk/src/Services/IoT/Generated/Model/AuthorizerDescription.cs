@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.IoT.Model
         private bool? _signingDisabled;
         private AuthorizerStatus _status;
         private string _tokenKeyName;
-        private Dictionary<string, string> _tokenSigningPublicKeys = new Dictionary<string, string>();
+        private Dictionary<string, string> _tokenSigningPublicKeys = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AuthorizerArn. 
@@ -228,7 +229,7 @@ namespace Amazon.IoT.Model
         // Check to see if TokenSigningPublicKeys property is set
         internal bool IsSetTokenSigningPublicKeys()
         {
-            return this._tokenSigningPublicKeys != null && this._tokenSigningPublicKeys.Count > 0; 
+            return this._tokenSigningPublicKeys != null && (this._tokenSigningPublicKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

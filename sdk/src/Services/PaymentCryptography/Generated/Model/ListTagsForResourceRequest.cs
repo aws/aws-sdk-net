@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PaymentCryptography.Model
 {
     /// <summary>
@@ -51,11 +52,13 @@ namespace Amazon.PaymentCryptography.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>TagResource</a> 
+    ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_TagResource.html">TagResource</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>UntagResource</a> 
+    ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_UntagResource.html">UntagResource</a>
+    /// 
     /// </para>
     ///  </li> </ul>
     /// </summary>

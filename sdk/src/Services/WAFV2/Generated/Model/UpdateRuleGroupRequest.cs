@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
@@ -100,12 +101,12 @@ namespace Amazon.WAFV2.Model
     /// </summary>
     public partial class UpdateRuleGroupRequest : AmazonWAFV2Request
     {
-        private Dictionary<string, CustomResponseBody> _customResponseBodies = new Dictionary<string, CustomResponseBody>();
+        private Dictionary<string, CustomResponseBody> _customResponseBodies = AWSConfigs.InitializeCollections ? new Dictionary<string, CustomResponseBody>() : null;
         private string _description;
         private string _id;
         private string _lockToken;
         private string _name;
-        private List<Rule> _rules = new List<Rule>();
+        private List<Rule> _rules = AWSConfigs.InitializeCollections ? new List<Rule>() : null;
         private Scope _scope;
         private VisibilityConfig _visibilityConfig;
 
@@ -138,7 +139,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if CustomResponseBodies property is set
         internal bool IsSetCustomResponseBodies()
         {
-            return this._customResponseBodies != null && this._customResponseBodies.Count > 0; 
+            return this._customResponseBodies != null && (this._customResponseBodies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -242,7 +243,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if Rules property is set
         internal bool IsSetRules()
         {
-            return this._rules != null && this._rules.Count > 0; 
+            return this._rules != null && (this._rules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

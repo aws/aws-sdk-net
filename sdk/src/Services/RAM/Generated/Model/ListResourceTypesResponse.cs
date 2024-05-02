@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RAM.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.RAM.Model
     public partial class ListResourceTypesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ServiceNameAndResourceType> _resourceTypes = new List<ServiceNameAndResourceType>();
+        private List<ServiceNameAndResourceType> _resourceTypes = AWSConfigs.InitializeCollections ? new List<ServiceNameAndResourceType>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -74,7 +75,7 @@ namespace Amazon.RAM.Model
         // Check to see if ResourceTypes property is set
         internal bool IsSetResourceTypes()
         {
-            return this._resourceTypes != null && this._resourceTypes.Count > 0; 
+            return this._resourceTypes != null && (this._resourceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.LexModelsV2.Model
         private string _botVersion;
         private BotVersionReplicationStatus _botVersionReplicationStatus;
         private DateTime? _creationDateTime;
-        private List<string> _failureReasons = new List<string>();
+        private List<string> _failureReasons = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property BotVersion. 
@@ -109,7 +110,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if FailureReasons property is set
         internal bool IsSetFailureReasons()
         {
-            return this._failureReasons != null && this._failureReasons.Count > 0; 
+            return this._failureReasons != null && (this._failureReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

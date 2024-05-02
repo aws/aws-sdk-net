@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     public partial class CreateLoadBalancerPolicyRequest : AmazonElasticLoadBalancingRequest
     {
         private string _loadBalancerName;
-        private List<PolicyAttribute> _policyAttributes = new List<PolicyAttribute>();
+        private List<PolicyAttribute> _policyAttributes = AWSConfigs.InitializeCollections ? new List<PolicyAttribute>() : null;
         private string _policyName;
         private string _policyTypeName;
 
@@ -79,7 +80,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if PolicyAttributes property is set
         internal bool IsSetPolicyAttributes()
         {
-            return this._policyAttributes != null && this._policyAttributes.Count > 0; 
+            return this._policyAttributes != null && (this._policyAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

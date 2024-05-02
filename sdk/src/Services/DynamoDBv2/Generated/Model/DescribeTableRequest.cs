@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
@@ -60,7 +61,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Instantiates DescribeTableRequest with the parameterized properties
         /// </summary>
-        /// <param name="tableName">The name of the table to describe.</param>
+        /// <param name="tableName">The name of the table to describe. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         public DescribeTableRequest(string tableName)
         {
             _tableName = tableName;
@@ -69,10 +70,11 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property TableName. 
         /// <para>
-        /// The name of the table to describe.
+        /// The name of the table to describe. You can also provide the Amazon Resource Name (ARN)
+        /// of the table in this parameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string TableName
         {
             get { return this._tableName; }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Amplify.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Amplify.Model
     public partial class Branch
     {
         private string _activeJobId;
-        private List<string> _associatedResources = new List<string>();
+        private List<string> _associatedResources = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Backend _backend;
         private string _backendEnvironmentArn;
         private string _basicAuthCredentials;
@@ -42,7 +43,7 @@ namespace Amazon.Amplify.Model
         private string _branchName;
         private string _buildSpec;
         private DateTime? _createTime;
-        private List<string> _customDomains = new List<string>();
+        private List<string> _customDomains = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _description;
         private string _destinationBranch;
         private string _displayName;
@@ -51,12 +52,12 @@ namespace Amazon.Amplify.Model
         private bool? _enableNotification;
         private bool? _enablePerformanceMode;
         private bool? _enablePullRequestPreview;
-        private Dictionary<string, string> _environmentVariables = new Dictionary<string, string>();
+        private Dictionary<string, string> _environmentVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _framework;
         private string _pullRequestEnvironmentName;
         private string _sourceBranch;
         private Stage _stage;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _thumbnailUrl;
         private string _totalNumberOfJobs;
         private string _ttl;
@@ -96,7 +97,7 @@ namespace Amazon.Amplify.Model
         // Check to see if AssociatedResources property is set
         internal bool IsSetAssociatedResources()
         {
-            return this._associatedResources != null && this._associatedResources.Count > 0; 
+            return this._associatedResources != null && (this._associatedResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -246,7 +247,7 @@ namespace Amazon.Amplify.Model
         // Check to see if CustomDomains property is set
         internal bool IsSetCustomDomains()
         {
-            return this._customDomains != null && this._customDomains.Count > 0; 
+            return this._customDomains != null && (this._customDomains.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -422,7 +423,7 @@ namespace Amazon.Amplify.Model
         // Check to see if EnvironmentVariables property is set
         internal bool IsSetEnvironmentVariables()
         {
-            return this._environmentVariables != null && this._environmentVariables.Count > 0; 
+            return this._environmentVariables != null && (this._environmentVariables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -517,7 +518,7 @@ namespace Amazon.Amplify.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

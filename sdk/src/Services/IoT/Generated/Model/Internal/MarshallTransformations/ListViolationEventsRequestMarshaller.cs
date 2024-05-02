@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -63,7 +64,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 request.Parameters.Add("behaviorCriteriaType", StringUtils.FromString(publicRequest.BehaviorCriteriaType));
             
             if (publicRequest.IsSetEndTimeUtc())
-                request.Parameters.Add("endTime", StringUtils.FromDateTimeToISO8601(publicRequest.EndTimeUtc));
+                request.Parameters.Add("endTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTimeUtc));
             
             if (publicRequest.IsSetListSuppressedAlerts())
                 request.Parameters.Add("listSuppressedAlerts", StringUtils.FromBool(publicRequest.ListSuppressedAlerts));
@@ -78,7 +79,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 request.Parameters.Add("securityProfileName", StringUtils.FromString(publicRequest.SecurityProfileName));
             
             if (publicRequest.IsSetStartTimeUtc())
-                request.Parameters.Add("startTime", StringUtils.FromDateTimeToISO8601(publicRequest.StartTimeUtc));
+                request.Parameters.Add("startTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTimeUtc));
             
             if (publicRequest.IsSetThingName())
                 request.Parameters.Add("thingName", StringUtils.FromString(publicRequest.ThingName));

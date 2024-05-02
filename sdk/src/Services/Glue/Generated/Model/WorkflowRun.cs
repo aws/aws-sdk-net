@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -43,7 +44,7 @@ namespace Amazon.Glue.Model
         private WorkflowRunStatistics _statistics;
         private WorkflowRunStatus _status;
         private string _workflowRunId;
-        private Dictionary<string, string> _workflowRunProperties = new Dictionary<string, string>();
+        private Dictionary<string, string> _workflowRunProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property CompletedOn. 
@@ -245,7 +246,7 @@ namespace Amazon.Glue.Model
         // Check to see if WorkflowRunProperties property is set
         internal bool IsSetWorkflowRunProperties()
         {
-            return this._workflowRunProperties != null && this._workflowRunProperties.Count > 0; 
+            return this._workflowRunProperties != null && (this._workflowRunProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     public partial class ListBootstrapActionsResponse : AmazonWebServiceResponse
     {
-        private List<Command> _bootstrapActions = new List<Command>();
+        private List<Command> _bootstrapActions = AWSConfigs.InitializeCollections ? new List<Command>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if BootstrapActions property is set
         internal bool IsSetBootstrapActions()
         {
-            return this._bootstrapActions != null && this._bootstrapActions.Count > 0; 
+            return this._bootstrapActions != null && (this._bootstrapActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

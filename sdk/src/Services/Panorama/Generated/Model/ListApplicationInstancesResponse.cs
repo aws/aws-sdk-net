@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Panorama.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Panorama.Model
     /// </summary>
     public partial class ListApplicationInstancesResponse : AmazonWebServiceResponse
     {
-        private List<ApplicationInstance> _applicationInstances = new List<ApplicationInstance>();
+        private List<ApplicationInstance> _applicationInstances = AWSConfigs.InitializeCollections ? new List<ApplicationInstance>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Panorama.Model
         // Check to see if ApplicationInstances property is set
         internal bool IsSetApplicationInstances()
         {
-            return this._applicationInstances != null && this._applicationInstances.Count > 0; 
+            return this._applicationInstances != null && (this._applicationInstances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

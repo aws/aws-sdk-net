@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AuditManager.Model
     /// </summary>
     public partial class ListAssessmentFrameworkShareRequestsResponse : AmazonWebServiceResponse
     {
-        private List<AssessmentFrameworkShareRequest> _assessmentFrameworkShareRequests = new List<AssessmentFrameworkShareRequest>();
+        private List<AssessmentFrameworkShareRequest> _assessmentFrameworkShareRequests = AWSConfigs.InitializeCollections ? new List<AssessmentFrameworkShareRequest>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if AssessmentFrameworkShareRequests property is set
         internal bool IsSetAssessmentFrameworkShareRequests()
         {
-            return this._assessmentFrameworkShareRequests != null && this._assessmentFrameworkShareRequests.Count > 0; 
+            return this._assessmentFrameworkShareRequests != null && (this._assessmentFrameworkShareRequests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

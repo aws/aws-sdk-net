@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAFRegional.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.WAFRegional.Model
     /// </summary>
     public partial class GetRateBasedRuleManagedKeysResponse : AmazonWebServiceResponse
     {
-        private List<string> _managedKeys = new List<string>();
+        private List<string> _managedKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextMarker;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.WAFRegional.Model
         // Check to see if ManagedKeys property is set
         internal bool IsSetManagedKeys()
         {
-            return this._managedKeys != null && this._managedKeys.Count > 0; 
+            return this._managedKeys != null && (this._managedKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

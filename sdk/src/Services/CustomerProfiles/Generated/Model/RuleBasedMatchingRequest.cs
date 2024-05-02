@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.CustomerProfiles.Model
         private ConflictResolution _conflictResolution;
         private bool? _enabled;
         private ExportingConfig _exportingConfig;
-        private List<MatchingRule> _matchingRules = new List<MatchingRule>();
+        private List<MatchingRule> _matchingRules = AWSConfigs.InitializeCollections ? new List<MatchingRule>() : null;
         private int? _maxAllowedRuleLevelForMatching;
         private int? _maxAllowedRuleLevelForMerging;
 
@@ -126,7 +127,7 @@ namespace Amazon.CustomerProfiles.Model
         // Check to see if MatchingRules property is set
         internal bool IsSetMatchingRules()
         {
-            return this._matchingRules != null && this._matchingRules.Count > 0; 
+            return this._matchingRules != null && (this._matchingRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

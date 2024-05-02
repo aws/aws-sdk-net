@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.XRay.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.XRay.Model
     /// </summary>
     public partial class GetInsightSummariesResponse : AmazonWebServiceResponse
     {
-        private List<InsightSummary> _insightSummaries = new List<InsightSummary>();
+        private List<InsightSummary> _insightSummaries = AWSConfigs.InitializeCollections ? new List<InsightSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.XRay.Model
         // Check to see if InsightSummaries property is set
         internal bool IsSetInsightSummaries()
         {
-            return this._insightSummaries != null && this._insightSummaries.Count > 0; 
+            return this._insightSummaries != null && (this._insightSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

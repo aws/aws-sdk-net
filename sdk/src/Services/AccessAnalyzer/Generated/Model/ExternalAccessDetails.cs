@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
@@ -33,11 +34,11 @@ namespace Amazon.AccessAnalyzer.Model
     /// </summary>
     public partial class ExternalAccessDetails
     {
-        private List<string> _action = new List<string>();
-        private Dictionary<string, string> _condition = new Dictionary<string, string>();
+        private List<string> _action = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _condition = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private bool? _isPublic;
-        private Dictionary<string, string> _principal = new Dictionary<string, string>();
-        private List<FindingSource> _sources = new List<FindingSource>();
+        private Dictionary<string, string> _principal = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<FindingSource> _sources = AWSConfigs.InitializeCollections ? new List<FindingSource>() : null;
 
         /// <summary>
         /// Gets and sets the property Action. 
@@ -55,7 +56,7 @@ namespace Amazon.AccessAnalyzer.Model
         // Check to see if Action property is set
         internal bool IsSetAction()
         {
-            return this._action != null && this._action.Count > 0; 
+            return this._action != null && (this._action.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace Amazon.AccessAnalyzer.Model
         // Check to see if Condition property is set
         internal bool IsSetCondition()
         {
-            return this._condition != null && this._condition.Count > 0; 
+            return this._condition != null && (this._condition.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -111,7 +112,7 @@ namespace Amazon.AccessAnalyzer.Model
         // Check to see if Principal property is set
         internal bool IsSetPrincipal()
         {
-            return this._principal != null && this._principal.Count > 0; 
+            return this._principal != null && (this._principal.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -130,7 +131,7 @@ namespace Amazon.AccessAnalyzer.Model
         // Check to see if Sources property is set
         internal bool IsSetSources()
         {
-            return this._sources != null && this._sources.Count > 0; 
+            return this._sources != null && (this._sources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

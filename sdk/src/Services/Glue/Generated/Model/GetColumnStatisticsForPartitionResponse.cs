@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class GetColumnStatisticsForPartitionResponse : AmazonWebServiceResponse
     {
-        private List<ColumnStatistics> _columnStatisticsList = new List<ColumnStatistics>();
-        private List<ColumnError> _errors = new List<ColumnError>();
+        private List<ColumnStatistics> _columnStatisticsList = AWSConfigs.InitializeCollections ? new List<ColumnStatistics>() : null;
+        private List<ColumnError> _errors = AWSConfigs.InitializeCollections ? new List<ColumnError>() : null;
 
         /// <summary>
         /// Gets and sets the property ColumnStatisticsList. 
@@ -51,7 +52,7 @@ namespace Amazon.Glue.Model
         // Check to see if ColumnStatisticsList property is set
         internal bool IsSetColumnStatisticsList()
         {
-            return this._columnStatisticsList != null && this._columnStatisticsList.Count > 0; 
+            return this._columnStatisticsList != null && (this._columnStatisticsList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.Glue.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

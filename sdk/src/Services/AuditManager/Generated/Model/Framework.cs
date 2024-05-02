@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.AuditManager.Model
     {
         private string _arn;
         private string _complianceType;
-        private List<ControlSet> _controlSets = new List<ControlSet>();
+        private List<ControlSet> _controlSets = AWSConfigs.InitializeCollections ? new List<ControlSet>() : null;
         private string _controlSources;
         private DateTime? _createdAt;
         private string _createdBy;
@@ -46,7 +47,7 @@ namespace Amazon.AuditManager.Model
         private string _lastUpdatedBy;
         private string _logo;
         private string _name;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private FrameworkType _type;
 
         /// <summary>
@@ -103,7 +104,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if ControlSets property is set
         internal bool IsSetControlSets()
         {
-            return this._controlSets != null && this._controlSets.Count > 0; 
+            return this._controlSets != null && (this._controlSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -291,7 +292,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

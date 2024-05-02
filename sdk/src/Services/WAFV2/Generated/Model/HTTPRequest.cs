@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.WAFV2.Model
     {
         private string _clientIP;
         private string _country;
-        private List<HTTPHeader> _headers = new List<HTTPHeader>();
+        private List<HTTPHeader> _headers = AWSConfigs.InitializeCollections ? new List<HTTPHeader>() : null;
         private string _httpVersion;
         private string _method;
         private string _uri;
@@ -109,7 +110,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if Headers property is set
         internal bool IsSetHeaders()
         {
-            return this._headers != null && this._headers.Count > 0; 
+            return this._headers != null && (this._headers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

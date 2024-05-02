@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
@@ -56,7 +57,7 @@ namespace Amazon.OpsWorks.Model
     public partial class AssignInstanceRequest : AmazonOpsWorksRequest
     {
         private string _instanceId;
-        private List<string> _layerIds = new List<string>();
+        private List<string> _layerIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property InstanceId. 
@@ -94,7 +95,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if LayerIds property is set
         internal bool IsSetLayerIds()
         {
-            return this._layerIds != null && this._layerIds.Count > 0; 
+            return this._layerIds != null && (this._layerIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -75,7 +75,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 	    private static ListPartsRequestMarshaller _instance;
 
-	    public static ListPartsRequestMarshaller Instance
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
+        public static ListPartsRequestMarshaller Instance
 	    {
 	        get
 	        {

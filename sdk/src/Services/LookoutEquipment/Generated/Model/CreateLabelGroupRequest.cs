@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LookoutEquipment.Model
 {
     /// <summary>
@@ -35,9 +36,9 @@ namespace Amazon.LookoutEquipment.Model
     public partial class CreateLabelGroupRequest : AmazonLookoutEquipmentRequest
     {
         private string _clientToken;
-        private List<string> _faultCodes = new List<string>();
+        private List<string> _faultCodes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _labelGroupName;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -81,7 +82,7 @@ namespace Amazon.LookoutEquipment.Model
         // Check to see if FaultCodes property is set
         internal bool IsSetFaultCodes()
         {
-            return this._faultCodes != null && this._faultCodes.Count > 0; 
+            return this._faultCodes != null && (this._faultCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -129,7 +130,7 @@ namespace Amazon.LookoutEquipment.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

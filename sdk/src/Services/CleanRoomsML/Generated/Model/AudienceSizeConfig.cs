@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CleanRoomsML.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.CleanRoomsML.Model
     /// </summary>
     public partial class AudienceSizeConfig
     {
-        private List<int> _audienceSizeBins = new List<int>();
+        private List<int> _audienceSizeBins = AWSConfigs.InitializeCollections ? new List<int>() : null;
         private AudienceSizeType _audienceSizeType;
 
         /// <summary>
@@ -56,7 +57,7 @@ namespace Amazon.CleanRoomsML.Model
         // Check to see if AudienceSizeBins property is set
         internal bool IsSetAudienceSizeBins()
         {
-            return this._audienceSizeBins != null && this._audienceSizeBins.Count > 0; 
+            return this._audienceSizeBins != null && (this._audienceSizeBins.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

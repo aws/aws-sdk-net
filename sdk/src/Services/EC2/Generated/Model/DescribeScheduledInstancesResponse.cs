@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EC2.Model
     public partial class DescribeScheduledInstancesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ScheduledInstance> _scheduledInstanceSet = new List<ScheduledInstance>();
+        private List<ScheduledInstance> _scheduledInstanceSet = AWSConfigs.InitializeCollections ? new List<ScheduledInstance>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.EC2.Model
         // Check to see if ScheduledInstanceSet property is set
         internal bool IsSetScheduledInstanceSet()
         {
-            return this._scheduledInstanceSet != null && this._scheduledInstanceSet.Count > 0; 
+            return this._scheduledInstanceSet != null && (this._scheduledInstanceSet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

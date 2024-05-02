@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Batch.Model
 {
     /// <summary>
@@ -38,18 +39,18 @@ namespace Amazon.Batch.Model
         private CRUpdateAllocationStrategy _allocationStrategy;
         private int? _bidPercentage;
         private int? _desiredvCpus;
-        private List<Ec2Configuration> _ec2Configuration = new List<Ec2Configuration>();
+        private List<Ec2Configuration> _ec2Configuration = AWSConfigs.InitializeCollections ? new List<Ec2Configuration>() : null;
         private string _ec2KeyPair;
         private string _imageId;
         private string _instanceRole;
-        private List<string> _instanceTypes = new List<string>();
+        private List<string> _instanceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private LaunchTemplateSpecification _launchTemplate;
         private int? _maxvCpus;
         private int? _minvCpus;
         private string _placementGroup;
-        private List<string> _securityGroupIds = new List<string>();
-        private List<string> _subnets = new List<string>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _subnets = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private CRType _type;
         private bool? _updateToLatestImageVersion;
 
@@ -196,7 +197,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Ec2Configuration. 
         /// <para>
-        /// Provides information used to select Amazon Machine Images (AMIs) for EC2 instances
+        /// Provides information used to select Amazon Machine Images (AMIs) for Amazon EC2 instances
         /// in the compute environment. If <c>Ec2Configuration</c> isn't specified, the default
         /// is <c>ECS_AL2</c>.
         /// </para>
@@ -204,9 +205,9 @@ namespace Amazon.Batch.Model
         /// <para>
         /// When updating a compute environment, changing this setting requires an infrastructure
         /// update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
-        /// compute environments</a> in the <i>Batch User Guide</i>. To remove the EC2 configuration
-        /// and any custom AMI ID specified in <c>imageIdOverride</c>, set this value to an empty
-        /// string.
+        /// compute environments</a> in the <i>Batch User Guide</i>. To remove the Amazon EC2
+        /// configuration and any custom AMI ID specified in <c>imageIdOverride</c>, set this
+        /// value to an empty string.
         /// </para>
         ///  
         /// <para>
@@ -228,7 +229,7 @@ namespace Amazon.Batch.Model
         // Check to see if Ec2Configuration property is set
         internal bool IsSetEc2Configuration()
         {
-            return this._ec2Configuration != null && this._ec2Configuration.Count > 0; 
+            return this._ec2Configuration != null && (this._ec2Configuration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -240,8 +241,8 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  
         /// <para>
-        /// When updating a compute environment, changing the EC2 key pair requires an infrastructure
-        /// update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+        /// When updating a compute environment, changing the Amazon EC2 key pair requires an
+        /// infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
         /// compute environments</a> in the <i>Batch User Guide</i>.
         /// </para>
         ///  <note> 
@@ -384,7 +385,7 @@ namespace Amazon.Batch.Model
         // Check to see if InstanceTypes property is set
         internal bool IsSetInstanceTypes()
         {
-            return this._instanceTypes != null && this._instanceTypes.Count > 0; 
+            return this._instanceTypes != null && (this._instanceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -519,13 +520,14 @@ namespace Amazon.Batch.Model
         /// compute environment. This parameter is required for Fargate compute resources, where
         /// it can contain up to 5 security groups. For Fargate compute resources, providing an
         /// empty list is handled as if this parameter wasn't specified and no change is made.
-        /// For EC2 compute resources, providing an empty list removes the security groups from
-        /// the compute resource.
+        /// For Amazon EC2 compute resources, providing an empty list removes the security groups
+        /// from the compute resource.
         /// </para>
         ///  
         /// <para>
-        /// When updating a compute environment, changing the EC2 security groups requires an
-        /// infrastructure update of the compute environment. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
+        /// When updating a compute environment, changing the Amazon EC2 security groups requires
+        /// an infrastructure update of the compute environment. For more information, see <a
+        /// href="https://docs.aws.amazon.com/batch/latest/userguide/updating-compute-environments.html">Updating
         /// compute environments</a> in the <i>Batch User Guide</i>.
         /// </para>
         /// </summary>
@@ -538,7 +540,7 @@ namespace Amazon.Batch.Model
         // Check to see if SecurityGroupIds property is set
         internal bool IsSetSecurityGroupIds()
         {
-            return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+            return this._securityGroupIds != null && (this._securityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -546,8 +548,8 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The VPC subnets where the compute resources are launched. Fargate compute resources
         /// can contain up to 16 subnets. For Fargate compute resources, providing an empty list
-        /// will be handled as if this parameter wasn't specified and no change is made. For EC2
-        /// compute resources, providing an empty list removes the VPC subnets from the compute
+        /// will be handled as if this parameter wasn't specified and no change is made. For Amazon
+        /// EC2 compute resources, providing an empty list removes the VPC subnets from the compute
         /// resource. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">VPCs
         /// and subnets</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
@@ -582,18 +584,18 @@ namespace Amazon.Batch.Model
         // Check to see if Subnets property is set
         internal bool IsSetSubnets()
         {
-            return this._subnets != null && this._subnets.Count > 0; 
+            return this._subnets != null && (this._subnets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Key-value pair tags to be applied to EC2 resources that are launched in the compute
-        /// environment. For Batch, these take the form of <c>"String1": "String2"</c>, where
-        /// <c>String1</c> is the tag key and <c>String2</c> is the tag value-for example, <c>{
-        /// "Name": "Batch Instance - C4OnDemand" }</c>. This is helpful for recognizing your
-        /// Batch instances in the Amazon EC2 console. These tags aren't seen when using the Batch
-        /// <c>ListTagsForResource</c> API operation.
+        /// Key-value pair tags to be applied to Amazon EC2 resources that are launched in the
+        /// compute environment. For Batch, these take the form of <c>"String1": "String2"</c>,
+        /// where <c>String1</c> is the tag key and <c>String2</c> is the tag value-for example,
+        /// <c>{ "Name": "Batch Instance - C4OnDemand" }</c>. This is helpful for recognizing
+        /// your Batch instances in the Amazon EC2 console. These tags aren't seen when using
+        /// the Batch <c>ListTagsForResource</c> API operation.
         /// </para>
         ///  
         /// <para>
@@ -617,7 +619,7 @@ namespace Amazon.Batch.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

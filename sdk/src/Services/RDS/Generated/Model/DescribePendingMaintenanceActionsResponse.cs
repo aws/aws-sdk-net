@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.RDS.Model
     public partial class DescribePendingMaintenanceActionsResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<ResourcePendingMaintenanceActions> _pendingMaintenanceActions = new List<ResourcePendingMaintenanceActions>();
+        private List<ResourcePendingMaintenanceActions> _pendingMaintenanceActions = AWSConfigs.InitializeCollections ? new List<ResourcePendingMaintenanceActions>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -71,7 +72,7 @@ namespace Amazon.RDS.Model
         // Check to see if PendingMaintenanceActions property is set
         internal bool IsSetPendingMaintenanceActions()
         {
-            return this._pendingMaintenanceActions != null && this._pendingMaintenanceActions.Count > 0; 
+            return this._pendingMaintenanceActions != null && (this._pendingMaintenanceActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

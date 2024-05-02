@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppConfigData.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.AppConfigData.Model
     #endif
     public partial class ResourceNotFoundException : AmazonAppConfigDataException
     {
-        private Dictionary<string, string> _referencedBy = new Dictionary<string, string>();
+        private Dictionary<string, string> _referencedBy = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ResourceType _resourceType;
 
         /// <summary>
@@ -137,7 +138,7 @@ namespace Amazon.AppConfigData.Model
         // Check to see if ReferencedBy property is set
         internal bool IsSetReferencedBy()
         {
-            return this._referencedBy != null && this._referencedBy.Count > 0; 
+            return this._referencedBy != null && (this._referencedBy.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Backup.Model
 {
     /// <summary>
@@ -34,10 +35,10 @@ namespace Amazon.Backup.Model
     public partial class BackupRuleInput
     {
         private long? _completionWindowMinutes;
-        private List<CopyAction> _copyActions = new List<CopyAction>();
+        private List<CopyAction> _copyActions = AWSConfigs.InitializeCollections ? new List<CopyAction>() : null;
         private bool? _enableContinuousBackup;
         private Lifecycle _lifecycle;
-        private Dictionary<string, string> _recoveryPointTags = new Dictionary<string, string>();
+        private Dictionary<string, string> _recoveryPointTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _ruleName;
         private string _scheduleExpression;
         private string _scheduleExpressionTimezone;
@@ -78,7 +79,7 @@ namespace Amazon.Backup.Model
         // Check to see if CopyActions property is set
         internal bool IsSetCopyActions()
         {
-            return this._copyActions != null && this._copyActions.Count > 0; 
+            return this._copyActions != null && (this._copyActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -156,7 +157,7 @@ namespace Amazon.Backup.Model
         // Check to see if RecoveryPointTags property is set
         internal bool IsSetRecoveryPointTags()
         {
-            return this._recoveryPointTags != null && this._recoveryPointTags.Count > 0; 
+            return this._recoveryPointTags != null && (this._recoveryPointTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

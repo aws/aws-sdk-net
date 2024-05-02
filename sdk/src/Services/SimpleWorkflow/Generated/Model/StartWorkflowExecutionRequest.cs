@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
@@ -108,7 +109,7 @@ namespace Amazon.SimpleWorkflow.Model
         private string _executionStartToCloseTimeout;
         private string _input;
         private string _lambdaRole;
-        private List<string> _tagList = new List<string>();
+        private List<string> _tagList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TaskList _taskList;
         private string _taskPriority;
         private string _taskStartToCloseTimeout;
@@ -288,7 +289,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if TagList property is set
         internal bool IsSetTagList()
         {
-            return this._tagList != null && this._tagList.Count > 0; 
+            return this._tagList != null && (this._tagList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -76,16 +77,16 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">Amazon
-    /// Elastic Block Store</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-    /// EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/what-is-ebs.html">Amazon
+    /// Elastic Block Store</a> and <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+    /// EBS encryption</a> in the <i>Amazon EBS User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateSnapshotRequest : AmazonEC2Request
     {
         private string _description;
         private string _outpostArn;
-        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
+        private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
         private string _volumeId;
 
         /// <summary>
@@ -145,9 +146,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot">Create
-        /// local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic Compute Cloud
-        /// User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#create-snapshot">Create
+        /// local snapshots from volumes on an Outpost</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         /// </summary>
         public string OutpostArn
@@ -177,7 +177,7 @@ namespace Amazon.EC2.Model
         // Check to see if TagSpecifications property is set
         internal bool IsSetTagSpecifications()
         {
-            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
+            return this._tagSpecifications != null && (this._tagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

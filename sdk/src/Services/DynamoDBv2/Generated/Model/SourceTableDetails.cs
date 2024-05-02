@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.DynamoDBv2.Model
     {
         private BillingMode _billingMode;
         private long? _itemCount;
-        private List<KeySchemaElement> _keySchema = new List<KeySchemaElement>();
+        private List<KeySchemaElement> _keySchema = AWSConfigs.InitializeCollections ? new List<KeySchemaElement>() : null;
         private ProvisionedThroughput _provisionedThroughput;
         private string _tableArn;
         private DateTime? _tableCreationDateTime;
@@ -108,7 +109,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if KeySchema property is set
         internal bool IsSetKeySchema()
         {
-            return this._keySchema != null && this._keySchema.Count > 0; 
+            return this._keySchema != null && (this._keySchema.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -136,6 +137,7 @@ namespace Amazon.DynamoDBv2.Model
         /// ARN of the table for which backup was created. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string TableArn
         {
             get { return this._tableArn; }

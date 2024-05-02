@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
@@ -47,7 +48,7 @@ namespace Amazon.Lightsail.Model
         private ResourceLocation _location;
         private string _name;
         private ResourceType _resourceType;
-        private List<CloudFormationStackRecordSourceInfo> _sourceInfo = new List<CloudFormationStackRecordSourceInfo>();
+        private List<CloudFormationStackRecordSourceInfo> _sourceInfo = AWSConfigs.InitializeCollections ? new List<CloudFormationStackRecordSourceInfo>() : null;
         private RecordState _state;
 
         /// <summary>
@@ -176,7 +177,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if SourceInfo property is set
         internal bool IsSetSourceInfo()
         {
-            return this._sourceInfo != null && this._sourceInfo.Count > 0; 
+            return this._sourceInfo != null && (this._sourceInfo.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

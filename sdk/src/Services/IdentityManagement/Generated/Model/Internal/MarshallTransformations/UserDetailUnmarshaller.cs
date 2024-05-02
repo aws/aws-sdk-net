@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -63,6 +64,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AttachedManagedPolicies/member", targetDepth))
                     {
                         var unmarshaller = AttachedPolicyTypeUnmarshaller.Instance;
+                        if (unmarshalledObject.AttachedManagedPolicies == null)
+                        {
+                            unmarshalledObject.AttachedManagedPolicies = new List<AttachedPolicyType>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AttachedManagedPolicies.Add(item);
                         continue;
@@ -76,6 +81,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("GroupList/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.GroupList == null)
+                        {
+                            unmarshalledObject.GroupList = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.GroupList.Add(item);
                         continue;
@@ -95,6 +104,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Tags/member", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tags.Add(item);
                         continue;
@@ -114,6 +127,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("UserPolicyList/member", targetDepth))
                     {
                         var unmarshaller = PolicyDetailUnmarshaller.Instance;
+                        if (unmarshalledObject.UserPolicyList == null)
+                        {
+                            unmarshalledObject.UserPolicyList = new List<PolicyDetail>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.UserPolicyList.Add(item);
                         continue;

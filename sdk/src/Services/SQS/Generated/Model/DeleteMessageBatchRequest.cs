@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SQS.Model
 {
     /// <summary>
@@ -44,7 +45,7 @@ namespace Amazon.SQS.Model
     /// </summary>
     public partial class DeleteMessageBatchRequest : AmazonSQSRequest
     {
-        private List<DeleteMessageBatchRequestEntry> _entries = new List<DeleteMessageBatchRequestEntry>();
+        private List<DeleteMessageBatchRequestEntry> _entries = AWSConfigs.InitializeCollections ? new List<DeleteMessageBatchRequestEntry>() : null;
         private string _queueUrl;
 
         /// <summary>
@@ -79,7 +80,7 @@ namespace Amazon.SQS.Model
         // Check to see if Entries property is set
         internal bool IsSetEntries()
         {
-            return this._entries != null && this._entries.Count > 0; 
+            return this._entries != null && (this._entries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

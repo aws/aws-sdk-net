@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PI.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.PI.Model
     {
         private string _identifier;
         private int? _maxResults;
-        private List<string> _metricTypes = new List<string>();
+        private List<string> _metricTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
         private ServiceType _serviceType;
 
@@ -117,7 +118,7 @@ namespace Amazon.PI.Model
         // Check to see if MetricTypes property is set
         internal bool IsSetMetricTypes()
         {
-            return this._metricTypes != null && this._metricTypes.Count > 0; 
+            return this._metricTypes != null && (this._metricTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

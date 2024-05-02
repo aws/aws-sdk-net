@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteApplicationVpcConfiguration operation.
-    /// Removes a VPC configuration from a Kinesis Data Analytics application.
+    /// Removes a VPC configuration from a Managed Service for Apache Flink application.
     /// </summary>
     public partial class DeleteApplicationVpcConfigurationRequest : AmazonKinesisAnalyticsV2Request
     {

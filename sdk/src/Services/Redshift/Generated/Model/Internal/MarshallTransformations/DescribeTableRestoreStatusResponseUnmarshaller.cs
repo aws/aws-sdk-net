@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -90,6 +91,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("TableRestoreStatusDetails/TableRestoreStatus", targetDepth))
                     {
                         var unmarshaller = TableRestoreStatusUnmarshaller.Instance;
+                        if (response.TableRestoreStatusDetails == null)
+                        {
+                            response.TableRestoreStatusDetails = new List<TableRestoreStatus>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.TableRestoreStatusDetails.Add(item);
                         continue;

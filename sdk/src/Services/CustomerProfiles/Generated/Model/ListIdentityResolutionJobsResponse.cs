@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CustomerProfiles.Model
     /// </summary>
     public partial class ListIdentityResolutionJobsResponse : AmazonWebServiceResponse
     {
-        private List<IdentityResolutionJob> _identityResolutionJobsList = new List<IdentityResolutionJob>();
+        private List<IdentityResolutionJob> _identityResolutionJobsList = AWSConfigs.InitializeCollections ? new List<IdentityResolutionJob>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.CustomerProfiles.Model
         // Check to see if IdentityResolutionJobsList property is set
         internal bool IsSetIdentityResolutionJobsList()
         {
-            return this._identityResolutionJobsList != null && this._identityResolutionJobsList.Count > 0; 
+            return this._identityResolutionJobsList != null && (this._identityResolutionJobsList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53RecoveryControlConfig.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
     /// </summary>
     public partial class ListControlPanelsResponse : AmazonWebServiceResponse
     {
-        private List<ControlPanel> _controlPanels = new List<ControlPanel>();
+        private List<ControlPanel> _controlPanels = AWSConfigs.InitializeCollections ? new List<ControlPanel>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         // Check to see if ControlPanels property is set
         internal bool IsSetControlPanels()
         {
-            return this._controlPanels != null && this._controlPanels.Count > 0; 
+            return this._controlPanels != null && (this._controlPanels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

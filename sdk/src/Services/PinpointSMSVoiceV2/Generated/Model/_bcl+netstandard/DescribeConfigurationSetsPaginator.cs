@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// Enumerable containing all of the ConfigurationSets
         /// </summary>
         public IPaginatedEnumerable<ConfigurationSetInformation> ConfigurationSets => 
-            new PaginatedResultKeyResponse<DescribeConfigurationSetsResponse, ConfigurationSetInformation>(this, (i) => i.ConfigurationSets);
+            new PaginatedResultKeyResponse<DescribeConfigurationSetsResponse, ConfigurationSetInformation>(this, (i) => i.ConfigurationSets ?? new List<ConfigurationSetInformation>());
 
         internal DescribeConfigurationSetsPaginator(IAmazonPinpointSMSVoiceV2 client, DescribeConfigurationSetsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeConfigurationSetsResponse> IPaginator<DescribeConfigurationSetsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeConfigurationSetsResponse> IPaginator<DescribeConfigurationSetsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

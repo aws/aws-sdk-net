@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -90,6 +91,10 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Jobs/member", targetDepth))
                     {
                         var unmarshaller = JobUnmarshaller.Instance;
+                        if (response.Jobs == null)
+                        {
+                            response.Jobs = new List<Job>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Jobs.Add(item);
                         continue;

@@ -26,6 +26,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.WAFV2.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.WAFV2
 {
     /// <summary>
@@ -1389,6 +1390,31 @@ namespace Amazon.WAFV2
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
         /// The operation isn't valid.
         /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <c>WebACL</c> with a <c>DefaultAction</c> that isn't among the
+        /// types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DescribeAllManagedProducts">REST API Reference for DescribeAllManagedProducts Operation</seealso>
         Task<DescribeAllManagedProductsResponse> DescribeAllManagedProductsAsync(DescribeAllManagedProductsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -1710,6 +1736,12 @@ namespace Amazon.WAFV2
         /// <exception cref="Amazon.WAFV2.Model.WAFInvalidResourceException">
         /// WAF couldn’t perform the operation because the resource that you requested isn’t valid.
         /// Check the resource, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFNonexistentItemException">
+        /// WAF couldn’t perform the operation because your resource doesn't exist. If you've
+        /// just created a resource that you're using in this operation, you might just need to
+        /// wait a few minutes. It can take from a few seconds to a number of minutes for changes
+        /// to propagate.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetDecryptedAPIKey">REST API Reference for GetDecryptedAPIKey Operation</seealso>
         Task<GetDecryptedAPIKeyResponse> GetDecryptedAPIKeyAsync(GetDecryptedAPIKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.GlueDataBrew.Model
     public partial class ListSchedulesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Schedule> _schedules = new List<Schedule>();
+        private List<Schedule> _schedules = AWSConfigs.InitializeCollections ? new List<Schedule>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.GlueDataBrew.Model
         // Check to see if Schedules property is set
         internal bool IsSetSchedules()
         {
-            return this._schedules != null && this._schedules.Count > 0; 
+            return this._schedules != null && (this._schedules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

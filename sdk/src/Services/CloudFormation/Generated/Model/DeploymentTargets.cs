@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
@@ -43,9 +44,9 @@ namespace Amazon.CloudFormation.Model
     public partial class DeploymentTargets
     {
         private AccountFilterType _accountFilterType;
-        private List<string> _accounts = new List<string>();
+        private List<string> _accounts = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _accountsUrl;
-        private List<string> _organizationalUnitIds = new List<string>();
+        private List<string> _organizationalUnitIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountFilterType. 
@@ -111,7 +112,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Accounts property is set
         internal bool IsSetAccounts()
         {
-            return this._accounts != null && this._accounts.Count > 0; 
+            return this._accounts != null && (this._accounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -148,7 +149,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if OrganizationalUnitIds property is set
         internal bool IsSetOrganizationalUnitIds()
         {
-            return this._organizationalUnitIds != null && this._organizationalUnitIds.Count > 0; 
+            return this._organizationalUnitIds != null && (this._organizationalUnitIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

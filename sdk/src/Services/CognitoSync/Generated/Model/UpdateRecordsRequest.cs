@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CognitoSync.Model
 {
     /// <summary>
@@ -60,7 +61,7 @@ namespace Amazon.CognitoSync.Model
         private string _deviceId;
         private string _identityId;
         private string _identityPoolId;
-        private List<RecordPatch> _recordPatches = new List<RecordPatch>();
+        private List<RecordPatch> _recordPatches = AWSConfigs.InitializeCollections ? new List<RecordPatch>() : null;
         private string _syncSessionToken;
 
         /// <summary>
@@ -162,7 +163,7 @@ namespace Amazon.CognitoSync.Model
         // Check to see if RecordPatches property is set
         internal bool IsSetRecordPatches()
         {
-            return this._recordPatches != null && this._recordPatches.Count > 0; 
+            return this._recordPatches != null && (this._recordPatches.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

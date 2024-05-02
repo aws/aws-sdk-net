@@ -26,21 +26,22 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CleanRoomsML.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateTrainingDataset operation.
-    /// Defines the information necessary to create a training dataset, or seed audience.
-    /// In Clean Rooms ML, the <c>TrainingDataset</c> is metadata that points to a Glue table,
-    /// which is read only during <c>AudienceModel</c> creation.
+    /// Defines the information necessary to create a training dataset. In Clean Rooms ML,
+    /// the <c>TrainingDataset</c> is metadata that points to a Glue table, which is read
+    /// only during <c>AudienceModel</c> creation.
     /// </summary>
     public partial class CreateTrainingDatasetRequest : AmazonCleanRoomsMLRequest
     {
         private string _description;
         private string _name;
         private string _roleArn;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
-        private List<Dataset> _trainingData = new List<Dataset>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<Dataset> _trainingData = AWSConfigs.InitializeCollections ? new List<Dataset>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -164,7 +165,7 @@ namespace Amazon.CleanRoomsML.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -185,7 +186,7 @@ namespace Amazon.CleanRoomsML.Model
         // Check to see if TrainingData property is set
         internal bool IsSetTrainingData()
         {
-            return this._trainingData != null && this._trainingData.Count > 0; 
+            return this._trainingData != null && (this._trainingData.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

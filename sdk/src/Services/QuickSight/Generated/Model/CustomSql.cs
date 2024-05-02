@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class CustomSql
     {
-        private List<InputColumn> _columns = new List<InputColumn>();
+        private List<InputColumn> _columns = AWSConfigs.InitializeCollections ? new List<InputColumn>() : null;
         private string _dataSourceArn;
         private string _name;
         private string _sqlQuery;
@@ -54,7 +55,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Columns property is set
         internal bool IsSetColumns()
         {
-            return this._columns != null && this._columns.Count > 0; 
+            return this._columns != null && (this._columns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -101,7 +102,7 @@ namespace Amazon.QuickSight.Model
         /// The SQL query.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=65536)]
+        [AWSProperty(Required=true, Min=1, Max=168000)]
         public string SqlQuery
         {
             get { return this._sqlQuery; }

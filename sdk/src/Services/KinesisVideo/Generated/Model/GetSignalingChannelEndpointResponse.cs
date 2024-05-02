@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.KinesisVideo.Model
     /// </summary>
     public partial class GetSignalingChannelEndpointResponse : AmazonWebServiceResponse
     {
-        private List<ResourceEndpointListItem> _resourceEndpointList = new List<ResourceEndpointListItem>();
+        private List<ResourceEndpointListItem> _resourceEndpointList = AWSConfigs.InitializeCollections ? new List<ResourceEndpointListItem>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceEndpointList. 
@@ -50,7 +51,7 @@ namespace Amazon.KinesisVideo.Model
         // Check to see if ResourceEndpointList property is set
         internal bool IsSetResourceEndpointList()
         {
-            return this._resourceEndpointList != null && this._resourceEndpointList.Count > 0; 
+            return this._resourceEndpointList != null && (this._resourceEndpointList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

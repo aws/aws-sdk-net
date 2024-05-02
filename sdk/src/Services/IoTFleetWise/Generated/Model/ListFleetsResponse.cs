@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTFleetWise.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoTFleetWise.Model
     /// </summary>
     public partial class ListFleetsResponse : AmazonWebServiceResponse
     {
-        private List<FleetSummary> _fleetSummaries = new List<FleetSummary>();
+        private List<FleetSummary> _fleetSummaries = AWSConfigs.InitializeCollections ? new List<FleetSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if FleetSummaries property is set
         internal bool IsSetFleetSummaries()
         {
-            return this._fleetSummaries != null && this._fleetSummaries.Count > 0; 
+            return this._fleetSummaries != null && (this._fleetSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

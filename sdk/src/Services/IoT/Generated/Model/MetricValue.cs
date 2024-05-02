@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -33,12 +34,12 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class MetricValue
     {
-        private List<string> _cidrs = new List<string>();
+        private List<string> _cidrs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private long? _count;
         private double? _number;
-        private List<double> _numbers = new List<double>();
-        private List<int> _ports = new List<int>();
-        private List<string> _strings = new List<string>();
+        private List<double> _numbers = AWSConfigs.InitializeCollections ? new List<double>() : null;
+        private List<int> _ports = AWSConfigs.InitializeCollections ? new List<int>() : null;
+        private List<string> _strings = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Cidrs. 
@@ -56,7 +57,7 @@ namespace Amazon.IoT.Model
         // Check to see if Cidrs property is set
         internal bool IsSetCidrs()
         {
-            return this._cidrs != null && this._cidrs.Count > 0; 
+            return this._cidrs != null && (this._cidrs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -112,7 +113,7 @@ namespace Amazon.IoT.Model
         // Check to see if Numbers property is set
         internal bool IsSetNumbers()
         {
-            return this._numbers != null && this._numbers.Count > 0; 
+            return this._numbers != null && (this._numbers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -131,7 +132,7 @@ namespace Amazon.IoT.Model
         // Check to see if Ports property is set
         internal bool IsSetPorts()
         {
-            return this._ports != null && this._ports.Count > 0; 
+            return this._ports != null && (this._ports.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -149,7 +150,7 @@ namespace Amazon.IoT.Model
         // Check to see if Strings property is set
         internal bool IsSetStrings()
         {
-            return this._strings != null && this._strings.Count > 0; 
+            return this._strings != null && (this._strings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

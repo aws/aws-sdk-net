@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FraudDetector.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.FraudDetector.Model
     {
         private string _arn;
         private string _detectorId;
-        private List<DetectorVersionSummary> _detectorVersionSummaries = new List<DetectorVersionSummary>();
+        private List<DetectorVersionSummary> _detectorVersionSummaries = AWSConfigs.InitializeCollections ? new List<DetectorVersionSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if DetectorVersionSummaries property is set
         internal bool IsSetDetectorVersionSummaries()
         {
-            return this._detectorVersionSummaries != null && this._detectorVersionSummaries.Count > 0; 
+            return this._detectorVersionSummaries != null && (this._detectorVersionSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

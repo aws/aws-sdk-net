@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppConfig.Model
 {
     /// <summary>
@@ -39,9 +40,10 @@ namespace Amazon.AppConfig.Model
         private string _configurationVersion;
         private string _deploymentStrategyId;
         private string _description;
+        private Dictionary<string, string> _dynamicExtensionParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _environmentId;
         private string _kmsKeyIdentifier;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
@@ -141,6 +143,26 @@ namespace Amazon.AppConfig.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DynamicExtensionParameters. 
+        /// <para>
+        /// A map of dynamic extension parameter names to values to pass to associated extensions
+        /// with <c>PRE_START_DEPLOYMENT</c> actions.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public Dictionary<string, string> DynamicExtensionParameters
+        {
+            get { return this._dynamicExtensionParameters; }
+            set { this._dynamicExtensionParameters = value; }
+        }
+
+        // Check to see if DynamicExtensionParameters property is set
+        internal bool IsSetDynamicExtensionParameters()
+        {
+            return this._dynamicExtensionParameters != null && (this._dynamicExtensionParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
         /// Gets and sets the property EnvironmentId. 
         /// <para>
         /// The environment ID.
@@ -196,7 +218,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

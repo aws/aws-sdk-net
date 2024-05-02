@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -35,9 +36,9 @@ namespace Amazon.Redshift.Model
     {
         private string _clusterSecurityGroupName;
         private string _description;
-        private List<EC2SecurityGroup> _ec2SecurityGroups = new List<EC2SecurityGroup>();
-        private List<IPRange> _ipRanges = new List<IPRange>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<EC2SecurityGroup> _ec2SecurityGroups = AWSConfigs.InitializeCollections ? new List<EC2SecurityGroup>() : null;
+        private List<IPRange> _ipRanges = AWSConfigs.InitializeCollections ? new List<IPRange>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ClusterSecurityGroupName. 
@@ -93,7 +94,7 @@ namespace Amazon.Redshift.Model
         // Check to see if EC2SecurityGroups property is set
         internal bool IsSetEC2SecurityGroups()
         {
-            return this._ec2SecurityGroups != null && this._ec2SecurityGroups.Count > 0; 
+            return this._ec2SecurityGroups != null && (this._ec2SecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -112,7 +113,7 @@ namespace Amazon.Redshift.Model
         // Check to see if IPRanges property is set
         internal bool IsSetIPRanges()
         {
-            return this._ipRanges != null && this._ipRanges.Count > 0; 
+            return this._ipRanges != null && (this._ipRanges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -130,7 +131,7 @@ namespace Amazon.Redshift.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

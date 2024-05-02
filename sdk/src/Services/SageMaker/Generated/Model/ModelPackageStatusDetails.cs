@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ModelPackageStatusDetails
     {
-        private List<ModelPackageStatusItem> _imageScanStatuses = new List<ModelPackageStatusItem>();
-        private List<ModelPackageStatusItem> _validationStatuses = new List<ModelPackageStatusItem>();
+        private List<ModelPackageStatusItem> _imageScanStatuses = AWSConfigs.InitializeCollections ? new List<ModelPackageStatusItem>() : null;
+        private List<ModelPackageStatusItem> _validationStatuses = AWSConfigs.InitializeCollections ? new List<ModelPackageStatusItem>() : null;
 
         /// <summary>
         /// Gets and sets the property ImageScanStatuses. 
@@ -51,7 +52,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ImageScanStatuses property is set
         internal bool IsSetImageScanStatuses()
         {
-            return this._imageScanStatuses != null && this._imageScanStatuses.Count > 0; 
+            return this._imageScanStatuses != null && (this._imageScanStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ValidationStatuses property is set
         internal bool IsSetValidationStatuses()
         {
-            return this._validationStatuses != null && this._validationStatuses.Count > 0; 
+            return this._validationStatuses != null && (this._validationStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -111,6 +112,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ClusterNodes/member", targetDepth))
                     {
                         var unmarshaller = ClusterNodeUnmarshaller.Instance;
+                        if (unmarshalledObject.ClusterNodes == null)
+                        {
+                            unmarshalledObject.ClusterNodes = new List<ClusterNode>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ClusterNodes.Add(item);
                         continue;
@@ -118,6 +123,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ClusterParameterGroups/ClusterParameterGroup", targetDepth))
                     {
                         var unmarshaller = ClusterParameterGroupStatusUnmarshaller.Instance;
+                        if (unmarshalledObject.ClusterParameterGroups == null)
+                        {
+                            unmarshalledObject.ClusterParameterGroups = new List<ClusterParameterGroupStatus>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ClusterParameterGroups.Add(item);
                         continue;
@@ -137,6 +146,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ClusterSecurityGroups/ClusterSecurityGroup", targetDepth))
                     {
                         var unmarshaller = ClusterSecurityGroupMembershipUnmarshaller.Instance;
+                        if (unmarshalledObject.ClusterSecurityGroups == null)
+                        {
+                            unmarshalledObject.ClusterSecurityGroups = new List<ClusterSecurityGroupMembership>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ClusterSecurityGroups.Add(item);
                         continue;
@@ -204,6 +217,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DeferredMaintenanceWindows/DeferredMaintenanceWindow", targetDepth))
                     {
                         var unmarshaller = DeferredMaintenanceWindowUnmarshaller.Instance;
+                        if (unmarshalledObject.DeferredMaintenanceWindows == null)
+                        {
+                            unmarshalledObject.DeferredMaintenanceWindows = new List<DeferredMaintenanceWindow>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.DeferredMaintenanceWindows.Add(item);
                         continue;
@@ -259,6 +276,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("IamRoles/ClusterIamRole", targetDepth))
                     {
                         var unmarshaller = ClusterIamRoleUnmarshaller.Instance;
+                        if (unmarshalledObject.IamRoles == null)
+                        {
+                            unmarshalledObject.IamRoles = new List<ClusterIamRole>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.IamRoles.Add(item);
                         continue;
@@ -344,6 +365,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("PendingActions/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.PendingActions == null)
+                        {
+                            unmarshalledObject.PendingActions = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.PendingActions.Add(item);
                         continue;
@@ -399,6 +424,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Tags/Tag", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tags.Add(item);
                         continue;
@@ -418,6 +447,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("VpcSecurityGroups/VpcSecurityGroup", targetDepth))
                     {
                         var unmarshaller = VpcSecurityGroupMembershipUnmarshaller.Instance;
+                        if (unmarshalledObject.VpcSecurityGroups == null)
+                        {
+                            unmarshalledObject.VpcSecurityGroups = new List<VpcSecurityGroupMembership>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.VpcSecurityGroups.Add(item);
                         continue;

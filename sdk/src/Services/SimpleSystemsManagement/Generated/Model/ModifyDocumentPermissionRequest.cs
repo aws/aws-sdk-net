@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -37,8 +38,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class ModifyDocumentPermissionRequest : AmazonSimpleSystemsManagementRequest
     {
-        private List<string> _accountIdsToAdd = new List<string>();
-        private List<string> _accountIdsToRemove = new List<string>();
+        private List<string> _accountIdsToAdd = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _accountIdsToRemove = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private DocumentPermissionType _permissionType;
         private string _sharedDocumentVersion;
@@ -60,7 +61,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if AccountIdsToAdd property is set
         internal bool IsSetAccountIdsToAdd()
         {
-            return this._accountIdsToAdd != null && this._accountIdsToAdd.Count > 0; 
+            return this._accountIdsToAdd != null && (this._accountIdsToAdd.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -68,7 +69,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The Amazon Web Services users that should no longer have access to the document. The
         /// Amazon Web Services user can either be a group of account IDs or <i>All</i>. This
-        /// action has a higher priority than <i>AccountIdsToAdd</i>. If you specify an ID to
+        /// action has a higher priority than <c>AccountIdsToAdd</c>. If you specify an ID to
         /// add and the same ID to remove, the system removes access to the document.
         /// </para>
         /// </summary>
@@ -82,7 +83,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if AccountIdsToRemove property is set
         internal bool IsSetAccountIdsToRemove()
         {
-            return this._accountIdsToRemove != null && this._accountIdsToRemove.Count > 0; 
+            return this._accountIdsToRemove != null && (this._accountIdsToRemove.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

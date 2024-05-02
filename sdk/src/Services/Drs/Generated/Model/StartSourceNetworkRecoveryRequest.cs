@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Drs.Model
 {
     /// <summary>
@@ -36,8 +37,8 @@ namespace Amazon.Drs.Model
     public partial class StartSourceNetworkRecoveryRequest : AmazonDrsRequest
     {
         private bool? _deployAsNew;
-        private List<StartSourceNetworkRecoveryRequestNetworkEntry> _sourceNetworks = new List<StartSourceNetworkRecoveryRequestNetworkEntry>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<StartSourceNetworkRecoveryRequestNetworkEntry> _sourceNetworks = AWSConfigs.InitializeCollections ? new List<StartSourceNetworkRecoveryRequestNetworkEntry>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property DeployAsNew. 
@@ -73,7 +74,7 @@ namespace Amazon.Drs.Model
         // Check to see if SourceNetworks property is set
         internal bool IsSetSourceNetworks()
         {
-            return this._sourceNetworks != null && this._sourceNetworks.Count > 0; 
+            return this._sourceNetworks != null && (this._sourceNetworks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.Drs.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

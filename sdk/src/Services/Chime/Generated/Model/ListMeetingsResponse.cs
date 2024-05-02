@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Chime.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Chime.Model
     /// </summary>
     public partial class ListMeetingsResponse : AmazonWebServiceResponse
     {
-        private List<Meeting> _meetings = new List<Meeting>();
+        private List<Meeting> _meetings = AWSConfigs.InitializeCollections ? new List<Meeting>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Chime.Model
         // Check to see if Meetings property is set
         internal bool IsSetMeetings()
         {
-            return this._meetings != null && this._meetings.Count > 0; 
+            return this._meetings != null && (this._meetings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

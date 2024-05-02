@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class DockerSettings
     {
         private FeatureStatus _enableDockerAccess;
-        private List<string> _vpcOnlyTrustedAccounts = new List<string>();
+        private List<string> _vpcOnlyTrustedAccounts = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property EnableDockerAccess. 
@@ -71,7 +72,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if VpcOnlyTrustedAccounts property is set
         internal bool IsSetVpcOnlyTrustedAccounts()
         {
-            return this._vpcOnlyTrustedAccounts != null && this._vpcOnlyTrustedAccounts.Count > 0; 
+            return this._vpcOnlyTrustedAccounts != null && (this._vpcOnlyTrustedAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

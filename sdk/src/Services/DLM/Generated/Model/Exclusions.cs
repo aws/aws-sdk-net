@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DLM.Model
 {
     /// <summary>
@@ -36,8 +37,8 @@ namespace Amazon.DLM.Model
     public partial class Exclusions
     {
         private bool? _excludeBootVolumes;
-        private List<Tag> _excludeTags = new List<Tag>();
-        private List<string> _excludeVolumeTypes = new List<string>();
+        private List<Tag> _excludeTags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<string> _excludeVolumeTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ExcludeBootVolumes. 
@@ -77,7 +78,7 @@ namespace Amazon.DLM.Model
         // Check to see if ExcludeTags property is set
         internal bool IsSetExcludeTags()
         {
-            return this._excludeTags != null && this._excludeTags.Count > 0; 
+            return this._excludeTags != null && (this._excludeTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -97,7 +98,7 @@ namespace Amazon.DLM.Model
         // Check to see if ExcludeVolumeTypes property is set
         internal bool IsSetExcludeVolumeTypes()
         {
-            return this._excludeVolumeTypes != null && this._excludeVolumeTypes.Count > 0; 
+            return this._excludeVolumeTypes != null && (this._excludeVolumeTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

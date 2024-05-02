@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MTurk.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MTurk.Model
     /// </summary>
     public partial class NotifyWorkersResponse : AmazonWebServiceResponse
     {
-        private List<NotifyWorkersFailureStatus> _notifyWorkersFailureStatuses = new List<NotifyWorkersFailureStatus>();
+        private List<NotifyWorkersFailureStatus> _notifyWorkersFailureStatuses = AWSConfigs.InitializeCollections ? new List<NotifyWorkersFailureStatus>() : null;
 
         /// <summary>
         /// Gets and sets the property NotifyWorkersFailureStatuses. 
@@ -51,7 +52,7 @@ namespace Amazon.MTurk.Model
         // Check to see if NotifyWorkersFailureStatuses property is set
         internal bool IsSetNotifyWorkersFailureStatuses()
         {
-            return this._notifyWorkersFailureStatuses != null && this._notifyWorkersFailureStatuses.Count > 0; 
+            return this._notifyWorkersFailureStatuses != null && (this._notifyWorkersFailureStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

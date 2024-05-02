@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.AccessAnalyzer.Model
         private string _accessRole;
         private DateTime? _endTime;
         private DateTime? _startTime;
-        private List<Trail> _trails = new List<Trail>();
+        private List<Trail> _trails = AWSConfigs.InitializeCollections ? new List<Trail>() : null;
 
         /// <summary>
         /// Gets and sets the property AccessRole. 
@@ -115,7 +116,7 @@ namespace Amazon.AccessAnalyzer.Model
         // Check to see if Trails property is set
         internal bool IsSetTrails()
         {
-            return this._trails != null && this._trails.Count > 0; 
+            return this._trails != null && (this._trails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

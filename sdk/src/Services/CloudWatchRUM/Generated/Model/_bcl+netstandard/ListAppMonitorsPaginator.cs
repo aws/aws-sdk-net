@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchRUM.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.CloudWatchRUM.Model
         /// Enumerable containing all of the AppMonitorSummaries
         /// </summary>
         public IPaginatedEnumerable<AppMonitorSummary> AppMonitorSummaries => 
-            new PaginatedResultKeyResponse<ListAppMonitorsResponse, AppMonitorSummary>(this, (i) => i.AppMonitorSummaries);
+            new PaginatedResultKeyResponse<ListAppMonitorsResponse, AppMonitorSummary>(this, (i) => i.AppMonitorSummaries ?? new List<AppMonitorSummary>());
 
         internal ListAppMonitorsPaginator(IAmazonCloudWatchRUM client, ListAppMonitorsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.CloudWatchRUM.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListAppMonitorsResponse> IPaginator<ListAppMonitorsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListAppMonitorsResponse> IPaginator<ListAppMonitorsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

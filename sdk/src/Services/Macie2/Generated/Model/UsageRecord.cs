@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Macie2.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Macie2.Model
         private string _accountId;
         private DateTime? _automatedDiscoveryFreeTrialStartDate;
         private DateTime? _freeTrialStartDate;
-        private List<UsageByAccount> _usage = new List<UsageByAccount>();
+        private List<UsageByAccount> _usage = AWSConfigs.InitializeCollections ? new List<UsageByAccount>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -112,7 +113,7 @@ namespace Amazon.Macie2.Model
         // Check to see if Usage property is set
         internal bool IsSetUsage()
         {
-            return this._usage != null && this._usage.Count > 0; 
+            return this._usage != null && (this._usage.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

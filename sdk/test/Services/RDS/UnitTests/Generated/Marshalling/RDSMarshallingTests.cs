@@ -3320,6 +3320,29 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void CreateDBInstanceReadReplica_CertificateNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateDBInstanceReadReplica");
+
+            var request = InstantiateClassGenerator.Execute<CreateDBInstanceReadReplicaRequest>(operation);
+            var marshaller = new CreateDBInstanceReadReplicaRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("CertificateNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateDBInstanceReadReplicaResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void CreateDBInstanceReadReplica_DBClusterNotFoundExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("CreateDBInstanceReadReplica");
@@ -12275,6 +12298,97 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void ModifyIntegrationMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyIntegration");
+
+            var request = InstantiateClassGenerator.Execute<ModifyIntegrationRequest>(operation);
+            var marshaller = new ModifyIntegrationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ModifyIntegrationResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyIntegrationResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void ModifyIntegration_IntegrationConflictOperationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyIntegration");
+
+            var request = InstantiateClassGenerator.Execute<ModifyIntegrationRequest>(operation);
+            var marshaller = new ModifyIntegrationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("IntegrationConflictOperationException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyIntegrationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void ModifyIntegration_IntegrationNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyIntegration");
+
+            var request = InstantiateClassGenerator.Execute<ModifyIntegrationRequest>(operation);
+            var marshaller = new ModifyIntegrationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("IntegrationNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyIntegrationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void ModifyIntegration_InvalidIntegrationStateExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyIntegration");
+
+            var request = InstantiateClassGenerator.Execute<ModifyIntegrationRequest>(operation);
+            var marshaller = new ModifyIntegrationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidIntegrationStateException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyIntegrationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void ModifyOptionGroupMarshallTest()
         {
             var operation = service_model.FindOperation("ModifyOptionGroup");
@@ -15230,6 +15344,29 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void RestoreDBInstanceFromDBSnapshot_CertificateNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RestoreDBInstanceFromDBSnapshot");
+
+            var request = InstantiateClassGenerator.Execute<RestoreDBInstanceFromDBSnapshotRequest>(operation);
+            var marshaller = new RestoreDBInstanceFromDBSnapshotRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("CertificateNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RestoreDBInstanceFromDBSnapshotResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void RestoreDBInstanceFromDBSnapshot_DBClusterSnapshotNotFoundExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("RestoreDBInstanceFromDBSnapshot");
@@ -15781,6 +15918,29 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void RestoreDBInstanceFromS3_CertificateNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RestoreDBInstanceFromS3");
+
+            var request = InstantiateClassGenerator.Execute<RestoreDBInstanceFromS3Request>(operation);
+            var marshaller = new RestoreDBInstanceFromS3RequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("CertificateNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RestoreDBInstanceFromS3ResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void RestoreDBInstanceFromS3_DBInstanceAlreadyExistsExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("RestoreDBInstanceFromS3");
@@ -16206,6 +16366,29 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("BackupPolicyNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RestoreDBInstanceToPointInTimeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void RestoreDBInstanceToPointInTime_CertificateNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RestoreDBInstanceToPointInTime");
+
+            var request = InstantiateClassGenerator.Execute<RestoreDBInstanceToPointInTimeRequest>(operation);
+            var marshaller = new RestoreDBInstanceToPointInTimeRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("CertificateNotFoundException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = RestoreDBInstanceToPointInTimeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);

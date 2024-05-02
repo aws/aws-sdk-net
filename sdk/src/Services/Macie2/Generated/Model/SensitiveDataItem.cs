@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Macie2.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Macie2.Model
     public partial class SensitiveDataItem
     {
         private SensitiveDataItemCategory _category;
-        private List<DefaultDetection> _detections = new List<DefaultDetection>();
+        private List<DefaultDetection> _detections = AWSConfigs.InitializeCollections ? new List<DefaultDetection>() : null;
         private long? _totalCount;
 
         /// <summary>
@@ -77,7 +78,7 @@ namespace Amazon.Macie2.Model
         // Check to see if Detections property is set
         internal bool IsSetDetections()
         {
-            return this._detections != null && this._detections.Count > 0; 
+            return this._detections != null && (this._detections.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

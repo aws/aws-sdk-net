@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Backup.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Backup.Model
     public partial class ListRestoreTestingPlansResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RestoreTestingPlanForList> _restoreTestingPlans = new List<RestoreTestingPlanForList>();
+        private List<RestoreTestingPlanForList> _restoreTestingPlans = AWSConfigs.InitializeCollections ? new List<RestoreTestingPlanForList>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.Backup.Model
         // Check to see if RestoreTestingPlans property is set
         internal bool IsSetRestoreTestingPlans()
         {
-            return this._restoreTestingPlans != null && this._restoreTestingPlans.Count > 0; 
+            return this._restoreTestingPlans != null && (this._restoreTestingPlans.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

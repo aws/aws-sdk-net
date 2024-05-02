@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.DeviceFarm.Model
     public partial class ListTestGridSessionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TestGridSession> _testGridSessions = new List<TestGridSession>();
+        private List<TestGridSession> _testGridSessions = AWSConfigs.InitializeCollections ? new List<TestGridSession>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if TestGridSessions property is set
         internal bool IsSetTestGridSessions()
         {
-            return this._testGridSessions != null && this._testGridSessions.Count > 0; 
+            return this._testGridSessions != null && (this._testGridSessions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
@@ -52,12 +53,12 @@ namespace Amazon.SimpleEmailV2.Model
     /// </summary>
     public partial class MessageInsightsFilters
     {
-        private List<string> _destination = new List<string>();
-        private List<string> _fromEmailAddress = new List<string>();
-        private List<string> _isp = new List<string>();
-        private List<string> _lastDeliveryEvent = new List<string>();
-        private List<string> _lastEngagementEvent = new List<string>();
-        private List<string> _subject = new List<string>();
+        private List<string> _destination = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _fromEmailAddress = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _isp = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _lastDeliveryEvent = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _lastEngagementEvent = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _subject = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Destination. 
@@ -75,7 +76,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if Destination property is set
         internal bool IsSetDestination()
         {
-            return this._destination != null && this._destination.Count > 0; 
+            return this._destination != null && (this._destination.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -94,7 +95,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if FromEmailAddress property is set
         internal bool IsSetFromEmailAddress()
         {
-            return this._fromEmailAddress != null && this._fromEmailAddress.Count > 0; 
+            return this._fromEmailAddress != null && (this._fromEmailAddress.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -113,7 +114,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if Isp property is set
         internal bool IsSetIsp()
         {
-            return this._isp != null && this._isp.Count > 0; 
+            return this._isp != null && (this._isp.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -133,7 +134,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if LastDeliveryEvent property is set
         internal bool IsSetLastDeliveryEvent()
         {
-            return this._lastDeliveryEvent != null && this._lastDeliveryEvent.Count > 0; 
+            return this._lastDeliveryEvent != null && (this._lastDeliveryEvent.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -158,7 +159,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if LastEngagementEvent property is set
         internal bool IsSetLastEngagementEvent()
         {
-            return this._lastEngagementEvent != null && this._lastEngagementEvent.Count > 0; 
+            return this._lastEngagementEvent != null && (this._lastEngagementEvent.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -177,7 +178,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if Subject property is set
         internal bool IsSetSubject()
         {
-            return this._subject != null && this._subject.Count > 0; 
+            return this._subject != null && (this._subject.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

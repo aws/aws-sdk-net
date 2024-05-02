@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CleanRoomsML.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CleanRoomsML.Model
     /// </summary>
     public partial class ListConfiguredAudienceModelsResponse : AmazonWebServiceResponse
     {
-        private List<ConfiguredAudienceModelSummary> _configuredAudienceModels = new List<ConfiguredAudienceModelSummary>();
+        private List<ConfiguredAudienceModelSummary> _configuredAudienceModels = AWSConfigs.InitializeCollections ? new List<ConfiguredAudienceModelSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.CleanRoomsML.Model
         // Check to see if ConfiguredAudienceModels property is set
         internal bool IsSetConfiguredAudienceModels()
         {
-            return this._configuredAudienceModels != null && this._configuredAudienceModels.Count > 0; 
+            return this._configuredAudienceModels != null && (this._configuredAudienceModels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.DataZone.Model
         private string _domainIdentifier;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _subjects = new List<string>();
+        private List<string> _subjects = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TaskStatus _taskStatus;
         private NotificationType _type;
 
@@ -158,7 +159,7 @@ namespace Amazon.DataZone.Model
         // Check to see if Subjects property is set
         internal bool IsSetSubjects()
         {
-            return this._subjects != null && this._subjects.Count > 0; 
+            return this._subjects != null && (this._subjects.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ManagedBlockchainQuery.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
     public partial class ListTransactionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TransactionOutputItem> _transactions = new List<TransactionOutputItem>();
+        private List<TransactionOutputItem> _transactions = AWSConfigs.InitializeCollections ? new List<TransactionOutputItem>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
         // Check to see if Transactions property is set
         internal bool IsSetTransactions()
         {
-            return this._transactions != null && this._transactions.Count > 0; 
+            return this._transactions != null && (this._transactions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

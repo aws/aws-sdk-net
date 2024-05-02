@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
@@ -33,16 +34,16 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class ListCisScansFilterCriteria
     {
-        private List<CisNumberFilter> _failedChecksFilters = new List<CisNumberFilter>();
-        private List<CisStringFilter> _scanArnFilters = new List<CisStringFilter>();
-        private List<CisDateFilter> _scanAtFilters = new List<CisDateFilter>();
-        private List<CisStringFilter> _scanConfigurationArnFilters = new List<CisStringFilter>();
-        private List<CisStringFilter> _scanNameFilters = new List<CisStringFilter>();
-        private List<CisScanStatusFilter> _scanStatusFilters = new List<CisScanStatusFilter>();
-        private List<CisStringFilter> _scheduledByFilters = new List<CisStringFilter>();
-        private List<CisStringFilter> _targetAccountIdFilters = new List<CisStringFilter>();
-        private List<CisStringFilter> _targetResourceIdFilters = new List<CisStringFilter>();
-        private List<TagFilter> _targetResourceTagFilters = new List<TagFilter>();
+        private List<CisNumberFilter> _failedChecksFilters = AWSConfigs.InitializeCollections ? new List<CisNumberFilter>() : null;
+        private List<CisStringFilter> _scanArnFilters = AWSConfigs.InitializeCollections ? new List<CisStringFilter>() : null;
+        private List<CisDateFilter> _scanAtFilters = AWSConfigs.InitializeCollections ? new List<CisDateFilter>() : null;
+        private List<CisStringFilter> _scanConfigurationArnFilters = AWSConfigs.InitializeCollections ? new List<CisStringFilter>() : null;
+        private List<CisStringFilter> _scanNameFilters = AWSConfigs.InitializeCollections ? new List<CisStringFilter>() : null;
+        private List<CisScanStatusFilter> _scanStatusFilters = AWSConfigs.InitializeCollections ? new List<CisScanStatusFilter>() : null;
+        private List<CisStringFilter> _scheduledByFilters = AWSConfigs.InitializeCollections ? new List<CisStringFilter>() : null;
+        private List<CisStringFilter> _targetAccountIdFilters = AWSConfigs.InitializeCollections ? new List<CisStringFilter>() : null;
+        private List<CisStringFilter> _targetResourceIdFilters = AWSConfigs.InitializeCollections ? new List<CisStringFilter>() : null;
+        private List<TagFilter> _targetResourceTagFilters = AWSConfigs.InitializeCollections ? new List<TagFilter>() : null;
 
         /// <summary>
         /// Gets and sets the property FailedChecksFilters. 
@@ -60,7 +61,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if FailedChecksFilters property is set
         internal bool IsSetFailedChecksFilters()
         {
-            return this._failedChecksFilters != null && this._failedChecksFilters.Count > 0; 
+            return this._failedChecksFilters != null && (this._failedChecksFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -79,7 +80,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if ScanArnFilters property is set
         internal bool IsSetScanArnFilters()
         {
-            return this._scanArnFilters != null && this._scanArnFilters.Count > 0; 
+            return this._scanArnFilters != null && (this._scanArnFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -98,7 +99,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if ScanAtFilters property is set
         internal bool IsSetScanAtFilters()
         {
-            return this._scanAtFilters != null && this._scanAtFilters.Count > 0; 
+            return this._scanAtFilters != null && (this._scanAtFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -117,7 +118,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if ScanConfigurationArnFilters property is set
         internal bool IsSetScanConfigurationArnFilters()
         {
-            return this._scanConfigurationArnFilters != null && this._scanConfigurationArnFilters.Count > 0; 
+            return this._scanConfigurationArnFilters != null && (this._scanConfigurationArnFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -136,7 +137,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if ScanNameFilters property is set
         internal bool IsSetScanNameFilters()
         {
-            return this._scanNameFilters != null && this._scanNameFilters.Count > 0; 
+            return this._scanNameFilters != null && (this._scanNameFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -155,7 +156,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if ScanStatusFilters property is set
         internal bool IsSetScanStatusFilters()
         {
-            return this._scanStatusFilters != null && this._scanStatusFilters.Count > 0; 
+            return this._scanStatusFilters != null && (this._scanStatusFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -174,7 +175,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if ScheduledByFilters property is set
         internal bool IsSetScheduledByFilters()
         {
-            return this._scheduledByFilters != null && this._scheduledByFilters.Count > 0; 
+            return this._scheduledByFilters != null && (this._scheduledByFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -193,7 +194,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if TargetAccountIdFilters property is set
         internal bool IsSetTargetAccountIdFilters()
         {
-            return this._targetAccountIdFilters != null && this._targetAccountIdFilters.Count > 0; 
+            return this._targetAccountIdFilters != null && (this._targetAccountIdFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -212,7 +213,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if TargetResourceIdFilters property is set
         internal bool IsSetTargetResourceIdFilters()
         {
-            return this._targetResourceIdFilters != null && this._targetResourceIdFilters.Count > 0; 
+            return this._targetResourceIdFilters != null && (this._targetResourceIdFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -231,7 +232,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if TargetResourceTagFilters property is set
         internal bool IsSetTargetResourceTagFilters()
         {
-            return this._targetResourceTagFilters != null && this._targetResourceTagFilters.Count > 0; 
+            return this._targetResourceTagFilters != null && (this._targetResourceTagFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

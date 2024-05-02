@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Snowball.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Snowball.Model
     public partial class CreateClusterResponse : AmazonWebServiceResponse
     {
         private string _clusterId;
-        private List<JobListEntry> _jobListEntries = new List<JobListEntry>();
+        private List<JobListEntry> _jobListEntries = AWSConfigs.InitializeCollections ? new List<JobListEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property ClusterId. 
@@ -71,7 +72,7 @@ namespace Amazon.Snowball.Model
         // Check to see if JobListEntries property is set
         internal bool IsSetJobListEntries()
         {
-            return this._jobListEntries != null && this._jobListEntries.Count > 0; 
+            return this._jobListEntries != null && (this._jobListEntries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

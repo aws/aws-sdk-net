@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Inspector.Model
     public partial class ListEventSubscriptionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Subscription> _subscriptions = new List<Subscription>();
+        private List<Subscription> _subscriptions = AWSConfigs.InitializeCollections ? new List<Subscription>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -74,7 +75,7 @@ namespace Amazon.Inspector.Model
         // Check to see if Subscriptions property is set
         internal bool IsSetSubscriptions()
         {
-            return this._subscriptions != null && this._subscriptions.Count > 0; 
+            return this._subscriptions != null && (this._subscriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

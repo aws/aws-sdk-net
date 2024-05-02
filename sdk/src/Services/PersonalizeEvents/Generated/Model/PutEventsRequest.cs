@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PersonalizeEvents.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.PersonalizeEvents.Model
     /// </summary>
     public partial class PutEventsRequest : AmazonPersonalizeEventsRequest
     {
-        private List<Event> _eventList = new List<Event>();
+        private List<Event> _eventList = AWSConfigs.InitializeCollections ? new List<Event>() : null;
         private string _sessionId;
         private string _trackingId;
         private string _userId;
@@ -56,7 +57,7 @@ namespace Amazon.PersonalizeEvents.Model
         // Check to see if EventList property is set
         internal bool IsSetEventList()
         {
-            return this._eventList != null && this._eventList.Count > 0; 
+            return this._eventList != null && (this._eventList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

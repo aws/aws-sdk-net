@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ElasticMapReduce.Model
     public partial class ListStudioSessionMappingsResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<SessionMappingSummary> _sessionMappings = new List<SessionMappingSummary>();
+        private List<SessionMappingSummary> _sessionMappings = AWSConfigs.InitializeCollections ? new List<SessionMappingSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -70,7 +71,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if SessionMappings property is set
         internal bool IsSetSessionMappings()
         {
-            return this._sessionMappings != null && this._sessionMappings.Count > 0; 
+            return this._sessionMappings != null && (this._sessionMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

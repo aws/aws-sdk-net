@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.QuickSight.Model
     public partial class UntagColumnOperation
     {
         private string _columnName;
-        private List<string> _tagNames = new List<string>();
+        private List<string> _tagNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ColumnName. 
@@ -71,7 +72,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if TagNames property is set
         internal bool IsSetTagNames()
         {
-            return this._tagNames != null && this._tagNames.Count > 0; 
+            return this._tagNames != null && (this._tagNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

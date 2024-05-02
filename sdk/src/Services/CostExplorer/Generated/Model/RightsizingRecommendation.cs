@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.CostExplorer.Model
     {
         private string _accountId;
         private CurrentInstance _currentInstance;
-        private List<string> _findingReasonCodes = new List<string>();
+        private List<string> _findingReasonCodes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ModifyRecommendationDetail _modifyRecommendationDetail;
         private RightsizingType _rightsizingType;
         private TerminateRecommendationDetail _terminateRecommendationDetail;
@@ -93,7 +94,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if FindingReasonCodes property is set
         internal bool IsSetFindingReasonCodes()
         {
-            return this._findingReasonCodes != null && this._findingReasonCodes.Count > 0; 
+            return this._findingReasonCodes != null && (this._findingReasonCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

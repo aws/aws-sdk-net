@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Mgn.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Mgn.Model
     /// </summary>
     public partial class ListExportsRequestFilters
     {
-        private List<string> _exportiDs = new List<string>();
+        private List<string> _exportiDs = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ExportIDs. 
@@ -51,7 +52,7 @@ namespace Amazon.Mgn.Model
         // Check to see if ExportIDs property is set
         internal bool IsSetExportIDs()
         {
-            return this._exportiDs != null && this._exportiDs.Count > 0; 
+            return this._exportiDs != null && (this._exportiDs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

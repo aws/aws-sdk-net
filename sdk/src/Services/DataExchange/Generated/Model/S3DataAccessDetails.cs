@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataExchange.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.DataExchange.Model
     /// </summary>
     public partial class S3DataAccessDetails
     {
-        private List<string> _keyPrefixes = new List<string>();
-        private List<string> _keys = new List<string>();
+        private List<string> _keyPrefixes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _keys = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property KeyPrefixes. 
@@ -51,7 +52,7 @@ namespace Amazon.DataExchange.Model
         // Check to see if KeyPrefixes property is set
         internal bool IsSetKeyPrefixes()
         {
-            return this._keyPrefixes != null && this._keyPrefixes.Count > 0; 
+            return this._keyPrefixes != null && (this._keyPrefixes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.DataExchange.Model
         // Check to see if Keys property is set
         internal bool IsSetKeys()
         {
-            return this._keys != null && this._keys.Count > 0; 
+            return this._keys != null && (this._keys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

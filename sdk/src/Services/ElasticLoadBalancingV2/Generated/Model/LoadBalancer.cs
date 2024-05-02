@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class LoadBalancer
     {
-        private List<AvailabilityZone> _availabilityZones = new List<AvailabilityZone>();
+        private List<AvailabilityZone> _availabilityZones = AWSConfigs.InitializeCollections ? new List<AvailabilityZone>() : null;
         private string _canonicalHostedZoneId;
         private DateTime? _createdTime;
         private string _customerOwnedIpv4Pool;
@@ -43,7 +44,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         private string _loadBalancerArn;
         private string _loadBalancerName;
         private LoadBalancerSchemeEnum _scheme;
-        private List<string> _securityGroups = new List<string>();
+        private List<string> _securityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private LoadBalancerState _state;
         private LoadBalancerTypeEnum _type;
         private string _vpcId;
@@ -63,7 +64,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+            return this._availabilityZones != null && (this._availabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -257,7 +258,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this._securityGroups != null && this._securityGroups.Count > 0; 
+            return this._securityGroups != null && (this._securityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

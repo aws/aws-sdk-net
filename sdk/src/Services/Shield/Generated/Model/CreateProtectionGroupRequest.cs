@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Shield.Model
 {
     /// <summary>
@@ -36,11 +37,11 @@ namespace Amazon.Shield.Model
     public partial class CreateProtectionGroupRequest : AmazonShieldRequest
     {
         private ProtectionGroupAggregation _aggregation;
-        private List<string> _members = new List<string>();
+        private List<string> _members = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ProtectionGroupPattern _pattern;
         private string _protectionGroupId;
         private ProtectedResourceType _resourceType;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Aggregation. 
@@ -97,7 +98,7 @@ namespace Amazon.Shield.Model
         // Check to see if Members property is set
         internal bool IsSetMembers()
         {
-            return this._members != null && this._members.Count > 0; 
+            return this._members != null && (this._members.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -180,7 +181,7 @@ namespace Amazon.Shield.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

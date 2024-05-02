@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FSx.Model
 {
     /// <summary>
@@ -34,10 +35,10 @@ namespace Amazon.FSx.Model
     /// </summary>
     public partial class DescribeVolumesRequest : AmazonFSxRequest
     {
-        private List<VolumeFilter> _filters = new List<VolumeFilter>();
+        private List<VolumeFilter> _filters = AWSConfigs.InitializeCollections ? new List<VolumeFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _volumeIds = new List<string>();
+        private List<string> _volumeIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -55,7 +56,7 @@ namespace Amazon.FSx.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -106,7 +107,7 @@ namespace Amazon.FSx.Model
         // Check to see if VolumeIds property is set
         internal bool IsSetVolumeIds()
         {
-            return this._volumeIds != null && this._volumeIds.Count > 0; 
+            return this._volumeIds != null && (this._volumeIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

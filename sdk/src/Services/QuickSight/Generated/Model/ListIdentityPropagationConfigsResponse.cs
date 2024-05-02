@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.QuickSight.Model
     {
         private string _nextToken;
         private string _requestId;
-        private List<AuthorizedTargetsByService> _services = new List<AuthorizedTargetsByService>();
+        private List<AuthorizedTargetsByService> _services = AWSConfigs.InitializeCollections ? new List<AuthorizedTargetsByService>() : null;
         private int? _status;
 
         /// <summary>
@@ -90,7 +91,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Services property is set
         internal bool IsSetServices()
         {
-            return this._services != null && this._services.Count > 0; 
+            return this._services != null && (this._services.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkSpacesWeb.Model
 {
     /// <summary>
@@ -35,9 +36,29 @@ namespace Amazon.WorkSpacesWeb.Model
     /// </summary>
     public partial class BrowserSettings
     {
-        private List<string> _associatedPortalArns = new List<string>();
+        private Dictionary<string, string> _additionalEncryptionContext = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<string> _associatedPortalArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _browserPolicy;
         private string _browserSettingsArn;
+        private string _customerManagedKey;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalEncryptionContext. 
+        /// <para>
+        /// The additional encryption context of the browser settings.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> AdditionalEncryptionContext
+        {
+            get { return this._additionalEncryptionContext; }
+            set { this._additionalEncryptionContext = value; }
+        }
+
+        // Check to see if AdditionalEncryptionContext property is set
+        internal bool IsSetAdditionalEncryptionContext()
+        {
+            return this._additionalEncryptionContext != null && (this._additionalEncryptionContext.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property AssociatedPortalArns. 
@@ -54,7 +75,7 @@ namespace Amazon.WorkSpacesWeb.Model
         // Check to see if AssociatedPortalArns property is set
         internal bool IsSetAssociatedPortalArns()
         {
-            return this._associatedPortalArns != null && this._associatedPortalArns.Count > 0; 
+            return this._associatedPortalArns != null && (this._associatedPortalArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -94,6 +115,25 @@ namespace Amazon.WorkSpacesWeb.Model
         internal bool IsSetBrowserSettingsArn()
         {
             return this._browserSettingsArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomerManagedKey. 
+        /// <para>
+        /// The customer managed key used to encrypt sensitive information in the browser settings.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string CustomerManagedKey
+        {
+            get { return this._customerManagedKey; }
+            set { this._customerManagedKey = value; }
+        }
+
+        // Check to see if CustomerManagedKey property is set
+        internal bool IsSetCustomerManagedKey()
+        {
+            return this._customerManagedKey != null;
         }
 
     }

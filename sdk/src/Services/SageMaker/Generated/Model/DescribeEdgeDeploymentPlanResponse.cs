@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -41,9 +42,9 @@ namespace Amazon.SageMaker.Model
         private string _edgeDeploymentPlanName;
         private int? _edgeDeploymentSuccess;
         private DateTime? _lastModifiedTime;
-        private List<EdgeDeploymentModelConfig> _modelConfigs = new List<EdgeDeploymentModelConfig>();
+        private List<EdgeDeploymentModelConfig> _modelConfigs = AWSConfigs.InitializeCollections ? new List<EdgeDeploymentModelConfig>() : null;
         private string _nextToken;
-        private List<DeploymentStageStatusSummary> _stages = new List<DeploymentStageStatusSummary>();
+        private List<DeploymentStageStatusSummary> _stages = AWSConfigs.InitializeCollections ? new List<DeploymentStageStatusSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -208,7 +209,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ModelConfigs property is set
         internal bool IsSetModelConfigs()
         {
-            return this._modelConfigs != null && this._modelConfigs.Count > 0; 
+            return this._modelConfigs != null && (this._modelConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -246,7 +247,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Stages property is set
         internal bool IsSetStages()
         {
-            return this._stages != null && this._stages.Count > 0; 
+            return this._stages != null && (this._stages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

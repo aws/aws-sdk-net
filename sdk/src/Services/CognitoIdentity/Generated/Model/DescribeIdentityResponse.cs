@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CognitoIdentity.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.CognitoIdentity.Model
         private DateTime? _creationDate;
         private string _identityId;
         private DateTime? _lastModifiedDate;
-        private List<string> _logins = new List<string>();
+        private List<string> _logins = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CreationDate. 
@@ -108,7 +109,7 @@ namespace Amazon.CognitoIdentity.Model
         // Check to see if Logins property is set
         internal bool IsSetLogins()
         {
-            return this._logins != null && this._logins.Count > 0; 
+            return this._logins != null && (this._logins.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

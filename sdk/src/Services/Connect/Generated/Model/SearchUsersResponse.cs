@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Connect.Model
     {
         private long? _approximateTotalCount;
         private string _nextToken;
-        private List<UserSearchSummary> _users = new List<UserSearchSummary>();
+        private List<UserSearchSummary> _users = AWSConfigs.InitializeCollections ? new List<UserSearchSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property ApproximateTotalCount. 
@@ -89,7 +90,7 @@ namespace Amazon.Connect.Model
         // Check to see if Users property is set
         internal bool IsSetUsers()
         {
-            return this._users != null && this._users.Count > 0; 
+            return this._users != null && (this._users.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

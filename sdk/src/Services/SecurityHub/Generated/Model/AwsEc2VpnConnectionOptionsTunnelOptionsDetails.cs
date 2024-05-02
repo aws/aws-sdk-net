@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -34,15 +35,15 @@ namespace Amazon.SecurityHub.Model
     public partial class AwsEc2VpnConnectionOptionsTunnelOptionsDetails
     {
         private int? _dpdTimeoutSeconds;
-        private List<string> _ikeVersions = new List<string>();
+        private List<string> _ikeVersions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _outsideIpAddress;
-        private List<int> _phase1DhGroupNumbers = new List<int>();
-        private List<string> _phase1EncryptionAlgorithms = new List<string>();
-        private List<string> _phase1IntegrityAlgorithms = new List<string>();
+        private List<int> _phase1DhGroupNumbers = AWSConfigs.InitializeCollections ? new List<int>() : null;
+        private List<string> _phase1EncryptionAlgorithms = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _phase1IntegrityAlgorithms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _phase1LifetimeSeconds;
-        private List<int> _phase2DhGroupNumbers = new List<int>();
-        private List<string> _phase2EncryptionAlgorithms = new List<string>();
-        private List<string> _phase2IntegrityAlgorithms = new List<string>();
+        private List<int> _phase2DhGroupNumbers = AWSConfigs.InitializeCollections ? new List<int>() : null;
+        private List<string> _phase2EncryptionAlgorithms = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _phase2IntegrityAlgorithms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _phase2LifetimeSeconds;
         private string _preSharedKey;
         private int? _rekeyFuzzPercentage;
@@ -83,7 +84,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if IkeVersions property is set
         internal bool IsSetIkeVersions()
         {
-            return this._ikeVersions != null && this._ikeVersions.Count > 0; 
+            return this._ikeVersions != null && (this._ikeVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -119,7 +120,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Phase1DhGroupNumbers property is set
         internal bool IsSetPhase1DhGroupNumbers()
         {
-            return this._phase1DhGroupNumbers != null && this._phase1DhGroupNumbers.Count > 0; 
+            return this._phase1DhGroupNumbers != null && (this._phase1DhGroupNumbers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -137,7 +138,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Phase1EncryptionAlgorithms property is set
         internal bool IsSetPhase1EncryptionAlgorithms()
         {
-            return this._phase1EncryptionAlgorithms != null && this._phase1EncryptionAlgorithms.Count > 0; 
+            return this._phase1EncryptionAlgorithms != null && (this._phase1EncryptionAlgorithms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -155,7 +156,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Phase1IntegrityAlgorithms property is set
         internal bool IsSetPhase1IntegrityAlgorithms()
         {
-            return this._phase1IntegrityAlgorithms != null && this._phase1IntegrityAlgorithms.Count > 0; 
+            return this._phase1IntegrityAlgorithms != null && (this._phase1IntegrityAlgorithms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -191,7 +192,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Phase2DhGroupNumbers property is set
         internal bool IsSetPhase2DhGroupNumbers()
         {
-            return this._phase2DhGroupNumbers != null && this._phase2DhGroupNumbers.Count > 0; 
+            return this._phase2DhGroupNumbers != null && (this._phase2DhGroupNumbers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -209,7 +210,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Phase2EncryptionAlgorithms property is set
         internal bool IsSetPhase2EncryptionAlgorithms()
         {
-            return this._phase2EncryptionAlgorithms != null && this._phase2EncryptionAlgorithms.Count > 0; 
+            return this._phase2EncryptionAlgorithms != null && (this._phase2EncryptionAlgorithms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -227,7 +228,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Phase2IntegrityAlgorithms property is set
         internal bool IsSetPhase2IntegrityAlgorithms()
         {
-            return this._phase2IntegrityAlgorithms != null && this._phase2IntegrityAlgorithms.Count > 0; 
+            return this._phase2IntegrityAlgorithms != null && (this._phase2IntegrityAlgorithms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

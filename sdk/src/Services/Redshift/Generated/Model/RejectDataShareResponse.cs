@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Redshift.Model
     {
         private bool? _allowPubliclyAccessibleConsumers;
         private string _dataShareArn;
-        private List<DataShareAssociation> _dataShareAssociations = new List<DataShareAssociation>();
+        private List<DataShareAssociation> _dataShareAssociations = AWSConfigs.InitializeCollections ? new List<DataShareAssociation>() : null;
         private string _managedBy;
         private string _producerArn;
 
@@ -61,9 +62,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property DataShareArn. 
         /// <para>
-        /// An Amazon Resource Name (ARN) that references the datashare that is owned by a specific
-        /// namespace of the producer cluster. A datashare ARN is in the <c>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</c>
-        /// format.
+        /// The Amazon Resource Name (ARN) of the datashare that the consumer is to use.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -95,7 +94,7 @@ namespace Amazon.Redshift.Model
         // Check to see if DataShareAssociations property is set
         internal bool IsSetDataShareAssociations()
         {
-            return this._dataShareAssociations != null && this._dataShareAssociations.Count > 0; 
+            return this._dataShareAssociations != null && (this._dataShareAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -120,7 +119,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ProducerArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the producer.
+        /// The Amazon Resource Name (ARN) of the producer namespace.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]

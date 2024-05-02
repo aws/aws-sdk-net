@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BCMDataExports.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.BCMDataExports.Model
     public partial class GetTableResponse : AmazonWebServiceResponse
     {
         private string _description;
-        private List<Column> _schema = new List<Column>();
+        private List<Column> _schema = AWSConfigs.InitializeCollections ? new List<Column>() : null;
         private string _tableName;
-        private Dictionary<string, string> _tableProperties = new Dictionary<string, string>();
+        private Dictionary<string, string> _tableProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -72,7 +73,7 @@ namespace Amazon.BCMDataExports.Model
         // Check to see if Schema property is set
         internal bool IsSetSchema()
         {
-            return this._schema != null && this._schema.Count > 0; 
+            return this._schema != null && (this._schema.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -112,7 +113,7 @@ namespace Amazon.BCMDataExports.Model
         // Check to see if TableProperties property is set
         internal bool IsSetTableProperties()
         {
-            return this._tableProperties != null && this._tableProperties.Count > 0; 
+            return this._tableProperties != null && (this._tableProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

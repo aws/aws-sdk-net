@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Glue.Model
     public partial class ListSchemasResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SchemaListItem> _schemas = new List<SchemaListItem>();
+        private List<SchemaListItem> _schemas = AWSConfigs.InitializeCollections ? new List<SchemaListItem>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.Glue.Model
         // Check to see if Schemas property is set
         internal bool IsSetSchemas()
         {
-            return this._schemas != null && this._schemas.Count > 0; 
+            return this._schemas != null && (this._schemas.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

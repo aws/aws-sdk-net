@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Personalize.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Personalize.Model
     public partial class ListRecommendersResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RecommenderSummary> _recommenders = new List<RecommenderSummary>();
+        private List<RecommenderSummary> _recommenders = AWSConfigs.InitializeCollections ? new List<RecommenderSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.Personalize.Model
         // Check to see if Recommenders property is set
         internal bool IsSetRecommenders()
         {
-            return this._recommenders != null && this._recommenders.Count > 0; 
+            return this._recommenders != null && (this._recommenders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class CookieObject
     {
-        private List<string> _cookiesAllowList = new List<string>();
+        private List<string> _cookiesAllowList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ForwardValues _option;
 
         /// <summary>
@@ -58,7 +59,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if CookiesAllowList property is set
         internal bool IsSetCookiesAllowList()
         {
-            return this._cookiesAllowList != null && this._cookiesAllowList.Count > 0; 
+            return this._cookiesAllowList != null && (this._cookiesAllowList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

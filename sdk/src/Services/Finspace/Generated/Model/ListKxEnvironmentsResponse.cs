@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Finspace.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Finspace.Model
     /// </summary>
     public partial class ListKxEnvironmentsResponse : AmazonWebServiceResponse
     {
-        private List<KxEnvironment> _environments = new List<KxEnvironment>();
+        private List<KxEnvironment> _environments = AWSConfigs.InitializeCollections ? new List<KxEnvironment>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Finspace.Model
         // Check to see if Environments property is set
         internal bool IsSetEnvironments()
         {
-            return this._environments != null && this._environments.Count > 0; 
+            return this._environments != null && (this._environments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

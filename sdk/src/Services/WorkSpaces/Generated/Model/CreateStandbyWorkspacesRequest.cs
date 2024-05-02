@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.WorkSpaces.Model
     public partial class CreateStandbyWorkspacesRequest : AmazonWorkSpacesRequest
     {
         private string _primaryRegion;
-        private List<StandbyWorkspace> _standbyWorkspaces = new List<StandbyWorkspace>();
+        private List<StandbyWorkspace> _standbyWorkspaces = AWSConfigs.InitializeCollections ? new List<StandbyWorkspace>() : null;
 
         /// <summary>
         /// Gets and sets the property PrimaryRegion. 
@@ -72,7 +73,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if StandbyWorkspaces property is set
         internal bool IsSetStandbyWorkspaces()
         {
-            return this._standbyWorkspaces != null && this._standbyWorkspaces.Count > 0; 
+            return this._standbyWorkspaces != null && (this._standbyWorkspaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

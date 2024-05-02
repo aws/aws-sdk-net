@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DLM.Model
 {
     /// <summary>
@@ -37,8 +38,8 @@ namespace Amazon.DLM.Model
     public partial class InvalidRequestException : AmazonDLMException
     {
         private string _code;
-        private List<string> _mutuallyExclusiveParameters = new List<string>();
-        private List<string> _requiredParameters = new List<string>();
+        private List<string> _mutuallyExclusiveParameters = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _requiredParameters = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Constructs a new InvalidRequestException with the specified error
@@ -154,7 +155,7 @@ namespace Amazon.DLM.Model
         // Check to see if MutuallyExclusiveParameters property is set
         internal bool IsSetMutuallyExclusiveParameters()
         {
-            return this._mutuallyExclusiveParameters != null && this._mutuallyExclusiveParameters.Count > 0; 
+            return this._mutuallyExclusiveParameters != null && (this._mutuallyExclusiveParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -172,7 +173,7 @@ namespace Amazon.DLM.Model
         // Check to see if RequiredParameters property is set
         internal bool IsSetRequiredParameters()
         {
-            return this._requiredParameters != null && this._requiredParameters.Count > 0; 
+            return this._requiredParameters != null && (this._requiredParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

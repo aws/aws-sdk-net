@@ -26,17 +26,41 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Search parameters for retrieving from knowledge base.
+    /// Contains configurations for the knowledge base query and retrieval process. For more
+    /// information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+    /// configurations</a>.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is used in the following API operations:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_RequestSyntax">Retrieve
+    /// request</a> – in the <c>retrievalConfiguration</c> field
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_RequestSyntax">RetrieveAndGenerate
+    /// request</a> – in the <c>retrievalConfiguration</c> field
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class KnowledgeBaseRetrievalConfiguration
     {
         private KnowledgeBaseVectorSearchConfiguration _vectorSearchConfiguration;
 
         /// <summary>
-        /// Gets and sets the property VectorSearchConfiguration.
+        /// Gets and sets the property VectorSearchConfiguration. 
+        /// <para>
+        /// Contains details about how the results from the vector search should be returned.
+        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+        /// configurations</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public KnowledgeBaseVectorSearchConfiguration VectorSearchConfiguration

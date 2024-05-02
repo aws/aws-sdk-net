@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
@@ -47,6 +48,14 @@ namespace Amazon.CloudFormation.Model
         ///  <c>FAILED</c>: The operation in the specified account and Region failed. If the stack
         /// set operation fails in enough accounts within a Region, the failure tolerance for
         /// the stack set operation as a whole might be exceeded.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>FAILED_IMPORT</c>: The import of the stack instance in the specified account and
+        /// Region failed and left the stack in an unstable state. Once the issues causing the
+        /// failure are fixed, the import operation can be retried. If enough stack set operations
+        /// fail in enough accounts within a Region, the failure tolerance for the stack set operation
+        /// as a whole might be exceeded.
         /// </para>
         ///  </li> <li> 
         /// <para>

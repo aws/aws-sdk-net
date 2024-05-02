@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IVSRealTime.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IVSRealTime.Model
     /// </summary>
     public partial class ListEncoderConfigurationsResponse : AmazonWebServiceResponse
     {
-        private List<EncoderConfigurationSummary> _encoderConfigurations = new List<EncoderConfigurationSummary>();
+        private List<EncoderConfigurationSummary> _encoderConfigurations = AWSConfigs.InitializeCollections ? new List<EncoderConfigurationSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.IVSRealTime.Model
         // Check to see if EncoderConfigurations property is set
         internal bool IsSetEncoderConfigurations()
         {
-            return this._encoderConfigurations != null && this._encoderConfigurations.Count > 0; 
+            return this._encoderConfigurations != null && (this._encoderConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

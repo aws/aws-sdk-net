@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PinpointEmail.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.PinpointEmail.Model
     public partial class InboxPlacementTrackingOption
     {
         private bool? _global;
-        private List<string> _trackedIsps = new List<string>();
+        private List<string> _trackedIsps = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Global. 
@@ -73,7 +74,7 @@ namespace Amazon.PinpointEmail.Model
         // Check to see if TrackedIsps property is set
         internal bool IsSetTrackedIsps()
         {
-            return this._trackedIsps != null && this._trackedIsps.Count > 0; 
+            return this._trackedIsps != null && (this._trackedIsps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

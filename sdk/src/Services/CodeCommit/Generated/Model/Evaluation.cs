@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.CodeCommit.Model
     /// </summary>
     public partial class Evaluation
     {
-        private List<string> _approvalRulesNotSatisfied = new List<string>();
-        private List<string> _approvalRulesSatisfied = new List<string>();
+        private List<string> _approvalRulesNotSatisfied = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _approvalRulesSatisfied = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _approved;
         private bool? _overridden;
 
@@ -54,7 +55,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if ApprovalRulesNotSatisfied property is set
         internal bool IsSetApprovalRulesNotSatisfied()
         {
-            return this._approvalRulesNotSatisfied != null && this._approvalRulesNotSatisfied.Count > 0; 
+            return this._approvalRulesNotSatisfied != null && (this._approvalRulesNotSatisfied.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if ApprovalRulesSatisfied property is set
         internal bool IsSetApprovalRulesSatisfied()
         {
-            return this._approvalRulesSatisfied != null && this._approvalRulesSatisfied.Count > 0; 
+            return this._approvalRulesSatisfied != null && (this._approvalRulesSatisfied.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

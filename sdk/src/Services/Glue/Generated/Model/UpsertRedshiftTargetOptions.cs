@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Glue.Model
     {
         private string _connectionName;
         private string _tableLocation;
-        private List<string> _upsertKeys = new List<string>();
+        private List<string> _upsertKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ConnectionName. 
@@ -88,7 +89,7 @@ namespace Amazon.Glue.Model
         // Check to see if UpsertKeys property is set
         internal bool IsSetUpsertKeys()
         {
-            return this._upsertKeys != null && this._upsertKeys.Count > 0; 
+            return this._upsertKeys != null && (this._upsertKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

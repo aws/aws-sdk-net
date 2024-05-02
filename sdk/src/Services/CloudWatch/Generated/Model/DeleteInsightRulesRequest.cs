@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class DeleteInsightRulesRequest : AmazonCloudWatchRequest
     {
-        private List<string> _ruleNames = new List<string>();
+        private List<string> _ruleNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property RuleNames. 
@@ -59,7 +60,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if RuleNames property is set
         internal bool IsSetRuleNames()
         {
-            return this._ruleNames != null && this._ruleNames.Count > 0; 
+            return this._ruleNames != null && (this._ruleNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

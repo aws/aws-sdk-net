@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
@@ -41,8 +42,8 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon Security Lake resource to retrieve the
-        /// tags for.
+        /// The Amazon Resource Name (ARN) of the Amazon Security Lake resource for which you
+        /// want to retrieve the tags.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]

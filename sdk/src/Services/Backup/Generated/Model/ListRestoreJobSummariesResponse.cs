@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Backup.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Backup.Model
     {
         private string _aggregationPeriod;
         private string _nextToken;
-        private List<RestoreJobSummary> _restoreJobSummaries = new List<RestoreJobSummary>();
+        private List<RestoreJobSummary> _restoreJobSummaries = AWSConfigs.InitializeCollections ? new List<RestoreJobSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property AggregationPeriod. 
@@ -105,7 +106,7 @@ namespace Amazon.Backup.Model
         // Check to see if RestoreJobSummaries property is set
         internal bool IsSetRestoreJobSummaries()
         {
-            return this._restoreJobSummaries != null && this._restoreJobSummaries.Count > 0; 
+            return this._restoreJobSummaries != null && (this._restoreJobSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

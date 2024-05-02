@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Route53.Model
     /// </summary>
     public partial class ListHostedZonesByVPCResponse : AmazonWebServiceResponse
     {
-        private List<HostedZoneSummary> _hostedZoneSummaries = new List<HostedZoneSummary>();
+        private List<HostedZoneSummary> _hostedZoneSummaries = AWSConfigs.InitializeCollections ? new List<HostedZoneSummary>() : null;
         private string _maxItems;
         private string _nextToken;
 
@@ -55,7 +56,7 @@ namespace Amazon.Route53.Model
         // Check to see if HostedZoneSummaries property is set
         internal bool IsSetHostedZoneSummaries()
         {
-            return this._hostedZoneSummaries != null && this._hostedZoneSummaries.Count > 0; 
+            return this._hostedZoneSummaries != null && (this._hostedZoneSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

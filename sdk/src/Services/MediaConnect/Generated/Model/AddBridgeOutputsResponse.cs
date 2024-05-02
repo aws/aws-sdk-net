@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.MediaConnect.Model
     public partial class AddBridgeOutputsResponse : AmazonWebServiceResponse
     {
         private string _bridgeArn;
-        private List<BridgeOutput> _outputs = new List<BridgeOutput>();
+        private List<BridgeOutput> _outputs = AWSConfigs.InitializeCollections ? new List<BridgeOutput>() : null;
 
         /// <summary>
         /// Gets and sets the property BridgeArn. The Amazon Resource Number (ARN) of the bridge.
@@ -63,7 +64,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if Outputs property is set
         internal bool IsSetOutputs()
         {
-            return this._outputs != null && this._outputs.Count > 0; 
+            return this._outputs != null && (this._outputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

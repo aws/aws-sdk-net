@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DocDB.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DocDB.Model
     /// </summary>
     public partial class DescribeEventSubscriptionsResponse : AmazonWebServiceResponse
     {
-        private List<EventSubscription> _eventSubscriptionsList = new List<EventSubscription>();
+        private List<EventSubscription> _eventSubscriptionsList = AWSConfigs.InitializeCollections ? new List<EventSubscription>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.DocDB.Model
         // Check to see if EventSubscriptionsList property is set
         internal bool IsSetEventSubscriptionsList()
         {
-            return this._eventSubscriptionsList != null && this._eventSubscriptionsList.Count > 0; 
+            return this._eventSubscriptionsList != null && (this._eventSubscriptionsList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

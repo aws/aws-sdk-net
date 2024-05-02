@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.DeviceFarm.Model
     public partial class ListSamplesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Sample> _samples = new List<Sample>();
+        private List<Sample> _samples = AWSConfigs.InitializeCollections ? new List<Sample>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if Samples property is set
         internal bool IsSetSamples()
         {
-            return this._samples != null && this._samples.Count > 0; 
+            return this._samples != null && (this._samples.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

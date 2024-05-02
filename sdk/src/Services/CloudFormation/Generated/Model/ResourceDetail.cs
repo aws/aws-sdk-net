@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
@@ -34,11 +35,11 @@ namespace Amazon.CloudFormation.Model
     public partial class ResourceDetail
     {
         private string _logicalResourceId;
-        private Dictionary<string, string> _resourceIdentifier = new Dictionary<string, string>();
+        private Dictionary<string, string> _resourceIdentifier = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private GeneratedTemplateResourceStatus _resourceStatus;
         private string _resourceStatusReason;
         private string _resourceType;
-        private List<WarningDetail> _warnings = new List<WarningDetail>();
+        private List<WarningDetail> _warnings = AWSConfigs.InitializeCollections ? new List<WarningDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property LogicalResourceId. 
@@ -80,7 +81,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if ResourceIdentifier property is set
         internal bool IsSetResourceIdentifier()
         {
-            return this._resourceIdentifier != null && this._resourceIdentifier.Count > 0; 
+            return this._resourceIdentifier != null && (this._resourceIdentifier.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -140,7 +141,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property ResourceType. 
         /// <para>
         /// The type of the resource, such as <c>AWS::DynamoDB::Table</c>. For the list of supported
-        /// resources, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/generate-IaC-supported-resources.html">IaC
+        /// resources, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">IaC
         /// generator supported resource types</a> In the <i>CloudFormation User Guide</i> 
         /// </para>
         /// </summary>
@@ -172,7 +173,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Warnings property is set
         internal bool IsSetWarnings()
         {
-            return this._warnings != null && this._warnings.Count > 0; 
+            return this._warnings != null && (this._warnings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

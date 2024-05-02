@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -84,6 +85,10 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DkimTokens/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (response.DkimTokens == null)
+                        {
+                            response.DkimTokens = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.DkimTokens.Add(item);
                         continue;

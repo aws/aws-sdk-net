@@ -33,6 +33,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.CognitoIdentityProvider
 {
     /// <summary>
@@ -3086,6 +3087,12 @@ namespace Amazon.CognitoIdentityProvider
         /// Resets the specified user's password in a user pool as an administrator. Works on
         /// any user.
         /// 
+        ///  
+        /// <para>
+        /// To use this API operation, your user pool must have self-service account recovery
+        /// configured. Use <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserPassword.html">AdminSetUserPassword</a>
+        /// if you manage passwords as an administrator.
+        /// </para>
         ///  <note> 
         /// <para>
         /// This action might generate an SMS text message. Starting June 1, 2021, US telecom
@@ -3205,6 +3212,12 @@ namespace Amazon.CognitoIdentityProvider
         /// Resets the specified user's password in a user pool as an administrator. Works on
         /// any user.
         /// 
+        ///  
+        /// <para>
+        /// To use this API operation, your user pool must have self-service account recovery
+        /// configured. Use <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserPassword.html">AdminSetUserPassword</a>
+        /// if you manage passwords as an administrator.
+        /// </para>
         ///  <note> 
         /// <para>
         /// This action might generate an SMS text message. Starting June 1, 2021, US telecom
@@ -8071,6 +8084,12 @@ namespace Amazon.CognitoIdentityProvider
         /// If your app client has a client secret and you don't provide a <c>SECRET_HASH</c>
         /// parameter, this API returns <c>NotAuthorizedException</c>.
         /// </para>
+        ///  
+        /// <para>
+        /// To use this API operation, your user pool must have self-service account recovery
+        /// configured. Use <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserPassword.html">AdminSetUserPassword</a>
+        /// if you manage passwords as an administrator.
+        /// </para>
         ///  <note> 
         /// <para>
         /// Amazon Cognito doesn't evaluate Identity and Access Management (IAM) policies in requests
@@ -8186,6 +8205,12 @@ namespace Amazon.CognitoIdentityProvider
         /// If neither a verified phone number nor a verified email exists, this API returns <c>InvalidParameterException</c>.
         /// If your app client has a client secret and you don't provide a <c>SECRET_HASH</c>
         /// parameter, this API returns <c>NotAuthorizedException</c>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use this API operation, your user pool must have self-service account recovery
+        /// configured. Use <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserPassword.html">AdminSetUserPassword</a>
+        /// if you manage passwords as an administrator.
         /// </para>
         ///  <note> 
         /// <para>
@@ -11942,6 +11967,9 @@ namespace Amazon.CognitoIdentityProvider
         /// <param name="request">Container for the necessary parameters to execute the SetUserPoolMfaConfig service method.</param>
         /// 
         /// <returns>The response from the SetUserPoolMfaConfig service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ConcurrentModificationException">
+        /// This exception is thrown if two or more modifications are happening concurrently.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -12011,6 +12039,9 @@ namespace Amazon.CognitoIdentityProvider
         /// </param>
         /// 
         /// <returns>The response from the SetUserPoolMfaConfig service method, as returned by CognitoIdentityProvider.</returns>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.ConcurrentModificationException">
+        /// This exception is thrown if two or more modifications are happening concurrently.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InternalErrorException">
         /// This exception is thrown when Amazon Cognito encounters an internal error.
         /// </exception>
@@ -12252,6 +12283,10 @@ namespace Amazon.CognitoIdentityProvider
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
+        /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.
         /// </exception>
@@ -12358,6 +12393,10 @@ namespace Amazon.CognitoIdentityProvider
         /// for SMS configuration. This can happen if you don't trust <c>cognito-idp.amazonaws.com</c>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
+        /// </exception>
+        /// <exception cref="Amazon.CognitoIdentityProvider.Model.LimitExceededException">
+        /// This exception is thrown when a user exceeds the limit for a requested Amazon Web
+        /// Services resource.
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.NotAuthorizedException">
         /// This exception is thrown when a user isn't authorized.

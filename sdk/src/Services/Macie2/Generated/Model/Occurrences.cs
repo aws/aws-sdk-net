@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Macie2.Model
 {
     /// <summary>
@@ -35,11 +36,11 @@ namespace Amazon.Macie2.Model
     /// </summary>
     public partial class Occurrences
     {
-        private List<Cell> _cells = new List<Cell>();
-        private List<Range> _lineRanges = new List<Range>();
-        private List<Range> _offsetRanges = new List<Range>();
-        private List<Page> _pages = new List<Page>();
-        private List<Record> _records = new List<Record>();
+        private List<Cell> _cells = AWSConfigs.InitializeCollections ? new List<Cell>() : null;
+        private List<Range> _lineRanges = AWSConfigs.InitializeCollections ? new List<Range>() : null;
+        private List<Range> _offsetRanges = AWSConfigs.InitializeCollections ? new List<Range>() : null;
+        private List<Page> _pages = AWSConfigs.InitializeCollections ? new List<Page>() : null;
+        private List<Record> _records = AWSConfigs.InitializeCollections ? new List<Record>() : null;
 
         /// <summary>
         /// Gets and sets the property Cells. 
@@ -61,7 +62,7 @@ namespace Amazon.Macie2.Model
         // Check to see if Cells property is set
         internal bool IsSetCells()
         {
-            return this._cells != null && this._cells.Count > 0; 
+            return this._cells != null && (this._cells.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -90,7 +91,7 @@ namespace Amazon.Macie2.Model
         // Check to see if LineRanges property is set
         internal bool IsSetLineRanges()
         {
-            return this._lineRanges != null && this._lineRanges.Count > 0; 
+            return this._lineRanges != null && (this._lineRanges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -108,7 +109,7 @@ namespace Amazon.Macie2.Model
         // Check to see if OffsetRanges property is set
         internal bool IsSetOffsetRanges()
         {
-            return this._offsetRanges != null && this._offsetRanges.Count > 0; 
+            return this._offsetRanges != null && (this._offsetRanges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -131,7 +132,7 @@ namespace Amazon.Macie2.Model
         // Check to see if Pages property is set
         internal bool IsSetPages()
         {
-            return this._pages != null && this._pages.Count > 0; 
+            return this._pages != null && (this._pages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -159,7 +160,7 @@ namespace Amazon.Macie2.Model
         // Check to see if Records property is set
         internal bool IsSetRecords()
         {
-            return this._records != null && this._records.Count > 0; 
+            return this._records != null && (this._records.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

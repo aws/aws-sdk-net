@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.SecurityHub.Model
     {
         private string _customResponseBodyKey;
         private int? _responseCode;
-        private List<AwsWafv2CustomHttpHeader> _responseHeaders = new List<AwsWafv2CustomHttpHeader>();
+        private List<AwsWafv2CustomHttpHeader> _responseHeaders = AWSConfigs.InitializeCollections ? new List<AwsWafv2CustomHttpHeader>() : null;
 
         /// <summary>
         /// Gets and sets the property CustomResponseBodyKey. 
@@ -93,7 +94,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ResponseHeaders property is set
         internal bool IsSetResponseHeaders()
         {
-            return this._responseHeaders != null && this._responseHeaders.Count > 0; 
+            return this._responseHeaders != null && (this._responseHeaders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

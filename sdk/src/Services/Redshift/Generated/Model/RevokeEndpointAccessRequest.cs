@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.Redshift.Model
         private string _account;
         private string _clusterIdentifier;
         private bool? _force;
-        private List<string> _vpcIds = new List<string>();
+        private List<string> _vpcIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Account. 
@@ -111,7 +112,7 @@ namespace Amazon.Redshift.Model
         // Check to see if VpcIds property is set
         internal bool IsSetVpcIds()
         {
-            return this._vpcIds != null && this._vpcIds.Count > 0; 
+            return this._vpcIds != null && (this._vpcIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

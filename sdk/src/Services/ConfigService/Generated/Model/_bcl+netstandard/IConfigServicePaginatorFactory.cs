@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the config-2014-11-12.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ConfigService.Model
 {
     /// <summary>

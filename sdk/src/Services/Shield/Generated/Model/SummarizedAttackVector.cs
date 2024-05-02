@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Shield.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Shield.Model
     /// </summary>
     public partial class SummarizedAttackVector
     {
-        private List<SummarizedCounter> _vectorCounters = new List<SummarizedCounter>();
+        private List<SummarizedCounter> _vectorCounters = AWSConfigs.InitializeCollections ? new List<SummarizedCounter>() : null;
         private string _vectorType;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Shield.Model
         // Check to see if VectorCounters property is set
         internal bool IsSetVectorCounters()
         {
-            return this._vectorCounters != null && this._vectorCounters.Count > 0; 
+            return this._vectorCounters != null && (this._vectorCounters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

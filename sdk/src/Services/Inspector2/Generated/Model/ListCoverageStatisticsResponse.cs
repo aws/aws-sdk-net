@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class ListCoverageStatisticsResponse : AmazonWebServiceResponse
     {
-        private List<Counts> _countsByGroup = new List<Counts>();
+        private List<Counts> _countsByGroup = AWSConfigs.InitializeCollections ? new List<Counts>() : null;
         private string _nextToken;
         private long? _totalCounts;
 
@@ -53,7 +54,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if CountsByGroup property is set
         internal bool IsSetCountsByGroup()
         {
-            return this._countsByGroup != null && this._countsByGroup.Count > 0; 
+            return this._countsByGroup != null && (this._countsByGroup.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

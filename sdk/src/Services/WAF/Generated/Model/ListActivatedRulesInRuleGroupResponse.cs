@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAF.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.WAF.Model
     /// </summary>
     public partial class ListActivatedRulesInRuleGroupResponse : AmazonWebServiceResponse
     {
-        private List<ActivatedRule> _activatedRules = new List<ActivatedRule>();
+        private List<ActivatedRule> _activatedRules = AWSConfigs.InitializeCollections ? new List<ActivatedRule>() : null;
         private string _nextMarker;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.WAF.Model
         // Check to see if ActivatedRules property is set
         internal bool IsSetActivatedRules()
         {
-            return this._activatedRules != null && this._activatedRules.Count > 0; 
+            return this._activatedRules != null && (this._activatedRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

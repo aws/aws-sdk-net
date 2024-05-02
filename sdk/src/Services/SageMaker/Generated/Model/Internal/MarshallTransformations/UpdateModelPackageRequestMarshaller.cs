@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -65,6 +66,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAdditionalInferenceSpecificationsToAdd())
@@ -114,6 +116,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetInferenceSpecification())
+                {
+                    context.Writer.WritePropertyName("InferenceSpecification");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = InferenceSpecificationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.InferenceSpecification, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetModelApprovalStatus())
                 {
                     context.Writer.WritePropertyName("ModelApprovalStatus");
@@ -124,6 +137,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("ModelPackageArn");
                     context.Writer.Write(publicRequest.ModelPackageArn);
+                }
+
+                if(publicRequest.IsSetSourceUri())
+                {
+                    context.Writer.WritePropertyName("SourceUri");
+                    context.Writer.Write(publicRequest.SourceUri);
                 }
 
                 writer.WriteObjectEnd();

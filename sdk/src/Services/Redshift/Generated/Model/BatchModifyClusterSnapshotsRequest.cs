@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Redshift.Model
     {
         private bool? _force;
         private int? _manualSnapshotRetentionPeriod;
-        private List<string> _snapshotIdentifierList = new List<string>();
+        private List<string> _snapshotIdentifierList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Force. 
@@ -103,7 +104,7 @@ namespace Amazon.Redshift.Model
         // Check to see if SnapshotIdentifierList property is set
         internal bool IsSetSnapshotIdentifierList()
         {
-            return this._snapshotIdentifierList != null && this._snapshotIdentifierList.Count > 0; 
+            return this._snapshotIdentifierList != null && (this._snapshotIdentifierList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

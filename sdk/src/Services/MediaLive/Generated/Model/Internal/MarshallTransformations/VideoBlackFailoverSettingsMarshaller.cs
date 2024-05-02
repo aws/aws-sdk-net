@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,10 +46,19 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(VideoBlackFailoverSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBlackDetectThreshold())
             {
                 context.Writer.WritePropertyName("blackDetectThreshold");
-                context.Writer.Write(requestObject.BlackDetectThreshold.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.BlackDetectThreshold.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.BlackDetectThreshold.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.BlackDetectThreshold.Value);
+                }
             }
 
             if(requestObject.IsSetVideoBlackThresholdMsec())

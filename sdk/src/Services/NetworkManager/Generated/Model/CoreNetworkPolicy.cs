@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkManager.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.NetworkManager.Model
         private DateTime? _createdAt;
         private string _description;
         private string _policyDocument;
-        private List<CoreNetworkPolicyError> _policyErrors = new List<CoreNetworkPolicyError>();
+        private List<CoreNetworkPolicyError> _policyErrors = AWSConfigs.InitializeCollections ? new List<CoreNetworkPolicyError>() : null;
         private int? _policyVersionId;
 
         /// <summary>
@@ -169,7 +170,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if PolicyErrors property is set
         internal bool IsSetPolicyErrors()
         {
-            return this._policyErrors != null && this._policyErrors.Count > 0; 
+            return this._policyErrors != null && (this._policyErrors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

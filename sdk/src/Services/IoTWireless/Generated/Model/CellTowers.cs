@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
@@ -33,11 +34,11 @@ namespace Amazon.IoTWireless.Model
     /// </summary>
     public partial class CellTowers
     {
-        private List<CdmaObj> _cdma = new List<CdmaObj>();
-        private List<GsmObj> _gsm = new List<GsmObj>();
-        private List<LteObj> _lte = new List<LteObj>();
-        private List<TdscdmaObj> _tdscdma = new List<TdscdmaObj>();
-        private List<WcdmaObj> _wcdma = new List<WcdmaObj>();
+        private List<CdmaObj> _cdma = AWSConfigs.InitializeCollections ? new List<CdmaObj>() : null;
+        private List<GsmObj> _gsm = AWSConfigs.InitializeCollections ? new List<GsmObj>() : null;
+        private List<LteObj> _lte = AWSConfigs.InitializeCollections ? new List<LteObj>() : null;
+        private List<TdscdmaObj> _tdscdma = AWSConfigs.InitializeCollections ? new List<TdscdmaObj>() : null;
+        private List<WcdmaObj> _wcdma = AWSConfigs.InitializeCollections ? new List<WcdmaObj>() : null;
 
         /// <summary>
         /// Gets and sets the property Cdma. 
@@ -55,7 +56,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if Cdma property is set
         internal bool IsSetCdma()
         {
-            return this._cdma != null && this._cdma.Count > 0; 
+            return this._cdma != null && (this._cdma.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if Gsm property is set
         internal bool IsSetGsm()
         {
-            return this._gsm != null && this._gsm.Count > 0; 
+            return this._gsm != null && (this._gsm.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -93,7 +94,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if Lte property is set
         internal bool IsSetLte()
         {
-            return this._lte != null && this._lte.Count > 0; 
+            return this._lte != null && (this._lte.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -112,7 +113,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if Tdscdma property is set
         internal bool IsSetTdscdma()
         {
-            return this._tdscdma != null && this._tdscdma.Count > 0; 
+            return this._tdscdma != null && (this._tdscdma.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -131,7 +132,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if Wcdma property is set
         internal bool IsSetWcdma()
         {
-            return this._wcdma != null && this._wcdma.Count > 0; 
+            return this._wcdma != null && (this._wcdma.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

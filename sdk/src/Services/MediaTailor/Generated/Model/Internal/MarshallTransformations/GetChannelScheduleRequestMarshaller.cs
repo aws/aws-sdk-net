@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -61,6 +62,9 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetChannelName())
                 throw new AmazonMediaTailorException("Request object does not have required field ChannelName set");
             request.AddPathResource("{ChannelName}", StringUtils.FromString(publicRequest.ChannelName));
+            
+            if (publicRequest.IsSetAudience())
+                request.Parameters.Add("audience", StringUtils.FromString(publicRequest.Audience));
             
             if (publicRequest.IsSetDurationMinutes())
                 request.Parameters.Add("durationMinutes", StringUtils.FromString(publicRequest.DurationMinutes));

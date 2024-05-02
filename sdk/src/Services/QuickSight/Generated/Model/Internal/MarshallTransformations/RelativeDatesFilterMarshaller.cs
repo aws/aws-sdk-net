@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RelativeDatesFilter requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAnchorDateConfiguration())
             {
                 context.Writer.WritePropertyName("AnchorDateConfiguration");
@@ -63,6 +66,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 
                 var marshaller = ColumnIdentifierMarshaller.Instance;
                 marshaller.Marshall(requestObject.Column, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetDefaultFilterControlConfiguration())
+            {
+                context.Writer.WritePropertyName("DefaultFilterControlConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DefaultFilterControlConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.DefaultFilterControlConfiguration, context);
 
                 context.Writer.WriteObjectEnd();
             }

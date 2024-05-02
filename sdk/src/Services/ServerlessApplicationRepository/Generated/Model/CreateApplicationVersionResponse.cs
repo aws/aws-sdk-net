@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServerlessApplicationRepository.Model
 {
     /// <summary>
@@ -35,8 +36,8 @@ namespace Amazon.ServerlessApplicationRepository.Model
     {
         private string _applicationId;
         private string _creationTime;
-        private List<ParameterDefinition> _parameterDefinitions = new List<ParameterDefinition>();
-        private List<string> _requiredCapabilities = new List<string>();
+        private List<ParameterDefinition> _parameterDefinitions = AWSConfigs.InitializeCollections ? new List<ParameterDefinition>() : null;
+        private List<string> _requiredCapabilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _resourcesSupported;
         private string _semanticVersion;
         private string _sourceCodeArchiveUrl;
@@ -94,7 +95,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         // Check to see if ParameterDefinitions property is set
         internal bool IsSetParameterDefinitions()
         {
-            return this._parameterDefinitions != null && this._parameterDefinitions.Count > 0; 
+            return this._parameterDefinitions != null && (this._parameterDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -152,7 +153,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         // Check to see if RequiredCapabilities property is set
         internal bool IsSetRequiredCapabilities()
         {
-            return this._requiredCapabilities != null && this._requiredCapabilities.Count > 0; 
+            return this._requiredCapabilities != null && (this._requiredCapabilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -58,6 +59,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("securityGroupReferenceSet/item", targetDepth))
                     {
                         var unmarshaller = SecurityGroupReferenceUnmarshaller.Instance;
+                        if (response.SecurityGroupReferenceSet == null)
+                        {
+                            response.SecurityGroupReferenceSet = new List<SecurityGroupReference>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.SecurityGroupReferenceSet.Add(item);
                         continue;

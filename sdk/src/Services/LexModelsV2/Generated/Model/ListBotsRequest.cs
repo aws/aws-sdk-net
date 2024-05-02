@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class ListBotsRequest : AmazonLexModelsV2Request
     {
-        private List<BotFilter> _filters = new List<BotFilter>();
+        private List<BotFilter> _filters = AWSConfigs.InitializeCollections ? new List<BotFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
         private BotSortBy _sortBy;
@@ -57,7 +58,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

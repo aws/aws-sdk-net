@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class ComplianceItemEntry
     {
-        private Dictionary<string, string> _details = new Dictionary<string, string>();
+        private Dictionary<string, string> _details = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _id;
         private ComplianceSeverity _severity;
         private ComplianceStatus _status;
@@ -54,7 +55,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Details property is set
         internal bool IsSetDetails()
         {
-            return this._details != null && this._details.Count > 0; 
+            return this._details != null && (this._details.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

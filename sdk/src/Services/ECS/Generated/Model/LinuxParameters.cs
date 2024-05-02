@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECS.Model
 {
     /// <summary>
@@ -34,12 +35,12 @@ namespace Amazon.ECS.Model
     public partial class LinuxParameters
     {
         private KernelCapabilities _capabilities;
-        private List<Device> _devices = new List<Device>();
+        private List<Device> _devices = AWSConfigs.InitializeCollections ? new List<Device>() : null;
         private bool? _initProcessEnabled;
         private int? _maxSwap;
         private int? _sharedMemorySize;
         private int? _swappiness;
-        private List<Tmpfs> _tmpfs = new List<Tmpfs>();
+        private List<Tmpfs> _tmpfs = AWSConfigs.InitializeCollections ? new List<Tmpfs>() : null;
 
         /// <summary>
         /// Gets and sets the property Capabilities. 
@@ -92,7 +93,7 @@ namespace Amazon.ECS.Model
         // Check to see if Devices property is set
         internal bool IsSetDevices()
         {
-            return this._devices != null && this._devices.Count > 0; 
+            return this._devices != null && (this._devices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -241,7 +242,7 @@ namespace Amazon.ECS.Model
         // Check to see if Tmpfs property is set
         internal bool IsSetTmpfs()
         {
-            return this._tmpfs != null && this._tmpfs.Count > 0; 
+            return this._tmpfs != null && (this._tmpfs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

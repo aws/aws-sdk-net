@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -44,7 +45,7 @@ namespace Amazon.SecurityHub.Model
         private AwsSecurityFindingFilters _filters;
         private int? _maxResults;
         private string _nextToken;
-        private List<SortCriterion> _sortCriteria = new List<SortCriterion>();
+        private List<SortCriterion> _sortCriteria = AWSConfigs.InitializeCollections ? new List<SortCriterion>() : null;
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -132,7 +133,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if SortCriteria property is set
         internal bool IsSetSortCriteria()
         {
-            return this._sortCriteria != null && this._sortCriteria.Count > 0; 
+            return this._sortCriteria != null && (this._sortCriteria.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

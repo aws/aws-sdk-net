@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.XRay.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.XRay.Model
     /// </summary>
     public partial class Insight
     {
-        private List<string> _categories = new List<string>();
+        private List<string> _categories = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private RequestImpactStatistics _clientRequestImpactStatistics;
         private DateTime? _endTime;
         private string _groupARN;
@@ -45,7 +46,7 @@ namespace Amazon.XRay.Model
         private DateTime? _startTime;
         private InsightState _state;
         private string _summary;
-        private List<AnomalousService> _topAnomalousServices = new List<AnomalousService>();
+        private List<AnomalousService> _topAnomalousServices = AWSConfigs.InitializeCollections ? new List<AnomalousService>() : null;
 
         /// <summary>
         /// Gets and sets the property Categories. 
@@ -62,7 +63,7 @@ namespace Amazon.XRay.Model
         // Check to see if Categories property is set
         internal bool IsSetCategories()
         {
-            return this._categories != null && this._categories.Count > 0; 
+            return this._categories != null && (this._categories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -261,7 +262,7 @@ namespace Amazon.XRay.Model
         // Check to see if TopAnomalousServices property is set
         internal bool IsSetTopAnomalousServices()
         {
-            return this._topAnomalousServices != null && this._topAnomalousServices.Count > 0; 
+            return this._topAnomalousServices != null && (this._topAnomalousServices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

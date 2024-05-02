@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Drs.Model
 {
     /// <summary>
@@ -36,8 +37,9 @@ namespace Amazon.Drs.Model
         private string _dataTimestamp;
         private bool? _forceUefi;
         private string _rootVolumeName;
-        private Dictionary<string, Dictionary<string, string>> _volumeToConversionMap = new Dictionary<string, Dictionary<string, string>>();
-        private Dictionary<string, long> _volumeToVolumeSize = new Dictionary<string, long>();
+        private Dictionary<string, Dictionary<string, string>> _volumeToConversionMap = AWSConfigs.InitializeCollections ? new Dictionary<string, Dictionary<string, string>>() : null;
+        private Dictionary<string, List<ProductCode>> _volumeToProductCodes = AWSConfigs.InitializeCollections ? new Dictionary<string, List<ProductCode>>() : null;
+        private Dictionary<string, long> _volumeToVolumeSize = AWSConfigs.InitializeCollections ? new Dictionary<string, long>() : null;
 
         /// <summary>
         /// Gets and sets the property DataTimestamp. 
@@ -110,7 +112,26 @@ namespace Amazon.Drs.Model
         // Check to see if VolumeToConversionMap property is set
         internal bool IsSetVolumeToConversionMap()
         {
-            return this._volumeToConversionMap != null && this._volumeToConversionMap.Count > 0; 
+            return this._volumeToConversionMap != null && (this._volumeToConversionMap.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeToProductCodes. 
+        /// <para>
+        /// A mapping between the volumes being converted and the product codes associated with
+        /// them
+        /// </para>
+        /// </summary>
+        public Dictionary<string, List<ProductCode>> VolumeToProductCodes
+        {
+            get { return this._volumeToProductCodes; }
+            set { this._volumeToProductCodes = value; }
+        }
+
+        // Check to see if VolumeToProductCodes property is set
+        internal bool IsSetVolumeToProductCodes()
+        {
+            return this._volumeToProductCodes != null && (this._volumeToProductCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -128,7 +149,7 @@ namespace Amazon.Drs.Model
         // Check to see if VolumeToVolumeSize property is set
         internal bool IsSetVolumeToVolumeSize()
         {
-            return this._volumeToVolumeSize != null && this._volumeToVolumeSize.Count > 0; 
+            return this._volumeToVolumeSize != null && (this._volumeToVolumeSize.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

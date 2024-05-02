@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class ProtectedQueryOutput
     {
-        private List<ProtectedQuerySingleMemberOutput> _memberList = new List<ProtectedQuerySingleMemberOutput>();
+        private List<ProtectedQuerySingleMemberOutput> _memberList = AWSConfigs.InitializeCollections ? new List<ProtectedQuerySingleMemberOutput>() : null;
         private ProtectedQueryS3Output _s3;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if MemberList property is set
         internal bool IsSetMemberList()
         {
-            return this._memberList != null && this._memberList.Count > 0; 
+            return this._memberList != null && (this._memberList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VerifiedPermissions.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.VerifiedPermissions.Model
     {
         private DateTime? _createdDate;
         private DateTime? _lastUpdatedDate;
-        private List<string> _namespaces = new List<string>();
+        private List<string> _namespaces = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _policyStoreId;
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.VerifiedPermissions.Model
         // Check to see if Namespaces property is set
         internal bool IsSetNamespaces()
         {
-            return this._namespaces != null && this._namespaces.Count > 0; 
+            return this._namespaces != null && (this._namespaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

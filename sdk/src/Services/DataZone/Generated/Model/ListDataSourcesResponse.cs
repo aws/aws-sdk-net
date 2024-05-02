@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class ListDataSourcesResponse : AmazonWebServiceResponse
     {
-        private List<DataSourceSummary> _items = new List<DataSourceSummary>();
+        private List<DataSourceSummary> _items = AWSConfigs.InitializeCollections ? new List<DataSourceSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.DataZone.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

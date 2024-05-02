@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
@@ -38,18 +39,19 @@ namespace Amazon.QBusiness.Model
         private DateTime? _createdAt;
         private string _description;
         private string _displayName;
-        private List<DocumentAttributeConfiguration> _documentAttributeConfigurations = new List<DocumentAttributeConfiguration>();
+        private List<DocumentAttributeConfiguration> _documentAttributeConfigurations = AWSConfigs.InitializeCollections ? new List<DocumentAttributeConfiguration>() : null;
         private ErrorDetail _error;
         private string _indexArn;
         private string _indexId;
         private IndexStatistics _indexStatistics;
         private IndexStatus _status;
+        private IndexType _type;
         private DateTime? _updatedAt;
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The identifier of the Amazon Q application associated with the index.
+        /// The identifier of the Amazon Q Business application associated with the index.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -68,7 +70,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property CapacityConfiguration. 
         /// <para>
-        /// The storage capacity units chosen for your Amazon Q index.
+        /// The storage capacity units chosen for your Amazon Q Business index.
         /// </para>
         /// </summary>
         public IndexCapacityConfiguration CapacityConfiguration
@@ -86,7 +88,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix timestamp when the Amazon Q index was created.
+        /// The Unix timestamp when the Amazon Q Business index was created.
         /// </para>
         /// </summary>
         public DateTime? CreatedAt
@@ -104,7 +106,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description for the Amazon Q index.
+        /// The description for the Amazon Q Business index.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -123,7 +125,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The name of the Amazon Q index.
+        /// The name of the Amazon Q Business index.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -158,7 +160,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if DocumentAttributeConfigurations property is set
         internal bool IsSetDocumentAttributeConfigurations()
         {
-            return this._documentAttributeConfigurations != null && this._documentAttributeConfigurations.Count > 0; 
+            return this._documentAttributeConfigurations != null && (this._documentAttributeConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -183,7 +185,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property IndexArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the Amazon Q index. 
+        ///  The Amazon Resource Name (ARN) of the Amazon Q Business index. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1284)]
@@ -202,7 +204,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier of the Amazon Q index.
+        /// The identifier of the Amazon Q Business index.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -257,9 +259,27 @@ namespace Amazon.QBusiness.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of index attached to your Amazon Q Business application.
+        /// </para>
+        /// </summary>
+        public IndexType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The Unix timestamp when the Amazon Q index was last updated.
+        /// The Unix timestamp when the Amazon Q Business index was last updated.
         /// </para>
         /// </summary>
         public DateTime? UpdatedAt

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.DevOpsGuru.Model
     public partial class RecommendationRelatedEvent
     {
         private string _name;
-        private List<RecommendationRelatedEventResource> _resources = new List<RecommendationRelatedEventResource>();
+        private List<RecommendationRelatedEventResource> _resources = AWSConfigs.InitializeCollections ? new List<RecommendationRelatedEventResource>() : null;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -72,7 +73,7 @@ namespace Amazon.DevOpsGuru.Model
         // Check to see if Resources property is set
         internal bool IsSetResources()
         {
-            return this._resources != null && this._resources.Count > 0; 
+            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

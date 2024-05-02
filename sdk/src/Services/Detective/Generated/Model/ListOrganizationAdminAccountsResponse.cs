@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Detective.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Detective.Model
     /// </summary>
     public partial class ListOrganizationAdminAccountsResponse : AmazonWebServiceResponse
     {
-        private List<Administrator> _administrators = new List<Administrator>();
+        private List<Administrator> _administrators = AWSConfigs.InitializeCollections ? new List<Administrator>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Detective.Model
         // Check to see if Administrators property is set
         internal bool IsSetAdministrators()
         {
-            return this._administrators != null && this._administrators.Count > 0; 
+            return this._administrators != null && (this._administrators.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

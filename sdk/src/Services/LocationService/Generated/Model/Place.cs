@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LocationService.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.LocationService.Model
     public partial class Place
     {
         private string _addressNumber;
-        private List<string> _categories = new List<string>();
+        private List<string> _categories = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _country;
         private PlaceGeometry _geometry;
         private bool? _interpolated;
@@ -52,7 +53,7 @@ namespace Amazon.LocationService.Model
         private string _street;
         private string _subMunicipality;
         private string _subRegion;
-        private List<string> _supplementalCategories = new List<string>();
+        private List<string> _supplementalCategories = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TimeZone _timeZone;
         private string _unitNumber;
         private string _unitType;
@@ -97,7 +98,7 @@ namespace Amazon.LocationService.Model
         // Check to see if Categories property is set
         internal bool IsSetCategories()
         {
-            return this._categories != null && this._categories.Count > 0; 
+            return this._categories != null && (this._categories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -342,7 +343,7 @@ namespace Amazon.LocationService.Model
         // Check to see if SupplementalCategories property is set
         internal bool IsSetSupplementalCategories()
         {
-            return this._supplementalCategories != null && this._supplementalCategories.Count > 0; 
+            return this._supplementalCategories != null && (this._supplementalCategories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     public partial class ContextDataType
     {
         private string _encodedData;
-        private List<HttpHeader> _httpHeaders = new List<HttpHeader>();
+        private List<HttpHeader> _httpHeaders = AWSConfigs.InitializeCollections ? new List<HttpHeader>() : null;
         private string _ipAddress;
         private string _serverName;
         private string _serverPath;
@@ -77,7 +78,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if HttpHeaders property is set
         internal bool IsSetHttpHeaders()
         {
-            return this._httpHeaders != null && this._httpHeaders.Count > 0; 
+            return this._httpHeaders != null && (this._httpHeaders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -63,6 +64,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AvailabilityZones/AvailabilityZone", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.AvailabilityZones == null)
+                        {
+                            unmarshalledObject.AvailabilityZones = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AvailabilityZones.Add(item);
                         continue;
@@ -185,6 +190,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = NullableBoolUnmarshaller.Instance;
                         unmarshalledObject.StorageEncrypted = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("StorageThroughput", targetDepth))
+                    {
+                        var unmarshaller = NullableIntUnmarshaller.Instance;
+                        unmarshalledObject.StorageThroughput = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("StorageType", targetDepth))

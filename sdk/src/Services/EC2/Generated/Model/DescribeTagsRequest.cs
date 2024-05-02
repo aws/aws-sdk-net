@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -37,10 +38,21 @@ namespace Amazon.EC2.Model
     /// For more information about tags, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tag
     /// your Amazon EC2 resources</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
+    ///  <important> 
+    /// <para>
+    /// We strongly recommend using only paginated requests. Unpaginated requests are susceptible
+    /// to throttling and timeouts.
+    /// </para>
+    ///  </important> <note> 
+    /// <para>
+    /// The order of the elements in the response, including those within nested structures,
+    /// might vary. Applications should not assume the elements appear in a particular order.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeTagsRequest : AmazonEC2Request
     {
-        private List<Filter> _filters = new List<Filter>();
+        private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -52,7 +64,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates DescribeTagsRequest with the parameterized properties
         /// </summary>
-        /// <param name="filters">The filters. <ul> <li>  <c>key</c> - The tag key. </li> <li>  <c>resource-id</c> - The ID of the resource. </li> <li>  <c>resource-type</c> - The resource type (<c>customer-gateway</c> | <c>dedicated-host</c> | <c>dhcp-options</c> | <c>elastic-ip</c> | <c>fleet</c> | <c>fpga-image</c> | <c>host-reservation</c> | <c>image</c> | <c>instance</c> | <c>internet-gateway</c> | <c>key-pair</c> | <c>launch-template</c> | <c>natgateway</c> | <c>network-acl</c> | <c>network-interface</c> | <c>placement-group</c> | <c>reserved-instances</c> | <c>route-table</c> | <c>security-group</c> | <c>snapshot</c> | <c>spot-instances-request</c> | <c>subnet</c> | <c>volume</c> | <c>vpc</c> | <c>vpc-endpoint</c> | <c>vpc-endpoint-service</c> | <c>vpc-peering-connection</c> | <c>vpn-connection</c> | <c>vpn-gateway</c>). </li> <li>  <c>tag</c>:&lt;key&gt; - The key/value combination of the tag. For example, specify "tag:Owner" for the filter name and "TeamA" for the filter value to find resources with the tag "Owner=TeamA". </li> <li>  <c>value</c> - The tag value. </li> </ul></param>
+        /// <param name="filters">The filters. <ul> <li>  <c>key</c> - The tag key. </li> <li>  <c>resource-id</c> - The ID of the resource. </li> <li>  <c>resource-type</c> - The resource type. For a list of possible values, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TagSpecification.html">TagSpecification</a>. </li> <li>  <c>tag</c>:&lt;key&gt; - The key/value combination of the tag. For example, specify "tag:Owner" for the filter name and "TeamA" for the filter value to find resources with the tag "Owner=TeamA". </li> <li>  <c>value</c> - The tag value. </li> </ul></param>
         public DescribeTagsRequest(List<Filter> filters)
         {
             _filters = filters;
@@ -73,14 +85,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>resource-type</c> - The resource type (<c>customer-gateway</c> | <c>dedicated-host</c>
-        /// | <c>dhcp-options</c> | <c>elastic-ip</c> | <c>fleet</c> | <c>fpga-image</c> | <c>host-reservation</c>
-        /// | <c>image</c> | <c>instance</c> | <c>internet-gateway</c> | <c>key-pair</c> | <c>launch-template</c>
-        /// | <c>natgateway</c> | <c>network-acl</c> | <c>network-interface</c> | <c>placement-group</c>
-        /// | <c>reserved-instances</c> | <c>route-table</c> | <c>security-group</c> | <c>snapshot</c>
-        /// | <c>spot-instances-request</c> | <c>subnet</c> | <c>volume</c> | <c>vpc</c> | <c>vpc-endpoint</c>
-        /// | <c>vpc-endpoint-service</c> | <c>vpc-peering-connection</c> | <c>vpn-connection</c>
-        /// | <c>vpn-gateway</c>).
+        ///  <c>resource-type</c> - The resource type. For a list of possible values, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TagSpecification.html">TagSpecification</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -103,7 +108,7 @@ namespace Amazon.EC2.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

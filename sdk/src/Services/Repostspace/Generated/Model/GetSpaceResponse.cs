@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Repostspace.Model
 {
     /// <summary>
@@ -41,14 +42,14 @@ namespace Amazon.Repostspace.Model
         private string _customerRoleArn;
         private DateTime? _deleteDateTime;
         private string _description;
-        private List<string> _groupAdmins = new List<string>();
+        private List<string> _groupAdmins = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private string _randomDomain;
         private string _spaceId;
         private string _status;
         private long? _storageLimit;
         private TierLevel _tier;
-        private List<string> _userAdmins = new List<string>();
+        private List<string> _userAdmins = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _userCount;
         private string _userkmsKey;
         private string _vanityDomain;
@@ -220,7 +221,7 @@ namespace Amazon.Repostspace.Model
         // Check to see if GroupAdmins property is set
         internal bool IsSetGroupAdmins()
         {
-            return this._groupAdmins != null && this._groupAdmins.Count > 0; 
+            return this._groupAdmins != null && (this._groupAdmins.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -352,7 +353,7 @@ namespace Amazon.Repostspace.Model
         // Check to see if UserAdmins property is set
         internal bool IsSetUserAdmins()
         {
-            return this._userAdmins != null && this._userAdmins.Count > 0; 
+            return this._userAdmins != null && (this._userAdmins.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

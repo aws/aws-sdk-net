@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -35,13 +36,13 @@ namespace Amazon.EC2.Model
     {
         private string _clientToken;
         private DateTime? _createDate;
-        private List<InstanceCount> _instanceCounts = new List<InstanceCount>();
-        private List<PriceSchedule> _priceSchedules = new List<PriceSchedule>();
+        private List<InstanceCount> _instanceCounts = AWSConfigs.InitializeCollections ? new List<InstanceCount>() : null;
+        private List<PriceSchedule> _priceSchedules = AWSConfigs.InitializeCollections ? new List<PriceSchedule>() : null;
         private string _reservedInstancesId;
         private string _reservedInstancesListingId;
         private ListingStatus _status;
         private string _statusMessage;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private DateTime? _updateDate;
 
         /// <summary>
@@ -97,7 +98,7 @@ namespace Amazon.EC2.Model
         // Check to see if InstanceCounts property is set
         internal bool IsSetInstanceCounts()
         {
-            return this._instanceCounts != null && this._instanceCounts.Count > 0; 
+            return this._instanceCounts != null && (this._instanceCounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -115,7 +116,7 @@ namespace Amazon.EC2.Model
         // Check to see if PriceSchedules property is set
         internal bool IsSetPriceSchedules()
         {
-            return this._priceSchedules != null && this._priceSchedules.Count > 0; 
+            return this._priceSchedules != null && (this._priceSchedules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -206,7 +207,7 @@ namespace Amazon.EC2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

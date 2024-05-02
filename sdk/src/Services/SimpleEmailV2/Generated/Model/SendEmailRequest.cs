@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
@@ -59,13 +60,13 @@ namespace Amazon.SimpleEmailV2.Model
         private string _configurationSetName;
         private EmailContent _content;
         private Destination _destination;
-        private List<MessageTag> _emailTags = new List<MessageTag>();
+        private List<MessageTag> _emailTags = AWSConfigs.InitializeCollections ? new List<MessageTag>() : null;
         private string _feedbackForwardingEmailAddress;
         private string _feedbackForwardingEmailAddressIdentityArn;
         private string _fromEmailAddress;
         private string _fromEmailAddressIdentityArn;
         private ListManagementOptions _listManagementOptions;
-        private List<string> _replyToAddresses = new List<string>();
+        private List<string> _replyToAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ConfigurationSetName. 
@@ -88,8 +89,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// An object that contains the body of the message. You can send either a Simple message
-        /// Raw message or a template Message.
+        /// An object that contains the body of the message. You can send either a Simple message,
+        /// Raw message, or a Templated message.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -140,7 +141,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if EmailTags property is set
         internal bool IsSetEmailTags()
         {
-            return this._emailTags != null && this._emailTags.Count > 0; 
+            return this._emailTags != null && (this._emailTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -284,7 +285,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if ReplyToAddresses property is set
         internal bool IsSetReplyToAddresses()
         {
-            return this._replyToAddresses != null && this._replyToAddresses.Count > 0; 
+            return this._replyToAddresses != null && (this._replyToAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

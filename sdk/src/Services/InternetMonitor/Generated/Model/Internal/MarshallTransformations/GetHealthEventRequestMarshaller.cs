@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -64,7 +65,11 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
             if (!publicRequest.IsSetMonitorName())
                 throw new AmazonInternetMonitorException("Request object does not have required field MonitorName set");
             request.AddPathResource("{MonitorName}", StringUtils.FromString(publicRequest.MonitorName));
+            
+            if (publicRequest.IsSetLinkedAccountId())
+                request.Parameters.Add("LinkedAccountId", StringUtils.FromString(publicRequest.LinkedAccountId));
             request.ResourcePath = "/v20210603/Monitors/{MonitorName}/HealthEvents/{EventId}";
+            request.UseQueryString = true;
 
             return request;
         }

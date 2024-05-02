@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Drs.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -85,6 +86,12 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, Dictionary<string, string>, StringUnmarshaller, DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>>(StringUnmarshaller.Instance, new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance));
                     unmarshalledObject.VolumeToConversionMap = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("volumeToProductCodes", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, List<ProductCode>, StringUnmarshaller, ListUnmarshaller<ProductCode, ProductCodeUnmarshaller>>(StringUnmarshaller.Instance, new ListUnmarshaller<ProductCode, ProductCodeUnmarshaller>(ProductCodeUnmarshaller.Instance));
+                    unmarshalledObject.VolumeToProductCodes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("volumeToVolumeSize", targetDepth))

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -41,8 +42,8 @@ namespace Amazon.EC2.Model
         private string _iamFleetRole;
         private InstanceInterruptionBehavior _instanceInterruptionBehavior;
         private int? _instancePoolsToUseCount;
-        private List<SpotFleetLaunchSpecification> _launchSpecifications = new List<SpotFleetLaunchSpecification>();
-        private List<LaunchTemplateConfig> _launchTemplateConfigs = new List<LaunchTemplateConfig>();
+        private List<SpotFleetLaunchSpecification> _launchSpecifications = AWSConfigs.InitializeCollections ? new List<SpotFleetLaunchSpecification>() : null;
+        private List<LaunchTemplateConfig> _launchTemplateConfigs = AWSConfigs.InitializeCollections ? new List<LaunchTemplateConfig>() : null;
         private LoadBalancersConfig _loadBalancersConfig;
         private OnDemandAllocationStrategy _onDemandAllocationStrategy;
         private double? _onDemandFulfilledCapacity;
@@ -52,7 +53,7 @@ namespace Amazon.EC2.Model
         private SpotMaintenanceStrategies _spotMaintenanceStrategies;
         private string _spotMaxTotalPrice;
         private string _spotPrice;
-        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
+        private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
         private int? _targetCapacity;
         private TargetCapacityUnitType _targetCapacityUnitType;
         private bool? _terminateInstancesWithExpiration;
@@ -281,6 +282,13 @@ namespace Amazon.EC2.Model
         /// you can't specify <c>LaunchTemplateConfigs</c>. If you include On-Demand capacity
         /// in your request, you must use <c>LaunchTemplateConfigs</c>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If an AMI specified in a launch specification is deregistered or disabled, no new
+        /// instances can be launched from the AMI. For fleets of type <c>maintain</c>, the target
+        /// capacity will not be maintained.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<SpotFleetLaunchSpecification> LaunchSpecifications
         {
@@ -291,7 +299,7 @@ namespace Amazon.EC2.Model
         // Check to see if LaunchSpecifications property is set
         internal bool IsSetLaunchSpecifications()
         {
-            return this._launchSpecifications != null && this._launchSpecifications.Count > 0; 
+            return this._launchSpecifications != null && (this._launchSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -311,7 +319,7 @@ namespace Amazon.EC2.Model
         // Check to see if LaunchTemplateConfigs property is set
         internal bool IsSetLaunchTemplateConfigs()
         {
-            return this._launchTemplateConfigs != null && this._launchTemplateConfigs.Count > 0; 
+            return this._launchTemplateConfigs != null && (this._launchTemplateConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -555,7 +563,7 @@ namespace Amazon.EC2.Model
         // Check to see if TagSpecifications property is set
         internal bool IsSetTagSpecifications()
         {
-            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
+            return this._tagSpecifications != null && (this._tagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

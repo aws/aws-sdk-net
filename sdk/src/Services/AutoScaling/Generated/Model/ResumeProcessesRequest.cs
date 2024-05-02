@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.AutoScaling.Model
     public partial class ResumeProcessesRequest : AmazonAutoScalingRequest
     {
         private string _autoScalingGroupName;
-        private List<string> _scalingProcesses = new List<string>();
+        private List<string> _scalingProcesses = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
@@ -118,7 +119,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if ScalingProcesses property is set
         internal bool IsSetScalingProcesses()
         {
-            return this._scalingProcesses != null && this._scalingProcesses.Count > 0; 
+            return this._scalingProcesses != null && (this._scalingProcesses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

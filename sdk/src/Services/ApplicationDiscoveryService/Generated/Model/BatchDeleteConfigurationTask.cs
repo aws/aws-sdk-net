@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
@@ -34,11 +35,11 @@ namespace Amazon.ApplicationDiscoveryService.Model
     public partial class BatchDeleteConfigurationTask
     {
         private DeletionConfigurationItemType _configurationType;
-        private List<string> _deletedConfigurations = new List<string>();
-        private List<DeletionWarning> _deletionWarnings = new List<DeletionWarning>();
+        private List<string> _deletedConfigurations = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<DeletionWarning> _deletionWarnings = AWSConfigs.InitializeCollections ? new List<DeletionWarning>() : null;
         private DateTime? _endTime;
-        private List<FailedConfiguration> _failedConfigurations = new List<FailedConfiguration>();
-        private List<string> _requestedConfigurations = new List<string>();
+        private List<FailedConfiguration> _failedConfigurations = AWSConfigs.InitializeCollections ? new List<FailedConfiguration>() : null;
+        private List<string> _requestedConfigurations = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _startTime;
         private BatchDeleteConfigurationTaskStatus _status;
         private string _taskId;
@@ -77,7 +78,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         // Check to see if DeletedConfigurations property is set
         internal bool IsSetDeletedConfigurations()
         {
-            return this._deletedConfigurations != null && this._deletedConfigurations.Count > 0; 
+            return this._deletedConfigurations != null && (this._deletedConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -96,7 +97,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         // Check to see if DeletionWarnings property is set
         internal bool IsSetDeletionWarnings()
         {
-            return this._deletionWarnings != null && this._deletionWarnings.Count > 0; 
+            return this._deletionWarnings != null && (this._deletionWarnings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -134,7 +135,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         // Check to see if FailedConfigurations property is set
         internal bool IsSetFailedConfigurations()
         {
-            return this._failedConfigurations != null && this._failedConfigurations.Count > 0; 
+            return this._failedConfigurations != null && (this._failedConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -153,7 +154,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         // Check to see if RequestedConfigurations property is set
         internal bool IsSetRequestedConfigurations()
         {
-            return this._requestedConfigurations != null && this._requestedConfigurations.Count > 0; 
+            return this._requestedConfigurations != null && (this._requestedConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

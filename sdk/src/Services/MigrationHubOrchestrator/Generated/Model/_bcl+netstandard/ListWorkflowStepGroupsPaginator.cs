@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MigrationHubOrchestrator.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         /// Enumerable containing all of the WorkflowStepGroupsSummary
         /// </summary>
         public IPaginatedEnumerable<WorkflowStepGroupSummary> WorkflowStepGroupsSummary => 
-            new PaginatedResultKeyResponse<ListWorkflowStepGroupsResponse, WorkflowStepGroupSummary>(this, (i) => i.WorkflowStepGroupsSummary);
+            new PaginatedResultKeyResponse<ListWorkflowStepGroupsResponse, WorkflowStepGroupSummary>(this, (i) => i.WorkflowStepGroupsSummary ?? new List<WorkflowStepGroupSummary>());
 
         internal ListWorkflowStepGroupsPaginator(IAmazonMigrationHubOrchestrator client, ListWorkflowStepGroupsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListWorkflowStepGroupsResponse> IPaginator<ListWorkflowStepGroupsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListWorkflowStepGroupsResponse> IPaginator<ListWorkflowStepGroupsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

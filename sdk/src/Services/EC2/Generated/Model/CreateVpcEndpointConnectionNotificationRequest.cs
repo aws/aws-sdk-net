@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -43,7 +44,7 @@ namespace Amazon.EC2.Model
     public partial class CreateVpcEndpointConnectionNotificationRequest : AmazonEC2Request
     {
         private string _clientToken;
-        private List<string> _connectionEvents = new List<string>();
+        private List<string> _connectionEvents = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _connectionNotificationArn;
         private string _serviceId;
         private string _vpcEndpointId;
@@ -85,7 +86,7 @@ namespace Amazon.EC2.Model
         // Check to see if ConnectionEvents property is set
         internal bool IsSetConnectionEvents()
         {
-            return this._connectionEvents != null && this._connectionEvents.Count > 0; 
+            return this._connectionEvents != null && (this._connectionEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

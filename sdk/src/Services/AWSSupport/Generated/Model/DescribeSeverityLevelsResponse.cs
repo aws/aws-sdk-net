@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AWSSupport.Model
     /// </summary>
     public partial class DescribeSeverityLevelsResponse : AmazonWebServiceResponse
     {
-        private List<SeverityLevel> _severityLevels = new List<SeverityLevel>();
+        private List<SeverityLevel> _severityLevels = AWSConfigs.InitializeCollections ? new List<SeverityLevel>() : null;
 
         /// <summary>
         /// Gets and sets the property SeverityLevels. 
@@ -51,7 +52,7 @@ namespace Amazon.AWSSupport.Model
         // Check to see if SeverityLevels property is set
         internal bool IsSetSeverityLevels()
         {
-            return this._severityLevels != null && this._severityLevels.Count > 0; 
+            return this._severityLevels != null && (this._severityLevels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

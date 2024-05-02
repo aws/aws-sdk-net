@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class JDBCConnectorOptions
     {
-        private Dictionary<string, string> _dataTypeMapping = new Dictionary<string, string>();
+        private Dictionary<string, string> _dataTypeMapping = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _filterPredicate;
-        private List<string> _jobBookmarkKeys = new List<string>();
+        private List<string> _jobBookmarkKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _jobBookmarkKeysSortOrder;
         private long? _lowerBound;
         private long? _numPartitions;
@@ -63,7 +64,7 @@ namespace Amazon.Glue.Model
         // Check to see if DataTypeMapping property is set
         internal bool IsSetDataTypeMapping()
         {
-            return this._dataTypeMapping != null && this._dataTypeMapping.Count > 0; 
+            return this._dataTypeMapping != null && (this._dataTypeMapping.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -108,7 +109,7 @@ namespace Amazon.Glue.Model
         // Check to see if JobBookmarkKeys property is set
         internal bool IsSetJobBookmarkKeys()
         {
-            return this._jobBookmarkKeys != null && this._jobBookmarkKeys.Count > 0; 
+            return this._jobBookmarkKeys != null && (this._jobBookmarkKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

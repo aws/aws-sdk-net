@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.CloudWatchLogs.Model
         private string _filterName;
         private string _filterPattern;
         private string _logGroupName;
-        private List<MetricTransformation> _metricTransformations = new List<MetricTransformation>();
+        private List<MetricTransformation> _metricTransformations = AWSConfigs.InitializeCollections ? new List<MetricTransformation>() : null;
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -130,7 +131,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if MetricTransformations property is set
         internal bool IsSetMetricTransformations()
         {
-            return this._metricTransformations != null && this._metricTransformations.Count > 0; 
+            return this._metricTransformations != null && (this._metricTransformations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

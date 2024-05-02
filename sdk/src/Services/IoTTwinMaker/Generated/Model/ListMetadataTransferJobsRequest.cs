@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTTwinMaker.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.IoTTwinMaker.Model
     public partial class ListMetadataTransferJobsRequest : AmazonIoTTwinMakerRequest
     {
         private DestinationType _destinationType;
-        private List<ListMetadataTransferJobsFilter> _filters = new List<ListMetadataTransferJobsFilter>();
+        private List<ListMetadataTransferJobsFilter> _filters = AWSConfigs.InitializeCollections ? new List<ListMetadataTransferJobsFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
         private SourceType _sourceType;
@@ -74,7 +75,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

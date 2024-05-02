@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.SageMaker.Model
         private DateTime? _creationTime;
         private BatchDataCaptureConfig _dataCaptureConfig;
         private DataProcessing _dataProcessing;
-        private Dictionary<string, string> _environment = new Dictionary<string, string>();
+        private Dictionary<string, string> _environment = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ExperimentConfig _experimentConfig;
         private string _failureReason;
         private string _labelingJobArn;
@@ -168,7 +169,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Environment property is set
         internal bool IsSetEnvironment()
         {
-            return this._environment != null && this._environment.Count > 0; 
+            return this._environment != null && (this._environment.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

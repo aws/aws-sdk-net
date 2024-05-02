@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkSpacesWeb.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.WorkSpacesWeb.Model
     /// </summary>
     public partial class CookieSynchronizationConfiguration
     {
-        private List<CookieSpecification> _allowlist = new List<CookieSpecification>();
-        private List<CookieSpecification> _blocklist = new List<CookieSpecification>();
+        private List<CookieSpecification> _allowlist = AWSConfigs.InitializeCollections ? new List<CookieSpecification>() : null;
+        private List<CookieSpecification> _blocklist = AWSConfigs.InitializeCollections ? new List<CookieSpecification>() : null;
 
         /// <summary>
         /// Gets and sets the property Allowlist. 
@@ -54,7 +55,7 @@ namespace Amazon.WorkSpacesWeb.Model
         // Check to see if Allowlist property is set
         internal bool IsSetAllowlist()
         {
-            return this._allowlist != null && this._allowlist.Count > 0; 
+            return this._allowlist != null && (this._allowlist.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.WorkSpacesWeb.Model
         // Check to see if Blocklist property is set
         internal bool IsSetBlocklist()
         {
-            return this._blocklist != null && this._blocklist.Count > 0; 
+            return this._blocklist != null && (this._blocklist.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

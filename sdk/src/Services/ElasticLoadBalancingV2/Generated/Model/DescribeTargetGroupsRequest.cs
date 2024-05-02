@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
@@ -39,9 +40,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
         private string _loadBalancerArn;
         private string _marker;
-        private List<string> _names = new List<string>();
+        private List<string> _names = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _pageSize;
-        private List<string> _targetGroupArns = new List<string>();
+        private List<string> _targetGroupArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property LoadBalancerArn. 
@@ -95,7 +96,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if Names property is set
         internal bool IsSetNames()
         {
-            return this._names != null && this._names.Count > 0; 
+            return this._names != null && (this._names.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -132,7 +133,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if TargetGroupArns property is set
         internal bool IsSetTargetGroupArns()
         {
-            return this._targetGroupArns != null && this._targetGroupArns.Count > 0; 
+            return this._targetGroupArns != null && (this._targetGroupArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

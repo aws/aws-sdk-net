@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
-        /// The value must be less than or equal to <c>IdleTTL</c>.
+        /// The value must be greater than or equal to <c>IdleTTL</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

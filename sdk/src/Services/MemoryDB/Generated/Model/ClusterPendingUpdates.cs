@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.MemoryDB.Model
     {
         private ACLsUpdateStatus _acLs;
         private ReshardingStatus _resharding;
-        private List<PendingModifiedServiceUpdate> _serviceUpdates = new List<PendingModifiedServiceUpdate>();
+        private List<PendingModifiedServiceUpdate> _serviceUpdates = AWSConfigs.InitializeCollections ? new List<PendingModifiedServiceUpdate>() : null;
 
         /// <summary>
         /// Gets and sets the property ACLs. 
@@ -88,7 +89,7 @@ namespace Amazon.MemoryDB.Model
         // Check to see if ServiceUpdates property is set
         internal bool IsSetServiceUpdates()
         {
-            return this._serviceUpdates != null && this._serviceUpdates.Count > 0; 
+            return this._serviceUpdates != null && (this._serviceUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

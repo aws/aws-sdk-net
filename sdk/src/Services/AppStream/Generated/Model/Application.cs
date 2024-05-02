@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppStream.Model
 {
     /// <summary>
@@ -41,12 +42,12 @@ namespace Amazon.AppStream.Model
         private bool? _enabled;
         private S3Location _iconS3Location;
         private string _iconURL;
-        private List<string> _instanceFamilies = new List<string>();
+        private List<string> _instanceFamilies = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _launchParameters;
         private string _launchPath;
-        private Dictionary<string, string> _metadata = new Dictionary<string, string>();
+        private Dictionary<string, string> _metadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _name;
-        private List<string> _platforms = new List<string>();
+        private List<string> _platforms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _workingDirectory;
 
         /// <summary>
@@ -211,7 +212,7 @@ namespace Amazon.AppStream.Model
         // Check to see if InstanceFamilies property is set
         internal bool IsSetInstanceFamilies()
         {
-            return this._instanceFamilies != null && this._instanceFamilies.Count > 0; 
+            return this._instanceFamilies != null && (this._instanceFamilies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -267,7 +268,7 @@ namespace Amazon.AppStream.Model
         // Check to see if Metadata property is set
         internal bool IsSetMetadata()
         {
-            return this._metadata != null && this._metadata.Count > 0; 
+            return this._metadata != null && (this._metadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -305,7 +306,7 @@ namespace Amazon.AppStream.Model
         // Check to see if Platforms property is set
         internal bool IsSetPlatforms()
         {
-            return this._platforms != null && this._platforms.Count > 0; 
+            return this._platforms != null && (this._platforms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

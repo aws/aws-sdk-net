@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Xml;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -61,18 +62,18 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("ListDistributionsByRealtimeLogConfigRequest", "http://cloudfront.amazonaws.com/doc/2020-05-31/");    
+                xmlWriter.WriteStartElement("ListDistributionsByRealtimeLogConfigRequest", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                 if(publicRequest.IsSetMarker())
-                    xmlWriter.WriteElementString("Marker", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.Marker));
+                    xmlWriter.WriteElementString("Marker", StringUtils.FromString(publicRequest.Marker));
 
                 if(publicRequest.IsSetMaxItems())
-                    xmlWriter.WriteElementString("MaxItems", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.MaxItems));
+                    xmlWriter.WriteElementString("MaxItems", StringUtils.FromString(publicRequest.MaxItems));
 
                 if(publicRequest.IsSetRealtimeLogConfigArn())
-                    xmlWriter.WriteElementString("RealtimeLogConfigArn", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.RealtimeLogConfigArn));
+                    xmlWriter.WriteElementString("RealtimeLogConfigArn", StringUtils.FromString(publicRequest.RealtimeLogConfigArn));
 
                 if(publicRequest.IsSetRealtimeLogConfigName())
-                    xmlWriter.WriteElementString("RealtimeLogConfigName", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.RealtimeLogConfigName));
+                    xmlWriter.WriteElementString("RealtimeLogConfigName", StringUtils.FromString(publicRequest.RealtimeLogConfigName));
 
 
                 xmlWriter.WriteEndElement();

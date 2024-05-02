@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DisassociateNatGatewayAddressResponse : AmazonWebServiceResponse
     {
-        private List<NatGatewayAddress> _natGatewayAddresses = new List<NatGatewayAddress>();
+        private List<NatGatewayAddress> _natGatewayAddresses = AWSConfigs.InitializeCollections ? new List<NatGatewayAddress>() : null;
         private string _natGatewayId;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.EC2.Model
         // Check to see if NatGatewayAddresses property is set
         internal bool IsSetNatGatewayAddresses()
         {
-            return this._natGatewayAddresses != null && this._natGatewayAddresses.Count > 0; 
+            return this._natGatewayAddresses != null && (this._natGatewayAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

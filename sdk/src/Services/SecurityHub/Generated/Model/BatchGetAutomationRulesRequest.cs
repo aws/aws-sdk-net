@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class BatchGetAutomationRulesRequest : AmazonSecurityHubRequest
     {
-        private List<string> _automationRulesArns = new List<string>();
+        private List<string> _automationRulesArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AutomationRulesArns. 
@@ -53,7 +54,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if AutomationRulesArns property is set
         internal bool IsSetAutomationRulesArns()
         {
-            return this._automationRulesArns != null && this._automationRulesArns.Count > 0; 
+            return this._automationRulesArns != null && (this._automationRulesArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Input to lambda used in action group
+    /// Contains details about the knowledge base to look up and the query to be made.
     /// </summary>
     public partial class KnowledgeBaseLookupInput
     {
@@ -37,7 +38,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         private string _text;
 
         /// <summary>
-        /// Gets and sets the property KnowledgeBaseId.
+        /// Gets and sets the property KnowledgeBaseId. 
+        /// <para>
+        /// The unique identifier of the knowledge base to look up.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string KnowledgeBaseId
@@ -53,7 +57,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Text.
+        /// Gets and sets the property Text. 
+        /// <para>
+        /// The query made to the knowledge base.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string Text

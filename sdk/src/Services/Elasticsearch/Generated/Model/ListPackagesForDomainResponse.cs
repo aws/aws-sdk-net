@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Elasticsearch.Model
     /// </summary>
     public partial class ListPackagesForDomainResponse : AmazonWebServiceResponse
     {
-        private List<DomainPackageDetails> _domainPackageDetailsList = new List<DomainPackageDetails>();
+        private List<DomainPackageDetails> _domainPackageDetailsList = AWSConfigs.InitializeCollections ? new List<DomainPackageDetails>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Elasticsearch.Model
         // Check to see if DomainPackageDetailsList property is set
         internal bool IsSetDomainPackageDetailsList()
         {
-            return this._domainPackageDetailsList != null && this._domainPackageDetailsList.Count > 0; 
+            return this._domainPackageDetailsList != null && (this._domainPackageDetailsList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

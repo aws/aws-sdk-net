@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeInternetGatewaysResponse : AmazonWebServiceResponse
     {
-        private List<InternetGateway> _internetGateways = new List<InternetGateway>();
+        private List<InternetGateway> _internetGateways = AWSConfigs.InitializeCollections ? new List<InternetGateway>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.EC2.Model
         // Check to see if InternetGateways property is set
         internal bool IsSetInternetGateways()
         {
-            return this._internetGateways != null && this._internetGateways.Count > 0; 
+            return this._internetGateways != null && (this._internetGateways.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

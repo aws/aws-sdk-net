@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Textract.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Textract.Model
     /// </summary>
     public partial class LineItemFields
     {
-        private List<ExpenseField> _lineItemExpenseFields = new List<ExpenseField>();
+        private List<ExpenseField> _lineItemExpenseFields = AWSConfigs.InitializeCollections ? new List<ExpenseField>() : null;
 
         /// <summary>
         /// Gets and sets the property LineItemExpenseFields. 
@@ -51,7 +52,7 @@ namespace Amazon.Textract.Model
         // Check to see if LineItemExpenseFields property is set
         internal bool IsSetLineItemExpenseFields()
         {
-            return this._lineItemExpenseFields != null && this._lineItemExpenseFields.Count > 0; 
+            return this._lineItemExpenseFields != null && (this._lineItemExpenseFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

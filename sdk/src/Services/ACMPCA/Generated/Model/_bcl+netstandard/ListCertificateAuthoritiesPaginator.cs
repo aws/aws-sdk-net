@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ACMPCA.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ACMPCA.Model
         /// Enumerable containing all of the CertificateAuthorities
         /// </summary>
         public IPaginatedEnumerable<CertificateAuthority> CertificateAuthorities => 
-            new PaginatedResultKeyResponse<ListCertificateAuthoritiesResponse, CertificateAuthority>(this, (i) => i.CertificateAuthorities);
+            new PaginatedResultKeyResponse<ListCertificateAuthoritiesResponse, CertificateAuthority>(this, (i) => i.CertificateAuthorities ?? new List<CertificateAuthority>());
 
         internal ListCertificateAuthoritiesPaginator(IAmazonACMPCA client, ListCertificateAuthoritiesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ACMPCA.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListCertificateAuthoritiesResponse> IPaginator<ListCertificateAuthoritiesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListCertificateAuthoritiesResponse> IPaginator<ListCertificateAuthoritiesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

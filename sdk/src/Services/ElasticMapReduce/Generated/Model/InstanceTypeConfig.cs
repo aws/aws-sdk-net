@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
@@ -48,7 +49,7 @@ namespace Amazon.ElasticMapReduce.Model
     {
         private string _bidPrice;
         private double? _bidPriceAsPercentageOfOnDemandPrice;
-        private List<Configuration> _configurations = new List<Configuration>();
+        private List<Configuration> _configurations = AWSConfigs.InitializeCollections ? new List<Configuration>() : null;
         private string _customAmiId;
         private EbsConfiguration _ebsConfiguration;
         private string _instanceType;
@@ -113,7 +114,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Configurations property is set
         internal bool IsSetConfigurations()
         {
-            return this._configurations != null && this._configurations.Count > 0; 
+            return this._configurations != null && (this._configurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

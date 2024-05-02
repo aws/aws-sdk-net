@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.IoT.Model
         private int? _numberOfRemovedThings;
         private int? _numberOfSucceededThings;
         private int? _numberOfTimedOutThings;
-        private List<string> _processingTargets = new List<string>();
+        private List<string> _processingTargets = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NumberOfCanceledThings. 
@@ -204,7 +205,7 @@ namespace Amazon.IoT.Model
         // Check to see if ProcessingTargets property is set
         internal bool IsSetProcessingTargets()
         {
-            return this._processingTargets != null && this._processingTargets.Count > 0; 
+            return this._processingTargets != null && (this._processingTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

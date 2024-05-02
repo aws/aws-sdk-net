@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SagemakerEdgeManager.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SagemakerEdgeManager.Model
     /// </summary>
     public partial class GetDeploymentsResponse : AmazonWebServiceResponse
     {
-        private List<EdgeDeployment> _deployments = new List<EdgeDeployment>();
+        private List<EdgeDeployment> _deployments = AWSConfigs.InitializeCollections ? new List<EdgeDeployment>() : null;
 
         /// <summary>
         /// Gets and sets the property Deployments. 
@@ -50,7 +51,7 @@ namespace Amazon.SagemakerEdgeManager.Model
         // Check to see if Deployments property is set
         internal bool IsSetDeployments()
         {
-            return this._deployments != null && this._deployments.Count > 0; 
+            return this._deployments != null && (this._deployments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

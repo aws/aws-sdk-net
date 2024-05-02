@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SavingsPlans.Model
 {
     /// <summary>
@@ -34,12 +35,12 @@ namespace Amazon.SavingsPlans.Model
     /// </summary>
     public partial class DescribeSavingsPlansRequest : AmazonSavingsPlansRequest
     {
-        private List<SavingsPlanFilter> _filters = new List<SavingsPlanFilter>();
+        private List<SavingsPlanFilter> _filters = AWSConfigs.InitializeCollections ? new List<SavingsPlanFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _savingsPlanArns = new List<string>();
-        private List<string> _savingsPlanIds = new List<string>();
-        private List<string> _states = new List<string>();
+        private List<string> _savingsPlanArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _savingsPlanIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _states = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -56,7 +57,7 @@ namespace Amazon.SavingsPlans.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -114,7 +115,7 @@ namespace Amazon.SavingsPlans.Model
         // Check to see if SavingsPlanArns property is set
         internal bool IsSetSavingsPlanArns()
         {
-            return this._savingsPlanArns != null && this._savingsPlanArns.Count > 0; 
+            return this._savingsPlanArns != null && (this._savingsPlanArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -132,13 +133,13 @@ namespace Amazon.SavingsPlans.Model
         // Check to see if SavingsPlanIds property is set
         internal bool IsSetSavingsPlanIds()
         {
-            return this._savingsPlanIds != null && this._savingsPlanIds.Count > 0; 
+            return this._savingsPlanIds != null && (this._savingsPlanIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property States. 
         /// <para>
-        /// The states.
+        /// The current states of the Savings Plans.
         /// </para>
         /// </summary>
         public List<string> States
@@ -150,7 +151,7 @@ namespace Amazon.SavingsPlans.Model
         // Check to see if States property is set
         internal bool IsSetStates()
         {
-            return this._states != null && this._states.Count > 0; 
+            return this._states != null && (this._states.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexRuntimeV2.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.LexRuntimeV2.Model
     public partial class Slot
     {
         private Shape _shape;
-        private Dictionary<string, Slot> _subSlots = new Dictionary<string, Slot>();
+        private Dictionary<string, Slot> _subSlots = AWSConfigs.InitializeCollections ? new Dictionary<string, Slot>() : null;
         private Value _value;
-        private List<Slot> _values = new List<Slot>();
+        private List<Slot> _values = AWSConfigs.InitializeCollections ? new List<Slot>() : null;
 
         /// <summary>
         /// Gets and sets the property Shape. 
@@ -73,7 +74,7 @@ namespace Amazon.LexRuntimeV2.Model
         // Check to see if SubSlots property is set
         internal bool IsSetSubSlots()
         {
-            return this._subSlots != null && this._subSlots.Count > 0; 
+            return this._subSlots != null && (this._subSlots.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -111,7 +112,7 @@ namespace Amazon.LexRuntimeV2.Model
         // Check to see if Values property is set
         internal bool IsSetValues()
         {
-            return this._values != null && this._values.Count > 0; 
+            return this._values != null && (this._values.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

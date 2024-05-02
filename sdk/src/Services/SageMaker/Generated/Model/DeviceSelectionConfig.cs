@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class DeviceSelectionConfig
     {
         private string _deviceNameContains;
-        private List<string> _deviceNames = new List<string>();
+        private List<string> _deviceNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DeviceSubsetType _deviceSubsetType;
         private int? _percentage;
 
@@ -72,7 +73,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if DeviceNames property is set
         internal bool IsSetDeviceNames()
         {
-            return this._deviceNames != null && this._deviceNames.Count > 0; 
+            return this._deviceNames != null && (this._deviceNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

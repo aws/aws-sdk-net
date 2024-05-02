@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
@@ -34,12 +35,13 @@ namespace Amazon.MarketplaceCatalog.Model
     public partial class OfferSummary
     {
         private string _availabilityEndDate;
-        private List<string> _buyerAccounts = new List<string>();
+        private List<string> _buyerAccounts = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private string _productId;
         private string _releaseDate;
+        private string _resaleAuthorizationId;
         private OfferStateString _state;
-        private List<string> _targeting = new List<string>();
+        private List<string> _targeting = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AvailabilityEndDate. 
@@ -76,7 +78,7 @@ namespace Amazon.MarketplaceCatalog.Model
         // Check to see if BuyerAccounts property is set
         internal bool IsSetBuyerAccounts()
         {
-            return this._buyerAccounts != null && this._buyerAccounts.Count > 0; 
+            return this._buyerAccounts != null && (this._buyerAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -137,6 +139,25 @@ namespace Amazon.MarketplaceCatalog.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ResaleAuthorizationId. 
+        /// <para>
+        /// The ResaleAuthorizationId of the offer.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string ResaleAuthorizationId
+        {
+            get { return this._resaleAuthorizationId; }
+            set { this._resaleAuthorizationId = value; }
+        }
+
+        // Check to see if ResaleAuthorizationId property is set
+        internal bool IsSetResaleAuthorizationId()
+        {
+            return this._resaleAuthorizationId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property State. 
         /// <para>
         /// The status of the offer.
@@ -170,7 +191,7 @@ namespace Amazon.MarketplaceCatalog.Model
         // Check to see if Targeting property is set
         internal bool IsSetTargeting()
         {
-            return this._targeting != null && this._targeting.Count > 0; 
+            return this._targeting != null && (this._targeting.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

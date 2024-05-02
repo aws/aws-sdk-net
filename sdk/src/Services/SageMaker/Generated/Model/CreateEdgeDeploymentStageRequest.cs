@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.SageMaker.Model
     public partial class CreateEdgeDeploymentStageRequest : AmazonSageMakerRequest
     {
         private string _edgeDeploymentPlanName;
-        private List<DeploymentStage> _stages = new List<DeploymentStage>();
+        private List<DeploymentStage> _stages = AWSConfigs.InitializeCollections ? new List<DeploymentStage>() : null;
 
         /// <summary>
         /// Gets and sets the property EdgeDeploymentPlanName. 
@@ -72,7 +73,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Stages property is set
         internal bool IsSetStages()
         {
-            return this._stages != null && this._stages.Count > 0; 
+            return this._stages != null && (this._stages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

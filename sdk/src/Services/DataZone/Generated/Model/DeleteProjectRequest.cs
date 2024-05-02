@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
@@ -79,7 +80,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property SkipDeletionCheck. 
         /// <para>
-        /// Optional flag to asynchronously delete child entities within the project
+        /// Specifies the optional flag to delete all child entities within the project.
         /// </para>
         /// </summary>
         public bool? SkipDeletionCheck

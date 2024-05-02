@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lambda.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class ListFunctionUrlConfigsResponse : AmazonWebServiceResponse
     {
-        private List<FunctionUrlConfig> _functionUrlConfigs = new List<FunctionUrlConfig>();
+        private List<FunctionUrlConfig> _functionUrlConfigs = AWSConfigs.InitializeCollections ? new List<FunctionUrlConfig>() : null;
         private string _nextMarker;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.Lambda.Model
         // Check to see if FunctionUrlConfigs property is set
         internal bool IsSetFunctionUrlConfigs()
         {
-            return this._functionUrlConfigs != null && this._functionUrlConfigs.Count > 0; 
+            return this._functionUrlConfigs != null && (this._functionUrlConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FraudDetector.Model
 {
     /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class AggregatedVariablesImpactExplanation
     {
-        private List<string> _eventVariableNames = new List<string>();
+        private List<string> _eventVariableNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private float? _logOddsImpact;
         private string _relativeImpact;
 
@@ -62,7 +63,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if EventVariableNames property is set
         internal bool IsSetEventVariableNames()
         {
-            return this._eventVariableNames != null && this._eventVariableNames.Count > 0; 
+            return this._eventVariableNames != null && (this._eventVariableNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

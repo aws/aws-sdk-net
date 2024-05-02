@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeKeyValueStore operation.
-    /// Specifies the Key Value Store and its configuration.
+    /// Specifies the key value store and its configuration.
     /// </summary>
     public partial class DescribeKeyValueStoreRequest : AmazonCloudFrontRequest
     {
@@ -39,7 +40,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the Key Value Store.
+        /// The name of the key value store.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

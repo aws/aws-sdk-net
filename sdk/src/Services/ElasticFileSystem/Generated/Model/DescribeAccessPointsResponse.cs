@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ElasticFileSystem.Model
     /// </summary>
     public partial class DescribeAccessPointsResponse : AmazonWebServiceResponse
     {
-        private List<AccessPointDescription> _accessPoints = new List<AccessPointDescription>();
+        private List<AccessPointDescription> _accessPoints = AWSConfigs.InitializeCollections ? new List<AccessPointDescription>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ElasticFileSystem.Model
         // Check to see if AccessPoints property is set
         internal bool IsSetAccessPoints()
         {
-            return this._accessPoints != null && this._accessPoints.Count > 0; 
+            return this._accessPoints != null && (this._accessPoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

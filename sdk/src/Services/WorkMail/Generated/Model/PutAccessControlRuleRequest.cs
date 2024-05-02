@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkMail.Model
 {
     /// <summary>
@@ -37,18 +38,18 @@ namespace Amazon.WorkMail.Model
     /// </summary>
     public partial class PutAccessControlRuleRequest : AmazonWorkMailRequest
     {
-        private List<string> _actions = new List<string>();
+        private List<string> _actions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _description;
         private AccessControlRuleEffect _effect;
-        private List<string> _impersonationRoleIds = new List<string>();
-        private List<string> _ipRanges = new List<string>();
+        private List<string> _impersonationRoleIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _ipRanges = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
-        private List<string> _notActions = new List<string>();
-        private List<string> _notImpersonationRoleIds = new List<string>();
-        private List<string> _notIpRanges = new List<string>();
-        private List<string> _notUserIds = new List<string>();
+        private List<string> _notActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _notImpersonationRoleIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _notIpRanges = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _notUserIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _organizationId;
-        private List<string> _userIds = new List<string>();
+        private List<string> _userIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Actions. 
@@ -68,7 +69,7 @@ namespace Amazon.WorkMail.Model
         // Check to see if Actions property is set
         internal bool IsSetActions()
         {
-            return this._actions != null && this._actions.Count > 0; 
+            return this._actions != null && (this._actions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -125,7 +126,7 @@ namespace Amazon.WorkMail.Model
         // Check to see if ImpersonationRoleIds property is set
         internal bool IsSetImpersonationRoleIds()
         {
-            return this._impersonationRoleIds != null && this._impersonationRoleIds.Count > 0; 
+            return this._impersonationRoleIds != null && (this._impersonationRoleIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -144,7 +145,7 @@ namespace Amazon.WorkMail.Model
         // Check to see if IpRanges property is set
         internal bool IsSetIpRanges()
         {
-            return this._ipRanges != null && this._ipRanges.Count > 0; 
+            return this._ipRanges != null && (this._ipRanges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -184,7 +185,7 @@ namespace Amazon.WorkMail.Model
         // Check to see if NotActions property is set
         internal bool IsSetNotActions()
         {
-            return this._notActions != null && this._notActions.Count > 0; 
+            return this._notActions != null && (this._notActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -203,7 +204,7 @@ namespace Amazon.WorkMail.Model
         // Check to see if NotImpersonationRoleIds property is set
         internal bool IsSetNotImpersonationRoleIds()
         {
-            return this._notImpersonationRoleIds != null && this._notImpersonationRoleIds.Count > 0; 
+            return this._notImpersonationRoleIds != null && (this._notImpersonationRoleIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -222,7 +223,7 @@ namespace Amazon.WorkMail.Model
         // Check to see if NotIpRanges property is set
         internal bool IsSetNotIpRanges()
         {
-            return this._notIpRanges != null && this._notIpRanges.Count > 0; 
+            return this._notIpRanges != null && (this._notIpRanges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -241,7 +242,7 @@ namespace Amazon.WorkMail.Model
         // Check to see if NotUserIds property is set
         internal bool IsSetNotUserIds()
         {
-            return this._notUserIds != null && this._notUserIds.Count > 0; 
+            return this._notUserIds != null && (this._notUserIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -279,7 +280,7 @@ namespace Amazon.WorkMail.Model
         // Check to see if UserIds property is set
         internal bool IsSetUserIds()
         {
-            return this._userIds != null && this._userIds.Count > 0; 
+            return this._userIds != null && (this._userIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

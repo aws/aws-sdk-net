@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -96,6 +97,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ServerCertificateMetadataList/member", targetDepth))
                     {
                         var unmarshaller = ServerCertificateMetadataUnmarshaller.Instance;
+                        if (response.ServerCertificateMetadataList == null)
+                        {
+                            response.ServerCertificateMetadataList = new List<ServerCertificateMetadata>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ServerCertificateMetadataList.Add(item);
                         continue;

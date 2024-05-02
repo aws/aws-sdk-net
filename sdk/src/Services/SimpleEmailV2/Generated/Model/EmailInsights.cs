@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SimpleEmailV2.Model
     public partial class EmailInsights
     {
         private string _destination;
-        private List<InsightsEvent> _events = new List<InsightsEvent>();
+        private List<InsightsEvent> _events = AWSConfigs.InitializeCollections ? new List<InsightsEvent>() : null;
         private string _isp;
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if Events property is set
         internal bool IsSetEvents()
         {
-            return this._events != null && this._events.Count > 0; 
+            return this._events != null && (this._events.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

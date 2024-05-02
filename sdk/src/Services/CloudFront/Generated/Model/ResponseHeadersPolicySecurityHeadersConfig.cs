@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
@@ -151,7 +152,8 @@ namespace Amazon.CloudFront.Model
         ///  
         /// <para>
         /// For more information about the <c>Strict-Transport-Security</c> HTTP response header,
-        /// see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security">Strict-Transport-Security</a>
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/understanding-response-headers-policies.html#understanding-response-headers-policies-security">Security
+        /// headers</a> in the <i>Amazon CloudFront Developer Guide</i> and <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security">Strict-Transport-Security</a>
         /// in the MDN Web Docs.
         /// </para>
         /// </summary>

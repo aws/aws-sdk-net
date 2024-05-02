@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Greengrass.Model
     /// </summary>
     public partial class ListResourceDefinitionsResponse : AmazonWebServiceResponse
     {
-        private List<DefinitionInformation> _definitions = new List<DefinitionInformation>();
+        private List<DefinitionInformation> _definitions = AWSConfigs.InitializeCollections ? new List<DefinitionInformation>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -48,7 +49,7 @@ namespace Amazon.Greengrass.Model
         // Check to see if Definitions property is set
         internal bool IsSetDefinitions()
         {
-            return this._definitions != null && this._definitions.Count > 0; 
+            return this._definitions != null && (this._definitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

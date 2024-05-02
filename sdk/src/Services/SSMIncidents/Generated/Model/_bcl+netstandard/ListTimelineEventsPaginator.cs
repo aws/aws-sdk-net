@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SSMIncidents.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.SSMIncidents.Model
         /// Enumerable containing all of the EventSummaries
         /// </summary>
         public IPaginatedEnumerable<EventSummary> EventSummaries => 
-            new PaginatedResultKeyResponse<ListTimelineEventsResponse, EventSummary>(this, (i) => i.EventSummaries);
+            new PaginatedResultKeyResponse<ListTimelineEventsResponse, EventSummary>(this, (i) => i.EventSummaries ?? new List<EventSummary>());
 
         internal ListTimelineEventsPaginator(IAmazonSSMIncidents client, ListTimelineEventsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.SSMIncidents.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListTimelineEventsResponse> IPaginator<ListTimelineEventsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListTimelineEventsResponse> IPaginator<ListTimelineEventsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

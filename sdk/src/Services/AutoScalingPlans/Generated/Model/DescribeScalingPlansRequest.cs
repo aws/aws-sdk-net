@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AutoScalingPlans.Model
 {
     /// <summary>
@@ -34,10 +35,10 @@ namespace Amazon.AutoScalingPlans.Model
     /// </summary>
     public partial class DescribeScalingPlansRequest : AmazonAutoScalingPlansRequest
     {
-        private List<ApplicationSource> _applicationSources = new List<ApplicationSource>();
+        private List<ApplicationSource> _applicationSources = AWSConfigs.InitializeCollections ? new List<ApplicationSource>() : null;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _scalingPlanNames = new List<string>();
+        private List<string> _scalingPlanNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private long? _scalingPlanVersion;
 
         /// <summary>
@@ -56,7 +57,7 @@ namespace Amazon.AutoScalingPlans.Model
         // Check to see if ApplicationSources property is set
         internal bool IsSetApplicationSources()
         {
-            return this._applicationSources != null && this._applicationSources.Count > 0; 
+            return this._applicationSources != null && (this._applicationSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -112,7 +113,7 @@ namespace Amazon.AutoScalingPlans.Model
         // Check to see if ScalingPlanNames property is set
         internal bool IsSetScalingPlanNames()
         {
-            return this._scalingPlanNames != null && this._scalingPlanNames.Count > 0; 
+            return this._scalingPlanNames != null && (this._scalingPlanNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

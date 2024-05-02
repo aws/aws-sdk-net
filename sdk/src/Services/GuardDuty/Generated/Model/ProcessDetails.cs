@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.GuardDuty.Model
         private int? _euid;
         private string _executablePath;
         private string _executableSha256;
-        private List<LineageObject> _lineage = new List<LineageObject>();
+        private List<LineageObject> _lineage = AWSConfigs.InitializeCollections ? new List<LineageObject>() : null;
         private string _name;
         private int? _namespacePid;
         private string _parentUuid;
@@ -116,7 +117,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if Lineage property is set
         internal bool IsSetLineage()
         {
-            return this._lineage != null && this._lineage.Count > 0; 
+            return this._lineage != null && (this._lineage.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Inspector2.Model
         private string _accountId;
         private string _ami;
         private string _instanceId;
-        private Dictionary<string, string> _instanceTags = new Dictionary<string, string>();
+        private Dictionary<string, string> _instanceTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private long? _networkFindings;
         private string _operatingSystem;
         private SeverityCounts _severityCounts;
@@ -111,7 +112,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if InstanceTags property is set
         internal bool IsSetInstanceTags()
         {
-            return this._instanceTags != null && this._instanceTags.Count > 0; 
+            return this._instanceTags != null && (this._instanceTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

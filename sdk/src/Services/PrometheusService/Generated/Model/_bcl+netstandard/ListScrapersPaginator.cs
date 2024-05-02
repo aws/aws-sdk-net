@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.PrometheusService.Model
         /// Enumerable containing all of the Scrapers
         /// </summary>
         public IPaginatedEnumerable<ScraperSummary> Scrapers => 
-            new PaginatedResultKeyResponse<ListScrapersResponse, ScraperSummary>(this, (i) => i.Scrapers);
+            new PaginatedResultKeyResponse<ListScrapersResponse, ScraperSummary>(this, (i) => i.Scrapers ?? new List<ScraperSummary>());
 
         internal ListScrapersPaginator(IAmazonPrometheusService client, ListScrapersRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.PrometheusService.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListScrapersResponse> IPaginator<ListScrapersResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListScrapersResponse> IPaginator<ListScrapersResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

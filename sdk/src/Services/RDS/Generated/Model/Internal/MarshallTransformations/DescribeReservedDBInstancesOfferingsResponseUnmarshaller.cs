@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -90,6 +91,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ReservedDBInstancesOfferings/ReservedDBInstancesOffering", targetDepth))
                     {
                         var unmarshaller = ReservedDBInstancesOfferingUnmarshaller.Instance;
+                        if (response.ReservedDBInstancesOfferings == null)
+                        {
+                            response.ReservedDBInstancesOfferings = new List<ReservedDBInstancesOffering>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ReservedDBInstancesOfferings.Add(item);
                         continue;

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -65,7 +66,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class CreateAutoMLJobV2Request : AmazonSageMakerRequest
     {
-        private List<AutoMLJobChannel> _autoMLJobInputDataConfig = new List<AutoMLJobChannel>();
+        private List<AutoMLJobChannel> _autoMLJobInputDataConfig = AWSConfigs.InitializeCollections ? new List<AutoMLJobChannel>() : null;
         private string _autoMLJobName;
         private AutoMLJobObjective _autoMLJobObjective;
         private AutoMLProblemTypeConfig _autoMLProblemTypeConfig;
@@ -74,7 +75,7 @@ namespace Amazon.SageMaker.Model
         private AutoMLOutputDataConfig _outputDataConfig;
         private string _roleArn;
         private AutoMLSecurityConfig _securityConfig;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AutoMLJobInputDataConfig. 
@@ -116,7 +117,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if AutoMLJobInputDataConfig property is set
         internal bool IsSetAutoMLJobInputDataConfig()
         {
-            return this._autoMLJobInputDataConfig != null && this._autoMLJobInputDataConfig.Count > 0; 
+            return this._autoMLJobInputDataConfig != null && (this._autoMLJobInputDataConfig.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -320,7 +321,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

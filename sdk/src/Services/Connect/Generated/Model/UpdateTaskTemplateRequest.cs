@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.Connect.Model
         private string _contactFlowId;
         private TaskTemplateDefaults _defaults;
         private string _description;
-        private List<TaskTemplateField> _fields = new List<TaskTemplateField>();
+        private List<TaskTemplateField> _fields = AWSConfigs.InitializeCollections ? new List<TaskTemplateField>() : null;
         private string _instanceId;
         private string _name;
         private TaskTemplateStatus _status;
@@ -136,7 +137,7 @@ namespace Amazon.Connect.Model
         // Check to see if Fields property is set
         internal bool IsSetFields()
         {
-            return this._fields != null && this._fields.Count > 0; 
+            return this._fields != null && (this._fields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

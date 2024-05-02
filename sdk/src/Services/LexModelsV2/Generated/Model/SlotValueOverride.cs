@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.LexModelsV2.Model
     {
         private SlotShape _shape;
         private SlotValue _value;
-        private List<SlotValueOverride> _values = new List<SlotValueOverride>();
+        private List<SlotValueOverride> _values = AWSConfigs.InitializeCollections ? new List<SlotValueOverride>() : null;
 
         /// <summary>
         /// Gets and sets the property Shape. 
@@ -91,7 +92,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if Values property is set
         internal bool IsSetValues()
         {
-            return this._values != null && this._values.Count > 0; 
+            return this._values != null && (this._values.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

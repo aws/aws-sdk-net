@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -63,6 +64,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("CacheNodeTypeSpecificValues/CacheNodeTypeSpecificValue", targetDepth))
                     {
                         var unmarshaller = CacheNodeTypeSpecificValueUnmarshaller.Instance;
+                        if (unmarshalledObject.CacheNodeTypeSpecificValues == null)
+                        {
+                            unmarshalledObject.CacheNodeTypeSpecificValues = new List<CacheNodeTypeSpecificValue>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.CacheNodeTypeSpecificValues.Add(item);
                         continue;

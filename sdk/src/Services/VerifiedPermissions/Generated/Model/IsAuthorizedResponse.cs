@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VerifiedPermissions.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.VerifiedPermissions.Model
     public partial class IsAuthorizedResponse : AmazonWebServiceResponse
     {
         private Decision _decision;
-        private List<DeterminingPolicyItem> _determiningPolicies = new List<DeterminingPolicyItem>();
-        private List<EvaluationErrorItem> _errors = new List<EvaluationErrorItem>();
+        private List<DeterminingPolicyItem> _determiningPolicies = AWSConfigs.InitializeCollections ? new List<DeterminingPolicyItem>() : null;
+        private List<EvaluationErrorItem> _errors = AWSConfigs.InitializeCollections ? new List<EvaluationErrorItem>() : null;
 
         /// <summary>
         /// Gets and sets the property Decision. 
@@ -77,7 +78,7 @@ namespace Amazon.VerifiedPermissions.Model
         // Check to see if DeterminingPolicies property is set
         internal bool IsSetDeterminingPolicies()
         {
-            return this._determiningPolicies != null && this._determiningPolicies.Count > 0; 
+            return this._determiningPolicies != null && (this._determiningPolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -97,7 +98,7 @@ namespace Amazon.VerifiedPermissions.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

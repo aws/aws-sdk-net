@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Macie2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Macie2.Model
     /// </summary>
     public partial class ListFindingsFiltersResponse : AmazonWebServiceResponse
     {
-        private List<FindingsFilterListItem> _findingsFilterListItems = new List<FindingsFilterListItem>();
+        private List<FindingsFilterListItem> _findingsFilterListItems = AWSConfigs.InitializeCollections ? new List<FindingsFilterListItem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Macie2.Model
         // Check to see if FindingsFilterListItems property is set
         internal bool IsSetFindingsFilterListItems()
         {
-            return this._findingsFilterListItems != null && this._findingsFilterListItems.Count > 0; 
+            return this._findingsFilterListItems != null && (this._findingsFilterListItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

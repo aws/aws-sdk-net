@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ForecastService.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.ForecastService.Model
         private double? _dataSize;
         private DataSource _dataSource;
         private long? _estimatedTimeRemainingInMinutes;
-        private Dictionary<string, Statistics> _fieldStatistics = new Dictionary<string, Statistics>();
+        private Dictionary<string, Statistics> _fieldStatistics = AWSConfigs.InitializeCollections ? new Dictionary<string, Statistics>() : null;
         private string _format;
         private string _geolocationFormat;
         private ImportMode _importMode;
@@ -202,7 +203,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if FieldStatistics property is set
         internal bool IsSetFieldStatistics()
         {
-            return this._fieldStatistics != null && this._fieldStatistics.Count > 0; 
+            return this._fieldStatistics != null && (this._fieldStatistics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.LexModelsV2.Model
     public partial class ListTestSetRecordsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TestSetTurnRecord> _testSetRecords = new List<TestSetTurnRecord>();
+        private List<TestSetTurnRecord> _testSetRecords = AWSConfigs.InitializeCollections ? new List<TestSetTurnRecord>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if TestSetRecords property is set
         internal bool IsSetTestSetRecords()
         {
-            return this._testSetRecords != null && this._testSetRecords.Count > 0; 
+            return this._testSetRecords != null && (this._testSetRecords.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

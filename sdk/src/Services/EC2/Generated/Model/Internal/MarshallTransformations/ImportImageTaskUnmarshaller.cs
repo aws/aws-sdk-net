@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -105,6 +106,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("licenseSpecifications/item", targetDepth))
                     {
                         var unmarshaller = ImportImageLicenseConfigurationResponseUnmarshaller.Instance;
+                        if (unmarshalledObject.LicenseSpecifications == null)
+                        {
+                            unmarshalledObject.LicenseSpecifications = new List<ImportImageLicenseConfigurationResponse>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.LicenseSpecifications.Add(item);
                         continue;
@@ -130,6 +135,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("snapshotDetailSet/item", targetDepth))
                     {
                         var unmarshaller = SnapshotDetailUnmarshaller.Instance;
+                        if (unmarshalledObject.SnapshotDetails == null)
+                        {
+                            unmarshalledObject.SnapshotDetails = new List<SnapshotDetail>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SnapshotDetails.Add(item);
                         continue;
@@ -149,6 +158,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tags.Add(item);
                         continue;

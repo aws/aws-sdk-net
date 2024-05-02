@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.MediaLive.Model
     public partial class ListOfferingsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Offering> _offerings = new List<Offering>();
+        private List<Offering> _offerings = AWSConfigs.InitializeCollections ? new List<Offering>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. Token to retrieve the next page of results
@@ -63,7 +64,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if Offerings property is set
         internal bool IsSetOfferings()
         {
-            return this._offerings != null && this._offerings.Count > 0; 
+            return this._offerings != null && (this._offerings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

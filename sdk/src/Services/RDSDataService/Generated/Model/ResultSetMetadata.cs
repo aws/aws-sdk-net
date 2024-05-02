@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDSDataService.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.RDSDataService.Model
     public partial class ResultSetMetadata
     {
         private long? _columnCount;
-        private List<ColumnMetadata> _columnMetadata = new List<ColumnMetadata>();
+        private List<ColumnMetadata> _columnMetadata = AWSConfigs.InitializeCollections ? new List<ColumnMetadata>() : null;
 
         /// <summary>
         /// Gets and sets the property ColumnCount. 
@@ -69,7 +70,7 @@ namespace Amazon.RDSDataService.Model
         // Check to see if ColumnMetadata property is set
         internal bool IsSetColumnMetadata()
         {
-            return this._columnMetadata != null && this._columnMetadata.Count > 0; 
+            return this._columnMetadata != null && (this._columnMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

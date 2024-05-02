@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GameLift.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class ListLocationsRequest : AmazonGameLiftRequest
     {
-        private List<string> _filters = new List<string>();
+        private List<string> _filters = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _limit;
         private string _nextToken;
 
@@ -54,7 +55,7 @@ namespace Amazon.GameLift.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

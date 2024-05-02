@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Enumerable containing all of the LoadBalancers
         /// </summary>
         public IPaginatedEnumerable<LoadBalancer> LoadBalancers => 
-            new PaginatedResultKeyResponse<DescribeLoadBalancersResponse, LoadBalancer>(this, (i) => i.LoadBalancers);
+            new PaginatedResultKeyResponse<DescribeLoadBalancersResponse, LoadBalancer>(this, (i) => i.LoadBalancers ?? new List<LoadBalancer>());
 
         internal DescribeLoadBalancersPaginator(IAmazonElasticLoadBalancingV2 client, DescribeLoadBalancersRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeLoadBalancersResponse> IPaginator<DescribeLoadBalancersResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeLoadBalancersResponse> IPaginator<DescribeLoadBalancersResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

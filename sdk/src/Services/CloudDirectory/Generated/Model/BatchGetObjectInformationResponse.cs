@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CloudDirectory.Model
     public partial class BatchGetObjectInformationResponse
     {
         private string _objectIdentifier;
-        private List<SchemaFacet> _schemaFacets = new List<SchemaFacet>();
+        private List<SchemaFacet> _schemaFacets = AWSConfigs.InitializeCollections ? new List<SchemaFacet>() : null;
 
         /// <summary>
         /// Gets and sets the property ObjectIdentifier. 
@@ -69,7 +70,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if SchemaFacets property is set
         internal bool IsSetSchemaFacets()
         {
-            return this._schemaFacets != null && this._schemaFacets.Count > 0; 
+            return this._schemaFacets != null && (this._schemaFacets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

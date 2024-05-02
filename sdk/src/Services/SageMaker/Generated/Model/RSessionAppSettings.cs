@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class RSessionAppSettings
     {
-        private List<CustomImage> _customImages = new List<CustomImage>();
+        private List<CustomImage> _customImages = AWSConfigs.InitializeCollections ? new List<CustomImage>() : null;
         private ResourceSpec _defaultResourceSpec;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if CustomImages property is set
         internal bool IsSetCustomImages()
         {
-            return this._customImages != null && this._customImages.Count > 0; 
+            return this._customImages != null && (this._customImages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

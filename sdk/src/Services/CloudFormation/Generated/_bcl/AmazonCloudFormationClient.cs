@@ -33,6 +33,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.CloudFormation
 {
     /// <summary>
@@ -360,7 +361,7 @@ namespace Amazon.CloudFormation
         /// Once you have activated a public third-party extension in your account and Region,
         /// use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>
         /// to specify configuration properties for the extension. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration">Configuring
         /// extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
@@ -394,7 +395,7 @@ namespace Amazon.CloudFormation
         /// Once you have activated a public third-party extension in your account and Region,
         /// use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>
         /// to specify configuration properties for the extension. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration">Configuring
         /// extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
@@ -431,7 +432,7 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration">Configuring
         /// extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
@@ -461,7 +462,7 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration">Configuring
         /// extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
@@ -2109,8 +2110,8 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Returns all stack related events for a specified stack in reverse chronological order.
-        /// For more information about a stack's event history, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a>
-        /// in the <i>CloudFormation User Guide</i>.
+        /// For more information about a stack's event history, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation
+        /// stack creation events</a> in the <i>CloudFormation User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
@@ -2135,8 +2136,8 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Returns all stack related events for a specified stack in reverse chronological order.
-        /// For more information about a stack's event history, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a>
-        /// in the <i>CloudFormation User Guide</i>.
+        /// For more information about a stack's event history, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation
+        /// stack creation events</a> in the <i>CloudFormation User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
@@ -2458,7 +2459,9 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Returns the description for the specified stack; if no stack name was specified, then
-        /// it returns the description for all the stacks created.
+        /// it returns the description for all the stacks created. For more information about
+        /// a stack's event history, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation
+        /// stack creation events</a> in the <i>CloudFormation User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
@@ -2477,7 +2480,9 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Returns the description for the specified stack; if no stack name was specified, then
-        /// it returns the description for all the stacks created.
+        /// it returns the description for all the stacks created. For more information about
+        /// a stack's event history, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation
+        /// stack creation events</a> in the <i>CloudFormation User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
@@ -2501,7 +2506,9 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Returns the description for the specified stack; if no stack name was specified, then
-        /// it returns the description for all the stacks created.
+        /// it returns the description for all the stacks created. For more information about
+        /// a stack's event history, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation
+        /// stack creation events</a> in the <i>CloudFormation User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
@@ -2522,7 +2529,9 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Returns the description for the specified stack; if no stack name was specified, then
-        /// it returns the description for all the stacks created.
+        /// it returns the description for all the stacks created. For more information about
+        /// a stack's event history, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation
+        /// stack creation events</a> in the <i>CloudFormation User Guide</i>.
         /// 
         ///  <note> 
         /// <para>
@@ -4249,6 +4258,53 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  ListStackSetAutoDeploymentTargets
+
+
+        /// <summary>
+        /// Returns summary information about deployment targets for a stack set.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStackSetAutoDeploymentTargets service method.</param>
+        /// 
+        /// <returns>The response from the ListStackSetAutoDeploymentTargets service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.StackSetNotFoundException">
+        /// The specified stack set doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetAutoDeploymentTargets">REST API Reference for ListStackSetAutoDeploymentTargets Operation</seealso>
+        public virtual ListStackSetAutoDeploymentTargetsResponse ListStackSetAutoDeploymentTargets(ListStackSetAutoDeploymentTargetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStackSetAutoDeploymentTargetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStackSetAutoDeploymentTargetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListStackSetAutoDeploymentTargetsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns summary information about deployment targets for a stack set.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStackSetAutoDeploymentTargets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListStackSetAutoDeploymentTargets service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.StackSetNotFoundException">
+        /// The specified stack set doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ListStackSetAutoDeploymentTargets">REST API Reference for ListStackSetAutoDeploymentTargets Operation</seealso>
+        public virtual Task<ListStackSetAutoDeploymentTargetsResponse> ListStackSetAutoDeploymentTargetsAsync(ListStackSetAutoDeploymentTargetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStackSetAutoDeploymentTargetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStackSetAutoDeploymentTargetsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListStackSetAutoDeploymentTargetsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListStackSetOperationResults
 
 
@@ -4821,7 +4877,7 @@ namespace Amazon.CloudFormation
         /// <para>
         /// Once you have registered a private extension in your account and Region, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>
         /// to specify configuration properties for the extension. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration">Configuring
         /// extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
@@ -4880,7 +4936,7 @@ namespace Amazon.CloudFormation
         /// <para>
         /// Once you have registered a private extension in your account and Region, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>
         /// to specify configuration properties for the extension. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration">Configuring
         /// extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
@@ -5074,7 +5130,7 @@ namespace Amazon.CloudFormation
         /// <para>
         /// To view the current configuration data for an extension, refer to the <c>ConfigurationSchema</c>
         /// element of <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration">Configuring
         /// extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         ///  <important> 
@@ -5114,7 +5170,7 @@ namespace Amazon.CloudFormation
         /// <para>
         /// To view the current configuration data for an extension, refer to the <c>ConfigurationSchema</c>
         /// element of <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration">Configuring
         /// extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         ///  <important> 

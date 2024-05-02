@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
@@ -37,13 +38,13 @@ namespace Amazon.APIGateway.Model
     {
         private string _body;
         private string _clientCertificateId;
-        private Dictionary<string, string> _headers = new Dictionary<string, string>();
+        private Dictionary<string, string> _headers = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _httpMethod;
-        private Dictionary<string, List<string>> _multiValueHeaders = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _multiValueHeaders = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private string _pathWithQueryString;
         private string _resourceId;
         private string _restApiId;
-        private Dictionary<string, string> _stageVariables = new Dictionary<string, string>();
+        private Dictionary<string, string> _stageVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Body. 
@@ -97,7 +98,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if Headers property is set
         internal bool IsSetHeaders()
         {
-            return this._headers != null && this._headers.Count > 0; 
+            return this._headers != null && (this._headers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -135,7 +136,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if MultiValueHeaders property is set
         internal bool IsSetMultiValueHeaders()
         {
-            return this._multiValueHeaders != null && this._multiValueHeaders.Count > 0; 
+            return this._multiValueHeaders != null && (this._multiValueHeaders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -210,7 +211,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if StageVariables property is set
         internal bool IsSetStageVariables()
         {
-            return this._stageVariables != null && this._stageVariables.Count > 0; 
+            return this._stageVariables != null && (this._stageVariables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

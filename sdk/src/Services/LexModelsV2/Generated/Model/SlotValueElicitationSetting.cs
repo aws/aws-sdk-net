@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.LexModelsV2.Model
     {
         private SlotDefaultValueSpecification _defaultValueSpecification;
         private PromptSpecification _promptSpecification;
-        private List<SampleUtterance> _sampleUtterances = new List<SampleUtterance>();
+        private List<SampleUtterance> _sampleUtterances = AWSConfigs.InitializeCollections ? new List<SampleUtterance>() : null;
         private SlotCaptureSetting _slotCaptureSetting;
         private SlotConstraint _slotConstraint;
         private SlotResolutionSetting _slotResolutionSetting;
@@ -96,7 +97,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if SampleUtterances property is set
         internal bool IsSetSampleUtterances()
         {
-            return this._sampleUtterances != null && this._sampleUtterances.Count > 0; 
+            return this._sampleUtterances != null && (this._sampleUtterances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

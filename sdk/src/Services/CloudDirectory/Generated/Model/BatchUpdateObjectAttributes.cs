@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CloudDirectory.Model
     /// </summary>
     public partial class BatchUpdateObjectAttributes
     {
-        private List<ObjectAttributeUpdate> _attributeUpdates = new List<ObjectAttributeUpdate>();
+        private List<ObjectAttributeUpdate> _attributeUpdates = AWSConfigs.InitializeCollections ? new List<ObjectAttributeUpdate>() : null;
         private ObjectReference _objectReference;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if AttributeUpdates property is set
         internal bool IsSetAttributeUpdates()
         {
-            return this._attributeUpdates != null && this._attributeUpdates.Count > 0; 
+            return this._attributeUpdates != null && (this._attributeUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudControlApi.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.CloudControlApi.Model
         /// Enumerable containing all of the ResourceDescriptions
         /// </summary>
         public IPaginatedEnumerable<ResourceDescription> ResourceDescriptions => 
-            new PaginatedResultKeyResponse<ListResourcesResponse, ResourceDescription>(this, (i) => i.ResourceDescriptions);
+            new PaginatedResultKeyResponse<ListResourcesResponse, ResourceDescription>(this, (i) => i.ResourceDescriptions ?? new List<ResourceDescription>());
 
         internal ListResourcesPaginator(IAmazonCloudControlApi client, ListResourcesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.CloudControlApi.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListResourcesResponse> IPaginator<ListResourcesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListResourcesResponse> IPaginator<ListResourcesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

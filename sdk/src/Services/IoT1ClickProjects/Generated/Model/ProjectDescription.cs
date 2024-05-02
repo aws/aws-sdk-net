@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT1ClickProjects.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.IoT1ClickProjects.Model
         private string _description;
         private PlacementTemplate _placementTemplate;
         private string _projectName;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DateTime? _updatedDate;
 
         /// <summary>
@@ -151,7 +152,7 @@ namespace Amazon.IoT1ClickProjects.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

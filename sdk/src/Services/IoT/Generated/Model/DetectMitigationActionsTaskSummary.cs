@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class DetectMitigationActionsTaskSummary
     {
-        private List<MitigationAction> _actionsDefinition = new List<MitigationAction>();
+        private List<MitigationAction> _actionsDefinition = AWSConfigs.InitializeCollections ? new List<MitigationAction>() : null;
         private bool? _onlyActiveViolationsIncluded;
         private bool? _suppressedAlertsIncluded;
         private DetectMitigationActionsTaskTarget _target;
@@ -59,7 +60,7 @@ namespace Amazon.IoT.Model
         // Check to see if ActionsDefinition property is set
         internal bool IsSetActionsDefinition()
         {
-            return this._actionsDefinition != null && this._actionsDefinition.Count > 0; 
+            return this._actionsDefinition != null && (this._actionsDefinition.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

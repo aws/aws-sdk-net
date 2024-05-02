@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class AudioSelectorGroup
     {
-        private List<string> _audioSelectorNames = new List<string>();
+        private List<string> _audioSelectorNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AudioSelectorNames. Name of an Audio Selector within the
@@ -53,7 +54,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if AudioSelectorNames property is set
         internal bool IsSetAudioSelectorNames()
         {
-            return this._audioSelectorNames != null && this._audioSelectorNames.Count > 0; 
+            return this._audioSelectorNames != null && (this._audioSelectorNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

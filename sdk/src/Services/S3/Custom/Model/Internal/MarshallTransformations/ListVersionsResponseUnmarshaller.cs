@@ -28,6 +28,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>
     public class ListVersionsResponseUnmarshaller : S3ReponseUnmarshaller
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {   
             ListVersionsResponse response = new ListVersionsResponse();
@@ -99,19 +104,27 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Version", targetDepth))
                     {
+                        if (response.Versions == null)
+                        {
+                            response.Versions = new List<S3ObjectVersion>();
+                        }
+
                         var version = VersionsItemUnmarshaller.Instance.Unmarshall(context);
                         version.BucketName = response.Name;
                         response.Versions.Add(version);
-                            
                         continue;
                     }
                     if (context.TestExpression("DeleteMarker", targetDepth))
                     {
+                        if (response.Versions == null)
+                        {
+                            response.Versions = new List<S3ObjectVersion>();
+                        }
+
                         var version = VersionsItemUnmarshaller.Instance.Unmarshall(context);
                         version.BucketName = response.Name;
                         version.IsDeleteMarker = true;
                         response.Versions.Add(version);
-                            
                         continue;
                     }
                     if (context.TestExpression("Name", targetDepth))
@@ -155,6 +168,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static ListVersionsResponseUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static ListVersionsResponseUnmarshaller Instance
         {
             get

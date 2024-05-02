@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class ListGlobalTablesResponse : AmazonWebServiceResponse
     {
-        private List<GlobalTable> _globalTables = new List<GlobalTable>();
+        private List<GlobalTable> _globalTables = AWSConfigs.InitializeCollections ? new List<GlobalTable>() : null;
         private string _lastEvaluatedGlobalTableName;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if GlobalTables property is set
         internal bool IsSetGlobalTables()
         {
-            return this._globalTables != null && this._globalTables.Count > 0; 
+            return this._globalTables != null && (this._globalTables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Glue.Model
     public partial class GetPartitionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Partition> _partitions = new List<Partition>();
+        private List<Partition> _partitions = AWSConfigs.InitializeCollections ? new List<Partition>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.Glue.Model
         // Check to see if Partitions property is set
         internal bool IsSetPartitions()
         {
-            return this._partitions != null && this._partitions.Count > 0; 
+            return this._partitions != null && (this._partitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

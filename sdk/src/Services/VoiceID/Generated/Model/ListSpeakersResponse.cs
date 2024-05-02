@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VoiceID.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.VoiceID.Model
     public partial class ListSpeakersResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SpeakerSummary> _speakerSummaries = new List<SpeakerSummary>();
+        private List<SpeakerSummary> _speakerSummaries = AWSConfigs.InitializeCollections ? new List<SpeakerSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +74,7 @@ namespace Amazon.VoiceID.Model
         // Check to see if SpeakerSummaries property is set
         internal bool IsSetSpeakerSummaries()
         {
-            return this._speakerSummaries != null && this._speakerSummaries.Count > 0; 
+            return this._speakerSummaries != null && (this._speakerSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

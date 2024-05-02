@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -48,7 +49,7 @@ namespace Amazon.EC2.Model
     {
         private string _bucket;
         private string _imageId;
-        private List<S3ObjectTag> _s3ObjectTags = new List<S3ObjectTag>();
+        private List<S3ObjectTag> _s3ObjectTags = AWSConfigs.InitializeCollections ? new List<S3ObjectTag>() : null;
 
         /// <summary>
         /// Gets and sets the property Bucket. 
@@ -105,7 +106,7 @@ namespace Amazon.EC2.Model
         // Check to see if S3ObjectTags property is set
         internal bool IsSetS3ObjectTags()
         {
-            return this._s3ObjectTags != null && this._s3ObjectTags.Count > 0; 
+            return this._s3ObjectTags != null && (this._s3ObjectTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

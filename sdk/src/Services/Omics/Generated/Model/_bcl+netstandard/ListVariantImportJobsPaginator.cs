@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Omics.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Omics.Model
         /// Enumerable containing all of the VariantImportJobs
         /// </summary>
         public IPaginatedEnumerable<VariantImportJobItem> VariantImportJobs => 
-            new PaginatedResultKeyResponse<ListVariantImportJobsResponse, VariantImportJobItem>(this, (i) => i.VariantImportJobs);
+            new PaginatedResultKeyResponse<ListVariantImportJobsResponse, VariantImportJobItem>(this, (i) => i.VariantImportJobs ?? new List<VariantImportJobItem>());
 
         internal ListVariantImportJobsPaginator(IAmazonOmics client, ListVariantImportJobsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Omics.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListVariantImportJobsResponse> IPaginator<ListVariantImportJobsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListVariantImportJobsResponse> IPaginator<ListVariantImportJobsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

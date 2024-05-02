@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.OpenSearchService.Model
         private double? _fixedPrice;
         private OpenSearchPartitionInstanceType _instanceType;
         private ReservedInstancePaymentOption _paymentOption;
-        private List<RecurringCharge> _recurringCharges = new List<RecurringCharge>();
+        private List<RecurringCharge> _recurringCharges = AWSConfigs.InitializeCollections ? new List<RecurringCharge>() : null;
         private string _reservedInstanceOfferingId;
         private double? _usagePrice;
 
@@ -148,7 +149,7 @@ namespace Amazon.OpenSearchService.Model
         // Check to see if RecurringCharges property is set
         internal bool IsSetRecurringCharges()
         {
-            return this._recurringCharges != null && this._recurringCharges.Count > 0; 
+            return this._recurringCharges != null && (this._recurringCharges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

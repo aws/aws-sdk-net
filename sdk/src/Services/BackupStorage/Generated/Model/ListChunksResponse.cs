@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BackupStorage.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.BackupStorage.Model
     /// </summary>
     public partial class ListChunksResponse : AmazonWebServiceResponse
     {
-        private List<Chunk> _chunkList = new List<Chunk>();
+        private List<Chunk> _chunkList = AWSConfigs.InitializeCollections ? new List<Chunk>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -49,7 +50,7 @@ namespace Amazon.BackupStorage.Model
         // Check to see if ChunkList property is set
         internal bool IsSetChunkList()
         {
-            return this._chunkList != null && this._chunkList.Count > 0; 
+            return this._chunkList != null && (this._chunkList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

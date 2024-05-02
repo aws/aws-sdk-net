@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.Pinpoint.Model
     /// </summary>
     public partial class SegmentGroup
     {
-        private List<SegmentDimensions> _dimensions = new List<SegmentDimensions>();
-        private List<SegmentReference> _sourceSegments = new List<SegmentReference>();
+        private List<SegmentDimensions> _dimensions = AWSConfigs.InitializeCollections ? new List<SegmentDimensions>() : null;
+        private List<SegmentReference> _sourceSegments = AWSConfigs.InitializeCollections ? new List<SegmentReference>() : null;
         private SourceType _sourceType;
         private Type _type;
 
@@ -54,7 +55,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Dimensions property is set
         internal bool IsSetDimensions()
         {
-            return this._dimensions != null && this._dimensions.Count > 0; 
+            return this._dimensions != null && (this._dimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -82,7 +83,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if SourceSegments property is set
         internal bool IsSetSourceSegments()
         {
-            return this._sourceSegments != null && this._sourceSegments.Count > 0; 
+            return this._sourceSegments != null && (this._sourceSegments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

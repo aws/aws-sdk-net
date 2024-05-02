@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     public partial class DescribeRegistrationAttachmentsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RegistrationAttachmentsInformation> _registrationAttachments = new List<RegistrationAttachmentsInformation>();
+        private List<RegistrationAttachmentsInformation> _registrationAttachments = AWSConfigs.InitializeCollections ? new List<RegistrationAttachmentsInformation>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +74,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if RegistrationAttachments property is set
         internal bool IsSetRegistrationAttachments()
         {
-            return this._registrationAttachments != null && this._registrationAttachments.Count > 0; 
+            return this._registrationAttachments != null && (this._registrationAttachments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

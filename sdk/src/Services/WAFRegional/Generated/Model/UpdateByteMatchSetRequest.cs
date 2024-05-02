@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAFRegional.Model
 {
     /// <summary>
@@ -108,7 +109,7 @@ namespace Amazon.WAFRegional.Model
     {
         private string _byteMatchSetId;
         private string _changeToken;
-        private List<ByteMatchSetUpdate> _updates = new List<ByteMatchSetUpdate>();
+        private List<ByteMatchSetUpdate> _updates = AWSConfigs.InitializeCollections ? new List<ByteMatchSetUpdate>() : null;
 
         /// <summary>
         /// Gets and sets the property ByteMatchSetId. 
@@ -180,7 +181,7 @@ namespace Amazon.WAFRegional.Model
         // Check to see if Updates property is set
         internal bool IsSetUpdates()
         {
-            return this._updates != null && this._updates.Count > 0; 
+            return this._updates != null && (this._updates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

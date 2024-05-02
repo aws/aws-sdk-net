@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
@@ -64,7 +65,7 @@ namespace Amazon.StorageGateway.Model
     public partial class AddTagsToResourceRequest : AmazonStorageGatewayRequest
     {
         private string _resourceARN;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceARN. 
@@ -110,7 +111,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

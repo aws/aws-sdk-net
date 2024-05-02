@@ -33,6 +33,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.SimpleEmailV2
 {
     /// <summary>
@@ -4579,8 +4580,15 @@ namespace Amazon.SimpleEmailV2
 
 
         /// <summary>
-        /// Updates a contact's preferences for a list. It is not necessary to specify all existing
-        /// topic preferences in the TopicPreferences object, just the ones that need updating.
+        /// Updates a contact's preferences for a list.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You must specify all existing topic preferences in the <c>TopicPreferences</c> object,
+        /// not just the ones that need updating; otherwise, all your existing preferences will
+        /// be removed.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContact service method.</param>
         /// <param name="cancellationToken">

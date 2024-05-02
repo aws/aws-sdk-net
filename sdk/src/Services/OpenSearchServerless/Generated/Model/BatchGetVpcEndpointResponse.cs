@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpenSearchServerless.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.OpenSearchServerless.Model
     /// </summary>
     public partial class BatchGetVpcEndpointResponse : AmazonWebServiceResponse
     {
-        private List<VpcEndpointDetail> _vpcEndpointDetails = new List<VpcEndpointDetail>();
-        private List<VpcEndpointErrorDetail> _vpcEndpointErrorDetails = new List<VpcEndpointErrorDetail>();
+        private List<VpcEndpointDetail> _vpcEndpointDetails = AWSConfigs.InitializeCollections ? new List<VpcEndpointDetail>() : null;
+        private List<VpcEndpointErrorDetail> _vpcEndpointErrorDetails = AWSConfigs.InitializeCollections ? new List<VpcEndpointErrorDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property VpcEndpointDetails. 
@@ -51,7 +52,7 @@ namespace Amazon.OpenSearchServerless.Model
         // Check to see if VpcEndpointDetails property is set
         internal bool IsSetVpcEndpointDetails()
         {
-            return this._vpcEndpointDetails != null && this._vpcEndpointDetails.Count > 0; 
+            return this._vpcEndpointDetails != null && (this._vpcEndpointDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.OpenSearchServerless.Model
         // Check to see if VpcEndpointErrorDetails property is set
         internal bool IsSetVpcEndpointErrorDetails()
         {
-            return this._vpcEndpointErrorDetails != null && this._vpcEndpointErrorDetails.Count > 0; 
+            return this._vpcEndpointErrorDetails != null && (this._vpcEndpointErrorDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Rekognition.Model
         /// Enumerable containing all of the ProjectVersionDescriptions
         /// </summary>
         public IPaginatedEnumerable<ProjectVersionDescription> ProjectVersionDescriptions => 
-            new PaginatedResultKeyResponse<DescribeProjectVersionsResponse, ProjectVersionDescription>(this, (i) => i.ProjectVersionDescriptions);
+            new PaginatedResultKeyResponse<DescribeProjectVersionsResponse, ProjectVersionDescription>(this, (i) => i.ProjectVersionDescriptions ?? new List<ProjectVersionDescription>());
 
         internal DescribeProjectVersionsPaginator(IAmazonRekognition client, DescribeProjectVersionsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Rekognition.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeProjectVersionsResponse> IPaginator<DescribeProjectVersionsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeProjectVersionsResponse> IPaginator<DescribeProjectVersionsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

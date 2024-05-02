@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RedshiftDataAPIService.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.RedshiftDataAPIService.Model
     public partial class ListStatementsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<StatementData> _statements = new List<StatementData>();
+        private List<StatementData> _statements = AWSConfigs.InitializeCollections ? new List<StatementData>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -74,7 +75,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         // Check to see if Statements property is set
         internal bool IsSetStatements()
         {
-            return this._statements != null && this._statements.Count > 0; 
+            return this._statements != null && (this._statements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

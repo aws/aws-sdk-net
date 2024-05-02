@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Mgn.Model
 {
     /// <summary>
@@ -42,10 +43,10 @@ namespace Amazon.Mgn.Model
         private string _description;
         private string _documentIdentifier;
         private string _documentVersion;
-        private Dictionary<string, SsmExternalParameter> _externalParameters = new Dictionary<string, SsmExternalParameter>();
+        private Dictionary<string, SsmExternalParameter> _externalParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, SsmExternalParameter>() : null;
         private bool? _mustSucceedForCutover;
         private int? _order;
-        private Dictionary<string, List<SsmParameterStoreParameter>> _parameters = new Dictionary<string, List<SsmParameterStoreParameter>>();
+        private Dictionary<string, List<SsmParameterStoreParameter>> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, List<SsmParameterStoreParameter>>() : null;
         private string _sourceServerID;
         private int? _timeoutSeconds;
 
@@ -214,7 +215,7 @@ namespace Amazon.Mgn.Model
         // Check to see if ExternalParameters property is set
         internal bool IsSetExternalParameters()
         {
-            return this._externalParameters != null && this._externalParameters.Count > 0; 
+            return this._externalParameters != null && (this._externalParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -270,7 +271,7 @@ namespace Amazon.Mgn.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

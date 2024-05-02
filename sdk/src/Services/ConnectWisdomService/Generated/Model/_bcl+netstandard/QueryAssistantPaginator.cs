@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ConnectWisdomService.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ConnectWisdomService.Model
         /// Enumerable containing all of the Results
         /// </summary>
         public IPaginatedEnumerable<ResultData> Results => 
-            new PaginatedResultKeyResponse<QueryAssistantResponse, ResultData>(this, (i) => i.Results);
+            new PaginatedResultKeyResponse<QueryAssistantResponse, ResultData>(this, (i) => i.Results ?? new List<ResultData>());
 
         internal QueryAssistantPaginator(IAmazonConnectWisdomService client, QueryAssistantRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ConnectWisdomService.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<QueryAssistantResponse> IPaginator<QueryAssistantResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<QueryAssistantResponse> IPaginator<QueryAssistantResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

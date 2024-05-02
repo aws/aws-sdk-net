@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Glue.Model
     public partial class QuerySchemaVersionMetadataRequest : AmazonGlueRequest
     {
         private int? _maxResults;
-        private List<MetadataKeyValuePair> _metadataList = new List<MetadataKeyValuePair>();
+        private List<MetadataKeyValuePair> _metadataList = AWSConfigs.InitializeCollections ? new List<MetadataKeyValuePair>() : null;
         private string _nextToken;
         private SchemaId _schemaId;
         private string _schemaVersionId;
@@ -77,7 +78,7 @@ namespace Amazon.Glue.Model
         // Check to see if MetadataList property is set
         internal bool IsSetMetadataList()
         {
-            return this._metadataList != null && this._metadataList.Count > 0; 
+            return this._metadataList != null && (this._metadataList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

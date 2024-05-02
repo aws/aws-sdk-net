@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ChimeSDKMessaging.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.ChimeSDKMessaging.Model
     {
         private string _content;
         private string _contentType;
-        private Dictionary<string, MessageAttributeValue> _messageAttributes = new Dictionary<string, MessageAttributeValue>();
+        private Dictionary<string, MessageAttributeValue> _messageAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, MessageAttributeValue>() : null;
         private string _messageId;
         private string _metadata;
         private PushNotificationConfiguration _pushNotification;
@@ -104,7 +105,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         // Check to see if MessageAttributes property is set
         internal bool IsSetMessageAttributes()
         {
-            return this._messageAttributes != null && this._messageAttributes.Count > 0; 
+            return this._messageAttributes != null && (this._messageAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

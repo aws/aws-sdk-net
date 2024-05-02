@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.CloudDirectory.Model
         private string _directoryArn;
         private bool? _isUnique;
         private string _linkName;
-        private List<AttributeKey> _orderedIndexedAttributeList = new List<AttributeKey>();
+        private List<AttributeKey> _orderedIndexedAttributeList = AWSConfigs.InitializeCollections ? new List<AttributeKey>() : null;
         private ObjectReference _parentReference;
 
         /// <summary>
@@ -115,7 +116,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if OrderedIndexedAttributeList property is set
         internal bool IsSetOrderedIndexedAttributeList()
         {
-            return this._orderedIndexedAttributeList != null && this._orderedIndexedAttributeList.Count > 0; 
+            return this._orderedIndexedAttributeList != null && (this._orderedIndexedAttributeList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

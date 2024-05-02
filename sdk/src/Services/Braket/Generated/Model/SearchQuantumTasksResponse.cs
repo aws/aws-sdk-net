@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Braket.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Braket.Model
     public partial class SearchQuantumTasksResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<QuantumTaskSummary> _quantumTasks = new List<QuantumTaskSummary>();
+        private List<QuantumTaskSummary> _quantumTasks = AWSConfigs.InitializeCollections ? new List<QuantumTaskSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.Braket.Model
         // Check to see if QuantumTasks property is set
         internal bool IsSetQuantumTasks()
         {
-            return this._quantumTasks != null && this._quantumTasks.Count > 0; 
+            return this._quantumTasks != null && (this._quantumTasks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

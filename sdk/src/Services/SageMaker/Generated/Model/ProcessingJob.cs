@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.SageMaker.Model
         private AppSpecification _appSpecification;
         private string _autoMLJobArn;
         private DateTime? _creationTime;
-        private Dictionary<string, string> _environment = new Dictionary<string, string>();
+        private Dictionary<string, string> _environment = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _exitMessage;
         private ExperimentConfig _experimentConfig;
         private string _failureReason;
@@ -46,7 +47,7 @@ namespace Amazon.SageMaker.Model
         private string _monitoringScheduleArn;
         private NetworkConfig _networkConfig;
         private DateTime? _processingEndTime;
-        private List<ProcessingInput> _processingInputs = new List<ProcessingInput>();
+        private List<ProcessingInput> _processingInputs = AWSConfigs.InitializeCollections ? new List<ProcessingInput>() : null;
         private string _processingJobArn;
         private string _processingJobName;
         private ProcessingJobStatus _processingJobStatus;
@@ -55,7 +56,7 @@ namespace Amazon.SageMaker.Model
         private DateTime? _processingStartTime;
         private string _roleArn;
         private ProcessingStoppingCondition _stoppingCondition;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _trainingJobArn;
 
         /// <summary>
@@ -126,7 +127,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Environment property is set
         internal bool IsSetEnvironment()
         {
-            return this._environment != null && this._environment.Count > 0; 
+            return this._environment != null && (this._environment.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -270,7 +271,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ProcessingInputs property is set
         internal bool IsSetProcessingInputs()
         {
-            return this._processingInputs != null && this._processingInputs.Count > 0; 
+            return this._processingInputs != null && (this._processingInputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -429,7 +430,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

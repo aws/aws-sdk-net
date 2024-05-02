@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -65,6 +66,7 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetDescription())
@@ -82,7 +84,14 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetMaxCapacity())
                 {
                     context.Writer.WritePropertyName("MaxCapacity");
-                    context.Writer.Write(publicRequest.MaxCapacity.Value);
+                    if(StringUtils.IsSpecialDoubleValue(publicRequest.MaxCapacity.Value))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.MaxCapacity.Value));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.MaxCapacity.Value);
+                    }
                 }
 
                 if(publicRequest.IsSetMaxRetries())

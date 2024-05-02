@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.WAFV2.Model
     public partial class GetSampledRequestsResponse : AmazonWebServiceResponse
     {
         private long? _populationSize;
-        private List<SampledHTTPRequest> _sampledRequests = new List<SampledHTTPRequest>();
+        private List<SampledHTTPRequest> _sampledRequests = AWSConfigs.InitializeCollections ? new List<SampledHTTPRequest>() : null;
         private TimeWindow _timeWindow;
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if SampledRequests property is set
         internal bool IsSetSampledRequests()
         {
-            return this._sampledRequests != null && this._sampledRequests.Count > 0; 
+            return this._sampledRequests != null && (this._sampledRequests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

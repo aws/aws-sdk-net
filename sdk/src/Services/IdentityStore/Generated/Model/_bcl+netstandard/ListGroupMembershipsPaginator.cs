@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IdentityStore.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.IdentityStore.Model
         /// Enumerable containing all of the GroupMemberships
         /// </summary>
         public IPaginatedEnumerable<GroupMembership> GroupMemberships => 
-            new PaginatedResultKeyResponse<ListGroupMembershipsResponse, GroupMembership>(this, (i) => i.GroupMemberships);
+            new PaginatedResultKeyResponse<ListGroupMembershipsResponse, GroupMembership>(this, (i) => i.GroupMemberships ?? new List<GroupMembership>());
 
         internal ListGroupMembershipsPaginator(IAmazonIdentityStore client, ListGroupMembershipsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.IdentityStore.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListGroupMembershipsResponse> IPaginator<ListGroupMembershipsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListGroupMembershipsResponse> IPaginator<ListGroupMembershipsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

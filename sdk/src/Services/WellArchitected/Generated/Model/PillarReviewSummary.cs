@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
@@ -36,8 +37,8 @@ namespace Amazon.WellArchitected.Model
         private string _notes;
         private string _pillarId;
         private string _pillarName;
-        private Dictionary<string, int> _prioritizedRiskCounts = new Dictionary<string, int>();
-        private Dictionary<string, int> _riskCounts = new Dictionary<string, int>();
+        private Dictionary<string, int> _prioritizedRiskCounts = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
+        private Dictionary<string, int> _riskCounts = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
 
         /// <summary>
         /// Gets and sets the property Notes.
@@ -99,7 +100,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if PrioritizedRiskCounts property is set
         internal bool IsSetPrioritizedRiskCounts()
         {
-            return this._prioritizedRiskCounts != null && this._prioritizedRiskCounts.Count > 0; 
+            return this._prioritizedRiskCounts != null && (this._prioritizedRiskCounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -114,7 +115,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if RiskCounts property is set
         internal bool IsSetRiskCounts()
         {
-            return this._riskCounts != null && this._riskCounts.Count > 0; 
+            return this._riskCounts != null && (this._riskCounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

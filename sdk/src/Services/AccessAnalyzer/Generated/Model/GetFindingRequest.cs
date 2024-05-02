@@ -26,11 +26,15 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
     /// Container for the parameters to the GetFinding operation.
-    /// Retrieves information about the specified finding.
+    /// Retrieves information about the specified finding. GetFinding and GetFindingV2 both
+    /// use <c>access-analyzer:GetFinding</c> in the <c>Action</c> element of an IAM policy
+    /// statement. You must have permission to perform the <c>access-analyzer:GetFinding</c>
+    /// action.
     /// </summary>
     public partial class GetFindingRequest : AmazonAccessAnalyzerRequest
     {

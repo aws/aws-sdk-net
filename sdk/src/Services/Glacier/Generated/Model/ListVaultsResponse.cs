@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glacier.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Glacier.Model
     public partial class ListVaultsResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<DescribeVaultOutput> _vaultList = new List<DescribeVaultOutput>();
+        private List<DescribeVaultOutput> _vaultList = AWSConfigs.InitializeCollections ? new List<DescribeVaultOutput>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -70,7 +71,7 @@ namespace Amazon.Glacier.Model
         // Check to see if VaultList property is set
         internal bool IsSetVaultList()
         {
-            return this._vaultList != null && this._vaultList.Count > 0; 
+            return this._vaultList != null && (this._vaultList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

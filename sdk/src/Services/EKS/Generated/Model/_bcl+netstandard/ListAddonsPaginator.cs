@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EKS.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.EKS.Model
         /// Enumerable containing all of the Addons
         /// </summary>
         public IPaginatedEnumerable<string> Addons => 
-            new PaginatedResultKeyResponse<ListAddonsResponse, string>(this, (i) => i.Addons);
+            new PaginatedResultKeyResponse<ListAddonsResponse, string>(this, (i) => i.Addons ?? new List<string>());
 
         internal ListAddonsPaginator(IAmazonEKS client, ListAddonsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.EKS.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListAddonsResponse> IPaginator<ListAddonsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListAddonsResponse> IPaginator<ListAddonsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

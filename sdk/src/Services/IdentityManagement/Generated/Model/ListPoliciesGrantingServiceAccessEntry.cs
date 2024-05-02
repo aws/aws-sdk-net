@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.IdentityManagement.Model
     /// </summary>
     public partial class ListPoliciesGrantingServiceAccessEntry
     {
-        private List<PolicyGrantingServiceAccess> _policies = new List<PolicyGrantingServiceAccess>();
+        private List<PolicyGrantingServiceAccess> _policies = AWSConfigs.InitializeCollections ? new List<PolicyGrantingServiceAccess>() : null;
         private string _serviceNamespace;
 
         /// <summary>
@@ -58,7 +59,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Policies property is set
         internal bool IsSetPolicies()
         {
-            return this._policies != null && this._policies.Count > 0; 
+            return this._policies != null && (this._policies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
@@ -33,11 +34,11 @@ namespace Amazon.ServiceCatalog.Model
     /// </summary>
     public partial class DescribeProductAsAdminResponse : AmazonWebServiceResponse
     {
-        private List<BudgetDetail> _budgets = new List<BudgetDetail>();
+        private List<BudgetDetail> _budgets = AWSConfigs.InitializeCollections ? new List<BudgetDetail>() : null;
         private ProductViewDetail _productViewDetail;
-        private List<ProvisioningArtifactSummary> _provisioningArtifactSummaries = new List<ProvisioningArtifactSummary>();
-        private List<TagOptionDetail> _tagOptions = new List<TagOptionDetail>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<ProvisioningArtifactSummary> _provisioningArtifactSummaries = AWSConfigs.InitializeCollections ? new List<ProvisioningArtifactSummary>() : null;
+        private List<TagOptionDetail> _tagOptions = AWSConfigs.InitializeCollections ? new List<TagOptionDetail>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Budgets. 
@@ -54,7 +55,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if Budgets property is set
         internal bool IsSetBudgets()
         {
-            return this._budgets != null && this._budgets.Count > 0; 
+            return this._budgets != null && (this._budgets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if ProvisioningArtifactSummaries property is set
         internal bool IsSetProvisioningArtifactSummaries()
         {
-            return this._provisioningArtifactSummaries != null && this._provisioningArtifactSummaries.Count > 0; 
+            return this._provisioningArtifactSummaries != null && (this._provisioningArtifactSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -109,7 +110,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if TagOptions property is set
         internal bool IsSetTagOptions()
         {
-            return this._tagOptions != null && this._tagOptions.Count > 0; 
+            return this._tagOptions != null && (this._tagOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -128,7 +129,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

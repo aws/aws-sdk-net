@@ -293,7 +293,7 @@
     <property>Amazon.IVSRealTime.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:[a-z-]/[a-zA-Z0-9-]+$</pattern>
+    <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:[a-z-]/[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVSRealTime.Model.StartCompositionRequest.IdempotencyToken</property>
@@ -317,13 +317,13 @@
     <property>Amazon.IVSRealTime.Model.TagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:[a-z-]/[a-zA-Z0-9-]+$</pattern>
+    <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:[a-z-]/[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVSRealTime.Model.UntagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:[a-z-]/[a-zA-Z0-9-]+$</pattern>
+    <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:[a-z-]/[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVSRealTime.Model.UpdateStageRequest.Arn</property>
@@ -341,7 +341,7 @@
     <property>Amazon.IVSRealTime.Model.ChannelDestinationConfiguration.ChannelArn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:aws:[is]vs:[a-z0-9-]+:[0-9]+:channel/[a-zA-Z0-9-]+$</pattern>
+    <pattern>^arn:aws:ivs:[a-z0-9-]+:[0-9]+:channel/[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVSRealTime.Model.ChannelDestinationConfiguration.EncoderConfigurationArn</property>
@@ -422,6 +422,10 @@
     <pattern>^[a-zA-Z0-9-_]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.GridConfiguration.GridGap</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IVSRealTime.Model.Participant.BrowserName</property>
     <min>0</min>
     <max>128</max>
@@ -498,6 +502,34 @@
     <property>Amazon.IVSRealTime.Model.ParticipantTokenConfiguration.UserId</property>
     <min>0</min>
     <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.PipConfiguration.FeaturedParticipantAttribute</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.PipConfiguration.GridGap</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.PipConfiguration.PipHeight</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.PipConfiguration.PipOffset</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.PipConfiguration.PipParticipantAttribute</property>
+    <min>0</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-_]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IVSRealTime.Model.PipConfiguration.PipWidth</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVSRealTime.Model.S3DestinationConfiguration.StorageConfigurationArn</property>

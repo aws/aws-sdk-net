@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// </summary>
     public partial class AttachLoadBalancerToSubnetsResponse : AmazonWebServiceResponse
     {
-        private List<string> _subnets = new List<string>();
+        private List<string> _subnets = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Subnets. 
@@ -50,7 +51,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if Subnets property is set
         internal bool IsSetSubnets()
         {
-            return this._subnets != null && this._subnets.Count > 0; 
+            return this._subnets != null && (this._subnets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

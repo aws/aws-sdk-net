@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
@@ -41,6 +42,7 @@ namespace Amazon.Route53Resolver.Model
         private string _creationTime;
         private string _creatorRequestId;
         private string _firewallDomainListId;
+        private FirewallDomainRedirectionAction _firewallDomainRedirectionAction;
         private string _firewallRuleGroupId;
         private string _modificationTime;
         private string _name;
@@ -236,6 +238,37 @@ namespace Amazon.Route53Resolver.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FirewallDomainRedirectionAction. 
+        /// <para>
+        ///  How you want the the rule to evaluate DNS redirection in the DNS redirection chain,
+        /// such as CNAME, DNAME, ot ALIAS. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>Inspect_Redirection_Domain </c>(Default) inspects all domains in the redirection
+        /// chain. The individual domains in the redirection chain must be added to the allow
+        /// domain list.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>Trust_Redirection_Domain </c> inspects only the first domain in the redirection
+        /// chain. You don't need to add the subsequent domains in the domain in the redirection
+        /// list to the domain alloww list.
+        /// </para>
+        /// </summary>
+        public FirewallDomainRedirectionAction FirewallDomainRedirectionAction
+        {
+            get { return this._firewallDomainRedirectionAction; }
+            set { this._firewallDomainRedirectionAction = value; }
+        }
+
+        // Check to see if FirewallDomainRedirectionAction property is set
+        internal bool IsSetFirewallDomainRedirectionAction()
+        {
+            return this._firewallDomainRedirectionAction != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FirewallRuleGroupId. 
         /// <para>
         /// The unique identifier of the firewall rule group of the rule. 
@@ -369,6 +402,13 @@ namespace Amazon.Route53Resolver.Model
         ///  </li> <li> 
         /// <para>
         /// TXT: Verifies email senders and application-specific values.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A query type you define by using the DNS type ID, for example 28 for AAAA. The values
+        /// must be defined as TYPENUMBER, where the NUMBER can be 1-65334, for example, TYPE28.
+        /// For more information, see <a href="https://en.wikipedia.org/wiki/List_of_DNS_record_types">List
+        /// of DNS record types</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

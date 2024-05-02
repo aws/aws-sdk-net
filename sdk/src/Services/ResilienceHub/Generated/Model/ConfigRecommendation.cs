@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
@@ -34,15 +35,15 @@ namespace Amazon.ResilienceHub.Model
     public partial class ConfigRecommendation
     {
         private string _appComponentName;
-        private Dictionary<string, DisruptionCompliance> _compliance = new Dictionary<string, DisruptionCompliance>();
+        private Dictionary<string, DisruptionCompliance> _compliance = AWSConfigs.InitializeCollections ? new Dictionary<string, DisruptionCompliance>() : null;
         private Cost _cost;
         private string _description;
         private HaArchitecture _haArchitecture;
         private string _name;
         private ConfigRecommendationOptimizationType _optimizationType;
-        private Dictionary<string, RecommendationDisruptionCompliance> _recommendationCompliance = new Dictionary<string, RecommendationDisruptionCompliance>();
+        private Dictionary<string, RecommendationDisruptionCompliance> _recommendationCompliance = AWSConfigs.InitializeCollections ? new Dictionary<string, RecommendationDisruptionCompliance>() : null;
         private string _referenceId;
-        private List<string> _suggestedChanges = new List<string>();
+        private List<string> _suggestedChanges = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AppComponentName. 
@@ -78,7 +79,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if Compliance property is set
         internal bool IsSetCompliance()
         {
-            return this._compliance != null && this._compliance.Count > 0; 
+            return this._compliance != null && (this._compliance.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -190,7 +191,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if RecommendationCompliance property is set
         internal bool IsSetRecommendationCompliance()
         {
-            return this._recommendationCompliance != null && this._recommendationCompliance.Count > 0; 
+            return this._recommendationCompliance != null && (this._recommendationCompliance.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -227,7 +228,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if SuggestedChanges property is set
         internal bool IsSetSuggestedChanges()
         {
-            return this._suggestedChanges != null && this._suggestedChanges.Count > 0; 
+            return this._suggestedChanges != null && (this._suggestedChanges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

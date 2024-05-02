@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EMRServerless.Model
 {
     /// <summary>
@@ -40,19 +41,19 @@ namespace Amazon.EMRServerless.Model
         private AutoStopConfig _autoStopConfiguration;
         private DateTime? _createdAt;
         private ImageConfiguration _imageConfiguration;
-        private Dictionary<string, InitialCapacityConfig> _initialCapacity = new Dictionary<string, InitialCapacityConfig>();
+        private Dictionary<string, InitialCapacityConfig> _initialCapacity = AWSConfigs.InitializeCollections ? new Dictionary<string, InitialCapacityConfig>() : null;
         private MaximumAllowedResources _maximumCapacity;
         private MonitoringConfiguration _monitoringConfiguration;
         private string _name;
         private NetworkConfiguration _networkConfiguration;
         private string _releaseLabel;
-        private List<Configuration> _runtimeConfiguration = new List<Configuration>();
+        private List<Configuration> _runtimeConfiguration = AWSConfigs.InitializeCollections ? new List<Configuration>() : null;
         private ApplicationState _state;
         private string _stateDetails;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _type;
         private DateTime? _updatedAt;
-        private Dictionary<string, WorkerTypeSpecification> _workerTypeSpecifications = new Dictionary<string, WorkerTypeSpecification>();
+        private Dictionary<string, WorkerTypeSpecification> _workerTypeSpecifications = AWSConfigs.InitializeCollections ? new Dictionary<string, WorkerTypeSpecification>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
@@ -200,7 +201,7 @@ namespace Amazon.EMRServerless.Model
         // Check to see if InitialCapacity property is set
         internal bool IsSetInitialCapacity()
         {
-            return this._initialCapacity != null && this._initialCapacity.Count > 0; 
+            return this._initialCapacity != null && (this._initialCapacity.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -314,7 +315,7 @@ namespace Amazon.EMRServerless.Model
         // Check to see if RuntimeConfiguration property is set
         internal bool IsSetRuntimeConfiguration()
         {
-            return this._runtimeConfiguration != null && this._runtimeConfiguration.Count > 0; 
+            return this._runtimeConfiguration != null && (this._runtimeConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -371,7 +372,7 @@ namespace Amazon.EMRServerless.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -427,7 +428,7 @@ namespace Amazon.EMRServerless.Model
         // Check to see if WorkerTypeSpecifications property is set
         internal bool IsSetWorkerTypeSpecifications()
         {
-            return this._workerTypeSpecifications != null && this._workerTypeSpecifications.Count > 0; 
+            return this._workerTypeSpecifications != null && (this._workerTypeSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

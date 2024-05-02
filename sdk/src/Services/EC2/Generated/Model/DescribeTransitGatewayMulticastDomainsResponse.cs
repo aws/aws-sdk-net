@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EC2.Model
     public partial class DescribeTransitGatewayMulticastDomainsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TransitGatewayMulticastDomain> _transitGatewayMulticastDomains = new List<TransitGatewayMulticastDomain>();
+        private List<TransitGatewayMulticastDomain> _transitGatewayMulticastDomains = AWSConfigs.InitializeCollections ? new List<TransitGatewayMulticastDomain>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.EC2.Model
         // Check to see if TransitGatewayMulticastDomains property is set
         internal bool IsSetTransitGatewayMulticastDomains()
         {
-            return this._transitGatewayMulticastDomains != null && this._transitGatewayMulticastDomains.Count > 0; 
+            return this._transitGatewayMulticastDomains != null && (this._transitGatewayMulticastDomains.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

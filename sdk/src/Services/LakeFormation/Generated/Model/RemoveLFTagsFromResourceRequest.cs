@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LakeFormation.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.LakeFormation.Model
     public partial class RemoveLFTagsFromResourceRequest : AmazonLakeFormationRequest
     {
         private string _catalogId;
-        private List<LFTagPair> _lfTags = new List<LFTagPair>();
+        private List<LFTagPair> _lfTags = AWSConfigs.InitializeCollections ? new List<LFTagPair>() : null;
         private Resource _resource;
 
         /// <summary>
@@ -77,7 +78,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if LFTags property is set
         internal bool IsSetLFTags()
         {
-            return this._lfTags != null && this._lfTags.Count > 0; 
+            return this._lfTags != null && (this._lfTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

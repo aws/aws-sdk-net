@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -35,8 +36,8 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class FeaturedResultsItem
     {
-        private List<AdditionalResultAttribute> _additionalAttributes = new List<AdditionalResultAttribute>();
-        private List<DocumentAttribute> _documentAttributes = new List<DocumentAttribute>();
+        private List<AdditionalResultAttribute> _additionalAttributes = AWSConfigs.InitializeCollections ? new List<AdditionalResultAttribute>() : null;
+        private List<DocumentAttribute> _documentAttributes = AWSConfigs.InitializeCollections ? new List<DocumentAttribute>() : null;
         private TextWithHighlights _documentExcerpt;
         private string _documentId;
         private TextWithHighlights _documentTitle;
@@ -60,7 +61,7 @@ namespace Amazon.Kendra.Model
         // Check to see if AdditionalAttributes property is set
         internal bool IsSetAdditionalAttributes()
         {
-            return this._additionalAttributes != null && this._additionalAttributes.Count > 0; 
+            return this._additionalAttributes != null && (this._additionalAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -80,7 +81,7 @@ namespace Amazon.Kendra.Model
         // Check to see if DocumentAttributes property is set
         internal bool IsSetDocumentAttributes()
         {
-            return this._documentAttributes != null && this._documentAttributes.Count > 0; 
+            return this._documentAttributes != null && (this._documentAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the Applications
         /// </summary>
         public IPaginatedEnumerable<Application> Applications => 
-            new PaginatedResultKeyResponse<ListSecurityProfileApplicationsResponse, Application>(this, (i) => i.Applications);
+            new PaginatedResultKeyResponse<ListSecurityProfileApplicationsResponse, Application>(this, (i) => i.Applications ?? new List<Application>());
 
         internal ListSecurityProfileApplicationsPaginator(IAmazonConnect client, ListSecurityProfileApplicationsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Connect.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListSecurityProfileApplicationsResponse> IPaginator<ListSecurityProfileApplicationsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListSecurityProfileApplicationsResponse> IPaginator<ListSecurityProfileApplicationsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

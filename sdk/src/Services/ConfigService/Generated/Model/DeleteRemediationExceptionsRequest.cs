@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -43,7 +44,7 @@ namespace Amazon.ConfigService.Model
     public partial class DeleteRemediationExceptionsRequest : AmazonConfigServiceRequest
     {
         private string _configRuleName;
-        private List<RemediationExceptionResourceKey> _resourceKeys = new List<RemediationExceptionResourceKey>();
+        private List<RemediationExceptionResourceKey> _resourceKeys = AWSConfigs.InitializeCollections ? new List<RemediationExceptionResourceKey>() : null;
 
         /// <summary>
         /// Gets and sets the property ConfigRuleName. 
@@ -82,7 +83,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if ResourceKeys property is set
         internal bool IsSetResourceKeys()
         {
-            return this._resourceKeys != null && this._resourceKeys.Count > 0; 
+            return this._resourceKeys != null && (this._resourceKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

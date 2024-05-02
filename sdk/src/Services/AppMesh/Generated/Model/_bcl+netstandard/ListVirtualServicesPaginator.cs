@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.AppMesh.Model
         /// Enumerable containing all of the VirtualServices
         /// </summary>
         public IPaginatedEnumerable<VirtualServiceRef> VirtualServices => 
-            new PaginatedResultKeyResponse<ListVirtualServicesResponse, VirtualServiceRef>(this, (i) => i.VirtualServices);
+            new PaginatedResultKeyResponse<ListVirtualServicesResponse, VirtualServiceRef>(this, (i) => i.VirtualServices ?? new List<VirtualServiceRef>());
 
         internal ListVirtualServicesPaginator(IAmazonAppMesh client, ListVirtualServicesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.AppMesh.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListVirtualServicesResponse> IPaginator<ListVirtualServicesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListVirtualServicesResponse> IPaginator<ListVirtualServicesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

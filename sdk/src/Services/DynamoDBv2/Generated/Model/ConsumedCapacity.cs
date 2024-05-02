@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
@@ -38,8 +39,8 @@ namespace Amazon.DynamoDBv2.Model
     public partial class ConsumedCapacity
     {
         private double? _capacityUnits;
-        private Dictionary<string, Capacity> _globalSecondaryIndexes = new Dictionary<string, Capacity>();
-        private Dictionary<string, Capacity> _localSecondaryIndexes = new Dictionary<string, Capacity>();
+        private Dictionary<string, Capacity> _globalSecondaryIndexes = AWSConfigs.InitializeCollections ? new Dictionary<string, Capacity>() : null;
+        private Dictionary<string, Capacity> _localSecondaryIndexes = AWSConfigs.InitializeCollections ? new Dictionary<string, Capacity>() : null;
         private double? _readCapacityUnits;
         private Capacity _table;
         private string _tableName;
@@ -78,7 +79,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if GlobalSecondaryIndexes property is set
         internal bool IsSetGlobalSecondaryIndexes()
         {
-            return this._globalSecondaryIndexes != null && this._globalSecondaryIndexes.Count > 0; 
+            return this._globalSecondaryIndexes != null && (this._globalSecondaryIndexes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -96,7 +97,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if LocalSecondaryIndexes property is set
         internal bool IsSetLocalSecondaryIndexes()
         {
-            return this._localSecondaryIndexes != null && this._localSecondaryIndexes.Count > 0; 
+            return this._localSecondaryIndexes != null && (this._localSecondaryIndexes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -138,10 +139,12 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property TableName. 
         /// <para>
-        /// The name of the table that was affected by the operation.
+        /// The name of the table that was affected by the operation. If you had specified the
+        /// Amazon Resource Name (ARN) of a table in the input, you'll see the table ARN in the
+        /// response.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=255)]
+        [AWSProperty(Min=1, Max=1024)]
         public string TableName
         {
             get { return this._tableName; }

@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(S3InputFormatConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetS3InputFileType())
             {
                 context.Writer.WritePropertyName("s3InputFileType");

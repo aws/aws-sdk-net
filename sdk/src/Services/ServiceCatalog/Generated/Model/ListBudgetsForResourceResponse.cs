@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ServiceCatalog.Model
     /// </summary>
     public partial class ListBudgetsForResourceResponse : AmazonWebServiceResponse
     {
-        private List<BudgetDetail> _budgets = new List<BudgetDetail>();
+        private List<BudgetDetail> _budgets = AWSConfigs.InitializeCollections ? new List<BudgetDetail>() : null;
         private string _nextPageToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if Budgets property is set
         internal bool IsSetBudgets()
         {
-            return this._budgets != null && this._budgets.Count > 0; 
+            return this._budgets != null && (this._budgets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

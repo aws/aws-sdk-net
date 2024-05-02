@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppFabric.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AppFabric.Model
     /// </summary>
     public partial class StartUserAccessTasksResponse : AmazonWebServiceResponse
     {
-        private List<UserAccessTaskItem> _userAccessTasksList = new List<UserAccessTaskItem>();
+        private List<UserAccessTaskItem> _userAccessTasksList = AWSConfigs.InitializeCollections ? new List<UserAccessTaskItem>() : null;
 
         /// <summary>
         /// Gets and sets the property UserAccessTasksList. 
@@ -50,7 +51,7 @@ namespace Amazon.AppFabric.Model
         // Check to see if UserAccessTasksList property is set
         internal bool IsSetUserAccessTasksList()
         {
-            return this._userAccessTasksList != null && this._userAccessTasksList.Count > 0; 
+            return this._userAccessTasksList != null && (this._userAccessTasksList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

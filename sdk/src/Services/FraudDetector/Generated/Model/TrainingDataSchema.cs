@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FraudDetector.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.FraudDetector.Model
     public partial class TrainingDataSchema
     {
         private LabelSchema _labelSchema;
-        private List<string> _modelVariables = new List<string>();
+        private List<string> _modelVariables = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property LabelSchema.
@@ -67,7 +68,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if ModelVariables property is set
         internal bool IsSetModelVariables()
         {
-            return this._modelVariables != null && this._modelVariables.Count > 0; 
+            return this._modelVariables != null && (this._modelVariables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class ListProjectMembershipsResponse : AmazonWebServiceResponse
     {
-        private List<ProjectMember> _members = new List<ProjectMember>();
+        private List<ProjectMember> _members = AWSConfigs.InitializeCollections ? new List<ProjectMember>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.DataZone.Model
         // Check to see if Members property is set
         internal bool IsSetMembers()
         {
-            return this._members != null && this._members.Count > 0; 
+            return this._members != null && (this._members.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

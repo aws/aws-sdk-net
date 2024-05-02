@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ElasticMapReduce.Model
     public partial class ListStudiosResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<StudioSummary> _studios = new List<StudioSummary>();
+        private List<StudioSummary> _studios = AWSConfigs.InitializeCollections ? new List<StudioSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -69,7 +70,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Studios property is set
         internal bool IsSetStudios()
         {
-            return this._studios != null && this._studios.Count > 0; 
+            return this._studios != null && (this._studios.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

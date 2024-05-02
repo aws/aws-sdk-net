@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeDhcpOptionsResponse : AmazonWebServiceResponse
     {
-        private List<DhcpOptions> _dhcpOptions = new List<DhcpOptions>();
+        private List<DhcpOptions> _dhcpOptions = AWSConfigs.InitializeCollections ? new List<DhcpOptions>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.EC2.Model
         // Check to see if DhcpOptions property is set
         internal bool IsSetDhcpOptions()
         {
-            return this._dhcpOptions != null && this._dhcpOptions.Count > 0; 
+            return this._dhcpOptions != null && (this._dhcpOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

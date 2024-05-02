@@ -146,7 +146,7 @@ namespace Amazon.Util
         /// <summary>
         /// The object persistence API relies on an internal cache of the DynamoDB table's metadata to construct and validate 
         /// requests. This controls how the cache key is derived, which influences when the SDK will call 
-        /// <see cref="IAmazonDynamoDB.DescribeTable(string)"/> internally to populate the cache.
+        /// IAmazonDynamoDB.DescribeTable(string) internally to populate the cache.
         /// </summary>
         /// <remarks>
         /// For <see cref="MetadataCachingMode.Default"/> the cache key will be a combination of the table name, credentials, region and service URL. 
@@ -161,7 +161,7 @@ namespace Amazon.Util
         /// </summary>
         /// <remarks>
         /// Setting this to true can avoid latency and thread starvation due to blocking asynchronous 
-        /// <see cref="IAmazonDynamoDB.DescribeTable(string)"/> calls that are used to populate the SDK's cache of 
+        /// IAmazonDynamoDB.DescribeTable(string) calls that are used to populate the SDK's cache of 
         /// table metadata. It requires that the table's index schema be accurately described via the above methods, 
         /// otherwise exceptions may be thrown and/or the results of certain DynamoDB operations may change.
         /// </remarks>

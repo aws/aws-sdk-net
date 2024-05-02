@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.DynamoDBv2.Model
         private string _autoScalingRoleArn;
         private long? _maximumUnits;
         private long? _minimumUnits;
-        private List<AutoScalingPolicyDescription> _scalingPolicies = new List<AutoScalingPolicyDescription>();
+        private List<AutoScalingPolicyDescription> _scalingPolicies = AWSConfigs.InitializeCollections ? new List<AutoScalingPolicyDescription>() : null;
 
         /// <summary>
         /// Gets and sets the property AutoScalingDisabled. 
@@ -130,7 +131,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if ScalingPolicies property is set
         internal bool IsSetScalingPolicies()
         {
-            return this._scalingPolicies != null && this._scalingPolicies.Count > 0; 
+            return this._scalingPolicies != null && (this._scalingPolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

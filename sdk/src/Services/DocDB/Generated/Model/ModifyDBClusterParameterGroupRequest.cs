@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DocDB.Model
 {
     /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.DocDB.Model
     public partial class ModifyDBClusterParameterGroupRequest : AmazonDocDBRequest
     {
         private string _dbClusterParameterGroupName;
-        private List<Parameter> _parameters = new List<Parameter>();
+        private List<Parameter> _parameters = AWSConfigs.InitializeCollections ? new List<Parameter>() : null;
 
         /// <summary>
         /// Gets and sets the property DBClusterParameterGroupName. 
@@ -91,7 +92,7 @@ namespace Amazon.DocDB.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

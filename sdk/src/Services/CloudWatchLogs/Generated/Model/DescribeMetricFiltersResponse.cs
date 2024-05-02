@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// </summary>
     public partial class DescribeMetricFiltersResponse : AmazonWebServiceResponse
     {
-        private List<MetricFilter> _metricFilters = new List<MetricFilter>();
+        private List<MetricFilter> _metricFilters = AWSConfigs.InitializeCollections ? new List<MetricFilter>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if MetricFilters property is set
         internal bool IsSetMetricFilters()
         {
-            return this._metricFilters != null && this._metricFilters.Count > 0; 
+            return this._metricFilters != null && (this._metricFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

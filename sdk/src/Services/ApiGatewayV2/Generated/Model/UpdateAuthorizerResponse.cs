@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ApiGatewayV2.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.ApiGatewayV2.Model
         private AuthorizerType _authorizerType;
         private string _authorizerUri;
         private bool? _enableSimpleResponses;
-        private List<string> _identitySource = new List<string>();
+        private List<string> _identitySource = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _identityValidationExpression;
         private JWTConfiguration _jwtConfiguration;
         private string _name;
@@ -229,7 +230,7 @@ namespace Amazon.ApiGatewayV2.Model
         // Check to see if IdentitySource property is set
         internal bool IsSetIdentitySource()
         {
-            return this._identitySource != null && this._identitySource.Count > 0; 
+            return this._identitySource != null && (this._identitySource.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

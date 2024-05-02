@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class StartAssociationsOnceRequest : AmazonSimpleSystemsManagementRequest
     {
-        private List<string> _associationIds = new List<string>();
+        private List<string> _associationIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AssociationIds. 
@@ -53,7 +54,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if AssociationIds property is set
         internal bool IsSetAssociationIds()
         {
-            return this._associationIds != null && this._associationIds.Count > 0; 
+            return this._associationIds != null && (this._associationIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

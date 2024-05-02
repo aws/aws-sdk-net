@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -84,6 +85,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AccessKeyMetadata/member", targetDepth))
                     {
                         var unmarshaller = AccessKeyMetadataUnmarshaller.Instance;
+                        if (response.AccessKeyMetadata == null)
+                        {
+                            response.AccessKeyMetadata = new List<AccessKeyMetadata>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.AccessKeyMetadata.Add(item);
                         continue;

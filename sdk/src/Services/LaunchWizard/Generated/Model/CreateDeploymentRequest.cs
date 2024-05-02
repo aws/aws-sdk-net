@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LaunchWizard.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.LaunchWizard.Model
         private string _deploymentPatternName;
         private bool? _dryRun;
         private string _name;
-        private Dictionary<string, string> _specifications = new Dictionary<string, string>();
+        private Dictionary<string, string> _specifications = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _workloadName;
 
         /// <summary>
@@ -121,7 +122,7 @@ namespace Amazon.LaunchWizard.Model
         // Check to see if Specifications property is set
         internal bool IsSetSpecifications()
         {
-            return this._specifications != null && this._specifications.Count > 0; 
+            return this._specifications != null && (this._specifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

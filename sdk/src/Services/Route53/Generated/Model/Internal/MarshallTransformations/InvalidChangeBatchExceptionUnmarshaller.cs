@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Route53.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -65,6 +66,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     if (context.TestExpression("messages/Message"))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (response.Messages == null)
+                        {
+                            response.Messages = new List<string>();
+                        }
                         response.Messages.Add(unmarshaller.Unmarshall(context));
                     }
                 }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Omics.Model
 {
     /// <summary>
@@ -42,19 +43,19 @@ namespace Amazon.Omics.Model
         private WorkflowEngine _engine;
         private string _id;
         private string _main;
-        private Dictionary<string, string> _metadata = new Dictionary<string, string>();
+        private Dictionary<string, string> _metadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _name;
-        private Dictionary<string, WorkflowParameter> _parameterTemplate = new Dictionary<string, WorkflowParameter>();
+        private Dictionary<string, WorkflowParameter> _parameterTemplate = AWSConfigs.InitializeCollections ? new Dictionary<string, WorkflowParameter>() : null;
         private WorkflowStatus _status;
         private string _statusMessage;
         private int? _storageCapacity;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private WorkflowType _type;
 
         /// <summary>
         /// Gets and sets the property Accelerators. 
         /// <para>
-        ///  The computational accelerator specified to run the workflow. 
+        /// The computational accelerator specified to run the workflow. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -224,7 +225,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
-        ///  Gets metadata for workflow. 
+        /// Gets metadata for workflow.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Metadata
@@ -236,7 +237,7 @@ namespace Amazon.Omics.Model
         // Check to see if Metadata property is set
         internal bool IsSetMetadata()
         {
-            return this._metadata != null && this._metadata.Count > 0; 
+            return this._metadata != null && (this._metadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -274,7 +275,7 @@ namespace Amazon.Omics.Model
         // Check to see if ParameterTemplate property is set
         internal bool IsSetParameterTemplate()
         {
-            return this._parameterTemplate != null && this._parameterTemplate.Count > 0; 
+            return this._parameterTemplate != null && (this._parameterTemplate.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -317,7 +318,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property StorageCapacity. 
         /// <para>
-        /// The workflow's storage capacity in gigabytes.
+        /// The workflow's storage capacity in gibibytes.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100000)]
@@ -348,7 +349,7 @@ namespace Amazon.Omics.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

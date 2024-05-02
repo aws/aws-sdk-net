@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECR.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ECR.Model
     /// </summary>
     public partial class DescribeImagesResponse : AmazonWebServiceResponse
     {
-        private List<ImageDetail> _imageDetails = new List<ImageDetail>();
+        private List<ImageDetail> _imageDetails = AWSConfigs.InitializeCollections ? new List<ImageDetail>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ECR.Model
         // Check to see if ImageDetails property is set
         internal bool IsSetImageDetails()
         {
-            return this._imageDetails != null && this._imageDetails.Count > 0; 
+            return this._imageDetails != null && (this._imageDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

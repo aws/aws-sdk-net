@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.SSOAdmin.Model
     /// </summary>
     public partial class AccessControlAttributeValue
     {
-        private List<string> _source = new List<string>();
+        private List<string> _source = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Source. 
@@ -53,7 +54,7 @@ namespace Amazon.SSOAdmin.Model
         // Check to see if Source property is set
         internal bool IsSetSource()
         {
-            return this._source != null && this._source.Count > 0; 
+            return this._source != null && (this._source.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
@@ -33,10 +34,10 @@ namespace Amazon.WellArchitected.Model
     /// </summary>
     public partial class Workload
     {
-        private List<string> _accountIds = new List<string>();
-        private List<string> _applications = new List<string>();
+        private List<string> _accountIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _applications = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _architecturalDesign;
-        private List<string> _awsRegions = new List<string>();
+        private List<string> _awsRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _description;
         private WorkloadDiscoveryConfig _discoveryConfig;
         private WorkloadEnvironment _environment;
@@ -44,18 +45,19 @@ namespace Amazon.WellArchitected.Model
         private string _industry;
         private string _industryType;
         private bool? _isReviewOwnerUpdateAcknowledged;
-        private List<string> _lenses = new List<string>();
-        private List<string> _nonAwsRegions = new List<string>();
+        private WorkloadJiraConfigurationOutput _jiraConfiguration;
+        private List<string> _lenses = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _nonAwsRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _notes;
         private string _owner;
-        private List<string> _pillarPriorities = new List<string>();
-        private Dictionary<string, int> _prioritizedRiskCounts = new Dictionary<string, int>();
-        private List<WorkloadProfile> _profiles = new List<WorkloadProfile>();
+        private List<string> _pillarPriorities = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, int> _prioritizedRiskCounts = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
+        private List<WorkloadProfile> _profiles = AWSConfigs.InitializeCollections ? new List<WorkloadProfile>() : null;
         private string _reviewOwner;
         private DateTime? _reviewRestrictionDate;
-        private Dictionary<string, int> _riskCounts = new Dictionary<string, int>();
+        private Dictionary<string, int> _riskCounts = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
         private string _shareInvitationId;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DateTime? _updatedAt;
         private string _workloadArn;
         private string _workloadId;
@@ -74,7 +76,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if AccountIds property is set
         internal bool IsSetAccountIds()
         {
-            return this._accountIds != null && this._accountIds.Count > 0; 
+            return this._accountIds != null && (this._accountIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -93,7 +95,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if Applications property is set
         internal bool IsSetApplications()
         {
-            return this._applications != null && this._applications.Count > 0; 
+            return this._applications != null && (this._applications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -125,7 +127,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if AwsRegions property is set
         internal bool IsSetAwsRegions()
         {
-            return this._awsRegions != null && this._awsRegions.Count > 0; 
+            return this._awsRegions != null && (this._awsRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -249,6 +251,24 @@ namespace Amazon.WellArchitected.Model
         }
 
         /// <summary>
+        /// Gets and sets the property JiraConfiguration. 
+        /// <para>
+        /// Jira configuration for a specific workload.
+        /// </para>
+        /// </summary>
+        public WorkloadJiraConfigurationOutput JiraConfiguration
+        {
+            get { return this._jiraConfiguration; }
+            set { this._jiraConfiguration = value; }
+        }
+
+        // Check to see if JiraConfiguration property is set
+        internal bool IsSetJiraConfiguration()
+        {
+            return this._jiraConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Lenses.
         /// </summary>
         public List<string> Lenses
@@ -260,7 +280,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if Lenses property is set
         internal bool IsSetLenses()
         {
-            return this._lenses != null && this._lenses.Count > 0; 
+            return this._lenses != null && (this._lenses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -276,7 +296,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if NonAwsRegions property is set
         internal bool IsSetNonAwsRegions()
         {
-            return this._nonAwsRegions != null && this._nonAwsRegions.Count > 0; 
+            return this._nonAwsRegions != null && (this._nonAwsRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -323,7 +343,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if PillarPriorities property is set
         internal bool IsSetPillarPriorities()
         {
-            return this._pillarPriorities != null && this._pillarPriorities.Count > 0; 
+            return this._pillarPriorities != null && (this._pillarPriorities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -338,7 +358,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if PrioritizedRiskCounts property is set
         internal bool IsSetPrioritizedRiskCounts()
         {
-            return this._prioritizedRiskCounts != null && this._prioritizedRiskCounts.Count > 0; 
+            return this._prioritizedRiskCounts != null && (this._prioritizedRiskCounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -357,7 +377,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if Profiles property is set
         internal bool IsSetProfiles()
         {
-            return this._profiles != null && this._profiles.Count > 0; 
+            return this._profiles != null && (this._profiles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -403,7 +423,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if RiskCounts property is set
         internal bool IsSetRiskCounts()
         {
-            return this._riskCounts != null && this._riskCounts.Count > 0; 
+            return this._riskCounts != null && (this._riskCounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -440,7 +460,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Chatbot.Model
 {
     /// <summary>
@@ -35,14 +36,14 @@ namespace Amazon.Chatbot.Model
     {
         private string _chatConfigurationArn;
         private string _configurationName;
-        private List<string> _guardrailPolicyArns = new List<string>();
+        private List<string> _guardrailPolicyArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _iamRoleArn;
         private string _loggingLevel;
         private string _slackChannelId;
         private string _slackChannelName;
         private string _slackTeamId;
         private string _slackTeamName;
-        private List<string> _snsTopicArns = new List<string>();
+        private List<string> _snsTopicArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _userAuthorizationRequired;
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace Amazon.Chatbot.Model
         // Check to see if GuardrailPolicyArns property is set
         internal bool IsSetGuardrailPolicyArns()
         {
-            return this._guardrailPolicyArns != null && this._guardrailPolicyArns.Count > 0; 
+            return this._guardrailPolicyArns != null && (this._guardrailPolicyArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -210,7 +211,7 @@ namespace Amazon.Chatbot.Model
         // Check to see if SnsTopicArns property is set
         internal bool IsSetSnsTopicArns()
         {
-            return this._snsTopicArns != null && this._snsTopicArns.Count > 0; 
+            return this._snsTopicArns != null && (this._snsTopicArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

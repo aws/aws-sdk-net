@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Pinpoint.Model
     /// </summary>
     public partial class SegmentImportResource
     {
-        private Dictionary<string, int> _channelCounts = new Dictionary<string, int>();
+        private Dictionary<string, int> _channelCounts = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
         private string _externalId;
         private Format _format;
         private string _roleArn;
@@ -57,7 +58,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if ChannelCounts property is set
         internal bool IsSetChannelCounts()
         {
-            return this._channelCounts != null && this._channelCounts.Count > 0; 
+            return this._channelCounts != null && (this._channelCounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

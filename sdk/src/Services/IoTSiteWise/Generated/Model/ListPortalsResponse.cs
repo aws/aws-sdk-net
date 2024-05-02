@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IoTSiteWise.Model
     public partial class ListPortalsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PortalSummary> _portalSummaries = new List<PortalSummary>();
+        private List<PortalSummary> _portalSummaries = AWSConfigs.InitializeCollections ? new List<PortalSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if PortalSummaries property is set
         internal bool IsSetPortalSummaries()
         {
-            return this._portalSummaries != null && this._portalSummaries.Count > 0; 
+            return this._portalSummaries != null && (this._portalSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

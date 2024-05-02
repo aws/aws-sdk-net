@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
@@ -47,7 +48,7 @@ namespace Amazon.IdentityManagement.Model
     public partial class UntagServerCertificateRequest : AmazonIdentityManagementServiceRequest
     {
         private string _serverCertificateName;
-        private List<string> _tagKeys = new List<string>();
+        private List<string> _tagKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ServerCertificateName. 
@@ -91,7 +92,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if TagKeys property is set
         internal bool IsSetTagKeys()
         {
-            return this._tagKeys != null && this._tagKeys.Count > 0; 
+            return this._tagKeys != null && (this._tagKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

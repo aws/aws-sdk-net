@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class GetRelationalDatabaseLogStreamsResponse : AmazonWebServiceResponse
     {
-        private List<string> _logStreams = new List<string>();
+        private List<string> _logStreams = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property LogStreams. 
@@ -50,7 +51,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if LogStreams property is set
         internal bool IsSetLogStreams()
         {
-            return this._logStreams != null && this._logStreams.Count > 0; 
+            return this._logStreams != null && (this._logStreams.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Lambda.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Lambda.Model
         /// Enumerable containing all of the Layers
         /// </summary>
         public IPaginatedEnumerable<LayersListItem> Layers => 
-            new PaginatedResultKeyResponse<ListLayersResponse, LayersListItem>(this, (i) => i.Layers);
+            new PaginatedResultKeyResponse<ListLayersResponse, LayersListItem>(this, (i) => i.Layers ?? new List<LayersListItem>());
 
         internal ListLayersPaginator(IAmazonLambda client, ListLayersRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Lambda.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListLayersResponse> IPaginator<ListLayersResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListLayersResponse> IPaginator<ListLayersResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CloudDirectory.Model
     /// </summary>
     public partial class ListFacetNamesResponse : AmazonWebServiceResponse
     {
-        private List<string> _facetNames = new List<string>();
+        private List<string> _facetNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if FacetNames property is set
         internal bool IsSetFacetNames()
         {
-            return this._facetNames != null && this._facetNames.Count > 0; 
+            return this._facetNames != null && (this._facetNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

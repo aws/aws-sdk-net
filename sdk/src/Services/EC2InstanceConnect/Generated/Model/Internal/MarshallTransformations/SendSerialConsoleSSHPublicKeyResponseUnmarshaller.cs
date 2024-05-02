@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2InstanceConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -121,6 +122,10 @@ namespace Amazon.EC2InstanceConnect.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("SerialConsoleSessionUnavailableException"))
                 {
                     return SerialConsoleSessionUnavailableExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("SerialConsoleSessionUnsupportedException"))
+                {
+                    return SerialConsoleSessionUnsupportedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceException"))
                 {

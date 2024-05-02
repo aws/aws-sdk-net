@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class GetDataflowGraphResponse : AmazonWebServiceResponse
     {
-        private List<CodeGenEdge> _dagEdges = new List<CodeGenEdge>();
-        private List<CodeGenNode> _dagNodes = new List<CodeGenNode>();
+        private List<CodeGenEdge> _dagEdges = AWSConfigs.InitializeCollections ? new List<CodeGenEdge>() : null;
+        private List<CodeGenNode> _dagNodes = AWSConfigs.InitializeCollections ? new List<CodeGenNode>() : null;
 
         /// <summary>
         /// Gets and sets the property DagEdges. 
@@ -51,7 +52,7 @@ namespace Amazon.Glue.Model
         // Check to see if DagEdges property is set
         internal bool IsSetDagEdges()
         {
-            return this._dagEdges != null && this._dagEdges.Count > 0; 
+            return this._dagEdges != null && (this._dagEdges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.Glue.Model
         // Check to see if DagNodes property is set
         internal bool IsSetDagNodes()
         {
-            return this._dagNodes != null && this._dagNodes.Count > 0; 
+            return this._dagNodes != null && (this._dagNodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

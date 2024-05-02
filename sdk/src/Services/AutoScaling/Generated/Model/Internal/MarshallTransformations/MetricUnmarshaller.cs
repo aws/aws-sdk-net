@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -57,6 +58,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Dimensions/member", targetDepth))
                     {
                         var unmarshaller = MetricDimensionUnmarshaller.Instance;
+                        if (unmarshalledObject.Dimensions == null)
+                        {
+                            unmarshalledObject.Dimensions = new List<MetricDimension>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Dimensions.Add(item);
                         continue;

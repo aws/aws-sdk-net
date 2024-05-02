@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Connect.Model
     {
         private SearchContactsMatchType _matchType;
         private ParticipantRole _participantRole;
-        private List<string> _searchText = new List<string>();
+        private List<string> _searchText = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property MatchType. 
@@ -93,7 +94,7 @@ namespace Amazon.Connect.Model
         // Check to see if SearchText property is set
         internal bool IsSetSearchText()
         {
-            return this._searchText != null && this._searchText.Count > 0; 
+            return this._searchText != null && (this._searchText.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

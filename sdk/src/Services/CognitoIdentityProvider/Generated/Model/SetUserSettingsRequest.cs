@@ -27,6 +27,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     public partial class SetUserSettingsRequest : AmazonCognitoIdentityProviderRequest
     {
         private string _accessToken;
-        private List<MFAOptionType> _mfaOptions = new List<MFAOptionType>();
+        private List<MFAOptionType> _mfaOptions = AWSConfigs.InitializeCollections ? new List<MFAOptionType>() : null;
 
         /// <summary>
         /// Gets and sets the property AccessToken. 
@@ -92,7 +93,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if MFAOptions property is set
         internal bool IsSetMFAOptions()
         {
-            return this._mfaOptions != null && this._mfaOptions.Count > 0; 
+            return this._mfaOptions != null && (this._mfaOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

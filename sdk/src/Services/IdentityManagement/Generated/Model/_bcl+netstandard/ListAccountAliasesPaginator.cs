@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.IdentityManagement.Model
         /// Enumerable containing all of the AccountAliases
         /// </summary>
         public IPaginatedEnumerable<string> AccountAliases => 
-            new PaginatedResultKeyResponse<ListAccountAliasesResponse, string>(this, (i) => i.AccountAliases);
+            new PaginatedResultKeyResponse<ListAccountAliasesResponse, string>(this, (i) => i.AccountAliases ?? new List<string>());
 
         internal ListAccountAliasesPaginator(IAmazonIdentityManagementService client, ListAccountAliasesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.IdentityManagement.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListAccountAliasesResponse> IPaginator<ListAccountAliasesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListAccountAliasesResponse> IPaginator<ListAccountAliasesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

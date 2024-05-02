@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Finspace.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Finspace.Model
     /// </summary>
     public partial class ListKxChangesetsResponse : AmazonWebServiceResponse
     {
-        private List<KxChangesetListEntry> _kxChangesets = new List<KxChangesetListEntry>();
+        private List<KxChangesetListEntry> _kxChangesets = AWSConfigs.InitializeCollections ? new List<KxChangesetListEntry>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Finspace.Model
         // Check to see if KxChangesets property is set
         internal bool IsSetKxChangesets()
         {
-            return this._kxChangesets != null && this._kxChangesets.Count > 0; 
+            return this._kxChangesets != null && (this._kxChangesets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

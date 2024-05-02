@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
@@ -35,7 +36,27 @@ namespace Amazon.EntityResolution.Model
     /// </summary>
     public partial class StartIdMappingJobRequest : AmazonEntityResolutionRequest
     {
+        private List<IdMappingJobOutputSource> _outputSourceConfig = AWSConfigs.InitializeCollections ? new List<IdMappingJobOutputSource>() : null;
         private string _workflowName;
+
+        /// <summary>
+        /// Gets and sets the property OutputSourceConfig. 
+        /// <para>
+        /// A list of <c>OutputSource</c> objects.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<IdMappingJobOutputSource> OutputSourceConfig
+        {
+            get { return this._outputSourceConfig; }
+            set { this._outputSourceConfig = value; }
+        }
+
+        // Check to see if OutputSourceConfig property is set
+        internal bool IsSetOutputSourceConfig()
+        {
+            return this._outputSourceConfig != null && (this._outputSourceConfig.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property WorkflowName. 
@@ -43,7 +64,7 @@ namespace Amazon.EntityResolution.Model
         /// The name of the ID mapping job to be retrieved.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true)]
         public string WorkflowName
         {
             get { return this._workflowName; }

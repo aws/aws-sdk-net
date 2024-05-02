@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -36,6 +37,7 @@ namespace Amazon.RDS.Model
     {
         private int? _allocatedStorage;
         private int? _backupRetentionPeriod;
+        private CertificateDetails _certificateDetails;
         private string _dbClusterIdentifier;
         private string _engineVersion;
         private bool? _iamDatabaseAuthenticationEnabled;
@@ -81,6 +83,21 @@ namespace Amazon.RDS.Model
         internal bool IsSetBackupRetentionPeriod()
         {
             return this._backupRetentionPeriod.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CertificateDetails.
+        /// </summary>
+        public CertificateDetails CertificateDetails
+        {
+            get { return this._certificateDetails; }
+            set { this._certificateDetails = value; }
+        }
+
+        // Check to see if CertificateDetails property is set
+        internal bool IsSetCertificateDetails()
+        {
+            return this._certificateDetails != null;
         }
 
         /// <summary>

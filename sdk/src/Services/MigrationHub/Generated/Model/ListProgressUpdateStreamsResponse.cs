@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MigrationHub.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.MigrationHub.Model
     public partial class ListProgressUpdateStreamsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ProgressUpdateStreamSummary> _progressUpdateStreamSummaryList = new List<ProgressUpdateStreamSummary>();
+        private List<ProgressUpdateStreamSummary> _progressUpdateStreamSummaryList = AWSConfigs.InitializeCollections ? new List<ProgressUpdateStreamSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.MigrationHub.Model
         // Check to see if ProgressUpdateStreamSummaryList property is set
         internal bool IsSetProgressUpdateStreamSummaryList()
         {
-            return this._progressUpdateStreamSummaryList != null && this._progressUpdateStreamSummaryList.Count > 0; 
+            return this._progressUpdateStreamSummaryList != null && (this._progressUpdateStreamSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

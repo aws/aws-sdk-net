@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServerlessApplicationRepository.Model
 {
     /// <summary>
@@ -35,17 +36,17 @@ namespace Amazon.ServerlessApplicationRepository.Model
     public partial class CreateCloudFormationChangeSetRequest : AmazonServerlessApplicationRepositoryRequest
     {
         private string _applicationId;
-        private List<string> _capabilities = new List<string>();
+        private List<string> _capabilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _changeSetName;
         private string _clientToken;
         private string _description;
-        private List<string> _notificationArns = new List<string>();
-        private List<ParameterValue> _parameterOverrides = new List<ParameterValue>();
-        private List<string> _resourceTypes = new List<string>();
+        private List<string> _notificationArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<ParameterValue> _parameterOverrides = AWSConfigs.InitializeCollections ? new List<ParameterValue>() : null;
+        private List<string> _resourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private RollbackConfiguration _rollbackConfiguration;
         private string _semanticVersion;
         private string _stackName;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _templateId;
 
         /// <summary>
@@ -122,7 +123,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         // Check to see if Capabilities property is set
         internal bool IsSetCapabilities()
         {
-            return this._capabilities != null && this._capabilities.Count > 0; 
+            return this._capabilities != null && (this._capabilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -202,7 +203,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         // Check to see if NotificationArns property is set
         internal bool IsSetNotificationArns()
         {
-            return this._notificationArns != null && this._notificationArns.Count > 0; 
+            return this._notificationArns != null && (this._notificationArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -220,7 +221,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         // Check to see if ParameterOverrides property is set
         internal bool IsSetParameterOverrides()
         {
-            return this._parameterOverrides != null && this._parameterOverrides.Count > 0; 
+            return this._parameterOverrides != null && (this._parameterOverrides.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -240,7 +241,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         // Check to see if ResourceTypes property is set
         internal bool IsSetResourceTypes()
         {
-            return this._resourceTypes != null && this._resourceTypes.Count > 0; 
+            return this._resourceTypes != null && (this._resourceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -323,7 +324,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

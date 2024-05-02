@@ -26,18 +26,43 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
     /// Designates the CloudWatch metric and statistic that provides the time series the anomaly
-    /// detector uses as input.
+    /// detector uses as input. If you have enabled unified cross-account observability, and
+    /// this account is a monitoring account, the metric can be in the same account or a source
+    /// account.
     /// </summary>
     public partial class SingleMetricAnomalyDetector
     {
-        private List<Dimension> _dimensions = new List<Dimension>();
+        private string _accountId;
+        private List<Dimension> _dimensions = AWSConfigs.InitializeCollections ? new List<Dimension>() : null;
         private string _metricName;
         private string _awsNamespace;
         private string _stat;
+
+        /// <summary>
+        /// Gets and sets the property AccountId. 
+        /// <para>
+        /// If the CloudWatch metric that provides the time series that the anomaly detector uses
+        /// as input is in another account, specify that account ID here. If you omit this parameter,
+        /// the current account is used.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string AccountId
+        {
+            get { return this._accountId; }
+            set { this._accountId = value; }
+        }
+
+        // Check to see if AccountId property is set
+        internal bool IsSetAccountId()
+        {
+            return this._accountId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Dimensions. 
@@ -55,7 +80,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if Dimensions property is set
         internal bool IsSetDimensions()
         {
-            return this._dimensions != null && this._dimensions.Count > 0; 
+            return this._dimensions != null && (this._dimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

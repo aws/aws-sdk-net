@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Macie2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Macie2.Model
     public partial class GetSensitiveDataOccurrencesAvailabilityResponse : AmazonWebServiceResponse
     {
         private AvailabilityCode _code;
-        private List<string> _reasons = new List<string>();
+        private List<string> _reasons = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Code. 
@@ -147,7 +148,7 @@ namespace Amazon.Macie2.Model
         // Check to see if Reasons property is set
         internal bool IsSetReasons()
         {
-            return this._reasons != null && this._reasons.Count > 0; 
+            return this._reasons != null && (this._reasons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

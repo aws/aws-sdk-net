@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
     public partial class PropertyGroup
     {
         private string _propertyGroupId;
-        private Dictionary<string, string> _propertyMap = new Dictionary<string, string>();
+        private Dictionary<string, string> _propertyMap = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property PropertyGroupId. 
@@ -71,7 +72,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         // Check to see if PropertyMap property is set
         internal bool IsSetPropertyMap()
         {
-            return this._propertyMap != null && this._propertyMap.Count > 0; 
+            return this._propertyMap != null && (this._propertyMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

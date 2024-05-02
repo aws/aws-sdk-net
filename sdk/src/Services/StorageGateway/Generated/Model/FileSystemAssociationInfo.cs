@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
@@ -39,10 +40,10 @@ namespace Amazon.StorageGateway.Model
         private EndpointNetworkConfiguration _endpointNetworkConfiguration;
         private string _fileSystemAssociationARN;
         private string _fileSystemAssociationStatus;
-        private List<FileSystemAssociationStatusDetail> _fileSystemAssociationStatusDetails = new List<FileSystemAssociationStatusDetail>();
+        private List<FileSystemAssociationStatusDetail> _fileSystemAssociationStatusDetails = AWSConfigs.InitializeCollections ? new List<FileSystemAssociationStatusDetail>() : null;
         private string _gatewayARN;
         private string _locationARN;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AuditDestinationARN. 
@@ -158,7 +159,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if FileSystemAssociationStatusDetails property is set
         internal bool IsSetFileSystemAssociationStatusDetails()
         {
-            return this._fileSystemAssociationStatusDetails != null && this._fileSystemAssociationStatusDetails.Count > 0; 
+            return this._fileSystemAssociationStatusDetails != null && (this._fileSystemAssociationStatusDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -214,7 +215,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

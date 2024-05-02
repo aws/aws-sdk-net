@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -62,8 +63,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property DeletionSummary. 
         /// <para>
         /// A summary of the delete operation. For more information about this summary, see <a
-        /// href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete-summary">Deleting
-        /// custom inventory</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+        /// href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-custom.html#sysman-inventory-delete-summary">Understanding
+        /// the delete inventory summary</a> in the <i>Amazon Web Services Systems Manager User
+        /// Guide</i>.
         /// </para>
         /// </summary>
         public InventoryDeletionSummary DeletionSummary

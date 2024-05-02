@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListHubsResponse : AmazonWebServiceResponse
     {
-        private List<HubInfo> _hubSummaries = new List<HubInfo>();
+        private List<HubInfo> _hubSummaries = AWSConfigs.InitializeCollections ? new List<HubInfo>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if HubSummaries property is set
         internal bool IsSetHubSummaries()
         {
-            return this._hubSummaries != null && this._hubSummaries.Count > 0; 
+            return this._hubSummaries != null && (this._hubSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

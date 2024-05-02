@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.KinesisFirehose.Model
     public partial class UntagDeliveryStreamRequest : AmazonKinesisFirehoseRequest
     {
         private string _deliveryStreamName;
-        private List<string> _tagKeys = new List<string>();
+        private List<string> _tagKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DeliveryStreamName. 
@@ -82,7 +83,7 @@ namespace Amazon.KinesisFirehose.Model
         // Check to see if TagKeys property is set
         internal bool IsSetTagKeys()
         {
-            return this._tagKeys != null && this._tagKeys.Count > 0; 
+            return this._tagKeys != null && (this._tagKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

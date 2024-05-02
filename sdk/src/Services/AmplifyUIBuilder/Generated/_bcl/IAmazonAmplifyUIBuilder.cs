@@ -26,6 +26,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.AmplifyUIBuilder.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.AmplifyUIBuilder
 {
     /// <summary>
@@ -886,6 +887,64 @@ namespace Amazon.AmplifyUIBuilder
 
         #endregion
         
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Returns a list of tags for a specified Amazon Resource Name (ARN).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by AmplifyUIBuilder.</returns>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InternalServerException">
+        /// An internal error has occurred. Please retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InvalidParameterException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.UnauthorizedException">
+        /// You don't have permission to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+
+
+        /// <summary>
+        /// Returns a list of tags for a specified Amazon Resource Name (ARN).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by AmplifyUIBuilder.</returns>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InternalServerException">
+        /// An internal error has occurred. Please retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InvalidParameterException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.UnauthorizedException">
+        /// You don't have permission to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ListThemes
 
 
@@ -1059,6 +1118,122 @@ namespace Amazon.AmplifyUIBuilder
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/StartCodegenJob">REST API Reference for StartCodegenJob Operation</seealso>
         Task<StartCodegenJobResponse> StartCodegenJobAsync(StartCodegenJobRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Tags the resource with a tag key and value.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by AmplifyUIBuilder.</returns>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InternalServerException">
+        /// An internal error has occurred. Please retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InvalidParameterException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.UnauthorizedException">
+        /// You don't have permission to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+
+
+        /// <summary>
+        /// Tags the resource with a tag key and value.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by AmplifyUIBuilder.</returns>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InternalServerException">
+        /// An internal error has occurred. Please retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InvalidParameterException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.UnauthorizedException">
+        /// You don't have permission to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/TagResource">REST API Reference for TagResource Operation</seealso>
+        Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Untags a resource with a specified Amazon Resource Name (ARN).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by AmplifyUIBuilder.</returns>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InternalServerException">
+        /// An internal error has occurred. Please retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InvalidParameterException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.UnauthorizedException">
+        /// You don't have permission to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+
+
+        /// <summary>
+        /// Untags a resource with a specified Amazon Resource Name (ARN).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by AmplifyUIBuilder.</returns>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InternalServerException">
+        /// An internal error has occurred. Please retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InvalidParameterException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.UnauthorizedException">
+        /// You don't have permission to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

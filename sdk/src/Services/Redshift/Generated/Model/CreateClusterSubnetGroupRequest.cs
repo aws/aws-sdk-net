@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -44,8 +45,8 @@ namespace Amazon.Redshift.Model
     {
         private string _clusterSubnetGroupName;
         private string _description;
-        private List<string> _subnetIds = new List<string>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ClusterSubnetGroupName. 
@@ -122,7 +123,7 @@ namespace Amazon.Redshift.Model
         // Check to see if SubnetIds property is set
         internal bool IsSetSubnetIds()
         {
-            return this._subnetIds != null && this._subnetIds.Count > 0; 
+            return this._subnetIds != null && (this._subnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -140,7 +141,7 @@ namespace Amazon.Redshift.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

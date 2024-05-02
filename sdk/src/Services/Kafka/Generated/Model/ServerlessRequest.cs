@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kafka.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Kafka.Model
     public partial class ServerlessRequest
     {
         private ServerlessClientAuthentication _clientAuthentication;
-        private List<VpcConfig> _vpcConfigs = new List<VpcConfig>();
+        private List<VpcConfig> _vpcConfigs = AWSConfigs.InitializeCollections ? new List<VpcConfig>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientAuthentication.             
@@ -70,7 +71,7 @@ namespace Amazon.Kafka.Model
         // Check to see if VpcConfigs property is set
         internal bool IsSetVpcConfigs()
         {
-            return this._vpcConfigs != null && this._vpcConfigs.Count > 0; 
+            return this._vpcConfigs != null && (this._vpcConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

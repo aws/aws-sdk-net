@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Lightsail.Model
     public partial class GetRelationalDatabaseParametersResponse : AmazonWebServiceResponse
     {
         private string _nextPageToken;
-        private List<RelationalDatabaseParameter> _parameters = new List<RelationalDatabaseParameter>();
+        private List<RelationalDatabaseParameter> _parameters = AWSConfigs.InitializeCollections ? new List<RelationalDatabaseParameter>() : null;
 
         /// <summary>
         /// Gets and sets the property NextPageToken. 
@@ -78,7 +79,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

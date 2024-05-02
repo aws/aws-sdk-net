@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FraudDetector.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class DataValidationMetrics
     {
-        private List<FieldValidationMessage> _fieldLevelMessages = new List<FieldValidationMessage>();
-        private List<FileValidationMessage> _fileLevelMessages = new List<FileValidationMessage>();
+        private List<FieldValidationMessage> _fieldLevelMessages = AWSConfigs.InitializeCollections ? new List<FieldValidationMessage>() : null;
+        private List<FileValidationMessage> _fileLevelMessages = AWSConfigs.InitializeCollections ? new List<FileValidationMessage>() : null;
 
         /// <summary>
         /// Gets and sets the property FieldLevelMessages. 
@@ -51,7 +52,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if FieldLevelMessages property is set
         internal bool IsSetFieldLevelMessages()
         {
-            return this._fieldLevelMessages != null && this._fieldLevelMessages.Count > 0; 
+            return this._fieldLevelMessages != null && (this._fieldLevelMessages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if FileLevelMessages property is set
         internal bool IsSetFileLevelMessages()
         {
-            return this._fileLevelMessages != null && this._fileLevelMessages.Count > 0; 
+            return this._fileLevelMessages != null && (this._fileLevelMessages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

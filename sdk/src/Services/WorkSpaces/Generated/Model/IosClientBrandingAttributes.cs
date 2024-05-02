@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.WorkSpaces.Model
     public partial class IosClientBrandingAttributes
     {
         private string _forgotPasswordLink;
-        private Dictionary<string, string> _loginMessage = new Dictionary<string, string>();
+        private Dictionary<string, string> _loginMessage = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _logo2xUrl;
         private string _logo3xUrl;
         private string _logoUrl;
@@ -88,7 +89,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if LoginMessage property is set
         internal bool IsSetLoginMessage()
         {
-            return this._loginMessage != null && this._loginMessage.Count > 0; 
+            return this._loginMessage != null && (this._loginMessage.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

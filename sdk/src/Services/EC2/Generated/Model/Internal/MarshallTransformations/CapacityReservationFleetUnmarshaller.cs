@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -93,6 +94,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("instanceTypeSpecificationSet/item", targetDepth))
                     {
                         var unmarshaller = FleetCapacityReservationUnmarshaller.Instance;
+                        if (unmarshalledObject.InstanceTypeSpecifications == null)
+                        {
+                            unmarshalledObject.InstanceTypeSpecifications = new List<FleetCapacityReservation>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.InstanceTypeSpecifications.Add(item);
                         continue;
@@ -106,6 +111,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tags.Add(item);
                         continue;

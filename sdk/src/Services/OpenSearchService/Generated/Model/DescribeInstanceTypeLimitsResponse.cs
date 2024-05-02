@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.OpenSearchService.Model
     /// </summary>
     public partial class DescribeInstanceTypeLimitsResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, Limits> _limitsByRole = new Dictionary<string, Limits>();
+        private Dictionary<string, Limits> _limitsByRole = AWSConfigs.InitializeCollections ? new Dictionary<string, Limits>() : null;
 
         /// <summary>
         /// Gets and sets the property LimitsByRole. 
@@ -51,7 +52,7 @@ namespace Amazon.OpenSearchService.Model
         // Check to see if LimitsByRole property is set
         internal bool IsSetLimitsByRole()
         {
-            return this._limitsByRole != null && this._limitsByRole.Count > 0; 
+            return this._limitsByRole != null && (this._limitsByRole.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

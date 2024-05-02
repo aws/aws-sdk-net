@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Detective.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Detective.Model
     /// </summary>
     public partial class ListMembersResponse : AmazonWebServiceResponse
     {
-        private List<MemberDetail> _memberDetails = new List<MemberDetail>();
+        private List<MemberDetail> _memberDetails = AWSConfigs.InitializeCollections ? new List<MemberDetail>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -62,7 +63,7 @@ namespace Amazon.Detective.Model
         // Check to see if MemberDetails property is set
         internal bool IsSetMemberDetails()
         {
-            return this._memberDetails != null && this._memberDetails.Count > 0; 
+            return this._memberDetails != null && (this._memberDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

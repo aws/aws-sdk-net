@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -35,11 +36,12 @@ namespace Amazon.SageMaker.Model
     {
         private AdditionalS3DataSource _additionalS3DataSource;
         private string _containerHostname;
-        private Dictionary<string, string> _environment = new Dictionary<string, string>();
+        private Dictionary<string, string> _environment = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _framework;
         private string _frameworkVersion;
         private string _image;
         private string _imageDigest;
+        private ModelDataSource _modelDataSource;
         private string _modelDataUrl;
         private ModelInput _modelInput;
         private string _nearestModelName;
@@ -91,7 +93,7 @@ namespace Amazon.SageMaker.Model
         /// up to 16 entries in the map.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=16)]
+        [AWSProperty(Max=100)]
         public Dictionary<string, string> Environment
         {
             get { return this._environment; }
@@ -101,7 +103,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Environment property is set
         internal bool IsSetEnvironment()
         {
-            return this._environment != null && this._environment.Count > 0; 
+            return this._environment != null && (this._environment.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -185,6 +187,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetImageDigest()
         {
             return this._imageDigest != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelDataSource. 
+        /// <para>
+        /// Specifies the location of ML model data to deploy during endpoint creation.
+        /// </para>
+        /// </summary>
+        public ModelDataSource ModelDataSource
+        {
+            get { return this._modelDataSource; }
+            set { this._modelDataSource = value; }
+        }
+
+        // Check to see if ModelDataSource property is set
+        internal bool IsSetModelDataSource()
+        {
+            return this._modelDataSource != null;
         }
 
         /// <summary>

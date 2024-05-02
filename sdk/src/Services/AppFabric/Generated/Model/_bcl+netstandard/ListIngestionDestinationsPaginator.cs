@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AppFabric.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.AppFabric.Model
         /// Enumerable containing all of the IngestionDestinations
         /// </summary>
         public IPaginatedEnumerable<IngestionDestinationSummary> IngestionDestinations => 
-            new PaginatedResultKeyResponse<ListIngestionDestinationsResponse, IngestionDestinationSummary>(this, (i) => i.IngestionDestinations);
+            new PaginatedResultKeyResponse<ListIngestionDestinationsResponse, IngestionDestinationSummary>(this, (i) => i.IngestionDestinations ?? new List<IngestionDestinationSummary>());
 
         internal ListIngestionDestinationsPaginator(IAmazonAppFabric client, ListIngestionDestinationsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.AppFabric.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListIngestionDestinationsResponse> IPaginator<ListIngestionDestinationsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListIngestionDestinationsResponse> IPaginator<ListIngestionDestinationsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

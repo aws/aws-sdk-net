@@ -26,10 +26,15 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Contains information about the API Schema for the Action Group
+    /// Contains details about the OpenAPI schema for the action group. For more information,
+    /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-api-schema.html">Action
+    /// group OpenAPI schemas</a>. You can either include the schema directly in the <c>payload</c>
+    /// field or you can upload it to an S3 bucket and specify the S3 bucket location in the
+    /// <c>s3</c> field.
     /// </summary>
     public partial class APISchema
     {
@@ -37,7 +42,12 @@ namespace Amazon.BedrockAgent.Model
         private S3Identifier _s3;
 
         /// <summary>
-        /// Gets and sets the property Payload.
+        /// Gets and sets the property Payload. 
+        /// <para>
+        /// The JSON or YAML-formatted payload defining the OpenAPI schema for the action group.
+        /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-api-schema.html">Action
+        /// group OpenAPI schemas</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string Payload
@@ -53,7 +63,12 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property S3.
+        /// Gets and sets the property S3. 
+        /// <para>
+        /// Contains details about the S3 object containing the OpenAPI schema for the action
+        /// group. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-api-schema.html">Action
+        /// group OpenAPI schemas</a>.
+        /// </para>
         /// </summary>
         public S3Identifier S3
         {

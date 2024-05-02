@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RestJsonTest.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -60,7 +61,7 @@ namespace Amazon.RestJsonTest.Model.Internal.MarshallTransformations
 
             
             if (publicRequest.IsSetQueryTimestampList())
-                request.ParameterCollection.Add("item", publicRequest.QueryTimestampList.ConvertAll<string>(item => StringUtils.FromDateTimeToISO8601(item)));
+                request.ParameterCollection.Add("item", publicRequest.QueryTimestampList.ConvertAll<string>(item => StringUtils.FromDateTimeToISO8601WithOptionalMs(item)));
             request.ResourcePath = "/path";
             request.UseQueryString = true;
 

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FraudDetector.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class EvaluatedExternalModel
     {
-        private Dictionary<string, string> _inputVariables = new Dictionary<string, string>();
+        private Dictionary<string, string> _inputVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _modelEndpoint;
-        private Dictionary<string, string> _outputVariables = new Dictionary<string, string>();
+        private Dictionary<string, string> _outputVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private bool? _useEventVariables;
 
         /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if InputVariables property is set
         internal bool IsSetInputVariables()
         {
-            return this._inputVariables != null && this._inputVariables.Count > 0; 
+            return this._inputVariables != null && (this._inputVariables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if OutputVariables property is set
         internal bool IsSetOutputVariables()
         {
-            return this._outputVariables != null && this._outputVariables.Count > 0; 
+            return this._outputVariables != null && (this._outputVariables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

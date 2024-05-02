@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SimpleEmail.Model
     /// </summary>
     public partial class GetIdentityPoliciesResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, string> _policies = new Dictionary<string, string>();
+        private Dictionary<string, string> _policies = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Policies. 
@@ -51,7 +52,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if Policies property is set
         internal bool IsSetPolicies()
         {
-            return this._policies != null && this._policies.Count > 0; 
+            return this._policies != null && (this._policies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

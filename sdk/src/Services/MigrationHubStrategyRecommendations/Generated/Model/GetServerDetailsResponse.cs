@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MigrationHubStrategyRecommendations.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
     /// </summary>
     public partial class GetServerDetailsResponse : AmazonWebServiceResponse
     {
-        private List<AssociatedApplication> _associatedApplications = new List<AssociatedApplication>();
+        private List<AssociatedApplication> _associatedApplications = AWSConfigs.InitializeCollections ? new List<AssociatedApplication>() : null;
         private string _nextToken;
         private ServerDetail _serverDetail;
 
@@ -53,7 +54,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         // Check to see if AssociatedApplications property is set
         internal bool IsSetAssociatedApplications()
         {
-            return this._associatedApplications != null && this._associatedApplications.Count > 0; 
+            return this._associatedApplications != null && (this._associatedApplications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3Control.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.S3Control.Model
         /// Enumerable containing all of the ObjectLambdaAccessPointList
         /// </summary>
         public IPaginatedEnumerable<ObjectLambdaAccessPoint> ObjectLambdaAccessPointList => 
-            new PaginatedResultKeyResponse<ListAccessPointsForObjectLambdaResponse, ObjectLambdaAccessPoint>(this, (i) => i.ObjectLambdaAccessPointList);
+            new PaginatedResultKeyResponse<ListAccessPointsForObjectLambdaResponse, ObjectLambdaAccessPoint>(this, (i) => i.ObjectLambdaAccessPointList ?? new List<ObjectLambdaAccessPoint>());
 
         internal ListAccessPointsForObjectLambdaPaginator(IAmazonS3Control client, ListAccessPointsForObjectLambdaRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.S3Control.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListAccessPointsForObjectLambdaResponse> IPaginator<ListAccessPointsForObjectLambdaResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListAccessPointsForObjectLambdaResponse> IPaginator<ListAccessPointsForObjectLambdaResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

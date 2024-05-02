@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.CloudFront.Model
     public partial class ActiveTrustedKeyGroups
     {
         private bool? _enabled;
-        private List<KGKeyPairIds> _items = new List<KGKeyPairIds>();
+        private List<KGKeyPairIds> _items = AWSConfigs.InitializeCollections ? new List<KGKeyPairIds>() : null;
         private int? _quantity;
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

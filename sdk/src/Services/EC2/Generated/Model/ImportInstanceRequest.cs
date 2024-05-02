@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -60,7 +61,7 @@ namespace Amazon.EC2.Model
     public partial class ImportInstanceRequest : AmazonEC2Request
     {
         private string _description;
-        private List<DiskImage> _diskImages = new List<DiskImage>();
+        private List<DiskImage> _diskImages = AWSConfigs.InitializeCollections ? new List<DiskImage>() : null;
         private ImportInstanceLaunchSpecification _launchSpecification;
         private PlatformValues _platform;
 
@@ -97,7 +98,7 @@ namespace Amazon.EC2.Model
         // Check to see if DiskImages property is set
         internal bool IsSetDiskImages()
         {
-            return this._diskImages != null && this._diskImages.Count > 0; 
+            return this._diskImages != null && (this._diskImages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

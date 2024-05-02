@@ -33,6 +33,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.Transfer
 {
     /// <summary>
@@ -417,7 +418,7 @@ namespace Amazon.Transfer
         /// or SFTP protocol. For AS2, the connector is required for sending files to an externally
         /// hosted AS2 server. For SFTP, the connector is required when sending files to an SFTP
         /// server or receiving files from an SFTP server. For more details about connectors,
-        /// see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html#configure-as2-connector">Create
+        /// see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/configure-as2-connector.html">Configure
         /// AS2 connectors</a> and <a href="https://docs.aws.amazon.com/transfer/latest/userguide/configure-sftp-connector.html">Create
         /// SFTP connectors</a>.
         /// 
@@ -1570,10 +1571,11 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Describes the security policy that is attached to your file transfer protocol-enabled
-        /// server. The response contains a description of the security policy's properties. For
-        /// more information about security policies, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html">Working
-        /// with security policies</a>.
+        /// Describes the security policy that is attached to your server or SFTP connector. The
+        /// response contains a description of the security policy's properties. For more information
+        /// about security policies, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html">Working
+        /// with security policies for servers</a> or <a href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies-connectors.html">Working
+        /// with security policies for SFTP connectors</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSecurityPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -2322,8 +2324,10 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Lists the security policies that are attached to your file transfer protocol-enabled
-        /// servers.
+        /// Lists the security policies that are attached to your servers and SFTP connectors.
+        /// For more information about security policies, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html">Working
+        /// with security policies for servers</a> or <a href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies-connectors.html">Working
+        /// with security policies for SFTP connectors</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSecurityPolicies service method.</param>
         /// <param name="cancellationToken">
@@ -2613,6 +2617,103 @@ namespace Amazon.Transfer
 
         #endregion
         
+        #region  StartDirectoryListing
+
+        internal virtual StartDirectoryListingResponse StartDirectoryListing(StartDirectoryListingRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartDirectoryListingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDirectoryListingResponseUnmarshaller.Instance;
+
+            return Invoke<StartDirectoryListingResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a list of the contents of a directory from a remote SFTP server. You specify
+        /// the connector ID, the output path, and the remote directory path. You can also specify
+        /// the optional <c>MaxItems</c> value to control the maximum number of items that are
+        /// listed from the remote directory. This API returns a list of all files and directories
+        /// in the remote directory (up to the maximum value), but does not return files or folders
+        /// in sub-directories. That is, it only returns a list of files and directories one-level
+        /// deep.
+        /// 
+        ///  
+        /// <para>
+        /// After you receive the listing file, you can provide the files that you want to transfer
+        /// to the <c>RetrieveFilePaths</c> parameter of the <c>StartFileTransfer</c> API call.
+        /// </para>
+        ///  
+        /// <para>
+        /// The naming convention for the output file is <c> <i>connector-ID</i>-<i>listing-ID</i>.json</c>.
+        /// The output file contains the following information:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>filePath</c>: the complete path of a remote file, relative to the directory of
+        /// the listing request for your SFTP connector on the remote server.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>modifiedTimestamp</c>: the last time the file was modified, in UTC time format.
+        /// This field is optional. If the remote file attributes don't contain a timestamp, it
+        /// is omitted from the file listing.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>size</c>: the size of the file, in bytes. This field is optional. If the remote
+        /// file attributes don't contain a file size, it is omitted from the file listing.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>path</c>: the complete path of a remote directory, relative to the directory of
+        /// the listing request for your SFTP connector on the remote server.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>truncated</c>: a flag indicating whether the list output contains all of the items
+        /// contained in the remote directory or not. If your <c>Truncated</c> output value is
+        /// true, you can increase the value provided in the optional <c>max-items</c> input attribute
+        /// to be able to list more items (up to the maximum allowed list size of 10,000 items).
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartDirectoryListing service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartDirectoryListing service method, as returned by Transfer.</returns>
+        /// <exception cref="Amazon.Transfer.Model.InternalServiceErrorException">
+        /// This exception is thrown when an error occurs in the Transfer Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.InvalidRequestException">
+        /// This exception is thrown when the client submits a malformed request.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ResourceNotFoundException">
+        /// This exception is thrown when a resource is not found by the Amazon Web ServicesTransfer
+        /// Family service.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ServiceUnavailableException">
+        /// The request has failed because the Amazon Web ServicesTransfer Family service is not
+        /// available.
+        /// </exception>
+        /// <exception cref="Amazon.Transfer.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartDirectoryListing">REST API Reference for StartDirectoryListing Operation</seealso>
+        public virtual Task<StartDirectoryListingResponse> StartDirectoryListingAsync(StartDirectoryListingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartDirectoryListingRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartDirectoryListingResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartDirectoryListingResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartFileTransfer
 
         internal virtual StartFileTransferResponse StartFileTransfer(StartFileTransferRequest request)
@@ -2644,7 +2745,7 @@ namespace Amazon.Transfer
         ///  <ul> <li> 
         /// <para>
         /// If you are transferring file from a partner's SFTP server to Amazon Web Services storage,
-        /// you specify one or more <c>RetreiveFilePaths</c> to identify the files you want to
+        /// you specify one or more <c>RetrieveFilePaths</c> to identify the files you want to
         /// transfer, and a <c>LocalDirectoryPath</c> to specify the destination folder.
         /// </para>
         ///  </li> <li> 
@@ -3506,6 +3607,26 @@ namespace Amazon.Transfer
         ///  
         /// <para>
         /// The response returns the <c>ServerId</c> and the <c>UserName</c> for the updated user.
+        /// </para>
+        ///  
+        /// <para>
+        /// In the console, you can select <i>Restricted</i> when you create or update a user.
+        /// This ensures that the user can't access anything outside of their home directory.
+        /// The programmatic way to configure this behavior is to update the user. Set their <c>HomeDirectoryType</c>
+        /// to <c>LOGICAL</c>, and specify <c>HomeDirectoryMappings</c> with <c>Entry</c> as root
+        /// (<c>/</c>) and <c>Target</c> as their home directory.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, if the user's home directory is <c>/test/admin-user</c>, the following
+        /// command updates the user so that their configuration in the console shows the <i>Restricted</i>
+        /// flag as selected.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c> aws transfer update-user --server-id &lt;server-id&gt; --user-name admin-user
+        /// --home-directory-type LOGICAL --home-directory-mappings "[{\"Entry\":\"/\", \"Target\":\"/test/admin-user\"}]"</c>
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateUser service method.</param>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AppMesh.Model
     /// </summary>
     public partial class TcpRouteAction
     {
-        private List<WeightedTarget> _weightedTargets = new List<WeightedTarget>();
+        private List<WeightedTarget> _weightedTargets = AWSConfigs.InitializeCollections ? new List<WeightedTarget>() : null;
 
         /// <summary>
         /// Gets and sets the property WeightedTargets. 
@@ -52,7 +53,7 @@ namespace Amazon.AppMesh.Model
         // Check to see if WeightedTargets property is set
         internal bool IsSetWeightedTargets()
         {
-            return this._weightedTargets != null && this._weightedTargets.Count > 0; 
+            return this._weightedTargets != null && (this._weightedTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

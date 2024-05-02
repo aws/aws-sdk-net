@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
@@ -38,8 +39,8 @@ namespace Amazon.CloudTrail.Model
         private string _eventSource;
         private InsightType _insightType;
         private string _nextToken;
-        private List<DateTime> _timestamps = new List<DateTime>();
-        private List<double> _values = new List<double>();
+        private List<DateTime> _timestamps = AWSConfigs.InitializeCollections ? new List<DateTime>() : null;
+        private List<double> _values = AWSConfigs.InitializeCollections ? new List<double>() : null;
 
         /// <summary>
         /// Gets and sets the property ErrorCode. 
@@ -162,7 +163,7 @@ namespace Amazon.CloudTrail.Model
         // Check to see if Timestamps property is set
         internal bool IsSetTimestamps()
         {
-            return this._timestamps != null && this._timestamps.Count > 0; 
+            return this._timestamps != null && (this._timestamps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -181,7 +182,7 @@ namespace Amazon.CloudTrail.Model
         // Check to see if Values property is set
         internal bool IsSetValues()
         {
-            return this._values != null && this._values.Count > 0; 
+            return this._values != null && (this._values.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

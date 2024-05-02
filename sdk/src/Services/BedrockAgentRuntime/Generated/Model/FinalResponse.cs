@@ -26,17 +26,21 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Agent finish output
+    /// Contains details about the response to the user.
     /// </summary>
     public partial class FinalResponse
     {
         private string _text;
 
         /// <summary>
-        /// Gets and sets the property Text.
+        /// Gets and sets the property Text. 
+        /// <para>
+        /// The text in the response to the user.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string Text

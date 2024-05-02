@@ -26,10 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// Information required for Amazon Q to find a specific file in an Amazon S3 bucket.
+    /// Information required for Amazon Q Business to find a specific file in an Amazon S3
+    /// bucket.
     /// </summary>
     public partial class S3
     {

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
@@ -102,13 +103,18 @@ namespace Amazon.GlobalAccelerator.Model
     public partial class ByoipCidr
     {
         private string _cidr;
-        private List<ByoipCidrEvent> _events = new List<ByoipCidrEvent>();
+        private List<ByoipCidrEvent> _events = AWSConfigs.InitializeCollections ? new List<ByoipCidrEvent>() : null;
         private ByoipCidrState _state;
 
         /// <summary>
         /// Gets and sets the property Cidr. 
         /// <para>
         /// The address range, in CIDR notation.
+        /// </para>
+        ///  
+        /// <para>
+        ///  For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
+        /// your own IP addresses (BYOIP)</a> in the Global Accelerator Developer Guide.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
@@ -140,7 +146,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if Events property is set
         internal bool IsSetEvents()
         {
-            return this._events != null && this._events.Count > 0; 
+            return this._events != null && (this._events.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

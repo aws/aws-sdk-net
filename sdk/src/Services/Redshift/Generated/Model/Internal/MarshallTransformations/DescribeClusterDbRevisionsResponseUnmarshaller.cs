@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -84,6 +85,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ClusterDbRevisions/ClusterDbRevision", targetDepth))
                     {
                         var unmarshaller = ClusterDbRevisionUnmarshaller.Instance;
+                        if (response.ClusterDbRevisions == null)
+                        {
+                            response.ClusterDbRevisions = new List<ClusterDbRevision>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ClusterDbRevisions.Add(item);
                         continue;

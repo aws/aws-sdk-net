@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkMail.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.WorkMail.Model
     {
         private string _granteeId;
         private MemberType _granteeType;
-        private List<string> _permissionValues = new List<string>();
+        private List<string> _permissionValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property GranteeId. 
@@ -97,7 +98,7 @@ namespace Amazon.WorkMail.Model
         // Check to see if PermissionValues property is set
         internal bool IsSetPermissionValues()
         {
-            return this._permissionValues != null && this._permissionValues.Count > 0; 
+            return this._permissionValues != null && (this._permissionValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

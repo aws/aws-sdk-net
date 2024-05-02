@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class DescribeAggregationAuthorizationsResponse : AmazonWebServiceResponse
     {
-        private List<AggregationAuthorization> _aggregationAuthorizations = new List<AggregationAuthorization>();
+        private List<AggregationAuthorization> _aggregationAuthorizations = AWSConfigs.InitializeCollections ? new List<AggregationAuthorization>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if AggregationAuthorizations property is set
         internal bool IsSetAggregationAuthorizations()
         {
-            return this._aggregationAuthorizations != null && this._aggregationAuthorizations.Count > 0; 
+            return this._aggregationAuthorizations != null && (this._aggregationAuthorizations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

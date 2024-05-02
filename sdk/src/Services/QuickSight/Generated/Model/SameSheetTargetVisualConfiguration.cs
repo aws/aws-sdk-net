@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.QuickSight.Model
     public partial class SameSheetTargetVisualConfiguration
     {
         private TargetVisualOptions _targetVisualOptions;
-        private List<string> _targetVisuals = new List<string>();
+        private List<string> _targetVisuals = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property TargetVisualOptions. 
@@ -85,7 +86,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if TargetVisuals property is set
         internal bool IsSetTargetVisuals()
         {
-            return this._targetVisuals != null && this._targetVisuals.Count > 0; 
+            return this._targetVisuals != null && (this._targetVisuals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

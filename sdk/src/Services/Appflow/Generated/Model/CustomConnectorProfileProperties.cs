@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Appflow.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Appflow.Model
     public partial class CustomConnectorProfileProperties
     {
         private OAuth2Properties _oAuth2Properties;
-        private Dictionary<string, string> _profileProperties = new Dictionary<string, string>();
+        private Dictionary<string, string> _profileProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property OAuth2Properties.
@@ -67,7 +68,7 @@ namespace Amazon.Appflow.Model
         // Check to see if ProfileProperties property is set
         internal bool IsSetProfileProperties()
         {
-            return this._profileProperties != null && this._profileProperties.Count > 0; 
+            return this._profileProperties != null && (this._profileProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

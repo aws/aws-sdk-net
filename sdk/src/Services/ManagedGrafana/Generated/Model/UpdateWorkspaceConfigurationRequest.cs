@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ManagedGrafana.Model
 {
     /// <summary>
@@ -62,7 +63,8 @@ namespace Amazon.ManagedGrafana.Model
         /// <summary>
         /// Gets and sets the property GrafanaVersion. 
         /// <para>
-        /// Specifies the version of Grafana to support in the new workspace.
+        /// Specifies the version of Grafana to support in the workspace. If not specified, keeps
+        /// the current version of the workspace.
         /// </para>
         ///  
         /// <para>
@@ -72,7 +74,8 @@ namespace Amazon.ManagedGrafana.Model
         ///  
         /// <para>
         /// To know what versions are available to upgrade to for a specific workspace, see the
-        /// <c>ListVersions</c> operation.
+        /// <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_ListVersions.html">ListVersions</a>
+        /// operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

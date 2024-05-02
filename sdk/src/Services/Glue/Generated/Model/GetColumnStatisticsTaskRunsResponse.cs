@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class GetColumnStatisticsTaskRunsResponse : AmazonWebServiceResponse
     {
-        private List<ColumnStatisticsTaskRun> _columnStatisticsTaskRuns = new List<ColumnStatisticsTaskRun>();
+        private List<ColumnStatisticsTaskRun> _columnStatisticsTaskRuns = AWSConfigs.InitializeCollections ? new List<ColumnStatisticsTaskRun>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Glue.Model
         // Check to see if ColumnStatisticsTaskRuns property is set
         internal bool IsSetColumnStatisticsTaskRuns()
         {
-            return this._columnStatisticsTaskRuns != null && this._columnStatisticsTaskRuns.Count > 0; 
+            return this._columnStatisticsTaskRuns != null && (this._columnStatisticsTaskRuns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

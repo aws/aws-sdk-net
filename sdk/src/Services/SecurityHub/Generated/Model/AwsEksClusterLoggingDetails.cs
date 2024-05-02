@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsEksClusterLoggingDetails
     {
-        private List<AwsEksClusterLoggingClusterLoggingDetails> _clusterLogging = new List<AwsEksClusterLoggingClusterLoggingDetails>();
+        private List<AwsEksClusterLoggingClusterLoggingDetails> _clusterLogging = AWSConfigs.InitializeCollections ? new List<AwsEksClusterLoggingClusterLoggingDetails>() : null;
 
         /// <summary>
         /// Gets and sets the property ClusterLogging. 
@@ -50,7 +51,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ClusterLogging property is set
         internal bool IsSetClusterLogging()
         {
-            return this._clusterLogging != null && this._clusterLogging.Count > 0; 
+            return this._clusterLogging != null && (this._clusterLogging.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

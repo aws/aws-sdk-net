@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ForecastService.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.ForecastService.Model
         private AutoMLOverrideStrategy _autoMLOverrideStrategy;
         private bool? _isAutoPredictor;
         private OptimizationMetric _optimizationMetric;
-        private List<EvaluationResult> _predictorEvaluationResults = new List<EvaluationResult>();
+        private List<EvaluationResult> _predictorEvaluationResults = AWSConfigs.InitializeCollections ? new List<EvaluationResult>() : null;
 
         /// <summary>
         /// Gets and sets the property AutoMLOverrideStrategy. <note> 
@@ -118,7 +119,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if PredictorEvaluationResults property is set
         internal bool IsSetPredictorEvaluationResults()
         {
-            return this._predictorEvaluationResults != null && this._predictorEvaluationResults.Count > 0; 
+            return this._predictorEvaluationResults != null && (this._predictorEvaluationResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lex.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Lex.Model
     /// </summary>
     public partial class PostTextResponse : AmazonWebServiceResponse
     {
-        private List<ActiveContext> _activeContexts = new List<ActiveContext>();
-        private List<PredictedIntent> _alternativeIntents = new List<PredictedIntent>();
+        private List<ActiveContext> _activeContexts = AWSConfigs.InitializeCollections ? new List<ActiveContext>() : null;
+        private List<PredictedIntent> _alternativeIntents = AWSConfigs.InitializeCollections ? new List<PredictedIntent>() : null;
         private string _botVersion;
         private DialogState _dialogState;
         private string _intentName;
@@ -43,9 +44,9 @@ namespace Amazon.Lex.Model
         private IntentConfidence _nluIntentConfidence;
         private ResponseCard _responseCard;
         private SentimentResponse _sentimentResponse;
-        private Dictionary<string, string> _sessionAttributes = new Dictionary<string, string>();
+        private Dictionary<string, string> _sessionAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _sessionId;
-        private Dictionary<string, string> _slots = new Dictionary<string, string>();
+        private Dictionary<string, string> _slots = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _slotToElicit;
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.Lex.Model
         // Check to see if ActiveContexts property is set
         internal bool IsSetActiveContexts()
         {
-            return this._activeContexts != null && this._activeContexts.Count > 0; 
+            return this._activeContexts != null && (this._activeContexts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -95,7 +96,7 @@ namespace Amazon.Lex.Model
         // Check to see if AlternativeIntents property is set
         internal bool IsSetAlternativeIntents()
         {
-            return this._alternativeIntents != null && this._alternativeIntents.Count > 0; 
+            return this._alternativeIntents != null && (this._alternativeIntents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -374,7 +375,7 @@ namespace Amazon.Lex.Model
         // Check to see if SessionAttributes property is set
         internal bool IsSetSessionAttributes()
         {
-            return this._sessionAttributes != null && this._sessionAttributes.Count > 0; 
+            return this._sessionAttributes != null && (this._sessionAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -422,7 +423,7 @@ namespace Amazon.Lex.Model
         // Check to see if Slots property is set
         internal bool IsSetSlots()
         {
-            return this._slots != null && this._slots.Count > 0; 
+            return this._slots != null && (this._slots.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

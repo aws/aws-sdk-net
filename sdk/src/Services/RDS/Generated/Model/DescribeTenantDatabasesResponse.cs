@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.RDS.Model
     public partial class DescribeTenantDatabasesResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<TenantDatabase> _tenantDatabases = new List<TenantDatabase>();
+        private List<TenantDatabase> _tenantDatabases = AWSConfigs.InitializeCollections ? new List<TenantDatabase>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -71,7 +72,7 @@ namespace Amazon.RDS.Model
         // Check to see if TenantDatabases property is set
         internal bool IsSetTenantDatabases()
         {
-            return this._tenantDatabases != null && this._tenantDatabases.Count > 0; 
+            return this._tenantDatabases != null && (this._tenantDatabases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

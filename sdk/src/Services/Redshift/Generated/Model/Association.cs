@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class Association
     {
-        private List<CertificateAssociation> _certificateAssociations = new List<CertificateAssociation>();
+        private List<CertificateAssociation> _certificateAssociations = AWSConfigs.InitializeCollections ? new List<CertificateAssociation>() : null;
         private string _customDomainCertificateArn;
         private DateTime? _customDomainCertificateExpiryDate;
 
@@ -52,7 +53,7 @@ namespace Amazon.Redshift.Model
         // Check to see if CertificateAssociations property is set
         internal bool IsSetCertificateAssociations()
         {
-            return this._certificateAssociations != null && this._certificateAssociations.Count > 0; 
+            return this._certificateAssociations != null && (this._certificateAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

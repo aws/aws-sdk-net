@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -48,7 +49,7 @@ namespace Amazon.EC2.Model
         private int? _allocationDefaultNetmaskLength;
         private int? _allocationMaxNetmaskLength;
         private int? _allocationMinNetmaskLength;
-        private List<RequestIpamResourceTag> _allocationResourceTags = new List<RequestIpamResourceTag>();
+        private List<RequestIpamResourceTag> _allocationResourceTags = AWSConfigs.InitializeCollections ? new List<RequestIpamResourceTag>() : null;
         private bool? _autoImport;
         private IpamPoolAwsService _awsService;
         private string _clientToken;
@@ -59,7 +60,7 @@ namespace Amazon.EC2.Model
         private bool? _publiclyAdvertisable;
         private string _sourceIpamPoolId;
         private IpamPoolSourceResourceRequest _sourceResource;
-        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
+        private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
 
         /// <summary>
         /// Gets and sets the property AddressFamily. 
@@ -164,7 +165,7 @@ namespace Amazon.EC2.Model
         // Check to see if AllocationResourceTags property is set
         internal bool IsSetAllocationResourceTags()
         {
-            return this._allocationResourceTags != null && this._allocationResourceTags.Count > 0; 
+            return this._allocationResourceTags != null && (this._allocationResourceTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -399,7 +400,7 @@ namespace Amazon.EC2.Model
         // Check to see if TagSpecifications property is set
         internal bool IsSetTagSpecifications()
         {
-            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
+            return this._tagSpecifications != null && (this._tagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

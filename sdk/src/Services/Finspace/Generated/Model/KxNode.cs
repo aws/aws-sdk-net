@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Finspace.Model
 {
     /// <summary>
@@ -36,6 +37,7 @@ namespace Amazon.Finspace.Model
         private string _availabilityZoneId;
         private DateTime? _launchTime;
         private string _nodeId;
+        private KxNodeStatus _status;
 
         /// <summary>
         /// Gets and sets the property AvailabilityZoneId. 
@@ -43,6 +45,7 @@ namespace Amazon.Finspace.Model
         /// The identifier of the availability zones where subnets for the environment are created.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=8, Max=12)]
         public string AvailabilityZoneId
         {
             get { return this._availabilityZoneId; }
@@ -92,6 +95,33 @@ namespace Amazon.Finspace.Model
         internal bool IsSetNodeId()
         {
             return this._nodeId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        ///  Specifies the status of the cluster nodes. 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>RUNNING</c> – The node is actively serving.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PROVISIONING</c> – The node is being prepared.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public KxNodeStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }

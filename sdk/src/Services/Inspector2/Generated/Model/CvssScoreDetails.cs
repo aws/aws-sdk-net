@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class CvssScoreDetails
     {
-        private List<CvssScoreAdjustment> _adjustments = new List<CvssScoreAdjustment>();
+        private List<CvssScoreAdjustment> _adjustments = AWSConfigs.InitializeCollections ? new List<CvssScoreAdjustment>() : null;
         private string _cvssSource;
         private double? _score;
         private string _scoreSource;
@@ -56,7 +57,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if Adjustments property is set
         internal bool IsSetAdjustments()
         {
-            return this._adjustments != null && this._adjustments.Count > 0; 
+            return this._adjustments != null && (this._adjustments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

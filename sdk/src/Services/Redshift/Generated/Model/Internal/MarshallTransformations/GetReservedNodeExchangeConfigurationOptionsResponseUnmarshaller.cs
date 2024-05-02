@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -90,6 +91,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ReservedNodeConfigurationOptionList/ReservedNodeConfigurationOption", targetDepth))
                     {
                         var unmarshaller = ReservedNodeConfigurationOptionUnmarshaller.Instance;
+                        if (response.ReservedNodeConfigurationOptionList == null)
+                        {
+                            response.ReservedNodeConfigurationOptionList = new List<ReservedNodeConfigurationOption>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ReservedNodeConfigurationOptionList.Add(item);
                         continue;

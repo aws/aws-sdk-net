@@ -30,54 +30,83 @@ namespace Amazon.S3.Model
     ///  
     /// <para>
     /// You first initiate the multipart upload and then upload all parts using the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
+    /// operation or the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>
     /// operation. After successfully uploading all relevant parts of an upload, you call
-    /// this action to complete the upload. Upon receiving this request, Amazon S3 concatenates
-    /// all the parts in ascending order by part number to create a new object. In the Complete
-    /// Multipart Upload request, you must provide the parts list. You must ensure that the
-    /// parts list is complete. This action concatenates the parts that you provide in the
-    /// list. For each part in the list, you must provide the part number and the <code>ETag</code>
-    /// value, returned after that part was uploaded.
+    /// this <c>CompleteMultipartUpload</c> operation to complete the upload. Upon receiving
+    /// this request, Amazon S3 concatenates all the parts in ascending order by part number
+    /// to create a new object. In the CompleteMultipartUpload request, you must provide the
+    /// parts list and ensure that the parts list is complete. The CompleteMultipartUpload
+    /// API operation concatenates the parts that you provide in the list. For each part in
+    /// the list, you must provide the <c>PartNumber</c> value and the <c>ETag</c>
+    /// value that are returned after that part was uploaded.
     /// </para>
     ///  
     /// <para>
-    /// Processing of a Complete Multipart Upload request could take several minutes to complete.
-    /// After Amazon S3 begins processing the request, it sends an HTTP response header that
-    /// specifies a 200 OK response. While processing is in progress, Amazon S3 periodically
-    /// sends white space characters to keep the connection from timing out. Because a request
-    /// could fail after the initial 200 OK response has been sent, it is important that you
-    /// check the response body to determine whether the request succeeded.
+    /// The processing of a CompleteMultipartUpload request could take several minutes to
+    /// finalize. After Amazon S3 begins processing the request, it sends an HTTP response
+    /// header that specifies a <c>200 OK</c> response. While processing is in progress,
+    /// Amazon S3 periodically sends white space characters to keep the connection from timing
+    /// out. A request could fail after the initial <c>200 OK</c> response has been
+    /// sent. This means that a <c>200 OK</c> response can contain either a success
+    /// or an error. The error response might be embedded in the <c>200 OK</c> response.
+    /// If you call this API operation directly, make sure to design your application to parse
+    /// the contents of the response and handle it appropriately. If you use Amazon Web Services
+    /// SDKs, SDKs handle this condition. The SDKs detect the embedded error and apply error
+    /// handling per your configuration settings (including automatically retrying the request
+    /// as appropriate). If the condition persists, the SDKs throw an exception (or, for the
+    /// SDKs that don't use exceptions, they return an error). 
     /// </para>
     ///  
     /// <para>
-    /// Note that if <code>CompleteMultipartUpload</code> fails, applications should be prepared
-    /// to retry the failed requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ErrorBestPractices.html">Amazon
+    /// Note that if <c>CompleteMultipartUpload</c> fails, applications should be prepared
+    /// to retry any failed requests (including 500 error responses). For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ErrorBestPractices.html">Amazon
     /// S3 Error Best Practices</a>.
     /// </para>
     ///  <important> 
     /// <para>
-    /// You cannot use <code>Content-Type: application/x-www-form-urlencode</code> with Complete
-    /// Multipart Upload requests. It is not allowed by the Amazon S3. Also, if
-    /// you do not provide a <code>Content-Type</code> header, <code>CompleteMultipartUpload</code>
-    /// returns a 200 OK response.
+    /// You can't use <c>Content-Type: application/x-www-form-urlencoded</c> for the
+    /// CompleteMultipartUpload requests. Also, if you don't provide a <c>Content-Type</c>
+    /// header, <c>CompleteMultipartUpload</c> can still return a <c>200 OK</c>
+    /// response.
     /// </para>
     ///  </important> 
     /// <para>
     /// For more information about multipart uploads, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/uploadobjusingmpu.html">Uploading
-    /// Objects Using Multipart Upload</a>.
+    /// Objects Using Multipart Upload</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
-    ///  
+    ///  <note> 
     /// <para>
-    /// For information about permissions required to use the multipart upload API, see <a
-    /// href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
-    /// Upload and Permissions</a>.
+    ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
+    /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
+    /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
+    /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+    /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
-    ///  
+    ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
     /// <para>
-    ///  <code>CompleteMultipartUpload</code> has the following special errors:
+    ///  <b>General purpose bucket permissions</b> - For information about permissions required
+    /// to use the multipart upload API, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
+    /// Upload and Permissions</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
-    ///  <ul> <li> 
+    ///  </li> <li> 
     /// <para>
-    /// Error code: <code>EntityTooSmall</code> 
+    ///  <b>Directory bucket permissions</b> - To grant access to this API operation on a
+    /// directory bucket, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
+    /// <c>CreateSession</c> </a> API operation for session-based authorization. Specifically,
+    /// you grant the <c>s3express:CreateSession</c> permission to the directory bucket
+    /// in a bucket policy or an IAM identity-based policy. Then, you make the <c>CreateSession</c>
+    /// API call on the bucket to obtain a session token. With the session token in your request
+    /// header, you can make API requests to this operation. After the session token expires,
+    /// you make another <c>CreateSession</c> API call to generate a new session token
+    /// for use. Amazon Web Services CLI or SDKs create session and refresh the session token
+    /// automatically to avoid service interruptions when a session expires. For more information
+    /// about authorization, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
+    /// <c>CreateSession</c> </a>.
+    /// </para>
+    ///  </li> </ul> </dd> <dt>Special errors</dt> <dd> <ul> <li> 
+    /// <para>
+    /// Error Code: <c>EntityTooSmall</c> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -86,25 +115,25 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// 400 Bad Request
+    /// HTTP Status Code: 400 Bad Request
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    /// Error code: <code>InvalidPart</code> 
+    /// Error Code: <c>InvalidPart</c> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
     /// Description: One or more of the specified parts could not be found. The part might
-    /// not have been uploaded, or the specified entity tag might not have matched the part's
-    /// entity tag.
+    /// not have been uploaded, or the specified ETag might not have matched the uploaded
+    /// part's ETag.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// 400 Bad Request
+    /// HTTP Status Code: 400 Bad Request
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    /// Error code: <code>InvalidPartOrder</code> 
+    /// Error Code: <c>InvalidPartOrder</c> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -113,11 +142,11 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// 400 Bad Request
+    /// HTTP Status Code: 400 Bad Request
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    /// Error code: <code>NoSuchUpload</code> 
+    /// Error Code: <c>NoSuchUpload</c> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -126,11 +155,15 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// 404 Not Found
+    /// HTTP Status Code: 404 Not Found
     /// </para>
-    ///  </li> </ul> </li> </ul> 
+    ///  </li> </ul> </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
     /// <para>
-    /// The following operations are related to <code>CompleteMultipartUpload</code>:
+    ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+    /// </para>
+    ///  </dd> </dl> 
+    /// <para>
+    /// The following operations are related to <c>CompleteMultipartUpload</c>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -167,7 +200,7 @@ namespace Amazon.S3.Model
         private string _checksumSHA1;
         private string _checksumSHA256;
         private string key;
-        private List<PartETag> partETags = new List<PartETag>();
+        private List<PartETag> partETags = AWSConfigs.InitializeCollections ? new List<PartETag>() : null;
         private string uploadId;
         private RequestPayer requestPayer;
         private string _sseCustomerAlgorithm;
@@ -182,17 +215,34 @@ namespace Amazon.S3.Model
         /// </para>
         ///  
         /// <para>
-        /// When using this action with an access point, you must direct requests to the access
-        /// point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+        ///  <b>Directory buckets</b> - When you use this operation with a directory bucket, you
+        /// must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
+        /// Path-style requests are not supported. Directory bucket names must be unique in the
+        /// chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c>
+        /// (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For
+        /// information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
+        /// bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Access points</b> - When you use this action with an access point, you must provide
+        /// the alias of the access point in place of the bucket name or specify the access point
+        /// ARN. When using the access point ARN, you must direct requests to the access point
+        /// hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
         /// When using this action with an access point through the Amazon Web Services SDKs,
         /// you provide the access point ARN in place of the bucket name. For more information
         /// about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
         /// access points</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
-        ///  
+        ///  <note> 
         /// <para>
-        /// When you use this action with Amazon S3 on Outposts, you must direct requests to the
-        /// S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+        /// Access points and Object Lambda access points are not supported by directory buckets.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you
+        /// must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes
+        /// the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>.
         /// When you use this action with S3 on Outposts through the Amazon Web Services SDKs,
         /// you provide the Outposts access point ARN in place of the bucket name. For more information
         /// about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
@@ -300,7 +350,7 @@ namespace Amazon.S3.Model
         /// <para>
         /// The account ID of the expected bucket owner. If the account ID that you provide does
         /// not match the actual owner of the bucket, the request fails with the HTTP status code
-        /// <code>403 Forbidden</code> (access denied).
+        /// <c>403 Forbidden</c> (access denied).
         /// </para>
         /// </summary>
         public string ExpectedBucketOwner
@@ -353,15 +403,7 @@ namespace Amazon.S3.Model
         /// </summary>
         public List<PartETag> PartETags
         {
-            get
-            {
-                if (this.partETags == null)
-                {
-                    this.partETags = new List<PartETag>();
-                }
-
-                return this.partETags;
-            }
+            get { return this.partETags; }
             set { this.partETags = value; }
         }
 
@@ -371,9 +413,12 @@ namespace Amazon.S3.Model
         /// <param name="partETags">PartETags that will added to this request.</param>
         public void AddPartETags(params PartETag[] partETags)
         {
-            foreach (PartETag part in partETags)
+            if (partETags != null)
             {
-                this.PartETags.Add(part);
+                foreach (PartETag part in partETags)
+                {
+                    this.PartETags.Add(part);
+                }
             }
         }
 
@@ -383,6 +428,10 @@ namespace Amazon.S3.Model
         /// <param name="partETags">PartETags that will added to this request.</param>
         public void AddPartETags(IEnumerable<PartETag> partETags)
         {
+            if (partETags == null)
+            {
+                partETags = new List<PartETag>();
+            }
             foreach (PartETag part in partETags)
             {
                 this.PartETags.Add(part);
@@ -395,6 +444,11 @@ namespace Amazon.S3.Model
         /// <param name="responses">The list of response objects return from UploadParts.</param>
         public void AddPartETags(params UploadPartResponse[] responses)
         {
+            if (PartETags == null)
+            {
+                PartETags = new List<PartETag>();
+            }
+
             foreach (UploadPartResponse response in responses)
             {
                 this.PartETags.Add(new PartETag(response));
@@ -407,6 +461,11 @@ namespace Amazon.S3.Model
         /// <param name="responses">The list of response objects return from UploadParts.</param>
         public void AddPartETags(IEnumerable<UploadPartResponse> responses)
         {
+            if (PartETags == null)
+            {
+                PartETags = new List<PartETag>();
+            }
+
             foreach (UploadPartResponse response in responses)
             {
                 this.PartETags.Add(new PartETag(response));
@@ -419,6 +478,11 @@ namespace Amazon.S3.Model
         /// <param name="responses">The list of response objects return from CopyParts.</param>
         public void AddPartETags(params CopyPartResponse[] responses)
         {
+            if (PartETags == null)
+            {
+                PartETags = new List<PartETag>();
+            }
+
             foreach (CopyPartResponse response in responses)
             {
                 this.PartETags.Add(new PartETag(response));
@@ -431,6 +495,11 @@ namespace Amazon.S3.Model
         /// <param name="responses">The list of response objects return from CopyParts.</param>
         public void AddPartETags(IEnumerable<CopyPartResponse> responses)
         {
+            if (PartETags == null)
+            {
+                PartETags = new List<PartETag>();
+            }
+
             foreach (CopyPartResponse response in responses)
             {
                 this.PartETags.Add(new PartETag(response));

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Schemas.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Schemas.Model
     /// </summary>
     public partial class ListDiscoverersResponse : AmazonWebServiceResponse
     {
-        private List<DiscovererSummary> _discoverers = new List<DiscovererSummary>();
+        private List<DiscovererSummary> _discoverers = AWSConfigs.InitializeCollections ? new List<DiscovererSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Schemas.Model
         // Check to see if Discoverers property is set
         internal bool IsSetDiscoverers()
         {
-            return this._discoverers != null && this._discoverers.Count > 0; 
+            return this._discoverers != null && (this._discoverers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

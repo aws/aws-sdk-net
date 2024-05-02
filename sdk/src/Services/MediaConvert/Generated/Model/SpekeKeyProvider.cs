@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.MediaConvert.Model
     {
         private string _certificateArn;
         private string _resourceId;
-        private List<string> _systemIds = new List<string>();
+        private List<string> _systemIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _url;
 
         /// <summary>
@@ -89,7 +90,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if SystemIds property is set
         internal bool IsSetSystemIds()
         {
-            return this._systemIds != null && this._systemIds.Count > 0; 
+            return this._systemIds != null && (this._systemIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AccessAnalyzer.Model
     /// </summary>
     public partial class AnalyzedResource
     {
-        private List<string> _actions = new List<string>();
+        private List<string> _actions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _analyzedAt;
         private DateTime? _createdAt;
         private string _error;
@@ -41,7 +42,7 @@ namespace Amazon.AccessAnalyzer.Model
         private string _resourceArn;
         private string _resourceOwnerAccount;
         private ResourceType _resourceType;
-        private List<string> _sharedVia = new List<string>();
+        private List<string> _sharedVia = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private FindingStatus _status;
         private DateTime? _updatedAt;
 
@@ -61,7 +62,7 @@ namespace Amazon.AccessAnalyzer.Model
         // Check to see if Actions property is set
         internal bool IsSetActions()
         {
-            return this._actions != null && this._actions.Count > 0; 
+            return this._actions != null && (this._actions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -213,7 +214,7 @@ namespace Amazon.AccessAnalyzer.Model
         // Check to see if SharedVia property is set
         internal bool IsSetSharedVia()
         {
-            return this._sharedVia != null && this._sharedVia.Count > 0; 
+            return this._sharedVia != null && (this._sharedVia.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

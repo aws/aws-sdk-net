@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -58,13 +59,13 @@ namespace Amazon.SageMaker.Model
     {
         private string _description;
         private string _eventTimeFeatureName;
-        private List<FeatureDefinition> _featureDefinitions = new List<FeatureDefinition>();
+        private List<FeatureDefinition> _featureDefinitions = AWSConfigs.InitializeCollections ? new List<FeatureDefinition>() : null;
         private string _featureGroupName;
         private OfflineStoreConfig _offlineStoreConfig;
         private OnlineStoreConfig _onlineStoreConfig;
         private string _recordIdentifierFeatureName;
         private string _roleArn;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private ThroughputConfig _throughputConfig;
 
         /// <summary>
@@ -158,22 +159,27 @@ namespace Amazon.SageMaker.Model
         // Check to see if FeatureDefinitions property is set
         internal bool IsSetFeatureDefinitions()
         {
-            return this._featureDefinitions != null && this._featureDefinitions.Count > 0; 
+            return this._featureDefinitions != null && (this._featureDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property FeatureGroupName. 
         /// <para>
         /// The name of the <c>FeatureGroup</c>. The name must be unique within an Amazon Web
-        /// Services Region in an Amazon Web Services account. The name:
+        /// Services Region in an Amazon Web Services account.
+        /// </para>
+        ///  
+        /// <para>
+        /// The name:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must start and end with an alphanumeric character.
+        /// Must start with an alphanumeric character.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can only contain alphanumeric character and hyphens. Spaces are not allowed. 
+        /// Can only include alphanumeric characters, underscores, and hyphens. Spaces are not
+        /// allowed.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -281,7 +287,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must start and end with an alphanumeric character.
+        /// Must start with an alphanumeric character.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -339,7 +345,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

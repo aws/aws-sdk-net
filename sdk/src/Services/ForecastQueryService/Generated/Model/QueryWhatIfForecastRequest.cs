@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ForecastQueryService.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.ForecastQueryService.Model
     public partial class QueryWhatIfForecastRequest : AmazonForecastQueryServiceRequest
     {
         private string _endDate;
-        private Dictionary<string, string> _filters = new Dictionary<string, string>();
+        private Dictionary<string, string> _filters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _nextToken;
         private string _startDate;
         private string _whatIfForecastArn;
@@ -85,7 +86,7 @@ namespace Amazon.ForecastQueryService.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

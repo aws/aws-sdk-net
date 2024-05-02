@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.StepFunctions.Model
         /// Enumerable containing all of the Activities
         /// </summary>
         public IPaginatedEnumerable<ActivityListItem> Activities => 
-            new PaginatedResultKeyResponse<ListActivitiesResponse, ActivityListItem>(this, (i) => i.Activities);
+            new PaginatedResultKeyResponse<ListActivitiesResponse, ActivityListItem>(this, (i) => i.Activities ?? new List<ActivityListItem>());
 
         internal ListActivitiesPaginator(IAmazonStepFunctions client, ListActivitiesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.StepFunctions.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListActivitiesResponse> IPaginator<ListActivitiesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListActivitiesResponse> IPaginator<ListActivitiesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MedicalImaging.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.MedicalImaging.Model
         /// Enumerable containing all of the DatastoreSummaries
         /// </summary>
         public IPaginatedEnumerable<DatastoreSummary> DatastoreSummaries => 
-            new PaginatedResultKeyResponse<ListDatastoresResponse, DatastoreSummary>(this, (i) => i.DatastoreSummaries);
+            new PaginatedResultKeyResponse<ListDatastoresResponse, DatastoreSummary>(this, (i) => i.DatastoreSummaries ?? new List<DatastoreSummary>());
 
         internal ListDatastoresPaginator(IAmazonMedicalImaging client, ListDatastoresRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.MedicalImaging.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListDatastoresResponse> IPaginator<ListDatastoresResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListDatastoresResponse> IPaginator<ListDatastoresResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

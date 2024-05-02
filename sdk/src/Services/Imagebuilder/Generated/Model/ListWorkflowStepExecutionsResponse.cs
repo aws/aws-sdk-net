@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.Imagebuilder.Model
         private string _message;
         private string _nextToken;
         private string _requestId;
-        private List<WorkflowStepMetadata> _steps = new List<WorkflowStepMetadata>();
+        private List<WorkflowStepMetadata> _steps = AWSConfigs.InitializeCollections ? new List<WorkflowStepMetadata>() : null;
         private string _workflowBuildVersionArn;
         private string _workflowExecutionId;
 
@@ -135,7 +136,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if Steps property is set
         internal bool IsSetSteps()
         {
-            return this._steps != null && this._steps.Count > 0; 
+            return this._steps != null && (this._steps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

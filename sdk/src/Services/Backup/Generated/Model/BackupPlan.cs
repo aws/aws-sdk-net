@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Backup.Model
 {
     /// <summary>
@@ -35,9 +36,9 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class BackupPlan
     {
-        private List<AdvancedBackupSetting> _advancedBackupSettings = new List<AdvancedBackupSetting>();
+        private List<AdvancedBackupSetting> _advancedBackupSettings = AWSConfigs.InitializeCollections ? new List<AdvancedBackupSetting>() : null;
         private string _backupPlanName;
-        private List<BackupRule> _rules = new List<BackupRule>();
+        private List<BackupRule> _rules = AWSConfigs.InitializeCollections ? new List<BackupRule>() : null;
 
         /// <summary>
         /// Gets and sets the property AdvancedBackupSettings. 
@@ -54,7 +55,7 @@ namespace Amazon.Backup.Model
         // Check to see if AdvancedBackupSettings property is set
         internal bool IsSetAdvancedBackupSettings()
         {
-            return this._advancedBackupSettings != null && this._advancedBackupSettings.Count > 0; 
+            return this._advancedBackupSettings != null && (this._advancedBackupSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -93,7 +94,7 @@ namespace Amazon.Backup.Model
         // Check to see if Rules property is set
         internal bool IsSetRules()
         {
-            return this._rules != null && this._rules.Count > 0; 
+            return this._rules != null && (this._rules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

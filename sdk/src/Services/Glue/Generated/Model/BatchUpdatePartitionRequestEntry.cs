@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Glue.Model
     public partial class BatchUpdatePartitionRequestEntry
     {
         private PartitionInput _partitionInput;
-        private List<string> _partitionValueList = new List<string>();
+        private List<string> _partitionValueList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property PartitionInput. 
@@ -71,7 +72,7 @@ namespace Amazon.Glue.Model
         // Check to see if PartitionValueList property is set
         internal bool IsSetPartitionValueList()
         {
-            return this._partitionValueList != null && this._partitionValueList.Count > 0; 
+            return this._partitionValueList != null && (this._partitionValueList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

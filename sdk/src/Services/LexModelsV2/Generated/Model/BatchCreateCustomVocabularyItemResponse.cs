@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -35,9 +36,9 @@ namespace Amazon.LexModelsV2.Model
     {
         private string _botId;
         private string _botVersion;
-        private List<FailedCustomVocabularyItem> _errors = new List<FailedCustomVocabularyItem>();
+        private List<FailedCustomVocabularyItem> _errors = AWSConfigs.InitializeCollections ? new List<FailedCustomVocabularyItem>() : null;
         private string _localeId;
-        private List<CustomVocabularyItem> _resources = new List<CustomVocabularyItem>();
+        private List<CustomVocabularyItem> _resources = AWSConfigs.InitializeCollections ? new List<CustomVocabularyItem>() : null;
 
         /// <summary>
         /// Gets and sets the property BotId. 
@@ -93,7 +94,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -131,7 +132,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if Resources property is set
         internal bool IsSetResources()
         {
-            return this._resources != null && this._resources.Count > 0; 
+            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

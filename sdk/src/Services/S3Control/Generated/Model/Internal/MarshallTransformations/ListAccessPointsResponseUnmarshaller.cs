@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -56,13 +57,20 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             int targetDepth = originalDepth + 1;
             if (context.IsStartOfDocument) 
                    targetDepth += 1;
-
+            if (context.IsEmptyResponse)
+            {
+                return;
+            }
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
                     if (context.TestExpression("AccessPointList/AccessPoint", targetDepth))
                     {
+                        if (response.AccessPointList == null)
+                        {
+                            response.AccessPointList = new List<AccessPoint>();
+                        }
                         var unmarshaller = AccessPointUnmarshaller.Instance;
                         response.AccessPointList.Add(unmarshaller.Unmarshall(context));
                         continue;

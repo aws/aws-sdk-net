@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.CodeBuild.Model
         /// Enumerable containing all of the Ids
         /// </summary>
         public IPaginatedEnumerable<string> Ids => 
-            new PaginatedResultKeyResponse<ListBuildBatchesForProjectResponse, string>(this, (i) => i.Ids);
+            new PaginatedResultKeyResponse<ListBuildBatchesForProjectResponse, string>(this, (i) => i.Ids ?? new List<string>());
 
         internal ListBuildBatchesForProjectPaginator(IAmazonCodeBuild client, ListBuildBatchesForProjectRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.CodeBuild.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListBuildBatchesForProjectResponse> IPaginator<ListBuildBatchesForProjectResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListBuildBatchesForProjectResponse> IPaginator<ListBuildBatchesForProjectResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

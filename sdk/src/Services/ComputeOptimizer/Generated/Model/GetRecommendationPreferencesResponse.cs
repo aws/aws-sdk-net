@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ComputeOptimizer.Model
     public partial class GetRecommendationPreferencesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RecommendationPreferencesDetail> _recommendationPreferencesDetails = new List<RecommendationPreferencesDetail>();
+        private List<RecommendationPreferencesDetail> _recommendationPreferencesDetails = AWSConfigs.InitializeCollections ? new List<RecommendationPreferencesDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +74,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if RecommendationPreferencesDetails property is set
         internal bool IsSetRecommendationPreferencesDetails()
         {
-            return this._recommendationPreferencesDetails != null && this._recommendationPreferencesDetails.Count > 0; 
+            return this._recommendationPreferencesDetails != null && (this._recommendationPreferencesDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

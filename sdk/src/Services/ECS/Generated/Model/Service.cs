@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECS.Model
 {
     /// <summary>
@@ -33,24 +34,24 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class Service
     {
-        private List<CapacityProviderStrategyItem> _capacityProviderStrategy = new List<CapacityProviderStrategyItem>();
+        private List<CapacityProviderStrategyItem> _capacityProviderStrategy = AWSConfigs.InitializeCollections ? new List<CapacityProviderStrategyItem>() : null;
         private string _clusterArn;
         private DateTime? _createdAt;
         private string _createdBy;
         private DeploymentConfiguration _deploymentConfiguration;
         private DeploymentController _deploymentController;
-        private List<Deployment> _deployments = new List<Deployment>();
+        private List<Deployment> _deployments = AWSConfigs.InitializeCollections ? new List<Deployment>() : null;
         private int? _desiredCount;
         private bool? _enableecsManagedTags;
         private bool? _enableExecuteCommand;
-        private List<ServiceEvent> _events = new List<ServiceEvent>();
+        private List<ServiceEvent> _events = AWSConfigs.InitializeCollections ? new List<ServiceEvent>() : null;
         private int? _healthCheckGracePeriodSeconds;
         private LaunchType _launchType;
-        private List<LoadBalancer> _loadBalancers = new List<LoadBalancer>();
+        private List<LoadBalancer> _loadBalancers = AWSConfigs.InitializeCollections ? new List<LoadBalancer>() : null;
         private NetworkConfiguration _networkConfiguration;
         private int? _pendingCount;
-        private List<PlacementConstraint> _placementConstraints = new List<PlacementConstraint>();
-        private List<PlacementStrategy> _placementStrategy = new List<PlacementStrategy>();
+        private List<PlacementConstraint> _placementConstraints = AWSConfigs.InitializeCollections ? new List<PlacementConstraint>() : null;
+        private List<PlacementStrategy> _placementStrategy = AWSConfigs.InitializeCollections ? new List<PlacementStrategy>() : null;
         private string _platformFamily;
         private string _platformVersion;
         private PropagateTags _propagateTags;
@@ -59,11 +60,11 @@ namespace Amazon.ECS.Model
         private SchedulingStrategy _schedulingStrategy;
         private string _serviceArn;
         private string _serviceName;
-        private List<ServiceRegistry> _serviceRegistries = new List<ServiceRegistry>();
+        private List<ServiceRegistry> _serviceRegistries = AWSConfigs.InitializeCollections ? new List<ServiceRegistry>() : null;
         private string _status;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _taskDefinition;
-        private List<TaskSet> _taskSets = new List<TaskSet>();
+        private List<TaskSet> _taskSets = AWSConfigs.InitializeCollections ? new List<TaskSet>() : null;
 
         /// <summary>
         /// Gets and sets the property CapacityProviderStrategy. 
@@ -81,7 +82,7 @@ namespace Amazon.ECS.Model
         // Check to see if CapacityProviderStrategy property is set
         internal bool IsSetCapacityProviderStrategy()
         {
-            return this._capacityProviderStrategy != null && this._capacityProviderStrategy.Count > 0; 
+            return this._capacityProviderStrategy != null && (this._capacityProviderStrategy.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -190,7 +191,7 @@ namespace Amazon.ECS.Model
         // Check to see if Deployments property is set
         internal bool IsSetDeployments()
         {
-            return this._deployments != null && this._deployments.Count > 0; 
+            return this._deployments != null && (this._deployments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -269,7 +270,7 @@ namespace Amazon.ECS.Model
         // Check to see if Events property is set
         internal bool IsSetEvents()
         {
-            return this._events != null && this._events.Count > 0; 
+            return this._events != null && (this._events.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -327,7 +328,7 @@ namespace Amazon.ECS.Model
         // Check to see if LoadBalancers property is set
         internal bool IsSetLoadBalancers()
         {
-            return this._loadBalancers != null && this._loadBalancers.Count > 0; 
+            return this._loadBalancers != null && (this._loadBalancers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -382,7 +383,7 @@ namespace Amazon.ECS.Model
         // Check to see if PlacementConstraints property is set
         internal bool IsSetPlacementConstraints()
         {
-            return this._placementConstraints != null && this._placementConstraints.Count > 0; 
+            return this._placementConstraints != null && (this._placementConstraints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -400,7 +401,7 @@ namespace Amazon.ECS.Model
         // Check to see if PlacementStrategy property is set
         internal bool IsSetPlacementStrategy()
         {
-            return this._placementStrategy != null && this._placementStrategy.Count > 0; 
+            return this._placementStrategy != null && (this._placementStrategy.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -604,7 +605,7 @@ namespace Amazon.ECS.Model
         // Check to see if ServiceRegistries property is set
         internal bool IsSetServiceRegistries()
         {
-            return this._serviceRegistries != null && this._serviceRegistries.Count > 0; 
+            return this._serviceRegistries != null && (this._serviceRegistries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -683,7 +684,7 @@ namespace Amazon.ECS.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -722,7 +723,7 @@ namespace Amazon.ECS.Model
         // Check to see if TaskSets property is set
         internal bool IsSetTaskSets()
         {
-            return this._taskSets != null && this._taskSets.Count > 0; 
+            return this._taskSets != null && (this._taskSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CloudWatchEvents.Model
     /// </summary>
     public partial class ListEventSourcesResponse : AmazonWebServiceResponse
     {
-        private List<EventSource> _eventSources = new List<EventSource>();
+        private List<EventSource> _eventSources = AWSConfigs.InitializeCollections ? new List<EventSource>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.CloudWatchEvents.Model
         // Check to see if EventSources property is set
         internal bool IsSetEventSources()
         {
-            return this._eventSources != null && this._eventSources.Count > 0; 
+            return this._eventSources != null && (this._eventSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Omics.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Omics.Model
     /// </summary>
     public partial class ListReadSetActivationJobsResponse : AmazonWebServiceResponse
     {
-        private List<ActivateReadSetJobItem> _activationJobs = new List<ActivateReadSetJobItem>();
+        private List<ActivateReadSetJobItem> _activationJobs = AWSConfigs.InitializeCollections ? new List<ActivateReadSetJobItem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Omics.Model
         // Check to see if ActivationJobs property is set
         internal bool IsSetActivationJobs()
         {
-            return this._activationJobs != null && this._activationJobs.Count > 0; 
+            return this._activationJobs != null && (this._activationJobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

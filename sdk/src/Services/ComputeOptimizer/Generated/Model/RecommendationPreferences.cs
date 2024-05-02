@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.ComputeOptimizer.Model
     /// </summary>
     public partial class RecommendationPreferences
     {
-        private List<string> _cpuVendorArchitectures = new List<string>();
+        private List<string> _cpuVendorArchitectures = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CpuVendorArchitectures. 
@@ -75,7 +76,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if CpuVendorArchitectures property is set
         internal bool IsSetCpuVendorArchitectures()
         {
-            return this._cpuVendorArchitectures != null && this._cpuVendorArchitectures.Count > 0; 
+            return this._cpuVendorArchitectures != null && (this._cpuVendorArchitectures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

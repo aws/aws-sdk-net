@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Enumerable containing all of the Jobs
         /// </summary>
         public IPaginatedEnumerable<Job> Jobs => 
-            new PaginatedResultKeyResponse<ListJobsByStatusResponse, Job>(this, (i) => i.Jobs);
+            new PaginatedResultKeyResponse<ListJobsByStatusResponse, Job>(this, (i) => i.Jobs ?? new List<Job>());
 
         internal ListJobsByStatusPaginator(IAmazonElasticTranscoder client, ListJobsByStatusRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ElasticTranscoder.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListJobsByStatusResponse> IPaginator<ListJobsByStatusResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListJobsByStatusResponse> IPaginator<ListJobsByStatusResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

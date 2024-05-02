@@ -30,12 +30,13 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RealtimeLogConfig Object
     /// </summary>  
-    public class RealtimeLogConfigUnmarshaller : IUnmarshaller<RealtimeLogConfig, XmlUnmarshallerContext>
+    public class RealtimeLogConfigUnmarshaller : IUnmarshaller<RealtimeLogConfig, XmlUnmarshallerContext>, IUnmarshaller<RealtimeLogConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -63,12 +64,20 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("EndPoints/member", targetDepth))
                     {
+                        if (unmarshalledObject.EndPoints == null)
+                        {
+                            unmarshalledObject.EndPoints = new List<EndPoint>();
+                        }
                         var unmarshaller = EndPointUnmarshaller.Instance;
                         unmarshalledObject.EndPoints.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
                     if (context.TestExpression("Fields/Field", targetDepth))
                     {
+                        if (unmarshalledObject.Fields == null)
+                        {
+                            unmarshalledObject.Fields = new List<string>();
+                        }
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Fields.Add(unmarshaller.Unmarshall(context));
                         continue;
@@ -92,6 +101,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public RealtimeLogConfig Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static RealtimeLogConfigUnmarshaller _instance = new RealtimeLogConfigUnmarshaller();        

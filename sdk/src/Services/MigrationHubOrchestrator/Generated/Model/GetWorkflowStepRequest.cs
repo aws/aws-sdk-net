@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MigrationHubOrchestrator.Model
 {
     /// <summary>
@@ -60,7 +61,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         /// <summary>
         /// Gets and sets the property StepGroupId. 
         /// <para>
-        /// desThe ID of the step group.
+        /// The ID of the step group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

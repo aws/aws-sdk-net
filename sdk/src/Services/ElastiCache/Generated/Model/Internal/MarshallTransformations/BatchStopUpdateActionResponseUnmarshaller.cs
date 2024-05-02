@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -84,6 +85,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ProcessedUpdateActions/ProcessedUpdateAction", targetDepth))
                     {
                         var unmarshaller = ProcessedUpdateActionUnmarshaller.Instance;
+                        if (response.ProcessedUpdateActions == null)
+                        {
+                            response.ProcessedUpdateActions = new List<ProcessedUpdateAction>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ProcessedUpdateActions.Add(item);
                         continue;
@@ -91,6 +96,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("UnprocessedUpdateActions/UnprocessedUpdateAction", targetDepth))
                     {
                         var unmarshaller = UnprocessedUpdateActionUnmarshaller.Instance;
+                        if (response.UnprocessedUpdateActions == null)
+                        {
+                            response.UnprocessedUpdateActions = new List<UnprocessedUpdateAction>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.UnprocessedUpdateActions.Add(item);
                         continue;

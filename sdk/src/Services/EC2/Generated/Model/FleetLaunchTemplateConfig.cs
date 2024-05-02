@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EC2.Model
     public partial class FleetLaunchTemplateConfig
     {
         private FleetLaunchTemplateSpecification _launchTemplateSpecification;
-        private List<FleetLaunchTemplateOverrides> _overrides = new List<FleetLaunchTemplateOverrides>();
+        private List<FleetLaunchTemplateOverrides> _overrides = AWSConfigs.InitializeCollections ? new List<FleetLaunchTemplateOverrides>() : null;
 
         /// <summary>
         /// Gets and sets the property LaunchTemplateSpecification. 
@@ -69,7 +70,7 @@ namespace Amazon.EC2.Model
         // Check to see if Overrides property is set
         internal bool IsSetOverrides()
         {
-            return this._overrides != null && this._overrides.Count > 0; 
+            return this._overrides != null && (this._overrides.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

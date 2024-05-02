@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
@@ -46,10 +47,10 @@ namespace Amazon.SimpleEmail.Model
     /// </summary>
     public partial class ReceiptRule
     {
-        private List<ReceiptAction> _actions = new List<ReceiptAction>();
+        private List<ReceiptAction> _actions = AWSConfigs.InitializeCollections ? new List<ReceiptAction>() : null;
         private bool? _enabled;
         private string _name;
-        private List<string> _recipients = new List<string>();
+        private List<string> _recipients = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _scanEnabled;
         private TlsPolicy _tlsPolicy;
 
@@ -69,7 +70,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if Actions property is set
         internal bool IsSetActions()
         {
-            return this._actions != null && this._actions.Count > 0; 
+            return this._actions != null && (this._actions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -139,7 +140,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if Recipients property is set
         internal bool IsSetRecipients()
         {
-            return this._recipients != null && this._recipients.Count > 0; 
+            return this._recipients != null && (this._recipients.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

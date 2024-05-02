@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeArtifact.Model
 {
     /// <summary>
@@ -106,23 +107,38 @@ namespace Amazon.CodeArtifact.Model
         /// The namespace of the requested package. The package component that specifies its namespace
         /// depends on its type. For example:
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The namespace is required when requesting packages of the following formats:
+        /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  The namespace of a Maven package is its <c>groupId</c>. The namespace is required
-        /// when requesting Maven packages. 
+        /// Maven
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The namespace of an npm package is its <c>scope</c>. 
+        /// Swift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Python and NuGet packages do not contain a corresponding component, packages of those
-        /// formats do not have a namespace. 
+        /// generic
+        /// </para>
+        ///  </li> </ul> </note> <ul> <li> 
+        /// <para>
+        ///  The namespace of a Maven package version is its <c>groupId</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The namespace of a generic package is its <c>namespace</c>. 
+        ///  The namespace of an npm or Swift package version is its <c>scope</c>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The namespace of a generic package is its <c>namespace</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Python, NuGet, and Ruby package versions do not contain a corresponding component,
+        /// package versions of those formats do not have a namespace. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

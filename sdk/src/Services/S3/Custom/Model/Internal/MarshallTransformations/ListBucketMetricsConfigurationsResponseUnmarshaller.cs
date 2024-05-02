@@ -29,6 +29,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>
     public class ListBucketMetricsConfigurationsResponseUnmarshaller : S3ReponseUnmarshaller
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             ListBucketMetricsConfigurationsResponse response = new ListBucketMetricsConfigurationsResponse();
@@ -67,8 +72,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("MetricsConfiguration", targetDepth))
                     {
+                        if (response.MetricsConfigurationList == null)
+                        {
+                            response.MetricsConfigurationList = new List<MetricsConfiguration>();
+                        }
                         response.MetricsConfigurationList.Add(MetricsConfigurationUnmarshaller.Instance.Unmarshall(context));
-
                         continue;
                     }
                     if (context.TestExpression("IsTruncated", targetDepth))
@@ -97,6 +105,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static ListBucketMetricsConfigurationsResponseUnmarshaller _instance = new ListBucketMetricsConfigurationsResponseUnmarshaller();
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static ListBucketMetricsConfigurationsResponseUnmarshaller Instance
         {
             get

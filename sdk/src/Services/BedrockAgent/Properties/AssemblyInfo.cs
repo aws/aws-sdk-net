@@ -42,9 +42,7 @@ using System.Runtime.CompilerServices;
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("3.3")]
-[assembly: AssemblyFileVersion("3.7.302.27")]
-
-[assembly: System.CLSCompliant(true)]
+[assembly: AssemblyFileVersion("3.7.306.4")]
 
 #if BCL
 [assembly: System.Security.AllowPartiallyTrustedCallers]

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkSpacesThinClient.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.WorkSpacesThinClient.Model
     public partial class ListSoftwareSetsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SoftwareSetSummary> _softwareSets = new List<SoftwareSetSummary>();
+        private List<SoftwareSetSummary> _softwareSets = AWSConfigs.InitializeCollections ? new List<SoftwareSetSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -74,7 +75,7 @@ namespace Amazon.WorkSpacesThinClient.Model
         // Check to see if SoftwareSets property is set
         internal bool IsSetSoftwareSets()
         {
-            return this._softwareSets != null && this._softwareSets.Count > 0; 
+            return this._softwareSets != null && (this._softwareSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

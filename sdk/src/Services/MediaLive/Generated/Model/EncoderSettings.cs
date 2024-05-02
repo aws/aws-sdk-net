@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
@@ -33,20 +34,20 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class EncoderSettings
     {
-        private List<AudioDescription> _audioDescriptions = new List<AudioDescription>();
+        private List<AudioDescription> _audioDescriptions = AWSConfigs.InitializeCollections ? new List<AudioDescription>() : null;
         private AvailBlanking _availBlanking;
         private AvailConfiguration _availConfiguration;
         private BlackoutSlate _blackoutSlate;
-        private List<CaptionDescription> _captionDescriptions = new List<CaptionDescription>();
+        private List<CaptionDescription> _captionDescriptions = AWSConfigs.InitializeCollections ? new List<CaptionDescription>() : null;
         private ColorCorrectionSettings _colorCorrectionSettings;
         private FeatureActivations _featureActivations;
         private GlobalConfiguration _globalConfiguration;
         private MotionGraphicsConfiguration _motionGraphicsConfiguration;
         private NielsenConfiguration _nielsenConfiguration;
-        private List<OutputGroup> _outputGroups = new List<OutputGroup>();
+        private List<OutputGroup> _outputGroups = AWSConfigs.InitializeCollections ? new List<OutputGroup>() : null;
         private ThumbnailConfiguration _thumbnailConfiguration;
         private TimecodeConfig _timecodeConfig;
-        private List<VideoDescription> _videoDescriptions = new List<VideoDescription>();
+        private List<VideoDescription> _videoDescriptions = AWSConfigs.InitializeCollections ? new List<VideoDescription>() : null;
 
         /// <summary>
         /// Gets and sets the property AudioDescriptions.
@@ -61,7 +62,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if AudioDescriptions property is set
         internal bool IsSetAudioDescriptions()
         {
-            return this._audioDescriptions != null && this._audioDescriptions.Count > 0; 
+            return this._audioDescriptions != null && (this._audioDescriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -122,7 +123,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if CaptionDescriptions property is set
         internal bool IsSetCaptionDescriptions()
         {
-            return this._captionDescriptions != null && this._captionDescriptions.Count > 0; 
+            return this._captionDescriptions != null && (this._captionDescriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -214,7 +215,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if OutputGroups property is set
         internal bool IsSetOutputGroups()
         {
-            return this._outputGroups != null && this._outputGroups.Count > 0; 
+            return this._outputGroups != null && (this._outputGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -262,7 +263,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if VideoDescriptions property is set
         internal bool IsSetVideoDescriptions()
         {
-            return this._videoDescriptions != null && this._videoDescriptions.Count > 0; 
+            return this._videoDescriptions != null && (this._videoDescriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

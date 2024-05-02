@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Proton.Model
 {
     /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.Proton.Model
     public partial class NotifyResourceDeploymentStatusChangeRequest : AmazonProtonRequest
     {
         private string _deploymentId;
-        private List<Output> _outputs = new List<Output>();
+        private List<Output> _outputs = AWSConfigs.InitializeCollections ? new List<Output>() : null;
         private string _resourceArn;
         private ResourceDeploymentStatus _status;
         private string _statusMessage;
@@ -81,7 +82,7 @@ namespace Amazon.Proton.Model
         // Check to see if Outputs property is set
         internal bool IsSetOutputs()
         {
-            return this._outputs != null && this._outputs.Count > 0; 
+            return this._outputs != null && (this._outputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

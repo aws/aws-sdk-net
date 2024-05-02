@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -35,8 +36,8 @@ namespace Amazon.SageMaker.Model
     public partial class UpdateImageVersionRequest : AmazonSageMakerRequest
     {
         private string _alias;
-        private List<string> _aliasesToAdd = new List<string>();
-        private List<string> _aliasesToDelete = new List<string>();
+        private List<string> _aliasesToAdd = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _aliasesToDelete = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _horovod;
         private string _imageName;
         private JobType _jobType;
@@ -81,7 +82,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if AliasesToAdd property is set
         internal bool IsSetAliasesToAdd()
         {
-            return this._aliasesToAdd != null && this._aliasesToAdd.Count > 0; 
+            return this._aliasesToAdd != null && (this._aliasesToAdd.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -99,7 +100,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if AliasesToDelete property is set
         internal bool IsSetAliasesToDelete()
         {
-            return this._aliasesToDelete != null && this._aliasesToDelete.Count > 0; 
+            return this._aliasesToDelete != null && (this._aliasesToDelete.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

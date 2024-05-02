@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
@@ -194,7 +195,8 @@ namespace Amazon.CloudFormation.Model
         /// Location of file containing the template body. The URL must point to a template (max
         /// size: 460,800 bytes) that's located in an Amazon S3 bucket or a Systems Manager document.
         /// For more information about templates, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-        /// anatomy</a> in the <i>CloudFormation User Guide</i>.
+        /// anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon S3
+        /// bucket must start with <c>https://</c>.
         /// </para>
         ///  
         /// <para>

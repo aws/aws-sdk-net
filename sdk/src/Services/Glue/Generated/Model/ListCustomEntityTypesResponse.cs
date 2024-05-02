@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class ListCustomEntityTypesResponse : AmazonWebServiceResponse
     {
-        private List<CustomEntityType> _customEntityTypes = new List<CustomEntityType>();
+        private List<CustomEntityType> _customEntityTypes = AWSConfigs.InitializeCollections ? new List<CustomEntityType>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Glue.Model
         // Check to see if CustomEntityTypes property is set
         internal bool IsSetCustomEntityTypes()
         {
-            return this._customEntityTypes != null && this._customEntityTypes.Count > 0; 
+            return this._customEntityTypes != null && (this._customEntityTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

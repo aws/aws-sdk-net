@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -67,6 +68,9 @@ namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            
+            if (publicRequest.IsSetSnapshotType())
+                request.Parameters.Add("snapshotType", StringUtils.FromString(publicRequest.SnapshotType));
             request.ResourcePath = "/cluster-snapshots";
             request.UseQueryString = true;
 

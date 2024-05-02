@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ChimeSDKVoice.Model
     /// </summary>
     public partial class ProxySession
     {
-        private List<string> _capabilities = new List<string>();
+        private List<string> _capabilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _createdTimestamp;
         private DateTime? _endedTimestamp;
         private int? _expiryMinutes;
@@ -41,7 +42,7 @@ namespace Amazon.ChimeSDKVoice.Model
         private GeoMatchParams _geoMatchParams;
         private string _name;
         private NumberSelectionBehavior _numberSelectionBehavior;
-        private List<Participant> _participants = new List<Participant>();
+        private List<Participant> _participants = AWSConfigs.InitializeCollections ? new List<Participant>() : null;
         private string _proxySessionId;
         private ProxySessionStatus _status;
         private DateTime? _updatedTimestamp;
@@ -62,7 +63,7 @@ namespace Amazon.ChimeSDKVoice.Model
         // Check to see if Capabilities property is set
         internal bool IsSetCapabilities()
         {
-            return this._capabilities != null && this._capabilities.Count > 0; 
+            return this._capabilities != null && (this._capabilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -210,7 +211,7 @@ namespace Amazon.ChimeSDKVoice.Model
         // Check to see if Participants property is set
         internal bool IsSetParticipants()
         {
-            return this._participants != null && this._participants.Count > 0; 
+            return this._participants != null && (this._participants.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

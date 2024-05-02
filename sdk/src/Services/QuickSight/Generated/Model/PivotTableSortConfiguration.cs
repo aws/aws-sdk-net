@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class PivotTableSortConfiguration
     {
-        private List<PivotFieldSortOptions> _fieldSortOptions = new List<PivotFieldSortOptions>();
+        private List<PivotFieldSortOptions> _fieldSortOptions = AWSConfigs.InitializeCollections ? new List<PivotFieldSortOptions>() : null;
 
         /// <summary>
         /// Gets and sets the property FieldSortOptions. 
@@ -51,7 +52,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if FieldSortOptions property is set
         internal bool IsSetFieldSortOptions()
         {
-            return this._fieldSortOptions != null && this._fieldSortOptions.Count > 0; 
+            return this._fieldSortOptions != null && (this._fieldSortOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

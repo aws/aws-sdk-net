@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CancelCapacityReservationFleetsResponse : AmazonWebServiceResponse
     {
-        private List<FailedCapacityReservationFleetCancellationResult> _failedFleetCancellations = new List<FailedCapacityReservationFleetCancellationResult>();
-        private List<CapacityReservationFleetCancellationState> _successfulFleetCancellations = new List<CapacityReservationFleetCancellationState>();
+        private List<FailedCapacityReservationFleetCancellationResult> _failedFleetCancellations = AWSConfigs.InitializeCollections ? new List<FailedCapacityReservationFleetCancellationResult>() : null;
+        private List<CapacityReservationFleetCancellationState> _successfulFleetCancellations = AWSConfigs.InitializeCollections ? new List<CapacityReservationFleetCancellationState>() : null;
 
         /// <summary>
         /// Gets and sets the property FailedFleetCancellations. 
@@ -51,7 +52,7 @@ namespace Amazon.EC2.Model
         // Check to see if FailedFleetCancellations property is set
         internal bool IsSetFailedFleetCancellations()
         {
-            return this._failedFleetCancellations != null && this._failedFleetCancellations.Count > 0; 
+            return this._failedFleetCancellations != null && (this._failedFleetCancellations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.EC2.Model
         // Check to see if SuccessfulFleetCancellations property is set
         internal bool IsSetSuccessfulFleetCancellations()
         {
-            return this._successfulFleetCancellations != null && this._successfulFleetCancellations.Count > 0; 
+            return this._successfulFleetCancellations != null && (this._successfulFleetCancellations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

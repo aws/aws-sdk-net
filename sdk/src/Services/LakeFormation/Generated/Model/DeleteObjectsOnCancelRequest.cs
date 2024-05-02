@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LakeFormation.Model
 {
     /// <summary>
@@ -47,7 +48,7 @@ namespace Amazon.LakeFormation.Model
     {
         private string _catalogId;
         private string _databaseName;
-        private List<VirtualObject> _objects = new List<VirtualObject>();
+        private List<VirtualObject> _objects = AWSConfigs.InitializeCollections ? new List<VirtualObject>() : null;
         private string _tableName;
         private string _transactionId;
 
@@ -107,7 +108,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if Objects property is set
         internal bool IsSetObjects()
         {
-            return this._objects != null && this._objects.Count > 0; 
+            return this._objects != null && (this._objects.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

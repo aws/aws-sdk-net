@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SageMakerGeospatial.Model
     public partial class SearchRasterDataCollectionResponse : AmazonWebServiceResponse
     {
         private int? _approximateResultCount;
-        private List<ItemSource> _items = new List<ItemSource>();
+        private List<ItemSource> _items = AWSConfigs.InitializeCollections ? new List<ItemSource>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.SageMakerGeospatial.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

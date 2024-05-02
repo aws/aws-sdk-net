@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListHyperParameterTuningJobsResponse : AmazonWebServiceResponse
     {
-        private List<HyperParameterTuningJobSummary> _hyperParameterTuningJobSummaries = new List<HyperParameterTuningJobSummary>();
+        private List<HyperParameterTuningJobSummary> _hyperParameterTuningJobSummaries = AWSConfigs.InitializeCollections ? new List<HyperParameterTuningJobSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if HyperParameterTuningJobSummaries property is set
         internal bool IsSetHyperParameterTuningJobSummaries()
         {
-            return this._hyperParameterTuningJobSummaries != null && this._hyperParameterTuningJobSummaries.Count > 0; 
+            return this._hyperParameterTuningJobSummaries != null && (this._hyperParameterTuningJobSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -37,9 +38,10 @@ namespace Amazon.SageMaker.Model
     public partial class CreateAppImageConfigRequest : AmazonSageMakerRequest
     {
         private string _appImageConfigName;
+        private CodeEditorAppImageConfig _codeEditorAppImageConfig;
         private JupyterLabAppImageConfig _jupyterLabAppImageConfig;
         private KernelGatewayImageConfig _kernelGatewayImageConfig;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AppImageConfigName. 
@@ -58,6 +60,26 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetAppImageConfigName()
         {
             return this._appImageConfigName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodeEditorAppImageConfig. 
+        /// <para>
+        /// The <c>CodeEditorAppImageConfig</c>. You can only specify one image kernel in the
+        /// AppImageConfig API. This kernel is shown to users before the image starts. After the
+        /// image runs, all kernels are visible in Code Editor.
+        /// </para>
+        /// </summary>
+        public CodeEditorAppImageConfig CodeEditorAppImageConfig
+        {
+            get { return this._codeEditorAppImageConfig; }
+            set { this._codeEditorAppImageConfig = value; }
+        }
+
+        // Check to see if CodeEditorAppImageConfig property is set
+        internal bool IsSetCodeEditorAppImageConfig()
+        {
+            return this._codeEditorAppImageConfig != null;
         }
 
         /// <summary>
@@ -116,7 +138,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

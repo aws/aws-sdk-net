@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -35,8 +36,8 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DeregisterDBProxyTargetsRequest : AmazonRDSRequest
     {
-        private List<string> _dbClusterIdentifiers = new List<string>();
-        private List<string> _dbInstanceIdentifiers = new List<string>();
+        private List<string> _dbClusterIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _dbInstanceIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _dbProxyName;
         private string _targetGroupName;
 
@@ -55,7 +56,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBClusterIdentifiers property is set
         internal bool IsSetDBClusterIdentifiers()
         {
-            return this._dbClusterIdentifiers != null && this._dbClusterIdentifiers.Count > 0; 
+            return this._dbClusterIdentifiers != null && (this._dbClusterIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBInstanceIdentifiers property is set
         internal bool IsSetDBInstanceIdentifiers()
         {
-            return this._dbInstanceIdentifiers != null && this._dbInstanceIdentifiers.Count > 0; 
+            return this._dbInstanceIdentifiers != null && (this._dbInstanceIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

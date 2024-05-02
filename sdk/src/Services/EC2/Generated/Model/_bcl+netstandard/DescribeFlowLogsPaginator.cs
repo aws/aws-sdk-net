@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the FlowLogs
         /// </summary>
         public IPaginatedEnumerable<FlowLog> FlowLogs => 
-            new PaginatedResultKeyResponse<DescribeFlowLogsResponse, FlowLog>(this, (i) => i.FlowLogs);
+            new PaginatedResultKeyResponse<DescribeFlowLogsResponse, FlowLog>(this, (i) => i.FlowLogs ?? new List<FlowLog>());
 
         internal DescribeFlowLogsPaginator(IAmazonEC2 client, DescribeFlowLogsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.EC2.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeFlowLogsResponse> IPaginator<DescribeFlowLogsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeFlowLogsResponse> IPaginator<DescribeFlowLogsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

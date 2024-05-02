@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LakeFormation.Model
 {
     /// <summary>
@@ -40,8 +41,8 @@ namespace Amazon.LakeFormation.Model
         private AuditContext _auditContext;
         private int? _durationSeconds;
         private PartitionValueList _partition;
-        private List<string> _permissions = new List<string>();
-        private List<string> _supportedPermissionTypes = new List<string>();
+        private List<string> _permissions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _supportedPermissionTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _tableArn;
 
         /// <summary>
@@ -117,7 +118,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if Permissions property is set
         internal bool IsSetPermissions()
         {
-            return this._permissions != null && this._permissions.Count > 0; 
+            return this._permissions != null && (this._permissions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -137,7 +138,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if SupportedPermissionTypes property is set
         internal bool IsSetSupportedPermissionTypes()
         {
-            return this._supportedPermissionTypes != null && this._supportedPermissionTypes.Count > 0; 
+            return this._supportedPermissionTypes != null && (this._supportedPermissionTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

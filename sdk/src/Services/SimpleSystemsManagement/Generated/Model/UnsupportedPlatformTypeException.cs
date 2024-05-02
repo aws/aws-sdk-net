@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The document doesn't support the platform type of the given managed node ID(s). For
+    /// The document doesn't support the platform type of the given managed node IDs. For
     /// example, you sent an document for a Windows managed node to a Linux node.
     /// </summary>
     #if !NETSTANDARD

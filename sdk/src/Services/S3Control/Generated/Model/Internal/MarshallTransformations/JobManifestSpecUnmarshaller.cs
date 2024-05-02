@@ -30,12 +30,13 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for JobManifestSpec Object
     /// </summary>  
-    public class JobManifestSpecUnmarshaller : IUnmarshaller<JobManifestSpec, XmlUnmarshallerContext>
+    public class JobManifestSpecUnmarshaller : IUnmarshaller<JobManifestSpec, XmlUnmarshallerContext>, IUnmarshaller<JobManifestSpec, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -57,6 +58,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Fields/member", targetDepth))
                     {
+                        if (unmarshalledObject.Fields == null)
+                        {
+                            unmarshalledObject.Fields = new List<string>();
+                        }
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Fields.Add(unmarshaller.Unmarshall(context));
                         continue;
@@ -74,6 +79,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public JobManifestSpec Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static JobManifestSpecUnmarshaller _instance = new JobManifestSpecUnmarshaller();        

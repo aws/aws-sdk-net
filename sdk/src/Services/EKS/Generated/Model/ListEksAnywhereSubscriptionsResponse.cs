@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EKS.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EKS.Model
     public partial class ListEksAnywhereSubscriptionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<EksAnywhereSubscription> _subscriptions = new List<EksAnywhereSubscription>();
+        private List<EksAnywhereSubscription> _subscriptions = AWSConfigs.InitializeCollections ? new List<EksAnywhereSubscription>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +74,7 @@ namespace Amazon.EKS.Model
         // Check to see if Subscriptions property is set
         internal bool IsSetSubscriptions()
         {
-            return this._subscriptions != null && this._subscriptions.Count > 0; 
+            return this._subscriptions != null && (this._subscriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

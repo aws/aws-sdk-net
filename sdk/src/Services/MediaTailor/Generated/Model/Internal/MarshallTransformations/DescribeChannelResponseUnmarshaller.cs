@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -55,6 +56,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Arn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Audiences", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.Audiences = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ChannelName", targetDepth))

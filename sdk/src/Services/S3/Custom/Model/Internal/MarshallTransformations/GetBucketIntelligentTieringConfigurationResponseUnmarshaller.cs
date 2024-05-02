@@ -26,6 +26,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 	/// </summary>
 	public class GetBucketIntelligentTieringConfigurationResponseUnmarshaller : S3ReponseUnmarshaller
 	{
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             GetBucketIntelligentTieringConfigurationResponse response = new GetBucketIntelligentTieringConfigurationResponse();
@@ -80,6 +85,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("Tiering", targetDepth))
                     {
+                        if (response.IntelligentTieringConfiguration.Tierings == null)
+                        {
+                            response.IntelligentTieringConfiguration.Tierings = new List<Tiering>();
+                        }
                         response.IntelligentTieringConfiguration.Tierings.Add(TieringUnmarshaller.Instance.Unmarshall(context));
                         continue;
                     }
@@ -96,6 +105,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static GetBucketIntelligentTieringConfigurationResponseUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static GetBucketIntelligentTieringConfigurationResponseUnmarshaller Instance
         {
             get

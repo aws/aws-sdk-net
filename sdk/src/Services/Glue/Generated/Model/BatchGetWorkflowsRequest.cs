@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.Glue.Model
     public partial class BatchGetWorkflowsRequest : AmazonGlueRequest
     {
         private bool? _includeGraph;
-        private List<string> _names = new List<string>();
+        private List<string> _names = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property IncludeGraph. 
@@ -75,7 +76,7 @@ namespace Amazon.Glue.Model
         // Check to see if Names property is set
         internal bool IsSetNames()
         {
-            return this._names != null && this._names.Count > 0; 
+            return this._names != null && (this._names.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     public partial class EbsConfiguration
     {
-        private List<EbsBlockDeviceConfig> _ebsBlockDeviceConfigs = new List<EbsBlockDeviceConfig>();
+        private List<EbsBlockDeviceConfig> _ebsBlockDeviceConfigs = AWSConfigs.InitializeCollections ? new List<EbsBlockDeviceConfig>() : null;
         private bool? _ebsOptimized;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if EbsBlockDeviceConfigs property is set
         internal bool IsSetEbsBlockDeviceConfigs()
         {
-            return this._ebsBlockDeviceConfigs != null && this._ebsBlockDeviceConfigs.Count > 0; 
+            return this._ebsBlockDeviceConfigs != null && (this._ebsBlockDeviceConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

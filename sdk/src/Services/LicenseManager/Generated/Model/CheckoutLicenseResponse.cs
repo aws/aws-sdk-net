@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LicenseManager.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.LicenseManager.Model
     public partial class CheckoutLicenseResponse : AmazonWebServiceResponse
     {
         private CheckoutType _checkoutType;
-        private List<EntitlementData> _entitlementsAllowed = new List<EntitlementData>();
+        private List<EntitlementData> _entitlementsAllowed = AWSConfigs.InitializeCollections ? new List<EntitlementData>() : null;
         private string _expiration;
         private string _issuedAt;
         private string _licenseArn;
@@ -75,7 +76,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if EntitlementsAllowed property is set
         internal bool IsSetEntitlementsAllowed()
         {
-            return this._entitlementsAllowed != null && this._entitlementsAllowed.Count > 0; 
+            return this._entitlementsAllowed != null && (this._entitlementsAllowed.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

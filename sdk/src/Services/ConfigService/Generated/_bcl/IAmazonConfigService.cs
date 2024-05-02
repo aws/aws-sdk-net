@@ -26,6 +26,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.ConfigService.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.ConfigService
 {
     /// <summary>
@@ -6329,7 +6330,7 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfConfigRulesExceededException">
         /// Failed to add the Config rule because the account already contains the maximum number
-        /// of 150 rules. Consider deleting any deactivated rules before you add new rules.
+        /// of 1000 rules. Consider deleting any deactivated rules before you add new rules.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoAvailableConfigurationRecorderException">
         /// There are no configuration recorders available to provide the role needed to describe
@@ -6490,7 +6491,7 @@ namespace Amazon.ConfigService
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfConfigRulesExceededException">
         /// Failed to add the Config rule because the account already contains the maximum number
-        /// of 150 rules. Consider deleting any deactivated rules before you add new rules.
+        /// of 1000 rules. Consider deleting any deactivated rules before you add new rules.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoAvailableConfigurationRecorderException">
         /// There are no configuration recorders available to provide the role needed to describe

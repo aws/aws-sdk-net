@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppSync.Model
 {
     /// <summary>
@@ -79,7 +80,7 @@ namespace Amazon.AppSync.Model
     ///  </li> <li> 
     /// <para>
     ///  <c>PER_RESOLVER_METRICS</c>: Records and emits metric data for resolvers that have
-    /// the <c>metricConfig</c> value set to <c>ENABLED</c>.
+    /// the <c>metricsConfig</c> value set to <c>ENABLED</c>.
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
@@ -112,7 +113,7 @@ namespace Amazon.AppSync.Model
     ///  </li> <li> 
     /// <para>
     ///  <c>PER_DATA_SOURCE_METRICS</c>: Records and emits metric data for data sources that
-    /// have the <c>metricConfig</c> value set to <c>ENABLED</c>.
+    /// have the <c>metricsConfig</c> value set to <c>ENABLED</c>.
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
@@ -173,7 +174,7 @@ namespace Amazon.AppSync.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>PER_DATA_SOURCE_METRICS</c>: Records and emits metric data for data sources that
-        /// have the <c>metricConfig</c> value set to <c>ENABLED</c>.
+        /// have the <c>metricsConfig</c> value set to <c>ENABLED</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -262,7 +263,7 @@ namespace Amazon.AppSync.Model
         ///  </li> <li> 
         /// <para>
         ///  <c>PER_RESOLVER_METRICS</c>: Records and emits metric data for resolvers that have
-        /// the <c>metricConfig</c> value set to <c>ENABLED</c>.
+        /// the <c>metricsConfig</c> value set to <c>ENABLED</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

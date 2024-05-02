@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class CreateAssociationBatchResponse : AmazonWebServiceResponse
     {
-        private List<FailedCreateAssociation> _failed = new List<FailedCreateAssociation>();
-        private List<AssociationDescription> _successful = new List<AssociationDescription>();
+        private List<FailedCreateAssociation> _failed = AWSConfigs.InitializeCollections ? new List<FailedCreateAssociation>() : null;
+        private List<AssociationDescription> _successful = AWSConfigs.InitializeCollections ? new List<AssociationDescription>() : null;
 
         /// <summary>
         /// Gets and sets the property Failed. 
@@ -51,7 +52,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Failed property is set
         internal bool IsSetFailed()
         {
-            return this._failed != null && this._failed.Count > 0; 
+            return this._failed != null && (this._failed.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Successful property is set
         internal bool IsSetSuccessful()
         {
-            return this._successful != null && this._successful.Count > 0; 
+            return this._successful != null && (this._successful.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

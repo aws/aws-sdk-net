@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.DirectoryService.Model
     /// </summary>
     public partial class CreateComputerRequest : AmazonDirectoryServiceRequest
     {
-        private List<Attribute> _computerAttributes = new List<Attribute>();
+        private List<Attribute> _computerAttributes = AWSConfigs.InitializeCollections ? new List<Attribute>() : null;
         private string _computerName;
         private string _directoryId;
         private string _organizationalUnitDistinguishedName;
@@ -56,7 +57,7 @@ namespace Amazon.DirectoryService.Model
         // Check to see if ComputerAttributes property is set
         internal bool IsSetComputerAttributes()
         {
-            return this._computerAttributes != null && this._computerAttributes.Count > 0; 
+            return this._computerAttributes != null && (this._computerAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

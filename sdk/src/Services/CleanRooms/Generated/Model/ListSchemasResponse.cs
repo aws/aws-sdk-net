@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CleanRooms.Model
     public partial class ListSchemasResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SchemaSummary> _schemaSummaries = new List<SchemaSummary>();
+        private List<SchemaSummary> _schemaSummaries = AWSConfigs.InitializeCollections ? new List<SchemaSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if SchemaSummaries property is set
         internal bool IsSetSchemaSummaries()
         {
-            return this._schemaSummaries != null && this._schemaSummaries.Count > 0; 
+            return this._schemaSummaries != null && (this._schemaSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

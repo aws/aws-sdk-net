@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.NetworkFirewall.Model
     {
         private string _firewallArn;
         private string _firewallName;
-        private List<SubnetMapping> _subnetMappings = new List<SubnetMapping>();
+        private List<SubnetMapping> _subnetMappings = AWSConfigs.InitializeCollections ? new List<SubnetMapping>() : null;
         private string _updateToken;
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.NetworkFirewall.Model
         // Check to see if SubnetMappings property is set
         internal bool IsSetSubnetMappings()
         {
-            return this._subnetMappings != null && this._subnetMappings.Count > 0; 
+            return this._subnetMappings != null && (this._subnetMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

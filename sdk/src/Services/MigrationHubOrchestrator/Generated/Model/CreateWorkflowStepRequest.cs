@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MigrationHubOrchestrator.Model
 {
     /// <summary>
@@ -36,12 +37,12 @@ namespace Amazon.MigrationHubOrchestrator.Model
     {
         private string _description;
         private string _name;
-        private List<string> _next = new List<string>();
-        private List<WorkflowStepOutput> _outputs = new List<WorkflowStepOutput>();
-        private List<string> _previous = new List<string>();
+        private List<string> _next = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<WorkflowStepOutput> _outputs = AWSConfigs.InitializeCollections ? new List<WorkflowStepOutput>() : null;
+        private List<string> _previous = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private StepActionType _stepActionType;
         private string _stepGroupId;
-        private List<string> _stepTarget = new List<string>();
+        private List<string> _stepTarget = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _workflowId;
         private WorkflowStepAutomationConfiguration _workflowStepAutomationConfiguration;
 
@@ -98,7 +99,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         // Check to see if Next property is set
         internal bool IsSetNext()
         {
-            return this._next != null && this._next.Count > 0; 
+            return this._next != null && (this._next.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -116,7 +117,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         // Check to see if Outputs property is set
         internal bool IsSetOutputs()
         {
-            return this._outputs != null && this._outputs.Count > 0; 
+            return this._outputs != null && (this._outputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -134,7 +135,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         // Check to see if Previous property is set
         internal bool IsSetPrevious()
         {
-            return this._previous != null && this._previous.Count > 0; 
+            return this._previous != null && (this._previous.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -191,7 +192,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         // Check to see if StepTarget property is set
         internal bool IsSetStepTarget()
         {
-            return this._stepTarget != null && this._stepTarget.Count > 0; 
+            return this._stepTarget != null && (this._stepTarget.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

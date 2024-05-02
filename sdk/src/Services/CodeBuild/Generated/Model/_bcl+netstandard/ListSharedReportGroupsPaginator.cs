@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.CodeBuild.Model
         /// Enumerable containing all of the ReportGroups
         /// </summary>
         public IPaginatedEnumerable<string> ReportGroups => 
-            new PaginatedResultKeyResponse<ListSharedReportGroupsResponse, string>(this, (i) => i.ReportGroups);
+            new PaginatedResultKeyResponse<ListSharedReportGroupsResponse, string>(this, (i) => i.ReportGroups ?? new List<string>());
 
         internal ListSharedReportGroupsPaginator(IAmazonCodeBuild client, ListSharedReportGroupsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.CodeBuild.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListSharedReportGroupsResponse> IPaginator<ListSharedReportGroupsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListSharedReportGroupsResponse> IPaginator<ListSharedReportGroupsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

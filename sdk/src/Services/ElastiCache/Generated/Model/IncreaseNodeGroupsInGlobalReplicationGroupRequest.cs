@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.ElastiCache.Model
         private bool? _applyImmediately;
         private string _globalReplicationGroupId;
         private int? _nodeGroupCount;
-        private List<RegionalConfiguration> _regionalConfigurations = new List<RegionalConfiguration>();
+        private List<RegionalConfiguration> _regionalConfigurations = AWSConfigs.InitializeCollections ? new List<RegionalConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplyImmediately. 
@@ -113,7 +114,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if RegionalConfigurations property is set
         internal bool IsSetRegionalConfigurations()
         {
-            return this._regionalConfigurations != null && this._regionalConfigurations.Count > 0; 
+            return this._regionalConfigurations != null && (this._regionalConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -37,18 +38,18 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ModifyVpcEndpointRequest : AmazonEC2Request
     {
-        private List<string> _addRouteTableIds = new List<string>();
-        private List<string> _addSecurityGroupIds = new List<string>();
-        private List<string> _addSubnetIds = new List<string>();
+        private List<string> _addRouteTableIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _addSecurityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _addSubnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DnsOptionsSpecification _dnsOptions;
         private IpAddressType _ipAddressType;
         private string _policyDocument;
         private bool? _privateDnsEnabled;
-        private List<string> _removeRouteTableIds = new List<string>();
-        private List<string> _removeSecurityGroupIds = new List<string>();
-        private List<string> _removeSubnetIds = new List<string>();
+        private List<string> _removeRouteTableIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _removeSecurityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _removeSubnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _resetPolicy;
-        private List<SubnetConfiguration> _subnetConfigurations = new List<SubnetConfiguration>();
+        private List<SubnetConfiguration> _subnetConfigurations = AWSConfigs.InitializeCollections ? new List<SubnetConfiguration>() : null;
         private string _vpcEndpointId;
 
         /// <summary>
@@ -66,7 +67,7 @@ namespace Amazon.EC2.Model
         // Check to see if AddRouteTableIds property is set
         internal bool IsSetAddRouteTableIds()
         {
-            return this._addRouteTableIds != null && this._addRouteTableIds.Count > 0; 
+            return this._addRouteTableIds != null && (this._addRouteTableIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -85,7 +86,7 @@ namespace Amazon.EC2.Model
         // Check to see if AddSecurityGroupIds property is set
         internal bool IsSetAddSecurityGroupIds()
         {
-            return this._addSecurityGroupIds != null && this._addSecurityGroupIds.Count > 0; 
+            return this._addSecurityGroupIds != null && (this._addSecurityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -105,7 +106,7 @@ namespace Amazon.EC2.Model
         // Check to see if AddSubnetIds property is set
         internal bool IsSetAddSubnetIds()
         {
-            return this._addSubnetIds != null && this._addSubnetIds.Count > 0; 
+            return this._addSubnetIds != null && (this._addSubnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -197,7 +198,7 @@ namespace Amazon.EC2.Model
         // Check to see if RemoveRouteTableIds property is set
         internal bool IsSetRemoveRouteTableIds()
         {
-            return this._removeRouteTableIds != null && this._removeRouteTableIds.Count > 0; 
+            return this._removeRouteTableIds != null && (this._removeRouteTableIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -216,7 +217,7 @@ namespace Amazon.EC2.Model
         // Check to see if RemoveSecurityGroupIds property is set
         internal bool IsSetRemoveSecurityGroupIds()
         {
-            return this._removeSecurityGroupIds != null && this._removeSecurityGroupIds.Count > 0; 
+            return this._removeSecurityGroupIds != null && (this._removeSecurityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -234,7 +235,7 @@ namespace Amazon.EC2.Model
         // Check to see if RemoveSubnetIds property is set
         internal bool IsSetRemoveSubnetIds()
         {
-            return this._removeSubnetIds != null && this._removeSubnetIds.Count > 0; 
+            return this._removeSubnetIds != null && (this._removeSubnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -271,7 +272,7 @@ namespace Amazon.EC2.Model
         // Check to see if SubnetConfigurations property is set
         internal bool IsSetSubnetConfigurations()
         {
-            return this._subnetConfigurations != null && this._subnetConfigurations.Count > 0; 
+            return this._subnetConfigurations != null && (this._subnetConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

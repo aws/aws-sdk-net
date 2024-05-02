@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
@@ -38,8 +39,8 @@ namespace Amazon.ManagedBlockchain.Model
     /// </summary>
     public partial class ProposalActions
     {
-        private List<InviteAction> _invitations = new List<InviteAction>();
-        private List<RemoveAction> _removals = new List<RemoveAction>();
+        private List<InviteAction> _invitations = AWSConfigs.InitializeCollections ? new List<InviteAction>() : null;
+        private List<RemoveAction> _removals = AWSConfigs.InitializeCollections ? new List<RemoveAction>() : null;
 
         /// <summary>
         /// Gets and sets the property Invitations. 
@@ -57,7 +58,7 @@ namespace Amazon.ManagedBlockchain.Model
         // Check to see if Invitations property is set
         internal bool IsSetInvitations()
         {
-            return this._invitations != null && this._invitations.Count > 0; 
+            return this._invitations != null && (this._invitations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -77,7 +78,7 @@ namespace Amazon.ManagedBlockchain.Model
         // Check to see if Removals property is set
         internal bool IsSetRemovals()
         {
-            return this._removals != null && this._removals.Count > 0; 
+            return this._removals != null && (this._removals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

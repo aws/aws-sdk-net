@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.OpsWorks.Model
     /// </summary>
     public partial class DeploymentCommand
     {
-        private Dictionary<string, List<string>> _args = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _args = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private DeploymentCommandName _name;
 
         /// <summary>
@@ -82,7 +83,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if Args property is set
         internal bool IsSetArgs()
         {
-            return this._args != null && this._args.Count > 0; 
+            return this._args != null && (this._args.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

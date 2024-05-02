@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.LexModelsV2.Model
     {
         private string _botId;
         private string _botVersion;
-        private List<IntentSummary> _intentSummaries = new List<IntentSummary>();
+        private List<IntentSummary> _intentSummaries = AWSConfigs.InitializeCollections ? new List<IntentSummary>() : null;
         private string _localeId;
         private string _nextToken;
 
@@ -95,7 +96,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if IntentSummaries property is set
         internal bool IsSetIntentSummaries()
         {
-            return this._intentSummaries != null && this._intentSummaries.Count > 0; 
+            return this._intentSummaries != null && (this._intentSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

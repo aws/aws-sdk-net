@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Route53.Model
     /// </summary>
     public partial class ListGeoLocationsResponse : AmazonWebServiceResponse
     {
-        private List<GeoLocationDetails> _geoLocationDetailsList = new List<GeoLocationDetails>();
+        private List<GeoLocationDetails> _geoLocationDetailsList = AWSConfigs.InitializeCollections ? new List<GeoLocationDetails>() : null;
         private bool? _isTruncated;
         private string _nextContinentCode;
         private string _nextCountryCode;
@@ -57,7 +58,7 @@ namespace Amazon.Route53.Model
         // Check to see if GeoLocationDetailsList property is set
         internal bool IsSetGeoLocationDetailsList()
         {
-            return this._geoLocationDetailsList != null && this._geoLocationDetailsList.Count > 0; 
+            return this._geoLocationDetailsList != null && (this._geoLocationDetailsList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

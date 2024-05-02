@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -66,6 +67,7 @@ namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAdminUserPassword())
@@ -80,6 +82,12 @@ namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AuthType);
                 }
 
+                if(publicRequest.IsSetBackupRetentionPeriod())
+                {
+                    context.Writer.WritePropertyName("backupRetentionPeriod");
+                    context.Writer.Write(publicRequest.BackupRetentionPeriod.Value);
+                }
+
                 if(publicRequest.IsSetClientToken())
                 {
                     context.Writer.WritePropertyName("clientToken");
@@ -91,6 +99,12 @@ namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetPreferredBackupWindow())
+                {
+                    context.Writer.WritePropertyName("preferredBackupWindow");
+                    context.Writer.Write(publicRequest.PreferredBackupWindow);
+                }
+
                 if(publicRequest.IsSetPreferredMaintenanceWindow())
                 {
                     context.Writer.WritePropertyName("preferredMaintenanceWindow");
@@ -107,6 +121,12 @@ namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("shardCount");
                     context.Writer.Write(publicRequest.ShardCount.Value);
+                }
+
+                if(publicRequest.IsSetShardInstanceCount())
+                {
+                    context.Writer.WritePropertyName("shardInstanceCount");
+                    context.Writer.Write(publicRequest.ShardInstanceCount.Value);
                 }
 
                 if(publicRequest.IsSetSubnetIds())

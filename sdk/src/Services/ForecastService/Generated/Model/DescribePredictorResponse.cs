@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ForecastService.Model
 {
     /// <summary>
@@ -34,16 +35,16 @@ namespace Amazon.ForecastService.Model
     public partial class DescribePredictorResponse : AmazonWebServiceResponse
     {
         private string _algorithmArn;
-        private List<string> _autoMLAlgorithmArns = new List<string>();
+        private List<string> _autoMLAlgorithmArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AutoMLOverrideStrategy _autoMLOverrideStrategy;
         private DateTime? _creationTime;
-        private List<string> _datasetImportJobArns = new List<string>();
+        private List<string> _datasetImportJobArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private EncryptionConfig _encryptionConfig;
         private long? _estimatedTimeRemainingInMinutes;
         private EvaluationParameters _evaluationParameters;
         private FeaturizationConfig _featurizationConfig;
         private int? _forecastHorizon;
-        private List<string> _forecastTypes = new List<string>();
+        private List<string> _forecastTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private HyperParameterTuningJobConfig _hpoConfig;
         private InputDataConfig _inputDataConfig;
         private bool? _isAutoPredictor;
@@ -56,7 +57,7 @@ namespace Amazon.ForecastService.Model
         private PredictorExecutionDetails _predictorExecutionDetails;
         private string _predictorName;
         private string _status;
-        private Dictionary<string, string> _trainingParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _trainingParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AlgorithmArn. 
@@ -92,7 +93,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if AutoMLAlgorithmArns property is set
         internal bool IsSetAutoMLAlgorithmArns()
         {
-            return this._autoMLAlgorithmArns != null && this._autoMLAlgorithmArns.Count > 0; 
+            return this._autoMLAlgorithmArns != null && (this._autoMLAlgorithmArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -158,7 +159,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if DatasetImportJobArns property is set
         internal bool IsSetDatasetImportJobArns()
         {
-            return this._datasetImportJobArns != null && this._datasetImportJobArns.Count > 0; 
+            return this._datasetImportJobArns != null && (this._datasetImportJobArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -273,7 +274,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if ForecastTypes property is set
         internal bool IsSetForecastTypes()
         {
-            return this._forecastTypes != null && this._forecastTypes.Count > 0; 
+            return this._forecastTypes != null && (this._forecastTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -559,7 +560,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if TrainingParameters property is set
         internal bool IsSetTrainingParameters()
         {
-            return this._trainingParameters != null && this._trainingParameters.Count > 0; 
+            return this._trainingParameters != null && (this._trainingParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

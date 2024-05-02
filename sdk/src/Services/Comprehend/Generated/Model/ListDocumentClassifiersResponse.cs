@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class ListDocumentClassifiersResponse : AmazonWebServiceResponse
     {
-        private List<DocumentClassifierProperties> _documentClassifierPropertiesList = new List<DocumentClassifierProperties>();
+        private List<DocumentClassifierProperties> _documentClassifierPropertiesList = AWSConfigs.InitializeCollections ? new List<DocumentClassifierProperties>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if DocumentClassifierPropertiesList property is set
         internal bool IsSetDocumentClassifierPropertiesList()
         {
-            return this._documentClassifierPropertiesList != null && this._documentClassifierPropertiesList.Count > 0; 
+            return this._documentClassifierPropertiesList != null && (this._documentClassifierPropertiesList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

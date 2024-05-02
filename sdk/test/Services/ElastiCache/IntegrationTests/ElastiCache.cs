@@ -66,9 +66,12 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         public void TestDescribeCacheClusters()
         {
             var response = Client.DescribeCacheClusters();
-            foreach (var cluster in response.CacheClusters)
+            if (response.CacheClusters != null)
             {
-                Assert.IsNotNull(cluster.CacheClusterId);
+                foreach (var cluster in response.CacheClusters)
+                {
+                    Assert.IsNotNull(cluster.CacheClusterId);
+                }
             }
         }
 

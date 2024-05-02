@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.CloudWatchEvents.Model
     /// </summary>
     public partial class PutPartnerEventsRequest : AmazonCloudWatchEventsRequest
     {
-        private List<PutPartnerEventsRequestEntry> _entries = new List<PutPartnerEventsRequestEntry>();
+        private List<PutPartnerEventsRequestEntry> _entries = AWSConfigs.InitializeCollections ? new List<PutPartnerEventsRequestEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property Entries. 
@@ -53,7 +54,7 @@ namespace Amazon.CloudWatchEvents.Model
         // Check to see if Entries property is set
         internal bool IsSetEntries()
         {
-            return this._entries != null && this._entries.Count > 0; 
+            return this._entries != null && (this._entries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

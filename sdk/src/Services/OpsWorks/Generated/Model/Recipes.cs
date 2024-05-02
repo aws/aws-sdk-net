@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
@@ -46,11 +47,11 @@ namespace Amazon.OpsWorks.Model
     /// </summary>
     public partial class Recipes
     {
-        private List<string> _configure = new List<string>();
-        private List<string> _deploy = new List<string>();
-        private List<string> _setup = new List<string>();
-        private List<string> _shutdown = new List<string>();
-        private List<string> _undeploy = new List<string>();
+        private List<string> _configure = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _deploy = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _setup = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _shutdown = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _undeploy = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Configure. 
@@ -67,7 +68,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if Configure property is set
         internal bool IsSetConfigure()
         {
-            return this._configure != null && this._configure.Count > 0; 
+            return this._configure != null && (this._configure.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -85,7 +86,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if Deploy property is set
         internal bool IsSetDeploy()
         {
-            return this._deploy != null && this._deploy.Count > 0; 
+            return this._deploy != null && (this._deploy.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -103,7 +104,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if Setup property is set
         internal bool IsSetSetup()
         {
-            return this._setup != null && this._setup.Count > 0; 
+            return this._setup != null && (this._setup.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -121,7 +122,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if Shutdown property is set
         internal bool IsSetShutdown()
         {
-            return this._shutdown != null && this._shutdown.Count > 0; 
+            return this._shutdown != null && (this._shutdown.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -139,7 +140,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if Undeploy property is set
         internal bool IsSetUndeploy()
         {
-            return this._undeploy != null && this._undeploy.Count > 0; 
+            return this._undeploy != null && (this._undeploy.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

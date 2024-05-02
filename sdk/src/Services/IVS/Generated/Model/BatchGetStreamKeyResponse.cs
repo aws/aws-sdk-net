@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IVS.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.IVS.Model
     /// </summary>
     public partial class BatchGetStreamKeyResponse : AmazonWebServiceResponse
     {
-        private List<BatchError> _errors = new List<BatchError>();
-        private List<StreamKey> _streamKeys = new List<StreamKey>();
+        private List<BatchError> _errors = AWSConfigs.InitializeCollections ? new List<BatchError>() : null;
+        private List<StreamKey> _streamKeys = AWSConfigs.InitializeCollections ? new List<StreamKey>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors.
@@ -48,7 +49,7 @@ namespace Amazon.IVS.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -63,7 +64,7 @@ namespace Amazon.IVS.Model
         // Check to see if StreamKeys property is set
         internal bool IsSetStreamKeys()
         {
-            return this._streamKeys != null && this._streamKeys.Count > 0; 
+            return this._streamKeys != null && (this._streamKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

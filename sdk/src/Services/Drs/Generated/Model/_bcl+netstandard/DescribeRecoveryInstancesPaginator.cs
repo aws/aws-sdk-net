@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Drs.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Drs.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<RecoveryInstance> Items => 
-            new PaginatedResultKeyResponse<DescribeRecoveryInstancesResponse, RecoveryInstance>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<DescribeRecoveryInstancesResponse, RecoveryInstance>(this, (i) => i.Items ?? new List<RecoveryInstance>());
 
         internal DescribeRecoveryInstancesPaginator(IAmazonDrs client, DescribeRecoveryInstancesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Drs.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeRecoveryInstancesResponse> IPaginator<DescribeRecoveryInstancesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeRecoveryInstancesResponse> IPaginator<DescribeRecoveryInstancesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

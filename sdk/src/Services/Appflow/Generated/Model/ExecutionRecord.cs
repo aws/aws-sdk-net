@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Appflow.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.Appflow.Model
         private ExecutionResult _executionResult;
         private ExecutionStatus _executionStatus;
         private DateTime? _lastUpdatedAt;
-        private List<MetadataCatalogDetail> _metadataCatalogDetails = new List<MetadataCatalogDetail>();
+        private List<MetadataCatalogDetail> _metadataCatalogDetails = AWSConfigs.InitializeCollections ? new List<MetadataCatalogDetail>() : null;
         private DateTime? _startedAt;
 
         /// <summary>
@@ -170,7 +171,7 @@ namespace Amazon.Appflow.Model
         // Check to see if MetadataCatalogDetails property is set
         internal bool IsSetMetadataCatalogDetails()
         {
-            return this._metadataCatalogDetails != null && this._metadataCatalogDetails.Count > 0; 
+            return this._metadataCatalogDetails != null && (this._metadataCatalogDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

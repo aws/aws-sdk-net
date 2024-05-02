@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kafka.Model
 {
     /// <summary>
@@ -36,8 +37,9 @@ namespace Amazon.Kafka.Model
         private bool? _copyAccessControlListsForTopics;
         private bool? _copyTopicConfigurations;
         private bool? _detectAndCopyNewTopics;
-        private List<string> _topicsToExclude = new List<string>();
-        private List<string> _topicsToReplicate = new List<string>();
+        private ReplicationStartingPosition _startingPosition;
+        private List<string> _topicsToExclude = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _topicsToReplicate = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CopyAccessControlListsForTopics. 
@@ -96,6 +98,24 @@ namespace Amazon.Kafka.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StartingPosition. 
+        /// <para>
+        /// Configuration for specifying the position in the topics to start replicating from.
+        /// </para>
+        /// </summary>
+        public ReplicationStartingPosition StartingPosition
+        {
+            get { return this._startingPosition; }
+            set { this._startingPosition = value; }
+        }
+
+        // Check to see if StartingPosition property is set
+        internal bool IsSetStartingPosition()
+        {
+            return this._startingPosition != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TopicsToExclude. 
         /// <para>
         /// List of regular expression patterns indicating the topics that should not be replicated.
@@ -110,7 +130,7 @@ namespace Amazon.Kafka.Model
         // Check to see if TopicsToExclude property is set
         internal bool IsSetTopicsToExclude()
         {
-            return this._topicsToExclude != null && this._topicsToExclude.Count > 0; 
+            return this._topicsToExclude != null && (this._topicsToExclude.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -129,7 +149,7 @@ namespace Amazon.Kafka.Model
         // Check to see if TopicsToReplicate property is set
         internal bool IsSetTopicsToReplicate()
         {
-            return this._topicsToReplicate != null && this._topicsToReplicate.Count > 0; 
+            return this._topicsToReplicate != null && (this._topicsToReplicate.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

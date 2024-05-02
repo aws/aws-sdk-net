@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EMRContainers.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EMRContainers.Model
     public partial class ListVirtualClustersResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<VirtualCluster> _virtualClusters = new List<VirtualCluster>();
+        private List<VirtualCluster> _virtualClusters = AWSConfigs.InitializeCollections ? new List<VirtualCluster>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.EMRContainers.Model
         // Check to see if VirtualClusters property is set
         internal bool IsSetVirtualClusters()
         {
-            return this._virtualClusters != null && this._virtualClusters.Count > 0; 
+            return this._virtualClusters != null && (this._virtualClusters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

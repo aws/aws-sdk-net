@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lambda.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class GetLayerVersionResponse : AmazonWebServiceResponse
     {
-        private List<string> _compatibleArchitectures = new List<string>();
-        private List<string> _compatibleRuntimes = new List<string>();
+        private List<string> _compatibleArchitectures = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _compatibleRuntimes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private LayerVersionContentOutput _content;
         private string _createdDate;
         private string _description;
@@ -60,7 +61,7 @@ namespace Amazon.Lambda.Model
         // Check to see if CompatibleArchitectures property is set
         internal bool IsSetCompatibleArchitectures()
         {
-            return this._compatibleArchitectures != null && this._compatibleArchitectures.Count > 0; 
+            return this._compatibleArchitectures != null && (this._compatibleArchitectures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -84,7 +85,7 @@ namespace Amazon.Lambda.Model
         // Check to see if CompatibleRuntimes property is set
         internal bool IsSetCompatibleRuntimes()
         {
-            return this._compatibleRuntimes != null && this._compatibleRuntimes.Count > 0; 
+            return this._compatibleRuntimes != null && (this._compatibleRuntimes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

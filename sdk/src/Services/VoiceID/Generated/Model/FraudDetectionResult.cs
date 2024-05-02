@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VoiceID.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.VoiceID.Model
         private FraudDetectionConfiguration _configuration;
         private FraudDetectionDecision _decision;
         private string _fraudDetectionResultId;
-        private List<string> _reasons = new List<string>();
+        private List<string> _reasons = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private FraudRiskDetails _riskDetails;
 
         /// <summary>
@@ -156,7 +157,7 @@ namespace Amazon.VoiceID.Model
         // Check to see if Reasons property is set
         internal bool IsSetReasons()
         {
-            return this._reasons != null && this._reasons.Count > 0; 
+            return this._reasons != null && (this._reasons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECR.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ECR.Model
     /// </summary>
     public partial class RepositoryScanningConfiguration
     {
-        private List<ScanningRepositoryFilter> _appliedScanFilters = new List<ScanningRepositoryFilter>();
+        private List<ScanningRepositoryFilter> _appliedScanFilters = AWSConfigs.InitializeCollections ? new List<ScanningRepositoryFilter>() : null;
         private string _repositoryArn;
         private string _repositoryName;
         private ScanFrequency _scanFrequency;
@@ -55,7 +56,7 @@ namespace Amazon.ECR.Model
         // Check to see if AppliedScanFilters property is set
         internal bool IsSetAppliedScanFilters()
         {
-            return this._appliedScanFilters != null && this._appliedScanFilters.Count > 0; 
+            return this._appliedScanFilters != null && (this._appliedScanFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

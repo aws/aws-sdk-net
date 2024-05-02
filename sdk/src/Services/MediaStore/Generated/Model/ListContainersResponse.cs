@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaStore.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MediaStore.Model
     /// </summary>
     public partial class ListContainersResponse : AmazonWebServiceResponse
     {
-        private List<Container> _containers = new List<Container>();
+        private List<Container> _containers = AWSConfigs.InitializeCollections ? new List<Container>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.MediaStore.Model
         // Check to see if Containers property is set
         internal bool IsSetContainers()
         {
-            return this._containers != null && this._containers.Count > 0; 
+            return this._containers != null && (this._containers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

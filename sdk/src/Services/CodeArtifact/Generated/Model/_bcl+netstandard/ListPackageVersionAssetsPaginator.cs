@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CodeArtifact.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.CodeArtifact.Model
         /// Enumerable containing all of the Assets
         /// </summary>
         public IPaginatedEnumerable<AssetSummary> Assets => 
-            new PaginatedResultKeyResponse<ListPackageVersionAssetsResponse, AssetSummary>(this, (i) => i.Assets);
+            new PaginatedResultKeyResponse<ListPackageVersionAssetsResponse, AssetSummary>(this, (i) => i.Assets ?? new List<AssetSummary>());
 
         internal ListPackageVersionAssetsPaginator(IAmazonCodeArtifact client, ListPackageVersionAssetsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.CodeArtifact.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListPackageVersionAssetsResponse> IPaginator<ListPackageVersionAssetsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListPackageVersionAssetsResponse> IPaginator<ListPackageVersionAssetsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ComputeOptimizer.Model
     /// </summary>
     public partial class GetEnrollmentStatusesForOrganizationResponse : AmazonWebServiceResponse
     {
-        private List<AccountEnrollmentStatus> _accountEnrollmentStatuses = new List<AccountEnrollmentStatus>();
+        private List<AccountEnrollmentStatus> _accountEnrollmentStatuses = AWSConfigs.InitializeCollections ? new List<AccountEnrollmentStatus>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if AccountEnrollmentStatuses property is set
         internal bool IsSetAccountEnrollmentStatuses()
         {
-            return this._accountEnrollmentStatuses != null && this._accountEnrollmentStatuses.Count > 0; 
+            return this._accountEnrollmentStatuses != null && (this._accountEnrollmentStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

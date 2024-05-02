@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Glue.Model
     public partial class GetTableVersionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TableVersion> _tableVersions = new List<TableVersion>();
+        private List<TableVersion> _tableVersions = AWSConfigs.InitializeCollections ? new List<TableVersion>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.Glue.Model
         // Check to see if TableVersions property is set
         internal bool IsSetTableVersions()
         {
-            return this._tableVersions != null && this._tableVersions.Count > 0; 
+            return this._tableVersions != null && (this._tableVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

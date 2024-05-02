@@ -24,6 +24,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// </summary>
     public class AbortIncompleteMultipartUploadUnmarshaller : IUnmarshaller<LifecycleRuleAbortIncompleteMultipartUpload, XmlUnmarshallerContext>, IUnmarshaller<LifecycleRuleAbortIncompleteMultipartUpload, JsonUnmarshallerContext> 
     {
+        /// <summary>
+        /// Invoke the unmarshaller
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public LifecycleRuleAbortIncompleteMultipartUpload Unmarshall(XmlUnmarshallerContext context) 
         {
             LifecycleRuleAbortIncompleteMultipartUpload aimu = new LifecycleRuleAbortIncompleteMultipartUpload();
@@ -53,6 +58,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return aimu;
         }
 
+        /// <summary>
+        /// Not implemented and always returns null.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public LifecycleRuleAbortIncompleteMultipartUpload Unmarshall(JsonUnmarshallerContext context) 
         {
             return null;
@@ -60,6 +70,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static AbortIncompleteMultipartUploadUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static AbortIncompleteMultipartUploadUnmarshaller Instance
         {
             get

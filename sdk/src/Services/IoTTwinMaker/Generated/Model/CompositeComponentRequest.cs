@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTTwinMaker.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.IoTTwinMaker.Model
     public partial class CompositeComponentRequest
     {
         private string _description;
-        private Dictionary<string, PropertyRequest> _properties = new Dictionary<string, PropertyRequest>();
-        private Dictionary<string, ComponentPropertyGroupRequest> _propertyGroups = new Dictionary<string, ComponentPropertyGroupRequest>();
+        private Dictionary<string, PropertyRequest> _properties = AWSConfigs.InitializeCollections ? new Dictionary<string, PropertyRequest>() : null;
+        private Dictionary<string, ComponentPropertyGroupRequest> _propertyGroups = AWSConfigs.InitializeCollections ? new Dictionary<string, ComponentPropertyGroupRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -72,7 +73,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if Properties property is set
         internal bool IsSetProperties()
         {
-            return this._properties != null && this._properties.Count > 0; 
+            return this._properties != null && (this._properties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -90,7 +91,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if PropertyGroups property is set
         internal bool IsSetPropertyGroups()
         {
-            return this._propertyGroups != null && this._propertyGroups.Count > 0; 
+            return this._propertyGroups != null && (this._propertyGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

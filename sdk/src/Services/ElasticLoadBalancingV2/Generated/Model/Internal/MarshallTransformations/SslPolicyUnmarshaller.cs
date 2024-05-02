@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -57,6 +58,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Ciphers/member", targetDepth))
                     {
                         var unmarshaller = CipherUnmarshaller.Instance;
+                        if (unmarshalledObject.Ciphers == null)
+                        {
+                            unmarshalledObject.Ciphers = new List<Cipher>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Ciphers.Add(item);
                         continue;
@@ -70,6 +75,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("SslProtocols/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.SslProtocols == null)
+                        {
+                            unmarshalledObject.SslProtocols = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SslProtocols.Add(item);
                         continue;
@@ -77,6 +86,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("SupportedLoadBalancerTypes/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.SupportedLoadBalancerTypes == null)
+                        {
+                            unmarshalledObject.SupportedLoadBalancerTypes = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SupportedLoadBalancerTypes.Add(item);
                         continue;

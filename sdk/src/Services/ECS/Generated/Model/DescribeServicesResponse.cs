@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECS.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class DescribeServicesResponse : AmazonWebServiceResponse
     {
-        private List<Failure> _failures = new List<Failure>();
-        private List<Service> _services = new List<Service>();
+        private List<Failure> _failures = AWSConfigs.InitializeCollections ? new List<Failure>() : null;
+        private List<Service> _services = AWSConfigs.InitializeCollections ? new List<Service>() : null;
 
         /// <summary>
         /// Gets and sets the property Failures. 
@@ -51,7 +52,7 @@ namespace Amazon.ECS.Model
         // Check to see if Failures property is set
         internal bool IsSetFailures()
         {
-            return this._failures != null && this._failures.Count > 0; 
+            return this._failures != null && (this._failures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.ECS.Model
         // Check to see if Services property is set
         internal bool IsSetServices()
         {
-            return this._services != null && this._services.Count > 0; 
+            return this._services != null && (this._services.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ElastiCache.Model
     /// </summary>
     public partial class CacheParameterGroupStatus
     {
-        private List<string> _cacheNodeIdsToReboot = new List<string>();
+        private List<string> _cacheNodeIdsToReboot = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _cacheParameterGroupName;
         private string _parameterApplyStatus;
 
@@ -58,7 +59,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheNodeIdsToReboot property is set
         internal bool IsSetCacheNodeIdsToReboot()
         {
-            return this._cacheNodeIdsToReboot != null && this._cacheNodeIdsToReboot.Count > 0; 
+            return this._cacheNodeIdsToReboot != null && (this._cacheNodeIdsToReboot.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

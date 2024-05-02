@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the RelatedResources
         /// </summary>
         public IPaginatedEnumerable<RelatedResource> RelatedResources => 
-            new PaginatedResultKeyResponse<ListRelatedResourcesForAuditFindingResponse, RelatedResource>(this, (i) => i.RelatedResources);
+            new PaginatedResultKeyResponse<ListRelatedResourcesForAuditFindingResponse, RelatedResource>(this, (i) => i.RelatedResources ?? new List<RelatedResource>());
 
         internal ListRelatedResourcesForAuditFindingPaginator(IAmazonIoT client, ListRelatedResourcesForAuditFindingRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.IoT.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListRelatedResourcesForAuditFindingResponse> IPaginator<ListRelatedResourcesForAuditFindingResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListRelatedResourcesForAuditFindingResponse> IPaginator<ListRelatedResourcesForAuditFindingResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

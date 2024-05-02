@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LocationService.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.LocationService.Model
         private double? _distance;
         private DistanceUnit _distanceUnit;
         private double? _durationSeconds;
-        private List<double> _routeBBox = new List<double>();
+        private List<double> _routeBBox = AWSConfigs.InitializeCollections ? new List<double>() : null;
 
         /// <summary>
         /// Gets and sets the property DataSource. 
@@ -188,7 +189,7 @@ namespace Amazon.LocationService.Model
         // Check to see if RouteBBox property is set
         internal bool IsSetRouteBBox()
         {
-            return this._routeBBox != null && this._routeBBox.Count > 0; 
+            return this._routeBBox != null && (this._routeBBox.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

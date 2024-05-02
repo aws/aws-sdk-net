@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.CodeCommit.Model
     /// </summary>
     public partial class TestRepositoryTriggersResponse : AmazonWebServiceResponse
     {
-        private List<RepositoryTriggerExecutionFailure> _failedExecutions = new List<RepositoryTriggerExecutionFailure>();
-        private List<string> _successfulExecutions = new List<string>();
+        private List<RepositoryTriggerExecutionFailure> _failedExecutions = AWSConfigs.InitializeCollections ? new List<RepositoryTriggerExecutionFailure>() : null;
+        private List<string> _successfulExecutions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property FailedExecutions. 
@@ -52,7 +53,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if FailedExecutions property is set
         internal bool IsSetFailedExecutions()
         {
-            return this._failedExecutions != null && this._failedExecutions.Count > 0; 
+            return this._failedExecutions != null && (this._failedExecutions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if SuccessfulExecutions property is set
         internal bool IsSetSuccessfulExecutions()
         {
-            return this._successfulExecutions != null && this._successfulExecutions.Count > 0; 
+            return this._successfulExecutions != null && (this._successfulExecutions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

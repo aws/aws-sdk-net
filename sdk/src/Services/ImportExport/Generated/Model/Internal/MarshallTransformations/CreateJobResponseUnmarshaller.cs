@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -84,6 +85,10 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ArtifactList/member", targetDepth))
                     {
                         var unmarshaller = ArtifactUnmarshaller.Instance;
+                        if (response.ArtifactList == null)
+                        {
+                            response.ArtifactList = new List<Artifact>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ArtifactList.Add(item);
                         continue;

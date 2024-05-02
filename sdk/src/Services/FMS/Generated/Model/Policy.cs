@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FMS.Model
 {
     /// <summary>
@@ -34,19 +35,19 @@ namespace Amazon.FMS.Model
     public partial class Policy
     {
         private bool? _deleteUnusedFMManagedResources;
-        private Dictionary<string, List<string>> _excludeMap = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _excludeMap = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private bool? _excludeResourceTags;
-        private Dictionary<string, List<string>> _includeMap = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _includeMap = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private string _policyDescription;
         private string _policyId;
         private string _policyName;
         private CustomerPolicyStatus _policyStatus;
         private string _policyUpdateToken;
         private bool? _remediationEnabled;
-        private List<string> _resourceSetIds = new List<string>();
-        private List<ResourceTag> _resourceTags = new List<ResourceTag>();
+        private List<string> _resourceSetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<ResourceTag> _resourceTags = AWSConfigs.InitializeCollections ? new List<ResourceTag>() : null;
         private string _resourceType;
-        private List<string> _resourceTypeList = new List<string>();
+        private List<string> _resourceTypeList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SecurityServicePolicyData _securityServicePolicyData;
 
         /// <summary>
@@ -127,7 +128,7 @@ namespace Amazon.FMS.Model
         // Check to see if ExcludeMap property is set
         internal bool IsSetExcludeMap()
         {
-            return this._excludeMap != null && this._excludeMap.Count > 0; 
+            return this._excludeMap != null && (this._excludeMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -198,7 +199,7 @@ namespace Amazon.FMS.Model
         // Check to see if IncludeMap property is set
         internal bool IsSetIncludeMap()
         {
-            return this._includeMap != null && this._includeMap.Count > 0; 
+            return this._includeMap != null && (this._includeMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -343,7 +344,7 @@ namespace Amazon.FMS.Model
         // Check to see if ResourceSetIds property is set
         internal bool IsSetResourceSetIds()
         {
-            return this._resourceSetIds != null && this._resourceSetIds.Count > 0; 
+            return this._resourceSetIds != null && (this._resourceSetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -352,7 +353,7 @@ namespace Amazon.FMS.Model
         /// An array of <c>ResourceTag</c> objects.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=8)]
+        [AWSProperty(Min=0, Max=50)]
         public List<ResourceTag> ResourceTags
         {
             get { return this._resourceTags; }
@@ -362,7 +363,7 @@ namespace Amazon.FMS.Model
         // Check to see if ResourceTags property is set
         internal bool IsSetResourceTags()
         {
-            return this._resourceTags != null && this._resourceTags.Count > 0; 
+            return this._resourceTags != null && (this._resourceTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -390,12 +391,16 @@ namespace Amazon.FMS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  DNS Firewall, Network Firewall, and third-party firewall - <c>AWS::EC2::VPC</c>.
+        /// Shield Advanced - <c>AWS::ElasticLoadBalancingV2::LoadBalancer</c>, <c>AWS::ElasticLoadBalancing::LoadBalancer</c>,
+        /// <c>AWS::EC2::EIP</c>, and <c>AWS::CloudFront::Distribution</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Shield Advanced - <c>AWS::ElasticLoadBalancingV2::LoadBalancer</c>, <c>AWS::ElasticLoadBalancing::LoadBalancer</c>,
-        /// <c>AWS::EC2::EIP</c>, and <c>AWS::CloudFront::Distribution</c>.
+        /// Network ACL - <c>AWS::EC2::Subnet</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Security group usage audit - <c>AWS::EC2::SecurityGroup</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -404,7 +409,7 @@ namespace Amazon.FMS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Security group usage audit - <c>AWS::EC2::SecurityGroup</c>.
+        /// DNS Firewall, Network Firewall, and third-party firewall - <c>AWS::EC2::VPC</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -437,7 +442,7 @@ namespace Amazon.FMS.Model
         // Check to see if ResourceTypeList property is set
         internal bool IsSetResourceTypeList()
         {
-            return this._resourceTypeList != null && this._resourceTypeList.Count > 0; 
+            return this._resourceTypeList != null && (this._resourceTypeList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

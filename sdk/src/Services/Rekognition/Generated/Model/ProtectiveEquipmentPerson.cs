@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class ProtectiveEquipmentPerson
     {
-        private List<ProtectiveEquipmentBodyPart> _bodyParts = new List<ProtectiveEquipmentBodyPart>();
+        private List<ProtectiveEquipmentBodyPart> _bodyParts = AWSConfigs.InitializeCollections ? new List<ProtectiveEquipmentBodyPart>() : null;
         private BoundingBox _boundingBox;
         private float? _confidence;
         private int? _id;
@@ -56,7 +57,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if BodyParts property is set
         internal bool IsSetBodyParts()
         {
-            return this._bodyParts != null && this._bodyParts.Count > 0; 
+            return this._bodyParts != null && (this._bodyParts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

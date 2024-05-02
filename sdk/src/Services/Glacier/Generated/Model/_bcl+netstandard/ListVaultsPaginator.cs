@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Glacier.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Glacier.Model
         /// Enumerable containing all of the VaultList
         /// </summary>
         public IPaginatedEnumerable<DescribeVaultOutput> VaultList => 
-            new PaginatedResultKeyResponse<ListVaultsResponse, DescribeVaultOutput>(this, (i) => i.VaultList);
+            new PaginatedResultKeyResponse<ListVaultsResponse, DescribeVaultOutput>(this, (i) => i.VaultList ?? new List<DescribeVaultOutput>());
 
         internal ListVaultsPaginator(IAmazonGlacier client, ListVaultsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Glacier.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListVaultsResponse> IPaginator<ListVaultsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListVaultsResponse> IPaginator<ListVaultsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

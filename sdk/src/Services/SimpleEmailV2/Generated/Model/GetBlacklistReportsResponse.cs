@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SimpleEmailV2.Model
     /// </summary>
     public partial class GetBlacklistReportsResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, List<BlacklistEntry>> _blacklistReport = new Dictionary<string, List<BlacklistEntry>>();
+        private Dictionary<string, List<BlacklistEntry>> _blacklistReport = AWSConfigs.InitializeCollections ? new Dictionary<string, List<BlacklistEntry>>() : null;
 
         /// <summary>
         /// Gets and sets the property BlacklistReport. 
@@ -52,7 +53,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if BlacklistReport property is set
         internal bool IsSetBlacklistReport()
         {
-            return this._blacklistReport != null && this._blacklistReport.Count > 0; 
+            return this._blacklistReport != null && (this._blacklistReport.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

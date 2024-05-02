@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// Enumerable containing all of the OptOutLists
         /// </summary>
         public IPaginatedEnumerable<OptOutListInformation> OptOutLists => 
-            new PaginatedResultKeyResponse<DescribeOptOutListsResponse, OptOutListInformation>(this, (i) => i.OptOutLists);
+            new PaginatedResultKeyResponse<DescribeOptOutListsResponse, OptOutListInformation>(this, (i) => i.OptOutLists ?? new List<OptOutListInformation>());
 
         internal DescribeOptOutListsPaginator(IAmazonPinpointSMSVoiceV2 client, DescribeOptOutListsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeOptOutListsResponse> IPaginator<DescribeOptOutListsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeOptOutListsResponse> IPaginator<DescribeOptOutListsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECS.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class DescribeCapacityProvidersRequest : AmazonECSRequest
     {
-        private List<string> _capacityProviders = new List<string>();
-        private List<string> _include = new List<string>();
+        private List<string> _capacityProviders = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _include = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -55,7 +56,7 @@ namespace Amazon.ECS.Model
         // Check to see if CapacityProviders property is set
         internal bool IsSetCapacityProviders()
         {
-            return this._capacityProviders != null && this._capacityProviders.Count > 0; 
+            return this._capacityProviders != null && (this._capacityProviders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace Amazon.ECS.Model
         // Check to see if Include property is set
         internal bool IsSetInclude()
         {
-            return this._include != null && this._include.Count > 0; 
+            return this._include != null && (this._include.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Redshift.Model
     public partial class DescribeTableRestoreStatusResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<TableRestoreStatus> _tableRestoreStatusDetails = new List<TableRestoreStatus>();
+        private List<TableRestoreStatus> _tableRestoreStatusDetails = AWSConfigs.InitializeCollections ? new List<TableRestoreStatus>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -71,7 +72,7 @@ namespace Amazon.Redshift.Model
         // Check to see if TableRestoreStatusDetails property is set
         internal bool IsSetTableRestoreStatusDetails()
         {
-            return this._tableRestoreStatusDetails != null && this._tableRestoreStatusDetails.Count > 0; 
+            return this._tableRestoreStatusDetails != null && (this._tableRestoreStatusDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

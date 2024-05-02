@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FIS.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.FIS.Model
     /// Creates a target account configuration for the experiment template. A target account
     /// configuration is required when <c>accountTargeting</c> of <c>experimentOptions</c>
     /// is set to <c>multi-account</c>. For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-options.html">experiment
-    /// options</a> in the <i>Fault Injection Simulator User Guide</i>.
+    /// options</a> in the <i>Fault Injection Service User Guide</i>.
     /// </summary>
     public partial class CreateTargetAccountConfigurationRequest : AmazonFISRequest
     {
@@ -46,7 +47,7 @@ namespace Amazon.FIS.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The AWS account ID of the target account.
+        /// The Amazon Web Services account ID of the target account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=48)]

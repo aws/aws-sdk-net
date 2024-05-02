@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Backup.Model
 {
     /// <summary>
@@ -34,10 +35,10 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class Conditions
     {
-        private List<ConditionParameter> _stringEquals = new List<ConditionParameter>();
-        private List<ConditionParameter> _stringLike = new List<ConditionParameter>();
-        private List<ConditionParameter> _stringNotEquals = new List<ConditionParameter>();
-        private List<ConditionParameter> _stringNotLike = new List<ConditionParameter>();
+        private List<ConditionParameter> _stringEquals = AWSConfigs.InitializeCollections ? new List<ConditionParameter>() : null;
+        private List<ConditionParameter> _stringLike = AWSConfigs.InitializeCollections ? new List<ConditionParameter>() : null;
+        private List<ConditionParameter> _stringNotEquals = AWSConfigs.InitializeCollections ? new List<ConditionParameter>() : null;
+        private List<ConditionParameter> _stringNotLike = AWSConfigs.InitializeCollections ? new List<ConditionParameter>() : null;
 
         /// <summary>
         /// Gets and sets the property StringEquals. 
@@ -55,7 +56,7 @@ namespace Amazon.Backup.Model
         // Check to see if StringEquals property is set
         internal bool IsSetStringEquals()
         {
-            return this._stringEquals != null && this._stringEquals.Count > 0; 
+            return this._stringEquals != null && (this._stringEquals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace Amazon.Backup.Model
         // Check to see if StringLike property is set
         internal bool IsSetStringLike()
         {
-            return this._stringLike != null && this._stringLike.Count > 0; 
+            return this._stringLike != null && (this._stringLike.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -94,7 +95,7 @@ namespace Amazon.Backup.Model
         // Check to see if StringNotEquals property is set
         internal bool IsSetStringNotEquals()
         {
-            return this._stringNotEquals != null && this._stringNotEquals.Count > 0; 
+            return this._stringNotEquals != null && (this._stringNotEquals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -113,7 +114,7 @@ namespace Amazon.Backup.Model
         // Check to see if StringNotLike property is set
         internal bool IsSetStringNotLike()
         {
-            return this._stringNotLike != null && this._stringNotLike.Count > 0; 
+            return this._stringNotLike != null && (this._stringNotLike.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTTwinMaker.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoTTwinMaker.Model
     /// </summary>
     public partial class ListComponentsResponse : AmazonWebServiceResponse
     {
-        private List<ComponentSummary> _componentSummaries = new List<ComponentSummary>();
+        private List<ComponentSummary> _componentSummaries = AWSConfigs.InitializeCollections ? new List<ComponentSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if ComponentSummaries property is set
         internal bool IsSetComponentSummaries()
         {
-            return this._componentSummaries != null && this._componentSummaries.Count > 0; 
+            return this._componentSummaries != null && (this._componentSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

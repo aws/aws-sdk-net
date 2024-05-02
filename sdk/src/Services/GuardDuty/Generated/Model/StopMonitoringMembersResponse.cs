@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class StopMonitoringMembersResponse : AmazonWebServiceResponse
     {
-        private List<UnprocessedAccount> _unprocessedAccounts = new List<UnprocessedAccount>();
+        private List<UnprocessedAccount> _unprocessedAccounts = AWSConfigs.InitializeCollections ? new List<UnprocessedAccount>() : null;
 
         /// <summary>
         /// Gets and sets the property UnprocessedAccounts. 
@@ -52,7 +53,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if UnprocessedAccounts property is set
         internal bool IsSetUnprocessedAccounts()
         {
-            return this._unprocessedAccounts != null && this._unprocessedAccounts.Count > 0; 
+            return this._unprocessedAccounts != null && (this._unprocessedAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

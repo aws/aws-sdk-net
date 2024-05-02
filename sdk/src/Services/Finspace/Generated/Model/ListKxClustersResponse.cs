@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Finspace.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Finspace.Model
     /// </summary>
     public partial class ListKxClustersResponse : AmazonWebServiceResponse
     {
-        private List<KxCluster> _kxClusterSummaries = new List<KxCluster>();
+        private List<KxCluster> _kxClusterSummaries = AWSConfigs.InitializeCollections ? new List<KxCluster>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Finspace.Model
         // Check to see if KxClusterSummaries property is set
         internal bool IsSetKxClusterSummaries()
         {
-            return this._kxClusterSummaries != null && this._kxClusterSummaries.Count > 0; 
+            return this._kxClusterSummaries != null && (this._kxClusterSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
@@ -67,7 +68,7 @@ namespace Amazon.StorageGateway.Model
     {
         private string _auditDestinationARN;
         private CacheAttributes _cacheAttributes;
-        private List<string> _clientList = new List<string>();
+        private List<string> _clientList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _defaultStorageClass;
         private string _fileShareARN;
         private string _fileShareName;
@@ -135,7 +136,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if ClientList property is set
         internal bool IsSetClientList()
         {
-            return this._clientList != null && this._clientList.Count > 0; 
+            return this._clientList != null && (this._clientList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

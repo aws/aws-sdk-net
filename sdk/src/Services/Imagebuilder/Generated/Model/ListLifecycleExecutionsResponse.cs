@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Imagebuilder.Model
     /// </summary>
     public partial class ListLifecycleExecutionsResponse : AmazonWebServiceResponse
     {
-        private List<LifecycleExecution> _lifecycleExecutions = new List<LifecycleExecution>();
+        private List<LifecycleExecution> _lifecycleExecutions = AWSConfigs.InitializeCollections ? new List<LifecycleExecution>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if LifecycleExecutions property is set
         internal bool IsSetLifecycleExecutions()
         {
-            return this._lifecycleExecutions != null && this._lifecycleExecutions.Count > 0; 
+            return this._lifecycleExecutions != null && (this._lifecycleExecutions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

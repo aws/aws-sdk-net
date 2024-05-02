@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
@@ -46,7 +47,7 @@ namespace Amazon.ElastiCache.Model
         private string _engine;
         private string _engineVersion;
         private string _kmsKeyId;
-        private List<NodeSnapshot> _nodeSnapshots = new List<NodeSnapshot>();
+        private List<NodeSnapshot> _nodeSnapshots = AWSConfigs.InitializeCollections ? new List<NodeSnapshot>() : null;
         private int? _numCacheNodes;
         private int? _numNodeGroups;
         private int? _port;
@@ -463,7 +464,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if NodeSnapshots property is set
         internal bool IsSetNodeSnapshots()
         {
-            return this._nodeSnapshots != null && this._nodeSnapshots.Count > 0; 
+            return this._nodeSnapshots != null && (this._nodeSnapshots.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

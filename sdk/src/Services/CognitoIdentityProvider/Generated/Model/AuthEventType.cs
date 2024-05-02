@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class AuthEventType
     {
-        private List<ChallengeResponseType> _challengeResponses = new List<ChallengeResponseType>();
+        private List<ChallengeResponseType> _challengeResponses = AWSConfigs.InitializeCollections ? new List<ChallengeResponseType>() : null;
         private DateTime? _creationDate;
         private EventContextDataType _eventContextData;
         private EventFeedbackType _eventFeedback;
@@ -57,14 +58,15 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if ChallengeResponses property is set
         internal bool IsSetChallengeResponses()
         {
-            return this._challengeResponses != null && this._challengeResponses.Count > 0; 
+            return this._challengeResponses != null && (this._challengeResponses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
-        /// The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
-        /// 8601</a> format, when the item was created.
+        /// The date and time when the item was created. Amazon Cognito returns this timestamp
+        /// in UNIX epoch time format. Your SDK might render the output in a human-readable format
+        /// like ISO 8601 or a Java <c>Date</c> object.
         /// </para>
         /// </summary>
         public DateTime? CreationDate

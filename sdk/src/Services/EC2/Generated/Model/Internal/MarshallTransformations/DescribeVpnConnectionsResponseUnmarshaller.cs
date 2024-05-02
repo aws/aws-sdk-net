@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -58,6 +59,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("vpnConnectionSet/item", targetDepth))
                     {
                         var unmarshaller = VpnConnectionUnmarshaller.Instance;
+                        if (response.VpnConnections == null)
+                        {
+                            response.VpnConnections = new List<VpnConnection>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.VpnConnections.Add(item);
                         continue;

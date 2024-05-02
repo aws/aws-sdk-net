@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ElasticTranscoder.Model
     /// </summary>
     public partial class Permission
     {
-        private List<string> _access = new List<string>();
+        private List<string> _access = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _grantee;
         private string _granteeType;
 
@@ -75,7 +76,7 @@ namespace Amazon.ElasticTranscoder.Model
         // Check to see if Access property is set
         internal bool IsSetAccess()
         {
-            return this._access != null && this._access.Count > 0; 
+            return this._access != null && (this._access.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     ///  
     /// <para>
     /// For the minimal permissions required to enable Amazon S3 output for an association,
-    /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-state-assoc.html">Creating
-    /// associations</a> in the <i>Systems Manager User Guide</i>. 
+    /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/state-manager-associations-creating.html#state-manager-associations-console">Create
+    /// an association (console)</a> in the <i>Systems Manager User Guide</i>. 
     /// </para>
     /// </summary>
     public partial class InstanceAssociationOutputLocation

@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -63,6 +64,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AssociatedClusters/ClusterAssociatedToSchedule", targetDepth))
                     {
                         var unmarshaller = ClusterAssociatedToScheduleUnmarshaller.Instance;
+                        if (unmarshalledObject.AssociatedClusters == null)
+                        {
+                            unmarshalledObject.AssociatedClusters = new List<ClusterAssociatedToSchedule>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AssociatedClusters.Add(item);
                         continue;
@@ -70,6 +75,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("NextInvocations/SnapshotTime", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;
+                        if (unmarshalledObject.NextInvocations == null)
+                        {
+                            unmarshalledObject.NextInvocations = new List<DateTime>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.NextInvocations.Add(item);
                         continue;
@@ -77,6 +86,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ScheduleDefinitions/ScheduleDefinition", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.ScheduleDefinitions == null)
+                        {
+                            unmarshalledObject.ScheduleDefinitions = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ScheduleDefinitions.Add(item);
                         continue;
@@ -96,6 +109,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Tags/Tag", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tags.Add(item);
                         continue;

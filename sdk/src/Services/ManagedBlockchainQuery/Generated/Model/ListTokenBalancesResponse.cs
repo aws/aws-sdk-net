@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ManagedBlockchainQuery.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
     public partial class ListTokenBalancesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TokenBalance> _tokenBalances = new List<TokenBalance>();
+        private List<TokenBalance> _tokenBalances = AWSConfigs.InitializeCollections ? new List<TokenBalance>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
         // Check to see if TokenBalances property is set
         internal bool IsSetTokenBalances()
         {
-            return this._tokenBalances != null && this._tokenBalances.Count > 0; 
+            return this._tokenBalances != null && (this._tokenBalances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

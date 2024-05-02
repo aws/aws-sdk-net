@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppSync.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.AppSync.Model
     public partial class ListResolversByFunctionResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Resolver> _resolvers = new List<Resolver>();
+        private List<Resolver> _resolvers = AWSConfigs.InitializeCollections ? new List<Resolver>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.AppSync.Model
         // Check to see if Resolvers property is set
         internal bool IsSetResolvers()
         {
-            return this._resolvers != null && this._resolvers.Count > 0; 
+            return this._resolvers != null && (this._resolvers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

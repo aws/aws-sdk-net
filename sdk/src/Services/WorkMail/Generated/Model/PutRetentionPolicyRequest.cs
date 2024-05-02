@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkMail.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.WorkMail.Model
     public partial class PutRetentionPolicyRequest : AmazonWorkMailRequest
     {
         private string _description;
-        private List<FolderConfiguration> _folderConfigurations = new List<FolderConfiguration>();
+        private List<FolderConfiguration> _folderConfigurations = AWSConfigs.InitializeCollections ? new List<FolderConfiguration>() : null;
         private string _id;
         private string _name;
         private string _organizationId;
@@ -75,7 +76,7 @@ namespace Amazon.WorkMail.Model
         // Check to see if FolderConfigurations property is set
         internal bool IsSetFolderConfigurations()
         {
-            return this._folderConfigurations != null && this._folderConfigurations.Count > 0; 
+            return this._folderConfigurations != null && (this._folderConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

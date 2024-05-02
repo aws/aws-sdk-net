@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -52,9 +53,8 @@ namespace Amazon.EC2.Model
     /// <para>
     /// Snapshots copied to an Outpost are encrypted by default using the default encryption
     /// key for the Region, or a different key that you specify in the request using <b>KmsKeyId</b>.
-    /// Outposts do not support unencrypted snapshots. For more information, <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">
-    /// Amazon EBS local snapshots on Outposts</a> in the <i>Amazon Elastic Compute Cloud
-    /// User Guide</i>.
+    /// Outposts do not support unencrypted snapshots. For more information, <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">
+    /// Amazon EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -63,8 +63,8 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-copy-snapshot.html">Copy
-    /// an Amazon EBS snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-copy-snapshot.html">Copy
+    /// an Amazon EBS snapshot</a> in the <i>Amazon EBS User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CopySnapshotRequest : AmazonEC2Request
@@ -77,7 +77,7 @@ namespace Amazon.EC2.Model
         private string _presignedUrl;
         private string _sourceRegion;
         private string _sourceSnapshotId;
-        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
+        private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -108,9 +108,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#copy-snapshots">
+        /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#copy-snapshots">
         /// Copy snapshots from an Amazon Web Services Region to an Outpost</a> in the <i>Amazon
-        /// Elastic Compute Cloud User Guide</i>.
+        /// EBS User Guide</i>.
         /// </para>
         /// </summary>
         public string DestinationOutpostArn
@@ -159,8 +159,8 @@ namespace Amazon.EC2.Model
         /// enable encryption using this parameter. Otherwise, omit this parameter. Encrypted
         /// snapshots are encrypted, even if you omit this parameter and encryption by default
         /// is not enabled. You cannot set this parameter to false. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-        /// EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+        /// <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+        /// EBS encryption</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         /// </summary>
         public bool? Encrypted
@@ -308,7 +308,7 @@ namespace Amazon.EC2.Model
         // Check to see if TagSpecifications property is set
         internal bool IsSetTagSpecifications()
         {
-            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
+            return this._tagSpecifications != null && (this._tagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

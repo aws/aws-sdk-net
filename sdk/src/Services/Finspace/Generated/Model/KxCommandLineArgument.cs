@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Finspace.Model
 {
     /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.Finspace.Model
         /// The name of the key.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Min=1, Max=1024)]
         public string Key
         {
             get { return this._key; }
@@ -61,7 +62,7 @@ namespace Amazon.Finspace.Model
         /// The value of the key.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Min=1, Max=1024)]
         public string Value
         {
             get { return this._value; }

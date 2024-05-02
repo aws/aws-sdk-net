@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.RDS.Model
     {
         private string _analysis;
         private DateTime? _endTime;
-        private List<Metric> _metrics = new List<Metric>();
+        private List<Metric> _metrics = AWSConfigs.InitializeCollections ? new List<Metric>() : null;
         private DateTime? _startTime;
 
         /// <summary>
@@ -89,7 +90,7 @@ namespace Amazon.RDS.Model
         // Check to see if Metrics property is set
         internal bool IsSetMetrics()
         {
-            return this._metrics != null && this._metrics.Count > 0; 
+            return this._metrics != null && (this._metrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class PivotTableFieldOptions
     {
-        private List<PivotTableFieldCollapseStateOption> _collapseStateOptions = new List<PivotTableFieldCollapseStateOption>();
-        private List<PivotTableDataPathOption> _dataPathOptions = new List<PivotTableDataPathOption>();
-        private List<PivotTableFieldOption> _selectedFieldOptions = new List<PivotTableFieldOption>();
+        private List<PivotTableFieldCollapseStateOption> _collapseStateOptions = AWSConfigs.InitializeCollections ? new List<PivotTableFieldCollapseStateOption>() : null;
+        private List<PivotTableDataPathOption> _dataPathOptions = AWSConfigs.InitializeCollections ? new List<PivotTableDataPathOption>() : null;
+        private List<PivotTableFieldOption> _selectedFieldOptions = AWSConfigs.InitializeCollections ? new List<PivotTableFieldOption>() : null;
 
         /// <summary>
         /// Gets and sets the property CollapseStateOptions. 
@@ -52,7 +53,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if CollapseStateOptions property is set
         internal bool IsSetCollapseStateOptions()
         {
-            return this._collapseStateOptions != null && this._collapseStateOptions.Count > 0; 
+            return this._collapseStateOptions != null && (this._collapseStateOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if DataPathOptions property is set
         internal bool IsSetDataPathOptions()
         {
-            return this._dataPathOptions != null && this._dataPathOptions.Count > 0; 
+            return this._dataPathOptions != null && (this._dataPathOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -90,7 +91,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if SelectedFieldOptions property is set
         internal bool IsSetSelectedFieldOptions()
         {
-            return this._selectedFieldOptions != null && this._selectedFieldOptions.Count > 0; 
+            return this._selectedFieldOptions != null && (this._selectedFieldOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

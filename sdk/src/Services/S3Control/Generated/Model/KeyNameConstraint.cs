@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3Control.Model
 {
     /// <summary>
@@ -35,9 +36,9 @@ namespace Amazon.S3Control.Model
     /// </summary>
     public partial class KeyNameConstraint
     {
-        private List<string> _matchAnyPrefix = new List<string>();
-        private List<string> _matchAnySubstring = new List<string>();
-        private List<string> _matchAnySuffix = new List<string>();
+        private List<string> _matchAnyPrefix = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _matchAnySubstring = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _matchAnySuffix = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property MatchAnyPrefix. 
@@ -55,7 +56,7 @@ namespace Amazon.S3Control.Model
         // Check to see if MatchAnyPrefix property is set
         internal bool IsSetMatchAnyPrefix()
         {
-            return this._matchAnyPrefix != null && this._matchAnyPrefix.Count > 0; 
+            return this._matchAnyPrefix != null && (this._matchAnyPrefix.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.S3Control.Model
         // Check to see if MatchAnySubstring property is set
         internal bool IsSetMatchAnySubstring()
         {
-            return this._matchAnySubstring != null && this._matchAnySubstring.Count > 0; 
+            return this._matchAnySubstring != null && (this._matchAnySubstring.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -93,7 +94,7 @@ namespace Amazon.S3Control.Model
         // Check to see if MatchAnySuffix property is set
         internal bool IsSetMatchAnySuffix()
         {
-            return this._matchAnySuffix != null && this._matchAnySuffix.Count > 0; 
+            return this._matchAnySuffix != null && (this._matchAnySuffix.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

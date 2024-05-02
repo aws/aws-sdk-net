@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.CloudTrail.Model
     public partial class ListTagsRequest : AmazonCloudTrailRequest
     {
         private string _nextToken;
-        private List<string> _resourceIdList = new List<string>();
+        private List<string> _resourceIdList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -88,7 +89,7 @@ namespace Amazon.CloudTrail.Model
         // Check to see if ResourceIdList property is set
         internal bool IsSetResourceIdList()
         {
-            return this._resourceIdList != null && this._resourceIdList.Count > 0; 
+            return this._resourceIdList != null && (this._resourceIdList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

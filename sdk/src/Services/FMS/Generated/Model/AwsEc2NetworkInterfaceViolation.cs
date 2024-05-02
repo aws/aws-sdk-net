@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FMS.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.FMS.Model
     /// </summary>
     public partial class AwsEc2NetworkInterfaceViolation
     {
-        private List<string> _violatingSecurityGroups = new List<string>();
+        private List<string> _violatingSecurityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _violationTarget;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.FMS.Model
         // Check to see if ViolatingSecurityGroups property is set
         internal bool IsSetViolatingSecurityGroups()
         {
-            return this._violatingSecurityGroups != null && this._violatingSecurityGroups.Count > 0; 
+            return this._violatingSecurityGroups != null && (this._violatingSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

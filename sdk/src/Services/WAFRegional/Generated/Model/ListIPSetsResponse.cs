@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAFRegional.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.WAFRegional.Model
     /// </summary>
     public partial class ListIPSetsResponse : AmazonWebServiceResponse
     {
-        private List<IPSetSummary> _ipSets = new List<IPSetSummary>();
+        private List<IPSetSummary> _ipSets = AWSConfigs.InitializeCollections ? new List<IPSetSummary>() : null;
         private string _nextMarker;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.WAFRegional.Model
         // Check to see if IPSets property is set
         internal bool IsSetIPSets()
         {
-            return this._ipSets != null && this._ipSets.Count > 0; 
+            return this._ipSets != null && (this._ipSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

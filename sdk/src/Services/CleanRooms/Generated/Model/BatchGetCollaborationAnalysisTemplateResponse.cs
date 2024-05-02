@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class BatchGetCollaborationAnalysisTemplateResponse : AmazonWebServiceResponse
     {
-        private List<CollaborationAnalysisTemplate> _collaborationAnalysisTemplates = new List<CollaborationAnalysisTemplate>();
-        private List<BatchGetCollaborationAnalysisTemplateError> _errors = new List<BatchGetCollaborationAnalysisTemplateError>();
+        private List<CollaborationAnalysisTemplate> _collaborationAnalysisTemplates = AWSConfigs.InitializeCollections ? new List<CollaborationAnalysisTemplate>() : null;
+        private List<BatchGetCollaborationAnalysisTemplateError> _errors = AWSConfigs.InitializeCollections ? new List<BatchGetCollaborationAnalysisTemplateError>() : null;
 
         /// <summary>
         /// Gets and sets the property CollaborationAnalysisTemplates. 
@@ -52,7 +53,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if CollaborationAnalysisTemplates property is set
         internal bool IsSetCollaborationAnalysisTemplates()
         {
-            return this._collaborationAnalysisTemplates != null && this._collaborationAnalysisTemplates.Count > 0; 
+            return this._collaborationAnalysisTemplates != null && (this._collaborationAnalysisTemplates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

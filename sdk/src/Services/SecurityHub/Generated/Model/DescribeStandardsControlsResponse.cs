@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class DescribeStandardsControlsResponse : AmazonWebServiceResponse
     {
-        private List<StandardsControl> _controls = new List<StandardsControl>();
+        private List<StandardsControl> _controls = AWSConfigs.InitializeCollections ? new List<StandardsControl>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Controls property is set
         internal bool IsSetControls()
         {
-            return this._controls != null && this._controls.Count > 0; 
+            return this._controls != null && (this._controls.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -90,6 +91,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("TypeVersionSummaries/member", targetDepth))
                     {
                         var unmarshaller = TypeVersionSummaryUnmarshaller.Instance;
+                        if (response.TypeVersionSummaries == null)
+                        {
+                            response.TypeVersionSummaries = new List<TypeVersionSummary>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.TypeVersionSummaries.Add(item);
                         continue;

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Omics.Model
 {
     /// <summary>
@@ -35,9 +36,21 @@ namespace Amazon.Omics.Model
     /// 
     ///  
     /// <para>
+    /// StartRun will not support re-run for a workflow that is shared with you.
+    /// </para>
+    ///  
+    /// <para>
     /// The total number of runs in your account is subject to a quota per Region. To avoid
     /// needing to delete runs manually, you can set the retention mode to <c>REMOVE</c>.
     /// Runs with this setting are deleted automatically when the run quoata is exceeded.
+    /// </para>
+    ///  
+    /// <para>
+    /// By default, the run uses STATIC storage. For STATIC storage, set the <c>storageCapacity</c>
+    /// field. You can set the storage type to DYNAMIC. You do not set <c>storageCapacity</c>,
+    /// because HealthOmics dynamically scales the storage up or down as required. For more
+    /// information about static and dynamic storage, see <a href="https://docs.aws.amazon.com/omics/latest/dev/Using-workflows.html">Running
+    /// workflows</a> in the <i>AWS HealthOmics User Guide</i>.
     /// </para>
     /// </summary>
     public partial class StartRunRequest : AmazonOmicsRequest
@@ -53,8 +66,10 @@ namespace Amazon.Omics.Model
         private string _runGroupId;
         private string _runId;
         private int? _storageCapacity;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private StorageType _storageType;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _workflowId;
+        private string _workflowOwnerId;
         private WorkflowType _workflowType;
 
         /// <summary>
@@ -249,7 +264,8 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property StorageCapacity. 
         /// <para>
-        /// A storage capacity for the run in gigabytes.
+        /// A storage capacity for the run in gibibytes. This field is not required if the storage
+        /// type is dynamic (the system ignores any value that you enter).
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100000)]
@@ -263,6 +279,27 @@ namespace Amazon.Omics.Model
         internal bool IsSetStorageCapacity()
         {
             return this._storageCapacity.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageType. 
+        /// <para>
+        /// The run's storage type. By default, the run uses STATIC storage type, which allocates
+        /// a fixed amount of storage. If you set the storage type to DYNAMIC, HealthOmics dynamically
+        /// scales the storage up or down, based on file system utilization.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public StorageType StorageType
+        {
+            get { return this._storageType; }
+            set { this._storageType = value; }
+        }
+
+        // Check to see if StorageType property is set
+        internal bool IsSetStorageType()
+        {
+            return this._storageType != null;
         }
 
         /// <summary>
@@ -280,7 +317,7 @@ namespace Amazon.Omics.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -300,6 +337,24 @@ namespace Amazon.Omics.Model
         internal bool IsSetWorkflowId()
         {
             return this._workflowId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkflowOwnerId. 
+        /// <para>
+        /// The ID of the workflow owner. 
+        /// </para>
+        /// </summary>
+        public string WorkflowOwnerId
+        {
+            get { return this._workflowOwnerId; }
+            set { this._workflowOwnerId = value; }
+        }
+
+        // Check to see if WorkflowOwnerId property is set
+        internal bool IsSetWorkflowOwnerId()
+        {
+            return this._workflowOwnerId != null;
         }
 
         /// <summary>

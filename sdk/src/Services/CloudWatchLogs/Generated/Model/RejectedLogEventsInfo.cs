@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
@@ -58,7 +59,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property TooNewLogEventStartIndex. 
         /// <para>
-        /// The log events that are too new.
+        /// The index of the first log event that is too new. This field is inclusive.
         /// </para>
         /// </summary>
         public int? TooNewLogEventStartIndex
@@ -76,7 +77,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property TooOldLogEventEndIndex. 
         /// <para>
-        /// The log events that are dated too far in the past.
+        /// The index of the last log event that is too old. This field is exclusive.
         /// </para>
         /// </summary>
         public int? TooOldLogEventEndIndex

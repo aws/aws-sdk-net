@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -67,7 +68,7 @@ namespace Amazon.EC2.Model
     {
         private string _clientToken;
         private int? _instanceCount;
-        private List<PriceScheduleSpecification> _priceSchedules = new List<PriceScheduleSpecification>();
+        private List<PriceScheduleSpecification> _priceSchedules = AWSConfigs.InitializeCollections ? new List<PriceScheduleSpecification>() : null;
         private string _reservedInstancesId;
 
         /// <summary>
@@ -129,7 +130,7 @@ namespace Amazon.EC2.Model
         // Check to see if PriceSchedules property is set
         internal bool IsSetPriceSchedules()
         {
-            return this._priceSchedules != null && this._priceSchedules.Count > 0; 
+            return this._priceSchedules != null && (this._priceSchedules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

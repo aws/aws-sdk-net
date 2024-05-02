@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.QuickSight.Model
     public partial class SearchAnalysesRequest : AmazonQuickSightRequest
     {
         private string _awsAccountId;
-        private List<AnalysisSearchFilter> _filters = new List<AnalysisSearchFilter>();
+        private List<AnalysisSearchFilter> _filters = AWSConfigs.InitializeCollections ? new List<AnalysisSearchFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -82,7 +83,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

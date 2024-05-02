@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class CreateDevEndpointRequest : AmazonGlueRequest
     {
-        private Dictionary<string, string> _arguments = new Dictionary<string, string>();
+        private Dictionary<string, string> _arguments = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _endpointName;
         private string _extraJarsS3Path;
         private string _extraPythonLibsS3Path;
@@ -42,12 +43,12 @@ namespace Amazon.Glue.Model
         private int? _numberOfNodes;
         private int? _numberOfWorkers;
         private string _publicKey;
-        private List<string> _publicKeys = new List<string>();
+        private List<string> _publicKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _roleArn;
         private string _securityConfiguration;
-        private List<string> _securityGroupIds = new List<string>();
+        private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _subnetId;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private WorkerType _workerType;
 
         /// <summary>
@@ -66,7 +67,7 @@ namespace Amazon.Glue.Model
         // Check to see if Arguments property is set
         internal bool IsSetArguments()
         {
-            return this._arguments != null && this._arguments.Count > 0; 
+            return this._arguments != null && (this._arguments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -260,7 +261,7 @@ namespace Amazon.Glue.Model
         // Check to see if PublicKeys property is set
         internal bool IsSetPublicKeys()
         {
-            return this._publicKeys != null && this._publicKeys.Count > 0; 
+            return this._publicKeys != null && (this._publicKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -316,7 +317,7 @@ namespace Amazon.Glue.Model
         // Check to see if SecurityGroupIds property is set
         internal bool IsSetSecurityGroupIds()
         {
-            return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+            return this._securityGroupIds != null && (this._securityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -355,7 +356,7 @@ namespace Amazon.Glue.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

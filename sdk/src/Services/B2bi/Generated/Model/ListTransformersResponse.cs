@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.B2bi.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.B2bi.Model
     public partial class ListTransformersResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TransformerSummary> _transformers = new List<TransformerSummary>();
+        private List<TransformerSummary> _transformers = AWSConfigs.InitializeCollections ? new List<TransformerSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -78,7 +79,7 @@ namespace Amazon.B2bi.Model
         // Check to see if Transformers property is set
         internal bool IsSetTransformers()
         {
-            return this._transformers != null && this._transformers.Count > 0; 
+            return this._transformers != null && (this._transformers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

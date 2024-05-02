@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Snowball.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.Snowball.Model
     {
         private string _bucketArn;
         private KeyRange _keyRange;
-        private List<TargetOnDeviceService> _targetOnDeviceServices = new List<TargetOnDeviceService>();
+        private List<TargetOnDeviceService> _targetOnDeviceServices = AWSConfigs.InitializeCollections ? new List<TargetOnDeviceService>() : null;
 
         /// <summary>
         /// Gets and sets the property BucketArn. 
@@ -98,7 +99,7 @@ namespace Amazon.Snowball.Model
         // Check to see if TargetOnDeviceServices property is set
         internal bool IsSetTargetOnDeviceServices()
         {
-            return this._targetOnDeviceServices != null && this._targetOnDeviceServices.Count > 0; 
+            return this._targetOnDeviceServices != null && (this._targetOnDeviceServices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class GetContactMethodsResponse : AmazonWebServiceResponse
     {
-        private List<ContactMethod> _contactMethods = new List<ContactMethod>();
+        private List<ContactMethod> _contactMethods = AWSConfigs.InitializeCollections ? new List<ContactMethod>() : null;
 
         /// <summary>
         /// Gets and sets the property ContactMethods. 
@@ -50,7 +51,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if ContactMethods property is set
         internal bool IsSetContactMethods()
         {
-            return this._contactMethods != null && this._contactMethods.Count > 0; 
+            return this._contactMethods != null && (this._contactMethods.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

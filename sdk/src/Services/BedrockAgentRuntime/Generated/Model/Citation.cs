@@ -26,18 +26,39 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Citation associated with the agent response
+    /// An object containing a segment of the generated response that is based on a source
+    /// in the knowledge base, alongside information about the source.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is used in the following API operations:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_ResponseSyntax">Retrieve
+    /// response</a> – in the <c>citations</c> field
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_ResponseSyntax">RetrieveAndGenerate
+    /// response</a> – in the <c>citations</c> field
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class Citation
     {
         private GeneratedResponsePart _generatedResponsePart;
-        private List<RetrievedReference> _retrievedReferences = new List<RetrievedReference>();
+        private List<RetrievedReference> _retrievedReferences = AWSConfigs.InitializeCollections ? new List<RetrievedReference>() : null;
 
         /// <summary>
-        /// Gets and sets the property GeneratedResponsePart.
+        /// Gets and sets the property GeneratedResponsePart. 
+        /// <para>
+        /// Contains the generated response and metadata 
+        /// </para>
         /// </summary>
         public GeneratedResponsePart GeneratedResponsePart
         {
@@ -52,7 +73,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RetrievedReferences.
+        /// Gets and sets the property RetrievedReferences. 
+        /// <para>
+        /// Contains metadata about the sources cited for the generated response.
+        /// </para>
         /// </summary>
         public List<RetrievedReference> RetrievedReferences
         {
@@ -63,7 +87,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         // Check to see if RetrievedReferences property is set
         internal bool IsSetRetrievedReferences()
         {
-            return this._retrievedReferences != null && this._retrievedReferences.Count > 0; 
+            return this._retrievedReferences != null && (this._retrievedReferences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

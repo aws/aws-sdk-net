@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Redshift.Model
         /// Enumerable containing all of the ClusterSecurityGroups
         /// </summary>
         public IPaginatedEnumerable<ClusterSecurityGroup> ClusterSecurityGroups => 
-            new PaginatedResultKeyResponse<DescribeClusterSecurityGroupsResponse, ClusterSecurityGroup>(this, (i) => i.ClusterSecurityGroups);
+            new PaginatedResultKeyResponse<DescribeClusterSecurityGroupsResponse, ClusterSecurityGroup>(this, (i) => i.ClusterSecurityGroups ?? new List<ClusterSecurityGroup>());
 
         internal DescribeClusterSecurityGroupsPaginator(IAmazonRedshift client, DescribeClusterSecurityGroupsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Redshift.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeClusterSecurityGroupsResponse> IPaginator<DescribeClusterSecurityGroupsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeClusterSecurityGroupsResponse> IPaginator<DescribeClusterSecurityGroupsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

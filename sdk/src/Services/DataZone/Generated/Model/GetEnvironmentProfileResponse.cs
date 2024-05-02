@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
@@ -44,7 +45,7 @@ namespace Amazon.DataZone.Model
         private string _name;
         private string _projectId;
         private DateTime? _updatedAt;
-        private List<CustomParameter> _userParameters = new List<CustomParameter>();
+        private List<CustomParameter> _userParameters = AWSConfigs.InitializeCollections ? new List<CustomParameter>() : null;
 
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
@@ -265,7 +266,7 @@ namespace Amazon.DataZone.Model
         // Check to see if UserParameters property is set
         internal bool IsSetUserParameters()
         {
-            return this._userParameters != null && this._userParameters.Count > 0; 
+            return this._userParameters != null && (this._userParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

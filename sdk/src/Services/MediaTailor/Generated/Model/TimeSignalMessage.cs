@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaTailor.Model
 {
     /// <summary>
@@ -47,7 +48,7 @@ namespace Amazon.MediaTailor.Model
     /// </summary>
     public partial class TimeSignalMessage
     {
-        private List<SegmentationDescriptor> _segmentationDescriptors = new List<SegmentationDescriptor>();
+        private List<SegmentationDescriptor> _segmentationDescriptors = AWSConfigs.InitializeCollections ? new List<SegmentationDescriptor>() : null;
 
         /// <summary>
         /// Gets and sets the property SegmentationDescriptors. 
@@ -65,7 +66,7 @@ namespace Amazon.MediaTailor.Model
         // Check to see if SegmentationDescriptors property is set
         internal bool IsSetSegmentationDescriptors()
         {
-            return this._segmentationDescriptors != null && this._segmentationDescriptors.Count > 0; 
+            return this._segmentationDescriptors != null && (this._segmentationDescriptors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

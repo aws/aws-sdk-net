@@ -16,6 +16,7 @@
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
+using Amazon.Util.Internal;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -262,6 +263,7 @@ namespace Amazon.Runtime.Internal
         /// <param name="requestContent">The destination where the content stream is written.</param>
         /// <param name="content">The content stream to be written.</param>
         /// <param name="contentHeaders">HTTP content headers.</param>
+        /// <param name="cancellationToken"></param>
         public async Task WriteToRequestBodyAsync(Stream requestContent, byte[] content, IDictionary<string, string> contentHeaders, CancellationToken cancellationToken = default(CancellationToken))
         {
             cancellationToken.ThrowIfCancellationRequested();
@@ -414,13 +416,23 @@ namespace Amazon.Runtime.Internal
                 requestContext.Metrics.AddProperty(Metric.ProxyPort, requestContext.ClientConfig.ProxyPort);
                 _request.Proxy = proxy;
             }
-            else if (_request.RequestUri.Scheme == Uri.UriSchemeHttp)
+            else if(!NoProxyFilter.Instance.Match(_request.RequestUri))
             {
-                _request.Proxy = requestContext.ClientConfig.GetHttpProxy();
-            }
-            else if (_request.RequestUri.Scheme == Uri.UriSchemeHttps)
-            {
-                _request.Proxy = requestContext.ClientConfig.GetHttpsProxy();
+                if (_request.RequestUri.Scheme == Uri.UriSchemeHttp)
+                {
+                    proxy = requestContext.ClientConfig.GetHttpProxy();
+                }
+                else if (_request.RequestUri.Scheme == Uri.UriSchemeHttps)
+                {
+                    proxy = requestContext.ClientConfig.GetHttpsProxy();
+                }
+
+                // Only set the HttpWebRequest Proxy property if we have a value so
+                // that we don't override any OS level proxy settings.
+                if (proxy != null)
+                {
+                    _request.Proxy = proxy;
+                }
             }
 
             // Set service point properties.

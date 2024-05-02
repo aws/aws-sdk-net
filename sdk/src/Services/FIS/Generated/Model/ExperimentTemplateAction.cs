@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FIS.Model
 {
     /// <summary>
@@ -35,9 +36,9 @@ namespace Amazon.FIS.Model
     {
         private string _actionId;
         private string _description;
-        private Dictionary<string, string> _parameters = new Dictionary<string, string>();
-        private List<string> _startAfter = new List<string>();
-        private Dictionary<string, string> _targets = new Dictionary<string, string>();
+        private Dictionary<string, string> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<string> _startAfter = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _targets = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ActionId. 
@@ -92,7 +93,7 @@ namespace Amazon.FIS.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -110,7 +111,7 @@ namespace Amazon.FIS.Model
         // Check to see if StartAfter property is set
         internal bool IsSetStartAfter()
         {
-            return this._startAfter != null && this._startAfter.Count > 0; 
+            return this._startAfter != null && (this._startAfter.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -128,7 +129,7 @@ namespace Amazon.FIS.Model
         // Check to see if Targets property is set
         internal bool IsSetTargets()
         {
-            return this._targets != null && this._targets.Count > 0; 
+            return this._targets != null && (this._targets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

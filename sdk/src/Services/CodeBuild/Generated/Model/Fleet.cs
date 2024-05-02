@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
@@ -41,9 +42,10 @@ namespace Amazon.CodeBuild.Model
         private string _id;
         private DateTime? _lastModified;
         private string _name;
+        private FleetOverflowBehavior _overflowBehavior;
         private ScalingConfigurationOutput _scalingConfiguration;
         private FleetStatus _status;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -299,6 +301,34 @@ namespace Amazon.CodeBuild.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OverflowBehavior. 
+        /// <para>
+        /// The compute fleet overflow behavior.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For overflow behavior <c>QUEUE</c>, your overflow builds need to wait on the existing
+        /// fleet instance to become available.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For overflow behavior <c>ON_DEMAND</c>, your overflow builds run on CodeBuild on-demand.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public FleetOverflowBehavior OverflowBehavior
+        {
+            get { return this._overflowBehavior; }
+            set { this._overflowBehavior = value; }
+        }
+
+        // Check to see if OverflowBehavior property is set
+        internal bool IsSetOverflowBehavior()
+        {
+            return this._overflowBehavior != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ScalingConfiguration. 
         /// <para>
         /// The scaling configuration of the compute fleet.
@@ -355,7 +385,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

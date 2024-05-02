@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SecurityHub.Model
     public partial class AwsEc2VpnConnectionOptionsDetails
     {
         private bool? _staticRoutesOnly;
-        private List<AwsEc2VpnConnectionOptionsTunnelOptionsDetails> _tunnelOptions = new List<AwsEc2VpnConnectionOptionsTunnelOptionsDetails>();
+        private List<AwsEc2VpnConnectionOptionsTunnelOptionsDetails> _tunnelOptions = AWSConfigs.InitializeCollections ? new List<AwsEc2VpnConnectionOptionsTunnelOptionsDetails>() : null;
 
         /// <summary>
         /// Gets and sets the property StaticRoutesOnly. 
@@ -69,7 +70,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if TunnelOptions property is set
         internal bool IsSetTunnelOptions()
         {
-            return this._tunnelOptions != null && this._tunnelOptions.Count > 0; 
+            return this._tunnelOptions != null && (this._tunnelOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

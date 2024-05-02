@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Trace Part which contains output details for action group or knowledge base or final
-    /// response
+    /// Contains the result or output of an action group or knowledge base, or the response
+    /// to the user.
     /// </summary>
     public partial class Observation
     {
@@ -42,7 +43,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         private Type _type;
 
         /// <summary>
-        /// Gets and sets the property ActionGroupInvocationOutput.
+        /// Gets and sets the property ActionGroupInvocationOutput. 
+        /// <para>
+        /// Contains the JSON-formatted string returned by the API invoked by the action group.
+        /// </para>
         /// </summary>
         public ActionGroupInvocationOutput ActionGroupInvocationOutput
         {
@@ -57,7 +61,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FinalResponse.
+        /// Gets and sets the property FinalResponse. 
+        /// <para>
+        /// Contains details about the response to the user.
+        /// </para>
         /// </summary>
         public FinalResponse FinalResponse
         {
@@ -72,7 +79,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KnowledgeBaseLookupOutput.
+        /// Gets and sets the property KnowledgeBaseLookupOutput. 
+        /// <para>
+        /// Contains details about the results from looking up the knowledge base.
+        /// </para>
         /// </summary>
         public KnowledgeBaseLookupOutput KnowledgeBaseLookupOutput
         {
@@ -87,7 +97,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RepromptResponse.
+        /// Gets and sets the property RepromptResponse. 
+        /// <para>
+        /// Contains details about the response to reprompt the input.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public RepromptResponse RepromptResponse
@@ -103,7 +116,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TraceId.
+        /// Gets and sets the property TraceId. 
+        /// <para>
+        /// The unique identifier of the trace.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=16)]
         public string TraceId
@@ -119,7 +135,32 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// Specifies what kind of information the agent returns in the observation. The following
+        /// values are possible.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>ACTION_GROUP</c> – The agent returns the result of an action group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>KNOWLEDGE_BASE</c> – The agent returns information from a knowledge base.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>FINISH</c> – The agent returns a final response to the user with no follow-up.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ASK_USER</c> – The agent asks the user a question.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>REPROMPT</c> – The agent prompts the user again for the same information.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public Type Type
         {

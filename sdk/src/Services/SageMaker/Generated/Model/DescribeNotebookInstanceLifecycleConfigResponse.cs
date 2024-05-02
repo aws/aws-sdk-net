@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -37,8 +38,8 @@ namespace Amazon.SageMaker.Model
         private DateTime? _lastModifiedTime;
         private string _notebookInstanceLifecycleConfigArn;
         private string _notebookInstanceLifecycleConfigName;
-        private List<NotebookInstanceLifecycleHook> _onCreate = new List<NotebookInstanceLifecycleHook>();
-        private List<NotebookInstanceLifecycleHook> _onStart = new List<NotebookInstanceLifecycleHook>();
+        private List<NotebookInstanceLifecycleHook> _onCreate = AWSConfigs.InitializeCollections ? new List<NotebookInstanceLifecycleHook>() : null;
+        private List<NotebookInstanceLifecycleHook> _onStart = AWSConfigs.InitializeCollections ? new List<NotebookInstanceLifecycleHook>() : null;
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -130,7 +131,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if OnCreate property is set
         internal bool IsSetOnCreate()
         {
-            return this._onCreate != null && this._onCreate.Count > 0; 
+            return this._onCreate != null && (this._onCreate.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -150,7 +151,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if OnStart property is set
         internal bool IsSetOnStart()
         {
-            return this._onStart != null && this._onStart.Count > 0; 
+            return this._onStart != null && (this._onStart.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

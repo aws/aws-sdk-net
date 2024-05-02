@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ModifyInstanceCreditSpecificationResponse : AmazonWebServiceResponse
     {
-        private List<SuccessfulInstanceCreditSpecificationItem> _successfulInstanceCreditSpecifications = new List<SuccessfulInstanceCreditSpecificationItem>();
-        private List<UnsuccessfulInstanceCreditSpecificationItem> _unsuccessfulInstanceCreditSpecifications = new List<UnsuccessfulInstanceCreditSpecificationItem>();
+        private List<SuccessfulInstanceCreditSpecificationItem> _successfulInstanceCreditSpecifications = AWSConfigs.InitializeCollections ? new List<SuccessfulInstanceCreditSpecificationItem>() : null;
+        private List<UnsuccessfulInstanceCreditSpecificationItem> _unsuccessfulInstanceCreditSpecifications = AWSConfigs.InitializeCollections ? new List<UnsuccessfulInstanceCreditSpecificationItem>() : null;
 
         /// <summary>
         /// Gets and sets the property SuccessfulInstanceCreditSpecifications. 
@@ -52,7 +53,7 @@ namespace Amazon.EC2.Model
         // Check to see if SuccessfulInstanceCreditSpecifications property is set
         internal bool IsSetSuccessfulInstanceCreditSpecifications()
         {
-            return this._successfulInstanceCreditSpecifications != null && this._successfulInstanceCreditSpecifications.Count > 0; 
+            return this._successfulInstanceCreditSpecifications != null && (this._successfulInstanceCreditSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.EC2.Model
         // Check to see if UnsuccessfulInstanceCreditSpecifications property is set
         internal bool IsSetUnsuccessfulInstanceCreditSpecifications()
         {
-            return this._unsuccessfulInstanceCreditSpecifications != null && this._unsuccessfulInstanceCreditSpecifications.Count > 0; 
+            return this._unsuccessfulInstanceCreditSpecifications != null && (this._unsuccessfulInstanceCreditSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

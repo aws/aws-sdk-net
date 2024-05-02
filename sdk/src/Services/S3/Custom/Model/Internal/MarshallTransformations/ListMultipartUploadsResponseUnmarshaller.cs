@@ -28,6 +28,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>
     public class ListMultipartUploadsResponseUnmarshaller : S3ReponseUnmarshaller
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {   
             ListMultipartUploadsResponse response = new ListMultipartUploadsResponse();
@@ -105,8 +110,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Upload", targetDepth))
                     {
+                        if (response.MultipartUploads == null)
+                        {
+                            response.MultipartUploads = new List<MultipartUpload>();
+                        }
+
                         response.MultipartUploads.Add(MultipartUploadUnmarshaller.Instance.Unmarshall(context));
-                            
                         continue;
                     }
                     if (context.TestExpression("Delimiter", targetDepth))
@@ -126,7 +135,13 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         var prefix = CommonPrefixesItemUnmarshaller.Instance.Unmarshall(context);
 
                         if (prefix != null)
+                        {
+                            if (response.CommonPrefixes == null)
+                            {
+                                response.CommonPrefixes = new List<string>();
+                            }
                             response.CommonPrefixes.Add(prefix);
+                        }
 
                         continue;
                     }
@@ -142,6 +157,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static ListMultipartUploadsResponseUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static ListMultipartUploadsResponseUnmarshaller Instance
         {
             get

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ShadowModeConfig
     {
-        private List<ShadowModelVariantConfig> _shadowModelVariants = new List<ShadowModelVariantConfig>();
+        private List<ShadowModelVariantConfig> _shadowModelVariants = AWSConfigs.InitializeCollections ? new List<ShadowModelVariantConfig>() : null;
         private string _sourceModelVariantName;
 
         /// <summary>
@@ -55,7 +56,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ShadowModelVariants property is set
         internal bool IsSetShadowModelVariants()
         {
-            return this._shadowModelVariants != null && this._shadowModelVariants.Count > 0; 
+            return this._shadowModelVariants != null && (this._shadowModelVariants.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

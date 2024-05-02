@@ -26,13 +26,14 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeStackEvents operation.
     /// Returns all stack related events for a specified stack in reverse chronological order.
-    /// For more information about a stack's event history, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a>
-    /// in the <i>CloudFormation User Guide</i>.
+    /// For more information about a stack's event history, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation
+    /// stack creation events</a> in the <i>CloudFormation User Guide</i>.
     /// 
     ///  <note> 
     /// <para>

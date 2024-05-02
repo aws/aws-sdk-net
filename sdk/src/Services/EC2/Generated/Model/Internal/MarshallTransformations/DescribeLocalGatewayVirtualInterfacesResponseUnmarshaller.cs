@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -58,6 +59,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("localGatewayVirtualInterfaceSet/item", targetDepth))
                     {
                         var unmarshaller = LocalGatewayVirtualInterfaceUnmarshaller.Instance;
+                        if (response.LocalGatewayVirtualInterfaces == null)
+                        {
+                            response.LocalGatewayVirtualInterfaces = new List<LocalGatewayVirtualInterface>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.LocalGatewayVirtualInterfaces.Add(item);
                         continue;

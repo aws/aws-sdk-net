@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CodeDeploy.Model
     /// </summary>
     public partial class DeleteDeploymentGroupResponse : AmazonWebServiceResponse
     {
-        private List<AutoScalingGroup> _hooksNotCleanedUp = new List<AutoScalingGroup>();
+        private List<AutoScalingGroup> _hooksNotCleanedUp = AWSConfigs.InitializeCollections ? new List<AutoScalingGroup>() : null;
 
         /// <summary>
         /// Gets and sets the property HooksNotCleanedUp. 
@@ -54,7 +55,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if HooksNotCleanedUp property is set
         internal bool IsSetHooksNotCleanedUp()
         {
-            return this._hooksNotCleanedUp != null && this._hooksNotCleanedUp.Count > 0; 
+            return this._hooksNotCleanedUp != null && (this._hooksNotCleanedUp.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

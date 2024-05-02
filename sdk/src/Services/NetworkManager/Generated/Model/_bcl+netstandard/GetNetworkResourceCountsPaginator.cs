@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkManager.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.NetworkManager.Model
         /// Enumerable containing all of the NetworkResourceCounts
         /// </summary>
         public IPaginatedEnumerable<NetworkResourceCount> NetworkResourceCounts => 
-            new PaginatedResultKeyResponse<GetNetworkResourceCountsResponse, NetworkResourceCount>(this, (i) => i.NetworkResourceCounts);
+            new PaginatedResultKeyResponse<GetNetworkResourceCountsResponse, NetworkResourceCount>(this, (i) => i.NetworkResourceCounts ?? new List<NetworkResourceCount>());
 
         internal GetNetworkResourceCountsPaginator(IAmazonNetworkManager client, GetNetworkResourceCountsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.NetworkManager.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<GetNetworkResourceCountsResponse> IPaginator<GetNetworkResourceCountsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<GetNetworkResourceCountsResponse> IPaginator<GetNetworkResourceCountsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

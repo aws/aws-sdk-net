@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class DocumentClassifierInputDataConfig
     {
-        private List<AugmentedManifestsListItem> _augmentedManifests = new List<AugmentedManifestsListItem>();
+        private List<AugmentedManifestsListItem> _augmentedManifests = AWSConfigs.InitializeCollections ? new List<AugmentedManifestsListItem>() : null;
         private DocumentClassifierDataFormat _dataFormat;
         private DocumentReaderConfig _documentReaderConfig;
         private DocumentClassifierDocuments _documents;
@@ -69,7 +70,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if AugmentedManifests property is set
         internal bool IsSetAugmentedManifests()
         {
-            return this._augmentedManifests != null && this._augmentedManifests.Count > 0; 
+            return this._augmentedManifests != null && (this._augmentedManifests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

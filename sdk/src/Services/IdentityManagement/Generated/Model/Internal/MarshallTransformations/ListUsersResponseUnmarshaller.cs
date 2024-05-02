@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -96,6 +97,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Users/member", targetDepth))
                     {
                         var unmarshaller = UserUnmarshaller.Instance;
+                        if (response.Users == null)
+                        {
+                            response.Users = new List<User>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Users.Add(item);
                         continue;

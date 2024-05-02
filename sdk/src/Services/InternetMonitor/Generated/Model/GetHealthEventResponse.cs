@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.InternetMonitor.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.InternetMonitor.Model
         private string _eventArn;
         private string _eventId;
         private double? _healthScoreThreshold;
-        private List<ImpactedLocation> _impactedLocations = new List<ImpactedLocation>();
+        private List<ImpactedLocation> _impactedLocations = AWSConfigs.InitializeCollections ? new List<ImpactedLocation>() : null;
         private HealthEventImpactType _impactType;
         private DateTime? _lastUpdatedAt;
         private double? _percentOfTotalTrafficImpacted;
@@ -157,7 +158,7 @@ namespace Amazon.InternetMonitor.Model
         // Check to see if ImpactedLocations property is set
         internal bool IsSetImpactedLocations()
         {
-            return this._impactedLocations != null && this._impactedLocations.Count > 0; 
+            return this._impactedLocations != null && (this._impactedLocations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

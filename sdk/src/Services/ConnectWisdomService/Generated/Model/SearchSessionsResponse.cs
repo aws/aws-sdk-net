@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConnectWisdomService.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ConnectWisdomService.Model
     public partial class SearchSessionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SessionSummary> _sessionSummaries = new List<SessionSummary>();
+        private List<SessionSummary> _sessionSummaries = AWSConfigs.InitializeCollections ? new List<SessionSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.ConnectWisdomService.Model
         // Check to see if SessionSummaries property is set
         internal bool IsSetSessionSummaries()
         {
-            return this._sessionSummaries != null && this._sessionSummaries.Count > 0; 
+            return this._sessionSummaries != null && (this._sessionSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// </summary>
     public partial class GetLogGroupFieldsResponse : AmazonWebServiceResponse
     {
-        private List<LogGroupField> _logGroupFields = new List<LogGroupField>();
+        private List<LogGroupField> _logGroupFields = AWSConfigs.InitializeCollections ? new List<LogGroupField>() : null;
 
         /// <summary>
         /// Gets and sets the property LogGroupFields. 
@@ -52,7 +53,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if LogGroupFields property is set
         internal bool IsSetLogGroupFields()
         {
-            return this._logGroupFields != null && this._logGroupFields.Count > 0; 
+            return this._logGroupFields != null && (this._logGroupFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

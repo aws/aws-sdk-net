@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class AmiAggregation
     {
-        private List<StringFilter> _amis = new List<StringFilter>();
+        private List<StringFilter> _amis = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
         private AmiSortBy _sortBy;
         private SortOrder _sortOrder;
 
@@ -53,7 +54,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if Amis property is set
         internal bool IsSetAmis()
         {
-            return this._amis != null && this._amis.Count > 0; 
+            return this._amis != null && (this._amis.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

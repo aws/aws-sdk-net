@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GroundStation.Model
 {
     /// <summary>
@@ -37,8 +38,8 @@ namespace Amazon.GroundStation.Model
         private int? _contactPrePassDurationSeconds;
         private string _dataflowEndpointGroupArn;
         private string _dataflowEndpointGroupId;
-        private List<EndpointDetails> _endpointsDetails = new List<EndpointDetails>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<EndpointDetails> _endpointsDetails = AWSConfigs.InitializeCollections ? new List<EndpointDetails>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ContactPostPassDurationSeconds. 
@@ -137,7 +138,7 @@ namespace Amazon.GroundStation.Model
         // Check to see if EndpointsDetails property is set
         internal bool IsSetEndpointsDetails()
         {
-            return this._endpointsDetails != null && this._endpointsDetails.Count > 0; 
+            return this._endpointsDetails != null && (this._endpointsDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -155,7 +156,7 @@ namespace Amazon.GroundStation.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

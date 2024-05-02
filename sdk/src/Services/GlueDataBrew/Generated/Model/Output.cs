@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.GlueDataBrew.Model
         private S3Location _location;
         private int? _maxOutputFiles;
         private bool? _overwrite;
-        private List<string> _partitionColumns = new List<string>();
+        private List<string> _partitionColumns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CompressionFormat. 
@@ -171,7 +172,7 @@ namespace Amazon.GlueDataBrew.Model
         // Check to see if PartitionColumns property is set
         internal bool IsSetPartitionColumns()
         {
-            return this._partitionColumns != null && this._partitionColumns.Count > 0; 
+            return this._partitionColumns != null && (this._partitionColumns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.Rekognition.Model
         private VideoJobStatus _jobStatus;
         private string _jobTag;
         private string _labelModelVersion;
-        private List<LabelDetection> _labels = new List<LabelDetection>();
+        private List<LabelDetection> _labels = AWSConfigs.InitializeCollections ? new List<LabelDetection>() : null;
         private string _nextToken;
         private string _statusMessage;
         private Video _video;
@@ -156,7 +157,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if Labels property is set
         internal bool IsSetLabels()
         {
-            return this._labels != null && this._labels.Count > 0; 
+            return this._labels != null && (this._labels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

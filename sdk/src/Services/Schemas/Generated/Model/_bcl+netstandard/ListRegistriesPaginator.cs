@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Schemas.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Schemas.Model
         /// Enumerable containing all of the Registries
         /// </summary>
         public IPaginatedEnumerable<RegistrySummary> Registries => 
-            new PaginatedResultKeyResponse<ListRegistriesResponse, RegistrySummary>(this, (i) => i.Registries);
+            new PaginatedResultKeyResponse<ListRegistriesResponse, RegistrySummary>(this, (i) => i.Registries ?? new List<RegistrySummary>());
 
         internal ListRegistriesPaginator(IAmazonSchemas client, ListRegistriesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Schemas.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListRegistriesResponse> IPaginator<ListRegistriesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListRegistriesResponse> IPaginator<ListRegistriesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

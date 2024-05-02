@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -64,6 +65,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("publicIpv4PoolSet/item", targetDepth))
                     {
                         var unmarshaller = PublicIpv4PoolUnmarshaller.Instance;
+                        if (response.PublicIpv4Pools == null)
+                        {
+                            response.PublicIpv4Pools = new List<PublicIpv4Pool>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.PublicIpv4Pools.Add(item);
                         continue;

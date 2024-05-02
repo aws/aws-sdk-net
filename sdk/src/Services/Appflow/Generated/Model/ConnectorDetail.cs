@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Appflow.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Appflow.Model
         private string _applicationType;
         private string _connectorDescription;
         private string _connectorLabel;
-        private List<string> _connectorModes = new List<string>();
+        private List<string> _connectorModes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _connectorName;
         private string _connectorOwner;
         private ConnectorProvisioningType _connectorProvisioningType;
@@ -44,7 +45,7 @@ namespace Amazon.Appflow.Model
         private string _connectorVersion;
         private DateTime? _registeredAt;
         private string _registeredBy;
-        private List<string> _supportedDataTransferTypes = new List<string>();
+        private List<string> _supportedDataTransferTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationType. 
@@ -118,7 +119,7 @@ namespace Amazon.Appflow.Model
         // Check to see if ConnectorModes property is set
         internal bool IsSetConnectorModes()
         {
-            return this._connectorModes != null && this._connectorModes.Count > 0; 
+            return this._connectorModes != null && (this._connectorModes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -275,7 +276,7 @@ namespace Amazon.Appflow.Model
         // Check to see if SupportedDataTransferTypes property is set
         internal bool IsSetSupportedDataTransferTypes()
         {
-            return this._supportedDataTransferTypes != null && this._supportedDataTransferTypes.Count > 0; 
+            return this._supportedDataTransferTypes != null && (this._supportedDataTransferTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

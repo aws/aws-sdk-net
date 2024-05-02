@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -69,6 +70,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("loadPermissions/item", targetDepth))
                     {
                         var unmarshaller = LoadPermissionUnmarshaller.Instance;
+                        if (unmarshalledObject.LoadPermissions == null)
+                        {
+                            unmarshalledObject.LoadPermissions = new List<LoadPermission>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.LoadPermissions.Add(item);
                         continue;
@@ -82,6 +87,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("productCodes/item", targetDepth))
                     {
                         var unmarshaller = ProductCodeUnmarshaller.Instance;
+                        if (unmarshalledObject.ProductCodes == null)
+                        {
+                            unmarshalledObject.ProductCodes = new List<ProductCode>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ProductCodes.Add(item);
                         continue;

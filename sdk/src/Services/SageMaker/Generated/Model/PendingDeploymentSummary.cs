@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -35,8 +36,8 @@ namespace Amazon.SageMaker.Model
     public partial class PendingDeploymentSummary
     {
         private string _endpointConfigName;
-        private List<PendingProductionVariantSummary> _productionVariants = new List<PendingProductionVariantSummary>();
-        private List<PendingProductionVariantSummary> _shadowProductionVariants = new List<PendingProductionVariantSummary>();
+        private List<PendingProductionVariantSummary> _productionVariants = AWSConfigs.InitializeCollections ? new List<PendingProductionVariantSummary>() : null;
+        private List<PendingProductionVariantSummary> _shadowProductionVariants = AWSConfigs.InitializeCollections ? new List<PendingProductionVariantSummary>() : null;
         private DateTime? _startTime;
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ProductionVariants property is set
         internal bool IsSetProductionVariants()
         {
-            return this._productionVariants != null && this._productionVariants.Count > 0; 
+            return this._productionVariants != null && (this._productionVariants.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -97,7 +98,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ShadowProductionVariants property is set
         internal bool IsSetShadowProductionVariants()
         {
-            return this._shadowProductionVariants != null && this._shadowProductionVariants.Count > 0; 
+            return this._shadowProductionVariants != null && (this._shadowProductionVariants.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

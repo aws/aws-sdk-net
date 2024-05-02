@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class GetAggregateComplianceDetailsByConfigRuleResponse : AmazonWebServiceResponse
     {
-        private List<AggregateEvaluationResult> _aggregateEvaluationResults = new List<AggregateEvaluationResult>();
+        private List<AggregateEvaluationResult> _aggregateEvaluationResults = AWSConfigs.InitializeCollections ? new List<AggregateEvaluationResult>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if AggregateEvaluationResults property is set
         internal bool IsSetAggregateEvaluationResults()
         {
-            return this._aggregateEvaluationResults != null && this._aggregateEvaluationResults.Count > 0; 
+            return this._aggregateEvaluationResults != null && (this._aggregateEvaluationResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

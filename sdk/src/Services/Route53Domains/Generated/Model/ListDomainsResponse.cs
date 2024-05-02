@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53Domains.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Route53Domains.Model
     /// </summary>
     public partial class ListDomainsResponse : AmazonWebServiceResponse
     {
-        private List<DomainSummary> _domains = new List<DomainSummary>();
+        private List<DomainSummary> _domains = AWSConfigs.InitializeCollections ? new List<DomainSummary>() : null;
         private string _nextPageMarker;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Route53Domains.Model
         // Check to see if Domains property is set
         internal bool IsSetDomains()
         {
-            return this._domains != null && this._domains.Count > 0; 
+            return this._domains != null && (this._domains.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.Inspector.Model
     /// </summary>
     public partial class CreateResourceGroupRequest : AmazonInspectorRequest
     {
-        private List<ResourceGroupTag> _resourceGroupTags = new List<ResourceGroupTag>();
+        private List<ResourceGroupTag> _resourceGroupTags = AWSConfigs.InitializeCollections ? new List<ResourceGroupTag>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceGroupTags. 
@@ -59,7 +60,7 @@ namespace Amazon.Inspector.Model
         // Check to see if ResourceGroupTags property is set
         internal bool IsSetResourceGroupTags()
         {
-            return this._resourceGroupTags != null && this._resourceGroupTags.Count > 0; 
+            return this._resourceGroupTags != null && (this._resourceGroupTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

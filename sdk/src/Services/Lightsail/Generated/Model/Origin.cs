@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
@@ -45,6 +46,7 @@ namespace Amazon.Lightsail.Model
         private OriginProtocolPolicyEnum _protocolPolicy;
         private RegionName _regionName;
         private ResourceType _resourceType;
+        private int? _responseTimeout;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -117,6 +119,26 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetResourceType()
         {
             return this._resourceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResponseTimeout. 
+        /// <para>
+        /// The amount of time, in seconds, that the distribution waits for a response after forwarding
+        /// a request to the origin. The minimum timeout is 1 second, the maximum is 60 seconds,
+        /// and the default (if you don't specify otherwise) is 30 seconds.
+        /// </para>
+        /// </summary>
+        public int? ResponseTimeout
+        {
+            get { return this._responseTimeout; }
+            set { this._responseTimeout = value; }
+        }
+
+        // Check to see if ResponseTimeout property is set
+        internal bool IsSetResponseTimeout()
+        {
+            return this._responseTimeout.HasValue; 
         }
 
     }

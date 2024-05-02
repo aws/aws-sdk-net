@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.SimpleEmail.Model
     /// </summary>
     public partial class ListConfigurationSetsResponse : AmazonWebServiceResponse
     {
-        private List<ConfigurationSet> _configurationSets = new List<ConfigurationSet>();
+        private List<ConfigurationSet> _configurationSets = AWSConfigs.InitializeCollections ? new List<ConfigurationSet>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if ConfigurationSets property is set
         internal bool IsSetConfigurationSets()
         {
-            return this._configurationSets != null && this._configurationSets.Count > 0; 
+            return this._configurationSets != null && (this._configurationSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

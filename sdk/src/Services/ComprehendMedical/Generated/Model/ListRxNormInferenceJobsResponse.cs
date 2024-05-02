@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ComprehendMedical.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ComprehendMedical.Model
     /// </summary>
     public partial class ListRxNormInferenceJobsResponse : AmazonWebServiceResponse
     {
-        private List<ComprehendMedicalAsyncJobProperties> _comprehendMedicalAsyncJobPropertiesList = new List<ComprehendMedicalAsyncJobProperties>();
+        private List<ComprehendMedicalAsyncJobProperties> _comprehendMedicalAsyncJobPropertiesList = AWSConfigs.InitializeCollections ? new List<ComprehendMedicalAsyncJobProperties>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ComprehendMedical.Model
         // Check to see if ComprehendMedicalAsyncJobPropertiesList property is set
         internal bool IsSetComprehendMedicalAsyncJobPropertiesList()
         {
-            return this._comprehendMedicalAsyncJobPropertiesList != null && this._comprehendMedicalAsyncJobPropertiesList.Count > 0; 
+            return this._comprehendMedicalAsyncJobPropertiesList != null && (this._comprehendMedicalAsyncJobPropertiesList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -33,6 +33,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.IVSRealTime
 {
     /// <summary>
@@ -1804,6 +1805,9 @@ namespace Amazon.IVSRealTime
         /// 
         /// <returns>The response from the UpdateStage service method, as returned by IVSRealTime.</returns>
         /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ConflictException">
         /// 
         /// </exception>
         /// <exception cref="Amazon.IVSRealTime.Model.PendingVerificationException">

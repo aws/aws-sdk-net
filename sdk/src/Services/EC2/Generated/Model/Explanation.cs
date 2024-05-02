@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -38,10 +39,10 @@ namespace Amazon.EC2.Model
         private AnalysisComponent _acl;
         private AnalysisAclRule _aclRule;
         private string _address;
-        private List<string> _addresses = new List<string>();
+        private List<string> _addresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AnalysisComponent _attachedTo;
-        private List<string> _availabilityZones = new List<string>();
-        private List<string> _cidrs = new List<string>();
+        private List<string> _availabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _cidrs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AnalysisLoadBalancerListener _classicLoadBalancerListener;
         private AnalysisComponent _component;
         private string _componentAccount;
@@ -60,21 +61,21 @@ namespace Amazon.EC2.Model
         private int? _loadBalancerListenerPort;
         private AnalysisLoadBalancerTarget _loadBalancerTarget;
         private AnalysisComponent _loadBalancerTargetGroup;
-        private List<AnalysisComponent> _loadBalancerTargetGroups = new List<AnalysisComponent>();
+        private List<AnalysisComponent> _loadBalancerTargetGroups = AWSConfigs.InitializeCollections ? new List<AnalysisComponent>() : null;
         private int? _loadBalancerTargetPort;
         private string _missingComponent;
         private AnalysisComponent _natGateway;
         private AnalysisComponent _networkInterface;
         private string _packetField;
         private int? _port;
-        private List<PortRange> _portRanges = new List<PortRange>();
+        private List<PortRange> _portRanges = AWSConfigs.InitializeCollections ? new List<PortRange>() : null;
         private AnalysisComponent _prefixList;
-        private List<string> _protocols = new List<string>();
+        private List<string> _protocols = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AnalysisComponent _routeTable;
         private AnalysisRouteTableRoute _routeTableRoute;
         private AnalysisComponent _securityGroup;
         private AnalysisSecurityGroupRule _securityGroupRule;
-        private List<AnalysisComponent> _securityGroups = new List<AnalysisComponent>();
+        private List<AnalysisComponent> _securityGroups = AWSConfigs.InitializeCollections ? new List<AnalysisComponent>() : null;
         private AnalysisComponent _sourceVpc;
         private string _state;
         private AnalysisComponent _subnet;
@@ -159,7 +160,7 @@ namespace Amazon.EC2.Model
         // Check to see if Addresses property is set
         internal bool IsSetAddresses()
         {
-            return this._addresses != null && this._addresses.Count > 0; 
+            return this._addresses != null && (this._addresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -195,7 +196,7 @@ namespace Amazon.EC2.Model
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+            return this._availabilityZones != null && (this._availabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -213,7 +214,7 @@ namespace Amazon.EC2.Model
         // Check to see if Cidrs property is set
         internal bool IsSetCidrs()
         {
-            return this._cidrs != null && this._cidrs.Count > 0; 
+            return this._cidrs != null && (this._cidrs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -566,7 +567,7 @@ namespace Amazon.EC2.Model
         // Check to see if LoadBalancerTargetGroups property is set
         internal bool IsSetLoadBalancerTargetGroups()
         {
-            return this._loadBalancerTargetGroups != null && this._loadBalancerTargetGroups.Count > 0; 
+            return this._loadBalancerTargetGroups != null && (this._loadBalancerTargetGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -694,7 +695,7 @@ namespace Amazon.EC2.Model
         // Check to see if PortRanges property is set
         internal bool IsSetPortRanges()
         {
-            return this._portRanges != null && this._portRanges.Count > 0; 
+            return this._portRanges != null && (this._portRanges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -730,7 +731,7 @@ namespace Amazon.EC2.Model
         // Check to see if Protocols property is set
         internal bool IsSetProtocols()
         {
-            return this._protocols != null && this._protocols.Count > 0; 
+            return this._protocols != null && (this._protocols.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -820,7 +821,7 @@ namespace Amazon.EC2.Model
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this._securityGroups != null && this._securityGroups.Count > 0; 
+            return this._securityGroups != null && (this._securityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

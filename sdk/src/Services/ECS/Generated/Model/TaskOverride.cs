@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECS.Model
 {
     /// <summary>
@@ -33,11 +34,11 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class TaskOverride
     {
-        private List<ContainerOverride> _containerOverrides = new List<ContainerOverride>();
+        private List<ContainerOverride> _containerOverrides = AWSConfigs.InitializeCollections ? new List<ContainerOverride>() : null;
         private string _cpu;
         private EphemeralStorage _ephemeralStorage;
         private string _executionRoleArn;
-        private List<InferenceAcceleratorOverride> _inferenceAcceleratorOverrides = new List<InferenceAcceleratorOverride>();
+        private List<InferenceAcceleratorOverride> _inferenceAcceleratorOverrides = AWSConfigs.InitializeCollections ? new List<InferenceAcceleratorOverride>() : null;
         private string _memory;
         private string _taskRoleArn;
 
@@ -56,7 +57,7 @@ namespace Amazon.ECS.Model
         // Check to see if ContainerOverrides property is set
         internal bool IsSetContainerOverrides()
         {
-            return this._containerOverrides != null && this._containerOverrides.Count > 0; 
+            return this._containerOverrides != null && (this._containerOverrides.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -145,7 +146,7 @@ namespace Amazon.ECS.Model
         // Check to see if InferenceAcceleratorOverrides property is set
         internal bool IsSetInferenceAcceleratorOverrides()
         {
-            return this._inferenceAcceleratorOverrides != null && this._inferenceAcceleratorOverrides.Count > 0; 
+            return this._inferenceAcceleratorOverrides != null && (this._inferenceAcceleratorOverrides.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

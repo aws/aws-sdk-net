@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.QBusiness.Model
         /// Enumerable containing all of the TopicConfigurations
         /// </summary>
         public IPaginatedEnumerable<TopicConfiguration> TopicConfigurations => 
-            new PaginatedResultKeyResponse<GetChatControlsConfigurationResponse, TopicConfiguration>(this, (i) => i.TopicConfigurations);
+            new PaginatedResultKeyResponse<GetChatControlsConfigurationResponse, TopicConfiguration>(this, (i) => i.TopicConfigurations ?? new List<TopicConfiguration>());
 
         internal GetChatControlsConfigurationPaginator(IAmazonQBusiness client, GetChatControlsConfigurationRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.QBusiness.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<GetChatControlsConfigurationResponse> IPaginator<GetChatControlsConfigurationResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<GetChatControlsConfigurationResponse> IPaginator<GetChatControlsConfigurationResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

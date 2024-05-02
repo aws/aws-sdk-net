@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppStream.Model
 {
     /// <summary>
@@ -68,7 +69,7 @@ namespace Amazon.AppStream.Model
     /// </summary>
     public partial class UpdateFleetRequest : AmazonAppStreamRequest
     {
-        private List<string> _attributesToDelete = new List<string>();
+        private List<string> _attributesToDelete = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ComputeCapacity _computeCapacity;
         private bool? _deleteVpcConfig;
         private string _description;
@@ -88,7 +89,7 @@ namespace Amazon.AppStream.Model
         private PlatformType _platform;
         private S3Location _sessionScriptS3Location;
         private StreamView _streamView;
-        private List<string> _usbDeviceFilterStrings = new List<string>();
+        private List<string> _usbDeviceFilterStrings = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private VpcConfig _vpcConfig;
 
         /// <summary>
@@ -106,7 +107,7 @@ namespace Amazon.AppStream.Model
         // Check to see if AttributesToDelete property is set
         internal bool IsSetAttributesToDelete()
         {
-            return this._attributesToDelete != null && this._attributesToDelete.Count > 0; 
+            return this._attributesToDelete != null && (this._attributesToDelete.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -698,7 +699,7 @@ namespace Amazon.AppStream.Model
         // Check to see if UsbDeviceFilterStrings property is set
         internal bool IsSetUsbDeviceFilterStrings()
         {
-            return this._usbDeviceFilterStrings != null && this._usbDeviceFilterStrings.Count > 0; 
+            return this._usbDeviceFilterStrings != null && (this._usbDeviceFilterStrings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

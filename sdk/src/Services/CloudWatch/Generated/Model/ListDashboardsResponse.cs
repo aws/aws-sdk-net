@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class ListDashboardsResponse : AmazonWebServiceResponse
     {
-        private List<DashboardEntry> _dashboardEntries = new List<DashboardEntry>();
+        private List<DashboardEntry> _dashboardEntries = AWSConfigs.InitializeCollections ? new List<DashboardEntry>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if DashboardEntries property is set
         internal bool IsSetDashboardEntries()
         {
-            return this._dashboardEntries != null && this._dashboardEntries.Count > 0; 
+            return this._dashboardEntries != null && (this._dashboardEntries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

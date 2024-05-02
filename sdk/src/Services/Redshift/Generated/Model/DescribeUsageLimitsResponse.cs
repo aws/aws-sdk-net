@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Redshift.Model
     public partial class DescribeUsageLimitsResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<UsageLimit> _usageLimits = new List<UsageLimit>();
+        private List<UsageLimit> _usageLimits = AWSConfigs.InitializeCollections ? new List<UsageLimit>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -74,7 +75,7 @@ namespace Amazon.Redshift.Model
         // Check to see if UsageLimits property is set
         internal bool IsSetUsageLimits()
         {
-            return this._usageLimits != null && this._usageLimits.Count > 0; 
+            return this._usageLimits != null && (this._usageLimits.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

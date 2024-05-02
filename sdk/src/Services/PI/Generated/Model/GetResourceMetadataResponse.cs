@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PI.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.PI.Model
     /// </summary>
     public partial class GetResourceMetadataResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, FeatureMetadata> _features = new Dictionary<string, FeatureMetadata>();
+        private Dictionary<string, FeatureMetadata> _features = AWSConfigs.InitializeCollections ? new Dictionary<string, FeatureMetadata>() : null;
         private string _identifier;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.PI.Model
         // Check to see if Features property is set
         internal bool IsSetFeatures()
         {
-            return this._features != null && this._features.Count > 0; 
+            return this._features != null && (this._features.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

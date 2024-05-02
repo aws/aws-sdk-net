@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LaunchWizard.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.LaunchWizard.Model
     /// </summary>
     public partial class ListDeploymentEventsResponse : AmazonWebServiceResponse
     {
-        private List<DeploymentEventDataSummary> _deploymentEvents = new List<DeploymentEventDataSummary>();
+        private List<DeploymentEventDataSummary> _deploymentEvents = AWSConfigs.InitializeCollections ? new List<DeploymentEventDataSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.LaunchWizard.Model
         // Check to see if DeploymentEvents property is set
         internal bool IsSetDeploymentEvents()
         {
-            return this._deploymentEvents != null && this._deploymentEvents.Count > 0; 
+            return this._deploymentEvents != null && (this._deploymentEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

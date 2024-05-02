@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
@@ -54,9 +55,9 @@ namespace Amazon.ServiceCatalog.Model
         private string _provisionedProductName;
         private string _provisioningArtifactId;
         private string _provisioningArtifactName;
-        private List<UpdateProvisioningParameter> _provisioningParameters = new List<UpdateProvisioningParameter>();
+        private List<UpdateProvisioningParameter> _provisioningParameters = AWSConfigs.InitializeCollections ? new List<UpdateProvisioningParameter>() : null;
         private UpdateProvisioningPreferences _provisioningPreferences;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _updateToken;
 
         /// <summary>
@@ -258,7 +259,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if ProvisioningParameters property is set
         internal bool IsSetProvisioningParameters()
         {
-            return this._provisioningParameters != null && this._provisioningParameters.Count > 0; 
+            return this._provisioningParameters != null && (this._provisioningParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -297,7 +298,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

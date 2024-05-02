@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MigrationHubStrategyRecommendations.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         /// Enumerable containing all of the ApplicationComponentInfos
         /// </summary>
         public IPaginatedEnumerable<ApplicationComponentDetail> ApplicationComponentInfos => 
-            new PaginatedResultKeyResponse<ListApplicationComponentsResponse, ApplicationComponentDetail>(this, (i) => i.ApplicationComponentInfos);
+            new PaginatedResultKeyResponse<ListApplicationComponentsResponse, ApplicationComponentDetail>(this, (i) => i.ApplicationComponentInfos ?? new List<ApplicationComponentDetail>());
 
         internal ListApplicationComponentsPaginator(IAmazonMigrationHubStrategyRecommendations client, ListApplicationComponentsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListApplicationComponentsResponse> IPaginator<ListApplicationComponentsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListApplicationComponentsResponse> IPaginator<ListApplicationComponentsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

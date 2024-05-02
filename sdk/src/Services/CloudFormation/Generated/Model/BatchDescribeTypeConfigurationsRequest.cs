@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
@@ -35,13 +36,13 @@ namespace Amazon.CloudFormation.Model
     /// 
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-private.html#registry-set-configuration">Configuring
     /// extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
     /// </para>
     /// </summary>
     public partial class BatchDescribeTypeConfigurationsRequest : AmazonCloudFormationRequest
     {
-        private List<TypeConfigurationIdentifier> _typeConfigurationIdentifiers = new List<TypeConfigurationIdentifier>();
+        private List<TypeConfigurationIdentifier> _typeConfigurationIdentifiers = AWSConfigs.InitializeCollections ? new List<TypeConfigurationIdentifier>() : null;
 
         /// <summary>
         /// Gets and sets the property TypeConfigurationIdentifiers. 
@@ -59,7 +60,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if TypeConfigurationIdentifiers property is set
         internal bool IsSetTypeConfigurationIdentifiers()
         {
-            return this._typeConfigurationIdentifiers != null && this._typeConfigurationIdentifiers.Count > 0; 
+            return this._typeConfigurationIdentifiers != null && (this._typeConfigurationIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

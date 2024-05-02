@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DLM.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.DLM.Model
         private ExecutionHandlerServiceValues _executionHandlerService;
         private int? _executionTimeout;
         private int? _maximumRetryCount;
-        private List<string> _stages = new List<string>();
+        private List<string> _stages = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ExecuteOperationOnScriptFailure. 
@@ -262,7 +263,7 @@ namespace Amazon.DLM.Model
         // Check to see if Stages property is set
         internal bool IsSetStages()
         {
-            return this._stages != null && this._stages.Count > 0; 
+            return this._stages != null && (this._stages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

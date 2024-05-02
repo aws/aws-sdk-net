@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CloudDirectory.Model
     /// </summary>
     public partial class BatchListIndexResponse
     {
-        private List<IndexAttachment> _indexAttachments = new List<IndexAttachment>();
+        private List<IndexAttachment> _indexAttachments = AWSConfigs.InitializeCollections ? new List<IndexAttachment>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if IndexAttachments property is set
         internal bool IsSetIndexAttachments()
         {
-            return this._indexAttachments != null && this._indexAttachments.Count > 0; 
+            return this._indexAttachments != null && (this._indexAttachments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

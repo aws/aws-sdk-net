@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CloudFront.Model
     public partial class RealtimeLogConfigs
     {
         private bool? _isTruncated;
-        private List<RealtimeLogConfig> _items = new List<RealtimeLogConfig>();
+        private List<RealtimeLogConfig> _items = AWSConfigs.InitializeCollections ? new List<RealtimeLogConfig>() : null;
         private string _marker;
         private int? _maxItems;
         private string _nextMarker;
@@ -74,7 +75,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

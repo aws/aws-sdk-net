@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -41,9 +42,9 @@ namespace Amazon.Kendra.Model
     public partial class WorkDocsConfiguration
     {
         private bool? _crawlComments;
-        private List<string> _exclusionPatterns = new List<string>();
-        private List<DataSourceToIndexFieldMapping> _fieldMappings = new List<DataSourceToIndexFieldMapping>();
-        private List<string> _inclusionPatterns = new List<string>();
+        private List<string> _exclusionPatterns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<DataSourceToIndexFieldMapping> _fieldMappings = AWSConfigs.InitializeCollections ? new List<DataSourceToIndexFieldMapping>() : null;
+        private List<string> _inclusionPatterns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _organizationId;
         private bool? _useChangeLog;
 
@@ -90,7 +91,7 @@ namespace Amazon.Kendra.Model
         // Check to see if ExclusionPatterns property is set
         internal bool IsSetExclusionPatterns()
         {
-            return this._exclusionPatterns != null && this._exclusionPatterns.Count > 0; 
+            return this._exclusionPatterns != null && (this._exclusionPatterns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -114,7 +115,7 @@ namespace Amazon.Kendra.Model
         // Check to see if FieldMappings property is set
         internal bool IsSetFieldMappings()
         {
-            return this._fieldMappings != null && this._fieldMappings.Count > 0; 
+            return this._fieldMappings != null && (this._fieldMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -137,7 +138,7 @@ namespace Amazon.Kendra.Model
         // Check to see if InclusionPatterns property is set
         internal bool IsSetInclusionPatterns()
         {
-            return this._inclusionPatterns != null && this._inclusionPatterns.Count > 0; 
+            return this._inclusionPatterns != null && (this._inclusionPatterns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

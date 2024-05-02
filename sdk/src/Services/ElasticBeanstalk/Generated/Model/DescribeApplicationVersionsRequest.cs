@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _applicationName;
         private int? _maxRecords;
         private string _nextToken;
-        private List<string> _versionLabels = new List<string>();
+        private List<string> _versionLabels = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -127,7 +128,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if VersionLabels property is set
         internal bool IsSetVersionLabels()
         {
-            return this._versionLabels != null && this._versionLabels.Count > 0; 
+            return this._versionLabels != null && (this._versionLabels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

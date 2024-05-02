@@ -62,7 +62,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 	    private static GetObjectTorrentRequestMarshaller _instance;
 
-	    public static GetObjectTorrentRequestMarshaller Instance
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
+        public static GetObjectTorrentRequestMarshaller Instance
 	    {
 	        get
 	        {

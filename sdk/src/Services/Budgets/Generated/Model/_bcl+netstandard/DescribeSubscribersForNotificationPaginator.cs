@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Budgets.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Budgets.Model
         /// Enumerable containing all of the Subscribers
         /// </summary>
         public IPaginatedEnumerable<Subscriber> Subscribers => 
-            new PaginatedResultKeyResponse<DescribeSubscribersForNotificationResponse, Subscriber>(this, (i) => i.Subscribers);
+            new PaginatedResultKeyResponse<DescribeSubscribersForNotificationResponse, Subscriber>(this, (i) => i.Subscribers ?? new List<Subscriber>());
 
         internal DescribeSubscribersForNotificationPaginator(IAmazonBudgets client, DescribeSubscribersForNotificationRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Budgets.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeSubscribersForNotificationResponse> IPaginator<DescribeSubscribersForNotificationResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeSubscribersForNotificationResponse> IPaginator<DescribeSubscribersForNotificationResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

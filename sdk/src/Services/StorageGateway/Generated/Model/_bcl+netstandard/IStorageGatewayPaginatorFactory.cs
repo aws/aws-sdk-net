@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the storagegateway-2013-06-30.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>

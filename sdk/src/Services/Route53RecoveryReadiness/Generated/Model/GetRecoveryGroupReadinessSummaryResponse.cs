@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
     {
         private string _nextToken;
         private Readiness _readiness;
-        private List<ReadinessCheckSummary> _readinessChecks = new List<ReadinessCheckSummary>();
+        private List<ReadinessCheckSummary> _readinessChecks = AWSConfigs.InitializeCollections ? new List<ReadinessCheckSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -88,7 +89,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
         // Check to see if ReadinessChecks property is set
         internal bool IsSetReadinessChecks()
         {
-            return this._readinessChecks != null && this._readinessChecks.Count > 0; 
+            return this._readinessChecks != null && (this._readinessChecks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

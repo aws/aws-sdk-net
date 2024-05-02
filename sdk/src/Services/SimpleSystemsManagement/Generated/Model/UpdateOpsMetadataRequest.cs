@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -35,8 +36,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class UpdateOpsMetadataRequest : AmazonSimpleSystemsManagementRequest
     {
-        private List<string> _keysToDelete = new List<string>();
-        private Dictionary<string, MetadataValue> _metadataToUpdate = new Dictionary<string, MetadataValue>();
+        private List<string> _keysToDelete = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, MetadataValue> _metadataToUpdate = AWSConfigs.InitializeCollections ? new Dictionary<string, MetadataValue>() : null;
         private string _opsMetadataArn;
 
         /// <summary>
@@ -55,7 +56,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if KeysToDelete property is set
         internal bool IsSetKeysToDelete()
         {
-            return this._keysToDelete != null && this._keysToDelete.Count > 0; 
+            return this._keysToDelete != null && (this._keysToDelete.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if MetadataToUpdate property is set
         internal bool IsSetMetadataToUpdate()
         {
-            return this._metadataToUpdate != null && this._metadataToUpdate.Count > 0; 
+            return this._metadataToUpdate != null && (this._metadataToUpdate.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -84,6 +85,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Options/member", targetDepth))
                     {
                         var unmarshaller = ConfigurationOptionDescriptionUnmarshaller.Instance;
+                        if (response.Options == null)
+                        {
+                            response.Options = new List<ConfigurationOptionDescription>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Options.Add(item);
                         continue;

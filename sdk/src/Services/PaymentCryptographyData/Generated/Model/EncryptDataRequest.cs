@@ -26,12 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PaymentCryptographyData.Model
 {
     /// <summary>
     /// Container for the parameters to the EncryptData operation.
-    /// Encrypts plaintext data to ciphertext using symmetric, asymmetric, or DUKPT data encryption
-    /// key. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/encrypt-data.html">Encrypt
+    /// Encrypts plaintext data to ciphertext using a symmetric (TDES, AES), asymmetric (RSA),
+    /// or derived (DUKPT or EMV) encryption key scheme. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/encrypt-data.html">Encrypt
     /// data</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.
     /// 
     ///  
@@ -42,16 +43,29 @@ namespace Amazon.PaymentCryptographyData.Model
     /// For this operation, the key must have <c>KeyModesOfUse</c> set to <c>Encrypt</c>.
     /// In asymmetric encryption, plaintext is encrypted using public component. You can import
     /// the public component of an asymmetric key pair created outside Amazon Web Services
-    /// Payment Cryptography by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>).
+    /// Payment Cryptography by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>.
     /// 
     /// </para>
     ///  
     /// <para>
-    /// for symmetric and DUKPT encryption, Amazon Web Services Payment Cryptography supports
-    /// <c>TDES</c> and <c>AES</c> algorithms. For asymmetric encryption, Amazon Web Services
-    /// Payment Cryptography supports <c>RSA</c>. To encrypt using DUKPT, you must already
-    /// have a DUKPT key in your account with <c>KeyModesOfUse</c> set to <c>DeriveKey</c>,
-    /// or you can generate a new DUKPT key by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>.
+    /// For symmetric and DUKPT encryption, Amazon Web Services Payment Cryptography supports
+    /// <c>TDES</c> and <c>AES</c> algorithms. For EMV encryption, Amazon Web Services Payment
+    /// Cryptography supports <c>TDES</c> algorithms.For asymmetric encryption, Amazon Web
+    /// Services Payment Cryptography supports <c>RSA</c>. 
+    /// </para>
+    ///  
+    /// <para>
+    /// When you use TDES or TDES DUKPT, the plaintext data length must be a multiple of 8
+    /// bytes. For AES or AES DUKPT, the plaintext data length must be a multiple of 16 bytes.
+    /// For RSA, it sould be equal to the key size unless padding is enabled.
+    /// </para>
+    ///  
+    /// <para>
+    /// To encrypt using DUKPT, you must already have a BDK (Base Derivation Key) key in your
+    /// account with <c>KeyModesOfUse</c> set to <c>DeriveKey</c>, or you can generate a new
+    /// DUKPT key by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>.
+    /// To encrypt using EMV, you must already have an IMK (Issuer Master Key) key in your
+    /// account with <c>KeyModesOfUse</c> set to <c>DeriveKey</c>.
     /// </para>
     ///  
     /// <para>
@@ -139,6 +153,14 @@ namespace Amazon.PaymentCryptographyData.Model
         /// <para>
         /// The plaintext to be encrypted.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// For encryption using asymmetric keys, plaintext data length is constrained by encryption
+        /// key strength that you define in <c>KeyAlgorithm</c> and padding type that you define
+        /// in <c>AsymmetricEncryptionAttributes</c>. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/encrypt-data.html">Encrypt
+        /// data</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=16, Max=4064)]
         public string PlainText

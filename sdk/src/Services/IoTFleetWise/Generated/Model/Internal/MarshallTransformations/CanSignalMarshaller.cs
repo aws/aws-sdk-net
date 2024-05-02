@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,10 +46,19 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CanSignal requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetFactor())
             {
                 context.Writer.WritePropertyName("factor");
-                context.Writer.Write(requestObject.Factor.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Factor.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Factor.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Factor.Value);
+                }
             }
 
             if(requestObject.IsSetIsBigEndian())
@@ -84,7 +94,14 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOffset())
             {
                 context.Writer.WritePropertyName("offset");
-                context.Writer.Write(requestObject.Offset.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Offset.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Offset.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Offset.Value);
+                }
             }
 
             if(requestObject.IsSetStartBit())

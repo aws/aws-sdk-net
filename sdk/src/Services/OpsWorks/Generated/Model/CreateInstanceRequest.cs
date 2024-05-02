@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
@@ -48,12 +49,12 @@ namespace Amazon.OpsWorks.Model
         private Architecture _architecture;
         private AutoScalingType _autoScalingType;
         private string _availabilityZone;
-        private List<BlockDeviceMapping> _blockDeviceMappings = new List<BlockDeviceMapping>();
+        private List<BlockDeviceMapping> _blockDeviceMappings = AWSConfigs.InitializeCollections ? new List<BlockDeviceMapping>() : null;
         private bool? _ebsOptimized;
         private string _hostname;
         private bool? _installUpdatesOnBoot;
         private string _instanceType;
-        private List<string> _layerIds = new List<string>();
+        private List<string> _layerIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _os;
         private RootDeviceType _rootDeviceType;
         private string _sshKeyName;
@@ -199,7 +200,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if BlockDeviceMappings property is set
         internal bool IsSetBlockDeviceMappings()
         {
-            return this._blockDeviceMappings != null && this._blockDeviceMappings.Count > 0; 
+            return this._blockDeviceMappings != null && (this._blockDeviceMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -306,7 +307,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if LayerIds property is set
         internal bool IsSetLayerIds()
         {
-            return this._layerIds != null && this._layerIds.Count > 0; 
+            return this._layerIds != null && (this._layerIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.StorageGateway.Model
     {
         private string _diskAllocationResource;
         private string _diskAllocationType;
-        private List<string> _diskAttributeList = new List<string>();
+        private List<string> _diskAttributeList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _diskId;
         private string _diskNode;
         private string _diskPath;
@@ -91,7 +92,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if DiskAttributeList property is set
         internal bool IsSetDiskAttributeList()
         {
-            return this._diskAttributeList != null && this._diskAttributeList.Count > 0; 
+            return this._diskAttributeList != null && (this._diskAttributeList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

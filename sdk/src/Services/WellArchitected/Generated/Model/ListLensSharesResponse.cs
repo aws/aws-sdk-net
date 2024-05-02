@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.WellArchitected.Model
     /// </summary>
     public partial class ListLensSharesResponse : AmazonWebServiceResponse
     {
-        private List<LensShareSummary> _lensShareSummaries = new List<LensShareSummary>();
+        private List<LensShareSummary> _lensShareSummaries = AWSConfigs.InitializeCollections ? new List<LensShareSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if LensShareSummaries property is set
         internal bool IsSetLensShareSummaries()
         {
-            return this._lensShareSummaries != null && this._lensShareSummaries.Count > 0; 
+            return this._lensShareSummaries != null && (this._lensShareSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
@@ -36,15 +37,15 @@ namespace Amazon.ElasticTranscoder.Model
         private string _arn;
         private string _id;
         private JobInput _input;
-        private List<JobInput> _inputs = new List<JobInput>();
+        private List<JobInput> _inputs = AWSConfigs.InitializeCollections ? new List<JobInput>() : null;
         private JobOutput _output;
         private string _outputKeyPrefix;
-        private List<JobOutput> _outputs = new List<JobOutput>();
+        private List<JobOutput> _outputs = AWSConfigs.InitializeCollections ? new List<JobOutput>() : null;
         private string _pipelineId;
-        private List<Playlist> _playlists = new List<Playlist>();
+        private List<Playlist> _playlists = AWSConfigs.InitializeCollections ? new List<Playlist>() : null;
         private string _status;
         private Timing _timing;
-        private Dictionary<string, string> _userMetadata = new Dictionary<string, string>();
+        private Dictionary<string, string> _userMetadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -119,7 +120,7 @@ namespace Amazon.ElasticTranscoder.Model
         // Check to see if Inputs property is set
         internal bool IsSetInputs()
         {
-            return this._inputs != null && this._inputs.Count > 0; 
+            return this._inputs != null && (this._inputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -196,7 +197,7 @@ namespace Amazon.ElasticTranscoder.Model
         // Check to see if Outputs property is set
         internal bool IsSetOutputs()
         {
-            return this._outputs != null && this._outputs.Count > 0; 
+            return this._outputs != null && (this._outputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -245,7 +246,7 @@ namespace Amazon.ElasticTranscoder.Model
         // Check to see if Playlists property is set
         internal bool IsSetPlaylists()
         {
-            return this._playlists != null && this._playlists.Count > 0; 
+            return this._playlists != null && (this._playlists.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -324,7 +325,7 @@ namespace Amazon.ElasticTranscoder.Model
         // Check to see if UserMetadata property is set
         internal bool IsSetUserMetadata()
         {
-            return this._userMetadata != null && this._userMetadata.Count > 0; 
+            return this._userMetadata != null && (this._userMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

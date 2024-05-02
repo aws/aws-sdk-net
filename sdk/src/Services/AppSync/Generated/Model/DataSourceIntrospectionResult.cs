@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppSync.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.AppSync.Model
     /// </summary>
     public partial class DataSourceIntrospectionResult
     {
-        private List<DataSourceIntrospectionModel> _models = new List<DataSourceIntrospectionModel>();
+        private List<DataSourceIntrospectionModel> _models = AWSConfigs.InitializeCollections ? new List<DataSourceIntrospectionModel>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.AppSync.Model
         // Check to see if Models property is set
         internal bool IsSetModels()
         {
-            return this._models != null && this._models.Count > 0; 
+            return this._models != null && (this._models.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

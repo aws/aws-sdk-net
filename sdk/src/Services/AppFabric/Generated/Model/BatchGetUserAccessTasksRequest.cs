@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppFabric.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.AppFabric.Model
     public partial class BatchGetUserAccessTasksRequest : AmazonAppFabricRequest
     {
         private string _appBundleIdentifier;
-        private List<string> _taskIdList = new List<string>();
+        private List<string> _taskIdList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AppBundleIdentifier. 
@@ -79,7 +80,7 @@ namespace Amazon.AppFabric.Model
         // Check to see if TaskIdList property is set
         internal bool IsSetTaskIdList()
         {
-            return this._taskIdList != null && this._taskIdList.Count > 0; 
+            return this._taskIdList != null && (this._taskIdList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class SearchAnalysesResponse : AmazonWebServiceResponse
     {
-        private List<AnalysisSummary> _analysisSummaryList = new List<AnalysisSummary>();
+        private List<AnalysisSummary> _analysisSummaryList = AWSConfigs.InitializeCollections ? new List<AnalysisSummary>() : null;
         private string _nextToken;
         private string _requestId;
         private int? _status;
@@ -54,7 +55,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if AnalysisSummaryList property is set
         internal bool IsSetAnalysisSummaryList()
         {
-            return this._analysisSummaryList != null && this._analysisSummaryList.Count > 0; 
+            return this._analysisSummaryList != null && (this._analysisSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

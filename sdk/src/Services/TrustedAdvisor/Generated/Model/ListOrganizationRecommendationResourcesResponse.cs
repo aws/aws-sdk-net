@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.TrustedAdvisor.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.TrustedAdvisor.Model
     public partial class ListOrganizationRecommendationResourcesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<OrganizationRecommendationResourceSummary> _organizationRecommendationResourceSummaries = new List<OrganizationRecommendationResourceSummary>();
+        private List<OrganizationRecommendationResourceSummary> _organizationRecommendationResourceSummaries = AWSConfigs.InitializeCollections ? new List<OrganizationRecommendationResourceSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.TrustedAdvisor.Model
         // Check to see if OrganizationRecommendationResourceSummaries property is set
         internal bool IsSetOrganizationRecommendationResourceSummaries()
         {
-            return this._organizationRecommendationResourceSummaries != null && this._organizationRecommendationResourceSummaries.Count > 0; 
+            return this._organizationRecommendationResourceSummaries != null && (this._organizationRecommendationResourceSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

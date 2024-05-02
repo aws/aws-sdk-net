@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Chime.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Chime.Model
     public partial class ListRoomMembershipsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RoomMembership> _roomMemberships = new List<RoomMembership>();
+        private List<RoomMembership> _roomMemberships = AWSConfigs.InitializeCollections ? new List<RoomMembership>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +70,7 @@ namespace Amazon.Chime.Model
         // Check to see if RoomMemberships property is set
         internal bool IsSetRoomMemberships()
         {
-            return this._roomMemberships != null && this._roomMemberships.Count > 0; 
+            return this._roomMemberships != null && (this._roomMemberships.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

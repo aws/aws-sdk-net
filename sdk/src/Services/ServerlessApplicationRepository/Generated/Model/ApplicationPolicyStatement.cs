@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServerlessApplicationRepository.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.ServerlessApplicationRepository.Model
     /// </summary>
     public partial class ApplicationPolicyStatement
     {
-        private List<string> _actions = new List<string>();
-        private List<string> _principalOrgIDs = new List<string>();
-        private List<string> _principals = new List<string>();
+        private List<string> _actions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _principalOrgIDs = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _principals = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _statementId;
 
         /// <summary>
@@ -55,7 +56,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         // Check to see if Actions property is set
         internal bool IsSetActions()
         {
-            return this._actions != null && this._actions.Count > 0; 
+            return this._actions != null && (this._actions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         // Check to see if PrincipalOrgIDs property is set
         internal bool IsSetPrincipalOrgIDs()
         {
-            return this._principalOrgIDs != null && this._principalOrgIDs.Count > 0; 
+            return this._principalOrgIDs != null && (this._principalOrgIDs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -93,7 +94,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         // Check to see if Principals property is set
         internal bool IsSetPrincipals()
         {
-            return this._principals != null && this._principals.Count > 0; 
+            return this._principals != null && (this._principals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

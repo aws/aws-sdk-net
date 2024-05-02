@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ControlTower.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ControlTower.Model
     /// </summary>
     public partial class ListEnabledBaselinesResponse : AmazonWebServiceResponse
     {
-        private List<EnabledBaselineSummary> _enabledBaselines = new List<EnabledBaselineSummary>();
+        private List<EnabledBaselineSummary> _enabledBaselines = AWSConfigs.InitializeCollections ? new List<EnabledBaselineSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.ControlTower.Model
         // Check to see if EnabledBaselines property is set
         internal bool IsSetEnabledBaselines()
         {
-            return this._enabledBaselines != null && this._enabledBaselines.Count > 0; 
+            return this._enabledBaselines != null && (this._enabledBaselines.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

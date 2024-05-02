@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DAX.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.DAX.Model
     /// </summary>
     public partial class CreateClusterRequest : AmazonDAXRequest
     {
-        private List<string> _availabilityZones = new List<string>();
+        private List<string> _availabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ClusterEndpointEncryptionType _clusterEndpointEncryptionType;
         private string _clusterName;
         private string _description;
@@ -44,10 +45,10 @@ namespace Amazon.DAX.Model
         private string _parameterGroupName;
         private string _preferredMaintenanceWindow;
         private int? _replicationFactor;
-        private List<string> _securityGroupIds = new List<string>();
+        private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SSESpecification _sseSpecification;
         private string _subnetGroupName;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
@@ -67,7 +68,7 @@ namespace Amazon.DAX.Model
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+            return this._availabilityZones != null && (this._availabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -342,7 +343,7 @@ namespace Amazon.DAX.Model
         // Check to see if SecurityGroupIds property is set
         internal bool IsSetSecurityGroupIds()
         {
-            return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+            return this._securityGroupIds != null && (this._securityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -402,7 +403,7 @@ namespace Amazon.DAX.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

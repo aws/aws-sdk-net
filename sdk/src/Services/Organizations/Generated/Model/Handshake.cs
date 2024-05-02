@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Organizations.Model
 {
     /// <summary>
@@ -47,9 +48,9 @@ namespace Amazon.Organizations.Model
         private string _arn;
         private DateTime? _expirationTimestamp;
         private string _id;
-        private List<HandshakeParty> _parties = new List<HandshakeParty>();
+        private List<HandshakeParty> _parties = AWSConfigs.InitializeCollections ? new List<HandshakeParty>() : null;
         private DateTime? _requestedTimestamp;
-        private List<HandshakeResource> _resources = new List<HandshakeResource>();
+        private List<HandshakeResource> _resources = AWSConfigs.InitializeCollections ? new List<HandshakeResource>() : null;
         private HandshakeState _state;
 
         /// <summary>
@@ -176,7 +177,7 @@ namespace Amazon.Organizations.Model
         // Check to see if Parties property is set
         internal bool IsSetParties()
         {
-            return this._parties != null && this._parties.Count > 0; 
+            return this._parties != null && (this._parties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -212,7 +213,7 @@ namespace Amazon.Organizations.Model
         // Check to see if Resources property is set
         internal bool IsSetResources()
         {
-            return this._resources != null && this._resources.Count > 0; 
+            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

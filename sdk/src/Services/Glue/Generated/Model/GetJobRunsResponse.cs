@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class GetJobRunsResponse : AmazonWebServiceResponse
     {
-        private List<JobRun> _jobRuns = new List<JobRun>();
+        private List<JobRun> _jobRuns = AWSConfigs.InitializeCollections ? new List<JobRun>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Glue.Model
         // Check to see if JobRuns property is set
         internal bool IsSetJobRuns()
         {
-            return this._jobRuns != null && this._jobRuns.Count > 0; 
+            return this._jobRuns != null && (this._jobRuns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

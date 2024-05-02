@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeArtifact.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CodeArtifact.Model
     public partial class ListRepositoriesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RepositorySummary> _repositories = new List<RepositorySummary>();
+        private List<RepositorySummary> _repositories = AWSConfigs.InitializeCollections ? new List<RepositorySummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.CodeArtifact.Model
         // Check to see if Repositories property is set
         internal bool IsSetRepositories()
         {
-            return this._repositories != null && this._repositories.Count > 0; 
+            return this._repositories != null && (this._repositories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

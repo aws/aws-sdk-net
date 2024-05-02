@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// Enumerable containing all of the PolicyGenerations
         /// </summary>
         public IPaginatedEnumerable<PolicyGeneration> PolicyGenerations => 
-            new PaginatedResultKeyResponse<ListPolicyGenerationsResponse, PolicyGeneration>(this, (i) => i.PolicyGenerations);
+            new PaginatedResultKeyResponse<ListPolicyGenerationsResponse, PolicyGeneration>(this, (i) => i.PolicyGenerations ?? new List<PolicyGeneration>());
 
         internal ListPolicyGenerationsPaginator(IAmazonAccessAnalyzer client, ListPolicyGenerationsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.AccessAnalyzer.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListPolicyGenerationsResponse> IPaginator<ListPolicyGenerationsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListPolicyGenerationsResponse> IPaginator<ListPolicyGenerationsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

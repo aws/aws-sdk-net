@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Mobile.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Mobile.Model
     /// </summary>
     public partial class DeleteProjectResponse : AmazonWebServiceResponse
     {
-        private List<Resource> _deletedResources = new List<Resource>();
-        private List<Resource> _orphanedResources = new List<Resource>();
+        private List<Resource> _deletedResources = AWSConfigs.InitializeCollections ? new List<Resource>() : null;
+        private List<Resource> _orphanedResources = AWSConfigs.InitializeCollections ? new List<Resource>() : null;
 
         /// <summary>
         /// Gets and sets the property DeletedResources. 
@@ -51,7 +52,7 @@ namespace Amazon.Mobile.Model
         // Check to see if DeletedResources property is set
         internal bool IsSetDeletedResources()
         {
-            return this._deletedResources != null && this._deletedResources.Count > 0; 
+            return this._deletedResources != null && (this._deletedResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.Mobile.Model
         // Check to see if OrphanedResources property is set
         internal bool IsSetOrphanedResources()
         {
-            return this._orphanedResources != null && this._orphanedResources.Count > 0; 
+            return this._orphanedResources != null && (this._orphanedResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

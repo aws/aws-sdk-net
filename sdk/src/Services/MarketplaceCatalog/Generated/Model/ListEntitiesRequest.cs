@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.MarketplaceCatalog.Model
         private string _entityType;
         private EntityTypeFilters _entityTypeFilters;
         private EntityTypeSort _entityTypeSort;
-        private List<Filter> _filterList = new List<Filter>();
+        private List<Filter> _filterList = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
         private int? _maxResults;
         private string _nextToken;
         private OwnershipType _ownershipType;
@@ -141,7 +142,7 @@ namespace Amazon.MarketplaceCatalog.Model
         // Check to see if FilterList property is set
         internal bool IsSetFilterList()
         {
-            return this._filterList != null && this._filterList.Count > 0; 
+            return this._filterList != null && (this._filterList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

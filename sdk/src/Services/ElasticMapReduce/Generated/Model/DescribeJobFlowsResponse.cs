@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     public partial class DescribeJobFlowsResponse : AmazonWebServiceResponse
     {
-        private List<JobFlowDetail> _jobFlows = new List<JobFlowDetail>();
+        private List<JobFlowDetail> _jobFlows = AWSConfigs.InitializeCollections ? new List<JobFlowDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property JobFlows. 
@@ -50,7 +51,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if JobFlows property is set
         internal bool IsSetJobFlows()
         {
-            return this._jobFlows != null && this._jobFlows.Count > 0; 
+            return this._jobFlows != null && (this._jobFlows.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

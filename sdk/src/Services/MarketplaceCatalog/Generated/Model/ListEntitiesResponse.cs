@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MarketplaceCatalog.Model
     /// </summary>
     public partial class ListEntitiesResponse : AmazonWebServiceResponse
     {
-        private List<EntitySummary> _entitySummaryList = new List<EntitySummary>();
+        private List<EntitySummary> _entitySummaryList = AWSConfigs.InitializeCollections ? new List<EntitySummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.MarketplaceCatalog.Model
         // Check to see if EntitySummaryList property is set
         internal bool IsSetEntitySummaryList()
         {
-            return this._entitySummaryList != null && this._entitySummaryList.Count > 0; 
+            return this._entitySummaryList != null && (this._entitySummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

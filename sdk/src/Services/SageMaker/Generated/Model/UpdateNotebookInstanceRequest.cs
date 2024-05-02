@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -36,8 +37,8 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class UpdateNotebookInstanceRequest : AmazonSageMakerRequest
     {
-        private List<string> _acceleratorTypes = new List<string>();
-        private List<string> _additionalCodeRepositories = new List<string>();
+        private List<string> _acceleratorTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _additionalCodeRepositories = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _defaultCodeRepository;
         private bool? _disassociateAcceleratorTypes;
         private bool? _disassociateAdditionalCodeRepositories;
@@ -69,7 +70,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if AcceleratorTypes property is set
         internal bool IsSetAcceleratorTypes()
         {
-            return this._acceleratorTypes != null && this._acceleratorTypes.Count > 0; 
+            return this._acceleratorTypes != null && (this._acceleratorTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -94,7 +95,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if AdditionalCodeRepositories property is set
         internal bool IsSetAdditionalCodeRepositories()
         {
-            return this._additionalCodeRepositories != null && this._additionalCodeRepositories.Count > 0; 
+            return this._additionalCodeRepositories != null && (this._additionalCodeRepositories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DocDBElastic.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property Cluster. 
         /// <para>
-        /// The new Elastic DocumentDB cluster that has been created.
+        /// The new elastic cluster that has been created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

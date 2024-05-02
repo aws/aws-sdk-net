@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.Route53Resolver.Model
         private ShareStatus _shareStatus;
         private ResolverRuleStatus _status;
         private string _statusMessage;
-        private List<TargetAddress> _targetIps = new List<TargetAddress>();
+        private List<TargetAddress> _targetIps = AWSConfigs.InitializeCollections ? new List<TargetAddress>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -346,7 +347,7 @@ namespace Amazon.Route53Resolver.Model
         // Check to see if TargetIps property is set
         internal bool IsSetTargetIps()
         {
-            return this._targetIps != null && this._targetIps.Count > 0; 
+            return this._targetIps != null && (this._targetIps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

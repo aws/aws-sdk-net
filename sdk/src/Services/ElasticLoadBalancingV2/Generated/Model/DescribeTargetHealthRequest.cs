@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class DescribeTargetHealthRequest : AmazonElasticLoadBalancingV2Request
     {
-        private List<string> _include = new List<string>();
+        private List<string> _include = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _targetGroupArn;
-        private List<TargetDescription> _targets = new List<TargetDescription>();
+        private List<TargetDescription> _targets = AWSConfigs.InitializeCollections ? new List<TargetDescription>() : null;
 
         /// <summary>
         /// Gets and sets the property Include. 
@@ -53,7 +54,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if Include property is set
         internal bool IsSetInclude()
         {
-            return this._include != null && this._include.Count > 0; 
+            return this._include != null && (this._include.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -90,7 +91,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if Targets property is set
         internal bool IsSetTargets()
         {
-            return this._targets != null && this._targets.Count > 0; 
+            return this._targets != null && (this._targets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

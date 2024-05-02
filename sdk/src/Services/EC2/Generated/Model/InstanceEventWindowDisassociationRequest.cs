@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class InstanceEventWindowDisassociationRequest
     {
-        private List<string> _dedicatedHostIds = new List<string>();
-        private List<string> _instanceIds = new List<string>();
-        private List<Tag> _instanceTags = new List<Tag>();
+        private List<string> _dedicatedHostIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _instanceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Tag> _instanceTags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property DedicatedHostIds. 
@@ -52,7 +53,7 @@ namespace Amazon.EC2.Model
         // Check to see if DedicatedHostIds property is set
         internal bool IsSetDedicatedHostIds()
         {
-            return this._dedicatedHostIds != null && this._dedicatedHostIds.Count > 0; 
+            return this._dedicatedHostIds != null && (this._dedicatedHostIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.EC2.Model
         // Check to see if InstanceIds property is set
         internal bool IsSetInstanceIds()
         {
-            return this._instanceIds != null && this._instanceIds.Count > 0; 
+            return this._instanceIds != null && (this._instanceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -89,7 +90,7 @@ namespace Amazon.EC2.Model
         // Check to see if InstanceTags property is set
         internal bool IsSetInstanceTags()
         {
-            return this._instanceTags != null && this._instanceTags.Count > 0; 
+            return this._instanceTags != null && (this._instanceTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

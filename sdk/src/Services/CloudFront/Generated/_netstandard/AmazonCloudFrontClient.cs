@@ -33,6 +33,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.CloudFront
 {
     /// <summary>
@@ -42,8 +43,8 @@ namespace Amazon.CloudFront
     /// <para>
     /// This is the <i>Amazon CloudFront API Reference</i>. This guide is for developers who
     /// need detailed information about CloudFront API actions, data types, and errors. For
-    /// detailed information about CloudFront features, see the <i>Amazon CloudFront Developer
-    /// Guide</i>.
+    /// detailed information about CloudFront features, see the <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Introduction.html">Amazon
+    /// CloudFront Developer Guide</a>.
     /// </para>
     /// </summary>
     public partial class AmazonCloudFrontClient : AmazonServiceClient, IAmazonCloudFront
@@ -1631,7 +1632,8 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Create a new invalidation.
+        /// Create a new invalidation. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html">Invalidating
+        /// files</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateInvalidation service method.</param>
         /// <param name="cancellationToken">
@@ -1752,8 +1754,8 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Specifies the Key Value Store resource to add to your account. In your account, the
-        /// Key Value Store names must be unique. You can also import Key Value Store data in
+        /// Specifies the key value store resource to add to your account. In your account, the
+        /// key value store names must be unique. You can also import key value store data in
         /// JSON format from an S3 bucket by providing a valid <c>ImportSource</c> that you own.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateKeyValueStore service method.</param>
@@ -1766,17 +1768,20 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.EntityAlreadyExistsException">
-        /// The Key Value Store entity already exists. You must provide a unique Key Value Store
+        /// The key value store entity already exists. You must provide a unique key value store
         /// entity.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.EntityLimitExceededException">
-        /// The Key Value Store entity limit has been exceeded.
+        /// The key value store entity limit has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.EntitySizeLimitExceededException">
-        /// The Key Value Store entity size limit was exceeded.
+        /// The key value store entity size limit was exceeded.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateKeyValueStore">REST API Reference for CreateKeyValueStore Operation</seealso>
         public virtual Task<CreateKeyValueStoreResponse> CreateKeyValueStoreAsync(CreateKeyValueStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2904,7 +2909,7 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Specifies the Key Value Store to delete.
+        /// Specifies the key value store to delete.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteKeyValueStore service method.</param>
         /// <param name="cancellationToken">
@@ -2916,16 +2921,19 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.CannotDeleteEntityWhileInUseException">
-        /// The Key Value Store entity cannot be deleted while it is in use.
+        /// The key value store entity cannot be deleted while it is in use.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
-        /// The Key Value Store entity was not found.
+        /// The key value store entity was not found.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
         /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteKeyValueStore">REST API Reference for DeleteKeyValueStore Operation</seealso>
         public virtual Task<DeleteKeyValueStoreResponse> DeleteKeyValueStoreAsync(DeleteKeyValueStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3536,7 +3544,7 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Specifies the Key Value Store and its configuration.
+        /// Specifies the key value store and its configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeKeyValueStore service method.</param>
         /// <param name="cancellationToken">
@@ -3548,10 +3556,13 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
-        /// The Key Value Store entity was not found.
+        /// The key value store entity was not found.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DescribeKeyValueStore">REST API Reference for DescribeKeyValueStore Operation</seealso>
         public virtual Task<DescribeKeyValueStoreResponse> DescribeKeyValueStoreAsync(DescribeKeyValueStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5780,7 +5791,7 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Specifies the Key Value Stores to list.
+        /// Specifies the key value stores to list.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListKeyValueStores service method.</param>
         /// <param name="cancellationToken">
@@ -5793,6 +5804,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListKeyValueStores">REST API Reference for ListKeyValueStores Operation</seealso>
         public virtual Task<ListKeyValueStoresResponse> ListKeyValueStoresAsync(ListKeyValueStoresRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -7509,7 +7523,7 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Specifies the Key Value Store to update.
+        /// Specifies the key value store to update.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateKeyValueStore service method.</param>
         /// <param name="cancellationToken">
@@ -7521,7 +7535,7 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.EntityNotFoundException">
-        /// The Key Value Store entity was not found.
+        /// The key value store entity was not found.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
@@ -7531,6 +7545,9 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
         /// The precondition in one or more of the request fields evaluated to <c>false</c>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
+        /// This operation is not supported in this region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateKeyValueStore">REST API Reference for UpdateKeyValueStore Operation</seealso>
         public virtual Task<UpdateKeyValueStoreResponse> UpdateKeyValueStoreAsync(UpdateKeyValueStoreRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

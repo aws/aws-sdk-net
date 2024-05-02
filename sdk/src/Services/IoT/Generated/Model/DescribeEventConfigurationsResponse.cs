@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IoT.Model
     public partial class DescribeEventConfigurationsResponse : AmazonWebServiceResponse
     {
         private DateTime? _creationDate;
-        private Dictionary<string, Configuration> _eventConfigurations = new Dictionary<string, Configuration>();
+        private Dictionary<string, Configuration> _eventConfigurations = AWSConfigs.InitializeCollections ? new Dictionary<string, Configuration>() : null;
         private DateTime? _lastModifiedDate;
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.IoT.Model
         // Check to see if EventConfigurations property is set
         internal bool IsSetEventConfigurations()
         {
-            return this._eventConfigurations != null && this._eventConfigurations.Count > 0; 
+            return this._eventConfigurations != null && (this._eventConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

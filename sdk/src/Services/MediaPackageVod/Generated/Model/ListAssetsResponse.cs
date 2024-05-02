@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaPackageVod.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MediaPackageVod.Model
     /// </summary>
     public partial class ListAssetsResponse : AmazonWebServiceResponse
     {
-        private List<AssetShallow> _assets = new List<AssetShallow>();
+        private List<AssetShallow> _assets = AWSConfigs.InitializeCollections ? new List<AssetShallow>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -48,7 +49,7 @@ namespace Amazon.MediaPackageVod.Model
         // Check to see if Assets property is set
         internal bool IsSetAssets()
         {
-            return this._assets != null && this._assets.Count > 0; 
+            return this._assets != null && (this._assets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

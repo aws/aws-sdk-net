@@ -24,6 +24,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>
     public class InventoryConfigurationUnmarshaller : IUnmarshaller<InventoryConfiguration, XmlUnmarshallerContext>, IUnmarshaller<InventoryConfiguration, JsonUnmarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public InventoryConfiguration Unmarshall(XmlUnmarshallerContext context)
         {
             InventoryConfiguration response = new InventoryConfiguration();
@@ -69,8 +74,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Field", targetDepth + 1))
                     {
+                        if (response.InventoryOptionalFields == null)
+                        {
+                            response.InventoryOptionalFields = new List<InventoryOptionalField>();
+                        }
                         response.InventoryOptionalFields.Add(InventoryOptionalField.FindValue(StringUnmarshaller.Instance.Unmarshall(context)));
-
                         continue;
                     }
                     if (context.TestExpression("Schedule", targetDepth))
@@ -91,6 +99,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return response;
         }
 
+        /// <summary>
+        /// Not implemented and always returns null.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public InventoryConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -98,6 +111,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static InventoryConfigurationUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static InventoryConfigurationUnmarshaller Instance
         {
             get

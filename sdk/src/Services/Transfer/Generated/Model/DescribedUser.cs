@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Transfer.Model
 {
     /// <summary>
@@ -35,13 +36,13 @@ namespace Amazon.Transfer.Model
     {
         private string _arn;
         private string _homeDirectory;
-        private List<HomeDirectoryMapEntry> _homeDirectoryMappings = new List<HomeDirectoryMapEntry>();
+        private List<HomeDirectoryMapEntry> _homeDirectoryMappings = AWSConfigs.InitializeCollections ? new List<HomeDirectoryMapEntry>() : null;
         private HomeDirectoryType _homeDirectoryType;
         private string _policy;
         private PosixProfile _posixProfile;
         private string _role;
-        private List<SshPublicKey> _sshPublicKeys = new List<SshPublicKey>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<SshPublicKey> _sshPublicKeys = AWSConfigs.InitializeCollections ? new List<SshPublicKey>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _userName;
 
         /// <summary>
@@ -122,7 +123,7 @@ namespace Amazon.Transfer.Model
         // Check to see if HomeDirectoryMappings property is set
         internal bool IsSetHomeDirectoryMappings()
         {
-            return this._homeDirectoryMappings != null && this._homeDirectoryMappings.Count > 0; 
+            return this._homeDirectoryMappings != null && (this._homeDirectoryMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -241,7 +242,7 @@ namespace Amazon.Transfer.Model
         // Check to see if SshPublicKeys property is set
         internal bool IsSetSshPublicKeys()
         {
-            return this._sshPublicKeys != null && this._sshPublicKeys.Count > 0; 
+            return this._sshPublicKeys != null && (this._sshPublicKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -261,7 +262,7 @@ namespace Amazon.Transfer.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

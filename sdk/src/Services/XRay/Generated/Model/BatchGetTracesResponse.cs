@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.XRay.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.XRay.Model
     public partial class BatchGetTracesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Trace> _traces = new List<Trace>();
-        private List<string> _unprocessedTraceIds = new List<string>();
+        private List<Trace> _traces = AWSConfigs.InitializeCollections ? new List<Trace>() : null;
+        private List<string> _unprocessedTraceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.XRay.Model
         // Check to see if Traces property is set
         internal bool IsSetTraces()
         {
-            return this._traces != null && this._traces.Count > 0; 
+            return this._traces != null && (this._traces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -88,7 +89,7 @@ namespace Amazon.XRay.Model
         // Check to see if UnprocessedTraceIds property is set
         internal bool IsSetUnprocessedTraceIds()
         {
-            return this._unprocessedTraceIds != null && this._unprocessedTraceIds.Count > 0; 
+            return this._unprocessedTraceIds != null && (this._unprocessedTraceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

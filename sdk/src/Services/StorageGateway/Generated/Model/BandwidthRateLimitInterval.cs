@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.StorageGateway.Model
     {
         private long? _averageDownloadRateLimitInBitsPerSec;
         private long? _averageUploadRateLimitInBitsPerSec;
-        private List<int> _daysOfWeek = new List<int>();
+        private List<int> _daysOfWeek = AWSConfigs.InitializeCollections ? new List<int>() : null;
         private int? _endHourOfDay;
         private int? _endMinuteOfHour;
         private int? _startHourOfDay;
@@ -113,7 +114,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if DaysOfWeek property is set
         internal bool IsSetDaysOfWeek()
         {
-            return this._daysOfWeek != null && this._daysOfWeek.Count > 0; 
+            return this._daysOfWeek != null && (this._daysOfWeek.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

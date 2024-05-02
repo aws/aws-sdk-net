@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTEvents.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IoTEvents.Model
     public partial class DetectorModelDefinition
     {
         private string _initialStateName;
-        private List<State> _states = new List<State>();
+        private List<State> _states = AWSConfigs.InitializeCollections ? new List<State>() : null;
 
         /// <summary>
         /// Gets and sets the property InitialStateName. 
@@ -71,7 +72,7 @@ namespace Amazon.IoTEvents.Model
         // Check to see if States property is set
         internal bool IsSetStates()
         {
-            return this._states != null && this._states.Count > 0; 
+            return this._states != null && (this._states.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

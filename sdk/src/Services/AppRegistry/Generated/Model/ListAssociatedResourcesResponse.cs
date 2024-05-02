@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppRegistry.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.AppRegistry.Model
     public partial class ListAssociatedResourcesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ResourceInfo> _resources = new List<ResourceInfo>();
+        private List<ResourceInfo> _resources = AWSConfigs.InitializeCollections ? new List<ResourceInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.AppRegistry.Model
         // Check to see if Resources property is set
         internal bool IsSetResources()
         {
-            return this._resources != null && this._resources.Count > 0; 
+            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

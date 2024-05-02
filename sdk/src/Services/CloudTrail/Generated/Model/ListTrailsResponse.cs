@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CloudTrail.Model
     public partial class ListTrailsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TrailInfo> _trails = new List<TrailInfo>();
+        private List<TrailInfo> _trails = AWSConfigs.InitializeCollections ? new List<TrailInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +74,7 @@ namespace Amazon.CloudTrail.Model
         // Check to see if Trails property is set
         internal bool IsSetTrails()
         {
-            return this._trails != null && this._trails.Count > 0; 
+            return this._trails != null && (this._trails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

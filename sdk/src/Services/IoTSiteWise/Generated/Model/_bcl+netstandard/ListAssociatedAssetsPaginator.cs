@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.IoTSiteWise.Model
         /// Enumerable containing all of the AssetSummaries
         /// </summary>
         public IPaginatedEnumerable<AssociatedAssetsSummary> AssetSummaries => 
-            new PaginatedResultKeyResponse<ListAssociatedAssetsResponse, AssociatedAssetsSummary>(this, (i) => i.AssetSummaries);
+            new PaginatedResultKeyResponse<ListAssociatedAssetsResponse, AssociatedAssetsSummary>(this, (i) => i.AssetSummaries ?? new List<AssociatedAssetsSummary>());
 
         internal ListAssociatedAssetsPaginator(IAmazonIoTSiteWise client, ListAssociatedAssetsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.IoTSiteWise.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListAssociatedAssetsResponse> IPaginator<ListAssociatedAssetsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListAssociatedAssetsResponse> IPaginator<ListAssociatedAssetsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

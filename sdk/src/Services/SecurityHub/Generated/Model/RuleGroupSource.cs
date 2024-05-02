@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.SecurityHub.Model
     {
         private RuleGroupSourceListDetails _rulesSourceList;
         private string _rulesString;
-        private List<RuleGroupSourceStatefulRulesDetails> _statefulRules = new List<RuleGroupSourceStatefulRulesDetails>();
+        private List<RuleGroupSourceStatefulRulesDetails> _statefulRules = AWSConfigs.InitializeCollections ? new List<RuleGroupSourceStatefulRulesDetails>() : null;
         private RuleGroupSourceStatelessRulesAndCustomActionsDetails _statelessRulesAndCustomActions;
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if StatefulRules property is set
         internal bool IsSetStatefulRules()
         {
-            return this._statefulRules != null && this._statefulRules.Count > 0; 
+            return this._statefulRules != null && (this._statefulRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

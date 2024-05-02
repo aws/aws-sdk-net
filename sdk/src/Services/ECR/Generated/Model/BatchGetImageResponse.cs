@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECR.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.ECR.Model
     /// </summary>
     public partial class BatchGetImageResponse : AmazonWebServiceResponse
     {
-        private List<ImageFailure> _failures = new List<ImageFailure>();
-        private List<Image> _images = new List<Image>();
+        private List<ImageFailure> _failures = AWSConfigs.InitializeCollections ? new List<ImageFailure>() : null;
+        private List<Image> _images = AWSConfigs.InitializeCollections ? new List<Image>() : null;
 
         /// <summary>
         /// Gets and sets the property Failures. 
@@ -51,7 +52,7 @@ namespace Amazon.ECR.Model
         // Check to see if Failures property is set
         internal bool IsSetFailures()
         {
-            return this._failures != null && this._failures.Count > 0; 
+            return this._failures != null && (this._failures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.ECR.Model
         // Check to see if Images property is set
         internal bool IsSetImages()
         {
-            return this._images != null && this._images.Count > 0; 
+            return this._images != null && (this._images.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

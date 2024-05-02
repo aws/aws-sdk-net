@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -35,11 +36,11 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class GetInventoryRequest : AmazonSimpleSystemsManagementRequest
     {
-        private List<InventoryAggregator> _aggregators = new List<InventoryAggregator>();
-        private List<InventoryFilter> _filters = new List<InventoryFilter>();
+        private List<InventoryAggregator> _aggregators = AWSConfigs.InitializeCollections ? new List<InventoryAggregator>() : null;
+        private List<InventoryFilter> _filters = AWSConfigs.InitializeCollections ? new List<InventoryFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
-        private List<ResultAttribute> _resultAttributes = new List<ResultAttribute>();
+        private List<ResultAttribute> _resultAttributes = AWSConfigs.InitializeCollections ? new List<ResultAttribute>() : null;
 
         /// <summary>
         /// Gets and sets the property Aggregators. 
@@ -60,7 +61,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Aggregators property is set
         internal bool IsSetAggregators()
         {
-            return this._aggregators != null && this._aggregators.Count > 0; 
+            return this._aggregators != null && (this._aggregators.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -79,7 +80,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -137,7 +138,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if ResultAttributes property is set
         internal bool IsSetResultAttributes()
         {
-            return this._resultAttributes != null && this._resultAttributes.Count > 0; 
+            return this._resultAttributes != null && (this._resultAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

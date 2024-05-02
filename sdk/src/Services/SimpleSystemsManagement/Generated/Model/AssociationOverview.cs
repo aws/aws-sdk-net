@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class AssociationOverview
     {
-        private Dictionary<string, int> _associationStatusAggregatedCount = new Dictionary<string, int>();
+        private Dictionary<string, int> _associationStatusAggregatedCount = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
         private string _detailedStatus;
         private string _status;
 
@@ -54,7 +55,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if AssociationStatusAggregatedCount property is set
         internal bool IsSetAssociationStatusAggregatedCount()
         {
-            return this._associationStatusAggregatedCount != null && this._associationStatusAggregatedCount.Count > 0; 
+            return this._associationStatusAggregatedCount != null && (this._associationStatusAggregatedCount.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

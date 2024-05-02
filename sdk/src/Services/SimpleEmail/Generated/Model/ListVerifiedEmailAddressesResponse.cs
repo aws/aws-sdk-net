@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SimpleEmail.Model
     /// </summary>
     public partial class ListVerifiedEmailAddressesResponse : AmazonWebServiceResponse
     {
-        private List<string> _verifiedEmailAddresses = new List<string>();
+        private List<string> _verifiedEmailAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property VerifiedEmailAddresses. 
@@ -51,7 +52,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if VerifiedEmailAddresses property is set
         internal bool IsSetVerifiedEmailAddresses()
         {
-            return this._verifiedEmailAddresses != null && this._verifiedEmailAddresses.Count > 0; 
+            return this._verifiedEmailAddresses != null && (this._verifiedEmailAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

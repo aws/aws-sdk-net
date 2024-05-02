@@ -22,9 +22,16 @@ using Amazon.Runtime.Internal.Transform;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
+    /// <summary>
+    /// PutBucketEncryptionResponse unmarshaller
+    /// </summary>
     public class PutBucketEncryptionResponseUnmarshaller : S3ReponseUnmarshaller
     {
-
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             PutBucketEncryptionResponse response = new PutBucketEncryptionResponse();
@@ -35,6 +42,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static PutBucketEncryptionResponseUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static PutBucketEncryptionResponseUnmarshaller Instance
         {
             get

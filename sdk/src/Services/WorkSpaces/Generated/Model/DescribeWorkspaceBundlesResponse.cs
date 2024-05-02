@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.WorkSpaces.Model
     /// </summary>
     public partial class DescribeWorkspaceBundlesResponse : AmazonWebServiceResponse
     {
-        private List<WorkspaceBundle> _bundles = new List<WorkspaceBundle>();
+        private List<WorkspaceBundle> _bundles = AWSConfigs.InitializeCollections ? new List<WorkspaceBundle>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if Bundles property is set
         internal bool IsSetBundles()
         {
-            return this._bundles != null && this._bundles.Count > 0; 
+            return this._bundles != null && (this._bundles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
@@ -35,11 +36,11 @@ namespace Amazon.CodeDeploy.Model
     {
         private string _deploymentId;
         private DateTime? _lastUpdatedAt;
-        private List<LifecycleEvent> _lifecycleEvents = new List<LifecycleEvent>();
+        private List<LifecycleEvent> _lifecycleEvents = AWSConfigs.InitializeCollections ? new List<LifecycleEvent>() : null;
         private TargetStatus _status;
         private string _targetArn;
         private string _targetId;
-        private List<ECSTaskSet> _taskSetsInfo = new List<ECSTaskSet>();
+        private List<ECSTaskSet> _taskSetsInfo = AWSConfigs.InitializeCollections ? new List<ECSTaskSet>() : null;
 
         /// <summary>
         /// Gets and sets the property DeploymentId. 
@@ -93,7 +94,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if LifecycleEvents property is set
         internal bool IsSetLifecycleEvents()
         {
-            return this._lifecycleEvents != null && this._lifecycleEvents.Count > 0; 
+            return this._lifecycleEvents != null && (this._lifecycleEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -165,7 +166,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if TaskSetsInfo property is set
         internal bool IsSetTaskSetsInfo()
         {
-            return this._taskSetsInfo != null && this._taskSetsInfo.Count > 0; 
+            return this._taskSetsInfo != null && (this._taskSetsInfo.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

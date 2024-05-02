@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
@@ -47,19 +48,19 @@ namespace Amazon.NimbleStudio.Model
         private DateTime? _createdAt;
         private string _createdBy;
         private string _description;
-        private List<string> _ec2SubnetIds = new List<string>();
+        private List<string> _ec2SubnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _launchProfileId;
-        private List<string> _launchProfileProtocolVersions = new List<string>();
+        private List<string> _launchProfileProtocolVersions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private LaunchProfileState _state;
         private LaunchProfileStatusCode _statusCode;
         private string _statusMessage;
         private StreamConfiguration _streamConfiguration;
-        private List<string> _studioComponentIds = new List<string>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<string> _studioComponentIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DateTime? _updatedAt;
         private string _updatedBy;
-        private List<ValidationResult> _validationResults = new List<ValidationResult>();
+        private List<ValidationResult> _validationResults = AWSConfigs.InitializeCollections ? new List<ValidationResult>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -151,7 +152,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if Ec2SubnetIds property is set
         internal bool IsSetEc2SubnetIds()
         {
-            return this._ec2SubnetIds != null && this._ec2SubnetIds.Count > 0; 
+            return this._ec2SubnetIds != null && (this._ec2SubnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -189,7 +190,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if LaunchProfileProtocolVersions property is set
         internal bool IsSetLaunchProfileProtocolVersions()
         {
-            return this._launchProfileProtocolVersions != null && this._launchProfileProtocolVersions.Count > 0; 
+            return this._launchProfileProtocolVersions != null && (this._launchProfileProtocolVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -300,7 +301,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if StudioComponentIds property is set
         internal bool IsSetStudioComponentIds()
         {
-            return this._studioComponentIds != null && this._studioComponentIds.Count > 0; 
+            return this._studioComponentIds != null && (this._studioComponentIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -318,7 +319,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -372,7 +373,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if ValidationResults property is set
         internal bool IsSetValidationResults()
         {
-            return this._validationResults != null && this._validationResults.Count > 0; 
+            return this._validationResults != null && (this._validationResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

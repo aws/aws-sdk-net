@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
@@ -49,10 +50,26 @@ namespace Amazon.GuardDuty.Model
     /// to <c>ALL</c>, you'll receive an error if you attempt to disassociate a member account
     /// before removing them from your organization.
     /// </para>
+    ///  
+    /// <para>
+    /// If you disassociate a member account that was added by invitation, the member account
+    /// details obtained from this API, including the associated email addresses, will be
+    /// retained. This is done so that the delegated administrator can invoke the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a>
+    /// API without the need to invoke the CreateMembers API again. To remove the details
+    /// associated with a member account, the delegated administrator must invoke the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_DeleteMembers.html">DeleteMembers</a>
+    /// API. 
+    /// </para>
+    ///  
+    /// <para>
+    /// When the member accounts added through Organizations are later disassociated, you
+    /// (administrator) can't invite them by calling the InviteMembers API. You can create
+    /// an association with these member accounts again only by calling the CreateMembers
+    /// API.
+    /// </para>
     /// </summary>
     public partial class DisassociateMembersRequest : AmazonGuardDutyRequest
     {
-        private List<string> _accountIds = new List<string>();
+        private List<string> _accountIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _detectorId;
 
         /// <summary>
@@ -72,7 +89,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if AccountIds property is set
         internal bool IsSetAccountIds()
         {
-            return this._accountIds != null && this._accountIds.Count > 0; 
+            return this._accountIds != null && (this._accountIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

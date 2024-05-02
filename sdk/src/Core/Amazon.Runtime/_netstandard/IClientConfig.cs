@@ -24,7 +24,6 @@ using System.Net.Http;
 
 namespace Amazon.Runtime
 {
-    [CLSCompliant(false)]
     public partial interface IClientConfig
     {
         /// <summary>
@@ -62,7 +61,7 @@ namespace Amazon.Runtime
         /// will have no effect unless they're used explicitly by the HttpClientFactory implementation.
         ///
         /// See https://docs.microsoft.com/en-us/xamarin/cross-platform/macios/http-stack?context=xamarin/ios and
-        /// https://docs.microsoft.com/en-us/xamarin/android/app-fundamentals/http-stack?context=xamarin%2Fcross-platform&tabs=macos#ssltls-implementation-build-option
+        /// https://learn.microsoft.com/en-us/xamarin/android/app-fundamentals/http-stack?context=xamarin%2Fcross-platform
         /// for guidance on creating HttpClients for your platform.
         /// </summary>
         HttpClientFactory HttpClientFactory { get; }

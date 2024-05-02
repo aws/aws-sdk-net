@@ -21,8 +21,10 @@ namespace Amazon.DNXCore.IntegrationTests.EC2
             // perform a filtered query to (a) test parameter marshalling
             // and (b) cut down the time to run -- an unfiltered request
             // yields a lot of images
-            var request = new DescribeImagesRequest();
-            request.Owners.Add("amazon");
+            var request = new DescribeImagesRequest()
+            {
+                Owners = new List<string> { "amazon" }
+            };
             var response = await Client.DescribeImagesAsync(request);
 
             Assert.NotNull(response);
@@ -35,8 +37,10 @@ namespace Amazon.DNXCore.IntegrationTests.EC2
             // perform a filtered query to (a) test parameter marshalling
             // and (b) cut down the time to run -- an unfiltered request
             // yields a lot of images
-            var request = new DescribeImagesRequest();
-            request.Owners.Add("amazon");
+            var request = new DescribeImagesRequest()
+            {
+                Owners = new List<string> { "amazon" }
+            };
 
             var cts = new CancellationTokenSource();
             cts.CancelAfter(1000);
@@ -48,7 +52,7 @@ namespace Amazon.DNXCore.IntegrationTests.EC2
             });
 
             //Assert.Equal(token, exception.CancellationToken);
-            Assert.Equal(true, exception.CancellationToken.IsCancellationRequested);
+            Assert.True(exception.CancellationToken.IsCancellationRequested);
 
         }
     }

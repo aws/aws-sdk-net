@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.MediaConvert.Model
         /// Enumerable containing all of the Presets
         /// </summary>
         public IPaginatedEnumerable<Preset> Presets => 
-            new PaginatedResultKeyResponse<ListPresetsResponse, Preset>(this, (i) => i.Presets);
+            new PaginatedResultKeyResponse<ListPresetsResponse, Preset>(this, (i) => i.Presets ?? new List<Preset>());
 
         internal ListPresetsPaginator(IAmazonMediaConvert client, ListPresetsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.MediaConvert.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListPresetsResponse> IPaginator<ListPresetsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListPresetsResponse> IPaginator<ListPresetsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

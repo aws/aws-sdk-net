@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -53,10 +54,10 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class DescribeParametersRequest : AmazonSimpleSystemsManagementRequest
     {
-        private List<ParametersFilter> _filters = new List<ParametersFilter>();
+        private List<ParametersFilter> _filters = AWSConfigs.InitializeCollections ? new List<ParametersFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
-        private List<ParameterStringFilter> _parameterFilters = new List<ParameterStringFilter>();
+        private List<ParameterStringFilter> _parameterFilters = AWSConfigs.InitializeCollections ? new List<ParameterStringFilter>() : null;
         private bool? _shared;
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -131,7 +132,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if ParameterFilters property is set
         internal bool IsSetParameterFilters()
         {
-            return this._parameterFilters != null && this._parameterFilters.Count > 0; 
+            return this._parameterFilters != null && (this._parameterFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -150,7 +151,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about sharing parameters, see <a href="systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working
+        /// For more information about sharing parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working
         /// with shared parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// </para>
         ///  </note>

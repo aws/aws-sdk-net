@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkMail.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.WorkMail.Model
     public partial class ListResourcesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Resource> _resources = new List<Resource>();
+        private List<Resource> _resources = AWSConfigs.InitializeCollections ? new List<Resource>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.WorkMail.Model
         // Check to see if Resources property is set
         internal bool IsSetResources()
         {
-            return this._resources != null && this._resources.Count > 0; 
+            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

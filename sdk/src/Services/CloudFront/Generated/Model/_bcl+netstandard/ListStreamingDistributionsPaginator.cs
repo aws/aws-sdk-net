@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.CloudFront.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<StreamingDistributionSummary> Items => 
-            new PaginatedResultKeyResponse<ListStreamingDistributionsResponse, StreamingDistributionSummary>(this, (i) => i.StreamingDistributionList.Items);
+            new PaginatedResultKeyResponse<ListStreamingDistributionsResponse, StreamingDistributionSummary>(this, (i) => i.StreamingDistributionList.Items ?? new List<StreamingDistributionSummary>());
 
         internal ListStreamingDistributionsPaginator(IAmazonCloudFront client, ListStreamingDistributionsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.CloudFront.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListStreamingDistributionsResponse> IPaginator<ListStreamingDistributionsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListStreamingDistributionsResponse> IPaginator<ListStreamingDistributionsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

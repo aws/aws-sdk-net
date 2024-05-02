@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkLink.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.WorkLink.Model
     public partial class ListWebsiteCertificateAuthoritiesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<WebsiteCaSummary> _websiteCertificateAuthorities = new List<WebsiteCaSummary>();
+        private List<WebsiteCaSummary> _websiteCertificateAuthorities = AWSConfigs.InitializeCollections ? new List<WebsiteCaSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.WorkLink.Model
         // Check to see if WebsiteCertificateAuthorities property is set
         internal bool IsSetWebsiteCertificateAuthorities()
         {
-            return this._websiteCertificateAuthorities != null && this._websiteCertificateAuthorities.Count > 0; 
+            return this._websiteCertificateAuthorities != null && (this._websiteCertificateAuthorities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
@@ -44,8 +45,8 @@ namespace Amazon.Lightsail.Model
         private float? _price;
         private int? _publicIpv4AddressCount;
         private float? _ramSizeInGb;
-        private List<string> _supportedAppCategories = new List<string>();
-        private List<string> _supportedPlatforms = new List<string>();
+        private List<string> _supportedAppCategories = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _supportedPlatforms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _transferPerMonthInGb;
 
         /// <summary>
@@ -253,7 +254,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if SupportedAppCategories property is set
         internal bool IsSetSupportedAppCategories()
         {
-            return this._supportedAppCategories != null && this._supportedAppCategories.Count > 0; 
+            return this._supportedAppCategories != null && (this._supportedAppCategories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -274,7 +275,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if SupportedPlatforms property is set
         internal bool IsSetSupportedPlatforms()
         {
-            return this._supportedPlatforms != null && this._supportedPlatforms.Count > 0; 
+            return this._supportedPlatforms != null && (this._supportedPlatforms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

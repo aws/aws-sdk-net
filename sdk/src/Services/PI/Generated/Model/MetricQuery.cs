@@ -26,18 +26,21 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PI.Model
 {
     /// <summary>
-    /// A single query to be processed. You must provide the metric to query. If no other
-    /// parameters are specified, Performance Insights returns all data points for the specified
-    /// metric. Optionally, you can request that the data points be aggregated by dimension
-    /// group (<c>GroupBy</c>), and return only those data points that match your criteria
-    /// (<c>Filter</c>).
+    /// A single query to be processed. You must provide the metric to query and append an
+    /// aggregate function to the metric. For example, to find the average for the metric
+    /// <c>db.load</c> you must use <c>db.load.avg</c>. Valid values for aggregate functions
+    /// include <c>.avg</c>, <c>.min</c>, <c>.max</c>, and <c>.sum</c>. If no other parameters
+    /// are specified, Performance Insights returns all data points for the specified metric.
+    /// Optionally, you can request that the data points be aggregated by dimension group
+    /// (<c>GroupBy</c>), and return only those data points that match your criteria (<c>Filter</c>).
     /// </summary>
     public partial class MetricQuery
     {
-        private Dictionary<string, string> _filter = new Dictionary<string, string>();
+        private Dictionary<string, string> _filter = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DimensionGroup _groupBy;
         private string _metric;
 
@@ -65,7 +68,7 @@ namespace Amazon.PI.Model
         // Check to see if Filter property is set
         internal bool IsSetFilter()
         {
-            return this._filter != null && this._filter.Count > 0; 
+            return this._filter != null && (this._filter.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -112,6 +115,11 @@ namespace Amazon.PI.Model
         /// <para>
         /// The counter metrics listed in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance
         /// Insights operating system counters</a> in the <i>Amazon Aurora User Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The counter metrics listed in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights_Counters.html#USER_PerfInsights_Counters.OS">Performance
+        /// Insights operating system counters</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  </li> </ul> 
         /// <para>

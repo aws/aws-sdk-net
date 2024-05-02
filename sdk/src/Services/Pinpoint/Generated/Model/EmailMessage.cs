@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
@@ -38,9 +39,9 @@ namespace Amazon.Pinpoint.Model
         private string _feedbackForwardingAddress;
         private string _fromAddress;
         private RawEmail _rawEmail;
-        private List<string> _replyToAddresses = new List<string>();
+        private List<string> _replyToAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SimpleEmail _simpleEmail;
-        private Dictionary<string, List<string>> _substitutions = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _substitutions = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
 
         /// <summary>
         /// Gets and sets the property Body. 
@@ -132,7 +133,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if ReplyToAddresses property is set
         internal bool IsSetReplyToAddresses()
         {
-            return this._replyToAddresses != null && this._replyToAddresses.Count > 0; 
+            return this._replyToAddresses != null && (this._replyToAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -169,7 +170,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Substitutions property is set
         internal bool IsSetSubstitutions()
         {
-            return this._substitutions != null && this._substitutions.Count > 0; 
+            return this._substitutions != null && (this._substitutions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

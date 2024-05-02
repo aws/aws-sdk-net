@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Route53Resolver.Model
     {
         private int? _maxResults;
         private string _nextToken;
-        private List<ResolverRuleAssociation> _resolverRuleAssociations = new List<ResolverRuleAssociation>();
+        private List<ResolverRuleAssociation> _resolverRuleAssociations = AWSConfigs.InitializeCollections ? new List<ResolverRuleAssociation>() : null;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -93,7 +94,7 @@ namespace Amazon.Route53Resolver.Model
         // Check to see if ResolverRuleAssociations property is set
         internal bool IsSetResolverRuleAssociations()
         {
-            return this._resolverRuleAssociations != null && this._resolverRuleAssociations.Count > 0; 
+            return this._resolverRuleAssociations != null && (this._resolverRuleAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

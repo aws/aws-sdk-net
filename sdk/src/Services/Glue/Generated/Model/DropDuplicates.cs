@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class DropDuplicates
     {
-        private List<List<string>> _columns = new List<List<string>>();
-        private List<string> _inputs = new List<string>();
+        private List<List<string>> _columns = AWSConfigs.InitializeCollections ? new List<List<string>>() : null;
+        private List<string> _inputs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.Glue.Model
         // Check to see if Columns property is set
         internal bool IsSetColumns()
         {
-            return this._columns != null && this._columns.Count > 0; 
+            return this._columns != null && (this._columns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.Glue.Model
         // Check to see if Inputs property is set
         internal bool IsSetInputs()
         {
-            return this._inputs != null && this._inputs.Count > 0; 
+            return this._inputs != null && (this._inputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

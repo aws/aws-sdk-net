@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LookoutMetrics.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.LookoutMetrics.Model
     /// </summary>
     public partial class ListAnomalyGroupRelatedMetricsResponse : AmazonWebServiceResponse
     {
-        private List<InterMetricImpactDetails> _interMetricImpactList = new List<InterMetricImpactDetails>();
+        private List<InterMetricImpactDetails> _interMetricImpactList = AWSConfigs.InitializeCollections ? new List<InterMetricImpactDetails>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.LookoutMetrics.Model
         // Check to see if InterMetricImpactList property is set
         internal bool IsSetInterMetricImpactList()
         {
-            return this._interMetricImpactList != null && this._interMetricImpactList.Count > 0; 
+            return this._interMetricImpactList != null && (this._interMetricImpactList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

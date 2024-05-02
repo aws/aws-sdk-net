@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Drs.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Drs.Model
     {
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _replicationConfigurationTemplateIDs = new List<string>();
+        private List<string> _replicationConfigurationTemplateIDs = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

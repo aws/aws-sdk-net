@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -40,8 +41,8 @@ namespace Amazon.RDS.Model
     public partial class OrderableDBInstanceOption
     {
         private string _availabilityZoneGroup;
-        private List<AvailabilityZone> _availabilityZones = new List<AvailabilityZone>();
-        private List<AvailableProcessorFeature> _availableProcessorFeatures = new List<AvailableProcessorFeature>();
+        private List<AvailabilityZone> _availabilityZones = AWSConfigs.InitializeCollections ? new List<AvailabilityZone>() : null;
+        private List<AvailableProcessorFeature> _availableProcessorFeatures = AWSConfigs.InitializeCollections ? new List<AvailableProcessorFeature>() : null;
         private string _dbInstanceClass;
         private string _engine;
         private string _engineVersion;
@@ -60,9 +61,9 @@ namespace Amazon.RDS.Model
         private bool? _outpostCapable;
         private bool? _readReplicaCapable;
         private string _storageType;
-        private List<string> _supportedActivityStreamModes = new List<string>();
-        private List<string> _supportedEngineModes = new List<string>();
-        private List<string> _supportedNetworkTypes = new List<string>();
+        private List<string> _supportedActivityStreamModes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _supportedEngineModes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _supportedNetworkTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _supportsClusters;
         private bool? _supportsDedicatedLogVolume;
         private bool? _supportsEnhancedMonitoring;
@@ -109,7 +110,7 @@ namespace Amazon.RDS.Model
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+            return this._availabilityZones != null && (this._availabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -127,7 +128,7 @@ namespace Amazon.RDS.Model
         // Check to see if AvailableProcessorFeatures property is set
         internal bool IsSetAvailableProcessorFeatures()
         {
-            return this._availableProcessorFeatures != null && this._availableProcessorFeatures.Count > 0; 
+            return this._availableProcessorFeatures != null && (this._availableProcessorFeatures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -476,7 +477,7 @@ namespace Amazon.RDS.Model
         // Check to see if SupportedActivityStreamModes property is set
         internal bool IsSetSupportedActivityStreamModes()
         {
-            return this._supportedActivityStreamModes != null && this._supportedActivityStreamModes.Count > 0; 
+            return this._supportedActivityStreamModes != null && (this._supportedActivityStreamModes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -494,7 +495,7 @@ namespace Amazon.RDS.Model
         // Check to see if SupportedEngineModes property is set
         internal bool IsSetSupportedEngineModes()
         {
-            return this._supportedEngineModes != null && this._supportedEngineModes.Count > 0; 
+            return this._supportedEngineModes != null && (this._supportedEngineModes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -522,7 +523,7 @@ namespace Amazon.RDS.Model
         // Check to see if SupportedNetworkTypes property is set
         internal bool IsSetSupportedNetworkTypes()
         {
-            return this._supportedNetworkTypes != null && this._supportedNetworkTypes.Count > 0; 
+            return this._supportedNetworkTypes != null && (this._supportedNetworkTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

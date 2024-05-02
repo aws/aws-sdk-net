@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Neptunedata.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Neptunedata.Model
     public partial class SubjectStructure
     {
         private long? _count;
-        private List<string> _predicates = new List<string>();
+        private List<string> _predicates = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Count. 
@@ -69,7 +70,7 @@ namespace Amazon.Neptunedata.Model
         // Check to see if Predicates property is set
         internal bool IsSetPredicates()
         {
-            return this._predicates != null && this._predicates.Count > 0; 
+            return this._predicates != null && (this._predicates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

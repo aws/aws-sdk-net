@@ -41,13 +41,13 @@ namespace Amazon.S3.Model
         /// Enumerable containing all of the S3Objects
         /// </summary>
         public IPaginatedEnumerable<S3Object> S3Objects =>
-            new PaginatedResultKeyResponse<ListObjectsResponse, S3Object>(this, (i) => i.S3Objects);
+            new PaginatedResultKeyResponse<ListObjectsResponse, S3Object>(this, (i) => i.S3Objects ?? new List<S3Object>());
 
         /// <summary>
         /// Enumerable containing all of the CommonPrefixes
         /// </summary>
         public IPaginatedEnumerable<string> CommonPrefixes =>
-            new PaginatedResultKeyResponse<ListObjectsResponse, string>(this, (i) => i.CommonPrefixes);
+            new PaginatedResultKeyResponse<ListObjectsResponse, string>(this, (i) => i.CommonPrefixes ?? new List<string>());
 
         internal ListObjectsPaginator(IAmazonS3 client, ListObjectsRequest request)
         {
@@ -75,7 +75,7 @@ namespace Amazon.S3.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListObjectsResponse> IPaginator<ListObjectsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListObjectsResponse> IPaginator<ListObjectsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

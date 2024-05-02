@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.QuickSight.Model
     {
         private string _message;
         private TemplateErrorType _type;
-        private List<Entity> _violatedEntities = new List<Entity>();
+        private List<Entity> _violatedEntities = AWSConfigs.InitializeCollections ? new List<Entity>() : null;
 
         /// <summary>
         /// Gets and sets the property Message. 
@@ -89,7 +90,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if ViolatedEntities property is set
         internal bool IsSetViolatedEntities()
         {
-            return this._violatedEntities != null && this._violatedEntities.Count > 0; 
+            return this._violatedEntities != null && (this._violatedEntities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

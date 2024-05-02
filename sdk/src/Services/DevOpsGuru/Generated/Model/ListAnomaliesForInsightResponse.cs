@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.DevOpsGuru.Model
     public partial class ListAnomaliesForInsightResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ProactiveAnomalySummary> _proactiveAnomalies = new List<ProactiveAnomalySummary>();
-        private List<ReactiveAnomalySummary> _reactiveAnomalies = new List<ReactiveAnomalySummary>();
+        private List<ProactiveAnomalySummary> _proactiveAnomalies = AWSConfigs.InitializeCollections ? new List<ProactiveAnomalySummary>() : null;
+        private List<ReactiveAnomalySummary> _reactiveAnomalies = AWSConfigs.InitializeCollections ? new List<ReactiveAnomalySummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +74,7 @@ namespace Amazon.DevOpsGuru.Model
         // Check to see if ProactiveAnomalies property is set
         internal bool IsSetProactiveAnomalies()
         {
-            return this._proactiveAnomalies != null && this._proactiveAnomalies.Count > 0; 
+            return this._proactiveAnomalies != null && (this._proactiveAnomalies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.DevOpsGuru.Model
         // Check to see if ReactiveAnomalies property is set
         internal bool IsSetReactiveAnomalies()
         {
-            return this._reactiveAnomalies != null && this._reactiveAnomalies.Count > 0; 
+            return this._reactiveAnomalies != null && (this._reactiveAnomalies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

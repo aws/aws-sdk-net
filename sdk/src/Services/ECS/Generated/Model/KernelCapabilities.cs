@@ -26,20 +26,21 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// The Linux capabilities for the container that are added to or dropped from the default
-    /// configuration provided by Docker. For more information about the default capabilities
-    /// and the non-default available capabilities, see <a href="https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities">Runtime
+    /// The Linux capabilities to add or remove from the default Docker configuration for
+    /// a container defined in the task definition. For more information about the default
+    /// capabilities and the non-default available capabilities, see <a href="https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities">Runtime
     /// privilege and Linux capabilities</a> in the <i>Docker run reference</i>. For more
     /// detailed information about these Linux capabilities, see the <a href="http://man7.org/linux/man-pages/man7/capabilities.7.html">capabilities(7)</a>
     /// Linux manual page.
     /// </summary>
     public partial class KernelCapabilities
     {
-        private List<string> _add = new List<string>();
-        private List<string> _drop = new List<string>();
+        private List<string> _add = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _drop = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Add. 
@@ -74,7 +75,7 @@ namespace Amazon.ECS.Model
         // Check to see if Add property is set
         internal bool IsSetAdd()
         {
-            return this._add != null && this._add.Count > 0; 
+            return this._add != null && (this._add.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -106,7 +107,7 @@ namespace Amazon.ECS.Model
         // Check to see if Drop property is set
         internal bool IsSetDrop()
         {
-            return this._drop != null && this._drop.Count > 0; 
+            return this._drop != null && (this._drop.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LaunchWizard.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.LaunchWizard.Model
     /// </summary>
     public partial class ListDeploymentsRequest : AmazonLaunchWizardRequest
     {
-        private List<DeploymentFilter> _filters = new List<DeploymentFilter>();
+        private List<DeploymentFilter> _filters = AWSConfigs.InitializeCollections ? new List<DeploymentFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -63,7 +64,7 @@ namespace Amazon.LaunchWizard.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Inspector.Model
     /// </summary>
     public partial class DescribeAssessmentTargetsResponse : AmazonWebServiceResponse
     {
-        private List<AssessmentTarget> _assessmentTargets = new List<AssessmentTarget>();
-        private Dictionary<string, FailedItemDetails> _failedItems = new Dictionary<string, FailedItemDetails>();
+        private List<AssessmentTarget> _assessmentTargets = AWSConfigs.InitializeCollections ? new List<AssessmentTarget>() : null;
+        private Dictionary<string, FailedItemDetails> _failedItems = AWSConfigs.InitializeCollections ? new Dictionary<string, FailedItemDetails>() : null;
 
         /// <summary>
         /// Gets and sets the property AssessmentTargets. 
@@ -52,7 +53,7 @@ namespace Amazon.Inspector.Model
         // Check to see if AssessmentTargets property is set
         internal bool IsSetAssessmentTargets()
         {
-            return this._assessmentTargets != null && this._assessmentTargets.Count > 0; 
+            return this._assessmentTargets != null && (this._assessmentTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.Inspector.Model
         // Check to see if FailedItems property is set
         internal bool IsSetFailedItems()
         {
-            return this._failedItems != null && this._failedItems.Count > 0; 
+            return this._failedItems != null && (this._failedItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

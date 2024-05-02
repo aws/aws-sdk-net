@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PaymentCryptographyData.Model
 {
     /// <summary>
@@ -41,10 +42,7 @@ namespace Amazon.PaymentCryptographyData.Model
     /// PIN block data leaving Amazon Web Services Payment Cryptography. The encryption key
     /// transformation can be from PEK (Pin Encryption Key) to BDK (Base Derivation Key) for
     /// DUKPT or from BDK for DUKPT to PEK. Amazon Web Services Payment Cryptography supports
-    /// <c>TDES</c> and <c>AES</c> key derivation type for DUKPT tranlations. You can use
-    /// this operation for P2PE (Point to Point Encryption) use cases where the encryption
-    /// keys should change but the processing system either does not need to, or is not permitted
-    /// to, decrypt the data.
+    /// <c>TDES</c> and <c>AES</c> key derivation type for DUKPT translations. 
     /// </para>
     ///  
     /// <para>
@@ -63,8 +61,9 @@ namespace Amazon.PaymentCryptographyData.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// At this time, Amazon Web Services Payment Cryptography does not support translations
-    /// to PIN format 4.
+    /// Amazon Web Services Payment Cryptography currently supports ISO PIN block 4 translation
+    /// for PIN block built using legacy PAN length. That is, PAN is the right most 12 digits
+    /// excluding the check digits.
     /// </para>
     ///  </note> 
     /// <para>
@@ -117,7 +116,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// <summary>
         /// Gets and sets the property IncomingDukptAttributes. 
         /// <para>
-        /// The attributes and values to use for incoming DUKPT encryption key for PIN block tranlation.
+        /// The attributes and values to use for incoming DUKPT encryption key for PIN block translation.
         /// </para>
         /// </summary>
         public DukptDerivationAttributes IncomingDukptAttributes
@@ -155,7 +154,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// <summary>
         /// Gets and sets the property IncomingTranslationAttributes. 
         /// <para>
-        /// The format of the incoming PIN block data for tranlation within Amazon Web Services
+        /// The format of the incoming PIN block data for translation within Amazon Web Services
         /// Payment Cryptography.
         /// </para>
         /// </summary>
@@ -214,7 +213,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// <summary>
         /// Gets and sets the property OutgoingTranslationAttributes. 
         /// <para>
-        /// The format of the outgoing PIN block data after tranlation by Amazon Web Services
+        /// The format of the outgoing PIN block data after translation by Amazon Web Services
         /// Payment Cryptography.
         /// </para>
         /// </summary>

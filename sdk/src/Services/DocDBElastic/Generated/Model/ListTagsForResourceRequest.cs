@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DocDBElastic.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Lists all tags on a Elastic DocumentDB resource
+    /// Lists all tags on a elastic cluster resource
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonDocDBElasticRequest
     {
@@ -39,7 +40,7 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The arn of the Elastic DocumentDB resource.
+        /// The ARN identifier of the elastic cluster resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]

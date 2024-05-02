@@ -215,7 +215,7 @@ namespace Amazon.S3.Internal.S3Express
                     var item = _cache.FindOldestItem();
                     while (item != null)
                     {
-                        if (_lastRefreshedTime == null)
+                        if (_lastRefreshedTime == DateTime.MinValue)
                         {
                             if (item.LastTouchedTimestamp > item.Value.CreatedAt.AddSeconds(RequestTime))
                                 keysToRefresh.Add(item.Key);

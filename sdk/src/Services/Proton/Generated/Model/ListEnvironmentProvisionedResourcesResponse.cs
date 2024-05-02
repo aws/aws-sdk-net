@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Proton.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Proton.Model
     public partial class ListEnvironmentProvisionedResourcesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ProvisionedResource> _provisionedResources = new List<ProvisionedResource>();
+        private List<ProvisionedResource> _provisionedResources = AWSConfigs.InitializeCollections ? new List<ProvisionedResource>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +74,7 @@ namespace Amazon.Proton.Model
         // Check to see if ProvisionedResources property is set
         internal bool IsSetProvisionedResources()
         {
-            return this._provisionedResources != null && this._provisionedResources.Count > 0; 
+            return this._provisionedResources != null && (this._provisionedResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

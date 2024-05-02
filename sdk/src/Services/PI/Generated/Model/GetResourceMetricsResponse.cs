@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PI.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.PI.Model
         private DateTime? _alignedEndTime;
         private DateTime? _alignedStartTime;
         private string _identifier;
-        private List<MetricKeyDataPoints> _metricList = new List<MetricKeyDataPoints>();
+        private List<MetricKeyDataPoints> _metricList = AWSConfigs.InitializeCollections ? new List<MetricKeyDataPoints>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -117,7 +118,7 @@ namespace Amazon.PI.Model
         // Check to see if MetricList property is set
         internal bool IsSetMetricList()
         {
-            return this._metricList != null && this._metricList.Count > 0; 
+            return this._metricList != null && (this._metricList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

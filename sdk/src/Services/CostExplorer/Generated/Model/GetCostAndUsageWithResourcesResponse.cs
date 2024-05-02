@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
@@ -33,10 +34,10 @@ namespace Amazon.CostExplorer.Model
     /// </summary>
     public partial class GetCostAndUsageWithResourcesResponse : AmazonWebServiceResponse
     {
-        private List<DimensionValuesWithAttributes> _dimensionValueAttributes = new List<DimensionValuesWithAttributes>();
-        private List<GroupDefinition> _groupDefinitions = new List<GroupDefinition>();
+        private List<DimensionValuesWithAttributes> _dimensionValueAttributes = AWSConfigs.InitializeCollections ? new List<DimensionValuesWithAttributes>() : null;
+        private List<GroupDefinition> _groupDefinitions = AWSConfigs.InitializeCollections ? new List<GroupDefinition>() : null;
         private string _nextPageToken;
-        private List<ResultByTime> _resultsByTime = new List<ResultByTime>();
+        private List<ResultByTime> _resultsByTime = AWSConfigs.InitializeCollections ? new List<ResultByTime>() : null;
 
         /// <summary>
         /// Gets and sets the property DimensionValueAttributes. 
@@ -54,7 +55,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if DimensionValueAttributes property is set
         internal bool IsSetDimensionValueAttributes()
         {
-            return this._dimensionValueAttributes != null && this._dimensionValueAttributes.Count > 0; 
+            return this._dimensionValueAttributes != null && (this._dimensionValueAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if GroupDefinitions property is set
         internal bool IsSetGroupDefinitions()
         {
-            return this._groupDefinitions != null && this._groupDefinitions.Count > 0; 
+            return this._groupDefinitions != null && (this._groupDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -112,7 +113,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if ResultsByTime property is set
         internal bool IsSetResultsByTime()
         {
-            return this._resultsByTime != null && this._resultsByTime.Count > 0; 
+            return this._resultsByTime != null && (this._resultsByTime.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

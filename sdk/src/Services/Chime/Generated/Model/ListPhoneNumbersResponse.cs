@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Chime.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Chime.Model
     public partial class ListPhoneNumbersResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PhoneNumber> _phoneNumbers = new List<PhoneNumber>();
+        private List<PhoneNumber> _phoneNumbers = AWSConfigs.InitializeCollections ? new List<PhoneNumber>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +70,7 @@ namespace Amazon.Chime.Model
         // Check to see if PhoneNumbers property is set
         internal bool IsSetPhoneNumbers()
         {
-            return this._phoneNumbers != null && this._phoneNumbers.Count > 0; 
+            return this._phoneNumbers != null && (this._phoneNumbers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

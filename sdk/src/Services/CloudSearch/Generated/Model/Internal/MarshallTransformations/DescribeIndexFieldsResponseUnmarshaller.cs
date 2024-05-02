@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -84,6 +85,10 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("IndexFields/member", targetDepth))
                     {
                         var unmarshaller = IndexFieldStatusUnmarshaller.Instance;
+                        if (response.IndexFields == null)
+                        {
+                            response.IndexFields = new List<IndexFieldStatus>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.IndexFields.Add(item);
                         continue;

@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -63,6 +64,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AttachedManagedPolicies/member", targetDepth))
                     {
                         var unmarshaller = AttachedPolicyTypeUnmarshaller.Instance;
+                        if (unmarshalledObject.AttachedManagedPolicies == null)
+                        {
+                            unmarshalledObject.AttachedManagedPolicies = new List<AttachedPolicyType>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AttachedManagedPolicies.Add(item);
                         continue;
@@ -88,6 +93,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("GroupPolicyList/member", targetDepth))
                     {
                         var unmarshaller = PolicyDetailUnmarshaller.Instance;
+                        if (unmarshalledObject.GroupPolicyList == null)
+                        {
+                            unmarshalledObject.GroupPolicyList = new List<PolicyDetail>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.GroupPolicyList.Add(item);
                         continue;

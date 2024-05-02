@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -84,6 +85,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ApplicationVersions/member", targetDepth))
                     {
                         var unmarshaller = ApplicationVersionDescriptionUnmarshaller.Instance;
+                        if (response.ApplicationVersions == null)
+                        {
+                            response.ApplicationVersions = new List<ApplicationVersionDescription>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ApplicationVersions.Add(item);
                         continue;

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class InstanceStorageInfo
     {
-        private List<DiskInfo> _disks = new List<DiskInfo>();
+        private List<DiskInfo> _disks = AWSConfigs.InitializeCollections ? new List<DiskInfo>() : null;
         private InstanceStorageEncryptionSupport _encryptionSupport;
         private EphemeralNvmeSupport _nvmeSupport;
         private long? _totalSizeInGB;
@@ -53,7 +54,7 @@ namespace Amazon.EC2.Model
         // Check to see if Disks property is set
         internal bool IsSetDisks()
         {
-            return this._disks != null && this._disks.Count > 0; 
+            return this._disks != null && (this._disks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class SpaceJupyterLabAppSettings
     {
-        private List<CodeRepository> _codeRepositories = new List<CodeRepository>();
+        private List<CodeRepository> _codeRepositories = AWSConfigs.InitializeCollections ? new List<CodeRepository>() : null;
         private ResourceSpec _defaultResourceSpec;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if CodeRepositories property is set
         internal bool IsSetCodeRepositories()
         {
-            return this._codeRepositories != null && this._codeRepositories.Count > 0; 
+            return this._codeRepositories != null && (this._codeRepositories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

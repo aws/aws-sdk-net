@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
@@ -33,18 +34,18 @@ namespace Amazon.AmplifyUIBuilder.Model
     /// </summary>
     public partial class UpdateComponentData
     {
-        private Dictionary<string, ComponentBindingPropertiesValue> _bindingProperties = new Dictionary<string, ComponentBindingPropertiesValue>();
-        private List<ComponentChild> _children = new List<ComponentChild>();
-        private Dictionary<string, ComponentDataConfiguration> _collectionProperties = new Dictionary<string, ComponentDataConfiguration>();
+        private Dictionary<string, ComponentBindingPropertiesValue> _bindingProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, ComponentBindingPropertiesValue>() : null;
+        private List<ComponentChild> _children = AWSConfigs.InitializeCollections ? new List<ComponentChild>() : null;
+        private Dictionary<string, ComponentDataConfiguration> _collectionProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, ComponentDataConfiguration>() : null;
         private string _componentType;
-        private Dictionary<string, ComponentEvent> _events = new Dictionary<string, ComponentEvent>();
+        private Dictionary<string, ComponentEvent> _events = AWSConfigs.InitializeCollections ? new Dictionary<string, ComponentEvent>() : null;
         private string _id;
         private string _name;
-        private Dictionary<string, Dictionary<string, string>> _overrides = new Dictionary<string, Dictionary<string, string>>();
-        private Dictionary<string, ComponentProperty> _properties = new Dictionary<string, ComponentProperty>();
+        private Dictionary<string, Dictionary<string, string>> _overrides = AWSConfigs.InitializeCollections ? new Dictionary<string, Dictionary<string, string>>() : null;
+        private Dictionary<string, ComponentProperty> _properties = AWSConfigs.InitializeCollections ? new Dictionary<string, ComponentProperty>() : null;
         private string _schemaVersion;
         private string _sourceId;
-        private List<ComponentVariant> _variants = new List<ComponentVariant>();
+        private List<ComponentVariant> _variants = AWSConfigs.InitializeCollections ? new List<ComponentVariant>() : null;
 
         /// <summary>
         /// Gets and sets the property BindingProperties. 
@@ -61,7 +62,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if BindingProperties property is set
         internal bool IsSetBindingProperties()
         {
-            return this._bindingProperties != null && this._bindingProperties.Count > 0; 
+            return this._bindingProperties != null && (this._bindingProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -79,7 +80,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if Children property is set
         internal bool IsSetChildren()
         {
-            return this._children != null && this._children.Count > 0; 
+            return this._children != null && (this._children.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -98,7 +99,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if CollectionProperties property is set
         internal bool IsSetCollectionProperties()
         {
-            return this._collectionProperties != null && this._collectionProperties.Count > 0; 
+            return this._collectionProperties != null && (this._collectionProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -137,7 +138,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if Events property is set
         internal bool IsSetEvents()
         {
-            return this._events != null && this._events.Count > 0; 
+            return this._events != null && (this._events.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -192,7 +193,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if Overrides property is set
         internal bool IsSetOverrides()
         {
-            return this._overrides != null && this._overrides.Count > 0; 
+            return this._overrides != null && (this._overrides.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -210,7 +211,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if Properties property is set
         internal bool IsSetProperties()
         {
-            return this._properties != null && this._properties.Count > 0; 
+            return this._properties != null && (this._properties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -264,7 +265,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if Variants property is set
         internal bool IsSetVariants()
         {
-            return this._variants != null && this._variants.Count > 0; 
+            return this._variants != null && (this._variants.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

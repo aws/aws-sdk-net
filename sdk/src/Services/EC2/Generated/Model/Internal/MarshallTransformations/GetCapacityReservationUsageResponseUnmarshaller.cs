@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -76,6 +77,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("instanceUsageSet/item", targetDepth))
                     {
                         var unmarshaller = InstanceUsageUnmarshaller.Instance;
+                        if (response.InstanceUsages == null)
+                        {
+                            response.InstanceUsages = new List<InstanceUsage>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.InstanceUsages.Add(item);
                         continue;

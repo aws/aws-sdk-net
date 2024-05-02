@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
@@ -35,9 +36,9 @@ namespace Amazon.IdentityManagement.Model
     {
         private bool? _isTruncated;
         private string _marker;
-        private List<PolicyGroup> _policyGroups = new List<PolicyGroup>();
-        private List<PolicyRole> _policyRoles = new List<PolicyRole>();
-        private List<PolicyUser> _policyUsers = new List<PolicyUser>();
+        private List<PolicyGroup> _policyGroups = AWSConfigs.InitializeCollections ? new List<PolicyGroup>() : null;
+        private List<PolicyRole> _policyRoles = AWSConfigs.InitializeCollections ? new List<PolicyRole>() : null;
+        private List<PolicyUser> _policyUsers = AWSConfigs.InitializeCollections ? new List<PolicyUser>() : null;
 
         /// <summary>
         /// Gets and sets the property IsTruncated. 
@@ -95,7 +96,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if PolicyGroups property is set
         internal bool IsSetPolicyGroups()
         {
-            return this._policyGroups != null && this._policyGroups.Count > 0; 
+            return this._policyGroups != null && (this._policyGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -113,7 +114,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if PolicyRoles property is set
         internal bool IsSetPolicyRoles()
         {
-            return this._policyRoles != null && this._policyRoles.Count > 0; 
+            return this._policyRoles != null && (this._policyRoles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -131,7 +132,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if PolicyUsers property is set
         internal bool IsSetPolicyUsers()
         {
-            return this._policyUsers != null && this._policyUsers.Count > 0; 
+            return this._policyUsers != null && (this._policyUsers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

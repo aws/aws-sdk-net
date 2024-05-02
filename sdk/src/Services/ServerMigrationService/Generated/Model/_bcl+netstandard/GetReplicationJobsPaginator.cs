@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ServerMigrationService.Model
         /// Enumerable containing all of the ReplicationJobList
         /// </summary>
         public IPaginatedEnumerable<ReplicationJob> ReplicationJobList => 
-            new PaginatedResultKeyResponse<GetReplicationJobsResponse, ReplicationJob>(this, (i) => i.ReplicationJobList);
+            new PaginatedResultKeyResponse<GetReplicationJobsResponse, ReplicationJob>(this, (i) => i.ReplicationJobList ?? new List<ReplicationJob>());
 
         internal GetReplicationJobsPaginator(IAmazonServerMigrationService client, GetReplicationJobsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ServerMigrationService.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<GetReplicationJobsResponse> IPaginator<GetReplicationJobsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<GetReplicationJobsResponse> IPaginator<GetReplicationJobsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

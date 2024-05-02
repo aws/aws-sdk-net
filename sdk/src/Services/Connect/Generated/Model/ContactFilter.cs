@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class ContactFilter
     {
-        private List<string> _contactStates = new List<string>();
+        private List<string> _contactStates = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ContactStates. 
@@ -54,7 +55,7 @@ namespace Amazon.Connect.Model
         // Check to see if ContactStates property is set
         internal bool IsSetContactStates()
         {
-            return this._contactStates != null && this._contactStates.Count > 0; 
+            return this._contactStates != null && (this._contactStates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

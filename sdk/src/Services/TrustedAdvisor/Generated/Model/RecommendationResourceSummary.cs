@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.TrustedAdvisor.Model
 {
     /// <summary>
@@ -35,9 +36,10 @@ namespace Amazon.TrustedAdvisor.Model
     {
         private string _arn;
         private string _awsResourceId;
+        private ExclusionStatus _exclusionStatus;
         private string _id;
         private DateTime? _lastUpdatedAt;
-        private Dictionary<string, string> _metadata = new Dictionary<string, string>();
+        private Dictionary<string, string> _metadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _recommendationArn;
         private string _regionCode;
         private ResourceStatus _status;
@@ -78,6 +80,24 @@ namespace Amazon.TrustedAdvisor.Model
         internal bool IsSetAwsResourceId()
         {
             return this._awsResourceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExclusionStatus. 
+        /// <para>
+        /// The exclusion status of the Recommendation Resource
+        /// </para>
+        /// </summary>
+        public ExclusionStatus ExclusionStatus
+        {
+            get { return this._exclusionStatus; }
+            set { this._exclusionStatus = value; }
+        }
+
+        // Check to see if ExclusionStatus property is set
+        internal bool IsSetExclusionStatus()
+        {
+            return this._exclusionStatus != null;
         }
 
         /// <summary>
@@ -134,7 +154,7 @@ namespace Amazon.TrustedAdvisor.Model
         // Check to see if Metadata property is set
         internal bool IsSetMetadata()
         {
-            return this._metadata != null && this._metadata.Count > 0; 
+            return this._metadata != null && (this._metadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

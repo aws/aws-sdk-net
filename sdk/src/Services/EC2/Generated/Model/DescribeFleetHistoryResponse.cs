@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EC2.Model
     public partial class DescribeFleetHistoryResponse : AmazonWebServiceResponse
     {
         private string _fleetId;
-        private List<HistoryRecordEntry> _historyRecords = new List<HistoryRecordEntry>();
+        private List<HistoryRecordEntry> _historyRecords = AWSConfigs.InitializeCollections ? new List<HistoryRecordEntry>() : null;
         private DateTime? _lastEvaluatedTime;
         private string _nextToken;
         private DateTime? _startTime;
@@ -72,7 +73,7 @@ namespace Amazon.EC2.Model
         // Check to see if HistoryRecords property is set
         internal bool IsSetHistoryRecords()
         {
-            return this._historyRecords != null && this._historyRecords.Count > 0; 
+            return this._historyRecords != null && (this._historyRecords.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

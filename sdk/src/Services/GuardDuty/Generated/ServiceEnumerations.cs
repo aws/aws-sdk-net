@@ -883,6 +883,10 @@ namespace Amazon.GuardDuty
     {
 
         /// <summary>
+        /// Constant EC2_AGENT_MANAGEMENT for FeatureAdditionalConfiguration
+        /// </summary>
+        public static readonly FeatureAdditionalConfiguration EC2_AGENT_MANAGEMENT = new FeatureAdditionalConfiguration("EC2_AGENT_MANAGEMENT");
+        /// <summary>
         /// Constant ECS_FARGATE_AGENT_MANAGEMENT for FeatureAdditionalConfiguration
         /// </summary>
         public static readonly FeatureAdditionalConfiguration ECS_FARGATE_AGENT_MANAGEMENT = new FeatureAdditionalConfiguration("ECS_FARGATE_AGENT_MANAGEMENT");
@@ -1579,6 +1583,10 @@ namespace Amazon.GuardDuty
     {
 
         /// <summary>
+        /// Constant EC2_AGENT_MANAGEMENT for OrgFeatureAdditionalConfiguration
+        /// </summary>
+        public static readonly OrgFeatureAdditionalConfiguration EC2_AGENT_MANAGEMENT = new OrgFeatureAdditionalConfiguration("EC2_AGENT_MANAGEMENT");
+        /// <summary>
         /// Constant ECS_FARGATE_AGENT_MANAGEMENT for OrgFeatureAdditionalConfiguration
         /// </summary>
         public static readonly OrgFeatureAdditionalConfiguration ECS_FARGATE_AGENT_MANAGEMENT = new OrgFeatureAdditionalConfiguration("ECS_FARGATE_AGENT_MANAGEMENT");
@@ -2274,6 +2282,14 @@ namespace Amazon.GuardDuty
         /// Constant LAMBDA_NETWORK_LOGS for UsageFeature
         /// </summary>
         public static readonly UsageFeature LAMBDA_NETWORK_LOGS = new UsageFeature("LAMBDA_NETWORK_LOGS");
+        /// <summary>
+        /// Constant RDS_DBI_PROTECTION_PROVISIONED for UsageFeature
+        /// </summary>
+        public static readonly UsageFeature RDS_DBI_PROTECTION_PROVISIONED = new UsageFeature("RDS_DBI_PROTECTION_PROVISIONED");
+        /// <summary>
+        /// Constant RDS_DBI_PROTECTION_SERVERLESS for UsageFeature
+        /// </summary>
+        public static readonly UsageFeature RDS_DBI_PROTECTION_SERVERLESS = new UsageFeature("RDS_DBI_PROTECTION_SERVERLESS");
         /// <summary>
         /// Constant RDS_LOGIN_EVENTS for UsageFeature
         /// </summary>

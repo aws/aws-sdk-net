@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class FreeFormSectionLayoutConfiguration
     {
-        private List<FreeFormLayoutElement> _elements = new List<FreeFormLayoutElement>();
+        private List<FreeFormLayoutElement> _elements = AWSConfigs.InitializeCollections ? new List<FreeFormLayoutElement>() : null;
 
         /// <summary>
         /// Gets and sets the property Elements. 
@@ -51,7 +52,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Elements property is set
         internal bool IsSetElements()
         {
-            return this._elements != null && this._elements.Count > 0; 
+            return this._elements != null && (this._elements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

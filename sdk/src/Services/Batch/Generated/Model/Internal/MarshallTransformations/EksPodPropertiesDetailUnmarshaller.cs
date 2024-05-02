@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -81,6 +82,18 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.HostNetwork = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("imagePullSecrets", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ImagePullSecret, ImagePullSecretUnmarshaller>(ImagePullSecretUnmarshaller.Instance);
+                    unmarshalledObject.ImagePullSecrets = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("initContainers", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<EksContainerDetail, EksContainerDetailUnmarshaller>(EksContainerDetailUnmarshaller.Instance);
+                    unmarshalledObject.InitContainers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("metadata", targetDepth))
                 {
                     var unmarshaller = EksMetadataUnmarshaller.Instance;
@@ -103,6 +116,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ServiceAccountName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("shareProcessNamespace", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.ShareProcessNamespace = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("volumes", targetDepth))

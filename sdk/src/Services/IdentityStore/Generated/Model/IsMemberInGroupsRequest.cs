@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IdentityStore.Model
 {
     /// <summary>
@@ -43,7 +44,7 @@ namespace Amazon.IdentityStore.Model
     /// </summary>
     public partial class IsMemberInGroupsRequest : AmazonIdentityStoreRequest
     {
-        private List<string> _groupIds = new List<string>();
+        private List<string> _groupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _identityStoreId;
         private MemberId _memberId;
 
@@ -63,7 +64,7 @@ namespace Amazon.IdentityStore.Model
         // Check to see if GroupIds property is set
         internal bool IsSetGroupIds()
         {
-            return this._groupIds != null && this._groupIds.Count > 0; 
+            return this._groupIds != null && (this._groupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

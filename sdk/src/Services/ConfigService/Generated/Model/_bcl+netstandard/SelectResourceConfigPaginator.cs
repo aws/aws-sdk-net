@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ConfigService.Model
         /// Enumerable containing all of the Results
         /// </summary>
         public IPaginatedEnumerable<string> Results => 
-            new PaginatedResultKeyResponse<SelectResourceConfigResponse, string>(this, (i) => i.Results);
+            new PaginatedResultKeyResponse<SelectResourceConfigResponse, string>(this, (i) => i.Results ?? new List<string>());
 
         internal SelectResourceConfigPaginator(IAmazonConfigService client, SelectResourceConfigRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ConfigService.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<SelectResourceConfigResponse> IPaginator<SelectResourceConfigResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<SelectResourceConfigResponse> IPaginator<SelectResourceConfigResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

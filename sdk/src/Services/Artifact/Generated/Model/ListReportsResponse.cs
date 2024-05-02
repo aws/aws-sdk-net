@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Artifact.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Artifact.Model
     public partial class ListReportsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ReportSummary> _reports = new List<ReportSummary>();
+        private List<ReportSummary> _reports = AWSConfigs.InitializeCollections ? new List<ReportSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.Artifact.Model
         // Check to see if Reports property is set
         internal bool IsSetReports()
         {
-            return this._reports != null && this._reports.Count > 0; 
+            return this._reports != null && (this._reports.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

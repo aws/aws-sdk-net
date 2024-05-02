@@ -26,6 +26,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.CodeArtifact.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.CodeArtifact
 {
     /// <summary>
@@ -41,21 +42,17 @@ namespace Amazon.CodeArtifact
     /// 
     ///  
     /// <para>
-    ///  <b>CodeArtifact Components</b> 
-    /// </para>
-    ///  
-    /// <para>
-    /// Use the information in this guide to help you work with the following CodeArtifact
-    /// components:
+    ///  <b>CodeArtifact concepts</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <b>Repository</b>: A CodeArtifact repository contains a set of <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/welcome.html#welcome-concepts-package-version">package
     /// versions</a>, each of which maps to a set of assets, or files. Repositories are polyglot,
     /// so a single repository can contain packages of any supported type. Each repository
-    /// exposes endpoints for fetching and publishing packages using tools like the <b> <c>npm</c>
-    /// </b> CLI, the Maven CLI (<b> <c>mvn</c> </b>), Python CLIs (<b> <c>pip</c> </b> and
-    /// <c>twine</c>), and NuGet CLIs (<c>nuget</c> and <c>dotnet</c>).
+    /// exposes endpoints for fetching and publishing packages using tools such as the <b>
+    /// <c>npm</c> </b> CLI or the Maven CLI (<b> <c>mvn</c> </b>). For a list of supported
+    /// package managers, see the <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/welcome.html">CodeArtifact
+    /// User Guide</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -85,11 +82,10 @@ namespace Amazon.CodeArtifact
     ///  </li> <li> 
     /// <para>
     ///  <b>Package</b>: A <i>package</i> is a bundle of software and the metadata required
-    /// to resolve dependencies and install the software. CodeArtifact supports <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-npm.html">npm</a>,
-    /// <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-python.html">PyPI</a>,
-    /// <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-maven">Maven</a>,
-    /// and <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-nuget">NuGet</a>
-    /// package formats.
+    /// to resolve dependencies and install the software. CodeArtifact supports npm, PyPI,
+    /// Maven, NuGet, Swift, Ruby, and generic package formats. For more information about
+    /// the supported package formats and how to use CodeArtifact with them, see the <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/welcome.html">CodeArtifact
+    /// User Guide</a>.
     /// </para>
     ///  
     /// <para>
@@ -113,6 +109,16 @@ namespace Amazon.CodeArtifact
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
+    ///  <b>Package group</b>: A group of packages that match a specified definition. Package
+    /// groups can be used to apply configuration to multiple packages that match a defined
+    /// pattern using package format, package namespace, and package name. You can use package
+    /// groups to more conveniently configure package origin controls for multiple packages.
+    /// Package origin controls are used to block or allow ingestion or publishing of new
+    /// package versions, which protects users from malicious actions known as dependency
+    /// substitution attacks.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <b>Package version</b>: A version of a package, such as <c>@types/node 12.6.9</c>.
     /// The version number format and semantics vary for different package formats. For example,
     /// npm package versions must conform to the <a href="https://semver.org/">Semantic Versioning
@@ -134,7 +140,7 @@ namespace Amazon.CodeArtifact
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// CodeArtifact supports these operations:
+    ///  <b>CodeArtifact supported API operations</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -148,7 +154,11 @@ namespace Amazon.CodeArtifact
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <c>CreateDomain</c>: Creates a domain
+    ///  <c>CreateDomain</c>: Creates a domain.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>CreatePackageGroup</c>: Creates a package group.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -167,6 +177,11 @@ namespace Amazon.CodeArtifact
     ///  </li> <li> 
     /// <para>
     ///  <c>DeletePackage</c>: Deletes a package and all associated package versions.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>DeletePackageGroup</c>: Deletes a package group. Does not delete packages or package
+    /// versions that are associated with a package group.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -195,6 +210,11 @@ namespace Amazon.CodeArtifact
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <c>DescribePackageGroup</c>: Returns a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageGroup.html">PackageGroup</a>
+    /// object that contains details about a package group. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <c>DescribePackageVersion</c>: Returns a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a>
     /// object that contains details about a package version. 
     /// </para>
@@ -213,6 +233,11 @@ namespace Amazon.CodeArtifact
     /// <para>
     ///  <c>DisassociateExternalConnection</c>: Removes an existing external connection from
     /// a repository. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>GetAssociatedPackageGroup</c>: Returns the most closely associated package group
+    /// to the specified package.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -243,6 +268,10 @@ namespace Amazon.CodeArtifact
     /// </para>
     ///  <ul> <li> 
     /// <para>
+    ///  <c>generic</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <c>maven</c> 
     /// </para>
     ///  </li> <li> 
@@ -257,10 +286,28 @@ namespace Amazon.CodeArtifact
     /// <para>
     ///  <c>pypi</c> 
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>ruby</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>swift</c> 
+    /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
     ///  <c>GetRepositoryPermissionsPolicy</c>: Returns the resource policy that is set on
     /// a repository. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>ListAllowedRepositoriesForGroup</c>: Lists the allowed repositories for a package
+    /// group that has origin configuration set to <c>ALLOW_SPECIFIC_REPOSITORIES</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>ListAssociatedPackages</c>: Returns a list of packages associated with the requested
+    /// package group.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -270,6 +317,10 @@ namespace Amazon.CodeArtifact
     ///  </li> <li> 
     /// <para>
     ///  <c>ListPackages</c>: Lists the packages in a repository.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>ListPackageGroups</c>: Returns a list of package groups in the requested domain.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -296,6 +347,11 @@ namespace Amazon.CodeArtifact
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <c>ListSubPackageGroups</c>: Returns a list of direct children of the specified package
+    /// group.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <c>PublishPackageVersion</c>: Creates a new package version containing one or more
     /// assets.
     /// </para>
@@ -313,6 +369,16 @@ namespace Amazon.CodeArtifact
     /// <para>
     ///  <c>PutRepositoryPermissionsPolicy</c>: Sets the resource policy on a repository that
     /// specifies permissions to access it. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>UpdatePackageGroup</c>: Updates a package group. This API cannot be used to update
+    /// a package group's origin configuration or pattern.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>UpdatePackageGroupOriginConfiguration</c>: Updates the package origin configuration
+    /// for a package group.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -486,6 +552,50 @@ namespace Amazon.CodeArtifact
 
         #endregion
                 
+        #region  CreatePackageGroup
+
+
+
+        /// <summary>
+        /// Creates a package group. For more information about creating package groups, including
+        /// example CLI commands, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/create-package-group.html">Create
+        /// a package group</a> in the <i>CodeArtifact User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePackageGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePackageGroup service method, as returned by CodeArtifact.</returns>
+        /// <exception cref="Amazon.CodeArtifact.Model.AccessDeniedException">
+        /// The operation did not succeed because of an unauthorized access attempt.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ConflictException">
+        /// The operation did not succeed because prerequisites are not met.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
+        /// The operation did not succeed because the resource requested is not found in the
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ServiceQuotaExceededException">
+        /// The operation did not succeed because it would have exceeded a service limit for
+        /// your account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
+        /// The operation did not succeed because too many requests are sent to the service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ValidationException">
+        /// The operation did not succeed because a parameter in the request was sent with an
+        /// invalid value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/CreatePackageGroup">REST API Reference for CreatePackageGroup Operation</seealso>
+        Task<CreatePackageGroupResponse> CreatePackageGroupAsync(CreatePackageGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateRepository
 
 
@@ -638,6 +748,52 @@ namespace Amazon.CodeArtifact
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DeletePackage">REST API Reference for DeletePackage Operation</seealso>
         Task<DeletePackageResponse> DeletePackageAsync(DeletePackageRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeletePackageGroup
+
+
+
+        /// <summary>
+        /// Deletes a package group. Deleting a package group does not delete packages or package
+        /// versions associated with the package group. When a package group is deleted, the direct
+        /// child package groups will become children of the package group's direct parent package
+        /// group. Therefore, if any of the child groups are inheriting any settings from the
+        /// parent, those settings could change.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePackageGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePackageGroup service method, as returned by CodeArtifact.</returns>
+        /// <exception cref="Amazon.CodeArtifact.Model.AccessDeniedException">
+        /// The operation did not succeed because of an unauthorized access attempt.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ConflictException">
+        /// The operation did not succeed because prerequisites are not met.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
+        /// The operation did not succeed because the resource requested is not found in the
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ServiceQuotaExceededException">
+        /// The operation did not succeed because it would have exceeded a service limit for
+        /// your account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
+        /// The operation did not succeed because too many requests are sent to the service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ValidationException">
+        /// The operation did not succeed because a parameter in the request was sent with an
+        /// invalid value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DeletePackageGroup">REST API Reference for DeletePackageGroup Operation</seealso>
+        Task<DeletePackageGroupResponse> DeletePackageGroupAsync(DeletePackageGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -842,6 +998,42 @@ namespace Amazon.CodeArtifact
 
         #endregion
                 
+        #region  DescribePackageGroup
+
+
+
+        /// <summary>
+        /// Returns a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageGroupDescription.html">PackageGroupDescription</a>
+        /// object that contains information about the requested package group.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePackageGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribePackageGroup service method, as returned by CodeArtifact.</returns>
+        /// <exception cref="Amazon.CodeArtifact.Model.AccessDeniedException">
+        /// The operation did not succeed because of an unauthorized access attempt.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
+        /// The operation did not succeed because the resource requested is not found in the
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
+        /// The operation did not succeed because too many requests are sent to the service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ValidationException">
+        /// The operation did not succeed because a parameter in the request was sent with an
+        /// invalid value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DescribePackageGroup">REST API Reference for DescribePackageGroup Operation</seealso>
+        Task<DescribePackageGroupResponse> DescribePackageGroupAsync(DescribePackageGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DescribePackageVersion
 
 
@@ -1008,6 +1200,48 @@ namespace Amazon.CodeArtifact
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DisposePackageVersions">REST API Reference for DisposePackageVersions Operation</seealso>
         Task<DisposePackageVersionsResponse> DisposePackageVersionsAsync(DisposePackageVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetAssociatedPackageGroup
+
+
+
+        /// <summary>
+        /// Returns the most closely associated package group to the specified package. This API
+        /// does not require that the package exist in any repository in the domain. As such,
+        /// <c>GetAssociatedPackageGroup</c> can be used to see which package group's origin configuration
+        /// applies to a package before that package is in a repository. This can be helpful to
+        /// check if public packages are blocked without ingesting them.
+        /// 
+        ///  
+        /// <para>
+        /// For information package group association and matching, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-definition-syntax-matching-behavior.html">Package
+        /// group definition syntax and matching behavior</a> in the <i>CodeArtifact User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAssociatedPackageGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAssociatedPackageGroup service method, as returned by CodeArtifact.</returns>
+        /// <exception cref="Amazon.CodeArtifact.Model.AccessDeniedException">
+        /// The operation did not succeed because of an unauthorized access attempt.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
+        /// The operation did not succeed because the resource requested is not found in the
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ValidationException">
+        /// The operation did not succeed because a parameter in the request was sent with an
+        /// invalid value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/GetAssociatedPackageGroup">REST API Reference for GetAssociatedPackageGroup Operation</seealso>
+        Task<GetAssociatedPackageGroupResponse> GetAssociatedPackageGroupAsync(GetAssociatedPackageGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1208,6 +1442,10 @@ namespace Amazon.CodeArtifact
         /// 
         ///  <ul> <li> 
         /// <para>
+        ///  <c>generic</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>maven</c> 
         /// </para>
         ///  </li> <li> 
@@ -1221,6 +1459,14 @@ namespace Amazon.CodeArtifact
         ///  </li> <li> 
         /// <para>
         ///  <c>pypi</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ruby</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>swift</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1287,6 +1533,82 @@ namespace Amazon.CodeArtifact
 
         #endregion
                 
+        #region  ListAllowedRepositoriesForGroup
+
+
+
+        /// <summary>
+        /// Lists the repositories in the added repositories list of the specified restriction
+        /// type for a package group. For more information about restriction types and added repository
+        /// lists, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-origin-controls.html">Package
+        /// group origin controls</a> in the <i>CodeArtifact User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAllowedRepositoriesForGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAllowedRepositoriesForGroup service method, as returned by CodeArtifact.</returns>
+        /// <exception cref="Amazon.CodeArtifact.Model.AccessDeniedException">
+        /// The operation did not succeed because of an unauthorized access attempt.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
+        /// The operation did not succeed because the resource requested is not found in the
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ServiceQuotaExceededException">
+        /// The operation did not succeed because it would have exceeded a service limit for
+        /// your account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
+        /// The operation did not succeed because too many requests are sent to the service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ValidationException">
+        /// The operation did not succeed because a parameter in the request was sent with an
+        /// invalid value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListAllowedRepositoriesForGroup">REST API Reference for ListAllowedRepositoriesForGroup Operation</seealso>
+        Task<ListAllowedRepositoriesForGroupResponse> ListAllowedRepositoriesForGroupAsync(ListAllowedRepositoriesForGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListAssociatedPackages
+
+
+
+        /// <summary>
+        /// Returns a list of packages associated with the requested package group. For information
+        /// package group association and matching, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-definition-syntax-matching-behavior.html">Package
+        /// group definition syntax and matching behavior</a> in the <i>CodeArtifact User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssociatedPackages service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAssociatedPackages service method, as returned by CodeArtifact.</returns>
+        /// <exception cref="Amazon.CodeArtifact.Model.AccessDeniedException">
+        /// The operation did not succeed because of an unauthorized access attempt.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
+        /// The operation did not succeed because the resource requested is not found in the
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ValidationException">
+        /// The operation did not succeed because a parameter in the request was sent with an
+        /// invalid value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListAssociatedPackages">REST API Reference for ListAssociatedPackages Operation</seealso>
+        Task<ListAssociatedPackagesResponse> ListAssociatedPackagesAsync(ListAssociatedPackagesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListDomains
 
 
@@ -1317,6 +1639,41 @@ namespace Amazon.CodeArtifact
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListDomains">REST API Reference for ListDomains Operation</seealso>
         Task<ListDomainsResponse> ListDomainsAsync(ListDomainsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListPackageGroups
+
+
+
+        /// <summary>
+        /// Returns a list of package groups in the requested domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPackageGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPackageGroups service method, as returned by CodeArtifact.</returns>
+        /// <exception cref="Amazon.CodeArtifact.Model.AccessDeniedException">
+        /// The operation did not succeed because of an unauthorized access attempt.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
+        /// The operation did not succeed because the resource requested is not found in the
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
+        /// The operation did not succeed because too many requests are sent to the service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ValidationException">
+        /// The operation did not succeed because a parameter in the request was sent with an
+        /// invalid value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListPackageGroups">REST API Reference for ListPackageGroups Operation</seealso>
+        Task<ListPackageGroupsResponse> ListPackageGroupsAsync(ListPackageGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1537,6 +1894,47 @@ namespace Amazon.CodeArtifact
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListRepositoriesInDomain">REST API Reference for ListRepositoriesInDomain Operation</seealso>
         Task<ListRepositoriesInDomainResponse> ListRepositoriesInDomainAsync(ListRepositoriesInDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListSubPackageGroups
+
+
+
+        /// <summary>
+        /// Returns a list of direct children of the specified package group.
+        /// 
+        ///  
+        /// <para>
+        /// For information package group hierarchy, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-definition-syntax-matching-behavior.html">Package
+        /// group definition syntax and matching behavior</a> in the <i>CodeArtifact User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSubPackageGroups service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSubPackageGroups service method, as returned by CodeArtifact.</returns>
+        /// <exception cref="Amazon.CodeArtifact.Model.AccessDeniedException">
+        /// The operation did not succeed because of an unauthorized access attempt.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
+        /// The operation did not succeed because the resource requested is not found in the
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
+        /// The operation did not succeed because too many requests are sent to the service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ValidationException">
+        /// The operation did not succeed because a parameter in the request was sent with an
+        /// invalid value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListSubPackageGroups">REST API Reference for ListSubPackageGroups Operation</seealso>
+        Task<ListSubPackageGroupsResponse> ListSubPackageGroupsAsync(ListSubPackageGroupsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1854,6 +2252,96 @@ namespace Amazon.CodeArtifact
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdatePackageGroup
+
+
+
+        /// <summary>
+        /// Updates a package group. This API cannot be used to update a package group's origin
+        /// configuration or pattern. To update a package group's origin configuration, use <a
+        /// href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageGroupOriginConfiguration.html">UpdatePackageGroupOriginConfiguration</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePackageGroup service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePackageGroup service method, as returned by CodeArtifact.</returns>
+        /// <exception cref="Amazon.CodeArtifact.Model.AccessDeniedException">
+        /// The operation did not succeed because of an unauthorized access attempt.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
+        /// The operation did not succeed because the resource requested is not found in the
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ServiceQuotaExceededException">
+        /// The operation did not succeed because it would have exceeded a service limit for
+        /// your account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
+        /// The operation did not succeed because too many requests are sent to the service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ValidationException">
+        /// The operation did not succeed because a parameter in the request was sent with an
+        /// invalid value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UpdatePackageGroup">REST API Reference for UpdatePackageGroup Operation</seealso>
+        Task<UpdatePackageGroupResponse> UpdatePackageGroupAsync(UpdatePackageGroupRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdatePackageGroupOriginConfiguration
+
+
+
+        /// <summary>
+        /// Updates the package origin configuration for a package group.
+        /// 
+        ///  
+        /// <para>
+        /// The package origin configuration determines how new versions of a package can be added
+        /// to a repository. You can allow or block direct publishing of new package versions,
+        /// or ingestion and retaining of new package versions from an external connection or
+        /// upstream source. For more information about package group origin controls and configuration,
+        /// see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/package-group-origin-controls.html">Package
+        /// group origin controls</a> in the <i>CodeArtifact User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePackageGroupOriginConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePackageGroupOriginConfiguration service method, as returned by CodeArtifact.</returns>
+        /// <exception cref="Amazon.CodeArtifact.Model.AccessDeniedException">
+        /// The operation did not succeed because of an unauthorized access attempt.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
+        /// The operation did not succeed because the resource requested is not found in the
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ServiceQuotaExceededException">
+        /// The operation did not succeed because it would have exceeded a service limit for
+        /// your account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
+        /// The operation did not succeed because too many requests are sent to the service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ValidationException">
+        /// The operation did not succeed because a parameter in the request was sent with an
+        /// invalid value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/UpdatePackageGroupOriginConfiguration">REST API Reference for UpdatePackageGroupOriginConfiguration Operation</seealso>
+        Task<UpdatePackageGroupOriginConfigurationResponse> UpdatePackageGroupOriginConfigurationAsync(UpdatePackageGroupOriginConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

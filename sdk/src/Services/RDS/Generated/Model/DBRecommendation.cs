@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -40,11 +41,11 @@ namespace Amazon.RDS.Model
         private string _detection;
         private string _impact;
         private IssueDetails _issueDetails;
-        private List<DocLink> _links = new List<DocLink>();
+        private List<DocLink> _links = AWSConfigs.InitializeCollections ? new List<DocLink>() : null;
         private string _reason;
         private string _recommendation;
         private string _recommendationId;
-        private List<RecommendedAction> _recommendedActions = new List<RecommendedAction>();
+        private List<RecommendedAction> _recommendedActions = AWSConfigs.InitializeCollections ? new List<RecommendedAction>() : null;
         private string _resourceArn;
         private string _severity;
         private string _source;
@@ -225,7 +226,7 @@ namespace Amazon.RDS.Model
         // Check to see if Links property is set
         internal bool IsSetLinks()
         {
-            return this._links != null && this._links.Count > 0; 
+            return this._links != null && (this._links.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -298,7 +299,7 @@ namespace Amazon.RDS.Model
         // Check to see if RecommendedActions property is set
         internal bool IsSetRecommendedActions()
         {
-            return this._recommendedActions != null && this._recommendedActions.Count > 0; 
+            return this._recommendedActions != null && (this._recommendedActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

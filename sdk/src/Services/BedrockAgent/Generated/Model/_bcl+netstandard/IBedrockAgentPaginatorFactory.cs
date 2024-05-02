@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the bedrock-agent-2023-06-05.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>

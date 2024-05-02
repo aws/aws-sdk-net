@@ -26,11 +26,14 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociateAgentKnowledgeBase operation.
-    /// Associate a Knowledge Base to an existing Amazon Bedrock Agent
+    /// Associates a knowledge base with an agent. If a knowledge base is associated and its
+    /// <c>indexState</c> is set to <c>Enabled</c>, the agent queries the knowledge base for
+    /// information to augment its response to the user.
     /// </summary>
     public partial class AssociateAgentKnowledgeBaseRequest : AmazonBedrockAgentRequest
     {
@@ -43,7 +46,8 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property AgentId. 
         /// <para>
-        /// Id generated at the server side when an Agent is created
+        /// The unique identifier of the agent with which you want to associate the knowledge
+        /// base.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,7 +66,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property AgentVersion. 
         /// <para>
-        /// Draft Version of the Agent.
+        /// The version of the agent with which you want to associate the knowledge base.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=5)]
@@ -79,7 +83,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description of what the agent should use the knowledge base for.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]
         public string Description
@@ -95,7 +102,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KnowledgeBaseId.
+        /// Gets and sets the property KnowledgeBaseId. 
+        /// <para>
+        /// The unique identifier of the knowledge base to associate with the agent.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string KnowledgeBaseId
@@ -111,7 +121,11 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KnowledgeBaseState.
+        /// Gets and sets the property KnowledgeBaseState. 
+        /// <para>
+        /// Specifies whether to use the knowledge base or not when sending an <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html">InvokeAgent</a>
+        /// request.
+        /// </para>
         /// </summary>
         public KnowledgeBaseState KnowledgeBaseState
         {

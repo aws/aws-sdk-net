@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class ListOpsItemEventsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<OpsItemEventSummary> _summaries = new List<OpsItemEventSummary>();
+        private List<OpsItemEventSummary> _summaries = AWSConfigs.InitializeCollections ? new List<OpsItemEventSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Summaries property is set
         internal bool IsSetSummaries()
         {
-            return this._summaries != null && this._summaries.Count > 0; 
+            return this._summaries != null && (this._summaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.GreengrassV2.Model
         /// Enumerable containing all of the Components
         /// </summary>
         public IPaginatedEnumerable<Component> Components => 
-            new PaginatedResultKeyResponse<ListComponentsResponse, Component>(this, (i) => i.Components);
+            new PaginatedResultKeyResponse<ListComponentsResponse, Component>(this, (i) => i.Components ?? new List<Component>());
 
         internal ListComponentsPaginator(IAmazonGreengrassV2 client, ListComponentsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.GreengrassV2.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListComponentsResponse> IPaginator<ListComponentsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListComponentsResponse> IPaginator<ListComponentsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

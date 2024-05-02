@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.LexModelsV2.Model
         private string _intentId;
         private string _localeId;
         private string _nextToken;
-        private List<SlotSummary> _slotSummaries = new List<SlotSummary>();
+        private List<SlotSummary> _slotSummaries = AWSConfigs.InitializeCollections ? new List<SlotSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property BotId. 
@@ -154,7 +155,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if SlotSummaries property is set
         internal bool IsSetSlotSummaries()
         {
-            return this._slotSummaries != null && this._slotSummaries.Count > 0; 
+            return this._slotSummaries != null && (this._slotSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

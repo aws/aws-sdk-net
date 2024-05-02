@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MigrationHub.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.MigrationHub.Model
         /// Enumerable containing all of the DiscoveredResourceList
         /// </summary>
         public IPaginatedEnumerable<DiscoveredResource> DiscoveredResourceList => 
-            new PaginatedResultKeyResponse<ListDiscoveredResourcesResponse, DiscoveredResource>(this, (i) => i.DiscoveredResourceList);
+            new PaginatedResultKeyResponse<ListDiscoveredResourcesResponse, DiscoveredResource>(this, (i) => i.DiscoveredResourceList ?? new List<DiscoveredResource>());
 
         internal ListDiscoveredResourcesPaginator(IAmazonMigrationHub client, ListDiscoveredResourcesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.MigrationHub.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListDiscoveredResourcesResponse> IPaginator<ListDiscoveredResourcesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListDiscoveredResourcesResponse> IPaginator<ListDiscoveredResourcesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

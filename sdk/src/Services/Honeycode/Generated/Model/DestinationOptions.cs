@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Honeycode.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Honeycode.Model
     /// </summary>
     public partial class DestinationOptions
     {
-        private Dictionary<string, SourceDataColumnProperties> _columnMap = new Dictionary<string, SourceDataColumnProperties>();
+        private Dictionary<string, SourceDataColumnProperties> _columnMap = AWSConfigs.InitializeCollections ? new Dictionary<string, SourceDataColumnProperties>() : null;
 
         /// <summary>
         /// Gets and sets the property ColumnMap. 
@@ -51,7 +52,7 @@ namespace Amazon.Honeycode.Model
         // Check to see if ColumnMap property is set
         internal bool IsSetColumnMap()
         {
-            return this._columnMap != null && this._columnMap.Count > 0; 
+            return this._columnMap != null && (this._columnMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

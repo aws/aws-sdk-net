@@ -26,14 +26,16 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// Used to specify the configuration options for a volume's storage aggregate or aggregates.
+    /// Used to specify the configuration options for an FSx for ONTAP volume's storage aggregate
+    /// or aggregates.
     /// </summary>
     public partial class CreateAggregateConfiguration
     {
-        private List<string> _aggregates = new List<string>();
+        private List<string> _aggregates = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _constituentsPerAggregate;
 
         /// <summary>
@@ -52,7 +54,7 @@ namespace Amazon.FSx.Model
         // Check to see if Aggregates property is set
         internal bool IsSetAggregates()
         {
-            return this._aggregates != null && this._aggregates.Count > 0; 
+            return this._aggregates != null && (this._aggregates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

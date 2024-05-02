@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MigrationHubStrategyRecommendations.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
     public partial class ListServersResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ServerDetail> _serverInfos = new List<ServerDetail>();
+        private List<ServerDetail> _serverInfos = AWSConfigs.InitializeCollections ? new List<ServerDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         // Check to see if ServerInfos property is set
         internal bool IsSetServerInfos()
         {
-            return this._serverInfos != null && this._serverInfos.Count > 0; 
+            return this._serverInfos != null && (this._serverInfos.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

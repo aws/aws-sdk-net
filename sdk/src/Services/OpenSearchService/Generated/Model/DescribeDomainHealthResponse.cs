@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.OpenSearchService.Model
         private string _dataNodeCount;
         private bool? _dedicatedMaster;
         private DomainState _domainState;
-        private List<EnvironmentInfo> _environmentInformation = new List<EnvironmentInfo>();
+        private List<EnvironmentInfo> _environmentInformation = AWSConfigs.InitializeCollections ? new List<EnvironmentInfo>() : null;
         private string _masterEligibleNodeCount;
         private MasterNodeStatus _masterNode;
         private string _standByAvailabilityZoneCount;
@@ -200,7 +201,7 @@ namespace Amazon.OpenSearchService.Model
         // Check to see if EnvironmentInformation property is set
         internal bool IsSetEnvironmentInformation()
         {
-            return this._environmentInformation != null && this._environmentInformation.Count > 0; 
+            return this._environmentInformation != null && (this._environmentInformation.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

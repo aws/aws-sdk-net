@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
@@ -49,9 +50,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class ModifyListenerRequest : AmazonElasticLoadBalancingV2Request
     {
-        private List<string> _alpnPolicy = new List<string>();
-        private List<Certificate> _certificates = new List<Certificate>();
-        private List<Action> _defaultActions = new List<Action>();
+        private List<string> _alpnPolicy = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Certificate> _certificates = AWSConfigs.InitializeCollections ? new List<Certificate>() : null;
+        private List<Action> _defaultActions = AWSConfigs.InitializeCollections ? new List<Action>() : null;
         private string _listenerArn;
         private MutualAuthenticationAttributes _mutualAuthentication;
         private int? _port;
@@ -99,7 +100,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if AlpnPolicy property is set
         internal bool IsSetAlpnPolicy()
         {
-            return this._alpnPolicy != null && this._alpnPolicy.Count > 0; 
+            return this._alpnPolicy != null && (this._alpnPolicy.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -119,7 +120,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if Certificates property is set
         internal bool IsSetCertificates()
         {
-            return this._certificates != null && this._certificates.Count > 0; 
+            return this._certificates != null && (this._certificates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -137,7 +138,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if DefaultActions property is set
         internal bool IsSetDefaultActions()
         {
-            return this._defaultActions != null && this._defaultActions.Count > 0; 
+            return this._defaultActions != null && (this._defaultActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

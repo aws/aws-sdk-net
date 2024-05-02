@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
     /// </summary>
     public partial class KeywordMatchConfiguration
     {
-        private List<string> _keywords = new List<string>();
+        private List<string> _keywords = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _negate;
         private string _ruleName;
 
@@ -53,7 +54,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         // Check to see if Keywords property is set
         internal bool IsSetKeywords()
         {
-            return this._keywords != null && this._keywords.Count > 0; 
+            return this._keywords != null && (this._keywords.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

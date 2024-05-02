@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class BatchDescribeModelPackageRequest : AmazonSageMakerRequest
     {
-        private List<string> _modelPackageArnList = new List<string>();
+        private List<string> _modelPackageArnList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ModelPackageArnList. 
@@ -52,7 +53,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ModelPackageArnList property is set
         internal bool IsSetModelPackageArnList()
         {
-            return this._modelPackageArnList != null && this._modelPackageArnList.Count > 0; 
+            return this._modelPackageArnList != null && (this._modelPackageArnList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

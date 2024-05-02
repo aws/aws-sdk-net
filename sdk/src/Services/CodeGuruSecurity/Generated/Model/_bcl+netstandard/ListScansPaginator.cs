@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CodeGuruSecurity.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.CodeGuruSecurity.Model
         /// Enumerable containing all of the Summaries
         /// </summary>
         public IPaginatedEnumerable<ScanSummary> Summaries => 
-            new PaginatedResultKeyResponse<ListScansResponse, ScanSummary>(this, (i) => i.Summaries);
+            new PaginatedResultKeyResponse<ListScansResponse, ScanSummary>(this, (i) => i.Summaries ?? new List<ScanSummary>());
 
         internal ListScansPaginator(IAmazonCodeGuruSecurity client, ListScansRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.CodeGuruSecurity.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListScansResponse> IPaginator<ListScansResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListScansResponse> IPaginator<ListScansResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

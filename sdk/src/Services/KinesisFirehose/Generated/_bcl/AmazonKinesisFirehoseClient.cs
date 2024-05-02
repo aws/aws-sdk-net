@@ -33,12 +33,17 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.KinesisFirehose
 {
     /// <summary>
     /// <para>Implementation for accessing KinesisFirehose</para>
     ///
-    /// Amazon Data Firehose 
+    /// Amazon Data Firehose <note> 
+    /// <para>
+    /// Amazon Data Firehose was previously known as Amazon Kinesis Data Firehose.
+    /// </para>
+    ///  </note> 
     /// <para>
     /// Amazon Data Firehose is a fully managed service that delivers real-time streaming
     /// data to destinations such as Amazon Simple Storage Service (Amazon S3), Amazon OpenSearch

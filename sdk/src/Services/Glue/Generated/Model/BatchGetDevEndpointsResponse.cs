@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class BatchGetDevEndpointsResponse : AmazonWebServiceResponse
     {
-        private List<DevEndpoint> _devEndpoints = new List<DevEndpoint>();
-        private List<string> _devEndpointsNotFound = new List<string>();
+        private List<DevEndpoint> _devEndpoints = AWSConfigs.InitializeCollections ? new List<DevEndpoint>() : null;
+        private List<string> _devEndpointsNotFound = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DevEndpoints. 
@@ -51,7 +52,7 @@ namespace Amazon.Glue.Model
         // Check to see if DevEndpoints property is set
         internal bool IsSetDevEndpoints()
         {
-            return this._devEndpoints != null && this._devEndpoints.Count > 0; 
+            return this._devEndpoints != null && (this._devEndpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.Glue.Model
         // Check to see if DevEndpointsNotFound property is set
         internal bool IsSetDevEndpointsNotFound()
         {
-            return this._devEndpointsNotFound != null && this._devEndpointsNotFound.Count > 0; 
+            return this._devEndpointsNotFound != null && (this._devEndpointsNotFound.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

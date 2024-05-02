@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class RuleGroupSourceStatelessRulesAndCustomActionsDetails
     {
-        private List<RuleGroupSourceCustomActionsDetails> _customActions = new List<RuleGroupSourceCustomActionsDetails>();
-        private List<RuleGroupSourceStatelessRulesDetails> _statelessRules = new List<RuleGroupSourceStatelessRulesDetails>();
+        private List<RuleGroupSourceCustomActionsDetails> _customActions = AWSConfigs.InitializeCollections ? new List<RuleGroupSourceCustomActionsDetails>() : null;
+        private List<RuleGroupSourceStatelessRulesDetails> _statelessRules = AWSConfigs.InitializeCollections ? new List<RuleGroupSourceStatelessRulesDetails>() : null;
 
         /// <summary>
         /// Gets and sets the property CustomActions. 
@@ -51,7 +52,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if CustomActions property is set
         internal bool IsSetCustomActions()
         {
-            return this._customActions != null && this._customActions.Count > 0; 
+            return this._customActions != null && (this._customActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if StatelessRules property is set
         internal bool IsSetStatelessRules()
         {
-            return this._statelessRules != null && this._statelessRules.Count > 0; 
+            return this._statelessRules != null && (this._statelessRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

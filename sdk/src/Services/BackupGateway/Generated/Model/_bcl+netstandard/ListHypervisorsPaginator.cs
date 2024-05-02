@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.BackupGateway.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.BackupGateway.Model
         /// Enumerable containing all of the Hypervisors
         /// </summary>
         public IPaginatedEnumerable<Hypervisor> Hypervisors => 
-            new PaginatedResultKeyResponse<ListHypervisorsResponse, Hypervisor>(this, (i) => i.Hypervisors);
+            new PaginatedResultKeyResponse<ListHypervisorsResponse, Hypervisor>(this, (i) => i.Hypervisors ?? new List<Hypervisor>());
 
         internal ListHypervisorsPaginator(IAmazonBackupGateway client, ListHypervisorsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.BackupGateway.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListHypervisorsResponse> IPaginator<ListHypervisorsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListHypervisorsResponse> IPaginator<ListHypervisorsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

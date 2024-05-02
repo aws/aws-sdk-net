@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DescribeAccountAttributesResponse : AmazonWebServiceResponse
     {
-        private List<AccountQuota> _accountQuotas = new List<AccountQuota>();
+        private List<AccountQuota> _accountQuotas = AWSConfigs.InitializeCollections ? new List<AccountQuota>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountQuotas. 
@@ -51,7 +52,7 @@ namespace Amazon.RDS.Model
         // Check to see if AccountQuotas property is set
         internal bool IsSetAccountQuotas()
         {
-            return this._accountQuotas != null && this._accountQuotas.Count > 0; 
+            return this._accountQuotas != null && (this._accountQuotas.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

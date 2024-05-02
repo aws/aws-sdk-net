@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
@@ -34,15 +35,16 @@ namespace Amazon.CleanRooms.Model
     public partial class Schema
     {
         private AnalysisMethod _analysisMethod;
-        private List<string> _analysisRuleTypes = new List<string>();
+        private List<string> _analysisRuleTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _collaborationArn;
         private string _collaborationId;
-        private List<Column> _columns = new List<Column>();
+        private List<Column> _columns = AWSConfigs.InitializeCollections ? new List<Column>() : null;
         private DateTime? _createTime;
         private string _creatorAccountId;
         private string _description;
         private string _name;
-        private List<Column> _partitionKeys = new List<Column>();
+        private List<Column> _partitionKeys = AWSConfigs.InitializeCollections ? new List<Column>() : null;
+        private List<SchemaStatusDetail> _schemaStatusDetails = AWSConfigs.InitializeCollections ? new List<SchemaStatusDetail>() : null;
         private SchemaType _type;
         private DateTime? _updateTime;
 
@@ -80,7 +82,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if AnalysisRuleTypes property is set
         internal bool IsSetAnalysisRuleTypes()
         {
-            return this._analysisRuleTypes != null && this._analysisRuleTypes.Count > 0; 
+            return this._analysisRuleTypes != null && (this._analysisRuleTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -137,7 +139,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if Columns property is set
         internal bool IsSetColumns()
         {
-            return this._columns != null && this._columns.Count > 0; 
+            return this._columns != null && (this._columns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -233,7 +235,26 @@ namespace Amazon.CleanRooms.Model
         // Check to see if PartitionKeys property is set
         internal bool IsSetPartitionKeys()
         {
-            return this._partitionKeys != null && this._partitionKeys.Count > 0; 
+            return this._partitionKeys != null && (this._partitionKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SchemaStatusDetails. 
+        /// <para>
+        /// Details about the status of the schema. Currently, only one entry is present.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public List<SchemaStatusDetail> SchemaStatusDetails
+        {
+            get { return this._schemaStatusDetails; }
+            set { this._schemaStatusDetails = value; }
+        }
+
+        // Check to see if SchemaStatusDetails property is set
+        internal bool IsSetSchemaStatusDetails()
+        {
+            return this._schemaStatusDetails != null && (this._schemaStatusDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

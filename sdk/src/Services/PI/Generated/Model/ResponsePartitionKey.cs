@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PI.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.PI.Model
     /// </summary>
     public partial class ResponsePartitionKey
     {
-        private Dictionary<string, string> _dimensions = new Dictionary<string, string>();
+        private Dictionary<string, string> _dimensions = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Dimensions. 
@@ -52,7 +53,7 @@ namespace Amazon.PI.Model
         // Check to see if Dimensions property is set
         internal bool IsSetDimensions()
         {
-            return this._dimensions != null && this._dimensions.Count > 0; 
+            return this._dimensions != null && (this._dimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

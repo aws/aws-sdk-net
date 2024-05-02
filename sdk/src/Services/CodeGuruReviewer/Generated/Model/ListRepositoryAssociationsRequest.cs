@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeGuruReviewer.Model
 {
     /// <summary>
@@ -40,11 +41,11 @@ namespace Amazon.CodeGuruReviewer.Model
     public partial class ListRepositoryAssociationsRequest : AmazonCodeGuruReviewerRequest
     {
         private int? _maxResults;
-        private List<string> _names = new List<string>();
+        private List<string> _names = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
-        private List<string> _owners = new List<string>();
-        private List<string> _providerTypes = new List<string>();
-        private List<string> _states = new List<string>();
+        private List<string> _owners = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _providerTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _states = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -87,7 +88,7 @@ namespace Amazon.CodeGuruReviewer.Model
         // Check to see if Names property is set
         internal bool IsSetNames()
         {
-            return this._names != null && this._names.Count > 0; 
+            return this._names != null && (this._names.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -137,7 +138,7 @@ namespace Amazon.CodeGuruReviewer.Model
         // Check to see if Owners property is set
         internal bool IsSetOwners()
         {
-            return this._owners != null && this._owners.Count > 0; 
+            return this._owners != null && (this._owners.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -156,7 +157,7 @@ namespace Amazon.CodeGuruReviewer.Model
         // Check to see if ProviderTypes property is set
         internal bool IsSetProviderTypes()
         {
-            return this._providerTypes != null && this._providerTypes.Count > 0; 
+            return this._providerTypes != null && (this._providerTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -223,7 +224,7 @@ namespace Amazon.CodeGuruReviewer.Model
         // Check to see if States property is set
         internal bool IsSetStates()
         {
-            return this._states != null && this._states.Count > 0; 
+            return this._states != null && (this._states.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

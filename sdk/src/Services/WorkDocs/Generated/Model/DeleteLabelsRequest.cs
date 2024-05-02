@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkDocs.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.WorkDocs.Model
     {
         private string _authenticationToken;
         private bool? _deleteAll;
-        private List<string> _labels = new List<string>();
+        private List<string> _labels = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _resourceId;
 
         /// <summary>
@@ -93,7 +94,7 @@ namespace Amazon.WorkDocs.Model
         // Check to see if Labels property is set
         internal bool IsSetLabels()
         {
-            return this._labels != null && this._labels.Count > 0; 
+            return this._labels != null && (this._labels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

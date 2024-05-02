@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -33,12 +34,12 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class OptionConfiguration
     {
-        private List<string> _dbSecurityGroupMemberships = new List<string>();
+        private List<string> _dbSecurityGroupMemberships = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _optionName;
-        private List<OptionSetting> _optionSettings = new List<OptionSetting>();
+        private List<OptionSetting> _optionSettings = AWSConfigs.InitializeCollections ? new List<OptionSetting>() : null;
         private string _optionVersion;
         private int? _port;
-        private List<string> _vpcSecurityGroupMemberships = new List<string>();
+        private List<string> _vpcSecurityGroupMemberships = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DBSecurityGroupMemberships. 
@@ -55,7 +56,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBSecurityGroupMemberships property is set
         internal bool IsSetDBSecurityGroupMemberships()
         {
-            return this._dbSecurityGroupMemberships != null && this._dbSecurityGroupMemberships.Count > 0; 
+            return this._dbSecurityGroupMemberships != null && (this._dbSecurityGroupMemberships.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.RDS.Model
         // Check to see if OptionSettings property is set
         internal bool IsSetOptionSettings()
         {
-            return this._optionSettings != null && this._optionSettings.Count > 0; 
+            return this._optionSettings != null && (this._optionSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -146,7 +147,7 @@ namespace Amazon.RDS.Model
         // Check to see if VpcSecurityGroupMemberships property is set
         internal bool IsSetVpcSecurityGroupMemberships()
         {
-            return this._vpcSecurityGroupMemberships != null && this._vpcSecurityGroupMemberships.Count > 0; 
+            return this._vpcSecurityGroupMemberships != null && (this._vpcSecurityGroupMemberships.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

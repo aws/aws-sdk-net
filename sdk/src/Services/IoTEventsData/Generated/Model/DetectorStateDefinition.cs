@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTEventsData.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.IoTEventsData.Model
     public partial class DetectorStateDefinition
     {
         private string _stateName;
-        private List<TimerDefinition> _timers = new List<TimerDefinition>();
-        private List<VariableDefinition> _variables = new List<VariableDefinition>();
+        private List<TimerDefinition> _timers = AWSConfigs.InitializeCollections ? new List<TimerDefinition>() : null;
+        private List<VariableDefinition> _variables = AWSConfigs.InitializeCollections ? new List<VariableDefinition>() : null;
 
         /// <summary>
         /// Gets and sets the property StateName. 
@@ -73,7 +74,7 @@ namespace Amazon.IoTEventsData.Model
         // Check to see if Timers property is set
         internal bool IsSetTimers()
         {
-            return this._timers != null && this._timers.Count > 0; 
+            return this._timers != null && (this._timers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -93,7 +94,7 @@ namespace Amazon.IoTEventsData.Model
         // Check to see if Variables property is set
         internal bool IsSetVariables()
         {
-            return this._variables != null && this._variables.Count > 0; 
+            return this._variables != null && (this._variables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

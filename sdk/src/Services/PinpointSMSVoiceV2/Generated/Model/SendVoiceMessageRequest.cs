@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
@@ -37,13 +38,14 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     public partial class SendVoiceMessageRequest : AmazonPinpointSMSVoiceV2Request
     {
         private string _configurationSetName;
-        private Dictionary<string, string> _context = new Dictionary<string, string>();
+        private Dictionary<string, string> _context = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _destinationPhoneNumber;
         private bool? _dryRun;
         private string _maxPricePerMinute;
         private string _messageBody;
         private VoiceMessageBodyTextType _messageBodyTextType;
         private string _originationIdentity;
+        private string _protectConfigurationId;
         private int? _timeToLive;
         private VoiceId _voiceId;
 
@@ -84,7 +86,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if Context property is set
         internal bool IsSetContext()
         {
-            return this._context != null && this._context.Count > 0; 
+            return this._context != null && (this._context.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -209,6 +211,25 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         internal bool IsSetOriginationIdentity()
         {
             return this._originationIdentity != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProtectConfigurationId. 
+        /// <para>
+        /// The unique identifier for the protect configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string ProtectConfigurationId
+        {
+            get { return this._protectConfigurationId; }
+            set { this._protectConfigurationId = value; }
+        }
+
+        // Check to see if ProtectConfigurationId property is set
+        internal bool IsSetProtectConfigurationId()
+        {
+            return this._protectConfigurationId != null;
         }
 
         /// <summary>

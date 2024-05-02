@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTEvents.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoTEvents.Model
     /// </summary>
     public partial class GetDetectorModelAnalysisResultsResponse : AmazonWebServiceResponse
     {
-        private List<AnalysisResult> _analysisResults = new List<AnalysisResult>();
+        private List<AnalysisResult> _analysisResults = AWSConfigs.InitializeCollections ? new List<AnalysisResult>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.IoTEvents.Model
         // Check to see if AnalysisResults property is set
         internal bool IsSetAnalysisResults()
         {
-            return this._analysisResults != null && this._analysisResults.Count > 0; 
+            return this._analysisResults != null && (this._analysisResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

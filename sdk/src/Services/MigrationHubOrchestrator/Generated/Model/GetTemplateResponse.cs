@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MigrationHubOrchestrator.Model
 {
     /// <summary>
@@ -36,10 +37,15 @@ namespace Amazon.MigrationHubOrchestrator.Model
         private DateTime? _creationTime;
         private string _description;
         private string _id;
-        private List<TemplateInput> _inputs = new List<TemplateInput>();
+        private List<TemplateInput> _inputs = AWSConfigs.InitializeCollections ? new List<TemplateInput>() : null;
         private string _name;
+        private string _owner;
         private TemplateStatus _status;
-        private List<Tool> _tools = new List<Tool>();
+        private string _statusMessage;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private string _templateArn;
+        private string _templateClass;
+        private List<Tool> _tools = AWSConfigs.InitializeCollections ? new List<Tool>() : null;
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -110,7 +116,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         // Check to see if Inputs property is set
         internal bool IsSetInputs()
         {
-            return this._inputs != null && this._inputs.Count > 0; 
+            return this._inputs != null && (this._inputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -132,6 +138,24 @@ namespace Amazon.MigrationHubOrchestrator.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Owner. 
+        /// <para>
+        /// The owner of the migration workflow template.
+        /// </para>
+        /// </summary>
+        public string Owner
+        {
+            get { return this._owner; }
+            set { this._owner = value; }
+        }
+
+        // Check to see if Owner property is set
+        internal bool IsSetOwner()
+        {
+            return this._owner != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
         /// The status of the template.
@@ -150,6 +174,106 @@ namespace Amazon.MigrationHubOrchestrator.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StatusMessage. 
+        /// <para>
+        /// The status message of retrieving migration workflow templates.
+        /// </para>
+        /// </summary>
+        public string StatusMessage
+        {
+            get { return this._statusMessage; }
+            set { this._statusMessage = value; }
+        }
+
+        // Check to see if StatusMessage property is set
+        internal bool IsSetStatusMessage()
+        {
+            return this._statusMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags added to the migration workflow template.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TemplateArn. 
+        /// <para>
+        /// &gt;The Amazon Resource Name (ARN) of the migration workflow template. The format
+        /// for an Migration Hub Orchestrator template ARN is <c>arn:aws:migrationhub-orchestrator:region:account:template/template-abcd1234</c>.
+        /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference-arns.html">Amazon
+        /// Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+        /// </para>
+        /// </summary>
+        public string TemplateArn
+        {
+            get { return this._templateArn; }
+            set { this._templateArn = value; }
+        }
+
+        // Check to see if TemplateArn property is set
+        internal bool IsSetTemplateArn()
+        {
+            return this._templateArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TemplateClass. 
+        /// <para>
+        /// The class of the migration workflow template. The available template classes are:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A2C
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// MGN
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SAP_MULTI
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SQL_EC2
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SQL_RDS
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// VMIE
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string TemplateClass
+        {
+            get { return this._templateClass; }
+            set { this._templateClass = value; }
+        }
+
+        // Check to see if TemplateClass property is set
+        internal bool IsSetTemplateClass()
+        {
+            return this._templateClass != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tools. 
         /// <para>
         /// List of AWS services utilized in a migration workflow.
@@ -164,7 +288,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         // Check to see if Tools property is set
         internal bool IsSetTools()
         {
-            return this._tools != null && this._tools.Count > 0; 
+            return this._tools != null && (this._tools.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

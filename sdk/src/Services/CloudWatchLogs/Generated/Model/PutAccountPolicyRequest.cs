@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
@@ -98,9 +99,9 @@ namespace Amazon.CloudWatchLogs.Model
     /// A subscription filter policy sets up a real-time feed of log events from CloudWatch
     /// Logs to other Amazon Web Services services. Account-level subscription filter policies
     /// apply to both existing log groups and log groups that are created later in this account.
-    /// Supported destinations are Kinesis Data Streams, Kinesis Data Firehose, and Lambda.
-    /// When log events are sent to the receiving service, they are Base64 encoded and compressed
-    /// with the GZIP format.
+    /// Supported destinations are Kinesis Data Streams, Firehose, and Lambda. When log events
+    /// are sent to the receiving service, they are Base64 encoded and compressed with the
+    /// GZIP format.
     /// </para>
     ///  
     /// <para>
@@ -113,8 +114,8 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// An Kinesis Data Firehose data stream in the same account as the subscription policy,
-    /// for same-account delivery.
+    /// An Firehose data stream in the same account as the subscription policy, for same-account
+    /// delivery.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -124,8 +125,8 @@ namespace Amazon.CloudWatchLogs.Model
     ///  </li> <li> 
     /// <para>
     /// A logical destination in a different account created with <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html">PutDestination</a>,
-    /// for cross-account delivery. Kinesis Data Streams and Kinesis Data Firehose are supported
-    /// as logical destinations.
+    /// for cross-account delivery. Kinesis Data Streams and Firehose are supported as logical
+    /// destinations.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -170,7 +171,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// sensitive data terms. This <c>Audit</c> action must contain a <c>FindingsDestination</c>
         /// object. You can optionally use that <c>FindingsDestination</c> object to list one
         /// or more destinations to send audit findings to. If you specify destinations such as
-        /// log groups, Kinesis Data Firehose streams, and S3 buckets, they must already exist.
+        /// log groups, Firehose streams, and S3 buckets, they must already exist.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -223,8 +224,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An Kinesis Data Firehose data stream in the same account as the subscription policy,
-        /// for same-account delivery.
+        /// An Firehose data stream in the same account as the subscription policy, for same-account
+        /// delivery.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -234,8 +235,8 @@ namespace Amazon.CloudWatchLogs.Model
         ///  </li> <li> 
         /// <para>
         /// A logical destination in a different account created with <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestination.html">PutDestination</a>,
-        /// for cross-account delivery. Kinesis Data Streams and Kinesis Data Firehose are supported
-        /// as logical destinations.
+        /// for cross-account delivery. Kinesis Data Streams and Firehose are supported as logical
+        /// destinations.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>

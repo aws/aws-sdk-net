@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.OpsWorks.Model
         private string _arn;
         private AutoScalingType _autoScalingType;
         private string _availabilityZone;
-        private List<BlockDeviceMapping> _blockDeviceMappings = new List<BlockDeviceMapping>();
+        private List<BlockDeviceMapping> _blockDeviceMappings = AWSConfigs.InitializeCollections ? new List<BlockDeviceMapping>() : null;
         private string _createdAt;
         private bool? _ebsOptimized;
         private string _ec2InstanceId;
@@ -53,7 +54,7 @@ namespace Amazon.OpsWorks.Model
         private string _instanceProfileArn;
         private string _instanceType;
         private string _lastServiceErrorId;
-        private List<string> _layerIds = new List<string>();
+        private List<string> _layerIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _os;
         private string _platform;
         private string _privateDns;
@@ -65,7 +66,7 @@ namespace Amazon.OpsWorks.Model
         private ReportedOs _reportedOs;
         private RootDeviceType _rootDeviceType;
         private string _rootDeviceVolumeId;
-        private List<string> _securityGroupIds = new List<string>();
+        private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _sshHostDsaKeyFingerprint;
         private string _sshHostRsaKeyFingerprint;
         private string _sshKeyName;
@@ -202,7 +203,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if BlockDeviceMappings property is set
         internal bool IsSetBlockDeviceMappings()
         {
-            return this._blockDeviceMappings != null && this._blockDeviceMappings.Count > 0; 
+            return this._blockDeviceMappings != null && (this._blockDeviceMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -467,7 +468,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if LayerIds property is set
         internal bool IsSetLayerIds()
         {
-            return this._layerIds != null && this._layerIds.Count > 0; 
+            return this._layerIds != null && (this._layerIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -684,7 +685,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if SecurityGroupIds property is set
         internal bool IsSetSecurityGroupIds()
         {
-            return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+            return this._securityGroupIds != null && (this._securityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

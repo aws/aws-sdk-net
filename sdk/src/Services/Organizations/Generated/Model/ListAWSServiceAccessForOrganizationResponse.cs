@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Organizations.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Organizations.Model
     /// </summary>
     public partial class ListAWSServiceAccessForOrganizationResponse : AmazonWebServiceResponse
     {
-        private List<EnabledServicePrincipal> _enabledServicePrincipals = new List<EnabledServicePrincipal>();
+        private List<EnabledServicePrincipal> _enabledServicePrincipals = AWSConfigs.InitializeCollections ? new List<EnabledServicePrincipal>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.Organizations.Model
         // Check to see if EnabledServicePrincipals property is set
         internal bool IsSetEnabledServicePrincipals()
         {
-            return this._enabledServicePrincipals != null && this._enabledServicePrincipals.Count > 0; 
+            return this._enabledServicePrincipals != null && (this._enabledServicePrincipals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

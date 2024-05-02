@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeLocalGatewayRouteTableVpcAssociationsResponse : AmazonWebServiceResponse
     {
-        private List<LocalGatewayRouteTableVpcAssociation> _localGatewayRouteTableVpcAssociations = new List<LocalGatewayRouteTableVpcAssociation>();
+        private List<LocalGatewayRouteTableVpcAssociation> _localGatewayRouteTableVpcAssociations = AWSConfigs.InitializeCollections ? new List<LocalGatewayRouteTableVpcAssociation>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.EC2.Model
         // Check to see if LocalGatewayRouteTableVpcAssociations property is set
         internal bool IsSetLocalGatewayRouteTableVpcAssociations()
         {
-            return this._localGatewayRouteTableVpcAssociations != null && this._localGatewayRouteTableVpcAssociations.Count > 0; 
+            return this._localGatewayRouteTableVpcAssociations != null && (this._localGatewayRouteTableVpcAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

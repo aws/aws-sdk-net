@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CloudTrail.Model
     /// </summary>
     public partial class CreateEventDataStoreRequest : AmazonCloudTrailRequest
     {
-        private List<AdvancedEventSelector> _advancedEventSelectors = new List<AdvancedEventSelector>();
+        private List<AdvancedEventSelector> _advancedEventSelectors = AWSConfigs.InitializeCollections ? new List<AdvancedEventSelector>() : null;
         private BillingMode _billingMode;
         private string _kmsKeyId;
         private bool? _multiRegionEnabled;
@@ -42,7 +43,7 @@ namespace Amazon.CloudTrail.Model
         private bool? _organizationEnabled;
         private int? _retentionPeriod;
         private bool? _startIngestion;
-        private List<Tag> _tagsList = new List<Tag>();
+        private List<Tag> _tagsList = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private bool? _terminationProtectionEnabled;
 
         /// <summary>
@@ -80,7 +81,7 @@ namespace Amazon.CloudTrail.Model
         // Check to see if AdvancedEventSelectors property is set
         internal bool IsSetAdvancedEventSelectors()
         {
-            return this._advancedEventSelectors != null && this._advancedEventSelectors.Count > 0; 
+            return this._advancedEventSelectors != null && (this._advancedEventSelectors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -314,7 +315,7 @@ namespace Amazon.CloudTrail.Model
         // Check to see if TagsList property is set
         internal bool IsSetTagsList()
         {
-            return this._tagsList != null && this._tagsList.Count > 0; 
+            return this._tagsList != null && (this._tagsList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

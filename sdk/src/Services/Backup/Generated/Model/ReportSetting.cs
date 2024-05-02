@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Backup.Model
 {
     /// <summary>
@@ -33,11 +34,11 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class ReportSetting
     {
-        private List<string> _accounts = new List<string>();
-        private List<string> _frameworkArns = new List<string>();
+        private List<string> _accounts = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _frameworkArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _numberOfFrameworks;
-        private List<string> _organizationUnits = new List<string>();
-        private List<string> _regions = new List<string>();
+        private List<string> _organizationUnits = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _regions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _reportTemplate;
 
         /// <summary>
@@ -55,7 +56,7 @@ namespace Amazon.Backup.Model
         // Check to see if Accounts property is set
         internal bool IsSetAccounts()
         {
-            return this._accounts != null && this._accounts.Count > 0; 
+            return this._accounts != null && (this._accounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.Backup.Model
         // Check to see if FrameworkArns property is set
         internal bool IsSetFrameworkArns()
         {
-            return this._frameworkArns != null && this._frameworkArns.Count > 0; 
+            return this._frameworkArns != null && (this._frameworkArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -109,7 +110,7 @@ namespace Amazon.Backup.Model
         // Check to see if OrganizationUnits property is set
         internal bool IsSetOrganizationUnits()
         {
-            return this._organizationUnits != null && this._organizationUnits.Count > 0; 
+            return this._organizationUnits != null && (this._organizationUnits.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -127,7 +128,7 @@ namespace Amazon.Backup.Model
         // Check to see if Regions property is set
         internal bool IsSetRegions()
         {
-            return this._regions != null && this._regions.Count > 0; 
+            return this._regions != null && (this._regions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

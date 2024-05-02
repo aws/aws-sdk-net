@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTThingsGraph.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoTThingsGraph.Model
     /// </summary>
     public partial class GetEntitiesResponse : AmazonWebServiceResponse
     {
-        private List<EntityDescription> _descriptions = new List<EntityDescription>();
+        private List<EntityDescription> _descriptions = AWSConfigs.InitializeCollections ? new List<EntityDescription>() : null;
 
         /// <summary>
         /// Gets and sets the property Descriptions. 
@@ -50,7 +51,7 @@ namespace Amazon.IoTThingsGraph.Model
         // Check to see if Descriptions property is set
         internal bool IsSetDescriptions()
         {
-            return this._descriptions != null && this._descriptions.Count > 0; 
+            return this._descriptions != null && (this._descriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BackupStorage.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.BackupStorage.Model
     public partial class ListObjectsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<BackupObject> _objectList = new List<BackupObject>();
+        private List<BackupObject> _objectList = AWSConfigs.InitializeCollections ? new List<BackupObject>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. Pagination token
@@ -64,7 +65,7 @@ namespace Amazon.BackupStorage.Model
         // Check to see if ObjectList property is set
         internal bool IsSetObjectList()
         {
-            return this._objectList != null && this._objectList.Count > 0; 
+            return this._objectList != null && (this._objectList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

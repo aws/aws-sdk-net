@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// </summary>
     public partial class DomainInfos
     {
-        private List<DomainInfo> _infos = new List<DomainInfo>();
+        private List<DomainInfo> _infos = AWSConfigs.InitializeCollections ? new List<DomainInfo>() : null;
         private string _nextPageToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Infos property is set
         internal bool IsSetInfos()
         {
-            return this._infos != null && this._infos.Count > 0; 
+            return this._infos != null && (this._infos.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.CodeBuild.Model
     {
         private string _description;
         private string _name;
-        private List<string> _versions = new List<string>();
+        private List<string> _versions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -88,7 +89,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if Versions property is set
         internal bool IsSetVersions()
         {
-            return this._versions != null && this._versions.Count > 0; 
+            return this._versions != null && (this._versions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

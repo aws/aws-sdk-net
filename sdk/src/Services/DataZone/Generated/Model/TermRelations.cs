@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class TermRelations
     {
-        private List<string> _classifies = new List<string>();
-        private List<string> _isa = new List<string>();
+        private List<string> _classifies = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _isa = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Classifies. 
@@ -52,7 +53,7 @@ namespace Amazon.DataZone.Model
         // Check to see if Classifies property is set
         internal bool IsSetClassifies()
         {
-            return this._classifies != null && this._classifies.Count > 0; 
+            return this._classifies != null && (this._classifies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.DataZone.Model
         // Check to see if IsA property is set
         internal bool IsSetIsA()
         {
-            return this._isa != null && this._isa.Count > 0; 
+            return this._isa != null && (this._isa.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

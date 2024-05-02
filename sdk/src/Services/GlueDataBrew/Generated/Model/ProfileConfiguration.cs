@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
@@ -35,10 +36,10 @@ namespace Amazon.GlueDataBrew.Model
     /// </summary>
     public partial class ProfileConfiguration
     {
-        private List<ColumnStatisticsConfiguration> _columnStatisticsConfigurations = new List<ColumnStatisticsConfiguration>();
+        private List<ColumnStatisticsConfiguration> _columnStatisticsConfigurations = AWSConfigs.InitializeCollections ? new List<ColumnStatisticsConfiguration>() : null;
         private StatisticsConfiguration _datasetStatisticsConfiguration;
         private EntityDetectorConfiguration _entityDetectorConfiguration;
-        private List<ColumnSelector> _profileColumns = new List<ColumnSelector>();
+        private List<ColumnSelector> _profileColumns = AWSConfigs.InitializeCollections ? new List<ColumnSelector>() : null;
 
         /// <summary>
         /// Gets and sets the property ColumnStatisticsConfigurations. 
@@ -59,7 +60,7 @@ namespace Amazon.GlueDataBrew.Model
         // Check to see if ColumnStatisticsConfigurations property is set
         internal bool IsSetColumnStatisticsConfigurations()
         {
-            return this._columnStatisticsConfigurations != null && this._columnStatisticsConfigurations.Count > 0; 
+            return this._columnStatisticsConfigurations != null && (this._columnStatisticsConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -119,7 +120,7 @@ namespace Amazon.GlueDataBrew.Model
         // Check to see if ProfileColumns property is set
         internal bool IsSetProfileColumns()
         {
-            return this._profileColumns != null && this._profileColumns.Count > 0; 
+            return this._profileColumns != null && (this._profileColumns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

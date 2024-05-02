@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.QuickSight.Model
         private string _nextToken;
         private string _requestId;
         private int? _status;
-        private List<TopicSummary> _topicsSummaries = new List<TopicSummary>();
+        private List<TopicSummary> _topicsSummaries = AWSConfigs.InitializeCollections ? new List<TopicSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -107,7 +108,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if TopicsSummaries property is set
         internal bool IsSetTopicsSummaries()
         {
-            return this._topicsSummaries != null && this._topicsSummaries.Count > 0; 
+            return this._topicsSummaries != null && (this._topicsSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

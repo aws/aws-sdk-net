@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Enumerable containing all of the Studios
         /// </summary>
         public IPaginatedEnumerable<StudioSummary> Studios => 
-            new PaginatedResultKeyResponse<ListStudiosResponse, StudioSummary>(this, (i) => i.Studios);
+            new PaginatedResultKeyResponse<ListStudiosResponse, StudioSummary>(this, (i) => i.Studios ?? new List<StudioSummary>());
 
         internal ListStudiosPaginator(IAmazonElasticMapReduce client, ListStudiosRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ElasticMapReduce.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListStudiosResponse> IPaginator<ListStudiosResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListStudiosResponse> IPaginator<ListStudiosResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

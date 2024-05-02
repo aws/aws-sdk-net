@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.SecurityLake.Model
     {
         private string _account;
         private string _region;
-        private List<LogSourceResource> _sources = new List<LogSourceResource>();
+        private List<LogSourceResource> _sources = AWSConfigs.InitializeCollections ? new List<LogSourceResource>() : null;
 
         /// <summary>
         /// Gets and sets the property Account. 
@@ -90,7 +91,7 @@ namespace Amazon.SecurityLake.Model
         // Check to see if Sources property is set
         internal bool IsSetSources()
         {
-            return this._sources != null && this._sources.Count > 0; 
+            return this._sources != null && (this._sources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

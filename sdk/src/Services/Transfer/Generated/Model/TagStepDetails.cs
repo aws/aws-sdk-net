@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Transfer.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.Transfer.Model
     {
         private string _name;
         private string _sourceFileLocation;
-        private List<S3Tag> _tags = new List<S3Tag>();
+        private List<S3Tag> _tags = AWSConfigs.InitializeCollections ? new List<S3Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -108,7 +109,7 @@ namespace Amazon.Transfer.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DirectoryService.Model
     /// </summary>
     public partial class DescribeClientAuthenticationSettingsResponse : AmazonWebServiceResponse
     {
-        private List<ClientAuthenticationSettingInfo> _clientAuthenticationSettingsInfo = new List<ClientAuthenticationSettingInfo>();
+        private List<ClientAuthenticationSettingInfo> _clientAuthenticationSettingsInfo = AWSConfigs.InitializeCollections ? new List<ClientAuthenticationSettingInfo>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.DirectoryService.Model
         // Check to see if ClientAuthenticationSettingsInfo property is set
         internal bool IsSetClientAuthenticationSettingsInfo()
         {
-            return this._clientAuthenticationSettingsInfo != null && this._clientAuthenticationSettingsInfo.Count > 0; 
+            return this._clientAuthenticationSettingsInfo != null && (this._clientAuthenticationSettingsInfo.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.FSx.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.FSx.Model
         /// Enumerable containing all of the Volumes
         /// </summary>
         public IPaginatedEnumerable<Volume> Volumes => 
-            new PaginatedResultKeyResponse<DescribeVolumesResponse, Volume>(this, (i) => i.Volumes);
+            new PaginatedResultKeyResponse<DescribeVolumesResponse, Volume>(this, (i) => i.Volumes ?? new List<Volume>());
 
         internal DescribeVolumesPaginator(IAmazonFSx client, DescribeVolumesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.FSx.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeVolumesResponse> IPaginator<DescribeVolumesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeVolumesResponse> IPaginator<DescribeVolumesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

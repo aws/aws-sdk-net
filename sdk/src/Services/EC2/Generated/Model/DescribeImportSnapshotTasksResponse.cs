@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeImportSnapshotTasksResponse : AmazonWebServiceResponse
     {
-        private List<ImportSnapshotTask> _importSnapshotTasks = new List<ImportSnapshotTask>();
+        private List<ImportSnapshotTask> _importSnapshotTasks = AWSConfigs.InitializeCollections ? new List<ImportSnapshotTask>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.EC2.Model
         // Check to see if ImportSnapshotTasks property is set
         internal bool IsSetImportSnapshotTasks()
         {
-            return this._importSnapshotTasks != null && this._importSnapshotTasks.Count > 0; 
+            return this._importSnapshotTasks != null && (this._importSnapshotTasks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

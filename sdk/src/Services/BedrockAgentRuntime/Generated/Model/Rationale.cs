@@ -26,10 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Trace Part which contains information related to reasoning
+    /// Contains the reasoning, based on the input, that the agent uses to justify carrying
+    /// out an action group or getting information from a knowledge base.
     /// </summary>
     public partial class Rationale
     {
@@ -37,7 +39,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         private string _traceId;
 
         /// <summary>
-        /// Gets and sets the property Text.
+        /// Gets and sets the property Text. 
+        /// <para>
+        /// The reasoning or thought process of the agent, based on the input.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string Text
@@ -53,7 +58,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TraceId.
+        /// Gets and sets the property TraceId. 
+        /// <para>
+        /// The unique identifier of the trace step.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=16)]
         public string TraceId

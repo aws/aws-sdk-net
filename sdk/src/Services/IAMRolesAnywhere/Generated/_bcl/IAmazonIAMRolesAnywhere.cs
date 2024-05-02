@@ -26,6 +26,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.IAMRolesAnywhere.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.IAMRolesAnywhere
 {
     /// <summary>
@@ -170,6 +171,52 @@ namespace Amazon.IAMRolesAnywhere
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/CreateTrustAnchor">REST API Reference for CreateTrustAnchor Operation</seealso>
         Task<CreateTrustAnchorResponse> CreateTrustAnchorAsync(CreateTrustAnchorRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteAttributeMapping
+
+
+        /// <summary>
+        /// Delete an entry from the attribute mapping rules enforced by a given profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAttributeMapping service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAttributeMapping service method, as returned by IAMRolesAnywhere.</returns>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/DeleteAttributeMapping">REST API Reference for DeleteAttributeMapping Operation</seealso>
+        DeleteAttributeMappingResponse DeleteAttributeMapping(DeleteAttributeMappingRequest request);
+
+
+
+        /// <summary>
+        /// Delete an entry from the attribute mapping rules enforced by a given profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAttributeMapping service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAttributeMapping service method, as returned by IAMRolesAnywhere.</returns>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/DeleteAttributeMapping">REST API Reference for DeleteAttributeMapping Operation</seealso>
+        Task<DeleteAttributeMappingResponse> DeleteAttributeMappingAsync(DeleteAttributeMappingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -842,8 +889,9 @@ namespace Amazon.IAMRolesAnywhere
 
         /// <summary>
         /// Imports the certificate revocation list (CRL). A CRL is a list of certificates that
-        /// have been revoked by the issuing certificate Authority (CA). IAM Roles Anywhere validates
-        /// against the CRL before issuing credentials. 
+        /// have been revoked by the issuing certificate Authority (CA).In order to be properly
+        /// imported, a CRL must be in PEM format. IAM Roles Anywhere validates against the CRL
+        /// before issuing credentials. 
         /// 
         ///  
         /// <para>
@@ -866,8 +914,9 @@ namespace Amazon.IAMRolesAnywhere
 
         /// <summary>
         /// Imports the certificate revocation list (CRL). A CRL is a list of certificates that
-        /// have been revoked by the issuing certificate Authority (CA). IAM Roles Anywhere validates
-        /// against the CRL before issuing credentials. 
+        /// have been revoked by the issuing certificate Authority (CA).In order to be properly
+        /// imported, a CRL must be in PEM format. IAM Roles Anywhere validates against the CRL
+        /// before issuing credentials. 
         /// 
         ///  
         /// <para>
@@ -1146,6 +1195,56 @@ namespace Amazon.IAMRolesAnywhere
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/ListTrustAnchors">REST API Reference for ListTrustAnchors Operation</seealso>
         Task<ListTrustAnchorsResponse> ListTrustAnchorsAsync(ListTrustAnchorsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PutAttributeMapping
+
+
+        /// <summary>
+        /// Put an entry in the attribute mapping rules that will be enforced by a given profile.
+        /// A mapping specifies a certificate field and one or more specifiers that have contextual
+        /// meanings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAttributeMapping service method.</param>
+        /// 
+        /// <returns>The response from the PutAttributeMapping service method, as returned by IAMRolesAnywhere.</returns>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/PutAttributeMapping">REST API Reference for PutAttributeMapping Operation</seealso>
+        PutAttributeMappingResponse PutAttributeMapping(PutAttributeMappingRequest request);
+
+
+
+        /// <summary>
+        /// Put an entry in the attribute mapping rules that will be enforced by a given profile.
+        /// A mapping specifies a certificate field and one or more specifiers that have contextual
+        /// meanings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAttributeMapping service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutAttributeMapping service method, as returned by IAMRolesAnywhere.</returns>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/PutAttributeMapping">REST API Reference for PutAttributeMapping Operation</seealso>
+        Task<PutAttributeMappingResponse> PutAttributeMappingAsync(PutAttributeMappingRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

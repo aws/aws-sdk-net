@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppStream.Model
 {
     /// <summary>
@@ -46,7 +47,7 @@ namespace Amazon.AppStream.Model
     /// </summary>
     public partial class AppBlock
     {
-        private List<ErrorDetails> _appBlockErrors = new List<ErrorDetails>();
+        private List<ErrorDetails> _appBlockErrors = AWSConfigs.InitializeCollections ? new List<ErrorDetails>() : null;
         private string _arn;
         private DateTime? _createdTime;
         private string _description;
@@ -73,7 +74,7 @@ namespace Amazon.AppStream.Model
         // Check to see if AppBlockErrors property is set
         internal bool IsSetAppBlockErrors()
         {
-            return this._appBlockErrors != null && this._appBlockErrors.Count > 0; 
+            return this._appBlockErrors != null && (this._appBlockErrors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

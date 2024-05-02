@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class BatchGetAggregateResourceConfigResponse : AmazonWebServiceResponse
     {
-        private List<BaseConfigurationItem> _baseConfigurationItems = new List<BaseConfigurationItem>();
-        private List<AggregateResourceIdentifier> _unprocessedResourceIdentifiers = new List<AggregateResourceIdentifier>();
+        private List<BaseConfigurationItem> _baseConfigurationItems = AWSConfigs.InitializeCollections ? new List<BaseConfigurationItem>() : null;
+        private List<AggregateResourceIdentifier> _unprocessedResourceIdentifiers = AWSConfigs.InitializeCollections ? new List<AggregateResourceIdentifier>() : null;
 
         /// <summary>
         /// Gets and sets the property BaseConfigurationItems. 
@@ -51,7 +52,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if BaseConfigurationItems property is set
         internal bool IsSetBaseConfigurationItems()
         {
-            return this._baseConfigurationItems != null && this._baseConfigurationItems.Count > 0; 
+            return this._baseConfigurationItems != null && (this._baseConfigurationItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if UnprocessedResourceIdentifiers property is set
         internal bool IsSetUnprocessedResourceIdentifiers()
         {
-            return this._unprocessedResourceIdentifiers != null && this._unprocessedResourceIdentifiers.Count > 0; 
+            return this._unprocessedResourceIdentifiers != null && (this._unprocessedResourceIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

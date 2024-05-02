@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Macie2.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Macie2.Model
     public partial class JobSummary
     {
         private S3BucketCriteriaForJob _bucketCriteria;
-        private List<S3BucketDefinitionForJob> _bucketDefinitions = new List<S3BucketDefinitionForJob>();
+        private List<S3BucketDefinitionForJob> _bucketDefinitions = AWSConfigs.InitializeCollections ? new List<S3BucketDefinitionForJob>() : null;
         private DateTime? _createdAt;
         private string _jobId;
         private JobStatus _jobStatus;
@@ -83,7 +84,7 @@ namespace Amazon.Macie2.Model
         // Check to see if BucketDefinitions property is set
         internal bool IsSetBucketDefinitions()
         {
-            return this._bucketDefinitions != null && this._bucketDefinitions.Count > 0; 
+            return this._bucketDefinitions != null && (this._bucketDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

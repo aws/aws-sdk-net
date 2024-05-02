@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CostOptimizationHub.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.CostOptimizationHub.Model
     #endif
     public partial class ValidationException : AmazonCostOptimizationHubException
     {
-        private List<ValidationExceptionDetail> _fields = new List<ValidationExceptionDetail>();
+        private List<ValidationExceptionDetail> _fields = AWSConfigs.InitializeCollections ? new List<ValidationExceptionDetail>() : null;
         private ValidationExceptionReason _reason;
 
         /// <summary>
@@ -136,7 +137,7 @@ namespace Amazon.CostOptimizationHub.Model
         // Check to see if Fields property is set
         internal bool IsSetFields()
         {
-            return this._fields != null && this._fields.Count > 0; 
+            return this._fields != null && (this._fields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

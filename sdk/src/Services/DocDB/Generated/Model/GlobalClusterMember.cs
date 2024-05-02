@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DocDB.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.DocDB.Model
     {
         private string _dbClusterArn;
         private bool? _isWriter;
-        private List<string> _readers = new List<string>();
+        private List<string> _readers = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DBClusterArn. 
@@ -92,7 +93,7 @@ namespace Amazon.DocDB.Model
         // Check to see if Readers property is set
         internal bool IsSetReaders()
         {
-            return this._readers != null && this._readers.Count > 0; 
+            return this._readers != null && (this._readers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

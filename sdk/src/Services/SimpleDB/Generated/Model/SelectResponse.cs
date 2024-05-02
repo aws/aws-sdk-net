@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleDB.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SimpleDB.Model
     /// </summary>
     public partial class SelectResponse : AmazonWebServiceResponse
     {
-        private List<Item> _items = new List<Item>();
+        private List<Item> _items = AWSConfigs.InitializeCollections ? new List<Item>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -48,7 +49,7 @@ namespace Amazon.SimpleDB.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

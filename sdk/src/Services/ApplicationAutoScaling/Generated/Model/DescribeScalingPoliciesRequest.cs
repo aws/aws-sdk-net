@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ApplicationAutoScaling.Model
 {
     /// <summary>
@@ -49,7 +50,7 @@ namespace Amazon.ApplicationAutoScaling.Model
     {
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _policyNames = new List<string>();
+        private List<string> _policyNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _resourceId;
         private ScalableDimension _scalableDimension;
         private ServiceNamespace _serviceNamespace;
@@ -114,7 +115,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         // Check to see if PolicyNames property is set
         internal bool IsSetPolicyNames()
         {
-            return this._policyNames != null && this._policyNames.Count > 0; 
+            return this._policyNames != null && (this._policyNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

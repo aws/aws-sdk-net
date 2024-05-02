@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.DeviceFarm.Model
     public partial class ListSuitesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Suite> _suites = new List<Suite>();
+        private List<Suite> _suites = AWSConfigs.InitializeCollections ? new List<Suite>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if Suites property is set
         internal bool IsSetSuites()
         {
-            return this._suites != null && this._suites.Count > 0; 
+            return this._suites != null && (this._suites.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

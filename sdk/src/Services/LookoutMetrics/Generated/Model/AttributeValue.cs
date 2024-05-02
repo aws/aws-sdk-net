@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LookoutMetrics.Model
 {
     /// <summary>
@@ -34,11 +35,11 @@ namespace Amazon.LookoutMetrics.Model
     public partial class AttributeValue
     {
         private string _b;
-        private List<string> _bs = new List<string>();
+        private List<string> _bs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _n;
-        private List<string> _ns = new List<string>();
+        private List<string> _ns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _s;
-        private List<string> _ss = new List<string>();
+        private List<string> _ss = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property B. 
@@ -73,7 +74,7 @@ namespace Amazon.LookoutMetrics.Model
         // Check to see if BS property is set
         internal bool IsSetBS()
         {
-            return this._bs != null && this._bs.Count > 0; 
+            return this._bs != null && (this._bs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -109,7 +110,7 @@ namespace Amazon.LookoutMetrics.Model
         // Check to see if NS property is set
         internal bool IsSetNS()
         {
-            return this._ns != null && this._ns.Count > 0; 
+            return this._ns != null && (this._ns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -145,7 +146,7 @@ namespace Amazon.LookoutMetrics.Model
         // Check to see if SS property is set
         internal bool IsSetSS()
         {
-            return this._ss != null && this._ss.Count > 0; 
+            return this._ss != null && (this._ss.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

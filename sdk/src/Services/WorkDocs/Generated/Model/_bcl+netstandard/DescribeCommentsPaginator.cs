@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.WorkDocs.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.WorkDocs.Model
         /// Enumerable containing all of the Comments
         /// </summary>
         public IPaginatedEnumerable<Comment> Comments => 
-            new PaginatedResultKeyResponse<DescribeCommentsResponse, Comment>(this, (i) => i.Comments);
+            new PaginatedResultKeyResponse<DescribeCommentsResponse, Comment>(this, (i) => i.Comments ?? new List<Comment>());
 
         internal DescribeCommentsPaginator(IAmazonWorkDocs client, DescribeCommentsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.WorkDocs.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeCommentsResponse> IPaginator<DescribeCommentsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeCommentsResponse> IPaginator<DescribeCommentsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

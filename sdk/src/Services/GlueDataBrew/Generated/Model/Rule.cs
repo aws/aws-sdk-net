@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
@@ -35,10 +36,10 @@ namespace Amazon.GlueDataBrew.Model
     public partial class Rule
     {
         private string _checkExpression;
-        private List<ColumnSelector> _columnSelectors = new List<ColumnSelector>();
+        private List<ColumnSelector> _columnSelectors = AWSConfigs.InitializeCollections ? new List<ColumnSelector>() : null;
         private bool? _disabled;
         private string _name;
-        private Dictionary<string, string> _substitutionMap = new Dictionary<string, string>();
+        private Dictionary<string, string> _substitutionMap = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private Threshold _threshold;
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace Amazon.GlueDataBrew.Model
         // Check to see if ColumnSelectors property is set
         internal bool IsSetColumnSelectors()
         {
-            return this._columnSelectors != null && this._columnSelectors.Count > 0; 
+            return this._columnSelectors != null && (this._columnSelectors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -150,7 +151,7 @@ namespace Amazon.GlueDataBrew.Model
         // Check to see if SubstitutionMap property is set
         internal bool IsSetSubstitutionMap()
         {
-            return this._substitutionMap != null && this._substitutionMap.Count > 0; 
+            return this._substitutionMap != null && (this._substitutionMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

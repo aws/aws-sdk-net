@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Backup.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class FrameworkControl
     {
-        private List<ControlInputParameter> _controlInputParameters = new List<ControlInputParameter>();
+        private List<ControlInputParameter> _controlInputParameters = AWSConfigs.InitializeCollections ? new List<ControlInputParameter>() : null;
         private string _controlName;
         private ControlScope _controlScope;
 
@@ -53,7 +54,7 @@ namespace Amazon.Backup.Model
         // Check to see if ControlInputParameters property is set
         internal bool IsSetControlInputParameters()
         {
-            return this._controlInputParameters != null && this._controlInputParameters.Count > 0; 
+            return this._controlInputParameters != null && (this._controlInputParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -81,6 +82,11 @@ namespace Amazon.Backup.Model
         /// The scope of a control. The control scope defines what the control will evaluate.
         /// Three examples of control scopes are: a specific backup plan, all backup plans with
         /// a specific tag, or all backup plans.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_ControlScope.html">
+        /// <c>ControlScope</c>.</a> 
         /// </para>
         /// </summary>
         public ControlScope ControlScope

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.SageMakerGeospatial.Model
         /// Enumerable containing all of the EarthObservationJobSummaries
         /// </summary>
         public IPaginatedEnumerable<ListEarthObservationJobOutputConfig> EarthObservationJobSummaries => 
-            new PaginatedResultKeyResponse<ListEarthObservationJobsResponse, ListEarthObservationJobOutputConfig>(this, (i) => i.EarthObservationJobSummaries);
+            new PaginatedResultKeyResponse<ListEarthObservationJobsResponse, ListEarthObservationJobOutputConfig>(this, (i) => i.EarthObservationJobSummaries ?? new List<ListEarthObservationJobOutputConfig>());
 
         internal ListEarthObservationJobsPaginator(IAmazonSageMakerGeospatial client, ListEarthObservationJobsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListEarthObservationJobsResponse> IPaginator<ListEarthObservationJobsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListEarthObservationJobsResponse> IPaginator<ListEarthObservationJobsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

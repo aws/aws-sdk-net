@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Budgets.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Budgets.Model
     /// </summary>
     public partial class DescribeBudgetActionHistoriesResponse : AmazonWebServiceResponse
     {
-        private List<ActionHistory> _actionHistories = new List<ActionHistory>();
+        private List<ActionHistory> _actionHistories = AWSConfigs.InitializeCollections ? new List<ActionHistory>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.Budgets.Model
         // Check to see if ActionHistories property is set
         internal bool IsSetActionHistories()
         {
-            return this._actionHistories != null && this._actionHistories.Count > 0; 
+            return this._actionHistories != null && (this._actionHistories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

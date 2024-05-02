@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.DirectoryService.Model
     {
         private string _directoryId;
         private string _nextToken;
-        private List<SettingEntry> _settingEntries = new List<SettingEntry>();
+        private List<SettingEntry> _settingEntries = AWSConfigs.InitializeCollections ? new List<SettingEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property DirectoryId. 
@@ -97,7 +98,7 @@ namespace Amazon.DirectoryService.Model
         // Check to see if SettingEntries property is set
         internal bool IsSetSettingEntries()
         {
-            return this._settingEntries != null && this._settingEntries.Count > 0; 
+            return this._settingEntries != null && (this._settingEntries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

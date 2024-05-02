@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MigrationHubStrategyRecommendations.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
     /// </summary>
     public partial class GetApplicationComponentStrategiesResponse : AmazonWebServiceResponse
     {
-        private List<ApplicationComponentStrategy> _applicationComponentStrategies = new List<ApplicationComponentStrategy>();
+        private List<ApplicationComponentStrategy> _applicationComponentStrategies = AWSConfigs.InitializeCollections ? new List<ApplicationComponentStrategy>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationComponentStrategies. 
@@ -50,7 +51,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         // Check to see if ApplicationComponentStrategies property is set
         internal bool IsSetApplicationComponentStrategies()
         {
-            return this._applicationComponentStrategies != null && this._applicationComponentStrategies.Count > 0; 
+            return this._applicationComponentStrategies != null && (this._applicationComponentStrategies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

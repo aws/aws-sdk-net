@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataSync.Model
 {
     /// <summary>
@@ -37,17 +38,18 @@ namespace Amazon.DataSync.Model
         private DateTime? _creationTime;
         private string _currentTaskExecutionArn;
         private string _destinationLocationArn;
-        private List<string> _destinationNetworkInterfaceArns = new List<string>();
+        private List<string> _destinationNetworkInterfaceArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _errorCode;
         private string _errorDetail;
-        private List<FilterRule> _excludes = new List<FilterRule>();
-        private List<FilterRule> _includes = new List<FilterRule>();
+        private List<FilterRule> _excludes = AWSConfigs.InitializeCollections ? new List<FilterRule>() : null;
+        private List<FilterRule> _includes = AWSConfigs.InitializeCollections ? new List<FilterRule>() : null;
         private ManifestConfig _manifestConfig;
         private string _name;
         private Options _options;
         private TaskSchedule _schedule;
+        private TaskScheduleDetails _scheduleDetails;
         private string _sourceLocationArn;
-        private List<string> _sourceNetworkInterfaceArns = new List<string>();
+        private List<string> _sourceNetworkInterfaceArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TaskStatus _status;
         private string _taskArn;
         private TaskReportConfig _taskReportConfig;
@@ -55,13 +57,13 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property CloudWatchLogGroupArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to
-        /// monitor and log events in the task.
+        /// The Amazon Resource Name (ARN) of an Amazon CloudWatch log group for monitoring your
+        /// task.
         /// </para>
         ///  
         /// <para>
-        /// For more information on these groups, see Working with Log Groups and Log Streams
-        /// in the <i>Amazon CloudWatch User Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/monitor-datasync.html">Monitoring
+        /// DataSync with Amazon CloudWatch</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=562)]
@@ -98,7 +100,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property CurrentTaskExecutionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the task execution that is transferring files.
+        /// The ARN of the most recent task execution.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -117,7 +119,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property DestinationLocationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon Web Services storage resource's location.
+        /// The ARN of your transfer's destination location.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -136,9 +138,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property DestinationNetworkInterfaceArns. 
         /// <para>
-        /// The Amazon Resource Names (ARNs) of the network interfaces created for your destination
-        /// location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network
-        /// interface requirements</a>.
+        /// The ARNs of the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network
+        /// interfaces</a> that DataSync created for your destination location.
         /// </para>
         /// </summary>
         public List<string> DestinationNetworkInterfaceArns
@@ -150,14 +151,15 @@ namespace Amazon.DataSync.Model
         // Check to see if DestinationNetworkInterfaceArns property is set
         internal bool IsSetDestinationNetworkInterfaceArns()
         {
-            return this._destinationNetworkInterfaceArns != null && this._destinationNetworkInterfaceArns.Count > 0; 
+            return this._destinationNetworkInterfaceArns != null && (this._destinationNetworkInterfaceArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        /// Errors that DataSync encountered during execution of the task. You can use this error
-        /// code to help troubleshoot issues.
+        /// If there's an issue with your task, you can use the error code to help you troubleshoot
+        /// the problem. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-locations-tasks.html">Troubleshooting
+        /// issues with DataSync transfers</a>.
         /// </para>
         /// </summary>
         public string ErrorCode
@@ -175,8 +177,9 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property ErrorDetail. 
         /// <para>
-        /// Detailed description of an error that was encountered during the task execution. You
-        /// can use this information to help troubleshoot issues. 
+        /// If there's an issue with your task, you can use the error details to help you troubleshoot
+        /// the problem. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-locations-tasks.html">Troubleshooting
+        /// issues with DataSync transfers</a>.
         /// </para>
         /// </summary>
         public string ErrorDetail
@@ -194,9 +197,10 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Excludes. 
         /// <para>
-        /// A list of filter rules that exclude specific data during your transfer. For more information
-        /// and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
-        /// data transferred by DataSync</a>.
+        /// The exclude filters that define the files, objects, and folders in your source location
+        /// that you don't want DataSync to transfer. For more information and examples, see <a
+        /// href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying
+        /// what DataSync transfers by using filters</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
@@ -209,15 +213,15 @@ namespace Amazon.DataSync.Model
         // Check to see if Excludes property is set
         internal bool IsSetExcludes()
         {
-            return this._excludes != null && this._excludes.Count > 0; 
+            return this._excludes != null && (this._excludes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property Includes. 
         /// <para>
-        /// A list of filter rules that include specific data during your transfer. For more information
-        /// and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
-        /// data transferred by DataSync</a>.
+        /// The include filters that define the files, objects, and folders in your source location
+        /// that you want DataSync to transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying
+        /// what DataSync transfers by using filters</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
@@ -230,14 +234,14 @@ namespace Amazon.DataSync.Model
         // Check to see if Includes property is set
         internal bool IsSetIncludes()
         {
-            return this._includes != null && this._includes.Count > 0; 
+            return this._includes != null && (this._includes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property ManifestConfig. 
         /// <para>
-        /// The configuration of the manifest that lists the files or objects to transfer. For
-        /// more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying
+        /// The configuration of the manifest that lists the files or objects that you want DataSync
+        /// to transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/transferring-with-manifest.html">Specifying
         /// what DataSync transfers by using a manifest</a>.
         /// </para>
         /// </summary>
@@ -256,10 +260,10 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the task that was described.
+        /// The name of your task.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -275,14 +279,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Options. 
         /// <para>
-        /// The configuration options that control the behavior of the <c>StartTaskExecution</c>
-        /// operation. Some options include preserving file or object metadata and verifying data
-        /// integrity.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can override these options for each task execution. For more information, see
-        /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.
+        /// The task's settings. For example, what file metadata gets preserved, how data integrity
+        /// gets verified at the end of your transfer, bandwidth limits, among other options.
         /// </para>
         /// </summary>
         public Options Options
@@ -300,7 +298,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Schedule. 
         /// <para>
-        /// The schedule used to periodically transfer files from a source to a destination location.
+        /// The schedule for when you want your task to run. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling
+        /// your task</a>.
         /// </para>
         /// </summary>
         public TaskSchedule Schedule
@@ -316,9 +315,28 @@ namespace Amazon.DataSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ScheduleDetails. 
+        /// <para>
+        /// The details about your <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">task
+        /// schedule</a>.
+        /// </para>
+        /// </summary>
+        public TaskScheduleDetails ScheduleDetails
+        {
+            get { return this._scheduleDetails; }
+            set { this._scheduleDetails = value; }
+        }
+
+        // Check to see if ScheduleDetails property is set
+        internal bool IsSetScheduleDetails()
+        {
+            return this._scheduleDetails != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SourceLocationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the source file system's location.
+        /// The ARN of your transfer's source location.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -337,9 +355,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property SourceNetworkInterfaceArns. 
         /// <para>
-        /// The Amazon Resource Names (ARNs) of the network interfaces created for your source
-        /// location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">Network
-        /// interface requirements</a>.
+        /// The ARNs of the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/datasync-network.html#required-network-interfaces">network
+        /// interfaces</a> that DataSync created for your source location.
         /// </para>
         /// </summary>
         public List<string> SourceNetworkInterfaceArns
@@ -351,18 +368,14 @@ namespace Amazon.DataSync.Model
         // Check to see if SourceNetworkInterfaceArns property is set
         internal bool IsSetSourceNetworkInterfaceArns()
         {
-            return this._sourceNetworkInterfaceArns != null && this._sourceNetworkInterfaceArns.Count > 0; 
+            return this._sourceNetworkInterfaceArns != null && (this._sourceNetworkInterfaceArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the task that was described.
-        /// </para>
-        ///  
-        /// <para>
-        /// For detailed information about task execution statuses, see Understanding Task Statuses
-        /// in the <i>DataSync User Guide</i>.
+        /// The status of your task. For information about what each status means, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-task-statuses.html#understand-task-creation-statuses">Task
+        /// statuses</a>.
         /// </para>
         /// </summary>
         public TaskStatus Status
@@ -380,7 +393,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property TaskArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the task that was described.
+        /// The ARN of your task.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -399,9 +412,9 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property TaskReportConfig. 
         /// <para>
-        /// The configuration of your task report, which provides detailed information about for
-        /// your DataSync transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Creating
-        /// a task report</a>.
+        /// The configuration of your task report, which provides detailed information about your
+        /// DataSync transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-reports.html">Monitoring
+        /// your DataSync transfers with task reports</a>.
         /// </para>
         /// </summary>
         public TaskReportConfig TaskReportConfig

@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -88,6 +89,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("reservedInstanceValueSet/item", targetDepth))
                     {
                         var unmarshaller = ReservedInstanceReservationValueUnmarshaller.Instance;
+                        if (response.ReservedInstanceValueSet == null)
+                        {
+                            response.ReservedInstanceValueSet = new List<ReservedInstanceReservationValue>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ReservedInstanceValueSet.Add(item);
                         continue;
@@ -101,6 +106,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("targetConfigurationValueSet/item", targetDepth))
                     {
                         var unmarshaller = TargetReservationValueUnmarshaller.Instance;
+                        if (response.TargetConfigurationValueSet == null)
+                        {
+                            response.TargetConfigurationValueSet = new List<TargetReservationValue>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.TargetConfigurationValueSet.Add(item);
                         continue;

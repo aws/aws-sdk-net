@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -40,12 +41,12 @@ namespace Amazon.EC2.Model
         private string _customerGatewayId;
         private GatewayAssociationState _gatewayAssociationState;
         private VpnConnectionOptions _options;
-        private List<VpnStaticRoute> _routes = new List<VpnStaticRoute>();
+        private List<VpnStaticRoute> _routes = AWSConfigs.InitializeCollections ? new List<VpnStaticRoute>() : null;
         private VpnState _state;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _transitGatewayId;
         private GatewayType _type;
-        private List<VgwTelemetry> _vgwTelemetry = new List<VgwTelemetry>();
+        private List<VgwTelemetry> _vgwTelemetry = AWSConfigs.InitializeCollections ? new List<VgwTelemetry>() : null;
         private string _vpnConnectionId;
         private string _vpnGatewayId;
 
@@ -196,7 +197,7 @@ namespace Amazon.EC2.Model
         // Check to see if Routes property is set
         internal bool IsSetRoutes()
         {
-            return this._routes != null && this._routes.Count > 0; 
+            return this._routes != null && (this._routes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -232,7 +233,7 @@ namespace Amazon.EC2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -286,7 +287,7 @@ namespace Amazon.EC2.Model
         // Check to see if VgwTelemetry property is set
         internal bool IsSetVgwTelemetry()
         {
-            return this._vgwTelemetry != null && this._vgwTelemetry.Count > 0; 
+            return this._vgwTelemetry != null && (this._vgwTelemetry.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

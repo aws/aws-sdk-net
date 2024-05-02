@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DnsServersOptionsModifyStructure
     {
-        private List<string> _customDnsServers = new List<string>();
+        private List<string> _customDnsServers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _enabled;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.EC2.Model
         // Check to see if CustomDnsServers property is set
         internal bool IsSetCustomDnsServers()
         {
-            return this._customDnsServers != null && this._customDnsServers.Count > 0; 
+            return this._customDnsServers != null && (this._customDnsServers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

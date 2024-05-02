@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SecurityHub.Model
     public partial class AwsEfsAccessPointPosixUserDetails
     {
         private string _gid;
-        private List<string> _secondaryGids = new List<string>();
+        private List<string> _secondaryGids = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _uid;
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if SecondaryGids property is set
         internal bool IsSetSecondaryGids()
         {
-            return this._secondaryGids != null && this._secondaryGids.Count > 0; 
+            return this._secondaryGids != null && (this._secondaryGids.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

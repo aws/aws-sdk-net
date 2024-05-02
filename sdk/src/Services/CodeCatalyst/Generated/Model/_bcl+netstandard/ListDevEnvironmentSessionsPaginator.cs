@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CodeCatalyst.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.CodeCatalyst.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<DevEnvironmentSessionSummary> Items => 
-            new PaginatedResultKeyResponse<ListDevEnvironmentSessionsResponse, DevEnvironmentSessionSummary>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListDevEnvironmentSessionsResponse, DevEnvironmentSessionSummary>(this, (i) => i.Items ?? new List<DevEnvironmentSessionSummary>());
 
         internal ListDevEnvironmentSessionsPaginator(IAmazonCodeCatalyst client, ListDevEnvironmentSessionsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.CodeCatalyst.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListDevEnvironmentSessionsResponse> IPaginator<ListDevEnvironmentSessionsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListDevEnvironmentSessionsResponse> IPaginator<ListDevEnvironmentSessionsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

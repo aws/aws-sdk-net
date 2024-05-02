@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class ListAutomationRulesResponse : AmazonWebServiceResponse
     {
-        private List<AutomationRulesMetadata> _automationRulesMetadata = new List<AutomationRulesMetadata>();
+        private List<AutomationRulesMetadata> _automationRulesMetadata = AWSConfigs.InitializeCollections ? new List<AutomationRulesMetadata>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if AutomationRulesMetadata property is set
         internal bool IsSetAutomationRulesMetadata()
         {
-            return this._automationRulesMetadata != null && this._automationRulesMetadata.Count > 0; 
+            return this._automationRulesMetadata != null && (this._automationRulesMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

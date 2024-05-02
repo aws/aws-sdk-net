@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaPackageVod.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.MediaPackageVod.Model
     public partial class CmafPackage
     {
         private CmafEncryption _encryption;
-        private List<HlsManifest> _hlsManifests = new List<HlsManifest>();
+        private List<HlsManifest> _hlsManifests = AWSConfigs.InitializeCollections ? new List<HlsManifest>() : null;
         private bool? _includeEncoderConfigurationInSegments;
         private int? _segmentDurationSeconds;
 
@@ -66,7 +67,7 @@ namespace Amazon.MediaPackageVod.Model
         // Check to see if HlsManifests property is set
         internal bool IsSetHlsManifests()
         {
-            return this._hlsManifests != null && this._hlsManifests.Count > 0; 
+            return this._hlsManifests != null && (this._hlsManifests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

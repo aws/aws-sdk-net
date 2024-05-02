@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MainframeModernization.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MainframeModernization.Model
     /// </summary>
     public partial class ListDeploymentsResponse : AmazonWebServiceResponse
     {
-        private List<DeploymentSummary> _deployments = new List<DeploymentSummary>();
+        private List<DeploymentSummary> _deployments = AWSConfigs.InitializeCollections ? new List<DeploymentSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.MainframeModernization.Model
         // Check to see if Deployments property is set
         internal bool IsSetDeployments()
         {
-            return this._deployments != null && this._deployments.Count > 0; 
+            return this._deployments != null && (this._deployments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

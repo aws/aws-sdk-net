@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.CodeDeploy.Model
     public partial class TargetGroupPairInfo
     {
         private TrafficRoute _prodTrafficRoute;
-        private List<TargetGroupInfo> _targetGroups = new List<TargetGroupInfo>();
+        private List<TargetGroupInfo> _targetGroups = AWSConfigs.InitializeCollections ? new List<TargetGroupInfo>() : null;
         private TrafficRoute _testTrafficRoute;
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if TargetGroups property is set
         internal bool IsSetTargetGroups()
         {
-            return this._targetGroups != null && this._targetGroups.Count > 0; 
+            return this._targetGroups != null && (this._targetGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

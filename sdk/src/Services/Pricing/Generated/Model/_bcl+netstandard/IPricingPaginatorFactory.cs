@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the pricing-2017-10-15.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Pricing.Model
 {
     /// <summary>

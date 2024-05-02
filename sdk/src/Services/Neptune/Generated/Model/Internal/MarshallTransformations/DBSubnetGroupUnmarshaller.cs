@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Neptune.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -81,6 +82,10 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Subnets/Subnet", targetDepth))
                     {
                         var unmarshaller = SubnetUnmarshaller.Instance;
+                        if (unmarshalledObject.Subnets == null)
+                        {
+                            unmarshalledObject.Subnets = new List<Subnet>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Subnets.Add(item);
                         continue;

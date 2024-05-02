@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Finspace.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Finspace.Model
         private string _releaseLabel;
         private KxClusterStatus _status;
         private string _statusReason;
-        private List<Volume> _volumes = new List<Volume>();
+        private List<Volume> _volumes = AWSConfigs.InitializeCollections ? new List<Volume>() : null;
 
         /// <summary>
         /// Gets and sets the property AvailabilityZoneId. 
@@ -53,6 +54,7 @@ namespace Amazon.Finspace.Model
         ///  The availability zone identifiers for the requested regions. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=8, Max=12)]
         public string AvailabilityZoneId
         {
             get { return this._availabilityZoneId; }
@@ -370,7 +372,7 @@ namespace Amazon.Finspace.Model
         // Check to see if Volumes property is set
         internal bool IsSetVolumes()
         {
-            return this._volumes != null && this._volumes.Count > 0; 
+            return this._volumes != null && (this._volumes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

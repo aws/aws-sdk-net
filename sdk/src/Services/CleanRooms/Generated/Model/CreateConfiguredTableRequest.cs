@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
@@ -34,12 +35,12 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class CreateConfiguredTableRequest : AmazonCleanRoomsRequest
     {
-        private List<string> _allowedColumns = new List<string>();
+        private List<string> _allowedColumns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AnalysisMethod _analysisMethod;
         private string _description;
         private string _name;
         private TableReference _tableReference;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AllowedColumns. 
@@ -58,7 +59,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if AllowedColumns property is set
         internal bool IsSetAllowedColumns()
         {
-            return this._allowedColumns != null && this._allowedColumns.Count > 0; 
+            return this._allowedColumns != null && (this._allowedColumns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -155,7 +156,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

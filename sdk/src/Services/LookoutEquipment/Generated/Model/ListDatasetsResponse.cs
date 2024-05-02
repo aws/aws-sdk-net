@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LookoutEquipment.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.LookoutEquipment.Model
     /// </summary>
     public partial class ListDatasetsResponse : AmazonWebServiceResponse
     {
-        private List<DatasetSummary> _datasetSummaries = new List<DatasetSummary>();
+        private List<DatasetSummary> _datasetSummaries = AWSConfigs.InitializeCollections ? new List<DatasetSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.LookoutEquipment.Model
         // Check to see if DatasetSummaries property is set
         internal bool IsSetDatasetSummaries()
         {
-            return this._datasetSummaries != null && this._datasetSummaries.Count > 0; 
+            return this._datasetSummaries != null && (this._datasetSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

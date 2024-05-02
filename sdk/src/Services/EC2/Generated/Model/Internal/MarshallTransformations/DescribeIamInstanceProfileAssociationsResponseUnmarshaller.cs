@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -58,6 +59,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("iamInstanceProfileAssociationSet/item", targetDepth))
                     {
                         var unmarshaller = IamInstanceProfileAssociationUnmarshaller.Instance;
+                        if (response.IamInstanceProfileAssociations == null)
+                        {
+                            response.IamInstanceProfileAssociations = new List<IamInstanceProfileAssociation>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.IamInstanceProfileAssociations.Add(item);
                         continue;

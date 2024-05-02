@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.WellArchitected.Model
     /// </summary>
     public partial class ListCheckSummariesResponse : AmazonWebServiceResponse
     {
-        private List<CheckSummary> _checkSummaries = new List<CheckSummary>();
+        private List<CheckSummary> _checkSummaries = AWSConfigs.InitializeCollections ? new List<CheckSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if CheckSummaries property is set
         internal bool IsSetCheckSummaries()
         {
-            return this._checkSummaries != null && this._checkSummaries.Count > 0; 
+            return this._checkSummaries != null && (this._checkSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

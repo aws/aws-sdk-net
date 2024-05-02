@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Omics.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Omics.Model
         /// Enumerable containing all of the ReadSets
         /// </summary>
         public IPaginatedEnumerable<ReadSetListItem> ReadSets => 
-            new PaginatedResultKeyResponse<ListReadSetsResponse, ReadSetListItem>(this, (i) => i.ReadSets);
+            new PaginatedResultKeyResponse<ListReadSetsResponse, ReadSetListItem>(this, (i) => i.ReadSets ?? new List<ReadSetListItem>());
 
         internal ListReadSetsPaginator(IAmazonOmics client, ListReadSetsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Omics.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListReadSetsResponse> IPaginator<ListReadSetsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListReadSetsResponse> IPaginator<ListReadSetsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

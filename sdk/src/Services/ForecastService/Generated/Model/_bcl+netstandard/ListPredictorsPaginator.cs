@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ForecastService.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ForecastService.Model
         /// Enumerable containing all of the Predictors
         /// </summary>
         public IPaginatedEnumerable<PredictorSummary> Predictors => 
-            new PaginatedResultKeyResponse<ListPredictorsResponse, PredictorSummary>(this, (i) => i.Predictors);
+            new PaginatedResultKeyResponse<ListPredictorsResponse, PredictorSummary>(this, (i) => i.Predictors ?? new List<PredictorSummary>());
 
         internal ListPredictorsPaginator(IAmazonForecastService client, ListPredictorsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ForecastService.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListPredictorsResponse> IPaginator<ListPredictorsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListPredictorsResponse> IPaginator<ListPredictorsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

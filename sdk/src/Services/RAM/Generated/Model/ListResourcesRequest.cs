@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RAM.Model
 {
     /// <summary>
@@ -38,10 +39,10 @@ namespace Amazon.RAM.Model
         private int? _maxResults;
         private string _nextToken;
         private string _principal;
-        private List<string> _resourceArns = new List<string>();
+        private List<string> _resourceArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ResourceOwner _resourceOwner;
         private ResourceRegionScopeFilter _resourceRegionScope;
-        private List<string> _resourceShareArns = new List<string>();
+        private List<string> _resourceShareArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _resourceType;
 
         /// <summary>
@@ -127,7 +128,7 @@ namespace Amazon.RAM.Model
         // Check to see if ResourceArns property is set
         internal bool IsSetResourceArns()
         {
-            return this._resourceArns != null && this._resourceArns.Count > 0; 
+            return this._resourceArns != null && (this._resourceArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -210,7 +211,7 @@ namespace Amazon.RAM.Model
         // Check to see if ResourceShareArns property is set
         internal bool IsSetResourceShareArns()
         {
-            return this._resourceShareArns != null && this._resourceShareArns.Count > 0; 
+            return this._resourceShareArns != null && (this._resourceShareArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

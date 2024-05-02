@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeGuruSecurity.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CodeGuruSecurity.Model
     public partial class Remediation
     {
         private Recommendation _recommendation;
-        private List<SuggestedFix> _suggestedFixes = new List<SuggestedFix>();
+        private List<SuggestedFix> _suggestedFixes = AWSConfigs.InitializeCollections ? new List<SuggestedFix>() : null;
 
         /// <summary>
         /// Gets and sets the property Recommendation. 
@@ -71,7 +72,7 @@ namespace Amazon.CodeGuruSecurity.Model
         // Check to see if SuggestedFixes property is set
         internal bool IsSetSuggestedFixes()
         {
-            return this._suggestedFixes != null && this._suggestedFixes.Count > 0; 
+            return this._suggestedFixes != null && (this._suggestedFixes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

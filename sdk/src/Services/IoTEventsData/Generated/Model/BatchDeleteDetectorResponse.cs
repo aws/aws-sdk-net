@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTEventsData.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoTEventsData.Model
     /// </summary>
     public partial class BatchDeleteDetectorResponse : AmazonWebServiceResponse
     {
-        private List<BatchDeleteDetectorErrorEntry> _batchDeleteDetectorErrorEntries = new List<BatchDeleteDetectorErrorEntry>();
+        private List<BatchDeleteDetectorErrorEntry> _batchDeleteDetectorErrorEntries = AWSConfigs.InitializeCollections ? new List<BatchDeleteDetectorErrorEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property BatchDeleteDetectorErrorEntries. 
@@ -52,7 +53,7 @@ namespace Amazon.IoTEventsData.Model
         // Check to see if BatchDeleteDetectorErrorEntries property is set
         internal bool IsSetBatchDeleteDetectorErrorEntries()
         {
-            return this._batchDeleteDetectorErrorEntries != null && this._batchDeleteDetectorErrorEntries.Count > 0; 
+            return this._batchDeleteDetectorErrorEntries != null && (this._batchDeleteDetectorErrorEntries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

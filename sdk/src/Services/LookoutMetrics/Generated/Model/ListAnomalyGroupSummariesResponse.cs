@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LookoutMetrics.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.LookoutMetrics.Model
     public partial class ListAnomalyGroupSummariesResponse : AmazonWebServiceResponse
     {
         private AnomalyGroupStatistics _anomalyGroupStatistics;
-        private List<AnomalyGroupSummary> _anomalyGroupSummaryList = new List<AnomalyGroupSummary>();
+        private List<AnomalyGroupSummary> _anomalyGroupSummaryList = AWSConfigs.InitializeCollections ? new List<AnomalyGroupSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.LookoutMetrics.Model
         // Check to see if AnomalyGroupSummaryList property is set
         internal bool IsSetAnomalyGroupSummaryList()
         {
-            return this._anomalyGroupSummaryList != null && this._anomalyGroupSummaryList.Count > 0; 
+            return this._anomalyGroupSummaryList != null && (this._anomalyGroupSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

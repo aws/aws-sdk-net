@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class CoverageStatistics
     {
-        private Dictionary<string, long> _countByCoverageStatus = new Dictionary<string, long>();
-        private Dictionary<string, long> _countByResourceType = new Dictionary<string, long>();
+        private Dictionary<string, long> _countByCoverageStatus = AWSConfigs.InitializeCollections ? new Dictionary<string, long>() : null;
+        private Dictionary<string, long> _countByResourceType = AWSConfigs.InitializeCollections ? new Dictionary<string, long>() : null;
 
         /// <summary>
         /// Gets and sets the property CountByCoverageStatus. 
@@ -51,7 +52,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if CountByCoverageStatus property is set
         internal bool IsSetCountByCoverageStatus()
         {
-            return this._countByCoverageStatus != null && this._countByCoverageStatus.Count > 0; 
+            return this._countByCoverageStatus != null && (this._countByCoverageStatus.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if CountByResourceType property is set
         internal bool IsSetCountByResourceType()
         {
-            return this._countByResourceType != null && this._countByResourceType.Count > 0; 
+            return this._countByResourceType != null && (this._countByResourceType.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

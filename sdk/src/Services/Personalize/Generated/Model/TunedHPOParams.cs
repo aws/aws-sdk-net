@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Personalize.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Personalize.Model
     /// </summary>
     public partial class TunedHPOParams
     {
-        private Dictionary<string, string> _algorithmHyperParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _algorithmHyperParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AlgorithmHyperParameters. 
@@ -52,7 +53,7 @@ namespace Amazon.Personalize.Model
         // Check to see if AlgorithmHyperParameters property is set
         internal bool IsSetAlgorithmHyperParameters()
         {
-            return this._algorithmHyperParameters != null && this._algorithmHyperParameters.Count > 0; 
+            return this._algorithmHyperParameters != null && (this._algorithmHyperParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

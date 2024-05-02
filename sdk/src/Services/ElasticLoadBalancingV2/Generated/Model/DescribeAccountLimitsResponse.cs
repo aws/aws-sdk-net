@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class DescribeAccountLimitsResponse : AmazonWebServiceResponse
     {
-        private List<Limit> _limits = new List<Limit>();
+        private List<Limit> _limits = AWSConfigs.InitializeCollections ? new List<Limit>() : null;
         private string _nextMarker;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if Limits property is set
         internal bool IsSetLimits()
         {
-            return this._limits != null && this._limits.Count > 0; 
+            return this._limits != null && (this._limits.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

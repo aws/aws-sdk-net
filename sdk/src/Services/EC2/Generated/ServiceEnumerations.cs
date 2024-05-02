@@ -3507,6 +3507,114 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type DefaultInstanceMetadataEndpointState.
+    /// </summary>
+    public class DefaultInstanceMetadataEndpointState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for DefaultInstanceMetadataEndpointState
+        /// </summary>
+        public static readonly DefaultInstanceMetadataEndpointState Disabled = new DefaultInstanceMetadataEndpointState("disabled");
+        /// <summary>
+        /// Constant Enabled for DefaultInstanceMetadataEndpointState
+        /// </summary>
+        public static readonly DefaultInstanceMetadataEndpointState Enabled = new DefaultInstanceMetadataEndpointState("enabled");
+        /// <summary>
+        /// Constant NoPreference for DefaultInstanceMetadataEndpointState
+        /// </summary>
+        public static readonly DefaultInstanceMetadataEndpointState NoPreference = new DefaultInstanceMetadataEndpointState("no-preference");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DefaultInstanceMetadataEndpointState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DefaultInstanceMetadataEndpointState FindValue(string value)
+        {
+            return FindValue<DefaultInstanceMetadataEndpointState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DefaultInstanceMetadataEndpointState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DefaultInstanceMetadataTagsState.
+    /// </summary>
+    public class DefaultInstanceMetadataTagsState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for DefaultInstanceMetadataTagsState
+        /// </summary>
+        public static readonly DefaultInstanceMetadataTagsState Disabled = new DefaultInstanceMetadataTagsState("disabled");
+        /// <summary>
+        /// Constant Enabled for DefaultInstanceMetadataTagsState
+        /// </summary>
+        public static readonly DefaultInstanceMetadataTagsState Enabled = new DefaultInstanceMetadataTagsState("enabled");
+        /// <summary>
+        /// Constant NoPreference for DefaultInstanceMetadataTagsState
+        /// </summary>
+        public static readonly DefaultInstanceMetadataTagsState NoPreference = new DefaultInstanceMetadataTagsState("no-preference");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DefaultInstanceMetadataTagsState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DefaultInstanceMetadataTagsState FindValue(string value)
+        {
+            return FindValue<DefaultInstanceMetadataTagsState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DefaultInstanceMetadataTagsState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DefaultRouteTableAssociationValue.
     /// </summary>
     public class DefaultRouteTableAssociationValue : ConstantClass
@@ -6509,6 +6617,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly ImageAttributeName BootMode = new ImageAttributeName("bootMode");
         /// <summary>
+        /// Constant DeregistrationProtection for ImageAttributeName
+        /// </summary>
+        public static readonly ImageAttributeName DeregistrationProtection = new ImageAttributeName("deregistrationProtection");
+        /// <summary>
         /// Constant Description for ImageAttributeName
         /// </summary>
         public static readonly ImageAttributeName Description = new ImageAttributeName("description");
@@ -8345,6 +8457,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType C7gdMedium = new InstanceType("c7gd.medium");
         /// <summary>
+        /// Constant C7gdMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType C7gdMetal = new InstanceType("c7gd.metal");
+        /// <summary>
         /// Constant C7gdXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType C7gdXlarge = new InstanceType("c7gd.xlarge");
@@ -8660,6 +8776,46 @@ namespace Amazon.EC2
         /// Constant G5Xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType G5Xlarge = new InstanceType("g5.xlarge");
+        /// <summary>
+        /// Constant G612xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G612xlarge = new InstanceType("g6.12xlarge");
+        /// <summary>
+        /// Constant G616xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G616xlarge = new InstanceType("g6.16xlarge");
+        /// <summary>
+        /// Constant G624xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G624xlarge = new InstanceType("g6.24xlarge");
+        /// <summary>
+        /// Constant G62xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G62xlarge = new InstanceType("g6.2xlarge");
+        /// <summary>
+        /// Constant G648xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G648xlarge = new InstanceType("g6.48xlarge");
+        /// <summary>
+        /// Constant G64xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G64xlarge = new InstanceType("g6.4xlarge");
+        /// <summary>
+        /// Constant G68xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G68xlarge = new InstanceType("g6.8xlarge");
+        /// <summary>
+        /// Constant G6Xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType G6Xlarge = new InstanceType("g6.xlarge");
+        /// <summary>
+        /// Constant Gr64xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Gr64xlarge = new InstanceType("gr6.4xlarge");
+        /// <summary>
+        /// Constant Gr68xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Gr68xlarge = new InstanceType("gr6.8xlarge");
         /// <summary>
         /// Constant H116xlarge for InstanceType
         /// </summary>
@@ -9617,6 +9773,10 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType M7gdMedium = new InstanceType("m7gd.medium");
         /// <summary>
+        /// Constant M7gdMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType M7gdMetal = new InstanceType("m7gd.metal");
+        /// <summary>
         /// Constant M7gdXlarge for InstanceType
         /// </summary>
         public static readonly InstanceType M7gdXlarge = new InstanceType("m7gd.xlarge");
@@ -10416,6 +10576,10 @@ namespace Amazon.EC2
         /// Constant R7gdMedium for InstanceType
         /// </summary>
         public static readonly InstanceType R7gdMedium = new InstanceType("r7gd.medium");
+        /// <summary>
+        /// Constant R7gdMetal for InstanceType
+        /// </summary>
+        public static readonly InstanceType R7gdMetal = new InstanceType("r7gd.metal");
         /// <summary>
         /// Constant R7gdXlarge for InstanceType
         /// </summary>
@@ -13789,6 +13953,60 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type MetadataDefaultHttpTokensState.
+    /// </summary>
+    public class MetadataDefaultHttpTokensState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NoPreference for MetadataDefaultHttpTokensState
+        /// </summary>
+        public static readonly MetadataDefaultHttpTokensState NoPreference = new MetadataDefaultHttpTokensState("no-preference");
+        /// <summary>
+        /// Constant Optional for MetadataDefaultHttpTokensState
+        /// </summary>
+        public static readonly MetadataDefaultHttpTokensState Optional = new MetadataDefaultHttpTokensState("optional");
+        /// <summary>
+        /// Constant Required for MetadataDefaultHttpTokensState
+        /// </summary>
+        public static readonly MetadataDefaultHttpTokensState Required = new MetadataDefaultHttpTokensState("required");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MetadataDefaultHttpTokensState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MetadataDefaultHttpTokensState FindValue(string value)
+        {
+            return FindValue<MetadataDefaultHttpTokensState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MetadataDefaultHttpTokensState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MetricType.
     /// </summary>
     public class MetricType : ConstantClass
@@ -14176,6 +14394,10 @@ namespace Amazon.EC2
     public class NetworkInterfaceAttribute : ConstantClass
     {
 
+        /// <summary>
+        /// Constant AssociatePublicIpAddress for NetworkInterfaceAttribute
+        /// </summary>
+        public static readonly NetworkInterfaceAttribute AssociatePublicIpAddress = new NetworkInterfaceAttribute("associatePublicIpAddress");
         /// <summary>
         /// Constant Attachment for NetworkInterfaceAttribute
         /// </summary>

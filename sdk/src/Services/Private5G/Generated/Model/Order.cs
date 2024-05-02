@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Private5G.Model
 {
     /// <summary>
@@ -38,9 +39,9 @@ namespace Amazon.Private5G.Model
         private string _networkArn;
         private string _networkSiteArn;
         private string _orderArn;
-        private List<OrderedResourceDefinition> _orderedResources = new List<OrderedResourceDefinition>();
+        private List<OrderedResourceDefinition> _orderedResources = AWSConfigs.InitializeCollections ? new List<OrderedResourceDefinition>() : null;
         private Address _shippingAddress;
-        private List<TrackingInformation> _trackingInformation = new List<TrackingInformation>();
+        private List<TrackingInformation> _trackingInformation = AWSConfigs.InitializeCollections ? new List<TrackingInformation>() : null;
 
         /// <summary>
         /// Gets and sets the property AcknowledgmentStatus. 
@@ -147,7 +148,7 @@ namespace Amazon.Private5G.Model
         // Check to see if OrderedResources property is set
         internal bool IsSetOrderedResources()
         {
-            return this._orderedResources != null && this._orderedResources.Count > 0; 
+            return this._orderedResources != null && (this._orderedResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -183,7 +184,7 @@ namespace Amazon.Private5G.Model
         // Check to see if TrackingInformation property is set
         internal bool IsSetTrackingInformation()
         {
-            return this._trackingInformation != null && this._trackingInformation.Count > 0; 
+            return this._trackingInformation != null && (this._trackingInformation.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

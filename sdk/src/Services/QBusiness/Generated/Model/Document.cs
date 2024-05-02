@@ -26,15 +26,16 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// A document in an Amazon Q application.
+    /// A document in an Amazon Q Business application.
     /// </summary>
     public partial class Document
     {
         private AccessConfiguration _accessConfiguration;
-        private List<DocumentAttribute> _attributes = new List<DocumentAttribute>();
+        private List<DocumentAttribute> _attributes = AWSConfigs.InitializeCollections ? new List<DocumentAttribute>() : null;
         private DocumentContent _content;
         private ContentType _contentType;
         private DocumentEnrichmentConfiguration _documentEnrichmentConfiguration;
@@ -62,7 +63,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// Custom attributes to apply to the document for refining Amazon Q web experience responses.
+        /// Custom attributes to apply to the document for refining Amazon Q Business web experience
+        /// responses.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
@@ -75,7 +77,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

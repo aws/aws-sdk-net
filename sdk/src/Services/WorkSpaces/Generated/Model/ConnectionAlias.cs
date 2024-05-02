@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.WorkSpaces.Model
     public partial class ConnectionAlias
     {
         private string _aliasId;
-        private List<ConnectionAliasAssociation> _associations = new List<ConnectionAliasAssociation>();
+        private List<ConnectionAliasAssociation> _associations = AWSConfigs.InitializeCollections ? new List<ConnectionAliasAssociation>() : null;
         private string _connectionString;
         private string _ownerAccountId;
         private ConnectionAliasState _state;
@@ -76,7 +77,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if Associations property is set
         internal bool IsSetAssociations()
         {
-            return this._associations != null && this._associations.Count > 0; 
+            return this._associations != null && (this._associations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Textract.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Textract.Model
     {
         private LendingDetection _keyDetection;
         private string _type;
-        private List<LendingDetection> _valueDetections = new List<LendingDetection>();
+        private List<LendingDetection> _valueDetections = AWSConfigs.InitializeCollections ? new List<LendingDetection>() : null;
 
         /// <summary>
         /// Gets and sets the property KeyDetection.
@@ -86,7 +87,7 @@ namespace Amazon.Textract.Model
         // Check to see if ValueDetections property is set
         internal bool IsSetValueDetections()
         {
-            return this._valueDetections != null && this._valueDetections.Count > 0; 
+            return this._valueDetections != null && (this._valueDetections.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

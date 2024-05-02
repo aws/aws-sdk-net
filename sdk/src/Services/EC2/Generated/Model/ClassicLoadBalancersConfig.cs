@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ClassicLoadBalancersConfig
     {
-        private List<ClassicLoadBalancer> _classicLoadBalancers = new List<ClassicLoadBalancer>();
+        private List<ClassicLoadBalancer> _classicLoadBalancers = AWSConfigs.InitializeCollections ? new List<ClassicLoadBalancer>() : null;
 
         /// <summary>
         /// Gets and sets the property ClassicLoadBalancers. 
@@ -52,7 +53,7 @@ namespace Amazon.EC2.Model
         // Check to see if ClassicLoadBalancers property is set
         internal bool IsSetClassicLoadBalancers()
         {
-            return this._classicLoadBalancers != null && this._classicLoadBalancers.Count > 0; 
+            return this._classicLoadBalancers != null && (this._classicLoadBalancers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

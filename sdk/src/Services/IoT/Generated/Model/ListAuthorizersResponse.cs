@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class ListAuthorizersResponse : AmazonWebServiceResponse
     {
-        private List<AuthorizerSummary> _authorizers = new List<AuthorizerSummary>();
+        private List<AuthorizerSummary> _authorizers = AWSConfigs.InitializeCollections ? new List<AuthorizerSummary>() : null;
         private string _nextMarker;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.IoT.Model
         // Check to see if Authorizers property is set
         internal bool IsSetAuthorizers()
         {
-            return this._authorizers != null && this._authorizers.Count > 0; 
+            return this._authorizers != null && (this._authorizers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

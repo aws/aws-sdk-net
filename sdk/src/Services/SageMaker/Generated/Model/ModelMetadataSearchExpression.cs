@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ModelMetadataSearchExpression
     {
-        private List<ModelMetadataFilter> _filters = new List<ModelMetadataFilter>();
+        private List<ModelMetadataFilter> _filters = AWSConfigs.InitializeCollections ? new List<ModelMetadataFilter>() : null;
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -53,7 +54,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

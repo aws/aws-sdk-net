@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class RuleGroupVariablesIpSetsDetails
     {
-        private List<string> _definition = new List<string>();
+        private List<string> _definition = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Definition. 
@@ -50,7 +51,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Definition property is set
         internal bool IsSetDefinition()
         {
-            return this._definition != null && this._definition.Count > 0; 
+            return this._definition != null && (this._definition.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

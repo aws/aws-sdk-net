@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpsWorksCM.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.OpsWorksCM.Model
     public partial class DescribeEventsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ServerEvent> _serverEvents = new List<ServerEvent>();
+        private List<ServerEvent> _serverEvents = AWSConfigs.InitializeCollections ? new List<ServerEvent>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -76,7 +77,7 @@ namespace Amazon.OpsWorksCM.Model
         // Check to see if ServerEvents property is set
         internal bool IsSetServerEvents()
         {
-            return this._serverEvents != null && this._serverEvents.Count > 0; 
+            return this._serverEvents != null && (this._serverEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

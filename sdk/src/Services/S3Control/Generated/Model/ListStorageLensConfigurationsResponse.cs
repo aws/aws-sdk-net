@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3Control.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.S3Control.Model
     public partial class ListStorageLensConfigurationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ListStorageLensConfigurationEntry> _storageLensConfigurationList = new List<ListStorageLensConfigurationEntry>();
+        private List<ListStorageLensConfigurationEntry> _storageLensConfigurationList = AWSConfigs.InitializeCollections ? new List<ListStorageLensConfigurationEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.S3Control.Model
         // Check to see if StorageLensConfigurationList property is set
         internal bool IsSetStorageLensConfigurationList()
         {
-            return this._storageLensConfigurationList != null && this._storageLensConfigurationList.Count > 0; 
+            return this._storageLensConfigurationList != null && (this._storageLensConfigurationList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

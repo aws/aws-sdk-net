@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.WorkSpaces.Model
     /// </summary>
     public partial class StopWorkspacesRequest : AmazonWorkSpacesRequest
     {
-        private List<StopRequest> _stopWorkspaceRequests = new List<StopRequest>();
+        private List<StopRequest> _stopWorkspaceRequests = AWSConfigs.InitializeCollections ? new List<StopRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property StopWorkspaceRequests. 
@@ -58,7 +59,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if StopWorkspaceRequests property is set
         internal bool IsSetStopWorkspaceRequests()
         {
-            return this._stopWorkspaceRequests != null && this._stopWorkspaceRequests.Count > 0; 
+            return this._stopWorkspaceRequests != null && (this._stopWorkspaceRequests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

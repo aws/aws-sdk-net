@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.DeviceFarm.Model
         private DeviceFormFactor _formFactor;
         private long? _heapSize;
         private string _image;
-        private List<DeviceInstance> _instances = new List<DeviceInstance>();
+        private List<DeviceInstance> _instances = AWSConfigs.InitializeCollections ? new List<DeviceInstance>() : null;
         private string _manufacturer;
         private long? _memory;
         private string _model;
@@ -247,7 +248,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this._instances != null && this._instances.Count > 0; 
+            return this._instances != null && (this._instances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CodeDeploy.Model
     public partial class ListDeploymentGroupsResponse : AmazonWebServiceResponse
     {
         private string _applicationName;
-        private List<string> _deploymentGroups = new List<string>();
+        private List<string> _deploymentGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if DeploymentGroups property is set
         internal bool IsSetDeploymentGroups()
         {
-            return this._deploymentGroups != null && this._deploymentGroups.Count > 0; 
+            return this._deploymentGroups != null && (this._deploymentGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

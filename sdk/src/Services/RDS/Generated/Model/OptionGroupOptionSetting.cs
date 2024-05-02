@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.RDS.Model
         private string _defaultValue;
         private bool? _isModifiable;
         private bool? _isRequired;
-        private List<MinimumEngineVersionPerAllowedValue> _minimumEngineVersionPerAllowedValue = new List<MinimumEngineVersionPerAllowedValue>();
+        private List<MinimumEngineVersionPerAllowedValue> _minimumEngineVersionPerAllowedValue = AWSConfigs.InitializeCollections ? new List<MinimumEngineVersionPerAllowedValue>() : null;
         private string _settingDescription;
         private string _settingName;
 
@@ -151,7 +152,7 @@ namespace Amazon.RDS.Model
         // Check to see if MinimumEngineVersionPerAllowedValue property is set
         internal bool IsSetMinimumEngineVersionPerAllowedValue()
         {
-            return this._minimumEngineVersionPerAllowedValue != null && this._minimumEngineVersionPerAllowedValue.Count > 0; 
+            return this._minimumEngineVersionPerAllowedValue != null && (this._minimumEngineVersionPerAllowedValue.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

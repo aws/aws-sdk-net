@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Amplify.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Amplify.Model
     /// </summary>
     public partial class ListDomainAssociationsResponse : AmazonWebServiceResponse
     {
-        private List<DomainAssociation> _domainAssociations = new List<DomainAssociation>();
+        private List<DomainAssociation> _domainAssociations = AWSConfigs.InitializeCollections ? new List<DomainAssociation>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.Amplify.Model
         // Check to see if DomainAssociations property is set
         internal bool IsSetDomainAssociations()
         {
-            return this._domainAssociations != null && this._domainAssociations.Count > 0; 
+            return this._domainAssociations != null && (this._domainAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

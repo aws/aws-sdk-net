@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
@@ -48,12 +49,12 @@ namespace Amazon.ElastiCache.Model
         private GlobalReplicationGroupInfo _globalReplicationGroupInfo;
         private IpDiscovery _ipDiscovery;
         private string _kmsKeyId;
-        private List<LogDeliveryConfiguration> _logDeliveryConfigurations = new List<LogDeliveryConfiguration>();
-        private List<string> _memberClusters = new List<string>();
-        private List<string> _memberClustersOutpostArns = new List<string>();
+        private List<LogDeliveryConfiguration> _logDeliveryConfigurations = AWSConfigs.InitializeCollections ? new List<LogDeliveryConfiguration>() : null;
+        private List<string> _memberClusters = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _memberClustersOutpostArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private MultiAZStatus _multiAZ;
         private NetworkType _networkType;
-        private List<NodeGroup> _nodeGroups = new List<NodeGroup>();
+        private List<NodeGroup> _nodeGroups = AWSConfigs.InitializeCollections ? new List<NodeGroup>() : null;
         private ReplicationGroupPendingModifiedValues _pendingModifiedValues;
         private DateTime? _replicationGroupCreateTime;
         private string _replicationGroupId;
@@ -63,7 +64,7 @@ namespace Amazon.ElastiCache.Model
         private string _status;
         private bool? _transitEncryptionEnabled;
         private TransitEncryptionMode _transitEncryptionMode;
-        private List<string> _userGroupIds = new List<string>();
+        private List<string> _userGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ARN. 
@@ -389,7 +390,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if LogDeliveryConfigurations property is set
         internal bool IsSetLogDeliveryConfigurations()
         {
-            return this._logDeliveryConfigurations != null && this._logDeliveryConfigurations.Count > 0; 
+            return this._logDeliveryConfigurations != null && (this._logDeliveryConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -407,7 +408,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if MemberClusters property is set
         internal bool IsSetMemberClusters()
         {
-            return this._memberClusters != null && this._memberClusters.Count > 0; 
+            return this._memberClusters != null && (this._memberClusters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -425,7 +426,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if MemberClustersOutpostArns property is set
         internal bool IsSetMemberClustersOutpostArns()
         {
-            return this._memberClustersOutpostArns != null && this._memberClustersOutpostArns.Count > 0; 
+            return this._memberClustersOutpostArns != null && (this._memberClustersOutpostArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -485,7 +486,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if NodeGroups property is set
         internal bool IsSetNodeGroups()
         {
-            return this._nodeGroups != null && this._nodeGroups.Count > 0; 
+            return this._nodeGroups != null && (this._nodeGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -700,7 +701,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if UserGroupIds property is set
         internal bool IsSetUserGroupIds()
         {
-            return this._userGroupIds != null && this._userGroupIds.Count > 0; 
+            return this._userGroupIds != null && (this._userGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

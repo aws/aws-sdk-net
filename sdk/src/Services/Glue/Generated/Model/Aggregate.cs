@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class Aggregate
     {
-        private List<AggregateOperation> _aggs = new List<AggregateOperation>();
-        private List<List<string>> _groups = new List<List<string>>();
-        private List<string> _inputs = new List<string>();
+        private List<AggregateOperation> _aggs = AWSConfigs.InitializeCollections ? new List<AggregateOperation>() : null;
+        private List<List<string>> _groups = AWSConfigs.InitializeCollections ? new List<List<string>>() : null;
+        private List<string> _inputs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
 
         /// <summary>
@@ -55,7 +56,7 @@ namespace Amazon.Glue.Model
         // Check to see if Aggs property is set
         internal bool IsSetAggs()
         {
-            return this._aggs != null && this._aggs.Count > 0; 
+            return this._aggs != null && (this._aggs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.Glue.Model
         // Check to see if Groups property is set
         internal bool IsSetGroups()
         {
-            return this._groups != null && this._groups.Count > 0; 
+            return this._groups != null && (this._groups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -93,7 +94,7 @@ namespace Amazon.Glue.Model
         // Check to see if Inputs property is set
         internal bool IsSetInputs()
         {
-            return this._inputs != null && this._inputs.Count > 0; 
+            return this._inputs != null && (this._inputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

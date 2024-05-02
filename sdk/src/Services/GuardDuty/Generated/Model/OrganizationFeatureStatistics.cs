@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class OrganizationFeatureStatistics
     {
-        private List<OrganizationFeatureStatisticsAdditionalConfiguration> _additionalConfiguration = new List<OrganizationFeatureStatisticsAdditionalConfiguration>();
+        private List<OrganizationFeatureStatisticsAdditionalConfiguration> _additionalConfiguration = AWSConfigs.InitializeCollections ? new List<OrganizationFeatureStatisticsAdditionalConfiguration>() : null;
         private int? _enabledAccountsCount;
         private OrgFeature _name;
 
@@ -52,7 +53,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if AdditionalConfiguration property is set
         internal bool IsSetAdditionalConfiguration()
         {
-            return this._additionalConfiguration != null && this._additionalConfiguration.Count > 0; 
+            return this._additionalConfiguration != null && (this._additionalConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

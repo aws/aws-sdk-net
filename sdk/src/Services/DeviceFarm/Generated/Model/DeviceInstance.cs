@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.DeviceFarm.Model
         private string _arn;
         private string _deviceArn;
         private InstanceProfile _instanceProfile;
-        private List<string> _labels = new List<string>();
+        private List<string> _labels = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private InstanceStatus _status;
         private string _udid;
 
@@ -111,7 +112,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if Labels property is set
         internal bool IsSetLabels()
         {
-            return this._labels != null && this._labels.Count > 0; 
+            return this._labels != null && (this._labels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

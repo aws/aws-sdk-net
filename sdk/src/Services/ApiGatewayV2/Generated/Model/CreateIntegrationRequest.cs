@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ApiGatewayV2.Model
 {
     /// <summary>
@@ -46,9 +47,9 @@ namespace Amazon.ApiGatewayV2.Model
         private string _integrationUri;
         private PassthroughBehavior _passthroughBehavior;
         private string _payloadFormatVersion;
-        private Dictionary<string, string> _requestParameters = new Dictionary<string, string>();
-        private Dictionary<string, string> _requestTemplates = new Dictionary<string, string>();
-        private Dictionary<string, Dictionary<string, string>> _responseParameters = new Dictionary<string, Dictionary<string, string>>();
+        private Dictionary<string, string> _requestParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, string> _requestTemplates = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, Dictionary<string, string>> _responseParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, Dictionary<string, string>>() : null;
         private string _templateSelectionExpression;
         private int? _timeoutInMillis;
         private TlsConfigInput _tlsConfig;
@@ -395,7 +396,7 @@ namespace Amazon.ApiGatewayV2.Model
         // Check to see if RequestParameters property is set
         internal bool IsSetRequestParameters()
         {
-            return this._requestParameters != null && this._requestParameters.Count > 0; 
+            return this._requestParameters != null && (this._requestParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -416,7 +417,7 @@ namespace Amazon.ApiGatewayV2.Model
         // Check to see if RequestTemplates property is set
         internal bool IsSetRequestTemplates()
         {
-            return this._requestTemplates != null && this._requestTemplates.Count > 0; 
+            return this._requestTemplates != null && (this._requestTemplates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -442,7 +443,7 @@ namespace Amazon.ApiGatewayV2.Model
         // Check to see if ResponseParameters property is set
         internal bool IsSetResponseParameters()
         {
-            return this._responseParameters != null && this._responseParameters.Count > 0; 
+            return this._responseParameters != null && (this._responseParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

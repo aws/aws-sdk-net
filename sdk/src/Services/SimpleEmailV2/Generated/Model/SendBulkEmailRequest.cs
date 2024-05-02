@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
@@ -34,15 +35,15 @@ namespace Amazon.SimpleEmailV2.Model
     /// </summary>
     public partial class SendBulkEmailRequest : AmazonSimpleEmailServiceV2Request
     {
-        private List<BulkEmailEntry> _bulkEmailEntries = new List<BulkEmailEntry>();
+        private List<BulkEmailEntry> _bulkEmailEntries = AWSConfigs.InitializeCollections ? new List<BulkEmailEntry>() : null;
         private string _configurationSetName;
         private BulkEmailContent _defaultContent;
-        private List<MessageTag> _defaultEmailTags = new List<MessageTag>();
+        private List<MessageTag> _defaultEmailTags = AWSConfigs.InitializeCollections ? new List<MessageTag>() : null;
         private string _feedbackForwardingEmailAddress;
         private string _feedbackForwardingEmailAddressIdentityArn;
         private string _fromEmailAddress;
         private string _fromEmailAddressIdentityArn;
-        private List<string> _replyToAddresses = new List<string>();
+        private List<string> _replyToAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property BulkEmailEntries. 
@@ -60,7 +61,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if BulkEmailEntries property is set
         internal bool IsSetBulkEmailEntries()
         {
-            return this._bulkEmailEntries != null && this._bulkEmailEntries.Count > 0; 
+            return this._bulkEmailEntries != null && (this._bulkEmailEntries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -117,7 +118,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if DefaultEmailTags property is set
         internal bool IsSetDefaultEmailTags()
         {
-            return this._defaultEmailTags != null && this._defaultEmailTags.Count > 0; 
+            return this._defaultEmailTags != null && (this._defaultEmailTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -237,7 +238,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if ReplyToAddresses property is set
         internal bool IsSetReplyToAddresses()
         {
-            return this._replyToAddresses != null && this._replyToAddresses.Count > 0; 
+            return this._replyToAddresses != null && (this._replyToAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

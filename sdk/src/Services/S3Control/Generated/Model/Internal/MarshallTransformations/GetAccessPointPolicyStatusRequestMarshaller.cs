@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Xml;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 {
     /// <summary>

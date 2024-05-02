@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Pipes.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.Pipes.Model
         private string _database;
         private string _dbUser;
         private string _secretManagerArn;
-        private List<string> _sqls = new List<string>();
+        private List<string> _sqls = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _statementName;
         private bool? _withEvent;
 
@@ -115,7 +116,7 @@ namespace Amazon.Pipes.Model
         // Check to see if Sqls property is set
         internal bool IsSetSqls()
         {
-            return this._sqls != null && this._sqls.Count > 0; 
+            return this._sqls != null && (this._sqls.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

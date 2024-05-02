@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     public partial class DescribeSenderIdsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SenderIdInformation> _senderIds = new List<SenderIdInformation>();
+        private List<SenderIdInformation> _senderIds = AWSConfigs.InitializeCollections ? new List<SenderIdInformation>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if SenderIds property is set
         internal bool IsSetSenderIds()
         {
-            return this._senderIds != null && this._senderIds.Count > 0; 
+            return this._senderIds != null && (this._senderIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

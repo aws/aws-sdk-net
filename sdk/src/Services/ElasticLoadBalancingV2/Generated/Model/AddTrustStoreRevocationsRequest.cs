@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class AddTrustStoreRevocationsRequest : AmazonElasticLoadBalancingV2Request
     {
-        private List<RevocationContent> _revocationContents = new List<RevocationContent>();
+        private List<RevocationContent> _revocationContents = AWSConfigs.InitializeCollections ? new List<RevocationContent>() : null;
         private string _trustStoreArn;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if RevocationContents property is set
         internal bool IsSetRevocationContents()
         {
-            return this._revocationContents != null && this._revocationContents.Count > 0; 
+            return this._revocationContents != null && (this._revocationContents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

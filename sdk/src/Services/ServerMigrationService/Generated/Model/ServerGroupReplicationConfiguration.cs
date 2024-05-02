@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ServerMigrationService.Model
     public partial class ServerGroupReplicationConfiguration
     {
         private string _serverGroupId;
-        private List<ServerReplicationConfiguration> _serverReplicationConfigurations = new List<ServerReplicationConfiguration>();
+        private List<ServerReplicationConfiguration> _serverReplicationConfigurations = AWSConfigs.InitializeCollections ? new List<ServerReplicationConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property ServerGroupId. 
@@ -69,7 +70,7 @@ namespace Amazon.ServerMigrationService.Model
         // Check to see if ServerReplicationConfigurations property is set
         internal bool IsSetServerReplicationConfigurations()
         {
-            return this._serverReplicationConfigurations != null && this._serverReplicationConfigurations.Count > 0; 
+            return this._serverReplicationConfigurations != null && (this._serverReplicationConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

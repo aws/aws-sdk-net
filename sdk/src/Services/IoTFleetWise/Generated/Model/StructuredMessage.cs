@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTFleetWise.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.IoTFleetWise.Model
     public partial class StructuredMessage
     {
         private PrimitiveMessageDefinition _primitiveMessageDefinition;
-        private List<StructuredMessageFieldNameAndDataTypePair> _structuredMessageDefinition = new List<StructuredMessageFieldNameAndDataTypePair>();
+        private List<StructuredMessageFieldNameAndDataTypePair> _structuredMessageDefinition = AWSConfigs.InitializeCollections ? new List<StructuredMessageFieldNameAndDataTypePair>() : null;
         private StructuredMessageListDefinition _structuredMessageListDefinition;
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if StructuredMessageDefinition property is set
         internal bool IsSetStructuredMessageDefinition()
         {
-            return this._structuredMessageDefinition != null && this._structuredMessageDefinition.Count > 0; 
+            return this._structuredMessageDefinition != null && (this._structuredMessageDefinition.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.IoTSiteWise.Model
         private string _externalId;
         private string _id;
         private string _name;
-        private List<AssetModelCompositeModelPathSegment> _path = new List<AssetModelCompositeModelPathSegment>();
+        private List<AssetModelCompositeModelPathSegment> _path = AWSConfigs.InitializeCollections ? new List<AssetModelCompositeModelPathSegment>() : null;
         private string _type;
 
         /// <summary>
@@ -133,7 +134,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if Path property is set
         internal bool IsSetPath()
         {
-            return this._path != null && this._path.Count > 0; 
+            return this._path != null && (this._path.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

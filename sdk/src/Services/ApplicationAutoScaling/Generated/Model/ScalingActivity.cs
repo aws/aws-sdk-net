@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ApplicationAutoScaling.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         private string _description;
         private string _details;
         private DateTime? _endTime;
-        private List<NotScaledReason> _notScaledReasons = new List<NotScaledReason>();
+        private List<NotScaledReason> _notScaledReasons = AWSConfigs.InitializeCollections ? new List<NotScaledReason>() : null;
         private string _resourceId;
         private ScalableDimension _scalableDimension;
         private ServiceNamespace _serviceNamespace;
@@ -156,7 +157,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         // Check to see if NotScaledReasons property is set
         internal bool IsSetNotScaledReasons()
         {
-            return this._notScaledReasons != null && this._notScaledReasons.Count > 0; 
+            return this._notScaledReasons != null && (this._notScaledReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

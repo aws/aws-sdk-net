@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Spigot requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetInputs())
             {
                 context.Writer.WritePropertyName("Inputs");
@@ -71,7 +74,14 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetProb())
             {
                 context.Writer.WritePropertyName("Prob");
-                context.Writer.Write(requestObject.Prob.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Prob.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Prob.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Prob.Value);
+                }
             }
 
             if(requestObject.IsSetTopk())

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.CostExplorer.Model
     /// </summary>
     public partial class Group
     {
-        private List<string> _keys = new List<string>();
-        private Dictionary<string, MetricValue> _metrics = new Dictionary<string, MetricValue>();
+        private List<string> _keys = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, MetricValue> _metrics = AWSConfigs.InitializeCollections ? new Dictionary<string, MetricValue>() : null;
 
         /// <summary>
         /// Gets and sets the property Keys. 
@@ -51,7 +52,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if Keys property is set
         internal bool IsSetKeys()
         {
-            return this._keys != null && this._keys.Count > 0; 
+            return this._keys != null && (this._keys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if Metrics property is set
         internal bool IsSetMetrics()
         {
-            return this._metrics != null && this._metrics.Count > 0; 
+            return this._metrics != null && (this._metrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

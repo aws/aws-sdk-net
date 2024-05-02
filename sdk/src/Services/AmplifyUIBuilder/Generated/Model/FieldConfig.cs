@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         private FieldInputConfig _inputType;
         private string _label;
         private FieldPosition _position;
-        private List<FieldValidationConfiguration> _validations = new List<FieldValidationConfiguration>();
+        private List<FieldValidationConfiguration> _validations = AWSConfigs.InitializeCollections ? new List<FieldValidationConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property Excluded. 
@@ -126,7 +127,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if Validations property is set
         internal bool IsSetValidations()
         {
-            return this._validations != null && this._validations.Count > 0; 
+            return this._validations != null && (this._validations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

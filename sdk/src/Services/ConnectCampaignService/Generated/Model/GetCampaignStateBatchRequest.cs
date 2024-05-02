@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConnectCampaignService.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ConnectCampaignService.Model
     /// </summary>
     public partial class GetCampaignStateBatchRequest : AmazonConnectCampaignServiceRequest
     {
-        private List<string> _campaignIds = new List<string>();
+        private List<string> _campaignIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CampaignIds.
@@ -49,7 +50,7 @@ namespace Amazon.ConnectCampaignService.Model
         // Check to see if CampaignIds property is set
         internal bool IsSetCampaignIds()
         {
-            return this._campaignIds != null && this._campaignIds.Count > 0; 
+            return this._campaignIds != null && (this._campaignIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

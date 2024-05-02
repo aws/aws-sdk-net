@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FMS.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.FMS.Model
     /// </summary>
     public partial class AwsEc2InstanceViolation
     {
-        private List<AwsEc2NetworkInterfaceViolation> _awsEc2NetworkInterfaceViolations = new List<AwsEc2NetworkInterfaceViolation>();
+        private List<AwsEc2NetworkInterfaceViolation> _awsEc2NetworkInterfaceViolations = AWSConfigs.InitializeCollections ? new List<AwsEc2NetworkInterfaceViolation>() : null;
         private string _violationTarget;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.FMS.Model
         // Check to see if AwsEc2NetworkInterfaceViolations property is set
         internal bool IsSetAwsEc2NetworkInterfaceViolations()
         {
-            return this._awsEc2NetworkInterfaceViolations != null && this._awsEc2NetworkInterfaceViolations.Count > 0; 
+            return this._awsEc2NetworkInterfaceViolations != null && (this._awsEc2NetworkInterfaceViolations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

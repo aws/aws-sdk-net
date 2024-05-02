@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.RDS.Model
         private bool? _multiTenant;
         private PendingCloudwatchLogsExports _pendingCloudwatchLogsExports;
         private int? _port;
-        private List<ProcessorFeature> _processorFeatures = new List<ProcessorFeature>();
+        private List<ProcessorFeature> _processorFeatures = AWSConfigs.InitializeCollections ? new List<ProcessorFeature>() : null;
         private DateTime? _resumeFullAutomationModeTime;
         private int? _storageThroughput;
         private string _storageType;
@@ -416,7 +417,7 @@ namespace Amazon.RDS.Model
         // Check to see if ProcessorFeatures property is set
         internal bool IsSetProcessorFeatures()
         {
-            return this._processorFeatures != null && this._processorFeatures.Count > 0; 
+            return this._processorFeatures != null && (this._processorFeatures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

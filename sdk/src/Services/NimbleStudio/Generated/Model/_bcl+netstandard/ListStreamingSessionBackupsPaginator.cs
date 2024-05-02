@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.NimbleStudio.Model
         /// Enumerable containing all of the StreamingSessionBackups
         /// </summary>
         public IPaginatedEnumerable<StreamingSessionBackup> StreamingSessionBackups => 
-            new PaginatedResultKeyResponse<ListStreamingSessionBackupsResponse, StreamingSessionBackup>(this, (i) => i.StreamingSessionBackups);
+            new PaginatedResultKeyResponse<ListStreamingSessionBackupsResponse, StreamingSessionBackup>(this, (i) => i.StreamingSessionBackups ?? new List<StreamingSessionBackup>());
 
         internal ListStreamingSessionBackupsPaginator(IAmazonNimbleStudio client, ListStreamingSessionBackupsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.NimbleStudio.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListStreamingSessionBackupsResponse> IPaginator<ListStreamingSessionBackupsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListStreamingSessionBackupsResponse> IPaginator<ListStreamingSessionBackupsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

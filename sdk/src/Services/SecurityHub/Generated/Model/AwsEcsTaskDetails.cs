@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -34,14 +35,14 @@ namespace Amazon.SecurityHub.Model
     public partial class AwsEcsTaskDetails
     {
         private string _clusterArn;
-        private List<AwsEcsContainerDetails> _containers = new List<AwsEcsContainerDetails>();
+        private List<AwsEcsContainerDetails> _containers = AWSConfigs.InitializeCollections ? new List<AwsEcsContainerDetails>() : null;
         private string _createdAt;
         private string _group;
         private string _startedAt;
         private string _startedBy;
         private string _taskDefinitionArn;
         private string _version;
-        private List<AwsEcsTaskVolumeDetails> _volumes = new List<AwsEcsTaskVolumeDetails>();
+        private List<AwsEcsTaskVolumeDetails> _volumes = AWSConfigs.InitializeCollections ? new List<AwsEcsTaskVolumeDetails>() : null;
 
         /// <summary>
         /// Gets and sets the property ClusterArn. 
@@ -76,7 +77,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Containers property is set
         internal bool IsSetContainers()
         {
-            return this._containers != null && this._containers.Count > 0; 
+            return this._containers != null && (this._containers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -206,7 +207,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Volumes property is set
         internal bool IsSetVolumes()
         {
-            return this._volumes != null && this._volumes.Count > 0; 
+            return this._volumes != null && (this._volumes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

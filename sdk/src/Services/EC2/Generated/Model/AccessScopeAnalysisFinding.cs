@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class AccessScopeAnalysisFinding
     {
-        private List<PathComponent> _findingComponents = new List<PathComponent>();
+        private List<PathComponent> _findingComponents = AWSConfigs.InitializeCollections ? new List<PathComponent>() : null;
         private string _findingId;
         private string _networkInsightsAccessScopeAnalysisId;
         private string _networkInsightsAccessScopeId;
@@ -53,7 +54,7 @@ namespace Amazon.EC2.Model
         // Check to see if FindingComponents property is set
         internal bool IsSetFindingComponents()
         {
-            return this._findingComponents != null && this._findingComponents.Count > 0; 
+            return this._findingComponents != null && (this._findingComponents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

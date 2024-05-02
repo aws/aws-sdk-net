@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -41,16 +42,16 @@ namespace Amazon.SimpleSystemsManagement.Model
         private DocumentHashType _documentHashType;
         private string _documentName;
         private string _documentVersion;
-        private List<string> _instanceIds = new List<string>();
+        private List<string> _instanceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _maxConcurrency;
         private string _maxErrors;
         private NotificationConfig _notificationConfig;
         private string _outputS3BucketName;
         private string _outputS3KeyPrefix;
         private string _outputS3Region;
-        private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private string _serviceRoleArn;
-        private List<Target> _targets = new List<Target>();
+        private List<Target> _targets = AWSConfigs.InitializeCollections ? new List<Target>() : null;
         private int? _timeoutSeconds;
 
         /// <summary>
@@ -61,8 +62,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Instantiates SendCommandRequest with the parameterized properties
         /// </summary>
-        /// <param name="documentName">The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document Amazon Resource Name (ARN). For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. <note> If you specify a document name or ARN that hasn't been shared with your account, you receive an <c>InvalidDocument</c> error.  </note></param>
-        /// <param name="instanceIds">The IDs of the managed nodes where the command should run. Specifying managed node IDs is most useful when you are targeting a limited number of managed nodes, though you can specify up to 50 IDs. To target a larger number of managed nodes, or if you prefer not to list individual node IDs, we recommend using the <c>Targets</c> option instead. Using <c>Targets</c>, which accepts tag key-value pairs to identify the managed nodes to send commands to, you can a send command to tens, hundreds, or thousands of nodes at once. For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</param>
+        /// <param name="documentName">The name of the Amazon Web Services Systems Manager document (SSM document) to run. This can be a public document or a custom document. To run a shared document belonging to another account, specify the document Amazon Resource Name (ARN). For more information about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Sharing SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>. <note> If you specify a document name or ARN that hasn't been shared with your account, you receive an <c>InvalidDocument</c> error.  </note></param>
+        /// <param name="instanceIds">The IDs of the managed nodes where the command should run. Specifying managed node IDs is most useful when you are targeting a limited number of managed nodes, though you can specify up to 50 IDs. To target a larger number of managed nodes, or if you prefer not to list individual node IDs, we recommend using the <c>Targets</c> option instead. Using <c>Targets</c>, which accepts tag key-value pairs to identify the managed nodes to send commands to, you can a send command to tens, hundreds, or thousands of nodes at once. For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run commands at scale</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</param>
         public SendCommandRequest(string documentName, List<string> instanceIds)
         {
             _documentName = documentName;
@@ -179,8 +180,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The name of the Amazon Web Services Systems Manager document (SSM document) to run.
         /// This can be a public document or a custom document. To run a shared document belonging
         /// to another account, specify the document Amazon Resource Name (ARN). For more information
-        /// about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using
-        /// shared SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+        /// about how to use shared documents, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Sharing
+        /// SSM documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -251,9 +252,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Using
-        /// targets and rate controls to send commands to a fleet</a> in the <i>Amazon Web Services
-        /// Systems Manager User Guide</i>.
+        /// For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run
+        /// commands at scale</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
@@ -266,7 +266,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if InstanceIds property is set
         internal bool IsSetInstanceIds()
         {
-            return this._instanceIds != null && this._instanceIds.Count > 0; 
+            return this._instanceIds != null && (this._instanceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -409,7 +409,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -454,8 +454,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
-        /// commands to a fleet</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+        /// For more information about how to use targets, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Run
+        /// commands at scale</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
@@ -468,7 +468,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Targets property is set
         internal bool IsSetTargets()
         {
-            return this._targets != null && this._targets.Count > 0; 
+            return this._targets != null && (this._targets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

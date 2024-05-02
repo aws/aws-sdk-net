@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.WorkDocs.Model
 {
     /// <summary>
@@ -45,13 +46,13 @@ namespace Amazon.WorkDocs.Model
         /// Enumerable containing all of the Folders
         /// </summary>
         public IPaginatedEnumerable<FolderMetadata> Folders => 
-            new PaginatedResultKeyResponse<DescribeFolderContentsResponse, FolderMetadata>(this, (i) => i.Folders);
+            new PaginatedResultKeyResponse<DescribeFolderContentsResponse, FolderMetadata>(this, (i) => i.Folders ?? new List<FolderMetadata>());
 
         /// <summary>
         /// Enumerable containing all of the Documents
         /// </summary>
         public IPaginatedEnumerable<DocumentMetadata> Documents => 
-            new PaginatedResultKeyResponse<DescribeFolderContentsResponse, DocumentMetadata>(this, (i) => i.Documents);
+            new PaginatedResultKeyResponse<DescribeFolderContentsResponse, DocumentMetadata>(this, (i) => i.Documents ?? new List<DocumentMetadata>());
 
         internal DescribeFolderContentsPaginator(IAmazonWorkDocs client, DescribeFolderContentsRequest request)
         {
@@ -79,7 +80,7 @@ namespace Amazon.WorkDocs.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeFolderContentsResponse> IPaginator<DescribeFolderContentsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeFolderContentsResponse> IPaginator<DescribeFolderContentsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// InvokeAgent Response
+    /// This is the response object from the InvokeAgent operation.
     /// </summary>
     public partial class InvokeAgentResponse : AmazonWebServiceResponse
     {
@@ -40,8 +41,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property Completion. 
         /// <para>
-        /// Inference response from the model in the format specified in the Content-Type response
-        /// header.
+        /// The agent's response to the user prompt.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        /// streaming response mimetype of the model
+        /// The MIME type of the input data in the request. The default value is <c>application/json</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,7 +79,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property SessionId. 
         /// <para>
-        /// streaming response mimetype of the model
+        /// The unique identifier of the session with the agent.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=100)]

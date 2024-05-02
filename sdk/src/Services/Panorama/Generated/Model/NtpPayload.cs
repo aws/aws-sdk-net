@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Panorama.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Panorama.Model
     /// </summary>
     public partial class NtpPayload
     {
-        private List<string> _ntpServers = new List<string>();
+        private List<string> _ntpServers = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NtpServers. 
@@ -52,7 +53,7 @@ namespace Amazon.Panorama.Model
         // Check to see if NtpServers property is set
         internal bool IsSetNtpServers()
         {
-            return this._ntpServers != null && this._ntpServers.Count > 0; 
+            return this._ntpServers != null && (this._ntpServers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

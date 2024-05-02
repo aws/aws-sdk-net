@@ -26,16 +26,17 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// A list of users or sub groups that belong to a group. This is for generating Amazon
-    /// Q chat results only from document a user has access to.
+    /// Q Business chat results only from document a user has access to.
     /// </summary>
     public partial class GroupMembers
     {
-        private List<MemberGroup> _memberGroups = new List<MemberGroup>();
-        private List<MemberUser> _memberUsers = new List<MemberUser>();
+        private List<MemberGroup> _memberGroups = AWSConfigs.InitializeCollections ? new List<MemberGroup>() : null;
+        private List<MemberUser> _memberUsers = AWSConfigs.InitializeCollections ? new List<MemberUser>() : null;
 
         /// <summary>
         /// Gets and sets the property MemberGroups. 
@@ -54,7 +55,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if MemberGroups property is set
         internal bool IsSetMemberGroups()
         {
-            return this._memberGroups != null && this._memberGroups.Count > 0; 
+            return this._memberGroups != null && (this._memberGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if MemberUsers property is set
         internal bool IsSetMemberUsers()
         {
-            return this._memberUsers != null && this._memberUsers.Count > 0; 
+            return this._memberUsers != null && (this._memberUsers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

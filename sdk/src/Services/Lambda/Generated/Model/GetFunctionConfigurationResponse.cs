@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lambda.Model
 {
     /// <summary>
@@ -33,14 +34,14 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class GetFunctionConfigurationResponse : AmazonWebServiceResponse
     {
-        private List<string> _architectures = new List<string>();
+        private List<string> _architectures = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _codeSha256;
         private long? _codeSize;
         private DeadLetterConfig _deadLetterConfig;
         private string _description;
         private EnvironmentResponse _environment;
         private EphemeralStorage _ephemeralStorage;
-        private List<FileSystemConfig> _fileSystemConfigs = new List<FileSystemConfig>();
+        private List<FileSystemConfig> _fileSystemConfigs = AWSConfigs.InitializeCollections ? new List<FileSystemConfig>() : null;
         private string _functionArn;
         private string _functionName;
         private string _handler;
@@ -50,7 +51,7 @@ namespace Amazon.Lambda.Model
         private LastUpdateStatus _lastUpdateStatus;
         private string _lastUpdateStatusReason;
         private LastUpdateStatusReasonCode _lastUpdateStatusReasonCode;
-        private List<Layer> _layers = new List<Layer>();
+        private List<Layer> _layers = AWSConfigs.InitializeCollections ? new List<Layer>() : null;
         private LoggingConfig _loggingConfig;
         private string _masterArn;
         private int? _memorySize;
@@ -87,7 +88,7 @@ namespace Amazon.Lambda.Model
         // Check to see if Architectures property is set
         internal bool IsSetArchitectures()
         {
-            return this._architectures != null && this._architectures.Count > 0; 
+            return this._architectures != null && (this._architectures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -220,7 +221,7 @@ namespace Amazon.Lambda.Model
         // Check to see if FileSystemConfigs property is set
         internal bool IsSetFileSystemConfigs()
         {
-            return this._fileSystemConfigs != null && this._fileSystemConfigs.Count > 0; 
+            return this._fileSystemConfigs != null && (this._fileSystemConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -407,7 +408,7 @@ namespace Amazon.Lambda.Model
         // Check to see if Layers property is set
         internal bool IsSetLayers()
         {
-            return this._layers != null && this._layers.Count > 0; 
+            return this._layers != null && (this._layers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

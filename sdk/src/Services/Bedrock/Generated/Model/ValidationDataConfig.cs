@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Bedrock.Model
     /// </summary>
     public partial class ValidationDataConfig
     {
-        private List<Validator> _validators = new List<Validator>();
+        private List<Validator> _validators = AWSConfigs.InitializeCollections ? new List<Validator>() : null;
 
         /// <summary>
         /// Gets and sets the property Validators. 
@@ -51,7 +52,7 @@ namespace Amazon.Bedrock.Model
         // Check to see if Validators property is set
         internal bool IsSetValidators()
         {
-            return this._validators != null && this._validators.Count > 0; 
+            return this._validators != null && (this._validators.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

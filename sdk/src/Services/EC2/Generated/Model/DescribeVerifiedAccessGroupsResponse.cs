@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EC2.Model
     public partial class DescribeVerifiedAccessGroupsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<VerifiedAccessGroup> _verifiedAccessGroups = new List<VerifiedAccessGroup>();
+        private List<VerifiedAccessGroup> _verifiedAccessGroups = AWSConfigs.InitializeCollections ? new List<VerifiedAccessGroup>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.EC2.Model
         // Check to see if VerifiedAccessGroups property is set
         internal bool IsSetVerifiedAccessGroups()
         {
-            return this._verifiedAccessGroups != null && this._verifiedAccessGroups.Count > 0; 
+            return this._verifiedAccessGroups != null && (this._verifiedAccessGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

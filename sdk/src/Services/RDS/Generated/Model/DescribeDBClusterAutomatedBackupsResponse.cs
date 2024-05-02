@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DescribeDBClusterAutomatedBackupsResponse : AmazonWebServiceResponse
     {
-        private List<DBClusterAutomatedBackup> _dbClusterAutomatedBackups = new List<DBClusterAutomatedBackup>();
+        private List<DBClusterAutomatedBackup> _dbClusterAutomatedBackups = AWSConfigs.InitializeCollections ? new List<DBClusterAutomatedBackup>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBClusterAutomatedBackups property is set
         internal bool IsSetDBClusterAutomatedBackups()
         {
-            return this._dbClusterAutomatedBackups != null && this._dbClusterAutomatedBackups.Count > 0; 
+            return this._dbClusterAutomatedBackups != null && (this._dbClusterAutomatedBackups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -35,13 +36,13 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class AdditionalInferenceSpecificationDefinition
     {
-        private List<ModelPackageContainerDefinition> _containers = new List<ModelPackageContainerDefinition>();
+        private List<ModelPackageContainerDefinition> _containers = AWSConfigs.InitializeCollections ? new List<ModelPackageContainerDefinition>() : null;
         private string _description;
         private string _name;
-        private List<string> _supportedContentTypes = new List<string>();
-        private List<string> _supportedRealtimeInferenceInstanceTypes = new List<string>();
-        private List<string> _supportedResponseMIMETypes = new List<string>();
-        private List<string> _supportedTransformInstanceTypes = new List<string>();
+        private List<string> _supportedContentTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _supportedRealtimeInferenceInstanceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _supportedResponseMIMETypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _supportedTransformInstanceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Containers. 
@@ -59,7 +60,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Containers property is set
         internal bool IsSetContainers()
         {
-            return this._containers != null && this._containers.Count > 0; 
+            return this._containers != null && (this._containers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -117,7 +118,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if SupportedContentTypes property is set
         internal bool IsSetSupportedContentTypes()
         {
-            return this._supportedContentTypes != null && this._supportedContentTypes.Count > 0; 
+            return this._supportedContentTypes != null && (this._supportedContentTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -135,7 +136,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if SupportedRealtimeInferenceInstanceTypes property is set
         internal bool IsSetSupportedRealtimeInferenceInstanceTypes()
         {
-            return this._supportedRealtimeInferenceInstanceTypes != null && this._supportedRealtimeInferenceInstanceTypes.Count > 0; 
+            return this._supportedRealtimeInferenceInstanceTypes != null && (this._supportedRealtimeInferenceInstanceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -153,7 +154,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if SupportedResponseMIMETypes property is set
         internal bool IsSetSupportedResponseMIMETypes()
         {
-            return this._supportedResponseMIMETypes != null && this._supportedResponseMIMETypes.Count > 0; 
+            return this._supportedResponseMIMETypes != null && (this._supportedResponseMIMETypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -173,7 +174,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if SupportedTransformInstanceTypes property is set
         internal bool IsSetSupportedTransformInstanceTypes()
         {
-            return this._supportedTransformInstanceTypes != null && this._supportedTransformInstanceTypes.Count > 0; 
+            return this._supportedTransformInstanceTypes != null && (this._supportedTransformInstanceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

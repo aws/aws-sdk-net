@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the IpamPoolAllocations
         /// </summary>
         public IPaginatedEnumerable<IpamPoolAllocation> IpamPoolAllocations => 
-            new PaginatedResultKeyResponse<GetIpamPoolAllocationsResponse, IpamPoolAllocation>(this, (i) => i.IpamPoolAllocations);
+            new PaginatedResultKeyResponse<GetIpamPoolAllocationsResponse, IpamPoolAllocation>(this, (i) => i.IpamPoolAllocations ?? new List<IpamPoolAllocation>());
 
         internal GetIpamPoolAllocationsPaginator(IAmazonEC2 client, GetIpamPoolAllocationsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.EC2.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<GetIpamPoolAllocationsResponse> IPaginator<GetIpamPoolAllocationsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<GetIpamPoolAllocationsResponse> IPaginator<GetIpamPoolAllocationsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

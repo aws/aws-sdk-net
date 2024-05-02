@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Macie2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Macie2.Model
     /// </summary>
     public partial class SearchResourcesResponse : AmazonWebServiceResponse
     {
-        private List<MatchingResource> _matchingResources = new List<MatchingResource>();
+        private List<MatchingResource> _matchingResources = AWSConfigs.InitializeCollections ? new List<MatchingResource>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.Macie2.Model
         // Check to see if MatchingResources property is set
         internal bool IsSetMatchingResources()
         {
-            return this._matchingResources != null && this._matchingResources.Count > 0; 
+            return this._matchingResources != null && (this._matchingResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

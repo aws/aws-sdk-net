@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.NetworkFirewall.Model
     /// </summary>
     public partial class TLSInspectionConfiguration
     {
-        private List<ServerCertificateConfiguration> _serverCertificateConfigurations = new List<ServerCertificateConfiguration>();
+        private List<ServerCertificateConfiguration> _serverCertificateConfigurations = AWSConfigs.InitializeCollections ? new List<ServerCertificateConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property ServerCertificateConfigurations. 
@@ -69,7 +70,7 @@ namespace Amazon.NetworkFirewall.Model
         // Check to see if ServerCertificateConfigurations property is set
         internal bool IsSetServerCertificateConfigurations()
         {
-            return this._serverCertificateConfigurations != null && this._serverCertificateConfigurations.Count > 0; 
+            return this._serverCertificateConfigurations != null && (this._serverCertificateConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

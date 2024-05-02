@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Detective.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Detective.Model
     /// </summary>
     public partial class ListDatasourcePackagesResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, DatasourcePackageIngestDetail> _datasourcePackages = new Dictionary<string, DatasourcePackageIngestDetail>();
+        private Dictionary<string, DatasourcePackageIngestDetail> _datasourcePackages = AWSConfigs.InitializeCollections ? new Dictionary<string, DatasourcePackageIngestDetail>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Detective.Model
         // Check to see if DatasourcePackages property is set
         internal bool IsSetDatasourcePackages()
         {
-            return this._datasourcePackages != null && this._datasourcePackages.Count > 0; 
+            return this._datasourcePackages != null && (this._datasourcePackages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LicenseManager.Model
 {
     /// <summary>
@@ -49,10 +50,10 @@ namespace Amazon.LicenseManager.Model
         private long? _licenseCount;
         private bool? _licenseCountHardLimit;
         private LicenseCountingType _licenseCountingType;
-        private List<string> _licenseRules = new List<string>();
+        private List<string> _licenseRules = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
-        private List<ProductInformation> _productInformationList = new List<ProductInformation>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<ProductInformation> _productInformationList = AWSConfigs.InitializeCollections ? new List<ProductInformation>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -190,7 +191,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if LicenseRules property is set
         internal bool IsSetLicenseRules()
         {
-            return this._licenseRules != null && this._licenseRules.Count > 0; 
+            return this._licenseRules != null && (this._licenseRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -227,7 +228,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if ProductInformationList property is set
         internal bool IsSetProductInformationList()
         {
-            return this._productInformationList != null && this._productInformationList.Count > 0; 
+            return this._productInformationList != null && (this._productInformationList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -245,7 +246,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

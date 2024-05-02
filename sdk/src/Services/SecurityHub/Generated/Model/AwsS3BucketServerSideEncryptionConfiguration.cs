@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsS3BucketServerSideEncryptionConfiguration
     {
-        private List<AwsS3BucketServerSideEncryptionRule> _rules = new List<AwsS3BucketServerSideEncryptionRule>();
+        private List<AwsS3BucketServerSideEncryptionRule> _rules = AWSConfigs.InitializeCollections ? new List<AwsS3BucketServerSideEncryptionRule>() : null;
 
         /// <summary>
         /// Gets and sets the property Rules. 
@@ -50,7 +51,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Rules property is set
         internal bool IsSetRules()
         {
-            return this._rules != null && this._rules.Count > 0; 
+            return this._rules != null && (this._rules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

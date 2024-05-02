@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.DirectConnect.Model
     public partial class ListVirtualInterfaceTestHistoryResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<VirtualInterfaceTestHistory> _virtualInterfaceTestHistory = new List<VirtualInterfaceTestHistory>();
+        private List<VirtualInterfaceTestHistory> _virtualInterfaceTestHistory = AWSConfigs.InitializeCollections ? new List<VirtualInterfaceTestHistory>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if VirtualInterfaceTestHistory property is set
         internal bool IsSetVirtualInterfaceTestHistory()
         {
-            return this._virtualInterfaceTestHistory != null && this._virtualInterfaceTestHistory.Count > 0; 
+            return this._virtualInterfaceTestHistory != null && (this._virtualInterfaceTestHistory.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -45,12 +46,12 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ModifyManagedPrefixListRequest : AmazonEC2Request
     {
-        private List<AddPrefixListEntry> _addEntries = new List<AddPrefixListEntry>();
+        private List<AddPrefixListEntry> _addEntries = AWSConfigs.InitializeCollections ? new List<AddPrefixListEntry>() : null;
         private long? _currentVersion;
         private int? _maxEntries;
         private string _prefixListId;
         private string _prefixListName;
-        private List<RemovePrefixListEntry> _removeEntries = new List<RemovePrefixListEntry>();
+        private List<RemovePrefixListEntry> _removeEntries = AWSConfigs.InitializeCollections ? new List<RemovePrefixListEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property AddEntries. 
@@ -68,7 +69,7 @@ namespace Amazon.EC2.Model
         // Check to see if AddEntries property is set
         internal bool IsSetAddEntries()
         {
-            return this._addEntries != null && this._addEntries.Count > 0; 
+            return this._addEntries != null && (this._addEntries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -167,7 +168,7 @@ namespace Amazon.EC2.Model
         // Check to see if RemoveEntries property is set
         internal bool IsSetRemoveEntries()
         {
-            return this._removeEntries != null && this._removeEntries.Count > 0; 
+            return this._removeEntries != null && (this._removeEntries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

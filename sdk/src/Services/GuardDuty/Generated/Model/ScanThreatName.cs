@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class ScanThreatName
     {
-        private List<ScanFilePath> _filePaths = new List<ScanFilePath>();
+        private List<ScanFilePath> _filePaths = AWSConfigs.InitializeCollections ? new List<ScanFilePath>() : null;
         private int? _itemCount;
         private string _name;
         private string _severity;
@@ -54,7 +55,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if FilePaths property is set
         internal bool IsSetFilePaths()
         {
-            return this._filePaths != null && this._filePaths.Count > 0; 
+            return this._filePaths != null && (this._filePaths.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

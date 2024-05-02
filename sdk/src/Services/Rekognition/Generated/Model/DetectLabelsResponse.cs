@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Rekognition.Model
     {
         private DetectLabelsImageProperties _imageProperties;
         private string _labelModelVersion;
-        private List<Label> _labels = new List<Label>();
+        private List<Label> _labels = AWSConfigs.InitializeCollections ? new List<Label>() : null;
         private OrientationCorrection _orientationCorrection;
 
         /// <summary>
@@ -90,7 +91,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if Labels property is set
         internal bool IsSetLabels()
         {
-            return this._labels != null && this._labels.Count > 0; 
+            return this._labels != null && (this._labels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

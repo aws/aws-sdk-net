@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AutoScaling.Model
     /// </summary>
     public partial class BatchDeleteScheduledActionResponse : AmazonWebServiceResponse
     {
-        private List<FailedScheduledUpdateGroupActionRequest> _failedScheduledActions = new List<FailedScheduledUpdateGroupActionRequest>();
+        private List<FailedScheduledUpdateGroupActionRequest> _failedScheduledActions = AWSConfigs.InitializeCollections ? new List<FailedScheduledUpdateGroupActionRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property FailedScheduledActions. 
@@ -50,7 +51,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if FailedScheduledActions property is set
         internal bool IsSetFailedScheduledActions()
         {
-            return this._failedScheduledActions != null && this._failedScheduledActions.Count > 0; 
+            return this._failedScheduledActions != null && (this._failedScheduledActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

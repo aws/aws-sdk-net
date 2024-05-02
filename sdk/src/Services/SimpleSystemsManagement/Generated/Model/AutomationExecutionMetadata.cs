@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -53,16 +54,16 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _maxErrors;
         private ExecutionMode _mode;
         private string _opsItemId;
-        private Dictionary<string, List<string>> _outputs = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _outputs = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private string _parentAutomationExecutionId;
         private ResolvedTargets _resolvedTargets;
-        private List<Runbook> _runbooks = new List<Runbook>();
+        private List<Runbook> _runbooks = AWSConfigs.InitializeCollections ? new List<Runbook>() : null;
         private DateTime? _scheduledTime;
         private string _target;
-        private List<Dictionary<string, List<string>>> _targetMaps = new List<Dictionary<string, List<string>>>();
+        private List<Dictionary<string, List<string>>> _targetMaps = AWSConfigs.InitializeCollections ? new List<Dictionary<string, List<string>>>() : null;
         private string _targetParameterName;
-        private List<Target> _targets = new List<Target>();
-        private List<AlarmStateInformation> _triggeredAlarms = new List<AlarmStateInformation>();
+        private List<Target> _targets = AWSConfigs.InitializeCollections ? new List<Target>() : null;
+        private List<AlarmStateInformation> _triggeredAlarms = AWSConfigs.InitializeCollections ? new List<AlarmStateInformation>() : null;
 
         /// <summary>
         /// Gets and sets the property AlarmConfiguration. 
@@ -449,7 +450,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Outputs property is set
         internal bool IsSetOutputs()
         {
-            return this._outputs != null && this._outputs.Count > 0; 
+            return this._outputs != null && (this._outputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -512,7 +513,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Runbooks property is set
         internal bool IsSetRunbooks()
         {
-            return this._runbooks != null && this._runbooks.Count > 0; 
+            return this._runbooks != null && (this._runbooks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -567,7 +568,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if TargetMaps property is set
         internal bool IsSetTargetMaps()
         {
-            return this._targetMaps != null && this._targetMaps.Count > 0; 
+            return this._targetMaps != null && (this._targetMaps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -605,7 +606,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Targets property is set
         internal bool IsSetTargets()
         {
-            return this._targets != null && this._targets.Count > 0; 
+            return this._targets != null && (this._targets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -624,7 +625,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if TriggeredAlarms property is set
         internal bool IsSetTriggeredAlarms()
         {
-            return this._triggeredAlarms != null && this._triggeredAlarms.Count > 0; 
+            return this._triggeredAlarms != null && (this._triggeredAlarms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

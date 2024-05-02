@@ -53,7 +53,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 	    private static DeleteBucketPolicyRequestMarshaller _instance;
 
-	    public static DeleteBucketPolicyRequestMarshaller Instance
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
+        public static DeleteBucketPolicyRequestMarshaller Instance
 	    {
 	        get
 	        {

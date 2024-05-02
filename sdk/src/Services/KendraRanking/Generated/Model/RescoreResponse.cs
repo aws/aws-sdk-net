@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KendraRanking.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.KendraRanking.Model
     public partial class RescoreResponse : AmazonWebServiceResponse
     {
         private string _rescoreId;
-        private List<RescoreResultItem> _resultItems = new List<RescoreResultItem>();
+        private List<RescoreResultItem> _resultItems = AWSConfigs.InitializeCollections ? new List<RescoreResultItem>() : null;
 
         /// <summary>
         /// Gets and sets the property RescoreId. 
@@ -74,7 +75,7 @@ namespace Amazon.KendraRanking.Model
         // Check to see if ResultItems property is set
         internal bool IsSetResultItems()
         {
-            return this._resultItems != null && this._resultItems.Count > 0; 
+            return this._resultItems != null && (this._resultItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

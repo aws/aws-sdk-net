@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -39,8 +40,8 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class S3DataSource
     {
-        private List<string> _attributeNames = new List<string>();
-        private List<string> _instanceGroupNames = new List<string>();
+        private List<string> _attributeNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _instanceGroupNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private S3DataDistribution _s3DataDistributionType;
         private S3DataType _s3DataType;
         private string _s3Uri;
@@ -62,7 +63,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if AttributeNames property is set
         internal bool IsSetAttributeNames()
         {
-            return this._attributeNames != null && this._attributeNames.Count > 0; 
+            return this._attributeNames != null && (this._attributeNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -81,7 +82,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if InstanceGroupNames property is set
         internal bool IsSetInstanceGroupNames()
         {
-            return this._instanceGroupNames != null && this._instanceGroupNames.Count > 0; 
+            return this._instanceGroupNames != null && (this._instanceGroupNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

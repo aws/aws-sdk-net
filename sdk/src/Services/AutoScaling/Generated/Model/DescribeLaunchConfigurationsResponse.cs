@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AutoScaling.Model
     /// </summary>
     public partial class DescribeLaunchConfigurationsResponse : AmazonWebServiceResponse
     {
-        private List<LaunchConfiguration> _launchConfigurations = new List<LaunchConfiguration>();
+        private List<LaunchConfiguration> _launchConfigurations = AWSConfigs.InitializeCollections ? new List<LaunchConfiguration>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if LaunchConfigurations property is set
         internal bool IsSetLaunchConfigurations()
         {
-            return this._launchConfigurations != null && this._launchConfigurations.Count > 0; 
+            return this._launchConfigurations != null && (this._launchConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

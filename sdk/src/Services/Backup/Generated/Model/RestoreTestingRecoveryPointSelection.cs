@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Backup.Model
 {
     /// <summary>
@@ -36,9 +37,9 @@ namespace Amazon.Backup.Model
     public partial class RestoreTestingRecoveryPointSelection
     {
         private RestoreTestingRecoveryPointSelectionAlgorithm _algorithm;
-        private List<string> _excludeVaults = new List<string>();
-        private List<string> _includeVaults = new List<string>();
-        private List<string> _recoveryPointTypes = new List<string>();
+        private List<string> _excludeVaults = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _includeVaults = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _recoveryPointTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _selectionWindowDays;
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace Amazon.Backup.Model
         // Check to see if ExcludeVaults property is set
         internal bool IsSetExcludeVaults()
         {
-            return this._excludeVaults != null && this._excludeVaults.Count > 0; 
+            return this._excludeVaults != null && (this._excludeVaults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -95,7 +96,7 @@ namespace Amazon.Backup.Model
         // Check to see if IncludeVaults property is set
         internal bool IsSetIncludeVaults()
         {
-            return this._includeVaults != null && this._includeVaults.Count > 0; 
+            return this._includeVaults != null && (this._includeVaults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -113,7 +114,7 @@ namespace Amazon.Backup.Model
         // Check to see if RecoveryPointTypes property is set
         internal bool IsSetRecoveryPointTypes()
         {
-            return this._recoveryPointTypes != null && this._recoveryPointTypes.Count > 0; 
+            return this._recoveryPointTypes != null && (this._recoveryPointTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

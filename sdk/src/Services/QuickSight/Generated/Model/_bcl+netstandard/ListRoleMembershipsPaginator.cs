@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.QuickSight.Model
         /// Enumerable containing all of the MembersList
         /// </summary>
         public IPaginatedEnumerable<string> MembersList => 
-            new PaginatedResultKeyResponse<ListRoleMembershipsResponse, string>(this, (i) => i.MembersList);
+            new PaginatedResultKeyResponse<ListRoleMembershipsResponse, string>(this, (i) => i.MembersList ?? new List<string>());
 
         internal ListRoleMembershipsPaginator(IAmazonQuickSight client, ListRoleMembershipsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.QuickSight.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListRoleMembershipsResponse> IPaginator<ListRoleMembershipsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListRoleMembershipsResponse> IPaginator<ListRoleMembershipsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

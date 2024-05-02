@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.DeviceFarm.Model
     public partial class ListRunsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Run> _runs = new List<Run>();
+        private List<Run> _runs = AWSConfigs.InitializeCollections ? new List<Run>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if Runs property is set
         internal bool IsSetRuns()
         {
-            return this._runs != null && this._runs.Count > 0; 
+            return this._runs != null && (this._runs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

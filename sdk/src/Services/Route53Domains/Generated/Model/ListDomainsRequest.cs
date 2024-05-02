@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53Domains.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Route53Domains.Model
     /// </summary>
     public partial class ListDomainsRequest : AmazonRoute53DomainsRequest
     {
-        private List<FilterCondition> _filterConditions = new List<FilterCondition>();
+        private List<FilterCondition> _filterConditions = AWSConfigs.InitializeCollections ? new List<FilterCondition>() : null;
         private string _marker;
         private int? _maxItems;
         private SortCondition _sortCondition;
@@ -56,7 +57,7 @@ namespace Amazon.Route53Domains.Model
         // Check to see if FilterConditions property is set
         internal bool IsSetFilterConditions()
         {
-            return this._filterConditions != null && this._filterConditions.Count > 0; 
+            return this._filterConditions != null && (this._filterConditions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

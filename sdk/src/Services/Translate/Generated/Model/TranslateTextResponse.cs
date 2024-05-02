@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Translate.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Translate.Model
     public partial class TranslateTextResponse : AmazonWebServiceResponse
     {
         private TranslationSettings _appliedSettings;
-        private List<AppliedTerminology> _appliedTerminologies = new List<AppliedTerminology>();
+        private List<AppliedTerminology> _appliedTerminologies = AWSConfigs.InitializeCollections ? new List<AppliedTerminology>() : null;
         private string _sourceLanguageCode;
         private string _targetLanguageCode;
         private string _translatedText;
@@ -73,7 +74,7 @@ namespace Amazon.Translate.Model
         // Check to see if AppliedTerminologies property is set
         internal bool IsSetAppliedTerminologies()
         {
-            return this._appliedTerminologies != null && this._appliedTerminologies.Count > 0; 
+            return this._appliedTerminologies != null && (this._appliedTerminologies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

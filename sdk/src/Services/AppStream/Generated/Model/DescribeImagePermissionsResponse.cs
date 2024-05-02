@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppStream.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.AppStream.Model
     {
         private string _name;
         private string _nextToken;
-        private List<SharedImagePermissions> _sharedImagePermissionsList = new List<SharedImagePermissions>();
+        private List<SharedImagePermissions> _sharedImagePermissionsList = AWSConfigs.InitializeCollections ? new List<SharedImagePermissions>() : null;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -90,7 +91,7 @@ namespace Amazon.AppStream.Model
         // Check to see if SharedImagePermissionsList property is set
         internal bool IsSetSharedImagePermissionsList()
         {
-            return this._sharedImagePermissionsList != null && this._sharedImagePermissionsList.Count > 0; 
+            return this._sharedImagePermissionsList != null && (this._sharedImagePermissionsList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

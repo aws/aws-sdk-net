@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTTwinMaker.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.IoTTwinMaker.Model
     {
         private bool? _areAllComponentsReturned;
         private string _arn;
-        private Dictionary<string, ComponentResponse> _components = new Dictionary<string, ComponentResponse>();
+        private Dictionary<string, ComponentResponse> _components = AWSConfigs.InitializeCollections ? new Dictionary<string, ComponentResponse>() : null;
         private DateTime? _creationDateTime;
         private string _description;
         private string _entityId;
@@ -101,7 +102,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if Components property is set
         internal bool IsSetComponents()
         {
-            return this._components != null && this._components.Count > 0; 
+            return this._components != null && (this._components.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Pinpoint.Model
     {
         private string _applicationId;
         private string _requestId;
-        private Dictionary<string, Dictionary<string, EndpointMessageResult>> _result = new Dictionary<string, Dictionary<string, EndpointMessageResult>>();
+        private Dictionary<string, Dictionary<string, EndpointMessageResult>> _result = AWSConfigs.InitializeCollections ? new Dictionary<string, Dictionary<string, EndpointMessageResult>>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
@@ -91,7 +92,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Result property is set
         internal bool IsSetResult()
         {
-            return this._result != null && this._result.Count > 0; 
+            return this._result != null && (this._result.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.Glue.Model
         private DateTime? _completedOn;
         private ConnectionsList _connections;
         private DateTime? _createdOn;
-        private Dictionary<string, string> _defaultArguments = new Dictionary<string, string>();
+        private Dictionary<string, string> _defaultArguments = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _description;
         private double? _dpuSeconds;
         private string _errorMessage;
@@ -141,7 +142,7 @@ namespace Amazon.Glue.Model
         // Check to see if DefaultArguments property is set
         internal bool IsSetDefaultArguments()
         {
-            return this._defaultArguments != null && this._defaultArguments.Count > 0; 
+            return this._defaultArguments != null && (this._defaultArguments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

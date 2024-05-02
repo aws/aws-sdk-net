@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AppRegistry.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.AppRegistry.Model
         /// Enumerable containing all of the AttributeGroups
         /// </summary>
         public IPaginatedEnumerable<string> AttributeGroups => 
-            new PaginatedResultKeyResponse<ListAssociatedAttributeGroupsResponse, string>(this, (i) => i.AttributeGroups);
+            new PaginatedResultKeyResponse<ListAssociatedAttributeGroupsResponse, string>(this, (i) => i.AttributeGroups ?? new List<string>());
 
         internal ListAssociatedAttributeGroupsPaginator(IAmazonAppRegistry client, ListAssociatedAttributeGroupsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.AppRegistry.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListAssociatedAttributeGroupsResponse> IPaginator<ListAssociatedAttributeGroupsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListAssociatedAttributeGroupsResponse> IPaginator<ListAssociatedAttributeGroupsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

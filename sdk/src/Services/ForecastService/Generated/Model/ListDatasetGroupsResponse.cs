@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ForecastService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ForecastService.Model
     /// </summary>
     public partial class ListDatasetGroupsResponse : AmazonWebServiceResponse
     {
-        private List<DatasetGroupSummary> _datasetGroups = new List<DatasetGroupSummary>();
+        private List<DatasetGroupSummary> _datasetGroups = AWSConfigs.InitializeCollections ? new List<DatasetGroupSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if DatasetGroups property is set
         internal bool IsSetDatasetGroups()
         {
-            return this._datasetGroups != null && this._datasetGroups.Count > 0; 
+            return this._datasetGroups != null && (this._datasetGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

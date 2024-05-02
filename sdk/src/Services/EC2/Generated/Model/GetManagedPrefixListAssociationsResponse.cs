@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EC2.Model
     public partial class GetManagedPrefixListAssociationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PrefixListAssociation> _prefixListAssociations = new List<PrefixListAssociation>();
+        private List<PrefixListAssociation> _prefixListAssociations = AWSConfigs.InitializeCollections ? new List<PrefixListAssociation>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.EC2.Model
         // Check to see if PrefixListAssociations property is set
         internal bool IsSetPrefixListAssociations()
         {
-            return this._prefixListAssociations != null && this._prefixListAssociations.Count > 0; 
+            return this._prefixListAssociations != null && (this._prefixListAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

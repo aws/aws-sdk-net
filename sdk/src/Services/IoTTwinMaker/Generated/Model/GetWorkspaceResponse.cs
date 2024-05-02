@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTTwinMaker.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.IoTTwinMaker.Model
         private string _arn;
         private DateTime? _creationDateTime;
         private string _description;
-        private List<string> _linkedServices = new List<string>();
+        private List<string> _linkedServices = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _role;
         private string _s3Location;
         private DateTime? _updateDateTime;
@@ -114,7 +115,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if LinkedServices property is set
         internal bool IsSetLinkedServices()
         {
-            return this._linkedServices != null && this._linkedServices.Count > 0; 
+            return this._linkedServices != null && (this._linkedServices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

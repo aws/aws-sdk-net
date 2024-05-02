@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
@@ -49,7 +50,7 @@ namespace Amazon.OpsWorks.Model
         private string _instanceId;
         private string _raidArrayId;
         private string _stackId;
-        private List<string> _volumeIds = new List<string>();
+        private List<string> _volumeIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property InstanceId. 
@@ -124,7 +125,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if VolumeIds property is set
         internal bool IsSetVolumeIds()
         {
-            return this._volumeIds != null && this._volumeIds.Count > 0; 
+            return this._volumeIds != null && (this._volumeIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

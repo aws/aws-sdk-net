@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Neptune.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Neptune.Model
         /// Enumerable containing all of the DBClusterParameterGroups
         /// </summary>
         public IPaginatedEnumerable<DBClusterParameterGroup> DBClusterParameterGroups => 
-            new PaginatedResultKeyResponse<DescribeDBClusterParameterGroupsResponse, DBClusterParameterGroup>(this, (i) => i.DBClusterParameterGroups);
+            new PaginatedResultKeyResponse<DescribeDBClusterParameterGroupsResponse, DBClusterParameterGroup>(this, (i) => i.DBClusterParameterGroups ?? new List<DBClusterParameterGroup>());
 
         internal DescribeDBClusterParameterGroupsPaginator(IAmazonNeptune client, DescribeDBClusterParameterGroupsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Neptune.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeDBClusterParameterGroupsResponse> IPaginator<DescribeDBClusterParameterGroupsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeDBClusterParameterGroupsResponse> IPaginator<DescribeDBClusterParameterGroupsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

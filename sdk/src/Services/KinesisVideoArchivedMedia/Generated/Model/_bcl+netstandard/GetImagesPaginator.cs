@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisVideoArchivedMedia.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// Enumerable containing all of the Images
         /// </summary>
         public IPaginatedEnumerable<Image> Images => 
-            new PaginatedResultKeyResponse<GetImagesResponse, Image>(this, (i) => i.Images);
+            new PaginatedResultKeyResponse<GetImagesResponse, Image>(this, (i) => i.Images ?? new List<Image>());
 
         internal GetImagesPaginator(IAmazonKinesisVideoArchivedMedia client, GetImagesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<GetImagesResponse> IPaginator<GetImagesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<GetImagesResponse> IPaginator<GetImagesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

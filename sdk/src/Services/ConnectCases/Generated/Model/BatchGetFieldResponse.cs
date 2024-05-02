@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConnectCases.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.ConnectCases.Model
     /// </summary>
     public partial class BatchGetFieldResponse : AmazonWebServiceResponse
     {
-        private List<FieldError> _errors = new List<FieldError>();
-        private List<GetFieldResponse> _fields = new List<GetFieldResponse>();
+        private List<FieldError> _errors = AWSConfigs.InitializeCollections ? new List<FieldError>() : null;
+        private List<GetFieldResponse> _fields = AWSConfigs.InitializeCollections ? new List<GetFieldResponse>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. 
@@ -52,7 +53,7 @@ namespace Amazon.ConnectCases.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.ConnectCases.Model
         // Check to see if Fields property is set
         internal bool IsSetFields()
         {
-            return this._fields != null && this._fields.Count > 0; 
+            return this._fields != null && (this._fields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -45,8 +46,8 @@ namespace Amazon.EC2.Model
     {
         private string _description;
         private DateTime? _endTimeUtc;
-        private List<string> _instances = new List<string>();
-        private List<string> _reasonCodes = new List<string>();
+        private List<string> _instances = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _reasonCodes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _startTimeUtc;
         private ReportStatusType _status;
 
@@ -102,7 +103,7 @@ namespace Amazon.EC2.Model
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this._instances != null && this._instances.Count > 0; 
+            return this._instances != null && (this._instances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -161,7 +162,7 @@ namespace Amazon.EC2.Model
         // Check to see if ReasonCodes property is set
         internal bool IsSetReasonCodes()
         {
-            return this._reasonCodes != null && this._reasonCodes.Count > 0; 
+            return this._reasonCodes != null && (this._reasonCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

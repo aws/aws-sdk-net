@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class DetectModerationLabelsResponse : AmazonWebServiceResponse
     {
-        private List<ContentType> _contentTypes = new List<ContentType>();
+        private List<ContentType> _contentTypes = AWSConfigs.InitializeCollections ? new List<ContentType>() : null;
         private HumanLoopActivationOutput _humanLoopActivationOutput;
-        private List<ModerationLabel> _moderationLabels = new List<ModerationLabel>();
+        private List<ModerationLabel> _moderationLabels = AWSConfigs.InitializeCollections ? new List<ModerationLabel>() : null;
         private string _moderationModelVersion;
         private string _projectVersion;
 
@@ -56,7 +57,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if ContentTypes property is set
         internal bool IsSetContentTypes()
         {
-            return this._contentTypes != null && this._contentTypes.Count > 0; 
+            return this._contentTypes != null && (this._contentTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -93,7 +94,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if ModerationLabels property is set
         internal bool IsSetModerationLabels()
         {
-            return this._moderationLabels != null && this._moderationLabels.Count > 0; 
+            return this._moderationLabels != null && (this._moderationLabels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

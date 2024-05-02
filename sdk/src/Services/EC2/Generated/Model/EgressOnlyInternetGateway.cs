@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class EgressOnlyInternetGateway
     {
-        private List<InternetGatewayAttachment> _attachments = new List<InternetGatewayAttachment>();
+        private List<InternetGatewayAttachment> _attachments = AWSConfigs.InitializeCollections ? new List<InternetGatewayAttachment>() : null;
         private string _egressOnlyInternetGatewayId;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Attachments. 
@@ -52,7 +53,7 @@ namespace Amazon.EC2.Model
         // Check to see if Attachments property is set
         internal bool IsSetAttachments()
         {
-            return this._attachments != null && this._attachments.Count > 0; 
+            return this._attachments != null && (this._attachments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -88,7 +89,7 @@ namespace Amazon.EC2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

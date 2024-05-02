@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.CodeGuruProfiler.Model
     public partial class PutPermissionRequest : AmazonCodeGuruProfilerRequest
     {
         private ActionGroup _actionGroup;
-        private List<string> _principals = new List<string>();
+        private List<string> _principals = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _profilingGroupName;
         private string _revisionId;
 
@@ -95,7 +96,7 @@ namespace Amazon.CodeGuruProfiler.Model
         // Check to see if Principals property is set
         internal bool IsSetPrincipals()
         {
-            return this._principals != null && this._principals.Count > 0; 
+            return this._principals != null && (this._principals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

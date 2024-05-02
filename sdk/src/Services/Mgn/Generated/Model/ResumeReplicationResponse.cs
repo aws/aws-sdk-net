@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Mgn.Model
 {
     /// <summary>
@@ -44,7 +45,7 @@ namespace Amazon.Mgn.Model
         private ReplicationType _replicationType;
         private SourceProperties _sourceProperties;
         private string _sourceServerID;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _userProvidedID;
         private string _vcenterClientID;
 
@@ -266,7 +267,7 @@ namespace Amazon.Mgn.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

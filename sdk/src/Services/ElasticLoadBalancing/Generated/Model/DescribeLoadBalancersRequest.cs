@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// </summary>
     public partial class DescribeLoadBalancersRequest : AmazonElasticLoadBalancingRequest
     {
-        private List<string> _loadBalancerNames = new List<string>();
+        private List<string> _loadBalancerNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _marker;
         private int? _pageSize;
 
@@ -68,7 +69,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if LoadBalancerNames property is set
         internal bool IsSetLoadBalancerNames()
         {
-            return this._loadBalancerNames != null && this._loadBalancerNames.Count > 0; 
+            return this._loadBalancerNames != null && (this._loadBalancerNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

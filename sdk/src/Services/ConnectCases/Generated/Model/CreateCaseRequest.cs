@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConnectCases.Model
 {
     /// <summary>
@@ -48,7 +49,7 @@ namespace Amazon.ConnectCases.Model
     {
         private string _clientToken;
         private string _domainId;
-        private List<FieldValue> _fields = new List<FieldValue>();
+        private List<FieldValue> _fields = AWSConfigs.InitializeCollections ? new List<FieldValue>() : null;
         private UserUnion _performedBy;
         private string _templateId;
 
@@ -110,7 +111,7 @@ namespace Amazon.ConnectCases.Model
         // Check to see if Fields property is set
         internal bool IsSetFields()
         {
-            return this._fields != null && this._fields.Count > 0; 
+            return this._fields != null && (this._fields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

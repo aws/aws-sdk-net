@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Glue.Model
     public partial class PhysicalConnectionRequirements
     {
         private string _availabilityZone;
-        private List<string> _securityGroupIdList = new List<string>();
+        private List<string> _securityGroupIdList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _subnetId;
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.Glue.Model
         // Check to see if SecurityGroupIdList property is set
         internal bool IsSetSecurityGroupIdList()
         {
-            return this._securityGroupIdList != null && this._securityGroupIdList.Count > 0; 
+            return this._securityGroupIdList != null && (this._securityGroupIdList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

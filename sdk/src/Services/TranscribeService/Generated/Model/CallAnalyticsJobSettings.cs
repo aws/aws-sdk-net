@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
@@ -36,9 +37,9 @@ namespace Amazon.TranscribeService.Model
     public partial class CallAnalyticsJobSettings
     {
         private ContentRedaction _contentRedaction;
-        private Dictionary<string, LanguageIdSettings> _languageIdSettings = new Dictionary<string, LanguageIdSettings>();
+        private Dictionary<string, LanguageIdSettings> _languageIdSettings = AWSConfigs.InitializeCollections ? new Dictionary<string, LanguageIdSettings>() : null;
         private string _languageModelName;
-        private List<string> _languageOptions = new List<string>();
+        private List<string> _languageOptions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Summarization _summarization;
         private VocabularyFilterMethod _vocabularyFilterMethod;
         private string _vocabularyFilterName;
@@ -108,7 +109,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if LanguageIdSettings property is set
         internal bool IsSetLanguageIdSettings()
         {
-            return this._languageIdSettings != null && this._languageIdSettings.Count > 0; 
+            return this._languageIdSettings != null && (this._languageIdSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -170,7 +171,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if LanguageOptions property is set
         internal bool IsSetLanguageOptions()
         {
-            return this._languageOptions != null && this._languageOptions.Count > 0; 
+            return this._languageOptions != null && (this._languageOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

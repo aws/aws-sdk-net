@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class DisableResponse : AmazonWebServiceResponse
     {
-        private List<Account> _accounts = new List<Account>();
-        private List<FailedAccount> _failedAccounts = new List<FailedAccount>();
+        private List<Account> _accounts = AWSConfigs.InitializeCollections ? new List<Account>() : null;
+        private List<FailedAccount> _failedAccounts = AWSConfigs.InitializeCollections ? new List<FailedAccount>() : null;
 
         /// <summary>
         /// Gets and sets the property Accounts. 
@@ -53,7 +54,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if Accounts property is set
         internal bool IsSetAccounts()
         {
-            return this._accounts != null && this._accounts.Count > 0; 
+            return this._accounts != null && (this._accounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if FailedAccounts property is set
         internal bool IsSetFailedAccounts()
         {
-            return this._failedAccounts != null && this._failedAccounts.Count > 0; 
+            return this._failedAccounts != null && (this._failedAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

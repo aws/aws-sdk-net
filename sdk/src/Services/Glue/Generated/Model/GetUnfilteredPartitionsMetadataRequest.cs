@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -48,7 +49,7 @@ namespace Amazon.Glue.Model
         private QuerySessionContext _querySessionContext;
         private string _region;
         private Segment _segment;
-        private List<string> _supportedPermissionTypes = new List<string>();
+        private List<string> _supportedPermissionTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _tableName;
 
         /// <summary>
@@ -354,7 +355,7 @@ namespace Amazon.Glue.Model
         // Check to see if SupportedPermissionTypes property is set
         internal bool IsSetSupportedPermissionTypes()
         {
-            return this._supportedPermissionTypes != null && this._supportedPermissionTypes.Count > 0; 
+            return this._supportedPermissionTypes != null && (this._supportedPermissionTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Detective.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Detective.Model
     {
         private string _accountId;
         private string _administratorId;
-        private Dictionary<string, string> _datasourcePackageIngestStates = new Dictionary<string, string>();
+        private Dictionary<string, string> _datasourcePackageIngestStates = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private MemberDisabledReason _disabledReason;
         private string _emailAddress;
         private string _graphArn;
@@ -46,7 +47,7 @@ namespace Amazon.Detective.Model
         private DateTime? _percentOfGraphUtilizationUpdatedTime;
         private MemberStatus _status;
         private DateTime? _updatedTime;
-        private Dictionary<string, DatasourcePackageUsageInfo> _volumeUsageByDatasourcePackage = new Dictionary<string, DatasourcePackageUsageInfo>();
+        private Dictionary<string, DatasourcePackageUsageInfo> _volumeUsageByDatasourcePackage = AWSConfigs.InitializeCollections ? new Dictionary<string, DatasourcePackageUsageInfo>() : null;
         private long? _volumeUsageInBytes;
         private DateTime? _volumeUsageUpdatedTime;
 
@@ -104,7 +105,7 @@ namespace Amazon.Detective.Model
         // Check to see if DatasourcePackageIngestStates property is set
         internal bool IsSetDatasourcePackageIngestStates()
         {
-            return this._datasourcePackageIngestStates != null && this._datasourcePackageIngestStates.Count > 0; 
+            return this._datasourcePackageIngestStates != null && (this._datasourcePackageIngestStates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -394,7 +395,7 @@ namespace Amazon.Detective.Model
         // Check to see if VolumeUsageByDatasourcePackage property is set
         internal bool IsSetVolumeUsageByDatasourcePackage()
         {
-            return this._volumeUsageByDatasourcePackage != null && this._volumeUsageByDatasourcePackage.Count > 0; 
+            return this._volumeUsageByDatasourcePackage != null && (this._volumeUsageByDatasourcePackage.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

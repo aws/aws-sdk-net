@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class DescribeDeliveryChannelsResponse : AmazonWebServiceResponse
     {
-        private List<DeliveryChannel> _deliveryChannels = new List<DeliveryChannel>();
+        private List<DeliveryChannel> _deliveryChannels = AWSConfigs.InitializeCollections ? new List<DeliveryChannel>() : null;
 
         /// <summary>
         /// Gets and sets the property DeliveryChannels. 
@@ -50,7 +51,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if DeliveryChannels property is set
         internal bool IsSetDeliveryChannels()
         {
-            return this._deliveryChannels != null && this._deliveryChannels.Count > 0; 
+            return this._deliveryChannels != null && (this._deliveryChannels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

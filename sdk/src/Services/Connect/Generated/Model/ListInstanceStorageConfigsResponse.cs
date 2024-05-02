@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Connect.Model
     public partial class ListInstanceStorageConfigsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<InstanceStorageConfig> _storageConfigs = new List<InstanceStorageConfig>();
+        private List<InstanceStorageConfig> _storageConfigs = AWSConfigs.InitializeCollections ? new List<InstanceStorageConfig>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +70,7 @@ namespace Amazon.Connect.Model
         // Check to see if StorageConfigs property is set
         internal bool IsSetStorageConfigs()
         {
-            return this._storageConfigs != null && this._storageConfigs.Count > 0; 
+            return this._storageConfigs != null && (this._storageConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

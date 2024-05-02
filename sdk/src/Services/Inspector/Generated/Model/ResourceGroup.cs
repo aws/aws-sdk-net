@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.Inspector.Model
     {
         private string _arn;
         private DateTime? _createdAt;
-        private List<ResourceGroupTag> _tags = new List<ResourceGroupTag>();
+        private List<ResourceGroupTag> _tags = AWSConfigs.InitializeCollections ? new List<ResourceGroupTag>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -95,7 +96,7 @@ namespace Amazon.Inspector.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

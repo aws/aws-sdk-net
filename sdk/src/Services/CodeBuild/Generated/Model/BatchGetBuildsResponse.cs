@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.CodeBuild.Model
     /// </summary>
     public partial class BatchGetBuildsResponse : AmazonWebServiceResponse
     {
-        private List<Build> _builds = new List<Build>();
-        private List<string> _buildsNotFound = new List<string>();
+        private List<Build> _builds = AWSConfigs.InitializeCollections ? new List<Build>() : null;
+        private List<string> _buildsNotFound = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Builds. 
@@ -51,7 +52,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if Builds property is set
         internal bool IsSetBuilds()
         {
-            return this._builds != null && this._builds.Count > 0; 
+            return this._builds != null && (this._builds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if BuildsNotFound property is set
         internal bool IsSetBuildsNotFound()
         {
-            return this._buildsNotFound != null && this._buildsNotFound.Count > 0; 
+            return this._buildsNotFound != null && (this._buildsNotFound.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

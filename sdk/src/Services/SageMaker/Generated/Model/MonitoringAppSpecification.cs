@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class MonitoringAppSpecification
     {
-        private List<string> _containerArguments = new List<string>();
-        private List<string> _containerEntrypoint = new List<string>();
+        private List<string> _containerArguments = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _containerEntrypoint = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _imageUri;
         private string _postAnalyticsProcessorSourceUri;
         private string _recordPreprocessorSourceUri;
@@ -55,7 +56,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ContainerArguments property is set
         internal bool IsSetContainerArguments()
         {
-            return this._containerArguments != null && this._containerArguments.Count > 0; 
+            return this._containerArguments != null && (this._containerArguments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ContainerEntrypoint property is set
         internal bool IsSetContainerEntrypoint()
         {
-            return this._containerEntrypoint != null && this._containerEntrypoint.Count > 0; 
+            return this._containerEntrypoint != null && (this._containerEntrypoint.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

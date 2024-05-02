@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.SageMaker.Model
     public partial class KernelGatewayImageConfig
     {
         private FileSystemConfig _fileSystemConfig;
-        private List<KernelSpec> _kernelSpecs = new List<KernelSpec>();
+        private List<KernelSpec> _kernelSpecs = AWSConfigs.InitializeCollections ? new List<KernelSpec>() : null;
 
         /// <summary>
         /// Gets and sets the property FileSystemConfig. 
@@ -71,7 +72,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if KernelSpecs property is set
         internal bool IsSetKernelSpecs()
         {
-            return this._kernelSpecs != null && this._kernelSpecs.Count > 0; 
+            return this._kernelSpecs != null && (this._kernelSpecs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

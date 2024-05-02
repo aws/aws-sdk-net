@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
@@ -33,8 +34,27 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class ThreatIntelligenceDetail
     {
+        private string _threatFileSha256;
         private string _threatListName;
-        private List<string> _threatNames = new List<string>();
+        private List<string> _threatNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property ThreatFileSha256. 
+        /// <para>
+        /// SHA256 of the file that generated the finding.
+        /// </para>
+        /// </summary>
+        public string ThreatFileSha256
+        {
+            get { return this._threatFileSha256; }
+            set { this._threatFileSha256 = value; }
+        }
+
+        // Check to see if ThreatFileSha256 property is set
+        internal bool IsSetThreatFileSha256()
+        {
+            return this._threatFileSha256 != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ThreatListName. 
@@ -70,7 +90,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if ThreatNames property is set
         internal bool IsSetThreatNames()
         {
-            return this._threatNames != null && this._threatNames.Count > 0; 
+            return this._threatNames != null && (this._threatNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

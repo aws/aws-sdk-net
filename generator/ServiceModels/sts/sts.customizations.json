@@ -2,13 +2,6 @@
     "runtimePipelineOverride": {
         "overrides": [
             {
-                "condition":"this.Config.RetryMode == RequestRetryMode.Legacy",
-                "operation": "replace",
-                "newType": "Amazon.Runtime.Internal.RetryHandler",
-                "targetType": "Amazon.Runtime.Internal.RetryHandler",
-                "constructorInput": "new SecurityTokenServiceRetryPolicy(this.Config)"
-            },
-            {
                 "condition":"this.Config.RetryMode == RequestRetryMode.Standard",
                 "operation": "replace",
                 "newType": "Amazon.Runtime.Internal.RetryHandler",

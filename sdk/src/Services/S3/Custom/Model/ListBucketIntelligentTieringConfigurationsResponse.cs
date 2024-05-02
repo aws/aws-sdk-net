@@ -19,12 +19,14 @@ using System.Text;
 
 namespace Amazon.S3.Model
 {
-	
-	public partial class ListBucketIntelligentTieringConfigurationsResponse : AmazonWebServiceResponse
+    /// <summary>
+    /// Response for the ListBucketIntelligentTieringConfigurations operation.
+    /// </summary>
+    public partial class ListBucketIntelligentTieringConfigurationsResponse : AmazonWebServiceResponse
 	{
 		private string continuationToken;
-		private List<IntelligentTieringConfiguration> intelligentTieringConfigurationList = new List<IntelligentTieringConfiguration>();
-		private bool? isTruncated;
+		private List<IntelligentTieringConfiguration> intelligentTieringConfigurationList = AWSConfigs.InitializeCollections ? new List<IntelligentTieringConfiguration>() : null;
+        private bool? isTruncated;
 		private string nextContinuationToken;
 
         /// <summary>
@@ -56,7 +58,7 @@ namespace Amazon.S3.Model
         /// </summary>
         public bool IsSetIntelligentTieringConfigurationList()
         {
-            return this.intelligentTieringConfigurationList.Count > 0;
+            return this.intelligentTieringConfigurationList != null && (this.intelligentTieringConfigurationList.Count > 0 || !AWSConfigs.InitializeCollections);
         }
 
         /// <summary>

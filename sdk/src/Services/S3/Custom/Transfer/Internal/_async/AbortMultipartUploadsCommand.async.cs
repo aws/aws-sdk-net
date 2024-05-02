@@ -59,25 +59,28 @@ namespace Amazon.S3.Transfer.Internal
                     listResponse = await this._s3Client.ListMultipartUploadsAsync(listRequest, cancellationToken)
                         .ConfigureAwait(continueOnCapturedContext: false);
 
-                    foreach (MultipartUpload upload in listResponse.MultipartUploads)
+                    if (listResponse.MultipartUploads != null)
                     {
-                        cancellationToken.ThrowIfCancellationRequested();
-                        if (internalCancellationToken.IsCancellationRequested)
+                        foreach (MultipartUpload upload in listResponse.MultipartUploads)
                         {
-                            // Operation cancelled as one of the AbortMultipartUpload requests failed with an exception,
-                            // don't schedule any more AbortMultipartUpload tasks. 
-                            // Don't throw an OperationCanceledException here as we want to process the 
-                            // responses and throw the original exception.
-                            break;
-                        }
-                        if (upload.Initiated < this._initiatedDate)
-                        {
-                            await asyncThrottler.WaitAsync(cancellationToken)
-                                .ConfigureAwait(continueOnCapturedContext: false);
+                            cancellationToken.ThrowIfCancellationRequested();
+                            if (internalCancellationToken.IsCancellationRequested)
+                            {
+                                // Operation cancelled as one of the AbortMultipartUpload requests failed with an exception,
+                                // don't schedule any more AbortMultipartUpload tasks. 
+                                // Don't throw an OperationCanceledException here as we want to process the 
+                                // responses and throw the original exception.
+                                break;
+                            }
+                            if (upload.Initiated < this._initiatedDate)
+                            {
+                                await asyncThrottler.WaitAsync(cancellationToken)
+                                    .ConfigureAwait(continueOnCapturedContext: false);
 
-                            var abortRequest = ConstructAbortMultipartUploadRequest(upload);
-                            var task = AbortAsync(abortRequest, internalCts, cancellationToken, asyncThrottler);
-                            pendingTasks.Add(task);
+                                var abortRequest = ConstructAbortMultipartUploadRequest(upload);
+                                var task = AbortAsync(abortRequest, internalCts, cancellationToken, asyncThrottler);
+                                pendingTasks.Add(task);
+                            }
                         }
                     }
                 }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PI.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.PI.Model
     /// </summary>
     public partial class MetricKeyDataPoints
     {
-        private List<DataPoint> _dataPoints = new List<DataPoint>();
+        private List<DataPoint> _dataPoints = AWSConfigs.InitializeCollections ? new List<DataPoint>() : null;
         private ResponseResourceMetricKey _key;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.PI.Model
         // Check to see if DataPoints property is set
         internal bool IsSetDataPoints()
         {
-            return this._dataPoints != null && this._dataPoints.Count > 0; 
+            return this._dataPoints != null && (this._dataPoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

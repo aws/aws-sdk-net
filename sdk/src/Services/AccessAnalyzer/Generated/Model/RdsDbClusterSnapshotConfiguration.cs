@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.AccessAnalyzer.Model
     /// </summary>
     public partial class RdsDbClusterSnapshotConfiguration
     {
-        private Dictionary<string, RdsDbClusterSnapshotAttributeValue> _attributes = new Dictionary<string, RdsDbClusterSnapshotAttributeValue>();
+        private Dictionary<string, RdsDbClusterSnapshotAttributeValue> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, RdsDbClusterSnapshotAttributeValue>() : null;
         private string _kmsKeyId;
 
         /// <summary>
@@ -57,7 +58,7 @@ namespace Amazon.AccessAnalyzer.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

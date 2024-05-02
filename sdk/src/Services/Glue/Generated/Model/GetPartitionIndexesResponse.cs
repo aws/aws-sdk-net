@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Glue.Model
     public partial class GetPartitionIndexesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PartitionIndexDescriptor> _partitionIndexDescriptorList = new List<PartitionIndexDescriptor>();
+        private List<PartitionIndexDescriptor> _partitionIndexDescriptorList = AWSConfigs.InitializeCollections ? new List<PartitionIndexDescriptor>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +70,7 @@ namespace Amazon.Glue.Model
         // Check to see if PartitionIndexDescriptorList property is set
         internal bool IsSetPartitionIndexDescriptorList()
         {
-            return this._partitionIndexDescriptorList != null && this._partitionIndexDescriptorList.Count > 0; 
+            return this._partitionIndexDescriptorList != null && (this._partitionIndexDescriptorList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

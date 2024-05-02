@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.DataPipeline.Model
     {
         private bool? _evaluateExpressions;
         private string _marker;
-        private List<string> _objectIds = new List<string>();
+        private List<string> _objectIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _pipelineId;
 
         /// <summary>
@@ -97,7 +98,7 @@ namespace Amazon.DataPipeline.Model
         // Check to see if ObjectIds property is set
         internal bool IsSetObjectIds()
         {
-            return this._objectIds != null && this._objectIds.Count > 0; 
+            return this._objectIds != null && (this._objectIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

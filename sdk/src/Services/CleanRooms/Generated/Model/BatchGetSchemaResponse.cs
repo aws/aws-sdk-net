@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class BatchGetSchemaResponse : AmazonWebServiceResponse
     {
-        private List<BatchGetSchemaError> _errors = new List<BatchGetSchemaError>();
-        private List<Schema> _schemas = new List<Schema>();
+        private List<BatchGetSchemaError> _errors = AWSConfigs.InitializeCollections ? new List<BatchGetSchemaError>() : null;
+        private List<Schema> _schemas = AWSConfigs.InitializeCollections ? new List<Schema>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. 
@@ -53,7 +54,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if Schemas property is set
         internal bool IsSetSchemas()
         {
-            return this._schemas != null && this._schemas.Count > 0; 
+            return this._schemas != null && (this._schemas.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

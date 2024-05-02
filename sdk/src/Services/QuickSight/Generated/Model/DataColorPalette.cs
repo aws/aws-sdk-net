@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -35,9 +36,9 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class DataColorPalette
     {
-        private List<string> _colors = new List<string>();
+        private List<string> _colors = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _emptyFillColor;
-        private List<string> _minMaxGradient = new List<string>();
+        private List<string> _minMaxGradient = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Colors. 
@@ -55,7 +56,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Colors property is set
         internal bool IsSetColors()
         {
-            return this._colors != null && this._colors.Count > 0; 
+            return this._colors != null && (this._colors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if MinMaxGradient property is set
         internal bool IsSetMinMaxGradient()
         {
-            return this._minMaxGradient != null && this._minMaxGradient.Count > 0; 
+            return this._minMaxGradient != null && (this._minMaxGradient.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

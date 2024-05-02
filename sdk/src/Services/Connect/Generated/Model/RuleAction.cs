@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -39,6 +40,7 @@ namespace Amazon.Connect.Model
         private EndAssociatedTasksActionDefinition _endAssociatedTasksAction;
         private EventBridgeActionDefinition _eventBridgeAction;
         private SendNotificationActionDefinition _sendNotificationAction;
+        private SubmitAutoEvaluationActionDefinition _submitAutoEvaluationAction;
         private TaskActionDefinition _taskAction;
         private UpdateCaseActionDefinition _updateCaseAction;
 
@@ -179,6 +181,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetSendNotificationAction()
         {
             return this._sendNotificationAction != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubmitAutoEvaluationAction. 
+        /// <para>
+        /// Information about the submit automated evaluation action.
+        /// </para>
+        /// </summary>
+        public SubmitAutoEvaluationActionDefinition SubmitAutoEvaluationAction
+        {
+            get { return this._submitAutoEvaluationAction; }
+            set { this._submitAutoEvaluationAction = value; }
+        }
+
+        // Check to see if SubmitAutoEvaluationAction property is set
+        internal bool IsSetSubmitAutoEvaluationAction()
+        {
+            return this._submitAutoEvaluationAction != null;
         }
 
         /// <summary>

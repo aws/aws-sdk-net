@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
@@ -36,8 +37,8 @@ namespace Amazon.Rekognition.Model
     {
         private BoundingBox _boundingBox;
         private float? _confidence;
-        private List<Emotion> _emotions = new List<Emotion>();
-        private List<Landmark> _landmarks = new List<Landmark>();
+        private List<Emotion> _emotions = AWSConfigs.InitializeCollections ? new List<Emotion>() : null;
+        private List<Landmark> _landmarks = AWSConfigs.InitializeCollections ? new List<Landmark>() : null;
         private Pose _pose;
         private ImageQuality _quality;
         private Smile _smile;
@@ -96,7 +97,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if Emotions property is set
         internal bool IsSetEmotions()
         {
-            return this._emotions != null && this._emotions.Count > 0; 
+            return this._emotions != null && (this._emotions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -114,7 +115,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if Landmarks property is set
         internal bool IsSetLandmarks()
         {
-            return this._landmarks != null && this._landmarks.Count > 0; 
+            return this._landmarks != null && (this._landmarks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

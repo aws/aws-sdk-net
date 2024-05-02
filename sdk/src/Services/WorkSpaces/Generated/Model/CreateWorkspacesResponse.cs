@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.WorkSpaces.Model
     /// </summary>
     public partial class CreateWorkspacesResponse : AmazonWebServiceResponse
     {
-        private List<FailedCreateWorkspaceRequest> _failedRequests = new List<FailedCreateWorkspaceRequest>();
-        private List<Workspace> _pendingRequests = new List<Workspace>();
+        private List<FailedCreateWorkspaceRequest> _failedRequests = AWSConfigs.InitializeCollections ? new List<FailedCreateWorkspaceRequest>() : null;
+        private List<Workspace> _pendingRequests = AWSConfigs.InitializeCollections ? new List<Workspace>() : null;
 
         /// <summary>
         /// Gets and sets the property FailedRequests. 
@@ -51,7 +52,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if FailedRequests property is set
         internal bool IsSetFailedRequests()
         {
-            return this._failedRequests != null && this._failedRequests.Count > 0; 
+            return this._failedRequests != null && (this._failedRequests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if PendingRequests property is set
         internal bool IsSetPendingRequests()
         {
-            return this._pendingRequests != null && this._pendingRequests.Count > 0; 
+            return this._pendingRequests != null && (this._pendingRequests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

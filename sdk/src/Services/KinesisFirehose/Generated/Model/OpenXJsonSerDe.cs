@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.KinesisFirehose.Model
     public partial class OpenXJsonSerDe
     {
         private bool? _caseInsensitive;
-        private Dictionary<string, string> _columnToJsonKeyMappings = new Dictionary<string, string>();
+        private Dictionary<string, string> _columnToJsonKeyMappings = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private bool? _convertDotsInJsonKeysToUnderscores;
 
         /// <summary>
@@ -77,7 +78,7 @@ namespace Amazon.KinesisFirehose.Model
         // Check to see if ColumnToJsonKeyMappings property is set
         internal bool IsSetColumnToJsonKeyMappings()
         {
-            return this._columnToJsonKeyMappings != null && this._columnToJsonKeyMappings.Count > 0; 
+            return this._columnToJsonKeyMappings != null && (this._columnToJsonKeyMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

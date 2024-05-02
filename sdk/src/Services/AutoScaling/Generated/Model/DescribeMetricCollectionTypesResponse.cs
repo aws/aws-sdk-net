@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.AutoScaling.Model
     /// </summary>
     public partial class DescribeMetricCollectionTypesResponse : AmazonWebServiceResponse
     {
-        private List<MetricGranularityType> _granularities = new List<MetricGranularityType>();
-        private List<MetricCollectionType> _metrics = new List<MetricCollectionType>();
+        private List<MetricGranularityType> _granularities = AWSConfigs.InitializeCollections ? new List<MetricGranularityType>() : null;
+        private List<MetricCollectionType> _metrics = AWSConfigs.InitializeCollections ? new List<MetricCollectionType>() : null;
 
         /// <summary>
         /// Gets and sets the property Granularities. 
@@ -51,7 +52,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Granularities property is set
         internal bool IsSetGranularities()
         {
-            return this._granularities != null && this._granularities.Count > 0; 
+            return this._granularities != null && (this._granularities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Metrics property is set
         internal bool IsSetMetrics()
         {
-            return this._metrics != null && this._metrics.Count > 0; 
+            return this._metrics != null && (this._metrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

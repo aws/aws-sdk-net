@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.CloudDirectory.Model
     /// </summary>
     public partial class TypedLinkFacet
     {
-        private List<TypedLinkAttributeDefinition> _attributes = new List<TypedLinkAttributeDefinition>();
-        private List<string> _identityAttributeOrder = new List<string>();
+        private List<TypedLinkAttributeDefinition> _attributes = AWSConfigs.InitializeCollections ? new List<TypedLinkAttributeDefinition>() : null;
+        private List<string> _identityAttributeOrder = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
 
         /// <summary>
@@ -57,7 +58,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -79,7 +80,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if IdentityAttributeOrder property is set
         internal bool IsSetIdentityAttributeOrder()
         {
-            return this._identityAttributeOrder != null && this._identityAttributeOrder.Count > 0; 
+            return this._identityAttributeOrder != null && (this._identityAttributeOrder.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

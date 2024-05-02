@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.MediaConnect.Model
         private string _programName;
         private int? _programNumber;
         private int? _programPid;
-        private List<TransportStream> _streams = new List<TransportStream>();
+        private List<TransportStream> _streams = AWSConfigs.InitializeCollections ? new List<TransportStream>() : null;
 
         /// <summary>
         /// Gets and sets the property PcrPid. The Program Clock Reference (PCR) Packet ID (PID)
@@ -120,7 +121,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if Streams property is set
         internal bool IsSetStreams()
         {
-            return this._streams != null && this._streams.Count > 0; 
+            return this._streams != null && (this._streams.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

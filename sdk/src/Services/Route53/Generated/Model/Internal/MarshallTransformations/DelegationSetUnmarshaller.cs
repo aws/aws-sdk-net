@@ -30,12 +30,13 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Route53.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DelegationSet Object
     /// </summary>  
-    public class DelegationSetUnmarshaller : IUnmarshaller<DelegationSet, XmlUnmarshallerContext>
+    public class DelegationSetUnmarshaller : IUnmarshaller<DelegationSet, XmlUnmarshallerContext>, IUnmarshaller<DelegationSet, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -69,6 +70,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("NameServers/NameServer", targetDepth))
                     {
+                        if (unmarshalledObject.NameServers == null)
+                        {
+                            unmarshalledObject.NameServers = new List<string>();
+                        }
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.NameServers.Add(unmarshaller.Unmarshall(context));
                         continue;
@@ -80,6 +85,16 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public DelegationSet Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static DelegationSetUnmarshaller _instance = new DelegationSetUnmarshaller();        

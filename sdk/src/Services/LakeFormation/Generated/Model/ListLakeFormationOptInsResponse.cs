@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LakeFormation.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.LakeFormation.Model
     /// </summary>
     public partial class ListLakeFormationOptInsResponse : AmazonWebServiceResponse
     {
-        private List<LakeFormationOptInsInfo> _lakeFormationOptInsInfoList = new List<LakeFormationOptInsInfo>();
+        private List<LakeFormationOptInsInfo> _lakeFormationOptInsInfoList = AWSConfigs.InitializeCollections ? new List<LakeFormationOptInsInfo>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if LakeFormationOptInsInfoList property is set
         internal bool IsSetLakeFormationOptInsInfoList()
         {
-            return this._lakeFormationOptInsInfoList != null && this._lakeFormationOptInsInfoList.Count > 0; 
+            return this._lakeFormationOptInsInfoList != null && (this._lakeFormationOptInsInfoList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Provides the configuration information for applying basic logic to alter document
-    /// metadata and content when ingesting documents into Amazon Q.
+    /// metadata and content when ingesting documents into Amazon Q Business.
     /// 
     ///  
     /// <para>

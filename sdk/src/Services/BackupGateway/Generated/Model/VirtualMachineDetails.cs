@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BackupGateway.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.BackupGateway.Model
         private string _name;
         private string _path;
         private string _resourceArn;
-        private List<VmwareTag> _vmwareTags = new List<VmwareTag>();
+        private List<VmwareTag> _vmwareTags = AWSConfigs.InitializeCollections ? new List<VmwareTag>() : null;
 
         /// <summary>
         /// Gets and sets the property HostName. 
@@ -168,7 +169,7 @@ namespace Amazon.BackupGateway.Model
         // Check to see if VmwareTags property is set
         internal bool IsSetVmwareTags()
         {
-            return this._vmwareTags != null && this._vmwareTags.Count > 0; 
+            return this._vmwareTags != null && (this._vmwareTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

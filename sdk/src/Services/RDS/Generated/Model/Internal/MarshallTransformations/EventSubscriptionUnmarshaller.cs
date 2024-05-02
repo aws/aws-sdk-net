@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -75,6 +76,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("EventCategoriesList/EventCategory", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.EventCategoriesList == null)
+                        {
+                            unmarshalledObject.EventCategoriesList = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.EventCategoriesList.Add(item);
                         continue;
@@ -94,6 +99,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("SourceIdsList/SourceId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.SourceIdsList == null)
+                        {
+                            unmarshalledObject.SourceIdsList = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SourceIdsList.Add(item);
                         continue;

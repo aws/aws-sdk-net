@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoTSiteWise.Model
     /// </summary>
     public partial class ListCompositionRelationshipsResponse : AmazonWebServiceResponse
     {
-        private List<CompositionRelationshipSummary> _compositionRelationshipSummaries = new List<CompositionRelationshipSummary>();
+        private List<CompositionRelationshipSummary> _compositionRelationshipSummaries = AWSConfigs.InitializeCollections ? new List<CompositionRelationshipSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if CompositionRelationshipSummaries property is set
         internal bool IsSetCompositionRelationshipSummaries()
         {
-            return this._compositionRelationshipSummaries != null && this._compositionRelationshipSummaries.Count > 0; 
+            return this._compositionRelationshipSummaries != null && (this._compositionRelationshipSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

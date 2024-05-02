@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.AppMesh.Model
         /// Enumerable containing all of the VirtualNodes
         /// </summary>
         public IPaginatedEnumerable<VirtualNodeRef> VirtualNodes => 
-            new PaginatedResultKeyResponse<ListVirtualNodesResponse, VirtualNodeRef>(this, (i) => i.VirtualNodes);
+            new PaginatedResultKeyResponse<ListVirtualNodesResponse, VirtualNodeRef>(this, (i) => i.VirtualNodes ?? new List<VirtualNodeRef>());
 
         internal ListVirtualNodesPaginator(IAmazonAppMesh client, ListVirtualNodesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.AppMesh.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListVirtualNodesResponse> IPaginator<ListVirtualNodesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListVirtualNodesResponse> IPaginator<ListVirtualNodesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

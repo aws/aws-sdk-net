@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.FMS.Model
         /// Enumerable containing all of the ThirdPartyFirewallFirewallPolicies
         /// </summary>
         public IPaginatedEnumerable<ThirdPartyFirewallFirewallPolicy> ThirdPartyFirewallFirewallPolicies => 
-            new PaginatedResultKeyResponse<ListThirdPartyFirewallFirewallPoliciesResponse, ThirdPartyFirewallFirewallPolicy>(this, (i) => i.ThirdPartyFirewallFirewallPolicies);
+            new PaginatedResultKeyResponse<ListThirdPartyFirewallFirewallPoliciesResponse, ThirdPartyFirewallFirewallPolicy>(this, (i) => i.ThirdPartyFirewallFirewallPolicies ?? new List<ThirdPartyFirewallFirewallPolicy>());
 
         internal ListThirdPartyFirewallFirewallPoliciesPaginator(IAmazonFMS client, ListThirdPartyFirewallFirewallPoliciesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.FMS.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListThirdPartyFirewallFirewallPoliciesResponse> IPaginator<ListThirdPartyFirewallFirewallPoliciesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListThirdPartyFirewallFirewallPoliciesResponse> IPaginator<ListThirdPartyFirewallFirewallPoliciesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

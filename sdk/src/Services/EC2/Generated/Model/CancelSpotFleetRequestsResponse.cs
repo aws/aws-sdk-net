@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class CancelSpotFleetRequestsResponse : AmazonWebServiceResponse
     {
-        private List<CancelSpotFleetRequestsSuccessItem> _successfulFleetRequests = new List<CancelSpotFleetRequestsSuccessItem>();
-        private List<CancelSpotFleetRequestsErrorItem> _unsuccessfulFleetRequests = new List<CancelSpotFleetRequestsErrorItem>();
+        private List<CancelSpotFleetRequestsSuccessItem> _successfulFleetRequests = AWSConfigs.InitializeCollections ? new List<CancelSpotFleetRequestsSuccessItem>() : null;
+        private List<CancelSpotFleetRequestsErrorItem> _unsuccessfulFleetRequests = AWSConfigs.InitializeCollections ? new List<CancelSpotFleetRequestsErrorItem>() : null;
 
         /// <summary>
         /// Gets and sets the property SuccessfulFleetRequests. 
@@ -51,7 +52,7 @@ namespace Amazon.EC2.Model
         // Check to see if SuccessfulFleetRequests property is set
         internal bool IsSetSuccessfulFleetRequests()
         {
-            return this._successfulFleetRequests != null && this._successfulFleetRequests.Count > 0; 
+            return this._successfulFleetRequests != null && (this._successfulFleetRequests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.EC2.Model
         // Check to see if UnsuccessfulFleetRequests property is set
         internal bool IsSetUnsuccessfulFleetRequests()
         {
-            return this._unsuccessfulFleetRequests != null && this._unsuccessfulFleetRequests.Count > 0; 
+            return this._unsuccessfulFleetRequests != null && (this._unsuccessfulFleetRequests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

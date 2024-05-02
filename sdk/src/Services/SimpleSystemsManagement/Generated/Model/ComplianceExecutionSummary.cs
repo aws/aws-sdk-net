@@ -26,12 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// A summary of the call execution that includes an execution ID, the type of execution
     /// (for example, <c>Command</c>), and the date/time of the execution using a datetime
-    /// object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.
+    /// object that is saved in the following format: <c>yyyy-MM-dd'T'HH:mm:ss'Z'</c>
     /// </summary>
     public partial class ComplianceExecutionSummary
     {
@@ -63,7 +64,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property ExecutionTime. 
         /// <para>
         /// The time the execution ran as a datetime object that is saved in the following format:
-        /// yyyy-MM-dd'T'HH:mm:ss'Z'.
+        /// <c>yyyy-MM-dd'T'HH:mm:ss'Z'</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class ConfigurationAggregator
     {
-        private List<AccountAggregationSource> _accountAggregationSources = new List<AccountAggregationSource>();
+        private List<AccountAggregationSource> _accountAggregationSources = AWSConfigs.InitializeCollections ? new List<AccountAggregationSource>() : null;
         private string _configurationAggregatorArn;
         private string _configurationAggregatorName;
         private string _createdBy;
@@ -58,7 +59,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if AccountAggregationSources property is set
         internal bool IsSetAccountAggregationSources()
         {
-            return this._accountAggregationSources != null && this._accountAggregationSources.Count > 0; 
+            return this._accountAggregationSources != null && (this._accountAggregationSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

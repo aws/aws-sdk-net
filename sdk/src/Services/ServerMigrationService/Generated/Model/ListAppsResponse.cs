@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ServerMigrationService.Model
     /// </summary>
     public partial class ListAppsResponse : AmazonWebServiceResponse
     {
-        private List<AppSummary> _apps = new List<AppSummary>();
+        private List<AppSummary> _apps = AWSConfigs.InitializeCollections ? new List<AppSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ServerMigrationService.Model
         // Check to see if Apps property is set
         internal bool IsSetApps()
         {
-            return this._apps != null && this._apps.Count > 0; 
+            return this._apps != null && (this._apps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CodeArtifact.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.CodeArtifact.Model
         /// Enumerable containing all of the Packages
         /// </summary>
         public IPaginatedEnumerable<PackageSummary> Packages => 
-            new PaginatedResultKeyResponse<ListPackagesResponse, PackageSummary>(this, (i) => i.Packages);
+            new PaginatedResultKeyResponse<ListPackagesResponse, PackageSummary>(this, (i) => i.Packages ?? new List<PackageSummary>());
 
         internal ListPackagesPaginator(IAmazonCodeArtifact client, ListPackagesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.CodeArtifact.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListPackagesResponse> IPaginator<ListPackagesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListPackagesResponse> IPaginator<ListPackagesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

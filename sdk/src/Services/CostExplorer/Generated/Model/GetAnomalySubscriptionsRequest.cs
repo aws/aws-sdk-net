@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.CostExplorer.Model
         private int? _maxResults;
         private string _monitorArn;
         private string _nextPageToken;
-        private List<string> _subscriptionArnList = new List<string>();
+        private List<string> _subscriptionArnList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -113,7 +114,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if SubscriptionArnList property is set
         internal bool IsSetSubscriptionArnList()
         {
-            return this._subscriptionArnList != null && this._subscriptionArnList.Count > 0; 
+            return this._subscriptionArnList != null && (this._subscriptionArnList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

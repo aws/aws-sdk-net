@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class DisassociatePersonasFromEntitiesResponse : AmazonWebServiceResponse
     {
-        private List<FailedEntity> _failedEntityList = new List<FailedEntity>();
+        private List<FailedEntity> _failedEntityList = AWSConfigs.InitializeCollections ? new List<FailedEntity>() : null;
 
         /// <summary>
         /// Gets and sets the property FailedEntityList. 
@@ -52,7 +53,7 @@ namespace Amazon.Kendra.Model
         // Check to see if FailedEntityList property is set
         internal bool IsSetFailedEntityList()
         {
-            return this._failedEntityList != null && this._failedEntityList.Count > 0; 
+            return this._failedEntityList != null && (this._failedEntityList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

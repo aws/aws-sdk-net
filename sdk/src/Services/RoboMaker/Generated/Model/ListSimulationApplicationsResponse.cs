@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RoboMaker.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.RoboMaker.Model
     public partial class ListSimulationApplicationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SimulationApplicationSummary> _simulationApplicationSummaries = new List<SimulationApplicationSummary>();
+        private List<SimulationApplicationSummary> _simulationApplicationSummaries = AWSConfigs.InitializeCollections ? new List<SimulationApplicationSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -75,7 +76,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if SimulationApplicationSummaries property is set
         internal bool IsSetSimulationApplicationSummaries()
         {
-            return this._simulationApplicationSummaries != null && this._simulationApplicationSummaries.Count > 0; 
+            return this._simulationApplicationSummaries != null && (this._simulationApplicationSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

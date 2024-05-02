@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Braket.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Braket.Model
         /// Enumerable containing all of the QuantumTasks
         /// </summary>
         public IPaginatedEnumerable<QuantumTaskSummary> QuantumTasks => 
-            new PaginatedResultKeyResponse<SearchQuantumTasksResponse, QuantumTaskSummary>(this, (i) => i.QuantumTasks);
+            new PaginatedResultKeyResponse<SearchQuantumTasksResponse, QuantumTaskSummary>(this, (i) => i.QuantumTasks ?? new List<QuantumTaskSummary>());
 
         internal SearchQuantumTasksPaginator(IAmazonBraket client, SearchQuantumTasksRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Braket.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<SearchQuantumTasksResponse> IPaginator<SearchQuantumTasksResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<SearchQuantumTasksResponse> IPaginator<SearchQuantumTasksResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

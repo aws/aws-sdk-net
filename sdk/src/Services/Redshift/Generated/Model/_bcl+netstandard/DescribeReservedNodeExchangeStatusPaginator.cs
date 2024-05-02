@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Redshift.Model
         /// Enumerable containing all of the ReservedNodeExchangeStatusDetails
         /// </summary>
         public IPaginatedEnumerable<ReservedNodeExchangeStatus> ReservedNodeExchangeStatusDetails => 
-            new PaginatedResultKeyResponse<DescribeReservedNodeExchangeStatusResponse, ReservedNodeExchangeStatus>(this, (i) => i.ReservedNodeExchangeStatusDetails);
+            new PaginatedResultKeyResponse<DescribeReservedNodeExchangeStatusResponse, ReservedNodeExchangeStatus>(this, (i) => i.ReservedNodeExchangeStatusDetails ?? new List<ReservedNodeExchangeStatus>());
 
         internal DescribeReservedNodeExchangeStatusPaginator(IAmazonRedshift client, DescribeReservedNodeExchangeStatusRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Redshift.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeReservedNodeExchangeStatusResponse> IPaginator<DescribeReservedNodeExchangeStatusResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeReservedNodeExchangeStatusResponse> IPaginator<DescribeReservedNodeExchangeStatusResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

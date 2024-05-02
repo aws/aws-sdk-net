@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ResourceExplorer2.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.ResourceExplorer2.Model
         private string _arn;
         private DateTime? _lastReportedAt;
         private string _owningAccountId;
-        private List<ResourceProperty> _properties = new List<ResourceProperty>();
+        private List<ResourceProperty> _properties = AWSConfigs.InitializeCollections ? new List<ResourceProperty>() : null;
         private string _region;
         private string _resourceType;
         private string _service;
@@ -116,7 +117,7 @@ namespace Amazon.ResourceExplorer2.Model
         // Check to see if Properties property is set
         internal bool IsSetProperties()
         {
-            return this._properties != null && this._properties.Count > 0; 
+            return this._properties != null && (this._properties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

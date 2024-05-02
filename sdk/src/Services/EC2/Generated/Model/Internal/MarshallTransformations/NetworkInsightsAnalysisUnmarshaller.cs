@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -57,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("additionalAccountSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.AdditionalAccounts == null)
+                        {
+                            unmarshalledObject.AdditionalAccounts = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AdditionalAccounts.Add(item);
                         continue;
@@ -64,6 +69,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("alternatePathHintSet/item", targetDepth))
                     {
                         var unmarshaller = AlternatePathHintUnmarshaller.Instance;
+                        if (unmarshalledObject.AlternatePathHints == null)
+                        {
+                            unmarshalledObject.AlternatePathHints = new List<AlternatePathHint>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AlternatePathHints.Add(item);
                         continue;
@@ -71,6 +80,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("explanationSet/item", targetDepth))
                     {
                         var unmarshaller = ExplanationUnmarshaller.Instance;
+                        if (unmarshalledObject.Explanations == null)
+                        {
+                            unmarshalledObject.Explanations = new List<Explanation>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Explanations.Add(item);
                         continue;
@@ -78,6 +91,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("filterInArnSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.FilterInArns == null)
+                        {
+                            unmarshalledObject.FilterInArns = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.FilterInArns.Add(item);
                         continue;
@@ -85,6 +102,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("forwardPathComponentSet/item", targetDepth))
                     {
                         var unmarshaller = PathComponentUnmarshaller.Instance;
+                        if (unmarshalledObject.ForwardPathComponents == null)
+                        {
+                            unmarshalledObject.ForwardPathComponents = new List<PathComponent>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ForwardPathComponents.Add(item);
                         continue;
@@ -116,6 +137,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("returnPathComponentSet/item", targetDepth))
                     {
                         var unmarshaller = PathComponentUnmarshaller.Instance;
+                        if (unmarshalledObject.ReturnPathComponents == null)
+                        {
+                            unmarshalledObject.ReturnPathComponents = new List<PathComponent>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ReturnPathComponents.Add(item);
                         continue;
@@ -141,6 +166,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("suggestedAccountSet/item", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.SuggestedAccounts == null)
+                        {
+                            unmarshalledObject.SuggestedAccounts = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SuggestedAccounts.Add(item);
                         continue;
@@ -148,6 +177,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tags.Add(item);
                         continue;

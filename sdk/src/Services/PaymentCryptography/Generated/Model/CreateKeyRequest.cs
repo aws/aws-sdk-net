@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PaymentCryptography.Model
 {
     /// <summary>
@@ -69,15 +70,18 @@ namespace Amazon.PaymentCryptography.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <a>DeleteKey</a> 
+    ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteKey.html">DeleteKey</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>GetKey</a> 
+    ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetKey.html">GetKey</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ListKeys</a> 
+    ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListKeys.html">ListKeys</a>
+    /// 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -87,7 +91,7 @@ namespace Amazon.PaymentCryptography.Model
         private bool? _exportable;
         private KeyAttributes _keyAttributes;
         private KeyCheckValueAlgorithm _keyCheckValueAlgorithm;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Enabled. 
@@ -179,7 +183,8 @@ namespace Amazon.PaymentCryptography.Model
         /// <para>
         /// Assigns one or more tags to the Amazon Web Services Payment Cryptography key. Use
         /// this parameter to tag a key when it is created. To tag an existing Amazon Web Services
-        /// Payment Cryptography key, use the <a>TagResource</a> operation.
+        /// Payment Cryptography key, use the <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_TagResource.html">TagResource</a>
+        /// operation.
         /// </para>
         ///  
         /// <para>
@@ -210,7 +215,7 @@ namespace Amazon.PaymentCryptography.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

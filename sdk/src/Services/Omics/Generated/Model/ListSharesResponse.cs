@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Omics.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Omics.Model
     public partial class ListSharesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ShareDetails> _shares = new List<ShareDetails>();
+        private List<ShareDetails> _shares = AWSConfigs.InitializeCollections ? new List<ShareDetails>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -58,7 +59,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Shares. 
         /// <para>
-        ///  The shares available and their meta details. 
+        /// The shares available and their metadata details.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -71,7 +72,7 @@ namespace Amazon.Omics.Model
         // Check to see if Shares property is set
         internal bool IsSetShares()
         {
-            return this._shares != null && this._shares.Count > 0; 
+            return this._shares != null && (this._shares.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

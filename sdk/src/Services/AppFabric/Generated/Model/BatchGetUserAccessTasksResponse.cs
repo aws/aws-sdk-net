@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppFabric.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AppFabric.Model
     /// </summary>
     public partial class BatchGetUserAccessTasksResponse : AmazonWebServiceResponse
     {
-        private List<UserAccessResultItem> _userAccessResultsList = new List<UserAccessResultItem>();
+        private List<UserAccessResultItem> _userAccessResultsList = AWSConfigs.InitializeCollections ? new List<UserAccessResultItem>() : null;
 
         /// <summary>
         /// Gets and sets the property UserAccessResultsList. 
@@ -50,7 +51,7 @@ namespace Amazon.AppFabric.Model
         // Check to see if UserAccessResultsList property is set
         internal bool IsSetUserAccessResultsList()
         {
-            return this._userAccessResultsList != null && this._userAccessResultsList.Count > 0; 
+            return this._userAccessResultsList != null && (this._userAccessResultsList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

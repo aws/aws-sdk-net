@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.QuickSight.Model
     {
         private string _catalog;
         private string _dataSourceArn;
-        private List<InputColumn> _inputColumns = new List<InputColumn>();
+        private List<InputColumn> _inputColumns = AWSConfigs.InitializeCollections ? new List<InputColumn>() : null;
         private string _name;
         private string _schema;
 
@@ -93,7 +94,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if InputColumns property is set
         internal bool IsSetInputColumns()
         {
-            return this._inputColumns != null && this._inputColumns.Count > 0; 
+            return this._inputColumns != null && (this._inputColumns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

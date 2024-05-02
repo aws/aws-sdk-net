@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SSMContacts.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SSMContacts.Model
     public partial class PreviewOverride
     {
         private DateTime? _endTime;
-        private List<string> _newMembers = new List<string>();
+        private List<string> _newMembers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _startTime;
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.SSMContacts.Model
         // Check to see if NewMembers property is set
         internal bool IsSetNewMembers()
         {
-            return this._newMembers != null && this._newMembers.Count > 0; 
+            return this._newMembers != null && (this._newMembers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

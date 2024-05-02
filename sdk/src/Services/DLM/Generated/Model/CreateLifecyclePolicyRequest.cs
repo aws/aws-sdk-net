@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DLM.Model
 {
     /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.DLM.Model
     {
         private bool? _copyTags;
         private int? _createInterval;
-        private List<CrossRegionCopyTarget> _crossRegionCopyTargets = new List<CrossRegionCopyTarget>();
+        private List<CrossRegionCopyTarget> _crossRegionCopyTargets = AWSConfigs.InitializeCollections ? new List<CrossRegionCopyTarget>() : null;
         private DefaultPolicyTypeValues _defaultPolicy;
         private string _description;
         private Exclusions _exclusions;
@@ -78,7 +79,7 @@ namespace Amazon.DLM.Model
         private PolicyDetails _policyDetails;
         private int? _retainInterval;
         private SettablePolicyStateValues _state;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property CopyTags. 
@@ -147,7 +148,7 @@ namespace Amazon.DLM.Model
         // Check to see if CrossRegionCopyTargets property is set
         internal bool IsSetCrossRegionCopyTargets()
         {
-            return this._crossRegionCopyTargets != null && this._crossRegionCopyTargets.Count > 0; 
+            return this._crossRegionCopyTargets != null && (this._crossRegionCopyTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -375,7 +376,7 @@ namespace Amazon.DLM.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

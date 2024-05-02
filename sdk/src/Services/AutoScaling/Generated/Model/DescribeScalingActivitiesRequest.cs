@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.AutoScaling.Model
     /// </summary>
     public partial class DescribeScalingActivitiesRequest : AmazonAutoScalingRequest
     {
-        private List<string> _activityIds = new List<string>();
+        private List<string> _activityIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _autoScalingGroupName;
         private bool? _includeDeletedGroups;
         private int? _maxRecords;
@@ -79,7 +80,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if ActivityIds property is set
         internal bool IsSetActivityIds()
         {
-            return this._activityIds != null && this._activityIds.Count > 0; 
+            return this._activityIds != null && (this._activityIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

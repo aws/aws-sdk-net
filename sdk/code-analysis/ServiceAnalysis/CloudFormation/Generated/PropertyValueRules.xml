@@ -876,6 +876,25 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudFormation.Model.ListStackSetAutoDeploymentTargetsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.ListStackSetAutoDeploymentTargetsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.ListStackSetAutoDeploymentTargetsRequest.StackSetName</property>
+    <pattern>[a-zA-Z][-a-zA-Z0-9]*(?::[a-zA-Z0-9]{8}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{4}-[a-zA-Z0-9]{12})?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.ListStackSetAutoDeploymentTargetsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudFormation.Model.ListStackSetOperationResultsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -1626,6 +1645,10 @@
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.StackSet.TemplateBody</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudFormation.Model.StackSetAutoDeploymentTargetSummary.OrganizationalUnitId</property>
+    <pattern>^(ou-[a-z0-9]{4,32}-[a-z0-9]{8,32}|r-[a-z0-9]{4,32})$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudFormation.Model.StackSetDriftDetectionDetails.DriftedStackInstancesCount</property>

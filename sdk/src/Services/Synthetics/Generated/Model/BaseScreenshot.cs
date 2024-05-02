@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Synthetics.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Synthetics.Model
     /// </summary>
     public partial class BaseScreenshot
     {
-        private List<string> _ignoreCoordinates = new List<string>();
+        private List<string> _ignoreCoordinates = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _screenshotName;
 
         /// <summary>
@@ -56,7 +57,7 @@ namespace Amazon.Synthetics.Model
         // Check to see if IgnoreCoordinates property is set
         internal bool IsSetIgnoreCoordinates()
         {
-            return this._ignoreCoordinates != null && this._ignoreCoordinates.Count > 0; 
+            return this._ignoreCoordinates != null && (this._ignoreCoordinates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

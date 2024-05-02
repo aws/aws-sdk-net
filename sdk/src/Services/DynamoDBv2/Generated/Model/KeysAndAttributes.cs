@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
@@ -41,10 +42,10 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class KeysAndAttributes
     {
-        private List<string> _attributesToGet = new List<string>();
+        private List<string> _attributesToGet = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _consistentRead;
-        private Dictionary<string, string> _expressionAttributeNames = new Dictionary<string, string>();
-        private List<Dictionary<string, AttributeValue>> _keys = new List<Dictionary<string, AttributeValue>>();
+        private Dictionary<string, string> _expressionAttributeNames = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<Dictionary<string, AttributeValue>> _keys = AWSConfigs.InitializeCollections ? new List<Dictionary<string, AttributeValue>>() : null;
         private string _projectionExpression;
 
         /// <summary>
@@ -65,7 +66,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if AttributesToGet property is set
         internal bool IsSetAttributesToGet()
         {
-            return this._attributesToGet != null && this._attributesToGet.Count > 0; 
+            return this._attributesToGet != null && (this._attributesToGet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -154,7 +155,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if ExpressionAttributeNames property is set
         internal bool IsSetExpressionAttributeNames()
         {
-            return this._expressionAttributeNames != null && this._expressionAttributeNames.Count > 0; 
+            return this._expressionAttributeNames != null && (this._expressionAttributeNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -174,7 +175,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if Keys property is set
         internal bool IsSetKeys()
         {
-            return this._keys != null && this._keys.Count > 0; 
+            return this._keys != null && (this._keys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

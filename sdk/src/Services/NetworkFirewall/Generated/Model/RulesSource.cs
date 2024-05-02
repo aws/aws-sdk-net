@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.NetworkFirewall.Model
     {
         private RulesSourceList _rulesSourceList;
         private string _rulesString;
-        private List<StatefulRule> _statefulRules = new List<StatefulRule>();
+        private List<StatefulRule> _statefulRules = AWSConfigs.InitializeCollections ? new List<StatefulRule>() : null;
         private StatelessRulesAndCustomActions _statelessRulesAndCustomActions;
 
         /// <summary>
@@ -109,7 +110,7 @@ namespace Amazon.NetworkFirewall.Model
         // Check to see if StatefulRules property is set
         internal bool IsSetStatefulRules()
         {
-            return this._statefulRules != null && this._statefulRules.Count > 0; 
+            return this._statefulRules != null && (this._statefulRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

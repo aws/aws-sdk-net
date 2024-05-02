@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.IdentityManagement.Model
         private JobStatusType _jobStatus;
         private AccessAdvisorUsageGranularityType _jobType;
         private string _marker;
-        private List<ServiceLastAccessed> _servicesLastAccessed = new List<ServiceLastAccessed>();
+        private List<ServiceLastAccessed> _servicesLastAccessed = AWSConfigs.InitializeCollections ? new List<ServiceLastAccessed>() : null;
 
         /// <summary>
         /// Gets and sets the property Error. 
@@ -202,7 +203,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if ServicesLastAccessed property is set
         internal bool IsSetServicesLastAccessed()
         {
-            return this._servicesLastAccessed != null && this._servicesLastAccessed.Count > 0; 
+            return this._servicesLastAccessed != null && (this._servicesLastAccessed.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

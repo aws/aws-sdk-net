@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Honeycode.Model
 {
     /// <summary>
@@ -44,7 +45,7 @@ namespace Amazon.Honeycode.Model
     public partial class BatchUpdateTableRowsRequest : AmazonHoneycodeRequest
     {
         private string _clientRequestToken;
-        private List<UpdateRowData> _rowsToUpdate = new List<UpdateRowData>();
+        private List<UpdateRowData> _rowsToUpdate = AWSConfigs.InitializeCollections ? new List<UpdateRowData>() : null;
         private string _tableId;
         private string _workbookId;
 
@@ -100,7 +101,7 @@ namespace Amazon.Honeycode.Model
         // Check to see if RowsToUpdate property is set
         internal bool IsSetRowsToUpdate()
         {
-            return this._rowsToUpdate != null && this._rowsToUpdate.Count > 0; 
+            return this._rowsToUpdate != null && (this._rowsToUpdate.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

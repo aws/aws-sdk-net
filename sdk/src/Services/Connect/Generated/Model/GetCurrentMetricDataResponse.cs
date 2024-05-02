@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Connect.Model
     {
         private long? _approximateTotalCount;
         private DateTime? _dataSnapshotTime;
-        private List<CurrentMetricResult> _metricResults = new List<CurrentMetricResult>();
+        private List<CurrentMetricResult> _metricResults = AWSConfigs.InitializeCollections ? new List<CurrentMetricResult>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -89,7 +90,7 @@ namespace Amazon.Connect.Model
         // Check to see if MetricResults property is set
         internal bool IsSetMetricResults()
         {
-            return this._metricResults != null && this._metricResults.Count > 0; 
+            return this._metricResults != null && (this._metricResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

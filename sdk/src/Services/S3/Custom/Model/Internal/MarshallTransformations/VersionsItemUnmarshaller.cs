@@ -24,6 +24,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// </summary>
     public class VersionsItemUnmarshaller : IUnmarshaller<S3ObjectVersion, XmlUnmarshallerContext>, IUnmarshaller<S3ObjectVersion, JsonUnmarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public S3ObjectVersion Unmarshall(XmlUnmarshallerContext context) 
         {
             S3ObjectVersion versionsItem = new S3ObjectVersion();
@@ -39,6 +44,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("ChecksumAlgorithm", targetDepth))
                     {
+                        if (versionsItem.ChecksumAlgorithm == null)
+                        {
+                            versionsItem.ChecksumAlgorithm = new List<string>();
+                        }
                         versionsItem.ChecksumAlgorithm.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
                         continue;
                     }
@@ -108,6 +117,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return versionsItem;
         }
 
+        /// <summary>
+        /// Not implemented and always returns null.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public S3ObjectVersion Unmarshall(JsonUnmarshallerContext context) 
         {
             return null;
@@ -115,6 +129,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static VersionsItemUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static VersionsItemUnmarshaller Instance
         {
             get

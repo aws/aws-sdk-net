@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class BatchAssociateAnalyticsDataSetResponse : AmazonWebServiceResponse
     {
-        private List<AnalyticsDataAssociationResult> _created = new List<AnalyticsDataAssociationResult>();
-        private List<ErrorResult> _errors = new List<ErrorResult>();
+        private List<AnalyticsDataAssociationResult> _created = AWSConfigs.InitializeCollections ? new List<AnalyticsDataAssociationResult>() : null;
+        private List<ErrorResult> _errors = AWSConfigs.InitializeCollections ? new List<ErrorResult>() : null;
 
         /// <summary>
         /// Gets and sets the property Created. 
@@ -52,7 +53,7 @@ namespace Amazon.Connect.Model
         // Check to see if Created property is set
         internal bool IsSetCreated()
         {
-            return this._created != null && this._created.Count > 0; 
+            return this._created != null && (this._created.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.Connect.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

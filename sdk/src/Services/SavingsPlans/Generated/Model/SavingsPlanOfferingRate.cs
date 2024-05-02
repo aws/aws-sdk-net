@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SavingsPlans.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.SavingsPlans.Model
     {
         private string _operation;
         private SavingsPlanProductType _productType;
-        private List<SavingsPlanOfferingRateProperty> _properties = new List<SavingsPlanOfferingRateProperty>();
+        private List<SavingsPlanOfferingRateProperty> _properties = AWSConfigs.InitializeCollections ? new List<SavingsPlanOfferingRateProperty>() : null;
         private string _rate;
         private ParentSavingsPlanOffering _savingsPlanOffering;
         private SavingsPlanRateServiceCode _serviceCode;
@@ -45,7 +46,7 @@ namespace Amazon.SavingsPlans.Model
         /// <summary>
         /// Gets and sets the property Operation. 
         /// <para>
-        /// The specific AWS operation for the line item in the billing report.
+        /// The specific Amazon Web Services operation for the line item in the billing report.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
@@ -94,7 +95,7 @@ namespace Amazon.SavingsPlans.Model
         // Check to see if Properties property is set
         internal bool IsSetProperties()
         {
-            return this._properties != null && this._properties.Count > 0; 
+            return this._properties != null && (this._properties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

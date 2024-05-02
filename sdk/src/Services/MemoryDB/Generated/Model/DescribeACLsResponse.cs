@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MemoryDB.Model
     /// </summary>
     public partial class DescribeACLsResponse : AmazonWebServiceResponse
     {
-        private List<ACL> _acLs = new List<ACL>();
+        private List<ACL> _acLs = AWSConfigs.InitializeCollections ? new List<ACL>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.MemoryDB.Model
         // Check to see if ACLs property is set
         internal bool IsSetACLs()
         {
-            return this._acLs != null && this._acLs.Count > 0; 
+            return this._acLs != null && (this._acLs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

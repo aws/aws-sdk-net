@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the Streams
         /// </summary>
         public IPaginatedEnumerable<StreamSummary> Streams => 
-            new PaginatedResultKeyResponse<ListStreamsResponse, StreamSummary>(this, (i) => i.Streams);
+            new PaginatedResultKeyResponse<ListStreamsResponse, StreamSummary>(this, (i) => i.Streams ?? new List<StreamSummary>());
 
         internal ListStreamsPaginator(IAmazonIoT client, ListStreamsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.IoT.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListStreamsResponse> IPaginator<ListStreamsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListStreamsResponse> IPaginator<ListStreamsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

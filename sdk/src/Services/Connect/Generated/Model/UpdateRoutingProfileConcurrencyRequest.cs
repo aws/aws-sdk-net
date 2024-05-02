@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Connect.Model
     public partial class UpdateRoutingProfileConcurrencyRequest : AmazonConnectRequest
     {
         private string _instanceId;
-        private List<MediaConcurrency> _mediaConcurrencies = new List<MediaConcurrency>();
+        private List<MediaConcurrency> _mediaConcurrencies = AWSConfigs.InitializeCollections ? new List<MediaConcurrency>() : null;
         private string _routingProfileId;
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace Amazon.Connect.Model
         // Check to see if MediaConcurrencies property is set
         internal bool IsSetMediaConcurrencies()
         {
-            return this._mediaConcurrencies != null && this._mediaConcurrencies.Count > 0; 
+            return this._mediaConcurrencies != null && (this._mediaConcurrencies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

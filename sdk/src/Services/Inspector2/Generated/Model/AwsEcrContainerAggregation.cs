@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
@@ -33,11 +34,11 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class AwsEcrContainerAggregation
     {
-        private List<StringFilter> _architectures = new List<StringFilter>();
-        private List<StringFilter> _imageShas = new List<StringFilter>();
-        private List<StringFilter> _imageTags = new List<StringFilter>();
-        private List<StringFilter> _repositories = new List<StringFilter>();
-        private List<StringFilter> _resourceIds = new List<StringFilter>();
+        private List<StringFilter> _architectures = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _imageShas = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _imageTags = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _repositories = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _resourceIds = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
         private AwsEcrContainerSortBy _sortBy;
         private SortOrder _sortOrder;
 
@@ -57,7 +58,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if Architectures property is set
         internal bool IsSetArchitectures()
         {
-            return this._architectures != null && this._architectures.Count > 0; 
+            return this._architectures != null && (this._architectures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -76,7 +77,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if ImageShas property is set
         internal bool IsSetImageShas()
         {
-            return this._imageShas != null && this._imageShas.Count > 0; 
+            return this._imageShas != null && (this._imageShas.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -95,7 +96,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if ImageTags property is set
         internal bool IsSetImageTags()
         {
-            return this._imageTags != null && this._imageTags.Count > 0; 
+            return this._imageTags != null && (this._imageTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -114,7 +115,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if Repositories property is set
         internal bool IsSetRepositories()
         {
-            return this._repositories != null && this._repositories.Count > 0; 
+            return this._repositories != null && (this._repositories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -133,7 +134,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if ResourceIds property is set
         internal bool IsSetResourceIds()
         {
-            return this._resourceIds != null && this._resourceIds.Count > 0; 
+            return this._resourceIds != null && (this._resourceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

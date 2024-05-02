@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppSync.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.AppSync.Model
     {
         private ErrorDetail _error;
         private string _evaluationResult;
-        private List<string> _logs = new List<string>();
+        private List<string> _logs = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Error. 
@@ -90,7 +91,7 @@ namespace Amazon.AppSync.Model
         // Check to see if Logs property is set
         internal bool IsSetLogs()
         {
-            return this._logs != null && this._logs.Count > 0; 
+            return this._logs != null && (this._logs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

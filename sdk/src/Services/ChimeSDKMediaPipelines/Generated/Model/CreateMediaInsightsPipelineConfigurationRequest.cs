@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
@@ -35,11 +36,11 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
     public partial class CreateMediaInsightsPipelineConfigurationRequest : AmazonChimeSDKMediaPipelinesRequest
     {
         private string _clientRequestToken;
-        private List<MediaInsightsPipelineConfigurationElement> _elements = new List<MediaInsightsPipelineConfigurationElement>();
+        private List<MediaInsightsPipelineConfigurationElement> _elements = AWSConfigs.InitializeCollections ? new List<MediaInsightsPipelineConfigurationElement>() : null;
         private string _mediaInsightsPipelineConfigurationName;
         private RealTimeAlertConfiguration _realTimeAlertConfiguration;
         private string _resourceAccessRoleArn;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -77,7 +78,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         // Check to see if Elements property is set
         internal bool IsSetElements()
         {
-            return this._elements != null && this._elements.Count > 0; 
+            return this._elements != null && (this._elements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -153,7 +154,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

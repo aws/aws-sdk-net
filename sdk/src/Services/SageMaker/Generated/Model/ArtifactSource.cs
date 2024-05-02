@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ArtifactSource
     {
-        private List<ArtifactSourceType> _sourceTypes = new List<ArtifactSourceType>();
+        private List<ArtifactSourceType> _sourceTypes = AWSConfigs.InitializeCollections ? new List<ArtifactSourceType>() : null;
         private string _sourceUri;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if SourceTypes property is set
         internal bool IsSetSourceTypes()
         {
-            return this._sourceTypes != null && this._sourceTypes.Count > 0; 
+            return this._sourceTypes != null && (this._sourceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

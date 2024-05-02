@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class BatchDetectSyntaxResponse : AmazonWebServiceResponse
     {
-        private List<BatchItemError> _errorList = new List<BatchItemError>();
-        private List<BatchDetectSyntaxItemResult> _resultList = new List<BatchDetectSyntaxItemResult>();
+        private List<BatchItemError> _errorList = AWSConfigs.InitializeCollections ? new List<BatchItemError>() : null;
+        private List<BatchDetectSyntaxItemResult> _resultList = AWSConfigs.InitializeCollections ? new List<BatchDetectSyntaxItemResult>() : null;
 
         /// <summary>
         /// Gets and sets the property ErrorList. 
@@ -55,7 +56,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if ErrorList property is set
         internal bool IsSetErrorList()
         {
-            return this._errorList != null && this._errorList.Count > 0; 
+            return this._errorList != null && (this._errorList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -77,7 +78,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if ResultList property is set
         internal bool IsSetResultList()
         {
-            return this._resultList != null && this._resultList.Count > 0; 
+            return this._resultList != null && (this._resultList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

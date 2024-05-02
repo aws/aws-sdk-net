@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
@@ -49,7 +50,7 @@ namespace Amazon.CostExplorer.Model
     public partial class TagResourceRequest : AmazonCostExplorerRequest
     {
         private string _resourceArn;
-        private List<ResourceTag> _resourceTags = new List<ResourceTag>();
+        private List<ResourceTag> _resourceTags = AWSConfigs.InitializeCollections ? new List<ResourceTag>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceArn. 
@@ -125,7 +126,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if ResourceTags property is set
         internal bool IsSetResourceTags()
         {
-            return this._resourceTags != null && this._resourceTags.Count > 0; 
+            return this._resourceTags != null && (this._resourceTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

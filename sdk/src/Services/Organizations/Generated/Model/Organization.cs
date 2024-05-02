@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Organizations.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Organizations.Model
     public partial class Organization
     {
         private string _arn;
-        private List<PolicyTypeSummary> _availablePolicyTypes = new List<PolicyTypeSummary>();
+        private List<PolicyTypeSummary> _availablePolicyTypes = AWSConfigs.InitializeCollections ? new List<PolicyTypeSummary>() : null;
         private OrganizationFeatureSet _featureSet;
         private string _id;
         private string _masterAccountArn;
@@ -88,7 +89,7 @@ namespace Amazon.Organizations.Model
         // Check to see if AvailablePolicyTypes property is set
         internal bool IsSetAvailablePolicyTypes()
         {
-            return this._availablePolicyTypes != null && this._availablePolicyTypes.Count > 0; 
+            return this._availablePolicyTypes != null && (this._availablePolicyTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

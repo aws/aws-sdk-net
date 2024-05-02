@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.XRay.Model
 {
     /// <summary>
@@ -35,9 +36,9 @@ namespace Amazon.XRay.Model
     public partial class InsightImpactGraphService
     {
         private string _accountId;
-        private List<InsightImpactGraphEdge> _edges = new List<InsightImpactGraphEdge>();
+        private List<InsightImpactGraphEdge> _edges = AWSConfigs.InitializeCollections ? new List<InsightImpactGraphEdge>() : null;
         private string _name;
-        private List<string> _names = new List<string>();
+        private List<string> _names = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _referenceId;
         private string _type;
 
@@ -74,7 +75,7 @@ namespace Amazon.XRay.Model
         // Check to see if Edges property is set
         internal bool IsSetEdges()
         {
-            return this._edges != null && this._edges.Count > 0; 
+            return this._edges != null && (this._edges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -110,7 +111,7 @@ namespace Amazon.XRay.Model
         // Check to see if Names property is set
         internal bool IsSetNames()
         {
-            return this._names != null && this._names.Count > 0; 
+            return this._names != null && (this._names.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

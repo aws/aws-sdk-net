@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LookoutMetrics.Model
 {
     /// <summary>
@@ -35,9 +36,9 @@ namespace Amazon.LookoutMetrics.Model
     public partial class S3SourceConfig
     {
         private FileFormatDescriptor _fileFormatDescriptor;
-        private List<string> _historicalDataPathList = new List<string>();
+        private List<string> _historicalDataPathList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _roleArn;
-        private List<string> _templatedPathList = new List<string>();
+        private List<string> _templatedPathList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property FileFormatDescriptor. 
@@ -73,7 +74,7 @@ namespace Amazon.LookoutMetrics.Model
         // Check to see if HistoricalDataPathList property is set
         internal bool IsSetHistoricalDataPathList()
         {
-            return this._historicalDataPathList != null && this._historicalDataPathList.Count > 0; 
+            return this._historicalDataPathList != null && (this._historicalDataPathList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -112,7 +113,7 @@ namespace Amazon.LookoutMetrics.Model
         // Check to see if TemplatedPathList property is set
         internal bool IsSetTemplatedPathList()
         {
-            return this._templatedPathList != null && this._templatedPathList.Count > 0; 
+            return this._templatedPathList != null && (this._templatedPathList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

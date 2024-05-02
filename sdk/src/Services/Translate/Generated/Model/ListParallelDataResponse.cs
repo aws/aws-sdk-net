@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Translate.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Translate.Model
     public partial class ListParallelDataResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ParallelDataProperties> _parallelDataPropertiesList = new List<ParallelDataProperties>();
+        private List<ParallelDataProperties> _parallelDataPropertiesList = AWSConfigs.InitializeCollections ? new List<ParallelDataProperties>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.Translate.Model
         // Check to see if ParallelDataPropertiesList property is set
         internal bool IsSetParallelDataPropertiesList()
         {
-            return this._parallelDataPropertiesList != null && this._parallelDataPropertiesList.Count > 0; 
+            return this._parallelDataPropertiesList != null && (this._parallelDataPropertiesList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

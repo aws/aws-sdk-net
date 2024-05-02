@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EKS.Model
 {
     /// <summary>
@@ -62,17 +63,17 @@ namespace Amazon.EKS.Model
         private string _clientRequestToken;
         private string _clusterName;
         private int? _diskSize;
-        private List<string> _instanceTypes = new List<string>();
-        private Dictionary<string, string> _labels = new Dictionary<string, string>();
+        private List<string> _instanceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _labels = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private LaunchTemplateSpecification _launchTemplate;
         private string _nodegroupName;
         private string _nodeRole;
         private string _releaseVersion;
         private RemoteAccessConfig _remoteAccess;
         private NodegroupScalingConfig _scalingConfig;
-        private List<string> _subnets = new List<string>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
-        private List<Taint> _taints = new List<Taint>();
+        private List<string> _subnets = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<Taint> _taints = AWSConfigs.InitializeCollections ? new List<Taint>() : null;
         private NodegroupUpdateConfig _updateConfig;
         private string _version;
 
@@ -204,7 +205,7 @@ namespace Amazon.EKS.Model
         // Check to see if InstanceTypes property is set
         internal bool IsSetInstanceTypes()
         {
-            return this._instanceTypes != null && this._instanceTypes.Count > 0; 
+            return this._instanceTypes != null && (this._instanceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -223,7 +224,7 @@ namespace Amazon.EKS.Model
         // Check to see if Labels property is set
         internal bool IsSetLabels()
         {
-            return this._labels != null && this._labels.Count > 0; 
+            return this._labels != null && (this._labels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -386,7 +387,7 @@ namespace Amazon.EKS.Model
         // Check to see if Subnets property is set
         internal bool IsSetSubnets()
         {
-            return this._subnets != null && this._subnets.Count > 0; 
+            return this._subnets != null && (this._subnets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -407,7 +408,7 @@ namespace Amazon.EKS.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -427,7 +428,7 @@ namespace Amazon.EKS.Model
         // Check to see if Taints property is set
         internal bool IsSetTaints()
         {
-            return this._taints != null && this._taints.Count > 0; 
+            return this._taints != null && (this._taints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

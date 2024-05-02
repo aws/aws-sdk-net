@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.DirectoryService.Model
         /// Enumerable containing all of the DirectoryDescriptions
         /// </summary>
         public IPaginatedEnumerable<DirectoryDescription> DirectoryDescriptions => 
-            new PaginatedResultKeyResponse<DescribeDirectoriesResponse, DirectoryDescription>(this, (i) => i.DirectoryDescriptions);
+            new PaginatedResultKeyResponse<DescribeDirectoriesResponse, DirectoryDescription>(this, (i) => i.DirectoryDescriptions ?? new List<DirectoryDescription>());
 
         internal DescribeDirectoriesPaginator(IAmazonDirectoryService client, DescribeDirectoriesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.DirectoryService.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeDirectoriesResponse> IPaginator<DescribeDirectoriesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeDirectoriesResponse> IPaginator<DescribeDirectoriesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

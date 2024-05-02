@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class ListInventoryEntriesResponse : AmazonWebServiceResponse
     {
         private string _captureTime;
-        private List<Dictionary<string, string>> _entries = new List<Dictionary<string, string>>();
+        private List<Dictionary<string, string>> _entries = AWSConfigs.InitializeCollections ? new List<Dictionary<string, string>>() : null;
         private string _instanceId;
         private string _nextToken;
         private string _schemaVersion;
@@ -43,7 +44,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property CaptureTime. 
         /// <para>
-        /// The time that inventory information was collected for the managed node(s).
+        /// The time that inventory information was collected for the managed nodes.
         /// </para>
         /// </summary>
         public string CaptureTime
@@ -61,7 +62,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Entries. 
         /// <para>
-        /// A list of inventory items on the managed node(s).
+        /// A list of inventory items on the managed nodes.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10000)]
@@ -74,7 +75,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Entries property is set
         internal bool IsSetEntries()
         {
-            return this._entries != null && this._entries.Count > 0; 
+            return this._entries != null && (this._entries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -117,7 +118,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property SchemaVersion. 
         /// <para>
-        /// The inventory schema version used by the managed node(s).
+        /// The inventory schema version used by the managed nodes.
         /// </para>
         /// </summary>
         public string SchemaVersion

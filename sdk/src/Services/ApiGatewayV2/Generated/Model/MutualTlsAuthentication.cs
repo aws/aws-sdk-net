@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ApiGatewayV2.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.ApiGatewayV2.Model
     {
         private string _truststoreUri;
         private string _truststoreVersion;
-        private List<string> _truststoreWarnings = new List<string>();
+        private List<string> _truststoreWarnings = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property TruststoreUri. 
@@ -97,7 +98,7 @@ namespace Amazon.ApiGatewayV2.Model
         // Check to see if TruststoreWarnings property is set
         internal bool IsSetTruststoreWarnings()
         {
-            return this._truststoreWarnings != null && this._truststoreWarnings.Count > 0; 
+            return this._truststoreWarnings != null && (this._truststoreWarnings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

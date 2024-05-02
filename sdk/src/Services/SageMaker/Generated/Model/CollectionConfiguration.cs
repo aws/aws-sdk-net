@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class CollectionConfiguration
     {
         private string _collectionName;
-        private Dictionary<string, string> _collectionParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _collectionParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property CollectionName. 
@@ -74,7 +75,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if CollectionParameters property is set
         internal bool IsSetCollectionParameters()
         {
-            return this._collectionParameters != null && this._collectionParameters.Count > 0; 
+            return this._collectionParameters != null && (this._collectionParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

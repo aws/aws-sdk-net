@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ManagedGrafana.Model
 {
     /// <summary>
@@ -54,12 +55,12 @@ namespace Amazon.ManagedGrafana.Model
         private bool? _removeVpcConfiguration;
         private string _stackSetName;
         private VpcConfiguration _vpcConfiguration;
-        private List<string> _workspaceDataSources = new List<string>();
+        private List<string> _workspaceDataSources = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _workspaceDescription;
         private string _workspaceId;
         private string _workspaceName;
-        private List<string> _workspaceNotificationDestinations = new List<string>();
-        private List<string> _workspaceOrganizationalUnits = new List<string>();
+        private List<string> _workspaceNotificationDestinations = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _workspaceOrganizationalUnits = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _workspaceRoleArn;
 
         /// <summary>
@@ -284,7 +285,7 @@ namespace Amazon.ManagedGrafana.Model
         // Check to see if WorkspaceDataSources property is set
         internal bool IsSetWorkspaceDataSources()
         {
-            return this._workspaceDataSources != null && this._workspaceDataSources.Count > 0; 
+            return this._workspaceDataSources != null && (this._workspaceDataSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -361,7 +362,7 @@ namespace Amazon.ManagedGrafana.Model
         // Check to see if WorkspaceNotificationDestinations property is set
         internal bool IsSetWorkspaceNotificationDestinations()
         {
-            return this._workspaceNotificationDestinations != null && this._workspaceNotificationDestinations.Count > 0; 
+            return this._workspaceNotificationDestinations != null && (this._workspaceNotificationDestinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -381,7 +382,7 @@ namespace Amazon.ManagedGrafana.Model
         // Check to see if WorkspaceOrganizationalUnits property is set
         internal bool IsSetWorkspaceOrganizationalUnits()
         {
-            return this._workspaceOrganizationalUnits != null && this._workspaceOrganizationalUnits.Count > 0; 
+            return this._workspaceOrganizationalUnits != null && (this._workspaceOrganizationalUnits.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

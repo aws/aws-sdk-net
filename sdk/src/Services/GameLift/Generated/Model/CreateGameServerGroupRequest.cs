@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GameLift.Model
 {
     /// <summary>
@@ -96,13 +97,13 @@ namespace Amazon.GameLift.Model
         private BalancingStrategy _balancingStrategy;
         private string _gameServerGroupName;
         private GameServerProtectionPolicy _gameServerProtectionPolicy;
-        private List<InstanceDefinition> _instanceDefinitions = new List<InstanceDefinition>();
+        private List<InstanceDefinition> _instanceDefinitions = AWSConfigs.InitializeCollections ? new List<InstanceDefinition>() : null;
         private LaunchTemplateSpecification _launchTemplate;
         private int? _maxSize;
         private int? _minSize;
         private string _roleArn;
-        private List<Tag> _tags = new List<Tag>();
-        private List<string> _vpcSubnets = new List<string>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<string> _vpcSubnets = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AutoScalingPolicy. 
@@ -237,7 +238,7 @@ namespace Amazon.GameLift.Model
         // Check to see if InstanceDefinitions property is set
         internal bool IsSetInstanceDefinitions()
         {
-            return this._instanceDefinitions != null && this._instanceDefinitions.Count > 0; 
+            return this._instanceDefinitions != null && (this._instanceDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -359,7 +360,7 @@ namespace Amazon.GameLift.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -383,7 +384,7 @@ namespace Amazon.GameLift.Model
         // Check to see if VpcSubnets property is set
         internal bool IsSetVpcSubnets()
         {
-            return this._vpcSubnets != null && this._vpcSubnets.Count > 0; 
+            return this._vpcSubnets != null && (this._vpcSubnets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ChimeSDKVoice.Model
     /// </summary>
     public partial class ListAvailableVoiceConnectorRegionsResponse : AmazonWebServiceResponse
     {
-        private List<string> _voiceConnectorRegions = new List<string>();
+        private List<string> _voiceConnectorRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property VoiceConnectorRegions. 
@@ -50,7 +51,7 @@ namespace Amazon.ChimeSDKVoice.Model
         // Check to see if VoiceConnectorRegions property is set
         internal bool IsSetVoiceConnectorRegions()
         {
-            return this._voiceConnectorRegions != null && this._voiceConnectorRegions.Count > 0; 
+            return this._voiceConnectorRegions != null && (this._voiceConnectorRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

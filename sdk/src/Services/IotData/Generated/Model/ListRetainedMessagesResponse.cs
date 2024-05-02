@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IotData.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IotData.Model
     public partial class ListRetainedMessagesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RetainedMessageSummary> _retainedTopics = new List<RetainedMessageSummary>();
+        private List<RetainedMessageSummary> _retainedTopics = AWSConfigs.InitializeCollections ? new List<RetainedMessageSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.IotData.Model
         // Check to see if RetainedTopics property is set
         internal bool IsSetRetainedTopics()
         {
-            return this._retainedTopics != null && this._retainedTopics.Count > 0; 
+            return this._retainedTopics != null && (this._retainedTopics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class ListCollectionsResponse : AmazonWebServiceResponse
     {
-        private List<string> _collectionIds = new List<string>();
-        private List<string> _faceModelVersions = new List<string>();
+        private List<string> _collectionIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _faceModelVersions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if CollectionIds property is set
         internal bool IsSetCollectionIds()
         {
-            return this._collectionIds != null && this._collectionIds.Count > 0; 
+            return this._collectionIds != null && (this._collectionIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if FaceModelVersions property is set
         internal bool IsSetFaceModelVersions()
         {
-            return this._faceModelVersions != null && this._faceModelVersions.Count > 0; 
+            return this._faceModelVersions != null && (this._faceModelVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

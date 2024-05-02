@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FMS.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.FMS.Model
     public partial class NetworkFirewallBlackHoleRouteDetectedViolation
     {
         private string _routeTableId;
-        private List<Route> _violatingRoutes = new List<Route>();
+        private List<Route> _violatingRoutes = AWSConfigs.InitializeCollections ? new List<Route>() : null;
         private string _violationTarget;
         private string _vpcId;
 
@@ -73,7 +74,7 @@ namespace Amazon.FMS.Model
         // Check to see if ViolatingRoutes property is set
         internal bool IsSetViolatingRoutes()
         {
-            return this._violatingRoutes != null && this._violatingRoutes.Count > 0; 
+            return this._violatingRoutes != null && (this._violatingRoutes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

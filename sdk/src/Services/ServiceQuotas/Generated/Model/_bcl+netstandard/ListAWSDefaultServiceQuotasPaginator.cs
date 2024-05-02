@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ServiceQuotas.Model
         /// Enumerable containing all of the Quotas
         /// </summary>
         public IPaginatedEnumerable<ServiceQuota> Quotas => 
-            new PaginatedResultKeyResponse<ListAWSDefaultServiceQuotasResponse, ServiceQuota>(this, (i) => i.Quotas);
+            new PaginatedResultKeyResponse<ListAWSDefaultServiceQuotasResponse, ServiceQuota>(this, (i) => i.Quotas ?? new List<ServiceQuota>());
 
         internal ListAWSDefaultServiceQuotasPaginator(IAmazonServiceQuotas client, ListAWSDefaultServiceQuotasRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ServiceQuotas.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListAWSDefaultServiceQuotasResponse> IPaginator<ListAWSDefaultServiceQuotasResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListAWSDefaultServiceQuotasResponse> IPaginator<ListAWSDefaultServiceQuotasResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

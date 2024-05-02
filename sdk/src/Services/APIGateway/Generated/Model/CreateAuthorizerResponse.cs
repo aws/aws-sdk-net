@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.APIGateway.Model
         private string _identitySource;
         private string _identityValidationExpression;
         private string _name;
-        private List<string> _providerarNs = new List<string>();
+        private List<string> _providerarNs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AuthorizerType _type;
 
         /// <summary>
@@ -240,7 +241,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if ProviderARNs property is set
         internal bool IsSetProviderARNs()
         {
-            return this._providerarNs != null && this._providerarNs.Count > 0; 
+            return this._providerarNs != null && (this._providerarNs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

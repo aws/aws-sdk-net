@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     public partial class InstanceGroupModifyConfig
     {
-        private List<Configuration> _configurations = new List<Configuration>();
-        private List<string> _ec2InstanceIdsToTerminate = new List<string>();
+        private List<Configuration> _configurations = AWSConfigs.InitializeCollections ? new List<Configuration>() : null;
+        private List<string> _ec2InstanceIdsToTerminate = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _instanceCount;
         private string _instanceGroupId;
         private ReconfigurationType _reconfigurationType;
@@ -71,7 +72,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Configurations property is set
         internal bool IsSetConfigurations()
         {
-            return this._configurations != null && this._configurations.Count > 0; 
+            return this._configurations != null && (this._configurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -90,7 +91,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if EC2InstanceIdsToTerminate property is set
         internal bool IsSetEC2InstanceIdsToTerminate()
         {
-            return this._ec2InstanceIdsToTerminate != null && this._ec2InstanceIdsToTerminate.Count > 0; 
+            return this._ec2InstanceIdsToTerminate != null && (this._ec2InstanceIdsToTerminate.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

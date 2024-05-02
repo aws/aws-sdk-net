@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Kendra.Model
     {
         private string _documentDataFieldName;
         private string _documentTitleFieldName;
-        private List<DataSourceToIndexFieldMapping> _fieldMappings = new List<DataSourceToIndexFieldMapping>();
+        private List<DataSourceToIndexFieldMapping> _fieldMappings = AWSConfigs.InitializeCollections ? new List<DataSourceToIndexFieldMapping>() : null;
         private SalesforceStandardObjectName _name;
 
         /// <summary>
@@ -96,7 +97,7 @@ namespace Amazon.Kendra.Model
         // Check to see if FieldMappings property is set
         internal bool IsSetFieldMappings()
         {
-            return this._fieldMappings != null && this._fieldMappings.Count > 0; 
+            return this._fieldMappings != null && (this._fieldMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Outposts.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Outposts.Model
         /// Enumerable containing all of the CatalogItems
         /// </summary>
         public IPaginatedEnumerable<CatalogItem> CatalogItems => 
-            new PaginatedResultKeyResponse<ListCatalogItemsResponse, CatalogItem>(this, (i) => i.CatalogItems);
+            new PaginatedResultKeyResponse<ListCatalogItemsResponse, CatalogItem>(this, (i) => i.CatalogItems ?? new List<CatalogItem>());
 
         internal ListCatalogItemsPaginator(IAmazonOutposts client, ListCatalogItemsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Outposts.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListCatalogItemsResponse> IPaginator<ListCatalogItemsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListCatalogItemsResponse> IPaginator<ListCatalogItemsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

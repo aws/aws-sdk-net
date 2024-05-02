@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.SimpleEmailV2.Model
     /// </summary>
     public partial class GetMessageInsightsResponse : AmazonWebServiceResponse
     {
-        private List<MessageTag> _emailTags = new List<MessageTag>();
+        private List<MessageTag> _emailTags = AWSConfigs.InitializeCollections ? new List<MessageTag>() : null;
         private string _fromEmailAddress;
-        private List<EmailInsights> _insights = new List<EmailInsights>();
+        private List<EmailInsights> _insights = AWSConfigs.InitializeCollections ? new List<EmailInsights>() : null;
         private string _messageId;
         private string _subject;
 
@@ -56,7 +57,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if EmailTags property is set
         internal bool IsSetEmailTags()
         {
-            return this._emailTags != null && this._emailTags.Count > 0; 
+            return this._emailTags != null && (this._emailTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -93,7 +94,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if Insights property is set
         internal bool IsSetInsights()
         {
-            return this._insights != null && this._insights.Count > 0; 
+            return this._insights != null && (this._insights.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

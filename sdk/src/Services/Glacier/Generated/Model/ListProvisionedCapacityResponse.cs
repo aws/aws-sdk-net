@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glacier.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Glacier.Model
     /// </summary>
     public partial class ListProvisionedCapacityResponse : AmazonWebServiceResponse
     {
-        private List<ProvisionedCapacityDescription> _provisionedCapacityList = new List<ProvisionedCapacityDescription>();
+        private List<ProvisionedCapacityDescription> _provisionedCapacityList = AWSConfigs.InitializeCollections ? new List<ProvisionedCapacityDescription>() : null;
 
         /// <summary>
         /// Gets and sets the property ProvisionedCapacityList. 
@@ -50,7 +51,7 @@ namespace Amazon.Glacier.Model
         // Check to see if ProvisionedCapacityList property is set
         internal bool IsSetProvisionedCapacityList()
         {
-            return this._provisionedCapacityList != null && this._provisionedCapacityList.Count > 0; 
+            return this._provisionedCapacityList != null && (this._provisionedCapacityList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

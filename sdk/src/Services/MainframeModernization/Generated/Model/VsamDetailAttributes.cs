@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MainframeModernization.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MainframeModernization.Model
     /// </summary>
     public partial class VsamDetailAttributes
     {
-        private List<AlternateKey> _alternateKeys = new List<AlternateKey>();
+        private List<AlternateKey> _alternateKeys = AWSConfigs.InitializeCollections ? new List<AlternateKey>() : null;
         private bool? _cacheAtStartup;
         private bool? _compressed;
         private string _encoding;
@@ -57,7 +58,7 @@ namespace Amazon.MainframeModernization.Model
         // Check to see if AlternateKeys property is set
         internal bool IsSetAlternateKeys()
         {
-            return this._alternateKeys != null && this._alternateKeys.Count > 0; 
+            return this._alternateKeys != null && (this._alternateKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

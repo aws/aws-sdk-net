@@ -26,15 +26,16 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Updates to the configuration of Kinesis Data Analytics Studio notebook.
+    /// Updates to the configuration of Managed Service for Apache Flink Studio notebook.
     /// </summary>
     public partial class ZeppelinApplicationConfigurationUpdate
     {
         private CatalogConfigurationUpdate _catalogConfigurationUpdate;
-        private List<CustomArtifactConfiguration> _customArtifactsConfigurationUpdate = new List<CustomArtifactConfiguration>();
+        private List<CustomArtifactConfiguration> _customArtifactsConfigurationUpdate = AWSConfigs.InitializeCollections ? new List<CustomArtifactConfiguration>() : null;
         private DeployAsApplicationConfigurationUpdate _deployAsApplicationConfigurationUpdate;
         private ZeppelinMonitoringConfigurationUpdate _monitoringConfigurationUpdate;
 
@@ -42,7 +43,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Gets and sets the property CatalogConfigurationUpdate. 
         /// <para>
         /// Updates to the configuration of the Amazon Glue Data Catalog that is associated with
-        /// the Kinesis Data Analytics Studio notebook.
+        /// the Managed Service for Apache Flink Studio notebook.
         /// </para>
         /// </summary>
         public CatalogConfigurationUpdate CatalogConfigurationUpdate
@@ -74,7 +75,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         // Check to see if CustomArtifactsConfigurationUpdate property is set
         internal bool IsSetCustomArtifactsConfigurationUpdate()
         {
-            return this._customArtifactsConfigurationUpdate != null && this._customArtifactsConfigurationUpdate.Count > 0; 
+            return this._customArtifactsConfigurationUpdate != null && (this._customArtifactsConfigurationUpdate.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -95,7 +96,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property MonitoringConfigurationUpdate. 
         /// <para>
-        /// Updates to the monitoring configuration of a Kinesis Data Analytics Studio notebook.
+        /// Updates to the monitoring configuration of a Managed Service for Apache Flink Studio
+        /// notebook.
         /// </para>
         /// </summary>
         public ZeppelinMonitoringConfigurationUpdate MonitoringConfigurationUpdate

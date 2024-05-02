@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class LambdaLayerAggregation
     {
-        private List<StringFilter> _functionNames = new List<StringFilter>();
-        private List<StringFilter> _layerArns = new List<StringFilter>();
-        private List<StringFilter> _resourceIds = new List<StringFilter>();
+        private List<StringFilter> _functionNames = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _layerArns = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _resourceIds = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
         private LambdaLayerSortBy _sortBy;
         private SortOrder _sortOrder;
 
@@ -56,7 +57,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if FunctionNames property is set
         internal bool IsSetFunctionNames()
         {
-            return this._functionNames != null && this._functionNames.Count > 0; 
+            return this._functionNames != null && (this._functionNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if LayerArns property is set
         internal bool IsSetLayerArns()
         {
-            return this._layerArns != null && this._layerArns.Count > 0; 
+            return this._layerArns != null && (this._layerArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -94,7 +95,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if ResourceIds property is set
         internal bool IsSetResourceIds()
         {
-            return this._resourceIds != null && this._resourceIds.Count > 0; 
+            return this._resourceIds != null && (this._resourceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

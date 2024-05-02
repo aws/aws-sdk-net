@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -33,15 +34,17 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DeleteIntegrationResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, string> _additionalEncryptionContext = new Dictionary<string, string>();
+        private Dictionary<string, string> _additionalEncryptionContext = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DateTime? _createTime;
-        private List<IntegrationError> _errors = new List<IntegrationError>();
+        private string _dataFilter;
+        private string _description;
+        private List<IntegrationError> _errors = AWSConfigs.InitializeCollections ? new List<IntegrationError>() : null;
         private string _integrationArn;
         private string _integrationName;
         private string _kmsKeyId;
         private string _sourceArn;
         private IntegrationStatus _status;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _targetArn;
 
         /// <summary>
@@ -60,7 +63,7 @@ namespace Amazon.RDS.Model
         // Check to see if AdditionalEncryptionContext property is set
         internal bool IsSetAdditionalEncryptionContext()
         {
-            return this._additionalEncryptionContext != null && this._additionalEncryptionContext.Count > 0; 
+            return this._additionalEncryptionContext != null && (this._additionalEncryptionContext.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -82,6 +85,45 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DataFilter. 
+        /// <para>
+        /// Data filters for the integration. These filters determine which tables from the source
+        /// database are sent to the target Amazon Redshift data warehouse. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=25600)]
+        public string DataFilter
+        {
+            get { return this._dataFilter; }
+            set { this._dataFilter = value; }
+        }
+
+        // Check to see if DataFilter property is set
+        internal bool IsSetDataFilter()
+        {
+            return this._dataFilter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description of the integration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1000)]
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
         /// Any errors associated with the integration.
@@ -96,7 +138,7 @@ namespace Amazon.RDS.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -205,7 +247,7 @@ namespace Amazon.RDS.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

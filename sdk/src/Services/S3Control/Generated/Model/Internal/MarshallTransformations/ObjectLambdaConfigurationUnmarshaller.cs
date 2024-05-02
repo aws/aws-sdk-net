@@ -30,12 +30,13 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ObjectLambdaConfiguration Object
     /// </summary>  
-    public class ObjectLambdaConfigurationUnmarshaller : IUnmarshaller<ObjectLambdaConfiguration, XmlUnmarshallerContext>
+    public class ObjectLambdaConfigurationUnmarshaller : IUnmarshaller<ObjectLambdaConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ObjectLambdaConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -57,6 +58,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("AllowedFeatures/AllowedFeature", targetDepth))
                     {
+                        if (unmarshalledObject.AllowedFeatures == null)
+                        {
+                            unmarshalledObject.AllowedFeatures = new List<string>();
+                        }
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.AllowedFeatures.Add(unmarshaller.Unmarshall(context));
                         continue;
@@ -75,6 +80,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("TransformationConfigurations/TransformationConfiguration", targetDepth))
                     {
+                        if (unmarshalledObject.TransformationConfigurations == null)
+                        {
+                            unmarshalledObject.TransformationConfigurations = new List<ObjectLambdaTransformationConfiguration>();
+                        }
                         var unmarshaller = ObjectLambdaTransformationConfigurationUnmarshaller.Instance;
                         unmarshalledObject.TransformationConfigurations.Add(unmarshaller.Unmarshall(context));
                         continue;
@@ -86,6 +95,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public ObjectLambdaConfiguration Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static ObjectLambdaConfigurationUnmarshaller _instance = new ObjectLambdaConfigurationUnmarshaller();        

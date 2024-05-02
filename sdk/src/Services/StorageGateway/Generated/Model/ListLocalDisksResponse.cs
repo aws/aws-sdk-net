@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class ListLocalDisksResponse : AmazonWebServiceResponse
     {
-        private List<Disk> _disks = new List<Disk>();
+        private List<Disk> _disks = AWSConfigs.InitializeCollections ? new List<Disk>() : null;
         private string _gatewayARN;
 
         /// <summary>
@@ -56,7 +57,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if Disks property is set
         internal bool IsSetDisks()
         {
-            return this._disks != null && this._disks.Count > 0; 
+            return this._disks != null && (this._disks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

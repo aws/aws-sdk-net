@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
     /// </summary>
     public partial class AmazonTranscribeCallAnalyticsProcessorConfiguration
     {
-        private List<string> _callAnalyticsStreamCategories = new List<string>();
+        private List<string> _callAnalyticsStreamCategories = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ContentType _contentIdentificationType;
         private ContentType _contentRedactionType;
         private bool? _enablePartialResultsStabilization;
@@ -65,7 +66,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         // Check to see if CallAnalyticsStreamCategories property is set
         internal bool IsSetCallAnalyticsStreamCategories()
         {
-            return this._callAnalyticsStreamCategories != null && this._callAnalyticsStreamCategories.Count > 0; 
+            return this._callAnalyticsStreamCategories != null && (this._callAnalyticsStreamCategories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

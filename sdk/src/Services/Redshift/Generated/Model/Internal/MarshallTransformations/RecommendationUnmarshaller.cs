@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -111,6 +112,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("RecommendedActions/RecommendedAction", targetDepth))
                     {
                         var unmarshaller = RecommendedActionUnmarshaller.Instance;
+                        if (unmarshalledObject.RecommendedActions == null)
+                        {
+                            unmarshalledObject.RecommendedActions = new List<RecommendedAction>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.RecommendedActions.Add(item);
                         continue;
@@ -118,6 +123,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ReferenceLinks/ReferenceLink", targetDepth))
                     {
                         var unmarshaller = ReferenceLinkUnmarshaller.Instance;
+                        if (unmarshalledObject.ReferenceLinks == null)
+                        {
+                            unmarshalledObject.ReferenceLinks = new List<ReferenceLink>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ReferenceLinks.Add(item);
                         continue;

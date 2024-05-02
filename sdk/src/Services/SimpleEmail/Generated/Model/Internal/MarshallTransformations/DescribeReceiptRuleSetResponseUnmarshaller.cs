@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -90,6 +91,10 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Rules/member", targetDepth))
                     {
                         var unmarshaller = ReceiptRuleUnmarshaller.Instance;
+                        if (response.Rules == null)
+                        {
+                            response.Rules = new List<ReceiptRule>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Rules.Add(item);
                         continue;

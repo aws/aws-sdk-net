@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Connect.Model
     public partial class ListTrafficDistributionGroupsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TrafficDistributionGroupSummary> _trafficDistributionGroupSummaryList = new List<TrafficDistributionGroupSummary>();
+        private List<TrafficDistributionGroupSummary> _trafficDistributionGroupSummaryList = AWSConfigs.InitializeCollections ? new List<TrafficDistributionGroupSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.Connect.Model
         // Check to see if TrafficDistributionGroupSummaryList property is set
         internal bool IsSetTrafficDistributionGroupSummaryList()
         {
-            return this._trafficDistributionGroupSummaryList != null && this._trafficDistributionGroupSummaryList.Count > 0; 
+            return this._trafficDistributionGroupSummaryList != null && (this._trafficDistributionGroupSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

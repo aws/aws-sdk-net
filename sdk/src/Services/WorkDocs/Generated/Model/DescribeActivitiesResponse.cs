@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkDocs.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.WorkDocs.Model
     public partial class DescribeActivitiesResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<Activity> _userActivities = new List<Activity>();
+        private List<Activity> _userActivities = AWSConfigs.InitializeCollections ? new List<Activity>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -70,7 +71,7 @@ namespace Amazon.WorkDocs.Model
         // Check to see if UserActivities property is set
         internal bool IsSetUserActivities()
         {
-            return this._userActivities != null && this._userActivities.Count > 0; 
+            return this._userActivities != null && (this._userActivities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

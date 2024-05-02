@@ -26,21 +26,22 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Provides the configuration information for invoking a Lambda function in Lambda to
-    /// alter document metadata and content when ingesting documents into Amazon Q.
+    /// alter document metadata and content when ingesting documents into Amazon Q Business.
     /// 
     ///  
     /// <para>
-    /// You can configure your Lambda function using <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentEnrichmentConfiguration.html">PreExtractionHookConfiguration</a>
-    /// if you want to apply advanced alterations on the original or raw documents.
+    /// You can configure your Lambda function using the <c>PreExtractionHookConfiguration</c>
+    /// parameter if you want to apply advanced alterations on the original or raw documents.
     /// </para>
     ///  
     /// <para>
-    /// If you want to apply advanced alterations on the Amazon Q structured documents, you
-    /// must configure your Lambda function using <a href="https://docs.aws.amazon.com/amazonq/latest/api-reference/API_DocumentEnrichmentConfiguration.html">PostExtractionHookConfiguration</a>.
+    /// If you want to apply advanced alterations on the Amazon Q Business structured documents,
+    /// you must configure your Lambda function using <c>PostExtractionHookConfiguration</c>.
     /// </para>
     ///  
     /// <para>
@@ -68,7 +69,7 @@ namespace Amazon.QBusiness.Model
         ///  
         /// <para>
         /// For example, you can specify a condition that if there are empty date-time values,
-        /// then Amazon Q should invoke a function that inserts the current date-time.
+        /// then Amazon Q Business should invoke a function that inserts the current date-time.
         /// </para>
         /// </summary>
         public DocumentAttributeCondition InvocationCondition

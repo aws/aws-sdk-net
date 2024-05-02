@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class ListAssetBundleImportJobsResponse : AmazonWebServiceResponse
     {
-        private List<AssetBundleImportJobSummary> _assetBundleImportJobSummaryList = new List<AssetBundleImportJobSummary>();
+        private List<AssetBundleImportJobSummary> _assetBundleImportJobSummaryList = AWSConfigs.InitializeCollections ? new List<AssetBundleImportJobSummary>() : null;
         private string _nextToken;
         private string _requestId;
         private int? _status;
@@ -53,7 +54,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if AssetBundleImportJobSummaryList property is set
         internal bool IsSetAssetBundleImportJobSummaryList()
         {
-            return this._assetBundleImportJobSummaryList != null && this._assetBundleImportJobSummaryList.Count > 0; 
+            return this._assetBundleImportJobSummaryList != null && (this._assetBundleImportJobSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class GetContainerServicePowersResponse : AmazonWebServiceResponse
     {
-        private List<ContainerServicePower> _powers = new List<ContainerServicePower>();
+        private List<ContainerServicePower> _powers = AWSConfigs.InitializeCollections ? new List<ContainerServicePower>() : null;
 
         /// <summary>
         /// Gets and sets the property Powers. 
@@ -51,7 +52,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Powers property is set
         internal bool IsSetPowers()
         {
-            return this._powers != null && this._powers.Count > 0; 
+            return this._powers != null && (this._powers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

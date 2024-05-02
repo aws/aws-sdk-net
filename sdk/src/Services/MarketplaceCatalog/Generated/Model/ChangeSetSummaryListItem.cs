@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.MarketplaceCatalog.Model
         private string _changeSetId;
         private string _changeSetName;
         private string _endTime;
-        private List<string> _entityIdList = new List<string>();
+        private List<string> _entityIdList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private FailureCode _failureCode;
         private string _startTime;
         private ChangeStatus _status;
@@ -136,7 +137,7 @@ namespace Amazon.MarketplaceCatalog.Model
         // Check to see if EntityIdList property is set
         internal bool IsSetEntityIdList()
         {
-            return this._entityIdList != null && this._entityIdList.Count > 0; 
+            return this._entityIdList != null && (this._entityIdList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

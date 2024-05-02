@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.SecurityHub.Model
     public partial class PortProbeAction
     {
         private bool? _blocked;
-        private List<PortProbeDetail> _portProbeDetails = new List<PortProbeDetail>();
+        private List<PortProbeDetail> _portProbeDetails = AWSConfigs.InitializeCollections ? new List<PortProbeDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property Blocked. 
@@ -70,7 +71,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if PortProbeDetails property is set
         internal bool IsSetPortProbeDetails()
         {
-            return this._portProbeDetails != null && this._portProbeDetails.Count > 0; 
+            return this._portProbeDetails != null && (this._portProbeDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

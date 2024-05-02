@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAFRegional.Model
 {
     /// <summary>
@@ -48,8 +49,8 @@ namespace Amazon.WAFRegional.Model
     /// </summary>
     public partial class LoggingConfiguration
     {
-        private List<string> _logDestinationConfigs = new List<string>();
-        private List<FieldToMatch> _redactedFields = new List<FieldToMatch>();
+        private List<string> _logDestinationConfigs = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<FieldToMatch> _redactedFields = AWSConfigs.InitializeCollections ? new List<FieldToMatch>() : null;
         private string _resourceArn;
 
         /// <summary>
@@ -68,7 +69,7 @@ namespace Amazon.WAFRegional.Model
         // Check to see if LogDestinationConfigs property is set
         internal bool IsSetLogDestinationConfigs()
         {
-            return this._logDestinationConfigs != null && this._logDestinationConfigs.Count > 0; 
+            return this._logDestinationConfigs != null && (this._logDestinationConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -87,7 +88,7 @@ namespace Amazon.WAFRegional.Model
         // Check to see if RedactedFields property is set
         internal bool IsSetRedactedFields()
         {
-            return this._redactedFields != null && this._redactedFields.Count > 0; 
+            return this._redactedFields != null && (this._redactedFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

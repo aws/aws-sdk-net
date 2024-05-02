@@ -26,23 +26,25 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLaunchTemplateVersion operation.
-    /// Creates a new version of a launch template. You can specify an existing version of
-    /// launch template from which to base the new version.
+    /// Creates a new version of a launch template. You must specify an existing launch template,
+    /// either by name or ID. You can determine whether the new version inherits parameters
+    /// from a source version, and add or overwrite parameters as needed.
     /// 
     ///  
     /// <para>
     /// Launch template versions are numbered in the order in which they are created. You
-    /// cannot specify, change, or replace the numbering of launch template versions.
+    /// can't specify, change, or replace the numbering of launch template versions.
     /// </para>
     ///  
     /// <para>
     /// Launch templates are immutable; after you create a launch template, you can't modify
-    /// it. Instead, you can create a new version of the launch template that includes any
-    /// changes you require.
+    /// it. Instead, you can create a new version of the launch template that includes the
+    /// changes that you require.
     /// </para>
     ///  
     /// <para>
@@ -111,8 +113,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// You must specify either the <c>LaunchTemplateId</c> or the <c>LaunchTemplateName</c>,
-        /// but not both.
+        /// You must specify either the launch template ID or the launch template name, but not
+        /// both.
         /// </para>
         /// </summary>
         public string LaunchTemplateId
@@ -134,8 +136,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// You must specify the <c>LaunchTemplateName</c> or the <c>LaunchTemplateId</c>, but
-        /// not both.
+        /// You must specify either the launch template ID or the launch template name, but not
+        /// both.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=128)]
@@ -180,11 +182,20 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SourceVersion. 
         /// <para>
-        /// The version number of the launch template version on which to base the new version.
-        /// The new version inherits the same launch parameters as the source version, except
-        /// for parameters that you specify in <c>LaunchTemplateData</c>. Snapshots applied to
-        /// the block device mapping are ignored when creating a new version unless they are explicitly
-        /// included.
+        /// The version of the launch template on which to base the new version. Snapshots applied
+        /// to the block device mapping are ignored when creating a new version unless they are
+        /// explicitly included.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify this parameter, the new version inherits the launch parameters from
+        /// the source version. If you specify additional launch parameters for the new version,
+        /// they overwrite any corresponding launch parameters inherited from the source version.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you omit this parameter, the new version contains only the launch parameters that
+        /// you specify for the new version.
         /// </para>
         /// </summary>
         public string SourceVersion

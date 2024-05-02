@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.MemoryDB.Model
     /// </summary>
     public partial class BatchUpdateClusterResponse : AmazonWebServiceResponse
     {
-        private List<Cluster> _processedClusters = new List<Cluster>();
-        private List<UnprocessedCluster> _unprocessedClusters = new List<UnprocessedCluster>();
+        private List<Cluster> _processedClusters = AWSConfigs.InitializeCollections ? new List<Cluster>() : null;
+        private List<UnprocessedCluster> _unprocessedClusters = AWSConfigs.InitializeCollections ? new List<UnprocessedCluster>() : null;
 
         /// <summary>
         /// Gets and sets the property ProcessedClusters. 
@@ -51,7 +52,7 @@ namespace Amazon.MemoryDB.Model
         // Check to see if ProcessedClusters property is set
         internal bool IsSetProcessedClusters()
         {
-            return this._processedClusters != null && this._processedClusters.Count > 0; 
+            return this._processedClusters != null && (this._processedClusters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.MemoryDB.Model
         // Check to see if UnprocessedClusters property is set
         internal bool IsSetUnprocessedClusters()
         {
-            return this._unprocessedClusters != null && this._unprocessedClusters.Count > 0; 
+            return this._unprocessedClusters != null && (this._unprocessedClusters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

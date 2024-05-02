@@ -13,7 +13,7 @@ using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal.Util;
 
-
+#pragma warning disable CS0162
 namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 {
     [TestClass]

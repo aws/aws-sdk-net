@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
@@ -56,7 +57,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class AddCustomAttributesRequest : AmazonCognitoIdentityProviderRequest
     {
-        private List<SchemaAttributeType> _customAttributes = new List<SchemaAttributeType>();
+        private List<SchemaAttributeType> _customAttributes = AWSConfigs.InitializeCollections ? new List<SchemaAttributeType>() : null;
         private string _userPoolId;
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if CustomAttributes property is set
         internal bool IsSetCustomAttributes()
         {
-            return this._customAttributes != null && this._customAttributes.Count > 0; 
+            return this._customAttributes != null && (this._customAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

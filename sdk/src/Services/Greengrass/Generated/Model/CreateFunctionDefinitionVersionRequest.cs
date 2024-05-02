@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.Greengrass.Model
         private string _amznClientToken;
         private FunctionDefaultConfig _defaultConfig;
         private string _functionDefinitionId;
-        private List<Function> _functions = new List<Function>();
+        private List<Function> _functions = AWSConfigs.InitializeCollections ? new List<Function>() : null;
 
         /// <summary>
         /// Gets and sets the property AmznClientToken. A client token used to correlate requests
@@ -101,7 +102,7 @@ namespace Amazon.Greengrass.Model
         // Check to see if Functions property is set
         internal bool IsSetFunctions()
         {
-            return this._functions != null && this._functions.Count > 0; 
+            return this._functions != null && (this._functions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

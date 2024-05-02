@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class UpdateHoursOfOperationRequest : AmazonConnectRequest
     {
-        private List<HoursOfOperationConfig> _config = new List<HoursOfOperationConfig>();
+        private List<HoursOfOperationConfig> _config = AWSConfigs.InitializeCollections ? new List<HoursOfOperationConfig>() : null;
         private string _description;
         private string _hoursOfOperationId;
         private string _instanceId;
@@ -62,7 +63,7 @@ namespace Amazon.Connect.Model
         // Check to see if Config property is set
         internal bool IsSetConfig()
         {
-            return this._config != null && this._config.Count > 0; 
+            return this._config != null && (this._config.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -84,6 +85,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Events/member", targetDepth))
                     {
                         var unmarshaller = EventDescriptionUnmarshaller.Instance;
+                        if (response.Events == null)
+                        {
+                            response.Events = new List<EventDescription>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Events.Add(item);
                         continue;

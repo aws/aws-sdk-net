@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,18 +34,18 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class InstanceAttribute
     {
-        private List<InstanceBlockDeviceMapping> _blockDeviceMappings = new List<InstanceBlockDeviceMapping>();
+        private List<InstanceBlockDeviceMapping> _blockDeviceMappings = AWSConfigs.InitializeCollections ? new List<InstanceBlockDeviceMapping>() : null;
         private bool? _disableApiStop;
         private bool? _disableApiTermination;
         private bool? _ebsOptimized;
         private bool? _enaSupport;
         private EnclaveOptions _enclaveOptions;
-        private List<GroupIdentifier> _groups = new List<GroupIdentifier>();
+        private List<GroupIdentifier> _groups = AWSConfigs.InitializeCollections ? new List<GroupIdentifier>() : null;
         private string _instanceId;
         private string _instanceInitiatedShutdownBehavior;
         private string _instanceType;
         private string _kernelId;
-        private List<ProductCode> _productCodes = new List<ProductCode>();
+        private List<ProductCode> _productCodes = AWSConfigs.InitializeCollections ? new List<ProductCode>() : null;
         private string _ramdiskId;
         private string _rootDeviceName;
         private bool? _sourceDestCheck;
@@ -66,7 +67,7 @@ namespace Amazon.EC2.Model
         // Check to see if BlockDeviceMappings property is set
         internal bool IsSetBlockDeviceMappings()
         {
-            return this._blockDeviceMappings != null && this._blockDeviceMappings.Count > 0; 
+            return this._blockDeviceMappings != null && (this._blockDeviceMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -177,7 +178,7 @@ namespace Amazon.EC2.Model
         // Check to see if Groups property is set
         internal bool IsSetGroups()
         {
-            return this._groups != null && this._groups.Count > 0; 
+            return this._groups != null && (this._groups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -268,7 +269,7 @@ namespace Amazon.EC2.Model
         // Check to see if ProductCodes property is set
         internal bool IsSetProductCodes()
         {
-            return this._productCodes != null && this._productCodes.Count > 0; 
+            return this._productCodes != null && (this._productCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

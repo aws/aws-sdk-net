@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConnectParticipant.Model
 {
     /// <summary>
@@ -86,7 +87,7 @@ namespace Amazon.ConnectParticipant.Model
     {
         private bool? _connectParticipant;
         private string _participantToken;
-        private List<string> _type = new List<string>();
+        private List<string> _type = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ConnectParticipant. 
@@ -150,7 +151,7 @@ namespace Amazon.ConnectParticipant.Model
         // Check to see if Type property is set
         internal bool IsSetType()
         {
-            return this._type != null && this._type.Count > 0; 
+            return this._type != null && (this._type.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

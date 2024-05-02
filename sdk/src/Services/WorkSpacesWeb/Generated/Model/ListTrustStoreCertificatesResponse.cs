@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkSpacesWeb.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.WorkSpacesWeb.Model
     /// </summary>
     public partial class ListTrustStoreCertificatesResponse : AmazonWebServiceResponse
     {
-        private List<CertificateSummary> _certificateList = new List<CertificateSummary>();
+        private List<CertificateSummary> _certificateList = AWSConfigs.InitializeCollections ? new List<CertificateSummary>() : null;
         private string _nextToken;
         private string _trustStoreArn;
 
@@ -52,7 +53,7 @@ namespace Amazon.WorkSpacesWeb.Model
         // Check to see if CertificateList property is set
         internal bool IsSetCertificateList()
         {
-            return this._certificateList != null && this._certificateList.Count > 0; 
+            return this._certificateList != null && (this._certificateList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

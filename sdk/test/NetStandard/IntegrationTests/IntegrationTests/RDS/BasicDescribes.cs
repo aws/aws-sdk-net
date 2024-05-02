@@ -5,7 +5,6 @@ using Amazon.RDS;
 using Amazon.RDS.Model;
 using Xunit;
 using Amazon.DNXCore.IntegrationTests;
-using System.Threading.Tasks;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
 {
@@ -52,7 +51,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
             var response = await Client.DescribeDBParameterGroupsAsync();
             Assert.NotNull(response);
 
-            if (response.DBParameterGroups.Count > 0)
+            if (response.DBParameterGroups != null && response.DBParameterGroups.Count > 0)
             {
                 var dbParamGroupFamily = response.DBParameterGroups[0];
 
@@ -62,11 +61,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
                 });
                 Assert.NotNull(response);
 
-                if (describeResponse.DBEngineVersions.Count > 0)
+                if (describeResponse.DBEngineVersions != null && describeResponse.DBEngineVersions.Count > 0)
                 {
                     foreach (var dbev in describeResponse.DBEngineVersions)
                     {
-                        Assert.True(dbev.DBParameterGroupFamily.Equals(dbParamGroupFamily.DBParameterGroupFamily));
+                        Assert.Equal(dbParamGroupFamily.DBParameterGroupFamily, dbev.DBParameterGroupFamily);
                     }
                 }
             }
@@ -79,7 +78,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
             var response = await Client.DescribeDBParameterGroupsAsync();
             Assert.NotNull(response);
 
-            if (response.DBParameterGroups.Count > 0)
+            if (response.DBParameterGroups != null && response.DBParameterGroups.Count > 0)
             {
                 foreach (var dbpg in response.DBParameterGroups)
                 {
@@ -97,7 +96,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
             Assert.NotNull(response);
 
             string dbInstanceIdentifier = null;
-            if (response.DBInstances.Count > 0)
+            if (response.DBInstances != null && response.DBInstances.Count > 0)
             {
                 foreach (var dbi in response.DBInstances)
                 {
@@ -127,7 +126,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
                         DBInstanceIdentifier = dbInstanceIdentifier
                     }).Result;
                 Assert.NotNull(specificIdResponse);
-                Assert.Equal(specificIdResponse.DBInstances.Count, 1);
+                Assert.Single(specificIdResponse.DBInstances);
             }
         } 
     }

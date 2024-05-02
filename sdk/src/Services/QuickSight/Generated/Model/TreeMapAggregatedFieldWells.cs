@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class TreeMapAggregatedFieldWells
     {
-        private List<MeasureField> _colors = new List<MeasureField>();
-        private List<DimensionField> _groups = new List<DimensionField>();
-        private List<MeasureField> _sizes = new List<MeasureField>();
+        private List<MeasureField> _colors = AWSConfigs.InitializeCollections ? new List<MeasureField>() : null;
+        private List<DimensionField> _groups = AWSConfigs.InitializeCollections ? new List<DimensionField>() : null;
+        private List<MeasureField> _sizes = AWSConfigs.InitializeCollections ? new List<MeasureField>() : null;
 
         /// <summary>
         /// Gets and sets the property Colors. 
@@ -54,7 +55,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Colors property is set
         internal bool IsSetColors()
         {
-            return this._colors != null && this._colors.Count > 0; 
+            return this._colors != null && (this._colors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Groups property is set
         internal bool IsSetGroups()
         {
-            return this._groups != null && this._groups.Count > 0; 
+            return this._groups != null && (this._groups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Sizes property is set
         internal bool IsSetSizes()
         {
-            return this._sizes != null && this._sizes.Count > 0; 
+            return this._sizes != null && (this._sizes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

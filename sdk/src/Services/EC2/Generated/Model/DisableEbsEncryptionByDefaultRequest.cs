@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -44,8 +45,8 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
-    /// EBS encryption</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-encryption.html">Amazon
+    /// EBS encryption</a> in the <i>Amazon EBS User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DisableEbsEncryptionByDefaultRequest : AmazonEC2Request

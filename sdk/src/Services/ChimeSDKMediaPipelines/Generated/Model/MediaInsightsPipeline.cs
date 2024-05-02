@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
@@ -34,11 +35,11 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
     public partial class MediaInsightsPipeline
     {
         private DateTime? _createdTimestamp;
-        private List<MediaInsightsPipelineElementStatus> _elementStatuses = new List<MediaInsightsPipelineElementStatus>();
+        private List<MediaInsightsPipelineElementStatus> _elementStatuses = AWSConfigs.InitializeCollections ? new List<MediaInsightsPipelineElementStatus>() : null;
         private KinesisVideoStreamRecordingSourceRuntimeConfiguration _kinesisVideoStreamRecordingSourceRuntimeConfiguration;
         private KinesisVideoStreamSourceRuntimeConfiguration _kinesisVideoStreamSourceRuntimeConfiguration;
         private string _mediaInsightsPipelineConfigurationArn;
-        private Dictionary<string, string> _mediaInsightsRuntimeMetadata = new Dictionary<string, string>();
+        private Dictionary<string, string> _mediaInsightsRuntimeMetadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _mediaPipelineArn;
         private string _mediaPipelineId;
         private S3RecordingSinkRuntimeConfiguration _s3RecordingSinkRuntimeConfiguration;
@@ -77,7 +78,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         // Check to see if ElementStatuses property is set
         internal bool IsSetElementStatuses()
         {
-            return this._elementStatuses != null && this._elementStatuses.Count > 0; 
+            return this._elementStatuses != null && (this._elementStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -154,7 +155,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         // Check to see if MediaInsightsRuntimeMetadata property is set
         internal bool IsSetMediaInsightsRuntimeMetadata()
         {
-            return this._mediaInsightsRuntimeMetadata != null && this._mediaInsightsRuntimeMetadata.Count > 0; 
+            return this._mediaInsightsRuntimeMetadata != null && (this._mediaInsightsRuntimeMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

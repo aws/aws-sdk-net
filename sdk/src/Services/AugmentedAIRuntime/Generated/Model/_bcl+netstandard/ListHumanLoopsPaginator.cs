@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AugmentedAIRuntime.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.AugmentedAIRuntime.Model
         /// Enumerable containing all of the HumanLoopSummaries
         /// </summary>
         public IPaginatedEnumerable<HumanLoopSummary> HumanLoopSummaries => 
-            new PaginatedResultKeyResponse<ListHumanLoopsResponse, HumanLoopSummary>(this, (i) => i.HumanLoopSummaries);
+            new PaginatedResultKeyResponse<ListHumanLoopsResponse, HumanLoopSummary>(this, (i) => i.HumanLoopSummaries ?? new List<HumanLoopSummary>());
 
         internal ListHumanLoopsPaginator(IAmazonAugmentedAIRuntime client, ListHumanLoopsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.AugmentedAIRuntime.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListHumanLoopsResponse> IPaginator<ListHumanLoopsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListHumanLoopsResponse> IPaginator<ListHumanLoopsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

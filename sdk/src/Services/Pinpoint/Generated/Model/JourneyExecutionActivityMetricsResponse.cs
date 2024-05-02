@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.Pinpoint.Model
         private string _journeyActivityId;
         private string _journeyId;
         private string _lastEvaluatedTime;
-        private Dictionary<string, string> _metrics = new Dictionary<string, string>();
+        private Dictionary<string, string> _metrics = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ActivityType. 
@@ -188,7 +189,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Metrics property is set
         internal bool IsSetMetrics()
         {
-            return this._metrics != null && this._metrics.Count > 0; 
+            return this._metrics != null && (this._metrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

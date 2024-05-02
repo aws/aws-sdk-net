@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -34,10 +35,10 @@ namespace Amazon.QuickSight.Model
     public partial class LineChartSortConfiguration
     {
         private ItemsLimitConfiguration _categoryItemsLimitConfiguration;
-        private List<FieldSortOptions> _categorySort = new List<FieldSortOptions>();
+        private List<FieldSortOptions> _categorySort = AWSConfigs.InitializeCollections ? new List<FieldSortOptions>() : null;
         private ItemsLimitConfiguration _colorItemsLimitConfiguration;
         private ItemsLimitConfiguration _smallMultiplesLimitConfiguration;
-        private List<FieldSortOptions> _smallMultiplesSort = new List<FieldSortOptions>();
+        private List<FieldSortOptions> _smallMultiplesSort = AWSConfigs.InitializeCollections ? new List<FieldSortOptions>() : null;
 
         /// <summary>
         /// Gets and sets the property CategoryItemsLimitConfiguration. 
@@ -73,7 +74,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if CategorySort property is set
         internal bool IsSetCategorySort()
         {
-            return this._categorySort != null && this._categorySort.Count > 0; 
+            return this._categorySort != null && (this._categorySort.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -128,7 +129,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if SmallMultiplesSort property is set
         internal bool IsSetSmallMultiplesSort()
         {
-            return this._smallMultiplesSort != null && this._smallMultiplesSort.Count > 0; 
+            return this._smallMultiplesSort != null && (this._smallMultiplesSort.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

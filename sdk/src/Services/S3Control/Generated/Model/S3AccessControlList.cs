@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3Control.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.S3Control.Model
     /// </summary>
     public partial class S3AccessControlList
     {
-        private List<S3Grant> _grants = new List<S3Grant>();
+        private List<S3Grant> _grants = AWSConfigs.InitializeCollections ? new List<S3Grant>() : null;
         private S3ObjectOwner _owner;
 
         /// <summary>
@@ -48,7 +49,7 @@ namespace Amazon.S3Control.Model
         // Check to see if Grants property is set
         internal bool IsSetGrants()
         {
-            return this._grants != null && this._grants.Count > 0; 
+            return this._grants != null && (this._grants.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

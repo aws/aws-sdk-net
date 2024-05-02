@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Inspector2.Model
     public partial class GetCisScanReportRequest : AmazonInspector2Request
     {
         private string _scanArn;
-        private List<string> _targetAccounts = new List<string>();
+        private List<string> _targetAccounts = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ScanArn. 
@@ -72,7 +73,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if TargetAccounts property is set
         internal bool IsSetTargetAccounts()
         {
-            return this._targetAccounts != null && this._targetAccounts.Count > 0; 
+            return this._targetAccounts != null && (this._targetAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53Domains.Model
 {
     /// <summary>
@@ -42,17 +43,17 @@ namespace Amazon.Route53Domains.Model
         private bool? _billingPrivacy;
         private DateTime? _creationDate;
         private string _dnsSec;
-        private List<DnssecKey> _dnssecKeys = new List<DnssecKey>();
+        private List<DnssecKey> _dnssecKeys = AWSConfigs.InitializeCollections ? new List<DnssecKey>() : null;
         private string _domainName;
         private DateTime? _expirationDate;
-        private List<Nameserver> _nameservers = new List<Nameserver>();
+        private List<Nameserver> _nameservers = AWSConfigs.InitializeCollections ? new List<Nameserver>() : null;
         private ContactDetail _registrantContact;
         private bool? _registrantPrivacy;
         private string _registrarName;
         private string _registrarUrl;
         private string _registryDomainId;
         private string _reseller;
-        private List<string> _statusList = new List<string>();
+        private List<string> _statusList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ContactDetail _techContact;
         private bool? _techPrivacy;
         private DateTime? _updatedDate;
@@ -248,7 +249,7 @@ namespace Amazon.Route53Domains.Model
         // Check to see if DnssecKeys property is set
         internal bool IsSetDnssecKeys()
         {
-            return this._dnssecKeys != null && this._dnssecKeys.Count > 0; 
+            return this._dnssecKeys != null && (this._dnssecKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -304,7 +305,7 @@ namespace Amazon.Route53Domains.Model
         // Check to see if Nameservers property is set
         internal bool IsSetNameservers()
         {
-            return this._nameservers != null && this._nameservers.Count > 0; 
+            return this._nameservers != null && (this._nameservers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -452,7 +453,7 @@ namespace Amazon.Route53Domains.Model
         // Check to see if StatusList property is set
         internal bool IsSetStatusList()
         {
-            return this._statusList != null && this._statusList.Count > 0; 
+            return this._statusList != null && (this._statusList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

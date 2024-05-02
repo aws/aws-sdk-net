@@ -133,6 +133,10 @@
     <pattern>[\S\s]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CostExplorer.Model.GetApproximateUsageRecordsResponse.TotalRecords</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CostExplorer.Model.GetCostAndUsageRequest.NextPageToken</property>
     <min>0</min>
     <max>8192</max>
@@ -387,6 +391,23 @@
     <max>99</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CostExplorer.Model.ListCostAllocationTagBackfillHistoryRequest.MaxResults</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.ListCostAllocationTagBackfillHistoryRequest.NextToken</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.ListCostAllocationTagBackfillHistoryResponse.NextToken</property>
+    <min>0</min>
+    <max>8192</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CostExplorer.Model.ListCostAllocationTagsRequest.MaxResults</property>
     <min>1</min>
     <max>1000</max>
@@ -459,6 +480,12 @@
     <min>0</min>
     <max>1024</max>
     <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.StartCostAllocationTagBackfillRequest.BackfillFrom</property>
+    <min>20</min>
+    <max>25</max>
+    <pattern>^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.StartSavingsPlansPurchaseRecommendationGenerationResponse.EstimatedCompletionTime</property>
@@ -675,6 +702,30 @@
     <min>0</min>
     <max>1024</max>
     <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.CostAllocationTagBackfillRequest.BackfillFrom</property>
+    <min>20</min>
+    <max>25</max>
+    <pattern>^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.CostAllocationTagBackfillRequest.CompletedAt</property>
+    <min>20</min>
+    <max>25</max>
+    <pattern>^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.CostAllocationTagBackfillRequest.LastUpdatedAt</property>
+    <min>20</min>
+    <max>25</max>
+    <pattern>^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.CostAllocationTagBackfillRequest.RequestedAt</property>
+    <min>20</min>
+    <max>25</max>
+    <pattern>^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(([+-]\d\d:\d\d)|Z)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.CostAllocationTagStatusEntry.TagKey</property>
@@ -1468,6 +1519,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CostExplorer.Model.ReservationPurchaseRecommendationDetail.UpfrontCost</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>[\S\s]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CostExplorer.Model.ReservationPurchaseRecommendationMetadata.AdditionalMetadata</property>
     <min>0</min>
     <max>1024</max>
     <pattern>[\S\s]*</pattern>

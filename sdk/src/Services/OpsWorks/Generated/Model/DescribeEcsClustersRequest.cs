@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
@@ -49,7 +50,7 @@ namespace Amazon.OpsWorks.Model
     /// </summary>
     public partial class DescribeEcsClustersRequest : AmazonOpsWorksRequest
     {
-        private List<string> _ecsClusterArns = new List<string>();
+        private List<string> _ecsClusterArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
         private string _stackId;
@@ -69,7 +70,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if EcsClusterArns property is set
         internal bool IsSetEcsClusterArns()
         {
-            return this._ecsClusterArns != null && this._ecsClusterArns.Count > 0; 
+            return this._ecsClusterArns != null && (this._ecsClusterArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

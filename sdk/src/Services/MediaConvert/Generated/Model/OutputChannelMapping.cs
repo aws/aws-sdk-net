@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class OutputChannelMapping
     {
-        private List<int> _inputChannels = new List<int>();
-        private List<double> _inputChannelsFineTune = new List<double>();
+        private List<int> _inputChannels = AWSConfigs.InitializeCollections ? new List<int>() : null;
+        private List<double> _inputChannelsFineTune = AWSConfigs.InitializeCollections ? new List<double>() : null;
 
         /// <summary>
         /// Gets and sets the property InputChannels. Use this setting to specify your remix values
@@ -49,7 +50,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if InputChannels property is set
         internal bool IsSetInputChannels()
         {
-            return this._inputChannels != null && this._inputChannels.Count > 0; 
+            return this._inputChannels != null && (this._inputChannels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -66,7 +67,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if InputChannelsFineTune property is set
         internal bool IsSetInputChannelsFineTune()
         {
-            return this._inputChannelsFineTune != null && this._inputChannelsFineTune.Count > 0; 
+            return this._inputChannelsFineTune != null && (this._inputChannelsFineTune.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

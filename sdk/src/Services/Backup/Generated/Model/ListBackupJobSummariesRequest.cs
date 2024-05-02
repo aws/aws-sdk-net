@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Backup.Model
 {
     /// <summary>
@@ -241,6 +242,22 @@ namespace Amazon.Backup.Model
         ///  
         /// <para>
         ///  <c>AGGREGATE_ALL</c> aggregates job counts for all states and returns the sum.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>Completed with issues</c> is a status found only in the Backup console. For API,
+        /// this status refers to jobs with a state of <c>COMPLETED</c> and a <c>MessageCategory</c>
+        /// with a value other than <c>SUCCESS</c>; that is, the status is completed but comes
+        /// with a status message. To obtain the job count for <c>Completed with issues</c>, run
+        /// two GET requests, and subtract the second, smaller number:
+        /// </para>
+        ///  
+        /// <para>
+        /// GET /audit/backup-job-summaries?AggregationPeriod=FOURTEEN_DAYS&amp;State=COMPLETED
+        /// </para>
+        ///  
+        /// <para>
+        /// GET /audit/backup-job-summaries?AggregationPeriod=FOURTEEN_DAYS&amp;MessageCategory=SUCCESS&amp;State=COMPLETED
         /// </para>
         /// </summary>
         public BackupJobStatus State

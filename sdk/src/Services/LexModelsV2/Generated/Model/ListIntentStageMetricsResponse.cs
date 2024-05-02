@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.LexModelsV2.Model
     {
         private string _botId;
         private string _nextToken;
-        private List<AnalyticsIntentStageResult> _results = new List<AnalyticsIntentStageResult>();
+        private List<AnalyticsIntentStageResult> _results = AWSConfigs.InitializeCollections ? new List<AnalyticsIntentStageResult>() : null;
 
         /// <summary>
         /// Gets and sets the property BotId. 
@@ -96,7 +97,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if Results property is set
         internal bool IsSetResults()
         {
-            return this._results != null && this._results.Count > 0; 
+            return this._results != null && (this._results.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

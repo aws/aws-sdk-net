@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class BatchGetCodeSnippetResponse : AmazonWebServiceResponse
     {
-        private List<CodeSnippetResult> _codeSnippetResults = new List<CodeSnippetResult>();
-        private List<CodeSnippetError> _errors = new List<CodeSnippetError>();
+        private List<CodeSnippetResult> _codeSnippetResults = AWSConfigs.InitializeCollections ? new List<CodeSnippetResult>() : null;
+        private List<CodeSnippetError> _errors = AWSConfigs.InitializeCollections ? new List<CodeSnippetError>() : null;
 
         /// <summary>
         /// Gets and sets the property CodeSnippetResults. 
@@ -51,7 +52,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if CodeSnippetResults property is set
         internal bool IsSetCodeSnippetResults()
         {
-            return this._codeSnippetResults != null && this._codeSnippetResults.Count > 0; 
+            return this._codeSnippetResults != null && (this._codeSnippetResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

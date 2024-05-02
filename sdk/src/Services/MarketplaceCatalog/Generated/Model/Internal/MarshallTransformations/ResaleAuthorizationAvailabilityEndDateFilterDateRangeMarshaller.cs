@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ResaleAuthorizationAvailabilityEndDateFilterDateRange requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAfterValue())
             {
                 context.Writer.WritePropertyName("AfterValue");

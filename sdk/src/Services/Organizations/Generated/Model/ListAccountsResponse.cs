@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Organizations.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Organizations.Model
     /// </summary>
     public partial class ListAccountsResponse : AmazonWebServiceResponse
     {
-        private List<Account> _accounts = new List<Account>();
+        private List<Account> _accounts = AWSConfigs.InitializeCollections ? new List<Account>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Organizations.Model
         // Check to see if Accounts property is set
         internal bool IsSetAccounts()
         {
-            return this._accounts != null && this._accounts.Count > 0; 
+            return this._accounts != null && (this._accounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

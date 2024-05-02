@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CostExplorer.Model
     /// </summary>
     public partial class UtilizationByTime
     {
-        private List<ReservationUtilizationGroup> _groups = new List<ReservationUtilizationGroup>();
+        private List<ReservationUtilizationGroup> _groups = AWSConfigs.InitializeCollections ? new List<ReservationUtilizationGroup>() : null;
         private DateInterval _timePeriod;
         private ReservationAggregates _total;
 
@@ -52,7 +53,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if Groups property is set
         internal bool IsSetGroups()
         {
-            return this._groups != null && this._groups.Count > 0; 
+            return this._groups != null && (this._groups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

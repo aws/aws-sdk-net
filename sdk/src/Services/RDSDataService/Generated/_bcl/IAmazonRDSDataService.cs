@@ -26,6 +26,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.RDSDataService.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.RDSDataService
 {
     /// <summary>

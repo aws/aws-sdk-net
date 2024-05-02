@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.GreengrassV2.Model
     /// </summary>
     public partial class IoTJobAbortConfig
     {
-        private List<IoTJobAbortCriteria> _criteriaList = new List<IoTJobAbortCriteria>();
+        private List<IoTJobAbortCriteria> _criteriaList = AWSConfigs.InitializeCollections ? new List<IoTJobAbortCriteria>() : null;
 
         /// <summary>
         /// Gets and sets the property CriteriaList. 
@@ -51,7 +52,7 @@ namespace Amazon.GreengrassV2.Model
         // Check to see if CriteriaList property is set
         internal bool IsSetCriteriaList()
         {
-            return this._criteriaList != null && this._criteriaList.Count > 0; 
+            return this._criteriaList != null && (this._criteriaList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

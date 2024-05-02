@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class ListIntentPathsResponse : AmazonWebServiceResponse
     {
-        private List<AnalyticsIntentNodeSummary> _nodeSummaries = new List<AnalyticsIntentNodeSummary>();
+        private List<AnalyticsIntentNodeSummary> _nodeSummaries = AWSConfigs.InitializeCollections ? new List<AnalyticsIntentNodeSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NodeSummaries. 
@@ -52,7 +53,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if NodeSummaries property is set
         internal bool IsSetNodeSummaries()
         {
-            return this._nodeSummaries != null && this._nodeSummaries.Count > 0; 
+            return this._nodeSummaries != null && (this._nodeSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

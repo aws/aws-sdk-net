@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SsmSap.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.SsmSap.Model
     {
         private string _ec2InstanceId;
         private string _hostname;
-        private List<IpAddressMember> _ipAddresses = new List<IpAddressMember>();
+        private List<IpAddressMember> _ipAddresses = AWSConfigs.InitializeCollections ? new List<IpAddressMember>() : null;
         private string _osVersion;
 
         /// <summary>
@@ -89,7 +90,7 @@ namespace Amazon.SsmSap.Model
         // Check to see if IpAddresses property is set
         internal bool IsSetIpAddresses()
         {
-            return this._ipAddresses != null && this._ipAddresses.Count > 0; 
+            return this._ipAddresses != null && (this._ipAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

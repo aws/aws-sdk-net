@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -45,12 +46,12 @@ namespace Amazon.SageMaker.Model
         private DateTime? _endTime;
         private string _failureReason;
         private bool? _generateCandidateDefinitionsOnly;
-        private List<AutoMLChannel> _inputDataConfig = new List<AutoMLChannel>();
+        private List<AutoMLChannel> _inputDataConfig = AWSConfigs.InitializeCollections ? new List<AutoMLChannel>() : null;
         private DateTime? _lastModifiedTime;
         private ModelDeployConfig _modelDeployConfig;
         private ModelDeployResult _modelDeployResult;
         private AutoMLOutputDataConfig _outputDataConfig;
-        private List<AutoMLPartialFailureReason> _partialFailureReasons = new List<AutoMLPartialFailureReason>();
+        private List<AutoMLPartialFailureReason> _partialFailureReasons = AWSConfigs.InitializeCollections ? new List<AutoMLPartialFailureReason>() : null;
         private ProblemType _problemType;
         private ResolvedAttributes _resolvedAttributes;
         private string _roleArn;
@@ -295,7 +296,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if InputDataConfig property is set
         internal bool IsSetInputDataConfig()
         {
-            return this._inputDataConfig != null && this._inputDataConfig.Count > 0; 
+            return this._inputDataConfig != null && (this._inputDataConfig.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -389,7 +390,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if PartialFailureReasons property is set
         internal bool IsSetPartialFailureReasons()
         {
-            return this._partialFailureReasons != null && this._partialFailureReasons.Count > 0; 
+            return this._partialFailureReasons != null && (this._partialFailureReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

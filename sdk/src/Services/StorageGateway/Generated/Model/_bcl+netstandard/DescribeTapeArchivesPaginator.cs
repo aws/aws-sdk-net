@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.StorageGateway.Model
         /// Enumerable containing all of the TapeArchives
         /// </summary>
         public IPaginatedEnumerable<TapeArchive> TapeArchives => 
-            new PaginatedResultKeyResponse<DescribeTapeArchivesResponse, TapeArchive>(this, (i) => i.TapeArchives);
+            new PaginatedResultKeyResponse<DescribeTapeArchivesResponse, TapeArchive>(this, (i) => i.TapeArchives ?? new List<TapeArchive>());
 
         internal DescribeTapeArchivesPaginator(IAmazonStorageGateway client, DescribeTapeArchivesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.StorageGateway.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeTapeArchivesResponse> IPaginator<DescribeTapeArchivesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeTapeArchivesResponse> IPaginator<DescribeTapeArchivesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

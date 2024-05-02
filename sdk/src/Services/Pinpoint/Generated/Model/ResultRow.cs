@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.Pinpoint.Model
     /// </summary>
     public partial class ResultRow
     {
-        private List<ResultRowValue> _groupedBys = new List<ResultRowValue>();
-        private List<ResultRowValue> _values = new List<ResultRowValue>();
+        private List<ResultRowValue> _groupedBys = AWSConfigs.InitializeCollections ? new List<ResultRowValue>() : null;
+        private List<ResultRowValue> _values = AWSConfigs.InitializeCollections ? new List<ResultRowValue>() : null;
 
         /// <summary>
         /// Gets and sets the property GroupedBys. 
@@ -55,7 +56,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if GroupedBys property is set
         internal bool IsSetGroupedBys()
         {
-            return this._groupedBys != null && this._groupedBys.Count > 0; 
+            return this._groupedBys != null && (this._groupedBys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Values property is set
         internal bool IsSetValues()
         {
-            return this._values != null && this._values.Count > 0; 
+            return this._values != null && (this._values.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

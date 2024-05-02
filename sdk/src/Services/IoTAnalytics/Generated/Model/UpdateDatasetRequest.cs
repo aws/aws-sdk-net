@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
@@ -34,12 +35,12 @@ namespace Amazon.IoTAnalytics.Model
     /// </summary>
     public partial class UpdateDatasetRequest : AmazonIoTAnalyticsRequest
     {
-        private List<DatasetAction> _actions = new List<DatasetAction>();
-        private List<DatasetContentDeliveryRule> _contentDeliveryRules = new List<DatasetContentDeliveryRule>();
+        private List<DatasetAction> _actions = AWSConfigs.InitializeCollections ? new List<DatasetAction>() : null;
+        private List<DatasetContentDeliveryRule> _contentDeliveryRules = AWSConfigs.InitializeCollections ? new List<DatasetContentDeliveryRule>() : null;
         private string _datasetName;
-        private List<LateDataRule> _lateDataRules = new List<LateDataRule>();
+        private List<LateDataRule> _lateDataRules = AWSConfigs.InitializeCollections ? new List<LateDataRule>() : null;
         private RetentionPeriod _retentionPeriod;
-        private List<DatasetTrigger> _triggers = new List<DatasetTrigger>();
+        private List<DatasetTrigger> _triggers = AWSConfigs.InitializeCollections ? new List<DatasetTrigger>() : null;
         private VersioningConfiguration _versioningConfiguration;
 
         /// <summary>
@@ -58,7 +59,7 @@ namespace Amazon.IoTAnalytics.Model
         // Check to see if Actions property is set
         internal bool IsSetActions()
         {
-            return this._actions != null && this._actions.Count > 0; 
+            return this._actions != null && (this._actions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -77,7 +78,7 @@ namespace Amazon.IoTAnalytics.Model
         // Check to see if ContentDeliveryRules property is set
         internal bool IsSetContentDeliveryRules()
         {
-            return this._contentDeliveryRules != null && this._contentDeliveryRules.Count > 0; 
+            return this._contentDeliveryRules != null && (this._contentDeliveryRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -117,7 +118,7 @@ namespace Amazon.IoTAnalytics.Model
         // Check to see if LateDataRules property is set
         internal bool IsSetLateDataRules()
         {
-            return this._lateDataRules != null && this._lateDataRules.Count > 0; 
+            return this._lateDataRules != null && (this._lateDataRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -155,7 +156,7 @@ namespace Amazon.IoTAnalytics.Model
         // Check to see if Triggers property is set
         internal bool IsSetTriggers()
         {
-            return this._triggers != null && this._triggers.Count > 0; 
+            return this._triggers != null && (this._triggers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

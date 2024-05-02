@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
@@ -45,13 +46,13 @@ namespace Amazon.CloudWatchLogs.Model
         /// Enumerable containing all of the Events
         /// </summary>
         public IPaginatedEnumerable<FilteredLogEvent> Events => 
-            new PaginatedResultKeyResponse<FilterLogEventsResponse, FilteredLogEvent>(this, (i) => i.Events);
+            new PaginatedResultKeyResponse<FilterLogEventsResponse, FilteredLogEvent>(this, (i) => i.Events ?? new List<FilteredLogEvent>());
 
         /// <summary>
         /// Enumerable containing all of the SearchedLogStreams
         /// </summary>
         public IPaginatedEnumerable<SearchedLogStream> SearchedLogStreams => 
-            new PaginatedResultKeyResponse<FilterLogEventsResponse, SearchedLogStream>(this, (i) => i.SearchedLogStreams);
+            new PaginatedResultKeyResponse<FilterLogEventsResponse, SearchedLogStream>(this, (i) => i.SearchedLogStreams ?? new List<SearchedLogStream>());
 
         internal FilterLogEventsPaginator(IAmazonCloudWatchLogs client, FilterLogEventsRequest request)
         {
@@ -79,7 +80,7 @@ namespace Amazon.CloudWatchLogs.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<FilterLogEventsResponse> IPaginator<FilterLogEventsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<FilterLogEventsResponse> IPaginator<FilterLogEventsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

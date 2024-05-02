@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Neptunedata.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Neptunedata.Model
     /// </summary>
     public partial class StartLoaderJobResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, string> _payload = new Dictionary<string, string>();
+        private Dictionary<string, string> _payload = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _status;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.Neptunedata.Model
         // Check to see if Payload property is set
         internal bool IsSetPayload()
         {
-            return this._payload != null && this._payload.Count > 0; 
+            return this._payload != null && (this._payload.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeGuruReviewer.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CodeGuruReviewer.Model
     public partial class ListRecommendationFeedbackResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RecommendationFeedbackSummary> _recommendationFeedbackSummaries = new List<RecommendationFeedbackSummary>();
+        private List<RecommendationFeedbackSummary> _recommendationFeedbackSummaries = AWSConfigs.InitializeCollections ? new List<RecommendationFeedbackSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.CodeGuruReviewer.Model
         // Check to see if RecommendationFeedbackSummaries property is set
         internal bool IsSetRecommendationFeedbackSummaries()
         {
-            return this._recommendationFeedbackSummaries != null && this._recommendationFeedbackSummaries.Count > 0; 
+            return this._recommendationFeedbackSummaries != null && (this._recommendationFeedbackSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

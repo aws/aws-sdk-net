@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class ListAliasesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<string> _sageMakerImageVersionAliases = new List<string>();
+        private List<string> _sageMakerImageVersionAliases = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if SageMakerImageVersionAliases property is set
         internal bool IsSetSageMakerImageVersionAliases()
         {
-            return this._sageMakerImageVersionAliases != null && this._sageMakerImageVersionAliases.Count > 0; 
+            return this._sageMakerImageVersionAliases != null && (this._sageMakerImageVersionAliases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

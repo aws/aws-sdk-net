@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class BatchGetFindingDetailsResponse : AmazonWebServiceResponse
     {
-        private List<FindingDetailsError> _errors = new List<FindingDetailsError>();
-        private List<FindingDetail> _findingDetails = new List<FindingDetail>();
+        private List<FindingDetailsError> _errors = AWSConfigs.InitializeCollections ? new List<FindingDetailsError>() : null;
+        private List<FindingDetail> _findingDetails = AWSConfigs.InitializeCollections ? new List<FindingDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. 
@@ -51,7 +52,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if FindingDetails property is set
         internal bool IsSetFindingDetails()
         {
-            return this._findingDetails != null && this._findingDetails.Count > 0; 
+            return this._findingDetails != null && (this._findingDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

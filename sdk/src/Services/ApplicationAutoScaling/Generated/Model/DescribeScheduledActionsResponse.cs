@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ApplicationAutoScaling.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ApplicationAutoScaling.Model
     public partial class DescribeScheduledActionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ScheduledAction> _scheduledActions = new List<ScheduledAction>();
+        private List<ScheduledAction> _scheduledActions = AWSConfigs.InitializeCollections ? new List<ScheduledAction>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         // Check to see if ScheduledActions property is set
         internal bool IsSetScheduledActions()
         {
-            return this._scheduledActions != null && this._scheduledActions.Count > 0; 
+            return this._scheduledActions != null && (this._scheduledActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

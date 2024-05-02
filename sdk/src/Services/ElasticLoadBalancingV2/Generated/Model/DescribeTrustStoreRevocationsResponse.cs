@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     public partial class DescribeTrustStoreRevocationsResponse : AmazonWebServiceResponse
     {
         private string _nextMarker;
-        private List<DescribeTrustStoreRevocation> _trustStoreRevocations = new List<DescribeTrustStoreRevocation>();
+        private List<DescribeTrustStoreRevocation> _trustStoreRevocations = AWSConfigs.InitializeCollections ? new List<DescribeTrustStoreRevocation>() : null;
 
         /// <summary>
         /// Gets and sets the property NextMarker. 
@@ -70,7 +71,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if TrustStoreRevocations property is set
         internal bool IsSetTrustStoreRevocations()
         {
-            return this._trustStoreRevocations != null && this._trustStoreRevocations.Count > 0; 
+            return this._trustStoreRevocations != null && (this._trustStoreRevocations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

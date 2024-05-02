@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
@@ -35,8 +36,8 @@ namespace Amazon.GlueDataBrew.Model
     {
         private int? _attempt;
         private DateTime? _completedOn;
-        private List<DatabaseOutput> _databaseOutputs = new List<DatabaseOutput>();
-        private List<DataCatalogOutput> _dataCatalogOutputs = new List<DataCatalogOutput>();
+        private List<DatabaseOutput> _databaseOutputs = AWSConfigs.InitializeCollections ? new List<DatabaseOutput>() : null;
+        private List<DataCatalogOutput> _dataCatalogOutputs = AWSConfigs.InitializeCollections ? new List<DataCatalogOutput>() : null;
         private string _datasetName;
         private string _errorMessage;
         private int? _executionTime;
@@ -44,14 +45,14 @@ namespace Amazon.GlueDataBrew.Model
         private JobSample _jobSample;
         private string _logGroupName;
         private LogSubscription _logSubscription;
-        private List<Output> _outputs = new List<Output>();
+        private List<Output> _outputs = AWSConfigs.InitializeCollections ? new List<Output>() : null;
         private ProfileConfiguration _profileConfiguration;
         private RecipeReference _recipeReference;
         private string _runId;
         private string _startedBy;
         private DateTime? _startedOn;
         private JobRunState _state;
-        private List<ValidationConfiguration> _validationConfigurations = new List<ValidationConfiguration>();
+        private List<ValidationConfiguration> _validationConfigurations = AWSConfigs.InitializeCollections ? new List<ValidationConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property Attempt. 
@@ -106,7 +107,7 @@ namespace Amazon.GlueDataBrew.Model
         // Check to see if DatabaseOutputs property is set
         internal bool IsSetDatabaseOutputs()
         {
-            return this._databaseOutputs != null && this._databaseOutputs.Count > 0; 
+            return this._databaseOutputs != null && (this._databaseOutputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -126,7 +127,7 @@ namespace Amazon.GlueDataBrew.Model
         // Check to see if DataCatalogOutputs property is set
         internal bool IsSetDataCatalogOutputs()
         {
-            return this._dataCatalogOutputs != null && this._dataCatalogOutputs.Count > 0; 
+            return this._dataCatalogOutputs != null && (this._dataCatalogOutputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -278,7 +279,7 @@ namespace Amazon.GlueDataBrew.Model
         // Check to see if Outputs property is set
         internal bool IsSetOutputs()
         {
-            return this._outputs != null && this._outputs.Count > 0; 
+            return this._outputs != null && (this._outputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -405,7 +406,7 @@ namespace Amazon.GlueDataBrew.Model
         // Check to see if ValidationConfigurations property is set
         internal bool IsSetValidationConfigurations()
         {
-            return this._validationConfigurations != null && this._validationConfigurations.Count > 0; 
+            return this._validationConfigurations != null && (this._validationConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

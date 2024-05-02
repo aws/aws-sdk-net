@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeStarconnections.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CodeStarconnections.Model
     public partial class ListSyncConfigurationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SyncConfiguration> _syncConfigurations = new List<SyncConfiguration>();
+        private List<SyncConfiguration> _syncConfigurations = AWSConfigs.InitializeCollections ? new List<SyncConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.CodeStarconnections.Model
         // Check to see if SyncConfigurations property is set
         internal bool IsSetSyncConfigurations()
         {
-            return this._syncConfigurations != null && this._syncConfigurations.Count > 0; 
+            return this._syncConfigurations != null && (this._syncConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

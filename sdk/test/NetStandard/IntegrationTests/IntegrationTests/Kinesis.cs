@@ -53,7 +53,7 @@ namespace Amazon.DNXCore.IntegrationTests
             {
                 StreamName = streamName
             })).StreamDescription;
-            Assert.Equal(stream.HasMoreShards, false);
+            Assert.False(stream.HasMoreShards);
             Assert.False(string.IsNullOrEmpty(stream.StreamARN));
             Assert.Equal(stream.StreamName, streamName);
             Assert.True(stream.StreamStatus == StreamStatus.CREATING || stream.StreamStatus == StreamStatus.ACTIVE);
@@ -61,7 +61,7 @@ namespace Amazon.DNXCore.IntegrationTests
             // List streams.
             var streamNames = (await Client.ListStreamsAsync()).StreamNames;
             Assert.True(streamNames.Count > 0);
-            Assert.True(streamNames.Contains(streamName));
+            Assert.Contains(streamName, streamNames);
         }
 
         private StreamDescription WaitForStreamToBeActive(string streamName)

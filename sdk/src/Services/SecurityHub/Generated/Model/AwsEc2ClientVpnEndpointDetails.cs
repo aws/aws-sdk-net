@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -35,15 +36,15 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsEc2ClientVpnEndpointDetails
     {
-        private List<AwsEc2ClientVpnEndpointAuthenticationOptionsDetails> _authenticationOptions = new List<AwsEc2ClientVpnEndpointAuthenticationOptionsDetails>();
+        private List<AwsEc2ClientVpnEndpointAuthenticationOptionsDetails> _authenticationOptions = AWSConfigs.InitializeCollections ? new List<AwsEc2ClientVpnEndpointAuthenticationOptionsDetails>() : null;
         private string _clientCidrBlock;
         private AwsEc2ClientVpnEndpointClientConnectOptionsDetails _clientConnectOptions;
         private AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetails _clientLoginBannerOptions;
         private string _clientVpnEndpointId;
         private AwsEc2ClientVpnEndpointConnectionLogOptionsDetails _connectionLogOptions;
         private string _description;
-        private List<string> _dnsServer = new List<string>();
-        private List<string> _securityGroupIdSet = new List<string>();
+        private List<string> _dnsServer = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _securityGroupIdSet = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _selfServicePortalUrl;
         private string _serverCertificateArn;
         private int? _sessionTimeoutHours;
@@ -67,7 +68,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if AuthenticationOptions property is set
         internal bool IsSetAuthenticationOptions()
         {
-            return this._authenticationOptions != null && this._authenticationOptions.Count > 0; 
+            return this._authenticationOptions != null && (this._authenticationOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -196,7 +197,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if DnsServer property is set
         internal bool IsSetDnsServer()
         {
-            return this._dnsServer != null && this._dnsServer.Count > 0; 
+            return this._dnsServer != null && (this._dnsServer.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -214,7 +215,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if SecurityGroupIdSet property is set
         internal bool IsSetSecurityGroupIdSet()
         {
-            return this._securityGroupIdSet != null && this._securityGroupIdSet.Count > 0; 
+            return this._securityGroupIdSet != null && (this._securityGroupIdSet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

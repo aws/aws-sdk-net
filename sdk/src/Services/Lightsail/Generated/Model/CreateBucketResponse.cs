@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Lightsail.Model
     public partial class CreateBucketResponse : AmazonWebServiceResponse
     {
         private Bucket _bucket;
-        private List<Operation> _operations = new List<Operation>();
+        private List<Operation> _operations = AWSConfigs.InitializeCollections ? new List<Operation>() : null;
 
         /// <summary>
         /// Gets and sets the property Bucket. 
@@ -70,7 +71,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Operations property is set
         internal bool IsSetOperations()
         {
-            return this._operations != null && this._operations.Count > 0; 
+            return this._operations != null && (this._operations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

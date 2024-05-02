@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -39,14 +40,14 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class CreateDocumentRequest : AmazonSimpleSystemsManagementRequest
     {
-        private List<AttachmentsSource> _attachments = new List<AttachmentsSource>();
+        private List<AttachmentsSource> _attachments = AWSConfigs.InitializeCollections ? new List<AttachmentsSource>() : null;
         private string _content;
         private string _displayName;
         private DocumentFormat _documentFormat;
         private DocumentType _documentType;
         private string _name;
-        private List<DocumentRequires> _requires = new List<DocumentRequires>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<DocumentRequires> _requires = AWSConfigs.InitializeCollections ? new List<DocumentRequires>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _targetType;
         private string _versionName;
 
@@ -58,8 +59,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Instantiates CreateDocumentRequest with the parameterized properties
         /// </summary>
-        /// <param name="name">A name for the SSM document. <important> You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes: <ul> <li>  <c>aws</c>  </li> <li>  <c>amazon</c>  </li> <li>  <c>amzn</c>  </li> </ul> </important></param>
-        /// <param name="content">The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB. This quota also includes the content specified for input parameters at runtime. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command. For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>. <ul> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a>  </li> </ul></param>
+        /// <param name="name">A name for the SSM document. <important> You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes: <ul> <li>  <c>aws</c>  </li> <li>  <c>amazon</c>  </li> <li>  <c>amzn</c>  </li> <li>  <c>AWSEC2</c>  </li> <li>  <c>AWSConfigRemediation</c>  </li> <li>  <c>AWSSupport</c>  </li> </ul> </important></param>
+        /// <param name="content">The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB. This quota also includes the content specified for input parameters at runtime. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command. For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>. <ul> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-console">Create an SSM document (console)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-cli">Create an SSM document (command line)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-api">Create an SSM document (API)</a>  </li> </ul></param>
         public CreateDocumentRequest(string name, string content)
         {
             _name = name;
@@ -82,7 +83,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Attachments property is set
         internal bool IsSetAttachments()
         {
-            return this._attachments != null && this._attachments.Count > 0; 
+            return this._attachments != null && (this._attachments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -100,17 +101,17 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
-        /// an SSM document (Amazon Web Services API)</a> 
+        ///  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-console">Create
+        /// an SSM document (console)</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create
-        /// an SSM document (Amazon Web Services CLI)</a> 
+        ///  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-cli">Create
+        /// an SSM document (command line)</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create
+        ///  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/documents-using.html#create-ssm-document-api">Create
         /// an SSM document (API)</a> 
         /// </para>
         ///  </li> </ul>
@@ -214,6 +215,18 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         ///  <c>amzn</c> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWSEC2</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWSConfigRemediation</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWSSupport</c> 
+        /// </para>
         ///  </li> </ul> </important>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -250,7 +263,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Requires property is set
         internal bool IsSetRequires()
         {
-            return this._requires != null && this._requires.Count > 0; 
+            return this._requires != null && (this._requires.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -285,7 +298,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

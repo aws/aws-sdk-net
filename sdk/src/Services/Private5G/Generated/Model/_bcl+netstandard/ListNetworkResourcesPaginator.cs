@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Private5G.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Private5G.Model
         /// Enumerable containing all of the NetworkResources
         /// </summary>
         public IPaginatedEnumerable<NetworkResource> NetworkResources => 
-            new PaginatedResultKeyResponse<ListNetworkResourcesResponse, NetworkResource>(this, (i) => i.NetworkResources);
+            new PaginatedResultKeyResponse<ListNetworkResourcesResponse, NetworkResource>(this, (i) => i.NetworkResources ?? new List<NetworkResource>());
 
         internal ListNetworkResourcesPaginator(IAmazonPrivate5G client, ListNetworkResourcesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Private5G.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListNetworkResourcesResponse> IPaginator<ListNetworkResourcesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListNetworkResourcesResponse> IPaginator<ListNetworkResourcesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CognitoIdentity.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CognitoIdentity.Model
     /// </summary>
     public partial class LookupDeveloperIdentityResponse : AmazonWebServiceResponse
     {
-        private List<string> _developerUserIdentifierList = new List<string>();
+        private List<string> _developerUserIdentifierList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _identityId;
         private string _nextToken;
 
@@ -53,7 +54,7 @@ namespace Amazon.CognitoIdentity.Model
         // Check to see if DeveloperUserIdentifierList property is set
         internal bool IsSetDeveloperUserIdentifierList()
         {
-            return this._developerUserIdentifierList != null && this._developerUserIdentifierList.Count > 0; 
+            return this._developerUserIdentifierList != null && (this._developerUserIdentifierList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

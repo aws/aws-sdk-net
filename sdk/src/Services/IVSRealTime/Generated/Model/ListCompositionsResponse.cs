@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IVSRealTime.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IVSRealTime.Model
     /// </summary>
     public partial class ListCompositionsResponse : AmazonWebServiceResponse
     {
-        private List<CompositionSummary> _compositions = new List<CompositionSummary>();
+        private List<CompositionSummary> _compositions = AWSConfigs.InitializeCollections ? new List<CompositionSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.IVSRealTime.Model
         // Check to see if Compositions property is set
         internal bool IsSetCompositions()
         {
-            return this._compositions != null && this._compositions.Count > 0; 
+            return this._compositions != null && (this._compositions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

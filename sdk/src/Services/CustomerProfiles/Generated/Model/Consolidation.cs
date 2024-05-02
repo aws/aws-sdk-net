@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CustomerProfiles.Model
     /// </summary>
     public partial class Consolidation
     {
-        private List<List<string>> _matchingAttributesList = new List<List<string>>();
+        private List<List<string>> _matchingAttributesList = AWSConfigs.InitializeCollections ? new List<List<string>>() : null;
 
         /// <summary>
         /// Gets and sets the property MatchingAttributesList. 
@@ -51,7 +52,7 @@ namespace Amazon.CustomerProfiles.Model
         // Check to see if MatchingAttributesList property is set
         internal bool IsSetMatchingAttributesList()
         {
-            return this._matchingAttributesList != null && this._matchingAttributesList.Count > 0; 
+            return this._matchingAttributesList != null && (this._matchingAttributesList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

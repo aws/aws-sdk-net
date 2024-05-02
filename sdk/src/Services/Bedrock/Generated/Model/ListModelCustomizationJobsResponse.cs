@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Bedrock.Model
     /// </summary>
     public partial class ListModelCustomizationJobsResponse : AmazonWebServiceResponse
     {
-        private List<ModelCustomizationJobSummary> _modelCustomizationJobSummaries = new List<ModelCustomizationJobSummary>();
+        private List<ModelCustomizationJobSummary> _modelCustomizationJobSummaries = AWSConfigs.InitializeCollections ? new List<ModelCustomizationJobSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Bedrock.Model
         // Check to see if ModelCustomizationJobSummaries property is set
         internal bool IsSetModelCustomizationJobSummaries()
         {
-            return this._modelCustomizationJobSummaries != null && this._modelCustomizationJobSummaries.Count > 0; 
+            return this._modelCustomizationJobSummaries != null && (this._modelCustomizationJobSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

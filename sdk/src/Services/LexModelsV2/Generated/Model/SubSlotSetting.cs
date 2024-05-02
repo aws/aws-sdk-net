@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.LexModelsV2.Model
     public partial class SubSlotSetting
     {
         private string _expression;
-        private Dictionary<string, Specifications> _slotSpecifications = new Dictionary<string, Specifications>();
+        private Dictionary<string, Specifications> _slotSpecifications = AWSConfigs.InitializeCollections ? new Dictionary<string, Specifications>() : null;
 
         /// <summary>
         /// Gets and sets the property Expression. 
@@ -73,7 +74,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if SlotSpecifications property is set
         internal bool IsSetSlotSpecifications()
         {
-            return this._slotSpecifications != null && this._slotSpecifications.Count > 0; 
+            return this._slotSpecifications != null && (this._slotSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.FMS.Model
         /// Enumerable containing all of the AdminAccounts
         /// </summary>
         public IPaginatedEnumerable<AdminAccountSummary> AdminAccounts => 
-            new PaginatedResultKeyResponse<ListAdminAccountsForOrganizationResponse, AdminAccountSummary>(this, (i) => i.AdminAccounts);
+            new PaginatedResultKeyResponse<ListAdminAccountsForOrganizationResponse, AdminAccountSummary>(this, (i) => i.AdminAccounts ?? new List<AdminAccountSummary>());
 
         internal ListAdminAccountsForOrganizationPaginator(IAmazonFMS client, ListAdminAccountsForOrganizationRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.FMS.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListAdminAccountsForOrganizationResponse> IPaginator<ListAdminAccountsForOrganizationResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListAdminAccountsForOrganizationResponse> IPaginator<ListAdminAccountsForOrganizationResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

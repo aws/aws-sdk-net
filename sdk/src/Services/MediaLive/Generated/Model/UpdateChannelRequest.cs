@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
@@ -36,9 +37,9 @@ namespace Amazon.MediaLive.Model
     {
         private CdiInputSpecification _cdiInputSpecification;
         private string _channelId;
-        private List<OutputDestination> _destinations = new List<OutputDestination>();
+        private List<OutputDestination> _destinations = AWSConfigs.InitializeCollections ? new List<OutputDestination>() : null;
         private EncoderSettings _encoderSettings;
-        private List<InputAttachment> _inputAttachments = new List<InputAttachment>();
+        private List<InputAttachment> _inputAttachments = AWSConfigs.InitializeCollections ? new List<InputAttachment>() : null;
         private InputSpecification _inputSpecification;
         private LogLevel _logLevel;
         private MaintenanceUpdateSettings _maintenance;
@@ -89,7 +90,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if Destinations property is set
         internal bool IsSetDestinations()
         {
-            return this._destinations != null && this._destinations.Count > 0; 
+            return this._destinations != null && (this._destinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -119,7 +120,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if InputAttachments property is set
         internal bool IsSetInputAttachments()
         {
-            return this._inputAttachments != null && this._inputAttachments.Count > 0; 
+            return this._inputAttachments != null && (this._inputAttachments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

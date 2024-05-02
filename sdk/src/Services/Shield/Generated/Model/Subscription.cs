@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Shield.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Shield.Model
     {
         private AutoRenew _autoRenew;
         private DateTime? _endTime;
-        private List<Limit> _limits = new List<Limit>();
+        private List<Limit> _limits = AWSConfigs.InitializeCollections ? new List<Limit>() : null;
         private ProactiveEngagementStatus _proactiveEngagementStatus;
         private DateTime? _startTime;
         private string _subscriptionArn;
@@ -101,7 +102,7 @@ namespace Amazon.Shield.Model
         // Check to see if Limits property is set
         internal bool IsSetLimits()
         {
-            return this._limits != null && this._limits.Count > 0; 
+            return this._limits != null && (this._limits.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoTSiteWise.Model
     /// </summary>
     public partial class ListAssetModelCompositeModelsResponse : AmazonWebServiceResponse
     {
-        private List<AssetModelCompositeModelSummary> _assetModelCompositeModelSummaries = new List<AssetModelCompositeModelSummary>();
+        private List<AssetModelCompositeModelSummary> _assetModelCompositeModelSummaries = AWSConfigs.InitializeCollections ? new List<AssetModelCompositeModelSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if AssetModelCompositeModelSummaries property is set
         internal bool IsSetAssetModelCompositeModelSummaries()
         {
-            return this._assetModelCompositeModelSummaries != null && this._assetModelCompositeModelSummaries.Count > 0; 
+            return this._assetModelCompositeModelSummaries != null && (this._assetModelCompositeModelSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

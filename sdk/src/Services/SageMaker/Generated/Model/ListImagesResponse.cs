@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListImagesResponse : AmazonWebServiceResponse
     {
-        private List<Image> _images = new List<Image>();
+        private List<Image> _images = AWSConfigs.InitializeCollections ? new List<Image>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Images property is set
         internal bool IsSetImages()
         {
-            return this._images != null && this._images.Count > 0; 
+            return this._images != null && (this._images.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

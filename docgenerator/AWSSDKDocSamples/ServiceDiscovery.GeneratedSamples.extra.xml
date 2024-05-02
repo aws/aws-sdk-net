@@ -154,6 +154,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.DiscoverInstancesRevision(Amazon.ServiceDiscovery.Model.DiscoverInstancesRevisionRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.DiscoverInstancesRevision(Amazon.ServiceDiscovery.Model.DiscoverInstancesRevisionRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.DiscoverInstancesRevisionRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.DiscoverInstancesRevisionResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example discovers the revision ID for a registered instance.
+                </para>
+                <code
+                    title="To discover the revision for a registered instance"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="to-discover-the-revision-for-a-registered-instance-1712867460953" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.GetInstance(Amazon.ServiceDiscovery.Model.GetInstanceRequest)" />
             <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.GetInstance(Amazon.ServiceDiscovery.Model.GetInstanceRequest)" />
             <member name="T:Amazon.ServiceDiscovery.Model.GetInstanceRequest" />
@@ -401,6 +420,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.UpdateHttpNamespace(Amazon.ServiceDiscovery.Model.UpdateHttpNamespaceRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.UpdateHttpNamespace(Amazon.ServiceDiscovery.Model.UpdateHttpNamespaceRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.UpdateHttpNamespaceRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.UpdateHttpNamespaceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example updates the description of a HTTP namespace.
+                </para>
+                <code
+                    title="To update a HTTP namespace"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="to-update-a-http-namespace-17128EXAMPLE" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.UpdateInstanceCustomHealthStatus(Amazon.ServiceDiscovery.Model.UpdateInstanceCustomHealthStatusRequest)" />
             <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.UpdateInstanceCustomHealthStatus(Amazon.ServiceDiscovery.Model.UpdateInstanceCustomHealthStatusRequest)" />
             <member name="T:Amazon.ServiceDiscovery.Model.UpdateInstanceCustomHealthStatusRequest" />
@@ -415,6 +453,44 @@
                     title="UpdateInstanceCustomHealthStatus Example"
                     source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
                     region="updateinstancecustomhealthstatus-example-1590118408574" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.UpdatePrivateDnsNamespace(Amazon.ServiceDiscovery.Model.UpdatePrivateDnsNamespaceRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.UpdatePrivateDnsNamespace(Amazon.ServiceDiscovery.Model.UpdatePrivateDnsNamespaceRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.UpdatePrivateDnsNamespaceRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.UpdatePrivateDnsNamespaceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example updates the description of a private DNS namespace.
+                </para>
+                <code
+                    title="To update a private DNS namespace"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="to-update-a-private-dns-namespace-1712868389604" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.ServiceDiscovery.IAmazonServiceDiscovery.UpdatePrivateDnsNamespace(Amazon.ServiceDiscovery.Model.UpdatePrivateDnsNamespaceRequest)" />
+            <member name="M:Amazon.ServiceDiscovery.AmazonServiceDiscoveryClient.UpdatePrivateDnsNamespace(Amazon.ServiceDiscovery.Model.UpdatePrivateDnsNamespaceRequest)" />
+            <member name="T:Amazon.ServiceDiscovery.Model.UpdatePrivateDnsNamespaceRequest" />
+            <member name="T:Amazon.ServiceDiscovery.Model.UpdatePrivateDnsNamespaceResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example updates the description of a public DNS namespace.
+                </para>
+                <code
+                    title="To update a public DNS namespace"
+                    source=".\AWSSDKDocSamples\ServiceDiscovery\ServiceDiscovery.GeneratedSamples.cs"
+                    region="to-update-a-public-dns-namespace-1712868389604" />
             </example>
         </value>
     </doc>

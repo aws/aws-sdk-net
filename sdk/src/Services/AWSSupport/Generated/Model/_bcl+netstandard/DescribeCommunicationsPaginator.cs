@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.AWSSupport.Model
         /// Enumerable containing all of the Communications
         /// </summary>
         public IPaginatedEnumerable<Communication> Communications => 
-            new PaginatedResultKeyResponse<DescribeCommunicationsResponse, Communication>(this, (i) => i.Communications);
+            new PaginatedResultKeyResponse<DescribeCommunicationsResponse, Communication>(this, (i) => i.Communications ?? new List<Communication>());
 
         internal DescribeCommunicationsPaginator(IAmazonAWSSupport client, DescribeCommunicationsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.AWSSupport.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeCommunicationsResponse> IPaginator<DescribeCommunicationsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeCommunicationsResponse> IPaginator<DescribeCommunicationsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

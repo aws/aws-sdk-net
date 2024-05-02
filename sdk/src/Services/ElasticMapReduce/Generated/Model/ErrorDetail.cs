@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ElasticMapReduce.Model
     public partial class ErrorDetail
     {
         private string _errorCode;
-        private List<Dictionary<string, string>> _errorData = new List<Dictionary<string, string>>();
+        private List<Dictionary<string, string>> _errorData = AWSConfigs.InitializeCollections ? new List<Dictionary<string, string>>() : null;
         private string _errorMessage;
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if ErrorData property is set
         internal bool IsSetErrorData()
         {
-            return this._errorData != null && this._errorData.Count > 0; 
+            return this._errorData != null && (this._errorData.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

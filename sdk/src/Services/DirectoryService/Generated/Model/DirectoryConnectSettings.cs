@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.DirectoryService.Model
     /// </summary>
     public partial class DirectoryConnectSettings
     {
-        private List<string> _customerDnsIps = new List<string>();
+        private List<string> _customerDnsIps = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _customerUserName;
-        private List<string> _subnetIds = new List<string>();
+        private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _vpcId;
 
         /// <summary>
@@ -56,7 +57,7 @@ namespace Amazon.DirectoryService.Model
         // Check to see if CustomerDnsIps property is set
         internal bool IsSetCustomerDnsIps()
         {
-            return this._customerDnsIps != null && this._customerDnsIps.Count > 0; 
+            return this._customerDnsIps != null && (this._customerDnsIps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -108,7 +109,7 @@ namespace Amazon.DirectoryService.Model
         // Check to see if SubnetIds property is set
         internal bool IsSetSubnetIds()
         {
-            return this._subnetIds != null && this._subnetIds.Count > 0; 
+            return this._subnetIds != null && (this._subnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

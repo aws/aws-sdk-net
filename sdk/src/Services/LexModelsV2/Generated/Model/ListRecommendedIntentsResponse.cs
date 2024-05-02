@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.LexModelsV2.Model
         private string _botVersion;
         private string _localeId;
         private string _nextToken;
-        private List<RecommendedIntentSummary> _summaryList = new List<RecommendedIntentSummary>();
+        private List<RecommendedIntentSummary> _summaryList = AWSConfigs.InitializeCollections ? new List<RecommendedIntentSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property BotId. 
@@ -156,7 +157,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if SummaryList property is set
         internal bool IsSetSummaryList()
         {
-            return this._summaryList != null && this._summaryList.Count > 0; 
+            return this._summaryList != null && (this._summaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.ElasticMapReduce.Model
     public partial class BlockPublicAccessConfiguration
     {
         private bool? _blockPublicSecurityGroupRules;
-        private List<PortRange> _permittedPublicSecurityGroupRuleRanges = new List<PortRange>();
+        private List<PortRange> _permittedPublicSecurityGroupRuleRanges = AWSConfigs.InitializeCollections ? new List<PortRange>() : null;
 
         /// <summary>
         /// Gets and sets the property BlockPublicSecurityGroupRules. 
@@ -85,7 +86,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if PermittedPublicSecurityGroupRuleRanges property is set
         internal bool IsSetPermittedPublicSecurityGroupRuleRanges()
         {
-            return this._permittedPublicSecurityGroupRuleRanges != null && this._permittedPublicSecurityGroupRuleRanges.Count > 0; 
+            return this._permittedPublicSecurityGroupRuleRanges != null && (this._permittedPublicSecurityGroupRuleRanges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Specifies a raw data source location to ingest.
+    /// Contains details about how a data source is stored.
     /// </summary>
     public partial class DataSourceConfiguration
     {
@@ -37,7 +38,10 @@ namespace Amazon.BedrockAgent.Model
         private DataSourceType _type;
 
         /// <summary>
-        /// Gets and sets the property S3Configuration.
+        /// Gets and sets the property S3Configuration. 
+        /// <para>
+        /// Contains details about the configuration of the S3 object containing the data source.
+        /// </para>
         /// </summary>
         public S3DataSourceConfiguration S3Configuration
         {
@@ -52,7 +56,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of storage for the data source.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DataSourceType Type

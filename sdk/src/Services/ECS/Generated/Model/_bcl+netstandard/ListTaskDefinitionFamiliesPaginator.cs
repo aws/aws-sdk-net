@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ECS.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ECS.Model
         /// Enumerable containing all of the Families
         /// </summary>
         public IPaginatedEnumerable<string> Families => 
-            new PaginatedResultKeyResponse<ListTaskDefinitionFamiliesResponse, string>(this, (i) => i.Families);
+            new PaginatedResultKeyResponse<ListTaskDefinitionFamiliesResponse, string>(this, (i) => i.Families ?? new List<string>());
 
         internal ListTaskDefinitionFamiliesPaginator(IAmazonECS client, ListTaskDefinitionFamiliesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ECS.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListTaskDefinitionFamiliesResponse> IPaginator<ListTaskDefinitionFamiliesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListTaskDefinitionFamiliesResponse> IPaginator<ListTaskDefinitionFamiliesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

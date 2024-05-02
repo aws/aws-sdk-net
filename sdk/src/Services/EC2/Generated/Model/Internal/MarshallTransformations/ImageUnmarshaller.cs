@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -63,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("blockDeviceMapping/item", targetDepth))
                     {
                         var unmarshaller = BlockDeviceMappingUnmarshaller.Instance;
+                        if (unmarshalledObject.BlockDeviceMappings == null)
+                        {
+                            unmarshalledObject.BlockDeviceMappings = new List<BlockDeviceMapping>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.BlockDeviceMappings.Add(item);
                         continue;
@@ -83,6 +88,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.DeprecationTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("deregistrationProtection", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.DeregistrationProtection = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("description", targetDepth))
@@ -139,6 +150,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.KernelId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("lastLaunchedTime", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.LastLaunchedTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("name", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -166,6 +183,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("productCodes/item", targetDepth))
                     {
                         var unmarshaller = ProductCodeUnmarshaller.Instance;
+                        if (unmarshalledObject.ProductCodes == null)
+                        {
+                            unmarshalledObject.ProductCodes = new List<ProductCode>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ProductCodes.Add(item);
                         continue;
@@ -221,6 +242,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tags.Add(item);
                         continue;

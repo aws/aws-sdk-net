@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeRegionsResponse : AmazonWebServiceResponse
     {
-        private List<Region> _regions = new List<Region>();
+        private List<Region> _regions = AWSConfigs.InitializeCollections ? new List<Region>() : null;
 
         /// <summary>
         /// Gets and sets the property Regions. 
@@ -50,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if Regions property is set
         internal bool IsSetRegions()
         {
-            return this._regions != null && this._regions.Count > 0; 
+            return this._regions != null && (this._regions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

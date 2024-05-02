@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Route53.Model
     /// </summary>
     public partial class ListReusableDelegationSetsResponse : AmazonWebServiceResponse
     {
-        private List<DelegationSet> _delegationSets = new List<DelegationSet>();
+        private List<DelegationSet> _delegationSets = AWSConfigs.InitializeCollections ? new List<DelegationSet>() : null;
         private string _marker;
         private bool? _isTruncated;
         private string _nextMarker;
@@ -57,7 +58,7 @@ namespace Amazon.Route53.Model
         // Check to see if DelegationSets property is set
         internal bool IsSetDelegationSets()
         {
-            return this._delegationSets != null && this._delegationSets.Count > 0; 
+            return this._delegationSets != null && (this._delegationSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

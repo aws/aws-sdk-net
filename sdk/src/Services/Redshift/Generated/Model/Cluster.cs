@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -42,11 +43,11 @@ namespace Amazon.Redshift.Model
         private DateTime? _clusterCreateTime;
         private string _clusterIdentifier;
         private string _clusterNamespaceArn;
-        private List<ClusterNode> _clusterNodes = new List<ClusterNode>();
-        private List<ClusterParameterGroupStatus> _clusterParameterGroups = new List<ClusterParameterGroupStatus>();
+        private List<ClusterNode> _clusterNodes = AWSConfigs.InitializeCollections ? new List<ClusterNode>() : null;
+        private List<ClusterParameterGroupStatus> _clusterParameterGroups = AWSConfigs.InitializeCollections ? new List<ClusterParameterGroupStatus>() : null;
         private string _clusterPublicKey;
         private string _clusterRevisionNumber;
-        private List<ClusterSecurityGroupMembership> _clusterSecurityGroups = new List<ClusterSecurityGroupMembership>();
+        private List<ClusterSecurityGroupMembership> _clusterSecurityGroups = AWSConfigs.InitializeCollections ? new List<ClusterSecurityGroupMembership>() : null;
         private ClusterSnapshotCopyStatus _clusterSnapshotCopyStatus;
         private string _clusterStatus;
         private string _clusterSubnetGroupName;
@@ -57,7 +58,7 @@ namespace Amazon.Redshift.Model
         private DataTransferProgress _dataTransferProgress;
         private string _dbName;
         private string _defaultIamRoleArn;
-        private List<DeferredMaintenanceWindow> _deferredMaintenanceWindows = new List<DeferredMaintenanceWindow>();
+        private List<DeferredMaintenanceWindow> _deferredMaintenanceWindows = AWSConfigs.InitializeCollections ? new List<DeferredMaintenanceWindow>() : null;
         private ElasticIpStatus _elasticIpStatus;
         private string _elasticResizeNumberOfNodeOptions;
         private bool? _encrypted;
@@ -66,7 +67,7 @@ namespace Amazon.Redshift.Model
         private DateTime? _expectedNextSnapshotScheduleTime;
         private string _expectedNextSnapshotScheduleTimeStatus;
         private HsmStatus _hsmStatus;
-        private List<ClusterIamRole> _iamRoles = new List<ClusterIamRole>();
+        private List<ClusterIamRole> _iamRoles = AWSConfigs.InitializeCollections ? new List<ClusterIamRole>() : null;
         private string _ipAddressType;
         private string _kmsKeyId;
         private string _maintenanceTrackName;
@@ -80,7 +81,7 @@ namespace Amazon.Redshift.Model
         private DateTime? _nextMaintenanceWindowStartTime;
         private string _nodeType;
         private int? _numberOfNodes;
-        private List<string> _pendingActions = new List<string>();
+        private List<string> _pendingActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private PendingModifiedValues _pendingModifiedValues;
         private string _preferredMaintenanceWindow;
         private bool? _publiclyAccessible;
@@ -89,10 +90,10 @@ namespace Amazon.Redshift.Model
         private RestoreStatus _restoreStatus;
         private string _snapshotScheduleIdentifier;
         private ScheduleState _snapshotScheduleState;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private long? _totalStorageCapacityInMegaBytes;
         private string _vpcId;
-        private List<VpcSecurityGroupMembership> _vpcSecurityGroups = new List<VpcSecurityGroupMembership>();
+        private List<VpcSecurityGroupMembership> _vpcSecurityGroups = AWSConfigs.InitializeCollections ? new List<VpcSecurityGroupMembership>() : null;
 
         /// <summary>
         /// Gets and sets the property AllowVersionUpgrade. 
@@ -301,7 +302,7 @@ namespace Amazon.Redshift.Model
         // Check to see if ClusterNodes property is set
         internal bool IsSetClusterNodes()
         {
-            return this._clusterNodes != null && this._clusterNodes.Count > 0; 
+            return this._clusterNodes != null && (this._clusterNodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -320,7 +321,7 @@ namespace Amazon.Redshift.Model
         // Check to see if ClusterParameterGroups property is set
         internal bool IsSetClusterParameterGroups()
         {
-            return this._clusterParameterGroups != null && this._clusterParameterGroups.Count > 0; 
+            return this._clusterParameterGroups != null && (this._clusterParameterGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -384,7 +385,7 @@ namespace Amazon.Redshift.Model
         // Check to see if ClusterSecurityGroups property is set
         internal bool IsSetClusterSecurityGroups()
         {
-            return this._clusterSecurityGroups != null && this._clusterSecurityGroups.Count > 0; 
+            return this._clusterSecurityGroups != null && (this._clusterSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -671,7 +672,7 @@ namespace Amazon.Redshift.Model
         // Check to see if DeferredMaintenanceWindows property is set
         internal bool IsSetDeferredMaintenanceWindows()
         {
-            return this._deferredMaintenanceWindows != null && this._deferredMaintenanceWindows.Count > 0; 
+            return this._deferredMaintenanceWindows != null && (this._deferredMaintenanceWindows.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -865,7 +866,7 @@ namespace Amazon.Redshift.Model
         // Check to see if IamRoles property is set
         internal bool IsSetIamRoles()
         {
-            return this._iamRoles != null && this._iamRoles.Count > 0; 
+            return this._iamRoles != null && (this._iamRoles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -1136,7 +1137,7 @@ namespace Amazon.Redshift.Model
         // Check to see if PendingActions property is set
         internal bool IsSetPendingActions()
         {
-            return this._pendingActions != null && this._pendingActions.Count > 0; 
+            return this._pendingActions != null && (this._pendingActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -1314,7 +1315,7 @@ namespace Amazon.Redshift.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -1370,7 +1371,7 @@ namespace Amazon.Redshift.Model
         // Check to see if VpcSecurityGroups property is set
         internal bool IsSetVpcSecurityGroups()
         {
-            return this._vpcSecurityGroups != null && this._vpcSecurityGroups.Count > 0; 
+            return this._vpcSecurityGroups != null && (this._vpcSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

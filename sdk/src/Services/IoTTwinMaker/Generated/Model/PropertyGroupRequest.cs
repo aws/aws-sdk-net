@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTTwinMaker.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IoTTwinMaker.Model
     public partial class PropertyGroupRequest
     {
         private GroupType _groupType;
-        private List<string> _propertyNames = new List<string>();
+        private List<string> _propertyNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property GroupType. 
@@ -69,7 +70,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if PropertyNames property is set
         internal bool IsSetPropertyNames()
         {
-            return this._propertyNames != null && this._propertyNames.Count > 0; 
+            return this._propertyNames != null && (this._propertyNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

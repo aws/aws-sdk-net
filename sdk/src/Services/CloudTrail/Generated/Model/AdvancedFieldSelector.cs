@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
@@ -33,13 +34,13 @@ namespace Amazon.CloudTrail.Model
     /// </summary>
     public partial class AdvancedFieldSelector
     {
-        private List<string> _endsWith = new List<string>();
-        private List<string> _equals = new List<string>();
+        private List<string> _endsWith = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _equals = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _field;
-        private List<string> _notEndsWith = new List<string>();
-        private List<string> _notEquals = new List<string>();
-        private List<string> _notStartsWith = new List<string>();
-        private List<string> _startsWith = new List<string>();
+        private List<string> _notEndsWith = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _notEquals = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _notStartsWith = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _startsWith = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property EndsWith. 
@@ -58,7 +59,7 @@ namespace Amazon.CloudTrail.Model
         // Check to see if EndsWith property is set
         internal bool IsSetEndsWith()
         {
-            return this._endsWith != null && this._endsWith.Count > 0; 
+            return this._endsWith != null && (this._endsWith.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
-        public List<string> Equals
+        public new List<string> Equals
         {
             get { return this._equals; }
             set { this._equals = value; }
@@ -79,7 +80,7 @@ namespace Amazon.CloudTrail.Model
         // Check to see if Equals property is set
         internal bool IsSetEquals()
         {
-            return this._equals != null && this._equals.Count > 0; 
+            return this._equals != null && (this._equals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -177,6 +178,10 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>AWS::AppConfig::Configuration</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>AWS::B2BI::Transformer</c> 
         /// </para>
         ///  </li> <li> 
@@ -233,7 +238,31 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>AWS::GreengrassV2::ComponentVersion</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::GreengrassV2::Deployment</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>AWS::GuardDuty::Detector</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::IoT::Certificate</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::IoT::Thing</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::IoTSiteWise::Asset</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::IoTSiteWise::TimeSeries</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -293,6 +322,18 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>AWS::S3::AccessPoint</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::S3ObjectLambda::AccessPoint</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::S3Outposts::Object</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>AWS::SageMaker::Endpoint</c> 
         /// </para>
         ///  </li> <li> 
@@ -325,19 +366,11 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <c>AWS::SWF::Domain</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>AWS::SQS::Queue</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::S3::AccessPoint</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::S3ObjectLambda::AccessPoint</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>AWS::S3Outposts::Object</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -409,6 +442,16 @@ namespace Amazon.CloudTrail.Model
         ///  <ul> <li> 
         /// <para>
         ///  <c>arn:&lt;partition&gt;:lambda:&lt;region&gt;:&lt;account_ID&gt;:function:&lt;function_name&gt;</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When resources.type equals <c>AWS::AppConfig::Configuration</c>, and the operator
+        /// is set to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>arn:&lt;partition&gt;:appconfig:&lt;region&gt;:&lt;account_ID&gt;:application/&lt;application_ID&gt;/environment/&lt;environment_ID&gt;/configuration/&lt;configuration_profile_ID&gt;</c>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -552,12 +595,73 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        /// When <c>resources.type</c> equals <c>AWS::GreengrassV2::ComponentVersion</c>, and
+        /// the operator is set to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following
+        /// format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>arn:&lt;partition&gt;:greengrass:&lt;region&gt;:&lt;account_ID&gt;:components/&lt;component_name&gt;</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <c>resources.type</c> equals <c>AWS::GreengrassV2::Deployment</c>, and the operator
+        /// is set to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>arn:&lt;partition&gt;:greengrass:&lt;region&gt;:&lt;account_ID&gt;:deployments/&lt;deployment_ID</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         /// When <c>resources.type</c> equals <c>AWS::GuardDuty::Detector</c>, and the operator
         /// is set to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following format:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <c>arn:&lt;partition&gt;:guardduty:&lt;region&gt;:&lt;account_ID&gt;:detector/&lt;detector_ID&gt;</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <c>resources.type</c> equals <c>AWS::IoT::Certificate</c>, and the operator is
+        /// set to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>arn:&lt;partition&gt;:iot:&lt;region&gt;:&lt;account_ID&gt;:cert/&lt;certificate_ID&gt;</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <c>resources.type</c> equals <c>AWS::IoT::Thing</c>, and the operator is set
+        /// to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>arn:&lt;partition&gt;:iot:&lt;region&gt;:&lt;account_ID&gt;:thing/&lt;thing_ID&gt;</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <c>resources.type</c> equals <c>AWS::IoTSiteWise::Asset</c>, and the operator
+        /// is set to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>arn:&lt;partition&gt;:iotsitewise:&lt;region&gt;:&lt;account_ID&gt;:asset/&lt;asset_ID&gt;</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <c>resources.type</c> equals <c>AWS::IoTSiteWise::TimeSeries</c>, and the operator
+        /// is set to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>arn:&lt;partition&gt;:iotsitewise:&lt;region&gt;:&lt;account_ID&gt;:timeseries/&lt;timeseries_ID&gt;</c>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -703,6 +807,45 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        /// When <c>resources.type</c> equals <c>AWS::S3::AccessPoint</c>, and the operator is
+        /// set to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in one of the following
+        /// formats. To log events on all objects in an S3 access point, we recommend that you
+        /// use only the access point ARN, don’t include the object path, and use the <c>StartsWith</c>
+        /// or <c>NotStartsWith</c> operators.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</c>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;/object/&lt;object_path&gt;</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <c>resources.type</c> equals <c>AWS::S3ObjectLambda::AccessPoint</c>, and the
+        /// operator is set to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following
+        /// format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>arn:&lt;partition&gt;:s3-object-lambda:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <c>resources.type</c> equals <c>AWS::S3Outposts::Object</c>, and the operator
+        /// is set to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         /// When <c>resources.type</c> equals <c>AWS::SageMaker::Endpoint</c>, and the operator
         /// is set to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following format:
         /// </para>
@@ -785,51 +928,22 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        /// When <c>resources.type</c> equals <c>AWS::SWF::Domain</c>, and the operator is set
+        /// to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>arn:&lt;partition&gt;:swf:&lt;region&gt;:&lt;account_ID&gt;:domain/&lt;domain_name&gt;</c>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
         /// When <c>resources.type</c> equals <c>AWS::SQS::Queue</c>, and the operator is set
         /// to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following format:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <c>arn:&lt;partition&gt;:sqs:&lt;region&gt;:&lt;account_ID&gt;:&lt;queue_name&gt;</c>
-        /// 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// When <c>resources.type</c> equals <c>AWS::S3::AccessPoint</c>, and the operator is
-        /// set to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in one of the following
-        /// formats. To log events on all objects in an S3 access point, we recommend that you
-        /// use only the access point ARN, don’t include the object path, and use the <c>StartsWith</c>
-        /// or <c>NotStartsWith</c> operators.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</c>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;/object/&lt;object_path&gt;</c>
-        /// 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// When <c>resources.type</c> equals <c>AWS::S3ObjectLambda::AccessPoint</c>, and the
-        /// operator is set to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following
-        /// format:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>arn:&lt;partition&gt;:s3-object-lambda:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</c>
-        /// 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// When <c>resources.type</c> equals <c>AWS::S3Outposts::Object</c>, and the operator
-        /// is set to <c>Equals</c> or <c>NotEquals</c>, the ARN must be in the following format:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</c>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -925,7 +1039,7 @@ namespace Amazon.CloudTrail.Model
         // Check to see if NotEndsWith property is set
         internal bool IsSetNotEndsWith()
         {
-            return this._notEndsWith != null && this._notEndsWith.Count > 0; 
+            return this._notEndsWith != null && (this._notEndsWith.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -945,7 +1059,7 @@ namespace Amazon.CloudTrail.Model
         // Check to see if NotEquals property is set
         internal bool IsSetNotEquals()
         {
-            return this._notEquals != null && this._notEquals.Count > 0; 
+            return this._notEquals != null && (this._notEquals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -965,7 +1079,7 @@ namespace Amazon.CloudTrail.Model
         // Check to see if NotStartsWith property is set
         internal bool IsSetNotStartsWith()
         {
-            return this._notStartsWith != null && this._notStartsWith.Count > 0; 
+            return this._notStartsWith != null && (this._notStartsWith.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -985,7 +1099,7 @@ namespace Amazon.CloudTrail.Model
         // Check to see if StartsWith property is set
         internal bool IsSetStartsWith()
         {
-            return this._startsWith != null && this._startsWith.Count > 0; 
+            return this._startsWith != null && (this._startsWith.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

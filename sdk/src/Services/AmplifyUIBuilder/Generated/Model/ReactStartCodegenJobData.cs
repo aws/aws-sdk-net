@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.AmplifyUIBuilder.Model
     public partial class ReactStartCodegenJobData
     {
         private ApiConfiguration _apiConfiguration;
-        private Dictionary<string, string> _dependencies = new Dictionary<string, string>();
+        private Dictionary<string, string> _dependencies = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private bool? _inlineSourceMap;
         private JSModule _module;
         private bool? _renderTypeDeclarations;
@@ -74,7 +75,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if Dependencies property is set
         internal bool IsSetDependencies()
         {
-            return this._dependencies != null && this._dependencies.Count > 0; 
+            return this._dependencies != null && (this._dependencies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

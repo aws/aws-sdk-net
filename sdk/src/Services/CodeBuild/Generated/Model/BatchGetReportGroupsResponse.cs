@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.CodeBuild.Model
     /// </summary>
     public partial class BatchGetReportGroupsResponse : AmazonWebServiceResponse
     {
-        private List<ReportGroup> _reportGroups = new List<ReportGroup>();
-        private List<string> _reportGroupsNotFound = new List<string>();
+        private List<ReportGroup> _reportGroups = AWSConfigs.InitializeCollections ? new List<ReportGroup>() : null;
+        private List<string> _reportGroupsNotFound = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ReportGroups. 
@@ -52,7 +53,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if ReportGroups property is set
         internal bool IsSetReportGroups()
         {
-            return this._reportGroups != null && this._reportGroups.Count > 0; 
+            return this._reportGroups != null && (this._reportGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if ReportGroupsNotFound property is set
         internal bool IsSetReportGroupsNotFound()
         {
-            return this._reportGroupsNotFound != null && this._reportGroupsNotFound.Count > 0; 
+            return this._reportGroupsNotFound != null && (this._reportGroupsNotFound.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

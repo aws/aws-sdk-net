@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _awsNamespace;
         private OptionRestrictionRegex _regex;
         private bool? _userDefined;
-        private List<string> _valueOptions = new List<string>();
+        private List<string> _valueOptions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ConfigurationOptionValueType _valueType;
 
         /// <summary>
@@ -266,7 +267,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if ValueOptions property is set
         internal bool IsSetValueOptions()
         {
-            return this._valueOptions != null && this._valueOptions.Count > 0; 
+            return this._valueOptions != null && (this._valueOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

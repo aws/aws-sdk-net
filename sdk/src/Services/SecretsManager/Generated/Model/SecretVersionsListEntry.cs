@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecretsManager.Model
 {
     /// <summary>
@@ -34,10 +35,10 @@ namespace Amazon.SecretsManager.Model
     public partial class SecretVersionsListEntry
     {
         private DateTime? _createdDate;
-        private List<string> _kmsKeyIds = new List<string>();
+        private List<string> _kmsKeyIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _lastAccessedDate;
         private string _versionId;
-        private List<string> _versionStages = new List<string>();
+        private List<string> _versionStages = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CreatedDate. 
@@ -72,7 +73,7 @@ namespace Amazon.SecretsManager.Model
         // Check to see if KmsKeyIds property is set
         internal bool IsSetKmsKeyIds()
         {
-            return this._kmsKeyIds != null && this._kmsKeyIds.Count > 0; 
+            return this._kmsKeyIds != null && (this._kmsKeyIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -130,7 +131,7 @@ namespace Amazon.SecretsManager.Model
         // Check to see if VersionStages property is set
         internal bool IsSetVersionStages()
         {
-            return this._versionStages != null && this._versionStages.Count > 0; 
+            return this._versionStages != null && (this._versionStages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

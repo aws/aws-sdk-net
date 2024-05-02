@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ApplicationAutoScaling.Model
 {
     /// <summary>
@@ -43,7 +44,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         private int? _cooldown;
         private MetricAggregationType _metricAggregationType;
         private int? _minAdjustmentMagnitude;
-        private List<StepAdjustment> _stepAdjustments = new List<StepAdjustment>();
+        private List<StepAdjustment> _stepAdjustments = AWSConfigs.InitializeCollections ? new List<StepAdjustment>() : null;
 
         /// <summary>
         /// Gets and sets the property AdjustmentType. 
@@ -153,7 +154,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         // Check to see if StepAdjustments property is set
         internal bool IsSetStepAdjustments()
         {
-            return this._stepAdjustments != null && this._stepAdjustments.Count > 0; 
+            return this._stepAdjustments != null && (this._stepAdjustments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

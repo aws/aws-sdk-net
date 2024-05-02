@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -64,6 +65,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("verifiedAccessTrustProviderSet/item", targetDepth))
                     {
                         var unmarshaller = VerifiedAccessTrustProviderUnmarshaller.Instance;
+                        if (response.VerifiedAccessTrustProviders == null)
+                        {
+                            response.VerifiedAccessTrustProviders = new List<VerifiedAccessTrustProvider>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.VerifiedAccessTrustProviders.Add(item);
                         continue;

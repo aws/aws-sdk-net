@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.WAFV2.Model
     public partial class ListRuleGroupsResponse : AmazonWebServiceResponse
     {
         private string _nextMarker;
-        private List<RuleGroupSummary> _ruleGroups = new List<RuleGroupSummary>();
+        private List<RuleGroupSummary> _ruleGroups = AWSConfigs.InitializeCollections ? new List<RuleGroupSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextMarker. 
@@ -74,7 +75,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if RuleGroups property is set
         internal bool IsSetRuleGroups()
         {
-            return this._ruleGroups != null && this._ruleGroups.Count > 0; 
+            return this._ruleGroups != null && (this._ruleGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

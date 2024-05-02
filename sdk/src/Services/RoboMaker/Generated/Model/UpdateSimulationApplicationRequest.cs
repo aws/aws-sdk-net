@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RoboMaker.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.RoboMaker.Model
         private RenderingEngine _renderingEngine;
         private RobotSoftwareSuite _robotSoftwareSuite;
         private SimulationSoftwareSuite _simulationSoftwareSuite;
-        private List<SourceConfig> _sources = new List<SourceConfig>();
+        private List<SourceConfig> _sources = AWSConfigs.InitializeCollections ? new List<SourceConfig>() : null;
 
         /// <summary>
         /// Gets and sets the property Application. 
@@ -169,7 +170,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if Sources property is set
         internal bool IsSetSources()
         {
-            return this._sources != null && this._sources.Count > 0; 
+            return this._sources != null && (this._sources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

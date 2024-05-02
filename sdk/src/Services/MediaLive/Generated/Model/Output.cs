@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class Output
     {
-        private List<string> _audioDescriptionNames = new List<string>();
-        private List<string> _captionDescriptionNames = new List<string>();
+        private List<string> _audioDescriptionNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _captionDescriptionNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _outputName;
         private OutputSettings _outputSettings;
         private string _videoDescriptionName;
@@ -52,7 +53,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if AudioDescriptionNames property is set
         internal bool IsSetAudioDescriptionNames()
         {
-            return this._audioDescriptionNames != null && this._audioDescriptionNames.Count > 0; 
+            return this._audioDescriptionNames != null && (this._audioDescriptionNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -68,7 +69,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if CaptionDescriptionNames property is set
         internal bool IsSetCaptionDescriptionNames()
         {
-            return this._captionDescriptionNames != null && this._captionDescriptionNames.Count > 0; 
+            return this._captionDescriptionNames != null && (this._captionDescriptionNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

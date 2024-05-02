@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class AssetBundleImportJobDataSourceOverrideTags
     {
-        private List<string> _dataSourceIds = new List<string>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<string> _dataSourceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property DataSourceIds. 
@@ -53,7 +54,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if DataSourceIds property is set
         internal bool IsSetDataSourceIds()
         {
-            return this._dataSourceIds != null && this._dataSourceIds.Count > 0; 
+            return this._dataSourceIds != null && (this._dataSourceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

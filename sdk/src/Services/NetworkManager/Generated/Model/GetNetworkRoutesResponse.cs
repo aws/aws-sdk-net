@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkManager.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.NetworkManager.Model
     public partial class GetNetworkRoutesResponse : AmazonWebServiceResponse
     {
         private CoreNetworkSegmentEdgeIdentifier _coreNetworkSegmentEdge;
-        private List<NetworkRoute> _networkRoutes = new List<NetworkRoute>();
+        private List<NetworkRoute> _networkRoutes = AWSConfigs.InitializeCollections ? new List<NetworkRoute>() : null;
         private string _routeTableArn;
         private DateTime? _routeTableTimestamp;
         private RouteTableType _routeTableType;
@@ -72,7 +73,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if NetworkRoutes property is set
         internal bool IsSetNetworkRoutes()
         {
-            return this._networkRoutes != null && this._networkRoutes.Count > 0; 
+            return this._networkRoutes != null && (this._networkRoutes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

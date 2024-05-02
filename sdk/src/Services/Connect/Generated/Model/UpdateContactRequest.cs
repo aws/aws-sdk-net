@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -50,7 +51,7 @@ namespace Amazon.Connect.Model
         private string _description;
         private string _instanceId;
         private string _name;
-        private Dictionary<string, Reference> _references = new Dictionary<string, Reference>();
+        private Dictionary<string, Reference> _references = AWSConfigs.InitializeCollections ? new Dictionary<string, Reference>() : null;
 
         /// <summary>
         /// Gets and sets the property ContactId. 
@@ -145,7 +146,7 @@ namespace Amazon.Connect.Model
         // Check to see if References property is set
         internal bool IsSetReferences()
         {
-            return this._references != null && this._references.Count > 0; 
+            return this._references != null && (this._references.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.OpsWorksCM.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.OpsWorksCM.Model
         /// Enumerable containing all of the Tags
         /// </summary>
         public IPaginatedEnumerable<Tag> Tags => 
-            new PaginatedResultKeyResponse<ListTagsForResourceResponse, Tag>(this, (i) => i.Tags);
+            new PaginatedResultKeyResponse<ListTagsForResourceResponse, Tag>(this, (i) => i.Tags ?? new List<Tag>());
 
         internal ListTagsForResourcePaginator(IAmazonOpsWorksCM client, ListTagsForResourceRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.OpsWorksCM.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListTagsForResourceResponse> IPaginator<ListTagsForResourceResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListTagsForResourceResponse> IPaginator<ListTagsForResourceResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

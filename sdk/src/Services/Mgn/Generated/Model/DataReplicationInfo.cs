@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Mgn.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.Mgn.Model
         private string _etaDateTime;
         private string _lagDuration;
         private string _lastSnapshotDateTime;
-        private List<DataReplicationInfoReplicatedDisk> _replicatedDisks = new List<DataReplicationInfoReplicatedDisk>();
+        private List<DataReplicationInfoReplicatedDisk> _replicatedDisks = AWSConfigs.InitializeCollections ? new List<DataReplicationInfoReplicatedDisk>() : null;
 
         /// <summary>
         /// Gets and sets the property DataReplicationError. 
@@ -168,7 +169,7 @@ namespace Amazon.Mgn.Model
         // Check to see if ReplicatedDisks property is set
         internal bool IsSetReplicatedDisks()
         {
-            return this._replicatedDisks != null && this._replicatedDisks.Count > 0; 
+            return this._replicatedDisks != null && (this._replicatedDisks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

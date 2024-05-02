@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Redshift.Model
     public partial class SecondaryClusterInfo
     {
         private string _availabilityZone;
-        private List<ClusterNode> _clusterNodes = new List<ClusterNode>();
+        private List<ClusterNode> _clusterNodes = AWSConfigs.InitializeCollections ? new List<ClusterNode>() : null;
 
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
@@ -71,7 +72,7 @@ namespace Amazon.Redshift.Model
         // Check to see if ClusterNodes property is set
         internal bool IsSetClusterNodes()
         {
-            return this._clusterNodes != null && this._clusterNodes.Count > 0; 
+            return this._clusterNodes != null && (this._clusterNodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

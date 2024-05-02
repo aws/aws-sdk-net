@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Amplify.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Amplify.Model
     /// </summary>
     public partial class ListAppsResponse : AmazonWebServiceResponse
     {
-        private List<App> _apps = new List<App>();
+        private List<App> _apps = AWSConfigs.InitializeCollections ? new List<App>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.Amplify.Model
         // Check to see if Apps property is set
         internal bool IsSetApps()
         {
-            return this._apps != null && this._apps.Count > 0; 
+            return this._apps != null && (this._apps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

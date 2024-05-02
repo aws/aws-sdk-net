@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.LexModelsV2.Model
     public partial class ResponseSpecification
     {
         private bool? _allowInterrupt;
-        private List<MessageGroup> _messageGroups = new List<MessageGroup>();
+        private List<MessageGroup> _messageGroups = AWSConfigs.InitializeCollections ? new List<MessageGroup>() : null;
 
         /// <summary>
         /// Gets and sets the property AllowInterrupt. 
@@ -71,7 +72,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if MessageGroups property is set
         internal bool IsSetMessageGroups()
         {
-            return this._messageGroups != null && this._messageGroups.Count > 0; 
+            return this._messageGroups != null && (this._messageGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
@@ -34,11 +35,11 @@ namespace Amazon.CodePipeline.Model
     public partial class ActionExecutionInput
     {
         private ActionTypeId _actionTypeId;
-        private Dictionary<string, string> _configuration = new Dictionary<string, string>();
-        private List<ArtifactDetail> _inputArtifacts = new List<ArtifactDetail>();
+        private Dictionary<string, string> _configuration = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<ArtifactDetail> _inputArtifacts = AWSConfigs.InitializeCollections ? new List<ArtifactDetail>() : null;
         private string _awsNamespace;
         private string _region;
-        private Dictionary<string, string> _resolvedConfiguration = new Dictionary<string, string>();
+        private Dictionary<string, string> _resolvedConfiguration = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _roleArn;
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if Configuration property is set
         internal bool IsSetConfiguration()
         {
-            return this._configuration != null && this._configuration.Count > 0; 
+            return this._configuration != null && (this._configuration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -89,7 +90,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if InputArtifacts property is set
         internal bool IsSetInputArtifacts()
         {
-            return this._inputArtifacts != null && this._inputArtifacts.Count > 0; 
+            return this._inputArtifacts != null && (this._inputArtifacts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -147,7 +148,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if ResolvedConfiguration property is set
         internal bool IsSetResolvedConfiguration()
         {
-            return this._resolvedConfiguration != null && this._resolvedConfiguration.Count > 0; 
+            return this._resolvedConfiguration != null && (this._resolvedConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

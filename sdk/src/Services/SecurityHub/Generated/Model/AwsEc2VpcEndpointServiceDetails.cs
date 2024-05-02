@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -34,16 +35,16 @@ namespace Amazon.SecurityHub.Model
     public partial class AwsEc2VpcEndpointServiceDetails
     {
         private bool? _acceptanceRequired;
-        private List<string> _availabilityZones = new List<string>();
-        private List<string> _baseEndpointDnsNames = new List<string>();
-        private List<string> _gatewayLoadBalancerArns = new List<string>();
+        private List<string> _availabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _baseEndpointDnsNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _gatewayLoadBalancerArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _managesVpcEndpoints;
-        private List<string> _networkLoadBalancerArns = new List<string>();
+        private List<string> _networkLoadBalancerArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _privateDnsName;
         private string _serviceId;
         private string _serviceName;
         private string _serviceState;
-        private List<AwsEc2VpcEndpointServiceServiceTypeDetails> _serviceType = new List<AwsEc2VpcEndpointServiceServiceTypeDetails>();
+        private List<AwsEc2VpcEndpointServiceServiceTypeDetails> _serviceType = AWSConfigs.InitializeCollections ? new List<AwsEc2VpcEndpointServiceServiceTypeDetails>() : null;
 
         /// <summary>
         /// Gets and sets the property AcceptanceRequired. 
@@ -79,7 +80,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+            return this._availabilityZones != null && (this._availabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -97,7 +98,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if BaseEndpointDnsNames property is set
         internal bool IsSetBaseEndpointDnsNames()
         {
-            return this._baseEndpointDnsNames != null && this._baseEndpointDnsNames.Count > 0; 
+            return this._baseEndpointDnsNames != null && (this._baseEndpointDnsNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -115,7 +116,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if GatewayLoadBalancerArns property is set
         internal bool IsSetGatewayLoadBalancerArns()
         {
-            return this._gatewayLoadBalancerArns != null && this._gatewayLoadBalancerArns.Count > 0; 
+            return this._gatewayLoadBalancerArns != null && (this._gatewayLoadBalancerArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -151,7 +152,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if NetworkLoadBalancerArns property is set
         internal bool IsSetNetworkLoadBalancerArns()
         {
-            return this._networkLoadBalancerArns != null && this._networkLoadBalancerArns.Count > 0; 
+            return this._networkLoadBalancerArns != null && (this._networkLoadBalancerArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -262,7 +263,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ServiceType property is set
         internal bool IsSetServiceType()
         {
-            return this._serviceType != null && this._serviceType.Count > 0; 
+            return this._serviceType != null && (this._serviceType.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

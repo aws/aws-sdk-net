@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53.Model
 {
     /// <summary>
@@ -42,8 +43,8 @@ namespace Amazon.Route53.Model
     {
         private TagResourceType _resourceType;
         private string _resourceId;
-        private List<Tag> _addTags = new List<Tag>();
-        private List<string> _removeTagKeys = new List<string>();
+        private List<Tag> _addTags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<string> _removeTagKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceType. 
@@ -113,7 +114,7 @@ namespace Amazon.Route53.Model
         // Check to see if AddTags property is set
         internal bool IsSetAddTags()
         {
-            return this._addTags != null && this._addTags.Count > 0; 
+            return this._addTags != null && (this._addTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -133,7 +134,7 @@ namespace Amazon.Route53.Model
         // Check to see if RemoveTagKeys property is set
         internal bool IsSetRemoveTagKeys()
         {
-            return this._removeTagKeys != null && this._removeTagKeys.Count > 0; 
+            return this._removeTagKeys != null && (this._removeTagKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

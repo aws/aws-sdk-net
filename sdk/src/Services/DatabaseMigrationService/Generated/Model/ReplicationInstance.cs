@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
@@ -49,15 +50,15 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _replicationInstanceArn;
         private string _replicationInstanceClass;
         private string _replicationInstanceIdentifier;
-        private List<string> _replicationInstanceIpv6Addresses = new List<string>();
+        private List<string> _replicationInstanceIpv6Addresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _replicationInstancePrivateIpAddress;
-        private List<string> _replicationInstancePrivateIpAddresses = new List<string>();
+        private List<string> _replicationInstancePrivateIpAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _replicationInstancePublicIpAddress;
-        private List<string> _replicationInstancePublicIpAddresses = new List<string>();
+        private List<string> _replicationInstancePublicIpAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _replicationInstanceStatus;
         private ReplicationSubnetGroup _replicationSubnetGroup;
         private string _secondaryAvailabilityZone;
-        private List<VpcSecurityGroupMembership> _vpcSecurityGroups = new List<VpcSecurityGroupMembership>();
+        private List<VpcSecurityGroupMembership> _vpcSecurityGroups = AWSConfigs.InitializeCollections ? new List<VpcSecurityGroupMembership>() : null;
 
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
@@ -421,7 +422,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if ReplicationInstanceIpv6Addresses property is set
         internal bool IsSetReplicationInstanceIpv6Addresses()
         {
-            return this._replicationInstanceIpv6Addresses != null && this._replicationInstanceIpv6Addresses.Count > 0; 
+            return this._replicationInstanceIpv6Addresses != null && (this._replicationInstanceIpv6Addresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -458,7 +459,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if ReplicationInstancePrivateIpAddresses property is set
         internal bool IsSetReplicationInstancePrivateIpAddresses()
         {
-            return this._replicationInstancePrivateIpAddresses != null && this._replicationInstancePrivateIpAddresses.Count > 0; 
+            return this._replicationInstancePrivateIpAddresses != null && (this._replicationInstancePrivateIpAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -495,7 +496,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if ReplicationInstancePublicIpAddresses property is set
         internal bool IsSetReplicationInstancePublicIpAddresses()
         {
-            return this._replicationInstancePublicIpAddresses != null && this._replicationInstancePublicIpAddresses.Count > 0; 
+            return this._replicationInstancePublicIpAddresses != null && (this._replicationInstancePublicIpAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -620,7 +621,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if VpcSecurityGroups property is set
         internal bool IsSetVpcSecurityGroups()
         {
-            return this._vpcSecurityGroups != null && this._vpcSecurityGroups.Count > 0; 
+            return this._vpcSecurityGroups != null && (this._vpcSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

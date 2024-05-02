@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class ListKeyPhrasesDetectionJobsResponse : AmazonWebServiceResponse
     {
-        private List<KeyPhrasesDetectionJobProperties> _keyPhrasesDetectionJobPropertiesList = new List<KeyPhrasesDetectionJobProperties>();
+        private List<KeyPhrasesDetectionJobProperties> _keyPhrasesDetectionJobPropertiesList = AWSConfigs.InitializeCollections ? new List<KeyPhrasesDetectionJobProperties>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if KeyPhrasesDetectionJobPropertiesList property is set
         internal bool IsSetKeyPhrasesDetectionJobPropertiesList()
         {
-            return this._keyPhrasesDetectionJobPropertiesList != null && this._keyPhrasesDetectionJobPropertiesList.Count > 0; 
+            return this._keyPhrasesDetectionJobPropertiesList != null && (this._keyPhrasesDetectionJobPropertiesList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

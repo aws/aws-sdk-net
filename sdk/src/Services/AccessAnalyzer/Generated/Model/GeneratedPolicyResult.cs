@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AccessAnalyzer.Model
     /// </summary>
     public partial class GeneratedPolicyResult
     {
-        private List<GeneratedPolicy> _generatedPolicies = new List<GeneratedPolicy>();
+        private List<GeneratedPolicy> _generatedPolicies = AWSConfigs.InitializeCollections ? new List<GeneratedPolicy>() : null;
         private GeneratedPolicyProperties _properties;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.AccessAnalyzer.Model
         // Check to see if GeneratedPolicies property is set
         internal bool IsSetGeneratedPolicies()
         {
-            return this._generatedPolicies != null && this._generatedPolicies.Count > 0; 
+            return this._generatedPolicies != null && (this._generatedPolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

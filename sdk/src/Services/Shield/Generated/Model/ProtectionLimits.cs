@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Shield.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Shield.Model
     /// </summary>
     public partial class ProtectionLimits
     {
-        private List<Limit> _protectedResourceTypeLimits = new List<Limit>();
+        private List<Limit> _protectedResourceTypeLimits = AWSConfigs.InitializeCollections ? new List<Limit>() : null;
 
         /// <summary>
         /// Gets and sets the property ProtectedResourceTypeLimits. 
@@ -51,7 +52,7 @@ namespace Amazon.Shield.Model
         // Check to see if ProtectedResourceTypeLimits property is set
         internal bool IsSetProtectedResourceTypeLimits()
         {
-            return this._protectedResourceTypeLimits != null && this._protectedResourceTypeLimits.Count > 0; 
+            return this._protectedResourceTypeLimits != null && (this._protectedResourceTypeLimits.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

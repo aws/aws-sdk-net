@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ElasticTranscoder.Model
     public partial class ReadPipelineResponse : AmazonWebServiceResponse
     {
         private Pipeline _pipeline;
-        private List<Warning> _warnings = new List<Warning>();
+        private List<Warning> _warnings = AWSConfigs.InitializeCollections ? new List<Warning>() : null;
 
         /// <summary>
         /// Gets and sets the property Pipeline. 
@@ -75,7 +76,7 @@ namespace Amazon.ElasticTranscoder.Model
         // Check to see if Warnings property is set
         internal bool IsSetWarnings()
         {
-            return this._warnings != null && this._warnings.Count > 0; 
+            return this._warnings != null && (this._warnings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

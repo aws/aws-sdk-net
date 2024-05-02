@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Xml;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -65,115 +66,108 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("CachePolicyConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
                     if(publicRequest.CachePolicyConfig.IsSetComment())
-                        xmlWriter.WriteElementString("Comment", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.CachePolicyConfig.Comment));
+                        xmlWriter.WriteElementString("Comment", StringUtils.FromString(publicRequest.CachePolicyConfig.Comment));
 
                     if(publicRequest.CachePolicyConfig.IsSetDefaultTTL())
-                        xmlWriter.WriteElementString("DefaultTTL", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromLong(publicRequest.CachePolicyConfig.DefaultTTL.Value));
+                        xmlWriter.WriteElementString("DefaultTTL", StringUtils.FromLong(publicRequest.CachePolicyConfig.DefaultTTL.Value));
 
                     if(publicRequest.CachePolicyConfig.IsSetMaxTTL())
-                        xmlWriter.WriteElementString("MaxTTL", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromLong(publicRequest.CachePolicyConfig.MaxTTL.Value));
+                        xmlWriter.WriteElementString("MaxTTL", StringUtils.FromLong(publicRequest.CachePolicyConfig.MaxTTL.Value));
 
                     if(publicRequest.CachePolicyConfig.IsSetMinTTL())
-                        xmlWriter.WriteElementString("MinTTL", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromLong(publicRequest.CachePolicyConfig.MinTTL.Value));
+                        xmlWriter.WriteElementString("MinTTL", StringUtils.FromLong(publicRequest.CachePolicyConfig.MinTTL.Value));
 
                     if(publicRequest.CachePolicyConfig.IsSetName())
-                        xmlWriter.WriteElementString("Name", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.CachePolicyConfig.Name));
+                        xmlWriter.WriteElementString("Name", StringUtils.FromString(publicRequest.CachePolicyConfig.Name));
 
-                
-                    if (publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin != null) 
+                    if (publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin != null)
                     {
-                        xmlWriter.WriteStartElement("ParametersInCacheKeyAndForwardedToOrigin", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
-                
-                        if (publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.CookiesConfig != null) 
+                        xmlWriter.WriteStartElement("ParametersInCacheKeyAndForwardedToOrigin");
+                        if (publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.CookiesConfig != null)
                         {
-                            xmlWriter.WriteStartElement("CookiesConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
+                            xmlWriter.WriteStartElement("CookiesConfig");
                             if(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.CookiesConfig.IsSetCookieBehavior())
-                                xmlWriter.WriteElementString("CookieBehavior", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.CookiesConfig.CookieBehavior));                 
+                                xmlWriter.WriteElementString("CookieBehavior", StringUtils.FromString(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.CookiesConfig.CookieBehavior));
 
-                
-                            if (publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.CookiesConfig.Cookies != null) 
+                            if (publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.CookiesConfig.Cookies != null)
                             {
-                                xmlWriter.WriteStartElement("Cookies", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
+                                xmlWriter.WriteStartElement("Cookies");
                                 var publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesItems = publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.CookiesConfig.Cookies.Items;
-                                if (publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesItems != null && publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesItems.Count > 0) 
-                                {                        
-                                    xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
+                                if (publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesItems != null && (publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                                {
+                                    xmlWriter.WriteStartElement("Items");
                                     foreach (var publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesItemsValue in publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesItems) 
                                     {
-                                        xmlWriter.WriteStartElement("Name", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
+                                        xmlWriter.WriteStartElement("Name");
                                         xmlWriter.WriteValue(publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginCookiesConfigCookiesItemsValue);
                                         xmlWriter.WriteEndElement();
                                     }            
                                     xmlWriter.WriteEndElement();            
                                 }
                                 if(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.CookiesConfig.Cookies.IsSetQuantity())
-                                    xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.CookiesConfig.Cookies.Quantity.Value));                 
+                                    xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.CookiesConfig.Cookies.Quantity.Value));
 
                                 xmlWriter.WriteEndElement();
                             }
                             xmlWriter.WriteEndElement();
                         }
                         if(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.IsSetEnableAcceptEncodingBrotli())
-                            xmlWriter.WriteElementString("EnableAcceptEncodingBrotli", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.EnableAcceptEncodingBrotli.Value));                 
+                            xmlWriter.WriteElementString("EnableAcceptEncodingBrotli", StringUtils.FromBool(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.EnableAcceptEncodingBrotli.Value));
 
                         if(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.IsSetEnableAcceptEncodingGzip())
-                            xmlWriter.WriteElementString("EnableAcceptEncodingGzip", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromBool(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.EnableAcceptEncodingGzip.Value));                 
+                            xmlWriter.WriteElementString("EnableAcceptEncodingGzip", StringUtils.FromBool(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.EnableAcceptEncodingGzip.Value));
 
-                
-                        if (publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.HeadersConfig != null) 
+                        if (publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.HeadersConfig != null)
                         {
-                            xmlWriter.WriteStartElement("HeadersConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
+                            xmlWriter.WriteStartElement("HeadersConfig");
                             if(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.HeadersConfig.IsSetHeaderBehavior())
-                                xmlWriter.WriteElementString("HeaderBehavior", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.HeadersConfig.HeaderBehavior));                 
+                                xmlWriter.WriteElementString("HeaderBehavior", StringUtils.FromString(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.HeadersConfig.HeaderBehavior));
 
-                
-                            if (publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.HeadersConfig.Headers != null) 
+                            if (publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.HeadersConfig.Headers != null)
                             {
-                                xmlWriter.WriteStartElement("Headers", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
+                                xmlWriter.WriteStartElement("Headers");
                                 var publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersItems = publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.HeadersConfig.Headers.Items;
-                                if (publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersItems != null && publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersItems.Count > 0) 
-                                {                        
-                                    xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
+                                if (publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersItems != null && (publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                                {
+                                    xmlWriter.WriteStartElement("Items");
                                     foreach (var publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersItemsValue in publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersItems) 
                                     {
-                                        xmlWriter.WriteStartElement("Name", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
+                                        xmlWriter.WriteStartElement("Name");
                                         xmlWriter.WriteValue(publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginHeadersConfigHeadersItemsValue);
                                         xmlWriter.WriteEndElement();
                                     }            
                                     xmlWriter.WriteEndElement();            
                                 }
                                 if(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.HeadersConfig.Headers.IsSetQuantity())
-                                    xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.HeadersConfig.Headers.Quantity.Value));                 
+                                    xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.HeadersConfig.Headers.Quantity.Value));
 
                                 xmlWriter.WriteEndElement();
                             }
                             xmlWriter.WriteEndElement();
                         }
-                
-                        if (publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.QueryStringsConfig != null) 
+                        if (publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.QueryStringsConfig != null)
                         {
-                            xmlWriter.WriteStartElement("QueryStringsConfig", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
+                            xmlWriter.WriteStartElement("QueryStringsConfig");
                             if(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.QueryStringsConfig.IsSetQueryStringBehavior())
-                                xmlWriter.WriteElementString("QueryStringBehavior", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromString(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.QueryStringsConfig.QueryStringBehavior));                 
+                                xmlWriter.WriteElementString("QueryStringBehavior", StringUtils.FromString(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.QueryStringsConfig.QueryStringBehavior));
 
-                
-                            if (publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.QueryStringsConfig.QueryStrings != null) 
+                            if (publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.QueryStringsConfig.QueryStrings != null)
                             {
-                                xmlWriter.WriteStartElement("QueryStrings", "http://cloudfront.amazonaws.com/doc/2020-05-31/");            
+                                xmlWriter.WriteStartElement("QueryStrings");
                                 var publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsItems = publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.QueryStringsConfig.QueryStrings.Items;
-                                if (publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsItems != null && publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsItems.Count > 0) 
-                                {                        
-                                    xmlWriter.WriteStartElement("Items", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
+                                if (publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsItems != null && (publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsItems.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                                {
+                                    xmlWriter.WriteStartElement("Items");
                                     foreach (var publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsItemsValue in publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsItems) 
                                     {
-                                        xmlWriter.WriteStartElement("Name", "http://cloudfront.amazonaws.com/doc/2020-05-31/");
+                                        xmlWriter.WriteStartElement("Name");
                                         xmlWriter.WriteValue(publicRequestCachePolicyConfigParametersInCacheKeyAndForwardedToOriginQueryStringsConfigQueryStringsItemsValue);
                                         xmlWriter.WriteEndElement();
                                     }            
                                     xmlWriter.WriteEndElement();            
                                 }
                                 if(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.QueryStringsConfig.QueryStrings.IsSetQuantity())
-                                    xmlWriter.WriteElementString("Quantity", "http://cloudfront.amazonaws.com/doc/2020-05-31/", StringUtils.FromInt(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.QueryStringsConfig.QueryStrings.Quantity.Value));                 
+                                    xmlWriter.WriteElementString("Quantity", StringUtils.FromInt(publicRequest.CachePolicyConfig.ParametersInCacheKeyAndForwardedToOrigin.QueryStringsConfig.QueryStrings.Quantity.Value));
 
                                 xmlWriter.WriteEndElement();
                             }

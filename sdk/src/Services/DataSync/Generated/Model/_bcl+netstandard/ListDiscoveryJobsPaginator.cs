@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.DataSync.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.DataSync.Model
         /// Enumerable containing all of the DiscoveryJobs
         /// </summary>
         public IPaginatedEnumerable<DiscoveryJobListEntry> DiscoveryJobs => 
-            new PaginatedResultKeyResponse<ListDiscoveryJobsResponse, DiscoveryJobListEntry>(this, (i) => i.DiscoveryJobs);
+            new PaginatedResultKeyResponse<ListDiscoveryJobsResponse, DiscoveryJobListEntry>(this, (i) => i.DiscoveryJobs ?? new List<DiscoveryJobListEntry>());
 
         internal ListDiscoveryJobsPaginator(IAmazonDataSync client, ListDiscoveryJobsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.DataSync.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListDiscoveryJobsResponse> IPaginator<ListDiscoveryJobsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListDiscoveryJobsResponse> IPaginator<ListDiscoveryJobsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

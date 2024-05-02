@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property DataShareArn. 
         /// <para>
-        /// The identifier of the datashare to describe details of.
+        /// The Amazon resource name (ARN) of the datashare to describe details of.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]

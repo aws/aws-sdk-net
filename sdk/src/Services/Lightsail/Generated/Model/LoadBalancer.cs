@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
@@ -34,23 +35,23 @@ namespace Amazon.Lightsail.Model
     public partial class LoadBalancer
     {
         private string _arn;
-        private Dictionary<string, string> _configurationOptions = new Dictionary<string, string>();
+        private Dictionary<string, string> _configurationOptions = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DateTime? _createdAt;
         private string _dnsName;
         private string _healthCheckPath;
         private bool? _httpsRedirectionEnabled;
-        private List<InstanceHealthSummary> _instanceHealthSummary = new List<InstanceHealthSummary>();
+        private List<InstanceHealthSummary> _instanceHealthSummary = AWSConfigs.InitializeCollections ? new List<InstanceHealthSummary>() : null;
         private int? _instancePort;
         private IpAddressType _ipAddressType;
         private ResourceLocation _location;
         private string _name;
         private LoadBalancerProtocol _protocol;
-        private List<int> _publicPorts = new List<int>();
+        private List<int> _publicPorts = AWSConfigs.InitializeCollections ? new List<int>() : null;
         private ResourceType _resourceType;
         private LoadBalancerState _state;
         private string _supportCode;
-        private List<Tag> _tags = new List<Tag>();
-        private List<LoadBalancerTlsCertificateSummary> _tlsCertificateSummaries = new List<LoadBalancerTlsCertificateSummary>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<LoadBalancerTlsCertificateSummary> _tlsCertificateSummaries = AWSConfigs.InitializeCollections ? new List<LoadBalancerTlsCertificateSummary>() : null;
         private string _tlsPolicyName;
 
         /// <summary>
@@ -87,7 +88,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if ConfigurationOptions property is set
         internal bool IsSetConfigurationOptions()
         {
-            return this._configurationOptions != null && this._configurationOptions.Count > 0; 
+            return this._configurationOptions != null && (this._configurationOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -178,7 +179,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if InstanceHealthSummary property is set
         internal bool IsSetInstanceHealthSummary()
         {
-            return this._instanceHealthSummary != null && this._instanceHealthSummary.Count > 0; 
+            return this._instanceHealthSummary != null && (this._instanceHealthSummary.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -298,7 +299,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if PublicPorts property is set
         internal bool IsSetPublicPorts()
         {
-            return this._publicPorts != null && this._publicPorts.Count > 0; 
+            return this._publicPorts != null && (this._publicPorts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -374,7 +375,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -394,7 +395,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if TlsCertificateSummaries property is set
         internal bool IsSetTlsCertificateSummaries()
         {
-            return this._tlsCertificateSummaries != null && this._tlsCertificateSummaries.Count > 0; 
+            return this._tlsCertificateSummaries != null && (this._tlsCertificateSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

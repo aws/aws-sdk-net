@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
     {
         private MediaEncoding _mediaEncoding;
         private int? _mediaSampleRate;
-        private List<StreamConfiguration> _streams = new List<StreamConfiguration>();
+        private List<StreamConfiguration> _streams = AWSConfigs.InitializeCollections ? new List<StreamConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property MediaEncoding. 
@@ -103,7 +104,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         // Check to see if Streams property is set
         internal bool IsSetStreams()
         {
-            return this._streams != null && this._streams.Count > 0; 
+            return this._streams != null && (this._streams.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

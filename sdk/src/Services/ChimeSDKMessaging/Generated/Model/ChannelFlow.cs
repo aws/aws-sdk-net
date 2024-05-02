@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ChimeSDKMessaging.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         private DateTime? _createdTimestamp;
         private DateTime? _lastUpdatedTimestamp;
         private string _name;
-        private List<Processor> _processors = new List<Processor>();
+        private List<Processor> _processors = AWSConfigs.InitializeCollections ? new List<Processor>() : null;
 
         /// <summary>
         /// Gets and sets the property ChannelFlowArn. 
@@ -129,7 +130,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         // Check to see if Processors property is set
         internal bool IsSetProcessors()
         {
-            return this._processors != null && this._processors.Count > 0; 
+            return this._processors != null && (this._processors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

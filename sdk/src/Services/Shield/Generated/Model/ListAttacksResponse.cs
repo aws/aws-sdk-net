@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Shield.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Shield.Model
     /// </summary>
     public partial class ListAttacksResponse : AmazonWebServiceResponse
     {
-        private List<AttackSummary> _attackSummaries = new List<AttackSummary>();
+        private List<AttackSummary> _attackSummaries = AWSConfigs.InitializeCollections ? new List<AttackSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Shield.Model
         // Check to see if AttackSummaries property is set
         internal bool IsSetAttackSummaries()
         {
-            return this._attackSummaries != null && this._attackSummaries.Count > 0; 
+            return this._attackSummaries != null && (this._attackSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

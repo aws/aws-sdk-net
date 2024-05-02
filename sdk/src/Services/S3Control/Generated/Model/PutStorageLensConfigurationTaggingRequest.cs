@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3Control.Model
 {
     /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.S3Control.Model
     {
         private string _accountId;
         private string _configId;
-        private List<StorageLensTag> _tags = new List<StorageLensTag>();
+        private List<StorageLensTag> _tags = AWSConfigs.InitializeCollections ? new List<StorageLensTag>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -114,7 +115,7 @@ namespace Amazon.S3Control.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

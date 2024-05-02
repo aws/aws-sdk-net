@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class ListCollaborationPrivacyBudgetsResponse : AmazonWebServiceResponse
     {
-        private List<CollaborationPrivacyBudgetSummary> _collaborationPrivacyBudgetSummaries = new List<CollaborationPrivacyBudgetSummary>();
+        private List<CollaborationPrivacyBudgetSummary> _collaborationPrivacyBudgetSummaries = AWSConfigs.InitializeCollections ? new List<CollaborationPrivacyBudgetSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if CollaborationPrivacyBudgetSummaries property is set
         internal bool IsSetCollaborationPrivacyBudgetSummaries()
         {
-            return this._collaborationPrivacyBudgetSummaries != null && this._collaborationPrivacyBudgetSummaries.Count > 0; 
+            return this._collaborationPrivacyBudgetSummaries != null && (this._collaborationPrivacyBudgetSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTEventsData.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.IoTEventsData.Model
     /// </summary>
     public partial class BatchResetAlarmRequest : AmazonIoTEventsDataRequest
     {
-        private List<ResetAlarmActionRequest> _resetActionRequests = new List<ResetAlarmActionRequest>();
+        private List<ResetAlarmActionRequest> _resetActionRequests = AWSConfigs.InitializeCollections ? new List<ResetAlarmActionRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property ResetActionRequests. 
@@ -53,7 +54,7 @@ namespace Amazon.IoTEventsData.Model
         // Check to see if ResetActionRequests property is set
         internal bool IsSetResetActionRequests()
         {
-            return this._resetActionRequests != null && this._resetActionRequests.Count > 0; 
+            return this._resetActionRequests != null && (this._resetActionRequests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

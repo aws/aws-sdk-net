@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class CurrentMetricResult
     {
-        private List<CurrentMetricData> _collections = new List<CurrentMetricData>();
+        private List<CurrentMetricData> _collections = AWSConfigs.InitializeCollections ? new List<CurrentMetricData>() : null;
         private Dimensions _dimensions;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Connect.Model
         // Check to see if Collections property is set
         internal bool IsSetCollections()
         {
-            return this._collections != null && this._collections.Count > 0; 
+            return this._collections != null && (this._collections.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

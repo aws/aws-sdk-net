@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CodeCommit.Model
     /// </summary>
     public partial class GetPullRequestApprovalStatesResponse : AmazonWebServiceResponse
     {
-        private List<Approval> _approvals = new List<Approval>();
+        private List<Approval> _approvals = AWSConfigs.InitializeCollections ? new List<Approval>() : null;
 
         /// <summary>
         /// Gets and sets the property Approvals. 
@@ -50,7 +51,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if Approvals property is set
         internal bool IsSetApprovals()
         {
-            return this._approvals != null && this._approvals.Count > 0; 
+            return this._approvals != null && (this._approvals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

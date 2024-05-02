@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class DescribeBotAliasResponse : AmazonWebServiceResponse
     {
-        private List<BotAliasHistoryEvent> _botAliasHistoryEvents = new List<BotAliasHistoryEvent>();
+        private List<BotAliasHistoryEvent> _botAliasHistoryEvents = AWSConfigs.InitializeCollections ? new List<BotAliasHistoryEvent>() : null;
         private string _botAliasId;
-        private Dictionary<string, BotAliasLocaleSettings> _botAliasLocaleSettings = new Dictionary<string, BotAliasLocaleSettings>();
+        private Dictionary<string, BotAliasLocaleSettings> _botAliasLocaleSettings = AWSConfigs.InitializeCollections ? new Dictionary<string, BotAliasLocaleSettings>() : null;
         private string _botAliasName;
         private BotAliasStatus _botAliasStatus;
         private string _botId;
@@ -44,7 +45,7 @@ namespace Amazon.LexModelsV2.Model
         private DateTime? _creationDateTime;
         private string _description;
         private DateTime? _lastUpdatedDateTime;
-        private List<ParentBotNetwork> _parentBotNetworks = new List<ParentBotNetwork>();
+        private List<ParentBotNetwork> _parentBotNetworks = AWSConfigs.InitializeCollections ? new List<ParentBotNetwork>() : null;
         private SentimentAnalysisSettings _sentimentAnalysisSettings;
 
         /// <summary>
@@ -63,7 +64,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if BotAliasHistoryEvents property is set
         internal bool IsSetBotAliasHistoryEvents()
         {
-            return this._botAliasHistoryEvents != null && this._botAliasHistoryEvents.Count > 0; 
+            return this._botAliasHistoryEvents != null && (this._botAliasHistoryEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -101,7 +102,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if BotAliasLocaleSettings property is set
         internal bool IsSetBotAliasLocaleSettings()
         {
-            return this._botAliasLocaleSettings != null && this._botAliasLocaleSettings.Count > 0; 
+            return this._botAliasLocaleSettings != null && (this._botAliasLocaleSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -270,7 +271,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if ParentBotNetworks property is set
         internal bool IsSetParentBotNetworks()
         {
-            return this._parentBotNetworks != null && this._parentBotNetworks.Count > 0; 
+            return this._parentBotNetworks != null && (this._parentBotNetworks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

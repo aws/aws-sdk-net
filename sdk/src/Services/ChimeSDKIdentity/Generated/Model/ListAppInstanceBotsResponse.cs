@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ChimeSDKIdentity.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ChimeSDKIdentity.Model
     public partial class ListAppInstanceBotsResponse : AmazonWebServiceResponse
     {
         private string _appInstanceArn;
-        private List<AppInstanceBotSummary> _appInstanceBots = new List<AppInstanceBotSummary>();
+        private List<AppInstanceBotSummary> _appInstanceBots = AWSConfigs.InitializeCollections ? new List<AppInstanceBotSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         // Check to see if AppInstanceBots property is set
         internal bool IsSetAppInstanceBots()
         {
-            return this._appInstanceBots != null && this._appInstanceBots.Count > 0; 
+            return this._appInstanceBots != null && (this._appInstanceBots.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

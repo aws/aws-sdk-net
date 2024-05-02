@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.AuditManager.Model
     public partial class ListNotificationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Notification> _notifications = new List<Notification>();
+        private List<Notification> _notifications = AWSConfigs.InitializeCollections ? new List<Notification>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if Notifications property is set
         internal bool IsSetNotifications()
         {
-            return this._notifications != null && this._notifications.Count > 0; 
+            return this._notifications != null && (this._notifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

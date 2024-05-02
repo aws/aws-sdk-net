@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.KeyManagementService.Model
     /// </summary>
     public partial class ListRetirableGrantsResponse : AmazonWebServiceResponse
     {
-        private List<GrantListEntry> _grants = new List<GrantListEntry>();
+        private List<GrantListEntry> _grants = AWSConfigs.InitializeCollections ? new List<GrantListEntry>() : null;
         private string _nextMarker;
         private bool? _truncated;
 
@@ -52,7 +53,7 @@ namespace Amazon.KeyManagementService.Model
         // Check to see if Grants property is set
         internal bool IsSetGrants()
         {
-            return this._grants != null && this._grants.Count > 0; 
+            return this._grants != null && (this._grants.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -80,7 +81,7 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// A flag that indicates whether there are more items in the list. When this value is
         /// true, the list in this response is truncated. To get more items, pass the value of
-        /// the <c>NextMarker</c> element in thisresponse to the <c>Marker</c> parameter in a
+        /// the <c>NextMarker</c> element in this response to the <c>Marker</c> parameter in a
         /// subsequent request.
         /// </para>
         /// </summary>

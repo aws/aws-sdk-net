@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
@@ -34,11 +35,11 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class CodeSnippetResult
     {
-        private List<CodeLine> _codeSnippet = new List<CodeLine>();
+        private List<CodeLine> _codeSnippet = AWSConfigs.InitializeCollections ? new List<CodeLine>() : null;
         private int? _endLine;
         private string _findingArn;
         private int? _startLine;
-        private List<SuggestedFix> _suggestedFixes = new List<SuggestedFix>();
+        private List<SuggestedFix> _suggestedFixes = AWSConfigs.InitializeCollections ? new List<SuggestedFix>() : null;
 
         /// <summary>
         /// Gets and sets the property CodeSnippet. 
@@ -56,7 +57,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if CodeSnippet property is set
         internal bool IsSetCodeSnippet()
         {
-            return this._codeSnippet != null && this._codeSnippet.Count > 0; 
+            return this._codeSnippet != null && (this._codeSnippet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -130,7 +131,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if SuggestedFixes property is set
         internal bool IsSetSuggestedFixes()
         {
-            return this._suggestedFixes != null && this._suggestedFixes.Count > 0; 
+            return this._suggestedFixes != null && (this._suggestedFixes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

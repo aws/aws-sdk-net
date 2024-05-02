@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
@@ -150,11 +151,11 @@ namespace Amazon.CostExplorer.Model
     /// </summary>
     public partial class Expression
     {
-        private List<Expression> _and = new List<Expression>();
+        private List<Expression> _and = AWSConfigs.InitializeCollections ? new List<Expression>() : null;
         private CostCategoryValues _costCategories;
         private DimensionValues _dimensions;
         private Expression _not;
-        private List<Expression> _or = new List<Expression>();
+        private List<Expression> _or = AWSConfigs.InitializeCollections ? new List<Expression>() : null;
         private TagValues _tags;
 
         /// <summary>
@@ -172,7 +173,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if And property is set
         internal bool IsSetAnd()
         {
-            return this._and != null && this._and.Count > 0; 
+            return this._and != null && (this._and.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -244,7 +245,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if Or property is set
         internal bool IsSetOr()
         {
-            return this._or != null && this._or.Count > 0; 
+            return this._or != null && (this._or.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

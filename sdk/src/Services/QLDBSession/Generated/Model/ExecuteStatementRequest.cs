@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QLDBSession.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.QLDBSession.Model
     /// </summary>
     public partial class ExecuteStatementRequest
     {
-        private List<ValueHolder> _parameters = new List<ValueHolder>();
+        private List<ValueHolder> _parameters = AWSConfigs.InitializeCollections ? new List<ValueHolder>() : null;
         private string _statement;
         private string _transactionId;
 
@@ -52,7 +53,7 @@ namespace Amazon.QLDBSession.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

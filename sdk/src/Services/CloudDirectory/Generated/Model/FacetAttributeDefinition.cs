@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.CloudDirectory.Model
     {
         private TypedAttributeValue _defaultValue;
         private bool? _isImmutable;
-        private Dictionary<string, Rule> _rules = new Dictionary<string, Rule>();
+        private Dictionary<string, Rule> _rules = AWSConfigs.InitializeCollections ? new Dictionary<string, Rule>() : null;
         private FacetAttributeType _type;
 
         /// <summary>
@@ -90,7 +91,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if Rules property is set
         internal bool IsSetRules()
         {
-            return this._rules != null && this._rules.Count > 0; 
+            return this._rules != null && (this._rules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

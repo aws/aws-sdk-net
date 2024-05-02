@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.APIGateway.Model
     /// </summary>
     public partial class TestInvokeAuthorizerResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, List<string>> _authorization = new Dictionary<string, List<string>>();
-        private Dictionary<string, string> _claims = new Dictionary<string, string>();
+        private Dictionary<string, List<string>> _authorization = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
+        private Dictionary<string, string> _claims = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private int? _clientStatus;
         private long? _latency;
         private string _log;
@@ -56,7 +57,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if Authorization property is set
         internal bool IsSetAuthorization()
         {
-            return this._authorization != null && this._authorization.Count > 0; 
+            return this._authorization != null && (this._authorization.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if Claims property is set
         internal bool IsSetClaims()
         {
-            return this._claims != null && this._claims.Count > 0; 
+            return this._claims != null && (this._claims.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

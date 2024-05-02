@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ControlTower.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ControlTower.Model
         /// Enumerable containing all of the Baselines
         /// </summary>
         public IPaginatedEnumerable<BaselineSummary> Baselines => 
-            new PaginatedResultKeyResponse<ListBaselinesResponse, BaselineSummary>(this, (i) => i.Baselines);
+            new PaginatedResultKeyResponse<ListBaselinesResponse, BaselineSummary>(this, (i) => i.Baselines ?? new List<BaselineSummary>());
 
         internal ListBaselinesPaginator(IAmazonControlTower client, ListBaselinesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ControlTower.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListBaselinesResponse> IPaginator<ListBaselinesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListBaselinesResponse> IPaginator<ListBaselinesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

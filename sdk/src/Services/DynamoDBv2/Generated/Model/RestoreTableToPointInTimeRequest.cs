@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
@@ -104,8 +105,8 @@ namespace Amazon.DynamoDBv2.Model
     public partial class RestoreTableToPointInTimeRequest : AmazonDynamoDBRequest
     {
         private BillingMode _billingModeOverride;
-        private List<GlobalSecondaryIndex> _globalSecondaryIndexOverride = new List<GlobalSecondaryIndex>();
-        private List<LocalSecondaryIndex> _localSecondaryIndexOverride = new List<LocalSecondaryIndex>();
+        private List<GlobalSecondaryIndex> _globalSecondaryIndexOverride = AWSConfigs.InitializeCollections ? new List<GlobalSecondaryIndex>() : null;
+        private List<LocalSecondaryIndex> _localSecondaryIndexOverride = AWSConfigs.InitializeCollections ? new List<LocalSecondaryIndex>() : null;
         private ProvisionedThroughput _provisionedThroughputOverride;
         private DateTime? _restoreDateTime;
         private string _sourceTableArn;
@@ -149,7 +150,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if GlobalSecondaryIndexOverride property is set
         internal bool IsSetGlobalSecondaryIndexOverride()
         {
-            return this._globalSecondaryIndexOverride != null && this._globalSecondaryIndexOverride.Count > 0; 
+            return this._globalSecondaryIndexOverride != null && (this._globalSecondaryIndexOverride.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -169,7 +170,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if LocalSecondaryIndexOverride property is set
         internal bool IsSetLocalSecondaryIndexOverride()
         {
-            return this._localSecondaryIndexOverride != null && this._localSecondaryIndexOverride.Count > 0; 
+            return this._localSecondaryIndexOverride != null && (this._localSecondaryIndexOverride.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -214,6 +215,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The DynamoDB table that will be restored. This value is an Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string SourceTableArn
         {
             get { return this._sourceTableArn; }

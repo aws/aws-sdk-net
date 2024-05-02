@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
@@ -38,11 +39,11 @@ namespace Amazon.IdentityManagement.Model
     /// </summary>
     public partial class ResourceSpecificResult
     {
-        private Dictionary<string, string> _evalDecisionDetails = new Dictionary<string, string>();
+        private Dictionary<string, string> _evalDecisionDetails = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private PolicyEvaluationDecisionType _evalResourceDecision;
         private string _evalResourceName;
-        private List<Statement> _matchedStatements = new List<Statement>();
-        private List<string> _missingContextValues = new List<string>();
+        private List<Statement> _matchedStatements = AWSConfigs.InitializeCollections ? new List<Statement>() : null;
+        private List<string> _missingContextValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private PermissionsBoundaryDecisionDetail _permissionsBoundaryDecisionDetail;
 
         /// <summary>
@@ -62,7 +63,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if EvalDecisionDetails property is set
         internal bool IsSetEvalDecisionDetails()
         {
-            return this._evalDecisionDetails != null && this._evalDecisionDetails.Count > 0; 
+            return this._evalDecisionDetails != null && (this._evalDecisionDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -123,7 +124,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if MatchedStatements property is set
         internal bool IsSetMatchedStatements()
         {
-            return this._matchedStatements != null && this._matchedStatements.Count > 0; 
+            return this._matchedStatements != null && (this._matchedStatements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -147,7 +148,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if MissingContextValues property is set
         internal bool IsSetMissingContextValues()
         {
-            return this._missingContextValues != null && this._missingContextValues.Count > 0; 
+            return this._missingContextValues != null && (this._missingContextValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

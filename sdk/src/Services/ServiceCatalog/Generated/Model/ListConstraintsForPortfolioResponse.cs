@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ServiceCatalog.Model
     /// </summary>
     public partial class ListConstraintsForPortfolioResponse : AmazonWebServiceResponse
     {
-        private List<ConstraintDetail> _constraintDetails = new List<ConstraintDetail>();
+        private List<ConstraintDetail> _constraintDetails = AWSConfigs.InitializeCollections ? new List<ConstraintDetail>() : null;
         private string _nextPageToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if ConstraintDetails property is set
         internal bool IsSetConstraintDetails()
         {
-            return this._constraintDetails != null && this._constraintDetails.Count > 0; 
+            return this._constraintDetails != null && (this._constraintDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

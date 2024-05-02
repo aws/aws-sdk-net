@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LicenseManager.Model
 {
     /// <summary>
@@ -44,7 +45,7 @@ namespace Amazon.LicenseManager.Model
         private string _beneficiary;
         private CheckoutType _checkoutType;
         private string _clientToken;
-        private List<EntitlementData> _entitlements = new List<EntitlementData>();
+        private List<EntitlementData> _entitlements = AWSConfigs.InitializeCollections ? new List<EntitlementData>() : null;
         private string _keyFingerprint;
         private string _nodeId;
         private string _productSKU;
@@ -122,7 +123,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if Entitlements property is set
         internal bool IsSetEntitlements()
         {
-            return this._entitlements != null && this._entitlements.Count > 0; 
+            return this._entitlements != null && (this._entitlements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

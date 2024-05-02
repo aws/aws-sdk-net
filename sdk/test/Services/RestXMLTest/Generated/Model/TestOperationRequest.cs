@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RestXMLTest.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.RestXMLTest.Model
     /// </summary>
     public partial class TestOperationRequest : AmazonRestXMLTestRequest
     {
-        private List<string> _contentLanguage = new List<string>();
-        private List<string> _contentLanguageEnums = new List<string>();
+        private List<string> _contentLanguage = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _contentLanguageEnums = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ContentLanguage.
@@ -49,7 +50,7 @@ namespace Amazon.RestXMLTest.Model
         // Check to see if ContentLanguage property is set
         internal bool IsSetContentLanguage()
         {
-            return this._contentLanguage != null && this._contentLanguage.Count > 0; 
+            return this._contentLanguage != null && (this._contentLanguage.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -64,7 +65,7 @@ namespace Amazon.RestXMLTest.Model
         // Check to see if ContentLanguageEnums property is set
         internal bool IsSetContentLanguageEnums()
         {
-            return this._contentLanguageEnums != null && this._contentLanguageEnums.Count > 0; 
+            return this._contentLanguageEnums != null && (this._contentLanguageEnums.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

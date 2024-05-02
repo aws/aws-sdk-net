@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KafkaConnect.Model
 {
     /// <summary>
@@ -38,6 +39,7 @@ namespace Amazon.KafkaConnect.Model
         private WorkerConfigurationRevisionSummary _latestRevision;
         private string _name;
         private string _workerConfigurationArn;
+        private WorkerConfigurationState _workerConfigurationState;
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -127,6 +129,24 @@ namespace Amazon.KafkaConnect.Model
         internal bool IsSetWorkerConfigurationArn()
         {
             return this._workerConfigurationArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkerConfigurationState. 
+        /// <para>
+        /// The state of the worker configuration.
+        /// </para>
+        /// </summary>
+        public WorkerConfigurationState WorkerConfigurationState
+        {
+            get { return this._workerConfigurationState; }
+            set { this._workerConfigurationState = value; }
+        }
+
+        // Check to see if WorkerConfigurationState property is set
+        internal bool IsSetWorkerConfigurationState()
+        {
+            return this._workerConfigurationState != null;
         }
 
     }

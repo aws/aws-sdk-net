@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FSx.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.FSx.Model
     public partial class CreateFileSystemWindowsConfiguration
     {
         private string _activeDirectoryId;
-        private List<string> _aliases = new List<string>();
+        private List<string> _aliases = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private WindowsAuditLogCreateConfiguration _auditLogConfiguration;
         private int? _automaticBackupRetentionDays;
         private bool? _copyTagsToBackups;
@@ -123,7 +124,7 @@ namespace Amazon.FSx.Model
         // Check to see if Aliases property is set
         internal bool IsSetAliases()
         {
-            return this._aliases != null && this._aliases.Count > 0; 
+            return this._aliases != null && (this._aliases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

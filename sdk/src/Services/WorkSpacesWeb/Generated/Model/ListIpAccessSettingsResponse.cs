@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkSpacesWeb.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.WorkSpacesWeb.Model
     /// </summary>
     public partial class ListIpAccessSettingsResponse : AmazonWebServiceResponse
     {
-        private List<IpAccessSettingsSummary> _ipAccessSettings = new List<IpAccessSettingsSummary>();
+        private List<IpAccessSettingsSummary> _ipAccessSettings = AWSConfigs.InitializeCollections ? new List<IpAccessSettingsSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.WorkSpacesWeb.Model
         // Check to see if IpAccessSettings property is set
         internal bool IsSetIpAccessSettings()
         {
-            return this._ipAccessSettings != null && this._ipAccessSettings.Count > 0; 
+            return this._ipAccessSettings != null && (this._ipAccessSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

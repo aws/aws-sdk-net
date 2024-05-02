@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Drs.Model
 {
     /// <summary>
@@ -38,6 +39,7 @@ namespace Amazon.Drs.Model
         private long? _replicatedStorageBytes;
         private long? _rescannedStorageBytes;
         private long? _totalStorageBytes;
+        private VolumeStatus _volumeStatus;
 
         /// <summary>
         /// Gets and sets the property BackloggedStorageBytes. 
@@ -132,6 +134,24 @@ namespace Amazon.Drs.Model
         internal bool IsSetTotalStorageBytes()
         {
             return this._totalStorageBytes.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VolumeStatus. 
+        /// <para>
+        /// The status of the volume.
+        /// </para>
+        /// </summary>
+        public VolumeStatus VolumeStatus
+        {
+            get { return this._volumeStatus; }
+            set { this._volumeStatus = value; }
+        }
+
+        // Check to see if VolumeStatus property is set
+        internal bool IsSetVolumeStatus()
+        {
+            return this._volumeStatus != null;
         }
 
     }

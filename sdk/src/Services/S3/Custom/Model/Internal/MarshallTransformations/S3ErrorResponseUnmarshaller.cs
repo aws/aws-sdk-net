@@ -137,6 +137,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static S3ErrorResponseUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static S3ErrorResponseUnmarshaller Instance
         {
             get

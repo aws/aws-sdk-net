@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.TrustedAdvisor.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.TrustedAdvisor.Model
     public partial class Recommendation
     {
         private string _arn;
-        private List<string> _awsServices = new List<string>();
+        private List<string> _awsServices = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _checkArn;
         private DateTime? _createdAt;
         private string _createdBy;
@@ -43,7 +44,7 @@ namespace Amazon.TrustedAdvisor.Model
         private DateTime? _lastUpdatedAt;
         private RecommendationLifecycleStage _lifecycleStage;
         private string _name;
-        private List<string> _pillars = new List<string>();
+        private List<string> _pillars = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private RecommendationPillarSpecificAggregates _pillarSpecificAggregates;
         private DateTime? _resolvedAt;
         private RecommendationResourcesAggregates _resourcesAggregates;
@@ -89,7 +90,7 @@ namespace Amazon.TrustedAdvisor.Model
         // Check to see if AwsServices property is set
         internal bool IsSetAwsServices()
         {
-            return this._awsServices != null && this._awsServices.Count > 0; 
+            return this._awsServices != null && (this._awsServices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -255,7 +256,7 @@ namespace Amazon.TrustedAdvisor.Model
         // Check to see if Pillars property is set
         internal bool IsSetPillars()
         {
-            return this._pillars != null && this._pillars.Count > 0; 
+            return this._pillars != null && (this._pillars.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

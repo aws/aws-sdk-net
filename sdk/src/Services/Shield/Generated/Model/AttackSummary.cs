@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Shield.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Shield.Model
     public partial class AttackSummary
     {
         private string _attackId;
-        private List<AttackVectorDescription> _attackVectors = new List<AttackVectorDescription>();
+        private List<AttackVectorDescription> _attackVectors = AWSConfigs.InitializeCollections ? new List<AttackVectorDescription>() : null;
         private DateTime? _endTime;
         private string _resourceArn;
         private DateTime? _startTime;
@@ -72,7 +73,7 @@ namespace Amazon.Shield.Model
         // Check to see if AttackVectors property is set
         internal bool IsSetAttackVectors()
         {
-            return this._attackVectors != null && this._attackVectors.Count > 0; 
+            return this._attackVectors != null && (this._attackVectors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Detective.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Detective.Model
     public partial class ListIndicatorsResponse : AmazonWebServiceResponse
     {
         private string _graphArn;
-        private List<Indicator> _indicators = new List<Indicator>();
+        private List<Indicator> _indicators = AWSConfigs.InitializeCollections ? new List<Indicator>() : null;
         private string _investigationId;
         private string _nextToken;
 
@@ -71,7 +72,7 @@ namespace Amazon.Detective.Model
         // Check to see if Indicators property is set
         internal bool IsSetIndicators()
         {
-            return this._indicators != null && this._indicators.Count > 0; 
+            return this._indicators != null && (this._indicators.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

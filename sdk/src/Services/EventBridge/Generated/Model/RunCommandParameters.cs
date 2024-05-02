@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EventBridge.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EventBridge.Model
     /// </summary>
     public partial class RunCommandParameters
     {
-        private List<RunCommandTarget> _runCommandTargets = new List<RunCommandTarget>();
+        private List<RunCommandTarget> _runCommandTargets = AWSConfigs.InitializeCollections ? new List<RunCommandTarget>() : null;
 
         /// <summary>
         /// Gets and sets the property RunCommandTargets. 
@@ -53,7 +54,7 @@ namespace Amazon.EventBridge.Model
         // Check to see if RunCommandTargets property is set
         internal bool IsSetRunCommandTargets()
         {
-            return this._runCommandTargets != null && this._runCommandTargets.Count > 0; 
+            return this._runCommandTargets != null && (this._runCommandTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

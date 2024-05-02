@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IdentityStore.Model
 {
     /// <summary>
@@ -34,14 +35,14 @@ namespace Amazon.IdentityStore.Model
     /// </summary>
     public partial class CreateUserRequest : AmazonIdentityStoreRequest
     {
-        private List<Address> _addresses = new List<Address>();
+        private List<Address> _addresses = AWSConfigs.InitializeCollections ? new List<Address>() : null;
         private string _displayName;
-        private List<Email> _emails = new List<Email>();
+        private List<Email> _emails = AWSConfigs.InitializeCollections ? new List<Email>() : null;
         private string _identityStoreId;
         private string _locale;
         private Name _name;
         private string _nickName;
-        private List<PhoneNumber> _phoneNumbers = new List<PhoneNumber>();
+        private List<PhoneNumber> _phoneNumbers = AWSConfigs.InitializeCollections ? new List<PhoneNumber>() : null;
         private string _preferredLanguage;
         private string _profileUrl;
         private string _timezone;
@@ -65,7 +66,7 @@ namespace Amazon.IdentityStore.Model
         // Check to see if Addresses property is set
         internal bool IsSetAddresses()
         {
-            return this._addresses != null && this._addresses.Count > 0; 
+            return this._addresses != null && (this._addresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -104,7 +105,7 @@ namespace Amazon.IdentityStore.Model
         // Check to see if Emails property is set
         internal bool IsSetEmails()
         {
-            return this._emails != null && this._emails.Count > 0; 
+            return this._emails != null && (this._emails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -199,7 +200,7 @@ namespace Amazon.IdentityStore.Model
         // Check to see if PhoneNumbers property is set
         internal bool IsSetPhoneNumbers()
         {
-            return this._phoneNumbers != null && this._phoneNumbers.Count > 0; 
+            return this._phoneNumbers != null && (this._phoneNumbers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

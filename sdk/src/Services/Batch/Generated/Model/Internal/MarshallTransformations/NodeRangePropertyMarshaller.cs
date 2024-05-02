@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NodeRangeProperty requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetContainer())
             {
                 context.Writer.WritePropertyName("container");
@@ -54,6 +57,28 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.Container, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetEcsProperties())
+            {
+                context.Writer.WritePropertyName("ecsProperties");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EcsPropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.EcsProperties, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetInstanceTypes())
+            {
+                context.Writer.WritePropertyName("instanceTypes");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectInstanceTypesListValue in requestObject.InstanceTypes)
+                {
+                        context.Writer.Write(requestObjectInstanceTypesListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
             if(requestObject.IsSetTargetNodes())

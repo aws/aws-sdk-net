@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.DynamoDBv2.Model
     public partial class Put
     {
         private string _conditionExpression;
-        private Dictionary<string, string> _expressionAttributeNames = new Dictionary<string, string>();
-        private Dictionary<string, AttributeValue> _expressionAttributeValues = new Dictionary<string, AttributeValue>();
-        private Dictionary<string, AttributeValue> _item = new Dictionary<string, AttributeValue>();
+        private Dictionary<string, string> _expressionAttributeNames = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, AttributeValue> _expressionAttributeValues = AWSConfigs.InitializeCollections ? new Dictionary<string, AttributeValue>() : null;
+        private Dictionary<string, AttributeValue> _item = AWSConfigs.InitializeCollections ? new Dictionary<string, AttributeValue>() : null;
         private ReturnValuesOnConditionCheckFailure _returnValuesOnConditionCheckFailure;
         private string _tableName;
 
@@ -73,7 +74,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if ExpressionAttributeNames property is set
         internal bool IsSetExpressionAttributeNames()
         {
-            return this._expressionAttributeNames != null && this._expressionAttributeNames.Count > 0; 
+            return this._expressionAttributeNames != null && (this._expressionAttributeNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if ExpressionAttributeValues property is set
         internal bool IsSetExpressionAttributeValues()
         {
-            return this._expressionAttributeValues != null && this._expressionAttributeValues.Count > 0; 
+            return this._expressionAttributeValues != null && (this._expressionAttributeValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -114,7 +115,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if Item property is set
         internal bool IsSetItem()
         {
-            return this._item != null && this._item.Count > 0; 
+            return this._item != null && (this._item.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -140,10 +141,11 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property TableName. 
         /// <para>
-        /// Name of the table in which to write the item.
+        /// Name of the table in which to write the item. You can also provide the Amazon Resource
+        /// Name (ARN) of the table in this parameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string TableName
         {
             get { return this._tableName; }

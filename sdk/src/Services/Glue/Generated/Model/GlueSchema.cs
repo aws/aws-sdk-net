@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class GlueSchema
     {
-        private List<GlueStudioSchemaColumn> _columns = new List<GlueStudioSchemaColumn>();
+        private List<GlueStudioSchemaColumn> _columns = AWSConfigs.InitializeCollections ? new List<GlueStudioSchemaColumn>() : null;
 
         /// <summary>
         /// Gets and sets the property Columns. 
@@ -50,7 +51,7 @@ namespace Amazon.Glue.Model
         // Check to see if Columns property is set
         internal bool IsSetColumns()
         {
-            return this._columns != null && this._columns.Count > 0; 
+            return this._columns != null && (this._columns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

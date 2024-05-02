@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
@@ -47,7 +48,7 @@ namespace Amazon.OpsWorks.Model
     public partial class DescribeDeploymentsRequest : AmazonOpsWorksRequest
     {
         private string _appId;
-        private List<string> _deploymentIds = new List<string>();
+        private List<string> _deploymentIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _stackId;
 
         /// <summary>
@@ -86,7 +87,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if DeploymentIds property is set
         internal bool IsSetDeploymentIds()
         {
-            return this._deploymentIds != null && this._deploymentIds.Count > 0; 
+            return this._deploymentIds != null && (this._deploymentIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

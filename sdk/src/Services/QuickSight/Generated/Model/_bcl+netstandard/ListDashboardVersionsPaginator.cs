@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.QuickSight.Model
         /// Enumerable containing all of the DashboardVersionSummaryList
         /// </summary>
         public IPaginatedEnumerable<DashboardVersionSummary> DashboardVersionSummaryList => 
-            new PaginatedResultKeyResponse<ListDashboardVersionsResponse, DashboardVersionSummary>(this, (i) => i.DashboardVersionSummaryList);
+            new PaginatedResultKeyResponse<ListDashboardVersionsResponse, DashboardVersionSummary>(this, (i) => i.DashboardVersionSummaryList ?? new List<DashboardVersionSummary>());
 
         internal ListDashboardVersionsPaginator(IAmazonQuickSight client, ListDashboardVersionsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.QuickSight.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListDashboardVersionsResponse> IPaginator<ListDashboardVersionsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListDashboardVersionsResponse> IPaginator<ListDashboardVersionsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

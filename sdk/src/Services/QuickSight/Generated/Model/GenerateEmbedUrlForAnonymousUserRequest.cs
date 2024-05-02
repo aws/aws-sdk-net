@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -68,13 +69,13 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class GenerateEmbedUrlForAnonymousUserRequest : AmazonQuickSightRequest
     {
-        private List<string> _allowedDomains = new List<string>();
-        private List<string> _authorizedResourceArns = new List<string>();
+        private List<string> _allowedDomains = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _authorizedResourceArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _awsAccountId;
         private AnonymousUserEmbeddingExperienceConfiguration _experienceConfiguration;
         private string _awsNamespace;
         private long? _sessionLifetimeInMinutes;
-        private List<SessionTag> _sessionTags = new List<SessionTag>();
+        private List<SessionTag> _sessionTags = AWSConfigs.InitializeCollections ? new List<SessionTag>() : null;
 
         /// <summary>
         /// Gets and sets the property AllowedDomains. 
@@ -100,17 +101,28 @@ namespace Amazon.QuickSight.Model
         // Check to see if AllowedDomains property is set
         internal bool IsSetAllowedDomains()
         {
-            return this._allowedDomains != null && this._allowedDomains.Count > 0; 
+            return this._allowedDomains != null && (this._allowedDomains.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property AuthorizedResourceArns. 
         /// <para>
         /// The Amazon Resource Names (ARNs) for the Amazon QuickSight resources that the user
-        /// is authorized to access during the lifetime of the session. If you choose <c>Dashboard</c>
-        /// embedding experience, pass the list of dashboard ARNs in the account that you want
-        /// the user to be able to view. Currently, you can pass up to 25 dashboard ARNs in each
-        /// API call.
+        /// is authorized to access during the lifetime of the session.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you choose <c>Dashboard</c> embedding experience, pass the list of dashboard ARNs
+        /// in the account that you want the user to be able to view.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you want to make changes to the theme of your embedded content, pass a list of
+        /// theme ARNs that the anonymous users need access to.
+        /// </para>
+        ///  
+        /// <para>
+        /// Currently, you can pass up to 25 theme ARNs in each API call.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -123,7 +135,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if AuthorizedResourceArns property is set
         internal bool IsSetAuthorizedResourceArns()
         {
-            return this._authorizedResourceArns != null && this._authorizedResourceArns.Count > 0; 
+            return this._authorizedResourceArns != null && (this._authorizedResourceArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -229,7 +241,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if SessionTags property is set
         internal bool IsSetSessionTags()
         {
-            return this._sessionTags != null && this._sessionTags.Count > 0; 
+            return this._sessionTags != null && (this._sessionTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

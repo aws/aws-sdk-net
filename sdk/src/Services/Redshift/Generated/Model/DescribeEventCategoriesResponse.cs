@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class DescribeEventCategoriesResponse : AmazonWebServiceResponse
     {
-        private List<EventCategoriesMap> _eventCategoriesMapList = new List<EventCategoriesMap>();
+        private List<EventCategoriesMap> _eventCategoriesMapList = AWSConfigs.InitializeCollections ? new List<EventCategoriesMap>() : null;
 
         /// <summary>
         /// Gets and sets the property EventCategoriesMapList. 
@@ -50,7 +51,7 @@ namespace Amazon.Redshift.Model
         // Check to see if EventCategoriesMapList property is set
         internal bool IsSetEventCategoriesMapList()
         {
-            return this._eventCategoriesMapList != null && this._eventCategoriesMapList.Count > 0; 
+            return this._eventCategoriesMapList != null && (this._eventCategoriesMapList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

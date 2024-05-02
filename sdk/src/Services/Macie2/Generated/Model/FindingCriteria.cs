@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Macie2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Macie2.Model
     /// </summary>
     public partial class FindingCriteria
     {
-        private Dictionary<string, CriterionAdditionalProperties> _criterion = new Dictionary<string, CriterionAdditionalProperties>();
+        private Dictionary<string, CriterionAdditionalProperties> _criterion = AWSConfigs.InitializeCollections ? new Dictionary<string, CriterionAdditionalProperties>() : null;
 
         /// <summary>
         /// Gets and sets the property Criterion. 
@@ -52,7 +53,7 @@ namespace Amazon.Macie2.Model
         // Check to see if Criterion property is set
         internal bool IsSetCriterion()
         {
-            return this._criterion != null && this._criterion.Count > 0; 
+            return this._criterion != null && (this._criterion.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

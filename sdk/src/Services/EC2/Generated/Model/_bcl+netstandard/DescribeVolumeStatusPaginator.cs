@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the VolumeStatuses
         /// </summary>
         public IPaginatedEnumerable<VolumeStatusItem> VolumeStatuses => 
-            new PaginatedResultKeyResponse<DescribeVolumeStatusResponse, VolumeStatusItem>(this, (i) => i.VolumeStatuses);
+            new PaginatedResultKeyResponse<DescribeVolumeStatusResponse, VolumeStatusItem>(this, (i) => i.VolumeStatuses ?? new List<VolumeStatusItem>());
 
         internal DescribeVolumeStatusPaginator(IAmazonEC2 client, DescribeVolumeStatusRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.EC2.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeVolumeStatusResponse> IPaginator<DescribeVolumeStatusResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeVolumeStatusResponse> IPaginator<DescribeVolumeStatusResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

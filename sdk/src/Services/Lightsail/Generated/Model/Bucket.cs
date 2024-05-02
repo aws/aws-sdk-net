@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
@@ -42,12 +43,12 @@ namespace Amazon.Lightsail.Model
         private ResourceLocation _location;
         private string _name;
         private string _objectVersioning;
-        private List<string> _readonlyAccessAccounts = new List<string>();
-        private List<ResourceReceivingAccess> _resourcesReceivingAccess = new List<ResourceReceivingAccess>();
+        private List<string> _readonlyAccessAccounts = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<ResourceReceivingAccess> _resourcesReceivingAccess = AWSConfigs.InitializeCollections ? new List<ResourceReceivingAccess>() : null;
         private string _resourceType;
         private BucketState _state;
         private string _supportCode;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _url;
 
         /// <summary>
@@ -270,7 +271,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if ReadonlyAccessAccounts property is set
         internal bool IsSetReadonlyAccessAccounts()
         {
-            return this._readonlyAccessAccounts != null && this._readonlyAccessAccounts.Count > 0; 
+            return this._readonlyAccessAccounts != null && (this._readonlyAccessAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -293,7 +294,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if ResourcesReceivingAccess property is set
         internal bool IsSetResourcesReceivingAccess()
         {
-            return this._resourcesReceivingAccess != null && this._resourcesReceivingAccess.Count > 0; 
+            return this._resourcesReceivingAccess != null && (this._resourcesReceivingAccess.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -368,7 +369,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

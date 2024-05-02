@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53Domains.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.Route53Domains.Model
     public partial class DeleteTagsForDomainRequest : AmazonRoute53DomainsRequest
     {
         private string _domainName;
-        private List<string> _tagsToDelete = new List<string>();
+        private List<string> _tagsToDelete = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DomainName. 
@@ -78,7 +79,7 @@ namespace Amazon.Route53Domains.Model
         // Check to see if TagsToDelete property is set
         internal bool IsSetTagsToDelete()
         {
-            return this._tagsToDelete != null && this._tagsToDelete.Count > 0; 
+            return this._tagsToDelete != null && (this._tagsToDelete.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

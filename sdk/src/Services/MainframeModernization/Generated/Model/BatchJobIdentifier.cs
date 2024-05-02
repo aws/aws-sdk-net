@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MainframeModernization.Model
 {
     /// <summary>
@@ -34,6 +35,7 @@ namespace Amazon.MainframeModernization.Model
     public partial class BatchJobIdentifier
     {
         private FileBatchJobIdentifier _fileBatchJobIdentifier;
+        private RestartBatchJobIdentifier _restartBatchJobIdentifier;
         private S3BatchJobIdentifier _s3BatchJobIdentifier;
         private ScriptBatchJobIdentifier _scriptBatchJobIdentifier;
 
@@ -53,6 +55,24 @@ namespace Amazon.MainframeModernization.Model
         internal bool IsSetFileBatchJobIdentifier()
         {
             return this._fileBatchJobIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RestartBatchJobIdentifier. 
+        /// <para>
+        /// Specifies the required information for restart, including execution ID and jobsteprestartmarker.
+        /// </para>
+        /// </summary>
+        public RestartBatchJobIdentifier RestartBatchJobIdentifier
+        {
+            get { return this._restartBatchJobIdentifier; }
+            set { this._restartBatchJobIdentifier = value; }
+        }
+
+        // Check to see if RestartBatchJobIdentifier property is set
+        internal bool IsSetRestartBatchJobIdentifier()
+        {
+            return this._restartBatchJobIdentifier != null;
         }
 
         /// <summary>

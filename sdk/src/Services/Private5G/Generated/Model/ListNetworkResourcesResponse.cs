@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Private5G.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Private5G.Model
     /// </summary>
     public partial class ListNetworkResourcesResponse : AmazonWebServiceResponse
     {
-        private List<NetworkResource> _networkResources = new List<NetworkResource>();
+        private List<NetworkResource> _networkResources = AWSConfigs.InitializeCollections ? new List<NetworkResource>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Private5G.Model
         // Check to see if NetworkResources property is set
         internal bool IsSetNetworkResources()
         {
-            return this._networkResources != null && this._networkResources.Count > 0; 
+            return this._networkResources != null && (this._networkResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

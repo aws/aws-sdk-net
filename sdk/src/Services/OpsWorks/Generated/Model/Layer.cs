@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.OpsWorks.Model
     public partial class Layer
     {
         private string _arn;
-        private Dictionary<string, string> _attributes = new Dictionary<string, string>();
+        private Dictionary<string, string> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private bool? _autoAssignElasticIps;
         private bool? _autoAssignPublicIps;
         private CloudWatchLogsConfiguration _cloudWatchLogsConfiguration;
@@ -42,20 +43,20 @@ namespace Amazon.OpsWorks.Model
         private string _customInstanceProfileArn;
         private string _customJson;
         private Recipes _customRecipes;
-        private List<string> _customSecurityGroupIds = new List<string>();
+        private List<string> _customSecurityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Recipes _defaultRecipes;
-        private List<string> _defaultSecurityGroupNames = new List<string>();
+        private List<string> _defaultSecurityGroupNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _enableAutoHealing;
         private bool? _installUpdatesOnBoot;
         private string _layerId;
         private LifecycleEventConfiguration _lifecycleEventConfiguration;
         private string _name;
-        private List<string> _packages = new List<string>();
+        private List<string> _packages = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _shortname;
         private string _stackId;
         private LayerType _type;
         private bool? _useEbsOptimizedInstances;
-        private List<VolumeConfiguration> _volumeConfigurations = new List<VolumeConfiguration>();
+        private List<VolumeConfiguration> _volumeConfigurations = AWSConfigs.InitializeCollections ? new List<VolumeConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -101,7 +102,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -252,7 +253,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if CustomSecurityGroupIds property is set
         internal bool IsSetCustomSecurityGroupIds()
         {
-            return this._customSecurityGroupIds != null && this._customSecurityGroupIds.Count > 0; 
+            return this._customSecurityGroupIds != null && (this._customSecurityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -300,7 +301,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if DefaultSecurityGroupNames property is set
         internal bool IsSetDefaultSecurityGroupNames()
         {
-            return this._defaultSecurityGroupNames != null && this._defaultSecurityGroupNames.Count > 0; 
+            return this._defaultSecurityGroupNames != null && (this._defaultSecurityGroupNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -418,7 +419,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if Packages property is set
         internal bool IsSetPackages()
         {
-            return this._packages != null && this._packages.Count > 0; 
+            return this._packages != null && (this._packages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -508,7 +509,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if VolumeConfigurations property is set
         internal bool IsSetVolumeConfigurations()
         {
-            return this._volumeConfigurations != null && this._volumeConfigurations.Count > 0; 
+            return this._volumeConfigurations != null && (this._volumeConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

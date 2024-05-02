@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GroundStation.Model
 {
     /// <summary>
@@ -47,7 +48,7 @@ namespace Amazon.GroundStation.Model
         private string _nextToken;
         private string _satelliteArn;
         private DateTime? _startTime;
-        private List<string> _statusList = new List<string>();
+        private List<string> _statusList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property EndTime. 
@@ -197,7 +198,7 @@ namespace Amazon.GroundStation.Model
         // Check to see if StatusList property is set
         internal bool IsSetStatusList()
         {
-            return this._statusList != null && this._statusList.Count > 0; 
+            return this._statusList != null && (this._statusList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

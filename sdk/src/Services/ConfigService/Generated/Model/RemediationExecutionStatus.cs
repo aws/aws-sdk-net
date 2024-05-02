@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.ConfigService.Model
         private DateTime? _lastUpdatedTime;
         private ResourceKey _resourceKey;
         private RemediationExecutionState _state;
-        private List<RemediationExecutionStep> _stepDetails = new List<RemediationExecutionStep>();
+        private List<RemediationExecutionStep> _stepDetails = AWSConfigs.InitializeCollections ? new List<RemediationExecutionStep>() : null;
 
         /// <summary>
         /// Gets and sets the property InvocationTime. 
@@ -124,7 +125,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if StepDetails property is set
         internal bool IsSetStepDetails()
         {
-            return this._stepDetails != null && this._stepDetails.Count > 0; 
+            return this._stepDetails != null && (this._stepDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

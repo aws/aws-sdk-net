@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OSIS.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.OSIS.Model
     /// </summary>
     public partial class ListPipelineBlueprintsResponse : AmazonWebServiceResponse
     {
-        private List<PipelineBlueprintSummary> _blueprints = new List<PipelineBlueprintSummary>();
+        private List<PipelineBlueprintSummary> _blueprints = AWSConfigs.InitializeCollections ? new List<PipelineBlueprintSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property Blueprints. 
@@ -50,7 +51,7 @@ namespace Amazon.OSIS.Model
         // Check to see if Blueprints property is set
         internal bool IsSetBlueprints()
         {
-            return this._blueprints != null && this._blueprints.Count > 0; 
+            return this._blueprints != null && (this._blueprints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

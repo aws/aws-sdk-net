@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ApiGatewayV2.Model
 {
     /// <summary>
@@ -42,13 +43,13 @@ namespace Amazon.ApiGatewayV2.Model
         private string _description;
         private bool? _disableExecuteApiEndpoint;
         private bool? _disableSchemaValidation;
-        private List<string> _importInfo = new List<string>();
+        private List<string> _importInfo = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private ProtocolType _protocolType;
         private string _routeSelectionExpression;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _version;
-        private List<string> _warnings = new List<string>();
+        private List<string> _warnings = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ApiEndpoint. 
@@ -236,7 +237,7 @@ namespace Amazon.ApiGatewayV2.Model
         // Check to see if ImportInfo property is set
         internal bool IsSetImportInfo()
         {
-            return this._importInfo != null && this._importInfo.Count > 0; 
+            return this._importInfo != null && (this._importInfo.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -313,7 +314,7 @@ namespace Amazon.ApiGatewayV2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -349,7 +350,7 @@ namespace Amazon.ApiGatewayV2.Model
         // Check to see if Warnings property is set
         internal bool IsSetWarnings()
         {
-            return this._warnings != null && this._warnings.Count > 0; 
+            return this._warnings != null && (this._warnings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

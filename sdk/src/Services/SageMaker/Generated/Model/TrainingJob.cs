@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -39,17 +40,17 @@ namespace Amazon.SageMaker.Model
         private CheckpointConfig _checkpointConfig;
         private DateTime? _creationTime;
         private DebugHookConfig _debugHookConfig;
-        private List<DebugRuleConfiguration> _debugRuleConfigurations = new List<DebugRuleConfiguration>();
-        private List<DebugRuleEvaluationStatus> _debugRuleEvaluationStatuses = new List<DebugRuleEvaluationStatus>();
+        private List<DebugRuleConfiguration> _debugRuleConfigurations = AWSConfigs.InitializeCollections ? new List<DebugRuleConfiguration>() : null;
+        private List<DebugRuleEvaluationStatus> _debugRuleEvaluationStatuses = AWSConfigs.InitializeCollections ? new List<DebugRuleEvaluationStatus>() : null;
         private bool? _enableInterContainerTrafficEncryption;
         private bool? _enableManagedSpotTraining;
         private bool? _enableNetworkIsolation;
-        private Dictionary<string, string> _environment = new Dictionary<string, string>();
+        private Dictionary<string, string> _environment = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ExperimentConfig _experimentConfig;
         private string _failureReason;
-        private List<MetricData> _finalMetricDataList = new List<MetricData>();
-        private Dictionary<string, string> _hyperParameters = new Dictionary<string, string>();
-        private List<Channel> _inputDataConfig = new List<Channel>();
+        private List<MetricData> _finalMetricDataList = AWSConfigs.InitializeCollections ? new List<MetricData>() : null;
+        private Dictionary<string, string> _hyperParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<Channel> _inputDataConfig = AWSConfigs.InitializeCollections ? new List<Channel>() : null;
         private string _labelingJobArn;
         private DateTime? _lastModifiedTime;
         private ModelArtifacts _modelArtifacts;
@@ -59,9 +60,9 @@ namespace Amazon.SageMaker.Model
         private RetryStrategy _retryStrategy;
         private string _roleArn;
         private SecondaryStatus _secondaryStatus;
-        private List<SecondaryStatusTransition> _secondaryStatusTransitions = new List<SecondaryStatusTransition>();
+        private List<SecondaryStatusTransition> _secondaryStatusTransitions = AWSConfigs.InitializeCollections ? new List<SecondaryStatusTransition>() : null;
         private StoppingCondition _stoppingCondition;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private TensorBoardOutputConfig _tensorBoardOutputConfig;
         private DateTime? _trainingEndTime;
         private string _trainingJobArn;
@@ -192,7 +193,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if DebugRuleConfigurations property is set
         internal bool IsSetDebugRuleConfigurations()
         {
-            return this._debugRuleConfigurations != null && this._debugRuleConfigurations.Count > 0; 
+            return this._debugRuleConfigurations != null && (this._debugRuleConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -211,7 +212,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if DebugRuleEvaluationStatuses property is set
         internal bool IsSetDebugRuleEvaluationStatuses()
         {
-            return this._debugRuleEvaluationStatuses != null && this._debugRuleEvaluationStatuses.Count > 0; 
+            return this._debugRuleEvaluationStatuses != null && (this._debugRuleEvaluationStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -292,7 +293,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Environment property is set
         internal bool IsSetEnvironment()
         {
-            return this._environment != null && this._environment.Count > 0; 
+            return this._environment != null && (this._environment.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -346,7 +347,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if FinalMetricDataList property is set
         internal bool IsSetFinalMetricDataList()
         {
-            return this._finalMetricDataList != null && this._finalMetricDataList.Count > 0; 
+            return this._finalMetricDataList != null && (this._finalMetricDataList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -365,7 +366,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if HyperParameters property is set
         internal bool IsSetHyperParameters()
         {
-            return this._hyperParameters != null && this._hyperParameters.Count > 0; 
+            return this._hyperParameters != null && (this._hyperParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -388,7 +389,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if InputDataConfig property is set
         internal bool IsSetInputDataConfig()
         {
-            return this._inputDataConfig != null && this._inputDataConfig.Count > 0; 
+            return this._inputDataConfig != null && (this._inputDataConfig.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -638,7 +639,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if SecondaryStatusTransitions property is set
         internal bool IsSetSecondaryStatusTransitions()
         {
-            return this._secondaryStatusTransitions != null && this._secondaryStatusTransitions.Count > 0; 
+            return this._secondaryStatusTransitions != null && (this._secondaryStatusTransitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -686,7 +687,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

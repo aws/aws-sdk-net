@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SagemakerEdgeManager.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.SagemakerEdgeManager.Model
     public partial class DeploymentResult
     {
         private DateTime? _deploymentEndTime;
-        private List<DeploymentModel> _deploymentModels = new List<DeploymentModel>();
+        private List<DeploymentModel> _deploymentModels = AWSConfigs.InitializeCollections ? new List<DeploymentModel>() : null;
         private string _deploymentName;
         private DateTime? _deploymentStartTime;
         private string _deploymentStatus;
@@ -74,7 +75,7 @@ namespace Amazon.SagemakerEdgeManager.Model
         // Check to see if DeploymentModels property is set
         internal bool IsSetDeploymentModels()
         {
-            return this._deploymentModels != null && this._deploymentModels.Count > 0; 
+            return this._deploymentModels != null && (this._deploymentModels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

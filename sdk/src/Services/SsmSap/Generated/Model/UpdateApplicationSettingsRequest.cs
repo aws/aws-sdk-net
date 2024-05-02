@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SsmSap.Model
 {
     /// <summary>
@@ -36,8 +37,8 @@ namespace Amazon.SsmSap.Model
     {
         private string _applicationId;
         private BackintConfig _backint;
-        private List<ApplicationCredential> _credentialsToAddOrUpdate = new List<ApplicationCredential>();
-        private List<ApplicationCredential> _credentialsToRemove = new List<ApplicationCredential>();
+        private List<ApplicationCredential> _credentialsToAddOrUpdate = AWSConfigs.InitializeCollections ? new List<ApplicationCredential>() : null;
+        private List<ApplicationCredential> _credentialsToRemove = AWSConfigs.InitializeCollections ? new List<ApplicationCredential>() : null;
         private string _databaseArn;
 
         /// <summary>
@@ -93,7 +94,7 @@ namespace Amazon.SsmSap.Model
         // Check to see if CredentialsToAddOrUpdate property is set
         internal bool IsSetCredentialsToAddOrUpdate()
         {
-            return this._credentialsToAddOrUpdate != null && this._credentialsToAddOrUpdate.Count > 0; 
+            return this._credentialsToAddOrUpdate != null && (this._credentialsToAddOrUpdate.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -112,7 +113,7 @@ namespace Amazon.SsmSap.Model
         // Check to see if CredentialsToRemove property is set
         internal bool IsSetCredentialsToRemove()
         {
-            return this._credentialsToRemove != null && this._credentialsToRemove.Count > 0; 
+            return this._credentialsToRemove != null && (this._credentialsToRemove.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.MarketplaceCatalog.Model
     /// </summary>
     public partial class BatchDescribeEntitiesRequest : AmazonMarketplaceCatalogRequest
     {
-        private List<EntityRequest> _entityRequestList = new List<EntityRequest>();
+        private List<EntityRequest> _entityRequestList = AWSConfigs.InitializeCollections ? new List<EntityRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property EntityRequestList. 
@@ -54,7 +55,7 @@ namespace Amazon.MarketplaceCatalog.Model
         // Check to see if EntityRequestList property is set
         internal bool IsSetEntityRequestList()
         {
-            return this._entityRequestList != null && this._entityRequestList.Count > 0; 
+            return this._entityRequestList != null && (this._entityRequestList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GroundStation.Model
 {
     /// <summary>
@@ -33,12 +34,12 @@ namespace Amazon.GroundStation.Model
     /// </summary>
     public partial class AgentDetails
     {
-        private List<int> _agentCpuCores = new List<int>();
+        private List<int> _agentCpuCores = AWSConfigs.InitializeCollections ? new List<int>() : null;
         private string _agentVersion;
-        private List<ComponentVersion> _componentVersions = new List<ComponentVersion>();
+        private List<ComponentVersion> _componentVersions = AWSConfigs.InitializeCollections ? new List<ComponentVersion>() : null;
         private string _instanceId;
         private string _instanceType;
-        private List<int> _reservedCpuCores = new List<int>();
+        private List<int> _reservedCpuCores = AWSConfigs.InitializeCollections ? new List<int>() : null;
 
         /// <summary>
         /// Gets and sets the property AgentCpuCores. 
@@ -56,7 +57,7 @@ namespace Amazon.GroundStation.Model
         // Check to see if AgentCpuCores property is set
         internal bool IsSetAgentCpuCores()
         {
-            return this._agentCpuCores != null && this._agentCpuCores.Count > 0; 
+            return this._agentCpuCores != null && (this._agentCpuCores.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -94,7 +95,7 @@ namespace Amazon.GroundStation.Model
         // Check to see if ComponentVersions property is set
         internal bool IsSetComponentVersions()
         {
-            return this._componentVersions != null && this._componentVersions.Count > 0; 
+            return this._componentVersions != null && (this._componentVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -155,7 +156,7 @@ namespace Amazon.GroundStation.Model
         // Check to see if ReservedCpuCores property is set
         internal bool IsSetReservedCpuCores()
         {
-            return this._reservedCpuCores != null && this._reservedCpuCores.Count > 0; 
+            return this._reservedCpuCores != null && (this._reservedCpuCores.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.OpenSearchService.Model
     {
         private string _nextToken;
         private string _packageID;
-        private List<PackageVersionHistory> _packageVersionHistoryList = new List<PackageVersionHistory>();
+        private List<PackageVersionHistory> _packageVersionHistoryList = AWSConfigs.InitializeCollections ? new List<PackageVersionHistory>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -90,7 +91,7 @@ namespace Amazon.OpenSearchService.Model
         // Check to see if PackageVersionHistoryList property is set
         internal bool IsSetPackageVersionHistoryList()
         {
-            return this._packageVersionHistoryList != null && this._packageVersionHistoryList.Count > 0; 
+            return this._packageVersionHistoryList != null && (this._packageVersionHistoryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

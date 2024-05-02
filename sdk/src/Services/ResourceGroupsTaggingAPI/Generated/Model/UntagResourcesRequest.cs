@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ResourceGroupsTaggingAPI.Model
 {
     /// <summary>
@@ -69,8 +70,8 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     /// </summary>
     public partial class UntagResourcesRequest : AmazonResourceGroupsTaggingAPIRequest
     {
-        private List<string> _resourceARNList = new List<string>();
-        private List<string> _tagKeys = new List<string>();
+        private List<string> _resourceARNList = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _tagKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceARNList. 
@@ -95,7 +96,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         // Check to see if ResourceARNList property is set
         internal bool IsSetResourceARNList()
         {
-            return this._resourceARNList != null && this._resourceARNList.Count > 0; 
+            return this._resourceARNList != null && (this._resourceARNList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -114,7 +115,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         // Check to see if TagKeys property is set
         internal bool IsSetTagKeys()
         {
-            return this._tagKeys != null && this._tagKeys.Count > 0; 
+            return this._tagKeys != null && (this._tagKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Mgn.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Mgn.Model
     /// </summary>
     public partial class ListConnectorsRequestFilters
     {
-        private List<string> _connectoriDs = new List<string>();
+        private List<string> _connectoriDs = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ConnectorIDs. 
@@ -51,7 +52,7 @@ namespace Amazon.Mgn.Model
         // Check to see if ConnectorIDs property is set
         internal bool IsSetConnectorIDs()
         {
-            return this._connectoriDs != null && this._connectoriDs.Count > 0; 
+            return this._connectoriDs != null && (this._connectoriDs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

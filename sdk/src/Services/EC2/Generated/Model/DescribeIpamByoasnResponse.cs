@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeIpamByoasnResponse : AmazonWebServiceResponse
     {
-        private List<Byoasn> _byoasns = new List<Byoasn>();
+        private List<Byoasn> _byoasns = AWSConfigs.InitializeCollections ? new List<Byoasn>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.EC2.Model
         // Check to see if Byoasns property is set
         internal bool IsSetByoasns()
         {
-            return this._byoasns != null && this._byoasns.Count > 0; 
+            return this._byoasns != null && (this._byoasns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

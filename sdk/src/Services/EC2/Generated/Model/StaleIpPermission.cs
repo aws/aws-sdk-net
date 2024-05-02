@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -35,16 +36,16 @@ namespace Amazon.EC2.Model
     {
         private int? _fromPort;
         private string _ipProtocol;
-        private List<string> _ipRanges = new List<string>();
-        private List<string> _prefixListIds = new List<string>();
+        private List<string> _ipRanges = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _prefixListIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _toPort;
-        private List<UserIdGroupPair> _userIdGroupPairs = new List<UserIdGroupPair>();
+        private List<UserIdGroupPair> _userIdGroupPairs = AWSConfigs.InitializeCollections ? new List<UserIdGroupPair>() : null;
 
         /// <summary>
         /// Gets and sets the property FromPort. 
         /// <para>
-        /// The start of the port range for the TCP and UDP protocols, or an ICMP type number.
-        /// A value of -1 indicates all ICMP types. 
+        /// If the protocol is TCP or UDP, this is the start of the port range. If the protocol
+        /// is ICMP or ICMPv6, this is the ICMP type or -1 (all ICMP types).
         /// </para>
         /// </summary>
         public int? FromPort
@@ -62,8 +63,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IpProtocol. 
         /// <para>
-        /// The IP protocol name (for <c>tcp</c>, <c>udp</c>, and <c>icmp</c>) or number (see
-        /// <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
+        /// The IP protocol name (<c>tcp</c>, <c>udp</c>, <c>icmp</c>, <c>icmpv6</c>) or number
+        /// (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
         /// Numbers)</a>.
         /// </para>
         /// </summary>
@@ -94,7 +95,7 @@ namespace Amazon.EC2.Model
         // Check to see if IpRanges property is set
         internal bool IsSetIpRanges()
         {
-            return this._ipRanges != null && this._ipRanges.Count > 0; 
+            return this._ipRanges != null && (this._ipRanges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -112,14 +113,14 @@ namespace Amazon.EC2.Model
         // Check to see if PrefixListIds property is set
         internal bool IsSetPrefixListIds()
         {
-            return this._prefixListIds != null && this._prefixListIds.Count > 0; 
+            return this._prefixListIds != null && (this._prefixListIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property ToPort. 
         /// <para>
-        /// The end of the port range for the TCP and UDP protocols, or an ICMP type number. A
-        /// value of <c>-1</c> indicates all ICMP types. 
+        /// If the protocol is TCP or UDP, this is the end of the port range. If the protocol
+        /// is ICMP or ICMPv6, this is the ICMP code or -1 (all ICMP codes).
         /// </para>
         /// </summary>
         public int? ToPort
@@ -150,7 +151,7 @@ namespace Amazon.EC2.Model
         // Check to see if UserIdGroupPairs property is set
         internal bool IsSetUserIdGroupPairs()
         {
-            return this._userIdGroupPairs != null && this._userIdGroupPairs.Count > 0; 
+            return this._userIdGroupPairs != null && (this._userIdGroupPairs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -24,6 +24,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// </summary>
     public class ContentsItemUnmarshaller : IUnmarshaller<S3Object, XmlUnmarshallerContext>, IUnmarshaller<S3Object, JsonUnmarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public S3Object Unmarshall(XmlUnmarshallerContext context) 
         {
             S3Object contentsItem = new S3Object();
@@ -39,6 +44,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("ChecksumAlgorithm", targetDepth))
                     {
+                        if (contentsItem.ChecksumAlgorithm == null)
+                        {
+                            contentsItem.ChecksumAlgorithm = new List<string>();
+                        }
                         contentsItem.ChecksumAlgorithm.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
                         continue;
                     }
@@ -96,6 +105,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return contentsItem;
         }
 
+        /// <summary>
+        /// Not implemented and always returns null.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public S3Object Unmarshall(JsonUnmarshallerContext context) 
         {
             return null;
@@ -103,6 +117,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static ContentsItemUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static ContentsItemUnmarshaller Instance
         {
             get

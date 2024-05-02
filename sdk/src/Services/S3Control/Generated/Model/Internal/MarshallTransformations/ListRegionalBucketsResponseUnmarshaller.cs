@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -56,7 +57,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             int targetDepth = originalDepth + 1;
             if (context.IsStartOfDocument) 
                    targetDepth += 1;
-
+            if (context.IsEmptyResponse)
+            {
+                return;
+            }
             while (context.Read())
             {
                 if (context.IsStartElement || context.IsAttribute)
@@ -69,6 +73,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("RegionalBucketList/RegionalBucket", targetDepth))
                     {
+                        if (response.RegionalBucketList == null)
+                        {
+                            response.RegionalBucketList = new List<RegionalBucket>();
+                        }
                         var unmarshaller = RegionalBucketUnmarshaller.Instance;
                         response.RegionalBucketList.Add(unmarshaller.Unmarshall(context));
                         continue;

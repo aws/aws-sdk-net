@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the UserHierarchyGroupSummaryList
         /// </summary>
         public IPaginatedEnumerable<HierarchyGroupSummary> UserHierarchyGroupSummaryList => 
-            new PaginatedResultKeyResponse<ListUserHierarchyGroupsResponse, HierarchyGroupSummary>(this, (i) => i.UserHierarchyGroupSummaryList);
+            new PaginatedResultKeyResponse<ListUserHierarchyGroupsResponse, HierarchyGroupSummary>(this, (i) => i.UserHierarchyGroupSummaryList ?? new List<HierarchyGroupSummary>());
 
         internal ListUserHierarchyGroupsPaginator(IAmazonConnect client, ListUserHierarchyGroupsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Connect.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListUserHierarchyGroupsResponse> IPaginator<ListUserHierarchyGroupsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListUserHierarchyGroupsResponse> IPaginator<ListUserHierarchyGroupsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

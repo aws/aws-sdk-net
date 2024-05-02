@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Mgn.Model
 {
     /// <summary>
@@ -37,8 +38,8 @@ namespace Amazon.Mgn.Model
         private string _datacenterName;
         private string _hostname;
         private string _lastSeenDatetime;
-        private Dictionary<string, string> _sourceServerTags = new Dictionary<string, string>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _sourceServerTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _vcenterClientID;
         private string _vcenteruuid;
 
@@ -134,7 +135,7 @@ namespace Amazon.Mgn.Model
         // Check to see if SourceServerTags property is set
         internal bool IsSetSourceServerTags()
         {
-            return this._sourceServerTags != null && this._sourceServerTags.Count > 0; 
+            return this._sourceServerTags != null && (this._sourceServerTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -153,7 +154,7 @@ namespace Amazon.Mgn.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.ConfigService.Model
     {
         private string _nextToken;
         private QueryInfo _queryInfo;
-        private List<string> _results = new List<string>();
+        private List<string> _results = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -86,7 +87,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if Results property is set
         internal bool IsSetResults()
         {
-            return this._results != null && this._results.Count > 0; 
+            return this._results != null && (this._results.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

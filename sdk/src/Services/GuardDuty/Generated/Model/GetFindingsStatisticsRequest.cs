@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
@@ -43,7 +44,7 @@ namespace Amazon.GuardDuty.Model
     {
         private string _detectorId;
         private FindingCriteria _findingCriteria;
-        private List<string> _findingStatisticTypes = new List<string>();
+        private List<string> _findingStatisticTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DetectorId. 
@@ -99,7 +100,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if FindingStatisticTypes property is set
         internal bool IsSetFindingStatisticTypes()
         {
-            return this._findingStatisticTypes != null && this._findingStatisticTypes.Count > 0; 
+            return this._findingStatisticTypes != null && (this._findingStatisticTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kafka.Model
 {
     /// <summary>
@@ -36,8 +37,8 @@ namespace Amazon.Kafka.Model
         private DateTime? _creationTime;
         private string _currentVersion;
         private bool? _isReplicatorReference;
-        private List<KafkaClusterDescription> _kafkaClusters = new List<KafkaClusterDescription>();
-        private List<ReplicationInfoDescription> _replicationInfoList = new List<ReplicationInfoDescription>();
+        private List<KafkaClusterDescription> _kafkaClusters = AWSConfigs.InitializeCollections ? new List<KafkaClusterDescription>() : null;
+        private List<ReplicationInfoDescription> _replicationInfoList = AWSConfigs.InitializeCollections ? new List<ReplicationInfoDescription>() : null;
         private string _replicatorArn;
         private string _replicatorDescription;
         private string _replicatorName;
@@ -45,7 +46,7 @@ namespace Amazon.Kafka.Model
         private ReplicatorState _replicatorState;
         private string _serviceExecutionRoleArn;
         private ReplicationStateInfo _stateInfo;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -116,7 +117,7 @@ namespace Amazon.Kafka.Model
         // Check to see if KafkaClusters property is set
         internal bool IsSetKafkaClusters()
         {
-            return this._kafkaClusters != null && this._kafkaClusters.Count > 0; 
+            return this._kafkaClusters != null && (this._kafkaClusters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -135,7 +136,7 @@ namespace Amazon.Kafka.Model
         // Check to see if ReplicationInfoList property is set
         internal bool IsSetReplicationInfoList()
         {
-            return this._replicationInfoList != null && this._replicationInfoList.Count > 0; 
+            return this._replicationInfoList != null && (this._replicationInfoList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -281,7 +282,7 @@ namespace Amazon.Kafka.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

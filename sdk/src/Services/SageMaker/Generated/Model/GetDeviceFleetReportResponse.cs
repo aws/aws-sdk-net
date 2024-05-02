@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -33,12 +34,12 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class GetDeviceFleetReportResponse : AmazonWebServiceResponse
     {
-        private List<AgentVersion> _agentVersions = new List<AgentVersion>();
+        private List<AgentVersion> _agentVersions = AWSConfigs.InitializeCollections ? new List<AgentVersion>() : null;
         private string _description;
         private string _deviceFleetArn;
         private string _deviceFleetName;
         private DeviceStats _deviceStats;
-        private List<EdgeModelStat> _modelStats = new List<EdgeModelStat>();
+        private List<EdgeModelStat> _modelStats = AWSConfigs.InitializeCollections ? new List<EdgeModelStat>() : null;
         private EdgeOutputConfig _outputConfig;
         private DateTime? _reportGenerated;
 
@@ -57,7 +58,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if AgentVersions property is set
         internal bool IsSetAgentVersions()
         {
-            return this._agentVersions != null && this._agentVersions.Count > 0; 
+            return this._agentVersions != null && (this._agentVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -150,7 +151,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ModelStats property is set
         internal bool IsSetModelStats()
         {
-            return this._modelStats != null && this._modelStats.Count > 0; 
+            return this._modelStats != null && (this._modelStats.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

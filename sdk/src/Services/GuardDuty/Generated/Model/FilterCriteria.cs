@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class FilterCriteria
     {
-        private List<FilterCriterion> _filterCriterion = new List<FilterCriterion>();
+        private List<FilterCriterion> _filterCriterion = AWSConfigs.InitializeCollections ? new List<FilterCriterion>() : null;
 
         /// <summary>
         /// Gets and sets the property FilterCriterion. 
@@ -51,7 +52,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if FilterCriterion property is set
         internal bool IsSetFilterCriterion()
         {
-            return this._filterCriterion != null && this._filterCriterion.Count > 0; 
+            return this._filterCriterion != null && (this._filterCriterion.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

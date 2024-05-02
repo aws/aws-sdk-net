@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.MediaLive.Model
     public partial class AudioTrackSelection
     {
         private AudioDolbyEDecode _dolbyEDecode;
-        private List<AudioTrack> _tracks = new List<AudioTrack>();
+        private List<AudioTrack> _tracks = AWSConfigs.InitializeCollections ? new List<AudioTrack>() : null;
 
         /// <summary>
         /// Gets and sets the property DolbyEDecode. Configure decoding options for Dolby E streams
@@ -66,7 +67,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if Tracks property is set
         internal bool IsSetTracks()
         {
-            return this._tracks != null && this._tracks.Count > 0; 
+            return this._tracks != null && (this._tracks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GameLift.Model
 {
     /// <summary>
@@ -49,7 +50,7 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class UpdateGameSessionRequest : AmazonGameLiftRequest
     {
-        private List<GameProperty> _gameProperties = new List<GameProperty>();
+        private List<GameProperty> _gameProperties = AWSConfigs.InitializeCollections ? new List<GameProperty>() : null;
         private string _gameSessionId;
         private int? _maximumPlayerSessionCount;
         private string _name;
@@ -77,7 +78,7 @@ namespace Amazon.GameLift.Model
         // Check to see if GameProperties property is set
         internal bool IsSetGameProperties()
         {
-            return this._gameProperties != null && this._gameProperties.Count > 0; 
+            return this._gameProperties != null && (this._gameProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

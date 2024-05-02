@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
@@ -35,12 +36,12 @@ namespace Amazon.ElasticBeanstalk.Model
     {
         private string _applicationArn;
         private string _applicationName;
-        private List<string> _configurationTemplates = new List<string>();
+        private List<string> _configurationTemplates = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _dateCreated;
         private DateTime? _dateUpdated;
         private string _description;
         private ApplicationResourceLifecycleConfig _resourceLifecycleConfig;
-        private List<string> _versions = new List<string>();
+        private List<string> _versions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -99,7 +100,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if ConfigurationTemplates property is set
         internal bool IsSetConfigurationTemplates()
         {
-            return this._configurationTemplates != null && this._configurationTemplates.Count > 0; 
+            return this._configurationTemplates != null && (this._configurationTemplates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -190,7 +191,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Versions property is set
         internal bool IsSetVersions()
         {
-            return this._versions != null && this._versions.Count > 0; 
+            return this._versions != null && (this._versions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

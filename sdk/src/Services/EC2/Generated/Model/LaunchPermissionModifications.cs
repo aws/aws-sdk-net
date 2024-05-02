@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class LaunchPermissionModifications
     {
-        private List<LaunchPermission> _add = new List<LaunchPermission>();
-        private List<LaunchPermission> _remove = new List<LaunchPermission>();
+        private List<LaunchPermission> _add = AWSConfigs.InitializeCollections ? new List<LaunchPermission>() : null;
+        private List<LaunchPermission> _remove = AWSConfigs.InitializeCollections ? new List<LaunchPermission>() : null;
 
         /// <summary>
         /// Gets and sets the property Add. 
@@ -52,7 +53,7 @@ namespace Amazon.EC2.Model
         // Check to see if Add property is set
         internal bool IsSetAdd()
         {
-            return this._add != null && this._add.Count > 0; 
+            return this._add != null && (this._add.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.EC2.Model
         // Check to see if Remove property is set
         internal bool IsSetRemove()
         {
-            return this._remove != null && this._remove.Count > 0; 
+            return this._remove != null && (this._remove.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTThingsGraph.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoTThingsGraph.Model
     /// </summary>
     public partial class ListFlowExecutionMessagesResponse : AmazonWebServiceResponse
     {
-        private List<FlowExecutionMessage> _messages = new List<FlowExecutionMessage>();
+        private List<FlowExecutionMessage> _messages = AWSConfigs.InitializeCollections ? new List<FlowExecutionMessage>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.IoTThingsGraph.Model
         // Check to see if Messages property is set
         internal bool IsSetMessages()
         {
-            return this._messages != null && this._messages.Count > 0; 
+            return this._messages != null && (this._messages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

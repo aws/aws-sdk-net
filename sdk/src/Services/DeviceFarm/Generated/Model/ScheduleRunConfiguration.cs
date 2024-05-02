@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.DeviceFarm.Model
     /// </summary>
     public partial class ScheduleRunConfiguration
     {
-        private List<string> _auxiliaryApps = new List<string>();
+        private List<string> _auxiliaryApps = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private BillingMethod _billingMethod;
         private CustomerArtifactPaths _customerArtifactPaths;
         private string _extraDataPackageArn;
@@ -42,7 +43,7 @@ namespace Amazon.DeviceFarm.Model
         private Location _location;
         private string _networkProfileArn;
         private Radios _radios;
-        private List<string> _vpceConfigurationArns = new List<string>();
+        private List<string> _vpceConfigurationArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AuxiliaryApps. 
@@ -59,7 +60,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if AuxiliaryApps property is set
         internal bool IsSetAuxiliaryApps()
         {
-            return this._auxiliaryApps != null && this._auxiliaryApps.Count > 0; 
+            return this._auxiliaryApps != null && (this._auxiliaryApps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -213,7 +214,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if VpceConfigurationArns property is set
         internal bool IsSetVpceConfigurationArns()
         {
-            return this._vpceConfigurationArns != null && this._vpceConfigurationArns.Count > 0; 
+            return this._vpceConfigurationArns != null && (this._vpceConfigurationArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

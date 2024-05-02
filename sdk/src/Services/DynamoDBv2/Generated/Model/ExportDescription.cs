@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
@@ -423,6 +424,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The Amazon Resource Name (ARN) of the table that was exported.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string TableArn
         {
             get { return this._tableArn; }

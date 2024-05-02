@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConnectCampaignService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ConnectCampaignService.Model
     /// </summary>
     public partial class ListCampaignsResponse : AmazonWebServiceResponse
     {
-        private List<CampaignSummary> _campaignSummaryList = new List<CampaignSummary>();
+        private List<CampaignSummary> _campaignSummaryList = AWSConfigs.InitializeCollections ? new List<CampaignSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -48,7 +49,7 @@ namespace Amazon.ConnectCampaignService.Model
         // Check to see if CampaignSummaryList property is set
         internal bool IsSetCampaignSummaryList()
         {
-            return this._campaignSummaryList != null && this._campaignSummaryList.Count > 0; 
+            return this._campaignSummaryList != null && (this._campaignSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Imagebuilder.Model
     /// </summary>
     public partial class OutputResources
     {
-        private List<Ami> _amis = new List<Ami>();
-        private List<Container> _containers = new List<Container>();
+        private List<Ami> _amis = AWSConfigs.InitializeCollections ? new List<Ami>() : null;
+        private List<Container> _containers = AWSConfigs.InitializeCollections ? new List<Container>() : null;
 
         /// <summary>
         /// Gets and sets the property Amis. 
@@ -51,7 +52,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if Amis property is set
         internal bool IsSetAmis()
         {
-            return this._amis != null && this._amis.Count > 0; 
+            return this._amis != null && (this._amis.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if Containers property is set
         internal bool IsSetContainers()
         {
-            return this._containers != null && this._containers.Count > 0; 
+            return this._containers != null && (this._containers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

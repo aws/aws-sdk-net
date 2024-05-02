@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -121,6 +122,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<Column, ColumnUnmarshaller>(ColumnUnmarshaller.Instance);
                     unmarshalledObject.PartitionKeys = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("schemaStatusDetails", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<SchemaStatusDetail, SchemaStatusDetailUnmarshaller>(SchemaStatusDetailUnmarshaller.Instance);
+                    unmarshalledObject.SchemaStatusDetails = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("type", targetDepth))

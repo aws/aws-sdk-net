@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkDocs.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.WorkDocs.Model
     /// </summary>
     public partial class DescribeGroupsResponse : AmazonWebServiceResponse
     {
-        private List<GroupMetadata> _groups = new List<GroupMetadata>();
+        private List<GroupMetadata> _groups = AWSConfigs.InitializeCollections ? new List<GroupMetadata>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.WorkDocs.Model
         // Check to see if Groups property is set
         internal bool IsSetGroups()
         {
-            return this._groups != null && this._groups.Count > 0; 
+            return this._groups != null && (this._groups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ChimeSDKVoice.Model
     public partial class ListVoiceConnectorsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<VoiceConnector> _voiceConnectors = new List<VoiceConnector>();
+        private List<VoiceConnector> _voiceConnectors = AWSConfigs.InitializeCollections ? new List<VoiceConnector>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +70,7 @@ namespace Amazon.ChimeSDKVoice.Model
         // Check to see if VoiceConnectors property is set
         internal bool IsSetVoiceConnectors()
         {
-            return this._voiceConnectors != null && this._voiceConnectors.Count > 0; 
+            return this._voiceConnectors != null && (this._voiceConnectors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

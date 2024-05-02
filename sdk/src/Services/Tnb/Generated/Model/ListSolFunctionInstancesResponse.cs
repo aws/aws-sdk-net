@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Tnb.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Tnb.Model
     /// </summary>
     public partial class ListSolFunctionInstancesResponse : AmazonWebServiceResponse
     {
-        private List<ListSolFunctionInstanceInfo> _functionInstances = new List<ListSolFunctionInstanceInfo>();
+        private List<ListSolFunctionInstanceInfo> _functionInstances = AWSConfigs.InitializeCollections ? new List<ListSolFunctionInstanceInfo>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Tnb.Model
         // Check to see if FunctionInstances property is set
         internal bool IsSetFunctionInstances()
         {
-            return this._functionInstances != null && this._functionInstances.Count > 0; 
+            return this._functionInstances != null && (this._functionInstances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

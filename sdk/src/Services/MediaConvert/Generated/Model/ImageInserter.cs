@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class ImageInserter
     {
-        private List<InsertableImage> _insertableImages = new List<InsertableImage>();
+        private List<InsertableImage> _insertableImages = AWSConfigs.InitializeCollections ? new List<InsertableImage>() : null;
         private int? _sdrReferenceWhiteLevel;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if InsertableImages property is set
         internal bool IsSetInsertableImages()
         {
-            return this._insertableImages != null && this._insertableImages.Count > 0; 
+            return this._insertableImages != null && (this._insertableImages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

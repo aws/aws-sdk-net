@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Enumerable containing all of the Infos
         /// </summary>
         public IPaginatedEnumerable<DomainInfo> Infos => 
-            new PaginatedResultKeyResponse<ListDomainsResponse, DomainInfo>(this, (i) => i.DomainInfos.Infos);
+            new PaginatedResultKeyResponse<ListDomainsResponse, DomainInfo>(this, (i) => i.DomainInfos.Infos ?? new List<DomainInfo>());
 
         internal ListDomainsPaginator(IAmazonSimpleWorkflow client, ListDomainsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.SimpleWorkflow.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListDomainsResponse> IPaginator<ListDomainsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListDomainsResponse> IPaginator<ListDomainsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Amplify.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Amplify.Model
     /// </summary>
     public partial class DomainAssociation
     {
-        private List<string> _autoSubDomainCreationPatterns = new List<string>();
+        private List<string> _autoSubDomainCreationPatterns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _autoSubDomainIAMRole;
         private Certificate _certificate;
         private string _certificateVerificationDNSRecord;
@@ -42,7 +43,7 @@ namespace Amazon.Amplify.Model
         private DomainStatus _domainStatus;
         private bool? _enableAutoSubDomain;
         private string _statusReason;
-        private List<SubDomain> _subDomains = new List<SubDomain>();
+        private List<SubDomain> _subDomains = AWSConfigs.InitializeCollections ? new List<SubDomain>() : null;
         private UpdateStatus _updateStatus;
 
         /// <summary>
@@ -60,7 +61,7 @@ namespace Amazon.Amplify.Model
         // Check to see if AutoSubDomainCreationPatterns property is set
         internal bool IsSetAutoSubDomainCreationPatterns()
         {
-            return this._autoSubDomainCreationPatterns != null && this._autoSubDomainCreationPatterns.Count > 0; 
+            return this._autoSubDomainCreationPatterns != null && (this._autoSubDomainCreationPatterns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -239,7 +240,7 @@ namespace Amazon.Amplify.Model
         // Check to see if SubDomains property is set
         internal bool IsSetSubDomains()
         {
-            return this._subDomains != null && this._subDomains.Count > 0; 
+            return this._subDomains != null && (this._subDomains.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

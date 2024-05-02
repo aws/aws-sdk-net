@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
     /// </summary>
     public partial class SqlApplicationConfiguration
     {
-        private List<Input> _inputs = new List<Input>();
-        private List<Output> _outputs = new List<Output>();
-        private List<ReferenceDataSource> _referenceDataSources = new List<ReferenceDataSource>();
+        private List<Input> _inputs = AWSConfigs.InitializeCollections ? new List<Input>() : null;
+        private List<Output> _outputs = AWSConfigs.InitializeCollections ? new List<Output>() : null;
+        private List<ReferenceDataSource> _referenceDataSources = AWSConfigs.InitializeCollections ? new List<ReferenceDataSource>() : null;
 
         /// <summary>
         /// Gets and sets the property Inputs. 
@@ -53,7 +54,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         // Check to see if Inputs property is set
         internal bool IsSetInputs()
         {
-            return this._inputs != null && this._inputs.Count > 0; 
+            return this._inputs != null && (this._inputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         // Check to see if Outputs property is set
         internal bool IsSetOutputs()
         {
-            return this._outputs != null && this._outputs.Count > 0; 
+            return this._outputs != null && (this._outputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         // Check to see if ReferenceDataSources property is set
         internal bool IsSetReferenceDataSources()
         {
-            return this._referenceDataSources != null && this._referenceDataSources.Count > 0; 
+            return this._referenceDataSources != null && (this._referenceDataSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

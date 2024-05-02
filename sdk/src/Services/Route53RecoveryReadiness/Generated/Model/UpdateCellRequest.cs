@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
     public partial class UpdateCellRequest : AmazonRoute53RecoveryReadinessRequest
     {
         private string _cellName;
-        private List<string> _cells = new List<string>();
+        private List<string> _cells = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CellName. 
@@ -73,7 +74,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
         // Check to see if Cells property is set
         internal bool IsSetCells()
         {
-            return this._cells != null && this._cells.Count > 0; 
+            return this._cells != null && (this._cells.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

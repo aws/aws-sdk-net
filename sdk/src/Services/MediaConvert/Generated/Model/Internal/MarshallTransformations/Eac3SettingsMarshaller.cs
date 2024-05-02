@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Eac3Settings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAttenuationControl())
             {
                 context.Writer.WritePropertyName("attenuationControl");
@@ -108,25 +111,53 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLoRoCenterMixLevel())
             {
                 context.Writer.WritePropertyName("loRoCenterMixLevel");
-                context.Writer.Write(requestObject.LoRoCenterMixLevel.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.LoRoCenterMixLevel.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LoRoCenterMixLevel.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.LoRoCenterMixLevel.Value);
+                }
             }
 
             if(requestObject.IsSetLoRoSurroundMixLevel())
             {
                 context.Writer.WritePropertyName("loRoSurroundMixLevel");
-                context.Writer.Write(requestObject.LoRoSurroundMixLevel.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.LoRoSurroundMixLevel.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LoRoSurroundMixLevel.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.LoRoSurroundMixLevel.Value);
+                }
             }
 
             if(requestObject.IsSetLtRtCenterMixLevel())
             {
                 context.Writer.WritePropertyName("ltRtCenterMixLevel");
-                context.Writer.Write(requestObject.LtRtCenterMixLevel.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.LtRtCenterMixLevel.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LtRtCenterMixLevel.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.LtRtCenterMixLevel.Value);
+                }
             }
 
             if(requestObject.IsSetLtRtSurroundMixLevel())
             {
                 context.Writer.WritePropertyName("ltRtSurroundMixLevel");
-                context.Writer.Write(requestObject.LtRtSurroundMixLevel.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.LtRtSurroundMixLevel.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.LtRtSurroundMixLevel.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.LtRtSurroundMixLevel.Value);
+                }
             }
 
             if(requestObject.IsSetMetadataControl())

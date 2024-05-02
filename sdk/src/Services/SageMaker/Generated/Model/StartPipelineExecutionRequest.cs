@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.SageMaker.Model
         private string _pipelineExecutionDescription;
         private string _pipelineExecutionDisplayName;
         private string _pipelineName;
-        private List<Parameter> _pipelineParameters = new List<Parameter>();
+        private List<Parameter> _pipelineParameters = AWSConfigs.InitializeCollections ? new List<Parameter>() : null;
         private SelectiveExecutionConfig _selectiveExecutionConfig;
 
         /// <summary>
@@ -154,7 +155,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if PipelineParameters property is set
         internal bool IsSetPipelineParameters()
         {
-            return this._pipelineParameters != null && this._pipelineParameters.Count > 0; 
+            return this._pipelineParameters != null && (this._pipelineParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

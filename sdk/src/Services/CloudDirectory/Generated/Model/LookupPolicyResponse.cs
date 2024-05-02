@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CloudDirectory.Model
     public partial class LookupPolicyResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PolicyToPath> _policyToPathList = new List<PolicyToPath>();
+        private List<PolicyToPath> _policyToPathList = AWSConfigs.InitializeCollections ? new List<PolicyToPath>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if PolicyToPathList property is set
         internal bool IsSetPolicyToPathList()
         {
-            return this._policyToPathList != null && this._policyToPathList.Count > 0; 
+            return this._policyToPathList != null && (this._policyToPathList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

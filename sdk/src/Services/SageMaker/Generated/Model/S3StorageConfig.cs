@@ -26,11 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The Amazon Simple Storage (Amazon S3) location and and security configuration for
-    /// <c>OfflineStore</c>.
+    /// The Amazon Simple Storage (Amazon S3) location and security configuration for <c>OfflineStore</c>.
     /// </summary>
     public partial class S3StorageConfig
     {

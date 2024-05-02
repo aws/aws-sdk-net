@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the CapacityReservationGroups
         /// </summary>
         public IPaginatedEnumerable<CapacityReservationGroup> CapacityReservationGroups => 
-            new PaginatedResultKeyResponse<GetGroupsForCapacityReservationResponse, CapacityReservationGroup>(this, (i) => i.CapacityReservationGroups);
+            new PaginatedResultKeyResponse<GetGroupsForCapacityReservationResponse, CapacityReservationGroup>(this, (i) => i.CapacityReservationGroups ?? new List<CapacityReservationGroup>());
 
         internal GetGroupsForCapacityReservationPaginator(IAmazonEC2 client, GetGroupsForCapacityReservationRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.EC2.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<GetGroupsForCapacityReservationResponse> IPaginator<GetGroupsForCapacityReservationResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<GetGroupsForCapacityReservationResponse> IPaginator<GetGroupsForCapacityReservationResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

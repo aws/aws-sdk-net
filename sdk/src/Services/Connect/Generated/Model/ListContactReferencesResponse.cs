@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Connect.Model
     public partial class ListContactReferencesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ReferenceSummary> _referenceSummaryList = new List<ReferenceSummary>();
+        private List<ReferenceSummary> _referenceSummaryList = AWSConfigs.InitializeCollections ? new List<ReferenceSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -74,7 +75,7 @@ namespace Amazon.Connect.Model
         // Check to see if ReferenceSummaryList property is set
         internal bool IsSetReferenceSummaryList()
         {
-            return this._referenceSummaryList != null && this._referenceSummaryList.Count > 0; 
+            return this._referenceSummaryList != null && (this._referenceSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

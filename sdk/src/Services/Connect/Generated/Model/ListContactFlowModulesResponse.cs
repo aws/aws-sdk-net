@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class ListContactFlowModulesResponse : AmazonWebServiceResponse
     {
-        private List<ContactFlowModuleSummary> _contactFlowModulesSummaryList = new List<ContactFlowModuleSummary>();
+        private List<ContactFlowModuleSummary> _contactFlowModulesSummaryList = AWSConfigs.InitializeCollections ? new List<ContactFlowModuleSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Connect.Model
         // Check to see if ContactFlowModulesSummaryList property is set
         internal bool IsSetContactFlowModulesSummaryList()
         {
-            return this._contactFlowModulesSummaryList != null && this._contactFlowModulesSummaryList.Count > 0; 
+            return this._contactFlowModulesSummaryList != null && (this._contactFlowModulesSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

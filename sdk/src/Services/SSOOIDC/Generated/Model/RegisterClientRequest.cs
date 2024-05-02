@@ -27,6 +27,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SSOOIDC.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.SSOOIDC.Model
     {
         private string _clientName;
         private string _clientType;
-        private List<string> _scopes = new List<string>();
+        private List<string> _scopes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientName. 
@@ -96,7 +97,7 @@ namespace Amazon.SSOOIDC.Model
         // Check to see if Scopes property is set
         internal bool IsSetScopes()
         {
-            return this._scopes != null && this._scopes.Count > 0; 
+            return this._scopes != null && (this._scopes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

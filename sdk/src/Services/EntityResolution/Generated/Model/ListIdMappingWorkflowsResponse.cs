@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EntityResolution.Model
     public partial class ListIdMappingWorkflowsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<IdMappingWorkflowSummary> _workflowSummaries = new List<IdMappingWorkflowSummary>();
+        private List<IdMappingWorkflowSummary> _workflowSummaries = AWSConfigs.InitializeCollections ? new List<IdMappingWorkflowSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.EntityResolution.Model
         // Check to see if WorkflowSummaries property is set
         internal bool IsSetWorkflowSummaries()
         {
-            return this._workflowSummaries != null && this._workflowSummaries.Count > 0; 
+            return this._workflowSummaries != null && (this._workflowSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

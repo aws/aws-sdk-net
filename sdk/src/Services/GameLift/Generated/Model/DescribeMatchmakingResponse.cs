@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GameLift.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class DescribeMatchmakingResponse : AmazonWebServiceResponse
     {
-        private List<MatchmakingTicket> _ticketList = new List<MatchmakingTicket>();
+        private List<MatchmakingTicket> _ticketList = AWSConfigs.InitializeCollections ? new List<MatchmakingTicket>() : null;
 
         /// <summary>
         /// Gets and sets the property TicketList. 
@@ -50,7 +51,7 @@ namespace Amazon.GameLift.Model
         // Check to see if TicketList property is set
         internal bool IsSetTicketList()
         {
-            return this._ticketList != null && this._ticketList.Count > 0; 
+            return this._ticketList != null && (this._ticketList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

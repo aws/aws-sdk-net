@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SavingsPlans.Model
 {
     /// <summary>
-    /// Information about a property.
+    /// Information about a Savings Plan offering property.
     /// </summary>
     public partial class SavingsPlanOfferingProperty
     {

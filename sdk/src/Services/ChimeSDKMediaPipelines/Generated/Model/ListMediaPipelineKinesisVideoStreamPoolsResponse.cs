@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
     /// </summary>
     public partial class ListMediaPipelineKinesisVideoStreamPoolsResponse : AmazonWebServiceResponse
     {
-        private List<KinesisVideoStreamPoolSummary> _kinesisVideoStreamPools = new List<KinesisVideoStreamPoolSummary>();
+        private List<KinesisVideoStreamPoolSummary> _kinesisVideoStreamPools = AWSConfigs.InitializeCollections ? new List<KinesisVideoStreamPoolSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         // Check to see if KinesisVideoStreamPools property is set
         internal bool IsSetKinesisVideoStreamPools()
         {
-            return this._kinesisVideoStreamPools != null && this._kinesisVideoStreamPools.Count > 0; 
+            return this._kinesisVideoStreamPools != null && (this._kinesisVideoStreamPools.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

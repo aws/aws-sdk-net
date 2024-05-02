@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
@@ -42,10 +43,10 @@ namespace Amazon.SimpleEmailV2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// It's possible for Amazon SES to accept a message without sending it. This can happen
-        /// when the message that you're trying to send has an attachment contains a virus, or
-        /// when you send a templated email that contains invalid personalization content, for
-        /// example.
+        /// It's possible for Amazon SES to accept a message without sending it. For example,
+        /// this can happen when the message that you're trying to send has an attachment that
+        /// contains a virus, or when you send a templated email that contains invalid personalization
+        /// content.
         /// </para>
         ///  </note>
         /// </summary>

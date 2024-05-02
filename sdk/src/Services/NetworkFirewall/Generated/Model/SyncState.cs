@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
@@ -56,7 +57,7 @@ namespace Amazon.NetworkFirewall.Model
     public partial class SyncState
     {
         private Attachment _attachment;
-        private Dictionary<string, PerObjectStatus> _config = new Dictionary<string, PerObjectStatus>();
+        private Dictionary<string, PerObjectStatus> _config = AWSConfigs.InitializeCollections ? new Dictionary<string, PerObjectStatus>() : null;
 
         /// <summary>
         /// Gets and sets the property Attachment. 
@@ -98,7 +99,7 @@ namespace Amazon.NetworkFirewall.Model
         // Check to see if Config property is set
         internal bool IsSetConfig()
         {
-            return this._config != null && this._config.Count > 0; 
+            return this._config != null && (this._config.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

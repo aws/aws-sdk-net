@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SSMIncidents.Model
 {
     /// <summary>
@@ -36,15 +37,15 @@ namespace Amazon.SSMIncidents.Model
     /// </summary>
     public partial class CreateResponsePlanRequest : AmazonSSMIncidentsRequest
     {
-        private List<Action> _actions = new List<Action>();
+        private List<Action> _actions = AWSConfigs.InitializeCollections ? new List<Action>() : null;
         private ChatChannel _chatChannel;
         private string _clientToken;
         private string _displayName;
-        private List<string> _engagements = new List<string>();
+        private List<string> _engagements = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private IncidentTemplate _incidentTemplate;
-        private List<Integration> _integrations = new List<Integration>();
+        private List<Integration> _integrations = AWSConfigs.InitializeCollections ? new List<Integration>() : null;
         private string _name;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Actions. 
@@ -62,7 +63,7 @@ namespace Amazon.SSMIncidents.Model
         // Check to see if Actions property is set
         internal bool IsSetActions()
         {
-            return this._actions != null && this._actions.Count > 0; 
+            return this._actions != null && (this._actions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -138,7 +139,7 @@ namespace Amazon.SSMIncidents.Model
         // Check to see if Engagements property is set
         internal bool IsSetEngagements()
         {
-            return this._engagements != null && this._engagements.Count > 0; 
+            return this._engagements != null && (this._engagements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -176,7 +177,7 @@ namespace Amazon.SSMIncidents.Model
         // Check to see if Integrations property is set
         internal bool IsSetIntegrations()
         {
-            return this._integrations != null && this._integrations.Count > 0; 
+            return this._integrations != null && (this._integrations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -214,7 +215,7 @@ namespace Amazon.SSMIncidents.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

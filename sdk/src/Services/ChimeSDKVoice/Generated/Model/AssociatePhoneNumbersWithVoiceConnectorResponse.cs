@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ChimeSDKVoice.Model
     /// </summary>
     public partial class AssociatePhoneNumbersWithVoiceConnectorResponse : AmazonWebServiceResponse
     {
-        private List<PhoneNumberError> _phoneNumberErrors = new List<PhoneNumberError>();
+        private List<PhoneNumberError> _phoneNumberErrors = AWSConfigs.InitializeCollections ? new List<PhoneNumberError>() : null;
 
         /// <summary>
         /// Gets and sets the property PhoneNumberErrors. 
@@ -51,7 +52,7 @@ namespace Amazon.ChimeSDKVoice.Model
         // Check to see if PhoneNumberErrors property is set
         internal bool IsSetPhoneNumberErrors()
         {
-            return this._phoneNumberErrors != null && this._phoneNumberErrors.Count > 0; 
+            return this._phoneNumberErrors != null && (this._phoneNumberErrors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

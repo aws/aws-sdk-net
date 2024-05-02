@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.AutoScaling.Model
         /// Enumerable containing all of the NotificationConfigurations
         /// </summary>
         public IPaginatedEnumerable<NotificationConfiguration> NotificationConfigurations => 
-            new PaginatedResultKeyResponse<DescribeNotificationConfigurationsResponse, NotificationConfiguration>(this, (i) => i.NotificationConfigurations);
+            new PaginatedResultKeyResponse<DescribeNotificationConfigurationsResponse, NotificationConfiguration>(this, (i) => i.NotificationConfigurations ?? new List<NotificationConfiguration>());
 
         internal DescribeNotificationConfigurationsPaginator(IAmazonAutoScaling client, DescribeNotificationConfigurationsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.AutoScaling.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeNotificationConfigurationsResponse> IPaginator<DescribeNotificationConfigurationsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeNotificationConfigurationsResponse> IPaginator<DescribeNotificationConfigurationsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.QBusiness.Model
     /// </summary>
     public partial class ListIndicesResponse : AmazonWebServiceResponse
     {
-        private List<Index> _indices = new List<Index>();
+        private List<Index> _indices = AWSConfigs.InitializeCollections ? new List<Index>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,14 +52,14 @@ namespace Amazon.QBusiness.Model
         // Check to see if Indices property is set
         internal bool IsSetIndices()
         {
-            return this._indices != null && this._indices.Count > 0; 
+            return this._indices != null && (this._indices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the response is truncated, Amazon Q returns this token that you can use in the
-        /// subsequent request to retrieve the next set of indexes.
+        /// If the response is truncated, Amazon Q Business returns this token that you can use
+        /// in the subsequent request to retrieve the next set of indexes.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=800)]

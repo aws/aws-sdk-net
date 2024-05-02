@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.DatabaseMigrationService.Model
     public partial class DescribeMigrationProjectsResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<MigrationProject> _migrationProjects = new List<MigrationProject>();
+        private List<MigrationProject> _migrationProjects = AWSConfigs.InitializeCollections ? new List<MigrationProject>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -78,7 +79,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if MigrationProjects property is set
         internal bool IsSetMigrationProjects()
         {
-            return this._migrationProjects != null && this._migrationProjects.Count > 0; 
+            return this._migrationProjects != null && (this._migrationProjects.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

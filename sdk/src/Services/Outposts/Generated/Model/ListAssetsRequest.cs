@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Outposts.Model
 {
     /// <summary>
@@ -42,11 +43,11 @@ namespace Amazon.Outposts.Model
     /// </summary>
     public partial class ListAssetsRequest : AmazonOutpostsRequest
     {
-        private List<string> _hostIdFilter = new List<string>();
+        private List<string> _hostIdFilter = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
         private string _outpostIdentifier;
-        private List<string> _statusFilter = new List<string>();
+        private List<string> _statusFilter = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property HostIdFilter. 
@@ -63,7 +64,7 @@ namespace Amazon.Outposts.Model
         // Check to see if HostIdFilter property is set
         internal bool IsSetHostIdFilter()
         {
-            return this._hostIdFilter != null && this._hostIdFilter.Count > 0; 
+            return this._hostIdFilter != null && (this._hostIdFilter.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -133,7 +134,7 @@ namespace Amazon.Outposts.Model
         // Check to see if StatusFilter property is set
         internal bool IsSetStatusFilter()
         {
-            return this._statusFilter != null && this._statusFilter.Count > 0; 
+            return this._statusFilter != null && (this._statusFilter.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
@@ -36,10 +37,10 @@ namespace Amazon.CloudTrail.Model
     /// </summary>
     public partial class CreateChannelRequest : AmazonCloudTrailRequest
     {
-        private List<Destination> _destinations = new List<Destination>();
+        private List<Destination> _destinations = AWSConfigs.InitializeCollections ? new List<Destination>() : null;
         private string _name;
         private string _source;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Destinations. 
@@ -57,7 +58,7 @@ namespace Amazon.CloudTrail.Model
         // Check to see if Destinations property is set
         internal bool IsSetDestinations()
         {
-            return this._destinations != null && this._destinations.Count > 0; 
+            return this._destinations != null && (this._destinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -119,7 +120,7 @@ namespace Amazon.CloudTrail.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

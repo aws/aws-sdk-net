@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
@@ -34,14 +35,14 @@ namespace Amazon.CodePipeline.Model
     public partial class PipelineDeclaration
     {
         private ArtifactStore _artifactStore;
-        private Dictionary<string, ArtifactStore> _artifactStores = new Dictionary<string, ArtifactStore>();
+        private Dictionary<string, ArtifactStore> _artifactStores = AWSConfigs.InitializeCollections ? new Dictionary<string, ArtifactStore>() : null;
         private ExecutionMode _executionMode;
         private string _name;
         private PipelineType _pipelineType;
         private string _roleArn;
-        private List<StageDeclaration> _stages = new List<StageDeclaration>();
-        private List<PipelineTriggerDeclaration> _triggers = new List<PipelineTriggerDeclaration>();
-        private List<PipelineVariableDeclaration> _variables = new List<PipelineVariableDeclaration>();
+        private List<StageDeclaration> _stages = AWSConfigs.InitializeCollections ? new List<StageDeclaration>() : null;
+        private List<PipelineTriggerDeclaration> _triggers = AWSConfigs.InitializeCollections ? new List<PipelineTriggerDeclaration>() : null;
+        private List<PipelineVariableDeclaration> _variables = AWSConfigs.InitializeCollections ? new List<PipelineVariableDeclaration>() : null;
         private int? _version;
 
         /// <summary>
@@ -93,7 +94,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if ArtifactStores property is set
         internal bool IsSetArtifactStores()
         {
-            return this._artifactStores != null && this._artifactStores.Count > 0; 
+            return this._artifactStores != null && (this._artifactStores.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -215,7 +216,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if Stages property is set
         internal bool IsSetStages()
         {
-            return this._stages != null && this._stages.Count > 0; 
+            return this._stages != null && (this._stages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -241,7 +242,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if Triggers property is set
         internal bool IsSetTriggers()
         {
-            return this._triggers != null && this._triggers.Count > 0; 
+            return this._triggers != null && (this._triggers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -261,7 +262,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if Variables property is set
         internal bool IsSetVariables()
         {
-            return this._variables != null && this._variables.Count > 0; 
+            return this._variables != null && (this._variables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ComprehendMedical.Model
 {
     /// <summary>
@@ -37,15 +38,15 @@ namespace Amazon.ComprehendMedical.Model
     /// </summary>
     public partial class SNOMEDCTEntity
     {
-        private List<SNOMEDCTAttribute> _attributes = new List<SNOMEDCTAttribute>();
+        private List<SNOMEDCTAttribute> _attributes = AWSConfigs.InitializeCollections ? new List<SNOMEDCTAttribute>() : null;
         private int? _beginOffset;
         private SNOMEDCTEntityCategory _category;
         private int? _endOffset;
         private int? _id;
         private float? _score;
-        private List<SNOMEDCTConcept> _snomedctConcepts = new List<SNOMEDCTConcept>();
+        private List<SNOMEDCTConcept> _snomedctConcepts = AWSConfigs.InitializeCollections ? new List<SNOMEDCTConcept>() : null;
         private string _text;
-        private List<SNOMEDCTTrait> _traits = new List<SNOMEDCTTrait>();
+        private List<SNOMEDCTTrait> _traits = AWSConfigs.InitializeCollections ? new List<SNOMEDCTTrait>() : null;
         private SNOMEDCTEntityType _type;
 
         /// <summary>
@@ -64,7 +65,7 @@ namespace Amazon.ComprehendMedical.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -178,7 +179,7 @@ namespace Amazon.ComprehendMedical.Model
         // Check to see if SNOMEDCTConcepts property is set
         internal bool IsSetSNOMEDCTConcepts()
         {
-            return this._snomedctConcepts != null && this._snomedctConcepts.Count > 0; 
+            return this._snomedctConcepts != null && (this._snomedctConcepts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -215,7 +216,7 @@ namespace Amazon.ComprehendMedical.Model
         // Check to see if Traits property is set
         internal bool IsSetTraits()
         {
-            return this._traits != null && this._traits.Count > 0; 
+            return this._traits != null && (this._traits.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

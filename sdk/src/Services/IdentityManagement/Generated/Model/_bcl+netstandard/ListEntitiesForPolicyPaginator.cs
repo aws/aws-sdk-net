@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
@@ -45,19 +46,19 @@ namespace Amazon.IdentityManagement.Model
         /// Enumerable containing all of the PolicyGroups
         /// </summary>
         public IPaginatedEnumerable<PolicyGroup> PolicyGroups => 
-            new PaginatedResultKeyResponse<ListEntitiesForPolicyResponse, PolicyGroup>(this, (i) => i.PolicyGroups);
+            new PaginatedResultKeyResponse<ListEntitiesForPolicyResponse, PolicyGroup>(this, (i) => i.PolicyGroups ?? new List<PolicyGroup>());
 
         /// <summary>
         /// Enumerable containing all of the PolicyUsers
         /// </summary>
         public IPaginatedEnumerable<PolicyUser> PolicyUsers => 
-            new PaginatedResultKeyResponse<ListEntitiesForPolicyResponse, PolicyUser>(this, (i) => i.PolicyUsers);
+            new PaginatedResultKeyResponse<ListEntitiesForPolicyResponse, PolicyUser>(this, (i) => i.PolicyUsers ?? new List<PolicyUser>());
 
         /// <summary>
         /// Enumerable containing all of the PolicyRoles
         /// </summary>
         public IPaginatedEnumerable<PolicyRole> PolicyRoles => 
-            new PaginatedResultKeyResponse<ListEntitiesForPolicyResponse, PolicyRole>(this, (i) => i.PolicyRoles);
+            new PaginatedResultKeyResponse<ListEntitiesForPolicyResponse, PolicyRole>(this, (i) => i.PolicyRoles ?? new List<PolicyRole>());
 
         internal ListEntitiesForPolicyPaginator(IAmazonIdentityManagementService client, ListEntitiesForPolicyRequest request)
         {
@@ -85,7 +86,7 @@ namespace Amazon.IdentityManagement.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListEntitiesForPolicyResponse> IPaginator<ListEntitiesForPolicyResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListEntitiesForPolicyResponse> IPaginator<ListEntitiesForPolicyResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

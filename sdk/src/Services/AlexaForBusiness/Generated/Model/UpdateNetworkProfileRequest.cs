@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AlexaForBusiness.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.AlexaForBusiness.Model
         private string _networkProfileArn;
         private string _networkProfileName;
         private string _nextPassword;
-        private List<string> _trustAnchors = new List<string>();
+        private List<string> _trustAnchors = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CertificateAuthorityArn. 
@@ -175,7 +176,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if TrustAnchors property is set
         internal bool IsSetTrustAnchors()
         {
-            return this._trustAnchors != null && this._trustAnchors.Count > 0; 
+            return this._trustAnchors != null && (this._trustAnchors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Chime.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Chime.Model
     public partial class ListChannelBansResponse : AmazonWebServiceResponse
     {
         private string _channelArn;
-        private List<ChannelBanSummary> _channelBans = new List<ChannelBanSummary>();
+        private List<ChannelBanSummary> _channelBans = AWSConfigs.InitializeCollections ? new List<ChannelBanSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.Chime.Model
         // Check to see if ChannelBans property is set
         internal bool IsSetChannelBans()
         {
-            return this._channelBans != null && this._channelBans.Count > 0; 
+            return this._channelBans != null && (this._channelBans.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

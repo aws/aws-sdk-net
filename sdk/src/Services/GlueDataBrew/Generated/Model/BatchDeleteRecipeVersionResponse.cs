@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.GlueDataBrew.Model
     /// </summary>
     public partial class BatchDeleteRecipeVersionResponse : AmazonWebServiceResponse
     {
-        private List<RecipeVersionErrorDetail> _errors = new List<RecipeVersionErrorDetail>();
+        private List<RecipeVersionErrorDetail> _errors = AWSConfigs.InitializeCollections ? new List<RecipeVersionErrorDetail>() : null;
         private string _name;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.GlueDataBrew.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

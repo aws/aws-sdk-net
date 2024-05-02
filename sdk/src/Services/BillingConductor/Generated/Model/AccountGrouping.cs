@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BillingConductor.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.BillingConductor.Model
     public partial class AccountGrouping
     {
         private bool? _autoAssociate;
-        private List<string> _linkedAccountIds = new List<string>();
+        private List<string> _linkedAccountIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AutoAssociate. 
@@ -73,7 +74,7 @@ namespace Amazon.BillingConductor.Model
         // Check to see if LinkedAccountIds property is set
         internal bool IsSetLinkedAccountIds()
         {
-            return this._linkedAccountIds != null && this._linkedAccountIds.Count > 0; 
+            return this._linkedAccountIds != null && (this._linkedAccountIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

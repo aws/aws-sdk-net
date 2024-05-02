@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ApplicationCostProfiler.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ApplicationCostProfiler.Model
     public partial class ListReportDefinitionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ReportDefinition> _reportDefinitions = new List<ReportDefinition>();
+        private List<ReportDefinition> _reportDefinitions = AWSConfigs.InitializeCollections ? new List<ReportDefinition>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.ApplicationCostProfiler.Model
         // Check to see if ReportDefinitions property is set
         internal bool IsSetReportDefinitions()
         {
-            return this._reportDefinitions != null && this._reportDefinitions.Count > 0; 
+            return this._reportDefinitions != null && (this._reportDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

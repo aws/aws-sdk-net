@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.ElastiCache.Model
         private AuthTokenUpdateStatus _authTokenStatus;
         private PendingAutomaticFailoverStatus _automaticFailoverStatus;
         private ClusterMode _clusterMode;
-        private List<PendingLogDeliveryConfiguration> _logDeliveryConfigurations = new List<PendingLogDeliveryConfiguration>();
+        private List<PendingLogDeliveryConfiguration> _logDeliveryConfigurations = AWSConfigs.InitializeCollections ? new List<PendingLogDeliveryConfiguration>() : null;
         private string _primaryClusterId;
         private ReshardingStatus _resharding;
         private bool? _transitEncryptionEnabled;
@@ -117,7 +118,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if LogDeliveryConfigurations property is set
         internal bool IsSetLogDeliveryConfigurations()
         {
-            return this._logDeliveryConfigurations != null && this._logDeliveryConfigurations.Count > 0; 
+            return this._logDeliveryConfigurations != null && (this._logDeliveryConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FraudDetector.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class EvaluatedModelVersion
     {
-        private List<ModelVersionEvaluation> _evaluations = new List<ModelVersionEvaluation>();
+        private List<ModelVersionEvaluation> _evaluations = AWSConfigs.InitializeCollections ? new List<ModelVersionEvaluation>() : null;
         private string _modelId;
         private string _modelType;
         private string _modelVersion;
@@ -53,7 +54,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if Evaluations property is set
         internal bool IsSetEvaluations()
         {
-            return this._evaluations != null && this._evaluations.Count > 0; 
+            return this._evaluations != null && (this._evaluations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

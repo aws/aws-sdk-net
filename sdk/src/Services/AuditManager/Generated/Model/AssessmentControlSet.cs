@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
@@ -33,12 +34,12 @@ namespace Amazon.AuditManager.Model
     /// </summary>
     public partial class AssessmentControlSet
     {
-        private List<AssessmentControl> _controls = new List<AssessmentControl>();
-        private List<Delegation> _delegations = new List<Delegation>();
+        private List<AssessmentControl> _controls = AWSConfigs.InitializeCollections ? new List<AssessmentControl>() : null;
+        private List<Delegation> _delegations = AWSConfigs.InitializeCollections ? new List<Delegation>() : null;
         private string _description;
         private string _id;
         private int? _manualEvidenceCount;
-        private List<Role> _roles = new List<Role>();
+        private List<Role> _roles = AWSConfigs.InitializeCollections ? new List<Role>() : null;
         private ControlSetStatus _status;
         private int? _systemEvidenceCount;
 
@@ -57,7 +58,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if Controls property is set
         internal bool IsSetControls()
         {
-            return this._controls != null && this._controls.Count > 0; 
+            return this._controls != null && (this._controls.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if Delegations property is set
         internal bool IsSetDelegations()
         {
-            return this._delegations != null && this._delegations.Count > 0; 
+            return this._delegations != null && (this._delegations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -152,7 +153,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if Roles property is set
         internal bool IsSetRoles()
         {
-            return this._roles != null && this._roles.Count > 0; 
+            return this._roles != null && (this._roles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

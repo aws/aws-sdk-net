@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class SearchVulnerabilitiesFilterCriteria
     {
-        private List<string> _vulnerabilityIds = new List<string>();
+        private List<string> _vulnerabilityIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property VulnerabilityIds. 
@@ -51,7 +52,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if VulnerabilityIds property is set
         internal bool IsSetVulnerabilityIds()
         {
-            return this._vulnerabilityIds != null && this._vulnerabilityIds.Count > 0; 
+            return this._vulnerabilityIds != null && (this._vulnerabilityIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ConfigService.Model
         /// Enumerable containing all of the ConformancePackComplianceSummaryList
         /// </summary>
         public IPaginatedEnumerable<ConformancePackComplianceSummary> ConformancePackComplianceSummaryList => 
-            new PaginatedResultKeyResponse<GetConformancePackComplianceSummaryResponse, ConformancePackComplianceSummary>(this, (i) => i.ConformancePackComplianceSummaryList);
+            new PaginatedResultKeyResponse<GetConformancePackComplianceSummaryResponse, ConformancePackComplianceSummary>(this, (i) => i.ConformancePackComplianceSummaryList ?? new List<ConformancePackComplianceSummary>());
 
         internal GetConformancePackComplianceSummaryPaginator(IAmazonConfigService client, GetConformancePackComplianceSummaryRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ConfigService.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<GetConformancePackComplianceSummaryResponse> IPaginator<GetConformancePackComplianceSummaryResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<GetConformancePackComplianceSummaryResponse> IPaginator<GetConformancePackComplianceSummaryResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

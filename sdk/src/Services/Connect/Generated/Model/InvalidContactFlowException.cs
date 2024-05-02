@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Connect.Model
     #endif
     public partial class InvalidContactFlowException : AmazonConnectException
     {
-        private List<ProblemDetail> _problems = new List<ProblemDetail>();
+        private List<ProblemDetail> _problems = AWSConfigs.InitializeCollections ? new List<ProblemDetail>() : null;
 
         /// <summary>
         /// Constructs a new InvalidContactFlowException with the specified error
@@ -134,7 +135,7 @@ namespace Amazon.Connect.Model
         // Check to see if Problems property is set
         internal bool IsSetProblems()
         {
-            return this._problems != null && this._problems.Count > 0; 
+            return this._problems != null && (this._problems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

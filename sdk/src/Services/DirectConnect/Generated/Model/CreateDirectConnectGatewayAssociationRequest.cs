@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.DirectConnect.Model
     /// </summary>
     public partial class CreateDirectConnectGatewayAssociationRequest : AmazonDirectConnectRequest
     {
-        private List<RouteFilterPrefix> _addAllowedPrefixesToDirectConnectGateway = new List<RouteFilterPrefix>();
+        private List<RouteFilterPrefix> _addAllowedPrefixesToDirectConnectGateway = AWSConfigs.InitializeCollections ? new List<RouteFilterPrefix>() : null;
         private string _directConnectGatewayId;
         private string _gatewayId;
         private string _virtualGatewayId;
@@ -65,7 +66,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if AddAllowedPrefixesToDirectConnectGateway property is set
         internal bool IsSetAddAllowedPrefixesToDirectConnectGateway()
         {
-            return this._addAllowedPrefixesToDirectConnectGateway != null && this._addAllowedPrefixesToDirectConnectGateway.Count > 0; 
+            return this._addAllowedPrefixesToDirectConnectGateway != null && (this._addAllowedPrefixesToDirectConnectGateway.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

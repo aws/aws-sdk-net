@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.SecurityHub.Model
         /// Enumerable containing all of the Findings
         /// </summary>
         public IPaginatedEnumerable<AwsSecurityFinding> Findings => 
-            new PaginatedResultKeyResponse<GetFindingsResponse, AwsSecurityFinding>(this, (i) => i.Findings);
+            new PaginatedResultKeyResponse<GetFindingsResponse, AwsSecurityFinding>(this, (i) => i.Findings ?? new List<AwsSecurityFinding>());
 
         internal GetFindingsPaginator(IAmazonSecurityHub client, GetFindingsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.SecurityHub.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<GetFindingsResponse> IPaginator<GetFindingsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<GetFindingsResponse> IPaginator<GetFindingsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

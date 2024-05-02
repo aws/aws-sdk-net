@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VerifiedPermissions.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.VerifiedPermissions.Model
     /// </summary>
     public partial class ListIdentitySourcesRequest : AmazonVerifiedPermissionsRequest
     {
-        private List<IdentitySourceFilter> _filters = new List<IdentitySourceFilter>();
+        private List<IdentitySourceFilter> _filters = AWSConfigs.InitializeCollections ? new List<IdentitySourceFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
         private string _policyStoreId;
@@ -57,7 +58,7 @@ namespace Amazon.VerifiedPermissions.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -77,7 +78,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// per response. You can specify a maximum of 200 identity sources per response.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=200)]
+        [AWSProperty(Min=1)]
         public int? MaxResults
         {
             get { return this._maxResults; }

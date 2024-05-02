@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Route53.Model
     /// </summary>
     public partial class ListTrafficPolicyInstancesResponse : AmazonWebServiceResponse
     {
-        private List<TrafficPolicyInstance> _trafficPolicyInstances = new List<TrafficPolicyInstance>();
+        private List<TrafficPolicyInstance> _trafficPolicyInstances = AWSConfigs.InitializeCollections ? new List<TrafficPolicyInstance>() : null;
         private string _hostedZoneIdMarker;
         private string _trafficPolicyInstanceNameMarker;
         private RRType _trafficPolicyInstanceTypeMarker;
@@ -57,7 +58,7 @@ namespace Amazon.Route53.Model
         // Check to see if TrafficPolicyInstances property is set
         internal bool IsSetTrafficPolicyInstances()
         {
-            return this._trafficPolicyInstances != null && this._trafficPolicyInstances.Count > 0; 
+            return this._trafficPolicyInstances != null && (this._trafficPolicyInstances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

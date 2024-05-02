@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
@@ -35,10 +36,10 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// </summary>
     public partial class DescribeRegistrationAttachmentsRequest : AmazonPinpointSMSVoiceV2Request
     {
-        private List<RegistrationAttachmentFilter> _filters = new List<RegistrationAttachmentFilter>();
+        private List<RegistrationAttachmentFilter> _filters = AWSConfigs.InitializeCollections ? new List<RegistrationAttachmentFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _registrationAttachmentIds = new List<string>();
+        private List<string> _registrationAttachmentIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -56,7 +57,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -114,7 +115,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if RegistrationAttachmentIds property is set
         internal bool IsSetRegistrationAttachmentIds()
         {
-            return this._registrationAttachmentIds != null && this._registrationAttachmentIds.Count > 0; 
+            return this._registrationAttachmentIds != null && (this._registrationAttachmentIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

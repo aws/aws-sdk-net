@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AmplifyBackend.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AmplifyBackend.Model
     /// </summary>
     public partial class ListS3BucketsResponse : AmazonWebServiceResponse
     {
-        private List<S3BucketInfo> _buckets = new List<S3BucketInfo>();
+        private List<S3BucketInfo> _buckets = AWSConfigs.InitializeCollections ? new List<S3BucketInfo>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.AmplifyBackend.Model
         // Check to see if Buckets property is set
         internal bool IsSetBuckets()
         {
-            return this._buckets != null && this._buckets.Count > 0; 
+            return this._buckets != null && (this._buckets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

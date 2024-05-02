@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTFleetWise.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.IoTFleetWise.Model
     public partial class ImportDecoderManifestRequest : AmazonIoTFleetWiseRequest
     {
         private string _name;
-        private List<NetworkFileDefinition> _networkFileDefinitions = new List<NetworkFileDefinition>();
+        private List<NetworkFileDefinition> _networkFileDefinitions = AWSConfigs.InitializeCollections ? new List<NetworkFileDefinition>() : null;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -72,7 +73,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if NetworkFileDefinitions property is set
         internal bool IsSetNetworkFileDefinitions()
         {
-            return this._networkFileDefinitions != null && this._networkFileDefinitions.Count > 0; 
+            return this._networkFileDefinitions != null && (this._networkFileDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

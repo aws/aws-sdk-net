@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CodeGuruReviewer.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// Enumerable containing all of the RepositoryAssociationSummaries
         /// </summary>
         public IPaginatedEnumerable<RepositoryAssociationSummary> RepositoryAssociationSummaries => 
-            new PaginatedResultKeyResponse<ListRepositoryAssociationsResponse, RepositoryAssociationSummary>(this, (i) => i.RepositoryAssociationSummaries);
+            new PaginatedResultKeyResponse<ListRepositoryAssociationsResponse, RepositoryAssociationSummary>(this, (i) => i.RepositoryAssociationSummaries ?? new List<RepositoryAssociationSummary>());
 
         internal ListRepositoryAssociationsPaginator(IAmazonCodeGuruReviewer client, ListRepositoryAssociationsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.CodeGuruReviewer.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListRepositoryAssociationsResponse> IPaginator<ListRepositoryAssociationsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListRepositoryAssociationsResponse> IPaginator<ListRepositoryAssociationsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

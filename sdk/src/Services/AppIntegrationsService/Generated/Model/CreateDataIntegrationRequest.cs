@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppIntegrationsService.Model
 {
     /// <summary>
@@ -47,10 +48,10 @@ namespace Amazon.AppIntegrationsService.Model
         private FileConfiguration _fileConfiguration;
         private string _kmsKey;
         private string _name;
-        private Dictionary<string, Dictionary<string, List<string>>> _objectConfiguration = new Dictionary<string, Dictionary<string, List<string>>>();
+        private Dictionary<string, Dictionary<string, List<string>>> _objectConfiguration = AWSConfigs.InitializeCollections ? new Dictionary<string, Dictionary<string, List<string>>>() : null;
         private ScheduleConfiguration _scheduleConfig;
         private string _sourceURI;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -164,7 +165,7 @@ namespace Amazon.AppIntegrationsService.Model
         // Check to see if ObjectConfiguration property is set
         internal bool IsSetObjectConfiguration()
         {
-            return this._objectConfiguration != null && this._objectConfiguration.Count > 0; 
+            return this._objectConfiguration != null && (this._objectConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -221,7 +222,7 @@ namespace Amazon.AppIntegrationsService.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

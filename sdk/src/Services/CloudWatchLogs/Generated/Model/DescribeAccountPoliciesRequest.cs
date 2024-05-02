@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// </summary>
     public partial class DescribeAccountPoliciesRequest : AmazonCloudWatchLogsRequest
     {
-        private List<string> _accountIdentifiers = new List<string>();
+        private List<string> _accountIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _policyName;
         private PolicyType _policyType;
 
@@ -61,7 +62,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if AccountIdentifiers property is set
         internal bool IsSetAccountIdentifiers()
         {
-            return this._accountIdentifiers != null && this._accountIdentifiers.Count > 0; 
+            return this._accountIdentifiers != null && (this._accountIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConnectCases.Model
 {
     /// <summary>
@@ -33,10 +34,10 @@ namespace Amazon.ConnectCases.Model
     /// </summary>
     public partial class CaseFilter
     {
-        private List<CaseFilter> _andAll = new List<CaseFilter>();
+        private List<CaseFilter> _andAll = AWSConfigs.InitializeCollections ? new List<CaseFilter>() : null;
         private FieldFilter _field;
         private CaseFilter _not;
-        private List<CaseFilter> _orAll = new List<CaseFilter>();
+        private List<CaseFilter> _orAll = AWSConfigs.InitializeCollections ? new List<CaseFilter>() : null;
 
         /// <summary>
         /// Gets and sets the property AndAll. 
@@ -54,7 +55,7 @@ namespace Amazon.ConnectCases.Model
         // Check to see if AndAll property is set
         internal bool IsSetAndAll()
         {
-            return this._andAll != null && this._andAll.Count > 0; 
+            return this._andAll != null && (this._andAll.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -106,7 +107,7 @@ namespace Amazon.ConnectCases.Model
         // Check to see if OrAll property is set
         internal bool IsSetOrAll()
         {
-            return this._orAll != null && this._orAll.Count > 0; 
+            return this._orAll != null && (this._orAll.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

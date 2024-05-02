@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
@@ -33,12 +34,12 @@ namespace Amazon.MediaConnect.Model
     /// </summary>
     public partial class Gateway
     {
-        private List<string> _egressCidrBlocks = new List<string>();
+        private List<string> _egressCidrBlocks = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _gatewayArn;
-        private List<MessageDetail> _gatewayMessages = new List<MessageDetail>();
+        private List<MessageDetail> _gatewayMessages = AWSConfigs.InitializeCollections ? new List<MessageDetail>() : null;
         private GatewayState _gatewayState;
         private string _name;
-        private List<GatewayNetwork> _networks = new List<GatewayNetwork>();
+        private List<GatewayNetwork> _networks = AWSConfigs.InitializeCollections ? new List<GatewayNetwork>() : null;
 
         /// <summary>
         /// Gets and sets the property EgressCidrBlocks. The range of IP addresses that contribute
@@ -56,7 +57,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if EgressCidrBlocks property is set
         internal bool IsSetEgressCidrBlocks()
         {
-            return this._egressCidrBlocks != null && this._egressCidrBlocks.Count > 0; 
+            return this._egressCidrBlocks != null && (this._egressCidrBlocks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -87,7 +88,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if GatewayMessages property is set
         internal bool IsSetGatewayMessages()
         {
-            return this._gatewayMessages != null && this._gatewayMessages.Count > 0; 
+            return this._gatewayMessages != null && (this._gatewayMessages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -135,7 +136,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if Networks property is set
         internal bool IsSetNetworks()
         {
-            return this._networks != null && this._networks.Count > 0; 
+            return this._networks != null && (this._networks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

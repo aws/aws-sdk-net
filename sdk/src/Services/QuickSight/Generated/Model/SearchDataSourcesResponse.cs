@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class SearchDataSourcesResponse : AmazonWebServiceResponse
     {
-        private List<DataSourceSummary> _dataSourceSummaries = new List<DataSourceSummary>();
+        private List<DataSourceSummary> _dataSourceSummaries = AWSConfigs.InitializeCollections ? new List<DataSourceSummary>() : null;
         private string _nextToken;
         private string _requestId;
         private int? _status;
@@ -53,7 +54,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if DataSourceSummaries property is set
         internal bool IsSetDataSourceSummaries()
         {
-            return this._dataSourceSummaries != null && this._dataSourceSummaries.Count > 0; 
+            return this._dataSourceSummaries != null && (this._dataSourceSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

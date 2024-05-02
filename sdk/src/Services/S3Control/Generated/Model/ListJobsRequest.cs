@@ -26,12 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Container for the parameters to the ListJobs operation.
     /// Lists current S3 Batch Operations jobs as well as the jobs that have ended within
-    /// the last 30 days for the Amazon Web Services account making the request. For more
+    /// the last 90 days for the Amazon Web Services account making the request. For more
     /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3
     /// Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
     /// 
@@ -69,7 +70,7 @@ namespace Amazon.S3Control.Model
     public partial class ListJobsRequest : AmazonS3ControlRequest
     {
         private string _accountId;
-        private List<string> _jobStatuses = new List<string>();
+        private List<string> _jobStatuses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -107,7 +108,7 @@ namespace Amazon.S3Control.Model
         // Check to see if JobStatuses property is set
         internal bool IsSetJobStatuses()
         {
-            return this._jobStatuses != null && this._jobStatuses.Count > 0; 
+            return this._jobStatuses != null && (this._jobStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

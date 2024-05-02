@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class ListAuditFindingsResponse : AmazonWebServiceResponse
     {
-        private List<AuditFinding> _findings = new List<AuditFinding>();
+        private List<AuditFinding> _findings = AWSConfigs.InitializeCollections ? new List<AuditFinding>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.IoT.Model
         // Check to see if Findings property is set
         internal bool IsSetFindings()
         {
-            return this._findings != null && this._findings.Count > 0; 
+            return this._findings != null && (this._findings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

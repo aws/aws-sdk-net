@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FMS.Model
 {
     /// <summary>
@@ -33,20 +34,20 @@ namespace Amazon.FMS.Model
     /// </summary>
     public partial class NetworkFirewallInternetTrafficNotInspectedViolation
     {
-        private List<Route> _actualFirewallSubnetRoutes = new List<Route>();
-        private List<Route> _actualInternetGatewayRoutes = new List<Route>();
+        private List<Route> _actualFirewallSubnetRoutes = AWSConfigs.InitializeCollections ? new List<Route>() : null;
+        private List<Route> _actualInternetGatewayRoutes = AWSConfigs.InitializeCollections ? new List<Route>() : null;
         private string _currentFirewallSubnetRouteTable;
         private string _currentInternetGatewayRouteTable;
         private string _expectedFirewallEndpoint;
-        private List<ExpectedRoute> _expectedFirewallSubnetRoutes = new List<ExpectedRoute>();
-        private List<ExpectedRoute> _expectedInternetGatewayRoutes = new List<ExpectedRoute>();
+        private List<ExpectedRoute> _expectedFirewallSubnetRoutes = AWSConfigs.InitializeCollections ? new List<ExpectedRoute>() : null;
+        private List<ExpectedRoute> _expectedInternetGatewayRoutes = AWSConfigs.InitializeCollections ? new List<ExpectedRoute>() : null;
         private string _firewallSubnetId;
         private string _internetGatewayId;
         private bool? _isRouteTableUsedInDifferentAZ;
         private string _routeTableId;
         private string _subnetAvailabilityZone;
         private string _subnetId;
-        private List<Route> _violatingRoutes = new List<Route>();
+        private List<Route> _violatingRoutes = AWSConfigs.InitializeCollections ? new List<Route>() : null;
         private string _vpcId;
 
         /// <summary>
@@ -64,7 +65,7 @@ namespace Amazon.FMS.Model
         // Check to see if ActualFirewallSubnetRoutes property is set
         internal bool IsSetActualFirewallSubnetRoutes()
         {
-            return this._actualFirewallSubnetRoutes != null && this._actualFirewallSubnetRoutes.Count > 0; 
+            return this._actualFirewallSubnetRoutes != null && (this._actualFirewallSubnetRoutes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -82,7 +83,7 @@ namespace Amazon.FMS.Model
         // Check to see if ActualInternetGatewayRoutes property is set
         internal bool IsSetActualInternetGatewayRoutes()
         {
-            return this._actualInternetGatewayRoutes != null && this._actualInternetGatewayRoutes.Count > 0; 
+            return this._actualInternetGatewayRoutes != null && (this._actualInternetGatewayRoutes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -157,7 +158,7 @@ namespace Amazon.FMS.Model
         // Check to see if ExpectedFirewallSubnetRoutes property is set
         internal bool IsSetExpectedFirewallSubnetRoutes()
         {
-            return this._expectedFirewallSubnetRoutes != null && this._expectedFirewallSubnetRoutes.Count > 0; 
+            return this._expectedFirewallSubnetRoutes != null && (this._expectedFirewallSubnetRoutes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -175,7 +176,7 @@ namespace Amazon.FMS.Model
         // Check to see if ExpectedInternetGatewayRoutes property is set
         internal bool IsSetExpectedInternetGatewayRoutes()
         {
-            return this._expectedInternetGatewayRoutes != null && this._expectedInternetGatewayRoutes.Count > 0; 
+            return this._expectedInternetGatewayRoutes != null && (this._expectedInternetGatewayRoutes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -306,7 +307,7 @@ namespace Amazon.FMS.Model
         // Check to see if ViolatingRoutes property is set
         internal bool IsSetViolatingRoutes()
         {
-            return this._violatingRoutes != null && this._violatingRoutes.Count > 0; 
+            return this._violatingRoutes != null && (this._violatingRoutes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

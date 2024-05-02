@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeKeyPairsResponse : AmazonWebServiceResponse
     {
-        private List<KeyPairInfo> _keyPairs = new List<KeyPairInfo>();
+        private List<KeyPairInfo> _keyPairs = AWSConfigs.InitializeCollections ? new List<KeyPairInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property KeyPairs. 
@@ -50,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if KeyPairs property is set
         internal bool IsSetKeyPairs()
         {
-            return this._keyPairs != null && this._keyPairs.Count > 0; 
+            return this._keyPairs != null && (this._keyPairs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

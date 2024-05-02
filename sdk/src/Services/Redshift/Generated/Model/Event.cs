@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Redshift.Model
     public partial class Event
     {
         private DateTime? _date;
-        private List<string> _eventCategories = new List<string>();
+        private List<string> _eventCategories = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _eventId;
         private string _message;
         private string _severity;
@@ -78,7 +79,7 @@ namespace Amazon.Redshift.Model
         // Check to see if EventCategories property is set
         internal bool IsSetEventCategories()
         {
-            return this._eventCategories != null && this._eventCategories.Count > 0; 
+            return this._eventCategories != null && (this._eventCategories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

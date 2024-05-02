@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.XRay.Model
 {
     /// <summary>
@@ -34,10 +35,10 @@ namespace Amazon.XRay.Model
     public partial class ResponseTimeRootCauseService
     {
         private string _accountId;
-        private List<ResponseTimeRootCauseEntity> _entityPath = new List<ResponseTimeRootCauseEntity>();
+        private List<ResponseTimeRootCauseEntity> _entityPath = AWSConfigs.InitializeCollections ? new List<ResponseTimeRootCauseEntity>() : null;
         private bool? _inferred;
         private string _name;
-        private List<string> _names = new List<string>();
+        private List<string> _names = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _type;
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.XRay.Model
         // Check to see if EntityPath property is set
         internal bool IsSetEntityPath()
         {
-            return this._entityPath != null && this._entityPath.Count > 0; 
+            return this._entityPath != null && (this._entityPath.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -127,7 +128,7 @@ namespace Amazon.XRay.Model
         // Check to see if Names property is set
         internal bool IsSetNames()
         {
-            return this._names != null && this._names.Count > 0; 
+            return this._names != null && (this._names.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

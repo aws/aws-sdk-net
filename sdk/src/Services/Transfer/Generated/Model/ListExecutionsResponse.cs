@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Transfer.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Transfer.Model
     /// </summary>
     public partial class ListExecutionsResponse : AmazonWebServiceResponse
     {
-        private List<ListedExecution> _executions = new List<ListedExecution>();
+        private List<ListedExecution> _executions = AWSConfigs.InitializeCollections ? new List<ListedExecution>() : null;
         private string _nextToken;
         private string _workflowId;
 
@@ -53,7 +54,7 @@ namespace Amazon.Transfer.Model
         // Check to see if Executions property is set
         internal bool IsSetExecutions()
         {
-            return this._executions != null && this._executions.Count > 0; 
+            return this._executions != null && (this._executions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

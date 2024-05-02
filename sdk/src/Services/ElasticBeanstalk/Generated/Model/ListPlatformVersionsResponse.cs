@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ElasticBeanstalk.Model
     public partial class ListPlatformVersionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PlatformSummary> _platformSummaryList = new List<PlatformSummary>();
+        private List<PlatformSummary> _platformSummaryList = AWSConfigs.InitializeCollections ? new List<PlatformSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if PlatformSummaryList property is set
         internal bool IsSetPlatformSummaryList()
         {
-            return this._platformSummaryList != null && this._platformSummaryList.Count > 0; 
+            return this._platformSummaryList != null && (this._platformSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

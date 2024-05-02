@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SSOAdmin.Model
     public partial class ListPermissionSetsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<string> _permissionSets = new List<string>();
+        private List<string> _permissionSets = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.SSOAdmin.Model
         // Check to see if PermissionSets property is set
         internal bool IsSetPermissionSets()
         {
-            return this._permissionSets != null && this._permissionSets.Count > 0; 
+            return this._permissionSets != null && (this._permissionSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

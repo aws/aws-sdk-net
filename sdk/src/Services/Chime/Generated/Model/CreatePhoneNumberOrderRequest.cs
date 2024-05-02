@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Chime.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Chime.Model
     /// </summary>
     public partial class CreatePhoneNumberOrderRequest : AmazonChimeRequest
     {
-        private List<string> _e164PhoneNumbers = new List<string>();
+        private List<string> _e164PhoneNumbers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private PhoneNumberProductType _productType;
 
         /// <summary>
@@ -55,7 +56,7 @@ namespace Amazon.Chime.Model
         // Check to see if E164PhoneNumbers property is set
         internal bool IsSetE164PhoneNumbers()
         {
-            return this._e164PhoneNumbers != null && this._e164PhoneNumbers.Count > 0; 
+            return this._e164PhoneNumbers != null && (this._e164PhoneNumbers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

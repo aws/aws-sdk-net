@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.BillingConductor.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.BillingConductor.Model
         /// Enumerable containing all of the AssociatedResources
         /// </summary>
         public IPaginatedEnumerable<ListResourcesAssociatedToCustomLineItemResponseElement> AssociatedResources => 
-            new PaginatedResultKeyResponse<ListResourcesAssociatedToCustomLineItemResponse, ListResourcesAssociatedToCustomLineItemResponseElement>(this, (i) => i.AssociatedResources);
+            new PaginatedResultKeyResponse<ListResourcesAssociatedToCustomLineItemResponse, ListResourcesAssociatedToCustomLineItemResponseElement>(this, (i) => i.AssociatedResources ?? new List<ListResourcesAssociatedToCustomLineItemResponseElement>());
 
         internal ListResourcesAssociatedToCustomLineItemPaginator(IAmazonBillingConductor client, ListResourcesAssociatedToCustomLineItemRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.BillingConductor.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListResourcesAssociatedToCustomLineItemResponse> IPaginator<ListResourcesAssociatedToCustomLineItemResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListResourcesAssociatedToCustomLineItemResponse> IPaginator<ListResourcesAssociatedToCustomLineItemResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

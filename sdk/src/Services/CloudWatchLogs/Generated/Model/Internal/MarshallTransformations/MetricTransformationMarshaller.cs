@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,10 +46,19 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MetricTransformation requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDefaultValue())
             {
                 context.Writer.WritePropertyName("defaultValue");
-                context.Writer.Write(requestObject.DefaultValue.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.DefaultValue.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DefaultValue.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.DefaultValue.Value);
+                }
             }
 
             if(requestObject.IsSetDimensions())

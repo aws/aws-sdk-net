@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataExchange.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DataExchange.Model
     /// </summary>
     public partial class SchemaChangeRequestDetails
     {
-        private List<SchemaChangeDetails> _changes = new List<SchemaChangeDetails>();
+        private List<SchemaChangeDetails> _changes = AWSConfigs.InitializeCollections ? new List<SchemaChangeDetails>() : null;
         private DateTime? _schemaChangeAt;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.DataExchange.Model
         // Check to see if Changes property is set
         internal bool IsSetChanges()
         {
-            return this._changes != null && this._changes.Count > 0; 
+            return this._changes != null && (this._changes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

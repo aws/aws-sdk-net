@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SecurityHub.Model
     public partial class ListSecurityControlDefinitionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SecurityControlDefinition> _securityControlDefinitions = new List<SecurityControlDefinition>();
+        private List<SecurityControlDefinition> _securityControlDefinitions = AWSConfigs.InitializeCollections ? new List<SecurityControlDefinition>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if SecurityControlDefinitions property is set
         internal bool IsSetSecurityControlDefinitions()
         {
-            return this._securityControlDefinitions != null && this._securityControlDefinitions.Count > 0; 
+            return this._securityControlDefinitions != null && (this._securityControlDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

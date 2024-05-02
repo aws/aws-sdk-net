@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.TimestreamQuery.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.TimestreamQuery.Model
     public partial class Type
     {
         private ColumnInfo _arrayColumnInfo;
-        private List<ColumnInfo> _rowColumnInfo = new List<ColumnInfo>();
+        private List<ColumnInfo> _rowColumnInfo = AWSConfigs.InitializeCollections ? new List<ColumnInfo>() : null;
         private ScalarType _scalarType;
         private ColumnInfo _timeSeriesMeasureValueColumnInfo;
 
@@ -74,14 +75,15 @@ namespace Amazon.TimestreamQuery.Model
         // Check to see if RowColumnInfo property is set
         internal bool IsSetRowColumnInfo()
         {
-            return this._rowColumnInfo != null && this._rowColumnInfo.Count > 0; 
+            return this._rowColumnInfo != null && (this._rowColumnInfo.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property ScalarType. 
         /// <para>
         /// Indicates if the column is of type string, integer, Boolean, double, timestamp, date,
-        /// time. 
+        /// time. For more information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/supported-data-types.html">Supported
+        /// data types</a>.
         /// </para>
         /// </summary>
         public ScalarType ScalarType

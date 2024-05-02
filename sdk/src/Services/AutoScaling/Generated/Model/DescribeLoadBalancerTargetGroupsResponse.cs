@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AutoScaling.Model
     /// </summary>
     public partial class DescribeLoadBalancerTargetGroupsResponse : AmazonWebServiceResponse
     {
-        private List<LoadBalancerTargetGroupState> _loadBalancerTargetGroups = new List<LoadBalancerTargetGroupState>();
+        private List<LoadBalancerTargetGroupState> _loadBalancerTargetGroups = AWSConfigs.InitializeCollections ? new List<LoadBalancerTargetGroupState>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if LoadBalancerTargetGroups property is set
         internal bool IsSetLoadBalancerTargetGroups()
         {
-            return this._loadBalancerTargetGroups != null && this._loadBalancerTargetGroups.Count > 0; 
+            return this._loadBalancerTargetGroups != null && (this._loadBalancerTargetGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

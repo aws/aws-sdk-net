@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
@@ -44,7 +45,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class HeaderObject
     {
-        private List<string> _headersAllowList = new List<string>();
+        private List<string> _headersAllowList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ForwardValues _option;
 
         /// <summary>
@@ -62,7 +63,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if HeadersAllowList property is set
         internal bool IsSetHeadersAllowList()
         {
-            return this._headersAllowList != null && this._headersAllowList.Count > 0; 
+            return this._headersAllowList != null && (this._headersAllowList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

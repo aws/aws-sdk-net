@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the IpamDiscoveredAccounts
         /// </summary>
         public IPaginatedEnumerable<IpamDiscoveredAccount> IpamDiscoveredAccounts => 
-            new PaginatedResultKeyResponse<GetIpamDiscoveredAccountsResponse, IpamDiscoveredAccount>(this, (i) => i.IpamDiscoveredAccounts);
+            new PaginatedResultKeyResponse<GetIpamDiscoveredAccountsResponse, IpamDiscoveredAccount>(this, (i) => i.IpamDiscoveredAccounts ?? new List<IpamDiscoveredAccount>());
 
         internal GetIpamDiscoveredAccountsPaginator(IAmazonEC2 client, GetIpamDiscoveredAccountsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.EC2.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<GetIpamDiscoveredAccountsResponse> IPaginator<GetIpamDiscoveredAccountsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<GetIpamDiscoveredAccountsResponse> IPaginator<GetIpamDiscoveredAccountsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

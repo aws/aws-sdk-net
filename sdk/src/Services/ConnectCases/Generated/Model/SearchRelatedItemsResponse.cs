@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConnectCases.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ConnectCases.Model
     public partial class SearchRelatedItemsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SearchRelatedItemsResponseItem> _relatedItems = new List<SearchRelatedItemsResponseItem>();
+        private List<SearchRelatedItemsResponseItem> _relatedItems = AWSConfigs.InitializeCollections ? new List<SearchRelatedItemsResponseItem>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.ConnectCases.Model
         // Check to see if RelatedItems property is set
         internal bool IsSetRelatedItems()
         {
-            return this._relatedItems != null && this._relatedItems.Count > 0; 
+            return this._relatedItems != null && (this._relatedItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

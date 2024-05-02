@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lambda.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class ListLayersResponse : AmazonWebServiceResponse
     {
-        private List<LayersListItem> _layers = new List<LayersListItem>();
+        private List<LayersListItem> _layers = AWSConfigs.InitializeCollections ? new List<LayersListItem>() : null;
         private string _nextMarker;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Lambda.Model
         // Check to see if Layers property is set
         internal bool IsSetLayers()
         {
-            return this._layers != null && this._layers.Count > 0; 
+            return this._layers != null && (this._layers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

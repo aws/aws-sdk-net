@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EKS.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.EKS.Model
         /// Enumerable containing all of the FargateProfileNames
         /// </summary>
         public IPaginatedEnumerable<string> FargateProfileNames => 
-            new PaginatedResultKeyResponse<ListFargateProfilesResponse, string>(this, (i) => i.FargateProfileNames);
+            new PaginatedResultKeyResponse<ListFargateProfilesResponse, string>(this, (i) => i.FargateProfileNames ?? new List<string>());
 
         internal ListFargateProfilesPaginator(IAmazonEKS client, ListFargateProfilesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.EKS.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListFargateProfilesResponse> IPaginator<ListFargateProfilesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListFargateProfilesResponse> IPaginator<ListFargateProfilesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

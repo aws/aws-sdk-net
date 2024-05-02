@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.Elasticsearch.Model
         private ESPartitionInstanceType _elasticsearchInstanceType;
         private double? _fixedPrice;
         private ReservedElasticsearchInstancePaymentOption _paymentOption;
-        private List<RecurringCharge> _recurringCharges = new List<RecurringCharge>();
+        private List<RecurringCharge> _recurringCharges = AWSConfigs.InitializeCollections ? new List<RecurringCharge>() : null;
         private string _reservedElasticsearchInstanceOfferingId;
         private double? _usagePrice;
 
@@ -149,7 +150,7 @@ namespace Amazon.Elasticsearch.Model
         // Check to see if RecurringCharges property is set
         internal bool IsSetRecurringCharges()
         {
-            return this._recurringCharges != null && this._recurringCharges.Count > 0; 
+            return this._recurringCharges != null && (this._recurringCharges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

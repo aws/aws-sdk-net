@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// </summary>
     public partial class DescribeEventsResponse : AmazonWebServiceResponse
     {
-        private List<EventDescription> _events = new List<EventDescription>();
+        private List<EventDescription> _events = AWSConfigs.InitializeCollections ? new List<EventDescription>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Events property is set
         internal bool IsSetEvents()
         {
-            return this._events != null && this._events.Count > 0; 
+            return this._events != null && (this._events.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

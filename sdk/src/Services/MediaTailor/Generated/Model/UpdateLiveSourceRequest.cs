@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaTailor.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.MediaTailor.Model
     /// </summary>
     public partial class UpdateLiveSourceRequest : AmazonMediaTailorRequest
     {
-        private List<HttpPackageConfiguration> _httpPackageConfigurations = new List<HttpPackageConfiguration>();
+        private List<HttpPackageConfiguration> _httpPackageConfigurations = AWSConfigs.InitializeCollections ? new List<HttpPackageConfiguration>() : null;
         private string _liveSourceName;
         private string _sourceLocationName;
 
@@ -54,7 +55,7 @@ namespace Amazon.MediaTailor.Model
         // Check to see if HttpPackageConfigurations property is set
         internal bool IsSetHttpPackageConfigurations()
         {
-            return this._httpPackageConfigurations != null && this._httpPackageConfigurations.Count > 0; 
+            return this._httpPackageConfigurations != null && (this._httpPackageConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

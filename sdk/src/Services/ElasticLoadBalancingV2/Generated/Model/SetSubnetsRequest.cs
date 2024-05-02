@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
@@ -45,8 +46,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
         private IpAddressType _ipAddressType;
         private string _loadBalancerArn;
-        private List<SubnetMapping> _subnetMappings = new List<SubnetMapping>();
-        private List<string> _subnets = new List<string>();
+        private List<SubnetMapping> _subnetMappings = AWSConfigs.InitializeCollections ? new List<SubnetMapping>() : null;
+        private List<string> _subnets = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property IpAddressType. 
@@ -136,7 +137,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if SubnetMappings property is set
         internal bool IsSetSubnetMappings()
         {
-            return this._subnetMappings != null && this._subnetMappings.Count > 0; 
+            return this._subnetMappings != null && (this._subnetMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -177,7 +178,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if Subnets property is set
         internal bool IsSetSubnets()
         {
-            return this._subnets != null && this._subnets.Count > 0; 
+            return this._subnets != null && (this._subnets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

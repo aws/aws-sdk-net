@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.ElasticBeanstalk.Model
     {
         private ApplicationMetrics _applicationMetrics;
         private string _availabilityZone;
-        private List<string> _causes = new List<string>();
+        private List<string> _causes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _color;
         private Deployment _deployment;
         private string _healthStatus;
@@ -96,7 +97,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Causes property is set
         internal bool IsSetCauses()
         {
-            return this._causes != null && this._causes.Count > 0; 
+            return this._causes != null && (this._causes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

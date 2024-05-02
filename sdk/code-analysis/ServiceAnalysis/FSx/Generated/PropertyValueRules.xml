@@ -996,7 +996,7 @@
   <property-value-rule>
     <property>Amazon.FSx.Model.CreateFileSystemOntapConfiguration.HAPairs</property>
     <min>1</min>
-    <max>6</max>
+    <max>12</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.CreateFileSystemOntapConfiguration.PreferredSubnetId</property>
@@ -1580,7 +1580,7 @@
   <property-value-rule>
     <property>Amazon.FSx.Model.OntapFileSystemConfiguration.HAPairs</property>
     <min>1</min>
-    <max>6</max>
+    <max>12</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FSx.Model.OntapFileSystemConfiguration.PreferredSubnetId</property>

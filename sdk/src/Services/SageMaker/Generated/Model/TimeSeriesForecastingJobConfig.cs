@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -38,8 +39,8 @@ namespace Amazon.SageMaker.Model
         private string _featureSpecificationS3Uri;
         private string _forecastFrequency;
         private int? _forecastHorizon;
-        private List<string> _forecastQuantiles = new List<string>();
-        private List<HolidayConfigAttributes> _holidayConfig = new List<HolidayConfigAttributes>();
+        private List<string> _forecastQuantiles = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<HolidayConfigAttributes> _holidayConfig = AWSConfigs.InitializeCollections ? new List<HolidayConfigAttributes>() : null;
         private TimeSeriesConfig _timeSeriesConfig;
         private TimeSeriesTransformations _transformations;
 
@@ -204,7 +205,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ForecastQuantiles property is set
         internal bool IsSetForecastQuantiles()
         {
-            return this._forecastQuantiles != null && this._forecastQuantiles.Count > 0; 
+            return this._forecastQuantiles != null && (this._forecastQuantiles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -224,7 +225,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if HolidayConfig property is set
         internal bool IsSetHolidayConfig()
         {
-            return this._holidayConfig != null && this._holidayConfig.Count > 0; 
+            return this._holidayConfig != null && (this._holidayConfig.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

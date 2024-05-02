@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the PrepareAgent operation.
-    /// Prepares an existing Amazon Bedrock Agent to receive runtime requests
+    /// Creates a <c>DRAFT</c> version of the agent that can be used for internal testing.
     /// </summary>
     public partial class PrepareAgentRequest : AmazonBedrockAgentRequest
     {
@@ -39,7 +40,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property AgentId. 
         /// <para>
-        /// Id generated at the server side when an Agent is created
+        /// The unique identifier of the agent for which to create a <c>DRAFT</c> version.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

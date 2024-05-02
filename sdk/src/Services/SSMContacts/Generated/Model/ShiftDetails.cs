@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SSMContacts.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SSMContacts.Model
     /// </summary>
     public partial class ShiftDetails
     {
-        private List<string> _overriddenContactIds = new List<string>();
+        private List<string> _overriddenContactIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property OverriddenContactIds. 
@@ -53,7 +54,7 @@ namespace Amazon.SSMContacts.Model
         // Check to see if OverriddenContactIds property is set
         internal bool IsSetOverriddenContactIds()
         {
-            return this._overriddenContactIds != null && this._overriddenContactIds.Count > 0; 
+            return this._overriddenContactIds != null && (this._overriddenContactIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

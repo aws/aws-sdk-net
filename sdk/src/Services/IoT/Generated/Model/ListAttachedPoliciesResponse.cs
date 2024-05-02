@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IoT.Model
     public partial class ListAttachedPoliciesResponse : AmazonWebServiceResponse
     {
         private string _nextMarker;
-        private List<Policy> _policies = new List<Policy>();
+        private List<Policy> _policies = AWSConfigs.InitializeCollections ? new List<Policy>() : null;
 
         /// <summary>
         /// Gets and sets the property NextMarker. 
@@ -70,7 +71,7 @@ namespace Amazon.IoT.Model
         // Check to see if Policies property is set
         internal bool IsSetPolicies()
         {
-            return this._policies != null && this._policies.Count > 0; 
+            return this._policies != null && (this._policies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

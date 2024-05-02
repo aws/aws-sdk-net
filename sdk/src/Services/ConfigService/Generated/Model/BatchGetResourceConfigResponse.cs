@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class BatchGetResourceConfigResponse : AmazonWebServiceResponse
     {
-        private List<BaseConfigurationItem> _baseConfigurationItems = new List<BaseConfigurationItem>();
-        private List<ResourceKey> _unprocessedResourceKeys = new List<ResourceKey>();
+        private List<BaseConfigurationItem> _baseConfigurationItems = AWSConfigs.InitializeCollections ? new List<BaseConfigurationItem>() : null;
+        private List<ResourceKey> _unprocessedResourceKeys = AWSConfigs.InitializeCollections ? new List<ResourceKey>() : null;
 
         /// <summary>
         /// Gets and sets the property BaseConfigurationItems. 
@@ -51,7 +52,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if BaseConfigurationItems property is set
         internal bool IsSetBaseConfigurationItems()
         {
-            return this._baseConfigurationItems != null && this._baseConfigurationItems.Count > 0; 
+            return this._baseConfigurationItems != null && (this._baseConfigurationItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if UnprocessedResourceKeys property is set
         internal bool IsSetUnprocessedResourceKeys()
         {
-            return this._unprocessedResourceKeys != null && this._unprocessedResourceKeys.Count > 0; 
+            return this._unprocessedResourceKeys != null && (this._unprocessedResourceKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

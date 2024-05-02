@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PersonalizeRuntime.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.PersonalizeRuntime.Model
     {
         private string _campaignArn;
         private string _filterArn;
-        private Dictionary<string, string> _filterValues = new Dictionary<string, string>();
+        private Dictionary<string, string> _filterValues = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private int? _numResults;
         private string _userId;
 
@@ -126,7 +127,7 @@ namespace Amazon.PersonalizeRuntime.Model
         // Check to see if FilterValues property is set
         internal bool IsSetFilterValues()
         {
-            return this._filterValues != null && this._filterValues.Count > 0; 
+            return this._filterValues != null && (this._filterValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

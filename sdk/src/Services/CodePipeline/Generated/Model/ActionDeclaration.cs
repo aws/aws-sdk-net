@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
@@ -34,11 +35,11 @@ namespace Amazon.CodePipeline.Model
     public partial class ActionDeclaration
     {
         private ActionTypeId _actionTypeId;
-        private Dictionary<string, string> _configuration = new Dictionary<string, string>();
-        private List<InputArtifact> _inputArtifacts = new List<InputArtifact>();
+        private Dictionary<string, string> _configuration = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<InputArtifact> _inputArtifacts = AWSConfigs.InitializeCollections ? new List<InputArtifact>() : null;
         private string _name;
         private string _awsNamespace;
-        private List<OutputArtifact> _outputArtifacts = new List<OutputArtifact>();
+        private List<OutputArtifact> _outputArtifacts = AWSConfigs.InitializeCollections ? new List<OutputArtifact>() : null;
         private string _region;
         private string _roleArn;
         private int? _runOrder;
@@ -98,7 +99,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if Configuration property is set
         internal bool IsSetConfiguration()
         {
-            return this._configuration != null && this._configuration.Count > 0; 
+            return this._configuration != null && (this._configuration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -116,7 +117,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if InputArtifacts property is set
         internal bool IsSetInputArtifacts()
         {
-            return this._inputArtifacts != null && this._inputArtifacts.Count > 0; 
+            return this._inputArtifacts != null && (this._inputArtifacts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -173,7 +174,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if OutputArtifacts property is set
         internal bool IsSetOutputArtifacts()
         {
-            return this._outputArtifacts != null && this._outputArtifacts.Count > 0; 
+            return this._outputArtifacts != null && (this._outputArtifacts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

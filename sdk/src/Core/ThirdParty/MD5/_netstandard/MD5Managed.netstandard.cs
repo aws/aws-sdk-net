@@ -42,7 +42,7 @@ namespace ThirdParty.MD5
             HashCore(inputBuffer, inputOffset, inputCount);
         }
 
-        public byte[] TransformFinalBlock(byte[] inputBuffer, int inputOffset, int inputCount)
+        public new byte[] TransformFinalBlock(byte[] inputBuffer, int inputOffset, int inputCount)
         {
             HashCore(inputBuffer, inputOffset, inputCount);
             var finalValue = HashFinal();

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelBuildingService.Model
 {
     /// <summary>
@@ -63,12 +64,12 @@ namespace Amazon.LexModelBuildingService.Model
         private bool? _detectSentiment;
         private bool? _enableModelImprovements;
         private int? _idleSessionTTLInSeconds;
-        private List<Intent> _intents = new List<Intent>();
+        private List<Intent> _intents = AWSConfigs.InitializeCollections ? new List<Intent>() : null;
         private Locale _locale;
         private string _name;
         private double? _nluIntentConfidenceThreshold;
         private ProcessBehavior _processBehavior;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _voiceId;
 
         /// <summary>
@@ -419,7 +420,7 @@ namespace Amazon.LexModelBuildingService.Model
         // Check to see if Intents property is set
         internal bool IsSetIntents()
         {
-            return this._intents != null && this._intents.Count > 0; 
+            return this._intents != null && (this._intents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -581,7 +582,7 @@ namespace Amazon.LexModelBuildingService.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

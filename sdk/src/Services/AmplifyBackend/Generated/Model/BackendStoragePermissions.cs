@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AmplifyBackend.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.AmplifyBackend.Model
     /// </summary>
     public partial class BackendStoragePermissions
     {
-        private List<string> _authenticated = new List<string>();
-        private List<string> _unAuthenticated = new List<string>();
+        private List<string> _authenticated = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _unAuthenticated = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Authenticated. 
@@ -53,7 +54,7 @@ namespace Amazon.AmplifyBackend.Model
         // Check to see if Authenticated property is set
         internal bool IsSetAuthenticated()
         {
-            return this._authenticated != null && this._authenticated.Count > 0; 
+            return this._authenticated != null && (this._authenticated.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.AmplifyBackend.Model
         // Check to see if UnAuthenticated property is set
         internal bool IsSetUnAuthenticated()
         {
-            return this._unAuthenticated != null && this._unAuthenticated.Count > 0; 
+            return this._unAuthenticated != null && (this._unAuthenticated.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

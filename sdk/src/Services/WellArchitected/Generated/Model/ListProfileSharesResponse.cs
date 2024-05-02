@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.WellArchitected.Model
     public partial class ListProfileSharesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ProfileShareSummary> _profileShareSummaries = new List<ProfileShareSummary>();
+        private List<ProfileShareSummary> _profileShareSummaries = AWSConfigs.InitializeCollections ? new List<ProfileShareSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken.
@@ -66,7 +67,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if ProfileShareSummaries property is set
         internal bool IsSetProfileShareSummaries()
         {
-            return this._profileShareSummaries != null && this._profileShareSummaries.Count > 0; 
+            return this._profileShareSummaries != null && (this._profileShareSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class AudioChannelMapping
     {
-        private List<InputChannelLevel> _inputChannelLevels = new List<InputChannelLevel>();
+        private List<InputChannelLevel> _inputChannelLevels = AWSConfigs.InitializeCollections ? new List<InputChannelLevel>() : null;
         private int? _outputChannel;
 
         /// <summary>
@@ -50,7 +51,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if InputChannelLevels property is set
         internal bool IsSetInputChannelLevels()
         {
-            return this._inputChannelLevels != null && this._inputChannelLevels.Count > 0; 
+            return this._inputChannelLevels != null && (this._inputChannelLevels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

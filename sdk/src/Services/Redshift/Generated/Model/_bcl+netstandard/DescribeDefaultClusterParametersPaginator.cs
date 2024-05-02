@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Redshift.Model
         /// Enumerable containing all of the Parameters
         /// </summary>
         public IPaginatedEnumerable<Parameter> Parameters => 
-            new PaginatedResultKeyResponse<DescribeDefaultClusterParametersResponse, Parameter>(this, (i) => i.DefaultClusterParameters.Parameters);
+            new PaginatedResultKeyResponse<DescribeDefaultClusterParametersResponse, Parameter>(this, (i) => i.DefaultClusterParameters.Parameters ?? new List<Parameter>());
 
         internal DescribeDefaultClusterParametersPaginator(IAmazonRedshift client, DescribeDefaultClusterParametersRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Redshift.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeDefaultClusterParametersResponse> IPaginator<DescribeDefaultClusterParametersResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeDefaultClusterParametersResponse> IPaginator<DescribeDefaultClusterParametersResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

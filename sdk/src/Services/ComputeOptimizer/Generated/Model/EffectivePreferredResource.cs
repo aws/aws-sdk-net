@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
@@ -40,9 +41,9 @@ namespace Amazon.ComputeOptimizer.Model
     /// </summary>
     public partial class EffectivePreferredResource
     {
-        private List<string> _effectiveIncludeList = new List<string>();
-        private List<string> _excludeList = new List<string>();
-        private List<string> _includeList = new List<string>();
+        private List<string> _effectiveIncludeList = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _excludeList = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _includeList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private PreferredResourceName _name;
 
         /// <summary>
@@ -60,7 +61,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if EffectiveIncludeList property is set
         internal bool IsSetEffectiveIncludeList()
         {
-            return this._effectiveIncludeList != null && this._effectiveIncludeList.Count > 0; 
+            return this._effectiveIncludeList != null && (this._effectiveIncludeList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -79,7 +80,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if ExcludeList property is set
         internal bool IsSetExcludeList()
         {
-            return this._excludeList != null && this._excludeList.Count > 0; 
+            return this._excludeList != null && (this._excludeList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -98,7 +99,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if IncludeList property is set
         internal bool IsSetIncludeList()
         {
-            return this._includeList != null && this._includeList.Count > 0; 
+            return this._includeList != null && (this._includeList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

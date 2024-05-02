@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EMRContainers.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EMRContainers.Model
     /// </summary>
     public partial class ListManagedEndpointsResponse : AmazonWebServiceResponse
     {
-        private List<Endpoint> _endpoints = new List<Endpoint>();
+        private List<Endpoint> _endpoints = AWSConfigs.InitializeCollections ? new List<Endpoint>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.EMRContainers.Model
         // Check to see if Endpoints property is set
         internal bool IsSetEndpoints()
         {
-            return this._endpoints != null && this._endpoints.Count > 0; 
+            return this._endpoints != null && (this._endpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

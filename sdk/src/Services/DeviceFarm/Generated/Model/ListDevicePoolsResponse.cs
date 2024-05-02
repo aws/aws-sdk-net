@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DeviceFarm.Model
     /// </summary>
     public partial class ListDevicePoolsResponse : AmazonWebServiceResponse
     {
-        private List<DevicePool> _devicePools = new List<DevicePool>();
+        private List<DevicePool> _devicePools = AWSConfigs.InitializeCollections ? new List<DevicePool>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if DevicePools property is set
         internal bool IsSetDevicePools()
         {
-            return this._devicePools != null && this._devicePools.Count > 0; 
+            return this._devicePools != null && (this._devicePools.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

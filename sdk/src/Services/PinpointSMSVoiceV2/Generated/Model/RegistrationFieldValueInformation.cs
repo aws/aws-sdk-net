@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         private string _deniedReason;
         private string _fieldPath;
         private string _registrationAttachmentId;
-        private List<string> _selectChoices = new List<string>();
+        private List<string> _selectChoices = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _textValue;
 
         /// <summary>
@@ -112,7 +113,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if SelectChoices property is set
         internal bool IsSetSelectChoices()
         {
-            return this._selectChoices != null && this._selectChoices.Count > 0; 
+            return this._selectChoices != null && (this._selectChoices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.WorkSpaces.Model
     /// </summary>
     public partial class DescribeWorkspaceSnapshotsResponse : AmazonWebServiceResponse
     {
-        private List<Snapshot> _rebuildSnapshots = new List<Snapshot>();
-        private List<Snapshot> _restoreSnapshots = new List<Snapshot>();
+        private List<Snapshot> _rebuildSnapshots = AWSConfigs.InitializeCollections ? new List<Snapshot>() : null;
+        private List<Snapshot> _restoreSnapshots = AWSConfigs.InitializeCollections ? new List<Snapshot>() : null;
 
         /// <summary>
         /// Gets and sets the property RebuildSnapshots. 
@@ -52,7 +53,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if RebuildSnapshots property is set
         internal bool IsSetRebuildSnapshots()
         {
-            return this._rebuildSnapshots != null && this._rebuildSnapshots.Count > 0; 
+            return this._rebuildSnapshots != null && (this._rebuildSnapshots.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if RestoreSnapshots property is set
         internal bool IsSetRestoreSnapshots()
         {
-            return this._restoreSnapshots != null && this._restoreSnapshots.Count > 0; 
+            return this._restoreSnapshots != null && (this._restoreSnapshots.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -35,8 +36,8 @@ namespace Amazon.QuickSight.Model
     public partial class UpdateTopicPermissionsRequest : AmazonQuickSightRequest
     {
         private string _awsAccountId;
-        private List<ResourcePermission> _grantPermissions = new List<ResourcePermission>();
-        private List<ResourcePermission> _revokePermissions = new List<ResourcePermission>();
+        private List<ResourcePermission> _grantPermissions = AWSConfigs.InitializeCollections ? new List<ResourcePermission>() : null;
+        private List<ResourcePermission> _revokePermissions = AWSConfigs.InitializeCollections ? new List<ResourcePermission>() : null;
         private string _topicId;
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if GrantPermissions property is set
         internal bool IsSetGrantPermissions()
         {
-            return this._grantPermissions != null && this._grantPermissions.Count > 0; 
+            return this._grantPermissions != null && (this._grantPermissions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -94,7 +95,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if RevokePermissions property is set
         internal bool IsSetRevokePermissions()
         {
-            return this._revokePermissions != null && this._revokePermissions.Count > 0; 
+            return this._revokePermissions != null && (this._revokePermissions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
@@ -55,7 +56,7 @@ namespace Amazon.CostExplorer.Model
         private string _instanceFamily;
         private string _latestUsageTimestamp;
         private LookbackPeriodInDays _lookbackPeriodInDays;
-        private List<RecommendationDetailHourlyMetrics> _metricsOverLookbackPeriod = new List<RecommendationDetailHourlyMetrics>();
+        private List<RecommendationDetailHourlyMetrics> _metricsOverLookbackPeriod = AWSConfigs.InitializeCollections ? new List<RecommendationDetailHourlyMetrics>() : null;
         private string _offeringId;
         private PaymentOption _paymentOption;
         private string _region;
@@ -502,7 +503,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if MetricsOverLookbackPeriod property is set
         internal bool IsSetMetricsOverLookbackPeriod()
         {
-            return this._metricsOverLookbackPeriod != null && this._metricsOverLookbackPeriod.Count > 0; 
+            return this._metricsOverLookbackPeriod != null && (this._metricsOverLookbackPeriod.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

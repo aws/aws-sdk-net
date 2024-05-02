@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
@@ -42,9 +43,9 @@ namespace Amazon.CodeDeploy.Model
     /// </summary>
     public partial class LoadBalancerInfo
     {
-        private List<ELBInfo> _elbInfoList = new List<ELBInfo>();
-        private List<TargetGroupInfo> _targetGroupInfoList = new List<TargetGroupInfo>();
-        private List<TargetGroupPairInfo> _targetGroupPairInfoList = new List<TargetGroupPairInfo>();
+        private List<ELBInfo> _elbInfoList = AWSConfigs.InitializeCollections ? new List<ELBInfo>() : null;
+        private List<TargetGroupInfo> _targetGroupInfoList = AWSConfigs.InitializeCollections ? new List<TargetGroupInfo>() : null;
+        private List<TargetGroupPairInfo> _targetGroupPairInfoList = AWSConfigs.InitializeCollections ? new List<TargetGroupPairInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property ElbInfoList. 
@@ -73,7 +74,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if ElbInfoList property is set
         internal bool IsSetElbInfoList()
         {
-            return this._elbInfoList != null && this._elbInfoList.Count > 0; 
+            return this._elbInfoList != null && (this._elbInfoList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -103,7 +104,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if TargetGroupInfoList property is set
         internal bool IsSetTargetGroupInfoList()
         {
-            return this._targetGroupInfoList != null && this._targetGroupInfoList.Count > 0; 
+            return this._targetGroupInfoList != null && (this._targetGroupInfoList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -122,7 +123,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if TargetGroupPairInfoList property is set
         internal bool IsSetTargetGroupPairInfoList()
         {
-            return this._targetGroupPairInfoList != null && this._targetGroupPairInfoList.Count > 0; 
+            return this._targetGroupPairInfoList != null && (this._targetGroupPairInfoList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

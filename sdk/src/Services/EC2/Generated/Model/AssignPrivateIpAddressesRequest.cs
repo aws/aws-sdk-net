@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -70,9 +71,9 @@ namespace Amazon.EC2.Model
     {
         private bool? _allowReassignment;
         private int? _ipv4PrefixCount;
-        private List<string> _ipv4Prefixes = new List<string>();
+        private List<string> _ipv4Prefixes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _networkInterfaceId;
-        private List<string> _privateIpAddresses = new List<string>();
+        private List<string> _privateIpAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _secondaryPrivateIpAddressCount;
 
         /// <summary>
@@ -130,7 +131,7 @@ namespace Amazon.EC2.Model
         // Check to see if Ipv4Prefixes property is set
         internal bool IsSetIpv4Prefixes()
         {
-            return this._ipv4Prefixes != null && this._ipv4Prefixes.Count > 0; 
+            return this._ipv4Prefixes != null && (this._ipv4Prefixes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -173,7 +174,7 @@ namespace Amazon.EC2.Model
         // Check to see if PrivateIpAddresses property is set
         internal bool IsSetPrivateIpAddresses()
         {
-            return this._privateIpAddresses != null && this._privateIpAddresses.Count > 0; 
+            return this._privateIpAddresses != null && (this._privateIpAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -36,12 +37,12 @@ namespace Amazon.QuickSight.Model
         private string _arn;
         private VPCConnectionAvailabilityStatus _availabilityStatus;
         private DateTime? _createdTime;
-        private List<string> _dnsResolvers = new List<string>();
+        private List<string> _dnsResolvers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _lastUpdatedTime;
         private string _name;
-        private List<NetworkInterface> _networkInterfaces = new List<NetworkInterface>();
+        private List<NetworkInterface> _networkInterfaces = AWSConfigs.InitializeCollections ? new List<NetworkInterface>() : null;
         private string _roleArn;
-        private List<string> _securityGroupIds = new List<string>();
+        private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private VPCConnectionResourceStatus _status;
         private string _vpcConnectionId;
         private string _vpcId;
@@ -115,7 +116,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if DnsResolvers property is set
         internal bool IsSetDnsResolvers()
         {
-            return this._dnsResolvers != null && this._dnsResolvers.Count > 0; 
+            return this._dnsResolvers != null && (this._dnsResolvers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -170,7 +171,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if NetworkInterfaces property is set
         internal bool IsSetNetworkInterfaces()
         {
-            return this._networkInterfaces != null && this._networkInterfaces.Count > 0; 
+            return this._networkInterfaces != null && (this._networkInterfaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -207,7 +208,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if SecurityGroupIds property is set
         internal bool IsSetSecurityGroupIds()
         {
-            return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+            return this._securityGroupIds != null && (this._securityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

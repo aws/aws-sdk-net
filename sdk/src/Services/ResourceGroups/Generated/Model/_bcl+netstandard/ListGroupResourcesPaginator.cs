@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
@@ -45,13 +46,13 @@ namespace Amazon.ResourceGroups.Model
         /// Enumerable containing all of the ResourceIdentifiers
         /// </summary>
         public IPaginatedEnumerable<ResourceIdentifier> ResourceIdentifiers => 
-            new PaginatedResultKeyResponse<ListGroupResourcesResponse, ResourceIdentifier>(this, (i) => i.ResourceIdentifiers);
+            new PaginatedResultKeyResponse<ListGroupResourcesResponse, ResourceIdentifier>(this, (i) => i.ResourceIdentifiers ?? new List<ResourceIdentifier>());
 
         /// <summary>
         /// Enumerable containing all of the Resources
         /// </summary>
         public IPaginatedEnumerable<ListGroupResourcesItem> Resources => 
-            new PaginatedResultKeyResponse<ListGroupResourcesResponse, ListGroupResourcesItem>(this, (i) => i.Resources);
+            new PaginatedResultKeyResponse<ListGroupResourcesResponse, ListGroupResourcesItem>(this, (i) => i.Resources ?? new List<ListGroupResourcesItem>());
 
         internal ListGroupResourcesPaginator(IAmazonResourceGroups client, ListGroupResourcesRequest request)
         {
@@ -79,7 +80,7 @@ namespace Amazon.ResourceGroups.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListGroupResourcesResponse> IPaginator<ListGroupResourcesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListGroupResourcesResponse> IPaginator<ListGroupResourcesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

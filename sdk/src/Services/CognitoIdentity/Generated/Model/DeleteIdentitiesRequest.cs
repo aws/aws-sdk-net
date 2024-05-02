@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CognitoIdentity.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.CognitoIdentity.Model
     /// </summary>
     public partial class DeleteIdentitiesRequest : AmazonCognitoIdentityRequest
     {
-        private List<string> _identityIdsToDelete = new List<string>();
+        private List<string> _identityIdsToDelete = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property IdentityIdsToDelete. 
@@ -58,7 +59,7 @@ namespace Amazon.CognitoIdentity.Model
         // Check to see if IdentityIdsToDelete property is set
         internal bool IsSetIdentityIdsToDelete()
         {
-            return this._identityIdsToDelete != null && this._identityIdsToDelete.Count > 0; 
+            return this._identityIdsToDelete != null && (this._identityIdsToDelete.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

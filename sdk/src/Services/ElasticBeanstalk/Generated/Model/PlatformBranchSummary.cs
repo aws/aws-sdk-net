@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.ElasticBeanstalk.Model
         private int? _branchOrder;
         private string _lifecycleState;
         private string _platformName;
-        private List<string> _supportedTierList = new List<string>();
+        private List<string> _supportedTierList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property BranchName. 
@@ -141,7 +142,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if SupportedTierList property is set
         internal bool IsSetSupportedTierList()
         {
-            return this._supportedTierList != null && this._supportedTierList.Count > 0; 
+            return this._supportedTierList != null && (this._supportedTierList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

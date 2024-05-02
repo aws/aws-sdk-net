@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -33,10 +34,10 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class TopicNamedEntity
     {
-        private List<NamedEntityDefinition> _definition = new List<NamedEntityDefinition>();
+        private List<NamedEntityDefinition> _definition = AWSConfigs.InitializeCollections ? new List<NamedEntityDefinition>() : null;
         private string _entityDescription;
         private string _entityName;
-        private List<string> _entitySynonyms = new List<string>();
+        private List<string> _entitySynonyms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SemanticEntityType _semanticEntityType;
 
         /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Definition property is set
         internal bool IsSetDefinition()
         {
-            return this._definition != null && this._definition.Count > 0; 
+            return this._definition != null && (this._definition.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -110,7 +111,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if EntitySynonyms property is set
         internal bool IsSetEntitySynonyms()
         {
-            return this._entitySynonyms != null && this._entitySynonyms.Count > 0; 
+            return this._entitySynonyms != null && (this._entitySynonyms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

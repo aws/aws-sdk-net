@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.IdentityManagement.Model
     public partial class DeletionTaskFailureReasonType
     {
         private string _reason;
-        private List<RoleUsageType> _roleUsageList = new List<RoleUsageType>();
+        private List<RoleUsageType> _roleUsageList = AWSConfigs.InitializeCollections ? new List<RoleUsageType>() : null;
 
         /// <summary>
         /// Gets and sets the property Reason. 
@@ -81,7 +82,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if RoleUsageList property is set
         internal bool IsSetRoleUsageList()
         {
-            return this._roleUsageList != null && this._roleUsageList.Count > 0; 
+            return this._roleUsageList != null && (this._roleUsageList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DirectConnect.Model
     /// </summary>
     public partial class DescribeHostedConnectionsResponse : AmazonWebServiceResponse
     {
-        private List<Connection> _connections = new List<Connection>();
+        private List<Connection> _connections = AWSConfigs.InitializeCollections ? new List<Connection>() : null;
 
         /// <summary>
         /// Gets and sets the property Connections. 
@@ -50,7 +51,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if Connections property is set
         internal bool IsSetConnections()
         {
-            return this._connections != null && this._connections.Count > 0; 
+            return this._connections != null && (this._connections.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

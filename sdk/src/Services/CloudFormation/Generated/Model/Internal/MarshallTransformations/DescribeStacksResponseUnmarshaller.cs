@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -90,6 +91,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Stacks/member", targetDepth))
                     {
                         var unmarshaller = StackUnmarshaller.Instance;
+                        if (response.Stacks == null)
+                        {
+                            response.Stacks = new List<Stack>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Stacks.Add(item);
                         continue;

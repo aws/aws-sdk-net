@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Redshift.Model
     public partial class AvailabilityZone
     {
         private string _name;
-        private List<SupportedPlatform> _supportedPlatforms = new List<SupportedPlatform>();
+        private List<SupportedPlatform> _supportedPlatforms = AWSConfigs.InitializeCollections ? new List<SupportedPlatform>() : null;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -67,7 +68,7 @@ namespace Amazon.Redshift.Model
         // Check to see if SupportedPlatforms property is set
         internal bool IsSetSupportedPlatforms()
         {
-            return this._supportedPlatforms != null && this._supportedPlatforms.Count > 0; 
+            return this._supportedPlatforms != null && (this._supportedPlatforms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

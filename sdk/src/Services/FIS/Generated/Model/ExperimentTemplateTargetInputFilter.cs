@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FIS.Model
 {
     /// <summary>
@@ -34,13 +35,13 @@ namespace Amazon.FIS.Model
     ///  
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/targets.html#target-filters">Resource
-    /// filters</a> in the <i>Fault Injection Simulator User Guide</i>.
+    /// filters</a> in the <i>Fault Injection Service User Guide</i>.
     /// </para>
     /// </summary>
     public partial class ExperimentTemplateTargetInputFilter
     {
         private string _path;
-        private List<string> _values = new List<string>();
+        private List<string> _values = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Path. 
@@ -77,7 +78,7 @@ namespace Amazon.FIS.Model
         // Check to see if Values property is set
         internal bool IsSetValues()
         {
-            return this._values != null && this._values.Count > 0; 
+            return this._values != null && (this._values.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

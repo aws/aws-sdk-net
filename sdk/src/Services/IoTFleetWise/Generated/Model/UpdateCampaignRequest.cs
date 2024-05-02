@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTFleetWise.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.IoTFleetWise.Model
     public partial class UpdateCampaignRequest : AmazonIoTFleetWiseRequest
     {
         private UpdateCampaignAction _action;
-        private List<string> _dataExtraDimensions = new List<string>();
+        private List<string> _dataExtraDimensions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _description;
         private string _name;
 
@@ -97,7 +98,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if DataExtraDimensions property is set
         internal bool IsSetDataExtraDimensions()
         {
-            return this._dataExtraDimensions != null && this._dataExtraDimensions.Count > 0; 
+            return this._dataExtraDimensions != null && (this._dataExtraDimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

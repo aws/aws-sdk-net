@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -36,9 +37,9 @@ namespace Amazon.SageMaker.Model
         private string _description;
         private bool? _isRequired;
         private string _name;
-        private List<string> _supportedCompressionTypes = new List<string>();
-        private List<string> _supportedContentTypes = new List<string>();
-        private List<string> _supportedInputModes = new List<string>();
+        private List<string> _supportedCompressionTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _supportedContentTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _supportedInputModes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -111,7 +112,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if SupportedCompressionTypes property is set
         internal bool IsSetSupportedCompressionTypes()
         {
-            return this._supportedCompressionTypes != null && this._supportedCompressionTypes.Count > 0; 
+            return this._supportedCompressionTypes != null && (this._supportedCompressionTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -130,7 +131,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if SupportedContentTypes property is set
         internal bool IsSetSupportedContentTypes()
         {
-            return this._supportedContentTypes != null && this._supportedContentTypes.Count > 0; 
+            return this._supportedContentTypes != null && (this._supportedContentTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -160,7 +161,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if SupportedInputModes property is set
         internal bool IsSetSupportedInputModes()
         {
-            return this._supportedInputModes != null && this._supportedInputModes.Count > 0; 
+            return this._supportedInputModes != null && (this._supportedInputModes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

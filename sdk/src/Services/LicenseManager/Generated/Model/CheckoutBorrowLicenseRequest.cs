@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LicenseManager.Model
 {
     /// <summary>
@@ -34,10 +35,10 @@ namespace Amazon.LicenseManager.Model
     /// </summary>
     public partial class CheckoutBorrowLicenseRequest : AmazonLicenseManagerRequest
     {
-        private List<Metadata> _checkoutMetadata = new List<Metadata>();
+        private List<Metadata> _checkoutMetadata = AWSConfigs.InitializeCollections ? new List<Metadata>() : null;
         private string _clientToken;
         private DigitalSignatureMethod _digitalSignatureMethod;
-        private List<EntitlementData> _entitlements = new List<EntitlementData>();
+        private List<EntitlementData> _entitlements = AWSConfigs.InitializeCollections ? new List<EntitlementData>() : null;
         private string _licenseArn;
         private string _nodeId;
 
@@ -56,7 +57,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if CheckoutMetadata property is set
         internal bool IsSetCheckoutMetadata()
         {
-            return this._checkoutMetadata != null && this._checkoutMetadata.Count > 0; 
+            return this._checkoutMetadata != null && (this._checkoutMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -116,7 +117,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if Entitlements property is set
         internal bool IsSetEntitlements()
         {
-            return this._entitlements != null && this._entitlements.Count > 0; 
+            return this._entitlements != null && (this._entitlements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AugmentedAIRuntime.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AugmentedAIRuntime.Model
     /// </summary>
     public partial class ListHumanLoopsResponse : AmazonWebServiceResponse
     {
-        private List<HumanLoopSummary> _humanLoopSummaries = new List<HumanLoopSummary>();
+        private List<HumanLoopSummary> _humanLoopSummaries = AWSConfigs.InitializeCollections ? new List<HumanLoopSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.AugmentedAIRuntime.Model
         // Check to see if HumanLoopSummaries property is set
         internal bool IsSetHumanLoopSummaries()
         {
-            return this._humanLoopSummaries != null && this._humanLoopSummaries.Count > 0; 
+            return this._humanLoopSummaries != null && (this._humanLoopSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

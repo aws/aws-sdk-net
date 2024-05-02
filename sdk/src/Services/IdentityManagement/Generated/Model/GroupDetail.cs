@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
@@ -40,11 +41,11 @@ namespace Amazon.IdentityManagement.Model
     public partial class GroupDetail
     {
         private string _arn;
-        private List<AttachedPolicyType> _attachedManagedPolicies = new List<AttachedPolicyType>();
+        private List<AttachedPolicyType> _attachedManagedPolicies = AWSConfigs.InitializeCollections ? new List<AttachedPolicyType>() : null;
         private DateTime? _createDate;
         private string _groupId;
         private string _groupName;
-        private List<PolicyDetail> _groupPolicyList = new List<PolicyDetail>();
+        private List<PolicyDetail> _groupPolicyList = AWSConfigs.InitializeCollections ? new List<PolicyDetail>() : null;
         private string _path;
 
         /// <summary>
@@ -78,7 +79,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if AttachedManagedPolicies property is set
         internal bool IsSetAttachedManagedPolicies()
         {
-            return this._attachedManagedPolicies != null && this._attachedManagedPolicies.Count > 0; 
+            return this._attachedManagedPolicies != null && (this._attachedManagedPolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -155,7 +156,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if GroupPolicyList property is set
         internal bool IsSetGroupPolicyList()
         {
-            return this._groupPolicyList != null && this._groupPolicyList.Count > 0; 
+            return this._groupPolicyList != null && (this._groupPolicyList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

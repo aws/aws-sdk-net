@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ModifyVpcEndpointServicePermissionsResponse : AmazonWebServiceResponse
     {
-        private List<AddedPrincipal> _addedPrincipals = new List<AddedPrincipal>();
+        private List<AddedPrincipal> _addedPrincipals = AWSConfigs.InitializeCollections ? new List<AddedPrincipal>() : null;
         private bool? _returnValue;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.EC2.Model
         // Check to see if AddedPrincipals property is set
         internal bool IsSetAddedPrincipals()
         {
-            return this._addedPrincipals != null && this._addedPrincipals.Count > 0; 
+            return this._addedPrincipals != null && (this._addedPrincipals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

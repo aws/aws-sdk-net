@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DirectoryService.Model
     /// </summary>
     public partial class RegionsInfo
     {
-        private List<string> _additionalRegions = new List<string>();
+        private List<string> _additionalRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _primaryRegion;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.DirectoryService.Model
         // Check to see if AdditionalRegions property is set
         internal bool IsSetAdditionalRegions()
         {
-            return this._additionalRegions != null && this._additionalRegions.Count > 0; 
+            return this._additionalRegions != null && (this._additionalRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

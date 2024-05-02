@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -58,10 +59,10 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class CreateModelPackageRequest : AmazonSageMakerRequest
     {
-        private List<AdditionalInferenceSpecificationDefinition> _additionalInferenceSpecifications = new List<AdditionalInferenceSpecificationDefinition>();
+        private List<AdditionalInferenceSpecificationDefinition> _additionalInferenceSpecifications = AWSConfigs.InitializeCollections ? new List<AdditionalInferenceSpecificationDefinition>() : null;
         private bool? _certifyForMarketplace;
         private string _clientToken;
-        private Dictionary<string, string> _customerMetadataProperties = new Dictionary<string, string>();
+        private Dictionary<string, string> _customerMetadataProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _domain;
         private DriftCheckBaselines _driftCheckBaselines;
         private InferenceSpecification _inferenceSpecification;
@@ -74,7 +75,8 @@ namespace Amazon.SageMaker.Model
         private string _samplePayloadUrl;
         private SkipModelValidation _skipModelValidation;
         private SourceAlgorithmSpecification _sourceAlgorithmSpecification;
-        private List<Tag> _tags = new List<Tag>();
+        private string _sourceUri;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _task;
         private ModelPackageValidationSpecification _validationSpecification;
 
@@ -97,7 +99,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if AdditionalInferenceSpecifications property is set
         internal bool IsSetAdditionalInferenceSpecifications()
         {
-            return this._additionalInferenceSpecifications != null && this._additionalInferenceSpecifications.Count > 0; 
+            return this._additionalInferenceSpecifications != null && (this._additionalInferenceSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -158,7 +160,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if CustomerMetadataProperties property is set
         internal bool IsSetCustomerMetadataProperties()
         {
-            return this._customerMetadataProperties != null && this._customerMetadataProperties.Count > 0; 
+            return this._customerMetadataProperties != null && (this._customerMetadataProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -204,8 +206,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property InferenceSpecification. 
         /// <para>
-        /// Specifies details about inference jobs that can be run with models based on this model
-        /// package, including the following:
+        /// Specifies details about inference jobs that you can run with models based on this
+        /// model package, including the following information:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -424,6 +426,27 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SourceUri. 
+        /// <para>
+        /// The URI of the source for the model package. If you want to clone a model package,
+        /// set it to the model package Amazon Resource Name (ARN). If you want to register a
+        /// model, set it to the model ARN.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string SourceUri
+        {
+            get { return this._sourceUri; }
+            set { this._sourceUri = value; }
+        }
+
+        // Check to see if SourceUri property is set
+        internal bool IsSetSourceUri()
+        {
+            return this._sourceUri != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
         /// A list of key value pairs associated with the model. For more information, see <a
@@ -447,7 +470,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

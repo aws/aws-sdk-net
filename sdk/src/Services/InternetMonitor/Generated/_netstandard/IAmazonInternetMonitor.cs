@@ -26,6 +26,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.InternetMonitor.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.InternetMonitor
 {
     /// <summary>
@@ -166,7 +167,7 @@ namespace Amazon.InternetMonitor
 
 
         /// <summary>
-        /// Gets information the Amazon CloudWatch Internet Monitor has created and stored about
+        /// Gets information that Amazon CloudWatch Internet Monitor has created and stored about
         /// a health event for a specified monitor. This information includes the impacted locations,
         /// and all the information related to the event, by location.
         /// 
@@ -201,6 +202,46 @@ namespace Amazon.InternetMonitor
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/GetHealthEvent">REST API Reference for GetHealthEvent Operation</seealso>
         Task<GetHealthEventResponse> GetHealthEventAsync(GetHealthEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetInternetEvent
+
+
+
+        /// <summary>
+        /// Gets information that Amazon CloudWatch Internet Monitor has generated about an internet
+        /// event. Internet Monitor displays information about recent global health events, called
+        /// internet events, on a global outages map that is available to all Amazon Web Services
+        /// customers. 
+        /// 
+        ///  
+        /// <para>
+        /// The information returned here includes the impacted location, when the event started
+        /// and (if the event is over) ended, the type of event (<c>PERFORMANCE</c> or <c>AVAILABILITY</c>),
+        /// and the status (<c>ACTIVE</c> or <c>RESOLVED</c>).
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetInternetEvent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetInternetEvent service method, as returned by InternetMonitor.</returns>
+        /// <exception cref="Amazon.InternetMonitor.Model.AccessDeniedException">
+        /// You don't have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.InternetMonitor.Model.InternalServerException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.InternetMonitor.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.InternetMonitor.Model.ValidationException">
+        /// Invalid request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/GetInternetEvent">REST API Reference for GetInternetEvent Operation</seealso>
+        Task<GetInternetEventResponse> GetInternetEventAsync(GetInternetEventRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -341,7 +382,7 @@ namespace Amazon.InternetMonitor
 
         /// <summary>
         /// Lists all health events for a monitor in Amazon CloudWatch Internet Monitor. Returns
-        /// information for health events including the event start and end time and the status.
+        /// information for health events including the event start and end times, and the status.
         /// 
         ///  <note> 
         /// <para>
@@ -370,6 +411,52 @@ namespace Amazon.InternetMonitor
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/ListHealthEvents">REST API Reference for ListHealthEvents Operation</seealso>
         Task<ListHealthEventsResponse> ListHealthEventsAsync(ListHealthEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListInternetEvents
+
+
+
+        /// <summary>
+        /// Lists internet events that cause performance or availability issues for client locations.
+        /// Amazon CloudWatch Internet Monitor displays information about recent global health
+        /// events, called internet events, on a global outages map that is available to all Amazon
+        /// Web Services customers. 
+        /// 
+        ///  
+        /// <para>
+        /// You can constrain the list of internet events returned by providing a start time and
+        /// end time to define a total time frame for events you want to list. Both start time
+        /// and end time specify the time when an event started. End time is optional. If you
+        /// don't include it, the default end time is the current time.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can also limit the events returned to a specific status (<c>ACTIVE</c> or <c>RESOLVED</c>)
+        /// or type (<c>PERFORMANCE</c> or <c>AVAILABILITY</c>).
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListInternetEvents service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListInternetEvents service method, as returned by InternetMonitor.</returns>
+        /// <exception cref="Amazon.InternetMonitor.Model.AccessDeniedException">
+        /// You don't have sufficient permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.InternetMonitor.Model.InternalServerException">
+        /// An internal error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.InternetMonitor.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.InternetMonitor.Model.ValidationException">
+        /// Invalid request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/ListInternetEvents">REST API Reference for ListInternetEvents Operation</seealso>
+        Task<ListInternetEventsResponse> ListInternetEventsAsync(ListInternetEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

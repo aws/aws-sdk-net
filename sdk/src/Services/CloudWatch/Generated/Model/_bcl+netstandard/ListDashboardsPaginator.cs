@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.CloudWatch.Model
         /// Enumerable containing all of the DashboardEntries
         /// </summary>
         public IPaginatedEnumerable<DashboardEntry> DashboardEntries => 
-            new PaginatedResultKeyResponse<ListDashboardsResponse, DashboardEntry>(this, (i) => i.DashboardEntries);
+            new PaginatedResultKeyResponse<ListDashboardsResponse, DashboardEntry>(this, (i) => i.DashboardEntries ?? new List<DashboardEntry>());
 
         internal ListDashboardsPaginator(IAmazonCloudWatch client, ListDashboardsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.CloudWatch.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListDashboardsResponse> IPaginator<ListDashboardsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListDashboardsResponse> IPaginator<ListDashboardsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

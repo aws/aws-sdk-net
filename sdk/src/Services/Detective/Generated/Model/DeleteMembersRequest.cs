@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Detective.Model
 {
     /// <summary>
@@ -56,7 +57,7 @@ namespace Amazon.Detective.Model
     /// </summary>
     public partial class DeleteMembersRequest : AmazonDetectiveRequest
     {
-        private List<string> _accountIds = new List<string>();
+        private List<string> _accountIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _graphArn;
 
         /// <summary>
@@ -76,7 +77,7 @@ namespace Amazon.Detective.Model
         // Check to see if AccountIds property is set
         internal bool IsSetAccountIds()
         {
-            return this._accountIds != null && this._accountIds.Count > 0; 
+            return this._accountIds != null && (this._accountIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

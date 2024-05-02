@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -37,11 +38,11 @@ namespace Amazon.Kendra.Model
     {
         private long? _creationTimestamp;
         private string _description;
-        private List<FeaturedDocument> _featuredDocuments = new List<FeaturedDocument>();
+        private List<FeaturedDocument> _featuredDocuments = AWSConfigs.InitializeCollections ? new List<FeaturedDocument>() : null;
         private string _featuredResultsSetId;
         private string _featuredResultsSetName;
         private long? _lastUpdatedTimestamp;
-        private List<string> _queryTexts = new List<string>();
+        private List<string> _queryTexts = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private FeaturedResultsSetStatus _status;
 
         /// <summary>
@@ -113,7 +114,7 @@ namespace Amazon.Kendra.Model
         // Check to see if FeaturedDocuments property is set
         internal bool IsSetFeaturedDocuments()
         {
-            return this._featuredDocuments != null && this._featuredDocuments.Count > 0; 
+            return this._featuredDocuments != null && (this._featuredDocuments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -197,7 +198,7 @@ namespace Amazon.Kendra.Model
         // Check to see if QueryTexts property is set
         internal bool IsSetQueryTexts()
         {
-            return this._queryTexts != null && this._queryTexts.Count > 0; 
+            return this._queryTexts != null && (this._queryTexts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

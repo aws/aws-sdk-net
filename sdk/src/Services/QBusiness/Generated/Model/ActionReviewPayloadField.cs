@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
@@ -33,7 +34,9 @@ namespace Amazon.QBusiness.Model
     /// </summary>
     public partial class ActionReviewPayloadField
     {
-        private List<ActionReviewPayloadFieldAllowedValue> _allowedValues = new List<ActionReviewPayloadFieldAllowedValue>();
+        private string _allowedFormat;
+        private List<ActionReviewPayloadFieldAllowedValue> _allowedValues = AWSConfigs.InitializeCollections ? new List<ActionReviewPayloadFieldAllowedValue>() : null;
+        private string _displayDescription;
         private string _displayName;
         private int? _displayOrder;
         private bool? _required;
@@ -41,10 +44,31 @@ namespace Amazon.QBusiness.Model
         private Amazon.Runtime.Documents.Document _value;
 
         /// <summary>
+        /// Gets and sets the property AllowedFormat. 
+        /// <para>
+        /// The expected data format for the action review input field value. For example, in
+        /// PTO request, <c>from</c> and <c>to</c> would be of <c>datetime</c> allowed format.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string AllowedFormat
+        {
+            get { return this._allowedFormat; }
+            set { this._allowedFormat = value; }
+        }
+
+        // Check to see if AllowedFormat property is set
+        internal bool IsSetAllowedFormat()
+        {
+            return this._allowedFormat != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property AllowedValues. 
         /// <para>
         /// Information about the field values that an end user can use to provide to Amazon Q
-        /// for Amazon Q to perform the requested plugin action.
+        /// Business for Amazon Q Business to perform the requested plugin action.
         /// </para>
         /// </summary>
         public List<ActionReviewPayloadFieldAllowedValue> AllowedValues
@@ -56,7 +80,28 @@ namespace Amazon.QBusiness.Model
         // Check to see if AllowedValues property is set
         internal bool IsSetAllowedValues()
         {
-            return this._allowedValues != null && this._allowedValues.Count > 0; 
+            return this._allowedValues != null && (this._allowedValues.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DisplayDescription. 
+        /// <para>
+        /// The field level description of each action review input field. This could be an explanation
+        /// of the field. In the Amazon Q Business web experience, these descriptions could be
+        /// used to display as tool tips to help users understand the field. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string DisplayDescription
+        {
+            get { return this._displayDescription; }
+            set { this._displayDescription = value; }
+        }
+
+        // Check to see if DisplayDescription property is set
+        internal bool IsSetDisplayDescription()
+        {
+            return this._displayDescription != null;
         }
 
         /// <summary>

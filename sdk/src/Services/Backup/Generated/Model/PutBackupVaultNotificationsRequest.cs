@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Backup.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class PutBackupVaultNotificationsRequest : AmazonBackupRequest
     {
-        private List<string> _backupVaultEvents = new List<string>();
+        private List<string> _backupVaultEvents = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _backupVaultName;
         private string _snsTopicArn;
 
@@ -88,7 +89,7 @@ namespace Amazon.Backup.Model
         // Check to see if BackupVaultEvents property is set
         internal bool IsSetBackupVaultEvents()
         {
-            return this._backupVaultEvents != null && this._backupVaultEvents.Count > 0; 
+            return this._backupVaultEvents != null && (this._backupVaultEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

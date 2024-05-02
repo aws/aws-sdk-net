@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -63,6 +64,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("cidrBlockSet/item", targetDepth))
                     {
                         var unmarshaller = CidrBlockUnmarshaller.Instance;
+                        if (unmarshalledObject.CidrBlockSet == null)
+                        {
+                            unmarshalledObject.CidrBlockSet = new List<CidrBlock>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.CidrBlockSet.Add(item);
                         continue;
@@ -70,6 +75,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ipv6CidrBlockSet/item", targetDepth))
                     {
                         var unmarshaller = Ipv6CidrBlockUnmarshaller.Instance;
+                        if (unmarshalledObject.Ipv6CidrBlockSet == null)
+                        {
+                            unmarshalledObject.Ipv6CidrBlockSet = new List<Ipv6CidrBlock>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Ipv6CidrBlockSet.Add(item);
                         continue;

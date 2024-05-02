@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ConfigService.Model
         /// Enumerable containing all of the RetentionConfigurations
         /// </summary>
         public IPaginatedEnumerable<RetentionConfiguration> RetentionConfigurations => 
-            new PaginatedResultKeyResponse<DescribeRetentionConfigurationsResponse, RetentionConfiguration>(this, (i) => i.RetentionConfigurations);
+            new PaginatedResultKeyResponse<DescribeRetentionConfigurationsResponse, RetentionConfiguration>(this, (i) => i.RetentionConfigurations ?? new List<RetentionConfiguration>());
 
         internal DescribeRetentionConfigurationsPaginator(IAmazonConfigService client, DescribeRetentionConfigurationsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ConfigService.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeRetentionConfigurationsResponse> IPaginator<DescribeRetentionConfigurationsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeRetentionConfigurationsResponse> IPaginator<DescribeRetentionConfigurationsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

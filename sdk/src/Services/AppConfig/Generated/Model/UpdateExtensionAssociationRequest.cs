@@ -26,18 +26,19 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppConfig.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateExtensionAssociation operation.
     /// Updates an association. For more information about extensions and associations, see
-    /// <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
-    /// with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+    /// <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Extending
+    /// workflows</a> in the <i>AppConfig User Guide</i>.
     /// </summary>
     public partial class UpdateExtensionAssociationRequest : AmazonAppConfigRequest
     {
         private string _extensionAssociationId;
-        private Dictionary<string, string> _parameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ExtensionAssociationId. 
@@ -64,7 +65,7 @@ namespace Amazon.AppConfig.Model
         /// The parameter names and values defined in the extension.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=5)]
+        [AWSProperty(Min=0, Max=10)]
         public Dictionary<string, string> Parameters
         {
             get { return this._parameters; }
@@ -74,7 +75,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

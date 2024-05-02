@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.GreengrassV2.Model
     /// </summary>
     public partial class ListEffectiveDeploymentsResponse : AmazonWebServiceResponse
     {
-        private List<EffectiveDeployment> _effectiveDeployments = new List<EffectiveDeployment>();
+        private List<EffectiveDeployment> _effectiveDeployments = AWSConfigs.InitializeCollections ? new List<EffectiveDeployment>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.GreengrassV2.Model
         // Check to see if EffectiveDeployments property is set
         internal bool IsSetEffectiveDeployments()
         {
-            return this._effectiveDeployments != null && this._effectiveDeployments.Count > 0; 
+            return this._effectiveDeployments != null && (this._effectiveDeployments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

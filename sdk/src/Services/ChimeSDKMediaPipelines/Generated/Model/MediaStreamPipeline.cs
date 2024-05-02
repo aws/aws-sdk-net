@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
@@ -36,8 +37,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         private DateTime? _createdTimestamp;
         private string _mediaPipelineArn;
         private string _mediaPipelineId;
-        private List<MediaStreamSink> _sinks = new List<MediaStreamSink>();
-        private List<MediaStreamSource> _sources = new List<MediaStreamSource>();
+        private List<MediaStreamSink> _sinks = AWSConfigs.InitializeCollections ? new List<MediaStreamSink>() : null;
+        private List<MediaStreamSource> _sources = AWSConfigs.InitializeCollections ? new List<MediaStreamSource>() : null;
         private MediaPipelineStatus _status;
         private DateTime? _updatedTimestamp;
 
@@ -113,7 +114,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         // Check to see if Sinks property is set
         internal bool IsSetSinks()
         {
-            return this._sinks != null && this._sinks.Count > 0; 
+            return this._sinks != null && (this._sinks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -132,7 +133,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         // Check to see if Sources property is set
         internal bool IsSetSources()
         {
-            return this._sources != null && this._sources.Count > 0; 
+            return this._sources != null && (this._sources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class VpcConfig
     {
-        private List<SecurityGroup> _securityGroups = new List<SecurityGroup>();
-        private List<string> _subnetIds = new List<string>();
+        private List<SecurityGroup> _securityGroups = AWSConfigs.InitializeCollections ? new List<SecurityGroup>() : null;
+        private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _vpcId;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this._securityGroups != null && this._securityGroups.Count > 0; 
+            return this._securityGroups != null && (this._securityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if SubnetIds property is set
         internal bool IsSetSubnetIds()
         {
-            return this._subnetIds != null && this._subnetIds.Count > 0; 
+            return this._subnetIds != null && (this._subnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.IoTSiteWise.Model
         private bool? _adaptiveIngestion;
         private bool? _deleteFilesAfterImport;
         private ErrorReportLocation _errorReportLocation;
-        private List<File> _files = new List<File>();
+        private List<File> _files = AWSConfigs.InitializeCollections ? new List<File>() : null;
         private JobConfiguration _jobConfiguration;
         private string _jobName;
         private string _jobRoleArn;
@@ -132,7 +133,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if Files property is set
         internal bool IsSetFiles()
         {
-            return this._files != null && this._files.Count > 0; 
+            return this._files != null && (this._files.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

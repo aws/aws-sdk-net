@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTEventsData.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.IoTEventsData.Model
     /// </summary>
     public partial class BatchPutMessageRequest : AmazonIoTEventsDataRequest
     {
-        private List<Message> _messages = new List<Message>();
+        private List<Message> _messages = AWSConfigs.InitializeCollections ? new List<Message>() : null;
 
         /// <summary>
         /// Gets and sets the property Messages. 
@@ -57,7 +58,7 @@ namespace Amazon.IoTEventsData.Model
         // Check to see if Messages property is set
         internal bool IsSetMessages()
         {
-            return this._messages != null && this._messages.Count > 0; 
+            return this._messages != null && (this._messages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

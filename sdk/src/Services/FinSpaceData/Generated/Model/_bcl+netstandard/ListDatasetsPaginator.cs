@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.FinSpaceData.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.FinSpaceData.Model
         /// Enumerable containing all of the Datasets
         /// </summary>
         public IPaginatedEnumerable<Dataset> Datasets => 
-            new PaginatedResultKeyResponse<ListDatasetsResponse, Dataset>(this, (i) => i.Datasets);
+            new PaginatedResultKeyResponse<ListDatasetsResponse, Dataset>(this, (i) => i.Datasets ?? new List<Dataset>());
 
         internal ListDatasetsPaginator(IAmazonFinSpaceData client, ListDatasetsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.FinSpaceData.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListDatasetsResponse> IPaginator<ListDatasetsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListDatasetsResponse> IPaginator<ListDatasetsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

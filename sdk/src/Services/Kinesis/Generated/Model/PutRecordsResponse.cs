@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Kinesis.Model
     {
         private EncryptionType _encryptionType;
         private int? _failedRecordCount;
-        private List<PutRecordsResultEntry> _records = new List<PutRecordsResultEntry>();
+        private List<PutRecordsResultEntry> _records = AWSConfigs.InitializeCollections ? new List<PutRecordsResultEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property EncryptionType. 
@@ -104,7 +105,7 @@ namespace Amazon.Kinesis.Model
         // Check to see if Records property is set
         internal bool IsSetRecords()
         {
-            return this._records != null && this._records.Count > 0; 
+            return this._records != null && (this._records.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

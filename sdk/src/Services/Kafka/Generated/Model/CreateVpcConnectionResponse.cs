@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kafka.Model
 {
     /// <summary>
@@ -34,11 +35,11 @@ namespace Amazon.Kafka.Model
     public partial class CreateVpcConnectionResponse : AmazonWebServiceResponse
     {
         private string _authentication;
-        private List<string> _clientSubnets = new List<string>();
+        private List<string> _clientSubnets = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _creationTime;
-        private List<string> _securityGroups = new List<string>();
+        private List<string> _securityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private VpcConnectionState _state;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _vpcConnectionArn;
         private string _vpcId;
 
@@ -75,7 +76,7 @@ namespace Amazon.Kafka.Model
         // Check to see if ClientSubnets property is set
         internal bool IsSetClientSubnets()
         {
-            return this._clientSubnets != null && this._clientSubnets.Count > 0; 
+            return this._clientSubnets != null && (this._clientSubnets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -111,7 +112,7 @@ namespace Amazon.Kafka.Model
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this._securityGroups != null && this._securityGroups.Count > 0; 
+            return this._securityGroups != null && (this._securityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -147,7 +148,7 @@ namespace Amazon.Kafka.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

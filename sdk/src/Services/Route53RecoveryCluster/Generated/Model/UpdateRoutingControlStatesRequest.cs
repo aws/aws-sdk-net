@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53RecoveryCluster.Model
 {
     /// <summary>
@@ -77,8 +78,8 @@ namespace Amazon.Route53RecoveryCluster.Model
     /// </summary>
     public partial class UpdateRoutingControlStatesRequest : AmazonRoute53RecoveryClusterRequest
     {
-        private List<string> _safetyRulesToOverride = new List<string>();
-        private List<UpdateRoutingControlStateEntry> _updateRoutingControlStateEntries = new List<UpdateRoutingControlStateEntry>();
+        private List<string> _safetyRulesToOverride = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<UpdateRoutingControlStateEntry> _updateRoutingControlStateEntries = AWSConfigs.InitializeCollections ? new List<UpdateRoutingControlStateEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property SafetyRulesToOverride. 
@@ -103,7 +104,7 @@ namespace Amazon.Route53RecoveryCluster.Model
         // Check to see if SafetyRulesToOverride property is set
         internal bool IsSetSafetyRulesToOverride()
         {
-            return this._safetyRulesToOverride != null && this._safetyRulesToOverride.Count > 0; 
+            return this._safetyRulesToOverride != null && (this._safetyRulesToOverride.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -122,7 +123,7 @@ namespace Amazon.Route53RecoveryCluster.Model
         // Check to see if UpdateRoutingControlStateEntries property is set
         internal bool IsSetUpdateRoutingControlStateEntries()
         {
-            return this._updateRoutingControlStateEntries != null && this._updateRoutingControlStateEntries.Count > 0; 
+            return this._updateRoutingControlStateEntries != null && (this._updateRoutingControlStateEntries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

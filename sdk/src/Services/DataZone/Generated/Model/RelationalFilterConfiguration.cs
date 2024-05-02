@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.DataZone.Model
     public partial class RelationalFilterConfiguration
     {
         private string _databaseName;
-        private List<FilterExpression> _filterExpressions = new List<FilterExpression>();
+        private List<FilterExpression> _filterExpressions = AWSConfigs.InitializeCollections ? new List<FilterExpression>() : null;
         private string _schemaName;
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.DataZone.Model
         // Check to see if FilterExpressions property is set
         internal bool IsSetFilterExpressions()
         {
-            return this._filterExpressions != null && this._filterExpressions.Count > 0; 
+            return this._filterExpressions != null && (this._filterExpressions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

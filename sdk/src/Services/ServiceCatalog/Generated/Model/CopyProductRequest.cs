@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
@@ -47,10 +48,10 @@ namespace Amazon.ServiceCatalog.Model
     public partial class CopyProductRequest : AmazonServiceCatalogRequest
     {
         private string _acceptLanguage;
-        private List<string> _copyOptions = new List<string>();
+        private List<string> _copyOptions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _idempotencyToken;
         private string _sourceProductArn;
-        private List<Dictionary<string, string>> _sourceProvisioningArtifactIdentifiers = new List<Dictionary<string, string>>();
+        private List<Dictionary<string, string>> _sourceProvisioningArtifactIdentifiers = AWSConfigs.InitializeCollections ? new List<Dictionary<string, string>>() : null;
         private string _targetProductId;
         private string _targetProductName;
 
@@ -98,7 +99,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if CopyOptions property is set
         internal bool IsSetCopyOptions()
         {
-            return this._copyOptions != null && this._copyOptions.Count > 0; 
+            return this._copyOptions != null && (this._copyOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -157,7 +158,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if SourceProvisioningArtifactIdentifiers property is set
         internal bool IsSetSourceProvisioningArtifactIdentifiers()
         {
-            return this._sourceProvisioningArtifactIdentifiers != null && this._sourceProvisioningArtifactIdentifiers.Count > 0; 
+            return this._sourceProvisioningArtifactIdentifiers != null && (this._sourceProvisioningArtifactIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

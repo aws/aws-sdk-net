@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class BatchGetTriggersResponse : AmazonWebServiceResponse
     {
-        private List<Trigger> _triggers = new List<Trigger>();
-        private List<string> _triggersNotFound = new List<string>();
+        private List<Trigger> _triggers = AWSConfigs.InitializeCollections ? new List<Trigger>() : null;
+        private List<string> _triggersNotFound = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Triggers. 
@@ -51,7 +52,7 @@ namespace Amazon.Glue.Model
         // Check to see if Triggers property is set
         internal bool IsSetTriggers()
         {
-            return this._triggers != null && this._triggers.Count > 0; 
+            return this._triggers != null && (this._triggers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.Glue.Model
         // Check to see if TriggersNotFound property is set
         internal bool IsSetTriggersNotFound()
         {
-            return this._triggersNotFound != null && this._triggersNotFound.Count > 0; 
+            return this._triggersNotFound != null && (this._triggersNotFound.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.GuardDuty.Model
         private string _requestUri;
         private string _resource;
         private string _resourceName;
-        private List<string> _sourceIps = new List<string>();
+        private List<string> _sourceIps = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _statusCode;
         private string _subresource;
         private string _userAgent;
@@ -166,7 +167,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if SourceIps property is set
         internal bool IsSetSourceIps()
         {
-            return this._sourceIps != null && this._sourceIps.Count > 0; 
+            return this._sourceIps != null && (this._sourceIps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

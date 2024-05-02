@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeTrunkInterfaceAssociationsResponse : AmazonWebServiceResponse
     {
-        private List<TrunkInterfaceAssociation> _interfaceAssociations = new List<TrunkInterfaceAssociation>();
+        private List<TrunkInterfaceAssociation> _interfaceAssociations = AWSConfigs.InitializeCollections ? new List<TrunkInterfaceAssociation>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.EC2.Model
         // Check to see if InterfaceAssociations property is set
         internal bool IsSetInterfaceAssociations()
         {
-            return this._interfaceAssociations != null && this._interfaceAssociations.Count > 0; 
+            return this._interfaceAssociations != null && (this._interfaceAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

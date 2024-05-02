@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class PutEvaluationsResponse : AmazonWebServiceResponse
     {
-        private List<Evaluation> _failedEvaluations = new List<Evaluation>();
+        private List<Evaluation> _failedEvaluations = AWSConfigs.InitializeCollections ? new List<Evaluation>() : null;
 
         /// <summary>
         /// Gets and sets the property FailedEvaluations. 
@@ -51,7 +52,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if FailedEvaluations property is set
         internal bool IsSetFailedEvaluations()
         {
-            return this._failedEvaluations != null && this._failedEvaluations.Count > 0; 
+            return this._failedEvaluations != null && (this._failedEvaluations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

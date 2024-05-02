@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class SankeyDiagramAggregatedFieldWells
     {
-        private List<DimensionField> _destination = new List<DimensionField>();
-        private List<DimensionField> _source = new List<DimensionField>();
-        private List<MeasureField> _weight = new List<MeasureField>();
+        private List<DimensionField> _destination = AWSConfigs.InitializeCollections ? new List<DimensionField>() : null;
+        private List<DimensionField> _source = AWSConfigs.InitializeCollections ? new List<DimensionField>() : null;
+        private List<MeasureField> _weight = AWSConfigs.InitializeCollections ? new List<MeasureField>() : null;
 
         /// <summary>
         /// Gets and sets the property Destination. 
@@ -53,7 +54,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Destination property is set
         internal bool IsSetDestination()
         {
-            return this._destination != null && this._destination.Count > 0; 
+            return this._destination != null && (this._destination.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Source property is set
         internal bool IsSetSource()
         {
-            return this._source != null && this._source.Count > 0; 
+            return this._source != null && (this._source.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Weight property is set
         internal bool IsSetWeight()
         {
-            return this._weight != null && this._weight.Count > 0; 
+            return this._weight != null && (this._weight.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

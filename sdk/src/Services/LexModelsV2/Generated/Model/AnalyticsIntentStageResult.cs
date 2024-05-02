@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class AnalyticsIntentStageResult
     {
-        private List<AnalyticsBinKey> _binKeys = new List<AnalyticsBinKey>();
-        private List<AnalyticsIntentStageGroupByKey> _groupByKeys = new List<AnalyticsIntentStageGroupByKey>();
-        private List<AnalyticsIntentStageMetricResult> _metricsResults = new List<AnalyticsIntentStageMetricResult>();
+        private List<AnalyticsBinKey> _binKeys = AWSConfigs.InitializeCollections ? new List<AnalyticsBinKey>() : null;
+        private List<AnalyticsIntentStageGroupByKey> _groupByKeys = AWSConfigs.InitializeCollections ? new List<AnalyticsIntentStageGroupByKey>() : null;
+        private List<AnalyticsIntentStageMetricResult> _metricsResults = AWSConfigs.InitializeCollections ? new List<AnalyticsIntentStageMetricResult>() : null;
 
         /// <summary>
         /// Gets and sets the property BinKeys. 
@@ -55,7 +56,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if BinKeys property is set
         internal bool IsSetBinKeys()
         {
-            return this._binKeys != null && this._binKeys.Count > 0; 
+            return this._binKeys != null && (this._binKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if GroupByKeys property is set
         internal bool IsSetGroupByKeys()
         {
-            return this._groupByKeys != null && this._groupByKeys.Count > 0; 
+            return this._groupByKeys != null && (this._groupByKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -93,7 +94,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if MetricsResults property is set
         internal bool IsSetMetricsResults()
         {
-            return this._metricsResults != null && this._metricsResults.Count > 0; 
+            return this._metricsResults != null && (this._metricsResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

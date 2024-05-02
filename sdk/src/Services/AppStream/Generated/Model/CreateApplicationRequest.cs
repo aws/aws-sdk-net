@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppStream.Model
 {
     /// <summary>
@@ -51,12 +52,12 @@ namespace Amazon.AppStream.Model
         private string _description;
         private string _displayName;
         private S3Location _iconS3Location;
-        private List<string> _instanceFamilies = new List<string>();
+        private List<string> _instanceFamilies = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _launchParameters;
         private string _launchPath;
         private string _name;
-        private List<string> _platforms = new List<string>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<string> _platforms = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _workingDirectory;
 
         /// <summary>
@@ -153,7 +154,7 @@ namespace Amazon.AppStream.Model
         // Check to see if InstanceFamilies property is set
         internal bool IsSetInstanceFamilies()
         {
-            return this._instanceFamilies != null && this._instanceFamilies.Count > 0; 
+            return this._instanceFamilies != null && (this._instanceFamilies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -231,7 +232,7 @@ namespace Amazon.AppStream.Model
         // Check to see if Platforms property is set
         internal bool IsSetPlatforms()
         {
-            return this._platforms != null && this._platforms.Count > 0; 
+            return this._platforms != null && (this._platforms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -250,7 +251,7 @@ namespace Amazon.AppStream.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

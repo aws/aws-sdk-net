@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
@@ -33,10 +34,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class SslPolicy
     {
-        private List<Cipher> _ciphers = new List<Cipher>();
+        private List<Cipher> _ciphers = AWSConfigs.InitializeCollections ? new List<Cipher>() : null;
         private string _name;
-        private List<string> _sslProtocols = new List<string>();
-        private List<string> _supportedLoadBalancerTypes = new List<string>();
+        private List<string> _sslProtocols = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _supportedLoadBalancerTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Ciphers. 
@@ -53,7 +54,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if Ciphers property is set
         internal bool IsSetCiphers()
         {
-            return this._ciphers != null && this._ciphers.Count > 0; 
+            return this._ciphers != null && (this._ciphers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -89,7 +90,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if SslProtocols property is set
         internal bool IsSetSslProtocols()
         {
-            return this._sslProtocols != null && this._sslProtocols.Count > 0; 
+            return this._sslProtocols != null && (this._sslProtocols.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -107,7 +108,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if SupportedLoadBalancerTypes property is set
         internal bool IsSetSupportedLoadBalancerTypes()
         {
-            return this._supportedLoadBalancerTypes != null && this._supportedLoadBalancerTypes.Count > 0; 
+            return this._supportedLoadBalancerTypes != null && (this._supportedLoadBalancerTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

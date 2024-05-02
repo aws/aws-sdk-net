@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class UpdateCaseActionDefinition
     {
-        private List<FieldValue> _fields = new List<FieldValue>();
+        private List<FieldValue> _fields = AWSConfigs.InitializeCollections ? new List<FieldValue>() : null;
 
         /// <summary>
         /// Gets and sets the property Fields. 
@@ -51,7 +52,7 @@ namespace Amazon.Connect.Model
         // Check to see if Fields property is set
         internal bool IsSetFields()
         {
-            return this._fields != null && this._fields.Count > 0; 
+            return this._fields != null && (this._fields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class AgentConfig
     {
-        private List<Distribution> _distributions = new List<Distribution>();
+        private List<Distribution> _distributions = AWSConfigs.InitializeCollections ? new List<Distribution>() : null;
 
         /// <summary>
         /// Gets and sets the property Distributions. 
@@ -51,7 +52,7 @@ namespace Amazon.Connect.Model
         // Check to see if Distributions property is set
         internal bool IsSetDistributions()
         {
-            return this._distributions != null && this._distributions.Count > 0; 
+            return this._distributions != null && (this._distributions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

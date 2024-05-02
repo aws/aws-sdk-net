@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.WellArchitected.Model
     public partial class PillarMetric
     {
         private string _pillarId;
-        private List<QuestionMetric> _questions = new List<QuestionMetric>();
-        private Dictionary<string, int> _riskCounts = new Dictionary<string, int>();
+        private List<QuestionMetric> _questions = AWSConfigs.InitializeCollections ? new List<QuestionMetric>() : null;
+        private Dictionary<string, int> _riskCounts = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
 
         /// <summary>
         /// Gets and sets the property PillarId.
@@ -68,7 +69,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if Questions property is set
         internal bool IsSetQuestions()
         {
-            return this._questions != null && this._questions.Count > 0; 
+            return this._questions != null && (this._questions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -83,7 +84,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if RiskCounts property is set
         internal bool IsSetRiskCounts()
         {
-            return this._riskCounts != null && this._riskCounts.Count > 0; 
+            return this._riskCounts != null && (this._riskCounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

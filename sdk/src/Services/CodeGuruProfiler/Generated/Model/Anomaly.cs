@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CodeGuruProfiler.Model
     /// </summary>
     public partial class Anomaly
     {
-        private List<AnomalyInstance> _instances = new List<AnomalyInstance>();
+        private List<AnomalyInstance> _instances = AWSConfigs.InitializeCollections ? new List<AnomalyInstance>() : null;
         private Metric _metric;
         private string _reason;
 
@@ -54,7 +55,7 @@ namespace Amazon.CodeGuruProfiler.Model
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this._instances != null && this._instances.Count > 0; 
+            return this._instances != null && (this._instances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IVS.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IVS.Model
     /// </summary>
     public partial class RenditionConfiguration
     {
-        private List<string> _renditions = new List<string>();
+        private List<string> _renditions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private RenditionConfigurationRenditionSelection _renditionSelection;
 
         /// <summary>
@@ -56,7 +57,7 @@ namespace Amazon.IVS.Model
         // Check to see if Renditions property is set
         internal bool IsSetRenditions()
         {
-            return this._renditions != null && this._renditions.Count > 0; 
+            return this._renditions != null && (this._renditions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

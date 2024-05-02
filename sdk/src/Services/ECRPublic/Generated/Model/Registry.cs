@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECRPublic.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ECRPublic.Model
     /// </summary>
     public partial class Registry
     {
-        private List<RegistryAlias> _aliases = new List<RegistryAlias>();
+        private List<RegistryAlias> _aliases = AWSConfigs.InitializeCollections ? new List<RegistryAlias>() : null;
         private string _registryArn;
         private string _registryId;
         private string _registryUri;
@@ -55,7 +56,7 @@ namespace Amazon.ECRPublic.Model
         // Check to see if Aliases property is set
         internal bool IsSetAliases()
         {
-            return this._aliases != null && this._aliases.Count > 0; 
+            return this._aliases != null && (this._aliases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

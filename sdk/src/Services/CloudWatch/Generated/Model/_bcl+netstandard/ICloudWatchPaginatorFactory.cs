@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the monitoring-2010-08-01.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>

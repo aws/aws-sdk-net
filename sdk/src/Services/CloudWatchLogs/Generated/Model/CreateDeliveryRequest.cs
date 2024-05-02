@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
@@ -43,7 +44,7 @@ namespace Amazon.CloudWatchLogs.Model
     ///  
     /// <para>
     /// A delivery destination can represent a log group in CloudWatch Logs, an Amazon S3
-    /// bucket, or a delivery stream in Kinesis Data Firehose.
+    /// bucket, or a delivery stream in Firehose.
     /// </para>
     ///  
     /// <para>
@@ -86,7 +87,7 @@ namespace Amazon.CloudWatchLogs.Model
     {
         private string _deliveryDestinationArn;
         private string _deliverySourceName;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property DeliveryDestinationArn. 
@@ -147,7 +148,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

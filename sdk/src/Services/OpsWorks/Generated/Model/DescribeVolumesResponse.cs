@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.OpsWorks.Model
     /// </summary>
     public partial class DescribeVolumesResponse : AmazonWebServiceResponse
     {
-        private List<Volume> _volumes = new List<Volume>();
+        private List<Volume> _volumes = AWSConfigs.InitializeCollections ? new List<Volume>() : null;
 
         /// <summary>
         /// Gets and sets the property Volumes. 
@@ -50,7 +51,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if Volumes property is set
         internal bool IsSetVolumes()
         {
-            return this._volumes != null && this._volumes.Count > 0; 
+            return this._volumes != null && (this._volumes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

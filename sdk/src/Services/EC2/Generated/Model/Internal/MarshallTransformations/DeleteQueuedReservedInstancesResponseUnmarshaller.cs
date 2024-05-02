@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -58,6 +59,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("failedQueuedPurchaseDeletionSet/item", targetDepth))
                     {
                         var unmarshaller = FailedQueuedPurchaseDeletionUnmarshaller.Instance;
+                        if (response.FailedQueuedPurchaseDeletions == null)
+                        {
+                            response.FailedQueuedPurchaseDeletions = new List<FailedQueuedPurchaseDeletion>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.FailedQueuedPurchaseDeletions.Add(item);
                         continue;
@@ -65,6 +70,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("successfulQueuedPurchaseDeletionSet/item", targetDepth))
                     {
                         var unmarshaller = SuccessfulQueuedPurchaseDeletionUnmarshaller.Instance;
+                        if (response.SuccessfulQueuedPurchaseDeletions == null)
+                        {
+                            response.SuccessfulQueuedPurchaseDeletions = new List<SuccessfulQueuedPurchaseDeletion>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.SuccessfulQueuedPurchaseDeletions.Add(item);
                         continue;

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class GetTransitGatewayMulticastDomainAssociationsResponse : AmazonWebServiceResponse
     {
-        private List<TransitGatewayMulticastDomainAssociation> _multicastDomainAssociations = new List<TransitGatewayMulticastDomainAssociation>();
+        private List<TransitGatewayMulticastDomainAssociation> _multicastDomainAssociations = AWSConfigs.InitializeCollections ? new List<TransitGatewayMulticastDomainAssociation>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.EC2.Model
         // Check to see if MulticastDomainAssociations property is set
         internal bool IsSetMulticastDomainAssociations()
         {
-            return this._multicastDomainAssociations != null && this._multicastDomainAssociations.Count > 0; 
+            return this._multicastDomainAssociations != null && (this._multicastDomainAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

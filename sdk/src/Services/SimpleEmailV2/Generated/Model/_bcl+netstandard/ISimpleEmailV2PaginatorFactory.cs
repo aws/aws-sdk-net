@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the sesv2-2019-09-27.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>

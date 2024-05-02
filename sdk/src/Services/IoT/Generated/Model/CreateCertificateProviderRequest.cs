@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -53,11 +54,11 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class CreateCertificateProviderRequest : AmazonIoTRequest
     {
-        private List<string> _accountDefaultForOperations = new List<string>();
+        private List<string> _accountDefaultForOperations = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _certificateProviderName;
         private string _clientToken;
         private string _lambdaFunctionArn;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountDefaultForOperations. 
@@ -76,7 +77,7 @@ namespace Amazon.IoT.Model
         // Check to see if AccountDefaultForOperations property is set
         internal bool IsSetAccountDefaultForOperations()
         {
-            return this._accountDefaultForOperations != null && this._accountDefaultForOperations.Count > 0; 
+            return this._accountDefaultForOperations != null && (this._accountDefaultForOperations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -152,7 +153,7 @@ namespace Amazon.IoT.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

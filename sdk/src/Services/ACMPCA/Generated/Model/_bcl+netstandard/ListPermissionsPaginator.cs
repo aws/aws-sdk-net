@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ACMPCA.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ACMPCA.Model
         /// Enumerable containing all of the Permissions
         /// </summary>
         public IPaginatedEnumerable<Permission> Permissions => 
-            new PaginatedResultKeyResponse<ListPermissionsResponse, Permission>(this, (i) => i.Permissions);
+            new PaginatedResultKeyResponse<ListPermissionsResponse, Permission>(this, (i) => i.Permissions ?? new List<Permission>());
 
         internal ListPermissionsPaginator(IAmazonACMPCA client, ListPermissionsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ACMPCA.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListPermissionsResponse> IPaginator<ListPermissionsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListPermissionsResponse> IPaginator<ListPermissionsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

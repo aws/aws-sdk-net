@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.CodeDeploy.Model
     /// </summary>
     public partial class BatchGetApplicationsRequest : AmazonCodeDeployRequest
     {
-        private List<string> _applicationNames = new List<string>();
+        private List<string> _applicationNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationNames. 
@@ -54,7 +55,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if ApplicationNames property is set
         internal bool IsSetApplicationNames()
         {
-            return this._applicationNames != null && this._applicationNames.Count > 0; 
+            return this._applicationNames != null && (this._applicationNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

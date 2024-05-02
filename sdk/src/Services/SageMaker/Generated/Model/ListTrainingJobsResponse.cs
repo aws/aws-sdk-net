@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class ListTrainingJobsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TrainingJobSummary> _trainingJobSummaries = new List<TrainingJobSummary>();
+        private List<TrainingJobSummary> _trainingJobSummaries = AWSConfigs.InitializeCollections ? new List<TrainingJobSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if TrainingJobSummaries property is set
         internal bool IsSetTrainingJobSummaries()
         {
-            return this._trainingJobSummaries != null && this._trainingJobSummaries.Count > 0; 
+            return this._trainingJobSummaries != null && (this._trainingJobSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

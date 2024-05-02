@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class TaskTemplateDefaults
     {
-        private List<TaskTemplateDefaultFieldValue> _defaultFieldValues = new List<TaskTemplateDefaultFieldValue>();
+        private List<TaskTemplateDefaultFieldValue> _defaultFieldValues = AWSConfigs.InitializeCollections ? new List<TaskTemplateDefaultFieldValue>() : null;
 
         /// <summary>
         /// Gets and sets the property DefaultFieldValues. 
@@ -50,7 +51,7 @@ namespace Amazon.Connect.Model
         // Check to see if DefaultFieldValues property is set
         internal bool IsSetDefaultFieldValues()
         {
-            return this._defaultFieldValues != null && this._defaultFieldValues.Count > 0; 
+            return this._defaultFieldValues != null && (this._defaultFieldValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

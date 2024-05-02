@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeNatGatewaysResponse : AmazonWebServiceResponse
     {
-        private List<NatGateway> _natGateways = new List<NatGateway>();
+        private List<NatGateway> _natGateways = AWSConfigs.InitializeCollections ? new List<NatGateway>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.EC2.Model
         // Check to see if NatGateways property is set
         internal bool IsSetNatGateways()
         {
-            return this._natGateways != null && this._natGateways.Count > 0; 
+            return this._natGateways != null && (this._natGateways.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

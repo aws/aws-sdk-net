@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MigrationHubOrchestrator.Model
 {
     /// <summary>
@@ -36,10 +37,10 @@ namespace Amazon.MigrationHubOrchestrator.Model
     {
         private string _applicationConfigurationId;
         private string _description;
-        private Dictionary<string, StepInput> _inputParameters = new Dictionary<string, StepInput>();
+        private Dictionary<string, StepInput> _inputParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, StepInput>() : null;
         private string _name;
-        private List<string> _stepTargets = new List<string>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<string> _stepTargets = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _templateId;
 
         /// <summary>
@@ -48,7 +49,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         /// The configuration ID of the application configured in Application Discovery Service.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public string ApplicationConfigurationId
         {
             get { return this._applicationConfigurationId; }
@@ -96,7 +97,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         // Check to see if InputParameters property is set
         internal bool IsSetInputParameters()
         {
-            return this._inputParameters != null && this._inputParameters.Count > 0; 
+            return this._inputParameters != null && (this._inputParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -133,7 +134,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         // Check to see if StepTargets property is set
         internal bool IsSetStepTargets()
         {
-            return this._stepTargets != null && this._stepTargets.Count > 0; 
+            return this._stepTargets != null && (this._stepTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -151,7 +152,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

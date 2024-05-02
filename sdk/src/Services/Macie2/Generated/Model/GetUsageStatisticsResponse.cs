@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Macie2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Macie2.Model
     public partial class GetUsageStatisticsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<UsageRecord> _records = new List<UsageRecord>();
+        private List<UsageRecord> _records = AWSConfigs.InitializeCollections ? new List<UsageRecord>() : null;
         private TimeRange _timeRange;
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.Macie2.Model
         // Check to see if Records property is set
         internal bool IsSetRecords()
         {
-            return this._records != null && this._records.Count > 0; 
+            return this._records != null && (this._records.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -241,6 +241,14 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly AMITypes AL2_x86_64_GPU = new AMITypes("AL2_x86_64_GPU");
         /// <summary>
+        /// Constant AL2023_ARM_64_STANDARD for AMITypes
+        /// </summary>
+        public static readonly AMITypes AL2023_ARM_64_STANDARD = new AMITypes("AL2023_ARM_64_STANDARD");
+        /// <summary>
+        /// Constant AL2023_x86_64_STANDARD for AMITypes
+        /// </summary>
+        public static readonly AMITypes AL2023_x86_64_STANDARD = new AMITypes("AL2023_x86_64_STANDARD");
+        /// <summary>
         /// Constant BOTTLEROCKET_ARM_64 for AMITypes
         /// </summary>
         public static readonly AMITypes BOTTLEROCKET_ARM_64 = new AMITypes("BOTTLEROCKET_ARM_64");
@@ -1337,6 +1345,10 @@ namespace Amazon.EKS
         /// </summary>
         public static readonly NodegroupIssueCode Ec2LaunchTemplateNotFound = new NodegroupIssueCode("Ec2LaunchTemplateNotFound");
         /// <summary>
+        /// Constant Ec2LaunchTemplateVersionMaxLimitExceeded for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode Ec2LaunchTemplateVersionMaxLimitExceeded = new NodegroupIssueCode("Ec2LaunchTemplateVersionMaxLimitExceeded");
+        /// <summary>
         /// Constant Ec2LaunchTemplateVersionMismatch for NodegroupIssueCode
         /// </summary>
         public static readonly NodegroupIssueCode Ec2LaunchTemplateVersionMismatch = new NodegroupIssueCode("Ec2LaunchTemplateVersionMismatch");
@@ -1392,6 +1404,10 @@ namespace Amazon.EKS
         /// Constant InternalFailure for NodegroupIssueCode
         /// </summary>
         public static readonly NodegroupIssueCode InternalFailure = new NodegroupIssueCode("InternalFailure");
+        /// <summary>
+        /// Constant KubernetesLabelInvalid for NodegroupIssueCode
+        /// </summary>
+        public static readonly NodegroupIssueCode KubernetesLabelInvalid = new NodegroupIssueCode("KubernetesLabelInvalid");
         /// <summary>
         /// Constant LimitExceeded for NodegroupIssueCode
         /// </summary>

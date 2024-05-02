@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EC2.Model
     public partial class DescribeReplaceRootVolumeTasksResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ReplaceRootVolumeTask> _replaceRootVolumeTasks = new List<ReplaceRootVolumeTask>();
+        private List<ReplaceRootVolumeTask> _replaceRootVolumeTasks = AWSConfigs.InitializeCollections ? new List<ReplaceRootVolumeTask>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.EC2.Model
         // Check to see if ReplaceRootVolumeTasks property is set
         internal bool IsSetReplaceRootVolumeTasks()
         {
-            return this._replaceRootVolumeTasks != null && this._replaceRootVolumeTasks.Count > 0; 
+            return this._replaceRootVolumeTasks != null && (this._replaceRootVolumeTasks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

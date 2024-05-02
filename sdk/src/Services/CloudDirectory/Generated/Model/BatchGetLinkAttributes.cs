@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CloudDirectory.Model
     /// </summary>
     public partial class BatchGetLinkAttributes
     {
-        private List<string> _attributeNames = new List<string>();
+        private List<string> _attributeNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TypedLinkSpecifier _typedLinkSpecifier;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if AttributeNames property is set
         internal bool IsSetAttributeNames()
         {
-            return this._attributeNames != null && this._attributeNames.Count > 0; 
+            return this._attributeNames != null && (this._attributeNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

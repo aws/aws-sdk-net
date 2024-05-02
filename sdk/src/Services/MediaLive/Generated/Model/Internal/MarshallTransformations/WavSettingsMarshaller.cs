@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,10 +46,19 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(WavSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBitDepth())
             {
                 context.Writer.WritePropertyName("bitDepth");
-                context.Writer.Write(requestObject.BitDepth.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.BitDepth.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.BitDepth.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.BitDepth.Value);
+                }
             }
 
             if(requestObject.IsSetCodingMode())
@@ -60,7 +70,14 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSampleRate())
             {
                 context.Writer.WritePropertyName("sampleRate");
-                context.Writer.Write(requestObject.SampleRate.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.SampleRate.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.SampleRate.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.SampleRate.Value);
+                }
             }
 
         }

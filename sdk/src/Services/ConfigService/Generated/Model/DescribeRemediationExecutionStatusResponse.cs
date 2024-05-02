@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ConfigService.Model
     public partial class DescribeRemediationExecutionStatusResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RemediationExecutionStatus> _remediationExecutionStatuses = new List<RemediationExecutionStatus>();
+        private List<RemediationExecutionStatus> _remediationExecutionStatuses = AWSConfigs.InitializeCollections ? new List<RemediationExecutionStatus>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if RemediationExecutionStatuses property is set
         internal bool IsSetRemediationExecutionStatuses()
         {
-            return this._remediationExecutionStatuses != null && this._remediationExecutionStatuses.Count > 0; 
+            return this._remediationExecutionStatuses != null && (this._remediationExecutionStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

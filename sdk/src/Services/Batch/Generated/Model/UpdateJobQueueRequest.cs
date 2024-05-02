@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Batch.Model
 {
     /// <summary>
@@ -34,8 +35,9 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class UpdateJobQueueRequest : AmazonBatchRequest
     {
-        private List<ComputeEnvironmentOrder> _computeEnvironmentOrder = new List<ComputeEnvironmentOrder>();
+        private List<ComputeEnvironmentOrder> _computeEnvironmentOrder = AWSConfigs.InitializeCollections ? new List<ComputeEnvironmentOrder>() : null;
         private string _jobQueue;
+        private List<JobStateTimeLimitAction> _jobStateTimeLimitActions = AWSConfigs.InitializeCollections ? new List<JobStateTimeLimitAction>() : null;
         private int? _priority;
         private string _schedulingPolicyArn;
         private JQState _state;
@@ -67,7 +69,7 @@ namespace Amazon.Batch.Model
         // Check to see if ComputeEnvironmentOrder property is set
         internal bool IsSetComputeEnvironmentOrder()
         {
-            return this._computeEnvironmentOrder != null && this._computeEnvironmentOrder.Count > 0; 
+            return this._computeEnvironmentOrder != null && (this._computeEnvironmentOrder.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -87,6 +89,26 @@ namespace Amazon.Batch.Model
         internal bool IsSetJobQueue()
         {
             return this._jobQueue != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobStateTimeLimitActions. 
+        /// <para>
+        /// The set of actions that Batch perform on jobs that remain at the head of the job queue
+        /// in the specified state longer than specified times. Batch will perform each action
+        /// after <c>maxTimeSeconds</c> has passed.
+        /// </para>
+        /// </summary>
+        public List<JobStateTimeLimitAction> JobStateTimeLimitActions
+        {
+            get { return this._jobStateTimeLimitActions; }
+            set { this._jobStateTimeLimitActions = value; }
+        }
+
+        // Check to see if JobStateTimeLimitActions property is set
+        internal bool IsSetJobStateTimeLimitActions()
+        {
+            return this._jobStateTimeLimitActions != null && (this._jobStateTimeLimitActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

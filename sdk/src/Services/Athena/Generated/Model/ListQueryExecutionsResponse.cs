@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Athena.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Athena.Model
     public partial class ListQueryExecutionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<string> _queryExecutionIds = new List<string>();
+        private List<string> _queryExecutionIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.Athena.Model
         // Check to see if QueryExecutionIds property is set
         internal bool IsSetQueryExecutionIds()
         {
-            return this._queryExecutionIds != null && this._queryExecutionIds.Count > 0; 
+            return this._queryExecutionIds != null && (this._queryExecutionIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

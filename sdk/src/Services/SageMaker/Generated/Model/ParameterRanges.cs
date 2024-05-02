@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -46,10 +47,10 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ParameterRanges
     {
-        private List<AutoParameter> _autoParameters = new List<AutoParameter>();
-        private List<CategoricalParameterRange> _categoricalParameterRanges = new List<CategoricalParameterRange>();
-        private List<ContinuousParameterRange> _continuousParameterRanges = new List<ContinuousParameterRange>();
-        private List<IntegerParameterRange> _integerParameterRanges = new List<IntegerParameterRange>();
+        private List<AutoParameter> _autoParameters = AWSConfigs.InitializeCollections ? new List<AutoParameter>() : null;
+        private List<CategoricalParameterRange> _categoricalParameterRanges = AWSConfigs.InitializeCollections ? new List<CategoricalParameterRange>() : null;
+        private List<ContinuousParameterRange> _continuousParameterRanges = AWSConfigs.InitializeCollections ? new List<ContinuousParameterRange>() : null;
+        private List<IntegerParameterRange> _integerParameterRanges = AWSConfigs.InitializeCollections ? new List<IntegerParameterRange>() : null;
 
         /// <summary>
         /// Gets and sets the property AutoParameters. 
@@ -68,7 +69,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if AutoParameters property is set
         internal bool IsSetAutoParameters()
         {
-            return this._autoParameters != null && this._autoParameters.Count > 0; 
+            return this._autoParameters != null && (this._autoParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -89,7 +90,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if CategoricalParameterRanges property is set
         internal bool IsSetCategoricalParameterRanges()
         {
-            return this._categoricalParameterRanges != null && this._categoricalParameterRanges.Count > 0; 
+            return this._categoricalParameterRanges != null && (this._categoricalParameterRanges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -110,7 +111,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ContinuousParameterRanges property is set
         internal bool IsSetContinuousParameterRanges()
         {
-            return this._continuousParameterRanges != null && this._continuousParameterRanges.Count > 0; 
+            return this._continuousParameterRanges != null && (this._continuousParameterRanges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -131,7 +132,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if IntegerParameterRanges property is set
         internal bool IsSetIntegerParameterRanges()
         {
-            return this._integerParameterRanges != null && this._integerParameterRanges.Count > 0; 
+            return this._integerParameterRanges != null && (this._integerParameterRanges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

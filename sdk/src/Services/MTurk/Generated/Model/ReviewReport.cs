@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MTurk.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.MTurk.Model
     /// </summary>
     public partial class ReviewReport
     {
-        private List<ReviewActionDetail> _reviewActions = new List<ReviewActionDetail>();
-        private List<ReviewResultDetail> _reviewResults = new List<ReviewResultDetail>();
+        private List<ReviewActionDetail> _reviewActions = AWSConfigs.InitializeCollections ? new List<ReviewActionDetail>() : null;
+        private List<ReviewResultDetail> _reviewResults = AWSConfigs.InitializeCollections ? new List<ReviewResultDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property ReviewActions. 
@@ -51,7 +52,7 @@ namespace Amazon.MTurk.Model
         // Check to see if ReviewActions property is set
         internal bool IsSetReviewActions()
         {
-            return this._reviewActions != null && this._reviewActions.Count > 0; 
+            return this._reviewActions != null && (this._reviewActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.MTurk.Model
         // Check to see if ReviewResults property is set
         internal bool IsSetReviewResults()
         {
-            return this._reviewResults != null && this._reviewResults.Count > 0; 
+            return this._reviewResults != null && (this._reviewResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

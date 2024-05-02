@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Shield.Model
 {
     /// <summary>
@@ -33,14 +34,14 @@ namespace Amazon.Shield.Model
     /// </summary>
     public partial class AttackDetail
     {
-        private List<SummarizedCounter> _attackCounters = new List<SummarizedCounter>();
+        private List<SummarizedCounter> _attackCounters = AWSConfigs.InitializeCollections ? new List<SummarizedCounter>() : null;
         private string _attackId;
-        private List<AttackProperty> _attackProperties = new List<AttackProperty>();
+        private List<AttackProperty> _attackProperties = AWSConfigs.InitializeCollections ? new List<AttackProperty>() : null;
         private DateTime? _endTime;
-        private List<Mitigation> _mitigations = new List<Mitigation>();
+        private List<Mitigation> _mitigations = AWSConfigs.InitializeCollections ? new List<Mitigation>() : null;
         private string _resourceArn;
         private DateTime? _startTime;
-        private List<SubResourceSummary> _subResources = new List<SubResourceSummary>();
+        private List<SubResourceSummary> _subResources = AWSConfigs.InitializeCollections ? new List<SubResourceSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property AttackCounters. 
@@ -57,7 +58,7 @@ namespace Amazon.Shield.Model
         // Check to see if AttackCounters property is set
         internal bool IsSetAttackCounters()
         {
-            return this._attackCounters != null && this._attackCounters.Count > 0; 
+            return this._attackCounters != null && (this._attackCounters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -100,7 +101,7 @@ namespace Amazon.Shield.Model
         // Check to see if AttackProperties property is set
         internal bool IsSetAttackProperties()
         {
-            return this._attackProperties != null && this._attackProperties.Count > 0; 
+            return this._attackProperties != null && (this._attackProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -136,7 +137,7 @@ namespace Amazon.Shield.Model
         // Check to see if Mitigations property is set
         internal bool IsSetMitigations()
         {
-            return this._mitigations != null && this._mitigations.Count > 0; 
+            return this._mitigations != null && (this._mitigations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -192,7 +193,7 @@ namespace Amazon.Shield.Model
         // Check to see if SubResources property is set
         internal bool IsSetSubResources()
         {
-            return this._subResources != null && this._subResources.Count > 0; 
+            return this._subResources != null && (this._subResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

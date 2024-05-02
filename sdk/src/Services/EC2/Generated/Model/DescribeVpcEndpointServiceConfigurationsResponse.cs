@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EC2.Model
     public partial class DescribeVpcEndpointServiceConfigurationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ServiceConfiguration> _serviceConfigurations = new List<ServiceConfiguration>();
+        private List<ServiceConfiguration> _serviceConfigurations = AWSConfigs.InitializeCollections ? new List<ServiceConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.EC2.Model
         // Check to see if ServiceConfigurations property is set
         internal bool IsSetServiceConfigurations()
         {
-            return this._serviceConfigurations != null && this._serviceConfigurations.Count > 0; 
+            return this._serviceConfigurations != null && (this._serviceConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

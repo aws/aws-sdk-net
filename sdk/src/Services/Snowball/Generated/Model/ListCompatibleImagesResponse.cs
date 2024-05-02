@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Snowball.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Snowball.Model
     /// </summary>
     public partial class ListCompatibleImagesResponse : AmazonWebServiceResponse
     {
-        private List<CompatibleImage> _compatibleImages = new List<CompatibleImage>();
+        private List<CompatibleImage> _compatibleImages = AWSConfigs.InitializeCollections ? new List<CompatibleImage>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.Snowball.Model
         // Check to see if CompatibleImages property is set
         internal bool IsSetCompatibleImages()
         {
-            return this._compatibleImages != null && this._compatibleImages.Count > 0; 
+            return this._compatibleImages != null && (this._compatibleImages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

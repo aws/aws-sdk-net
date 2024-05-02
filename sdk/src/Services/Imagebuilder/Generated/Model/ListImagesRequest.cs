@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Imagebuilder.Model
     public partial class ListImagesRequest : AmazonImagebuilderRequest
     {
         private bool? _byName;
-        private List<Filter> _filters = new List<Filter>();
+        private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
         private bool? _includeDeprecated;
         private int? _maxResults;
         private string _nextToken;
@@ -97,7 +98,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkManager.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.NetworkManager.Model
     public partial class GetTransitGatewayConnectPeerAssociationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TransitGatewayConnectPeerAssociation> _transitGatewayConnectPeerAssociations = new List<TransitGatewayConnectPeerAssociation>();
+        private List<TransitGatewayConnectPeerAssociation> _transitGatewayConnectPeerAssociations = AWSConfigs.InitializeCollections ? new List<TransitGatewayConnectPeerAssociation>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if TransitGatewayConnectPeerAssociations property is set
         internal bool IsSetTransitGatewayConnectPeerAssociations()
         {
-            return this._transitGatewayConnectPeerAssociations != null && this._transitGatewayConnectPeerAssociations.Count > 0; 
+            return this._transitGatewayConnectPeerAssociations != null && (this._transitGatewayConnectPeerAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

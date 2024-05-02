@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Bedrock.Model
         /// Enumerable containing all of the ModelSummaries
         /// </summary>
         public IPaginatedEnumerable<CustomModelSummary> ModelSummaries => 
-            new PaginatedResultKeyResponse<ListCustomModelsResponse, CustomModelSummary>(this, (i) => i.ModelSummaries);
+            new PaginatedResultKeyResponse<ListCustomModelsResponse, CustomModelSummary>(this, (i) => i.ModelSummaries ?? new List<CustomModelSummary>());
 
         internal ListCustomModelsPaginator(IAmazonBedrock client, ListCustomModelsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Bedrock.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListCustomModelsResponse> IPaginator<ListCustomModelsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListCustomModelsResponse> IPaginator<ListCustomModelsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

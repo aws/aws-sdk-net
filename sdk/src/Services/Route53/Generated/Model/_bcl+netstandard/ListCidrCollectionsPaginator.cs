@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Route53.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Route53.Model
         /// Enumerable containing all of the CidrCollections
         /// </summary>
         public IPaginatedEnumerable<CollectionSummary> CidrCollections => 
-            new PaginatedResultKeyResponse<ListCidrCollectionsResponse, CollectionSummary>(this, (i) => i.CidrCollections);
+            new PaginatedResultKeyResponse<ListCidrCollectionsResponse, CollectionSummary>(this, (i) => i.CidrCollections ?? new List<CollectionSummary>());
 
         internal ListCidrCollectionsPaginator(IAmazonRoute53 client, ListCidrCollectionsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Route53.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListCidrCollectionsResponse> IPaginator<ListCidrCollectionsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListCidrCollectionsResponse> IPaginator<ListCidrCollectionsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

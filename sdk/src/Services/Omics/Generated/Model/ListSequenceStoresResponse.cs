@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Omics.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Omics.Model
     public partial class ListSequenceStoresResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SequenceStoreDetail> _sequenceStores = new List<SequenceStoreDetail>();
+        private List<SequenceStoreDetail> _sequenceStores = AWSConfigs.InitializeCollections ? new List<SequenceStoreDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.Omics.Model
         // Check to see if SequenceStores property is set
         internal bool IsSetSequenceStores()
         {
-            return this._sequenceStores != null && this._sequenceStores.Count > 0; 
+            return this._sequenceStores != null && (this._sequenceStores.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

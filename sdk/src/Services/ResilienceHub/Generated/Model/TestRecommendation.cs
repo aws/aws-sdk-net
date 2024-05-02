@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
@@ -34,10 +35,10 @@ namespace Amazon.ResilienceHub.Model
     public partial class TestRecommendation
     {
         private string _appComponentName;
-        private List<string> _dependsOnAlarms = new List<string>();
+        private List<string> _dependsOnAlarms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _description;
         private string _intent;
-        private List<RecommendationItem> _items = new List<RecommendationItem>();
+        private List<RecommendationItem> _items = AWSConfigs.InitializeCollections ? new List<RecommendationItem>() : null;
         private string _name;
         private string _prerequisite;
         private string _recommendationId;
@@ -81,7 +82,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if DependsOnAlarms property is set
         internal bool IsSetDependsOnAlarms()
         {
-            return this._dependsOnAlarms != null && this._dependsOnAlarms.Count > 0; 
+            return this._dependsOnAlarms != null && (this._dependsOnAlarms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -137,7 +138,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

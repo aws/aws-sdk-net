@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GroundStation.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.GroundStation.Model
     /// </summary>
     public partial class DiscoveryData
     {
-        private List<string> _capabilityArns = new List<string>();
-        private List<string> _privateIpAddresses = new List<string>();
-        private List<string> _publicIpAddresses = new List<string>();
+        private List<string> _capabilityArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _privateIpAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _publicIpAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CapabilityArns. 
@@ -53,7 +54,7 @@ namespace Amazon.GroundStation.Model
         // Check to see if CapabilityArns property is set
         internal bool IsSetCapabilityArns()
         {
-            return this._capabilityArns != null && this._capabilityArns.Count > 0; 
+            return this._capabilityArns != null && (this._capabilityArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.GroundStation.Model
         // Check to see if PrivateIpAddresses property is set
         internal bool IsSetPrivateIpAddresses()
         {
-            return this._privateIpAddresses != null && this._privateIpAddresses.Count > 0; 
+            return this._privateIpAddresses != null && (this._privateIpAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace Amazon.GroundStation.Model
         // Check to see if PublicIpAddresses property is set
         internal bool IsSetPublicIpAddresses()
         {
-            return this._publicIpAddresses != null && this._publicIpAddresses.Count > 0; 
+            return this._publicIpAddresses != null && (this._publicIpAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationAutoScaling.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Enumerable containing all of the ScalableTargets
         /// </summary>
         public IPaginatedEnumerable<ScalableTarget> ScalableTargets => 
-            new PaginatedResultKeyResponse<DescribeScalableTargetsResponse, ScalableTarget>(this, (i) => i.ScalableTargets);
+            new PaginatedResultKeyResponse<DescribeScalableTargetsResponse, ScalableTarget>(this, (i) => i.ScalableTargets ?? new List<ScalableTarget>());
 
         internal DescribeScalableTargetsPaginator(IAmazonApplicationAutoScaling client, DescribeScalableTargetsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeScalableTargetsResponse> IPaginator<DescribeScalableTargetsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeScalableTargetsResponse> IPaginator<DescribeScalableTargetsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

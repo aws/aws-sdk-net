@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Route53Resolver.Model
     /// </summary>
     public partial class ListFirewallDomainListsResponse : AmazonWebServiceResponse
     {
-        private List<FirewallDomainListMetadata> _firewallDomainLists = new List<FirewallDomainListMetadata>();
+        private List<FirewallDomainListMetadata> _firewallDomainLists = AWSConfigs.InitializeCollections ? new List<FirewallDomainListMetadata>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -56,7 +57,7 @@ namespace Amazon.Route53Resolver.Model
         // Check to see if FirewallDomainLists property is set
         internal bool IsSetFirewallDomainLists()
         {
-            return this._firewallDomainLists != null && this._firewallDomainLists.Count > 0; 
+            return this._firewallDomainLists != null && (this._firewallDomainLists.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

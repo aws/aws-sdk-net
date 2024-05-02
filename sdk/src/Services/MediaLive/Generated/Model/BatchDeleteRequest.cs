@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
@@ -34,10 +35,10 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class BatchDeleteRequest : AmazonMediaLiveRequest
     {
-        private List<string> _channelIds = new List<string>();
-        private List<string> _inputIds = new List<string>();
-        private List<string> _inputSecurityGroupIds = new List<string>();
-        private List<string> _multiplexIds = new List<string>();
+        private List<string> _channelIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _inputIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _inputSecurityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _multiplexIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ChannelIds. List of channel IDs
@@ -51,7 +52,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if ChannelIds property is set
         internal bool IsSetChannelIds()
         {
-            return this._channelIds != null && this._channelIds.Count > 0; 
+            return this._channelIds != null && (this._channelIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -66,7 +67,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if InputIds property is set
         internal bool IsSetInputIds()
         {
-            return this._inputIds != null && this._inputIds.Count > 0; 
+            return this._inputIds != null && (this._inputIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -81,7 +82,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if InputSecurityGroupIds property is set
         internal bool IsSetInputSecurityGroupIds()
         {
-            return this._inputSecurityGroupIds != null && this._inputSecurityGroupIds.Count > 0; 
+            return this._inputSecurityGroupIds != null && (this._inputSecurityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -96,7 +97,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if MultiplexIds property is set
         internal bool IsSetMultiplexIds()
         {
-            return this._multiplexIds != null && this._multiplexIds.Count > 0; 
+            return this._multiplexIds != null && (this._multiplexIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

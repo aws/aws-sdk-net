@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Backup.Model
 {
     /// <summary>
@@ -40,8 +41,8 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class UpdateRegionSettingsRequest : AmazonBackupRequest
     {
-        private Dictionary<string, bool> _resourceTypeManagementPreference = new Dictionary<string, bool>();
-        private Dictionary<string, bool> _resourceTypeOptInPreference = new Dictionary<string, bool>();
+        private Dictionary<string, bool> _resourceTypeManagementPreference = AWSConfigs.InitializeCollections ? new Dictionary<string, bool>() : null;
+        private Dictionary<string, bool> _resourceTypeOptInPreference = AWSConfigs.InitializeCollections ? new Dictionary<string, bool>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceTypeManagementPreference. 
@@ -61,7 +62,7 @@ namespace Amazon.Backup.Model
         // Check to see if ResourceTypeManagementPreference property is set
         internal bool IsSetResourceTypeManagementPreference()
         {
-            return this._resourceTypeManagementPreference != null && this._resourceTypeManagementPreference.Count > 0; 
+            return this._resourceTypeManagementPreference != null && (this._resourceTypeManagementPreference.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -88,7 +89,7 @@ namespace Amazon.Backup.Model
         // Check to see if ResourceTypeOptInPreference property is set
         internal bool IsSetResourceTypeOptInPreference()
         {
-            return this._resourceTypeOptInPreference != null && this._resourceTypeOptInPreference.Count > 0; 
+            return this._resourceTypeOptInPreference != null && (this._resourceTypeOptInPreference.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

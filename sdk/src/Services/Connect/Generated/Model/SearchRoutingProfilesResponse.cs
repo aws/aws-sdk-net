@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Connect.Model
     {
         private long? _approximateTotalCount;
         private string _nextToken;
-        private List<RoutingProfile> _routingProfiles = new List<RoutingProfile>();
+        private List<RoutingProfile> _routingProfiles = AWSConfigs.InitializeCollections ? new List<RoutingProfile>() : null;
 
         /// <summary>
         /// Gets and sets the property ApproximateTotalCount. 
@@ -89,7 +90,7 @@ namespace Amazon.Connect.Model
         // Check to see if RoutingProfiles property is set
         internal bool IsSetRoutingProfiles()
         {
-            return this._routingProfiles != null && this._routingProfiles.Count > 0; 
+            return this._routingProfiles != null && (this._routingProfiles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

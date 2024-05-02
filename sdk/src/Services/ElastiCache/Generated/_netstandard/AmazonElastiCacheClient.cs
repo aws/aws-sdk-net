@@ -33,6 +33,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.ElastiCache
 {
     /// <summary>
@@ -1183,9 +1184,9 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  
         /// <para>
-        /// A Redis (cluster mode disabled) replication group is a collection of clusters, where
-        /// one of the clusters is a read/write primary and the others are read-only replicas.
-        /// Writes to the primary are asynchronously propagated to the replicas.
+        /// A Redis (cluster mode disabled) replication group is a collection of nodes, where
+        /// one of the nodes is a read/write primary and the others are read-only replicas. Writes
+        /// to the primary are asynchronously propagated to the replicas.
         /// </para>
         ///  
         /// <para>

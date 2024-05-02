@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -34,15 +35,15 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsCloudFormationStackDetails
     {
-        private List<string> _capabilities = new List<string>();
+        private List<string> _capabilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _creationTime;
         private string _description;
         private bool? _disableRollback;
         private AwsCloudFormationStackDriftInformationDetails _driftInformation;
         private bool? _enableTerminationProtection;
         private string _lastUpdatedTime;
-        private List<string> _notificationArns = new List<string>();
-        private List<AwsCloudFormationStackOutputsDetails> _outputs = new List<AwsCloudFormationStackOutputsDetails>();
+        private List<string> _notificationArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<AwsCloudFormationStackOutputsDetails> _outputs = AWSConfigs.InitializeCollections ? new List<AwsCloudFormationStackOutputsDetails>() : null;
         private string _roleArn;
         private string _stackId;
         private string _stackName;
@@ -65,7 +66,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Capabilities property is set
         internal bool IsSetCapabilities()
         {
-            return this._capabilities != null && this._capabilities.Count > 0; 
+            return this._capabilities != null && (this._capabilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -195,7 +196,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if NotificationArns property is set
         internal bool IsSetNotificationArns()
         {
-            return this._notificationArns != null && this._notificationArns.Count > 0; 
+            return this._notificationArns != null && (this._notificationArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -213,7 +214,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Outputs property is set
         internal bool IsSetOutputs()
         {
-            return this._outputs != null && this._outputs.Count > 0; 
+            return this._outputs != null && (this._outputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

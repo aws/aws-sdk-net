@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
@@ -291,7 +292,13 @@ namespace Amazon.WAFV2.Model
         /// criteria, collects them into aggregation instances, and counts and rate limits the
         /// requests for each instance. 
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// If you change any of these settings in a rule that's currently in use, the change
+        /// resets the rule's rate limiting counts. This can pause the rule's rate limiting activities
+        /// for up to a minute. 
+        /// </para>
+        ///  </note> 
         /// <para>
         /// You can specify individual aggregation keys, like IP address or HTTP method. You can
         /// also specify aggregation key combinations, like IP address and HTTP method, or HTTP
@@ -519,12 +526,11 @@ namespace Amazon.WAFV2.Model
         ///  
         /// <para>
         /// If you configure WAF to inspect the request body, WAF inspects only the number of
-        /// bytes of the body up to the limit for the web ACL. By default, for regional web ACLs,
-        /// this limit is 8 KB (8,192 bytes) and for CloudFront web ACLs, this limit is 16 KB
-        /// (16,384 bytes). For CloudFront web ACLs, you can increase the limit in the web ACL
-        /// <c>AssociationConfig</c>, for additional fees. If you know that the request body for
-        /// your web requests should never exceed the inspection limit, you could use a size constraint
-        /// statement to block requests that have a larger request body size.
+        /// bytes in the body up to the limit for the web ACL and protected resource type. If
+        /// you know that the request body for your web requests should never exceed the inspection
+        /// limit, you can use a size constraint statement to block requests that have a larger
+        /// request body size. For more information about the inspection limits, see <c>Body</c>
+        /// and <c>JsonBody</c> settings for the <c>FieldToMatch</c> data type. 
         /// </para>
         ///  
         /// <para>

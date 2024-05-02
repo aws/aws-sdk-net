@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.RDS.Model
         private bool? _multiAZ;
         private string _offeringType;
         private string _productDescription;
-        private List<RecurringCharge> _recurringCharges = new List<RecurringCharge>();
+        private List<RecurringCharge> _recurringCharges = AWSConfigs.InitializeCollections ? new List<RecurringCharge>() : null;
         private string _reservedDBInstancesOfferingId;
         private double? _usagePrice;
 
@@ -191,7 +192,7 @@ namespace Amazon.RDS.Model
         // Check to see if RecurringCharges property is set
         internal bool IsSetRecurringCharges()
         {
-            return this._recurringCharges != null && this._recurringCharges.Count > 0; 
+            return this._recurringCharges != null && (this._recurringCharges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

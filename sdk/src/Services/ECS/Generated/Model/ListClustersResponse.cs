@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECS.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class ListClustersResponse : AmazonWebServiceResponse
     {
-        private List<string> _clusterArns = new List<string>();
+        private List<string> _clusterArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.ECS.Model
         // Check to see if ClusterArns property is set
         internal bool IsSetClusterArns()
         {
-            return this._clusterArns != null && this._clusterArns.Count > 0; 
+            return this._clusterArns != null && (this._clusterArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

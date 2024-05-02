@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
@@ -65,7 +66,7 @@ namespace Amazon.WAFV2.Model
         private string _name;
         private string _recommendedVersion;
         private Scope _scope;
-        private Dictionary<string, VersionToPublish> _versionsToPublish = new Dictionary<string, VersionToPublish>();
+        private Dictionary<string, VersionToPublish> _versionsToPublish = AWSConfigs.InitializeCollections ? new Dictionary<string, VersionToPublish>() : null;
 
         /// <summary>
         /// Gets and sets the property Id. 
@@ -210,7 +211,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if VersionsToPublish property is set
         internal bool IsSetVersionsToPublish()
         {
-            return this._versionsToPublish != null && this._versionsToPublish.Count > 0; 
+            return this._versionsToPublish != null && (this._versionsToPublish.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BillingConductor.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.BillingConductor.Model
     /// </summary>
     public partial class ListBillingGroupCostReportsFilter
     {
-        private List<string> _billingGroupArns = new List<string>();
+        private List<string> _billingGroupArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property BillingGroupArns. 
@@ -52,7 +53,7 @@ namespace Amazon.BillingConductor.Model
         // Check to see if BillingGroupArns property is set
         internal bool IsSetBillingGroupArns()
         {
-            return this._billingGroupArns != null && this._billingGroupArns.Count > 0; 
+            return this._billingGroupArns != null && (this._billingGroupArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

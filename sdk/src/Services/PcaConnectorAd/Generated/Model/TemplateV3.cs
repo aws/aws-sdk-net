@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PcaConnectorAd.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.PcaConnectorAd.Model
         private PrivateKeyAttributesV3 _privateKeyAttributes;
         private PrivateKeyFlagsV3 _privateKeyFlags;
         private SubjectNameFlagsV3 _subjectNameFlags;
-        private List<string> _supersededTemplates = new List<string>();
+        private List<string> _supersededTemplates = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CertificateValidity. 
@@ -218,7 +219,7 @@ namespace Amazon.PcaConnectorAd.Model
         // Check to see if SupersededTemplates property is set
         internal bool IsSetSupersededTemplates()
         {
-            return this._supersededTemplates != null && this._supersededTemplates.Count > 0; 
+            return this._supersededTemplates != null && (this._supersededTemplates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

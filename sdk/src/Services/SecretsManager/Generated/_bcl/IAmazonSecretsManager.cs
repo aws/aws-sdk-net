@@ -26,6 +26,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.SecretsManager.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.SecretsManager
 {
     /// <summary>
@@ -1102,10 +1103,7 @@ namespace Amazon.SecretsManager
         /// 
         ///  
         /// <para>
-        /// Secrets Manager generates a CloudTrail log entry when you call this action. Do not
-        /// include sensitive information in request parameters because it might be logged. For
-        /// more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
-        /// Secrets Manager events with CloudTrail</a>.
+        /// Secrets Manager generates a CloudTrail log entry when you call this action.
         /// </para>
         ///  
         /// <para>
@@ -1162,10 +1160,7 @@ namespace Amazon.SecretsManager
         /// 
         ///  
         /// <para>
-        /// Secrets Manager generates a CloudTrail log entry when you call this action. Do not
-        /// include sensitive information in request parameters because it might be logged. For
-        /// more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
-        /// Secrets Manager events with CloudTrail</a>.
+        /// Secrets Manager generates a CloudTrail log entry when you call this action.
         /// </para>
         ///  
         /// <para>

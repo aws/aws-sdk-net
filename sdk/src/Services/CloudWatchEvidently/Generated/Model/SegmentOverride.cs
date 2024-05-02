@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchEvidently.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.CloudWatchEvidently.Model
     {
         private long? _evaluationOrder;
         private string _segment;
-        private Dictionary<string, long> _weights = new Dictionary<string, long>();
+        private Dictionary<string, long> _weights = AWSConfigs.InitializeCollections ? new Dictionary<string, long>() : null;
 
         /// <summary>
         /// Gets and sets the property EvaluationOrder. 
@@ -96,7 +97,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if Weights property is set
         internal bool IsSetWeights()
         {
-            return this._weights != null && this._weights.Count > 0; 
+            return this._weights != null && (this._weights.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

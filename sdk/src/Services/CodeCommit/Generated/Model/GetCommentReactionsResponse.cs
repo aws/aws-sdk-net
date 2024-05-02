@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CodeCommit.Model
     public partial class GetCommentReactionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ReactionForComment> _reactionsForComment = new List<ReactionForComment>();
+        private List<ReactionForComment> _reactionsForComment = AWSConfigs.InitializeCollections ? new List<ReactionForComment>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if ReactionsForComment property is set
         internal bool IsSetReactionsForComment()
         {
-            return this._reactionsForComment != null && this._reactionsForComment.Count > 0; 
+            return this._reactionsForComment != null && (this._reactionsForComment.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

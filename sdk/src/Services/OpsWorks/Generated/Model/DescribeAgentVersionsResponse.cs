@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.OpsWorks.Model
     /// </summary>
     public partial class DescribeAgentVersionsResponse : AmazonWebServiceResponse
     {
-        private List<AgentVersion> _agentVersions = new List<AgentVersion>();
+        private List<AgentVersion> _agentVersions = AWSConfigs.InitializeCollections ? new List<AgentVersion>() : null;
 
         /// <summary>
         /// Gets and sets the property AgentVersions. 
@@ -51,7 +52,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if AgentVersions property is set
         internal bool IsSetAgentVersions()
         {
-            return this._agentVersions != null && this._agentVersions.Count > 0; 
+            return this._agentVersions != null && (this._agentVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

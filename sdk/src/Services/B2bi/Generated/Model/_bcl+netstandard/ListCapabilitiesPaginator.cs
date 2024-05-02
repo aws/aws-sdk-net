@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.B2bi.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.B2bi.Model
         /// Enumerable containing all of the Capabilities
         /// </summary>
         public IPaginatedEnumerable<CapabilitySummary> Capabilities => 
-            new PaginatedResultKeyResponse<ListCapabilitiesResponse, CapabilitySummary>(this, (i) => i.Capabilities);
+            new PaginatedResultKeyResponse<ListCapabilitiesResponse, CapabilitySummary>(this, (i) => i.Capabilities ?? new List<CapabilitySummary>());
 
         internal ListCapabilitiesPaginator(IAmazonB2bi client, ListCapabilitiesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.B2bi.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListCapabilitiesResponse> IPaginator<ListCapabilitiesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListCapabilitiesResponse> IPaginator<ListCapabilitiesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

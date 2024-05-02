@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Neptune.Model
 {
     /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.Neptune.Model
         private string _dbClusterParameterGroupName;
         private string _dbSubnetGroupName;
         private bool? _deletionProtection;
-        private List<string> _enableCloudwatchLogsExports = new List<string>();
+        private List<string> _enableCloudwatchLogsExports = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _enableIAMDatabaseAuthentication;
         private string _kmsKeyId;
         private string _optionGroupName;
@@ -62,9 +63,9 @@ namespace Amazon.Neptune.Model
         private ServerlessV2ScalingConfiguration _serverlessV2ScalingConfiguration;
         private string _sourceDBClusterIdentifier;
         private string _storageType;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private bool? _useLatestRestorableTime;
-        private List<string> _vpcSecurityGroupIds = new List<string>();
+        private List<string> _vpcSecurityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
@@ -190,7 +191,7 @@ namespace Amazon.Neptune.Model
         // Check to see if EnableCloudwatchLogsExports property is set
         internal bool IsSetEnableCloudwatchLogsExports()
         {
-            return this._enableCloudwatchLogsExports != null && this._enableCloudwatchLogsExports.Count > 0; 
+            return this._enableCloudwatchLogsExports != null && (this._enableCloudwatchLogsExports.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -482,7 +483,7 @@ namespace Amazon.Neptune.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -527,7 +528,7 @@ namespace Amazon.Neptune.Model
         // Check to see if VpcSecurityGroupIds property is set
         internal bool IsSetVpcSecurityGroupIds()
         {
-            return this._vpcSecurityGroupIds != null && this._vpcSecurityGroupIds.Count > 0; 
+            return this._vpcSecurityGroupIds != null && (this._vpcSecurityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
 #region Backwards compatible properties

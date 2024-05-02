@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.DocDB.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.DocDB.Model
         /// Enumerable containing all of the DBClusters
         /// </summary>
         public IPaginatedEnumerable<DBCluster> DBClusters => 
-            new PaginatedResultKeyResponse<DescribeDBClustersResponse, DBCluster>(this, (i) => i.DBClusters);
+            new PaginatedResultKeyResponse<DescribeDBClustersResponse, DBCluster>(this, (i) => i.DBClusters ?? new List<DBCluster>());
 
         internal DescribeDBClustersPaginator(IAmazonDocDB client, DescribeDBClustersRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.DocDB.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeDBClustersResponse> IPaginator<DescribeDBClustersResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeDBClustersResponse> IPaginator<DescribeDBClustersResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

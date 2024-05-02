@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Glue.Model
     {
         private string _createdTime;
         private string _metadataValue;
-        private List<OtherMetadataValueListItem> _otherMetadataValueList = new List<OtherMetadataValueListItem>();
+        private List<OtherMetadataValueListItem> _otherMetadataValueList = AWSConfigs.InitializeCollections ? new List<OtherMetadataValueListItem>() : null;
 
         /// <summary>
         /// Gets and sets the property CreatedTime. 
@@ -89,7 +90,7 @@ namespace Amazon.Glue.Model
         // Check to see if OtherMetadataValueList property is set
         internal bool IsSetOtherMetadataValueList()
         {
-            return this._otherMetadataValueList != null && this._otherMetadataValueList.Count > 0; 
+            return this._otherMetadataValueList != null && (this._otherMetadataValueList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

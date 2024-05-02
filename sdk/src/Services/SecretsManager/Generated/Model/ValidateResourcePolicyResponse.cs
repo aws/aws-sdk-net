@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecretsManager.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SecretsManager.Model
     public partial class ValidateResourcePolicyResponse : AmazonWebServiceResponse
     {
         private bool? _policyValidationPassed;
-        private List<ValidationErrorsEntry> _validationErrors = new List<ValidationErrorsEntry>();
+        private List<ValidationErrorsEntry> _validationErrors = AWSConfigs.InitializeCollections ? new List<ValidationErrorsEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property PolicyValidationPassed. 
@@ -69,7 +70,7 @@ namespace Amazon.SecretsManager.Model
         // Check to see if ValidationErrors property is set
         internal bool IsSetValidationErrors()
         {
-            return this._validationErrors != null && this._validationErrors.Count > 0; 
+            return this._validationErrors != null && (this._validationErrors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

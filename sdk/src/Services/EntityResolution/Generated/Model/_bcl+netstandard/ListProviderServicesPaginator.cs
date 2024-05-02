@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.EntityResolution.Model
         /// Enumerable containing all of the ProviderServiceSummaries
         /// </summary>
         public IPaginatedEnumerable<ProviderServiceSummary> ProviderServiceSummaries => 
-            new PaginatedResultKeyResponse<ListProviderServicesResponse, ProviderServiceSummary>(this, (i) => i.ProviderServiceSummaries);
+            new PaginatedResultKeyResponse<ListProviderServicesResponse, ProviderServiceSummary>(this, (i) => i.ProviderServiceSummaries ?? new List<ProviderServiceSummary>());
 
         internal ListProviderServicesPaginator(IAmazonEntityResolution client, ListProviderServicesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.EntityResolution.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListProviderServicesResponse> IPaginator<ListProviderServicesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListProviderServicesResponse> IPaginator<ListProviderServicesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

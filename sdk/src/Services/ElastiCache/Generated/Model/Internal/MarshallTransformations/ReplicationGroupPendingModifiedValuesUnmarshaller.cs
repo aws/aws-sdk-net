@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -75,6 +76,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("LogDeliveryConfigurations/member", targetDepth))
                     {
                         var unmarshaller = PendingLogDeliveryConfigurationUnmarshaller.Instance;
+                        if (unmarshalledObject.LogDeliveryConfigurations == null)
+                        {
+                            unmarshalledObject.LogDeliveryConfigurations = new List<PendingLogDeliveryConfiguration>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.LogDeliveryConfigurations.Add(item);
                         continue;

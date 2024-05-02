@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class GetDistributionsResponse : AmazonWebServiceResponse
     {
-        private List<LightsailDistribution> _distributions = new List<LightsailDistribution>();
+        private List<LightsailDistribution> _distributions = AWSConfigs.InitializeCollections ? new List<LightsailDistribution>() : null;
         private string _nextPageToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Distributions property is set
         internal bool IsSetDistributions()
         {
-            return this._distributions != null && this._distributions.Count > 0; 
+            return this._distributions != null && (this._distributions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.AppMesh.Model
     public partial class VirtualGatewaySpec
     {
         private VirtualGatewayBackendDefaults _backendDefaults;
-        private List<VirtualGatewayListener> _listeners = new List<VirtualGatewayListener>();
+        private List<VirtualGatewayListener> _listeners = AWSConfigs.InitializeCollections ? new List<VirtualGatewayListener>() : null;
         private VirtualGatewayLogging _logging;
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.AppMesh.Model
         // Check to see if Listeners property is set
         internal bool IsSetListeners()
         {
-            return this._listeners != null && this._listeners.Count > 0; 
+            return this._listeners != null && (this._listeners.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

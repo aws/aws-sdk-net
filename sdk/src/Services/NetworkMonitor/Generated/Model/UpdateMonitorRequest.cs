@@ -26,12 +26,14 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkMonitor.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateMonitor operation.
     /// Updates the <c>aggregationPeriod</c> for a monitor. Monitors support an <c>aggregationPeriod</c>
-    /// of either <c>30</c> or <c>60</c> seconds.
+    /// of either <c>30</c> or <c>60</c> seconds. This action requires the <c>monitorName</c>
+    /// and <c>probeId</c> parameter. Run <c>ListMonitors</c> to get a list of monitor names.
     /// </summary>
     public partial class UpdateMonitorRequest : AmazonNetworkMonitorRequest
     {
@@ -61,11 +63,10 @@ namespace Amazon.NetworkMonitor.Model
         /// <summary>
         /// Gets and sets the property MonitorName. 
         /// <para>
-        /// The name of the monitor to update. Run <c>ListMonitors</c> to get a list of monitor
-        /// names.
+        /// The name of the monitor to update. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=200)]
         public string MonitorName
         {
             get { return this._monitorName; }

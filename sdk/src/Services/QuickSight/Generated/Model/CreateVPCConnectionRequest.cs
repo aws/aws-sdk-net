@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -35,12 +36,12 @@ namespace Amazon.QuickSight.Model
     public partial class CreateVPCConnectionRequest : AmazonQuickSightRequest
     {
         private string _awsAccountId;
-        private List<string> _dnsResolvers = new List<string>();
+        private List<string> _dnsResolvers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private string _roleArn;
-        private List<string> _securityGroupIds = new List<string>();
-        private List<string> _subnetIds = new List<string>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _vpcConnectionId;
 
         /// <summary>
@@ -79,7 +80,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if DnsResolvers property is set
         internal bool IsSetDnsResolvers()
         {
-            return this._dnsResolvers != null && this._dnsResolvers.Count > 0; 
+            return this._dnsResolvers != null && (this._dnsResolvers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -136,7 +137,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if SecurityGroupIds property is set
         internal bool IsSetSecurityGroupIds()
         {
-            return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+            return this._securityGroupIds != null && (this._securityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -155,7 +156,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if SubnetIds property is set
         internal bool IsSetSubnetIds()
         {
-            return this._subnetIds != null && this._subnetIds.Count > 0; 
+            return this._subnetIds != null && (this._subnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -174,7 +175,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

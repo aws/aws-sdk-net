@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.SimpleEmailV2.Model
     {
         private Destination _destination;
         private ReplacementEmailContent _replacementEmailContent;
-        private List<MessageTag> _replacementTags = new List<MessageTag>();
+        private List<MessageTag> _replacementTags = AWSConfigs.InitializeCollections ? new List<MessageTag>() : null;
 
         /// <summary>
         /// Gets and sets the property Destination. 
@@ -101,7 +102,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if ReplacementTags property is set
         internal bool IsSetReplacementTags()
         {
-            return this._replacementTags != null && this._replacementTags.Count > 0; 
+            return this._replacementTags != null && (this._replacementTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

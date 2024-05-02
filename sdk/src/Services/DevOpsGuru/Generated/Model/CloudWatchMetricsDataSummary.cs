@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.DevOpsGuru.Model
     public partial class CloudWatchMetricsDataSummary
     {
         private CloudWatchMetricDataStatusCode _statusCode;
-        private List<TimestampMetricValuePair> _timestampMetricValuePairList = new List<TimestampMetricValuePair>();
+        private List<TimestampMetricValuePair> _timestampMetricValuePairList = AWSConfigs.InitializeCollections ? new List<TimestampMetricValuePair>() : null;
 
         /// <summary>
         /// Gets and sets the property StatusCode. 
@@ -70,7 +71,7 @@ namespace Amazon.DevOpsGuru.Model
         // Check to see if TimestampMetricValuePairList property is set
         internal bool IsSetTimestampMetricValuePairList()
         {
-            return this._timestampMetricValuePairList != null && this._timestampMetricValuePairList.Count > 0; 
+            return this._timestampMetricValuePairList != null && (this._timestampMetricValuePairList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

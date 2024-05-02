@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DocDB.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DocDB.Model
     /// </summary>
     public partial class OrderableDBInstanceOption
     {
-        private List<AvailabilityZone> _availabilityZones = new List<AvailabilityZone>();
+        private List<AvailabilityZone> _availabilityZones = AWSConfigs.InitializeCollections ? new List<AvailabilityZone>() : null;
         private string _dbInstanceClass;
         private string _engine;
         private string _engineVersion;
@@ -56,7 +57,7 @@ namespace Amazon.DocDB.Model
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+            return this._availabilityZones != null && (this._availabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IVSRealTime.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IVSRealTime.Model
     /// </summary>
     public partial class CreateStageResponse : AmazonWebServiceResponse
     {
-        private List<ParticipantToken> _participantTokens = new List<ParticipantToken>();
+        private List<ParticipantToken> _participantTokens = AWSConfigs.InitializeCollections ? new List<ParticipantToken>() : null;
         private Stage _stage;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.IVSRealTime.Model
         // Check to see if ParticipantTokens property is set
         internal bool IsSetParticipantTokens()
         {
-            return this._participantTokens != null && this._participantTokens.Count > 0; 
+            return this._participantTokens != null && (this._participantTokens.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

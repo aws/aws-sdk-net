@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.SecurityLake.Model
         /// Enumerable containing all of the DataLakeSources
         /// </summary>
         public IPaginatedEnumerable<DataLakeSource> DataLakeSources => 
-            new PaginatedResultKeyResponse<GetDataLakeSourcesResponse, DataLakeSource>(this, (i) => i.DataLakeSources);
+            new PaginatedResultKeyResponse<GetDataLakeSourcesResponse, DataLakeSource>(this, (i) => i.DataLakeSources ?? new List<DataLakeSource>());
 
         internal GetDataLakeSourcesPaginator(IAmazonSecurityLake client, GetDataLakeSourcesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.SecurityLake.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<GetDataLakeSourcesResponse> IPaginator<GetDataLakeSourcesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<GetDataLakeSourcesResponse> IPaginator<GetDataLakeSourcesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

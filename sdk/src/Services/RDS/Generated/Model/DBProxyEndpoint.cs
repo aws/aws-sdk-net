@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -51,8 +52,8 @@ namespace Amazon.RDS.Model
         private DBProxyEndpointStatus _status;
         private DBProxyEndpointTargetRole _targetRole;
         private string _vpcId;
-        private List<string> _vpcSecurityGroupIds = new List<string>();
-        private List<string> _vpcSubnetIds = new List<string>();
+        private List<string> _vpcSecurityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _vpcSubnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CreatedDate. 
@@ -239,7 +240,7 @@ namespace Amazon.RDS.Model
         // Check to see if VpcSecurityGroupIds property is set
         internal bool IsSetVpcSecurityGroupIds()
         {
-            return this._vpcSecurityGroupIds != null && this._vpcSecurityGroupIds.Count > 0; 
+            return this._vpcSecurityGroupIds != null && (this._vpcSecurityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -257,7 +258,7 @@ namespace Amazon.RDS.Model
         // Check to see if VpcSubnetIds property is set
         internal bool IsSetVpcSubnetIds()
         {
-            return this._vpcSubnetIds != null && this._vpcSubnetIds.Count > 0; 
+            return this._vpcSubnetIds != null && (this._vpcSubnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

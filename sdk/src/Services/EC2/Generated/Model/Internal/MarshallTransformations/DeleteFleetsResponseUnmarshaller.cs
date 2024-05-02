@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -58,6 +59,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("successfulFleetDeletionSet/item", targetDepth))
                     {
                         var unmarshaller = DeleteFleetSuccessItemUnmarshaller.Instance;
+                        if (response.SuccessfulFleetDeletions == null)
+                        {
+                            response.SuccessfulFleetDeletions = new List<DeleteFleetSuccessItem>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.SuccessfulFleetDeletions.Add(item);
                         continue;
@@ -65,6 +70,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("unsuccessfulFleetDeletionSet/item", targetDepth))
                     {
                         var unmarshaller = DeleteFleetErrorItemUnmarshaller.Instance;
+                        if (response.UnsuccessfulFleetDeletions == null)
+                        {
+                            response.UnsuccessfulFleetDeletions = new List<DeleteFleetErrorItem>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.UnsuccessfulFleetDeletions.Add(item);
                         continue;

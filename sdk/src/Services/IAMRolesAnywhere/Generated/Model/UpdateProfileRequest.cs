@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IAMRolesAnywhere.Model
 {
     /// <summary>
@@ -41,19 +42,22 @@ namespace Amazon.IAMRolesAnywhere.Model
     public partial class UpdateProfileRequest : AmazonIAMRolesAnywhereRequest
     {
         private int? _durationSeconds;
-        private List<string> _managedPolicyArns = new List<string>();
+        private List<string> _managedPolicyArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private string _profileId;
-        private List<string> _roleArns = new List<string>();
+        private List<string> _roleArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _sessionPolicy;
 
         /// <summary>
         /// Gets and sets the property DurationSeconds. 
         /// <para>
-        ///  The number of seconds the vended session credentials are valid for. 
+        ///  Used to determine how long sessions vended using this profile are valid for. See
+        /// the <c>Expiration</c> section of the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/userguide/authentication-create-session.html#credentials-object">CreateSession
+        /// API documentation</a> page for more details. In requests, if this value is not provided,
+        /// the default value will be 3600. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=900, Max=3600)]
+        [AWSProperty(Min=900, Max=43200)]
         public int? DurationSeconds
         {
             get { return this._durationSeconds; }
@@ -82,7 +86,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         // Check to see if ManagedPolicyArns property is set
         internal bool IsSetManagedPolicyArns()
         {
-            return this._managedPolicyArns != null && this._managedPolicyArns.Count > 0; 
+            return this._managedPolicyArns != null && (this._managedPolicyArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -129,7 +133,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// A list of IAM roles that this profile can assume in a temporary credential request.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=50)]
+        [AWSProperty(Min=0, Max=250)]
         public List<string> RoleArns
         {
             get { return this._roleArns; }
@@ -139,7 +143,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         // Check to see if RoleArns property is set
         internal bool IsSetRoleArns()
         {
-            return this._roleArns != null && this._roleArns.Count > 0; 
+            return this._roleArns != null && (this._roleArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

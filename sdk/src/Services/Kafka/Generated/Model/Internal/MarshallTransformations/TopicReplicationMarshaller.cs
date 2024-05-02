@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(TopicReplication requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCopyAccessControlListsForTopics())
             {
                 context.Writer.WritePropertyName("copyAccessControlListsForTopics");
@@ -61,6 +64,17 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("detectAndCopyNewTopics");
                 context.Writer.Write(requestObject.DetectAndCopyNewTopics.Value);
+            }
+
+            if(requestObject.IsSetStartingPosition())
+            {
+                context.Writer.WritePropertyName("startingPosition");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ReplicationStartingPositionMarshaller.Instance;
+                marshaller.Marshall(requestObject.StartingPosition, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
             if(requestObject.IsSetTopicsToExclude())

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FIS.Model
 {
     /// <summary>
@@ -33,10 +34,10 @@ namespace Amazon.FIS.Model
     /// </summary>
     public partial class ExperimentTarget
     {
-        private List<ExperimentTargetFilter> _filters = new List<ExperimentTargetFilter>();
-        private Dictionary<string, string> _parameters = new Dictionary<string, string>();
-        private List<string> _resourceArns = new List<string>();
-        private Dictionary<string, string> _resourceTags = new Dictionary<string, string>();
+        private List<ExperimentTargetFilter> _filters = AWSConfigs.InitializeCollections ? new List<ExperimentTargetFilter>() : null;
+        private Dictionary<string, string> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<string> _resourceArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _resourceTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _resourceType;
         private string _selectionMode;
 
@@ -55,7 +56,7 @@ namespace Amazon.FIS.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.FIS.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.FIS.Model
         // Check to see if ResourceArns property is set
         internal bool IsSetResourceArns()
         {
-            return this._resourceArns != null && this._resourceArns.Count > 0; 
+            return this._resourceArns != null && (this._resourceArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -111,7 +112,7 @@ namespace Amazon.FIS.Model
         // Check to see if ResourceTags property is set
         internal bool IsSetResourceTags()
         {
-            return this._resourceTags != null && this._resourceTags.Count > 0; 
+            return this._resourceTags != null && (this._resourceTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

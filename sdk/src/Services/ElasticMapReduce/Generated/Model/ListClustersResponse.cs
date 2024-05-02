@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     public partial class ListClustersResponse : AmazonWebServiceResponse
     {
-        private List<ClusterSummary> _clusters = new List<ClusterSummary>();
+        private List<ClusterSummary> _clusters = AWSConfigs.InitializeCollections ? new List<ClusterSummary>() : null;
         private string _marker;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Clusters property is set
         internal bool IsSetClusters()
         {
-            return this._clusters != null && this._clusters.Count > 0; 
+            return this._clusters != null && (this._clusters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

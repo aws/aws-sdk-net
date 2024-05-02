@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class DisassociateEntitiesFromExperienceRequest : AmazonKendraRequest
     {
-        private List<EntityConfiguration> _entityList = new List<EntityConfiguration>();
+        private List<EntityConfiguration> _entityList = AWSConfigs.InitializeCollections ? new List<EntityConfiguration>() : null;
         private string _id;
         private string _indexId;
 
@@ -58,7 +59,7 @@ namespace Amazon.Kendra.Model
         // Check to see if EntityList property is set
         internal bool IsSetEntityList()
         {
-            return this._entityList != null && this._entityList.Count > 0; 
+            return this._entityList != null && (this._entityList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

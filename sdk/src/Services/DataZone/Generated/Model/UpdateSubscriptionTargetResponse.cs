@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class UpdateSubscriptionTargetResponse : AmazonWebServiceResponse
     {
-        private List<string> _applicableAssetTypes = new List<string>();
-        private List<string> _authorizedPrincipals = new List<string>();
+        private List<string> _applicableAssetTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _authorizedPrincipals = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _createdAt;
         private string _createdBy;
         private string _domainId;
@@ -44,7 +45,7 @@ namespace Amazon.DataZone.Model
         private string _name;
         private string _projectId;
         private string _provider;
-        private List<SubscriptionTargetForm> _subscriptionTargetConfig = new List<SubscriptionTargetForm>();
+        private List<SubscriptionTargetForm> _subscriptionTargetConfig = AWSConfigs.InitializeCollections ? new List<SubscriptionTargetForm>() : null;
         private string _type;
         private DateTime? _updatedAt;
         private string _updatedBy;
@@ -66,7 +67,7 @@ namespace Amazon.DataZone.Model
         // Check to see if ApplicableAssetTypes property is set
         internal bool IsSetApplicableAssetTypes()
         {
-            return this._applicableAssetTypes != null && this._applicableAssetTypes.Count > 0; 
+            return this._applicableAssetTypes != null && (this._applicableAssetTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -86,7 +87,7 @@ namespace Amazon.DataZone.Model
         // Check to see if AuthorizedPrincipals property is set
         internal bool IsSetAuthorizedPrincipals()
         {
-            return this._authorizedPrincipals != null && this._authorizedPrincipals.Count > 0; 
+            return this._authorizedPrincipals != null && (this._authorizedPrincipals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -278,7 +279,7 @@ namespace Amazon.DataZone.Model
         // Check to see if SubscriptionTargetConfig property is set
         internal bool IsSetSubscriptionTargetConfig()
         {
-            return this._subscriptionTargetConfig != null && this._subscriptionTargetConfig.Count > 0; 
+            return this._subscriptionTargetConfig != null && (this._subscriptionTargetConfig.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

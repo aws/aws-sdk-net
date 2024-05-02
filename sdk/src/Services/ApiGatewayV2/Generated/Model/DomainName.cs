@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ApiGatewayV2.Model
 {
     /// <summary>
@@ -34,10 +35,10 @@ namespace Amazon.ApiGatewayV2.Model
     public partial class DomainName
     {
         private string _apiMappingSelectionExpression;
-        private List<DomainNameConfiguration> _domainNameConfigurations = new List<DomainNameConfiguration>();
+        private List<DomainNameConfiguration> _domainNameConfigurations = AWSConfigs.InitializeCollections ? new List<DomainNameConfiguration>() : null;
         private MutualTlsAuthentication _mutualTlsAuthentication;
         private string _name;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ApiMappingSelectionExpression. 
@@ -72,7 +73,7 @@ namespace Amazon.ApiGatewayV2.Model
         // Check to see if DomainNameConfigurations property is set
         internal bool IsSetDomainNameConfigurations()
         {
-            return this._domainNameConfigurations != null && this._domainNameConfigurations.Count > 0; 
+            return this._domainNameConfigurations != null && (this._domainNameConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -126,7 +127,7 @@ namespace Amazon.ApiGatewayV2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

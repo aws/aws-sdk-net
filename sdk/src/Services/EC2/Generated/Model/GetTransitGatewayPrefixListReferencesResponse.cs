@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EC2.Model
     public partial class GetTransitGatewayPrefixListReferencesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TransitGatewayPrefixListReference> _transitGatewayPrefixListReferences = new List<TransitGatewayPrefixListReference>();
+        private List<TransitGatewayPrefixListReference> _transitGatewayPrefixListReferences = AWSConfigs.InitializeCollections ? new List<TransitGatewayPrefixListReference>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.EC2.Model
         // Check to see if TransitGatewayPrefixListReferences property is set
         internal bool IsSetTransitGatewayPrefixListReferences()
         {
-            return this._transitGatewayPrefixListReferences != null && this._transitGatewayPrefixListReferences.Count > 0; 
+            return this._transitGatewayPrefixListReferences != null && (this._transitGatewayPrefixListReferences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

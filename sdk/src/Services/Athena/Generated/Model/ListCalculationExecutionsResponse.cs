@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Athena.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Athena.Model
     /// </summary>
     public partial class ListCalculationExecutionsResponse : AmazonWebServiceResponse
     {
-        private List<CalculationSummary> _calculations = new List<CalculationSummary>();
+        private List<CalculationSummary> _calculations = AWSConfigs.InitializeCollections ? new List<CalculationSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.Athena.Model
         // Check to see if Calculations property is set
         internal bool IsSetCalculations()
         {
-            return this._calculations != null && this._calculations.Count > 0; 
+            return this._calculations != null && (this._calculations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

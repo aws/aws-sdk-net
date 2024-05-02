@@ -26,12 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// A rule for configuring how Amazon Q responds when it encounters a a blocked topic.
-    /// You can configure a custom message to inform your end users that they have asked about
-    /// a restricted topic and suggest any next steps they should take.
+    /// A rule for configuring how Amazon Q Business responds when it encounters a a blocked
+    /// topic. You can configure a custom message to inform your end users that they have
+    /// asked about a restricted topic and suggest any next steps they should take.
     /// </summary>
     public partial class ContentBlockerRule
     {

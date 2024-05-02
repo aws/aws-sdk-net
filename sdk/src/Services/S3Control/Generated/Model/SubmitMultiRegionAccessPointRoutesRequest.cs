@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3Control.Model
 {
     /// <summary>
@@ -80,17 +81,13 @@ namespace Amazon.S3Control.Model
     /// <para>
     ///  <c>eu-west-1</c> 
     /// </para>
-    ///  </li> </ul> <note> 
-    /// <para>
-    /// Your Amazon S3 bucket does not need to be in these five Regions.
-    /// </para>
-    ///  </note>
+    ///  </li> </ul>
     /// </summary>
     public partial class SubmitMultiRegionAccessPointRoutesRequest : AmazonS3ControlRequest
     {
         private string _accountId;
         private string _mrap;
-        private List<MultiRegionAccessPointRoute> _routeUpdates = new List<MultiRegionAccessPointRoute>();
+        private List<MultiRegionAccessPointRoute> _routeUpdates = AWSConfigs.InitializeCollections ? new List<MultiRegionAccessPointRoute>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -147,7 +144,7 @@ namespace Amazon.S3Control.Model
         // Check to see if RouteUpdates property is set
         internal bool IsSetRouteUpdates()
         {
-            return this._routeUpdates != null && this._routeUpdates.Count > 0; 
+            return this._routeUpdates != null && (this._routeUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

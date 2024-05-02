@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -34,11 +35,11 @@ namespace Amazon.SecurityHub.Model
     public partial class StandardsControlAssociationDetail
     {
         private AssociationStatus _associationStatus;
-        private List<string> _relatedRequirements = new List<string>();
+        private List<string> _relatedRequirements = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _securityControlArn;
         private string _securityControlId;
         private string _standardsArn;
-        private List<string> _standardsControlArns = new List<string>();
+        private List<string> _standardsControlArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _standardsControlDescription;
         private string _standardsControlTitle;
         private DateTime? _updatedAt;
@@ -79,7 +80,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if RelatedRequirements property is set
         internal bool IsSetRelatedRequirements()
         {
-            return this._relatedRequirements != null && this._relatedRequirements.Count > 0; 
+            return this._relatedRequirements != null && (this._relatedRequirements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -159,7 +160,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if StandardsControlArns property is set
         internal bool IsSetStandardsControlArns()
         {
-            return this._standardsControlArns != null && this._standardsControlArns.Count > 0; 
+            return this._standardsControlArns != null && (this._standardsControlArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

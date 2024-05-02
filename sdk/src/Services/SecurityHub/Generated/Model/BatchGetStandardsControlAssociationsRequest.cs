@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class BatchGetStandardsControlAssociationsRequest : AmazonSecurityHubRequest
     {
-        private List<StandardsControlAssociationId> _standardsControlAssociationIds = new List<StandardsControlAssociationId>();
+        private List<StandardsControlAssociationId> _standardsControlAssociationIds = AWSConfigs.InitializeCollections ? new List<StandardsControlAssociationId>() : null;
 
         /// <summary>
         /// Gets and sets the property StandardsControlAssociationIds. 
@@ -57,7 +58,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if StandardsControlAssociationIds property is set
         internal bool IsSetStandardsControlAssociationIds()
         {
-            return this._standardsControlAssociationIds != null && this._standardsControlAssociationIds.Count > 0; 
+            return this._standardsControlAssociationIds != null && (this._standardsControlAssociationIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

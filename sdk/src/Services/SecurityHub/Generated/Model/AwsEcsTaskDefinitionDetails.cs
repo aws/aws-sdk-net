@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -34,21 +35,21 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsEcsTaskDefinitionDetails
     {
-        private List<AwsEcsTaskDefinitionContainerDefinitionsDetails> _containerDefinitions = new List<AwsEcsTaskDefinitionContainerDefinitionsDetails>();
+        private List<AwsEcsTaskDefinitionContainerDefinitionsDetails> _containerDefinitions = AWSConfigs.InitializeCollections ? new List<AwsEcsTaskDefinitionContainerDefinitionsDetails>() : null;
         private string _cpu;
         private string _executionRoleArn;
         private string _family;
-        private List<AwsEcsTaskDefinitionInferenceAcceleratorsDetails> _inferenceAccelerators = new List<AwsEcsTaskDefinitionInferenceAcceleratorsDetails>();
+        private List<AwsEcsTaskDefinitionInferenceAcceleratorsDetails> _inferenceAccelerators = AWSConfigs.InitializeCollections ? new List<AwsEcsTaskDefinitionInferenceAcceleratorsDetails>() : null;
         private string _ipcMode;
         private string _memory;
         private string _networkMode;
         private string _pidMode;
-        private List<AwsEcsTaskDefinitionPlacementConstraintsDetails> _placementConstraints = new List<AwsEcsTaskDefinitionPlacementConstraintsDetails>();
+        private List<AwsEcsTaskDefinitionPlacementConstraintsDetails> _placementConstraints = AWSConfigs.InitializeCollections ? new List<AwsEcsTaskDefinitionPlacementConstraintsDetails>() : null;
         private AwsEcsTaskDefinitionProxyConfigurationDetails _proxyConfiguration;
-        private List<string> _requiresCompatibilities = new List<string>();
+        private List<string> _requiresCompatibilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _status;
         private string _taskRoleArn;
-        private List<AwsEcsTaskDefinitionVolumesDetails> _volumes = new List<AwsEcsTaskDefinitionVolumesDetails>();
+        private List<AwsEcsTaskDefinitionVolumesDetails> _volumes = AWSConfigs.InitializeCollections ? new List<AwsEcsTaskDefinitionVolumesDetails>() : null;
 
         /// <summary>
         /// Gets and sets the property ContainerDefinitions. 
@@ -65,7 +66,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ContainerDefinitions property is set
         internal bool IsSetContainerDefinitions()
         {
-            return this._containerDefinitions != null && this._containerDefinitions.Count > 0; 
+            return this._containerDefinitions != null && (this._containerDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -159,7 +160,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if InferenceAccelerators property is set
         internal bool IsSetInferenceAccelerators()
         {
-            return this._inferenceAccelerators != null && this._inferenceAccelerators.Count > 0; 
+            return this._inferenceAccelerators != null && (this._inferenceAccelerators.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -291,7 +292,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if PlacementConstraints property is set
         internal bool IsSetPlacementConstraints()
         {
-            return this._placementConstraints != null && this._placementConstraints.Count > 0; 
+            return this._placementConstraints != null && (this._placementConstraints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -327,7 +328,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if RequiresCompatibilities property is set
         internal bool IsSetRequiresCompatibilities()
         {
-            return this._requiresCompatibilities != null && this._requiresCompatibilities.Count > 0; 
+            return this._requiresCompatibilities != null && (this._requiresCompatibilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -382,7 +383,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Volumes property is set
         internal bool IsSetVolumes()
         {
-            return this._volumes != null && this._volumes.Count > 0; 
+            return this._volumes != null && (this._volumes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lambda.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class ListAliasesResponse : AmazonWebServiceResponse
     {
-        private List<AliasConfiguration> _aliases = new List<AliasConfiguration>();
+        private List<AliasConfiguration> _aliases = AWSConfigs.InitializeCollections ? new List<AliasConfiguration>() : null;
         private string _nextMarker;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Lambda.Model
         // Check to see if Aliases property is set
         internal bool IsSetAliases()
         {
-            return this._aliases != null && this._aliases.Count > 0; 
+            return this._aliases != null && (this._aliases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

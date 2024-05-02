@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CloudDirectory.Model
     public partial class BatchListObjectParentPathsResponse
     {
         private string _nextToken;
-        private List<PathToObjectIdentifiers> _pathToObjectIdentifiersList = new List<PathToObjectIdentifiers>();
+        private List<PathToObjectIdentifiers> _pathToObjectIdentifiersList = AWSConfigs.InitializeCollections ? new List<PathToObjectIdentifiers>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +70,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if PathToObjectIdentifiersList property is set
         internal bool IsSetPathToObjectIdentifiersList()
         {
-            return this._pathToObjectIdentifiersList != null && this._pathToObjectIdentifiersList.Count > 0; 
+            return this._pathToObjectIdentifiersList != null && (this._pathToObjectIdentifiersList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

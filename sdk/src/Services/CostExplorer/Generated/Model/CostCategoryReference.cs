@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
@@ -46,8 +47,8 @@ namespace Amazon.CostExplorer.Model
         private string _effectiveStart;
         private string _name;
         private int? _numberOfRules;
-        private List<CostCategoryProcessingStatus> _processingStatus = new List<CostCategoryProcessingStatus>();
-        private List<string> _values = new List<string>();
+        private List<CostCategoryProcessingStatus> _processingStatus = AWSConfigs.InitializeCollections ? new List<CostCategoryProcessingStatus>() : null;
+        private List<string> _values = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CostCategoryArn. 
@@ -173,7 +174,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if ProcessingStatus property is set
         internal bool IsSetProcessingStatus()
         {
-            return this._processingStatus != null && this._processingStatus.Count > 0; 
+            return this._processingStatus != null && (this._processingStatus.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -191,7 +192,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if Values property is set
         internal bool IsSetValues()
         {
-            return this._values != null && this._values.Count > 0; 
+            return this._values != null && (this._values.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

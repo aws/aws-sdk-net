@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.DynamoDBv2.Model
     {
         private string _regionName;
         private BillingModeSummary _replicaBillingModeSummary;
-        private List<ReplicaGlobalSecondaryIndexSettingsDescription> _replicaGlobalSecondaryIndexSettings = new List<ReplicaGlobalSecondaryIndexSettingsDescription>();
+        private List<ReplicaGlobalSecondaryIndexSettingsDescription> _replicaGlobalSecondaryIndexSettings = AWSConfigs.InitializeCollections ? new List<ReplicaGlobalSecondaryIndexSettingsDescription>() : null;
         private AutoScalingSettingsDescription _replicaProvisionedReadCapacityAutoScalingSettings;
         private long? _replicaProvisionedReadCapacityUnits;
         private AutoScalingSettingsDescription _replicaProvisionedWriteCapacityAutoScalingSettings;
@@ -95,7 +96,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if ReplicaGlobalSecondaryIndexSettings property is set
         internal bool IsSetReplicaGlobalSecondaryIndexSettings()
         {
-            return this._replicaGlobalSecondaryIndexSettings != null && this._replicaGlobalSecondaryIndexSettings.Count > 0; 
+            return this._replicaGlobalSecondaryIndexSettings != null && (this._replicaGlobalSecondaryIndexSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

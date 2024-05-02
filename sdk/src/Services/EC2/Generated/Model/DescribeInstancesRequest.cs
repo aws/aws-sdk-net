@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -58,11 +59,22 @@ namespace Amazon.EC2.Model
     /// do not specify any instance IDs at all, the call fails. If you describe instances
     /// and specify only instance IDs that are in an unaffected zone, the call works normally.
     /// </para>
+    ///  <important> 
+    /// <para>
+    /// We strongly recommend using only paginated requests. Unpaginated requests are susceptible
+    /// to throttling and timeouts.
+    /// </para>
+    ///  </important> <note> 
+    /// <para>
+    /// The order of the elements in the response, including those within nested structures,
+    /// might vary. Applications should not assume the elements appear in a particular order.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeInstancesRequest : AmazonEC2Request
     {
-        private List<Filter> _filters = new List<Filter>();
-        private List<string> _instanceIds = new List<string>();
+        private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
+        private List<string> _instanceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -715,7 +727,7 @@ namespace Amazon.EC2.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -737,7 +749,7 @@ namespace Amazon.EC2.Model
         // Check to see if InstanceIds property is set
         internal bool IsSetInstanceIds()
         {
-            return this._instanceIds != null && this._instanceIds.Count > 0; 
+            return this._instanceIds != null && (this._instanceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

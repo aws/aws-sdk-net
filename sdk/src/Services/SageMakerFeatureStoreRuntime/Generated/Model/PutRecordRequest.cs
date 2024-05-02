@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMakerFeatureStoreRuntime.Model
 {
     /// <summary>
@@ -58,8 +59,8 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
     public partial class PutRecordRequest : AmazonSageMakerFeatureStoreRuntimeRequest
     {
         private string _featureGroupName;
-        private List<FeatureValue> _record = new List<FeatureValue>();
-        private List<string> _targetStores = new List<string>();
+        private List<FeatureValue> _record = AWSConfigs.InitializeCollections ? new List<FeatureValue>() : null;
+        private List<string> _targetStores = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TtlDuration _ttlDuration;
 
         /// <summary>
@@ -112,7 +113,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         // Check to see if Record property is set
         internal bool IsSetRecord()
         {
-            return this._record != null && this._record.Count > 0; 
+            return this._record != null && (this._record.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -132,7 +133,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         // Check to see if TargetStores property is set
         internal bool IsSetTargetStores()
         {
-            return this._targetStores != null && this._targetStores.Count > 0; 
+            return this._targetStores != null && (this._targetStores.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

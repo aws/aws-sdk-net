@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CostExplorer.Model
     /// </summary>
     public partial class ListCostCategoryDefinitionsResponse : AmazonWebServiceResponse
     {
-        private List<CostCategoryReference> _costCategoryReferences = new List<CostCategoryReference>();
+        private List<CostCategoryReference> _costCategoryReferences = AWSConfigs.InitializeCollections ? new List<CostCategoryReference>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if CostCategoryReferences property is set
         internal bool IsSetCostCategoryReferences()
         {
-            return this._costCategoryReferences != null && this._costCategoryReferences.Count > 0; 
+            return this._costCategoryReferences != null && (this._costCategoryReferences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

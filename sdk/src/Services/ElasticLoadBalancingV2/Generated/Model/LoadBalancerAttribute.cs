@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
@@ -94,6 +95,11 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         ///  <c>idle_timeout.timeout_seconds</c> - The idle timeout value, in seconds. The valid
         /// range is 1-4000 seconds. The default is 60 seconds.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>client_keep_alive.seconds</c> - The client keep alive value, in seconds. The valid
+        /// range is 60-604800 seconds. The default is 3600 seconds.
         /// </para>
         ///  </li> <li> 
         /// <para>

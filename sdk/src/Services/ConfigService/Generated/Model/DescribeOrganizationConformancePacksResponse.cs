@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ConfigService.Model
     public partial class DescribeOrganizationConformancePacksResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<OrganizationConformancePack> _organizationConformancePacks = new List<OrganizationConformancePack>();
+        private List<OrganizationConformancePack> _organizationConformancePacks = AWSConfigs.InitializeCollections ? new List<OrganizationConformancePack>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if OrganizationConformancePacks property is set
         internal bool IsSetOrganizationConformancePacks()
         {
-            return this._organizationConformancePacks != null && this._organizationConformancePacks.Count > 0; 
+            return this._organizationConformancePacks != null && (this._organizationConformancePacks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

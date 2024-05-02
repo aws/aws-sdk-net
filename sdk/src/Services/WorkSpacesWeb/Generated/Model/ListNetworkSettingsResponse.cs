@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkSpacesWeb.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.WorkSpacesWeb.Model
     /// </summary>
     public partial class ListNetworkSettingsResponse : AmazonWebServiceResponse
     {
-        private List<NetworkSettingsSummary> _networkSettings = new List<NetworkSettingsSummary>();
+        private List<NetworkSettingsSummary> _networkSettings = AWSConfigs.InitializeCollections ? new List<NetworkSettingsSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.WorkSpacesWeb.Model
         // Check to see if NetworkSettings property is set
         internal bool IsSetNetworkSettings()
         {
-            return this._networkSettings != null && this._networkSettings.Count > 0; 
+            return this._networkSettings != null && (this._networkSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

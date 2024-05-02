@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class GeospatialMapAggregatedFieldWells
     {
-        private List<DimensionField> _colors = new List<DimensionField>();
-        private List<DimensionField> _geospatial = new List<DimensionField>();
-        private List<MeasureField> _values = new List<MeasureField>();
+        private List<DimensionField> _colors = AWSConfigs.InitializeCollections ? new List<DimensionField>() : null;
+        private List<DimensionField> _geospatial = AWSConfigs.InitializeCollections ? new List<DimensionField>() : null;
+        private List<MeasureField> _values = AWSConfigs.InitializeCollections ? new List<MeasureField>() : null;
 
         /// <summary>
         /// Gets and sets the property Colors. 
@@ -53,7 +54,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Colors property is set
         internal bool IsSetColors()
         {
-            return this._colors != null && this._colors.Count > 0; 
+            return this._colors != null && (this._colors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Geospatial property is set
         internal bool IsSetGeospatial()
         {
-            return this._geospatial != null && this._geospatial.Count > 0; 
+            return this._geospatial != null && (this._geospatial.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Values property is set
         internal bool IsSetValues()
         {
-            return this._values != null && this._values.Count > 0; 
+            return this._values != null && (this._values.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

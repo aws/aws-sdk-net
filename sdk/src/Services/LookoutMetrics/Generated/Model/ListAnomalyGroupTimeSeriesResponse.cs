@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LookoutMetrics.Model
 {
     /// <summary>
@@ -36,8 +37,8 @@ namespace Amazon.LookoutMetrics.Model
         private string _anomalyGroupId;
         private string _metricName;
         private string _nextToken;
-        private List<TimeSeries> _timeSeriesList = new List<TimeSeries>();
-        private List<string> _timestampList = new List<string>();
+        private List<TimeSeries> _timeSeriesList = AWSConfigs.InitializeCollections ? new List<TimeSeries>() : null;
+        private List<string> _timestampList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AnomalyGroupId. 
@@ -111,7 +112,7 @@ namespace Amazon.LookoutMetrics.Model
         // Check to see if TimeSeriesList property is set
         internal bool IsSetTimeSeriesList()
         {
-            return this._timeSeriesList != null && this._timeSeriesList.Count > 0; 
+            return this._timeSeriesList != null && (this._timeSeriesList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -129,7 +130,7 @@ namespace Amazon.LookoutMetrics.Model
         // Check to see if TimestampList property is set
         internal bool IsSetTimestampList()
         {
-            return this._timestampList != null && this._timestampList.Count > 0; 
+            return this._timestampList != null && (this._timestampList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

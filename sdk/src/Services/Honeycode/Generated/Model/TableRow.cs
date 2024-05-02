@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Honeycode.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Honeycode.Model
     /// </summary>
     public partial class TableRow
     {
-        private List<Cell> _cells = new List<Cell>();
+        private List<Cell> _cells = AWSConfigs.InitializeCollections ? new List<Cell>() : null;
         private string _rowId;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.Honeycode.Model
         // Check to see if Cells property is set
         internal bool IsSetCells()
         {
-            return this._cells != null && this._cells.Count > 0; 
+            return this._cells != null && (this._cells.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

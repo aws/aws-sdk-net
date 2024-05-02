@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppRunner.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.AppRunner.Model
         private CustomDomain _customDomain;
         private string _dnsTarget;
         private string _serviceArn;
-        private List<VpcDNSTarget> _vpcDNSTargets = new List<VpcDNSTarget>();
+        private List<VpcDNSTarget> _vpcDNSTargets = AWSConfigs.InitializeCollections ? new List<VpcDNSTarget>() : null;
 
         /// <summary>
         /// Gets and sets the property CustomDomain. 
@@ -113,7 +114,7 @@ namespace Amazon.AppRunner.Model
         // Check to see if VpcDNSTargets property is set
         internal bool IsSetVpcDNSTargets()
         {
-            return this._vpcDNSTargets != null && this._vpcDNSTargets.Count > 0; 
+            return this._vpcDNSTargets != null && (this._vpcDNSTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class OverallTestResultItem
     {
-        private Dictionary<string, int> _endToEndResultCounts = new Dictionary<string, int>();
+        private Dictionary<string, int> _endToEndResultCounts = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
         private bool? _multiTurnConversation;
-        private Dictionary<string, int> _speechTranscriptionResultCounts = new Dictionary<string, int>();
+        private Dictionary<string, int> _speechTranscriptionResultCounts = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
         private int? _totalResultCount;
 
         /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if EndToEndResultCounts property is set
         internal bool IsSetEndToEndResultCounts()
         {
-            return this._endToEndResultCounts != null && this._endToEndResultCounts.Count > 0; 
+            return this._endToEndResultCounts != null && (this._endToEndResultCounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if SpeechTranscriptionResultCounts property is set
         internal bool IsSetSpeechTranscriptionResultCounts()
         {
-            return this._speechTranscriptionResultCounts != null && this._speechTranscriptionResultCounts.Count > 0; 
+            return this._speechTranscriptionResultCounts != null && (this._speechTranscriptionResultCounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

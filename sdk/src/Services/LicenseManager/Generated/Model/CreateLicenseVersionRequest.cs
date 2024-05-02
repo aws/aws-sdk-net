@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LicenseManager.Model
 {
     /// <summary>
@@ -36,11 +37,11 @@ namespace Amazon.LicenseManager.Model
     {
         private string _clientToken;
         private ConsumptionConfiguration _consumptionConfiguration;
-        private List<Entitlement> _entitlements = new List<Entitlement>();
+        private List<Entitlement> _entitlements = AWSConfigs.InitializeCollections ? new List<Entitlement>() : null;
         private string _homeRegion;
         private Issuer _issuer;
         private string _licenseArn;
-        private List<Metadata> _licenseMetadata = new List<Metadata>();
+        private List<Metadata> _licenseMetadata = AWSConfigs.InitializeCollections ? new List<Metadata>() : null;
         private string _licenseName;
         private string _productName;
         private string _sourceVersion;
@@ -104,7 +105,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if Entitlements property is set
         internal bool IsSetEntitlements()
         {
-            return this._entitlements != null && this._entitlements.Count > 0; 
+            return this._entitlements != null && (this._entitlements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -179,7 +180,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if LicenseMetadata property is set
         internal bool IsSetLicenseMetadata()
         {
-            return this._licenseMetadata != null && this._licenseMetadata.Count > 0; 
+            return this._licenseMetadata != null && (this._licenseMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

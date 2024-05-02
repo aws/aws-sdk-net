@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Route53.Model
     {
         private HostedZone _hostedZone;
         private DelegationSet _delegationSet;
-        private List<VPC> _vpCs = new List<VPC>();
+        private List<VPC> _vpCs = AWSConfigs.InitializeCollections ? new List<VPC>() : null;
 
         /// <summary>
         /// Gets and sets the property HostedZone. 
@@ -92,7 +93,7 @@ namespace Amazon.Route53.Model
         // Check to see if VPCs property is set
         internal bool IsSetVPCs()
         {
-            return this._vpCs != null && this._vpCs.Count > 0; 
+            return this._vpCs != null && (this._vpCs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

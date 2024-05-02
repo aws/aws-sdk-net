@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ForecastService.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ForecastService.Model
     /// </summary>
     public partial class PredictorBaseline
     {
-        private List<BaselineMetric> _baselineMetrics = new List<BaselineMetric>();
+        private List<BaselineMetric> _baselineMetrics = AWSConfigs.InitializeCollections ? new List<BaselineMetric>() : null;
 
         /// <summary>
         /// Gets and sets the property BaselineMetrics. 
@@ -53,7 +54,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if BaselineMetrics property is set
         internal bool IsSetBaselineMetrics()
         {
-            return this._baselineMetrics != null && this._baselineMetrics.Count > 0; 
+            return this._baselineMetrics != null && (this._baselineMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

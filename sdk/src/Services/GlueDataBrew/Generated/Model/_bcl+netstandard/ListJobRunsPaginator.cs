@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.GlueDataBrew.Model
         /// Enumerable containing all of the JobRuns
         /// </summary>
         public IPaginatedEnumerable<JobRun> JobRuns => 
-            new PaginatedResultKeyResponse<ListJobRunsResponse, JobRun>(this, (i) => i.JobRuns);
+            new PaginatedResultKeyResponse<ListJobRunsResponse, JobRun>(this, (i) => i.JobRuns ?? new List<JobRun>());
 
         internal ListJobRunsPaginator(IAmazonGlueDataBrew client, ListJobRunsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.GlueDataBrew.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListJobRunsResponse> IPaginator<ListJobRunsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListJobRunsResponse> IPaginator<ListJobRunsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

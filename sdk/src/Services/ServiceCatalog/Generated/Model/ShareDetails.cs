@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.ServiceCatalog.Model
     /// </summary>
     public partial class ShareDetails
     {
-        private List<ShareError> _shareErrors = new List<ShareError>();
-        private List<string> _successfulShares = new List<string>();
+        private List<ShareError> _shareErrors = AWSConfigs.InitializeCollections ? new List<ShareError>() : null;
+        private List<string> _successfulShares = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ShareErrors. 
@@ -51,7 +52,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if ShareErrors property is set
         internal bool IsSetShareErrors()
         {
-            return this._shareErrors != null && this._shareErrors.Count > 0; 
+            return this._shareErrors != null && (this._shareErrors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if SuccessfulShares property is set
         internal bool IsSetSuccessfulShares()
         {
-            return this._successfulShares != null && this._successfulShares.Count > 0; 
+            return this._successfulShares != null && (this._successfulShares.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

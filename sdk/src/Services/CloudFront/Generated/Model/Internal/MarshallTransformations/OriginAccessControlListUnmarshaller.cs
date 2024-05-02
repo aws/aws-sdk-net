@@ -30,12 +30,13 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for OriginAccessControlList Object
     /// </summary>  
-    public class OriginAccessControlListUnmarshaller : IUnmarshaller<OriginAccessControlList, XmlUnmarshallerContext>
+    public class OriginAccessControlListUnmarshaller : IUnmarshaller<OriginAccessControlList, XmlUnmarshallerContext>, IUnmarshaller<OriginAccessControlList, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -63,6 +64,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Items/OriginAccessControlSummary", targetDepth))
                     {
+                        if (unmarshalledObject.Items == null)
+                        {
+                            unmarshalledObject.Items = new List<OriginAccessControlSummary>();
+                        }
                         var unmarshaller = OriginAccessControlSummaryUnmarshaller.Instance;
                         unmarshalledObject.Items.Add(unmarshaller.Unmarshall(context));
                         continue;
@@ -98,6 +103,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public OriginAccessControlList Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static OriginAccessControlListUnmarshaller _instance = new OriginAccessControlListUnmarshaller();        

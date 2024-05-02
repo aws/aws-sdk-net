@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class DescribeAssociationExecutionsResponse : AmazonWebServiceResponse
     {
-        private List<AssociationExecution> _associationExecutions = new List<AssociationExecution>();
+        private List<AssociationExecution> _associationExecutions = AWSConfigs.InitializeCollections ? new List<AssociationExecution>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if AssociationExecutions property is set
         internal bool IsSetAssociationExecutions()
         {
-            return this._associationExecutions != null && this._associationExecutions.Count > 0; 
+            return this._associationExecutions != null && (this._associationExecutions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

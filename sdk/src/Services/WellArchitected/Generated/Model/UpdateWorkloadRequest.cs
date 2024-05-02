@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
@@ -34,10 +35,10 @@ namespace Amazon.WellArchitected.Model
     /// </summary>
     public partial class UpdateWorkloadRequest : AmazonWellArchitectedRequest
     {
-        private List<string> _accountIds = new List<string>();
-        private List<string> _applications = new List<string>();
+        private List<string> _accountIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _applications = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _architecturalDesign;
-        private List<string> _awsRegions = new List<string>();
+        private List<string> _awsRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _description;
         private WorkloadDiscoveryConfig _discoveryConfig;
         private WorkloadEnvironment _environment;
@@ -45,9 +46,10 @@ namespace Amazon.WellArchitected.Model
         private string _industry;
         private string _industryType;
         private bool? _isReviewOwnerUpdateAcknowledged;
-        private List<string> _nonAwsRegions = new List<string>();
+        private WorkloadJiraConfigurationInput _jiraConfiguration;
+        private List<string> _nonAwsRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _notes;
-        private List<string> _pillarPriorities = new List<string>();
+        private List<string> _pillarPriorities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _reviewOwner;
         private string _workloadId;
         private string _workloadName;
@@ -65,7 +67,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if AccountIds property is set
         internal bool IsSetAccountIds()
         {
-            return this._accountIds != null && this._accountIds.Count > 0; 
+            return this._accountIds != null && (this._accountIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -84,7 +86,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if Applications property is set
         internal bool IsSetApplications()
         {
-            return this._applications != null && this._applications.Count > 0; 
+            return this._applications != null && (this._applications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -116,7 +118,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if AwsRegions property is set
         internal bool IsSetAwsRegions()
         {
-            return this._awsRegions != null && this._awsRegions.Count > 0; 
+            return this._awsRegions != null && (this._awsRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -240,6 +242,24 @@ namespace Amazon.WellArchitected.Model
         }
 
         /// <summary>
+        /// Gets and sets the property JiraConfiguration. 
+        /// <para>
+        /// Configuration of the Jira integration.
+        /// </para>
+        /// </summary>
+        public WorkloadJiraConfigurationInput JiraConfiguration
+        {
+            get { return this._jiraConfiguration; }
+            set { this._jiraConfiguration = value; }
+        }
+
+        // Check to see if JiraConfiguration property is set
+        internal bool IsSetJiraConfiguration()
+        {
+            return this._jiraConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property NonAwsRegions.
         /// </summary>
         [AWSProperty(Max=5)]
@@ -252,7 +272,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if NonAwsRegions property is set
         internal bool IsSetNonAwsRegions()
         {
-            return this._nonAwsRegions != null && this._nonAwsRegions.Count > 0; 
+            return this._nonAwsRegions != null && (this._nonAwsRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -283,7 +303,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if PillarPriorities property is set
         internal bool IsSetPillarPriorities()
         {
-            return this._pillarPriorities != null && this._pillarPriorities.Count > 0; 
+            return this._pillarPriorities != null && (this._pillarPriorities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

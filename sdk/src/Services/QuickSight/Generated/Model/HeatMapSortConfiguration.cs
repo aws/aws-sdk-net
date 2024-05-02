@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.QuickSight.Model
     public partial class HeatMapSortConfiguration
     {
         private ItemsLimitConfiguration _heatMapColumnItemsLimitConfiguration;
-        private List<FieldSortOptions> _heatMapColumnSort = new List<FieldSortOptions>();
+        private List<FieldSortOptions> _heatMapColumnSort = AWSConfigs.InitializeCollections ? new List<FieldSortOptions>() : null;
         private ItemsLimitConfiguration _heatMapRowItemsLimitConfiguration;
-        private List<FieldSortOptions> _heatMapRowSort = new List<FieldSortOptions>();
+        private List<FieldSortOptions> _heatMapRowSort = AWSConfigs.InitializeCollections ? new List<FieldSortOptions>() : null;
 
         /// <summary>
         /// Gets and sets the property HeatMapColumnItemsLimitConfiguration. 
@@ -73,7 +74,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if HeatMapColumnSort property is set
         internal bool IsSetHeatMapColumnSort()
         {
-            return this._heatMapColumnSort != null && this._heatMapColumnSort.Count > 0; 
+            return this._heatMapColumnSort != null && (this._heatMapColumnSort.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -110,7 +111,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if HeatMapRowSort property is set
         internal bool IsSetHeatMapRowSort()
         {
-            return this._heatMapRowSort != null && this._heatMapRowSort.Count > 0; 
+            return this._heatMapRowSort != null && (this._heatMapRowSort.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

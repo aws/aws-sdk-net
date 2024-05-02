@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class GetAutoSnapshotsResponse : AmazonWebServiceResponse
     {
-        private List<AutoSnapshotDetails> _autoSnapshots = new List<AutoSnapshotDetails>();
+        private List<AutoSnapshotDetails> _autoSnapshots = AWSConfigs.InitializeCollections ? new List<AutoSnapshotDetails>() : null;
         private string _resourceName;
         private ResourceType _resourceType;
 
@@ -53,7 +54,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if AutoSnapshots property is set
         internal bool IsSetAutoSnapshots()
         {
-            return this._autoSnapshots != null && this._autoSnapshots.Count > 0; 
+            return this._autoSnapshots != null && (this._autoSnapshots.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

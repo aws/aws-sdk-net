@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.LexModelsV2.Model
     public partial class UpdateBotAliasRequest : AmazonLexModelsV2Request
     {
         private string _botAliasId;
-        private Dictionary<string, BotAliasLocaleSettings> _botAliasLocaleSettings = new Dictionary<string, BotAliasLocaleSettings>();
+        private Dictionary<string, BotAliasLocaleSettings> _botAliasLocaleSettings = AWSConfigs.InitializeCollections ? new Dictionary<string, BotAliasLocaleSettings>() : null;
         private string _botAliasName;
         private string _botId;
         private string _botVersion;
@@ -78,7 +79,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if BotAliasLocaleSettings property is set
         internal bool IsSetBotAliasLocaleSettings()
         {
-            return this._botAliasLocaleSettings != null && this._botAliasLocaleSettings.Count > 0; 
+            return this._botAliasLocaleSettings != null && (this._botAliasLocaleSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

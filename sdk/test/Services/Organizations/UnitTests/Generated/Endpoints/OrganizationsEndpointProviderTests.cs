@@ -286,6 +286,21 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("Organizations")]
+        [Description("For region aws-iso-global with FIPS disabled and DualStack disabled")]
+        public void For_region_awsisoglobal_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new OrganizationsEndpointParameters();
+            parameters["Region"] = "aws-iso-global";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonOrganizationsEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://organizations.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("Organizations")]
         [Description("For region us-iso-east-1 with FIPS enabled and DualStack enabled")]
         [ExpectedException(typeof(AmazonClientException), @"FIPS and DualStack are enabled, but this partition does not support one or both")]
         public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_enabled_Test()

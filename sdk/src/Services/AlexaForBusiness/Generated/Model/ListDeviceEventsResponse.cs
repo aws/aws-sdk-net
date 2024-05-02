@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AlexaForBusiness.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AlexaForBusiness.Model
     /// </summary>
     public partial class ListDeviceEventsResponse : AmazonWebServiceResponse
     {
-        private List<DeviceEvent> _deviceEvents = new List<DeviceEvent>();
+        private List<DeviceEvent> _deviceEvents = AWSConfigs.InitializeCollections ? new List<DeviceEvent>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if DeviceEvents property is set
         internal bool IsSetDeviceEvents()
         {
-            return this._deviceEvents != null && this._deviceEvents.Count > 0; 
+            return this._deviceEvents != null && (this._deviceEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

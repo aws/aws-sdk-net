@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.Glue.Model
         private string _catalogId;
         private string _databaseName;
         private string _tableName;
-        private List<string> _versionIds = new List<string>();
+        private List<string> _versionIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CatalogId. 
@@ -115,7 +116,7 @@ namespace Amazon.Glue.Model
         // Check to see if VersionIds property is set
         internal bool IsSetVersionIds()
         {
-            return this._versionIds != null && this._versionIds.Count > 0; 
+            return this._versionIds != null && (this._versionIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

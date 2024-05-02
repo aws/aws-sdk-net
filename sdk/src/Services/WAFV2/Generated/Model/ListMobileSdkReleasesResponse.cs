@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.WAFV2.Model
     public partial class ListMobileSdkReleasesResponse : AmazonWebServiceResponse
     {
         private string _nextMarker;
-        private List<ReleaseSummary> _releaseSummaries = new List<ReleaseSummary>();
+        private List<ReleaseSummary> _releaseSummaries = AWSConfigs.InitializeCollections ? new List<ReleaseSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextMarker. 
@@ -74,7 +75,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if ReleaseSummaries property is set
         internal bool IsSetReleaseSummaries()
         {
-            return this._releaseSummaries != null && this._releaseSummaries.Count > 0; 
+            return this._releaseSummaries != null && (this._releaseSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

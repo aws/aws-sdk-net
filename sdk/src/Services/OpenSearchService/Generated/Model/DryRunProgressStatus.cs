@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.OpenSearchService.Model
         private string _dryRunId;
         private string _dryRunStatus;
         private string _updateDate;
-        private List<ValidationFailure> _validationFailures = new List<ValidationFailure>();
+        private List<ValidationFailure> _validationFailures = AWSConfigs.InitializeCollections ? new List<ValidationFailure>() : null;
 
         /// <summary>
         /// Gets and sets the property CreationDate. 
@@ -130,7 +131,7 @@ namespace Amazon.OpenSearchService.Model
         // Check to see if ValidationFailures property is set
         internal bool IsSetValidationFailures()
         {
-            return this._validationFailures != null && this._validationFailures.Count > 0; 
+            return this._validationFailures != null && (this._validationFailures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

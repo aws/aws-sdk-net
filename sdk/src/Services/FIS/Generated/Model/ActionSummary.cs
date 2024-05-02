@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FIS.Model
 {
     /// <summary>
@@ -33,10 +34,30 @@ namespace Amazon.FIS.Model
     /// </summary>
     public partial class ActionSummary
     {
+        private string _arn;
         private string _description;
         private string _id;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
-        private Dictionary<string, ActionTarget> _targets = new Dictionary<string, ActionTarget>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, ActionTarget> _targets = AWSConfigs.InitializeCollections ? new Dictionary<string, ActionTarget>() : null;
+
+        /// <summary>
+        /// Gets and sets the property Arn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the action.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string Arn
+        {
+            get { return this._arn; }
+            set { this._arn = value; }
+        }
+
+        // Check to see if Arn property is set
+        internal bool IsSetArn()
+        {
+            return this._arn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -92,7 +113,7 @@ namespace Amazon.FIS.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -110,7 +131,7 @@ namespace Amazon.FIS.Model
         // Check to see if Targets property is set
         internal bool IsSetTargets()
         {
-            return this._targets != null && this._targets.Count > 0; 
+            return this._targets != null && (this._targets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

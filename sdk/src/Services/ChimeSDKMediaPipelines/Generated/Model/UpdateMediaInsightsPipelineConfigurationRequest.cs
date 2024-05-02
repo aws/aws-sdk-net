@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
     /// </summary>
     public partial class UpdateMediaInsightsPipelineConfigurationRequest : AmazonChimeSDKMediaPipelinesRequest
     {
-        private List<MediaInsightsPipelineConfigurationElement> _elements = new List<MediaInsightsPipelineConfigurationElement>();
+        private List<MediaInsightsPipelineConfigurationElement> _elements = AWSConfigs.InitializeCollections ? new List<MediaInsightsPipelineConfigurationElement>() : null;
         private string _identifier;
         private RealTimeAlertConfiguration _realTimeAlertConfiguration;
         private string _resourceAccessRoleArn;
@@ -56,7 +57,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         // Check to see if Elements property is set
         internal bool IsSetElements()
         {
-            return this._elements != null && this._elements.Count > 0; 
+            return this._elements != null && (this._elements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

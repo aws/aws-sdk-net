@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class JobExecutionsRetryConfig
     {
-        private List<RetryCriteria> _criteriaList = new List<RetryCriteria>();
+        private List<RetryCriteria> _criteriaList = AWSConfigs.InitializeCollections ? new List<RetryCriteria>() : null;
 
         /// <summary>
         /// Gets and sets the property CriteriaList. 
@@ -53,7 +54,7 @@ namespace Amazon.IoT.Model
         // Check to see if CriteriaList property is set
         internal bool IsSetCriteriaList()
         {
-            return this._criteriaList != null && this._criteriaList.Count > 0; 
+            return this._criteriaList != null && (this._criteriaList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

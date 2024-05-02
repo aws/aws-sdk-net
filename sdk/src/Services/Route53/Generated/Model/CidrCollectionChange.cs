@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Route53.Model
     {
         private string _locationName;
         private CidrCollectionChangeAction _action;
-        private List<string> _cidrList = new List<string>();
+        private List<string> _cidrList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property LocationName. 
@@ -91,7 +92,7 @@ namespace Amazon.Route53.Model
         // Check to see if CidrList property is set
         internal bool IsSetCidrList()
         {
-            return this._cidrList != null && this._cidrList.Count > 0; 
+            return this._cidrList != null && (this._cidrList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

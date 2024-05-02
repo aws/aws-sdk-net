@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -84,6 +85,10 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
                     if (context.TestExpression("Endpoints/member", targetDepth))
                     {
                         var unmarshaller = EndpointUnmarshaller.Instance;
+                        if (response.Endpoints == null)
+                        {
+                            response.Endpoints = new List<Endpoint>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Endpoints.Add(item);
                         continue;

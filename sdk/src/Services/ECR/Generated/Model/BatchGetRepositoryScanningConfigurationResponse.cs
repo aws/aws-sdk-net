@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECR.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.ECR.Model
     /// </summary>
     public partial class BatchGetRepositoryScanningConfigurationResponse : AmazonWebServiceResponse
     {
-        private List<RepositoryScanningConfigurationFailure> _failures = new List<RepositoryScanningConfigurationFailure>();
-        private List<RepositoryScanningConfiguration> _scanningConfigurations = new List<RepositoryScanningConfiguration>();
+        private List<RepositoryScanningConfigurationFailure> _failures = AWSConfigs.InitializeCollections ? new List<RepositoryScanningConfigurationFailure>() : null;
+        private List<RepositoryScanningConfiguration> _scanningConfigurations = AWSConfigs.InitializeCollections ? new List<RepositoryScanningConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property Failures. 
@@ -51,7 +52,7 @@ namespace Amazon.ECR.Model
         // Check to see if Failures property is set
         internal bool IsSetFailures()
         {
-            return this._failures != null && this._failures.Count > 0; 
+            return this._failures != null && (this._failures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.ECR.Model
         // Check to see if ScanningConfigurations property is set
         internal bool IsSetScanningConfigurations()
         {
-            return this._scanningConfigurations != null && this._scanningConfigurations.Count > 0; 
+            return this._scanningConfigurations != null && (this._scanningConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

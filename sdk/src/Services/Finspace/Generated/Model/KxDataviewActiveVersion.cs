@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Finspace.Model
 {
     /// <summary>
@@ -33,10 +34,10 @@ namespace Amazon.Finspace.Model
     /// </summary>
     public partial class KxDataviewActiveVersion
     {
-        private List<string> _attachedClusters = new List<string>();
+        private List<string> _attachedClusters = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _changesetId;
         private DateTime? _createdTimestamp;
-        private List<KxDataviewSegmentConfiguration> _segmentConfigurations = new List<KxDataviewSegmentConfiguration>();
+        private List<KxDataviewSegmentConfiguration> _segmentConfigurations = AWSConfigs.InitializeCollections ? new List<KxDataviewSegmentConfiguration>() : null;
         private string _versionId;
 
         /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.Finspace.Model
         // Check to see if AttachedClusters property is set
         internal bool IsSetAttachedClusters()
         {
-            return this._attachedClusters != null && this._attachedClusters.Count > 0; 
+            return this._attachedClusters != null && (this._attachedClusters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -115,7 +116,7 @@ namespace Amazon.Finspace.Model
         // Check to see if SegmentConfigurations property is set
         internal bool IsSetSegmentConfigurations()
         {
-            return this._segmentConfigurations != null && this._segmentConfigurations.Count > 0; 
+            return this._segmentConfigurations != null && (this._segmentConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

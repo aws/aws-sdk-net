@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConnectWisdomService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ConnectWisdomService.Model
     /// </summary>
     public partial class ListAssistantAssociationsResponse : AmazonWebServiceResponse
     {
-        private List<AssistantAssociationSummary> _assistantAssociationSummaries = new List<AssistantAssociationSummary>();
+        private List<AssistantAssociationSummary> _assistantAssociationSummaries = AWSConfigs.InitializeCollections ? new List<AssistantAssociationSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.ConnectWisdomService.Model
         // Check to see if AssistantAssociationSummaries property is set
         internal bool IsSetAssistantAssociationSummaries()
         {
-            return this._assistantAssociationSummaries != null && this._assistantAssociationSummaries.Count > 0; 
+            return this._assistantAssociationSummaries != null && (this._assistantAssociationSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

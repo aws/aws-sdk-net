@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
@@ -36,12 +37,12 @@ namespace Amazon.GlueDataBrew.Model
         private DateTime? _createDate;
         private string _createdBy;
         private string _cronExpression;
-        private List<string> _jobNames = new List<string>();
+        private List<string> _jobNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _lastModifiedBy;
         private DateTime? _lastModifiedDate;
         private string _name;
         private string _resourceArn;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property CreateDate. 
@@ -116,7 +117,7 @@ namespace Amazon.GlueDataBrew.Model
         // Check to see if JobNames property is set
         internal bool IsSetJobNames()
         {
-            return this._jobNames != null && this._jobNames.Count > 0; 
+            return this._jobNames != null && (this._jobNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -209,7 +210,7 @@ namespace Amazon.GlueDataBrew.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

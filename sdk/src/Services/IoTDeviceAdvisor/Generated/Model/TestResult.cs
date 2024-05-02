@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTDeviceAdvisor.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
     /// </summary>
     public partial class TestResult
     {
-        private List<GroupResult> _groups = new List<GroupResult>();
+        private List<GroupResult> _groups = AWSConfigs.InitializeCollections ? new List<GroupResult>() : null;
 
         /// <summary>
         /// Gets and sets the property Groups. 
@@ -50,7 +51,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         // Check to see if Groups property is set
         internal bool IsSetGroups()
         {
-            return this._groups != null && this._groups.Count > 0; 
+            return this._groups != null && (this._groups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

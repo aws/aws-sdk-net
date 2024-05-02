@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class ListEntityRecognizerSummariesResponse : AmazonWebServiceResponse
     {
-        private List<EntityRecognizerSummary> _entityRecognizerSummariesList = new List<EntityRecognizerSummary>();
+        private List<EntityRecognizerSummary> _entityRecognizerSummariesList = AWSConfigs.InitializeCollections ? new List<EntityRecognizerSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if EntityRecognizerSummariesList property is set
         internal bool IsSetEntityRecognizerSummariesList()
         {
-            return this._entityRecognizerSummariesList != null && this._entityRecognizerSummariesList.Count > 0; 
+            return this._entityRecognizerSummariesList != null && (this._entityRecognizerSummariesList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

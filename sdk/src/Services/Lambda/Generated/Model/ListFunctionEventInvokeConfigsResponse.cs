@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lambda.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class ListFunctionEventInvokeConfigsResponse : AmazonWebServiceResponse
     {
-        private List<FunctionEventInvokeConfig> _functionEventInvokeConfigs = new List<FunctionEventInvokeConfig>();
+        private List<FunctionEventInvokeConfig> _functionEventInvokeConfigs = AWSConfigs.InitializeCollections ? new List<FunctionEventInvokeConfig>() : null;
         private string _nextMarker;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Lambda.Model
         // Check to see if FunctionEventInvokeConfigs property is set
         internal bool IsSetFunctionEventInvokeConfigs()
         {
-            return this._functionEventInvokeConfigs != null && this._functionEventInvokeConfigs.Count > 0; 
+            return this._functionEventInvokeConfigs != null && (this._functionEventInvokeConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

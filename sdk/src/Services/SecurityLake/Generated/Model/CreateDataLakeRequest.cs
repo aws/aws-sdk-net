@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
@@ -52,9 +53,9 @@ namespace Amazon.SecurityLake.Model
     /// </summary>
     public partial class CreateDataLakeRequest : AmazonSecurityLakeRequest
     {
-        private List<DataLakeConfiguration> _configurations = new List<DataLakeConfiguration>();
+        private List<DataLakeConfiguration> _configurations = AWSConfigs.InitializeCollections ? new List<DataLakeConfiguration>() : null;
         private string _metaStoreManagerRoleArn;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Configurations. 
@@ -62,7 +63,7 @@ namespace Amazon.SecurityLake.Model
         /// Specify the Region or Regions that will contribute data to the rollup region.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1)]
         public List<DataLakeConfiguration> Configurations
         {
             get { return this._configurations; }
@@ -72,7 +73,7 @@ namespace Amazon.SecurityLake.Model
         // Check to see if Configurations property is set
         internal bool IsSetConfigurations()
         {
-            return this._configurations != null && this._configurations.Count > 0; 
+            return this._configurations != null && (this._configurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -114,7 +115,7 @@ namespace Amazon.SecurityLake.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

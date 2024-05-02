@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.ResourceGroups.Model
         private Group _group;
         private GroupConfiguration _groupConfiguration;
         private ResourceQuery _resourceQuery;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Group. 
@@ -111,7 +112,7 @@ namespace Amazon.ResourceGroups.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

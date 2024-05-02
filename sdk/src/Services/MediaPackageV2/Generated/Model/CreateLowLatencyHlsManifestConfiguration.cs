@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaPackageV2.Model
 {
     /// <summary>
@@ -108,7 +109,7 @@ namespace Amazon.MediaPackageV2.Model
         /// The total duration (in seconds) of the manifest's content.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=30, Max=900)]
+        [AWSProperty(Min=30)]
         public int? ManifestWindowSeconds
         {
             get { return this._manifestWindowSeconds; }

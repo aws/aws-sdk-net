@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Tnb.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.Tnb.Model
     /// </summary>
     public partial class NetworkArtifactMeta
     {
-        private List<ToscaOverride> _overrides = new List<ToscaOverride>();
+        private List<ToscaOverride> _overrides = AWSConfigs.InitializeCollections ? new List<ToscaOverride>() : null;
 
         /// <summary>
         /// Gets and sets the property Overrides. 
@@ -55,7 +56,7 @@ namespace Amazon.Tnb.Model
         // Check to see if Overrides property is set
         internal bool IsSetOverrides()
         {
-            return this._overrides != null && this._overrides.Count > 0; 
+            return this._overrides != null && (this._overrides.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

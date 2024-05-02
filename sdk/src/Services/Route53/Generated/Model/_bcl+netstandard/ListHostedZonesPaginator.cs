@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Route53.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Route53.Model
         /// Enumerable containing all of the HostedZones
         /// </summary>
         public IPaginatedEnumerable<HostedZone> HostedZones => 
-            new PaginatedResultKeyResponse<ListHostedZonesResponse, HostedZone>(this, (i) => i.HostedZones);
+            new PaginatedResultKeyResponse<ListHostedZonesResponse, HostedZone>(this, (i) => i.HostedZones ?? new List<HostedZone>());
 
         internal ListHostedZonesPaginator(IAmazonRoute53 client, ListHostedZonesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Route53.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListHostedZonesResponse> IPaginator<ListHostedZonesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListHostedZonesResponse> IPaginator<ListHostedZonesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

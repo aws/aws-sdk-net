@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
@@ -33,10 +34,10 @@ namespace Amazon.AmplifyUIBuilder.Model
     /// </summary>
     public partial class ComponentDataConfiguration
     {
-        private List<string> _identifiers = new List<string>();
+        private List<string> _identifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _model;
         private Predicate _predicate;
-        private List<SortProperty> _sort = new List<SortProperty>();
+        private List<SortProperty> _sort = AWSConfigs.InitializeCollections ? new List<SortProperty>() : null;
 
         /// <summary>
         /// Gets and sets the property Identifiers. 
@@ -54,7 +55,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if Identifiers property is set
         internal bool IsSetIdentifiers()
         {
-            return this._identifiers != null && this._identifiers.Count > 0; 
+            return this._identifiers != null && (this._identifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -110,7 +111,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if Sort property is set
         internal bool IsSetSort()
         {
-            return this._sort != null && this._sort.Count > 0; 
+            return this._sort != null && (this._sort.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

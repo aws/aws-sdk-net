@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PersonalizeRuntime.Model
 {
     /// <summary>
@@ -42,11 +43,11 @@ namespace Amazon.PersonalizeRuntime.Model
     public partial class GetPersonalizedRankingRequest : AmazonPersonalizeRuntimeRequest
     {
         private string _campaignArn;
-        private Dictionary<string, string> _context = new Dictionary<string, string>();
+        private Dictionary<string, string> _context = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _filterArn;
-        private Dictionary<string, string> _filterValues = new Dictionary<string, string>();
-        private List<string> _inputList = new List<string>();
-        private Dictionary<string, List<string>> _metadataColumns = new Dictionary<string, List<string>>();
+        private Dictionary<string, string> _filterValues = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<string> _inputList = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, List<string>> _metadataColumns = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private string _userId;
 
         /// <summary>
@@ -87,7 +88,7 @@ namespace Amazon.PersonalizeRuntime.Model
         // Check to see if Context property is set
         internal bool IsSetContext()
         {
-            return this._context != null && this._context.Count > 0; 
+            return this._context != null && (this._context.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -143,7 +144,7 @@ namespace Amazon.PersonalizeRuntime.Model
         // Check to see if FilterValues property is set
         internal bool IsSetFilterValues()
         {
-            return this._filterValues != null && this._filterValues.Count > 0; 
+            return this._filterValues != null && (this._filterValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -164,7 +165,7 @@ namespace Amazon.PersonalizeRuntime.Model
         // Check to see if InputList property is set
         internal bool IsSetInputList()
         {
-            return this._inputList != null && this._inputList.Count > 0; 
+            return this._inputList != null && (this._inputList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -191,7 +192,7 @@ namespace Amazon.PersonalizeRuntime.Model
         // Check to see if MetadataColumns property is set
         internal bool IsSetMetadataColumns()
         {
-            return this._metadataColumns != null && this._metadataColumns.Count > 0; 
+            return this._metadataColumns != null && (this._metadataColumns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

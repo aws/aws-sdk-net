@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.QBusiness.Model
     /// </summary>
     public partial class GetUserResponse : AmazonWebServiceResponse
     {
-        private List<UserAlias> _userAliases = new List<UserAlias>();
+        private List<UserAlias> _userAliases = AWSConfigs.InitializeCollections ? new List<UserAlias>() : null;
 
         /// <summary>
         /// Gets and sets the property UserAliases. 
@@ -50,7 +51,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if UserAliases property is set
         internal bool IsSetUserAliases()
         {
-            return this._userAliases != null && this._userAliases.Count > 0; 
+            return this._userAliases != null && (this._userAliases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

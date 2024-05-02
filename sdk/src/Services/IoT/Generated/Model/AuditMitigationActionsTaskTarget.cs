@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class AuditMitigationActionsTaskTarget
     {
-        private Dictionary<string, List<string>> _auditCheckToReasonCodeFilter = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _auditCheckToReasonCodeFilter = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private string _auditTaskId;
-        private List<string> _findingIds = new List<string>();
+        private List<string> _findingIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AuditCheckToReasonCodeFilter. 
@@ -54,7 +55,7 @@ namespace Amazon.IoT.Model
         // Check to see if AuditCheckToReasonCodeFilter property is set
         internal bool IsSetAuditCheckToReasonCodeFilter()
         {
-            return this._auditCheckToReasonCodeFilter != null && this._auditCheckToReasonCodeFilter.Count > 0; 
+            return this._auditCheckToReasonCodeFilter != null && (this._auditCheckToReasonCodeFilter.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -94,7 +95,7 @@ namespace Amazon.IoT.Model
         // Check to see if FindingIds property is set
         internal bool IsSetFindingIds()
         {
-            return this._findingIds != null && this._findingIds.Count > 0; 
+            return this._findingIds != null && (this._findingIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

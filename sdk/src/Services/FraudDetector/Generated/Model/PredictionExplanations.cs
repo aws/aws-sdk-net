@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FraudDetector.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class PredictionExplanations
     {
-        private List<AggregatedVariablesImpactExplanation> _aggregatedVariablesImpactExplanations = new List<AggregatedVariablesImpactExplanation>();
-        private List<VariableImpactExplanation> _variableImpactExplanations = new List<VariableImpactExplanation>();
+        private List<AggregatedVariablesImpactExplanation> _aggregatedVariablesImpactExplanations = AWSConfigs.InitializeCollections ? new List<AggregatedVariablesImpactExplanation>() : null;
+        private List<VariableImpactExplanation> _variableImpactExplanations = AWSConfigs.InitializeCollections ? new List<VariableImpactExplanation>() : null;
 
         /// <summary>
         /// Gets and sets the property AggregatedVariablesImpactExplanations. 
@@ -60,7 +61,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if AggregatedVariablesImpactExplanations property is set
         internal bool IsSetAggregatedVariablesImpactExplanations()
         {
-            return this._aggregatedVariablesImpactExplanations != null && this._aggregatedVariablesImpactExplanations.Count > 0; 
+            return this._aggregatedVariablesImpactExplanations != null && (this._aggregatedVariablesImpactExplanations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -78,7 +79,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if VariableImpactExplanations property is set
         internal bool IsSetVariableImpactExplanations()
         {
-            return this._variableImpactExplanations != null && this._variableImpactExplanations.Count > 0; 
+            return this._variableImpactExplanations != null && (this._variableImpactExplanations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

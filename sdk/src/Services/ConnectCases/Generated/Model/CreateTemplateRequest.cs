@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConnectCases.Model
 {
     /// <summary>
@@ -43,7 +44,7 @@ namespace Amazon.ConnectCases.Model
         private string _domainId;
         private LayoutConfiguration _layoutConfiguration;
         private string _name;
-        private List<RequiredField> _requiredFields = new List<RequiredField>();
+        private List<RequiredField> _requiredFields = AWSConfigs.InitializeCollections ? new List<RequiredField>() : null;
         private TemplateStatus _status;
 
         /// <summary>
@@ -138,7 +139,7 @@ namespace Amazon.ConnectCases.Model
         // Check to see if RequiredFields property is set
         internal bool IsSetRequiredFields()
         {
-            return this._requiredFields != null && this._requiredFields.Count > 0; 
+            return this._requiredFields != null && (this._requiredFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

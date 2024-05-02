@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53RecoveryCluster.Model
 {
     /// <summary>
@@ -79,7 +80,7 @@ namespace Amazon.Route53RecoveryCluster.Model
     {
         private string _routingControlArn;
         private RoutingControlState _routingControlState;
-        private List<string> _safetyRulesToOverride = new List<string>();
+        private List<string> _safetyRulesToOverride = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property RoutingControlArn. 
@@ -143,7 +144,7 @@ namespace Amazon.Route53RecoveryCluster.Model
         // Check to see if SafetyRulesToOverride property is set
         internal bool IsSetSafetyRulesToOverride()
         {
-            return this._safetyRulesToOverride != null && this._safetyRulesToOverride.Count > 0; 
+            return this._safetyRulesToOverride != null && (this._safetyRulesToOverride.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

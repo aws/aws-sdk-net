@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
@@ -160,12 +161,12 @@ namespace Amazon.KeyManagementService.Model
     {
         private MemoryStream _ciphertextBlob;
         private EncryptionAlgorithmSpec _destinationEncryptionAlgorithm;
-        private Dictionary<string, string> _destinationEncryptionContext = new Dictionary<string, string>();
+        private Dictionary<string, string> _destinationEncryptionContext = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _destinationKeyId;
         private bool? _dryRun;
-        private List<string> _grantTokens = new List<string>();
+        private List<string> _grantTokens = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private EncryptionAlgorithmSpec _sourceEncryptionAlgorithm;
-        private Dictionary<string, string> _sourceEncryptionContext = new Dictionary<string, string>();
+        private Dictionary<string, string> _sourceEncryptionContext = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _sourceKeyId;
 
         /// <summary>
@@ -252,7 +253,7 @@ namespace Amazon.KeyManagementService.Model
         // Check to see if DestinationEncryptionContext property is set
         internal bool IsSetDestinationEncryptionContext()
         {
-            return this._destinationEncryptionContext != null && this._destinationEncryptionContext.Count > 0; 
+            return this._destinationEncryptionContext != null && (this._destinationEncryptionContext.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -356,7 +357,7 @@ namespace Amazon.KeyManagementService.Model
         // Check to see if GrantTokens property is set
         internal bool IsSetGrantTokens()
         {
-            return this._grantTokens != null && this._grantTokens.Count > 0; 
+            return this._grantTokens != null && (this._grantTokens.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -419,7 +420,7 @@ namespace Amazon.KeyManagementService.Model
         // Check to see if SourceEncryptionContext property is set
         internal bool IsSetSourceEncryptionContext()
         {
-            return this._sourceEncryptionContext != null && this._sourceEncryptionContext.Count > 0; 
+            return this._sourceEncryptionContext != null && (this._sourceEncryptionContext.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

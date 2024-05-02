@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConnectCases.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ConnectCases.Model
     /// </summary>
     public partial class LayoutSections
     {
-        private List<Section> _sections = new List<Section>();
+        private List<Section> _sections = AWSConfigs.InitializeCollections ? new List<Section>() : null;
 
         /// <summary>
         /// Gets and sets the property Sections.
@@ -49,7 +50,7 @@ namespace Amazon.ConnectCases.Model
         // Check to see if Sections property is set
         internal bool IsSetSections()
         {
-            return this._sections != null && this._sections.Count > 0; 
+            return this._sections != null && (this._sections.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

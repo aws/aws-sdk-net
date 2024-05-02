@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.SimpleEmailV2.Model
     public partial class PutConfigurationSetSuppressionOptionsRequest : AmazonSimpleEmailServiceV2Request
     {
         private string _configurationSetName;
-        private List<string> _suppressedReasons = new List<string>();
+        private List<string> _suppressedReasons = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ConfigurationSetName. 
@@ -83,7 +84,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if SuppressedReasons property is set
         internal bool IsSetSuppressedReasons()
         {
-            return this._suppressedReasons != null && this._suppressedReasons.Count > 0; 
+            return this._suppressedReasons != null && (this._suppressedReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

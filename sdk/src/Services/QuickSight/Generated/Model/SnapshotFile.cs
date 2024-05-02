@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.QuickSight.Model
     public partial class SnapshotFile
     {
         private SnapshotFileFormatType _formatType;
-        private List<SnapshotFileSheetSelection> _sheetSelections = new List<SnapshotFileSheetSelection>();
+        private List<SnapshotFileSheetSelection> _sheetSelections = AWSConfigs.InitializeCollections ? new List<SnapshotFileSheetSelection>() : null;
 
         /// <summary>
         /// Gets and sets the property FormatType. 
@@ -76,7 +77,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if SheetSelections property is set
         internal bool IsSetSheetSelections()
         {
-            return this._sheetSelections != null && this._sheetSelections.Count > 0; 
+            return this._sheetSelections != null && (this._sheetSelections.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
@@ -34,11 +35,11 @@ namespace Amazon.NetworkFirewall.Model
     /// </summary>
     public partial class ServerCertificateScope
     {
-        private List<PortRange> _destinationPorts = new List<PortRange>();
-        private List<Address> _destinations = new List<Address>();
-        private List<int> _protocols = new List<int>();
-        private List<PortRange> _sourcePorts = new List<PortRange>();
-        private List<Address> _sources = new List<Address>();
+        private List<PortRange> _destinationPorts = AWSConfigs.InitializeCollections ? new List<PortRange>() : null;
+        private List<Address> _destinations = AWSConfigs.InitializeCollections ? new List<Address>() : null;
+        private List<int> _protocols = AWSConfigs.InitializeCollections ? new List<int>() : null;
+        private List<PortRange> _sourcePorts = AWSConfigs.InitializeCollections ? new List<PortRange>() : null;
+        private List<Address> _sources = AWSConfigs.InitializeCollections ? new List<Address>() : null;
 
         /// <summary>
         /// Gets and sets the property DestinationPorts. 
@@ -61,7 +62,7 @@ namespace Amazon.NetworkFirewall.Model
         // Check to see if DestinationPorts property is set
         internal bool IsSetDestinationPorts()
         {
-            return this._destinationPorts != null && this._destinationPorts.Count > 0; 
+            return this._destinationPorts != null && (this._destinationPorts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -80,7 +81,7 @@ namespace Amazon.NetworkFirewall.Model
         // Check to see if Destinations property is set
         internal bool IsSetDestinations()
         {
-            return this._destinations != null && this._destinations.Count > 0; 
+            return this._destinations != null && (this._destinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -99,7 +100,7 @@ namespace Amazon.NetworkFirewall.Model
         // Check to see if Protocols property is set
         internal bool IsSetProtocols()
         {
-            return this._protocols != null && this._protocols.Count > 0; 
+            return this._protocols != null && (this._protocols.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -123,7 +124,7 @@ namespace Amazon.NetworkFirewall.Model
         // Check to see if SourcePorts property is set
         internal bool IsSetSourcePorts()
         {
-            return this._sourcePorts != null && this._sourcePorts.Count > 0; 
+            return this._sourcePorts != null && (this._sourcePorts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -142,7 +143,7 @@ namespace Amazon.NetworkFirewall.Model
         // Check to see if Sources property is set
         internal bool IsSetSources()
         {
-            return this._sources != null && this._sources.Count > 0; 
+            return this._sources != null && (this._sources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

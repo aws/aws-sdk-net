@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -69,6 +70,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ipRanges/item", targetDepth))
                     {
                         var unmarshaller = IpRangeUnmarshaller.Instance;
+                        if (unmarshalledObject.Ipv4Ranges == null)
+                        {
+                            unmarshalledObject.Ipv4Ranges = new List<IpRange>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Ipv4Ranges.Add(item);
                         continue;
@@ -76,6 +81,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ipv6Ranges/item", targetDepth))
                     {
                         var unmarshaller = Ipv6RangeUnmarshaller.Instance;
+                        if (unmarshalledObject.Ipv6Ranges == null)
+                        {
+                            unmarshalledObject.Ipv6Ranges = new List<Ipv6Range>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Ipv6Ranges.Add(item);
                         continue;
@@ -83,6 +92,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("prefixListIds/item", targetDepth))
                     {
                         var unmarshaller = PrefixListIdUnmarshaller.Instance;
+                        if (unmarshalledObject.PrefixListIds == null)
+                        {
+                            unmarshalledObject.PrefixListIds = new List<PrefixListId>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.PrefixListIds.Add(item);
                         continue;
@@ -96,6 +109,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("groups/item", targetDepth))
                     {
                         var unmarshaller = UserIdGroupPairUnmarshaller.Instance;
+                        if (unmarshalledObject.UserIdGroupPairs == null)
+                        {
+                            unmarshalledObject.UserIdGroupPairs = new List<UserIdGroupPair>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.UserIdGroupPairs.Add(item);
                         continue;

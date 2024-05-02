@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EKS.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EKS.Model
     /// </summary>
     public partial class Insight
     {
-        private Dictionary<string, string> _additionalInfo = new Dictionary<string, string>();
+        private Dictionary<string, string> _additionalInfo = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private Category _category;
         private InsightCategorySpecificSummary _categorySpecificSummary;
         private string _description;
@@ -44,7 +45,7 @@ namespace Amazon.EKS.Model
         private DateTime? _lastTransitionTime;
         private string _name;
         private string _recommendation;
-        private List<InsightResourceDetail> _resources = new List<InsightResourceDetail>();
+        private List<InsightResourceDetail> _resources = AWSConfigs.InitializeCollections ? new List<InsightResourceDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property AdditionalInfo. 
@@ -61,7 +62,7 @@ namespace Amazon.EKS.Model
         // Check to see if AdditionalInfo property is set
         internal bool IsSetAdditionalInfo()
         {
-            return this._additionalInfo != null && this._additionalInfo.Count > 0; 
+            return this._additionalInfo != null && (this._additionalInfo.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -262,7 +263,7 @@ namespace Amazon.EKS.Model
         // Check to see if Resources property is set
         internal bool IsSetResources()
         {
-            return this._resources != null && this._resources.Count > 0; 
+            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

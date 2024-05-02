@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kafka.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Kafka.Model
     public partial class ListReplicatorsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ReplicatorSummary> _replicators = new List<ReplicatorSummary>();
+        private List<ReplicatorSummary> _replicators = AWSConfigs.InitializeCollections ? new List<ReplicatorSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.Kafka.Model
         // Check to see if Replicators property is set
         internal bool IsSetReplicators()
         {
-            return this._replicators != null && this._replicators.Count > 0; 
+            return this._replicators != null && (this._replicators.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

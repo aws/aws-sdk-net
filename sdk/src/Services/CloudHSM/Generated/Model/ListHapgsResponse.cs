@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudHSM.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CloudHSM.Model
     /// </summary>
     public partial class ListHapgsResponse : AmazonWebServiceResponse
     {
-        private List<string> _hapgList = new List<string>();
+        private List<string> _hapgList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.CloudHSM.Model
         // Check to see if HapgList property is set
         internal bool IsSetHapgList()
         {
-            return this._hapgList != null && this._hapgList.Count > 0; 
+            return this._hapgList != null && (this._hapgList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

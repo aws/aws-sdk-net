@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTSecureTunneling.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IoTSecureTunneling.Model
     public partial class ListTunnelsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TunnelSummary> _tunnelSummaries = new List<TunnelSummary>();
+        private List<TunnelSummary> _tunnelSummaries = AWSConfigs.InitializeCollections ? new List<TunnelSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.IoTSecureTunneling.Model
         // Check to see if TunnelSummaries property is set
         internal bool IsSetTunnelSummaries()
         {
-            return this._tunnelSummaries != null && this._tunnelSummaries.Count > 0; 
+            return this._tunnelSummaries != null && (this._tunnelSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

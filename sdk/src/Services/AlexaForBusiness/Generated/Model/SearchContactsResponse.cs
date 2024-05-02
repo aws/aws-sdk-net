@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AlexaForBusiness.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AlexaForBusiness.Model
     /// </summary>
     public partial class SearchContactsResponse : AmazonWebServiceResponse
     {
-        private List<ContactData> _contacts = new List<ContactData>();
+        private List<ContactData> _contacts = AWSConfigs.InitializeCollections ? new List<ContactData>() : null;
         private string _nextToken;
         private int? _totalCount;
 
@@ -52,7 +53,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if Contacts property is set
         internal bool IsSetContacts()
         {
-            return this._contacts != null && this._contacts.Count > 0; 
+            return this._contacts != null && (this._contacts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.QuickSight.Model
     public partial class DecimalDefaultValues
     {
         private DynamicDefaultValue _dynamicValue;
-        private List<double> _staticValues = new List<double>();
+        private List<double> _staticValues = AWSConfigs.InitializeCollections ? new List<double>() : null;
 
         /// <summary>
         /// Gets and sets the property DynamicValue. 
@@ -71,7 +72,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if StaticValues property is set
         internal bool IsSetStaticValues()
         {
-            return this._staticValues != null && this._staticValues.Count > 0; 
+            return this._staticValues != null && (this._staticValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

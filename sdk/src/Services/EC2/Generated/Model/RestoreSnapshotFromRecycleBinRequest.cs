@@ -26,12 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the RestoreSnapshotFromRecycleBin operation.
-    /// Restores a snapshot from the Recycle Bin. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-snaps.html#recycle-bin-restore-snaps">Restore
-    /// snapshots from the Recycle Bin</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// Restores a snapshot from the Recycle Bin. For more information, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/recycle-bin-working-with-snaps.html#recycle-bin-restore-snaps">Restore
+    /// snapshots from the Recycle Bin</a> in the <i>Amazon EBS User Guide</i>.
     /// </summary>
     public partial class RestoreSnapshotFromRecycleBinRequest : AmazonEC2Request
     {

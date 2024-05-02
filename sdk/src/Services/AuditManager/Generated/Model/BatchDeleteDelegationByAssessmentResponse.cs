@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AuditManager.Model
     /// </summary>
     public partial class BatchDeleteDelegationByAssessmentResponse : AmazonWebServiceResponse
     {
-        private List<BatchDeleteDelegationByAssessmentError> _errors = new List<BatchDeleteDelegationByAssessmentError>();
+        private List<BatchDeleteDelegationByAssessmentError> _errors = AWSConfigs.InitializeCollections ? new List<BatchDeleteDelegationByAssessmentError>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. 
@@ -52,7 +53,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

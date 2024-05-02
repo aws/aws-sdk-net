@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
@@ -36,8 +37,8 @@ namespace Amazon.MemoryDB.Model
     public partial class CreateACLRequest : AmazonMemoryDBRequest
     {
         private string _aclName;
-        private List<Tag> _tags = new List<Tag>();
-        private List<string> _userNames = new List<string>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<string> _userNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ACLName. 
@@ -75,7 +76,7 @@ namespace Amazon.MemoryDB.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -94,7 +95,7 @@ namespace Amazon.MemoryDB.Model
         // Check to see if UserNames property is set
         internal bool IsSetUserNames()
         {
-            return this._userNames != null && this._userNames.Count > 0; 
+            return this._userNames != null && (this._userNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

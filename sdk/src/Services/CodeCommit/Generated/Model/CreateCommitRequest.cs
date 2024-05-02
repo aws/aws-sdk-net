@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
@@ -37,13 +38,13 @@ namespace Amazon.CodeCommit.Model
         private string _authorName;
         private string _branchName;
         private string _commitMessage;
-        private List<DeleteFileEntry> _deleteFiles = new List<DeleteFileEntry>();
+        private List<DeleteFileEntry> _deleteFiles = AWSConfigs.InitializeCollections ? new List<DeleteFileEntry>() : null;
         private string _email;
         private bool? _keepEmptyFolders;
         private string _parentCommitId;
-        private List<PutFileEntry> _putFiles = new List<PutFileEntry>();
+        private List<PutFileEntry> _putFiles = AWSConfigs.InitializeCollections ? new List<PutFileEntry>() : null;
         private string _repositoryName;
-        private List<SetFileModeEntry> _setFileModes = new List<SetFileModeEntry>();
+        private List<SetFileModeEntry> _setFileModes = AWSConfigs.InitializeCollections ? new List<SetFileModeEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property AuthorName. 
@@ -117,7 +118,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if DeleteFiles property is set
         internal bool IsSetDeleteFiles()
         {
-            return this._deleteFiles != null && this._deleteFiles.Count > 0; 
+            return this._deleteFiles != null && (this._deleteFiles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -192,7 +193,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if PutFiles property is set
         internal bool IsSetPutFiles()
         {
-            return this._putFiles != null && this._putFiles.Count > 0; 
+            return this._putFiles != null && (this._putFiles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -229,7 +230,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if SetFileModes property is set
         internal bool IsSetSetFileModes()
         {
-            return this._setFileModes != null && this._setFileModes.Count > 0; 
+            return this._setFileModes != null && (this._setFileModes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

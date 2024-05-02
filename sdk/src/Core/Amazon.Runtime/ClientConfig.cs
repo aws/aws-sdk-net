@@ -89,7 +89,6 @@ namespace Amazon.Runtime
         private RequestRetryMode? retryMode = null;
         private int? maxRetries = null;
         private const int MaxRetriesDefault = 2;
-        private const int MaxRetriesLegacyDefault = 4;
         private const long DefaultMinCompressionSizeBytes = 10240;
         private bool didProcessServiceURL = false;
         private IAWSTokenProvider _awsTokenProvider = new DefaultAWSTokenProviderChain();
@@ -131,7 +130,7 @@ namespace Amazon.Runtime
 #if BCL
         private static WebProxy GetWebProxyWithCredentials(string value)
 #else
-        private static Amazon.Runtime.Internal.Util.WebProxy? GetWebProxyWithCredentials(string value)
+        private static Amazon.Runtime.Internal.Util.WebProxy GetWebProxyWithCredentials(string value)
 #endif
         {
             if (!string.IsNullOrEmpty(value))
@@ -254,7 +253,9 @@ namespace Amazon.Runtime
                     this.regionEndpoint =
                         RegionEndpoint.GetBySystemName(
                             value.SystemName.Replace("fips-", "").Replace("-fips", ""));
+#pragma warning disable CS0612,CS0618
                     this.RegionEndpoint.OriginalSystemName = value.SystemName;
+#pragma warning restore CS0612,CS0618
                 }
             }
         }
@@ -415,11 +416,12 @@ namespace Amazon.Runtime
 
         internal static string GetUrl(IClientConfig config, RegionEndpoint regionEndpoint)
         {
+#pragma warning disable CS0612,CS0618
             var endpoint = 
                 regionEndpoint.GetEndpointForService(
                     config.RegionEndpointServiceName, 
                     config.ToGetEndpointForServiceOptions());
-
+#pragma warning restore CS0612,CS0618
             string url = new Uri(string.Format(CultureInfo.InvariantCulture, "{0}{1}", config.UseHttp ? "http://" : "https://", endpoint.Hostname)).AbsoluteUri;
             return url;
         }
@@ -462,8 +464,7 @@ namespace Amazon.Runtime
         }
         /// <summary>
         /// Returns the flag indicating how many retry HTTP requests an SDK should
-        /// make for a single SDK operation invocation before giving up. This flag will 
-        /// return 4 when the RetryMode is set to "Legacy" which is the default. For
+        /// make for a single SDK operation invocation before giving up. For
         /// RetryMode values of "Standard" or "Adaptive" this flag will return 2. In 
         /// addition to the values returned that are dependent on the RetryMode, the
         /// value can be set to a specific value by using the AWS_MAX_ATTEMPTS environment
@@ -480,13 +481,6 @@ namespace Amazon.Runtime
             {
                 if (!this.maxRetries.HasValue)
                 {
-                    //For legacy mode there was no MaxAttempts shared config or 
-                    //environment variables so use the legacy default value.
-                    if (RetryMode == RequestRetryMode.Legacy)
-                    {
-                        return MaxRetriesLegacyDefault;
-                    }
-
                     //For standard and adaptive modes first check the environment variables
                     //and shared config for a value. Otherwise default to the new default value.
                     //In the shared config or environment variable MaxAttempts is the total number 
@@ -720,45 +714,18 @@ namespace Amazon.Runtime
             Initialize();
         }
 
-        public ClientConfig() : this(new LegacyOnlyDefaultConfigurationProvider())
-        {
-            this.defaultConfigurationBackingField = _defaultConfigurationProvider.GetDefaultConfiguration(null, null);
-            this.defaultConfigurationMode = this.defaultConfigurationBackingField.Name;
-        }
-
-        /// <summary>
-        /// Specialized <see cref="IDefaultConfigurationProvider"/> that is only meant to provide backwards
-        /// compatibility for the obsolete <see cref="ClientConfig"/> constructor.
-        /// </summary>
-        private class LegacyOnlyDefaultConfigurationProvider : IDefaultConfigurationProvider
-        {
-            public IDefaultConfiguration GetDefaultConfiguration(RegionEndpoint clientRegion, DefaultConfigurationMode? requestedConfigurationMode = null)
-            {
-                if (requestedConfigurationMode.HasValue &&
-                    requestedConfigurationMode.Value != Runtime.DefaultConfigurationMode.Legacy)
-                    throw new AmazonClientException($"This ClientConfig only supports {Runtime.DefaultConfigurationMode.Legacy}");
-
-                return new DefaultConfiguration
-                {
-                    Name = Runtime.DefaultConfigurationMode.Legacy,
-                    RetryMode = RequestRetryMode.Legacy,
-                    S3UsEast1RegionalEndpoint = S3UsEast1RegionalEndpointValue.Legacy,
-                    StsRegionalEndpoints = StsRegionalEndpointsValue.Legacy
-                };
-            }
-        }
         #endregion
 
         protected virtual void Initialize()
         {
         }
 
-#if BCL
         /// <summary>
+        /// .NET Framework 3.5
+        /// ------------------
         /// Overrides the default request timeout value.
         /// This field does not impact *Async calls. A manual timeout (for instance, using CancellationToken) must be implemented.
         /// </summary>
-#endif
         /// <remarks>
         /// <para>
         /// If the value is set, the value is assigned to the Timeout property of the HttpWebRequest/HttpClient object used
@@ -796,15 +763,9 @@ namespace Amazon.Runtime
         /// <summary>
         /// Generates a <see cref="CancellationToken"/> based on the value
         /// for <see cref="DefaultConfiguration.TimeToFirstByteTimeout"/>.
-        /// <para />
-        /// NOTE: <see cref="Amazon.Runtime.HttpWebRequestMessage.GetResponseAsync"/> uses 
         /// </summary>
         internal CancellationToken BuildDefaultCancellationToken()
         {
-            // legacy mode never had a working cancellation token, so keep it to default()
-            if (DefaultConfiguration.Name == Runtime.DefaultConfigurationMode.Legacy)
-                return default(CancellationToken);
-
             // TimeToFirstByteTimeout is not a perfect match with HttpWebRequest/HttpClient.Timeout.  However, given
             // that both are configured to only use Timeout until the Response Headers are downloaded, this value
             // provides a reasonable default value.
@@ -815,7 +776,6 @@ namespace Amazon.Runtime
                 : default(CancellationToken);
         }
 #endif
-
 
         /// <summary>
         /// Configures the endpoint calculation for a service to go to a dual stack (ipv6 enabled) endpoint
@@ -913,9 +873,16 @@ namespace Amazon.Runtime
         }
 
         /// <summary>
-        /// Customers can opt-in to provide an app id that is intended to identify their applications
-        /// in the user agent header string. The value must not exceed <see cref="EnvironmentVariableInternalConfiguration.AWS_SDK_UA_APP_ID_MAX_LENGTH"/> characters.
+        /// <para>
+        /// ClientAppId is an optional application specific identifier that can be set. When set it will be appended to the User-Agent header of every request in the form of <c>app/{ClientAppId}</c>. 
+        /// </para>
+        /// <para>
+        /// If the ClientAppId is not set on the object the SDK will search the environment variable <c>AWS_SDK_UA_APP_ID</c> and the shared config profile attribute <c>sdk_ua_app_id</c> for a potential value for the ClientAppId.
+        /// </para>
         /// </summary>
+        /// <remarks>
+        /// See <see href="https://docs.aws.amazon.com/sdkref/latest/guide/settings-reference.html"/> for more information on environment variables and shared config settings.
+        /// </remarks>
         public string ClientAppId
         {
             get
@@ -1017,7 +984,7 @@ namespace Amazon.Runtime
         /// and the SDK has determined that there is a difference between local
         /// and server times.
         /// 
-        /// If <seealso cref="CorrectForClockSkew"/> is set to true, this
+        /// If <seealso cref="AWSConfigs.CorrectForClockSkew"/> is set to true, this
         /// value will still be set to the correction, but it will not be used by the
         /// SDK and clock skew errors will not be retried.
         /// </summary>
@@ -1031,7 +998,9 @@ namespace Amazon.Runtime
                 }
                 else
                 {
+#pragma warning disable CS0612,CS0618
                     string endpoint = DetermineServiceURL();
+#pragma warning restore CS0612,CS0618
                     return CorrectClockSkew.GetClockCorrectionForEndpoint(endpoint);
                 }
             }
@@ -1080,7 +1049,7 @@ namespace Amazon.Runtime
         /// <summary>
         /// Returns the flag indicating the current mode in use for request 
         /// retries and influences the value returned from <see cref="MaxErrorRetry"/>.
-        /// The default value is RequestRetryMode.Legacy. This flag can be configured
+        /// The default value is <see cref="RequestRetryMode.Standard"/>. This flag can be configured
         /// by using the AWS_RETRY_MODE environment variable, retry_mode in the
         /// shared configuration file, or by setting this value directly.
         /// </summary>
@@ -1168,7 +1137,7 @@ namespace Amazon.Runtime
         /// If CacheHttpClient is set to true then HttpClientCacheSize controls the number of HttpClients cached.
         /// <para>
         /// The default value is 1 which is suitable for Windows and for all other platforms that have HttpClient
-        /// implementations using <see cref="System.Net.Http.SocketsHttpHandler"/> (.NET Core 2.1 and higher).
+        /// implementations using System.Net.Http.SocketsHttpHandler (.NET Core 2.1 and higher).
         /// </para>
         /// </summary>
         public int HttpClientCacheSize

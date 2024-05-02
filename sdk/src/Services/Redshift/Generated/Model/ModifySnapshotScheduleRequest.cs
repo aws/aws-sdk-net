@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class ModifySnapshotScheduleRequest : AmazonRedshiftRequest
     {
-        private List<string> _scheduleDefinitions = new List<string>();
+        private List<string> _scheduleDefinitions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _scheduleIdentifier;
 
         /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.Redshift.Model
         // Check to see if ScheduleDefinitions property is set
         internal bool IsSetScheduleDefinitions()
         {
-            return this._scheduleDefinitions != null && this._scheduleDefinitions.Count > 0; 
+            return this._scheduleDefinitions != null && (this._scheduleDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

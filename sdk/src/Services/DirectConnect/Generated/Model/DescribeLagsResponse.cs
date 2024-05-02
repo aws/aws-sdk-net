@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DirectConnect.Model
     /// </summary>
     public partial class DescribeLagsResponse : AmazonWebServiceResponse
     {
-        private List<Lag> _lags = new List<Lag>();
+        private List<Lag> _lags = AWSConfigs.InitializeCollections ? new List<Lag>() : null;
 
         /// <summary>
         /// Gets and sets the property Lags. 
@@ -50,7 +51,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if Lags property is set
         internal bool IsSetLags()
         {
-            return this._lags != null && this._lags.Count > 0; 
+            return this._lags != null && (this._lags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

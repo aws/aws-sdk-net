@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class BatchUpdateFindingsResponse : AmazonWebServiceResponse
     {
-        private List<AwsSecurityFindingIdentifier> _processedFindings = new List<AwsSecurityFindingIdentifier>();
-        private List<BatchUpdateFindingsUnprocessedFinding> _unprocessedFindings = new List<BatchUpdateFindingsUnprocessedFinding>();
+        private List<AwsSecurityFindingIdentifier> _processedFindings = AWSConfigs.InitializeCollections ? new List<AwsSecurityFindingIdentifier>() : null;
+        private List<BatchUpdateFindingsUnprocessedFinding> _unprocessedFindings = AWSConfigs.InitializeCollections ? new List<BatchUpdateFindingsUnprocessedFinding>() : null;
 
         /// <summary>
         /// Gets and sets the property ProcessedFindings. 
@@ -52,7 +53,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ProcessedFindings property is set
         internal bool IsSetProcessedFindings()
         {
-            return this._processedFindings != null && this._processedFindings.Count > 0; 
+            return this._processedFindings != null && (this._processedFindings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if UnprocessedFindings property is set
         internal bool IsSetUnprocessedFindings()
         {
-            return this._unprocessedFindings != null && this._unprocessedFindings.Count > 0; 
+            return this._unprocessedFindings != null && (this._unprocessedFindings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

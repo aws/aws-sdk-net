@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class BatchGetDataQualityResultResponse : AmazonWebServiceResponse
     {
-        private List<DataQualityResult> _results = new List<DataQualityResult>();
-        private List<string> _resultsNotFound = new List<string>();
+        private List<DataQualityResult> _results = AWSConfigs.InitializeCollections ? new List<DataQualityResult>() : null;
+        private List<string> _resultsNotFound = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Results. 
@@ -52,7 +53,7 @@ namespace Amazon.Glue.Model
         // Check to see if Results property is set
         internal bool IsSetResults()
         {
-            return this._results != null && this._results.Count > 0; 
+            return this._results != null && (this._results.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.Glue.Model
         // Check to see if ResultsNotFound property is set
         internal bool IsSetResultsNotFound()
         {
-            return this._resultsNotFound != null && this._resultsNotFound.Count > 0; 
+            return this._resultsNotFound != null && (this._resultsNotFound.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

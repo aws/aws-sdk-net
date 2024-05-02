@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RedshiftDataAPIService.Model
 {
     /// <summary>
@@ -83,7 +84,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         private string _database;
         private string _dbUser;
         private string _secretArn;
-        private List<string> _sqls = new List<string>();
+        private List<string> _sqls = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _statementName;
         private bool? _withEvent;
         private string _workgroupName;
@@ -204,7 +205,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         // Check to see if Sqls property is set
         internal bool IsSetSqls()
         {
-            return this._sqls != null && this._sqls.Count > 0; 
+            return this._sqls != null && (this._sqls.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

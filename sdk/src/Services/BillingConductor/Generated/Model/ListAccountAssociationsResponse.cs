@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BillingConductor.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.BillingConductor.Model
     /// </summary>
     public partial class ListAccountAssociationsResponse : AmazonWebServiceResponse
     {
-        private List<AccountAssociationsListElement> _linkedAccounts = new List<AccountAssociationsListElement>();
+        private List<AccountAssociationsListElement> _linkedAccounts = AWSConfigs.InitializeCollections ? new List<AccountAssociationsListElement>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.BillingConductor.Model
         // Check to see if LinkedAccounts property is set
         internal bool IsSetLinkedAccounts()
         {
-            return this._linkedAccounts != null && this._linkedAccounts.Count > 0; 
+            return this._linkedAccounts != null && (this._linkedAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

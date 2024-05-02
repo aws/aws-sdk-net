@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LookoutforVision.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.LookoutforVision.Model
     /// </summary>
     public partial class ListModelsResponse : AmazonWebServiceResponse
     {
-        private List<ModelMetadata> _models = new List<ModelMetadata>();
+        private List<ModelMetadata> _models = AWSConfigs.InitializeCollections ? new List<ModelMetadata>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.LookoutforVision.Model
         // Check to see if Models property is set
         internal bool IsSetModels()
         {
-            return this._models != null && this._models.Count > 0; 
+            return this._models != null && (this._models.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// For more information about modifying snapshot permissions, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-modifying-snapshot-permissions.html">Share
-    /// a snapshot</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+    /// For more information about modifying snapshot permissions, see <a href="https://docs.aws.amazon.com/ebs/latest/userguide/ebs-modifying-snapshot-permissions.html">Share
+    /// a snapshot</a> in the <i>Amazon EBS User Guide</i>.
     /// </para>
     /// </summary>
     public partial class ResetSnapshotAttributeRequest : AmazonEC2Request

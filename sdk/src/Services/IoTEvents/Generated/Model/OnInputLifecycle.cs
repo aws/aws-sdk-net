@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTEvents.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.IoTEvents.Model
     /// </summary>
     public partial class OnInputLifecycle
     {
-        private List<Event> _events = new List<Event>();
-        private List<TransitionEvent> _transitionEvents = new List<TransitionEvent>();
+        private List<Event> _events = AWSConfigs.InitializeCollections ? new List<Event>() : null;
+        private List<TransitionEvent> _transitionEvents = AWSConfigs.InitializeCollections ? new List<TransitionEvent>() : null;
 
         /// <summary>
         /// Gets and sets the property Events. 
@@ -51,7 +52,7 @@ namespace Amazon.IoTEvents.Model
         // Check to see if Events property is set
         internal bool IsSetEvents()
         {
-            return this._events != null && this._events.Count > 0; 
+            return this._events != null && (this._events.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.IoTEvents.Model
         // Check to see if TransitionEvents property is set
         internal bool IsSetTransitionEvents()
         {
-            return this._transitionEvents != null && this._transitionEvents.Count > 0; 
+            return this._transitionEvents != null && (this._transitionEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

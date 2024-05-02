@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ServiceCatalog.Model
     /// </summary>
     public partial class ListLaunchPathsResponse : AmazonWebServiceResponse
     {
-        private List<LaunchPathSummary> _launchPathSummaries = new List<LaunchPathSummary>();
+        private List<LaunchPathSummary> _launchPathSummaries = AWSConfigs.InitializeCollections ? new List<LaunchPathSummary>() : null;
         private string _nextPageToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if LaunchPathSummaries property is set
         internal bool IsSetLaunchPathSummaries()
         {
-            return this._launchPathSummaries != null && this._launchPathSummaries.Count > 0; 
+            return this._launchPathSummaries != null && (this._launchPathSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

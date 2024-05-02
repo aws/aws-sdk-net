@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RecycleBin.Model
 {
     /// <summary>
@@ -38,10 +39,10 @@ namespace Amazon.RecycleBin.Model
     {
         private string _description;
         private LockConfiguration _lockConfiguration;
-        private List<ResourceTag> _resourceTags = new List<ResourceTag>();
+        private List<ResourceTag> _resourceTags = AWSConfigs.InitializeCollections ? new List<ResourceTag>() : null;
         private ResourceType _resourceType;
         private RetentionPeriod _retentionPeriod;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -111,7 +112,7 @@ namespace Amazon.RecycleBin.Model
         // Check to see if ResourceTags property is set
         internal bool IsSetResourceTags()
         {
-            return this._resourceTags != null && this._resourceTags.Count > 0; 
+            return this._resourceTags != null && (this._resourceTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -170,7 +171,7 @@ namespace Amazon.RecycleBin.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

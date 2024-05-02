@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Neptune.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.Neptune.Model
     /// </summary>
     public partial class DBClusterSnapshotAttributesResult
     {
-        private List<DBClusterSnapshotAttribute> _dbClusterSnapshotAttributes = new List<DBClusterSnapshotAttribute>();
+        private List<DBClusterSnapshotAttribute> _dbClusterSnapshotAttributes = AWSConfigs.InitializeCollections ? new List<DBClusterSnapshotAttribute>() : null;
         private string _dbClusterSnapshotIdentifier;
 
         /// <summary>
@@ -59,7 +60,7 @@ namespace Amazon.Neptune.Model
         // Check to see if DBClusterSnapshotAttributes property is set
         internal bool IsSetDBClusterSnapshotAttributes()
         {
-            return this._dbClusterSnapshotAttributes != null && this._dbClusterSnapshotAttributes.Count > 0; 
+            return this._dbClusterSnapshotAttributes != null && (this._dbClusterSnapshotAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

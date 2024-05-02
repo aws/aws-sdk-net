@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LookoutMetrics.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.LookoutMetrics.Model
     /// </summary>
     public partial class AnomalyDetectorDataQualityMetric
     {
-        private List<MetricSetDataQualityMetric> _metricSetDataQualityMetricList = new List<MetricSetDataQualityMetric>();
+        private List<MetricSetDataQualityMetric> _metricSetDataQualityMetricList = AWSConfigs.InitializeCollections ? new List<MetricSetDataQualityMetric>() : null;
         private DateTime? _startTimestamp;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.LookoutMetrics.Model
         // Check to see if MetricSetDataQualityMetricList property is set
         internal bool IsSetMetricSetDataQualityMetricList()
         {
-            return this._metricSetDataQualityMetricList != null && this._metricSetDataQualityMetricList.Count > 0; 
+            return this._metricSetDataQualityMetricList != null && (this._metricSetDataQualityMetricList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

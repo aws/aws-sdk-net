@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LookoutMetrics.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.LookoutMetrics.Model
     /// </summary>
     public partial class VpcConfiguration
     {
-        private List<string> _securityGroupIdList = new List<string>();
-        private List<string> _subnetIdList = new List<string>();
+        private List<string> _securityGroupIdList = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _subnetIdList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property SecurityGroupIdList. 
@@ -52,7 +53,7 @@ namespace Amazon.LookoutMetrics.Model
         // Check to see if SecurityGroupIdList property is set
         internal bool IsSetSecurityGroupIdList()
         {
-            return this._securityGroupIdList != null && this._securityGroupIdList.Count > 0; 
+            return this._securityGroupIdList != null && (this._securityGroupIdList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.LookoutMetrics.Model
         // Check to see if SubnetIdList property is set
         internal bool IsSetSubnetIdList()
         {
-            return this._subnetIdList != null && this._subnetIdList.Count > 0; 
+            return this._subnetIdList != null && (this._subnetIdList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

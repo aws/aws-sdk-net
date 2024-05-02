@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MainframeModernization.Model
 {
     /// <summary>
@@ -43,16 +44,16 @@ namespace Amazon.MainframeModernization.Model
         private string _kmsKeyId;
         private DateTime? _lastStartTime;
         private ApplicationVersionSummary _latestVersion;
-        private List<string> _listenerArns = new List<string>();
-        private List<int> _listenerPorts = new List<int>();
+        private List<string> _listenerArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<int> _listenerPorts = AWSConfigs.InitializeCollections ? new List<int>() : null;
         private string _loadBalancerDnsName;
-        private List<LogGroupSummary> _logGroups = new List<LogGroupSummary>();
+        private List<LogGroupSummary> _logGroups = AWSConfigs.InitializeCollections ? new List<LogGroupSummary>() : null;
         private string _name;
         private string _roleArn;
         private ApplicationLifecycle _status;
         private string _statusReason;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
-        private List<string> _targetGroupArns = new List<string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<string> _targetGroupArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationArn. 
@@ -259,7 +260,7 @@ namespace Amazon.MainframeModernization.Model
         // Check to see if ListenerArns property is set
         internal bool IsSetListenerArns()
         {
-            return this._listenerArns != null && this._listenerArns.Count > 0; 
+            return this._listenerArns != null && (this._listenerArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -279,7 +280,7 @@ namespace Amazon.MainframeModernization.Model
         // Check to see if ListenerPorts property is set
         internal bool IsSetListenerPorts()
         {
-            return this._listenerPorts != null && this._listenerPorts.Count > 0; 
+            return this._listenerPorts != null && (this._listenerPorts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -317,7 +318,7 @@ namespace Amazon.MainframeModernization.Model
         // Check to see if LogGroups property is set
         internal bool IsSetLogGroups()
         {
-            return this._logGroups != null && this._logGroups.Count > 0; 
+            return this._logGroups != null && (this._logGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -410,7 +411,7 @@ namespace Amazon.MainframeModernization.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -430,7 +431,7 @@ namespace Amazon.MainframeModernization.Model
         // Check to see if TargetGroupArns property is set
         internal bool IsSetTargetGroupArns()
         {
-            return this._targetGroupArns != null && this._targetGroupArns.Count > 0; 
+            return this._targetGroupArns != null && (this._targetGroupArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

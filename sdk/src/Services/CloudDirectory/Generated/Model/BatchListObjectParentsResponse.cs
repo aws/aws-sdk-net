@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CloudDirectory.Model
     public partial class BatchListObjectParentsResponse
     {
         private string _nextToken;
-        private List<ObjectIdentifierAndLinkNameTuple> _parentLinks = new List<ObjectIdentifierAndLinkNameTuple>();
+        private List<ObjectIdentifierAndLinkNameTuple> _parentLinks = AWSConfigs.InitializeCollections ? new List<ObjectIdentifierAndLinkNameTuple>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +70,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if ParentLinks property is set
         internal bool IsSetParentLinks()
         {
-            return this._parentLinks != null && this._parentLinks.Count > 0; 
+            return this._parentLinks != null && (this._parentLinks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

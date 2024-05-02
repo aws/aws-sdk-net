@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.SageMaker.Model
         private string _hubDescription;
         private string _hubDisplayName;
         private string _hubName;
-        private List<string> _hubSearchKeywords = new List<string>();
+        private List<string> _hubSearchKeywords = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private HubStatus _hubStatus;
         private DateTime? _lastModifiedTime;
         private HubS3StorageConfig _s3StorageConfig;
@@ -174,7 +175,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if HubSearchKeywords property is set
         internal bool IsSetHubSearchKeywords()
         {
-            return this._hubSearchKeywords != null && this._hubSearchKeywords.Count > 0; 
+            return this._hubSearchKeywords != null && (this._hubSearchKeywords.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

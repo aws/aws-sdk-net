@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
@@ -35,8 +36,8 @@ namespace Amazon.Rekognition.Model
     {
         private string _faceModelVersion;
         private SearchedFaceDetails _searchedFace;
-        private List<UnsearchedFace> _unsearchedFaces = new List<UnsearchedFace>();
-        private List<UserMatch> _userMatches = new List<UserMatch>();
+        private List<UnsearchedFace> _unsearchedFaces = AWSConfigs.InitializeCollections ? new List<UnsearchedFace>() : null;
+        private List<UserMatch> _userMatches = AWSConfigs.InitializeCollections ? new List<UserMatch>() : null;
 
         /// <summary>
         /// Gets and sets the property FaceModelVersion. 
@@ -93,7 +94,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if UnsearchedFaces property is set
         internal bool IsSetUnsearchedFaces()
         {
-            return this._unsearchedFaces != null && this._unsearchedFaces.Count > 0; 
+            return this._unsearchedFaces != null && (this._unsearchedFaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -114,7 +115,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if UserMatches property is set
         internal bool IsSetUserMatches()
         {
-            return this._userMatches != null && this._userMatches.Count > 0; 
+            return this._userMatches != null && (this._userMatches.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

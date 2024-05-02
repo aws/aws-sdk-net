@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAFRegional.Model
 {
     /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.WAFRegional.Model
     {
         private string _name;
         private string _sqlInjectionMatchSetId;
-        private List<SqlInjectionMatchTuple> _sqlInjectionMatchTuples = new List<SqlInjectionMatchTuple>();
+        private List<SqlInjectionMatchTuple> _sqlInjectionMatchTuples = AWSConfigs.InitializeCollections ? new List<SqlInjectionMatchTuple>() : null;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -121,7 +122,7 @@ namespace Amazon.WAFRegional.Model
         // Check to see if SqlInjectionMatchTuples property is set
         internal bool IsSetSqlInjectionMatchTuples()
         {
-            return this._sqlInjectionMatchTuples != null && this._sqlInjectionMatchTuples.Count > 0; 
+            return this._sqlInjectionMatchTuples != null && (this._sqlInjectionMatchTuples.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

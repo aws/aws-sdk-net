@@ -26,13 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// This structure contains information about one <i>delivery source</i> in your account.
     /// A delivery source is an Amazon Web Services resource that sends logs to an Amazon
-    /// Web Services destination. The destination can be CloudWatch Logs, Amazon S3, or Kinesis
-    /// Data Firehose.
+    /// Web Services destination. The destination can be CloudWatch Logs, Amazon S3, or Firehose.
     /// 
     ///  
     /// <para>
@@ -79,9 +79,9 @@ namespace Amazon.CloudWatchLogs.Model
         private string _arn;
         private string _logType;
         private string _name;
-        private List<string> _resourceArns = new List<string>();
+        private List<string> _resourceArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _service;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -156,7 +156,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if ResourceArns property is set
         internal bool IsSetResourceArns()
         {
-            return this._resourceArns != null && this._resourceArns.Count > 0; 
+            return this._resourceArns != null && (this._resourceArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -194,7 +194,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

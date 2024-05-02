@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -457,6 +458,14 @@ namespace Amazon.EC2.Model
         public IDescribeLocalGatewayVirtualInterfacesPaginator DescribeLocalGatewayVirtualInterfaces(DescribeLocalGatewayVirtualInterfacesRequest request) 
         {
             return new DescribeLocalGatewayVirtualInterfacesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeMacHosts operation
+        ///</summary>
+        public IDescribeMacHostsPaginator DescribeMacHosts(DescribeMacHostsRequest request) 
+        {
+            return new DescribeMacHostsPaginator(this.client, request);
         }
 
         /// <summary>

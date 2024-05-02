@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.DataZone.Model
         private DeploymentType _deploymentType;
         private EnvironmentError _failureReason;
         private bool? _isDeploymentComplete;
-        private List<string> _messages = new List<string>();
+        private List<string> _messages = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DeploymentId. 
@@ -145,7 +146,7 @@ namespace Amazon.DataZone.Model
         // Check to see if Messages property is set
         internal bool IsSetMessages()
         {
-            return this._messages != null && this._messages.Count > 0; 
+            return this._messages != null && (this._messages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -36,8 +37,8 @@ namespace Amazon.Kendra.Model
         private ConfluenceAttachmentConfiguration _attachmentConfiguration;
         private ConfluenceAuthenticationType _authenticationType;
         private ConfluenceBlogConfiguration _blogConfiguration;
-        private List<string> _exclusionPatterns = new List<string>();
-        private List<string> _inclusionPatterns = new List<string>();
+        private List<string> _exclusionPatterns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _inclusionPatterns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ConfluencePageConfiguration _pageConfiguration;
         private ProxyConfiguration _proxyConfiguration;
         private string _secretArn;
@@ -122,7 +123,7 @@ namespace Amazon.Kendra.Model
         // Check to see if ExclusionPatterns property is set
         internal bool IsSetExclusionPatterns()
         {
-            return this._exclusionPatterns != null && this._exclusionPatterns.Count > 0; 
+            return this._exclusionPatterns != null && (this._exclusionPatterns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -145,7 +146,7 @@ namespace Amazon.Kendra.Model
         // Check to see if InclusionPatterns property is set
         internal bool IsSetInclusionPatterns()
         {
-            return this._inclusionPatterns != null && this._inclusionPatterns.Count > 0; 
+            return this._inclusionPatterns != null && (this._inclusionPatterns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

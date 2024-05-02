@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.GreengrassV2.Model
     /// </summary>
     public partial class BatchAssociateClientDeviceWithCoreDeviceResponse : AmazonWebServiceResponse
     {
-        private List<AssociateClientDeviceWithCoreDeviceErrorEntry> _errorEntries = new List<AssociateClientDeviceWithCoreDeviceErrorEntry>();
+        private List<AssociateClientDeviceWithCoreDeviceErrorEntry> _errorEntries = AWSConfigs.InitializeCollections ? new List<AssociateClientDeviceWithCoreDeviceErrorEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property ErrorEntries. 
@@ -52,7 +53,7 @@ namespace Amazon.GreengrassV2.Model
         // Check to see if ErrorEntries property is set
         internal bool IsSetErrorEntries()
         {
-            return this._errorEntries != null && this._errorEntries.Count > 0; 
+            return this._errorEntries != null && (this._errorEntries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

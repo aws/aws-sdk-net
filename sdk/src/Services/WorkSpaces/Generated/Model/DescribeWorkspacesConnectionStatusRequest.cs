@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.WorkSpaces.Model
     public partial class DescribeWorkspacesConnectionStatusRequest : AmazonWorkSpacesRequest
     {
         private string _nextToken;
-        private List<string> _workspaceIds = new List<string>();
+        private List<string> _workspaceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +74,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if WorkspaceIds property is set
         internal bool IsSetWorkspaceIds()
         {
-            return this._workspaceIds != null && this._workspaceIds.Count > 0; 
+            return this._workspaceIds != null && (this._workspaceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

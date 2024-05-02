@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkSpacesWeb.Model
 {
     /// <summary>
@@ -36,6 +37,8 @@ namespace Amazon.WorkSpacesWeb.Model
     {
         private AuthenticationType _authenticationType;
         private string _displayName;
+        private InstanceType _instanceType;
+        private int? _maxConcurrentSessions;
         private string _portalArn;
 
         /// <summary>
@@ -53,9 +56,8 @@ namespace Amazon.WorkSpacesWeb.Model
         /// </para>
         ///  
         /// <para>
-        ///  <c>IAM_Identity_Center</c> web portals are authenticated through AWS IAM Identity
-        /// Center (successor to AWS Single Sign-On). They provide additional features, such as
-        /// IdP-initiated authentication. Identity sources (including external identity provider
+        ///  <c>IAM Identity Center</c> web portals are authenticated through IAM Identity Center
+        /// (successor to Single Sign-On). Identity sources (including external identity provider
         /// integration), plus user and group access to your web portal, can be configured in
         /// the IAM Identity Center.
         /// </para>
@@ -89,6 +91,43 @@ namespace Amazon.WorkSpacesWeb.Model
         internal bool IsSetDisplayName()
         {
             return this._displayName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceType. 
+        /// <para>
+        /// The type and resources of the underlying instance.
+        /// </para>
+        /// </summary>
+        public InstanceType InstanceType
+        {
+            get { return this._instanceType; }
+            set { this._instanceType = value; }
+        }
+
+        // Check to see if InstanceType property is set
+        internal bool IsSetInstanceType()
+        {
+            return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxConcurrentSessions. 
+        /// <para>
+        /// The maximum number of concurrent sessions for the portal.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5000)]
+        public int? MaxConcurrentSessions
+        {
+            get { return this._maxConcurrentSessions; }
+            set { this._maxConcurrentSessions = value; }
+        }
+
+        // Check to see if MaxConcurrentSessions property is set
+        internal bool IsSetMaxConcurrentSessions()
+        {
+            return this._maxConcurrentSessions.HasValue; 
         }
 
         /// <summary>

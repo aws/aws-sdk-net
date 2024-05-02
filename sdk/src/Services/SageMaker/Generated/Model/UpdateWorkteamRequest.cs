@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.SageMaker.Model
     public partial class UpdateWorkteamRequest : AmazonSageMakerRequest
     {
         private string _description;
-        private List<MemberDefinition> _memberDefinitions = new List<MemberDefinition>();
+        private List<MemberDefinition> _memberDefinitions = AWSConfigs.InitializeCollections ? new List<MemberDefinition>() : null;
         private NotificationConfiguration _notificationConfiguration;
         private string _workteamName;
 
@@ -101,7 +102,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if MemberDefinitions property is set
         internal bool IsSetMemberDefinitions()
         {
-            return this._memberDefinitions != null && this._memberDefinitions.Count > 0; 
+            return this._memberDefinitions != null && (this._memberDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

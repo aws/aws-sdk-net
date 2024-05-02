@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeVpnGatewaysResponse : AmazonWebServiceResponse
     {
-        private List<VpnGateway> _vpnGateways = new List<VpnGateway>();
+        private List<VpnGateway> _vpnGateways = AWSConfigs.InitializeCollections ? new List<VpnGateway>() : null;
 
         /// <summary>
         /// Gets and sets the property VpnGateways. 
@@ -50,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if VpnGateways property is set
         internal bool IsSetVpnGateways()
         {
-            return this._vpnGateways != null && this._vpnGateways.Count > 0; 
+            return this._vpnGateways != null && (this._vpnGateways.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

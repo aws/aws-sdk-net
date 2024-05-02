@@ -14,7 +14,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace <#=this.Config.Namespace#>.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ foreach(var resultKey in this.Operation.Paginators.ResultKeys.Where(r => r.ListI
         /// Enumerable containing all of the <#=resultKey.Member.PropertyName#>
         /// </summary>
         public IPaginatedEnumerable<<#=resultKey.ListItemType#>> <#=resultKey.Member.PropertyName#> => 
-            new PaginatedResultKeyResponse<<#=this.Operation.Name#>Response, <#=resultKey.ListItemType#>>(this, (i) => i.<#=resultKey.PropertyName#>);
+            new PaginatedResultKeyResponse<<#=this.Operation.Name#>Response, <#=resultKey.ListItemType#>>(this, (i) => i.<#=resultKey.PropertyName#> ?? new <#=resultKey.Member.DetermineType()#>());
 <#
 }
 #>
@@ -100,6 +101,12 @@ else if (this.Operation.Paginators.InputTokens[0].IsListOrDict)
             while (<#=this.Operation.Paginators.InputTokens[0].Member.ArgumentName#>.Count > 0);
 <#
 }
+else if (this.Operation.StopPaginationOnSameToken)
+{
+#>
+            while (<#=this.Operation.Paginators.InputTokens[0].Member.ArgumentName#> != _request.<#=this.Operation.Paginators.InputTokens[0].PropertyName#>);
+<#
+}
 else
 {
 #>
@@ -110,7 +117,7 @@ else
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<<#=this.Operation.Name#>Response> IPaginator<<#=this.Operation.Name#>Response>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<<#=this.Operation.Name#>Response> IPaginator<<#=this.Operation.Name#>Response>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
@@ -159,6 +166,12 @@ else if (this.Operation.Paginators.InputTokens[0].IsListOrDict)
 {
 #>
             while (<#=this.Operation.Paginators.InputTokens[0].Member.ArgumentName#>.Count > 0);
+<#
+}
+else if (this.Operation.StopPaginationOnSameToken)
+{
+#>
+            while (<#=this.Operation.Paginators.InputTokens[0].Member.ArgumentName#> != _request.<#=this.Operation.Paginators.InputTokens[0].PropertyName#>);
 <#
 }
 else

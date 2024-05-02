@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class DocumentMetadata
     {
-        private List<ExtractedCharactersListItem> _extractedCharacters = new List<ExtractedCharactersListItem>();
+        private List<ExtractedCharactersListItem> _extractedCharacters = AWSConfigs.InitializeCollections ? new List<ExtractedCharactersListItem>() : null;
         private int? _pages;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if ExtractedCharacters property is set
         internal bool IsSetExtractedCharacters()
         {
-            return this._extractedCharacters != null && this._extractedCharacters.Count > 0; 
+            return this._extractedCharacters != null && (this._extractedCharacters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

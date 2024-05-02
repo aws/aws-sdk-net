@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.CloudWatchLogs.Model
     public partial class TestMetricFilterRequest : AmazonCloudWatchLogsRequest
     {
         private string _filterPattern;
-        private List<string> _logEventMessages = new List<string>();
+        private List<string> _logEventMessages = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property FilterPattern.
@@ -70,7 +71,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if LogEventMessages property is set
         internal bool IsSetLogEventMessages()
         {
-            return this._logEventMessages != null && this._logEventMessages.Count > 0; 
+            return this._logEventMessages != null && (this._logEventMessages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

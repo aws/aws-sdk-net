@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
@@ -48,14 +49,14 @@ namespace Amazon.MemoryDB.Model
         private int? _numShards;
         private string _parameterGroupName;
         private int? _port;
-        private List<string> _securityGroupIds = new List<string>();
-        private List<string> _snapshotArns = new List<string>();
+        private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _snapshotArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _snapshotName;
         private int? _snapshotRetentionLimit;
         private string _snapshotWindow;
         private string _snsTopicArn;
         private string _subnetGroupName;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private bool? _tlsEnabled;
 
         /// <summary>
@@ -354,7 +355,7 @@ namespace Amazon.MemoryDB.Model
         // Check to see if SecurityGroupIds property is set
         internal bool IsSetSecurityGroupIds()
         {
-            return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+            return this._securityGroupIds != null && (this._securityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -374,7 +375,7 @@ namespace Amazon.MemoryDB.Model
         // Check to see if SnapshotArns property is set
         internal bool IsSetSnapshotArns()
         {
-            return this._snapshotArns != null && this._snapshotArns.Count > 0; 
+            return this._snapshotArns != null && (this._snapshotArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -499,7 +500,7 @@ namespace Amazon.MemoryDB.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

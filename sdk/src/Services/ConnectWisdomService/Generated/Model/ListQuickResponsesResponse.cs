@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConnectWisdomService.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ConnectWisdomService.Model
     public partial class ListQuickResponsesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<QuickResponseSummary> _quickResponseSummaries = new List<QuickResponseSummary>();
+        private List<QuickResponseSummary> _quickResponseSummaries = AWSConfigs.InitializeCollections ? new List<QuickResponseSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.ConnectWisdomService.Model
         // Check to see if QuickResponseSummaries property is set
         internal bool IsSetQuickResponseSummaries()
         {
-            return this._quickResponseSummaries != null && this._quickResponseSummaries.Count > 0; 
+            return this._quickResponseSummaries != null && (this._quickResponseSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

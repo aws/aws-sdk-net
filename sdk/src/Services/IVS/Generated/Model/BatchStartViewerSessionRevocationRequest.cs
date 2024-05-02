@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IVS.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.IVS.Model
     /// </summary>
     public partial class BatchStartViewerSessionRevocationRequest : AmazonIVSRequest
     {
-        private List<BatchStartViewerSessionRevocationViewerSession> _viewerSessions = new List<BatchStartViewerSessionRevocationViewerSession>();
+        private List<BatchStartViewerSessionRevocationViewerSession> _viewerSessions = AWSConfigs.InitializeCollections ? new List<BatchStartViewerSessionRevocationViewerSession>() : null;
 
         /// <summary>
         /// Gets and sets the property ViewerSessions. 
@@ -53,7 +54,7 @@ namespace Amazon.IVS.Model
         // Check to see if ViewerSessions property is set
         internal bool IsSetViewerSessions()
         {
-            return this._viewerSessions != null && this._viewerSessions.Count > 0; 
+            return this._viewerSessions != null && (this._viewerSessions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

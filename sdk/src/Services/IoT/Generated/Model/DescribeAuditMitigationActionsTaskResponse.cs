@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -33,12 +34,12 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class DescribeAuditMitigationActionsTaskResponse : AmazonWebServiceResponse
     {
-        private List<MitigationAction> _actionsDefinition = new List<MitigationAction>();
-        private Dictionary<string, List<string>> _auditCheckToActionsMapping = new Dictionary<string, List<string>>();
+        private List<MitigationAction> _actionsDefinition = AWSConfigs.InitializeCollections ? new List<MitigationAction>() : null;
+        private Dictionary<string, List<string>> _auditCheckToActionsMapping = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private DateTime? _endTime;
         private DateTime? _startTime;
         private AuditMitigationActionsTaskTarget _target;
-        private Dictionary<string, TaskStatisticsForAuditCheck> _taskStatistics = new Dictionary<string, TaskStatisticsForAuditCheck>();
+        private Dictionary<string, TaskStatisticsForAuditCheck> _taskStatistics = AWSConfigs.InitializeCollections ? new Dictionary<string, TaskStatisticsForAuditCheck>() : null;
         private AuditMitigationActionsTaskStatus _taskStatus;
 
         /// <summary>
@@ -57,7 +58,7 @@ namespace Amazon.IoT.Model
         // Check to see if ActionsDefinition property is set
         internal bool IsSetActionsDefinition()
         {
-            return this._actionsDefinition != null && this._actionsDefinition.Count > 0; 
+            return this._actionsDefinition != null && (this._actionsDefinition.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace Amazon.IoT.Model
         // Check to see if AuditCheckToActionsMapping property is set
         internal bool IsSetAuditCheckToActionsMapping()
         {
-            return this._auditCheckToActionsMapping != null && this._auditCheckToActionsMapping.Count > 0; 
+            return this._auditCheckToActionsMapping != null && (this._auditCheckToActionsMapping.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -149,7 +150,7 @@ namespace Amazon.IoT.Model
         // Check to see if TaskStatistics property is set
         internal bool IsSetTaskStatistics()
         {
-            return this._taskStatistics != null && this._taskStatistics.Count > 0; 
+            return this._taskStatistics != null && (this._taskStatistics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

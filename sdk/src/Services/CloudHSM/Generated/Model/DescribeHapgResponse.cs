@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudHSM.Model
 {
     /// <summary>
@@ -35,12 +36,12 @@ namespace Amazon.CloudHSM.Model
     {
         private string _hapgArn;
         private string _hapgSerial;
-        private List<string> _hsmsLastActionFailed = new List<string>();
-        private List<string> _hsmsPendingDeletion = new List<string>();
-        private List<string> _hsmsPendingRegistration = new List<string>();
+        private List<string> _hsmsLastActionFailed = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _hsmsPendingDeletion = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _hsmsPendingRegistration = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _label;
         private string _lastModifiedTimestamp;
-        private List<string> _partitionSerialList = new List<string>();
+        private List<string> _partitionSerialList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private CloudHsmObjectState _state;
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace Amazon.CloudHSM.Model
         // Check to see if HsmsLastActionFailed property is set
         internal bool IsSetHsmsLastActionFailed()
         {
-            return this._hsmsLastActionFailed != null && this._hsmsLastActionFailed.Count > 0; 
+            return this._hsmsLastActionFailed != null && (this._hsmsLastActionFailed.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -106,7 +107,7 @@ namespace Amazon.CloudHSM.Model
         // Check to see if HsmsPendingDeletion property is set
         internal bool IsSetHsmsPendingDeletion()
         {
-            return this._hsmsPendingDeletion != null && this._hsmsPendingDeletion.Count > 0; 
+            return this._hsmsPendingDeletion != null && (this._hsmsPendingDeletion.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -121,7 +122,7 @@ namespace Amazon.CloudHSM.Model
         // Check to see if HsmsPendingRegistration property is set
         internal bool IsSetHsmsPendingRegistration()
         {
-            return this._hsmsPendingRegistration != null && this._hsmsPendingRegistration.Count > 0; 
+            return this._hsmsPendingRegistration != null && (this._hsmsPendingRegistration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -176,7 +177,7 @@ namespace Amazon.CloudHSM.Model
         // Check to see if PartitionSerialList property is set
         internal bool IsSetPartitionSerialList()
         {
-            return this._partitionSerialList != null && this._partitionSerialList.Count > 0; 
+            return this._partitionSerialList != null && (this._partitionSerialList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,13 +26,47 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkMonitor.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateProbe operation.
     /// Updates a monitor probe. This action requires both the <c>monitorName</c> and <c>probeId</c>
     /// parameters. Run <c>ListMonitors</c> to get a list of monitor names. Run <c>GetMonitor</c>
-    /// to get a list of probes and probe IDs.
+    /// to get a list of probes and probe IDs. 
+    /// 
+    ///  
+    /// <para>
+    /// You can update the following para create a monitor with probes using this command.
+    /// For each probe, you define the following:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <c>state</c>—The state of the probe.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>destination</c>— The target destination IP address for the probe.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>destinationPort</c>—Required only if the protocol is <c>TCP</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>protocol</c>—The communication protocol between the source and destination. This
+    /// will be either <c>TCP</c> or <c>ICMP</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>packetSize</c>—The size of the packets. This must be a number between <c>56</c>
+    /// and <c>8500</c>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// (Optional) <c>tags</c> —Key-value pairs created and assigned to the probe.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class UpdateProbeRequest : AmazonNetworkMonitorRequest
     {
@@ -90,7 +124,7 @@ namespace Amazon.NetworkMonitor.Model
         /// The name of the monitor that the probe was updated for.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=200)]
         public string MonitorName
         {
             get { return this._monitorName; }
@@ -126,7 +160,7 @@ namespace Amazon.NetworkMonitor.Model
         /// <summary>
         /// Gets and sets the property ProbeId. 
         /// <para>
-        /// Run <c>GetMonitor</c> to get a list of probes and probe IDs.
+        /// The ID of the probe to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

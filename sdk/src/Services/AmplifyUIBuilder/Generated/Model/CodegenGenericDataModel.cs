@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.AmplifyUIBuilder.Model
     /// </summary>
     public partial class CodegenGenericDataModel
     {
-        private Dictionary<string, CodegenGenericDataField> _fields = new Dictionary<string, CodegenGenericDataField>();
+        private Dictionary<string, CodegenGenericDataField> _fields = AWSConfigs.InitializeCollections ? new Dictionary<string, CodegenGenericDataField>() : null;
         private bool? _isJoinTable;
-        private List<string> _primaryKeys = new List<string>();
+        private List<string> _primaryKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Fields. 
@@ -53,7 +54,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if Fields property is set
         internal bool IsSetFields()
         {
-            return this._fields != null && this._fields.Count > 0; 
+            return this._fields != null && (this._fields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -90,7 +91,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if PrimaryKeys property is set
         internal bool IsSetPrimaryKeys()
         {
-            return this._primaryKeys != null && this._primaryKeys.Count > 0; 
+            return this._primaryKeys != null && (this._primaryKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

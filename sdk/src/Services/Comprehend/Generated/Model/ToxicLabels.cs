@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class ToxicLabels
     {
-        private List<ToxicContent> _labels = new List<ToxicContent>();
+        private List<ToxicContent> _labels = AWSConfigs.InitializeCollections ? new List<ToxicContent>() : null;
         private float? _toxicity;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if Labels property is set
         internal bool IsSetLabels()
         {
-            return this._labels != null && this._labels.Count > 0; 
+            return this._labels != null && (this._labels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

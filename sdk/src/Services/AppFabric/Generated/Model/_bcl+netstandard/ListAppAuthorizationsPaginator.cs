@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AppFabric.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.AppFabric.Model
         /// Enumerable containing all of the AppAuthorizationSummaryList
         /// </summary>
         public IPaginatedEnumerable<AppAuthorizationSummary> AppAuthorizationSummaryList => 
-            new PaginatedResultKeyResponse<ListAppAuthorizationsResponse, AppAuthorizationSummary>(this, (i) => i.AppAuthorizationSummaryList);
+            new PaginatedResultKeyResponse<ListAppAuthorizationsResponse, AppAuthorizationSummary>(this, (i) => i.AppAuthorizationSummaryList ?? new List<AppAuthorizationSummary>());
 
         internal ListAppAuthorizationsPaginator(IAmazonAppFabric client, ListAppAuthorizationsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.AppFabric.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListAppAuthorizationsResponse> IPaginator<ListAppAuthorizationsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListAppAuthorizationsResponse> IPaginator<ListAppAuthorizationsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

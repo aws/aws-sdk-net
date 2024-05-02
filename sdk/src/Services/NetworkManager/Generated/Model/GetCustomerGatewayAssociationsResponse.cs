@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkManager.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.NetworkManager.Model
     /// </summary>
     public partial class GetCustomerGatewayAssociationsResponse : AmazonWebServiceResponse
     {
-        private List<CustomerGatewayAssociation> _customerGatewayAssociations = new List<CustomerGatewayAssociation>();
+        private List<CustomerGatewayAssociation> _customerGatewayAssociations = AWSConfigs.InitializeCollections ? new List<CustomerGatewayAssociation>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if CustomerGatewayAssociations property is set
         internal bool IsSetCustomerGatewayAssociations()
         {
-            return this._customerGatewayAssociations != null && this._customerGatewayAssociations.Count > 0; 
+            return this._customerGatewayAssociations != null && (this._customerGatewayAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

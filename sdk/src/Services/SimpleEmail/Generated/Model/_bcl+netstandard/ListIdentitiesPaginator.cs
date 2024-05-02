@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.SimpleEmail.Model
         /// Enumerable containing all of the Identities
         /// </summary>
         public IPaginatedEnumerable<string> Identities => 
-            new PaginatedResultKeyResponse<ListIdentitiesResponse, string>(this, (i) => i.Identities);
+            new PaginatedResultKeyResponse<ListIdentitiesResponse, string>(this, (i) => i.Identities ?? new List<string>());
 
         internal ListIdentitiesPaginator(IAmazonSimpleEmailService client, ListIdentitiesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.SimpleEmail.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListIdentitiesResponse> IPaginator<ListIdentitiesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListIdentitiesResponse> IPaginator<ListIdentitiesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

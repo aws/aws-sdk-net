@@ -26,11 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
     /// Container for the parameters to the RetrieveAndGenerate operation.
-    /// RetrieveAndGenerate API
+    /// Queries a knowledge base and generates responses based on the retrieved results. The
+    /// response only cites sources that are relevant to the query.
     /// </summary>
     public partial class RetrieveAndGenerateRequest : AmazonBedrockAgentRuntimeRequest
     {
@@ -40,7 +42,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         private string _sessionId;
 
         /// <summary>
-        /// Gets and sets the property Input.
+        /// Gets and sets the property Input. 
+        /// <para>
+        /// Contains the query to be made to the knowledge base.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
         public RetrieveAndGenerateInput Input
@@ -56,7 +61,12 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RetrieveAndGenerateConfiguration.
+        /// Gets and sets the property RetrieveAndGenerateConfiguration. 
+        /// <para>
+        /// Contains configurations for the knowledge base query and retrieval process. For more
+        /// information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+        /// configurations</a>.
+        /// </para>
         /// </summary>
         public RetrieveAndGenerateConfiguration RetrieveAndGenerateConfiguration
         {
@@ -71,7 +81,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SessionConfiguration.
+        /// Gets and sets the property SessionConfiguration. 
+        /// <para>
+        /// Contains details about the session with the knowledge base.
+        /// </para>
         /// </summary>
         public RetrieveAndGenerateSessionConfiguration SessionConfiguration
         {
@@ -86,7 +99,11 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SessionId.
+        /// Gets and sets the property SessionId. 
+        /// <para>
+        /// The unique identifier of the session. Reuse the same value to continue the same session
+        /// with the knowledge base.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=100)]
         public string SessionId

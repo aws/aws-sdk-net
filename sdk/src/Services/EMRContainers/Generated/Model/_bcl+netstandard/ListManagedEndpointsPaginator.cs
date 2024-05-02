@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EMRContainers.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.EMRContainers.Model
         /// Enumerable containing all of the Endpoints
         /// </summary>
         public IPaginatedEnumerable<Endpoint> Endpoints => 
-            new PaginatedResultKeyResponse<ListManagedEndpointsResponse, Endpoint>(this, (i) => i.Endpoints);
+            new PaginatedResultKeyResponse<ListManagedEndpointsResponse, Endpoint>(this, (i) => i.Endpoints ?? new List<Endpoint>());
 
         internal ListManagedEndpointsPaginator(IAmazonEMRContainers client, ListManagedEndpointsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.EMRContainers.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListManagedEndpointsResponse> IPaginator<ListManagedEndpointsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListManagedEndpointsResponse> IPaginator<ListManagedEndpointsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

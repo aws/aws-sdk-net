@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.DynamoDBv2.Model
         private string _globalTableArn;
         private string _globalTableName;
         private GlobalTableStatus _globalTableStatus;
-        private List<ReplicaDescription> _replicationGroup = new List<ReplicaDescription>();
+        private List<ReplicaDescription> _replicationGroup = AWSConfigs.InitializeCollections ? new List<ReplicaDescription>() : null;
 
         /// <summary>
         /// Gets and sets the property CreationDateTime. 
@@ -144,7 +145,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if ReplicationGroup property is set
         internal bool IsSetReplicationGroup()
         {
-            return this._replicationGroup != null && this._replicationGroup.Count > 0; 
+            return this._replicationGroup != null && (this._replicationGroup.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
@@ -77,8 +78,9 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DomainWithSuffix. 
         /// <para>
-        /// The second and top level domain involved in the activity that prompted GuardDuty to
-        /// generate this finding.
+        /// The second and top level domain involved in the activity that potentially prompted
+        /// GuardDuty to generate this finding. For a list of top-level and second-level domains,
+        /// see <a href="https://publicsuffix.org/">public suffix list</a>.
         /// </para>
         /// </summary>
         public string DomainWithSuffix

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaTailor.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.MediaTailor.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<LiveSource> Items => 
-            new PaginatedResultKeyResponse<ListLiveSourcesResponse, LiveSource>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListLiveSourcesResponse, LiveSource>(this, (i) => i.Items ?? new List<LiveSource>());
 
         internal ListLiveSourcesPaginator(IAmazonMediaTailor client, ListLiveSourcesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.MediaTailor.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListLiveSourcesResponse> IPaginator<ListLiveSourcesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListLiveSourcesResponse> IPaginator<ListLiveSourcesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

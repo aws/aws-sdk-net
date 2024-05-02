@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.GuardDuty.Model
     {
         private string _accountId;
         private DataSourceConfigurationsResult _dataSources;
-        private List<MemberFeaturesConfigurationResult> _features = new List<MemberFeaturesConfigurationResult>();
+        private List<MemberFeaturesConfigurationResult> _features = AWSConfigs.InitializeCollections ? new List<MemberFeaturesConfigurationResult>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -90,7 +91,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if Features property is set
         internal bool IsSetFeatures()
         {
-            return this._features != null && this._features.Count > 0; 
+            return this._features != null && (this._features.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

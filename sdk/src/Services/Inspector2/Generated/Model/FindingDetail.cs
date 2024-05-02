@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
@@ -34,15 +35,15 @@ namespace Amazon.Inspector2.Model
     public partial class FindingDetail
     {
         private CisaData _cisaData;
-        private List<string> _cwes = new List<string>();
+        private List<string> _cwes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private double? _epssScore;
-        private List<Evidence> _evidences = new List<Evidence>();
+        private List<Evidence> _evidences = AWSConfigs.InitializeCollections ? new List<Evidence>() : null;
         private ExploitObserved _exploitObserved;
         private string _findingArn;
-        private List<string> _referenceUrls = new List<string>();
+        private List<string> _referenceUrls = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _riskScore;
-        private List<string> _tools = new List<string>();
-        private List<string> _ttps = new List<string>();
+        private List<string> _tools = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _ttps = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CisaData.
@@ -75,7 +76,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if Cwes property is set
         internal bool IsSetCwes()
         {
-            return this._cwes != null && this._cwes.Count > 0; 
+            return this._cwes != null && (this._cwes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -111,7 +112,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if Evidences property is set
         internal bool IsSetEvidences()
         {
-            return this._evidences != null && this._evidences.Count > 0; 
+            return this._evidences != null && (this._evidences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -164,7 +165,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if ReferenceUrls property is set
         internal bool IsSetReferenceUrls()
         {
-            return this._referenceUrls != null && this._referenceUrls.Count > 0; 
+            return this._referenceUrls != null && (this._referenceUrls.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -200,7 +201,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if Tools property is set
         internal bool IsSetTools()
         {
-            return this._tools != null && this._tools.Count > 0; 
+            return this._tools != null && (this._tools.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -220,7 +221,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if Ttps property is set
         internal bool IsSetTtps()
         {
-            return this._ttps != null && this._ttps.Count > 0; 
+            return this._ttps != null && (this._ttps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

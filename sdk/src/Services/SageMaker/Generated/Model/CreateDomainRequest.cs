@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -103,8 +104,8 @@ namespace Amazon.SageMaker.Model
         private DomainSettings _domainSettings;
         private string _homeEfsFileSystemKmsKeyId;
         private string _kmsKeyId;
-        private List<string> _subnetIds = new List<string>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _vpcId;
 
         /// <summary>
@@ -280,9 +281,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// SageMaker uses Amazon Web Services KMS to encrypt the EFS volume attached to the domain
-        /// with an Amazon Web Services managed key by default. For more control, specify a customer
-        /// managed key.
+        /// SageMaker uses Amazon Web Services KMS to encrypt EFS and EBS volumes attached to
+        /// the domain with an Amazon Web Services managed key by default. For more control, specify
+        /// a customer managed key.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]
@@ -314,7 +315,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if SubnetIds property is set
         internal bool IsSetSubnetIds()
         {
-            return this._subnetIds != null && this._subnetIds.Count > 0; 
+            return this._subnetIds != null && (this._subnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -339,7 +340,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

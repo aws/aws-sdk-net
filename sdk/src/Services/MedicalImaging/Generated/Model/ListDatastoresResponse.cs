@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MedicalImaging.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MedicalImaging.Model
     /// </summary>
     public partial class ListDatastoresResponse : AmazonWebServiceResponse
     {
-        private List<DatastoreSummary> _datastoreSummaries = new List<DatastoreSummary>();
+        private List<DatastoreSummary> _datastoreSummaries = AWSConfigs.InitializeCollections ? new List<DatastoreSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.MedicalImaging.Model
         // Check to see if DatastoreSummaries property is set
         internal bool IsSetDatastoreSummaries()
         {
-            return this._datastoreSummaries != null && this._datastoreSummaries.Count > 0; 
+            return this._datastoreSummaries != null && (this._datastoreSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

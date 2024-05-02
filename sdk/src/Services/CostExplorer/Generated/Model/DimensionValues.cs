@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
@@ -35,8 +36,8 @@ namespace Amazon.CostExplorer.Model
     public partial class DimensionValues
     {
         private Dimension _key;
-        private List<string> _matchOptions = new List<string>();
-        private List<string> _values = new List<string>();
+        private List<string> _matchOptions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _values = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Key. 
@@ -95,7 +96,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if MatchOptions property is set
         internal bool IsSetMatchOptions()
         {
-            return this._matchOptions != null && this._matchOptions.Count > 0; 
+            return this._matchOptions != null && (this._matchOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -114,7 +115,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if Values property is set
         internal bool IsSetValues()
         {
-            return this._values != null && this._values.Count > 0; 
+            return this._values != null && (this._values.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

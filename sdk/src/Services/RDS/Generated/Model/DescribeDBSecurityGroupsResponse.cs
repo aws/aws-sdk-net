@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DescribeDBSecurityGroupsResponse : AmazonWebServiceResponse
     {
-        private List<DBSecurityGroup> _dbSecurityGroups = new List<DBSecurityGroup>();
+        private List<DBSecurityGroup> _dbSecurityGroups = AWSConfigs.InitializeCollections ? new List<DBSecurityGroup>() : null;
         private string _marker;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBSecurityGroups property is set
         internal bool IsSetDBSecurityGroups()
         {
-            return this._dbSecurityGroups != null && this._dbSecurityGroups.Count > 0; 
+            return this._dbSecurityGroups != null && (this._dbSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

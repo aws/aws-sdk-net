@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.ElastiCache.Model
         private AvailabilityZone _subnetAvailabilityZone;
         private string _subnetIdentifier;
         private SubnetOutpost _subnetOutpost;
-        private List<string> _supportedNetworkTypes = new List<string>();
+        private List<string> _supportedNetworkTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property SubnetAvailabilityZone. 
@@ -110,7 +111,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if SupportedNetworkTypes property is set
         internal bool IsSetSupportedNetworkTypes()
         {
-            return this._supportedNetworkTypes != null && this._supportedNetworkTypes.Count > 0; 
+            return this._supportedNetworkTypes != null && (this._supportedNetworkTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Xml;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -69,25 +70,24 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("SubmitMultiRegionAccessPointRoutesRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");    
+                xmlWriter.WriteStartElement("SubmitMultiRegionAccessPointRoutesRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                 var publicRequestRouteUpdates = publicRequest.RouteUpdates;
-                if (publicRequestRouteUpdates != null && publicRequestRouteUpdates.Count > 0) 
-                {                        
-                    xmlWriter.WriteStartElement("RouteUpdates", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                if (publicRequestRouteUpdates != null && (publicRequestRouteUpdates.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                {
+                    xmlWriter.WriteStartElement("RouteUpdates");
                     foreach (var publicRequestRouteUpdatesValue in publicRequestRouteUpdates) 
                     {
-                
-                    if (publicRequestRouteUpdatesValue != null) 
+                    if (publicRequestRouteUpdatesValue != null)
                     {
-                        xmlWriter.WriteStartElement("Route", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                        xmlWriter.WriteStartElement("Route");
                         if(publicRequestRouteUpdatesValue.IsSetBucket())
-                            xmlWriter.WriteElementString("Bucket", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestRouteUpdatesValue.Bucket));                 
+                            xmlWriter.WriteElementString("Bucket", StringUtils.FromString(publicRequestRouteUpdatesValue.Bucket));
 
                         if(publicRequestRouteUpdatesValue.IsSetRegion())
-                            xmlWriter.WriteElementString("Region", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestRouteUpdatesValue.Region));                 
+                            xmlWriter.WriteElementString("Region", StringUtils.FromString(publicRequestRouteUpdatesValue.Region));
 
                         if(publicRequestRouteUpdatesValue.IsSetTrafficDialPercentage())
-                            xmlWriter.WriteElementString("TrafficDialPercentage", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromInt(publicRequestRouteUpdatesValue.TrafficDialPercentage.Value));                 
+                            xmlWriter.WriteElementString("TrafficDialPercentage", StringUtils.FromInt(publicRequestRouteUpdatesValue.TrafficDialPercentage.Value));
 
                         xmlWriter.WriteEndElement();
                     }

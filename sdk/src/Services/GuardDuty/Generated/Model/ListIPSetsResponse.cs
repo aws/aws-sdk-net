@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class ListIPSetsResponse : AmazonWebServiceResponse
     {
-        private List<string> _ipSetIds = new List<string>();
+        private List<string> _ipSetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if IpSetIds property is set
         internal bool IsSetIpSetIds()
         {
-            return this._ipSetIds != null && this._ipSetIds.Count > 0; 
+            return this._ipSetIds != null && (this._ipSetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

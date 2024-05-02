@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,16 +46,32 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PredictiveDialerConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBandwidthAllocation())
             {
                 context.Writer.WritePropertyName("bandwidthAllocation");
-                context.Writer.Write(requestObject.BandwidthAllocation.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.BandwidthAllocation.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.BandwidthAllocation.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.BandwidthAllocation.Value);
+                }
             }
 
             if(requestObject.IsSetDialingCapacity())
             {
                 context.Writer.WritePropertyName("dialingCapacity");
-                context.Writer.Write(requestObject.DialingCapacity.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.DialingCapacity.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DialingCapacity.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.DialingCapacity.Value);
+                }
             }
 
         }

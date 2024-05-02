@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkManager.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.NetworkManager.Model
         /// Enumerable containing all of the Attachments
         /// </summary>
         public IPaginatedEnumerable<Attachment> Attachments => 
-            new PaginatedResultKeyResponse<ListAttachmentsResponse, Attachment>(this, (i) => i.Attachments);
+            new PaginatedResultKeyResponse<ListAttachmentsResponse, Attachment>(this, (i) => i.Attachments ?? new List<Attachment>());
 
         internal ListAttachmentsPaginator(IAmazonNetworkManager client, ListAttachmentsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.NetworkManager.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListAttachmentsResponse> IPaginator<ListAttachmentsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListAttachmentsResponse> IPaginator<ListAttachmentsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

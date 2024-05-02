@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FIS.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.FIS.Model
     public partial class ListExperimentResolvedTargetsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ResolvedTarget> _resolvedTargets = new List<ResolvedTarget>();
+        private List<ResolvedTarget> _resolvedTargets = AWSConfigs.InitializeCollections ? new List<ResolvedTarget>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.FIS.Model
         // Check to see if ResolvedTargets property is set
         internal bool IsSetResolvedTargets()
         {
-            return this._resolvedTargets != null && this._resolvedTargets.Count > 0; 
+            return this._resolvedTargets != null && (this._resolvedTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

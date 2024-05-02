@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.VoiceID.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.VoiceID.Model
         /// Enumerable containing all of the FraudsterSummaries
         /// </summary>
         public IPaginatedEnumerable<FraudsterSummary> FraudsterSummaries => 
-            new PaginatedResultKeyResponse<ListFraudstersResponse, FraudsterSummary>(this, (i) => i.FraudsterSummaries);
+            new PaginatedResultKeyResponse<ListFraudstersResponse, FraudsterSummary>(this, (i) => i.FraudsterSummaries ?? new List<FraudsterSummary>());
 
         internal ListFraudstersPaginator(IAmazonVoiceID client, ListFraudstersRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.VoiceID.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListFraudstersResponse> IPaginator<ListFraudstersResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListFraudstersResponse> IPaginator<ListFraudstersResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

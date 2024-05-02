@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Scheduler.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Scheduler.Model
         /// Enumerable containing all of the Schedules
         /// </summary>
         public IPaginatedEnumerable<ScheduleSummary> Schedules => 
-            new PaginatedResultKeyResponse<ListSchedulesResponse, ScheduleSummary>(this, (i) => i.Schedules);
+            new PaginatedResultKeyResponse<ListSchedulesResponse, ScheduleSummary>(this, (i) => i.Schedules ?? new List<ScheduleSummary>());
 
         internal ListSchedulesPaginator(IAmazonScheduler client, ListSchedulesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Scheduler.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListSchedulesResponse> IPaginator<ListSchedulesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListSchedulesResponse> IPaginator<ListSchedulesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

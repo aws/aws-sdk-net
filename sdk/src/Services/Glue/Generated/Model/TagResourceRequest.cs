@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.Glue.Model
     public partial class TagResourceRequest : AmazonGlueRequest
     {
         private string _resourceArn;
-        private Dictionary<string, string> _tagsToAdd = new Dictionary<string, string>();
+        private Dictionary<string, string> _tagsToAdd = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceArn. 
@@ -77,7 +78,7 @@ namespace Amazon.Glue.Model
         // Check to see if TagsToAdd property is set
         internal bool IsSetTagsToAdd()
         {
-            return this._tagsToAdd != null && this._tagsToAdd.Count > 0; 
+            return this._tagsToAdd != null && (this._tagsToAdd.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

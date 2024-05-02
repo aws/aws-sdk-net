@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class BatchDeleteClusterSnapshotsResponse : AmazonWebServiceResponse
     {
-        private List<SnapshotErrorMessage> _errors = new List<SnapshotErrorMessage>();
-        private List<string> _resources = new List<string>();
+        private List<SnapshotErrorMessage> _errors = AWSConfigs.InitializeCollections ? new List<SnapshotErrorMessage>() : null;
+        private List<string> _resources = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. 
@@ -51,7 +52,7 @@ namespace Amazon.Redshift.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.Redshift.Model
         // Check to see if Resources property is set
         internal bool IsSetResources()
         {
-            return this._resources != null && this._resources.Count > 0; 
+            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

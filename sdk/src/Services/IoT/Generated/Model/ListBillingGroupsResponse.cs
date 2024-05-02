@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class ListBillingGroupsResponse : AmazonWebServiceResponse
     {
-        private List<GroupNameAndArn> _billingGroups = new List<GroupNameAndArn>();
+        private List<GroupNameAndArn> _billingGroups = AWSConfigs.InitializeCollections ? new List<GroupNameAndArn>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.IoT.Model
         // Check to see if BillingGroups property is set
         internal bool IsSetBillingGroups()
         {
-            return this._billingGroups != null && this._billingGroups.Count > 0; 
+            return this._billingGroups != null && (this._billingGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

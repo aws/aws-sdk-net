@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelBuildingService.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.LexModelBuildingService.Model
     public partial class GetImportResponse : AmazonWebServiceResponse
     {
         private DateTime? _createdDate;
-        private List<string> _failureReason = new List<string>();
+        private List<string> _failureReason = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _importId;
         private ImportStatus _importStatus;
         private MergeStrategy _mergeStrategy;
@@ -74,7 +75,7 @@ namespace Amazon.LexModelBuildingService.Model
         // Check to see if FailureReason property is set
         internal bool IsSetFailureReason()
         {
-            return this._failureReason != null && this._failureReason.Count > 0; 
+            return this._failureReason != null && (this._failureReason.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

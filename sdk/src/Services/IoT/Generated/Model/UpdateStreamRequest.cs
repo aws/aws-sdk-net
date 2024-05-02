@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.IoT.Model
     public partial class UpdateStreamRequest : AmazonIoTRequest
     {
         private string _description;
-        private List<StreamFile> _files = new List<StreamFile>();
+        private List<StreamFile> _files = AWSConfigs.InitializeCollections ? new List<StreamFile>() : null;
         private string _roleArn;
         private string _streamId;
 
@@ -80,7 +81,7 @@ namespace Amazon.IoT.Model
         // Check to see if Files property is set
         internal bool IsSetFiles()
         {
-            return this._files != null && this._files.Count > 0; 
+            return this._files != null && (this._files.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

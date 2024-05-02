@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SimpleEmailV2.Model
     /// </summary>
     public partial class GetConfigurationSetEventDestinationsResponse : AmazonWebServiceResponse
     {
-        private List<EventDestination> _eventDestinations = new List<EventDestination>();
+        private List<EventDestination> _eventDestinations = AWSConfigs.InitializeCollections ? new List<EventDestination>() : null;
 
         /// <summary>
         /// Gets and sets the property EventDestinations. 
@@ -51,7 +52,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if EventDestinations property is set
         internal bool IsSetEventDestinations()
         {
-            return this._eventDestinations != null && this._eventDestinations.Count > 0; 
+            return this._eventDestinations != null && (this._eventDestinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

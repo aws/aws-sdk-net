@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EksPodPropertiesOverride requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetContainers())
             {
                 context.Writer.WritePropertyName("containers");
@@ -55,6 +58,22 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
                     var marshaller = EksContainerOverrideMarshaller.Instance;
                     marshaller.Marshall(requestObjectContainersListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetInitContainers())
+            {
+                context.Writer.WritePropertyName("initContainers");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectInitContainersListValue in requestObject.InitContainers)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EksContainerOverrideMarshaller.Instance;
+                    marshaller.Marshall(requestObjectInitContainersListValue, context);
 
                     context.Writer.WriteObjectEnd();
                 }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class BatchGetBlueprintsResponse : AmazonWebServiceResponse
     {
-        private List<Blueprint> _blueprints = new List<Blueprint>();
-        private List<string> _missingBlueprints = new List<string>();
+        private List<Blueprint> _blueprints = AWSConfigs.InitializeCollections ? new List<Blueprint>() : null;
+        private List<string> _missingBlueprints = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Blueprints. 
@@ -51,7 +52,7 @@ namespace Amazon.Glue.Model
         // Check to see if Blueprints property is set
         internal bool IsSetBlueprints()
         {
-            return this._blueprints != null && this._blueprints.Count > 0; 
+            return this._blueprints != null && (this._blueprints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.Glue.Model
         // Check to see if MissingBlueprints property is set
         internal bool IsSetMissingBlueprints()
         {
-            return this._missingBlueprints != null && this._missingBlueprints.Count > 0; 
+            return this._missingBlueprints != null && (this._missingBlueprints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

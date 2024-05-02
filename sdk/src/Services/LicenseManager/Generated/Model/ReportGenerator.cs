@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LicenseManager.Model
 {
     /// <summary>
@@ -43,9 +44,9 @@ namespace Amazon.LicenseManager.Model
         private string _reportCreatorAccount;
         private ReportFrequency _reportFrequency;
         private string _reportGeneratorName;
-        private List<string> _reportType = new List<string>();
+        private List<string> _reportType = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private S3Location _s3Location;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property CreateTime. 
@@ -242,7 +243,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if ReportType property is set
         internal bool IsSetReportType()
         {
-            return this._reportType != null && this._reportType.Count > 0; 
+            return this._reportType != null && (this._reportType.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -278,7 +279,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

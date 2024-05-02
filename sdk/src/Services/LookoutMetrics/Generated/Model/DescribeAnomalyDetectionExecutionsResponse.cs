@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LookoutMetrics.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.LookoutMetrics.Model
     /// </summary>
     public partial class DescribeAnomalyDetectionExecutionsResponse : AmazonWebServiceResponse
     {
-        private List<ExecutionStatus> _executionList = new List<ExecutionStatus>();
+        private List<ExecutionStatus> _executionList = AWSConfigs.InitializeCollections ? new List<ExecutionStatus>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.LookoutMetrics.Model
         // Check to see if ExecutionList property is set
         internal bool IsSetExecutionList()
         {
-            return this._executionList != null && this._executionList.Count > 0; 
+            return this._executionList != null && (this._executionList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IVS.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IVS.Model
     public partial class ListStreamSessionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<StreamSessionSummary> _streamSessions = new List<StreamSessionSummary>();
+        private List<StreamSessionSummary> _streamSessions = AWSConfigs.InitializeCollections ? new List<StreamSessionSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.IVS.Model
         // Check to see if StreamSessions property is set
         internal bool IsSetStreamSessions()
         {
-            return this._streamSessions != null && this._streamSessions.Count > 0; 
+            return this._streamSessions != null && (this._streamSessions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

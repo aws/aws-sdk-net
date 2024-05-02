@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FMS.Model
 {
     /// <summary>
@@ -33,13 +34,13 @@ namespace Amazon.FMS.Model
     /// </summary>
     public partial class AppsListData
     {
-        private List<App> _appsList = new List<App>();
+        private List<App> _appsList = AWSConfigs.InitializeCollections ? new List<App>() : null;
         private DateTime? _createTime;
         private DateTime? _lastUpdateTime;
         private string _listId;
         private string _listName;
         private string _listUpdateToken;
-        private Dictionary<string, List<App>> _previousAppsList = new Dictionary<string, List<App>>();
+        private Dictionary<string, List<App>> _previousAppsList = AWSConfigs.InitializeCollections ? new Dictionary<string, List<App>>() : null;
 
         /// <summary>
         /// Gets and sets the property AppsList. 
@@ -57,7 +58,7 @@ namespace Amazon.FMS.Model
         // Check to see if AppsList property is set
         internal bool IsSetAppsList()
         {
-            return this._appsList != null && this._appsList.Count > 0; 
+            return this._appsList != null && (this._appsList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -170,7 +171,7 @@ namespace Amazon.FMS.Model
         // Check to see if PreviousAppsList property is set
         internal bool IsSetPreviousAppsList()
         {
-            return this._previousAppsList != null && this._previousAppsList.Count > 0; 
+            return this._previousAppsList != null && (this._previousAppsList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

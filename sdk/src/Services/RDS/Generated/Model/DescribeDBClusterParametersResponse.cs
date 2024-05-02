@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.RDS.Model
     public partial class DescribeDBClusterParametersResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<Parameter> _parameters = new List<Parameter>();
+        private List<Parameter> _parameters = AWSConfigs.InitializeCollections ? new List<Parameter>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -72,7 +73,7 @@ namespace Amazon.RDS.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

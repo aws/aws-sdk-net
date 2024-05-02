@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FMS.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.FMS.Model
         private DateTime? _lastUpdateTime;
         private string _name;
         private ResourceSetStatus _resourceSetStatus;
-        private List<string> _resourceTypeList = new List<string>();
+        private List<string> _resourceTypeList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _updateToken;
 
         /// <summary>
@@ -165,7 +166,7 @@ namespace Amazon.FMS.Model
         // Check to see if ResourceTypeList property is set
         internal bool IsSetResourceTypeList()
         {
-            return this._resourceTypeList != null && this._resourceTypeList.Count > 0; 
+            return this._resourceTypeList != null && (this._resourceTypeList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Greengrass.Model
     public partial class ListDeviceDefinitionVersionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<VersionInformation> _versions = new List<VersionInformation>();
+        private List<VersionInformation> _versions = AWSConfigs.InitializeCollections ? new List<VersionInformation>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. The token for the next set of results, or ''null''
@@ -64,7 +65,7 @@ namespace Amazon.Greengrass.Model
         // Check to see if Versions property is set
         internal bool IsSetVersions()
         {
-            return this._versions != null && this._versions.Count > 0; 
+            return this._versions != null && (this._versions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

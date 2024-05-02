@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -58,6 +59,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("natGatewaySet/item", targetDepth))
                     {
                         var unmarshaller = NatGatewayUnmarshaller.Instance;
+                        if (response.NatGateways == null)
+                        {
+                            response.NatGateways = new List<NatGateway>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.NatGateways.Add(item);
                         continue;

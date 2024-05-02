@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.GuardDuty.Model
         /// Enumerable containing all of the FindingIds
         /// </summary>
         public IPaginatedEnumerable<string> FindingIds => 
-            new PaginatedResultKeyResponse<ListFindingsResponse, string>(this, (i) => i.FindingIds);
+            new PaginatedResultKeyResponse<ListFindingsResponse, string>(this, (i) => i.FindingIds ?? new List<string>());
 
         internal ListFindingsPaginator(IAmazonGuardDuty client, ListFindingsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.GuardDuty.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListFindingsResponse> IPaginator<ListFindingsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListFindingsResponse> IPaginator<ListFindingsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

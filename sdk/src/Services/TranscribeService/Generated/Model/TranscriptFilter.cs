@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
@@ -61,7 +62,7 @@ namespace Amazon.TranscribeService.Model
         private bool? _negate;
         private ParticipantRole _participantRole;
         private RelativeTimeRange _relativeTimeRange;
-        private List<string> _targets = new List<string>();
+        private List<string> _targets = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TranscriptFilterType _transcriptFilterType;
 
         /// <summary>
@@ -157,7 +158,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if Targets property is set
         internal bool IsSetTargets()
         {
-            return this._targets != null && this._targets.Count > 0; 
+            return this._targets != null && (this._targets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Athena.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Athena.Model
     public partial class ResultSet
     {
         private ResultSetMetadata _resultSetMetadata;
-        private List<Row> _rows = new List<Row>();
+        private List<Row> _rows = AWSConfigs.InitializeCollections ? new List<Row>() : null;
 
         /// <summary>
         /// Gets and sets the property ResultSetMetadata. 
@@ -71,7 +72,7 @@ namespace Amazon.Athena.Model
         // Check to see if Rows property is set
         internal bool IsSetRows()
         {
-            return this._rows != null && this._rows.Count > 0; 
+            return this._rows != null && (this._rows.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

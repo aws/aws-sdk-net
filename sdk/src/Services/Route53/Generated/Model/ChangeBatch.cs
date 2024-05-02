@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Route53.Model
     public partial class ChangeBatch
     {
         private string _comment;
-        private List<Change> _changes = new List<Change>();
+        private List<Change> _changes = AWSConfigs.InitializeCollections ? new List<Change>() : null;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -85,7 +86,7 @@ namespace Amazon.Route53.Model
         // Check to see if Changes property is set
         internal bool IsSetChanges()
         {
-            return this._changes != null && this._changes.Count > 0; 
+            return this._changes != null && (this._changes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

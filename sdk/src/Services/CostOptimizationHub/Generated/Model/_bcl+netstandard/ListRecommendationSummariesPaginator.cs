@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CostOptimizationHub.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.CostOptimizationHub.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<RecommendationSummary> Items => 
-            new PaginatedResultKeyResponse<ListRecommendationSummariesResponse, RecommendationSummary>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListRecommendationSummariesResponse, RecommendationSummary>(this, (i) => i.Items ?? new List<RecommendationSummary>());
 
         internal ListRecommendationSummariesPaginator(IAmazonCostOptimizationHub client, ListRecommendationSummariesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.CostOptimizationHub.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListRecommendationSummariesResponse> IPaginator<ListRecommendationSummariesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListRecommendationSummariesResponse> IPaginator<ListRecommendationSummariesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

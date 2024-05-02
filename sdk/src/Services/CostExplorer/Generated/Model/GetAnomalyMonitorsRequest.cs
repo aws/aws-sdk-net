@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.CostExplorer.Model
     public partial class GetAnomalyMonitorsRequest : AmazonCostExplorerRequest
     {
         private int? _maxResults;
-        private List<string> _monitorArnList = new List<string>();
+        private List<string> _monitorArnList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextPageToken;
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if MonitorArnList property is set
         internal bool IsSetMonitorArnList()
         {
-            return this._monitorArnList != null && this._monitorArnList.Count > 0; 
+            return this._monitorArnList != null && (this._monitorArnList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

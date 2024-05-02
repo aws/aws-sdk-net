@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaPackageV2.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.MediaPackageV2.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<OriginEndpointListConfiguration> Items => 
-            new PaginatedResultKeyResponse<ListOriginEndpointsResponse, OriginEndpointListConfiguration>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListOriginEndpointsResponse, OriginEndpointListConfiguration>(this, (i) => i.Items ?? new List<OriginEndpointListConfiguration>());
 
         internal ListOriginEndpointsPaginator(IAmazonMediaPackageV2 client, ListOriginEndpointsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.MediaPackageV2.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListOriginEndpointsResponse> IPaginator<ListOriginEndpointsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListOriginEndpointsResponse> IPaginator<ListOriginEndpointsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

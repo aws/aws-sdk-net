@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.APIGateway.Model
     {
         private string _apiKeyVersion;
         private string _cloudwatchRoleArn;
-        private List<string> _features = new List<string>();
+        private List<string> _features = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ThrottleSettings _throttleSettings;
 
         /// <summary>
@@ -90,7 +91,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if Features property is set
         internal bool IsSetFeatures()
         {
-            return this._features != null && this._features.Count > 0; 
+            return this._features != null && (this._features.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

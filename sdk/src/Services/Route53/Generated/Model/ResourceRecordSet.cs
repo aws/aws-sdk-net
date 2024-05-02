@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53.Model
 {
     /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.Route53.Model
         private ResourceRecordSetFailover _failover;
         private bool? _multiValueAnswer;
         private long? _ttl;
-        private List<ResourceRecord> _resourceRecords = new List<ResourceRecord>();
+        private List<ResourceRecord> _resourceRecords = AWSConfigs.InitializeCollections ? new List<ResourceRecord>() : null;
         private AliasTarget _aliasTarget;
         private string _healthCheckId;
         private string _trafficPolicyInstanceId;
@@ -631,7 +632,7 @@ namespace Amazon.Route53.Model
         // Check to see if ResourceRecords property is set
         internal bool IsSetResourceRecords()
         {
-            return this._resourceRecords != null && this._resourceRecords.Count > 0; 
+            return this._resourceRecords != null && (this._resourceRecords.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

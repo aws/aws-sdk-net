@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LakeFormation.Model
 {
     /// <summary>
@@ -40,8 +41,8 @@ namespace Amazon.LakeFormation.Model
     {
         private string _catalogId;
         private string _tagKey;
-        private List<string> _tagValuesToAdd = new List<string>();
-        private List<string> _tagValuesToDelete = new List<string>();
+        private List<string> _tagValuesToAdd = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _tagValuesToDelete = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CatalogId. 
@@ -99,7 +100,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if TagValuesToAdd property is set
         internal bool IsSetTagValuesToAdd()
         {
-            return this._tagValuesToAdd != null && this._tagValuesToAdd.Count > 0; 
+            return this._tagValuesToAdd != null && (this._tagValuesToAdd.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -118,7 +119,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if TagValuesToDelete property is set
         internal bool IsSetTagValuesToDelete()
         {
-            return this._tagValuesToDelete != null && this._tagValuesToDelete.Count > 0; 
+            return this._tagValuesToDelete != null && (this._tagValuesToDelete.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

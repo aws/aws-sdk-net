@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Honeycode.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Honeycode.Model
     /// </summary>
     public partial class BatchUpsertTableRowsResponse : AmazonWebServiceResponse
     {
-        private List<FailedBatchItem> _failedBatchItems = new List<FailedBatchItem>();
-        private Dictionary<string, UpsertRowsResult> _rows = new Dictionary<string, UpsertRowsResult>();
+        private List<FailedBatchItem> _failedBatchItems = AWSConfigs.InitializeCollections ? new List<FailedBatchItem>() : null;
+        private Dictionary<string, UpsertRowsResult> _rows = AWSConfigs.InitializeCollections ? new Dictionary<string, UpsertRowsResult>() : null;
         private long? _workbookCursor;
 
         /// <summary>
@@ -56,7 +57,7 @@ namespace Amazon.Honeycode.Model
         // Check to see if FailedBatchItems property is set
         internal bool IsSetFailedBatchItems()
         {
-            return this._failedBatchItems != null && this._failedBatchItems.Count > 0; 
+            return this._failedBatchItems != null && (this._failedBatchItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -78,7 +79,7 @@ namespace Amazon.Honeycode.Model
         // Check to see if Rows property is set
         internal bool IsSetRows()
         {
-            return this._rows != null && this._rows.Count > 0; 
+            return this._rows != null && (this._rows.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

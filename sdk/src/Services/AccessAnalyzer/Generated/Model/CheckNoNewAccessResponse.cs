@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.AccessAnalyzer.Model
     public partial class CheckNoNewAccessResponse : AmazonWebServiceResponse
     {
         private string _message;
-        private List<ReasonSummary> _reasons = new List<ReasonSummary>();
+        private List<ReasonSummary> _reasons = AWSConfigs.InitializeCollections ? new List<ReasonSummary>() : null;
         private CheckNoNewAccessResult _result;
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.AccessAnalyzer.Model
         // Check to see if Reasons property is set
         internal bool IsSetReasons()
         {
-            return this._reasons != null && this._reasons.Count > 0; 
+            return this._reasons != null && (this._reasons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

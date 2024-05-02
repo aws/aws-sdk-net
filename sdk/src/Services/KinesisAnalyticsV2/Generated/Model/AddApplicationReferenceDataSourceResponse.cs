@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
     {
         private string _applicationARN;
         private long? _applicationVersionId;
-        private List<ReferenceDataSourceDescription> _referenceDataSourceDescriptions = new List<ReferenceDataSourceDescription>();
+        private List<ReferenceDataSourceDescription> _referenceDataSourceDescriptions = AWSConfigs.InitializeCollections ? new List<ReferenceDataSourceDescription>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationARN. 
@@ -91,7 +92,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         // Check to see if ReferenceDataSourceDescriptions property is set
         internal bool IsSetReferenceDataSourceDescriptions()
         {
-            return this._referenceDataSourceDescriptions != null && this._referenceDataSourceDescriptions.Count > 0; 
+            return this._referenceDataSourceDescriptions != null && (this._referenceDataSourceDescriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.CloudWatchLogs.Model
     {
         private string _eventMessage;
         private long? _eventNumber;
-        private Dictionary<string, string> _extractedValues = new Dictionary<string, string>();
+        private Dictionary<string, string> _extractedValues = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property EventMessage. 
@@ -89,7 +90,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if ExtractedValues property is set
         internal bool IsSetExtractedValues()
         {
-            return this._extractedValues != null && this._extractedValues.Count > 0; 
+            return this._extractedValues != null && (this._extractedValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

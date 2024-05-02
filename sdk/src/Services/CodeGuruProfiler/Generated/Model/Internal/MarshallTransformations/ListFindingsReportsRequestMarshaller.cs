@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -66,7 +67,7 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
                 request.Parameters.Add("dailyReportsOnly", StringUtils.FromBool(publicRequest.DailyReportsOnly));
             
             if (publicRequest.IsSetEndTime())
-                request.Parameters.Add("endTime", StringUtils.FromDateTimeToISO8601(publicRequest.EndTime));
+                request.Parameters.Add("endTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTime));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
@@ -75,7 +76,7 @@ namespace Amazon.CodeGuruProfiler.Model.Internal.MarshallTransformations
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             
             if (publicRequest.IsSetStartTime())
-                request.Parameters.Add("startTime", StringUtils.FromDateTimeToISO8601(publicRequest.StartTime));
+                request.Parameters.Add("startTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTime));
             request.ResourcePath = "/internal/profilingGroups/{profilingGroupName}/findingsReports";
             request.UseQueryString = true;
 

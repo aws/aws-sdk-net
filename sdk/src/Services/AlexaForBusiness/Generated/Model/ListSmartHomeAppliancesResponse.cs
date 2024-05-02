@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AlexaForBusiness.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.AlexaForBusiness.Model
     public partial class ListSmartHomeAppliancesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SmartHomeAppliance> _smartHomeAppliances = new List<SmartHomeAppliance>();
+        private List<SmartHomeAppliance> _smartHomeAppliances = AWSConfigs.InitializeCollections ? new List<SmartHomeAppliance>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if SmartHomeAppliances property is set
         internal bool IsSetSmartHomeAppliances()
         {
-            return this._smartHomeAppliances != null && this._smartHomeAppliances.Count > 0; 
+            return this._smartHomeAppliances != null && (this._smartHomeAppliances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

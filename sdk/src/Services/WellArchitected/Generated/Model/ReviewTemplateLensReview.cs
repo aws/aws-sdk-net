@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
@@ -40,8 +41,8 @@ namespace Amazon.WellArchitected.Model
         private string _lensVersion;
         private string _nextToken;
         private string _notes;
-        private List<ReviewTemplatePillarReviewSummary> _pillarReviewSummaries = new List<ReviewTemplatePillarReviewSummary>();
-        private Dictionary<string, int> _questionCounts = new Dictionary<string, int>();
+        private List<ReviewTemplatePillarReviewSummary> _pillarReviewSummaries = AWSConfigs.InitializeCollections ? new List<ReviewTemplatePillarReviewSummary>() : null;
+        private Dictionary<string, int> _questionCounts = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
         private DateTime? _updatedAt;
 
         /// <summary>
@@ -177,7 +178,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if PillarReviewSummaries property is set
         internal bool IsSetPillarReviewSummaries()
         {
-            return this._pillarReviewSummaries != null && this._pillarReviewSummaries.Count > 0; 
+            return this._pillarReviewSummaries != null && (this._pillarReviewSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -195,7 +196,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if QuestionCounts property is set
         internal bool IsSetQuestionCounts()
         {
-            return this._questionCounts != null && this._questionCounts.Count > 0; 
+            return this._questionCounts != null && (this._questionCounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

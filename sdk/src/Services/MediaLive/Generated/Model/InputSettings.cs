@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class InputSettings
     {
-        private List<AudioSelector> _audioSelectors = new List<AudioSelector>();
-        private List<CaptionSelector> _captionSelectors = new List<CaptionSelector>();
+        private List<AudioSelector> _audioSelectors = AWSConfigs.InitializeCollections ? new List<AudioSelector>() : null;
+        private List<CaptionSelector> _captionSelectors = AWSConfigs.InitializeCollections ? new List<CaptionSelector>() : null;
         private InputDeblockFilter _deblockFilter;
         private InputDenoiseFilter _denoiseFilter;
         private int? _filterStrength;
@@ -58,7 +59,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if AudioSelectors property is set
         internal bool IsSetAudioSelectors()
         {
-            return this._audioSelectors != null && this._audioSelectors.Count > 0; 
+            return this._audioSelectors != null && (this._audioSelectors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if CaptionSelectors property is set
         internal bool IsSetCaptionSelectors()
         {
-            return this._captionSelectors != null && this._captionSelectors.Count > 0; 
+            return this._captionSelectors != null && (this._captionSelectors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

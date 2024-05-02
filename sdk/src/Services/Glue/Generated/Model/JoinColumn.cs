@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Glue.Model
     public partial class JoinColumn
     {
         private string _from;
-        private List<List<string>> _keys = new List<List<string>>();
+        private List<List<string>> _keys = AWSConfigs.InitializeCollections ? new List<List<string>>() : null;
 
         /// <summary>
         /// Gets and sets the property From. 
@@ -71,7 +72,7 @@ namespace Amazon.Glue.Model
         // Check to see if Keys property is set
         internal bool IsSetKeys()
         {
-            return this._keys != null && this._keys.Count > 0; 
+            return this._keys != null && (this._keys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

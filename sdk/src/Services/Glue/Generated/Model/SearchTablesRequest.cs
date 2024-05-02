@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -46,12 +47,12 @@ namespace Amazon.Glue.Model
     public partial class SearchTablesRequest : AmazonGlueRequest
     {
         private string _catalogId;
-        private List<PropertyPredicate> _filters = new List<PropertyPredicate>();
+        private List<PropertyPredicate> _filters = AWSConfigs.InitializeCollections ? new List<PropertyPredicate>() : null;
         private int? _maxResults;
         private string _nextToken;
         private ResourceShareType _resourceShareType;
         private string _searchText;
-        private List<SortCriterion> _sortCriteria = new List<SortCriterion>();
+        private List<SortCriterion> _sortCriteria = AWSConfigs.InitializeCollections ? new List<SortCriterion>() : null;
 
         /// <summary>
         /// Gets and sets the property CatalogId. 
@@ -99,7 +100,7 @@ namespace Amazon.Glue.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -208,7 +209,7 @@ namespace Amazon.Glue.Model
         // Check to see if SortCriteria property is set
         internal bool IsSetSortCriteria()
         {
-            return this._sortCriteria != null && this._sortCriteria.Count > 0; 
+            return this._sortCriteria != null && (this._sortCriteria.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

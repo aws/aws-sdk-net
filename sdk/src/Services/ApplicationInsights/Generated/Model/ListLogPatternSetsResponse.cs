@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ApplicationInsights.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ApplicationInsights.Model
     public partial class ListLogPatternSetsResponse : AmazonWebServiceResponse
     {
         private string _accountId;
-        private List<string> _logPatternSets = new List<string>();
+        private List<string> _logPatternSets = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
         private string _resourceGroupName;
 
@@ -72,7 +73,7 @@ namespace Amazon.ApplicationInsights.Model
         // Check to see if LogPatternSets property is set
         internal bool IsSetLogPatternSets()
         {
-            return this._logPatternSets != null && this._logPatternSets.Count > 0; 
+            return this._logPatternSets != null && (this._logPatternSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

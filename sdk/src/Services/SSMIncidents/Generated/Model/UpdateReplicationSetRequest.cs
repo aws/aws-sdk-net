@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SSMIncidents.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SSMIncidents.Model
     /// </summary>
     public partial class UpdateReplicationSetRequest : AmazonSSMIncidentsRequest
     {
-        private List<UpdateReplicationSetAction> _actions = new List<UpdateReplicationSetAction>();
+        private List<UpdateReplicationSetAction> _actions = AWSConfigs.InitializeCollections ? new List<UpdateReplicationSetAction>() : null;
         private string _arn;
         private string _clientToken;
 
@@ -54,7 +55,7 @@ namespace Amazon.SSMIncidents.Model
         // Check to see if Actions property is set
         internal bool IsSetActions()
         {
-            return this._actions != null && this._actions.Count > 0; 
+            return this._actions != null && (this._actions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

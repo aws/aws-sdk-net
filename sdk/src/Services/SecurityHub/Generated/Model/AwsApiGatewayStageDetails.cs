@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -44,10 +45,10 @@ namespace Amazon.SecurityHub.Model
         private string _description;
         private string _documentationVersion;
         private string _lastUpdatedDate;
-        private List<AwsApiGatewayMethodSettings> _methodSettings = new List<AwsApiGatewayMethodSettings>();
+        private List<AwsApiGatewayMethodSettings> _methodSettings = AWSConfigs.InitializeCollections ? new List<AwsApiGatewayMethodSettings>() : null;
         private string _stageName;
         private bool? _tracingEnabled;
-        private Dictionary<string, string> _variables = new Dictionary<string, string>();
+        private Dictionary<string, string> _variables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _webAclArn;
 
         /// <summary>
@@ -165,10 +166,32 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
-        /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
+        /// This field accepts only the specified formats. Timestamps can end with <c>Z</c> or
+        /// <c>("+" / "-") time-hour [":" time-minute]</c>. The time-secfrac after seconds is
+        /// limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
+        /// timestamp formats with examples:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SSZ</c> (for example, <c>2019-01-31T23:00:00Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</c> (for example, <c>2019-01-31T23:00:00.123456789Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS+HH:MM</c> (for example, <c>2024-01-04T15:25:10+17:59</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS-HHMM</c> (for example, <c>2024-01-04T15:25:10-1759</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</c> (for example, <c>2024-01-04T15:25:10.123456789+17:59</c>)
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string CreatedDate
         {
@@ -243,10 +266,32 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
-        /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
+        /// This field accepts only the specified formats. Timestamps can end with <c>Z</c> or
+        /// <c>("+" / "-") time-hour [":" time-minute]</c>. The time-secfrac after seconds is
+        /// limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
+        /// timestamp formats with examples:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SSZ</c> (for example, <c>2019-01-31T23:00:00Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</c> (for example, <c>2019-01-31T23:00:00.123456789Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS+HH:MM</c> (for example, <c>2024-01-04T15:25:10+17:59</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS-HHMM</c> (for example, <c>2024-01-04T15:25:10-1759</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</c> (for example, <c>2024-01-04T15:25:10.123456789+17:59</c>)
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string LastUpdatedDate
         {
@@ -275,7 +320,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if MethodSettings property is set
         internal bool IsSetMethodSettings()
         {
-            return this._methodSettings != null && this._methodSettings.Count > 0; 
+            return this._methodSettings != null && (this._methodSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -350,7 +395,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Variables property is set
         internal bool IsSetVariables()
         {
-            return this._variables != null && this._variables.Count > 0; 
+            return this._variables != null && (this._variables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

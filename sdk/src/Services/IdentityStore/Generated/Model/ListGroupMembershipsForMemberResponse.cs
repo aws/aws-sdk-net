@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IdentityStore.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IdentityStore.Model
     /// </summary>
     public partial class ListGroupMembershipsForMemberResponse : AmazonWebServiceResponse
     {
-        private List<GroupMembership> _groupMemberships = new List<GroupMembership>();
+        private List<GroupMembership> _groupMemberships = AWSConfigs.InitializeCollections ? new List<GroupMembership>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.IdentityStore.Model
         // Check to see if GroupMemberships property is set
         internal bool IsSetGroupMemberships()
         {
-            return this._groupMemberships != null && this._groupMemberships.Count > 0; 
+            return this._groupMemberships != null && (this._groupMemberships.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LicenseManagerLinuxSubscriptions.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions.Model
     public partial class LinuxSubscriptionsDiscoverySettings
     {
         private OrganizationIntegration _organizationIntegration;
-        private List<string> _sourceRegions = new List<string>();
+        private List<string> _sourceRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property OrganizationIntegration. 
@@ -71,7 +72,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions.Model
         // Check to see if SourceRegions property is set
         internal bool IsSetSourceRegions()
         {
-            return this._sourceRegions != null && this._sourceRegions.Count > 0; 
+            return this._sourceRegions != null && (this._sourceRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkManager.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.NetworkManager.Model
     /// </summary>
     public partial class ListCoreNetworkPolicyVersionsResponse : AmazonWebServiceResponse
     {
-        private List<CoreNetworkPolicyVersion> _coreNetworkPolicyVersions = new List<CoreNetworkPolicyVersion>();
+        private List<CoreNetworkPolicyVersion> _coreNetworkPolicyVersions = AWSConfigs.InitializeCollections ? new List<CoreNetworkPolicyVersion>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if CoreNetworkPolicyVersions property is set
         internal bool IsSetCoreNetworkPolicyVersions()
         {
-            return this._coreNetworkPolicyVersions != null && this._coreNetworkPolicyVersions.Count > 0; 
+            return this._coreNetworkPolicyVersions != null && (this._coreNetworkPolicyVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

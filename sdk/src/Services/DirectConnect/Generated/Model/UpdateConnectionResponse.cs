@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
@@ -47,13 +48,13 @@ namespace Amazon.DirectConnect.Model
         private DateTime? _loaIssueTime;
         private string _location;
         private bool? _macSecCapable;
-        private List<MacSecKey> _macSecKeys = new List<MacSecKey>();
+        private List<MacSecKey> _macSecKeys = AWSConfigs.InitializeCollections ? new List<MacSecKey>() : null;
         private string _ownerAccount;
         private string _partnerName;
         private string _portEncryptionStatus;
         private string _providerName;
         private string _region;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private int? _vlan;
 
         /// <summary>
@@ -370,7 +371,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if MacSecKeys property is set
         internal bool IsSetMacSecKeys()
         {
-            return this._macSecKeys != null && this._macSecKeys.Count > 0; 
+            return this._macSecKeys != null && (this._macSecKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -484,7 +485,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

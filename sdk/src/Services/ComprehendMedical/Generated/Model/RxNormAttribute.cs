@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ComprehendMedical.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.ComprehendMedical.Model
         private float? _relationshipScore;
         private float? _score;
         private string _text;
-        private List<RxNormTrait> _traits = new List<RxNormTrait>();
+        private List<RxNormTrait> _traits = AWSConfigs.InitializeCollections ? new List<RxNormTrait>() : null;
         private RxNormAttributeType _type;
 
         /// <summary>
@@ -174,7 +175,7 @@ namespace Amazon.ComprehendMedical.Model
         // Check to see if Traits property is set
         internal bool IsSetTraits()
         {
-            return this._traits != null && this._traits.Count > 0; 
+            return this._traits != null && (this._traits.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

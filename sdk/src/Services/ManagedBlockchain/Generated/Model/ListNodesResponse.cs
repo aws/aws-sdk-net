@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ManagedBlockchain.Model
     public partial class ListNodesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<NodeSummary> _nodes = new List<NodeSummary>();
+        private List<NodeSummary> _nodes = AWSConfigs.InitializeCollections ? new List<NodeSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.ManagedBlockchain.Model
         // Check to see if Nodes property is set
         internal bool IsSetNodes()
         {
-            return this._nodes != null && this._nodes.Count > 0; 
+            return this._nodes != null && (this._nodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

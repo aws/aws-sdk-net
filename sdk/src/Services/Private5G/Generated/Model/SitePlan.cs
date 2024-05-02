@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Private5G.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Private5G.Model
     /// </summary>
     public partial class SitePlan
     {
-        private List<NameValuePair> _options = new List<NameValuePair>();
-        private List<NetworkResourceDefinition> _resourceDefinitions = new List<NetworkResourceDefinition>();
+        private List<NameValuePair> _options = AWSConfigs.InitializeCollections ? new List<NameValuePair>() : null;
+        private List<NetworkResourceDefinition> _resourceDefinitions = AWSConfigs.InitializeCollections ? new List<NetworkResourceDefinition>() : null;
 
         /// <summary>
         /// Gets and sets the property Options. 
@@ -51,7 +52,7 @@ namespace Amazon.Private5G.Model
         // Check to see if Options property is set
         internal bool IsSetOptions()
         {
-            return this._options != null && this._options.Count > 0; 
+            return this._options != null && (this._options.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.Private5G.Model
         // Check to see if ResourceDefinitions property is set
         internal bool IsSetResourceDefinitions()
         {
-            return this._resourceDefinitions != null && this._resourceDefinitions.Count > 0; 
+            return this._resourceDefinitions != null && (this._resourceDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

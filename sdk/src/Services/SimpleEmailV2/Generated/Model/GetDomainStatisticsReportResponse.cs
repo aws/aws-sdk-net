@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SimpleEmailV2.Model
     /// </summary>
     public partial class GetDomainStatisticsReportResponse : AmazonWebServiceResponse
     {
-        private List<DailyVolume> _dailyVolumes = new List<DailyVolume>();
+        private List<DailyVolume> _dailyVolumes = AWSConfigs.InitializeCollections ? new List<DailyVolume>() : null;
         private OverallVolume _overallVolume;
 
         /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if DailyVolumes property is set
         internal bool IsSetDailyVolumes()
         {
-            return this._dailyVolumes != null && this._dailyVolumes.Count > 0; 
+            return this._dailyVolumes != null && (this._dailyVolumes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
@@ -34,9 +35,10 @@ namespace Amazon.DataZone.Model
     public partial class GlueRunConfigurationOutput
     {
         private string _accountId;
+        private bool? _autoImportDataQualityResult;
         private string _dataAccessRole;
         private string _region;
-        private List<RelationalFilterConfiguration> _relationalFilterConfigurations = new List<RelationalFilterConfiguration>();
+        private List<RelationalFilterConfiguration> _relationalFilterConfigurations = AWSConfigs.InitializeCollections ? new List<RelationalFilterConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -56,6 +58,25 @@ namespace Amazon.DataZone.Model
         internal bool IsSetAccountId()
         {
             return this._accountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoImportDataQualityResult. 
+        /// <para>
+        /// Specifies whether to automatically import data quality metrics as part of the data
+        /// source run.
+        /// </para>
+        /// </summary>
+        public bool? AutoImportDataQualityResult
+        {
+            get { return this._autoImportDataQualityResult; }
+            set { this._autoImportDataQualityResult = value; }
+        }
+
+        // Check to see if AutoImportDataQualityResult property is set
+        internal bool IsSetAutoImportDataQualityResult()
+        {
+            return this._autoImportDataQualityResult.HasValue; 
         }
 
         /// <summary>
@@ -114,7 +135,7 @@ namespace Amazon.DataZone.Model
         // Check to see if RelationalFilterConfigurations property is set
         internal bool IsSetRelationalFilterConfigurations()
         {
-            return this._relationalFilterConfigurations != null && this._relationalFilterConfigurations.Count > 0; 
+            return this._relationalFilterConfigurations != null && (this._relationalFilterConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

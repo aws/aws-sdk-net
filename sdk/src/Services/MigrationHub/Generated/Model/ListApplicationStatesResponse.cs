@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MigrationHub.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MigrationHub.Model
     /// </summary>
     public partial class ListApplicationStatesResponse : AmazonWebServiceResponse
     {
-        private List<ApplicationState> _applicationStateList = new List<ApplicationState>();
+        private List<ApplicationState> _applicationStateList = AWSConfigs.InitializeCollections ? new List<ApplicationState>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.MigrationHub.Model
         // Check to see if ApplicationStateList property is set
         internal bool IsSetApplicationStateList()
         {
-            return this._applicationStateList != null && this._applicationStateList.Count > 0; 
+            return this._applicationStateList != null && (this._applicationStateList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

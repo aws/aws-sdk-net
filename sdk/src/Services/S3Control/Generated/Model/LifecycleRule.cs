@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3Control.Model
 {
     /// <summary>
@@ -38,9 +39,9 @@ namespace Amazon.S3Control.Model
         private LifecycleRuleFilter _filter;
         private string _id;
         private NoncurrentVersionExpiration _noncurrentVersionExpiration;
-        private List<NoncurrentVersionTransition> _noncurrentVersionTransitions = new List<NoncurrentVersionTransition>();
+        private List<NoncurrentVersionTransition> _noncurrentVersionTransitions = AWSConfigs.InitializeCollections ? new List<NoncurrentVersionTransition>() : null;
         private ExpirationStatus _status;
-        private List<Transition> _transitions = new List<Transition>();
+        private List<Transition> _transitions = AWSConfigs.InitializeCollections ? new List<Transition>() : null;
 
         /// <summary>
         /// Gets and sets the property AbortIncompleteMultipartUpload. 
@@ -161,7 +162,7 @@ namespace Amazon.S3Control.Model
         // Check to see if NoncurrentVersionTransitions property is set
         internal bool IsSetNoncurrentVersionTransitions()
         {
-            return this._noncurrentVersionTransitions != null && this._noncurrentVersionTransitions.Count > 0; 
+            return this._noncurrentVersionTransitions != null && (this._noncurrentVersionTransitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -204,7 +205,7 @@ namespace Amazon.S3Control.Model
         // Check to see if Transitions property is set
         internal bool IsSetTransitions()
         {
-            return this._transitions != null && this._transitions.Count > 0; 
+            return this._transitions != null && (this._transitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

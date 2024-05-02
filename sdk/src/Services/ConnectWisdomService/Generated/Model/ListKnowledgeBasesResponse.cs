@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConnectWisdomService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ConnectWisdomService.Model
     /// </summary>
     public partial class ListKnowledgeBasesResponse : AmazonWebServiceResponse
     {
-        private List<KnowledgeBaseSummary> _knowledgeBaseSummaries = new List<KnowledgeBaseSummary>();
+        private List<KnowledgeBaseSummary> _knowledgeBaseSummaries = AWSConfigs.InitializeCollections ? new List<KnowledgeBaseSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.ConnectWisdomService.Model
         // Check to see if KnowledgeBaseSummaries property is set
         internal bool IsSetKnowledgeBaseSummaries()
         {
-            return this._knowledgeBaseSummaries != null && this._knowledgeBaseSummaries.Count > 0; 
+            return this._knowledgeBaseSummaries != null && (this._knowledgeBaseSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

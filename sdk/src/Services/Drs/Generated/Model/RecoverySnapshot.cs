@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Drs.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Drs.Model
     /// </summary>
     public partial class RecoverySnapshot
     {
-        private List<string> _ebsSnapshots = new List<string>();
+        private List<string> _ebsSnapshots = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _expectedTimestamp;
         private string _snapshotid;
         private string _sourceServerID;
@@ -54,7 +55,7 @@ namespace Amazon.Drs.Model
         // Check to see if EbsSnapshots property is set
         internal bool IsSetEbsSnapshots()
         {
-            return this._ebsSnapshots != null && this._ebsSnapshots.Count > 0; 
+            return this._ebsSnapshots != null && (this._ebsSnapshots.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

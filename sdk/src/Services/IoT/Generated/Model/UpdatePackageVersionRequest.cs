@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.IoT.Model
     public partial class UpdatePackageVersionRequest : AmazonIoTRequest
     {
         private PackageVersionAction _action;
-        private Dictionary<string, string> _attributes = new Dictionary<string, string>();
+        private Dictionary<string, string> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _clientToken;
         private string _description;
         private string _packageName;
@@ -95,7 +96,7 @@ namespace Amazon.IoT.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

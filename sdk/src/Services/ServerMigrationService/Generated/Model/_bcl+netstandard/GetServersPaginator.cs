@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ServerMigrationService.Model
         /// Enumerable containing all of the ServerList
         /// </summary>
         public IPaginatedEnumerable<Server> ServerList => 
-            new PaginatedResultKeyResponse<GetServersResponse, Server>(this, (i) => i.ServerList);
+            new PaginatedResultKeyResponse<GetServersResponse, Server>(this, (i) => i.ServerList ?? new List<Server>());
 
         internal GetServersPaginator(IAmazonServerMigrationService client, GetServersRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ServerMigrationService.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<GetServersResponse> IPaginator<GetServersResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<GetServersResponse> IPaginator<GetServersResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

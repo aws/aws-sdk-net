@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     public partial class ListInstancesResponse : AmazonWebServiceResponse
     {
-        private List<Instance> _instances = new List<Instance>();
+        private List<Instance> _instances = AWSConfigs.InitializeCollections ? new List<Instance>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this._instances != null && this._instances.Count > 0; 
+            return this._instances != null && (this._instances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

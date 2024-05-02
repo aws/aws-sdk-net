@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// </summary>
     public partial class DescribeEnvironmentManagedActionHistoryResponse : AmazonWebServiceResponse
     {
-        private List<ManagedActionHistoryItem> _managedActionHistoryItems = new List<ManagedActionHistoryItem>();
+        private List<ManagedActionHistoryItem> _managedActionHistoryItems = AWSConfigs.InitializeCollections ? new List<ManagedActionHistoryItem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if ManagedActionHistoryItems property is set
         internal bool IsSetManagedActionHistoryItems()
         {
-            return this._managedActionHistoryItems != null && this._managedActionHistoryItems.Count > 0; 
+            return this._managedActionHistoryItems != null && (this._managedActionHistoryItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

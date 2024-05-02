@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -46,11 +47,17 @@ namespace Amazon.EC2.Model
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
     /// Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
+    ///  <note> 
+    /// <para>
+    /// The order of the elements in the response, including those within nested structures,
+    /// might vary. Applications should not assume the elements appear in a particular order.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeReservedInstancesOfferingsRequest : AmazonEC2Request
     {
         private string _availabilityZone;
-        private List<Filter> _filters = new List<Filter>();
+        private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
         private bool? _includeMarketplace;
         private Tenancy _instanceTenancy;
         private InstanceType _instanceType;
@@ -62,7 +69,7 @@ namespace Amazon.EC2.Model
         private OfferingClassType _offeringClass;
         private OfferingTypeValues _offeringType;
         private RIProductDescription _productDescription;
-        private List<string> _reservedInstancesOfferingIds = new List<string>();
+        private List<string> _reservedInstancesOfferingIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
@@ -143,7 +150,7 @@ namespace Amazon.EC2.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -393,7 +400,7 @@ namespace Amazon.EC2.Model
         // Check to see if ReservedInstancesOfferingIds property is set
         internal bool IsSetReservedInstancesOfferingIds()
         {
-            return this._reservedInstancesOfferingIds != null && this._reservedInstancesOfferingIds.Count > 0; 
+            return this._reservedInstancesOfferingIds != null && (this._reservedInstancesOfferingIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

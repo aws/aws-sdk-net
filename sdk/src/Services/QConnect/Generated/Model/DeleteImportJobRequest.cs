@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QConnect.Model
 {
     /// <summary>
@@ -59,8 +60,7 @@ namespace Amazon.QConnect.Model
         /// <summary>
         /// Gets and sets the property KnowledgeBaseId. 
         /// <para>
-        /// The identifier of the knowledge base. This should not be a QUICK_RESPONSES type knowledge
-        /// base if you're storing Amazon Q Content resource to it.
+        /// The identifier of the knowledge base.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

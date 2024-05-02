@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.DataZone.Model
         private string _createdBy;
         private string _description;
         private string _domainId;
-        private List<Import> _imports = new List<Import>();
+        private List<Import> _imports = AWSConfigs.InitializeCollections ? new List<Import>() : null;
         private Model _model;
         private string _name;
         private string _originDomainId;
@@ -136,7 +137,7 @@ namespace Amazon.DataZone.Model
         // Check to see if Imports property is set
         internal bool IsSetImports()
         {
-            return this._imports != null && this._imports.Count > 0; 
+            return this._imports != null && (this._imports.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

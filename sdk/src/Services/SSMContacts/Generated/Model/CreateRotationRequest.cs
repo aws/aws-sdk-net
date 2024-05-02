@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SSMContacts.Model
 {
     /// <summary>
@@ -34,12 +35,12 @@ namespace Amazon.SSMContacts.Model
     /// </summary>
     public partial class CreateRotationRequest : AmazonSSMContactsRequest
     {
-        private List<string> _contactIds = new List<string>();
+        private List<string> _contactIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _idempotencyToken;
         private string _name;
         private RecurrenceSettings _recurrence;
         private DateTime? _startTime;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _timeZoneId;
 
         /// <summary>
@@ -63,7 +64,7 @@ namespace Amazon.SSMContacts.Model
         // Check to see if ContactIds property is set
         internal bool IsSetContactIds()
         {
-            return this._contactIds != null && this._contactIds.Count > 0; 
+            return this._contactIds != null && (this._contactIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -160,7 +161,7 @@ namespace Amazon.SSMContacts.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

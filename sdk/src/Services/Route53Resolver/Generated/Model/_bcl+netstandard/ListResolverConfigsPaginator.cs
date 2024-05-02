@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Route53Resolver.Model
         /// Enumerable containing all of the ResolverConfigs
         /// </summary>
         public IPaginatedEnumerable<ResolverConfig> ResolverConfigs => 
-            new PaginatedResultKeyResponse<ListResolverConfigsResponse, ResolverConfig>(this, (i) => i.ResolverConfigs);
+            new PaginatedResultKeyResponse<ListResolverConfigsResponse, ResolverConfig>(this, (i) => i.ResolverConfigs ?? new List<ResolverConfig>());
 
         internal ListResolverConfigsPaginator(IAmazonRoute53Resolver client, ListResolverConfigsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Route53Resolver.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListResolverConfigsResponse> IPaginator<ListResolverConfigsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListResolverConfigsResponse> IPaginator<ListResolverConfigsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

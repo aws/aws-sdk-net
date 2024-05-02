@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.SageMaker.Model
     public partial class UpdateClusterRequest : AmazonSageMakerRequest
     {
         private string _clusterName;
-        private List<ClusterInstanceGroupSpecification> _instanceGroups = new List<ClusterInstanceGroupSpecification>();
+        private List<ClusterInstanceGroupSpecification> _instanceGroups = AWSConfigs.InitializeCollections ? new List<ClusterInstanceGroupSpecification>() : null;
 
         /// <summary>
         /// Gets and sets the property ClusterName. 
@@ -72,7 +73,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if InstanceGroups property is set
         internal bool IsSetInstanceGroups()
         {
-            return this._instanceGroups != null && this._instanceGroups.Count > 0; 
+            return this._instanceGroups != null && (this._instanceGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

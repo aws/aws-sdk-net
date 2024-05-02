@@ -26,17 +26,18 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// The topic specific controls configured for an Amazon Q application.
+    /// The topic specific controls configured for an Amazon Q Business application.
     /// </summary>
     public partial class TopicConfiguration
     {
         private string _description;
-        private List<string> _exampleChatMessages = new List<string>();
+        private List<string> _exampleChatMessages = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
-        private List<Rule> _rules = new List<Rule>();
+        private List<Rule> _rules = AWSConfigs.InitializeCollections ? new List<Rule>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -74,7 +75,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if ExampleChatMessages property is set
         internal bool IsSetExampleChatMessages()
         {
-            return this._exampleChatMessages != null && this._exampleChatMessages.Count > 0; 
+            return this._exampleChatMessages != null && (this._exampleChatMessages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -112,7 +113,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if Rules property is set
         internal bool IsSetRules()
         {
-            return this._rules != null && this._rules.Count > 0; 
+            return this._rules != null && (this._rules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

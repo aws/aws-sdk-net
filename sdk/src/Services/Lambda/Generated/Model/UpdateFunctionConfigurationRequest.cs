@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lambda.Model
 {
     /// <summary>
@@ -61,12 +62,12 @@ namespace Amazon.Lambda.Model
         private string _description;
         private Environment _environment;
         private EphemeralStorage _ephemeralStorage;
-        private List<FileSystemConfig> _fileSystemConfigs = new List<FileSystemConfig>();
+        private List<FileSystemConfig> _fileSystemConfigs = AWSConfigs.InitializeCollections ? new List<FileSystemConfig>() : null;
         private string _functionName;
         private string _handler;
         private ImageConfig _imageConfig;
         private string _kmsKeyArn;
-        private List<string> _layers = new List<string>();
+        private List<string> _layers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private LoggingConfig _loggingConfig;
         private int? _memorySize;
         private string _revisionId;
@@ -199,7 +200,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// The name of the Lambda function.
+        /// The name or ARN of the Lambda function.
         /// </para>
         ///  
         /// <para>
@@ -262,7 +263,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property ImageConfig. 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container
+        ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-create.html#images-parms">Container
         /// image configuration values</a> that override the values in the container image Docker
         /// file.
         /// </para>

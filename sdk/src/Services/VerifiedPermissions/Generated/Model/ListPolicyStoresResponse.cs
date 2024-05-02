@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VerifiedPermissions.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.VerifiedPermissions.Model
     public partial class ListPolicyStoresResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PolicyStoreItem> _policyStores = new List<PolicyStoreItem>();
+        private List<PolicyStoreItem> _policyStores = AWSConfigs.InitializeCollections ? new List<PolicyStoreItem>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -75,7 +76,7 @@ namespace Amazon.VerifiedPermissions.Model
         // Check to see if PolicyStores property is set
         internal bool IsSetPolicyStores()
         {
-            return this._policyStores != null && this._policyStores.Count > 0; 
+            return this._policyStores != null && (this._policyStores.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

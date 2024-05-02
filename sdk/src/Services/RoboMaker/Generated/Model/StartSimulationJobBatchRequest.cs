@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RoboMaker.Model
 {
     /// <summary>
@@ -37,8 +38,8 @@ namespace Amazon.RoboMaker.Model
     {
         private BatchPolicy _batchPolicy;
         private string _clientRequestToken;
-        private List<SimulationJobRequest> _createSimulationJobRequests = new List<SimulationJobRequest>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<SimulationJobRequest> _createSimulationJobRequests = AWSConfigs.InitializeCollections ? new List<SimulationJobRequest>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property BatchPolicy. 
@@ -94,7 +95,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if CreateSimulationJobRequests property is set
         internal bool IsSetCreateSimulationJobRequests()
         {
-            return this._createSimulationJobRequests != null && this._createSimulationJobRequests.Count > 0; 
+            return this._createSimulationJobRequests != null && (this._createSimulationJobRequests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -114,7 +115,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
@@ -77,7 +78,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The role ARN.
+        /// The role Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]

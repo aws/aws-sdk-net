@@ -21,7 +21,7 @@
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
 
     <NoWarn>$(NoWarn);CS1591;CA1822</NoWarn>
-
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <SignAssembly>True</SignAssembly>
   </PropertyGroup>
     <!-- Async Enumerable Compatibility -->
@@ -77,6 +77,9 @@
   </ItemGroup>
 
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
-    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="1.1.0" />
+    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces" Version="8.0.0" />
+    <PackageReference Include="System.Buffers" Version="4.5.1" />
+    <PackageReference Include="System.Memory" Version="4.5.5" />
+    <PackageReference Include="System.Text.Json" Version="8.0.3" />
   </ItemGroup>
 </Project>

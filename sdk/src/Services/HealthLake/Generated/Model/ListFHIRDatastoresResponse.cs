@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.HealthLake.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.HealthLake.Model
     /// </summary>
     public partial class ListFHIRDatastoresResponse : AmazonWebServiceResponse
     {
-        private List<DatastoreProperties> _datastorePropertiesList = new List<DatastoreProperties>();
+        private List<DatastoreProperties> _datastorePropertiesList = AWSConfigs.InitializeCollections ? new List<DatastoreProperties>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.HealthLake.Model
         // Check to see if DatastorePropertiesList property is set
         internal bool IsSetDatastorePropertiesList()
         {
-            return this._datastorePropertiesList != null && this._datastorePropertiesList.Count > 0; 
+            return this._datastorePropertiesList != null && (this._datastorePropertiesList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

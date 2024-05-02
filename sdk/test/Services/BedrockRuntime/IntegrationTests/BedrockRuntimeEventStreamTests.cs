@@ -1,5 +1,4 @@
-﻿using Amazon.BedrockRuntime;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Amazon.BedrockRuntime;
 using Amazon.BedrockRuntime.Model;
 using System.Threading.Tasks;

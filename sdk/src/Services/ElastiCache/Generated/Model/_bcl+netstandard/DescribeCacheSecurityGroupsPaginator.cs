@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ElastiCache.Model
         /// Enumerable containing all of the CacheSecurityGroups
         /// </summary>
         public IPaginatedEnumerable<CacheSecurityGroup> CacheSecurityGroups => 
-            new PaginatedResultKeyResponse<DescribeCacheSecurityGroupsResponse, CacheSecurityGroup>(this, (i) => i.CacheSecurityGroups);
+            new PaginatedResultKeyResponse<DescribeCacheSecurityGroupsResponse, CacheSecurityGroup>(this, (i) => i.CacheSecurityGroups ?? new List<CacheSecurityGroup>());
 
         internal DescribeCacheSecurityGroupsPaginator(IAmazonElastiCache client, DescribeCacheSecurityGroupsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ElastiCache.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeCacheSecurityGroupsResponse> IPaginator<DescribeCacheSecurityGroupsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeCacheSecurityGroupsResponse> IPaginator<DescribeCacheSecurityGroupsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

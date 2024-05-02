@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SimpleEmail.Model
     public partial class IdentityDkimAttributes
     {
         private bool? _dkimEnabled;
-        private List<string> _dkimTokens = new List<string>();
+        private List<string> _dkimTokens = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private VerificationStatus _dkimVerificationStatus;
 
         /// <summary>
@@ -82,7 +83,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if DkimTokens property is set
         internal bool IsSetDkimTokens()
         {
-            return this._dkimTokens != null && this._dkimTokens.Count > 0; 
+            return this._dkimTokens != null && (this._dkimTokens.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

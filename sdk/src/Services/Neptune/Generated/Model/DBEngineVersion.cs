@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Neptune.Model
 {
     /// <summary>
@@ -39,13 +40,13 @@ namespace Amazon.Neptune.Model
         private CharacterSet _defaultCharacterSet;
         private string _engine;
         private string _engineVersion;
-        private List<string> _exportableLogTypes = new List<string>();
-        private List<CharacterSet> _supportedCharacterSets = new List<CharacterSet>();
-        private List<Timezone> _supportedTimezones = new List<Timezone>();
+        private List<string> _exportableLogTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<CharacterSet> _supportedCharacterSets = AWSConfigs.InitializeCollections ? new List<CharacterSet>() : null;
+        private List<Timezone> _supportedTimezones = AWSConfigs.InitializeCollections ? new List<Timezone>() : null;
         private bool? _supportsGlobalDatabases;
         private bool? _supportsLogExportsToCloudwatchLogs;
         private bool? _supportsReadReplica;
-        private List<UpgradeTarget> _validUpgradeTarget = new List<UpgradeTarget>();
+        private List<UpgradeTarget> _validUpgradeTarget = AWSConfigs.InitializeCollections ? new List<UpgradeTarget>() : null;
 
         /// <summary>
         /// Gets and sets the property DBEngineDescription. 
@@ -171,7 +172,7 @@ namespace Amazon.Neptune.Model
         // Check to see if ExportableLogTypes property is set
         internal bool IsSetExportableLogTypes()
         {
-            return this._exportableLogTypes != null && this._exportableLogTypes.Count > 0; 
+            return this._exportableLogTypes != null && (this._exportableLogTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -189,7 +190,7 @@ namespace Amazon.Neptune.Model
         // Check to see if SupportedCharacterSets property is set
         internal bool IsSetSupportedCharacterSets()
         {
-            return this._supportedCharacterSets != null && this._supportedCharacterSets.Count > 0; 
+            return this._supportedCharacterSets != null && (this._supportedCharacterSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -208,7 +209,7 @@ namespace Amazon.Neptune.Model
         // Check to see if SupportedTimezones property is set
         internal bool IsSetSupportedTimezones()
         {
-            return this._supportedTimezones != null && this._supportedTimezones.Count > 0; 
+            return this._supportedTimezones != null && (this._supportedTimezones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -282,7 +283,7 @@ namespace Amazon.Neptune.Model
         // Check to see if ValidUpgradeTarget property is set
         internal bool IsSetValidUpgradeTarget()
         {
-            return this._validUpgradeTarget != null && this._validUpgradeTarget.Count > 0; 
+            return this._validUpgradeTarget != null && (this._validUpgradeTarget.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

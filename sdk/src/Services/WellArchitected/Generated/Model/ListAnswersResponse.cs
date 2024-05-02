@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.WellArchitected.Model
     /// </summary>
     public partial class ListAnswersResponse : AmazonWebServiceResponse
     {
-        private List<AnswerSummary> _answerSummaries = new List<AnswerSummary>();
+        private List<AnswerSummary> _answerSummaries = AWSConfigs.InitializeCollections ? new List<AnswerSummary>() : null;
         private string _lensAlias;
         private string _lensArn;
         private int? _milestoneNumber;
@@ -52,7 +53,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if AnswerSummaries property is set
         internal bool IsSetAnswerSummaries()
         {
-            return this._answerSummaries != null && this._answerSummaries.Count > 0; 
+            return this._answerSummaries != null && (this._answerSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

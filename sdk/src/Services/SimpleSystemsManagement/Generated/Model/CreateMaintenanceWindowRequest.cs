@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -56,7 +57,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private int? _scheduleOffset;
         private string _scheduleTimezone;
         private string _startDate;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AllowUnassociatedTargets. 
@@ -282,6 +283,12 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// window to become active. <c>StartDate</c> allows you to delay activation of the maintenance
         /// window until the specified future date.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When using a rate schedule, if you provide a start date that occurs in the past, the
+        /// current date and time are used as the start date. 
+        /// </para>
+        ///  </note>
         /// </summary>
         public string StartDate
         {
@@ -332,7 +339,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GroundStation.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.GroundStation.Model
     /// </summary>
     public partial class ListMissionProfilesResponse : AmazonWebServiceResponse
     {
-        private List<MissionProfileListItem> _missionProfileList = new List<MissionProfileListItem>();
+        private List<MissionProfileListItem> _missionProfileList = AWSConfigs.InitializeCollections ? new List<MissionProfileListItem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.GroundStation.Model
         // Check to see if MissionProfileList property is set
         internal bool IsSetMissionProfileList()
         {
-            return this._missionProfileList != null && this._missionProfileList.Count > 0; 
+            return this._missionProfileList != null && (this._missionProfileList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

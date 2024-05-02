@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.WorkSpaces.Model
     /// </summary>
     public partial class DescribeClientPropertiesResponse : AmazonWebServiceResponse
     {
-        private List<ClientPropertiesResult> _clientPropertiesList = new List<ClientPropertiesResult>();
+        private List<ClientPropertiesResult> _clientPropertiesList = AWSConfigs.InitializeCollections ? new List<ClientPropertiesResult>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientPropertiesList. 
@@ -50,7 +51,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if ClientPropertiesList property is set
         internal bool IsSetClientPropertiesList()
         {
-            return this._clientPropertiesList != null && this._clientPropertiesList.Count > 0; 
+            return this._clientPropertiesList != null && (this._clientPropertiesList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

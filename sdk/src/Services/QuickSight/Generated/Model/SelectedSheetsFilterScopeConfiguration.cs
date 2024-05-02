@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class SelectedSheetsFilterScopeConfiguration
     {
-        private List<SheetVisualScopingConfiguration> _sheetVisualScopingConfigurations = new List<SheetVisualScopingConfiguration>();
+        private List<SheetVisualScopingConfiguration> _sheetVisualScopingConfigurations = AWSConfigs.InitializeCollections ? new List<SheetVisualScopingConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property SheetVisualScopingConfigurations. 
@@ -58,7 +59,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if SheetVisualScopingConfigurations property is set
         internal bool IsSetSheetVisualScopingConfigurations()
         {
-            return this._sheetVisualScopingConfigurations != null && this._sheetVisualScopingConfigurations.Count > 0; 
+            return this._sheetVisualScopingConfigurations != null && (this._sheetVisualScopingConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

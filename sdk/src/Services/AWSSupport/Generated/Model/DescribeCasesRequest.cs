@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.AWSSupport.Model
     {
         private string _afterTime;
         private string _beforeTime;
-        private List<string> _caseIdList = new List<string>();
+        private List<string> _caseIdList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _displayId;
         private bool? _includeCommunications;
         private bool? _includeResolvedCases;
@@ -135,7 +136,7 @@ namespace Amazon.AWSSupport.Model
         // Check to see if CaseIdList property is set
         internal bool IsSetCaseIdList()
         {
-            return this._caseIdList != null && this._caseIdList.Count > 0; 
+            return this._caseIdList != null && (this._caseIdList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

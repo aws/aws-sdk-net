@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AutoScaling.Model
     /// </summary>
     public partial class PutScalingPolicyResponse : AmazonWebServiceResponse
     {
-        private List<Alarm> _alarms = new List<Alarm>();
+        private List<Alarm> _alarms = AWSConfigs.InitializeCollections ? new List<Alarm>() : null;
         private string _policyARN;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Alarms property is set
         internal bool IsSetAlarms()
         {
-            return this._alarms != null && this._alarms.Count > 0; 
+            return this._alarms != null && (this._alarms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

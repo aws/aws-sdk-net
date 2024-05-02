@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Detective.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Detective.Model
     /// </summary>
     public partial class ListInvitationsResponse : AmazonWebServiceResponse
     {
-        private List<MemberDetail> _invitations = new List<MemberDetail>();
+        private List<MemberDetail> _invitations = AWSConfigs.InitializeCollections ? new List<MemberDetail>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Detective.Model
         // Check to see if Invitations property is set
         internal bool IsSetInvitations()
         {
-            return this._invitations != null && this._invitations.Count > 0; 
+            return this._invitations != null && (this._invitations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

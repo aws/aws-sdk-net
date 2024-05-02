@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -34,14 +35,14 @@ namespace Amazon.EC2.Model
     public partial class Vpc
     {
         private string _cidrBlock;
-        private List<VpcCidrBlockAssociation> _cidrBlockAssociationSet = new List<VpcCidrBlockAssociation>();
+        private List<VpcCidrBlockAssociation> _cidrBlockAssociationSet = AWSConfigs.InitializeCollections ? new List<VpcCidrBlockAssociation>() : null;
         private string _dhcpOptionsId;
         private Tenancy _instanceTenancy;
-        private List<VpcIpv6CidrBlockAssociation> _ipv6CidrBlockAssociationSet = new List<VpcIpv6CidrBlockAssociation>();
+        private List<VpcIpv6CidrBlockAssociation> _ipv6CidrBlockAssociationSet = AWSConfigs.InitializeCollections ? new List<VpcIpv6CidrBlockAssociation>() : null;
         private bool? _isDefault;
         private string _ownerId;
         private VpcState _state;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _vpcId;
 
         /// <summary>
@@ -77,7 +78,7 @@ namespace Amazon.EC2.Model
         // Check to see if CidrBlockAssociationSet property is set
         internal bool IsSetCidrBlockAssociationSet()
         {
-            return this._cidrBlockAssociationSet != null && this._cidrBlockAssociationSet.Count > 0; 
+            return this._cidrBlockAssociationSet != null && (this._cidrBlockAssociationSet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -131,7 +132,7 @@ namespace Amazon.EC2.Model
         // Check to see if Ipv6CidrBlockAssociationSet property is set
         internal bool IsSetIpv6CidrBlockAssociationSet()
         {
-            return this._ipv6CidrBlockAssociationSet != null && this._ipv6CidrBlockAssociationSet.Count > 0; 
+            return this._ipv6CidrBlockAssociationSet != null && (this._ipv6CidrBlockAssociationSet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -203,7 +204,7 @@ namespace Amazon.EC2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

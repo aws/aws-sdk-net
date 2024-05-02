@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.CodePipeline.Model
     public partial class GitPullRequestFilter
     {
         private GitBranchFilterCriteria _branches;
-        private List<string> _events = new List<string>();
+        private List<string> _events = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private GitFilePathFilterCriteria _filePaths;
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if Events property is set
         internal bool IsSetEvents()
         {
-            return this._events != null && this._events.Count > 0; 
+            return this._events != null && (this._events.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

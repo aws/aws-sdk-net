@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ECR.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ECR.Model
         /// Enumerable containing all of the Repositories
         /// </summary>
         public IPaginatedEnumerable<Repository> Repositories => 
-            new PaginatedResultKeyResponse<DescribeRepositoriesResponse, Repository>(this, (i) => i.Repositories);
+            new PaginatedResultKeyResponse<DescribeRepositoriesResponse, Repository>(this, (i) => i.Repositories ?? new List<Repository>());
 
         internal DescribeRepositoriesPaginator(IAmazonECR client, DescribeRepositoriesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ECR.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeRepositoriesResponse> IPaginator<DescribeRepositoriesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeRepositoriesResponse> IPaginator<DescribeRepositoriesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

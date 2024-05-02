@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PersonalizeEvents.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.PersonalizeEvents.Model
         private string _actionId;
         private string _eventId;
         private string _eventType;
-        private List<string> _impression = new List<string>();
+        private List<string> _impression = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _properties;
         private string _recommendationId;
         private string _sessionId;
@@ -127,7 +128,7 @@ namespace Amazon.PersonalizeEvents.Model
         // Check to see if Impression property is set
         internal bool IsSetImpression()
         {
-            return this._impression != null && this._impression.Count > 0; 
+            return this._impression != null && (this._impression.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -28,6 +28,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>
     public class GetBucketWebsiteResponseUnmarshaller : S3ReponseUnmarshaller
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {   
             GetBucketWebsiteResponse response = new GetBucketWebsiteResponse();
@@ -79,8 +84,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("RoutingRule", targetDepth + 1))
                     {
+                        if (response.WebsiteConfiguration.RoutingRules == null)
+                        {
+                            response.WebsiteConfiguration.RoutingRules = new List<RoutingRule>();
+                        }
+
                         response.WebsiteConfiguration.RoutingRules.Add(RoutingRuleUnmarshaller.Instance.Unmarshall(context));
-                            
                         continue;
                     }
                 }
@@ -95,6 +104,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static GetBucketWebsiteResponseUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static GetBucketWebsiteResponseUnmarshaller Instance
         {
             get

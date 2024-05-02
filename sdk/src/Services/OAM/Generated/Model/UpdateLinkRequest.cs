@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OAM.Model
 {
     /// <summary>
@@ -36,13 +37,20 @@ namespace Amazon.OAM.Model
     /// 
     ///  
     /// <para>
+    /// When you update a link, you can optionally specify filters that specify which metric
+    /// namespaces and which log groups are shared from the source account to the monitoring
+    /// account.
+    /// </para>
+    ///  
+    /// <para>
     /// To update the list of tags associated with the sink, use <a href="https://docs.aws.amazon.com/OAM/latest/APIReference/API_TagResource.html">TagResource</a>.
     /// </para>
     /// </summary>
     public partial class UpdateLinkRequest : AmazonOAMRequest
     {
         private string _identifier;
-        private List<string> _resourceTypes = new List<string>();
+        private LinkConfiguration _linkConfiguration;
+        private List<string> _resourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Identifier. 
@@ -61,6 +69,25 @@ namespace Amazon.OAM.Model
         internal bool IsSetIdentifier()
         {
             return this._identifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LinkConfiguration. 
+        /// <para>
+        /// Use this structure to filter which metric namespaces and which log groups are to be
+        /// shared from the source account to the monitoring account.
+        /// </para>
+        /// </summary>
+        public LinkConfiguration LinkConfiguration
+        {
+            get { return this._linkConfiguration; }
+            set { this._linkConfiguration = value; }
+        }
+
+        // Check to see if LinkConfiguration property is set
+        internal bool IsSetLinkConfiguration()
+        {
+            return this._linkConfiguration != null;
         }
 
         /// <summary>
@@ -84,7 +111,7 @@ namespace Amazon.OAM.Model
         // Check to see if ResourceTypes property is set
         internal bool IsSetResourceTypes()
         {
-            return this._resourceTypes != null && this._resourceTypes.Count > 0; 
+            return this._resourceTypes != null && (this._resourceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

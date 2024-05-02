@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
@@ -49,9 +50,9 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class ProtectiveEquipmentSummary
     {
-        private List<int> _personsIndeterminate = new List<int>();
-        private List<int> _personsWithoutRequiredEquipment = new List<int>();
-        private List<int> _personsWithRequiredEquipment = new List<int>();
+        private List<int> _personsIndeterminate = AWSConfigs.InitializeCollections ? new List<int>() : null;
+        private List<int> _personsWithoutRequiredEquipment = AWSConfigs.InitializeCollections ? new List<int>() : null;
+        private List<int> _personsWithRequiredEquipment = AWSConfigs.InitializeCollections ? new List<int>() : null;
 
         /// <summary>
         /// Gets and sets the property PersonsIndeterminate. 
@@ -69,7 +70,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if PersonsIndeterminate property is set
         internal bool IsSetPersonsIndeterminate()
         {
-            return this._personsIndeterminate != null && this._personsIndeterminate.Count > 0; 
+            return this._personsIndeterminate != null && (this._personsIndeterminate.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -89,7 +90,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if PersonsWithoutRequiredEquipment property is set
         internal bool IsSetPersonsWithoutRequiredEquipment()
         {
-            return this._personsWithoutRequiredEquipment != null && this._personsWithoutRequiredEquipment.Count > 0; 
+            return this._personsWithoutRequiredEquipment != null && (this._personsWithoutRequiredEquipment.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -108,7 +109,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if PersonsWithRequiredEquipment property is set
         internal bool IsSetPersonsWithRequiredEquipment()
         {
-            return this._personsWithRequiredEquipment != null && this._personsWithRequiredEquipment.Count > 0; 
+            return this._personsWithRequiredEquipment != null && (this._personsWithRequiredEquipment.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MarketplaceAgreement.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.MarketplaceAgreement.Model
     public partial class UsageBasedPricingTerm
     {
         private string _currencyCode;
-        private List<UsageBasedRateCardItem> _rateCards = new List<UsageBasedRateCardItem>();
+        private List<UsageBasedRateCardItem> _rateCards = AWSConfigs.InitializeCollections ? new List<UsageBasedRateCardItem>() : null;
         private string _type;
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.MarketplaceAgreement.Model
         // Check to see if RateCards property is set
         internal bool IsSetRateCards()
         {
-            return this._rateCards != null && this._rateCards.Count > 0; 
+            return this._rateCards != null && (this._rateCards.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

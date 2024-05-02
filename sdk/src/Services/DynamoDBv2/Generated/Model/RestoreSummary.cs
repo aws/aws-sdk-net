@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
@@ -101,6 +102,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The ARN of the source table of the backup that is being restored.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
         public string SourceTableArn
         {
             get { return this._sourceTableArn; }

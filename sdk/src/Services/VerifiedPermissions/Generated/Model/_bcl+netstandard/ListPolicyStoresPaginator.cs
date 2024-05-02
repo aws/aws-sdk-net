@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.VerifiedPermissions.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// Enumerable containing all of the PolicyStores
         /// </summary>
         public IPaginatedEnumerable<PolicyStoreItem> PolicyStores => 
-            new PaginatedResultKeyResponse<ListPolicyStoresResponse, PolicyStoreItem>(this, (i) => i.PolicyStores);
+            new PaginatedResultKeyResponse<ListPolicyStoresResponse, PolicyStoreItem>(this, (i) => i.PolicyStores ?? new List<PolicyStoreItem>());
 
         internal ListPolicyStoresPaginator(IAmazonVerifiedPermissions client, ListPolicyStoresRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.VerifiedPermissions.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListPolicyStoresResponse> IPaginator<ListPolicyStoresResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListPolicyStoresResponse> IPaginator<ListPolicyStoresResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

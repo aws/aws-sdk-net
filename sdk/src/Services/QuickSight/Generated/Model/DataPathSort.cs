@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.QuickSight.Model
     public partial class DataPathSort
     {
         private SortDirection _direction;
-        private List<DataPathValue> _sortPaths = new List<DataPathValue>();
+        private List<DataPathValue> _sortPaths = AWSConfigs.InitializeCollections ? new List<DataPathValue>() : null;
 
         /// <summary>
         /// Gets and sets the property Direction. 
@@ -71,7 +72,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if SortPaths property is set
         internal bool IsSetSortPaths()
         {
-            return this._sortPaths != null && this._sortPaths.Count > 0; 
+            return this._sortPaths != null && (this._sortPaths.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

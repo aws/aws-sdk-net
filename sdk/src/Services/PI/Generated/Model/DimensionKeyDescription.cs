@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PI.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.PI.Model
     /// </summary>
     public partial class DimensionKeyDescription
     {
-        private Dictionary<string, double> _additionalMetrics = new Dictionary<string, double>();
-        private Dictionary<string, string> _dimensions = new Dictionary<string, string>();
-        private List<double> _partitions = new List<double>();
+        private Dictionary<string, double> _additionalMetrics = AWSConfigs.InitializeCollections ? new Dictionary<string, double>() : null;
+        private Dictionary<string, string> _dimensions = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<double> _partitions = AWSConfigs.InitializeCollections ? new List<double>() : null;
         private double? _total;
 
         /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.PI.Model
         // Check to see if AdditionalMetrics property is set
         internal bool IsSetAdditionalMetrics()
         {
-            return this._additionalMetrics != null && this._additionalMetrics.Count > 0; 
+            return this._additionalMetrics != null && (this._additionalMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.PI.Model
         // Check to see if Dimensions property is set
         internal bool IsSetDimensions()
         {
-            return this._dimensions != null && this._dimensions.Count > 0; 
+            return this._dimensions != null && (this._dimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace Amazon.PI.Model
         // Check to see if Partitions property is set
         internal bool IsSetPartitions()
         {
-            return this._partitions != null && this._partitions.Count > 0; 
+            return this._partitions != null && (this._partitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

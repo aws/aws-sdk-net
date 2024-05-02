@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class PendingCloudwatchLogsExports
     {
-        private List<string> _logTypesToDisable = new List<string>();
-        private List<string> _logTypesToEnable = new List<string>();
+        private List<string> _logTypesToDisable = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _logTypesToEnable = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property LogTypesToDisable. 
@@ -53,7 +54,7 @@ namespace Amazon.RDS.Model
         // Check to see if LogTypesToDisable property is set
         internal bool IsSetLogTypesToDisable()
         {
-            return this._logTypesToDisable != null && this._logTypesToDisable.Count > 0; 
+            return this._logTypesToDisable != null && (this._logTypesToDisable.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.RDS.Model
         // Check to see if LogTypesToEnable property is set
         internal bool IsSetLogTypesToEnable()
         {
-            return this._logTypesToEnable != null && this._logTypesToEnable.Count > 0; 
+            return this._logTypesToEnable != null && (this._logTypesToEnable.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

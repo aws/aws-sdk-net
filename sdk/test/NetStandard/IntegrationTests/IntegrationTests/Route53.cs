@@ -2,15 +2,11 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 using Amazon.Route53;
 using Amazon.Route53.Model;
-using System.Threading;
-using Amazon;
 using Xunit;
-using Amazon.DNXCore.IntegrationTests;
 
 
 namespace Amazon.DNXCore.IntegrationTests
@@ -21,7 +17,6 @@ namespace Amazon.DNXCore.IntegrationTests
         private const string COMMENT = "comment";
         private const string ZONE_NAME = "aws.sdk.com.";
         private static string CALLER_REFERENCE { get { return Guid.NewGuid().ToString(); } }
-        private static TimeSpan pollingPeriod = TimeSpan.FromSeconds(30);
         private static TimeSpan maxWaitTime = TimeSpan.FromMinutes(5);
 
         // The ID of the zone we created in this test
@@ -67,7 +62,7 @@ namespace Amazon.DNXCore.IntegrationTests
             {
                 var geoLocations = (await Client.ListGeoLocationsAsync()).GeoLocationDetailsList;
                 Assert.NotNull(geoLocations);
-                Assert.NotEqual(0, geoLocations.Count);
+                Assert.NotEmpty(geoLocations);
 
                 CreateHostedZoneRequest createRequest = new CreateHostedZoneRequest
                 {
@@ -113,14 +108,13 @@ namespace Amazon.DNXCore.IntegrationTests
                 {
                     Assert.NotNull(rrset.Name);
                     Assert.NotNull(rrset.Type);
-                    Assert.NotNull(rrset.TTL);
                     Assert.True(rrset.ResourceRecords.Count > 0);
                 }
 
 
                 // Get Change
                 ChangeInfo changeInfo = (await Client.GetChangeAsync(new GetChangeRequest { Id = createdZoneChangeId })).ChangeInfo;
-                Assert.True(changeInfo.Id.EndsWith(createdZoneChangeId));
+                Assert.EndsWith(createdZoneChangeId, changeInfo.Id);
                 assertValidChangeInfo(changeInfo);
 
 
@@ -162,7 +156,7 @@ namespace Amazon.DNXCore.IntegrationTests
 
         [Fact]
         [Trait(CategoryAttribute,"Route53")]
-        public void HealthCheckTests()
+        public async Task HealthCheckTests()
         {
             var createRequest = new CreateHealthCheckRequest()
             {
@@ -176,13 +170,13 @@ namespace Amazon.DNXCore.IntegrationTests
                     FailureThreshold = 5
                 }
             };
-            var createResponse = Client.CreateHealthCheckAsync(createRequest).Result;
+            var createResponse = await Client.CreateHealthCheckAsync(createRequest);
             Assert.NotNull(createResponse.HealthCheck.Id);
             Assert.Equal(10, createResponse.HealthCheck.HealthCheckConfig.RequestInterval);
             Assert.Equal(5, createResponse.HealthCheck.HealthCheckConfig.FailureThreshold);
             string healthCheckId = createResponse.HealthCheck.Id;
 
-            var listResponse = Client.ListHealthChecksAsync().Result;
+            var listResponse = await Client.ListHealthChecksAsync();
             Assert.NotNull(listResponse.HealthChecks.FirstOrDefault(x => x.Id == healthCheckId));
 
             GetHealthCheckStatusResponse status = null;
@@ -192,10 +186,10 @@ namespace Amazon.DNXCore.IntegrationTests
             {
                 try
                 {
-                    status = Client.GetHealthCheckStatusAsync(new GetHealthCheckStatusRequest
+                    status = await Client.GetHealthCheckStatusAsync(new GetHealthCheckStatusRequest
                     {
                         HealthCheckId = healthCheckId
-                    }).Result;
+                    });
                     break;
                 }
                 catch
@@ -204,28 +198,34 @@ namespace Amazon.DNXCore.IntegrationTests
                 }
             }
             Assert.NotNull(status);
-            Assert.NotNull(status.HealthCheckObservations);
 
-            var healthCheck = Client.GetHealthCheckAsync(new GetHealthCheckRequest
+            var healthCheck = (await Client.GetHealthCheckAsync(new GetHealthCheckRequest
             {
                 HealthCheckId = healthCheckId
-            }).Result.HealthCheck;
+            })).HealthCheck;
             Assert.NotNull(healthCheck);
             Assert.NotNull(healthCheck.Id);
             Assert.NotNull(healthCheck.HealthCheckConfig);
 
-            var tagSet = Client.ListTagsForResourceAsync(new ListTagsForResourceRequest
+            var tagSet = (await Client.ListTagsForResourceAsync(new ListTagsForResourceRequest
             {
                 ResourceType = TagResourceType.Healthcheck,
                 ResourceId = healthCheckId
-            }).Result.ResourceTagSet;
+            })).ResourceTagSet;
             Assert.NotNull(tagSet);
             Assert.NotNull(tagSet.ResourceId);
             Assert.NotNull(tagSet.ResourceType);
-            Assert.NotNull(tagSet.Tags);
-            Assert.Equal(0, tagSet.Tags.Count);
 
-            Client.ChangeTagsForResourceAsync(new ChangeTagsForResourceRequest
+            if (AWSConfigs.InitializeCollections)
+            {
+                Assert.Empty(tagSet.Tags);
+            }
+            else
+            {
+                Assert.Null(tagSet.Tags);
+            }
+
+            await Client.ChangeTagsForResourceAsync(new ChangeTagsForResourceRequest
             {
                 ResourceType = TagResourceType.Healthcheck,
                 ResourceId = healthCheckId,
@@ -233,24 +233,24 @@ namespace Amazon.DNXCore.IntegrationTests
                 {
                     new Tag { Key = "Test", Value = "true" }
                 }
-            }).Wait();
+            });
 
-            tagSet = Client.ListTagsForResourceAsync(new ListTagsForResourceRequest
+            tagSet = (await Client.ListTagsForResourceAsync(new ListTagsForResourceRequest
             {
                 ResourceType = TagResourceType.Healthcheck,
                 ResourceId = healthCheckId
-            }).Result.ResourceTagSet;
+            })).ResourceTagSet;
             Assert.NotNull(tagSet);
             Assert.NotNull(tagSet.ResourceId);
             Assert.NotNull(tagSet.ResourceType);
             Assert.NotNull(tagSet.Tags);
-            Assert.Equal(1, tagSet.Tags.Count);
+            Assert.Single(tagSet.Tags);
             Assert.Equal("Test", tagSet.Tags[0].Key);
             Assert.Equal("true", tagSet.Tags[0].Value);
 
             Client.DeleteHealthCheckAsync(new DeleteHealthCheckRequest() { HealthCheckId = healthCheckId }).Wait();
 
-            listResponse = Client.ListHealthChecksAsync().Result;
+            listResponse = await Client.ListHealthChecksAsync();
             Assert.Null(listResponse.HealthChecks.FirstOrDefault(x => x.Id == healthCheckId));
 
 
@@ -258,31 +258,31 @@ namespace Amazon.DNXCore.IntegrationTests
 
         [Fact(Skip = "Excluding flaky Route53 delegation set test.")]
         [Trait(CategoryAttribute,"Route53")]
-        public void DelegationSetTests()
+        public async Task DelegationSetTests()
         {
             string createdZoneId = null;
             try
             {
                 List<string> createdSets = new List<string>();
 
-                var sets = Client.ListReusableDelegationSetsAsync(new ListReusableDelegationSetsRequest()).Result;
+                var sets = await Client.ListReusableDelegationSetsAsync(new ListReusableDelegationSetsRequest());
                 var setCount = sets.DelegationSets.Count;
 
                 var callerReference = "DNSMigration" + DateTime.Now.ToFileTime();
-                var createResponse = Client.CreateReusableDelegationSetAsync(new CreateReusableDelegationSetRequest
+                var createResponse = await Client.CreateReusableDelegationSetAsync(new CreateReusableDelegationSetRequest
                 {
                     CallerReference = callerReference
-                }).Result;
+                });
                 Assert.NotNull(createResponse.Location);
                 var delegationSet = createResponse.DelegationSet;
                 Assert.NotNull(delegationSet);
                 Assert.NotNull(delegationSet.CallerReference);
                 Assert.NotNull(delegationSet.Id);
                 Assert.NotNull(delegationSet.NameServers);
-                Assert.NotEqual(0, delegationSet.NameServers.Count);
+                Assert.NotEmpty(delegationSet.NameServers);
                 createdSets.Add(delegationSet.Id);
 
-                sets = Client.ListReusableDelegationSetsAsync(new ListReusableDelegationSetsRequest()).Result;
+                sets = await Client.ListReusableDelegationSetsAsync(new ListReusableDelegationSetsRequest());
                 Assert.Equal(setCount + 1, sets.DelegationSets.Count);
 
                 CreateHostedZoneRequest createRequest = new CreateHostedZoneRequest
@@ -296,26 +296,26 @@ namespace Amazon.DNXCore.IntegrationTests
                     Client.CreateHostedZoneAsync(createRequest).Result.HostedZone.Id
                 );
 
-                var hostedZoneInfo = Client.GetHostedZoneAsync(new GetHostedZoneRequest
+                var hostedZoneInfo = await Client.GetHostedZoneAsync(new GetHostedZoneRequest
                 {
                     Id = createdZoneId
-                }).Result;
+                });
                 Assert.NotNull(hostedZoneInfo.VPCs);
                 Assert.False(hostedZoneInfo.HostedZone.Config.PrivateZone);
                 Assert.Equal(delegationSet.Id, hostedZoneInfo.DelegationSet.Id);
 
-                var hostedZones = Client.ListHostedZonesAsync(new ListHostedZonesRequest
+                var hostedZones = (await Client.ListHostedZonesAsync(new ListHostedZonesRequest
                 {
                     DelegationSetId = delegationSet.Id
-                }).Result.HostedZones;
-                Assert.Equal(1, hostedZones.Count);
+                })).HostedZones;
+                Assert.Single(hostedZones);
 
                 // add a second set
                 callerReference = "DNSMigration" + DateTime.Now.ToFileTime();
-                createResponse = Client.CreateReusableDelegationSetAsync(new CreateReusableDelegationSetRequest
+                createResponse = await Client.CreateReusableDelegationSetAsync(new CreateReusableDelegationSetRequest
                 {
                     CallerReference = callerReference
-                }).Result;
+                });
                 delegationSet = createResponse.DelegationSet;
                 createdSets.Add(delegationSet.Id);
 
@@ -323,11 +323,11 @@ namespace Amazon.DNXCore.IntegrationTests
                 string nextMarker = null;
                 do
                 {
-                    var response = Client.ListReusableDelegationSetsAsync(new ListReusableDelegationSetsRequest
+                    var response = await Client.ListReusableDelegationSetsAsync(new ListReusableDelegationSetsRequest
                     {
                         MaxItems = "1",
                         Marker = nextMarker
-                    }).Result;
+                    });
                     totalSetCount += response.DelegationSets.Count;
                     nextMarker = response.NextMarker;
                 } while (!string.IsNullOrEmpty(nextMarker));
@@ -347,18 +347,18 @@ namespace Amazon.DNXCore.IntegrationTests
                     }).Wait();
                 }
 
-                sets = Client.ListReusableDelegationSetsAsync(new ListReusableDelegationSetsRequest()).Result;
+                sets = await Client.ListReusableDelegationSetsAsync(new ListReusableDelegationSetsRequest());
                 Assert.Equal(setCount, sets.DelegationSets.Count);
             }
             finally
             {
-                DeleteHostedZone(createdZoneId);
+                DeleteHostedZone(createdZoneId).Wait();
             }
         }
 
         [Fact]
         [Trait(CategoryAttribute,"Route53")]
-        public void VPCTests()
+        public async Task VPCTests()
         {
             var vpc1 = CreateVPC();
             var vpc2 = CreateVPC();
@@ -376,56 +376,56 @@ namespace Amazon.DNXCore.IntegrationTests
                     Client.CreateHostedZoneAsync(createRequest).Result.HostedZone.Id
                 );
 
-                var hostedZoneInfo = Client.GetHostedZoneAsync(new GetHostedZoneRequest
+                var hostedZoneInfo = await Client.GetHostedZoneAsync(new GetHostedZoneRequest
                 {
                     Id = createdZoneId
-                }).Result;
+                });
                 Assert.NotNull(hostedZoneInfo.VPCs);
-                Assert.Equal(1, hostedZoneInfo.VPCs.Count);
+                Assert.Single(hostedZoneInfo.VPCs);
                 Assert.True(hostedZoneInfo.HostedZone.Config.PrivateZone);
 
-                var changeInfo = Client.AssociateVPCWithHostedZoneAsync(new AssociateVPCWithHostedZoneRequest
+                var changeInfo = (await Client.AssociateVPCWithHostedZoneAsync(new AssociateVPCWithHostedZoneRequest
                 {
                     VPC = vpc2,
                     Comment = COMMENT,
                     HostedZoneId = createdZoneId
-                }).Result.ChangeInfo;
+                })).ChangeInfo;
                 Assert.NotNull(changeInfo);
                 Assert.NotNull(changeInfo.Comment);
                 assertValidChangeInfo(changeInfo);
 
-                hostedZoneInfo = Client.GetHostedZoneAsync(new GetHostedZoneRequest
+                hostedZoneInfo = await Client.GetHostedZoneAsync(new GetHostedZoneRequest
                 {
                     Id = createdZoneId
-                }).Result;
+                });
                 Assert.NotNull(hostedZoneInfo.VPCs);
                 Assert.Equal(2, hostedZoneInfo.VPCs.Count);
 
-                changeInfo = Client.DisassociateVPCFromHostedZoneAsync(new DisassociateVPCFromHostedZoneRequest
+                changeInfo = (await Client.DisassociateVPCFromHostedZoneAsync(new DisassociateVPCFromHostedZoneRequest
                 {
                     HostedZoneId = createdZoneId,
                     VPC = vpc2
-                }).Result.ChangeInfo;
+                })).ChangeInfo;
                 assertValidChangeInfo(changeInfo);
 
-                hostedZoneInfo = Client.GetHostedZoneAsync(new GetHostedZoneRequest
+                hostedZoneInfo = await Client.GetHostedZoneAsync(new GetHostedZoneRequest
                 {
                     Id = createdZoneId
-                }).Result;
+                });
                 Assert.NotNull(hostedZoneInfo.VPCs);
-                Assert.Equal(1, hostedZoneInfo.VPCs.Count);
+                Assert.Single(hostedZoneInfo.VPCs);
 
-                changeInfo = Client.DeleteHostedZoneAsync(new DeleteHostedZoneRequest
+                changeInfo = (await Client.DeleteHostedZoneAsync(new DeleteHostedZoneRequest
                 {
                     Id = createdZoneId
-                }).Result.ChangeInfo;
+                })).ChangeInfo;
                 assertValidChangeInfo(changeInfo);
             }
             finally
             {
                 DeleteVPC(vpc1);
                 DeleteVPC(vpc2);
-                DeleteHostedZone(createdZoneId);
+                DeleteHostedZone(createdZoneId).Wait();
             }
         }
 
@@ -486,13 +486,13 @@ namespace Amazon.DNXCore.IntegrationTests
         {
             Assert.NotNull(change.Id);
             Assert.NotNull(change.Status);
-            Assert.NotNull(change.SubmittedAt);
+            Assert.NotEqual(DateTime.MinValue, change.SubmittedAt);
 
             ChangeInfo retrievedChange = Client.GetChangeAsync(new GetChangeRequest { Id = change.Id }).Result.ChangeInfo;
             Assert.NotNull(retrievedChange);
             Assert.NotNull(retrievedChange.Id);
             Assert.NotNull(retrievedChange.Status);
-            Assert.NotNull(retrievedChange.SubmittedAt);
+            Assert.NotEqual(DateTime.MinValue, retrievedChange.SubmittedAt);
         }
     }
 }

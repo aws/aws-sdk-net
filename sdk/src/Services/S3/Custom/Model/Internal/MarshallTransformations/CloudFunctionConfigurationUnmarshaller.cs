@@ -21,8 +21,16 @@ using Amazon.Runtime.Internal.Transform;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
+    /// <summary>
+    /// LambdaFunction unmarshaller
+    /// </summary>
     public class LambdaFunctionConfigurationUnmarshaller : IUnmarshaller<LambdaFunctionConfiguration, XmlUnmarshallerContext>, IUnmarshaller<LambdaFunctionConfiguration, JsonUnmarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public LambdaFunctionConfiguration Unmarshall(XmlUnmarshallerContext context)
         {
             LambdaFunctionConfiguration cloudFunctionConfiguration = new LambdaFunctionConfiguration();
@@ -44,6 +52,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Event", targetDepth))
                     {
+                        if (cloudFunctionConfiguration.Events == null)
+                        {
+                            cloudFunctionConfiguration.Events = new List<EventType>();
+                        }
+
                         cloudFunctionConfiguration.Events.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
 
                         continue;
@@ -70,6 +83,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return cloudFunctionConfiguration;
         }
 
+        /// <summary>
+        /// Not implemented and always returns null.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public LambdaFunctionConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -77,6 +95,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static LambdaFunctionConfigurationUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static LambdaFunctionConfigurationUnmarshaller Instance
         {
             get

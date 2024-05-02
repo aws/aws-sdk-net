@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MigrationHubStrategyRecommendations.Model
 {
     /// <summary>
@@ -37,13 +38,13 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         private AntipatternReportStatus _antipatternReportStatus;
         private string _antipatternReportStatusMessage;
         private DateTime? _lastAnalyzedTimestamp;
-        private List<AntipatternSeveritySummary> _listAntipatternSeveritySummary = new List<AntipatternSeveritySummary>();
-        private List<ApplicationComponentStatusSummary> _listApplicationComponentStatusSummary = new List<ApplicationComponentStatusSummary>();
-        private List<StrategySummary> _listApplicationComponentStrategySummary = new List<StrategySummary>();
-        private List<ApplicationComponentSummary> _listApplicationComponentSummary = new List<ApplicationComponentSummary>();
-        private List<ServerStatusSummary> _listServerStatusSummary = new List<ServerStatusSummary>();
-        private List<StrategySummary> _listServerStrategySummary = new List<StrategySummary>();
-        private List<ServerSummary> _listServerSummary = new List<ServerSummary>();
+        private List<AntipatternSeveritySummary> _listAntipatternSeveritySummary = AWSConfigs.InitializeCollections ? new List<AntipatternSeveritySummary>() : null;
+        private List<ApplicationComponentStatusSummary> _listApplicationComponentStatusSummary = AWSConfigs.InitializeCollections ? new List<ApplicationComponentStatusSummary>() : null;
+        private List<StrategySummary> _listApplicationComponentStrategySummary = AWSConfigs.InitializeCollections ? new List<StrategySummary>() : null;
+        private List<ApplicationComponentSummary> _listApplicationComponentSummary = AWSConfigs.InitializeCollections ? new List<ApplicationComponentSummary>() : null;
+        private List<ServerStatusSummary> _listServerStatusSummary = AWSConfigs.InitializeCollections ? new List<ServerStatusSummary>() : null;
+        private List<StrategySummary> _listServerStrategySummary = AWSConfigs.InitializeCollections ? new List<StrategySummary>() : null;
+        private List<ServerSummary> _listServerSummary = AWSConfigs.InitializeCollections ? new List<ServerSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property AntipatternReportS3Object. 
@@ -133,7 +134,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         // Check to see if ListAntipatternSeveritySummary property is set
         internal bool IsSetListAntipatternSeveritySummary()
         {
-            return this._listAntipatternSeveritySummary != null && this._listAntipatternSeveritySummary.Count > 0; 
+            return this._listAntipatternSeveritySummary != null && (this._listAntipatternSeveritySummary.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -151,7 +152,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         // Check to see if ListApplicationComponentStatusSummary property is set
         internal bool IsSetListApplicationComponentStatusSummary()
         {
-            return this._listApplicationComponentStatusSummary != null && this._listApplicationComponentStatusSummary.Count > 0; 
+            return this._listApplicationComponentStatusSummary != null && (this._listApplicationComponentStatusSummary.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -169,7 +170,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         // Check to see if ListApplicationComponentStrategySummary property is set
         internal bool IsSetListApplicationComponentStrategySummary()
         {
-            return this._listApplicationComponentStrategySummary != null && this._listApplicationComponentStrategySummary.Count > 0; 
+            return this._listApplicationComponentStrategySummary != null && (this._listApplicationComponentStrategySummary.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -187,7 +188,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         // Check to see if ListApplicationComponentSummary property is set
         internal bool IsSetListApplicationComponentSummary()
         {
-            return this._listApplicationComponentSummary != null && this._listApplicationComponentSummary.Count > 0; 
+            return this._listApplicationComponentSummary != null && (this._listApplicationComponentSummary.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -205,7 +206,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         // Check to see if ListServerStatusSummary property is set
         internal bool IsSetListServerStatusSummary()
         {
-            return this._listServerStatusSummary != null && this._listServerStatusSummary.Count > 0; 
+            return this._listServerStatusSummary != null && (this._listServerStatusSummary.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -223,7 +224,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         // Check to see if ListServerStrategySummary property is set
         internal bool IsSetListServerStrategySummary()
         {
-            return this._listServerStrategySummary != null && this._listServerStrategySummary.Count > 0; 
+            return this._listServerStrategySummary != null && (this._listServerStrategySummary.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -241,7 +242,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         // Check to see if ListServerSummary property is set
         internal bool IsSetListServerSummary()
         {
-            return this._listServerSummary != null && this._listServerSummary.Count > 0; 
+            return this._listServerSummary != null && (this._listServerSummary.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

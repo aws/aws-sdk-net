@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Finspace.Model
 {
     /// <summary>
@@ -34,13 +35,13 @@ namespace Amazon.Finspace.Model
     /// </summary>
     public partial class CreateKxVolumeRequest : AmazonFinspaceRequest
     {
-        private List<string> _availabilityZoneIds = new List<string>();
+        private List<string> _availabilityZoneIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private KxAzMode _azMode;
         private string _clientToken;
         private string _description;
         private string _environmentId;
         private KxNAS1Configuration _nas1Configuration;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _volumeName;
         private KxVolumeType _volumeType;
 
@@ -60,14 +61,14 @@ namespace Amazon.Finspace.Model
         // Check to see if AvailabilityZoneIds property is set
         internal bool IsSetAvailabilityZoneIds()
         {
-            return this._availabilityZoneIds != null && this._availabilityZoneIds.Count > 0; 
+            return this._availabilityZoneIds != null && (this._availabilityZoneIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property AzMode. 
         /// <para>
-        /// The number of availability zones you want to assign per cluster. Currently, FinSpace
-        /// only support <c>SINGLE</c> for volumes.
+        /// The number of availability zones you want to assign per volume. Currently, FinSpace
+        /// only supports <c>SINGLE</c> for volumes. This places dataview in a single AZ.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -177,7 +178,7 @@ namespace Amazon.Finspace.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

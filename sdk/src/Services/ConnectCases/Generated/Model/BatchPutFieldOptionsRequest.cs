@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConnectCases.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.ConnectCases.Model
     {
         private string _domainId;
         private string _fieldId;
-        private List<FieldOption> _options = new List<FieldOption>();
+        private List<FieldOption> _options = AWSConfigs.InitializeCollections ? new List<FieldOption>() : null;
 
         /// <summary>
         /// Gets and sets the property DomainId. 
@@ -92,7 +93,7 @@ namespace Amazon.ConnectCases.Model
         // Check to see if Options property is set
         internal bool IsSetOptions()
         {
-            return this._options != null && this._options.Count > 0; 
+            return this._options != null && (this._options.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class DetectFacesResponse : AmazonWebServiceResponse
     {
-        private List<FaceDetail> _faceDetails = new List<FaceDetail>();
+        private List<FaceDetail> _faceDetails = AWSConfigs.InitializeCollections ? new List<FaceDetail>() : null;
         private OrientationCorrection _orientationCorrection;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if FaceDetails property is set
         internal bool IsSetFaceDetails()
         {
-            return this._faceDetails != null && this._faceDetails.Count > 0; 
+            return this._faceDetails != null && (this._faceDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class AutoRollbackConfig
     {
-        private List<Alarm> _alarms = new List<Alarm>();
+        private List<Alarm> _alarms = AWSConfigs.InitializeCollections ? new List<Alarm>() : null;
 
         /// <summary>
         /// Gets and sets the property Alarms. 
@@ -53,7 +54,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Alarms property is set
         internal bool IsSetAlarms()
         {
-            return this._alarms != null && this._alarms.Count > 0; 
+            return this._alarms != null && (this._alarms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

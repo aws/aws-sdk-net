@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.GreengrassV2.Model
     /// </summary>
     public partial class ListInstalledComponentsResponse : AmazonWebServiceResponse
     {
-        private List<InstalledComponent> _installedComponents = new List<InstalledComponent>();
+        private List<InstalledComponent> _installedComponents = AWSConfigs.InitializeCollections ? new List<InstalledComponent>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -63,7 +64,7 @@ namespace Amazon.GreengrassV2.Model
         // Check to see if InstalledComponents property is set
         internal bool IsSetInstalledComponents()
         {
-            return this._installedComponents != null && this._installedComponents.Count > 0; 
+            return this._installedComponents != null && (this._installedComponents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

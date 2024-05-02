@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.EC2.Model
     {
         private string _frequency;
         private int? _interval;
-        private List<int> _occurrenceDays = new List<int>();
+        private List<int> _occurrenceDays = AWSConfigs.InitializeCollections ? new List<int>() : null;
         private bool? _occurrenceRelativeToEnd;
         private string _occurrenceUnit;
 
@@ -94,7 +95,7 @@ namespace Amazon.EC2.Model
         // Check to see if OccurrenceDays property is set
         internal bool IsSetOccurrenceDays()
         {
-            return this._occurrenceDays != null && this._occurrenceDays.Count > 0; 
+            return this._occurrenceDays != null && (this._occurrenceDays.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

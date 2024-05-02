@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
@@ -167,8 +168,8 @@ namespace Amazon.KeyManagementService.Model
     {
         private bool? _dryRun;
         private EncryptionAlgorithmSpec _encryptionAlgorithm;
-        private Dictionary<string, string> _encryptionContext = new Dictionary<string, string>();
-        private List<string> _grantTokens = new List<string>();
+        private Dictionary<string, string> _encryptionContext = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<string> _grantTokens = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _keyId;
         private MemoryStream _plaintext;
 
@@ -262,7 +263,7 @@ namespace Amazon.KeyManagementService.Model
         // Check to see if EncryptionContext property is set
         internal bool IsSetEncryptionContext()
         {
-            return this._encryptionContext != null && this._encryptionContext.Count > 0; 
+            return this._encryptionContext != null && (this._encryptionContext.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -289,7 +290,7 @@ namespace Amazon.KeyManagementService.Model
         // Check to see if GrantTokens property is set
         internal bool IsSetGrantTokens()
         {
-            return this._grantTokens != null && this._grantTokens.Count > 0; 
+            return this._grantTokens != null && (this._grantTokens.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

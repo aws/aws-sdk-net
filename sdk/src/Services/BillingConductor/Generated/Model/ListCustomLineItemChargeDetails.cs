@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BillingConductor.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.BillingConductor.Model
     public partial class ListCustomLineItemChargeDetails
     {
         private ListCustomLineItemFlatChargeDetails _flat;
-        private List<LineItemFilter> _lineItemFilters = new List<LineItemFilter>();
+        private List<LineItemFilter> _lineItemFilters = AWSConfigs.InitializeCollections ? new List<LineItemFilter>() : null;
         private ListCustomLineItemPercentageChargeDetails _percentage;
         private CustomLineItemType _type;
 
@@ -73,7 +74,7 @@ namespace Amazon.BillingConductor.Model
         // Check to see if LineItemFilters property is set
         internal bool IsSetLineItemFilters()
         {
-            return this._lineItemFilters != null && this._lineItemFilters.Count > 0; 
+            return this._lineItemFilters != null && (this._lineItemFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

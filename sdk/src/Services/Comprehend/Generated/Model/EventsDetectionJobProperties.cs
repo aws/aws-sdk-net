@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
@@ -44,7 +45,7 @@ namespace Amazon.Comprehend.Model
         private string _message;
         private OutputDataConfig _outputDataConfig;
         private DateTime? _submitTime;
-        private List<string> _targetEventTypes = new List<string>();
+        private List<string> _targetEventTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
@@ -283,7 +284,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if TargetEventTypes property is set
         internal bool IsSetTargetEventTypes()
         {
-            return this._targetEventTypes != null && this._targetEventTypes.Count > 0; 
+            return this._targetEventTypes != null && (this._targetEventTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

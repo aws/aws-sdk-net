@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Pinpoint.Model
     /// </summary>
     public partial class EventsResponse
     {
-        private Dictionary<string, ItemResponse> _results = new Dictionary<string, ItemResponse>();
+        private Dictionary<string, ItemResponse> _results = AWSConfigs.InitializeCollections ? new Dictionary<string, ItemResponse>() : null;
 
         /// <summary>
         /// Gets and sets the property Results. 
@@ -53,7 +54,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Results property is set
         internal bool IsSetResults()
         {
-            return this._results != null && this._results.Count > 0; 
+            return this._results != null && (this._results.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
@@ -49,7 +50,7 @@ namespace Amazon.CloudWatch.Model
     public partial class DescribeAlarmHistoryRequest : AmazonCloudWatchRequest
     {
         private string _alarmName;
-        private List<string> _alarmTypes = new List<string>();
+        private List<string> _alarmTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _endDateUtc;
         private HistoryItemType _historyItemType;
         private int? _maxRecords;
@@ -92,7 +93,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if AlarmTypes property is set
         internal bool IsSetAlarmTypes()
         {
-            return this._alarmTypes != null && this._alarmTypes.Count > 0; 
+            return this._alarmTypes != null && (this._alarmTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

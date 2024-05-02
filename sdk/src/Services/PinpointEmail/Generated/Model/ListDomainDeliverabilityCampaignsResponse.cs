@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PinpointEmail.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.PinpointEmail.Model
     /// </summary>
     public partial class ListDomainDeliverabilityCampaignsResponse : AmazonWebServiceResponse
     {
-        private List<DomainDeliverabilityCampaign> _domainDeliverabilityCampaigns = new List<DomainDeliverabilityCampaign>();
+        private List<DomainDeliverabilityCampaign> _domainDeliverabilityCampaigns = AWSConfigs.InitializeCollections ? new List<DomainDeliverabilityCampaign>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -56,7 +57,7 @@ namespace Amazon.PinpointEmail.Model
         // Check to see if DomainDeliverabilityCampaigns property is set
         internal bool IsSetDomainDeliverabilityCampaigns()
         {
-            return this._domainDeliverabilityCampaigns != null && this._domainDeliverabilityCampaigns.Count > 0; 
+            return this._domainDeliverabilityCampaigns != null && (this._domainDeliverabilityCampaigns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

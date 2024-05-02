@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ImportExport.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ImportExport.Model
     /// </summary>
     public partial class GetStatusResponse : AmazonWebServiceResponse
     {
-        private List<Artifact> _artifactList = new List<Artifact>();
+        private List<Artifact> _artifactList = AWSConfigs.InitializeCollections ? new List<Artifact>() : null;
         private string _carrier;
         private DateTime? _creationDate;
         private string _currentManifest;
@@ -62,7 +63,7 @@ namespace Amazon.ImportExport.Model
         // Check to see if ArtifactList property is set
         internal bool IsSetArtifactList()
         {
-            return this._artifactList != null && this._artifactList.Count > 0; 
+            return this._artifactList != null && (this._artifactList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

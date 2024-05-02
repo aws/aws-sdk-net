@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class TargetLocation
     {
-        private List<string> _accounts = new List<string>();
+        private List<string> _accounts = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _executionRoleName;
-        private List<string> _regions = new List<string>();
+        private List<string> _regions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AlarmConfiguration _targetLocationAlarmConfiguration;
         private string _targetLocationMaxConcurrency;
         private string _targetLocationMaxErrors;
@@ -57,7 +58,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Accounts property is set
         internal bool IsSetAccounts()
         {
-            return this._accounts != null && this._accounts.Count > 0; 
+            return this._accounts != null && (this._accounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -96,7 +97,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Regions property is set
         internal bool IsSetRegions()
         {
-            return this._regions != null && this._regions.Count > 0; 
+            return this._regions != null && (this._regions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

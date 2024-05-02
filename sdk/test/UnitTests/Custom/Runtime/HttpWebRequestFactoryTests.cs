@@ -38,9 +38,11 @@ namespace AWSSDK.UnitTests
             _fixture.Customize<RequestContext>(cc =>
                 cc.With(config => config.CancellationToken, CancellationToken.None)
             );
-#endif
-            TestHttpRequest(CancellationToken.None);
 
+            _ = TestHttpRequest(CancellationToken.None);
+#else
+            TestHttpRequest(CancellationToken.None);
+#endif
         }
 
 #if ASYNC_AWAIT

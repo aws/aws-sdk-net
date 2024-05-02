@@ -843,6 +843,10 @@ namespace Amazon.Imagebuilder
         /// </summary>
         public static readonly LifecycleExecutionStatus IN_PROGRESS = new LifecycleExecutionStatus("IN_PROGRESS");
         /// <summary>
+        /// Constant PENDING for LifecycleExecutionStatus
+        /// </summary>
+        public static readonly LifecycleExecutionStatus PENDING = new LifecycleExecutionStatus("PENDING");
+        /// <summary>
         /// Constant SUCCESS for LifecycleExecutionStatus
         /// </summary>
         public static readonly LifecycleExecutionStatus SUCCESS = new LifecycleExecutionStatus("SUCCESS");

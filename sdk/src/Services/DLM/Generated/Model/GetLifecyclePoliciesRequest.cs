@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DLM.Model
 {
     /// <summary>
@@ -40,11 +41,11 @@ namespace Amazon.DLM.Model
     public partial class GetLifecyclePoliciesRequest : AmazonDLMRequest
     {
         private DefaultPoliciesTypeValues _defaultPolicyType;
-        private List<string> _policyIds = new List<string>();
-        private List<string> _resourceTypes = new List<string>();
+        private List<string> _policyIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _resourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private GettablePolicyStateValues _state;
-        private List<string> _tagsToAdd = new List<string>();
-        private List<string> _targetTags = new List<string>();
+        private List<string> _tagsToAdd = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _targetTags = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DefaultPolicyType. 
@@ -93,7 +94,7 @@ namespace Amazon.DLM.Model
         // Check to see if PolicyIds property is set
         internal bool IsSetPolicyIds()
         {
-            return this._policyIds != null && this._policyIds.Count > 0; 
+            return this._policyIds != null && (this._policyIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -112,7 +113,7 @@ namespace Amazon.DLM.Model
         // Check to see if ResourceTypes property is set
         internal bool IsSetResourceTypes()
         {
-            return this._resourceTypes != null && this._resourceTypes.Count > 0; 
+            return this._resourceTypes != null && (this._resourceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -158,7 +159,7 @@ namespace Amazon.DLM.Model
         // Check to see if TagsToAdd property is set
         internal bool IsSetTagsToAdd()
         {
-            return this._tagsToAdd != null && this._tagsToAdd.Count > 0; 
+            return this._tagsToAdd != null && (this._tagsToAdd.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -181,7 +182,7 @@ namespace Amazon.DLM.Model
         // Check to see if TargetTags property is set
         internal bool IsSetTargetTags()
         {
-            return this._targetTags != null && this._targetTags.Count > 0; 
+            return this._targetTags != null && (this._targetTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

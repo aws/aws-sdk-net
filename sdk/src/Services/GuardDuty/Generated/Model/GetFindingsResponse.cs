@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class GetFindingsResponse : AmazonWebServiceResponse
     {
-        private List<Finding> _findings = new List<Finding>();
+        private List<Finding> _findings = AWSConfigs.InitializeCollections ? new List<Finding>() : null;
 
         /// <summary>
         /// Gets and sets the property Findings. 
@@ -51,7 +52,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if Findings property is set
         internal bool IsSetFindings()
         {
-            return this._findings != null && this._findings.Count > 0; 
+            return this._findings != null && (this._findings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

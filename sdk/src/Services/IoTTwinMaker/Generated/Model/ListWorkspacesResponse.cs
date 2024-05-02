@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTTwinMaker.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IoTTwinMaker.Model
     public partial class ListWorkspacesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<WorkspaceSummary> _workspaceSummaries = new List<WorkspaceSummary>();
+        private List<WorkspaceSummary> _workspaceSummaries = AWSConfigs.InitializeCollections ? new List<WorkspaceSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if WorkspaceSummaries property is set
         internal bool IsSetWorkspaceSummaries()
         {
-            return this._workspaceSummaries != null && this._workspaceSummaries.Count > 0; 
+            return this._workspaceSummaries != null && (this._workspaceSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

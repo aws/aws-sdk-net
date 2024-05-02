@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SecurityHub.Model
     public partial class AwsCodeBuildProjectEnvironment
     {
         private string _certificate;
-        private List<AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails> _environmentVariables = new List<AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails>();
+        private List<AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails> _environmentVariables = AWSConfigs.InitializeCollections ? new List<AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetails>() : null;
         private string _imagePullCredentialsType;
         private bool? _privilegedMode;
         private AwsCodeBuildProjectEnvironmentRegistryCredential _registryCredential;
@@ -73,7 +74,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if EnvironmentVariables property is set
         internal bool IsSetEnvironmentVariables()
         {
-            return this._environmentVariables != null && this._environmentVariables.Count > 0; 
+            return this._environmentVariables != null && (this._environmentVariables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

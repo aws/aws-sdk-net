@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CostExplorer.Model
     /// </summary>
     public partial class ModifyRecommendationDetail
     {
-        private List<TargetInstance> _targetInstances = new List<TargetInstance>();
+        private List<TargetInstance> _targetInstances = AWSConfigs.InitializeCollections ? new List<TargetInstance>() : null;
 
         /// <summary>
         /// Gets and sets the property TargetInstances. 
@@ -50,7 +51,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if TargetInstances property is set
         internal bool IsSetTargetInstances()
         {
-            return this._targetInstances != null && this._targetInstances.Count > 0; 
+            return this._targetInstances != null && (this._targetInstances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

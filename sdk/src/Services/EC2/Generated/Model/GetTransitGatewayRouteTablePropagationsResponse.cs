@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EC2.Model
     public partial class GetTransitGatewayRouteTablePropagationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TransitGatewayRouteTablePropagation> _transitGatewayRouteTablePropagations = new List<TransitGatewayRouteTablePropagation>();
+        private List<TransitGatewayRouteTablePropagation> _transitGatewayRouteTablePropagations = AWSConfigs.InitializeCollections ? new List<TransitGatewayRouteTablePropagation>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.EC2.Model
         // Check to see if TransitGatewayRouteTablePropagations property is set
         internal bool IsSetTransitGatewayRouteTablePropagations()
         {
-            return this._transitGatewayRouteTablePropagations != null && this._transitGatewayRouteTablePropagations.Count > 0; 
+            return this._transitGatewayRouteTablePropagations != null && (this._transitGatewayRouteTablePropagations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

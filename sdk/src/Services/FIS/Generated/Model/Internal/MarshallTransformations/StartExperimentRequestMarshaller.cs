@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.FIS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -63,6 +64,7 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetClientToken())
@@ -76,6 +78,17 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("clientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetExperimentOptions())
+                {
+                    context.Writer.WritePropertyName("experimentOptions");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = StartExperimentExperimentOptionsInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ExperimentOptions, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetExperimentTemplateId())
                 {
                     context.Writer.WritePropertyName("experimentTemplateId");

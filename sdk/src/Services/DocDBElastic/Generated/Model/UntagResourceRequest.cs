@@ -26,21 +26,22 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DocDBElastic.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes metadata tags to a Elastic DocumentDB resource
+    /// Removes metadata tags from an elastic cluster resource
     /// </summary>
     public partial class UntagResourceRequest : AmazonDocDBElasticRequest
     {
         private string _resourceArn;
-        private List<string> _tagKeys = new List<string>();
+        private List<string> _tagKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The arn of the Elastic DocumentDB resource.
+        /// The ARN identifier of the elastic cluster resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]
@@ -59,7 +60,7 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// The tag keys to be removed from the Elastic DocumentDB resource.
+        /// The tag keys to be removed from the elastic cluster resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]
@@ -72,7 +73,7 @@ namespace Amazon.DocDBElastic.Model
         // Check to see if TagKeys property is set
         internal bool IsSetTagKeys()
         {
-            return this._tagKeys != null && this._tagKeys.Count > 0; 
+            return this._tagKeys != null && (this._tagKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.SSOAdmin.Model
     public partial class PutApplicationAccessScopeRequest : AmazonSSOAdminRequest
     {
         private string _applicationArn;
-        private List<string> _authorizedTargets = new List<string>();
+        private List<string> _authorizedTargets = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _scope;
 
         /// <summary>
@@ -76,7 +77,7 @@ namespace Amazon.SSOAdmin.Model
         // Check to see if AuthorizedTargets property is set
         internal bool IsSetAuthorizedTargets()
         {
-            return this._authorizedTargets != null && this._authorizedTargets.Count > 0; 
+            return this._authorizedTargets != null && (this._authorizedTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

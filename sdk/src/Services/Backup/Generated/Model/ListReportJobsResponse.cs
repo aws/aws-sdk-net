@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Backup.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Backup.Model
     public partial class ListReportJobsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ReportJob> _reportJobs = new List<ReportJob>();
+        private List<ReportJob> _reportJobs = AWSConfigs.InitializeCollections ? new List<ReportJob>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.Backup.Model
         // Check to see if ReportJobs property is set
         internal bool IsSetReportJobs()
         {
-            return this._reportJobs != null && this._reportJobs.Count > 0; 
+            return this._reportJobs != null && (this._reportJobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

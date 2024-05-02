@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Personalize.Model
 {
     /// <summary>
@@ -34,16 +35,20 @@ namespace Amazon.Personalize.Model
     /// </summary>
     public partial class TrainingDataConfig
     {
-        private Dictionary<string, List<string>> _excludedDatasetColumns = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _excludedDatasetColumns = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
 
         /// <summary>
         /// Gets and sets the property ExcludedDatasetColumns. 
         /// <para>
         /// Specifies the columns to exclude from training. Each key is a dataset type, and each
         /// value is a list of columns. Exclude columns to control what data Amazon Personalize
-        /// uses to generate recommendations. For example, you might have a column that you want
-        /// to use only to filter recommendations. You can exclude this column from training and
-        /// Amazon Personalize considers it only when filtering. 
+        /// uses to generate recommendations.
+        /// </para>
+        ///  
+        /// <para>
+        ///  For example, you might have a column that you want to use only to filter recommendations.
+        /// You can exclude this column from training and Amazon Personalize considers it only
+        /// when filtering. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=3)]
@@ -56,7 +61,7 @@ namespace Amazon.Personalize.Model
         // Check to see if ExcludedDatasetColumns property is set
         internal bool IsSetExcludedDatasetColumns()
         {
-            return this._excludedDatasetColumns != null && this._excludedDatasetColumns.Count > 0; 
+            return this._excludedDatasetColumns != null && (this._excludedDatasetColumns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.SecurityHub.Model
     public partial class AwsBackupBackupPlanRuleDetails
     {
         private long? _completionWindowMinutes;
-        private List<AwsBackupBackupPlanRuleCopyActionsDetails> _copyActions = new List<AwsBackupBackupPlanRuleCopyActionsDetails>();
+        private List<AwsBackupBackupPlanRuleCopyActionsDetails> _copyActions = AWSConfigs.InitializeCollections ? new List<AwsBackupBackupPlanRuleCopyActionsDetails>() : null;
         private bool? _enableContinuousBackup;
         private AwsBackupBackupPlanLifecycleDetails _lifecycle;
         private string _ruleId;
@@ -79,7 +80,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if CopyActions property is set
         internal bool IsSetCopyActions()
         {
-            return this._copyActions != null && this._copyActions.Count > 0; 
+            return this._copyActions != null && (this._copyActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

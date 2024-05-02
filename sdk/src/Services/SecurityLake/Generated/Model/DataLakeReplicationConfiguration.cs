@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SecurityLake.Model
     /// </summary>
     public partial class DataLakeReplicationConfiguration
     {
-        private List<string> _regions = new List<string>();
+        private List<string> _regions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _roleArn;
 
         /// <summary>
@@ -63,7 +64,7 @@ namespace Amazon.SecurityLake.Model
         // Check to see if Regions property is set
         internal bool IsSetRegions()
         {
-            return this._regions != null && this._regions.Count > 0; 
+            return this._regions != null && (this._regions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.CodeCommit.Model
         private string _blobId;
         private Commit _commit;
         private string _path;
-        private List<string> _revisionChildren = new List<string>();
+        private List<string> _revisionChildren = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property BlobId. 
@@ -107,7 +108,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if RevisionChildren property is set
         internal bool IsSetRevisionChildren()
         {
-            return this._revisionChildren != null && this._revisionChildren.Count > 0; 
+            return this._revisionChildren != null && (this._revisionChildren.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

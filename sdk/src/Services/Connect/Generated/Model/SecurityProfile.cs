@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -33,16 +34,37 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class SecurityProfile
     {
-        private Dictionary<string, string> _allowedAccessControlTags = new Dictionary<string, string>();
+        private string _allowedAccessControlHierarchyGroupId;
+        private Dictionary<string, string> _allowedAccessControlTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _arn;
         private string _description;
+        private List<string> _hierarchyRestrictedResources = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _id;
         private string _lastModifiedRegion;
         private DateTime? _lastModifiedTime;
         private string _organizationResourceId;
         private string _securityProfileName;
-        private List<string> _tagRestrictedResources = new List<string>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<string> _tagRestrictedResources = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+
+        /// <summary>
+        /// Gets and sets the property AllowedAccessControlHierarchyGroupId. 
+        /// <para>
+        /// The identifier of the hierarchy group that a security profile uses to restrict access
+        /// to resources in Amazon Connect.
+        /// </para>
+        /// </summary>
+        public string AllowedAccessControlHierarchyGroupId
+        {
+            get { return this._allowedAccessControlHierarchyGroupId; }
+            set { this._allowedAccessControlHierarchyGroupId = value; }
+        }
+
+        // Check to see if AllowedAccessControlHierarchyGroupId property is set
+        internal bool IsSetAllowedAccessControlHierarchyGroupId()
+        {
+            return this._allowedAccessControlHierarchyGroupId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AllowedAccessControlTags. 
@@ -61,7 +83,7 @@ namespace Amazon.Connect.Model
         // Check to see if AllowedAccessControlTags property is set
         internal bool IsSetAllowedAccessControlTags()
         {
-            return this._allowedAccessControlTags != null && this._allowedAccessControlTags.Count > 0; 
+            return this._allowedAccessControlTags != null && (this._allowedAccessControlTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -99,6 +121,25 @@ namespace Amazon.Connect.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HierarchyRestrictedResources. 
+        /// <para>
+        /// The list of resources that a security profile applies hierarchy restrictions to in
+        /// Amazon Connect. Following are acceptable ResourceNames: <c>User</c>.
+        /// </para>
+        /// </summary>
+        public List<string> HierarchyRestrictedResources
+        {
+            get { return this._hierarchyRestrictedResources; }
+            set { this._hierarchyRestrictedResources = value; }
+        }
+
+        // Check to see if HierarchyRestrictedResources property is set
+        internal bool IsSetHierarchyRestrictedResources()
+        {
+            return this._hierarchyRestrictedResources != null && (this._hierarchyRestrictedResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -209,7 +250,7 @@ namespace Amazon.Connect.Model
         // Check to see if TagRestrictedResources property is set
         internal bool IsSetTagRestrictedResources()
         {
-            return this._tagRestrictedResources != null && this._tagRestrictedResources.Count > 0; 
+            return this._tagRestrictedResources != null && (this._tagRestrictedResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -229,7 +270,7 @@ namespace Amazon.Connect.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

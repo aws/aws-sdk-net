@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DomainNameConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetApiGatewayDomainName())
             {
                 context.Writer.WritePropertyName("apiGatewayDomainName");
@@ -66,7 +69,7 @@ namespace Amazon.ApiGatewayV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCertificateUploadDate())
             {
                 context.Writer.WritePropertyName("certificateUploadDate");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601(requestObject.CertificateUploadDate));
+                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.CertificateUploadDate));
             }
 
             if(requestObject.IsSetDomainNameStatus())

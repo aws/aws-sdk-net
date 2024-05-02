@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SavingsPlans.Model
 {
     /// <summary>
@@ -40,8 +41,8 @@ namespace Amazon.SavingsPlans.Model
         private string _operation;
         private SavingsPlanPaymentOption _paymentOption;
         private SavingsPlanType _planType;
-        private List<string> _productTypes = new List<string>();
-        private List<SavingsPlanOfferingProperty> _properties = new List<SavingsPlanOfferingProperty>();
+        private List<string> _productTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<SavingsPlanOfferingProperty> _properties = AWSConfigs.InitializeCollections ? new List<SavingsPlanOfferingProperty>() : null;
         private string _serviceCode;
         private string _usageType;
 
@@ -121,7 +122,7 @@ namespace Amazon.SavingsPlans.Model
         /// <summary>
         /// Gets and sets the property Operation. 
         /// <para>
-        /// The specific AWS operation for the line item in the billing report.
+        /// The specific Amazon Web Services operation for the line item in the billing report.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
@@ -188,7 +189,7 @@ namespace Amazon.SavingsPlans.Model
         // Check to see if ProductTypes property is set
         internal bool IsSetProductTypes()
         {
-            return this._productTypes != null && this._productTypes.Count > 0; 
+            return this._productTypes != null && (this._productTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -206,7 +207,7 @@ namespace Amazon.SavingsPlans.Model
         // Check to see if Properties property is set
         internal bool IsSetProperties()
         {
-            return this._properties != null && this._properties.Count > 0; 
+            return this._properties != null && (this._properties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

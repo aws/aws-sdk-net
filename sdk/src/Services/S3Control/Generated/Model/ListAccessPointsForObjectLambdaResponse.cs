@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3Control.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.S3Control.Model
     public partial class ListAccessPointsForObjectLambdaResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ObjectLambdaAccessPoint> _objectLambdaAccessPointList = new List<ObjectLambdaAccessPoint>();
+        private List<ObjectLambdaAccessPoint> _objectLambdaAccessPointList = AWSConfigs.InitializeCollections ? new List<ObjectLambdaAccessPoint>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.S3Control.Model
         // Check to see if ObjectLambdaAccessPointList property is set
         internal bool IsSetObjectLambdaAccessPointList()
         {
-            return this._objectLambdaAccessPointList != null && this._objectLambdaAccessPointList.Count > 0; 
+            return this._objectLambdaAccessPointList != null && (this._objectLambdaAccessPointList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

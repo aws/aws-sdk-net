@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RoboMaker.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.RoboMaker.Model
     /// </summary>
     public partial class LaunchConfig
     {
-        private List<string> _command = new List<string>();
-        private Dictionary<string, string> _environmentVariables = new Dictionary<string, string>();
+        private List<string> _command = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _environmentVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _launchFile;
         private string _packageName;
         private PortForwardingConfig _portForwardingConfig;
@@ -61,7 +62,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if Command property is set
         internal bool IsSetCommand()
         {
-            return this._command != null && this._command.Count > 0; 
+            return this._command != null && (this._command.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -80,7 +81,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if EnvironmentVariables property is set
         internal bool IsSetEnvironmentVariables()
         {
-            return this._environmentVariables != null && this._environmentVariables.Count > 0; 
+            return this._environmentVariables != null && (this._environmentVariables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ForecastService.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ForecastService.Model
         /// Enumerable containing all of the WhatIfForecasts
         /// </summary>
         public IPaginatedEnumerable<WhatIfForecastSummary> WhatIfForecasts => 
-            new PaginatedResultKeyResponse<ListWhatIfForecastsResponse, WhatIfForecastSummary>(this, (i) => i.WhatIfForecasts);
+            new PaginatedResultKeyResponse<ListWhatIfForecastsResponse, WhatIfForecastSummary>(this, (i) => i.WhatIfForecasts ?? new List<WhatIfForecastSummary>());
 
         internal ListWhatIfForecastsPaginator(IAmazonForecastService client, ListWhatIfForecastsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ForecastService.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListWhatIfForecastsResponse> IPaginator<ListWhatIfForecastsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListWhatIfForecastsResponse> IPaginator<ListWhatIfForecastsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

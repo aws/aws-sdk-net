@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ApplicationARN. 
         /// <para>
-        /// The ARN of the Kinesis Data Analytics application.
+        /// The ARN of the Managed Service for Apache Flink application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

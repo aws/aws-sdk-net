@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -58,6 +59,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ipv6CidrAssociationSet/item", targetDepth))
                     {
                         var unmarshaller = Ipv6CidrAssociationUnmarshaller.Instance;
+                        if (response.Ipv6CidrAssociations == null)
+                        {
+                            response.Ipv6CidrAssociations = new List<Ipv6CidrAssociation>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Ipv6CidrAssociations.Add(item);
                         continue;

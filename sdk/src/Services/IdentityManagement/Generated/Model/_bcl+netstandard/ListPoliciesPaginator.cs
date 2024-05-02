@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.IdentityManagement.Model
         /// Enumerable containing all of the Policies
         /// </summary>
         public IPaginatedEnumerable<ManagedPolicy> Policies => 
-            new PaginatedResultKeyResponse<ListPoliciesResponse, ManagedPolicy>(this, (i) => i.Policies);
+            new PaginatedResultKeyResponse<ListPoliciesResponse, ManagedPolicy>(this, (i) => i.Policies ?? new List<ManagedPolicy>());
 
         internal ListPoliciesPaginator(IAmazonIdentityManagementService client, ListPoliciesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.IdentityManagement.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListPoliciesResponse> IPaginator<ListPoliciesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListPoliciesResponse> IPaginator<ListPoliciesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

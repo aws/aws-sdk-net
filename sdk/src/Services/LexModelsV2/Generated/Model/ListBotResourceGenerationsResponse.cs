@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.LexModelsV2.Model
     {
         private string _botId;
         private string _botVersion;
-        private List<GenerationSummary> _generationSummaries = new List<GenerationSummary>();
+        private List<GenerationSummary> _generationSummaries = AWSConfigs.InitializeCollections ? new List<GenerationSummary>() : null;
         private string _localeId;
         private string _nextToken;
 
@@ -93,7 +94,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if GenerationSummaries property is set
         internal bool IsSetGenerationSummaries()
         {
-            return this._generationSummaries != null && this._generationSummaries.Count > 0; 
+            return this._generationSummaries != null && (this._generationSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

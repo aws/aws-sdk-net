@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GroundStation.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.GroundStation.Model
     /// </summary>
     public partial class ListGroundStationsResponse : AmazonWebServiceResponse
     {
-        private List<GroundStationData> _groundStationList = new List<GroundStationData>();
+        private List<GroundStationData> _groundStationList = AWSConfigs.InitializeCollections ? new List<GroundStationData>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.GroundStation.Model
         // Check to see if GroundStationList property is set
         internal bool IsSetGroundStationList()
         {
-            return this._groundStationList != null && this._groundStationList.Count > 0; 
+            return this._groundStationList != null && (this._groundStationList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

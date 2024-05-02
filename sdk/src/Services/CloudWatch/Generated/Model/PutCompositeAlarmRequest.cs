@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
@@ -51,10 +52,25 @@ namespace Amazon.CloudWatch.Model
     /// </para>
     ///  
     /// <para>
-    /// Currently, the only alarm actions that can be taken by composite alarms are notifying
-    /// SNS topics.
+    /// Composite alarms can take the following actions:
     /// </para>
-    ///  <note> 
+    ///  <ul> <li> 
+    /// <para>
+    /// Notify Amazon SNS topics.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Invoke Lambda functions.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Create OpsItems in Systems Manager Ops Center.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Create incidents in Systems Manager Incident Manager.
+    /// </para>
+    ///  </li> </ul> <note> 
     /// <para>
     /// It is possible to create a loop or cycle of composite alarms, where composite alarm
     /// A depends on composite alarm B, and composite alarm B also depends on composite alarm
@@ -104,13 +120,13 @@ namespace Amazon.CloudWatch.Model
         private string _actionsSuppressor;
         private int? _actionsSuppressorExtensionPeriod;
         private int? _actionsSuppressorWaitPeriod;
-        private List<string> _alarmActions = new List<string>();
+        private List<string> _alarmActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _alarmDescription;
         private string _alarmName;
         private string _alarmRule;
-        private List<string> _insufficientDataActions = new List<string>();
-        private List<string> _okActions = new List<string>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<string> _insufficientDataActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _okActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ActionsEnabled. 
@@ -211,9 +227,42 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <c>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>
-        /// </c> | <c>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </c>
-        /// 
+        /// Valid Values: ]
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Amazon SNS actions:</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </c> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Lambda actions:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Invoke the latest version of a Lambda function: <c>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>
+        /// </c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Invoke a specific version of a Lambda function: <c>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i>
+        /// </c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Invoke a function by using an alias Lambda function: <c>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i>
+        /// </c> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  <b>Systems Manager actions:</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </c> 
         /// </para>
         /// </summary>
         [AWSProperty(Max=5)]
@@ -226,7 +275,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if AlarmActions property is set
         internal bool IsSetAlarmActions()
         {
-            return this._alarmActions != null && this._alarmActions.Count > 0; 
+            return this._alarmActions != null && (this._alarmActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -372,9 +421,36 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <c>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>
+        /// Valid Values: ]
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Amazon SNS actions:</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </c> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Lambda actions:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Invoke the latest version of a Lambda function: <c>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>
         /// </c> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Invoke a specific version of a Lambda function: <c>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i>
+        /// </c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Invoke a function by using an alias Lambda function: <c>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i>
+        /// </c> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Max=5)]
         public List<string> InsufficientDataActions
@@ -386,7 +462,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if InsufficientDataActions property is set
         internal bool IsSetInsufficientDataActions()
         {
-            return this._insufficientDataActions != null && this._insufficientDataActions.Count > 0; 
+            return this._insufficientDataActions != null && (this._insufficientDataActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -397,9 +473,36 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <c>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>
+        /// Valid Values: ]
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Amazon SNS actions:</b> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i> </c> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Lambda actions:</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Invoke the latest version of a Lambda function: <c>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>
         /// </c> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Invoke a specific version of a Lambda function: <c>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>version-number</i>
+        /// </c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Invoke a function by using an alias Lambda function: <c>arn:aws:lambda:<i>region</i>:<i>account-id</i>:function:<i>function-name</i>:<i>alias-name</i>
+        /// </c> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Max=5)]
         public List<string> OKActions
@@ -411,20 +514,27 @@ namespace Amazon.CloudWatch.Model
         // Check to see if OKActions property is set
         internal bool IsSetOKActions()
         {
-            return this._okActions != null && this._okActions.Count > 0; 
+            return this._okActions != null && (this._okActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of key-value pairs to associate with the composite alarm. You can associate
-        /// as many as 50 tags with an alarm.
+        /// A list of key-value pairs to associate with the alarm. You can associate as many as
+        /// 50 tags with an alarm. To be able to associate tags with the alarm when you create
+        /// the alarm, you must have the <c>cloudwatch:TagResource</c> permission.
         /// </para>
         ///  
         /// <para>
         /// Tags can help you organize and categorize your resources. You can also use them to
-        /// scope user permissions, by granting a user permission to access or change only resources
+        /// scope user permissions by granting a user permission to access or change only resources
         /// with certain tag values.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are using this operation to update an existing alarm, any tags you specify
+        /// in this parameter are ignored. To change the tags of an existing alarm, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a>
+        /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.
         /// </para>
         /// </summary>
         public List<Tag> Tags
@@ -436,7 +546,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

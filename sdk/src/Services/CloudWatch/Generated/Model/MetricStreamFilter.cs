@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class MetricStreamFilter
     {
-        private List<string> _metricNames = new List<string>();
+        private List<string> _metricNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _awsNamespace;
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if MetricNames property is set
         internal bool IsSetMetricNames()
         {
-            return this._metricNames != null && this._metricNames.Count > 0; 
+            return this._metricNames != null && (this._metricNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

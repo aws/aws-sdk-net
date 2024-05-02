@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Backup.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Backup.Model
         /// Enumerable containing all of the RecoveryPoints
         /// </summary>
         public IPaginatedEnumerable<RecoveryPointMember> RecoveryPoints => 
-            new PaginatedResultKeyResponse<ListRecoveryPointsByLegalHoldResponse, RecoveryPointMember>(this, (i) => i.RecoveryPoints);
+            new PaginatedResultKeyResponse<ListRecoveryPointsByLegalHoldResponse, RecoveryPointMember>(this, (i) => i.RecoveryPoints ?? new List<RecoveryPointMember>());
 
         internal ListRecoveryPointsByLegalHoldPaginator(IAmazonBackup client, ListRecoveryPointsByLegalHoldRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Backup.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListRecoveryPointsByLegalHoldResponse> IPaginator<ListRecoveryPointsByLegalHoldResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListRecoveryPointsByLegalHoldResponse> IPaginator<ListRecoveryPointsByLegalHoldResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

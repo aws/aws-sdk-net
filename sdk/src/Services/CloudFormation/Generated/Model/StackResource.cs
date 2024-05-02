@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
@@ -183,7 +184,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property ResourceType. 
         /// <para>
         /// Type of resource. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
-        /// Web Services Resource Types Reference</a> in the CloudFormation User Guide.
+        /// Web Services Resource Types Reference</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

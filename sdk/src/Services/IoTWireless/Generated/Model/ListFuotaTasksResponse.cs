@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoTWireless.Model
     /// </summary>
     public partial class ListFuotaTasksResponse : AmazonWebServiceResponse
     {
-        private List<FuotaTask> _fuotaTaskList = new List<FuotaTask>();
+        private List<FuotaTask> _fuotaTaskList = AWSConfigs.InitializeCollections ? new List<FuotaTask>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -48,7 +49,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if FuotaTaskList property is set
         internal bool IsSetFuotaTaskList()
         {
-            return this._fuotaTaskList != null && this._fuotaTaskList.Count > 0; 
+            return this._fuotaTaskList != null && (this._fuotaTaskList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

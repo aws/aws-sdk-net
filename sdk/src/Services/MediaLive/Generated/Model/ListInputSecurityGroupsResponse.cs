@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class ListInputSecurityGroupsResponse : AmazonWebServiceResponse
     {
-        private List<InputSecurityGroup> _inputSecurityGroups = new List<InputSecurityGroup>();
+        private List<InputSecurityGroup> _inputSecurityGroups = AWSConfigs.InitializeCollections ? new List<InputSecurityGroup>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -48,7 +49,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if InputSecurityGroups property is set
         internal bool IsSetInputSecurityGroups()
         {
-            return this._inputSecurityGroups != null && this._inputSecurityGroups.Count > 0; 
+            return this._inputSecurityGroups != null && (this._inputSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

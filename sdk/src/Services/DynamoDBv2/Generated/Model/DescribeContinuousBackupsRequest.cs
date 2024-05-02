@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
@@ -60,8 +61,12 @@ namespace Amazon.DynamoDBv2.Model
         /// Name of the table for which the customer wants to check the continuous backups and
         /// point in time recovery settings.
         /// </para>
+        ///  
+        /// <para>
+        /// You can also provide the Amazon Resource Name (ARN) of the table in this parameter.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string TableName
         {
             get { return this._tableName; }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
@@ -40,18 +41,18 @@ namespace Amazon.ComputeOptimizer.Model
         private EffectiveRecommendationPreferences _effectiveRecommendationPreferences;
         private ExternalMetricStatus _externalMetricStatus;
         private Finding _finding;
-        private List<string> _findingReasonCodes = new List<string>();
+        private List<string> _findingReasonCodes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private InstanceIdle _idle;
-        private List<string> _inferredWorkloadTypes = new List<string>();
+        private List<string> _inferredWorkloadTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _instanceArn;
         private string _instanceName;
         private InstanceState _instanceState;
         private DateTime? _lastRefreshTimestamp;
         private double? _lookBackPeriodInDays;
-        private List<InstanceRecommendationOption> _recommendationOptions = new List<InstanceRecommendationOption>();
-        private List<RecommendationSource> _recommendationSources = new List<RecommendationSource>();
-        private List<Tag> _tags = new List<Tag>();
-        private List<UtilizationMetric> _utilizationMetrics = new List<UtilizationMetric>();
+        private List<InstanceRecommendationOption> _recommendationOptions = AWSConfigs.InitializeCollections ? new List<InstanceRecommendationOption>() : null;
+        private List<RecommendationSource> _recommendationSources = AWSConfigs.InitializeCollections ? new List<RecommendationSource>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<UtilizationMetric> _utilizationMetrics = AWSConfigs.InitializeCollections ? new List<UtilizationMetric>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -366,7 +367,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if FindingReasonCodes property is set
         internal bool IsSetFindingReasonCodes()
         {
-            return this._findingReasonCodes != null && this._findingReasonCodes.Count > 0; 
+            return this._findingReasonCodes != null && (this._findingReasonCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -444,7 +445,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if InferredWorkloadTypes property is set
         internal bool IsSetInferredWorkloadTypes()
         {
-            return this._inferredWorkloadTypes != null && this._inferredWorkloadTypes.Count > 0; 
+            return this._inferredWorkloadTypes != null && (this._inferredWorkloadTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -552,7 +553,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if RecommendationOptions property is set
         internal bool IsSetRecommendationOptions()
         {
-            return this._recommendationOptions != null && this._recommendationOptions.Count > 0; 
+            return this._recommendationOptions != null && (this._recommendationOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -570,7 +571,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if RecommendationSources property is set
         internal bool IsSetRecommendationSources()
         {
-            return this._recommendationSources != null && this._recommendationSources.Count > 0; 
+            return this._recommendationSources != null && (this._recommendationSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -588,7 +589,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -606,7 +607,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if UtilizationMetrics property is set
         internal bool IsSetUtilizationMetrics()
         {
-            return this._utilizationMetrics != null && this._utilizationMetrics.Count > 0; 
+            return this._utilizationMetrics != null && (this._utilizationMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

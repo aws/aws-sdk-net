@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.InternetMonitor.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.InternetMonitor.Model
         /// Enumerable containing all of the Monitors
         /// </summary>
         public IPaginatedEnumerable<Monitor> Monitors => 
-            new PaginatedResultKeyResponse<ListMonitorsResponse, Monitor>(this, (i) => i.Monitors);
+            new PaginatedResultKeyResponse<ListMonitorsResponse, Monitor>(this, (i) => i.Monitors ?? new List<Monitor>());
 
         internal ListMonitorsPaginator(IAmazonInternetMonitor client, ListMonitorsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.InternetMonitor.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListMonitorsResponse> IPaginator<ListMonitorsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListMonitorsResponse> IPaginator<ListMonitorsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

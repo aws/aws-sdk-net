@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class DescribeInventoryDeletionsResponse : AmazonWebServiceResponse
     {
-        private List<InventoryDeletionStatusItem> _inventoryDeletions = new List<InventoryDeletionStatusItem>();
+        private List<InventoryDeletionStatusItem> _inventoryDeletions = AWSConfigs.InitializeCollections ? new List<InventoryDeletionStatusItem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if InventoryDeletions property is set
         internal bool IsSetInventoryDeletions()
         {
-            return this._inventoryDeletions != null && this._inventoryDeletions.Count > 0; 
+            return this._inventoryDeletions != null && (this._inventoryDeletions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

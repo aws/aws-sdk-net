@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -46,7 +47,7 @@ namespace Amazon.SecurityHub.Model
         private string _replicationInstanceClass;
         private string _replicationInstanceIdentifier;
         private AwsDmsReplicationInstanceReplicationSubnetGroupDetails _replicationSubnetGroup;
-        private List<AwsDmsReplicationInstanceVpcSecurityGroupsDetails> _vpcSecurityGroups = new List<AwsDmsReplicationInstanceVpcSecurityGroupsDetails>();
+        private List<AwsDmsReplicationInstanceVpcSecurityGroupsDetails> _vpcSecurityGroups = AWSConfigs.InitializeCollections ? new List<AwsDmsReplicationInstanceVpcSecurityGroupsDetails>() : null;
 
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
@@ -277,7 +278,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if VpcSecurityGroups property is set
         internal bool IsSetVpcSecurityGroups()
         {
-            return this._vpcSecurityGroups != null && this._vpcSecurityGroups.Count > 0; 
+            return this._vpcSecurityGroups != null && (this._vpcSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

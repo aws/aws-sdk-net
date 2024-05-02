@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ManagedBlockchain.Model
     public partial class ListProposalsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ProposalSummary> _proposals = new List<ProposalSummary>();
+        private List<ProposalSummary> _proposals = AWSConfigs.InitializeCollections ? new List<ProposalSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.ManagedBlockchain.Model
         // Check to see if Proposals property is set
         internal bool IsSetProposals()
         {
-            return this._proposals != null && this._proposals.Count > 0; 
+            return this._proposals != null && (this._proposals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
@@ -37,11 +38,11 @@ namespace Amazon.ElastiCache.Model
         private string _engine;
         private string _minimumEngineVersion;
         private UserGroupPendingChanges _pendingChanges;
-        private List<string> _replicationGroups = new List<string>();
-        private List<string> _serverlessCaches = new List<string>();
+        private List<string> _replicationGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _serverlessCaches = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _status;
         private string _userGroupId;
-        private List<string> _userIds = new List<string>();
+        private List<string> _userIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ARN. 
@@ -130,7 +131,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if ReplicationGroups property is set
         internal bool IsSetReplicationGroups()
         {
-            return this._replicationGroups != null && this._replicationGroups.Count > 0; 
+            return this._replicationGroups != null && (this._replicationGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -149,7 +150,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if ServerlessCaches property is set
         internal bool IsSetServerlessCaches()
         {
-            return this._serverlessCaches != null && this._serverlessCaches.Count > 0; 
+            return this._serverlessCaches != null && (this._serverlessCaches.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -203,7 +204,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if UserIds property is set
         internal bool IsSetUserIds()
         {
-            return this._userIds != null && this._userIds.Count > 0; 
+            return this._userIds != null && (this._userIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

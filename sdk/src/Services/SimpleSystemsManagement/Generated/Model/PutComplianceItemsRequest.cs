@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -101,7 +102,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     ///  </li> <li> 
     /// <para>
     /// InstalledTime: The time the association, patch, or custom compliance item was applied
-    /// to the resource. Specify the time by using the following format: yyyy-MM-dd'T'HH:mm:ss'Z'
+    /// to the resource. Specify the time by using the following format: <c>yyyy-MM-dd'T'HH:mm:ss'Z'</c>
+    /// 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -110,7 +112,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _complianceType;
         private ComplianceExecutionSummary _executionSummary;
         private string _itemContentHash;
-        private List<ComplianceItemEntry> _items = new List<ComplianceItemEntry>();
+        private List<ComplianceItemEntry> _items = AWSConfigs.InitializeCollections ? new List<ComplianceItemEntry>() : null;
         private string _resourceId;
         private string _resourceType;
         private ComplianceUploadType _uploadType;
@@ -140,7 +142,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// A summary of the call execution that includes an execution ID, the type of execution
         /// (for example, <c>Command</c>), and the date/time of the execution using a datetime
-        /// object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.
+        /// object that is saved in the following format: <c>yyyy-MM-dd'T'HH:mm:ss'Z'</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -195,7 +197,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

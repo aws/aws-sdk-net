@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
@@ -43,8 +44,8 @@ namespace Amazon.Imagebuilder.Model
         private Platform _platform;
         private string _publisher;
         private ComponentState _state;
-        private List<string> _supportedOsVersions = new List<string>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<string> _supportedOsVersions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ComponentType _type;
         private string _version;
 
@@ -252,7 +253,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if SupportedOsVersions property is set
         internal bool IsSetSupportedOsVersions()
         {
-            return this._supportedOsVersions != null && this._supportedOsVersions.Count > 0; 
+            return this._supportedOsVersions != null && (this._supportedOsVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -271,7 +272,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
@@ -39,7 +40,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property MaxLength. 
         /// <para>
-        /// The maximum length.
+        /// The maximum length of a string attribute value. Must be a number less than or equal
+        /// to <c>2^1023</c>, represented as a string with a length of 131072 characters or fewer.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=131072)]

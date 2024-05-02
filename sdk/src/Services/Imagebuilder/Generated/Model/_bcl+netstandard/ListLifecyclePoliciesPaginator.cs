@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Imagebuilder.Model
         /// Enumerable containing all of the LifecyclePolicySummaryList
         /// </summary>
         public IPaginatedEnumerable<LifecyclePolicySummary> LifecyclePolicySummaryList => 
-            new PaginatedResultKeyResponse<ListLifecyclePoliciesResponse, LifecyclePolicySummary>(this, (i) => i.LifecyclePolicySummaryList);
+            new PaginatedResultKeyResponse<ListLifecyclePoliciesResponse, LifecyclePolicySummary>(this, (i) => i.LifecyclePolicySummaryList ?? new List<LifecyclePolicySummary>());
 
         internal ListLifecyclePoliciesPaginator(IAmazonImagebuilder client, ListLifecyclePoliciesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Imagebuilder.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListLifecyclePoliciesResponse> IPaginator<ListLifecyclePoliciesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListLifecyclePoliciesResponse> IPaginator<ListLifecyclePoliciesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

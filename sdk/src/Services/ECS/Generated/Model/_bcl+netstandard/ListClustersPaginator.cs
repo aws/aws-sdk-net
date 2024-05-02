@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ECS.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ECS.Model
         /// Enumerable containing all of the ClusterArns
         /// </summary>
         public IPaginatedEnumerable<string> ClusterArns => 
-            new PaginatedResultKeyResponse<ListClustersResponse, string>(this, (i) => i.ClusterArns);
+            new PaginatedResultKeyResponse<ListClustersResponse, string>(this, (i) => i.ClusterArns ?? new List<string>());
 
         internal ListClustersPaginator(IAmazonECS client, ListClustersRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ECS.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListClustersResponse> IPaginator<ListClustersResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListClustersResponse> IPaginator<ListClustersResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

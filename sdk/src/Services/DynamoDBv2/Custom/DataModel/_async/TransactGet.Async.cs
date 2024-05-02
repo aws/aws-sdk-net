@@ -28,7 +28,6 @@ namespace Amazon.DynamoDBv2.DataModel
 
         /// <summary>
         /// Executes a server call to get the items requested in a transaction.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.TransactGet.Execute"/>
         /// </summary>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>

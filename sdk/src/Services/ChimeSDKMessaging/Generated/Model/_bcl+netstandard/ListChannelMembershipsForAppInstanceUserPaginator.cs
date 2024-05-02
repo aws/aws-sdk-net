@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKMessaging.Model
 {
     /// <summary>
@@ -67,7 +68,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListChannelMembershipsForAppInstanceUserResponse> IPaginator<ListChannelMembershipsForAppInstanceUserResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListChannelMembershipsForAppInstanceUserResponse> IPaginator<ListChannelMembershipsForAppInstanceUserResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

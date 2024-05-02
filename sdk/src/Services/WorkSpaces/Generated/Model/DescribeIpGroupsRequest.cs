@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.WorkSpaces.Model
     /// </summary>
     public partial class DescribeIpGroupsRequest : AmazonWorkSpacesRequest
     {
-        private List<string> _groupIds = new List<string>();
+        private List<string> _groupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -53,7 +54,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if GroupIds property is set
         internal bool IsSetGroupIds()
         {
-            return this._groupIds != null && this._groupIds.Count > 0; 
+            return this._groupIds != null && (this._groupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

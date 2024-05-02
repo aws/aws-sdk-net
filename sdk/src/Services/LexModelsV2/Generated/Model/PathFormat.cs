@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class PathFormat
     {
-        private List<string> _objectPrefixes = new List<string>();
+        private List<string> _objectPrefixes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ObjectPrefixes. 
@@ -54,7 +55,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if ObjectPrefixes property is set
         internal bool IsSetObjectPrefixes()
         {
-            return this._objectPrefixes != null && this._objectPrefixes.Count > 0; 
+            return this._objectPrefixes != null && (this._objectPrefixes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

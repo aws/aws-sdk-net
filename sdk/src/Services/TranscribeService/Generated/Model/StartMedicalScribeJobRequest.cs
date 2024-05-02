@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
@@ -87,15 +88,15 @@ namespace Amazon.TranscribeService.Model
     /// </summary>
     public partial class StartMedicalScribeJobRequest : AmazonTranscribeServiceRequest
     {
-        private List<MedicalScribeChannelDefinition> _channelDefinitions = new List<MedicalScribeChannelDefinition>();
+        private List<MedicalScribeChannelDefinition> _channelDefinitions = AWSConfigs.InitializeCollections ? new List<MedicalScribeChannelDefinition>() : null;
         private string _dataAccessRoleArn;
-        private Dictionary<string, string> _kmsEncryptionContext = new Dictionary<string, string>();
+        private Dictionary<string, string> _kmsEncryptionContext = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private Media _media;
         private string _medicalScribeJobName;
         private string _outputBucketName;
         private string _outputEncryptionKMSKeyId;
         private MedicalScribeSettings _settings;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ChannelDefinitions. 
@@ -119,7 +120,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if ChannelDefinitions property is set
         internal bool IsSetChannelDefinitions()
         {
-            return this._channelDefinitions != null && this._channelDefinitions.Count > 0; 
+            return this._channelDefinitions != null && (this._channelDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -174,7 +175,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if KMSEncryptionContext property is set
         internal bool IsSetKMSEncryptionContext()
         {
-            return this._kmsEncryptionContext != null && this._kmsEncryptionContext.Count > 0; 
+            return this._kmsEncryptionContext != null && (this._kmsEncryptionContext.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -357,7 +358,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

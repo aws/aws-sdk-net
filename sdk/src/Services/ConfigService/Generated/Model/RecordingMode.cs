@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -57,7 +58,7 @@ namespace Amazon.ConfigService.Model
     public partial class RecordingMode
     {
         private RecordingFrequency _recordingFrequency;
-        private List<RecordingModeOverride> _recordingModeOverrides = new List<RecordingModeOverride>();
+        private List<RecordingModeOverride> _recordingModeOverrides = AWSConfigs.InitializeCollections ? new List<RecordingModeOverride>() : null;
 
         /// <summary>
         /// Gets and sets the property RecordingFrequency. 
@@ -119,7 +120,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if RecordingModeOverrides property is set
         internal bool IsSetRecordingModeOverrides()
         {
-            return this._recordingModeOverrides != null && this._recordingModeOverrides.Count > 0; 
+            return this._recordingModeOverrides != null && (this._recordingModeOverrides.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class GetComplianceSummaryByResourceTypeResponse : AmazonWebServiceResponse
     {
-        private List<ComplianceSummaryByResourceType> _complianceSummariesByResourceType = new List<ComplianceSummaryByResourceType>();
+        private List<ComplianceSummaryByResourceType> _complianceSummariesByResourceType = AWSConfigs.InitializeCollections ? new List<ComplianceSummaryByResourceType>() : null;
 
         /// <summary>
         /// Gets and sets the property ComplianceSummariesByResourceType. 
@@ -52,7 +53,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if ComplianceSummariesByResourceType property is set
         internal bool IsSetComplianceSummariesByResourceType()
         {
-            return this._complianceSummariesByResourceType != null && this._complianceSummariesByResourceType.Count > 0; 
+            return this._complianceSummariesByResourceType != null && (this._complianceSummariesByResourceType.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

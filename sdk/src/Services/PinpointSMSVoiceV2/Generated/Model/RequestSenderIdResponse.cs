@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
@@ -35,12 +36,12 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     {
         private bool? _deletionProtectionEnabled;
         private string _isoCountryCode;
-        private List<string> _messageTypes = new List<string>();
+        private List<string> _messageTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _monthlyLeasingPrice;
         private bool? _registered;
         private string _senderId;
         private string _senderIdArn;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property DeletionProtectionEnabled. 
@@ -97,7 +98,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if MessageTypes property is set
         internal bool IsSetMessageTypes()
         {
-            return this._messageTypes != null && this._messageTypes.Count > 0; 
+            return this._messageTypes != null && (this._messageTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -192,7 +193,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

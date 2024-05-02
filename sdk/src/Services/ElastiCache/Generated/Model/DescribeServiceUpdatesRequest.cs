@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.ElastiCache.Model
         private string _marker;
         private int? _maxRecords;
         private string _serviceUpdateName;
-        private List<string> _serviceUpdateStatus = new List<string>();
+        private List<string> _serviceUpdateStatus = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -111,7 +112,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if ServiceUpdateStatus property is set
         internal bool IsSetServiceUpdateStatus()
         {
-            return this._serviceUpdateStatus != null && this._serviceUpdateStatus.Count > 0; 
+            return this._serviceUpdateStatus != null && (this._serviceUpdateStatus.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

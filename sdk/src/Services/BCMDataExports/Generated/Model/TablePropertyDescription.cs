@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BCMDataExports.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.BCMDataExports.Model
         private string _defaultValue;
         private string _description;
         private string _name;
-        private List<string> _validValues = new List<string>();
+        private List<string> _validValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DefaultValue. 
@@ -110,7 +111,7 @@ namespace Amazon.BCMDataExports.Model
         // Check to see if ValidValues property is set
         internal bool IsSetValidValues()
         {
-            return this._validValues != null && this._validValues.Count > 0; 
+            return this._validValues != null && (this._validValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

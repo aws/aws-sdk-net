@@ -26,6 +26,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.S3.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.S3
 {
     /// <summary>
@@ -123,7 +124,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name to which the upload was taking place.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name to which the upload was taking place.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key of the object for which the multipart upload was initiated.</param>
         /// <param name="uploadId">Upload ID that identifies the multipart upload.</param>
         /// 
@@ -294,7 +295,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name to which the upload was taking place.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name to which the upload was taking place.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key of the object for which the multipart upload was initiated.</param>
         /// <param name="uploadId">Upload ID that identifies the multipart upload.</param>
         /// <param name="cancellationToken">
@@ -433,7 +434,8 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// Note that if <c>CompleteMultipartUpload</c> fails, applications should be prepared
-        /// to retry the failed requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ErrorBestPractices.html">Amazon
+        /// to retry any failed requests (including 500 error responses). For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ErrorBestPractices.html">Amazon
         /// S3 Error Best Practices</a>.
         /// </para>
         ///  <important> 
@@ -607,7 +609,8 @@ namespace Amazon.S3
         ///  
         /// <para>
         /// Note that if <c>CompleteMultipartUpload</c> fails, applications should be prepared
-        /// to retry the failed requests. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ErrorBestPractices.html">Amazon
+        /// to retry any failed requests (including 500 error responses). For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ErrorBestPractices.html">Amazon
         /// S3 Error Best Practices</a>.
         /// </para>
         ///  <important> 
@@ -779,7 +782,10 @@ namespace Amazon.S3
         ///  </note> 
         /// <para>
         /// Both the Region that you want to copy the object from and the Region that you want
-        /// to copy the object to must be enabled for your account.
+        /// to copy the object to must be enabled for your account. For more information about
+        /// how to enable a Region for your account, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-regions.html#manage-acct-regions-enable-standalone">Enable
+        /// or disable a Region for standalone accounts</a> in the <i>Amazon Web Services Account
+        /// Management Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -823,7 +829,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the destination bucket is a general purpose bucket, you must have <b> <c>s3:PubObject</c>
+        /// If the destination bucket is a general purpose bucket, you must have <b> <c>s3:PutObject</c>
         /// </b> permission to write the object copy to the destination bucket. 
         /// </para>
         ///  </li> </ul> </li> <li> 
@@ -881,7 +887,7 @@ namespace Amazon.S3
         /// <para>
         /// If the error occurs during the copy operation, the error response is embedded in the
         /// <c>200 OK</c> response. For example, in a cross-region copy, you may encounter throttling
-        /// and receive a <c>200 OK</c> response. For more information, see <a href="repost.aws/knowledge-center/s3-resolve-200-internalerror">Resolve
+        /// and receive a <c>200 OK</c> response. For more information, see <a href="https://repost.aws/knowledge-center/s3-resolve-200-internalerror">Resolve
         /// the Error 200 response when copying objects to Amazon S3</a>. The <c>200 OK</c> status
         /// code means the copy was accepted, but it doesn't mean the copy is complete. Another
         /// example is when you disconnect from Amazon S3 before the copy is complete, Amazon
@@ -901,8 +907,10 @@ namespace Amazon.S3
         /// <para>
         /// The copy request charge is based on the storage class and Region that you specify
         /// for the destination object. The request can also result in a data retrieval charge
-        /// for the source if the source storage class bills for data retrieval. For pricing information,
-        /// see <a href="http://aws.amazon.com/s3/pricing/">Amazon S3 pricing</a>.
+        /// for the source if the source storage class bills for data retrieval. If the copy source
+        /// is in a different region, the data transfer is billed to the copy source account.
+        /// For pricing information, see <a href="http://aws.amazon.com/s3/pricing/">Amazon S3
+        /// pricing</a>.
         /// </para>
         ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
@@ -926,7 +934,7 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="sourceBucket">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
         /// <param name="sourceKey">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
-        /// <param name="destinationBucket">The name of the destination bucket.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="destinationBucket">The name of the destination bucket.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="destinationKey">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
         /// 
         /// <returns>The response from the CopyObject service method, as returned by S3.</returns>
@@ -960,7 +968,10 @@ namespace Amazon.S3
         ///  </note> 
         /// <para>
         /// Both the Region that you want to copy the object from and the Region that you want
-        /// to copy the object to must be enabled for your account.
+        /// to copy the object to must be enabled for your account. For more information about
+        /// how to enable a Region for your account, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-regions.html#manage-acct-regions-enable-standalone">Enable
+        /// or disable a Region for standalone accounts</a> in the <i>Amazon Web Services Account
+        /// Management Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -1004,7 +1015,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the destination bucket is a general purpose bucket, you must have <b> <c>s3:PubObject</c>
+        /// If the destination bucket is a general purpose bucket, you must have <b> <c>s3:PutObject</c>
         /// </b> permission to write the object copy to the destination bucket. 
         /// </para>
         ///  </li> </ul> </li> <li> 
@@ -1062,7 +1073,7 @@ namespace Amazon.S3
         /// <para>
         /// If the error occurs during the copy operation, the error response is embedded in the
         /// <c>200 OK</c> response. For example, in a cross-region copy, you may encounter throttling
-        /// and receive a <c>200 OK</c> response. For more information, see <a href="repost.aws/knowledge-center/s3-resolve-200-internalerror">Resolve
+        /// and receive a <c>200 OK</c> response. For more information, see <a href="https://repost.aws/knowledge-center/s3-resolve-200-internalerror">Resolve
         /// the Error 200 response when copying objects to Amazon S3</a>. The <c>200 OK</c> status
         /// code means the copy was accepted, but it doesn't mean the copy is complete. Another
         /// example is when you disconnect from Amazon S3 before the copy is complete, Amazon
@@ -1082,8 +1093,10 @@ namespace Amazon.S3
         /// <para>
         /// The copy request charge is based on the storage class and Region that you specify
         /// for the destination object. The request can also result in a data retrieval charge
-        /// for the source if the source storage class bills for data retrieval. For pricing information,
-        /// see <a href="http://aws.amazon.com/s3/pricing/">Amazon S3 pricing</a>.
+        /// for the source if the source storage class bills for data retrieval. If the copy source
+        /// is in a different region, the data transfer is billed to the copy source account.
+        /// For pricing information, see <a href="http://aws.amazon.com/s3/pricing/">Amazon S3
+        /// pricing</a>.
         /// </para>
         ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
@@ -1108,7 +1121,7 @@ namespace Amazon.S3
         /// <param name="sourceBucket">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
         /// <param name="sourceKey">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
         /// <param name="sourceVersionId">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
-        /// <param name="destinationBucket">The name of the destination bucket.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="destinationBucket">The name of the destination bucket.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="destinationKey">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
         /// 
         /// <returns>The response from the CopyObject service method, as returned by S3.</returns>
@@ -1142,7 +1155,10 @@ namespace Amazon.S3
         ///  </note> 
         /// <para>
         /// Both the Region that you want to copy the object from and the Region that you want
-        /// to copy the object to must be enabled for your account.
+        /// to copy the object to must be enabled for your account. For more information about
+        /// how to enable a Region for your account, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-regions.html#manage-acct-regions-enable-standalone">Enable
+        /// or disable a Region for standalone accounts</a> in the <i>Amazon Web Services Account
+        /// Management Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -1186,7 +1202,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the destination bucket is a general purpose bucket, you must have <b> <c>s3:PubObject</c>
+        /// If the destination bucket is a general purpose bucket, you must have <b> <c>s3:PutObject</c>
         /// </b> permission to write the object copy to the destination bucket. 
         /// </para>
         ///  </li> </ul> </li> <li> 
@@ -1244,7 +1260,7 @@ namespace Amazon.S3
         /// <para>
         /// If the error occurs during the copy operation, the error response is embedded in the
         /// <c>200 OK</c> response. For example, in a cross-region copy, you may encounter throttling
-        /// and receive a <c>200 OK</c> response. For more information, see <a href="repost.aws/knowledge-center/s3-resolve-200-internalerror">Resolve
+        /// and receive a <c>200 OK</c> response. For more information, see <a href="https://repost.aws/knowledge-center/s3-resolve-200-internalerror">Resolve
         /// the Error 200 response when copying objects to Amazon S3</a>. The <c>200 OK</c> status
         /// code means the copy was accepted, but it doesn't mean the copy is complete. Another
         /// example is when you disconnect from Amazon S3 before the copy is complete, Amazon
@@ -1264,8 +1280,10 @@ namespace Amazon.S3
         /// <para>
         /// The copy request charge is based on the storage class and Region that you specify
         /// for the destination object. The request can also result in a data retrieval charge
-        /// for the source if the source storage class bills for data retrieval. For pricing information,
-        /// see <a href="http://aws.amazon.com/s3/pricing/">Amazon S3 pricing</a>.
+        /// for the source if the source storage class bills for data retrieval. If the copy source
+        /// is in a different region, the data transfer is billed to the copy source account.
+        /// For pricing information, see <a href="http://aws.amazon.com/s3/pricing/">Amazon S3
+        /// pricing</a>.
         /// </para>
         ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
@@ -1321,7 +1339,10 @@ namespace Amazon.S3
         ///  </note> 
         /// <para>
         /// Both the Region that you want to copy the object from and the Region that you want
-        /// to copy the object to must be enabled for your account.
+        /// to copy the object to must be enabled for your account. For more information about
+        /// how to enable a Region for your account, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-regions.html#manage-acct-regions-enable-standalone">Enable
+        /// or disable a Region for standalone accounts</a> in the <i>Amazon Web Services Account
+        /// Management Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -1365,7 +1386,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the destination bucket is a general purpose bucket, you must have <b> <c>s3:PubObject</c>
+        /// If the destination bucket is a general purpose bucket, you must have <b> <c>s3:PutObject</c>
         /// </b> permission to write the object copy to the destination bucket. 
         /// </para>
         ///  </li> </ul> </li> <li> 
@@ -1423,7 +1444,7 @@ namespace Amazon.S3
         /// <para>
         /// If the error occurs during the copy operation, the error response is embedded in the
         /// <c>200 OK</c> response. For example, in a cross-region copy, you may encounter throttling
-        /// and receive a <c>200 OK</c> response. For more information, see <a href="repost.aws/knowledge-center/s3-resolve-200-internalerror">Resolve
+        /// and receive a <c>200 OK</c> response. For more information, see <a href="https://repost.aws/knowledge-center/s3-resolve-200-internalerror">Resolve
         /// the Error 200 response when copying objects to Amazon S3</a>. The <c>200 OK</c> status
         /// code means the copy was accepted, but it doesn't mean the copy is complete. Another
         /// example is when you disconnect from Amazon S3 before the copy is complete, Amazon
@@ -1443,8 +1464,10 @@ namespace Amazon.S3
         /// <para>
         /// The copy request charge is based on the storage class and Region that you specify
         /// for the destination object. The request can also result in a data retrieval charge
-        /// for the source if the source storage class bills for data retrieval. For pricing information,
-        /// see <a href="http://aws.amazon.com/s3/pricing/">Amazon S3 pricing</a>.
+        /// for the source if the source storage class bills for data retrieval. If the copy source
+        /// is in a different region, the data transfer is billed to the copy source account.
+        /// For pricing information, see <a href="http://aws.amazon.com/s3/pricing/">Amazon S3
+        /// pricing</a>.
         /// </para>
         ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
@@ -1468,7 +1491,7 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="sourceBucket">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
         /// <param name="sourceKey">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
-        /// <param name="destinationBucket">The name of the destination bucket.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="destinationBucket">The name of the destination bucket.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="destinationKey">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1505,7 +1528,10 @@ namespace Amazon.S3
         ///  </note> 
         /// <para>
         /// Both the Region that you want to copy the object from and the Region that you want
-        /// to copy the object to must be enabled for your account.
+        /// to copy the object to must be enabled for your account. For more information about
+        /// how to enable a Region for your account, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-regions.html#manage-acct-regions-enable-standalone">Enable
+        /// or disable a Region for standalone accounts</a> in the <i>Amazon Web Services Account
+        /// Management Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -1549,7 +1575,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the destination bucket is a general purpose bucket, you must have <b> <c>s3:PubObject</c>
+        /// If the destination bucket is a general purpose bucket, you must have <b> <c>s3:PutObject</c>
         /// </b> permission to write the object copy to the destination bucket. 
         /// </para>
         ///  </li> </ul> </li> <li> 
@@ -1607,7 +1633,7 @@ namespace Amazon.S3
         /// <para>
         /// If the error occurs during the copy operation, the error response is embedded in the
         /// <c>200 OK</c> response. For example, in a cross-region copy, you may encounter throttling
-        /// and receive a <c>200 OK</c> response. For more information, see <a href="repost.aws/knowledge-center/s3-resolve-200-internalerror">Resolve
+        /// and receive a <c>200 OK</c> response. For more information, see <a href="https://repost.aws/knowledge-center/s3-resolve-200-internalerror">Resolve
         /// the Error 200 response when copying objects to Amazon S3</a>. The <c>200 OK</c> status
         /// code means the copy was accepted, but it doesn't mean the copy is complete. Another
         /// example is when you disconnect from Amazon S3 before the copy is complete, Amazon
@@ -1627,8 +1653,10 @@ namespace Amazon.S3
         /// <para>
         /// The copy request charge is based on the storage class and Region that you specify
         /// for the destination object. The request can also result in a data retrieval charge
-        /// for the source if the source storage class bills for data retrieval. For pricing information,
-        /// see <a href="http://aws.amazon.com/s3/pricing/">Amazon S3 pricing</a>.
+        /// for the source if the source storage class bills for data retrieval. If the copy source
+        /// is in a different region, the data transfer is billed to the copy source account.
+        /// For pricing information, see <a href="http://aws.amazon.com/s3/pricing/">Amazon S3
+        /// pricing</a>.
         /// </para>
         ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
@@ -1653,7 +1681,7 @@ namespace Amazon.S3
         /// <param name="sourceBucket">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
         /// <param name="sourceKey">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
         /// <param name="sourceVersionId">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
-        /// <param name="destinationBucket">The name of the destination bucket.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="destinationBucket">The name of the destination bucket.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="destinationKey">A property of CopyObjectRequest used to execute the CopyObject service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1691,7 +1719,10 @@ namespace Amazon.S3
         ///  </note> 
         /// <para>
         /// Both the Region that you want to copy the object from and the Region that you want
-        /// to copy the object to must be enabled for your account.
+        /// to copy the object to must be enabled for your account. For more information about
+        /// how to enable a Region for your account, see <a href="https://docs.aws.amazon.com/accounts/latest/reference/manage-acct-regions.html#manage-acct-regions-enable-standalone">Enable
+        /// or disable a Region for standalone accounts</a> in the <i>Amazon Web Services Account
+        /// Management Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -1735,7 +1766,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the destination bucket is a general purpose bucket, you must have <b> <c>s3:PubObject</c>
+        /// If the destination bucket is a general purpose bucket, you must have <b> <c>s3:PutObject</c>
         /// </b> permission to write the object copy to the destination bucket. 
         /// </para>
         ///  </li> </ul> </li> <li> 
@@ -1793,7 +1824,7 @@ namespace Amazon.S3
         /// <para>
         /// If the error occurs during the copy operation, the error response is embedded in the
         /// <c>200 OK</c> response. For example, in a cross-region copy, you may encounter throttling
-        /// and receive a <c>200 OK</c> response. For more information, see <a href="repost.aws/knowledge-center/s3-resolve-200-internalerror">Resolve
+        /// and receive a <c>200 OK</c> response. For more information, see <a href="https://repost.aws/knowledge-center/s3-resolve-200-internalerror">Resolve
         /// the Error 200 response when copying objects to Amazon S3</a>. The <c>200 OK</c> status
         /// code means the copy was accepted, but it doesn't mean the copy is complete. Another
         /// example is when you disconnect from Amazon S3 before the copy is complete, Amazon
@@ -1813,8 +1844,10 @@ namespace Amazon.S3
         /// <para>
         /// The copy request charge is based on the storage class and Region that you specify
         /// for the destination object. The request can also result in a data retrieval charge
-        /// for the source if the source storage class bills for data retrieval. For pricing information,
-        /// see <a href="http://aws.amazon.com/s3/pricing/">Amazon S3 pricing</a>.
+        /// for the source if the source storage class bills for data retrieval. If the copy source
+        /// is in a different region, the data transfer is billed to the copy source account.
+        /// For pricing information, see <a href="http://aws.amazon.com/s3/pricing/">Amazon S3
+        /// pricing</a>.
         /// </para>
         ///  </dd> <dt>HTTP Host header syntax</dt> <dd> 
         /// <para>
@@ -1926,7 +1959,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the destination bucket is a general purpose bucket, you must have the <b> <c>s3:PubObject</c>
+        /// If the destination bucket is a general purpose bucket, you must have the <b> <c>s3:PutObject</c>
         /// </b> permission to write the object copy to the destination bucket. 
         /// </para>
         ///  </li> </ul> 
@@ -2043,13 +2076,14 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="sourceBucket">A property of CopyPartRequest used to execute the CopyPart service method.</param>
         /// <param name="sourceKey">A property of CopyPartRequest used to execute the CopyPart service method.</param>
-        /// <param name="destinationBucket">The bucket name.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="destinationBucket">The bucket name.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="destinationKey">A property of CopyPartRequest used to execute the CopyPart service method.</param>
         /// <param name="uploadId">Upload ID identifying the multipart upload whose part is being copied.</param>
+        /// <param name="partNumber">Part number of part being copied. This is a positive integer between 1 and 10,000.</param>
         /// 
         /// <returns>The response from the CopyPart service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPartCopy">REST API Reference for CopyPart Operation</seealso>
-        CopyPartResponse CopyPart(string sourceBucket, string sourceKey, string destinationBucket, string destinationKey, string uploadId);
+        CopyPartResponse CopyPart(string sourceBucket, string sourceKey, string destinationBucket, string destinationKey, string uploadId, int? partNumber);
 
         /// <summary>
         /// Uploads a part by copying data from an existing object as data source. To specify
@@ -2127,7 +2161,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the destination bucket is a general purpose bucket, you must have the <b> <c>s3:PubObject</c>
+        /// If the destination bucket is a general purpose bucket, you must have the <b> <c>s3:PutObject</c>
         /// </b> permission to write the object copy to the destination bucket. 
         /// </para>
         ///  </li> </ul> 
@@ -2245,13 +2279,14 @@ namespace Amazon.S3
         /// <param name="sourceBucket">A property of CopyPartRequest used to execute the CopyPart service method.</param>
         /// <param name="sourceKey">A property of CopyPartRequest used to execute the CopyPart service method.</param>
         /// <param name="sourceVersionId">A property of CopyPartRequest used to execute the CopyPart service method.</param>
-        /// <param name="destinationBucket">The bucket name.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="destinationBucket">The bucket name.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="destinationKey">A property of CopyPartRequest used to execute the CopyPart service method.</param>
         /// <param name="uploadId">Upload ID identifying the multipart upload whose part is being copied.</param>
+        /// <param name="partNumber">Part number of part being copied. This is a positive integer between 1 and 10,000.</param>
         /// 
         /// <returns>The response from the CopyPart service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPartCopy">REST API Reference for CopyPart Operation</seealso>
-        CopyPartResponse CopyPart(string sourceBucket, string sourceKey, string sourceVersionId, string destinationBucket, string destinationKey, string uploadId);
+        CopyPartResponse CopyPart(string sourceBucket, string sourceKey, string sourceVersionId, string destinationBucket, string destinationKey, string uploadId, int? partNumber);
 
         /// <summary>
         /// Uploads a part by copying data from an existing object as data source. To specify
@@ -2329,7 +2364,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the destination bucket is a general purpose bucket, you must have the <b> <c>s3:PubObject</c>
+        /// If the destination bucket is a general purpose bucket, you must have the <b> <c>s3:PutObject</c>
         /// </b> permission to write the object copy to the destination bucket. 
         /// </para>
         ///  </li> </ul> 
@@ -2527,7 +2562,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the destination bucket is a general purpose bucket, you must have the <b> <c>s3:PubObject</c>
+        /// If the destination bucket is a general purpose bucket, you must have the <b> <c>s3:PutObject</c>
         /// </b> permission to write the object copy to the destination bucket. 
         /// </para>
         ///  </li> </ul> 
@@ -2644,16 +2679,17 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="sourceBucket">A property of CopyPartRequest used to execute the CopyPart service method.</param>
         /// <param name="sourceKey">A property of CopyPartRequest used to execute the CopyPart service method.</param>
-        /// <param name="destinationBucket">The bucket name.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="destinationBucket">The bucket name.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="destinationKey">A property of CopyPartRequest used to execute the CopyPart service method.</param>
         /// <param name="uploadId">Upload ID identifying the multipart upload whose part is being copied.</param>
+        /// <param name="partNumber">Part number of part being copied. This is a positive integer between 1 and 10,000.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
         /// <returns>The response from the CopyPart service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPartCopy">REST API Reference for CopyPart Operation</seealso>
-        Task<CopyPartResponse> CopyPartAsync(string sourceBucket, string sourceKey, string destinationBucket, string destinationKey, string uploadId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        Task<CopyPartResponse> CopyPartAsync(string sourceBucket, string sourceKey, string destinationBucket, string destinationKey, string uploadId, int? partNumber, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         /// <summary>
         /// Uploads a part by copying data from an existing object as data source. To specify
@@ -2731,7 +2767,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the destination bucket is a general purpose bucket, you must have the <b> <c>s3:PubObject</c>
+        /// If the destination bucket is a general purpose bucket, you must have the <b> <c>s3:PutObject</c>
         /// </b> permission to write the object copy to the destination bucket. 
         /// </para>
         ///  </li> </ul> 
@@ -2849,16 +2885,17 @@ namespace Amazon.S3
         /// <param name="sourceBucket">A property of CopyPartRequest used to execute the CopyPart service method.</param>
         /// <param name="sourceKey">A property of CopyPartRequest used to execute the CopyPart service method.</param>
         /// <param name="sourceVersionId">A property of CopyPartRequest used to execute the CopyPart service method.</param>
-        /// <param name="destinationBucket">The bucket name.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="destinationBucket">The bucket name.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="destinationKey">A property of CopyPartRequest used to execute the CopyPart service method.</param>
         /// <param name="uploadId">Upload ID identifying the multipart upload whose part is being copied.</param>
+        /// <param name="partNumber">Part number of part being copied. This is a positive integer between 1 and 10,000.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
         /// <returns>The response from the CopyPart service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/UploadPartCopy">REST API Reference for CopyPart Operation</seealso>
-        Task<CopyPartResponse> CopyPartAsync(string sourceBucket, string sourceKey, string sourceVersionId, string destinationBucket, string destinationKey, string uploadId, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        Task<CopyPartResponse> CopyPartAsync(string sourceBucket, string sourceKey, string sourceVersionId, string destinationBucket, string destinationKey, string uploadId, int? partNumber, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
 
         /// <summary>
@@ -2937,7 +2974,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the destination bucket is a general purpose bucket, you must have the <b> <c>s3:PubObject</c>
+        /// If the destination bucket is a general purpose bucket, you must have the <b> <c>s3:PutObject</c>
         /// </b> permission to write the object copy to the destination bucket. 
         /// </para>
         ///  </li> </ul> 
@@ -3302,7 +3339,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">Specifies the bucket being deleted.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <c> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
+        /// <param name="bucketName">Specifies the bucket being deleted.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <c> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
         /// 
         /// <returns>The response from the DeleteBucket service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucket">REST API Reference for DeleteBucket Operation</seealso>
@@ -3423,7 +3460,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">Specifies the bucket being deleted.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <c> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
+        /// <param name="bucketName">Specifies the bucket being deleted.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <c> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -4220,7 +4257,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <c> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
+        /// <param name="bucketName">The bucket name.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <c> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
         /// 
         /// <returns>The response from the DeleteBucketPolicy service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteBucketPolicy">REST API Reference for DeleteBucketPolicy Operation</seealso>
@@ -4379,7 +4416,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <c> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
+        /// <param name="bucketName">The bucket name.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <c> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -5348,14 +5385,26 @@ namespace Amazon.S3
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// If versioning is enabled, the operation removes the null version (if there is one)
-        /// of an object and inserts a delete marker, which becomes the latest version of the
-        /// object. If there isn't a null version, Amazon S3 does not remove any objects but will
-        /// still respond that the command was successful.
+        /// If bucket versioning is not enabled, the operation permanently deletes the object.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If versioning is suspended or not enabled, the operation permanently deletes the object.
+        /// If bucket versioning is enabled, the operation inserts a delete marker, which becomes
+        /// the current version of the object. To permanently delete an object in a versioned
+        /// bucket, you must include the object’s <c>versionId</c> in the request. For more information
+        /// about versioning-enabled buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjectVersions.html">Deleting
+        /// object versions from a versioning-enabled bucket</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If bucket versioning is suspended, the operation removes the object that has a null
+        /// <c>versionId</c>, if there is one, and inserts a delete marker that becomes the current
+        /// version of the object. If there isn't an object with a null <c>versionId</c>, and
+        /// all versions of the object have a <c>versionId</c>, Amazon S3 does not remove the
+        /// object and only inserts a delete marker. To permanently delete an object that has
+        /// a <c>versionId</c>, you must include the object’s <c>versionId</c> in the request.
+        /// For more information about versioning-suspended buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjectsfromVersioningSuspendedBuckets.html">Deleting
+        /// objects from versioning-suspended buckets</a>.
         /// </para>
         ///  </li> </ul> <note> <ul> <li> 
         /// <para>
@@ -5416,7 +5465,8 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         ///  <b> <c>s3:DeleteObjectVersion</c> </b> - To delete a specific version of an object
-        /// from a versiong-enabled bucket, you must have the <c>s3:DeleteObjectVersion</c> permission.
+        /// from a versioning-enabled bucket, you must have the <c>s3:DeleteObjectVersion</c>
+        /// permission.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -5448,7 +5498,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name of the bucket containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name of the bucket containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key name of the object to delete.</param>
         /// 
         /// <returns>The response from the DeleteObject service method, as returned by S3.</returns>
@@ -5461,14 +5511,26 @@ namespace Amazon.S3
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// If versioning is enabled, the operation removes the null version (if there is one)
-        /// of an object and inserts a delete marker, which becomes the latest version of the
-        /// object. If there isn't a null version, Amazon S3 does not remove any objects but will
-        /// still respond that the command was successful.
+        /// If bucket versioning is not enabled, the operation permanently deletes the object.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If versioning is suspended or not enabled, the operation permanently deletes the object.
+        /// If bucket versioning is enabled, the operation inserts a delete marker, which becomes
+        /// the current version of the object. To permanently delete an object in a versioned
+        /// bucket, you must include the object’s <c>versionId</c> in the request. For more information
+        /// about versioning-enabled buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjectVersions.html">Deleting
+        /// object versions from a versioning-enabled bucket</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If bucket versioning is suspended, the operation removes the object that has a null
+        /// <c>versionId</c>, if there is one, and inserts a delete marker that becomes the current
+        /// version of the object. If there isn't an object with a null <c>versionId</c>, and
+        /// all versions of the object have a <c>versionId</c>, Amazon S3 does not remove the
+        /// object and only inserts a delete marker. To permanently delete an object that has
+        /// a <c>versionId</c>, you must include the object’s <c>versionId</c> in the request.
+        /// For more information about versioning-suspended buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjectsfromVersioningSuspendedBuckets.html">Deleting
+        /// objects from versioning-suspended buckets</a>.
         /// </para>
         ///  </li> </ul> <note> <ul> <li> 
         /// <para>
@@ -5529,7 +5591,8 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         ///  <b> <c>s3:DeleteObjectVersion</c> </b> - To delete a specific version of an object
-        /// from a versiong-enabled bucket, you must have the <c>s3:DeleteObjectVersion</c> permission.
+        /// from a versioning-enabled bucket, you must have the <c>s3:DeleteObjectVersion</c>
+        /// permission.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -5561,7 +5624,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name of the bucket containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name of the bucket containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key name of the object to delete.</param>
         /// <param name="versionId">Version ID used to reference a specific version of the object. <note> For directory buckets in this API operation, only the <c>null</c> value of the version ID is supported. </note></param>
         /// 
@@ -5575,14 +5638,26 @@ namespace Amazon.S3
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// If versioning is enabled, the operation removes the null version (if there is one)
-        /// of an object and inserts a delete marker, which becomes the latest version of the
-        /// object. If there isn't a null version, Amazon S3 does not remove any objects but will
-        /// still respond that the command was successful.
+        /// If bucket versioning is not enabled, the operation permanently deletes the object.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If versioning is suspended or not enabled, the operation permanently deletes the object.
+        /// If bucket versioning is enabled, the operation inserts a delete marker, which becomes
+        /// the current version of the object. To permanently delete an object in a versioned
+        /// bucket, you must include the object’s <c>versionId</c> in the request. For more information
+        /// about versioning-enabled buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjectVersions.html">Deleting
+        /// object versions from a versioning-enabled bucket</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If bucket versioning is suspended, the operation removes the object that has a null
+        /// <c>versionId</c>, if there is one, and inserts a delete marker that becomes the current
+        /// version of the object. If there isn't an object with a null <c>versionId</c>, and
+        /// all versions of the object have a <c>versionId</c>, Amazon S3 does not remove the
+        /// object and only inserts a delete marker. To permanently delete an object that has
+        /// a <c>versionId</c>, you must include the object’s <c>versionId</c> in the request.
+        /// For more information about versioning-suspended buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjectsfromVersioningSuspendedBuckets.html">Deleting
+        /// objects from versioning-suspended buckets</a>.
         /// </para>
         ///  </li> </ul> <note> <ul> <li> 
         /// <para>
@@ -5643,7 +5718,8 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         ///  <b> <c>s3:DeleteObjectVersion</c> </b> - To delete a specific version of an object
-        /// from a versiong-enabled bucket, you must have the <c>s3:DeleteObjectVersion</c> permission.
+        /// from a versioning-enabled bucket, you must have the <c>s3:DeleteObjectVersion</c>
+        /// permission.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -5688,14 +5764,26 @@ namespace Amazon.S3
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// If versioning is enabled, the operation removes the null version (if there is one)
-        /// of an object and inserts a delete marker, which becomes the latest version of the
-        /// object. If there isn't a null version, Amazon S3 does not remove any objects but will
-        /// still respond that the command was successful.
+        /// If bucket versioning is not enabled, the operation permanently deletes the object.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If versioning is suspended or not enabled, the operation permanently deletes the object.
+        /// If bucket versioning is enabled, the operation inserts a delete marker, which becomes
+        /// the current version of the object. To permanently delete an object in a versioned
+        /// bucket, you must include the object’s <c>versionId</c> in the request. For more information
+        /// about versioning-enabled buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjectVersions.html">Deleting
+        /// object versions from a versioning-enabled bucket</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If bucket versioning is suspended, the operation removes the object that has a null
+        /// <c>versionId</c>, if there is one, and inserts a delete marker that becomes the current
+        /// version of the object. If there isn't an object with a null <c>versionId</c>, and
+        /// all versions of the object have a <c>versionId</c>, Amazon S3 does not remove the
+        /// object and only inserts a delete marker. To permanently delete an object that has
+        /// a <c>versionId</c>, you must include the object’s <c>versionId</c> in the request.
+        /// For more information about versioning-suspended buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjectsfromVersioningSuspendedBuckets.html">Deleting
+        /// objects from versioning-suspended buckets</a>.
         /// </para>
         ///  </li> </ul> <note> <ul> <li> 
         /// <para>
@@ -5756,7 +5844,8 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         ///  <b> <c>s3:DeleteObjectVersion</c> </b> - To delete a specific version of an object
-        /// from a versiong-enabled bucket, you must have the <c>s3:DeleteObjectVersion</c> permission.
+        /// from a versioning-enabled bucket, you must have the <c>s3:DeleteObjectVersion</c>
+        /// permission.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -5788,7 +5877,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name of the bucket containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name of the bucket containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key name of the object to delete.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -5804,14 +5893,26 @@ namespace Amazon.S3
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// If versioning is enabled, the operation removes the null version (if there is one)
-        /// of an object and inserts a delete marker, which becomes the latest version of the
-        /// object. If there isn't a null version, Amazon S3 does not remove any objects but will
-        /// still respond that the command was successful.
+        /// If bucket versioning is not enabled, the operation permanently deletes the object.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If versioning is suspended or not enabled, the operation permanently deletes the object.
+        /// If bucket versioning is enabled, the operation inserts a delete marker, which becomes
+        /// the current version of the object. To permanently delete an object in a versioned
+        /// bucket, you must include the object’s <c>versionId</c> in the request. For more information
+        /// about versioning-enabled buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjectVersions.html">Deleting
+        /// object versions from a versioning-enabled bucket</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If bucket versioning is suspended, the operation removes the object that has a null
+        /// <c>versionId</c>, if there is one, and inserts a delete marker that becomes the current
+        /// version of the object. If there isn't an object with a null <c>versionId</c>, and
+        /// all versions of the object have a <c>versionId</c>, Amazon S3 does not remove the
+        /// object and only inserts a delete marker. To permanently delete an object that has
+        /// a <c>versionId</c>, you must include the object’s <c>versionId</c> in the request.
+        /// For more information about versioning-suspended buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjectsfromVersioningSuspendedBuckets.html">Deleting
+        /// objects from versioning-suspended buckets</a>.
         /// </para>
         ///  </li> </ul> <note> <ul> <li> 
         /// <para>
@@ -5872,7 +5973,8 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         ///  <b> <c>s3:DeleteObjectVersion</c> </b> - To delete a specific version of an object
-        /// from a versiong-enabled bucket, you must have the <c>s3:DeleteObjectVersion</c> permission.
+        /// from a versioning-enabled bucket, you must have the <c>s3:DeleteObjectVersion</c>
+        /// permission.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -5904,7 +6006,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name of the bucket containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name of the bucket containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key name of the object to delete.</param>
         /// <param name="versionId">Version ID used to reference a specific version of the object. <note> For directory buckets in this API operation, only the <c>null</c> value of the version ID is supported. </note></param>
         /// <param name="cancellationToken">
@@ -5922,14 +6024,26 @@ namespace Amazon.S3
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// If versioning is enabled, the operation removes the null version (if there is one)
-        /// of an object and inserts a delete marker, which becomes the latest version of the
-        /// object. If there isn't a null version, Amazon S3 does not remove any objects but will
-        /// still respond that the command was successful.
+        /// If bucket versioning is not enabled, the operation permanently deletes the object.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If versioning is suspended or not enabled, the operation permanently deletes the object.
+        /// If bucket versioning is enabled, the operation inserts a delete marker, which becomes
+        /// the current version of the object. To permanently delete an object in a versioned
+        /// bucket, you must include the object’s <c>versionId</c> in the request. For more information
+        /// about versioning-enabled buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjectVersions.html">Deleting
+        /// object versions from a versioning-enabled bucket</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If bucket versioning is suspended, the operation removes the object that has a null
+        /// <c>versionId</c>, if there is one, and inserts a delete marker that becomes the current
+        /// version of the object. If there isn't an object with a null <c>versionId</c>, and
+        /// all versions of the object have a <c>versionId</c>, Amazon S3 does not remove the
+        /// object and only inserts a delete marker. To permanently delete an object that has
+        /// a <c>versionId</c>, you must include the object’s <c>versionId</c> in the request.
+        /// For more information about versioning-suspended buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/DeletingObjectsfromVersioningSuspendedBuckets.html">Deleting
+        /// objects from versioning-suspended buckets</a>.
         /// </para>
         ///  </li> </ul> <note> <ul> <li> 
         /// <para>
@@ -5990,7 +6104,8 @@ namespace Amazon.S3
         ///  </li> <li> 
         /// <para>
         ///  <b> <c>s3:DeleteObjectVersion</c> </b> - To delete a specific version of an object
-        /// from a versiong-enabled bucket, you must have the <c>s3:DeleteObjectVersion</c> permission.
+        /// from a versioning-enabled bucket, you must have the <c>s3:DeleteObjectVersion</c>
+        /// permission.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -8301,7 +8416,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name to get the bucket policy for.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <c> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>   <b>Access points</b> - When you use this API operation with an access point, provide the alias of the access point in place of the bucket name.  <b>Object Lambda access points</b> - When you use this API operation with an Object Lambda access point, provide the alias of the Object Lambda access point in place of the bucket name. If the Object Lambda access point alias in a request is not valid, the error code <c>InvalidAccessPointAliasError</c> is returned. For more information about <c>InvalidAccessPointAliasError</c>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List of Error Codes</a>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note></param>
+        /// <param name="bucketName">The bucket name to get the bucket policy for.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <c> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>   <b>Access points</b> - When you use this API operation with an access point, provide the alias of the access point in place of the bucket name.  <b>Object Lambda access points</b> - When you use this API operation with an Object Lambda access point, provide the alias of the Object Lambda access point in place of the bucket name. If the Object Lambda access point alias in a request is not valid, the error code <c>InvalidAccessPointAliasError</c> is returned. For more information about <c>InvalidAccessPointAliasError</c>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List of Error Codes</a>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note></param>
         /// 
         /// <returns>The response from the GetBucketPolicy service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketPolicy">REST API Reference for GetBucketPolicy Operation</seealso>
@@ -8470,7 +8585,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name to get the bucket policy for.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <c> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>   <b>Access points</b> - When you use this API operation with an access point, provide the alias of the access point in place of the bucket name.  <b>Object Lambda access points</b> - When you use this API operation with an Object Lambda access point, provide the alias of the Object Lambda access point in place of the bucket name. If the Object Lambda access point alias in a request is not valid, the error code <c>InvalidAccessPointAliasError</c> is returned. For more information about <c>InvalidAccessPointAliasError</c>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List of Error Codes</a>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note></param>
+        /// <param name="bucketName">The bucket name to get the bucket policy for.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <c> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>   <b>Access points</b> - When you use this API operation with an access point, provide the alias of the access point in place of the bucket name.  <b>Object Lambda access points</b> - When you use this API operation with an Object Lambda access point, provide the alias of the Object Lambda access point in place of the bucket name. If the Object Lambda access point alias in a request is not valid, the error code <c>InvalidAccessPointAliasError</c> is returned. For more information about <c>InvalidAccessPointAliasError</c>, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List of Error Codes</a>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note></param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -9560,11 +9675,14 @@ namespace Amazon.S3
         ///  </note> <note> 
         /// <para>
         /// Bucket lifecycle configuration now supports specifying a lifecycle rule using an object
-        /// key name prefix, one or more object tags, or a combination of both. Accordingly, this
-        /// section describes the latest API. The response describes the new filter element that
-        /// you can use to specify a filter to select a subset of objects to which the rule applies.
-        /// If you are using a previous version of the lifecycle configuration, it still works.
-        /// For the earlier action, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycle.html">GetBucketLifecycle</a>.
+        /// key name prefix, one or more object tags, object size, or any combination of these.
+        /// Accordingly, this section describes the latest API. The previous version of the API
+        /// supported filtering based only on an object key name prefix, which is supported for
+        /// backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycle.html">GetBucketLifecycle</a>.
+        /// Accordingly, this section describes the latest API. The response describes the new
+        /// filter element that you can use to specify a filter to select a subset of objects
+        /// to which the rule applies. If you are using a previous version of the lifecycle configuration,
+        /// it still works. For the earlier action, 
         /// </para>
         ///  </note> 
         /// <para>
@@ -9635,11 +9753,14 @@ namespace Amazon.S3
         ///  </note> <note> 
         /// <para>
         /// Bucket lifecycle configuration now supports specifying a lifecycle rule using an object
-        /// key name prefix, one or more object tags, or a combination of both. Accordingly, this
-        /// section describes the latest API. The response describes the new filter element that
-        /// you can use to specify a filter to select a subset of objects to which the rule applies.
-        /// If you are using a previous version of the lifecycle configuration, it still works.
-        /// For the earlier action, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycle.html">GetBucketLifecycle</a>.
+        /// key name prefix, one or more object tags, object size, or any combination of these.
+        /// Accordingly, this section describes the latest API. The previous version of the API
+        /// supported filtering based only on an object key name prefix, which is supported for
+        /// backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycle.html">GetBucketLifecycle</a>.
+        /// Accordingly, this section describes the latest API. The response describes the new
+        /// filter element that you can use to specify a filter to select a subset of objects
+        /// to which the rule applies. If you are using a previous version of the lifecycle configuration,
+        /// it still works. For the earlier action, 
         /// </para>
         ///  </note> 
         /// <para>
@@ -9711,11 +9832,14 @@ namespace Amazon.S3
         ///  </note> <note> 
         /// <para>
         /// Bucket lifecycle configuration now supports specifying a lifecycle rule using an object
-        /// key name prefix, one or more object tags, or a combination of both. Accordingly, this
-        /// section describes the latest API. The response describes the new filter element that
-        /// you can use to specify a filter to select a subset of objects to which the rule applies.
-        /// If you are using a previous version of the lifecycle configuration, it still works.
-        /// For the earlier action, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycle.html">GetBucketLifecycle</a>.
+        /// key name prefix, one or more object tags, object size, or any combination of these.
+        /// Accordingly, this section describes the latest API. The previous version of the API
+        /// supported filtering based only on an object key name prefix, which is supported for
+        /// backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycle.html">GetBucketLifecycle</a>.
+        /// Accordingly, this section describes the latest API. The response describes the new
+        /// filter element that you can use to specify a filter to select a subset of objects
+        /// to which the rule applies. If you are using a previous version of the lifecycle configuration,
+        /// it still works. For the earlier action, 
         /// </para>
         ///  </note> 
         /// <para>
@@ -9790,11 +9914,14 @@ namespace Amazon.S3
         ///  </note> <note> 
         /// <para>
         /// Bucket lifecycle configuration now supports specifying a lifecycle rule using an object
-        /// key name prefix, one or more object tags, or a combination of both. Accordingly, this
-        /// section describes the latest API. The response describes the new filter element that
-        /// you can use to specify a filter to select a subset of objects to which the rule applies.
-        /// If you are using a previous version of the lifecycle configuration, it still works.
-        /// For the earlier action, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycle.html">GetBucketLifecycle</a>.
+        /// key name prefix, one or more object tags, object size, or any combination of these.
+        /// Accordingly, this section describes the latest API. The previous version of the API
+        /// supported filtering based only on an object key name prefix, which is supported for
+        /// backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycle.html">GetBucketLifecycle</a>.
+        /// Accordingly, this section describes the latest API. The response describes the new
+        /// filter element that you can use to specify a filter to select a subset of objects
+        /// to which the rule applies. If you are using a previous version of the lifecycle configuration,
+        /// it still works. For the earlier action, 
         /// </para>
         ///  </note> 
         /// <para>
@@ -10046,7 +10173,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.  <b>Object Lambda access points</b> - When you use this action with an Object Lambda access point, you must direct requests to the Object Lambda access point hostname. The Object Lambda access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-object-lambda.<i>Region</i>.amazonaws.com. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.  <b>Object Lambda access points</b> - When you use this action with an Object Lambda access point, you must direct requests to the Object Lambda access point hostname. The Object Lambda access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-object-lambda.<i>Region</i>.amazonaws.com. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key of the object to get.</param>
         /// 
         /// <returns>The response from the GetObject service method, as returned by S3.</returns>
@@ -10234,7 +10361,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.  <b>Object Lambda access points</b> - When you use this action with an Object Lambda access point, you must direct requests to the Object Lambda access point hostname. The Object Lambda access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-object-lambda.<i>Region</i>.amazonaws.com. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.  <b>Object Lambda access points</b> - When you use this action with an Object Lambda access point, you must direct requests to the Object Lambda access point hostname. The Object Lambda access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-object-lambda.<i>Region</i>.amazonaws.com. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key of the object to get.</param>
         /// <param name="versionId">Version ID used to reference a specific version of the object. By default, the <c>GetObject</c> operation returns the current version of an object. To return a different version, use the <c>versionId</c> subresource. <note> <ul> <li> If you include a <c>versionId</c> in your request header, you must have the <c>s3:GetObjectVersion</c> permission to access a specific version of an object. The <c>s3:GetObject</c> permission is not required in this scenario. </li> <li> If you request the current version of an object without a specific <c>versionId</c> in the request header, only the <c>s3:GetObject</c> permission is required. The <c>s3:GetObjectVersion</c> permission is not required in this scenario. </li> <li>  <b>Directory buckets</b> - S3 Versioning isn't enabled and supported for directory buckets. For this API operation, only the <c>null</c> value of the version ID is supported by directory buckets. You can only specify <c>null</c> to the <c>versionId</c> query parameter in the request. </li> </ul> </note> For more information about versioning, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html">PutBucketVersioning</a>.</param>
         /// 
@@ -10611,7 +10738,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.  <b>Object Lambda access points</b> - When you use this action with an Object Lambda access point, you must direct requests to the Object Lambda access point hostname. The Object Lambda access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-object-lambda.<i>Region</i>.amazonaws.com. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.  <b>Object Lambda access points</b> - When you use this action with an Object Lambda access point, you must direct requests to the Object Lambda access point hostname. The Object Lambda access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-object-lambda.<i>Region</i>.amazonaws.com. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key of the object to get.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -10802,7 +10929,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The bucket name containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.  <b>Object Lambda access points</b> - When you use this action with an Object Lambda access point, you must direct requests to the Object Lambda access point hostname. The Object Lambda access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-object-lambda.<i>Region</i>.amazonaws.com. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The bucket name containing the object.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>.  <b>Object Lambda access points</b> - When you use this action with an Object Lambda access point, you must direct requests to the Object Lambda access point hostname. The Object Lambda access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-object-lambda.<i>Region</i>.amazonaws.com. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Key of the object to get.</param>
         /// <param name="versionId">Version ID used to reference a specific version of the object. By default, the <c>GetObject</c> operation returns the current version of an object. To return a different version, use the <c>versionId</c> subresource. <note> <ul> <li> If you include a <c>versionId</c> in your request header, you must have the <c>s3:GetObjectVersion</c> permission to access a specific version of an object. The <c>s3:GetObject</c> permission is not required in this scenario. </li> <li> If you request the current version of an object without a specific <c>versionId</c> in the request header, only the <c>s3:GetObject</c> permission is required. The <c>s3:GetObjectVersion</c> permission is not required in this scenario. </li> <li>  <b>Directory buckets</b> - S3 Versioning isn't enabled and supported for directory buckets. For this API operation, only the <c>null</c> value of the version ID is supported by directory buckets. You can only specify <c>null</c> to the <c>versionId</c> query parameter in the request. </li> </ul> </note> For more information about versioning, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html">PutBucketVersioning</a>.</param>
         /// <param name="cancellationToken">
@@ -11709,7 +11836,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket that contains the object.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket that contains the object.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">The object key.</param>
         /// 
         /// <returns>The response from the GetObjectMetadata service method, as returned by S3.</returns>
@@ -11862,7 +11989,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket that contains the object.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket that contains the object.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">The object key.</param>
         /// <param name="versionId">Version ID used to reference a specific version of the object. <note> For directory buckets in this API operation, only the <c>null</c> value of the version ID is supported. </note></param>
         /// 
@@ -12169,7 +12296,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket that contains the object.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket that contains the object.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">The object key.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -12325,7 +12452,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket that contains the object.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket that contains the object.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">The object key.</param>
         /// <param name="versionId">Version ID used to reference a specific version of the object. <note> For directory buckets in this API operation, only the <c>null</c> value of the version ID is supported. </note></param>
         /// <param name="cancellationToken">
@@ -13211,7 +13338,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket where the multipart upload is initiated and where the object is uploaded.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket where the multipart upload is initiated and where the object is uploaded.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Object key for which the multipart upload is to be initiated.</param>
         /// 
         /// <returns>The response from the InitiateMultipartUpload service method, as returned by S3.</returns>
@@ -13667,7 +13794,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket where the multipart upload is initiated and where the object is uploaded.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket where the multipart upload is initiated and where the object is uploaded.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Object key for which the multipart upload is to be initiated.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -14740,7 +14867,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket to which the multipart upload was initiated.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket to which the multipart upload was initiated.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// 
         /// <returns>The response from the ListMultipartUploads service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListMultipartUploads">REST API Reference for ListMultipartUploads Operation</seealso>
@@ -14870,7 +14997,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket to which the multipart upload was initiated.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket to which the multipart upload was initiated.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="prefix">Lists in-progress uploads only for those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different grouping of keys. (You can think of using <c>prefix</c> to make groups in the same way that you'd use a folder in a file system.) <note>  <b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter (<c>/</c>) are supported. </note></param>
         /// 
         /// <returns>The response from the ListMultipartUploads service method, as returned by S3.</returns>
@@ -15132,7 +15259,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket to which the multipart upload was initiated.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket to which the multipart upload was initiated.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -15265,7 +15392,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket to which the multipart upload was initiated.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket to which the multipart upload was initiated.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="prefix">Lists in-progress uploads only for those keys that begin with the specified prefix. You can use prefixes to separate a bucket into different grouping of keys. (You can think of using <c>prefix</c> to make groups in the same way that you'd use a folder in a file system.) <note>  <b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter (<c>/</c>) are supported. </note></param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -15463,7 +15590,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket containing the objects.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket containing the objects.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// 
         /// <returns>The response from the ListObjects service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListObjects">REST API Reference for ListObjects Operation</seealso>
@@ -15518,7 +15645,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket containing the objects.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket containing the objects.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="prefix">Limits the response to keys that begin with the specified prefix.</param>
         /// 
         /// <returns>The response from the ListObjects service method, as returned by S3.</returns>
@@ -15630,7 +15757,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket containing the objects.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket containing the objects.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -15688,7 +15815,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket containing the objects.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket containing the objects.  <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="prefix">Limits the response to keys that begin with the specified prefix.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -16048,7 +16175,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket to which the parts are being uploaded.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket to which the parts are being uploaded.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Object key for which the multipart upload was initiated.</param>
         /// <param name="uploadId">Upload ID identifying the multipart upload whose parts are being listed.</param>
         /// 
@@ -16263,7 +16390,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket to which the parts are being uploaded.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
+        /// <param name="bucketName">The name of the bucket to which the parts are being uploaded.   <b>Directory buckets</b> - When you use this operation with a directory bucket, you must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>. Path-style requests are not supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Access points</b> - When you use this action with an access point, you must provide the alias of the access point in place of the bucket name or specify the access point ARN. When using the access point ARN, you must direct requests to the access point hostname. The access point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action with an access point through the Amazon Web Services SDKs, you provide the access point ARN in place of the bucket name. For more information about access point ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in the <i>Amazon S3 User Guide</i>. <note> Access points and Object Lambda access points are not supported by directory buckets. </note>  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>. When you use this action with S3 on Outposts through the Amazon Web Services SDKs, you provide the Outposts access point ARN in place of the bucket name. For more information about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What is S3 on Outposts?</a> in the <i>Amazon S3 User Guide</i>.</param>
         /// <param name="key">Object key for which the multipart upload was initiated.</param>
         /// <param name="uploadId">Upload ID identifying the multipart upload whose parts are being listed.</param>
         /// <param name="cancellationToken">
@@ -17333,11 +17460,21 @@ namespace Amazon.S3
         /// </para>
         ///  <important> 
         /// <para>
-        /// If your <c>CreateBucket</c> request sets <c>BucketOwnerEnforced</c> for Amazon S3
-        /// Object Ownership and specifies a bucket ACL that provides access to an external Amazon
-        /// Web Services account, your request fails with a <c>400</c> error and returns the <c>InvalidBucketAcLWithObjectOwnership</c>
-        /// error code. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-ownership-existing-bucket.html">Setting
-        /// Object Ownership on an existing bucket </a> in the <i>Amazon S3 User Guide</i>. 
+        ///  To set an ACL on a bucket as part of a <c>CreateBucket</c> request, you must explicitly
+        /// set S3 Object Ownership for the bucket to a different value than the default, <c>BucketOwnerEnforced</c>.
+        /// Additionally, if your desired bucket ACL grants public access, you must first create
+        /// the bucket (without the bucket ACL) and then explicitly disable Block Public Access
+        /// on the bucket before using <c>PutBucketAcl</c> to set the ACL. If you try to create
+        /// a bucket with a public ACL, the request will fail. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  For the majority of modern use cases in S3, we recommend that you keep all Block
+        /// Public Access settings enabled and keep ACLs disabled. If you would like to share
+        /// data with users outside of your account, you can use bucket policies as needed. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling
+        /// ownership of objects and disabling ACLs for your bucket </a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html">Blocking
+        /// public access to your Amazon S3 storage </a> in the <i>Amazon S3 User Guide</i>. 
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
@@ -17395,7 +17532,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket to create.  <b>General purpose buckets</b> - For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <c> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
+        /// <param name="bucketName">The name of the bucket to create.  <b>General purpose buckets</b> - For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <c> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
         /// 
         /// <returns>The response from the PutBucket service method, as returned by S3.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CreateBucket">REST API Reference for PutBucket Operation</seealso>
@@ -17469,11 +17606,21 @@ namespace Amazon.S3
         /// </para>
         ///  <important> 
         /// <para>
-        /// If your <c>CreateBucket</c> request sets <c>BucketOwnerEnforced</c> for Amazon S3
-        /// Object Ownership and specifies a bucket ACL that provides access to an external Amazon
-        /// Web Services account, your request fails with a <c>400</c> error and returns the <c>InvalidBucketAcLWithObjectOwnership</c>
-        /// error code. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-ownership-existing-bucket.html">Setting
-        /// Object Ownership on an existing bucket </a> in the <i>Amazon S3 User Guide</i>. 
+        ///  To set an ACL on a bucket as part of a <c>CreateBucket</c> request, you must explicitly
+        /// set S3 Object Ownership for the bucket to a different value than the default, <c>BucketOwnerEnforced</c>.
+        /// Additionally, if your desired bucket ACL grants public access, you must first create
+        /// the bucket (without the bucket ACL) and then explicitly disable Block Public Access
+        /// on the bucket before using <c>PutBucketAcl</c> to set the ACL. If you try to create
+        /// a bucket with a public ACL, the request will fail. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  For the majority of modern use cases in S3, we recommend that you keep all Block
+        /// Public Access settings enabled and keep ACLs disabled. If you would like to share
+        /// data with users outside of your account, you can use bucket policies as needed. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling
+        /// ownership of objects and disabling ACLs for your bucket </a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html">Blocking
+        /// public access to your Amazon S3 storage </a> in the <i>Amazon S3 User Guide</i>. 
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
@@ -17606,11 +17753,21 @@ namespace Amazon.S3
         /// </para>
         ///  <important> 
         /// <para>
-        /// If your <c>CreateBucket</c> request sets <c>BucketOwnerEnforced</c> for Amazon S3
-        /// Object Ownership and specifies a bucket ACL that provides access to an external Amazon
-        /// Web Services account, your request fails with a <c>400</c> error and returns the <c>InvalidBucketAcLWithObjectOwnership</c>
-        /// error code. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-ownership-existing-bucket.html">Setting
-        /// Object Ownership on an existing bucket </a> in the <i>Amazon S3 User Guide</i>. 
+        ///  To set an ACL on a bucket as part of a <c>CreateBucket</c> request, you must explicitly
+        /// set S3 Object Ownership for the bucket to a different value than the default, <c>BucketOwnerEnforced</c>.
+        /// Additionally, if your desired bucket ACL grants public access, you must first create
+        /// the bucket (without the bucket ACL) and then explicitly disable Block Public Access
+        /// on the bucket before using <c>PutBucketAcl</c> to set the ACL. If you try to create
+        /// a bucket with a public ACL, the request will fail. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  For the majority of modern use cases in S3, we recommend that you keep all Block
+        /// Public Access settings enabled and keep ACLs disabled. If you would like to share
+        /// data with users outside of your account, you can use bucket policies as needed. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling
+        /// ownership of objects and disabling ACLs for your bucket </a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html">Blocking
+        /// public access to your Amazon S3 storage </a> in the <i>Amazon S3 User Guide</i>. 
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
@@ -17668,7 +17825,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket to create.  <b>General purpose buckets</b> - For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <c> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
+        /// <param name="bucketName">The name of the bucket to create.  <b>General purpose buckets</b> - For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <c> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -17746,11 +17903,21 @@ namespace Amazon.S3
         /// </para>
         ///  <important> 
         /// <para>
-        /// If your <c>CreateBucket</c> request sets <c>BucketOwnerEnforced</c> for Amazon S3
-        /// Object Ownership and specifies a bucket ACL that provides access to an external Amazon
-        /// Web Services account, your request fails with a <c>400</c> error and returns the <c>InvalidBucketAcLWithObjectOwnership</c>
-        /// error code. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-ownership-existing-bucket.html">Setting
-        /// Object Ownership on an existing bucket </a> in the <i>Amazon S3 User Guide</i>. 
+        ///  To set an ACL on a bucket as part of a <c>CreateBucket</c> request, you must explicitly
+        /// set S3 Object Ownership for the bucket to a different value than the default, <c>BucketOwnerEnforced</c>.
+        /// Additionally, if your desired bucket ACL grants public access, you must first create
+        /// the bucket (without the bucket ACL) and then explicitly disable Block Public Access
+        /// on the bucket before using <c>PutBucketAcl</c> to set the ACL. If you try to create
+        /// a bucket with a public ACL, the request will fail. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  For the majority of modern use cases in S3, we recommend that you keep all Block
+        /// Public Access settings enabled and keep ACLs disabled. If you would like to share
+        /// data with users outside of your account, you can use bucket policies as needed. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling
+        /// ownership of objects and disabling ACLs for your bucket </a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-control-block-public-access.html">Blocking
+        /// public access to your Amazon S3 storage </a> in the <i>Amazon S3 User Guide</i>. 
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
@@ -19525,7 +19692,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <c> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
+        /// <param name="bucketName">The name of the bucket.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <c> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
         /// <param name="policy">The bucket policy as a JSON document. For directory buckets, the only IAM action supported in the bucket policy is <c>s3express:CreateSession</c>.</param>
         /// 
         /// <returns>The response from the PutBucketPolicy service method, as returned by S3.</returns>
@@ -19615,7 +19782,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <c> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
+        /// <param name="bucketName">The name of the bucket.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <c> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
         /// <param name="policy">The bucket policy as a JSON document. For directory buckets, the only IAM action supported in the bucket policy is <c>s3express:CreateSession</c>.</param>
         /// <param name="contentMD5">The MD5 hash of the request body. For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically. <note> This functionality is not supported for directory buckets. </note></param>
         /// 
@@ -19796,7 +19963,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <c> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
+        /// <param name="bucketName">The name of the bucket.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <c> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
         /// <param name="policy">The bucket policy as a JSON document. For directory buckets, the only IAM action supported in the bucket policy is <c>s3express:CreateSession</c>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -19889,7 +20056,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="bucketName">The name of the bucket.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <c> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
+        /// <param name="bucketName">The name of the bucket.  <b>Directory buckets </b> - When you use this operation with a directory bucket, you must use path-style requests in the format <c>https://s3express-control.<i>region_code</i>.amazonaws.com/<i>bucket-name</i> </c>. Virtual-hosted-style requests aren't supported. Directory bucket names must be unique in the chosen Availability Zone. Bucket names must also follow the format <c> <i>bucket_base_name</i>--<i>az_id</i>--x-s3</c> (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory bucket naming rules</a> in the <i>Amazon S3 User Guide</i> </param>
         /// <param name="policy">The bucket policy as a JSON document. For directory buckets, the only IAM action supported in the bucket policy is <c>s3express:CreateSession</c>.</param>
         /// <param name="contentMD5">The MD5 hash of the request body. For requests made using the Amazon Web Services Command Line Interface (CLI) or Amazon Web Services SDKs, this field is calculated automatically. <note> This functionality is not supported for directory buckets. </note></param>
         /// <param name="cancellationToken">
@@ -21766,10 +21933,10 @@ namespace Amazon.S3
         ///  <note> 
         /// <para>
         /// Bucket lifecycle configuration now supports specifying a lifecycle rule using an object
-        /// key name prefix, one or more object tags, or a combination of both. Accordingly, this
-        /// section describes the latest API. The previous version of the API supported filtering
-        /// based only on an object key name prefix, which is supported for backward compatibility.
-        /// For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
+        /// key name prefix, one or more object tags, object size, or any combination of these.
+        /// Accordingly, this section describes the latest API. The previous version of the API
+        /// supported filtering based only on an object key name prefix, which is supported for
+        /// backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
         /// </para>
         ///  </note> <dl> <dt>Rules</dt> <dd> 
         /// <para>
@@ -21781,7 +21948,7 @@ namespace Amazon.S3
         ///  <ul> <li> 
         /// <para>
         /// A filter identifying a subset of objects to which the rule applies. The filter can
-        /// be based on a key name prefix, object tags, or a combination of both.
+        /// be based on a key name prefix, object tags, object size, or any combination of these.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -21877,10 +22044,10 @@ namespace Amazon.S3
         ///  <note> 
         /// <para>
         /// Bucket lifecycle configuration now supports specifying a lifecycle rule using an object
-        /// key name prefix, one or more object tags, or a combination of both. Accordingly, this
-        /// section describes the latest API. The previous version of the API supported filtering
-        /// based only on an object key name prefix, which is supported for backward compatibility.
-        /// For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
+        /// key name prefix, one or more object tags, object size, or any combination of these.
+        /// Accordingly, this section describes the latest API. The previous version of the API
+        /// supported filtering based only on an object key name prefix, which is supported for
+        /// backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
         /// </para>
         ///  </note> <dl> <dt>Rules</dt> <dd> 
         /// <para>
@@ -21892,7 +22059,7 @@ namespace Amazon.S3
         ///  <ul> <li> 
         /// <para>
         /// A filter identifying a subset of objects to which the rule applies. The filter can
-        /// be based on a key name prefix, object tags, or a combination of both.
+        /// be based on a key name prefix, object tags, object size, or any combination of these.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -21988,10 +22155,10 @@ namespace Amazon.S3
         ///  <note> 
         /// <para>
         /// Bucket lifecycle configuration now supports specifying a lifecycle rule using an object
-        /// key name prefix, one or more object tags, or a combination of both. Accordingly, this
-        /// section describes the latest API. The previous version of the API supported filtering
-        /// based only on an object key name prefix, which is supported for backward compatibility.
-        /// For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
+        /// key name prefix, one or more object tags, object size, or any combination of these.
+        /// Accordingly, this section describes the latest API. The previous version of the API
+        /// supported filtering based only on an object key name prefix, which is supported for
+        /// backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
         /// </para>
         ///  </note> <dl> <dt>Rules</dt> <dd> 
         /// <para>
@@ -22003,7 +22170,7 @@ namespace Amazon.S3
         ///  <ul> <li> 
         /// <para>
         /// A filter identifying a subset of objects to which the rule applies. The filter can
-        /// be based on a key name prefix, object tags, or a combination of both.
+        /// be based on a key name prefix, object tags, object size, or any combination of these.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -22103,10 +22270,10 @@ namespace Amazon.S3
         ///  <note> 
         /// <para>
         /// Bucket lifecycle configuration now supports specifying a lifecycle rule using an object
-        /// key name prefix, one or more object tags, or a combination of both. Accordingly, this
-        /// section describes the latest API. The previous version of the API supported filtering
-        /// based only on an object key name prefix, which is supported for backward compatibility.
-        /// For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
+        /// key name prefix, one or more object tags, object size, or any combination of these.
+        /// Accordingly, this section describes the latest API. The previous version of the API
+        /// supported filtering based only on an object key name prefix, which is supported for
+        /// backward compatibility. For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
         /// </para>
         ///  </note> <dl> <dt>Rules</dt> <dd> 
         /// <para>
@@ -22118,7 +22285,7 @@ namespace Amazon.S3
         ///  <ul> <li> 
         /// <para>
         /// A filter identifying a subset of objects to which the rule applies. The filter can
-        /// be based on a key name prefix, object tags, or a combination of both.
+        /// be based on a key name prefix, object tags, object size, or any combination of these.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -22986,10 +23153,6 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>select</c> - Perform a select query on an archived object
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <c>restore an archive</c> - Restore an archived object
         /// </para>
         ///  </li> </ul> 
@@ -23010,73 +23173,6 @@ namespace Amazon.S3
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting
         /// Data Using Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Define the SQL expression for the <c>SELECT</c> type of restoration for your query
-        /// in the request body's <c>SelectParameters</c> structure. You can use expressions like
-        /// the following examples.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// The following expression returns all records from the specified object.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>SELECT * FROM Object</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Assuming that you are not using any headers for data stored in the object, you can
-        /// specify columns with positional headers.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>SELECT s._1, s._2 FROM Object s WHERE s._3 &gt; 100</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If you have headers and you set the <c>fileHeaderInfo</c> in the <c>CSV</c> structure
-        /// in the request body to <c>USE</c>, you can specify headers in the query. (If you set
-        /// the <c>fileHeaderInfo</c> field to <c>IGNORE</c>, the first row is skipped for the
-        /// query.) You cannot mix ordinal positions with header column names. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>SELECT s.Id, s.FirstName, s.SSN FROM S3Object s</c> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// When making a select request, you can also do the following:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To expedite your queries, specify the <c>Expedited</c> tier. For more information
-        /// about tiers, see "Restoring Archives," later in this topic.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Specify details about the data serialization format of both the input object that
-        /// is being queried and the serialization of the CSV-encoded query results.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// The following are additional important facts about the select feature:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// The output results are new Amazon S3 objects. Unlike archive retrievals, they are
-        /// stored until explicitly deleted-manually or through a lifecycle configuration.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You can issue more than one select request on the same Amazon S3 object. Amazon S3
-        /// doesn't duplicate requests, so avoid issuing duplicate requests.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  Amazon S3 accepts a select request even if the object has already been restored.
-        /// A select request doesn’t return error response <c>409</c>.
         /// </para>
         ///  </li> </ul> <dl> <dt>Permissions</dt> <dd> 
         /// <para>
@@ -23206,8 +23302,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>Cause: Object restore is already in progress. (This error does not apply to SELECT
-        /// type requests.)</i> 
+        ///  <i>Cause: Object restore is already in progress.</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -23277,10 +23372,6 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>select</c> - Perform a select query on an archived object
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <c>restore an archive</c> - Restore an archived object
         /// </para>
         ///  </li> </ul> 
@@ -23301,73 +23392,6 @@ namespace Amazon.S3
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting
         /// Data Using Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Define the SQL expression for the <c>SELECT</c> type of restoration for your query
-        /// in the request body's <c>SelectParameters</c> structure. You can use expressions like
-        /// the following examples.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// The following expression returns all records from the specified object.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>SELECT * FROM Object</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Assuming that you are not using any headers for data stored in the object, you can
-        /// specify columns with positional headers.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>SELECT s._1, s._2 FROM Object s WHERE s._3 &gt; 100</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If you have headers and you set the <c>fileHeaderInfo</c> in the <c>CSV</c> structure
-        /// in the request body to <c>USE</c>, you can specify headers in the query. (If you set
-        /// the <c>fileHeaderInfo</c> field to <c>IGNORE</c>, the first row is skipped for the
-        /// query.) You cannot mix ordinal positions with header column names. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>SELECT s.Id, s.FirstName, s.SSN FROM S3Object s</c> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// When making a select request, you can also do the following:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To expedite your queries, specify the <c>Expedited</c> tier. For more information
-        /// about tiers, see "Restoring Archives," later in this topic.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Specify details about the data serialization format of both the input object that
-        /// is being queried and the serialization of the CSV-encoded query results.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// The following are additional important facts about the select feature:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// The output results are new Amazon S3 objects. Unlike archive retrievals, they are
-        /// stored until explicitly deleted-manually or through a lifecycle configuration.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You can issue more than one select request on the same Amazon S3 object. Amazon S3
-        /// doesn't duplicate requests, so avoid issuing duplicate requests.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  Amazon S3 accepts a select request even if the object has already been restored.
-        /// A select request doesn’t return error response <c>409</c>.
         /// </para>
         ///  </li> </ul> <dl> <dt>Permissions</dt> <dd> 
         /// <para>
@@ -23497,8 +23521,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>Cause: Object restore is already in progress. (This error does not apply to SELECT
-        /// type requests.)</i> 
+        ///  <i>Cause: Object restore is already in progress.</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -23569,10 +23592,6 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>select</c> - Perform a select query on an archived object
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <c>restore an archive</c> - Restore an archived object
         /// </para>
         ///  </li> </ul> 
@@ -23593,73 +23612,6 @@ namespace Amazon.S3
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting
         /// Data Using Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Define the SQL expression for the <c>SELECT</c> type of restoration for your query
-        /// in the request body's <c>SelectParameters</c> structure. You can use expressions like
-        /// the following examples.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// The following expression returns all records from the specified object.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>SELECT * FROM Object</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Assuming that you are not using any headers for data stored in the object, you can
-        /// specify columns with positional headers.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>SELECT s._1, s._2 FROM Object s WHERE s._3 &gt; 100</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If you have headers and you set the <c>fileHeaderInfo</c> in the <c>CSV</c> structure
-        /// in the request body to <c>USE</c>, you can specify headers in the query. (If you set
-        /// the <c>fileHeaderInfo</c> field to <c>IGNORE</c>, the first row is skipped for the
-        /// query.) You cannot mix ordinal positions with header column names. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>SELECT s.Id, s.FirstName, s.SSN FROM S3Object s</c> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// When making a select request, you can also do the following:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To expedite your queries, specify the <c>Expedited</c> tier. For more information
-        /// about tiers, see "Restoring Archives," later in this topic.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Specify details about the data serialization format of both the input object that
-        /// is being queried and the serialization of the CSV-encoded query results.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// The following are additional important facts about the select feature:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// The output results are new Amazon S3 objects. Unlike archive retrievals, they are
-        /// stored until explicitly deleted-manually or through a lifecycle configuration.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You can issue more than one select request on the same Amazon S3 object. Amazon S3
-        /// doesn't duplicate requests, so avoid issuing duplicate requests.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  Amazon S3 accepts a select request even if the object has already been restored.
-        /// A select request doesn’t return error response <c>409</c>.
         /// </para>
         ///  </li> </ul> <dl> <dt>Permissions</dt> <dd> 
         /// <para>
@@ -23789,8 +23741,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>Cause: Object restore is already in progress. (This error does not apply to SELECT
-        /// type requests.)</i> 
+        ///  <i>Cause: Object restore is already in progress.</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -23861,10 +23812,6 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>select</c> - Perform a select query on an archived object
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <c>restore an archive</c> - Restore an archived object
         /// </para>
         ///  </li> </ul> 
@@ -23885,73 +23832,6 @@ namespace Amazon.S3
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting
         /// Data Using Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Define the SQL expression for the <c>SELECT</c> type of restoration for your query
-        /// in the request body's <c>SelectParameters</c> structure. You can use expressions like
-        /// the following examples.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// The following expression returns all records from the specified object.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>SELECT * FROM Object</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Assuming that you are not using any headers for data stored in the object, you can
-        /// specify columns with positional headers.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>SELECT s._1, s._2 FROM Object s WHERE s._3 &gt; 100</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If you have headers and you set the <c>fileHeaderInfo</c> in the <c>CSV</c> structure
-        /// in the request body to <c>USE</c>, you can specify headers in the query. (If you set
-        /// the <c>fileHeaderInfo</c> field to <c>IGNORE</c>, the first row is skipped for the
-        /// query.) You cannot mix ordinal positions with header column names. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>SELECT s.Id, s.FirstName, s.SSN FROM S3Object s</c> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// When making a select request, you can also do the following:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To expedite your queries, specify the <c>Expedited</c> tier. For more information
-        /// about tiers, see "Restoring Archives," later in this topic.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Specify details about the data serialization format of both the input object that
-        /// is being queried and the serialization of the CSV-encoded query results.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// The following are additional important facts about the select feature:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// The output results are new Amazon S3 objects. Unlike archive retrievals, they are
-        /// stored until explicitly deleted-manually or through a lifecycle configuration.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You can issue more than one select request on the same Amazon S3 object. Amazon S3
-        /// doesn't duplicate requests, so avoid issuing duplicate requests.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  Amazon S3 accepts a select request even if the object has already been restored.
-        /// A select request doesn’t return error response <c>409</c>.
         /// </para>
         ///  </li> </ul> <dl> <dt>Permissions</dt> <dd> 
         /// <para>
@@ -24081,8 +23961,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>Cause: Object restore is already in progress. (This error does not apply to SELECT
-        /// type requests.)</i> 
+        ///  <i>Cause: Object restore is already in progress.</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -24154,10 +24033,6 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>select</c> - Perform a select query on an archived object
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <c>restore an archive</c> - Restore an archived object
         /// </para>
         ///  </li> </ul> 
@@ -24178,73 +24053,6 @@ namespace Amazon.S3
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting
         /// Data Using Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Define the SQL expression for the <c>SELECT</c> type of restoration for your query
-        /// in the request body's <c>SelectParameters</c> structure. You can use expressions like
-        /// the following examples.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// The following expression returns all records from the specified object.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>SELECT * FROM Object</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Assuming that you are not using any headers for data stored in the object, you can
-        /// specify columns with positional headers.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>SELECT s._1, s._2 FROM Object s WHERE s._3 &gt; 100</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If you have headers and you set the <c>fileHeaderInfo</c> in the <c>CSV</c> structure
-        /// in the request body to <c>USE</c>, you can specify headers in the query. (If you set
-        /// the <c>fileHeaderInfo</c> field to <c>IGNORE</c>, the first row is skipped for the
-        /// query.) You cannot mix ordinal positions with header column names. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>SELECT s.Id, s.FirstName, s.SSN FROM S3Object s</c> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// When making a select request, you can also do the following:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To expedite your queries, specify the <c>Expedited</c> tier. For more information
-        /// about tiers, see "Restoring Archives," later in this topic.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Specify details about the data serialization format of both the input object that
-        /// is being queried and the serialization of the CSV-encoded query results.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// The following are additional important facts about the select feature:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// The output results are new Amazon S3 objects. Unlike archive retrievals, they are
-        /// stored until explicitly deleted-manually or through a lifecycle configuration.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You can issue more than one select request on the same Amazon S3 object. Amazon S3
-        /// doesn't duplicate requests, so avoid issuing duplicate requests.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  Amazon S3 accepts a select request even if the object has already been restored.
-        /// A select request doesn’t return error response <c>409</c>.
         /// </para>
         ///  </li> </ul> <dl> <dt>Permissions</dt> <dd> 
         /// <para>
@@ -24374,8 +24182,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>Cause: Object restore is already in progress. (This error does not apply to SELECT
-        /// type requests.)</i> 
+        ///  <i>Cause: Object restore is already in progress.</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -24445,10 +24252,6 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>select</c> - Perform a select query on an archived object
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <c>restore an archive</c> - Restore an archived object
         /// </para>
         ///  </li> </ul> 
@@ -24469,73 +24272,6 @@ namespace Amazon.S3
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting
         /// Data Using Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Define the SQL expression for the <c>SELECT</c> type of restoration for your query
-        /// in the request body's <c>SelectParameters</c> structure. You can use expressions like
-        /// the following examples.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// The following expression returns all records from the specified object.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>SELECT * FROM Object</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Assuming that you are not using any headers for data stored in the object, you can
-        /// specify columns with positional headers.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>SELECT s._1, s._2 FROM Object s WHERE s._3 &gt; 100</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If you have headers and you set the <c>fileHeaderInfo</c> in the <c>CSV</c> structure
-        /// in the request body to <c>USE</c>, you can specify headers in the query. (If you set
-        /// the <c>fileHeaderInfo</c> field to <c>IGNORE</c>, the first row is skipped for the
-        /// query.) You cannot mix ordinal positions with header column names. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>SELECT s.Id, s.FirstName, s.SSN FROM S3Object s</c> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// When making a select request, you can also do the following:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To expedite your queries, specify the <c>Expedited</c> tier. For more information
-        /// about tiers, see "Restoring Archives," later in this topic.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Specify details about the data serialization format of both the input object that
-        /// is being queried and the serialization of the CSV-encoded query results.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// The following are additional important facts about the select feature:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// The output results are new Amazon S3 objects. Unlike archive retrievals, they are
-        /// stored until explicitly deleted-manually or through a lifecycle configuration.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You can issue more than one select request on the same Amazon S3 object. Amazon S3
-        /// doesn't duplicate requests, so avoid issuing duplicate requests.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  Amazon S3 accepts a select request even if the object has already been restored.
-        /// A select request doesn’t return error response <c>409</c>.
         /// </para>
         ///  </li> </ul> <dl> <dt>Permissions</dt> <dd> 
         /// <para>
@@ -24665,8 +24401,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>Cause: Object restore is already in progress. (This error does not apply to SELECT
-        /// type requests.)</i> 
+        ///  <i>Cause: Object restore is already in progress.</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -24739,10 +24474,6 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>select</c> - Perform a select query on an archived object
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <c>restore an archive</c> - Restore an archived object
         /// </para>
         ///  </li> </ul> 
@@ -24763,73 +24494,6 @@ namespace Amazon.S3
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting
         /// Data Using Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Define the SQL expression for the <c>SELECT</c> type of restoration for your query
-        /// in the request body's <c>SelectParameters</c> structure. You can use expressions like
-        /// the following examples.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// The following expression returns all records from the specified object.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>SELECT * FROM Object</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Assuming that you are not using any headers for data stored in the object, you can
-        /// specify columns with positional headers.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>SELECT s._1, s._2 FROM Object s WHERE s._3 &gt; 100</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If you have headers and you set the <c>fileHeaderInfo</c> in the <c>CSV</c> structure
-        /// in the request body to <c>USE</c>, you can specify headers in the query. (If you set
-        /// the <c>fileHeaderInfo</c> field to <c>IGNORE</c>, the first row is skipped for the
-        /// query.) You cannot mix ordinal positions with header column names. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>SELECT s.Id, s.FirstName, s.SSN FROM S3Object s</c> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// When making a select request, you can also do the following:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To expedite your queries, specify the <c>Expedited</c> tier. For more information
-        /// about tiers, see "Restoring Archives," later in this topic.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Specify details about the data serialization format of both the input object that
-        /// is being queried and the serialization of the CSV-encoded query results.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// The following are additional important facts about the select feature:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// The output results are new Amazon S3 objects. Unlike archive retrievals, they are
-        /// stored until explicitly deleted-manually or through a lifecycle configuration.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You can issue more than one select request on the same Amazon S3 object. Amazon S3
-        /// doesn't duplicate requests, so avoid issuing duplicate requests.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  Amazon S3 accepts a select request even if the object has already been restored.
-        /// A select request doesn’t return error response <c>409</c>.
         /// </para>
         ///  </li> </ul> <dl> <dt>Permissions</dt> <dd> 
         /// <para>
@@ -24959,8 +24623,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>Cause: Object restore is already in progress. (This error does not apply to SELECT
-        /// type requests.)</i> 
+        ///  <i>Cause: Object restore is already in progress.</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -25034,10 +24697,6 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>select</c> - Perform a select query on an archived object
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <c>restore an archive</c> - Restore an archived object
         /// </para>
         ///  </li> </ul> 
@@ -25058,73 +24717,6 @@ namespace Amazon.S3
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting
         /// Data Using Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Define the SQL expression for the <c>SELECT</c> type of restoration for your query
-        /// in the request body's <c>SelectParameters</c> structure. You can use expressions like
-        /// the following examples.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// The following expression returns all records from the specified object.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>SELECT * FROM Object</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Assuming that you are not using any headers for data stored in the object, you can
-        /// specify columns with positional headers.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>SELECT s._1, s._2 FROM Object s WHERE s._3 &gt; 100</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If you have headers and you set the <c>fileHeaderInfo</c> in the <c>CSV</c> structure
-        /// in the request body to <c>USE</c>, you can specify headers in the query. (If you set
-        /// the <c>fileHeaderInfo</c> field to <c>IGNORE</c>, the first row is skipped for the
-        /// query.) You cannot mix ordinal positions with header column names. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>SELECT s.Id, s.FirstName, s.SSN FROM S3Object s</c> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// When making a select request, you can also do the following:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To expedite your queries, specify the <c>Expedited</c> tier. For more information
-        /// about tiers, see "Restoring Archives," later in this topic.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Specify details about the data serialization format of both the input object that
-        /// is being queried and the serialization of the CSV-encoded query results.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// The following are additional important facts about the select feature:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// The output results are new Amazon S3 objects. Unlike archive retrievals, they are
-        /// stored until explicitly deleted-manually or through a lifecycle configuration.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You can issue more than one select request on the same Amazon S3 object. Amazon S3
-        /// doesn't duplicate requests, so avoid issuing duplicate requests.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  Amazon S3 accepts a select request even if the object has already been restored.
-        /// A select request doesn’t return error response <c>409</c>.
         /// </para>
         ///  </li> </ul> <dl> <dt>Permissions</dt> <dd> 
         /// <para>
@@ -25254,8 +24846,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>Cause: Object restore is already in progress. (This error does not apply to SELECT
-        /// type requests.)</i> 
+        ///  <i>Cause: Object restore is already in progress.</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -25329,10 +24920,6 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>select</c> - Perform a select query on an archived object
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <c>restore an archive</c> - Restore an archived object
         /// </para>
         ///  </li> </ul> 
@@ -25353,73 +24940,6 @@ namespace Amazon.S3
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting
         /// Data Using Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Define the SQL expression for the <c>SELECT</c> type of restoration for your query
-        /// in the request body's <c>SelectParameters</c> structure. You can use expressions like
-        /// the following examples.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// The following expression returns all records from the specified object.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>SELECT * FROM Object</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Assuming that you are not using any headers for data stored in the object, you can
-        /// specify columns with positional headers.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>SELECT s._1, s._2 FROM Object s WHERE s._3 &gt; 100</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If you have headers and you set the <c>fileHeaderInfo</c> in the <c>CSV</c> structure
-        /// in the request body to <c>USE</c>, you can specify headers in the query. (If you set
-        /// the <c>fileHeaderInfo</c> field to <c>IGNORE</c>, the first row is skipped for the
-        /// query.) You cannot mix ordinal positions with header column names. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>SELECT s.Id, s.FirstName, s.SSN FROM S3Object s</c> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// When making a select request, you can also do the following:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To expedite your queries, specify the <c>Expedited</c> tier. For more information
-        /// about tiers, see "Restoring Archives," later in this topic.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Specify details about the data serialization format of both the input object that
-        /// is being queried and the serialization of the CSV-encoded query results.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// The following are additional important facts about the select feature:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// The output results are new Amazon S3 objects. Unlike archive retrievals, they are
-        /// stored until explicitly deleted-manually or through a lifecycle configuration.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You can issue more than one select request on the same Amazon S3 object. Amazon S3
-        /// doesn't duplicate requests, so avoid issuing duplicate requests.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  Amazon S3 accepts a select request even if the object has already been restored.
-        /// A select request doesn’t return error response <c>409</c>.
         /// </para>
         ///  </li> </ul> <dl> <dt>Permissions</dt> <dd> 
         /// <para>
@@ -25549,8 +25069,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>Cause: Object restore is already in progress. (This error does not apply to SELECT
-        /// type requests.)</i> 
+        ///  <i>Cause: Object restore is already in progress.</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -25626,10 +25145,6 @@ namespace Amazon.S3
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>select</c> - Perform a select query on an archived object
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <c>restore an archive</c> - Restore an archived object
         /// </para>
         ///  </li> </ul> 
@@ -25650,73 +25165,6 @@ namespace Amazon.S3
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting
         /// Data Using Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// Define the SQL expression for the <c>SELECT</c> type of restoration for your query
-        /// in the request body's <c>SelectParameters</c> structure. You can use expressions like
-        /// the following examples.
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// The following expression returns all records from the specified object.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>SELECT * FROM Object</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Assuming that you are not using any headers for data stored in the object, you can
-        /// specify columns with positional headers.
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>SELECT s._1, s._2 FROM Object s WHERE s._3 &gt; 100</c> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If you have headers and you set the <c>fileHeaderInfo</c> in the <c>CSV</c> structure
-        /// in the request body to <c>USE</c>, you can specify headers in the query. (If you set
-        /// the <c>fileHeaderInfo</c> field to <c>IGNORE</c>, the first row is skipped for the
-        /// query.) You cannot mix ordinal positions with header column names. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <c>SELECT s.Id, s.FirstName, s.SSN FROM S3Object s</c> 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// When making a select request, you can also do the following:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// To expedite your queries, specify the <c>Expedited</c> tier. For more information
-        /// about tiers, see "Restoring Archives," later in this topic.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Specify details about the data serialization format of both the input object that
-        /// is being queried and the serialization of the CSV-encoded query results.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// The following are additional important facts about the select feature:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// The output results are new Amazon S3 objects. Unlike archive retrievals, they are
-        /// stored until explicitly deleted-manually or through a lifecycle configuration.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// You can issue more than one select request on the same Amazon S3 object. Amazon S3
-        /// doesn't duplicate requests, so avoid issuing duplicate requests.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  Amazon S3 accepts a select request even if the object has already been restored.
-        /// A select request doesn’t return error response <c>409</c>.
         /// </para>
         ///  </li> </ul> <dl> <dt>Permissions</dt> <dd> 
         /// <para>
@@ -25846,8 +25294,7 @@ namespace Amazon.S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>Cause: Object restore is already in progress. (This error does not apply to SELECT
-        /// type requests.)</i> 
+        ///  <i>Cause: Object restore is already in progress.</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>

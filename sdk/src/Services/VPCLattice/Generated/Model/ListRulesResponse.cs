@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VPCLattice.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.VPCLattice.Model
     /// </summary>
     public partial class ListRulesResponse : AmazonWebServiceResponse
     {
-        private List<RuleSummary> _items = new List<RuleSummary>();
+        private List<RuleSummary> _items = AWSConfigs.InitializeCollections ? new List<RuleSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.VPCLattice.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

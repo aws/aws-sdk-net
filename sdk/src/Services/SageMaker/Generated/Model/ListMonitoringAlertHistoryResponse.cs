@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListMonitoringAlertHistoryResponse : AmazonWebServiceResponse
     {
-        private List<MonitoringAlertHistorySummary> _monitoringAlertHistory = new List<MonitoringAlertHistorySummary>();
+        private List<MonitoringAlertHistorySummary> _monitoringAlertHistory = AWSConfigs.InitializeCollections ? new List<MonitoringAlertHistorySummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if MonitoringAlertHistory property is set
         internal bool IsSetMonitoringAlertHistory()
         {
-            return this._monitoringAlertHistory != null && this._monitoringAlertHistory.Count > 0; 
+            return this._monitoringAlertHistory != null && (this._monitoringAlertHistory.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

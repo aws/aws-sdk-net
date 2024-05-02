@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Macie2.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Macie2.Model
     /// </summary>
     public partial class BatchGetCustomDataIdentifiersResponse : AmazonWebServiceResponse
     {
-        private List<BatchGetCustomDataIdentifierSummary> _customDataIdentifiers = new List<BatchGetCustomDataIdentifierSummary>();
-        private List<string> _notFoundIdentifierIds = new List<string>();
+        private List<BatchGetCustomDataIdentifierSummary> _customDataIdentifiers = AWSConfigs.InitializeCollections ? new List<BatchGetCustomDataIdentifierSummary>() : null;
+        private List<string> _notFoundIdentifierIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CustomDataIdentifiers. 
@@ -52,7 +53,7 @@ namespace Amazon.Macie2.Model
         // Check to see if CustomDataIdentifiers property is set
         internal bool IsSetCustomDataIdentifiers()
         {
-            return this._customDataIdentifiers != null && this._customDataIdentifiers.Count > 0; 
+            return this._customDataIdentifiers != null && (this._customDataIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.Macie2.Model
         // Check to see if NotFoundIdentifierIds property is set
         internal bool IsSetNotFoundIdentifierIds()
         {
-            return this._notFoundIdentifierIds != null && this._notFoundIdentifierIds.Count > 0; 
+            return this._notFoundIdentifierIds != null && (this._notFoundIdentifierIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

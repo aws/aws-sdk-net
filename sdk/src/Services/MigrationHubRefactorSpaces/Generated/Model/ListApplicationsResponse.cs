@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MigrationHubRefactorSpaces.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
     /// </summary>
     public partial class ListApplicationsResponse : AmazonWebServiceResponse
     {
-        private List<ApplicationSummary> _applicationSummaryList = new List<ApplicationSummary>();
+        private List<ApplicationSummary> _applicationSummaryList = AWSConfigs.InitializeCollections ? new List<ApplicationSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         // Check to see if ApplicationSummaryList property is set
         internal bool IsSetApplicationSummaryList()
         {
-            return this._applicationSummaryList != null && this._applicationSummaryList.Count > 0; 
+            return this._applicationSummaryList != null && (this._applicationSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

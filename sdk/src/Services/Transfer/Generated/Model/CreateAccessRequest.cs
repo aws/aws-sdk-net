@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Transfer.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.Transfer.Model
     {
         private string _externalId;
         private string _homeDirectory;
-        private List<HomeDirectoryMapEntry> _homeDirectoryMappings = new List<HomeDirectoryMapEntry>();
+        private List<HomeDirectoryMapEntry> _homeDirectoryMappings = AWSConfigs.InitializeCollections ? new List<HomeDirectoryMapEntry>() : null;
         private HomeDirectoryType _homeDirectoryType;
         private string _policy;
         private PosixProfile _posixProfile;
@@ -161,7 +162,7 @@ namespace Amazon.Transfer.Model
         // Check to see if HomeDirectoryMappings property is set
         internal bool IsSetHomeDirectoryMappings()
         {
-            return this._homeDirectoryMappings != null && this._homeDirectoryMappings.Count > 0; 
+            return this._homeDirectoryMappings != null && (this._homeDirectoryMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

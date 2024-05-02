@@ -26,27 +26,44 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterCompute operation.
-    /// Registers a compute resource to an Amazon GameLift Anywhere fleet. With Anywhere fleets
-    /// you can incorporate your own computing hardware into an Amazon GameLift game hosting
-    /// solution.
+    /// <b>This operation has been expanded to use with the Amazon GameLift containers feature,
+    /// which is currently in public preview.</b> 
     /// 
     ///  
     /// <para>
-    /// To register a compute to a fleet, give the compute a name (must be unique within the
-    /// fleet) and specify the compute resource's DNS name or IP address. Provide the Anywhere
-    /// fleet ID and a fleet location to associate with the compute being registered. You
-    /// can optionally include the path to a TLS certificate on the compute resource.
+    /// Registers a compute resource in an Amazon GameLift fleet. Register computes with an
+    /// Amazon GameLift Anywhere fleet or a container fleet. 
     /// </para>
     ///  
     /// <para>
-    /// If successful, this operation returns the compute details, including an Amazon GameLift
-    /// SDK endpoint. Game server processes that run on the compute use this endpoint to communicate
-    /// with the Amazon GameLift service. Each server process includes the SDK endpoint in
-    /// its call to the Amazon GameLift server SDK action <c>InitSDK()</c>.
+    /// For an Anywhere fleet or a container fleet that's running the Amazon GameLift Agent,
+    /// the Agent handles all compute registry tasks for you. For an Anywhere fleet that doesn't
+    /// use the Agent, call this operation to register fleet computes.
+    /// </para>
+    ///  
+    /// <para>
+    /// To register a compute, give the compute a name (must be unique within the fleet) and
+    /// specify the compute resource's DNS name or IP address. Provide a fleet ID and a fleet
+    /// location to associate with the compute being registered. You can optionally include
+    /// the path to a TLS certificate on the compute resource.
+    /// </para>
+    ///  
+    /// <para>
+    /// If successful, this operation returns compute details, including an Amazon GameLift
+    /// SDK endpoint or Agent endpoint. Game server processes running on the compute can use
+    /// this endpoint to communicate with the Amazon GameLift service. Each server process
+    /// includes the SDK endpoint in its call to the Amazon GameLift server SDK action <c>InitSDK()</c>.
+    /// 
+    /// </para>
+    ///  
+    /// <para>
+    /// To view compute details, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeCompute.html">DescribeCompute</a>
+    /// with the compute name. 
     /// </para>
     ///  
     /// <para>

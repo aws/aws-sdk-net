@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
@@ -35,10 +36,10 @@ namespace Amazon.MediaLive.Model
     {
         private string _arn;
         private string _id;
-        private List<string> _inputs = new List<string>();
+        private List<string> _inputs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private InputSecurityGroupState _state;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
-        private List<InputWhitelistRule> _whitelistRules = new List<InputWhitelistRule>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<InputWhitelistRule> _whitelistRules = AWSConfigs.InitializeCollections ? new List<InputWhitelistRule>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. Unique ARN of Input Security Group
@@ -83,7 +84,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if Inputs property is set
         internal bool IsSetInputs()
         {
-            return this._inputs != null && this._inputs.Count > 0; 
+            return this._inputs != null && (this._inputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -113,7 +114,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -128,7 +129,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if WhitelistRules property is set
         internal bool IsSetWhitelistRules()
         {
-            return this._whitelistRules != null && this._whitelistRules.Count > 0; 
+            return this._whitelistRules != null && (this._whitelistRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

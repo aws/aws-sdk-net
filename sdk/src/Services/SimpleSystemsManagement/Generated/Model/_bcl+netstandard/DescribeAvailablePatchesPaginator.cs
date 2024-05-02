@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Enumerable containing all of the Patches
         /// </summary>
         public IPaginatedEnumerable<Patch> Patches => 
-            new PaginatedResultKeyResponse<DescribeAvailablePatchesResponse, Patch>(this, (i) => i.Patches);
+            new PaginatedResultKeyResponse<DescribeAvailablePatchesResponse, Patch>(this, (i) => i.Patches ?? new List<Patch>());
 
         internal DescribeAvailablePatchesPaginator(IAmazonSimpleSystemsManagement client, DescribeAvailablePatchesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeAvailablePatchesResponse> IPaginator<DescribeAvailablePatchesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeAvailablePatchesResponse> IPaginator<DescribeAvailablePatchesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kafka.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Kafka.Model
     public partial class ListNodesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<NodeInfo> _nodeInfoList = new List<NodeInfo>();
+        private List<NodeInfo> _nodeInfoList = AWSConfigs.InitializeCollections ? new List<NodeInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken.             
@@ -71,7 +72,7 @@ namespace Amazon.Kafka.Model
         // Check to see if NodeInfoList property is set
         internal bool IsSetNodeInfoList()
         {
-            return this._nodeInfoList != null && this._nodeInfoList.Count > 0; 
+            return this._nodeInfoList != null && (this._nodeInfoList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

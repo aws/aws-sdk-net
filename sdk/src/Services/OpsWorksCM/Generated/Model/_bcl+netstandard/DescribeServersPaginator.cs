@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.OpsWorksCM.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.OpsWorksCM.Model
         /// Enumerable containing all of the Servers
         /// </summary>
         public IPaginatedEnumerable<CMServer> Servers => 
-            new PaginatedResultKeyResponse<DescribeServersResponse, CMServer>(this, (i) => i.Servers);
+            new PaginatedResultKeyResponse<DescribeServersResponse, CMServer>(this, (i) => i.Servers ?? new List<CMServer>());
 
         internal DescribeServersPaginator(IAmazonOpsWorksCM client, DescribeServersRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.OpsWorksCM.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeServersResponse> IPaginator<DescribeServersResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeServersResponse> IPaginator<DescribeServersResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

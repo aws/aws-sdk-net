@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Kendra.Model
     public partial class ListExperienceEntitiesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ExperienceEntitiesSummary> _summaryItems = new List<ExperienceEntitiesSummary>();
+        private List<ExperienceEntitiesSummary> _summaryItems = AWSConfigs.InitializeCollections ? new List<ExperienceEntitiesSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.Kendra.Model
         // Check to see if SummaryItems property is set
         internal bool IsSetSummaryItems()
         {
-            return this._summaryItems != null && this._summaryItems.Count > 0; 
+            return this._summaryItems != null && (this._summaryItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoTWireless.Model
     /// </summary>
     public partial class ListMulticastGroupsByFuotaTaskResponse : AmazonWebServiceResponse
     {
-        private List<MulticastGroupByFuotaTask> _multicastGroupList = new List<MulticastGroupByFuotaTask>();
+        private List<MulticastGroupByFuotaTask> _multicastGroupList = AWSConfigs.InitializeCollections ? new List<MulticastGroupByFuotaTask>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -48,7 +49,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if MulticastGroupList property is set
         internal bool IsSetMulticastGroupList()
         {
-            return this._multicastGroupList != null && this._multicastGroupList.Count > 0; 
+            return this._multicastGroupList != null && (this._multicastGroupList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

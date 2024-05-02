@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class AttributeSuggestionsGetConfig
     {
-        private List<string> _additionalResponseAttributes = new List<string>();
+        private List<string> _additionalResponseAttributes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AttributeFilter _attributeFilter;
-        private List<string> _suggestionAttributes = new List<string>();
+        private List<string> _suggestionAttributes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private UserContext _userContext;
 
         /// <summary>
@@ -57,7 +58,7 @@ namespace Amazon.Kendra.Model
         // Check to see if AdditionalResponseAttributes property is set
         internal bool IsSetAdditionalResponseAttributes()
         {
-            return this._additionalResponseAttributes != null && this._additionalResponseAttributes.Count > 0; 
+            return this._additionalResponseAttributes != null && (this._additionalResponseAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -96,7 +97,7 @@ namespace Amazon.Kendra.Model
         // Check to see if SuggestionAttributes property is set
         internal bool IsSetSuggestionAttributes()
         {
-            return this._suggestionAttributes != null && this._suggestionAttributes.Count > 0; 
+            return this._suggestionAttributes != null && (this._suggestionAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

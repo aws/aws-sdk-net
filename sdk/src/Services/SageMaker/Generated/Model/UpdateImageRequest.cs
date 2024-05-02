@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class UpdateImageRequest : AmazonSageMakerRequest
     {
-        private List<string> _deleteProperties = new List<string>();
+        private List<string> _deleteProperties = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _description;
         private string _displayName;
         private string _imageName;
@@ -60,7 +61,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if DeleteProperties property is set
         internal bool IsSetDeleteProperties()
         {
-            return this._deleteProperties != null && this._deleteProperties.Count > 0; 
+            return this._deleteProperties != null && (this._deleteProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

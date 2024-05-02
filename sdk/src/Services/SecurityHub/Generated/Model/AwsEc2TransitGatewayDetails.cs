@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -44,7 +45,7 @@ namespace Amazon.SecurityHub.Model
         private string _id;
         private string _multicastSupport;
         private string _propagationDefaultRouteTableId;
-        private List<string> _transitGatewayCidrBlocks = new List<string>();
+        private List<string> _transitGatewayCidrBlocks = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _vpnEcmpSupport;
 
         /// <summary>
@@ -244,7 +245,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if TransitGatewayCidrBlocks property is set
         internal bool IsSetTransitGatewayCidrBlocks()
         {
-            return this._transitGatewayCidrBlocks != null && this._transitGatewayCidrBlocks.Count > 0; 
+            return this._transitGatewayCidrBlocks != null && (this._transitGatewayCidrBlocks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

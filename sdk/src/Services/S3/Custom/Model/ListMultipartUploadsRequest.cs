@@ -26,7 +26,7 @@ namespace Amazon.S3.Model
     /// <summary>
     /// Container for the parameters to the ListMultipartUploads operation.
     /// This operation lists in-progress multipart uploads in a bucket. An in-progress multipart
-    /// upload is a multipart upload that has been initiated by the <code>CreateMultipartUpload</code>
+    /// upload is a multipart upload that has been initiated by the <c>CreateMultipartUpload</c>
     /// request, but has not yet been completed or aborted.
     /// 
     ///  <note> 
@@ -37,26 +37,24 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// The <code>ListMultipartUploads</code> operation returns a maximum of 1,000 multipart
-    /// uploads in the response. The limit of 1,000 multipart uploads is also the default
-    /// value. You can further limit the number of uploads in a response by specifying the
-    /// <code>max-uploads</code> request parameter. If there are more than 1,000 multipart
-    /// uploads that satisfy your <code>ListMultipartUploads</code> request, the response
-    /// returns an <code>IsTruncated</code> element with the value of <code>true</code>, a
-    /// <code>NextKeyMarker</code> element, and a <code>NextUploadIdMarker</code> element.
-    /// To list the remaining multipart uploads, you need to make subsequent <code>ListMultipartUploads</code>
-    /// requests. In these requests, include two query parameters: <code>key-marker</code>
-    /// and <code>upload-id-marker</code>. Set the value of <code>key-marker</code> to the
-    /// <code>NextKeyMarker</code> value from the previous response. Similarly, set the value
-    /// of <code>upload-id-marker</code> to the <code>NextUploadIdMarker</code> value from
-    /// the previous response.
+    /// The <c>ListMultipartUploads</c> operation returns a maximum of 1,000 multipart uploads
+    /// in the response. The limit of 1,000 multipart uploads is also the default value. You
+    /// can further limit the number of uploads in a response by specifying the <c>max-uploads</c>
+    /// request parameter. If there are more than 1,000 multipart uploads that satisfy your
+    /// <c>ListMultipartUploads</c> request, the response returns an <c>IsTruncated</c> element
+    /// with the value of <c>true</c>, a <c>NextKeyMarker</c> element, and a <c>NextUploadIdMarker</c>
+    /// element. To list the remaining multipart uploads, you need to make subsequent <c>ListMultipartUploads</c>
+    /// requests. In these requests, include two query parameters: <c>key-marker</c> and <c>upload-id-marker</c>.
+    /// Set the value of <c>key-marker</c> to the <c>NextKeyMarker</c> value from the previous
+    /// response. Similarly, set the value of <c>upload-id-marker</c> to the <c>NextUploadIdMarker</c>
+    /// value from the previous response.
     /// </para>
     ///  <note> 
     /// <para>
-    ///  <b>Directory buckets</b> - The <code>upload-id-marker</code> element and the <code>NextUploadIdMarker</code>
+    ///  <b>Directory buckets</b> - The <c>upload-id-marker</c> element and the <c>NextUploadIdMarker</c>
     /// element aren't supported by directory buckets. To list the additional multipart uploads,
-    /// you only need to set the value of <code>key-marker</code> to the <code>NextKeyMarker</code>
-    /// value from the previous response. 
+    /// you only need to set the value of <c>key-marker</c> to the <c>NextKeyMarker</c> value
+    /// from the previous response. 
     /// </para>
     ///  </note> 
     /// <para>
@@ -67,8 +65,8 @@ namespace Amazon.S3.Model
     /// <para>
     ///  <b>Directory buckets</b> - For directory buckets, you must make requests for this
     /// API operation to the Zonal endpoint. These endpoints support virtual-hosted-style
-    /// requests in the format <code>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
-    /// </code>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
+    /// requests in the format <c>https://<i>bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com/<i>key-name</i>
+    /// </c>. Path-style requests are not supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-Regions-and-Zones.html">Regional
     /// and Zonal endpoints</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
     ///  </note> <dl> <dt>Permissions</dt> <dd> <ul> <li> 
@@ -81,22 +79,22 @@ namespace Amazon.S3.Model
     /// <para>
     ///  <b>Directory bucket permissions</b> - To grant access to this API operation on a
     /// directory bucket, we recommend that you use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
-    /// <code>CreateSession</code> </a> API operation for session-based authorization. Specifically,
-    /// you grant the <code>s3express:CreateSession</code> permission to the directory bucket
-    /// in a bucket policy or an IAM identity-based policy. Then, you make the <code>CreateSession</code>
+    /// <c>CreateSession</c> </a> API operation for session-based authorization. Specifically,
+    /// you grant the <c>s3express:CreateSession</c> permission to the directory bucket in
+    /// a bucket policy or an IAM identity-based policy. Then, you make the <c>CreateSession</c>
     /// API call on the bucket to obtain a session token. With the session token in your request
     /// header, you can make API requests to this operation. After the session token expires,
-    /// you make another <code>CreateSession</code> API call to generate a new session token
-    /// for use. Amazon Web Services CLI or SDKs create session and refresh the session token
+    /// you make another <c>CreateSession</c> API call to generate a new session token for
+    /// use. Amazon Web Services CLI or SDKs create session and refresh the session token
     /// automatically to avoid service interruptions when a session expires. For more information
     /// about authorization, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateSession.html">
-    /// <code>CreateSession</code> </a>.
+    /// <c>CreateSession</c> </a>.
     /// </para>
     ///  </li> </ul> </dd> <dt>Sorting of multipart uploads in response</dt> <dd> <ul> <li>
     /// 
     /// <para>
-    ///  <b>General purpose bucket</b> - In the <code>ListMultipartUploads</code> response,
-    /// the multipart uploads are sorted based on two criteria:
+    ///  <b>General purpose bucket</b> - In the <c>ListMultipartUploads</c> response, the
+    /// multipart uploads are sorted based on two criteria:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -112,16 +110,16 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    ///  <b>Directory bucket</b> - In the <code>ListMultipartUploads</code> response, the
-    /// multipart uploads aren't sorted lexicographically based on the object keys. 
+    ///  <b>Directory bucket</b> - In the <c>ListMultipartUploads</c> response, the multipart
+    /// uploads aren't sorted lexicographically based on the object keys. 
     /// </para>
     ///  </li> </ul> </dd> <dt>HTTP Host header syntax</dt> <dd> 
     /// <para>
-    ///  <b>Directory buckets </b> - The HTTP Host header syntax is <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>.
+    ///  <b>Directory buckets </b> - The HTTP Host header syntax is <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
     /// </para>
     ///  </dd> </dl> 
     /// <para>
-    /// The following operations are related to <code>ListMultipartUploads</code>:
+    /// The following operations are related to <c>ListMultipartUploads</c>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -170,11 +168,11 @@ namespace Amazon.S3.Model
         ///  
         /// <para>
         ///  <b>Directory buckets</b> - When you use this operation with a directory bucket, you
-        /// must use virtual-hosted-style requests in the format <code> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</code>.
+        /// must use virtual-hosted-style requests in the format <c> <i>Bucket_name</i>.s3express-<i>az_id</i>.<i>region</i>.amazonaws.com</c>.
         /// Path-style requests are not supported. Directory bucket names must be unique in the
-        /// chosen Availability Zone. Bucket names must follow the format <code> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</code>
-        /// (for example, <code> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az2</i>--x-s3</code>). For
-        /// information about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
+        /// chosen Availability Zone. Bucket names must follow the format <c> <i>bucket_base_name</i>--<i>az-id</i>--x-s3</c>
+        /// (for example, <c> <i>DOC-EXAMPLE-BUCKET</i>--<i>usw2-az1</i>--x-s3</c>). For information
+        /// about bucket naming restrictions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/directory-bucket-naming-rules.html">Directory
         /// bucket naming rules</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         ///  
@@ -196,7 +194,7 @@ namespace Amazon.S3.Model
         /// <para>
         ///  <b>S3 on Outposts</b> - When you use this action with Amazon S3 on Outposts, you
         /// must direct requests to the S3 on Outposts hostname. The S3 on Outposts hostname takes
-        /// the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+        /// the form <c> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</c>.
         /// When you use this action with S3 on Outposts through the Amazon Web Services SDKs,
         /// you provide the Outposts access point ARN in place of the bucket name. For more information
         /// about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
@@ -224,13 +222,13 @@ namespace Amazon.S3.Model
         /// <para>
         /// All keys that contain the same string between the prefix, if specified, and the first
         /// occurrence of the delimiter after the prefix are grouped under a single result element,
-        /// <code>CommonPrefixes</code>. If you don't specify the prefix parameter, then the substring
-        /// starts at the beginning of the key. The keys that are grouped under <code>CommonPrefixes</code>
+        /// <c>CommonPrefixes</c>. If you don't specify the prefix parameter, then the substring
+        /// starts at the beginning of the key. The keys that are grouped under <c>CommonPrefixes</c>
         /// result element are not returned elsewhere in the response.
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <b>Directory buckets</b> - For directory buckets, <code>/</code> is the only supported
+        ///  <b>Directory buckets</b> - For directory buckets, <c>/</c> is the only supported
         /// delimiter.
         /// </para>
         ///  </note>
@@ -272,7 +270,7 @@ namespace Amazon.S3.Model
         /// <para>
         /// The account ID of the expected bucket owner. If the account ID that you provide does
         /// not match the actual owner of the bucket, the request fails with the HTTP status code
-        /// <code>403 Forbidden</code> (access denied).
+        /// <c>403 Forbidden</c> (access denied).
         /// </para>
         /// </summary>
         public string ExpectedBucketOwner
@@ -297,32 +295,32 @@ namespace Amazon.S3.Model
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        ///  <b>General purpose buckets</b> - For general purpose buckets, <code>key-marker</code>
-        /// is an object key. Together with <code>upload-id-marker</code>, this parameter specifies
+        ///  <b>General purpose buckets</b> - For general purpose buckets, <c>key-marker</c>
+        /// is an object key. Together with <c>upload-id-marker</c>, this parameter specifies
         /// the multipart upload after which listing should begin.
         /// </para>
         ///  
         /// <para>
-        /// If <code>upload-id-marker</code> is not specified, only the keys lexicographically
-        /// greater than the specified <code>key-marker</code> will be included in the list.
+        /// If <c>upload-id-marker</c> is not specified, only the keys lexicographically
+        /// greater than the specified <c>key-marker</c> will be included in the list.
         /// </para>
         ///  
         /// <para>
-        /// If <code>upload-id-marker</code> is specified, any multipart uploads for a key equal
-        /// to the <code>key-marker</code> might also be included, provided those multipart uploads
-        /// have upload IDs lexicographically greater than the specified <code>upload-id-marker</code>.
+        /// If <c>upload-id-marker</c> is specified, any multipart uploads for a key equal
+        /// to the <c>key-marker</c> might also be included, provided those multipart uploads
+        /// have upload IDs lexicographically greater than the specified <c>upload-id-marker</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Directory buckets</b> - For directory buckets, <code>key-marker</code> is obfuscated
-        /// and isn't a real object key. The <code>upload-id-marker</code> parameter isn't supported
+        ///  <b>Directory buckets</b> - For directory buckets, <c>key-marker</c> is obfuscated
+        /// and isn't a real object key. The <c>upload-id-marker</c> parameter isn't supported
         /// by directory buckets. To list the additional multipart uploads, you only need to set
-        /// the value of <code>key-marker</code> to the <code>NextKeyMarker</code> value from
+        /// the value of <c>key-marker</c> to the <c>NextKeyMarker</c> value from
         /// the previous response. 
         /// </para>
         ///  
         /// <para>
-        /// In the <code>ListMultipartUploads</code> response, the multipart uploads aren't sorted
+        /// In the <c>ListMultipartUploads</c> response, the multipart uploads aren't sorted
         /// lexicographically based on the object keys. 
         /// </para>
         ///  </li> </ul> </note>
@@ -363,13 +361,13 @@ namespace Amazon.S3.Model
         /// <para>
         /// Lists in-progress uploads only for those keys that begin with the specified prefix.
         /// You can use prefixes to separate a bucket into different grouping of keys. (You can
-        /// think of using <code>prefix</code> to make groups in the same way that you'd use a
+        /// think of using <c>prefix</c> to make groups in the same way that you'd use a
         /// folder in a file system.)
         /// </para>
         ///  <note> 
         /// <para>
         ///  <b>Directory buckets</b> - For directory buckets, only prefixes that end in a delimiter
-        /// (<code>/</code>) are supported.
+        /// (<c>/</c>) are supported.
         /// </para>
         ///  </note>
         /// </summary>
@@ -407,7 +405,7 @@ namespace Amazon.S3.Model
         /// begin. If key-marker is not specified, the upload-id-marker parameter is ignored.
         /// Otherwise, any multipart uploads for a key equal to the key-marker might be included
         /// in the list only if they have an upload ID lexicographically greater than the specified
-        /// <code>upload-id-marker</code>.
+        /// <c>upload-id-marker</c>.
         /// </para>
         ///  <note> 
         /// <para>

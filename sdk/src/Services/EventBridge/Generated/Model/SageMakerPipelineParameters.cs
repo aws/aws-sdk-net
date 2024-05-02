@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EventBridge.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EventBridge.Model
     /// </summary>
     public partial class SageMakerPipelineParameters
     {
-        private List<SageMakerPipelineParameter> _pipelineParameterList = new List<SageMakerPipelineParameter>();
+        private List<SageMakerPipelineParameter> _pipelineParameterList = AWSConfigs.InitializeCollections ? new List<SageMakerPipelineParameter>() : null;
 
         /// <summary>
         /// Gets and sets the property PipelineParameterList. 
@@ -52,7 +53,7 @@ namespace Amazon.EventBridge.Model
         // Check to see if PipelineParameterList property is set
         internal bool IsSetPipelineParameterList()
         {
-            return this._pipelineParameterList != null && this._pipelineParameterList.Count > 0; 
+            return this._pipelineParameterList != null && (this._pipelineParameterList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

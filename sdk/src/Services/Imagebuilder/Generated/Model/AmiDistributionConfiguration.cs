@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
@@ -33,12 +34,12 @@ namespace Amazon.Imagebuilder.Model
     /// </summary>
     public partial class AmiDistributionConfiguration
     {
-        private Dictionary<string, string> _amiTags = new Dictionary<string, string>();
+        private Dictionary<string, string> _amiTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _description;
         private string _kmsKeyId;
         private LaunchPermissionConfiguration _launchPermission;
         private string _name;
-        private List<string> _targetAccountIds = new List<string>();
+        private List<string> _targetAccountIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AmiTags. 
@@ -56,7 +57,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if AmiTags property is set
         internal bool IsSetAmiTags()
         {
-            return this._amiTags != null && this._amiTags.Count > 0; 
+            return this._amiTags != null && (this._amiTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -152,7 +153,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if TargetAccountIds property is set
         internal bool IsSetTargetAccountIds()
         {
-            return this._targetAccountIds != null && this._targetAccountIds.Count > 0; 
+            return this._targetAccountIds != null && (this._targetAccountIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

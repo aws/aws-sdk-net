@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.StorageGateway.Model
     public partial class ListVolumeRecoveryPointsResponse : AmazonWebServiceResponse
     {
         private string _gatewayARN;
-        private List<VolumeRecoveryPointInfo> _volumeRecoveryPointInfos = new List<VolumeRecoveryPointInfo>();
+        private List<VolumeRecoveryPointInfo> _volumeRecoveryPointInfos = AWSConfigs.InitializeCollections ? new List<VolumeRecoveryPointInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property GatewayARN.
@@ -67,7 +68,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if VolumeRecoveryPointInfos property is set
         internal bool IsSetVolumeRecoveryPointInfos()
         {
-            return this._volumeRecoveryPointInfos != null && this._volumeRecoveryPointInfos.Count > 0; 
+            return this._volumeRecoveryPointInfos != null && (this._volumeRecoveryPointInfos.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

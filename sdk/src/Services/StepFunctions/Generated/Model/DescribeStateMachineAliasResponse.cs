@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.StepFunctions.Model
         private DateTime? _creationDate;
         private string _description;
         private string _name;
-        private List<RoutingConfigurationListItem> _routingConfiguration = new List<RoutingConfigurationListItem>();
+        private List<RoutingConfigurationListItem> _routingConfiguration = AWSConfigs.InitializeCollections ? new List<RoutingConfigurationListItem>() : null;
         private string _stateMachineAliasArn;
         private DateTime? _updateDate;
 
@@ -112,7 +113,7 @@ namespace Amazon.StepFunctions.Model
         // Check to see if RoutingConfiguration property is set
         internal bool IsSetRoutingConfiguration()
         {
-            return this._routingConfiguration != null && this._routingConfiguration.Count > 0; 
+            return this._routingConfiguration != null && (this._routingConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

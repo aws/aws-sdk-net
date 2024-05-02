@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
@@ -35,9 +36,9 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
     public partial class CreateMediaConcatenationPipelineRequest : AmazonChimeSDKMediaPipelinesRequest
     {
         private string _clientRequestToken;
-        private List<ConcatenationSink> _sinks = new List<ConcatenationSink>();
-        private List<ConcatenationSource> _sources = new List<ConcatenationSource>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<ConcatenationSink> _sinks = AWSConfigs.InitializeCollections ? new List<ConcatenationSink>() : null;
+        private List<ConcatenationSource> _sources = AWSConfigs.InitializeCollections ? new List<ConcatenationSource>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -75,7 +76,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         // Check to see if Sinks property is set
         internal bool IsSetSinks()
         {
-            return this._sinks != null && this._sinks.Count > 0; 
+            return this._sinks != null && (this._sinks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -94,7 +95,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         // Check to see if Sources property is set
         internal bool IsSetSources()
         {
-            return this._sources != null && this._sources.Count > 0; 
+            return this._sources != null && (this._sources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -113,7 +114,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTEvents.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoTEvents.Model
     /// </summary>
     public partial class ListAlarmModelVersionsResponse : AmazonWebServiceResponse
     {
-        private List<AlarmModelVersionSummary> _alarmModelVersionSummaries = new List<AlarmModelVersionSummary>();
+        private List<AlarmModelVersionSummary> _alarmModelVersionSummaries = AWSConfigs.InitializeCollections ? new List<AlarmModelVersionSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.IoTEvents.Model
         // Check to see if AlarmModelVersionSummaries property is set
         internal bool IsSetAlarmModelVersionSummaries()
         {
-            return this._alarmModelVersionSummaries != null && this._alarmModelVersionSummaries.Count > 0; 
+            return this._alarmModelVersionSummaries != null && (this._alarmModelVersionSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

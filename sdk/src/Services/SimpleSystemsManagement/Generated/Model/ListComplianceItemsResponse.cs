@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class ListComplianceItemsResponse : AmazonWebServiceResponse
     {
-        private List<ComplianceItem> _complianceItems = new List<ComplianceItem>();
+        private List<ComplianceItem> _complianceItems = AWSConfigs.InitializeCollections ? new List<ComplianceItem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if ComplianceItems property is set
         internal bool IsSetComplianceItems()
         {
-            return this._complianceItems != null && this._complianceItems.Count > 0; 
+            return this._complianceItems != null && (this._complianceItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -86,12 +87,12 @@ namespace Amazon.Kendra.Model
     public partial class RetrieveRequest : AmazonKendraRequest
     {
         private AttributeFilter _attributeFilter;
-        private List<DocumentRelevanceConfiguration> _documentRelevanceOverrideConfigurations = new List<DocumentRelevanceConfiguration>();
+        private List<DocumentRelevanceConfiguration> _documentRelevanceOverrideConfigurations = AWSConfigs.InitializeCollections ? new List<DocumentRelevanceConfiguration>() : null;
         private string _indexId;
         private int? _pageNumber;
         private int? _pageSize;
         private string _queryText;
-        private List<string> _requestedDocumentAttributes = new List<string>();
+        private List<string> _requestedDocumentAttributes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private UserContext _userContext;
 
         /// <summary>
@@ -147,7 +148,7 @@ namespace Amazon.Kendra.Model
         // Check to see if DocumentRelevanceOverrideConfigurations property is set
         internal bool IsSetDocumentRelevanceOverrideConfigurations()
         {
-            return this._documentRelevanceOverrideConfigurations != null && this._documentRelevanceOverrideConfigurations.Count > 0; 
+            return this._documentRelevanceOverrideConfigurations != null && (this._documentRelevanceOverrideConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -214,7 +215,10 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// The input query text to retrieve relevant passages for the search. Amazon Kendra truncates
         /// queries at 30 token words, which excludes punctuation and stop words. Truncation still
-        /// applies if you use Boolean or more advanced, complex queries.
+        /// applies if you use Boolean or more advanced, complex queries. For example, <c>Timeoff
+        /// AND October AND Category:HR</c> is counted as 3 tokens: <c>timeoff</c>, <c>october</c>,
+        /// <c>hr</c>. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/searching-example.html#searching-index-query-syntax">Searching
+        /// with advanced query syntax</a> in the Amazon Kendra Developer Guide. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -248,7 +252,7 @@ namespace Amazon.Kendra.Model
         // Check to see if RequestedDocumentAttributes property is set
         internal bool IsSetRequestedDocumentAttributes()
         {
-            return this._requestedDocumentAttributes != null && this._requestedDocumentAttributes.Count > 0; 
+            return this._requestedDocumentAttributes != null && (this._requestedDocumentAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

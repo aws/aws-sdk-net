@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IdentityManagement.Model
     /// </summary>
     public partial class GetContextKeysForPrincipalPolicyResponse : AmazonWebServiceResponse
     {
-        private List<string> _contextKeyNames = new List<string>();
+        private List<string> _contextKeyNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ContextKeyNames. 
@@ -51,7 +52,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if ContextKeyNames property is set
         internal bool IsSetContextKeyNames()
         {
-            return this._contextKeyNames != null && this._contextKeyNames.Count > 0; 
+            return this._contextKeyNames != null && (this._contextKeyNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

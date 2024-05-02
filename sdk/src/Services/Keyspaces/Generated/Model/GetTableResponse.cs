@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Keyspaces.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.Keyspaces.Model
         private EncryptionSpecification _encryptionSpecification;
         private string _keyspaceName;
         private PointInTimeRecoverySummary _pointInTimeRecovery;
-        private List<ReplicaSpecificationSummary> _replicaSpecifications = new List<ReplicaSpecificationSummary>();
+        private List<ReplicaSpecificationSummary> _replicaSpecifications = AWSConfigs.InitializeCollections ? new List<ReplicaSpecificationSummary>() : null;
         private string _resourceArn;
         private SchemaDefinition _schemaDefinition;
         private TableStatus _status;
@@ -220,7 +221,7 @@ namespace Amazon.Keyspaces.Model
         // Check to see if ReplicaSpecifications property is set
         internal bool IsSetReplicaSpecifications()
         {
-            return this._replicaSpecifications != null && this._replicaSpecifications.Count > 0; 
+            return this._replicaSpecifications != null && (this._replicaSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchEvidently.Model
 {
     /// <summary>
@@ -37,16 +38,16 @@ namespace Amazon.CloudWatchEvidently.Model
         private DateTime? _createdTime;
         private string _defaultVariation;
         private string _description;
-        private Dictionary<string, string> _entityOverrides = new Dictionary<string, string>();
-        private List<EvaluationRule> _evaluationRules = new List<EvaluationRule>();
+        private Dictionary<string, string> _entityOverrides = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<EvaluationRule> _evaluationRules = AWSConfigs.InitializeCollections ? new List<EvaluationRule>() : null;
         private FeatureEvaluationStrategy _evaluationStrategy;
         private DateTime? _lastUpdatedTime;
         private string _name;
         private string _project;
         private FeatureStatus _status;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private VariationValueType _valueType;
-        private List<Variation> _variations = new List<Variation>();
+        private List<Variation> _variations = AWSConfigs.InitializeCollections ? new List<Variation>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -160,7 +161,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if EntityOverrides property is set
         internal bool IsSetEntityOverrides()
         {
-            return this._entityOverrides != null && this._entityOverrides.Count > 0; 
+            return this._entityOverrides != null && (this._entityOverrides.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -178,7 +179,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if EvaluationRules property is set
         internal bool IsSetEvaluationRules()
         {
-            return this._evaluationRules != null && this._evaluationRules.Count > 0; 
+            return this._evaluationRules != null && (this._evaluationRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -293,7 +294,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -333,7 +334,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if Variations property is set
         internal bool IsSetVariations()
         {
-            return this._variations != null && this._variations.Count > 0; 
+            return this._variations != null && (this._variations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.CostExplorer.Model
         private RightsizingRecommendationConfiguration _configuration;
         private RightsizingRecommendationMetadata _metadata;
         private string _nextPageToken;
-        private List<RightsizingRecommendation> _rightsizingRecommendations = new List<RightsizingRecommendation>();
+        private List<RightsizingRecommendation> _rightsizingRecommendations = AWSConfigs.InitializeCollections ? new List<RightsizingRecommendation>() : null;
         private RightsizingRecommendationSummary _summary;
 
         /// <summary>
@@ -113,7 +114,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if RightsizingRecommendations property is set
         internal bool IsSetRightsizingRecommendations()
         {
-            return this._rightsizingRecommendations != null && this._rightsizingRecommendations.Count > 0; 
+            return this._rightsizingRecommendations != null && (this._rightsizingRecommendations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

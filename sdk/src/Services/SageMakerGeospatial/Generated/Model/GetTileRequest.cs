@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.SageMakerGeospatial.Model
     {
         private string _arn;
         private string _executionRoleArn;
-        private List<string> _imageAssets = new List<string>();
+        private List<string> _imageAssets = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _imageMask;
         private OutputType _outputDataType;
         private string _outputFormat;
@@ -101,7 +102,7 @@ namespace Amazon.SageMakerGeospatial.Model
         // Check to see if ImageAssets property is set
         internal bool IsSetImageAssets()
         {
-            return this._imageAssets != null && this._imageAssets.Count > 0; 
+            return this._imageAssets != null && (this._imageAssets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

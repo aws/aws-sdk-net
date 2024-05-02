@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -36,8 +37,8 @@ namespace Amazon.EC2.Model
         private string _clientToken;
         private DateTime? _createDate;
         private DateTime? _effectiveDate;
-        private List<ReservedInstancesModificationResult> _modificationResults = new List<ReservedInstancesModificationResult>();
-        private List<ReservedInstancesId> _reservedInstancesIds = new List<ReservedInstancesId>();
+        private List<ReservedInstancesModificationResult> _modificationResults = AWSConfigs.InitializeCollections ? new List<ReservedInstancesModificationResult>() : null;
+        private List<ReservedInstancesId> _reservedInstancesIds = AWSConfigs.InitializeCollections ? new List<ReservedInstancesId>() : null;
         private string _reservedInstancesModificationId;
         private string _status;
         private string _statusMessage;
@@ -115,7 +116,7 @@ namespace Amazon.EC2.Model
         // Check to see if ModificationResults property is set
         internal bool IsSetModificationResults()
         {
-            return this._modificationResults != null && this._modificationResults.Count > 0; 
+            return this._modificationResults != null && (this._modificationResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -133,7 +134,7 @@ namespace Amazon.EC2.Model
         // Check to see if ReservedInstancesIds property is set
         internal bool IsSetReservedInstancesIds()
         {
-            return this._reservedInstancesIds != null && this._reservedInstancesIds.Count > 0; 
+            return this._reservedInstancesIds != null && (this._reservedInstancesIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

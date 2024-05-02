@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Account.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Account.Model
     public partial class ListRegionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Region> _regions = new List<Region>();
+        private List<Region> _regions = AWSConfigs.InitializeCollections ? new List<Region>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.Account.Model
         // Check to see if Regions property is set
         internal bool IsSetRegions()
         {
-            return this._regions != null && this._regions.Count > 0; 
+            return this._regions != null && (this._regions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SecurityLake.Model
     public partial class DataLakeLifecycleConfiguration
     {
         private DataLakeLifecycleExpiration _expiration;
-        private List<DataLakeLifecycleTransition> _transitions = new List<DataLakeLifecycleTransition>();
+        private List<DataLakeLifecycleTransition> _transitions = AWSConfigs.InitializeCollections ? new List<DataLakeLifecycleTransition>() : null;
 
         /// <summary>
         /// Gets and sets the property Expiration. 
@@ -69,7 +70,7 @@ namespace Amazon.SecurityLake.Model
         // Check to see if Transitions property is set
         internal bool IsSetTransitions()
         {
-            return this._transitions != null && this._transitions.Count > 0; 
+            return this._transitions != null && (this._transitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

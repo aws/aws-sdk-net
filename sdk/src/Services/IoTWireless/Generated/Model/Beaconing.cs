@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IoTWireless.Model
     public partial class Beaconing
     {
         private int? _dataRate;
-        private List<int> _frequencies = new List<int>();
+        private List<int> _frequencies = AWSConfigs.InitializeCollections ? new List<int>() : null;
 
         /// <summary>
         /// Gets and sets the property DataRate. 
@@ -71,7 +72,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if Frequencies property is set
         internal bool IsSetFrequencies()
         {
-            return this._frequencies != null && this._frequencies.Count > 0; 
+            return this._frequencies != null && (this._frequencies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

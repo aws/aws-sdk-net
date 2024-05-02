@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
@@ -101,7 +102,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the project.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=64)]
         public string Name

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ResourceGroupsTaggingAPI.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     public partial class GetResourcesResponse : AmazonWebServiceResponse
     {
         private string _paginationToken;
-        private List<ResourceTagMapping> _resourceTagMappingList = new List<ResourceTagMapping>();
+        private List<ResourceTagMapping> _resourceTagMappingList = AWSConfigs.InitializeCollections ? new List<ResourceTagMapping>() : null;
 
         /// <summary>
         /// Gets and sets the property PaginationToken. 
@@ -72,7 +73,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         // Check to see if ResourceTagMappingList property is set
         internal bool IsSetResourceTagMappingList()
         {
-            return this._resourceTagMappingList != null && this._resourceTagMappingList.Count > 0; 
+            return this._resourceTagMappingList != null && (this._resourceTagMappingList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

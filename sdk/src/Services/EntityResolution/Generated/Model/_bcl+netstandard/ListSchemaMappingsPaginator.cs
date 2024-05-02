@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.EntityResolution.Model
         /// Enumerable containing all of the SchemaList
         /// </summary>
         public IPaginatedEnumerable<SchemaMappingSummary> SchemaList => 
-            new PaginatedResultKeyResponse<ListSchemaMappingsResponse, SchemaMappingSummary>(this, (i) => i.SchemaList);
+            new PaginatedResultKeyResponse<ListSchemaMappingsResponse, SchemaMappingSummary>(this, (i) => i.SchemaList ?? new List<SchemaMappingSummary>());
 
         internal ListSchemaMappingsPaginator(IAmazonEntityResolution client, ListSchemaMappingsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.EntityResolution.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListSchemaMappingsResponse> IPaginator<ListSchemaMappingsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListSchemaMappingsResponse> IPaginator<ListSchemaMappingsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

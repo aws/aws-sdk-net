@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -64,6 +65,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("storeImageTaskResultSet/item", targetDepth))
                     {
                         var unmarshaller = StoreImageTaskResultUnmarshaller.Instance;
+                        if (response.StoreImageTaskResults == null)
+                        {
+                            response.StoreImageTaskResults = new List<StoreImageTaskResult>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.StoreImageTaskResults.Add(item);
                         continue;

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Rekognition.Model
     {
         private float? _confidence;
         private string _faceId;
-        private List<string> _reasons = new List<string>();
+        private List<string> _reasons = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _userId;
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if Reasons property is set
         internal bool IsSetReasons()
         {
-            return this._reasons != null && this._reasons.Count > 0; 
+            return this._reasons != null && (this._reasons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -169,22 +169,25 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 logger.InfoFormat("Description for table [{0}] loaded from SDK Cache", TableName);
             }
 
-            foreach (var key in table.KeySchema)
+            if (table.KeySchema != null)
             {
-                string keyName = key.AttributeName;
-                AttributeDefinition attributeDefinition = table.AttributeDefinitions
-                    .FirstOrDefault(a => string.Equals(a.AttributeName, keyName, StringComparison.Ordinal));
-                if (attributeDefinition == null) throw new InvalidOperationException("No attribute definition found for key " + key.AttributeName);
-                KeyDescription keyDescription = new KeyDescription
+                foreach (var key in table.KeySchema)
                 {
-                    IsHash = string.Equals(key.KeyType, "HASH", StringComparison.OrdinalIgnoreCase),
-                    Type = GetType(attributeDefinition.AttributeType)
-                };
-                if (keyDescription.IsHash)
-                    HashKeys.Add(keyName);
-                else
-                    RangeKeys.Add(keyName);
-                Keys[keyName] = keyDescription;
+                    string keyName = key.AttributeName;
+                    AttributeDefinition attributeDefinition = table.AttributeDefinitions
+                        .FirstOrDefault(a => string.Equals(a.AttributeName, keyName, StringComparison.Ordinal));
+                    if (attributeDefinition == null) throw new InvalidOperationException("No attribute definition found for key " + key.AttributeName);
+                    KeyDescription keyDescription = new KeyDescription
+                    {
+                        IsHash = string.Equals(key.KeyType, "HASH", StringComparison.OrdinalIgnoreCase),
+                        Type = GetType(attributeDefinition.AttributeType)
+                    };
+                    if (keyDescription.IsHash)
+                        HashKeys.Add(keyName);
+                    else
+                        RangeKeys.Add(keyName);
+                    Keys[keyName] = keyDescription;
+                }
             }
 
             if (table.LocalSecondaryIndexes != null)
@@ -205,9 +208,12 @@ namespace Amazon.DynamoDBv2.DocumentModel
                 }
             }
 
-            foreach (var attribute in table.AttributeDefinitions)
+            if (table.AttributeDefinitions != null)
             {
-                Attributes.Add(attribute);
+                foreach (var attribute in table.AttributeDefinitions)
+                {
+                    Attributes.Add(attribute);
+                }
             }
         }
 
@@ -578,6 +584,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     IndexName = gsiIndexName
                 };
 
+                if (indexDescription.KeySchema == null)
+                {
+                    indexDescription.KeySchema = new List<KeySchemaElement>();
+                }
+
                 var hashKeyProperty = itemStorageConfig.GetPropertyStorage(gsi.HashKeyPropertyName);
                 indexDescription.KeySchema.Add(new KeySchemaElement()
                 {
@@ -677,7 +688,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="isEmptyStringValueEnabled">If the property is false, empty string values will be interpreted as null values.</param>
         /// <param name="metadataCachingMode">The document API relies on an internal cache of the DynamoDB table's metadata to construct and validate 
         /// requests. This controls how the cache key is derived, which influences when the SDK will call 
-        /// <see cref="IAmazonDynamoDB.DescribeTable(string)"/> internally to populate the cache.</param>
+        /// IAmazonDynamoDB.DescribeTable(string) internally to populate the cache.</param>
         /// <returns>Table object representing the specified table.</returns>
         public static Table LoadTable(IAmazonDynamoDB ddbClient, string tableName, DynamoDBEntryConversion conversion, bool isEmptyStringValueEnabled, MetadataCachingMode metadataCachingMode)
         {
@@ -772,7 +783,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         /// <param name="isEmptyStringValueEnabled">If the property is false, empty string values will be interpreted as null values.</param>
         /// <param name="metadataCachingMode">The document API relies on an internal cache of the DynamoDB table's metadata to construct and validate 
         /// requests. This controls how the cache key is derived, which influences when the SDK will call 
-        /// <see cref="IAmazonDynamoDB.DescribeTable(string)"/> internally to populate the cache.</param>
+        /// IAmazonDynamoDB.DescribeTable(string) internally to populate the cache.</param>
         /// <param name="table">Loaded table.</param>
         /// <returns>
         /// True if table was successfully loaded; otherwise false.

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -36,9 +37,9 @@ namespace Amazon.Redshift.Model
         private string _clusterSubnetGroupName;
         private string _description;
         private string _subnetGroupStatus;
-        private List<Subnet> _subnets = new List<Subnet>();
-        private List<string> _supportedClusterIpAddressTypes = new List<string>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<Subnet> _subnets = AWSConfigs.InitializeCollections ? new List<Subnet>() : null;
+        private List<string> _supportedClusterIpAddressTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _vpcId;
 
         /// <summary>
@@ -114,7 +115,7 @@ namespace Amazon.Redshift.Model
         // Check to see if Subnets property is set
         internal bool IsSetSubnets()
         {
-            return this._subnets != null && this._subnets.Count > 0; 
+            return this._subnets != null && (this._subnets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -133,7 +134,7 @@ namespace Amazon.Redshift.Model
         // Check to see if SupportedClusterIpAddressTypes property is set
         internal bool IsSetSupportedClusterIpAddressTypes()
         {
-            return this._supportedClusterIpAddressTypes != null && this._supportedClusterIpAddressTypes.Count > 0; 
+            return this._supportedClusterIpAddressTypes != null && (this._supportedClusterIpAddressTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -151,7 +152,7 @@ namespace Amazon.Redshift.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

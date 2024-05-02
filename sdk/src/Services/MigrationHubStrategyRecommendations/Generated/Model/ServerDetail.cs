@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MigrationHubStrategyRecommendations.Model
 {
     /// <summary>
@@ -36,11 +37,11 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         private S3Object _antipatternReportS3Object;
         private AntipatternReportStatus _antipatternReportStatus;
         private string _antipatternReportStatusMessage;
-        private List<StrategySummary> _applicationComponentStrategySummary = new List<StrategySummary>();
+        private List<StrategySummary> _applicationComponentStrategySummary = AWSConfigs.InitializeCollections ? new List<StrategySummary>() : null;
         private RunTimeAssessmentStatus _dataCollectionStatus;
         private string _id;
         private DateTime? _lastAnalyzedTimestamp;
-        private List<AntipatternSeveritySummary> _listAntipatternSeveritySummary = new List<AntipatternSeveritySummary>();
+        private List<AntipatternSeveritySummary> _listAntipatternSeveritySummary = AWSConfigs.InitializeCollections ? new List<AntipatternSeveritySummary>() : null;
         private string _name;
         private RecommendationSet _recommendationSet;
         private ServerError _serverError;
@@ -118,7 +119,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         // Check to see if ApplicationComponentStrategySummary property is set
         internal bool IsSetApplicationComponentStrategySummary()
         {
-            return this._applicationComponentStrategySummary != null && this._applicationComponentStrategySummary.Count > 0; 
+            return this._applicationComponentStrategySummary != null && (this._applicationComponentStrategySummary.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -191,7 +192,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         // Check to see if ListAntipatternSeveritySummary property is set
         internal bool IsSetListAntipatternSeveritySummary()
         {
-            return this._listAntipatternSeveritySummary != null && this._listAntipatternSeveritySummary.Count > 0; 
+            return this._listAntipatternSeveritySummary != null && (this._listAntipatternSeveritySummary.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

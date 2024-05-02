@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ApplicationAutoScaling.Model
 {
     /// <summary>
@@ -64,9 +65,9 @@ namespace Amazon.ApplicationAutoScaling.Model
     /// </summary>
     public partial class CustomizedMetricSpecification
     {
-        private List<MetricDimension> _dimensions = new List<MetricDimension>();
+        private List<MetricDimension> _dimensions = AWSConfigs.InitializeCollections ? new List<MetricDimension>() : null;
         private string _metricName;
-        private List<TargetTrackingMetricDataQuery> _metrics = new List<TargetTrackingMetricDataQuery>();
+        private List<TargetTrackingMetricDataQuery> _metrics = AWSConfigs.InitializeCollections ? new List<TargetTrackingMetricDataQuery>() : null;
         private string _awsNamespace;
         private MetricStatistic _statistic;
         private string _unit;
@@ -91,7 +92,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         // Check to see if Dimensions property is set
         internal bool IsSetDimensions()
         {
-            return this._dimensions != null && this._dimensions.Count > 0; 
+            return this._dimensions != null && (this._dimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -130,7 +131,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         // Check to see if Metrics property is set
         internal bool IsSetMetrics()
         {
-            return this._metrics != null && this._metrics.Count > 0; 
+            return this._metrics != null && (this._metrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

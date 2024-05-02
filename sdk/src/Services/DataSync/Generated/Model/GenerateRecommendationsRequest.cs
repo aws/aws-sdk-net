@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataSync.Model
 {
     /// <summary>
@@ -44,7 +45,7 @@ namespace Amazon.DataSync.Model
     public partial class GenerateRecommendationsRequest : AmazonDataSyncRequest
     {
         private string _discoveryJobArn;
-        private List<string> _resourceIds = new List<string>();
+        private List<string> _resourceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DiscoveryResourceType _resourceType;
 
         /// <summary>
@@ -84,7 +85,7 @@ namespace Amazon.DataSync.Model
         // Check to see if ResourceIds property is set
         internal bool IsSetResourceIds()
         {
-            return this._resourceIds != null && this._resourceIds.Count > 0; 
+            return this._resourceIds != null && (this._resourceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

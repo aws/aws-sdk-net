@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Neptunedata.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Neptunedata.Model
     /// </summary>
     public partial class LoaderIdResult
     {
-        private List<string> _loadIds = new List<string>();
+        private List<string> _loadIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property LoadIds. 
@@ -50,7 +51,7 @@ namespace Amazon.Neptunedata.Model
         // Check to see if LoadIds property is set
         internal bool IsSetLoadIds()
         {
-            return this._loadIds != null && this._loadIds.Count > 0; 
+            return this._loadIds != null && (this._loadIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

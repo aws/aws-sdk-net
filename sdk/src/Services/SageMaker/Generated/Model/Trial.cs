@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -42,9 +43,9 @@ namespace Amazon.SageMaker.Model
         private DateTime? _lastModifiedTime;
         private MetadataProperties _metadataProperties;
         private TrialSource _source;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _trialArn;
-        private List<TrialComponentSimpleSummary> _trialComponentSummaries = new List<TrialComponentSimpleSummary>();
+        private List<TrialComponentSimpleSummary> _trialComponentSummaries = AWSConfigs.InitializeCollections ? new List<TrialComponentSimpleSummary>() : null;
         private string _trialName;
 
         /// <summary>
@@ -202,7 +203,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -240,7 +241,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if TrialComponentSummaries property is set
         internal bool IsSetTrialComponentSummaries()
         {
-            return this._trialComponentSummaries != null && this._trialComponentSummaries.Count > 0; 
+            return this._trialComponentSummaries != null && (this._trialComponentSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

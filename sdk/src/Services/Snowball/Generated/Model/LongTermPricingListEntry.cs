@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Snowball.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Snowball.Model
     {
         private string _currentActiveJob;
         private bool? _isLongTermPricingAutoRenew;
-        private List<string> _jobIds = new List<string>();
+        private List<string> _jobIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _longTermPricingEndDate;
         private string _longTermPricingId;
         private DateTime? _longTermPricingStartDate;
@@ -98,7 +99,7 @@ namespace Amazon.Snowball.Model
         // Check to see if JobIds property is set
         internal bool IsSetJobIds()
         {
-            return this._jobIds != null && this._jobIds.Count > 0; 
+            return this._jobIds != null && (this._jobIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

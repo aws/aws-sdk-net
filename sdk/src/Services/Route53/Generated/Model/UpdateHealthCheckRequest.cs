@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53.Model
 {
     /// <summary>
@@ -51,12 +52,12 @@ namespace Amazon.Route53.Model
         private bool? _inverted;
         private bool? _disabled;
         private int? _healthThreshold;
-        private List<string> _childHealthChecks = new List<string>();
+        private List<string> _childHealthChecks = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _enableSNI;
-        private List<string> _regions = new List<string>();
+        private List<string> _regions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AlarmIdentifier _alarmIdentifier;
         private InsufficientDataHealthStatus _insufficientDataHealthStatus;
-        private List<string> _resetElements = new List<string>();
+        private List<string> _resetElements = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property HealthCheckId. 
@@ -541,7 +542,7 @@ namespace Amazon.Route53.Model
         // Check to see if ChildHealthChecks property is set
         internal bool IsSetChildHealthChecks()
         {
-            return this._childHealthChecks != null && this._childHealthChecks.Count > 0; 
+            return this._childHealthChecks != null && (this._childHealthChecks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -601,7 +602,7 @@ namespace Amazon.Route53.Model
         // Check to see if Regions property is set
         internal bool IsSetRegions()
         {
-            return this._regions != null && this._regions.Count > 0; 
+            return this._regions != null && (this._regions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -697,7 +698,7 @@ namespace Amazon.Route53.Model
         // Check to see if ResetElements property is set
         internal bool IsSetResetElements()
         {
-            return this._resetElements != null && this._resetElements.Count > 0; 
+            return this._resetElements != null && (this._resetElements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

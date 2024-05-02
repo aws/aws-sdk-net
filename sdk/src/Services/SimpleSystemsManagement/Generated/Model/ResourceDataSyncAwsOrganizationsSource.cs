@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class ResourceDataSyncAwsOrganizationsSource
     {
-        private List<ResourceDataSyncOrganizationalUnit> _organizationalUnits = new List<ResourceDataSyncOrganizationalUnit>();
+        private List<ResourceDataSyncOrganizationalUnit> _organizationalUnits = AWSConfigs.InitializeCollections ? new List<ResourceDataSyncOrganizationalUnit>() : null;
         private string _organizationSourceType;
 
         /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if OrganizationalUnits property is set
         internal bool IsSetOrganizationalUnits()
         {
-            return this._organizationalUnits != null && this._organizationalUnits.Count > 0; 
+            return this._organizationalUnits != null && (this._organizationalUnits.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

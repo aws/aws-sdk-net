@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class SnapshotJobResult
     {
-        private List<AnonymousUserSnapshotJobResult> _anonymousUsers = new List<AnonymousUserSnapshotJobResult>();
+        private List<AnonymousUserSnapshotJobResult> _anonymousUsers = AWSConfigs.InitializeCollections ? new List<AnonymousUserSnapshotJobResult>() : null;
 
         /// <summary>
         /// Gets and sets the property AnonymousUsers. 
@@ -53,7 +54,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if AnonymousUsers property is set
         internal bool IsSetAnonymousUsers()
         {
-            return this._anonymousUsers != null && this._anonymousUsers.Count > 0; 
+            return this._anonymousUsers != null && (this._anonymousUsers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudHSM.Model
 {
     /// <summary>
@@ -56,7 +57,7 @@ namespace Amazon.CloudHSM.Model
     public partial class RemoveTagsFromResourceRequest : AmazonCloudHSMRequest
     {
         private string _resourceArn;
-        private List<string> _tagKeyList = new List<string>();
+        private List<string> _tagKeyList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceArn. 
@@ -98,7 +99,7 @@ namespace Amazon.CloudHSM.Model
         // Check to see if TagKeyList property is set
         internal bool IsSetTagKeyList()
         {
-            return this._tagKeyList != null && this._tagKeyList.Count > 0; 
+            return this._tagKeyList != null && (this._tagKeyList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

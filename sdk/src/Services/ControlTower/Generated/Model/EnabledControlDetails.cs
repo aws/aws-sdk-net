@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ControlTower.Model
 {
     /// <summary>
@@ -36,10 +37,10 @@ namespace Amazon.ControlTower.Model
         private string _arn;
         private string _controlIdentifier;
         private DriftStatusSummary _driftStatusSummary;
-        private List<EnabledControlParameterSummary> _parameters = new List<EnabledControlParameterSummary>();
+        private List<EnabledControlParameterSummary> _parameters = AWSConfigs.InitializeCollections ? new List<EnabledControlParameterSummary>() : null;
         private EnablementStatusSummary _statusSummary;
         private string _targetIdentifier;
-        private List<Region> _targetRegions = new List<Region>();
+        private List<Region> _targetRegions = AWSConfigs.InitializeCollections ? new List<Region>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -114,7 +115,7 @@ namespace Amazon.ControlTower.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -171,7 +172,7 @@ namespace Amazon.ControlTower.Model
         // Check to see if TargetRegions property is set
         internal bool IsSetTargetRegions()
         {
-            return this._targetRegions != null && this._targetRegions.Count > 0; 
+            return this._targetRegions != null && (this._targetRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTEvents.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IoTEvents.Model
     public partial class SMSConfiguration
     {
         private string _additionalMessage;
-        private List<RecipientDetail> _recipients = new List<RecipientDetail>();
+        private List<RecipientDetail> _recipients = AWSConfigs.InitializeCollections ? new List<RecipientDetail>() : null;
         private string _senderId;
 
         /// <summary>
@@ -77,7 +78,7 @@ namespace Amazon.IoTEvents.Model
         // Check to see if Recipients property is set
         internal bool IsSetRecipients()
         {
-            return this._recipients != null && this._recipients.Count > 0; 
+            return this._recipients != null && (this._recipients.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

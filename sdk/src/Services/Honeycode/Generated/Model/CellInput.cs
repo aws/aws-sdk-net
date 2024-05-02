@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Honeycode.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.Honeycode.Model
     public partial class CellInput
     {
         private string _fact;
-        private List<string> _facts = new List<string>();
+        private List<string> _facts = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Fact. 
@@ -80,7 +81,7 @@ namespace Amazon.Honeycode.Model
         // Check to see if Facts property is set
         internal bool IsSetFacts()
         {
-            return this._facts != null && this._facts.Count > 0; 
+            return this._facts != null && (this._facts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

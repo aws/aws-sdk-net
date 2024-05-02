@@ -30,12 +30,13 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CachePolicyList Object
     /// </summary>  
-    public class CachePolicyListUnmarshaller : IUnmarshaller<CachePolicyList, XmlUnmarshallerContext>
+    public class CachePolicyListUnmarshaller : IUnmarshaller<CachePolicyList, XmlUnmarshallerContext>, IUnmarshaller<CachePolicyList, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -57,6 +58,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Items/CachePolicySummary", targetDepth))
                     {
+                        if (unmarshalledObject.Items == null)
+                        {
+                            unmarshalledObject.Items = new List<CachePolicySummary>();
+                        }
                         var unmarshaller = CachePolicySummaryUnmarshaller.Instance;
                         unmarshalledObject.Items.Add(unmarshaller.Unmarshall(context));
                         continue;
@@ -86,6 +91,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public CachePolicyList Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static CachePolicyListUnmarshaller _instance = new CachePolicyListUnmarshaller();        

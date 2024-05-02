@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CodeCommit.Model
     public partial class DescribePullRequestEventsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PullRequestEvent> _pullRequestEvents = new List<PullRequestEvent>();
+        private List<PullRequestEvent> _pullRequestEvents = AWSConfigs.InitializeCollections ? new List<PullRequestEvent>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if PullRequestEvents property is set
         internal bool IsSetPullRequestEvents()
         {
-            return this._pullRequestEvents != null && this._pullRequestEvents.Count > 0; 
+            return this._pullRequestEvents != null && (this._pullRequestEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

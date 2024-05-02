@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.QuickSight.Model
         /// Enumerable containing all of the AssetBundleImportJobSummaryList
         /// </summary>
         public IPaginatedEnumerable<AssetBundleImportJobSummary> AssetBundleImportJobSummaryList => 
-            new PaginatedResultKeyResponse<ListAssetBundleImportJobsResponse, AssetBundleImportJobSummary>(this, (i) => i.AssetBundleImportJobSummaryList);
+            new PaginatedResultKeyResponse<ListAssetBundleImportJobsResponse, AssetBundleImportJobSummary>(this, (i) => i.AssetBundleImportJobSummaryList ?? new List<AssetBundleImportJobSummary>());
 
         internal ListAssetBundleImportJobsPaginator(IAmazonQuickSight client, ListAssetBundleImportJobsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.QuickSight.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListAssetBundleImportJobsResponse> IPaginator<ListAssetBundleImportJobsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListAssetBundleImportJobsResponse> IPaginator<ListAssetBundleImportJobsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

@@ -26,11 +26,21 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
     /// Container for the parameters to the StartBuild operation.
-    /// Starts running a build.
+    /// Starts running a build with the settings defined in the project. These setting include:
+    /// how to run a build, where to get the source code, which build environment to use,
+    /// which build commands to run, and where to store the build output.
+    /// 
+    ///  
+    /// <para>
+    /// You can also start a build run by overriding some of the build settings in the project.
+    /// The overrides only apply for that specific start build request. The settings in the
+    /// project are unaltered.
+    /// </para>
     /// </summary>
     public partial class StartBuildRequest : AmazonCodeBuildRequest
     {
@@ -43,7 +53,7 @@ namespace Amazon.CodeBuild.Model
         private bool? _debugSessionEnabled;
         private string _encryptionKeyOverride;
         private EnvironmentType _environmentTypeOverride;
-        private List<EnvironmentVariable> _environmentVariablesOverride = new List<EnvironmentVariable>();
+        private List<EnvironmentVariable> _environmentVariablesOverride = AWSConfigs.InitializeCollections ? new List<EnvironmentVariable>() : null;
         private ProjectFleet _fleetOverride;
         private int? _gitCloneDepthOverride;
         private GitSubmodulesConfig _gitSubmodulesConfigOverride;
@@ -57,9 +67,9 @@ namespace Amazon.CodeBuild.Model
         private int? _queuedTimeoutInMinutesOverride;
         private RegistryCredential _registryCredentialOverride;
         private bool? _reportBuildStatusOverride;
-        private List<ProjectArtifacts> _secondaryArtifactsOverride = new List<ProjectArtifacts>();
-        private List<ProjectSource> _secondarySourcesOverride = new List<ProjectSource>();
-        private List<ProjectSourceVersion> _secondarySourcesVersionOverride = new List<ProjectSourceVersion>();
+        private List<ProjectArtifacts> _secondaryArtifactsOverride = AWSConfigs.InitializeCollections ? new List<ProjectArtifacts>() : null;
+        private List<ProjectSource> _secondarySourcesOverride = AWSConfigs.InitializeCollections ? new List<ProjectSource>() : null;
+        private List<ProjectSourceVersion> _secondarySourcesVersionOverride = AWSConfigs.InitializeCollections ? new List<ProjectSourceVersion>() : null;
         private string _serviceRoleOverride;
         private SourceAuth _sourceAuthOverride;
         private string _sourceLocationOverride;
@@ -89,20 +99,29 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property BuildspecOverride. 
         /// <para>
-        /// A buildspec file declaration that overrides, for this build only, the latest one already
-        /// defined in the build project.
+        /// A buildspec file declaration that overrides the latest one defined in the build project,
+        /// for this build only. The buildspec defined on the project is not changed.
         /// </para>
         ///  
         /// <para>
-        ///  If this value is set, it can be either an inline buildspec definition, the path to
+        /// If this value is set, it can be either an inline buildspec definition, the path to
         /// an alternate buildspec file relative to the value of the built-in <c>CODEBUILD_SRC_DIR</c>
         /// environment variable, or the path to an S3 bucket. The bucket must be in the same
         /// Amazon Web Services Region as the build project. Specify the buildspec file using
         /// its ARN (for example, <c>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</c>). If
         /// this value is not provided or is set to an empty string, the source code must contain
         /// a buildspec file in its root directory. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec
-        /// File Name and Storage Location</a>. 
+        /// File Name and Storage Location</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Since this property allows you to change the build commands that will run in the container,
+        /// you should note that an IAM principal with the ability to call this API and set this
+        /// parameter can override the default settings. Moreover, we encourage that you use a
+        /// trustworthy buildspec location like a file in your source repository or a Amazon S3
+        /// bucket.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string BuildspecOverride
         {
@@ -277,7 +296,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if EnvironmentVariablesOverride property is set
         internal bool IsSetEnvironmentVariablesOverride()
         {
-            return this._environmentVariablesOverride != null && this._environmentVariablesOverride.Count > 0; 
+            return this._environmentVariablesOverride != null && (this._environmentVariablesOverride.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -577,7 +596,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if SecondaryArtifactsOverride property is set
         internal bool IsSetSecondaryArtifactsOverride()
         {
-            return this._secondaryArtifactsOverride != null && this._secondaryArtifactsOverride.Count > 0; 
+            return this._secondaryArtifactsOverride != null && (this._secondaryArtifactsOverride.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -596,7 +615,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if SecondarySourcesOverride property is set
         internal bool IsSetSecondarySourcesOverride()
         {
-            return this._secondarySourcesOverride != null && this._secondarySourcesOverride.Count > 0; 
+            return this._secondarySourcesOverride != null && (this._secondarySourcesOverride.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -616,7 +635,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if SecondarySourcesVersionOverride property is set
         internal bool IsSetSecondarySourcesVersionOverride()
         {
-            return this._secondarySourcesVersionOverride != null && this._secondarySourcesVersionOverride.Count > 0; 
+            return this._secondarySourcesVersionOverride != null && (this._secondarySourcesVersionOverride.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

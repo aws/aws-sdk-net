@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.NetworkFirewall.Model
     {
         private StatefulAction _action;
         private Header _header;
-        private List<RuleOption> _ruleOptions = new List<RuleOption>();
+        private List<RuleOption> _ruleOptions = AWSConfigs.InitializeCollections ? new List<RuleOption>() : null;
 
         /// <summary>
         /// Gets and sets the property Action. 
@@ -123,7 +124,7 @@ namespace Amazon.NetworkFirewall.Model
         // Check to see if RuleOptions property is set
         internal bool IsSetRuleOptions()
         {
-            return this._ruleOptions != null && this._ruleOptions.Count > 0; 
+            return this._ruleOptions != null && (this._ruleOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

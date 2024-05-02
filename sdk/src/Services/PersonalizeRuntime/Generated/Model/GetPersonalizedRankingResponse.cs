@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PersonalizeRuntime.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.PersonalizeRuntime.Model
     /// </summary>
     public partial class GetPersonalizedRankingResponse : AmazonWebServiceResponse
     {
-        private List<PredictedItem> _personalizedRanking = new List<PredictedItem>();
+        private List<PredictedItem> _personalizedRanking = AWSConfigs.InitializeCollections ? new List<PredictedItem>() : null;
         private string _recommendationId;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.PersonalizeRuntime.Model
         // Check to see if PersonalizedRanking property is set
         internal bool IsSetPersonalizedRanking()
         {
-            return this._personalizedRanking != null && this._personalizedRanking.Count > 0; 
+            return this._personalizedRanking != null && (this._personalizedRanking.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTTwinMaker.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IoTTwinMaker.Model
     public partial class ListSyncJobsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SyncJobSummary> _syncJobSummaries = new List<SyncJobSummary>();
+        private List<SyncJobSummary> _syncJobSummaries = AWSConfigs.InitializeCollections ? new List<SyncJobSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if SyncJobSummaries property is set
         internal bool IsSetSyncJobSummaries()
         {
-            return this._syncJobSummaries != null && this._syncJobSummaries.Count > 0; 
+            return this._syncJobSummaries != null && (this._syncJobSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

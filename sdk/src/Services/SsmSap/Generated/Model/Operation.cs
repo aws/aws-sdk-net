@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SsmSap.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.SsmSap.Model
         private DateTime? _endTime;
         private string _id;
         private DateTime? _lastUpdatedTime;
-        private Dictionary<string, string> _properties = new Dictionary<string, string>();
+        private Dictionary<string, string> _properties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _resourceArn;
         private string _resourceId;
         private string _resourceType;
@@ -114,7 +115,7 @@ namespace Amazon.SsmSap.Model
         // Check to see if Properties property is set
         internal bool IsSetProperties()
         {
-            return this._properties != null && this._properties.Count > 0; 
+            return this._properties != null && (this._properties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

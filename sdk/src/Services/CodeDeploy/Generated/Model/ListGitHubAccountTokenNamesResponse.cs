@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CodeDeploy.Model
     public partial class ListGitHubAccountTokenNamesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<string> _tokenNameList = new List<string>();
+        private List<string> _tokenNameList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if TokenNameList property is set
         internal bool IsSetTokenNameList()
         {
-            return this._tokenNameList != null && this._tokenNameList.Count > 0; 
+            return this._tokenNameList != null && (this._tokenNameList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

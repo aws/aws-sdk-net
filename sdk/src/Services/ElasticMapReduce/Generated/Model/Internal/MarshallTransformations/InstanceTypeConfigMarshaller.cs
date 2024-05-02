@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InstanceTypeConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBidPrice())
             {
                 context.Writer.WritePropertyName("BidPrice");
@@ -54,7 +57,14 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBidPriceAsPercentageOfOnDemandPrice())
             {
                 context.Writer.WritePropertyName("BidPriceAsPercentageOfOnDemandPrice");
-                context.Writer.Write(requestObject.BidPriceAsPercentageOfOnDemandPrice.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.BidPriceAsPercentageOfOnDemandPrice.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.BidPriceAsPercentageOfOnDemandPrice.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.BidPriceAsPercentageOfOnDemandPrice.Value);
+                }
             }
 
             if(requestObject.IsSetConfigurations())

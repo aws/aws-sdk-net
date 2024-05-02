@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ModifyIpamPoolRequest : AmazonEC2Request
     {
-        private List<RequestIpamResourceTag> _addAllocationResourceTags = new List<RequestIpamResourceTag>();
+        private List<RequestIpamResourceTag> _addAllocationResourceTags = AWSConfigs.InitializeCollections ? new List<RequestIpamResourceTag>() : null;
         private int? _allocationDefaultNetmaskLength;
         private int? _allocationMaxNetmaskLength;
         private int? _allocationMinNetmaskLength;
@@ -48,7 +49,7 @@ namespace Amazon.EC2.Model
         private bool? _clearAllocationDefaultNetmaskLength;
         private string _description;
         private string _ipamPoolId;
-        private List<RequestIpamResourceTag> _removeAllocationResourceTags = new List<RequestIpamResourceTag>();
+        private List<RequestIpamResourceTag> _removeAllocationResourceTags = AWSConfigs.InitializeCollections ? new List<RequestIpamResourceTag>() : null;
 
         /// <summary>
         /// Gets and sets the property AddAllocationResourceTags. 
@@ -67,7 +68,7 @@ namespace Amazon.EC2.Model
         // Check to see if AddAllocationResourceTags property is set
         internal bool IsSetAddAllocationResourceTags()
         {
-            return this._addAllocationResourceTags != null && this._addAllocationResourceTags.Count > 0; 
+            return this._addAllocationResourceTags != null && (this._addAllocationResourceTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -234,7 +235,7 @@ namespace Amazon.EC2.Model
         // Check to see if RemoveAllocationResourceTags property is set
         internal bool IsSetRemoveAllocationResourceTags()
         {
-            return this._removeAllocationResourceTags != null && this._removeAllocationResourceTags.Count > 0; 
+            return this._removeAllocationResourceTags != null && (this._removeAllocationResourceTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

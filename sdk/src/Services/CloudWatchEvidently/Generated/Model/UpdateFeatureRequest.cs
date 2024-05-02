@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchEvidently.Model
 {
     /// <summary>
@@ -41,14 +42,14 @@ namespace Amazon.CloudWatchEvidently.Model
     /// </summary>
     public partial class UpdateFeatureRequest : AmazonCloudWatchEvidentlyRequest
     {
-        private List<VariationConfig> _addOrUpdateVariations = new List<VariationConfig>();
+        private List<VariationConfig> _addOrUpdateVariations = AWSConfigs.InitializeCollections ? new List<VariationConfig>() : null;
         private string _defaultVariation;
         private string _description;
-        private Dictionary<string, string> _entityOverrides = new Dictionary<string, string>();
+        private Dictionary<string, string> _entityOverrides = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private FeatureEvaluationStrategy _evaluationStrategy;
         private string _feature;
         private string _project;
-        private List<string> _removeVariations = new List<string>();
+        private List<string> _removeVariations = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AddOrUpdateVariations. 
@@ -69,7 +70,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if AddOrUpdateVariations property is set
         internal bool IsSetAddOrUpdateVariations()
         {
-            return this._addOrUpdateVariations != null && this._addOrUpdateVariations.Count > 0; 
+            return this._addOrUpdateVariations != null && (this._addOrUpdateVariations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -136,7 +137,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if EntityOverrides property is set
         internal bool IsSetEntityOverrides()
         {
-            return this._entityOverrides != null && this._entityOverrides.Count > 0; 
+            return this._entityOverrides != null && (this._entityOverrides.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -219,7 +220,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if RemoveVariations property is set
         internal bool IsSetRemoveVariations()
         {
-            return this._removeVariations != null && this._removeVariations.Count > 0; 
+            return this._removeVariations != null && (this._removeVariations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

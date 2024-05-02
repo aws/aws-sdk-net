@@ -30,12 +30,13 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Route53.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for HealthCheckConfig Object
     /// </summary>  
-    public class HealthCheckConfigUnmarshaller : IUnmarshaller<HealthCheckConfig, XmlUnmarshallerContext>
+    public class HealthCheckConfigUnmarshaller : IUnmarshaller<HealthCheckConfig, XmlUnmarshallerContext>, IUnmarshaller<HealthCheckConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -129,6 +130,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("ChildHealthChecks/ChildHealthCheck", targetDepth))
                     {
+                        if (unmarshalledObject.ChildHealthChecks == null)
+                        {
+                            unmarshalledObject.ChildHealthChecks = new List<string>();
+                        }
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.ChildHealthChecks.Add(unmarshaller.Unmarshall(context));
                         continue;
@@ -141,6 +146,10 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Regions/Region", targetDepth))
                     {
+                        if (unmarshalledObject.Regions == null)
+                        {
+                            unmarshalledObject.Regions = new List<string>();
+                        }
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Regions.Add(unmarshaller.Unmarshall(context));
                         continue;
@@ -170,6 +179,16 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public HealthCheckConfig Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static HealthCheckConfigUnmarshaller _instance = new HealthCheckConfigUnmarshaller();        

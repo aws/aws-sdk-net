@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
@@ -34,12 +35,12 @@ namespace Amazon.WellArchitected.Model
     public partial class ReviewTemplate
     {
         private string _description;
-        private List<string> _lenses = new List<string>();
+        private List<string> _lenses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _notes;
         private string _owner;
-        private Dictionary<string, int> _questionCounts = new Dictionary<string, int>();
+        private Dictionary<string, int> _questionCounts = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
         private string _shareInvitationId;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _templateArn;
         private string _templateName;
         private DateTime? _updatedAt;
@@ -79,7 +80,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if Lenses property is set
         internal bool IsSetLenses()
         {
-            return this._lenses != null && this._lenses.Count > 0; 
+            return this._lenses != null && (this._lenses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -129,7 +130,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if QuestionCounts property is set
         internal bool IsSetQuestionCounts()
         {
-            return this._questionCounts != null && this._questionCounts.Count > 0; 
+            return this._questionCounts != null && (this._questionCounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -166,7 +167,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

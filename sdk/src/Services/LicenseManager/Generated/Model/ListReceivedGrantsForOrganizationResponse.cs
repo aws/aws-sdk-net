@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LicenseManager.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.LicenseManager.Model
     /// </summary>
     public partial class ListReceivedGrantsForOrganizationResponse : AmazonWebServiceResponse
     {
-        private List<Grant> _grants = new List<Grant>();
+        private List<Grant> _grants = AWSConfigs.InitializeCollections ? new List<Grant>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if Grants property is set
         internal bool IsSetGrants()
         {
-            return this._grants != null && this._grants.Count > 0; 
+            return this._grants != null && (this._grants.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

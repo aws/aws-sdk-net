@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.CodeBuild.Model
         private int? _desiredCapacity;
         private int? _maxCapacity;
         private FleetScalingType _scalingType;
-        private List<TargetTrackingScalingConfiguration> _targetTrackingScalingConfigs = new List<TargetTrackingScalingConfiguration>();
+        private List<TargetTrackingScalingConfiguration> _targetTrackingScalingConfigs = AWSConfigs.InitializeCollections ? new List<TargetTrackingScalingConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property DesiredCapacity. 
@@ -109,7 +110,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if TargetTrackingScalingConfigs property is set
         internal bool IsSetTargetTrackingScalingConfigs()
         {
-            return this._targetTrackingScalingConfigs != null && this._targetTrackingScalingConfigs.Count > 0; 
+            return this._targetTrackingScalingConfigs != null && (this._targetTrackingScalingConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

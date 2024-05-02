@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -64,6 +65,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = NullableIntUnmarshaller.Instance;
                         unmarshalledObject.BackupRetentionPeriod = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("CertificateDetails", targetDepth))
+                    {
+                        var unmarshaller = CertificateDetailsUnmarshaller.Instance;
+                        unmarshalledObject.CertificateDetails = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("DBClusterIdentifier", targetDepth))

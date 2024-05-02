@@ -26,12 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
     /// Container for the parameters to the StartApplication operation.
-    /// Starts the specified Kinesis Data Analytics application. After creating an application,
-    /// you must exclusively call this operation to start your application.
+    /// Starts the specified Managed Service for Apache Flink application. After creating
+    /// an application, you must exclusively call this operation to start your application.
     /// </summary>
     public partial class StartApplicationRequest : AmazonKinesisAnalyticsV2Request
     {
@@ -60,7 +61,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property RunConfiguration. 
         /// <para>
-        /// Identifies the run configuration (start parameters) of a Kinesis Data Analytics application.
+        /// Identifies the run configuration (start parameters) of a Managed Service for Apache
+        /// Flink application.
         /// </para>
         /// </summary>
         public RunConfiguration RunConfiguration

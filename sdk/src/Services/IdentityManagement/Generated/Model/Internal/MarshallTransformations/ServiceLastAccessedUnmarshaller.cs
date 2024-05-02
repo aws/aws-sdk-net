@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -93,6 +94,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("TrackedActionsLastAccessed/member", targetDepth))
                     {
                         var unmarshaller = TrackedActionLastAccessedUnmarshaller.Instance;
+                        if (unmarshalledObject.TrackedActionsLastAccessed == null)
+                        {
+                            unmarshalledObject.TrackedActionsLastAccessed = new List<TrackedActionLastAccessed>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.TrackedActionsLastAccessed.Add(item);
                         continue;

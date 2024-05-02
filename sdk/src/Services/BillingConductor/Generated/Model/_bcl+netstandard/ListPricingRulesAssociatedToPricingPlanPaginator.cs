@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.BillingConductor.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.BillingConductor.Model
         /// Enumerable containing all of the PricingRuleArns
         /// </summary>
         public IPaginatedEnumerable<string> PricingRuleArns => 
-            new PaginatedResultKeyResponse<ListPricingRulesAssociatedToPricingPlanResponse, string>(this, (i) => i.PricingRuleArns);
+            new PaginatedResultKeyResponse<ListPricingRulesAssociatedToPricingPlanResponse, string>(this, (i) => i.PricingRuleArns ?? new List<string>());
 
         internal ListPricingRulesAssociatedToPricingPlanPaginator(IAmazonBillingConductor client, ListPricingRulesAssociatedToPricingPlanRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.BillingConductor.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListPricingRulesAssociatedToPricingPlanResponse> IPaginator<ListPricingRulesAssociatedToPricingPlanResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListPricingRulesAssociatedToPricingPlanResponse> IPaginator<ListPricingRulesAssociatedToPricingPlanResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

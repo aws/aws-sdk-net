@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.AuditManager.Model
     public partial class BatchDeleteDelegationByAssessmentRequest : AmazonAuditManagerRequest
     {
         private string _assessmentId;
-        private List<string> _delegationIds = new List<string>();
+        private List<string> _delegationIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AssessmentId. 
@@ -72,7 +73,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if DelegationIds property is set
         internal bool IsSetDelegationIds()
         {
-            return this._delegationIds != null && this._delegationIds.Count > 0; 
+            return this._delegationIds != null && (this._delegationIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

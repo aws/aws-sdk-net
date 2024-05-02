@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTTwinMaker.Model
 {
     /// <summary>
@@ -36,16 +37,16 @@ namespace Amazon.IoTTwinMaker.Model
         private string _arn;
         private string _componentTypeId;
         private string _componentTypeName;
-        private Dictionary<string, CompositeComponentTypeResponse> _compositeComponentTypes = new Dictionary<string, CompositeComponentTypeResponse>();
+        private Dictionary<string, CompositeComponentTypeResponse> _compositeComponentTypes = AWSConfigs.InitializeCollections ? new Dictionary<string, CompositeComponentTypeResponse>() : null;
         private DateTime? _creationDateTime;
         private string _description;
-        private List<string> _extendsFrom = new List<string>();
-        private Dictionary<string, FunctionResponse> _functions = new Dictionary<string, FunctionResponse>();
+        private List<string> _extendsFrom = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, FunctionResponse> _functions = AWSConfigs.InitializeCollections ? new Dictionary<string, FunctionResponse>() : null;
         private bool? _isAbstract;
         private bool? _isSchemaInitialized;
         private bool? _isSingleton;
-        private Dictionary<string, PropertyDefinitionResponse> _propertyDefinitions = new Dictionary<string, PropertyDefinitionResponse>();
-        private Dictionary<string, PropertyGroupResponse> _propertyGroups = new Dictionary<string, PropertyGroupResponse>();
+        private Dictionary<string, PropertyDefinitionResponse> _propertyDefinitions = AWSConfigs.InitializeCollections ? new Dictionary<string, PropertyDefinitionResponse>() : null;
+        private Dictionary<string, PropertyGroupResponse> _propertyGroups = AWSConfigs.InitializeCollections ? new Dictionary<string, PropertyGroupResponse>() : null;
         private Status _status;
         private string _syncSource;
         private DateTime? _updateDateTime;
@@ -124,7 +125,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if CompositeComponentTypes property is set
         internal bool IsSetCompositeComponentTypes()
         {
-            return this._compositeComponentTypes != null && this._compositeComponentTypes.Count > 0; 
+            return this._compositeComponentTypes != null && (this._compositeComponentTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -180,7 +181,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if ExtendsFrom property is set
         internal bool IsSetExtendsFrom()
         {
-            return this._extendsFrom != null && this._extendsFrom.Count > 0; 
+            return this._extendsFrom != null && (this._extendsFrom.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -199,7 +200,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if Functions property is set
         internal bool IsSetFunctions()
         {
-            return this._functions != null && this._functions.Count > 0; 
+            return this._functions != null && (this._functions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -274,7 +275,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if PropertyDefinitions property is set
         internal bool IsSetPropertyDefinitions()
         {
-            return this._propertyDefinitions != null && this._propertyDefinitions.Count > 0; 
+            return this._propertyDefinitions != null && (this._propertyDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -296,7 +297,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if PropertyGroups property is set
         internal bool IsSetPropertyGroups()
         {
-            return this._propertyGroups != null && this._propertyGroups.Count > 0; 
+            return this._propertyGroups != null && (this._propertyGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

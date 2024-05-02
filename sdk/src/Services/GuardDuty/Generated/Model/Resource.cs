@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.GuardDuty.Model
         private RdsDbInstanceDetails _rdsDbInstanceDetails;
         private RdsDbUserDetails _rdsDbUserDetails;
         private string _resourceType;
-        private List<S3BucketDetail> _s3BucketDetails = new List<S3BucketDetail>();
+        private List<S3BucketDetail> _s3BucketDetails = AWSConfigs.InitializeCollections ? new List<S3BucketDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property AccessKeyDetails. 
@@ -261,7 +262,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if S3BucketDetails property is set
         internal bool IsSetS3BucketDetails()
         {
-            return this._s3BucketDetails != null && this._s3BucketDetails.Count > 0; 
+            return this._s3BucketDetails != null && (this._s3BucketDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

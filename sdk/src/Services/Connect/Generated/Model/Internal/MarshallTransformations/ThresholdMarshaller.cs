@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Threshold requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetComparison())
             {
                 context.Writer.WritePropertyName("Comparison");
@@ -54,7 +57,14 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetThresholdValue())
             {
                 context.Writer.WritePropertyName("ThresholdValue");
-                context.Writer.Write(requestObject.ThresholdValue.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ThresholdValue.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ThresholdValue.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.ThresholdValue.Value);
+                }
             }
 
         }

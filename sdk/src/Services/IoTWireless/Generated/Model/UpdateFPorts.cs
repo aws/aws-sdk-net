@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoTWireless.Model
     /// </summary>
     public partial class UpdateFPorts
     {
-        private List<ApplicationConfig> _applications = new List<ApplicationConfig>();
+        private List<ApplicationConfig> _applications = AWSConfigs.InitializeCollections ? new List<ApplicationConfig>() : null;
         private Positioning _positioning;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if Applications property is set
         internal bool IsSetApplications()
         {
-            return this._applications != null && this._applications.Count > 0; 
+            return this._applications != null && (this._applications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

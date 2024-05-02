@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RoboMaker.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.RoboMaker.Model
         private string _application;
         private string _currentRevisionId;
         private string _imageDigest;
-        private List<string> _s3Etags = new List<string>();
+        private List<string> _s3Etags = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Application. 
@@ -112,7 +113,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if S3Etags property is set
         internal bool IsSetS3Etags()
         {
-            return this._s3Etags != null && this._s3Etags.Count > 0; 
+            return this._s3Etags != null && (this._s3Etags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

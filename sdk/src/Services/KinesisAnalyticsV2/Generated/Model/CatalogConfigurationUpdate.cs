@@ -26,12 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
     /// Updates to the configuration parameters for the default Amazon Glue database. You
-    /// use this database for SQL queries that you write in a Kinesis Data Analytics Studio
-    /// notebook.
+    /// use this database for SQL queries that you write in a Managed Service for Apache Flink
+    /// Studio notebook.
     /// </summary>
     public partial class CatalogConfigurationUpdate
     {
@@ -41,8 +42,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Gets and sets the property GlueDataCatalogConfigurationUpdate. 
         /// <para>
         /// Updates to the configuration parameters for the default Amazon Glue database. You
-        /// use this database for SQL queries that you write in a Kinesis Data Analytics Studio
-        /// notebook.
+        /// use this database for SQL queries that you write in a Managed Service for Apache Flink
+        /// Studio notebook.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

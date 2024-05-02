@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -46,7 +47,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     {
         private int? _maxResults;
         private string _nextToken;
-        private List<ParameterStringFilter> _parameterFilters = new List<ParameterStringFilter>();
+        private List<ParameterStringFilter> _parameterFilters = AWSConfigs.InitializeCollections ? new List<ParameterStringFilter>() : null;
         private string _path;
         private bool? _recursive;
         private bool? _withDecryption;
@@ -115,7 +116,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if ParameterFilters property is set
         internal bool IsSetParameterFilters()
         {
-            return this._parameterFilters != null && this._parameterFilters.Count > 0; 
+            return this._parameterFilters != null && (this._parameterFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

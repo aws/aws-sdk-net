@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.GameLift.Model
         /// Enumerable containing all of the FleetUtilization
         /// </summary>
         public IPaginatedEnumerable<FleetUtilization> FleetUtilization => 
-            new PaginatedResultKeyResponse<DescribeFleetUtilizationResponse, FleetUtilization>(this, (i) => i.FleetUtilization);
+            new PaginatedResultKeyResponse<DescribeFleetUtilizationResponse, FleetUtilization>(this, (i) => i.FleetUtilization ?? new List<FleetUtilization>());
 
         internal DescribeFleetUtilizationPaginator(IAmazonGameLift client, DescribeFleetUtilizationRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.GameLift.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeFleetUtilizationResponse> IPaginator<DescribeFleetUtilizationResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeFleetUtilizationResponse> IPaginator<DescribeFleetUtilizationResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

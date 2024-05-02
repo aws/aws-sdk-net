@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// An issue occurred with the internal server used for your Amazon Q service. Wait some
-    /// minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+    /// An issue occurred with the internal server used for your Amazon Q Business service.
+    /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
     /// for help.
     /// </summary>
     #if !NETSTANDARD

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GameLift.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class ListGameServersResponse : AmazonWebServiceResponse
     {
-        private List<GameServer> _gameServers = new List<GameServer>();
+        private List<GameServer> _gameServers = AWSConfigs.InitializeCollections ? new List<GameServer>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.GameLift.Model
         // Check to see if GameServers property is set
         internal bool IsSetGameServers()
         {
-            return this._gameServers != null && this._gameServers.Count > 0; 
+            return this._gameServers != null && (this._gameServers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

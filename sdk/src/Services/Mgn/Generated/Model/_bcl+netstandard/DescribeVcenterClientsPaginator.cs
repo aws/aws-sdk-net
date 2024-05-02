@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Mgn.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Mgn.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<VcenterClient> Items => 
-            new PaginatedResultKeyResponse<DescribeVcenterClientsResponse, VcenterClient>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<DescribeVcenterClientsResponse, VcenterClient>(this, (i) => i.Items ?? new List<VcenterClient>());
 
         internal DescribeVcenterClientsPaginator(IAmazonMgn client, DescribeVcenterClientsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Mgn.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeVcenterClientsResponse> IPaginator<DescribeVcenterClientsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeVcenterClientsResponse> IPaginator<DescribeVcenterClientsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

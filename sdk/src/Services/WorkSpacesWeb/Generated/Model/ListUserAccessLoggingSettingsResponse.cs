@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkSpacesWeb.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.WorkSpacesWeb.Model
     public partial class ListUserAccessLoggingSettingsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<UserAccessLoggingSettingsSummary> _userAccessLoggingSettings = new List<UserAccessLoggingSettingsSummary>();
+        private List<UserAccessLoggingSettingsSummary> _userAccessLoggingSettings = AWSConfigs.InitializeCollections ? new List<UserAccessLoggingSettingsSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.WorkSpacesWeb.Model
         // Check to see if UserAccessLoggingSettings property is set
         internal bool IsSetUserAccessLoggingSettings()
         {
-            return this._userAccessLoggingSettings != null && this._userAccessLoggingSettings.Count > 0; 
+            return this._userAccessLoggingSettings != null && (this._userAccessLoggingSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

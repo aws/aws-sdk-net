@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.CloudWatchEvents.Model
     {
         private string _detail;
         private string _detailType;
-        private List<string> _resources = new List<string>();
+        private List<string> _resources = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _source;
         private DateTime? _time;
 
@@ -92,7 +93,7 @@ namespace Amazon.CloudWatchEvents.Model
         // Check to see if Resources property is set
         internal bool IsSetResources()
         {
-            return this._resources != null && this._resources.Count > 0; 
+            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

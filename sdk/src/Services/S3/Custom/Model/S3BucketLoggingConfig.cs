@@ -27,7 +27,7 @@ namespace Amazon.S3.Model
     /// </summary>
     public class S3BucketLoggingConfig
     {
-        private List<S3Grant> targetGrants = new List<S3Grant>();
+        private List<S3Grant> targetGrants = AWSConfigs.InitializeCollections ? new List<S3Grant>() : null;
 
         /// <summary>
         /// Specifies the bucket where you want Amazon S3 to store server access logs. You can have your logs delivered to any bucket that you own,
@@ -60,7 +60,7 @@ namespace Amazon.S3.Model
         // Check to see if TargetGrants property is set
         internal bool IsSetGrants()
         {
-            return this.targetGrants.Count > 0;
+            return this.targetGrants != null && (this.targetGrants.Count > 0 || !AWSConfigs.InitializeCollections);
         }
 
         private TargetObjectKeyFormat _targetObjectKeyFormat;
@@ -105,6 +105,11 @@ namespace Amazon.S3.Model
         /// <param name="permission">The permission for the grantee.</param>
         public void AddGrant(S3Grantee grantee, S3Permission permission)
         {
+            if (Grants == null)
+            {
+                Grants = new List<S3Grant>();
+            }
+
             S3Grant grant = new S3Grant{ Grantee = grantee, Permission = permission };
             Grants.Add(grant);
         }
@@ -116,12 +121,15 @@ namespace Amazon.S3.Model
         /// <param name="permission">The permission for the grantee to remove</param>
         public void RemoveGrant(S3Grantee grantee, S3Permission permission)
         {
-            foreach (S3Grant grant in Grants)
+            if (Grants != null)
             {
-                if (grant.Grantee.Equals(grantee) && grant.Permission == permission)
+                foreach (S3Grant grant in Grants)
                 {
-                    Grants.Remove(grant);
-                    break;
+                    if (grant.Grantee.Equals(grantee) && grant.Permission == permission)
+                    {
+                        Grants.Remove(grant);
+                        break;
+                    }
                 }
             }
         }
@@ -132,17 +140,20 @@ namespace Amazon.S3.Model
         /// <param name="grantee"></param>
         public void RemoveGrant(S3Grantee grantee)
         {
-            List<S3Grant> removeList = new List<S3Grant>();
-            foreach (S3Grant grant in Grants)
+            if (this.Grants != null)
             {
-                if (grant.Grantee.Equals(grantee))
+                List<S3Grant> removeList = new List<S3Grant>();
+                foreach (S3Grant grant in Grants)
                 {
-                    removeList.Add(grant);
+                    if (grant.Grantee.Equals(grantee))
+                    {
+                        removeList.Add(grant);
+                    }
                 }
-            }
-            foreach (S3Grant grant in removeList)
-            {
-                this.Grants.Remove(grant);
+                foreach (S3Grant grant in removeList)
+                {
+                    this.Grants.Remove(grant);
+                }
             }
         }
     }

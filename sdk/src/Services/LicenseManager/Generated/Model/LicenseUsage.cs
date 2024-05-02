@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LicenseManager.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.LicenseManager.Model
     /// </summary>
     public partial class LicenseUsage
     {
-        private List<EntitlementUsage> _entitlementUsages = new List<EntitlementUsage>();
+        private List<EntitlementUsage> _entitlementUsages = AWSConfigs.InitializeCollections ? new List<EntitlementUsage>() : null;
 
         /// <summary>
         /// Gets and sets the property EntitlementUsages. 
@@ -50,7 +51,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if EntitlementUsages property is set
         internal bool IsSetEntitlementUsages()
         {
-            return this._entitlementUsages != null && this._entitlementUsages.Count > 0; 
+            return this._entitlementUsages != null && (this._entitlementUsages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

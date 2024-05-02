@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.MachineLearning.Model
     public partial class DescribeMLModelsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<MLModel> _results = new List<MLModel>();
+        private List<MLModel> _results = AWSConfigs.InitializeCollections ? new List<MLModel>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.MachineLearning.Model
         // Check to see if Results property is set
         internal bool IsSetResults()
         {
-            return this._results != null && this._results.Count > 0; 
+            return this._results != null && (this._results.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

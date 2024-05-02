@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -35,8 +36,8 @@ namespace Amazon.SecurityHub.Model
     {
         private bool? _autoprovision;
         private string _driver;
-        private Dictionary<string, string> _driverOpts = new Dictionary<string, string>();
-        private Dictionary<string, string> _labels = new Dictionary<string, string>();
+        private Dictionary<string, string> _driverOpts = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, string> _labels = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _scope;
 
         /// <summary>
@@ -90,7 +91,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if DriverOpts property is set
         internal bool IsSetDriverOpts()
         {
-            return this._driverOpts != null && this._driverOpts.Count > 0; 
+            return this._driverOpts != null && (this._driverOpts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -108,7 +109,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Labels property is set
         internal bool IsSetLabels()
         {
-            return this._labels != null && this._labels.Count > 0; 
+            return this._labels != null && (this._labels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

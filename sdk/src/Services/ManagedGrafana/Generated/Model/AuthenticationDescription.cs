@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ManagedGrafana.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.ManagedGrafana.Model
     public partial class AuthenticationDescription
     {
         private AwsSsoAuthentication _awsSso;
-        private List<string> _providers = new List<string>();
+        private List<string> _providers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SamlAuthentication _saml;
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.ManagedGrafana.Model
         // Check to see if Providers property is set
         internal bool IsSetProviders()
         {
-            return this._providers != null && this._providers.Count > 0; 
+            return this._providers != null && (this._providers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

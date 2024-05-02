@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FIS.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.FIS.Model
     public partial class ListTargetResourceTypesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TargetResourceTypeSummary> _targetResourceTypes = new List<TargetResourceTypeSummary>();
+        private List<TargetResourceTypeSummary> _targetResourceTypes = AWSConfigs.InitializeCollections ? new List<TargetResourceTypeSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.FIS.Model
         // Check to see if TargetResourceTypes property is set
         internal bool IsSetTargetResourceTypes()
         {
-            return this._targetResourceTypes != null && this._targetResourceTypes.Count > 0; 
+            return this._targetResourceTypes != null && (this._targetResourceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

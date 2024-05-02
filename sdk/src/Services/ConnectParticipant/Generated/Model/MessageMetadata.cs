@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConnectParticipant.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ConnectParticipant.Model
     public partial class MessageMetadata
     {
         private string _messageId;
-        private List<Receipt> _receipts = new List<Receipt>();
+        private List<Receipt> _receipts = AWSConfigs.InitializeCollections ? new List<Receipt>() : null;
 
         /// <summary>
         /// Gets and sets the property MessageId. 
@@ -70,7 +71,7 @@ namespace Amazon.ConnectParticipant.Model
         // Check to see if Receipts property is set
         internal bool IsSetReceipts()
         {
-            return this._receipts != null && this._receipts.Count > 0; 
+            return this._receipts != null && (this._receipts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

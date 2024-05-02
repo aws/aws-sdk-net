@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeArtifact.Model
 {
     /// <summary>
@@ -55,8 +56,8 @@ namespace Amazon.CodeArtifact.Model
         private string _awsNamespace;
         private string _package;
         private string _repository;
-        private Dictionary<string, string> _versionRevisions = new Dictionary<string, string>();
-        private List<string> _versions = new List<string>();
+        private Dictionary<string, string> _versionRevisions = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<string> _versions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Domain. 
@@ -137,25 +138,41 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The namespace of the package versions to be disposed. The package version component
-        /// that specifies its namespace depends on its type. For example:
+        /// The namespace of the package versions to be disposed. The package component that specifies
+        /// its namespace depends on its type. For example:
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The namespace is required when disposing package versions of the following formats:
         /// </para>
         ///  <ul> <li> 
+        /// <para>
+        /// Maven
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Swift
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// generic
+        /// </para>
+        ///  </li> </ul> </note> <ul> <li> 
         /// <para>
         ///  The namespace of a Maven package version is its <c>groupId</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The namespace of an npm package version is its <c>scope</c>. 
+        ///  The namespace of an npm or Swift package version is its <c>scope</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Python and NuGet package versions do not contain a corresponding component, package
-        /// versions of those formats do not have a namespace. 
+        /// The namespace of a generic package is its <c>namespace</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The namespace of a generic package is its <c>namespace</c>. 
+        ///  Python, NuGet, and Ruby package versions do not contain a corresponding component,
+        /// package versions of those formats do not have a namespace. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -226,7 +243,7 @@ namespace Amazon.CodeArtifact.Model
         // Check to see if VersionRevisions property is set
         internal bool IsSetVersionRevisions()
         {
-            return this._versionRevisions != null && this._versionRevisions.Count > 0; 
+            return this._versionRevisions != null && (this._versionRevisions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -245,7 +262,7 @@ namespace Amazon.CodeArtifact.Model
         // Check to see if Versions property is set
         internal bool IsSetVersions()
         {
-            return this._versions != null && this._versions.Count > 0; 
+            return this._versions != null && (this._versions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

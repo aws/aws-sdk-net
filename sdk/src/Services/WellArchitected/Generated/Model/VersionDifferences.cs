@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.WellArchitected.Model
     /// </summary>
     public partial class VersionDifferences
     {
-        private List<PillarDifference> _pillarDifferences = new List<PillarDifference>();
+        private List<PillarDifference> _pillarDifferences = AWSConfigs.InitializeCollections ? new List<PillarDifference>() : null;
 
         /// <summary>
         /// Gets and sets the property PillarDifferences. 
@@ -50,7 +51,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if PillarDifferences property is set
         internal bool IsSetPillarDifferences()
         {
-            return this._pillarDifferences != null && this._pillarDifferences.Count > 0; 
+            return this._pillarDifferences != null && (this._pillarDifferences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SagemakerEdgeManager.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SagemakerEdgeManager.Model
     /// </summary>
     public partial class EdgeDeployment
     {
-        private List<Definition> _definitions = new List<Definition>();
+        private List<Definition> _definitions = AWSConfigs.InitializeCollections ? new List<Definition>() : null;
         private string _deploymentName;
         private FailureHandlingPolicy _failureHandlingPolicy;
         private DeploymentType _type;
@@ -54,7 +55,7 @@ namespace Amazon.SagemakerEdgeManager.Model
         // Check to see if Definitions property is set
         internal bool IsSetDefinitions()
         {
-            return this._definitions != null && this._definitions.Count > 0; 
+            return this._definitions != null && (this._definitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.GuardDuty.Model
     {
         private int? _itemCount;
         private bool? _shortened;
-        private List<ScanThreatName> _threatNames = new List<ScanThreatName>();
+        private List<ScanThreatName> _threatNames = AWSConfigs.InitializeCollections ? new List<ScanThreatName>() : null;
         private int? _uniqueThreatNameCount;
 
         /// <summary>
@@ -90,7 +91,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if ThreatNames property is set
         internal bool IsSetThreatNames()
         {
-            return this._threatNames != null && this._threatNames.Count > 0; 
+            return this._threatNames != null && (this._threatNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

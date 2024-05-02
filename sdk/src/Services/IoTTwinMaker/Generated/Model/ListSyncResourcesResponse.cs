@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTTwinMaker.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IoTTwinMaker.Model
     public partial class ListSyncResourcesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SyncResourceSummary> _syncResources = new List<SyncResourceSummary>();
+        private List<SyncResourceSummary> _syncResources = AWSConfigs.InitializeCollections ? new List<SyncResourceSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if SyncResources property is set
         internal bool IsSetSyncResources()
         {
-            return this._syncResources != null && this._syncResources.Count > 0; 
+            return this._syncResources != null && (this._syncResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -96,6 +97,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("SSHPublicKeys/member", targetDepth))
                     {
                         var unmarshaller = SSHPublicKeyMetadataUnmarshaller.Instance;
+                        if (response.SSHPublicKeys == null)
+                        {
+                            response.SSHPublicKeys = new List<SSHPublicKeyMetadata>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.SSHPublicKeys.Add(item);
                         continue;

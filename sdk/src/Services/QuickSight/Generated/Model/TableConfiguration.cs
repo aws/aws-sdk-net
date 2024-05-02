@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.QuickSight.Model
         private VisualInteractionOptions _interactions;
         private TablePaginatedReportOptions _paginatedReportOptions;
         private TableSortConfiguration _sortConfiguration;
-        private List<TableInlineVisualization> _tableInlineVisualizations = new List<TableInlineVisualization>();
+        private List<TableInlineVisualization> _tableInlineVisualizations = AWSConfigs.InitializeCollections ? new List<TableInlineVisualization>() : null;
         private TableOptions _tableOptions;
         private TotalOptions _totalOptions;
 
@@ -148,7 +149,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if TableInlineVisualizations property is set
         internal bool IsSetTableInlineVisualizations()
         {
-            return this._tableInlineVisualizations != null && this._tableInlineVisualizations.Count > 0; 
+            return this._tableInlineVisualizations != null && (this._tableInlineVisualizations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class ListOpsMetadataResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<OpsMetadata> _opsMetadataList = new List<OpsMetadata>();
+        private List<OpsMetadata> _opsMetadataList = AWSConfigs.InitializeCollections ? new List<OpsMetadata>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if OpsMetadataList property is set
         internal bool IsSetOpsMetadataList()
         {
-            return this._opsMetadataList != null && this._opsMetadataList.Count > 0; 
+            return this._opsMetadataList != null && (this._opsMetadataList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Macie2.Model
 {
     /// <summary>
@@ -33,10 +34,10 @@ namespace Amazon.Macie2.Model
     /// </summary>
     public partial class DescribeClassificationJobResponse : AmazonWebServiceResponse
     {
-        private List<string> _allowListIds = new List<string>();
+        private List<string> _allowListIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _clientToken;
         private DateTime? _createdAt;
-        private List<string> _customDataIdentifierIds = new List<string>();
+        private List<string> _customDataIdentifierIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _description;
         private bool? _initialRun;
         private string _jobArn;
@@ -45,14 +46,14 @@ namespace Amazon.Macie2.Model
         private JobType _jobType;
         private LastRunErrorStatus _lastRunErrorStatus;
         private DateTime? _lastRunTime;
-        private List<string> _managedDataIdentifierIds = new List<string>();
+        private List<string> _managedDataIdentifierIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ManagedDataIdentifierSelector _managedDataIdentifierSelector;
         private string _name;
         private S3JobDefinition _s3JobDefinition;
         private int? _samplingPercentage;
         private JobScheduleFrequency _scheduleFrequency;
         private Statistics _statistics;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private UserPausedDetails _userPausedDetails;
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.Macie2.Model
         // Check to see if AllowListIds property is set
         internal bool IsSetAllowListIds()
         {
-            return this._allowListIds != null && this._allowListIds.Count > 0; 
+            return this._allowListIds != null && (this._allowListIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -128,7 +129,7 @@ namespace Amazon.Macie2.Model
         // Check to see if CustomDataIdentifierIds property is set
         internal bool IsSetCustomDataIdentifierIds()
         {
-            return this._customDataIdentifierIds != null && this._customDataIdentifierIds.Count > 0; 
+            return this._customDataIdentifierIds != null && (this._customDataIdentifierIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -350,7 +351,7 @@ namespace Amazon.Macie2.Model
         // Check to see if ManagedDataIdentifierIds property is set
         internal bool IsSetManagedDataIdentifierIds()
         {
-            return this._managedDataIdentifierIds != null && this._managedDataIdentifierIds.Count > 0; 
+            return this._managedDataIdentifierIds != null && (this._managedDataIdentifierIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -521,7 +522,7 @@ namespace Amazon.Macie2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

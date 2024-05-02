@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAFRegional.Model
 {
     /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.WAFRegional.Model
     {
         private string _name;
         private string _regexPatternSetId;
-        private List<string> _regexPatternStrings = new List<string>();
+        private List<string> _regexPatternStrings = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -116,7 +117,7 @@ namespace Amazon.WAFRegional.Model
         // Check to see if RegexPatternStrings property is set
         internal bool IsSetRegexPatternStrings()
         {
-            return this._regexPatternStrings != null && this._regexPatternStrings.Count > 0; 
+            return this._regexPatternStrings != null && (this._regexPatternStrings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class DescribeAlarmHistoryResponse : AmazonWebServiceResponse
     {
-        private List<AlarmHistoryItem> _alarmHistoryItems = new List<AlarmHistoryItem>();
+        private List<AlarmHistoryItem> _alarmHistoryItems = AWSConfigs.InitializeCollections ? new List<AlarmHistoryItem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if AlarmHistoryItems property is set
         internal bool IsSetAlarmHistoryItems()
         {
-            return this._alarmHistoryItems != null && this._alarmHistoryItems.Count > 0; 
+            return this._alarmHistoryItems != null && (this._alarmHistoryItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

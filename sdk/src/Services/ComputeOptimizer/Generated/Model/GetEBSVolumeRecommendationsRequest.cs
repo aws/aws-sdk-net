@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
@@ -41,11 +42,11 @@ namespace Amazon.ComputeOptimizer.Model
     /// </summary>
     public partial class GetEBSVolumeRecommendationsRequest : AmazonComputeOptimizerRequest
     {
-        private List<string> _accountIds = new List<string>();
-        private List<EBSFilter> _filters = new List<EBSFilter>();
+        private List<string> _accountIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<EBSFilter> _filters = AWSConfigs.InitializeCollections ? new List<EBSFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _volumeArns = new List<string>();
+        private List<string> _volumeArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountIds. 
@@ -71,7 +72,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if AccountIds property is set
         internal bool IsSetAccountIds()
         {
-            return this._accountIds != null && this._accountIds.Count > 0; 
+            return this._accountIds != null && (this._accountIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -90,7 +91,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -150,7 +151,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if VolumeArns property is set
         internal bool IsSetVolumeArns()
         {
-            return this._volumeArns != null && this._volumeArns.Count > 0; 
+            return this._volumeArns != null && (this._volumeArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

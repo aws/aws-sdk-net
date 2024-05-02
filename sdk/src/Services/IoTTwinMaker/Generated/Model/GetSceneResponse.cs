@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTTwinMaker.Model
 {
     /// <summary>
@@ -34,14 +35,14 @@ namespace Amazon.IoTTwinMaker.Model
     public partial class GetSceneResponse : AmazonWebServiceResponse
     {
         private string _arn;
-        private List<string> _capabilities = new List<string>();
+        private List<string> _capabilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _contentLocation;
         private DateTime? _creationDateTime;
         private string _description;
         private SceneError _error;
-        private Dictionary<string, string> _generatedSceneMetadata = new Dictionary<string, string>();
+        private Dictionary<string, string> _generatedSceneMetadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _sceneId;
-        private Dictionary<string, string> _sceneMetadata = new Dictionary<string, string>();
+        private Dictionary<string, string> _sceneMetadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DateTime? _updateDateTime;
         private string _workspaceId;
 
@@ -80,7 +81,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if Capabilities property is set
         internal bool IsSetCapabilities()
         {
-            return this._capabilities != null && this._capabilities.Count > 0; 
+            return this._capabilities != null && (this._capabilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -174,7 +175,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if GeneratedSceneMetadata property is set
         internal bool IsSetGeneratedSceneMetadata()
         {
-            return this._generatedSceneMetadata != null && this._generatedSceneMetadata.Count > 0; 
+            return this._generatedSceneMetadata != null && (this._generatedSceneMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -212,7 +213,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if SceneMetadata property is set
         internal bool IsSetSceneMetadata()
         {
-            return this._sceneMetadata != null && this._sceneMetadata.Count > 0; 
+            return this._sceneMetadata != null && (this._sceneMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

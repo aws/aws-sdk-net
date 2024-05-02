@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.LexModelsV2.Model
     {
         private string _intentName;
         private bool? _multiTurnConversation;
-        private List<SlotResolutionTestResultItem> _slotResolutionResults = new List<SlotResolutionTestResultItem>();
+        private List<SlotResolutionTestResultItem> _slotResolutionResults = AWSConfigs.InitializeCollections ? new List<SlotResolutionTestResultItem>() : null;
 
         /// <summary>
         /// Gets and sets the property IntentName. 
@@ -91,7 +92,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if SlotResolutionResults property is set
         internal bool IsSetSlotResolutionResults()
         {
-            return this._slotResolutionResults != null && this._slotResolutionResults.Count > 0; 
+            return this._slotResolutionResults != null && (this._slotResolutionResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

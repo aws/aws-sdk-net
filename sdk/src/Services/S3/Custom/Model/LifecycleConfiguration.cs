@@ -32,7 +32,7 @@ namespace Amazon.S3.Model
     public class LifecycleConfiguration
     {
         
-        private List<LifecycleRule> rules = new List<LifecycleRule>();
+        private List<LifecycleRule> rules = AWSConfigs.InitializeCollections ? new List<LifecycleRule>() : null;
 
         /// <summary>
         /// Gets and sets the Rules property. These rules defined the lifecycle configuration.
@@ -46,7 +46,7 @@ namespace Amazon.S3.Model
         // Check to see if Rules property is set
         internal bool IsSetRules()
         {
-            return this.rules.Count > 0;
+            return this.rules != null && (this.rules.Count > 0 || !AWSConfigs.InitializeCollections);
         }
     }
 }

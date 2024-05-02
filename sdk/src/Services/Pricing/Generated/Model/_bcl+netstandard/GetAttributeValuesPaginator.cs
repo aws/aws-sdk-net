@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Pricing.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Pricing.Model
         /// Enumerable containing all of the AttributeValues
         /// </summary>
         public IPaginatedEnumerable<AttributeValue> AttributeValues => 
-            new PaginatedResultKeyResponse<GetAttributeValuesResponse, AttributeValue>(this, (i) => i.AttributeValues);
+            new PaginatedResultKeyResponse<GetAttributeValuesResponse, AttributeValue>(this, (i) => i.AttributeValues ?? new List<AttributeValue>());
 
         internal GetAttributeValuesPaginator(IAmazonPricing client, GetAttributeValuesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Pricing.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<GetAttributeValuesResponse> IPaginator<GetAttributeValuesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<GetAttributeValuesResponse> IPaginator<GetAttributeValuesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

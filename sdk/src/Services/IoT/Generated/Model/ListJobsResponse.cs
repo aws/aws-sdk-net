@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class ListJobsResponse : AmazonWebServiceResponse
     {
-        private List<JobSummary> _jobs = new List<JobSummary>();
+        private List<JobSummary> _jobs = AWSConfigs.InitializeCollections ? new List<JobSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.IoT.Model
         // Check to see if Jobs property is set
         internal bool IsSetJobs()
         {
-            return this._jobs != null && this._jobs.Count > 0; 
+            return this._jobs != null && (this._jobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

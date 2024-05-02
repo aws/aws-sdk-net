@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.WAFV2.Model
     /// </summary>
     public partial class GeoMatchStatement
     {
-        private List<string> _countryCodes = new List<string>();
+        private List<string> _countryCodes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ForwardedIPConfig _forwardedIPConfig;
 
         /// <summary>
@@ -103,7 +104,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if CountryCodes property is set
         internal bool IsSetCountryCodes()
         {
-            return this._countryCodes != null && this._countryCodes.Count > 0; 
+            return this._countryCodes != null && (this._countryCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

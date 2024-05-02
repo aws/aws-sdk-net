@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexRuntimeV2.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.LexRuntimeV2.Model
     {
         private ConfirmationState _confirmationState;
         private string _name;
-        private Dictionary<string, Slot> _slots = new Dictionary<string, Slot>();
+        private Dictionary<string, Slot> _slots = AWSConfigs.InitializeCollections ? new Dictionary<string, Slot>() : null;
         private IntentState _state;
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.LexRuntimeV2.Model
         // Check to see if Slots property is set
         internal bool IsSetSlots()
         {
-            return this._slots != null && this._slots.Count > 0; 
+            return this._slots != null && (this._slots.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

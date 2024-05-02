@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -70,13 +71,13 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class ListIntentStageMetricsRequest : AmazonLexModelsV2Request
     {
-        private List<AnalyticsBinBySpecification> _binBy = new List<AnalyticsBinBySpecification>();
+        private List<AnalyticsBinBySpecification> _binBy = AWSConfigs.InitializeCollections ? new List<AnalyticsBinBySpecification>() : null;
         private string _botId;
         private DateTime? _endDateTime;
-        private List<AnalyticsIntentStageFilter> _filters = new List<AnalyticsIntentStageFilter>();
-        private List<AnalyticsIntentStageGroupBySpecification> _groupBy = new List<AnalyticsIntentStageGroupBySpecification>();
+        private List<AnalyticsIntentStageFilter> _filters = AWSConfigs.InitializeCollections ? new List<AnalyticsIntentStageFilter>() : null;
+        private List<AnalyticsIntentStageGroupBySpecification> _groupBy = AWSConfigs.InitializeCollections ? new List<AnalyticsIntentStageGroupBySpecification>() : null;
         private int? _maxResults;
-        private List<AnalyticsIntentStageMetric> _metrics = new List<AnalyticsIntentStageMetric>();
+        private List<AnalyticsIntentStageMetric> _metrics = AWSConfigs.InitializeCollections ? new List<AnalyticsIntentStageMetric>() : null;
         private string _nextToken;
         private DateTime? _startDateTime;
 
@@ -97,7 +98,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if BinBy property is set
         internal bool IsSetBinBy()
         {
-            return this._binBy != null && this._binBy.Count > 0; 
+            return this._binBy != null && (this._binBy.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -156,7 +157,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -185,7 +186,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if GroupBy property is set
         internal bool IsSetGroupBy()
         {
-            return this._groupBy != null && this._groupBy.Count > 0; 
+            return this._groupBy != null && (this._groupBy.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -225,7 +226,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if Metrics property is set
         internal bool IsSetMetrics()
         {
-            return this._metrics != null && this._metrics.Count > 0; 
+            return this._metrics != null && (this._metrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

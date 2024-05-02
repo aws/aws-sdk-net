@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
@@ -59,7 +60,7 @@ namespace Amazon.ElastiCache.Model
     public partial class RebootCacheClusterRequest : AmazonElastiCacheRequest
     {
         private string _cacheClusterId;
-        private List<string> _cacheNodeIdsToReboot = new List<string>();
+        private List<string> _cacheNodeIdsToReboot = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -113,7 +114,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheNodeIdsToReboot property is set
         internal bool IsSetCacheNodeIdsToReboot()
         {
-            return this._cacheNodeIdsToReboot != null && this._cacheNodeIdsToReboot.Count > 0; 
+            return this._cacheNodeIdsToReboot != null && (this._cacheNodeIdsToReboot.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

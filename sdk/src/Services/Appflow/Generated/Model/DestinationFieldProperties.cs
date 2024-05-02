@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Appflow.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.Appflow.Model
         private bool? _isNullable;
         private bool? _isUpdatable;
         private bool? _isUpsertable;
-        private List<string> _supportedWriteOperations = new List<string>();
+        private List<string> _supportedWriteOperations = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property IsCreatable. 
@@ -149,7 +150,7 @@ namespace Amazon.Appflow.Model
         // Check to see if SupportedWriteOperations property is set
         internal bool IsSetSupportedWriteOperations()
         {
-            return this._supportedWriteOperations != null && this._supportedWriteOperations.Count > 0; 
+            return this._supportedWriteOperations != null && (this._supportedWriteOperations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IAMRolesAnywhere.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// Enumerable containing all of the Profiles
         /// </summary>
         public IPaginatedEnumerable<ProfileDetail> Profiles => 
-            new PaginatedResultKeyResponse<ListProfilesResponse, ProfileDetail>(this, (i) => i.Profiles);
+            new PaginatedResultKeyResponse<ListProfilesResponse, ProfileDetail>(this, (i) => i.Profiles ?? new List<ProfileDetail>());
 
         internal ListProfilesPaginator(IAmazonIAMRolesAnywhere client, ListProfilesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListProfilesResponse> IPaginator<ListProfilesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListProfilesResponse> IPaginator<ListProfilesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

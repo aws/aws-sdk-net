@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ApiGatewayV2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ApiGatewayV2.Model
     /// </summary>
     public partial class JWTConfiguration
     {
-        private List<string> _audience = new List<string>();
+        private List<string> _audience = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _issuer;
 
         /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.ApiGatewayV2.Model
         // Check to see if Audience property is set
         internal bool IsSetAudience()
         {
-            return this._audience != null && this._audience.Count > 0; 
+            return this._audience != null && (this._audience.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

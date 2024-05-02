@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CodeBuild.Model
     /// </summary>
     public partial class ListFleetsResponse : AmazonWebServiceResponse
     {
-        private List<string> _fleets = new List<string>();
+        private List<string> _fleets = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if Fleets property is set
         internal bool IsSetFleets()
         {
-            return this._fleets != null && this._fleets.Count > 0; 
+            return this._fleets != null && (this._fleets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

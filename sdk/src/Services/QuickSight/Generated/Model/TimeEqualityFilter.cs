@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -34,6 +35,7 @@ namespace Amazon.QuickSight.Model
     public partial class TimeEqualityFilter
     {
         private ColumnIdentifier _column;
+        private DefaultFilterControlConfiguration _defaultFilterControlConfiguration;
         private string _filterId;
         private string _parameterName;
         private RollingDateConfiguration _rollingDate;
@@ -57,6 +59,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetColumn()
         {
             return this._column != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DefaultFilterControlConfiguration. 
+        /// <para>
+        /// The default configurations for the associated controls. This applies only for filters
+        /// that are scoped to multiple sheets.
+        /// </para>
+        /// </summary>
+        public DefaultFilterControlConfiguration DefaultFilterControlConfiguration
+        {
+            get { return this._defaultFilterControlConfiguration; }
+            set { this._defaultFilterControlConfiguration = value; }
+        }
+
+        // Check to see if DefaultFilterControlConfiguration property is set
+        internal bool IsSetDefaultFilterControlConfiguration()
+        {
+            return this._defaultFilterControlConfiguration != null;
         }
 
         /// <summary>

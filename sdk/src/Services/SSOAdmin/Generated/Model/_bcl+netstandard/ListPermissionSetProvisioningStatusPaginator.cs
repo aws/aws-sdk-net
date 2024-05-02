@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.SSOAdmin.Model
         /// Enumerable containing all of the PermissionSetsProvisioningStatus
         /// </summary>
         public IPaginatedEnumerable<PermissionSetProvisioningStatusMetadata> PermissionSetsProvisioningStatus => 
-            new PaginatedResultKeyResponse<ListPermissionSetProvisioningStatusResponse, PermissionSetProvisioningStatusMetadata>(this, (i) => i.PermissionSetsProvisioningStatus);
+            new PaginatedResultKeyResponse<ListPermissionSetProvisioningStatusResponse, PermissionSetProvisioningStatusMetadata>(this, (i) => i.PermissionSetsProvisioningStatus ?? new List<PermissionSetProvisioningStatusMetadata>());
 
         internal ListPermissionSetProvisioningStatusPaginator(IAmazonSSOAdmin client, ListPermissionSetProvisioningStatusRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.SSOAdmin.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListPermissionSetProvisioningStatusResponse> IPaginator<ListPermissionSetProvisioningStatusResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListPermissionSetProvisioningStatusResponse> IPaginator<ListPermissionSetProvisioningStatusResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

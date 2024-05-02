@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,10 +46,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsRedshiftClusterRestoreStatus requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCurrentRestoreRateInMegaBytesPerSecond())
             {
                 context.Writer.WritePropertyName("CurrentRestoreRateInMegaBytesPerSecond");
-                context.Writer.Write(requestObject.CurrentRestoreRateInMegaBytesPerSecond.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.CurrentRestoreRateInMegaBytesPerSecond.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.CurrentRestoreRateInMegaBytesPerSecond.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.CurrentRestoreRateInMegaBytesPerSecond.Value);
+                }
             }
 
             if(requestObject.IsSetElapsedTimeInSeconds())

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class ListActiveViolationsResponse : AmazonWebServiceResponse
     {
-        private List<ActiveViolation> _activeViolations = new List<ActiveViolation>();
+        private List<ActiveViolation> _activeViolations = AWSConfigs.InitializeCollections ? new List<ActiveViolation>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.IoT.Model
         // Check to see if ActiveViolations property is set
         internal bool IsSetActiveViolations()
         {
-            return this._activeViolations != null && this._activeViolations.Count > 0; 
+            return this._activeViolations != null && (this._activeViolations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

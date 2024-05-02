@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ACMPCA.Model
 {
     /// <summary>
@@ -67,7 +68,7 @@ namespace Amazon.ACMPCA.Model
     /// </summary>
     public partial class CreatePermissionRequest : AmazonACMPCARequest
     {
-        private List<string> _actions = new List<string>();
+        private List<string> _actions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _certificateAuthorityArn;
         private string _principal;
         private string _sourceAccount;
@@ -89,7 +90,7 @@ namespace Amazon.ACMPCA.Model
         // Check to see if Actions property is set
         internal bool IsSetActions()
         {
-            return this._actions != null && this._actions.Count > 0; 
+            return this._actions != null && (this._actions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

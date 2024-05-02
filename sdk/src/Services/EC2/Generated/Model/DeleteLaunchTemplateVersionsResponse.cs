@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DeleteLaunchTemplateVersionsResponse : AmazonWebServiceResponse
     {
-        private List<DeleteLaunchTemplateVersionsResponseSuccessItem> _successfullyDeletedLaunchTemplateVersions = new List<DeleteLaunchTemplateVersionsResponseSuccessItem>();
-        private List<DeleteLaunchTemplateVersionsResponseErrorItem> _unsuccessfullyDeletedLaunchTemplateVersions = new List<DeleteLaunchTemplateVersionsResponseErrorItem>();
+        private List<DeleteLaunchTemplateVersionsResponseSuccessItem> _successfullyDeletedLaunchTemplateVersions = AWSConfigs.InitializeCollections ? new List<DeleteLaunchTemplateVersionsResponseSuccessItem>() : null;
+        private List<DeleteLaunchTemplateVersionsResponseErrorItem> _unsuccessfullyDeletedLaunchTemplateVersions = AWSConfigs.InitializeCollections ? new List<DeleteLaunchTemplateVersionsResponseErrorItem>() : null;
 
         /// <summary>
         /// Gets and sets the property SuccessfullyDeletedLaunchTemplateVersions. 
@@ -51,7 +52,7 @@ namespace Amazon.EC2.Model
         // Check to see if SuccessfullyDeletedLaunchTemplateVersions property is set
         internal bool IsSetSuccessfullyDeletedLaunchTemplateVersions()
         {
-            return this._successfullyDeletedLaunchTemplateVersions != null && this._successfullyDeletedLaunchTemplateVersions.Count > 0; 
+            return this._successfullyDeletedLaunchTemplateVersions != null && (this._successfullyDeletedLaunchTemplateVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.EC2.Model
         // Check to see if UnsuccessfullyDeletedLaunchTemplateVersions property is set
         internal bool IsSetUnsuccessfullyDeletedLaunchTemplateVersions()
         {
-            return this._unsuccessfullyDeletedLaunchTemplateVersions != null && this._unsuccessfullyDeletedLaunchTemplateVersions.Count > 0; 
+            return this._unsuccessfullyDeletedLaunchTemplateVersions != null && (this._unsuccessfullyDeletedLaunchTemplateVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

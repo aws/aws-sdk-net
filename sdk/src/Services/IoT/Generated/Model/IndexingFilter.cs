@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -58,8 +59,8 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class IndexingFilter
     {
-        private List<GeoLocationTarget> _geoLocations = new List<GeoLocationTarget>();
-        private List<string> _namedShadowNames = new List<string>();
+        private List<GeoLocationTarget> _geoLocations = AWSConfigs.InitializeCollections ? new List<GeoLocationTarget>() : null;
+        private List<string> _namedShadowNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property GeoLocations. 
@@ -79,7 +80,7 @@ namespace Amazon.IoT.Model
         // Check to see if GeoLocations property is set
         internal bool IsSetGeoLocations()
         {
-            return this._geoLocations != null && this._geoLocations.Count > 0; 
+            return this._geoLocations != null && (this._geoLocations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -100,7 +101,7 @@ namespace Amazon.IoT.Model
         // Check to see if NamedShadowNames property is set
         internal bool IsSetNamedShadowNames()
         {
-            return this._namedShadowNames != null && this._namedShadowNames.Count > 0; 
+            return this._namedShadowNames != null && (this._namedShadowNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

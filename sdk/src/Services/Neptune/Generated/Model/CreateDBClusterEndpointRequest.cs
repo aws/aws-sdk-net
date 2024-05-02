@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Neptune.Model
 {
     /// <summary>
@@ -37,9 +38,9 @@ namespace Amazon.Neptune.Model
         private string _dbClusterEndpointIdentifier;
         private string _dbClusterIdentifier;
         private string _endpointType;
-        private List<string> _excludedMembers = new List<string>();
-        private List<string> _staticMembers = new List<string>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<string> _excludedMembers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _staticMembers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property DBClusterEndpointIdentifier. 
@@ -117,7 +118,7 @@ namespace Amazon.Neptune.Model
         // Check to see if ExcludedMembers property is set
         internal bool IsSetExcludedMembers()
         {
-            return this._excludedMembers != null && this._excludedMembers.Count > 0; 
+            return this._excludedMembers != null && (this._excludedMembers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -135,7 +136,7 @@ namespace Amazon.Neptune.Model
         // Check to see if StaticMembers property is set
         internal bool IsSetStaticMembers()
         {
-            return this._staticMembers != null && this._staticMembers.Count > 0; 
+            return this._staticMembers != null && (this._staticMembers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -153,7 +154,7 @@ namespace Amazon.Neptune.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EKS.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.EKS.Model
     /// </summary>
     public partial class InsightsFilter
     {
-        private List<string> _categories = new List<string>();
-        private List<string> _kubernetesVersions = new List<string>();
-        private List<string> _statuses = new List<string>();
+        private List<string> _categories = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _kubernetesVersions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _statuses = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Categories. 
@@ -52,7 +53,7 @@ namespace Amazon.EKS.Model
         // Check to see if Categories property is set
         internal bool IsSetCategories()
         {
-            return this._categories != null && this._categories.Count > 0; 
+            return this._categories != null && (this._categories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.EKS.Model
         // Check to see if KubernetesVersions property is set
         internal bool IsSetKubernetesVersions()
         {
-            return this._kubernetesVersions != null && this._kubernetesVersions.Count > 0; 
+            return this._kubernetesVersions != null && (this._kubernetesVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -88,7 +89,7 @@ namespace Amazon.EKS.Model
         // Check to see if Statuses property is set
         internal bool IsSetStatuses()
         {
-            return this._statuses != null && this._statuses.Count > 0; 
+            return this._statuses != null && (this._statuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

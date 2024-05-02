@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RedshiftServerless.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.RedshiftServerless.Model
     /// </summary>
     public partial class ListNamespacesResponse : AmazonWebServiceResponse
     {
-        private List<Namespace> _namespaces = new List<Namespace>();
+        private List<Namespace> _namespaces = AWSConfigs.InitializeCollections ? new List<Namespace>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.RedshiftServerless.Model
         // Check to see if Namespaces property is set
         internal bool IsSetNamespaces()
         {
-            return this._namespaces != null && this._namespaces.Count > 0; 
+            return this._namespaces != null && (this._namespaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -28,6 +28,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>
     public class ListObjectsV2ResponseUnmarshaller : S3ReponseUnmarshaller
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             ListObjectsV2Response response = new ListObjectsV2Response();
@@ -69,12 +74,16 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Contents", targetDepth))
                     {
+                        if (response.S3Objects == null)
+                        {
+                            response.S3Objects = new List<S3Object>();
+                        }
+
                         // adding the bucket name into the S3Object instance enables
                         // a better pipelining experience in PowerShell
                         var s3Object = ContentsItemUnmarshaller.Instance.Unmarshall(context);
                         s3Object.BucketName = response.Name;
                         response.S3Objects.Add(s3Object);
-
                         continue;
                     }
                     if (context.TestExpression("Name", targetDepth))
@@ -106,8 +115,14 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                         var prefix = CommonPrefixesItemUnmarshaller.Instance.Unmarshall(context);
 
                         if(prefix != null)
+                        {
+                            if (response.CommonPrefixes == null)
+                            {
+                                response.CommonPrefixes = new List<string>();
+                            }
                             response.CommonPrefixes.Add(prefix);
-                            
+                        }
+
                         continue;
                     }
                     if (context.TestExpression("EncodingType", targetDepth))
@@ -154,6 +169,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static ListObjectsV2ResponseUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static ListObjectsV2ResponseUnmarshaller Instance
         {
             get

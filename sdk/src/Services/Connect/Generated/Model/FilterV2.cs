@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Connect.Model
     public partial class FilterV2
     {
         private string _filterKey;
-        private List<string> _filterValues = new List<string>();
+        private List<string> _filterValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property FilterKey. 
@@ -76,7 +77,7 @@ namespace Amazon.Connect.Model
         // Check to see if FilterValues property is set
         internal bool IsSetFilterValues()
         {
-            return this._filterValues != null && this._filterValues.Count > 0; 
+            return this._filterValues != null && (this._filterValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

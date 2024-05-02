@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Greengrass.Model
     /// </summary>
     public partial class LoggerDefinitionVersion
     {
-        private List<Logger> _loggers = new List<Logger>();
+        private List<Logger> _loggers = AWSConfigs.InitializeCollections ? new List<Logger>() : null;
 
         /// <summary>
         /// Gets and sets the property Loggers. A list of loggers.
@@ -47,7 +48,7 @@ namespace Amazon.Greengrass.Model
         // Check to see if Loggers property is set
         internal bool IsSetLoggers()
         {
-            return this._loggers != null && this._loggers.Count > 0; 
+            return this._loggers != null && (this._loggers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

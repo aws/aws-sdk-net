@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ServiceQuotas.Model
     public partial class ListServiceQuotaIncreaseRequestsInTemplateResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ServiceQuotaIncreaseRequestInTemplate> _serviceQuotaIncreaseRequestInTemplateList = new List<ServiceQuotaIncreaseRequestInTemplate>();
+        private List<ServiceQuotaIncreaseRequestInTemplate> _serviceQuotaIncreaseRequestInTemplateList = AWSConfigs.InitializeCollections ? new List<ServiceQuotaIncreaseRequestInTemplate>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +74,7 @@ namespace Amazon.ServiceQuotas.Model
         // Check to see if ServiceQuotaIncreaseRequestInTemplateList property is set
         internal bool IsSetServiceQuotaIncreaseRequestInTemplateList()
         {
-            return this._serviceQuotaIncreaseRequestInTemplateList != null && this._serviceQuotaIncreaseRequestInTemplateList.Count > 0; 
+            return this._serviceQuotaIncreaseRequestInTemplateList != null && (this._serviceQuotaIncreaseRequestInTemplateList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

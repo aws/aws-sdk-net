@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ApiGatewayV2.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.ApiGatewayV2.Model
     public partial class UpdateDomainNameRequest : AmazonApiGatewayV2Request
     {
         private string _domainName;
-        private List<DomainNameConfiguration> _domainNameConfigurations = new List<DomainNameConfiguration>();
+        private List<DomainNameConfiguration> _domainNameConfigurations = AWSConfigs.InitializeCollections ? new List<DomainNameConfiguration>() : null;
         private MutualTlsAuthenticationInput _mutualTlsAuthentication;
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.ApiGatewayV2.Model
         // Check to see if DomainNameConfigurations property is set
         internal bool IsSetDomainNameConfigurations()
         {
-            return this._domainNameConfigurations != null && this._domainNameConfigurations.Count > 0; 
+            return this._domainNameConfigurations != null && (this._domainNameConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

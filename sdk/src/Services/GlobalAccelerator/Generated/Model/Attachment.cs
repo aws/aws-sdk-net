@@ -26,12 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
     /// A cross-account attachment in Global Accelerator. A cross-account attachment specifies
-    /// the <i>principals</i> who have permission to add to accelerators in their own account
-    /// the resources in your account that you also list in the attachment.
+    /// the <i>principals</i> who have permission to work with <i>resources</i> in your account,
+    /// which you also list in the attachment.
     /// </summary>
     public partial class Attachment
     {
@@ -39,8 +40,8 @@ namespace Amazon.GlobalAccelerator.Model
         private DateTime? _createdTime;
         private DateTime? _lastModifiedTime;
         private string _name;
-        private List<string> _principals = new List<string>();
-        private List<Resource> _resources = new List<Resource>();
+        private List<string> _principals = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Resource> _resources = AWSConfigs.InitializeCollections ? new List<Resource>() : null;
 
         /// <summary>
         /// Gets and sets the property AttachmentArn. 
@@ -131,7 +132,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if Principals property is set
         internal bool IsSetPrincipals()
         {
-            return this._principals != null && this._principals.Count > 0; 
+            return this._principals != null && (this._principals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -149,7 +150,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if Resources property is set
         internal bool IsSetResources()
         {
-            return this._resources != null && this._resources.Count > 0; 
+            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

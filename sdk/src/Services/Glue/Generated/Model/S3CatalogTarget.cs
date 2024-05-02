@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.Glue.Model
     public partial class S3CatalogTarget
     {
         private string _database;
-        private List<string> _inputs = new List<string>();
+        private List<string> _inputs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
-        private List<List<string>> _partitionKeys = new List<List<string>>();
+        private List<List<string>> _partitionKeys = AWSConfigs.InitializeCollections ? new List<List<string>>() : null;
         private CatalogSchemaChangePolicy _schemaChangePolicy;
         private string _table;
 
@@ -75,7 +76,7 @@ namespace Amazon.Glue.Model
         // Check to see if Inputs property is set
         internal bool IsSetInputs()
         {
-            return this._inputs != null && this._inputs.Count > 0; 
+            return this._inputs != null && (this._inputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -112,7 +113,7 @@ namespace Amazon.Glue.Model
         // Check to see if PartitionKeys property is set
         internal bool IsSetPartitionKeys()
         {
-            return this._partitionKeys != null && this._partitionKeys.Count > 0; 
+            return this._partitionKeys != null && (this._partitionKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

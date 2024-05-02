@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.CodePipeline.Model
     /// </summary>
     public partial class StageState
     {
-        private List<ActionState> _actionStates = new List<ActionState>();
+        private List<ActionState> _actionStates = AWSConfigs.InitializeCollections ? new List<ActionState>() : null;
         private StageExecution _inboundExecution;
-        private List<StageExecution> _inboundExecutions = new List<StageExecution>();
+        private List<StageExecution> _inboundExecutions = AWSConfigs.InitializeCollections ? new List<StageExecution>() : null;
         private TransitionState _inboundTransitionState;
         private StageExecution _latestExecution;
         private string _stageName;
@@ -55,7 +56,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if ActionStates property is set
         internal bool IsSetActionStates()
         {
-            return this._actionStates != null && this._actionStates.Count > 0; 
+            return this._actionStates != null && (this._actionStates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -88,7 +89,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if InboundExecutions property is set
         internal bool IsSetInboundExecutions()
         {
-            return this._inboundExecutions != null && this._inboundExecutions.Count > 0; 
+            return this._inboundExecutions != null && (this._inboundExecutions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

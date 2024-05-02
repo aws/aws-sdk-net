@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
@@ -34,10 +35,10 @@ namespace Amazon.DataPipeline.Model
     public partial class PipelineDescription
     {
         private string _description;
-        private List<Field> _fields = new List<Field>();
+        private List<Field> _fields = AWSConfigs.InitializeCollections ? new List<Field>() : null;
         private string _name;
         private string _pipelineId;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -75,7 +76,7 @@ namespace Amazon.DataPipeline.Model
         // Check to see if Fields property is set
         internal bool IsSetFields()
         {
-            return this._fields != null && this._fields.Count > 0; 
+            return this._fields != null && (this._fields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -135,7 +136,7 @@ namespace Amazon.DataPipeline.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

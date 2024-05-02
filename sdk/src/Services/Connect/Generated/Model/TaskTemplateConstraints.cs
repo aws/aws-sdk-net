@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class TaskTemplateConstraints
     {
-        private List<InvisibleFieldInfo> _invisibleFields = new List<InvisibleFieldInfo>();
-        private List<ReadOnlyFieldInfo> _readOnlyFields = new List<ReadOnlyFieldInfo>();
-        private List<RequiredFieldInfo> _requiredFields = new List<RequiredFieldInfo>();
+        private List<InvisibleFieldInfo> _invisibleFields = AWSConfigs.InitializeCollections ? new List<InvisibleFieldInfo>() : null;
+        private List<ReadOnlyFieldInfo> _readOnlyFields = AWSConfigs.InitializeCollections ? new List<ReadOnlyFieldInfo>() : null;
+        private List<RequiredFieldInfo> _requiredFields = AWSConfigs.InitializeCollections ? new List<RequiredFieldInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property InvisibleFields. 
@@ -52,7 +53,7 @@ namespace Amazon.Connect.Model
         // Check to see if InvisibleFields property is set
         internal bool IsSetInvisibleFields()
         {
-            return this._invisibleFields != null && this._invisibleFields.Count > 0; 
+            return this._invisibleFields != null && (this._invisibleFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.Connect.Model
         // Check to see if ReadOnlyFields property is set
         internal bool IsSetReadOnlyFields()
         {
-            return this._readOnlyFields != null && this._readOnlyFields.Count > 0; 
+            return this._readOnlyFields != null && (this._readOnlyFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -88,7 +89,7 @@ namespace Amazon.Connect.Model
         // Check to see if RequiredFields property is set
         internal bool IsSetRequiredFields()
         {
-            return this._requiredFields != null && this._requiredFields.Count > 0; 
+            return this._requiredFields != null && (this._requiredFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

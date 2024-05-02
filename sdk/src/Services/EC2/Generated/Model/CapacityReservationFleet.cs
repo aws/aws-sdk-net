@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -39,9 +40,9 @@ namespace Amazon.EC2.Model
         private DateTime? _createTime;
         private DateTime? _endDate;
         private FleetInstanceMatchCriteria _instanceMatchCriteria;
-        private List<FleetCapacityReservation> _instanceTypeSpecifications = new List<FleetCapacityReservation>();
+        private List<FleetCapacityReservation> _instanceTypeSpecifications = AWSConfigs.InitializeCollections ? new List<FleetCapacityReservation>() : null;
         private CapacityReservationFleetState _state;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private FleetCapacityReservationTenancy _tenancy;
         private double? _totalFulfilledCapacity;
         private int? _totalTargetCapacity;
@@ -179,7 +180,7 @@ namespace Amazon.EC2.Model
         // Check to see if InstanceTypeSpecifications property is set
         internal bool IsSetInstanceTypeSpecifications()
         {
-            return this._instanceTypeSpecifications != null && this._instanceTypeSpecifications.Count > 0; 
+            return this._instanceTypeSpecifications != null && (this._instanceTypeSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -265,7 +266,7 @@ namespace Amazon.EC2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

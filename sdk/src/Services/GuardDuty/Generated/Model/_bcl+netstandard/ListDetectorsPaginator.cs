@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.GuardDuty.Model
         /// Enumerable containing all of the DetectorIds
         /// </summary>
         public IPaginatedEnumerable<string> DetectorIds => 
-            new PaginatedResultKeyResponse<ListDetectorsResponse, string>(this, (i) => i.DetectorIds);
+            new PaginatedResultKeyResponse<ListDetectorsResponse, string>(this, (i) => i.DetectorIds ?? new List<string>());
 
         internal ListDetectorsPaginator(IAmazonGuardDuty client, ListDetectorsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.GuardDuty.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListDetectorsResponse> IPaginator<ListDetectorsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListDetectorsResponse> IPaginator<ListDetectorsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

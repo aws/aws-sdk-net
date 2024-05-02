@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.APIGateway.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<ApiKey> Items => 
-            new PaginatedResultKeyResponse<GetApiKeysResponse, ApiKey>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<GetApiKeysResponse, ApiKey>(this, (i) => i.Items ?? new List<ApiKey>());
 
         internal GetApiKeysPaginator(IAmazonAPIGateway client, GetApiKeysRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.APIGateway.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<GetApiKeysResponse> IPaginator<GetApiKeysResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<GetApiKeysResponse> IPaginator<GetApiKeysResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

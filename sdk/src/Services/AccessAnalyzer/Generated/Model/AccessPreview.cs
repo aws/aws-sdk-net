@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.AccessAnalyzer.Model
     public partial class AccessPreview
     {
         private string _analyzerArn;
-        private Dictionary<string, Configuration> _configurations = new Dictionary<string, Configuration>();
+        private Dictionary<string, Configuration> _configurations = AWSConfigs.InitializeCollections ? new Dictionary<string, Configuration>() : null;
         private DateTime? _createdAt;
         private string _id;
         private AccessPreviewStatus _status;
@@ -75,7 +76,7 @@ namespace Amazon.AccessAnalyzer.Model
         // Check to see if Configurations property is set
         internal bool IsSetConfigurations()
         {
-            return this._configurations != null && this._configurations.Count > 0; 
+            return this._configurations != null && (this._configurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

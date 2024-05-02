@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -63,6 +64,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("NodeGroupMembers/NodeGroupMember", targetDepth))
                     {
                         var unmarshaller = NodeGroupMemberUnmarshaller.Instance;
+                        if (unmarshalledObject.NodeGroupMembers == null)
+                        {
+                            unmarshalledObject.NodeGroupMembers = new List<NodeGroupMember>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.NodeGroupMembers.Add(item);
                         continue;

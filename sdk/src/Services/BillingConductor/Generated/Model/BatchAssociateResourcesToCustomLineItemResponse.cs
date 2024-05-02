@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BillingConductor.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.BillingConductor.Model
     /// </summary>
     public partial class BatchAssociateResourcesToCustomLineItemResponse : AmazonWebServiceResponse
     {
-        private List<AssociateResourceResponseElement> _failedAssociatedResources = new List<AssociateResourceResponseElement>();
-        private List<AssociateResourceResponseElement> _successfullyAssociatedResources = new List<AssociateResourceResponseElement>();
+        private List<AssociateResourceResponseElement> _failedAssociatedResources = AWSConfigs.InitializeCollections ? new List<AssociateResourceResponseElement>() : null;
+        private List<AssociateResourceResponseElement> _successfullyAssociatedResources = AWSConfigs.InitializeCollections ? new List<AssociateResourceResponseElement>() : null;
 
         /// <summary>
         /// Gets and sets the property FailedAssociatedResources. 
@@ -52,7 +53,7 @@ namespace Amazon.BillingConductor.Model
         // Check to see if FailedAssociatedResources property is set
         internal bool IsSetFailedAssociatedResources()
         {
-            return this._failedAssociatedResources != null && this._failedAssociatedResources.Count > 0; 
+            return this._failedAssociatedResources != null && (this._failedAssociatedResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.BillingConductor.Model
         // Check to see if SuccessfullyAssociatedResources property is set
         internal bool IsSetSuccessfullyAssociatedResources()
         {
-            return this._successfullyAssociatedResources != null && this._successfullyAssociatedResources.Count > 0; 
+            return this._successfullyAssociatedResources != null && (this._successfullyAssociatedResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

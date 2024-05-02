@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelBuildingService.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.LexModelBuildingService.Model
     public partial class Prompt
     {
         private int? _maxAttempts;
-        private List<Message> _messages = new List<Message>();
+        private List<Message> _messages = AWSConfigs.InitializeCollections ? new List<Message>() : null;
         private string _responseCard;
 
         /// <summary>
@@ -76,7 +77,7 @@ namespace Amazon.LexModelBuildingService.Model
         // Check to see if Messages property is set
         internal bool IsSetMessages()
         {
-            return this._messages != null && this._messages.Count > 0; 
+            return this._messages != null && (this._messages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

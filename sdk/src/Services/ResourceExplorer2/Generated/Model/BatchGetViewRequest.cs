@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ResourceExplorer2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ResourceExplorer2.Model
     /// </summary>
     public partial class BatchGetViewRequest : AmazonResourceExplorer2Request
     {
-        private List<string> _viewArns = new List<string>();
+        private List<string> _viewArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ViewArns. 
@@ -53,7 +54,7 @@ namespace Amazon.ResourceExplorer2.Model
         // Check to see if ViewArns property is set
         internal bool IsSetViewArns()
         {
-            return this._viewArns != null && this._viewArns.Count > 0; 
+            return this._viewArns != null && (this._viewArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

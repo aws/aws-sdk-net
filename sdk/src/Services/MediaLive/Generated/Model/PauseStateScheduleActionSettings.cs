@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class PauseStateScheduleActionSettings
     {
-        private List<PipelinePauseStateSettings> _pipelines = new List<PipelinePauseStateSettings>();
+        private List<PipelinePauseStateSettings> _pipelines = AWSConfigs.InitializeCollections ? new List<PipelinePauseStateSettings>() : null;
 
         /// <summary>
         /// Gets and sets the property Pipelines.
@@ -47,7 +48,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if Pipelines property is set
         internal bool IsSetPipelines()
         {
-            return this._pipelines != null && this._pipelines.Count > 0; 
+            return this._pipelines != null && (this._pipelines.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

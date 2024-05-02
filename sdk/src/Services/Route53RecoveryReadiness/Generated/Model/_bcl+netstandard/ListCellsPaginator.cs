@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
         /// Enumerable containing all of the Cells
         /// </summary>
         public IPaginatedEnumerable<CellOutput> Cells => 
-            new PaginatedResultKeyResponse<ListCellsResponse, CellOutput>(this, (i) => i.Cells);
+            new PaginatedResultKeyResponse<ListCellsResponse, CellOutput>(this, (i) => i.Cells ?? new List<CellOutput>());
 
         internal ListCellsPaginator(IAmazonRoute53RecoveryReadiness client, ListCellsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListCellsResponse> IPaginator<ListCellsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListCellsResponse> IPaginator<ListCellsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

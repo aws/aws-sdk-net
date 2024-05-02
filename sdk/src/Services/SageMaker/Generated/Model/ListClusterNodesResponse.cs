@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListClusterNodesResponse : AmazonWebServiceResponse
     {
-        private List<ClusterNodeSummary> _clusterNodeSummaries = new List<ClusterNodeSummary>();
+        private List<ClusterNodeSummary> _clusterNodeSummaries = AWSConfigs.InitializeCollections ? new List<ClusterNodeSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ClusterNodeSummaries property is set
         internal bool IsSetClusterNodeSummaries()
         {
-            return this._clusterNodeSummaries != null && this._clusterNodeSummaries.Count > 0; 
+            return this._clusterNodeSummaries != null && (this._clusterNodeSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

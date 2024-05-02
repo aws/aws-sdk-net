@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Inspector.Model
     /// </summary>
     public partial class ListAssessmentTemplatesResponse : AmazonWebServiceResponse
     {
-        private List<string> _assessmentTemplateArns = new List<string>();
+        private List<string> _assessmentTemplateArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.Inspector.Model
         // Check to see if AssessmentTemplateArns property is set
         internal bool IsSetAssessmentTemplateArns()
         {
-            return this._assessmentTemplateArns != null && this._assessmentTemplateArns.Count > 0; 
+            return this._assessmentTemplateArns != null && (this._assessmentTemplateArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

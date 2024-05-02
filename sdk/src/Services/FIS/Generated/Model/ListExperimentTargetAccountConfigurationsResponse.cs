@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FIS.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.FIS.Model
     public partial class ListExperimentTargetAccountConfigurationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ExperimentTargetAccountConfigurationSummary> _targetAccountConfigurations = new List<ExperimentTargetAccountConfigurationSummary>();
+        private List<ExperimentTargetAccountConfigurationSummary> _targetAccountConfigurations = AWSConfigs.InitializeCollections ? new List<ExperimentTargetAccountConfigurationSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.FIS.Model
         // Check to see if TargetAccountConfigurations property is set
         internal bool IsSetTargetAccountConfigurations()
         {
-            return this._targetAccountConfigurations != null && this._targetAccountConfigurations.Count > 0; 
+            return this._targetAccountConfigurations != null && (this._targetAccountConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

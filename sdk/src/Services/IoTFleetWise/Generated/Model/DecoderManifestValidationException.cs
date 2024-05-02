@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTFleetWise.Model
 {
     /// <summary>
@@ -37,8 +38,8 @@ namespace Amazon.IoTFleetWise.Model
     #endif
     public partial class DecoderManifestValidationException : AmazonIoTFleetWiseException
     {
-        private List<InvalidNetworkInterface> _invalidNetworkInterfaces = new List<InvalidNetworkInterface>();
-        private List<InvalidSignalDecoder> _invalidSignals = new List<InvalidSignalDecoder>();
+        private List<InvalidNetworkInterface> _invalidNetworkInterfaces = AWSConfigs.InitializeCollections ? new List<InvalidNetworkInterface>() : null;
+        private List<InvalidSignalDecoder> _invalidSignals = AWSConfigs.InitializeCollections ? new List<InvalidSignalDecoder>() : null;
 
         /// <summary>
         /// Constructs a new DecoderManifestValidationException with the specified error
@@ -137,7 +138,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if InvalidNetworkInterfaces property is set
         internal bool IsSetInvalidNetworkInterfaces()
         {
-            return this._invalidNetworkInterfaces != null && this._invalidNetworkInterfaces.Count > 0; 
+            return this._invalidNetworkInterfaces != null && (this._invalidNetworkInterfaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -155,7 +156,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if InvalidSignals property is set
         internal bool IsSetInvalidSignals()
         {
-            return this._invalidSignals != null && this._invalidSignals.Count > 0; 
+            return this._invalidSignals != null && (this._invalidSignals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

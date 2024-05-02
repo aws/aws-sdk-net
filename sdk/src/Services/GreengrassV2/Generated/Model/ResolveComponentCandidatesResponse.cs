@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.GreengrassV2.Model
     /// </summary>
     public partial class ResolveComponentCandidatesResponse : AmazonWebServiceResponse
     {
-        private List<ResolvedComponentVersion> _resolvedComponentVersions = new List<ResolvedComponentVersion>();
+        private List<ResolvedComponentVersion> _resolvedComponentVersions = AWSConfigs.InitializeCollections ? new List<ResolvedComponentVersion>() : null;
 
         /// <summary>
         /// Gets and sets the property ResolvedComponentVersions. 
@@ -51,7 +52,7 @@ namespace Amazon.GreengrassV2.Model
         // Check to see if ResolvedComponentVersions property is set
         internal bool IsSetResolvedComponentVersions()
         {
-            return this._resolvedComponentVersions != null && this._resolvedComponentVersions.Count > 0; 
+            return this._resolvedComponentVersions != null && (this._resolvedComponentVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

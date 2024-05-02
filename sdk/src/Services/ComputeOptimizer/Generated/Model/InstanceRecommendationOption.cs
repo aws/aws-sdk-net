@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
@@ -37,8 +38,8 @@ namespace Amazon.ComputeOptimizer.Model
         private string _instanceType;
         private MigrationEffort _migrationEffort;
         private double? _performanceRisk;
-        private List<string> _platformDifferences = new List<string>();
-        private List<UtilizationMetric> _projectedUtilizationMetrics = new List<UtilizationMetric>();
+        private List<string> _platformDifferences = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<UtilizationMetric> _projectedUtilizationMetrics = AWSConfigs.InitializeCollections ? new List<UtilizationMetric>() : null;
         private int? _rank;
         private SavingsOpportunity _savingsOpportunity;
         private InstanceSavingsOpportunityAfterDiscounts _savingsOpportunityAfterDiscounts;
@@ -240,7 +241,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if PlatformDifferences property is set
         internal bool IsSetPlatformDifferences()
         {
-            return this._platformDifferences != null && this._platformDifferences.Count > 0; 
+            return this._platformDifferences != null && (this._platformDifferences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -268,7 +269,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if ProjectedUtilizationMetrics property is set
         internal bool IsSetProjectedUtilizationMetrics()
         {
-            return this._projectedUtilizationMetrics != null && this._projectedUtilizationMetrics.Count > 0; 
+            return this._projectedUtilizationMetrics != null && (this._projectedUtilizationMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

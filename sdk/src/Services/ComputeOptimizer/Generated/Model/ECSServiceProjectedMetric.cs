@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
@@ -40,10 +41,10 @@ namespace Amazon.ComputeOptimizer.Model
     /// </summary>
     public partial class ECSServiceProjectedMetric
     {
-        private List<double> _lowerBoundValues = new List<double>();
+        private List<double> _lowerBoundValues = AWSConfigs.InitializeCollections ? new List<double>() : null;
         private ECSServiceMetricName _name;
-        private List<DateTime> _timestamps = new List<DateTime>();
-        private List<double> _upperBoundValues = new List<double>();
+        private List<DateTime> _timestamps = AWSConfigs.InitializeCollections ? new List<DateTime>() : null;
+        private List<double> _upperBoundValues = AWSConfigs.InitializeCollections ? new List<double>() : null;
 
         /// <summary>
         /// Gets and sets the property LowerBoundValues. 
@@ -60,7 +61,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if LowerBoundValues property is set
         internal bool IsSetLowerBoundValues()
         {
-            return this._lowerBoundValues != null && this._lowerBoundValues.Count > 0; 
+            return this._lowerBoundValues != null && (this._lowerBoundValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -110,7 +111,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if Timestamps property is set
         internal bool IsSetTimestamps()
         {
-            return this._timestamps != null && this._timestamps.Count > 0; 
+            return this._timestamps != null && (this._timestamps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -128,7 +129,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if UpperBoundValues property is set
         internal bool IsSetUpperBoundValues()
         {
-            return this._upperBoundValues != null && this._upperBoundValues.Count > 0; 
+            return this._upperBoundValues != null && (this._upperBoundValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

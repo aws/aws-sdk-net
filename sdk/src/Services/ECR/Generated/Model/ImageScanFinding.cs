@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECR.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ECR.Model
     /// </summary>
     public partial class ImageScanFinding
     {
-        private List<Attribute> _attributes = new List<Attribute>();
+        private List<Attribute> _attributes = AWSConfigs.InitializeCollections ? new List<Attribute>() : null;
         private string _description;
         private string _name;
         private FindingSeverity _severity;
@@ -55,7 +56,7 @@ namespace Amazon.ECR.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

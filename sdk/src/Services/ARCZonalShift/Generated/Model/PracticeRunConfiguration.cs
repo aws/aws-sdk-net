@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ARCZonalShift.Model
 {
     /// <summary>
@@ -42,10 +43,10 @@ namespace Amazon.ARCZonalShift.Model
     /// </summary>
     public partial class PracticeRunConfiguration
     {
-        private List<string> _blockedDates = new List<string>();
-        private List<string> _blockedWindows = new List<string>();
-        private List<ControlCondition> _blockingAlarms = new List<ControlCondition>();
-        private List<ControlCondition> _outcomeAlarms = new List<ControlCondition>();
+        private List<string> _blockedDates = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _blockedWindows = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<ControlCondition> _blockingAlarms = AWSConfigs.InitializeCollections ? new List<ControlCondition>() : null;
+        private List<ControlCondition> _outcomeAlarms = AWSConfigs.InitializeCollections ? new List<ControlCondition>() : null;
 
         /// <summary>
         /// Gets and sets the property BlockedDates. 
@@ -69,7 +70,7 @@ namespace Amazon.ARCZonalShift.Model
         // Check to see if BlockedDates property is set
         internal bool IsSetBlockedDates()
         {
-            return this._blockedDates != null && this._blockedDates.Count > 0; 
+            return this._blockedDates != null && (this._blockedDates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -94,7 +95,7 @@ namespace Amazon.ARCZonalShift.Model
         // Check to see if BlockedWindows property is set
         internal bool IsSetBlockedWindows()
         {
-            return this._blockedWindows != null && this._blockedWindows.Count > 0; 
+            return this._blockedWindows != null && (this._blockedWindows.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -114,7 +115,7 @@ namespace Amazon.ARCZonalShift.Model
         // Check to see if BlockingAlarms property is set
         internal bool IsSetBlockingAlarms()
         {
-            return this._blockingAlarms != null && this._blockingAlarms.Count > 0; 
+            return this._blockingAlarms != null && (this._blockingAlarms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -134,7 +135,7 @@ namespace Amazon.ARCZonalShift.Model
         // Check to see if OutcomeAlarms property is set
         internal bool IsSetOutcomeAlarms()
         {
-            return this._outcomeAlarms != null && this._outcomeAlarms.Count > 0; 
+            return this._outcomeAlarms != null && (this._outcomeAlarms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

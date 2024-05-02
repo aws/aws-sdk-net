@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EMRServerless.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EMRServerless.Model
     public partial class SparkSubmit
     {
         private string _entryPoint;
-        private List<string> _entryPointArguments = new List<string>();
+        private List<string> _entryPointArguments = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _sparkSubmitParameters;
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.EMRServerless.Model
         // Check to see if EntryPointArguments property is set
         internal bool IsSetEntryPointArguments()
         {
-            return this._entryPointArguments != null && this._entryPointArguments.Count > 0; 
+            return this._entryPointArguments != null && (this._entryPointArguments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

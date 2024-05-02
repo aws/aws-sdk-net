@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ApplicationInsights.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ApplicationInsights.Model
     public partial class DescribeComponentResponse : AmazonWebServiceResponse
     {
         private ApplicationComponent _applicationComponent;
-        private List<string> _resourceList = new List<string>();
+        private List<string> _resourceList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationComponent.
@@ -66,7 +67,7 @@ namespace Amazon.ApplicationInsights.Model
         // Check to see if ResourceList property is set
         internal bool IsSetResourceList()
         {
-            return this._resourceList != null && this._resourceList.Count > 0; 
+            return this._resourceList != null && (this._resourceList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

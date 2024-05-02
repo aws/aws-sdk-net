@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// </summary>
     public partial class Policies
     {
-        private List<AppCookieStickinessPolicy> _appCookieStickinessPolicies = new List<AppCookieStickinessPolicy>();
-        private List<LBCookieStickinessPolicy> _lbCookieStickinessPolicies = new List<LBCookieStickinessPolicy>();
-        private List<string> _otherPolicies = new List<string>();
+        private List<AppCookieStickinessPolicy> _appCookieStickinessPolicies = AWSConfigs.InitializeCollections ? new List<AppCookieStickinessPolicy>() : null;
+        private List<LBCookieStickinessPolicy> _lbCookieStickinessPolicies = AWSConfigs.InitializeCollections ? new List<LBCookieStickinessPolicy>() : null;
+        private List<string> _otherPolicies = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -57,7 +58,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if AppCookieStickinessPolicies property is set
         internal bool IsSetAppCookieStickinessPolicies()
         {
-            return this._appCookieStickinessPolicies != null && this._appCookieStickinessPolicies.Count > 0; 
+            return this._appCookieStickinessPolicies != null && (this._appCookieStickinessPolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if LBCookieStickinessPolicies property is set
         internal bool IsSetLBCookieStickinessPolicies()
         {
-            return this._lbCookieStickinessPolicies != null && this._lbCookieStickinessPolicies.Count > 0; 
+            return this._lbCookieStickinessPolicies != null && (this._lbCookieStickinessPolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -93,7 +94,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         // Check to see if OtherPolicies property is set
         internal bool IsSetOtherPolicies()
         {
-            return this._otherPolicies != null && this._otherPolicies.Count > 0; 
+            return this._otherPolicies != null && (this._otherPolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Comprehend.Model
     public partial class BatchDetectKeyPhrasesRequest : AmazonComprehendRequest
     {
         private LanguageCode _languageCode;
-        private List<string> _textList = new List<string>();
+        private List<string> _textList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property LanguageCode. 
@@ -74,7 +75,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if TextList property is set
         internal bool IsSetTextList()
         {
-            return this._textList != null && this._textList.Count > 0; 
+            return this._textList != null && (this._textList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

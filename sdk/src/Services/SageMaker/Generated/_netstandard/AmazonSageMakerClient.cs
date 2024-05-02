@@ -33,6 +33,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.SageMaker
 {
     /// <summary>
@@ -2237,12 +2238,6 @@ namespace Amazon.SageMaker
         /// API, and then create an endpoint with the <c>CreateEndpoint</c> API. SageMaker then
         /// deploys all of the containers that you defined for the model in the hosting environment.
         /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// For an example that calls this method when deploying a model to SageMaker hosting
-        /// services, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints-deployment.html#realtime-endpoints-deployment-create-model">Create
-        /// a Model (Amazon Web Services SDK for Python (Boto 3)).</a> 
         /// </para>
         ///  
         /// <para>
@@ -12761,6 +12756,8 @@ namespace Amazon.SageMaker
         /// applies for all records added to the feature group <i>after the feature group is updated</i>.
         /// If a record level <c>TtlDuration</c> exists from using the <c>PutRecord</c> API, the
         /// record level <c>TtlDuration</c> applies to that record instead of the default <c>TtlDuration</c>.
+        /// To remove the default <c>TtlDuration</c> from an existing feature group, use the <c>UpdateFeatureGroup</c>
+        /// API and set the <c>TtlDuration</c> <c>Unit</c> and <c>Value</c> to <c>null</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFeatureGroup service method.</param>

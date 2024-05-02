@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeHostsResponse : AmazonWebServiceResponse
     {
-        private List<Host> _hosts = new List<Host>();
+        private List<Host> _hosts = AWSConfigs.InitializeCollections ? new List<Host>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.EC2.Model
         // Check to see if Hosts property is set
         internal bool IsSetHosts()
         {
-            return this._hosts != null && this._hosts.Count > 0; 
+            return this._hosts != null && (this._hosts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

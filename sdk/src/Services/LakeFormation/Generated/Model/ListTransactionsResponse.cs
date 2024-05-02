@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LakeFormation.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.LakeFormation.Model
     public partial class ListTransactionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TransactionDescription> _transactions = new List<TransactionDescription>();
+        private List<TransactionDescription> _transactions = AWSConfigs.InitializeCollections ? new List<TransactionDescription>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if Transactions property is set
         internal bool IsSetTransactions()
         {
-            return this._transactions != null && this._transactions.Count > 0; 
+            return this._transactions != null && (this._transactions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

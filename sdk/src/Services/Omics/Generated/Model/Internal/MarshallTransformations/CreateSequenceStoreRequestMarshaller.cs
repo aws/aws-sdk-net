@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Omics.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -63,6 +64,7 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetClientToken())
@@ -75,6 +77,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("description");
                     context.Writer.Write(publicRequest.Description);
+                }
+
+                if(publicRequest.IsSetETagAlgorithmFamily())
+                {
+                    context.Writer.WritePropertyName("eTagAlgorithmFamily");
+                    context.Writer.Write(publicRequest.ETagAlgorithmFamily);
                 }
 
                 if(publicRequest.IsSetFallbackLocation())

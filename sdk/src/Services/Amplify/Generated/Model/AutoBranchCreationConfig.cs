@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Amplify.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.Amplify.Model
         private bool? _enableBasicAuth;
         private bool? _enablePerformanceMode;
         private bool? _enablePullRequestPreview;
-        private Dictionary<string, string> _environmentVariables = new Dictionary<string, string>();
+        private Dictionary<string, string> _environmentVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _framework;
         private string _pullRequestEnvironmentName;
         private Stage _stage;
@@ -176,7 +177,7 @@ namespace Amazon.Amplify.Model
         // Check to see if EnvironmentVariables property is set
         internal bool IsSetEnvironmentVariables()
         {
-            return this._environmentVariables != null && this._environmentVariables.Count > 0; 
+            return this._environmentVariables != null && (this._environmentVariables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

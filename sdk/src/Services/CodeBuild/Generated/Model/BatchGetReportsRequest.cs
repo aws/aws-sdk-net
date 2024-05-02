@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CodeBuild.Model
     /// </summary>
     public partial class BatchGetReportsRequest : AmazonCodeBuildRequest
     {
-        private List<string> _reportArns = new List<string>();
+        private List<string> _reportArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ReportArns. 
@@ -52,7 +53,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if ReportArns property is set
         internal bool IsSetReportArns()
         {
-            return this._reportArns != null && this._reportArns.Count > 0; 
+            return this._reportArns != null && (this._reportArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

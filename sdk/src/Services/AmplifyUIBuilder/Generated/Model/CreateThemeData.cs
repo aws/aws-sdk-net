@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.AmplifyUIBuilder.Model
     public partial class CreateThemeData
     {
         private string _name;
-        private List<ThemeValues> _overrides = new List<ThemeValues>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
-        private List<ThemeValues> _values = new List<ThemeValues>();
+        private List<ThemeValues> _overrides = AWSConfigs.InitializeCollections ? new List<ThemeValues>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<ThemeValues> _values = AWSConfigs.InitializeCollections ? new List<ThemeValues>() : null;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -72,7 +73,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if Overrides property is set
         internal bool IsSetOverrides()
         {
-            return this._overrides != null && this._overrides.Count > 0; 
+            return this._overrides != null && (this._overrides.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -90,7 +91,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -109,7 +110,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if Values property is set
         internal bool IsSetValues()
         {
-            return this._values != null && this._values.Count > 0; 
+            return this._values != null && (this._values.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

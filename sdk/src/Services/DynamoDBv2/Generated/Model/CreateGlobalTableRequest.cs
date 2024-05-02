@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
@@ -113,7 +114,7 @@ namespace Amazon.DynamoDBv2.Model
     public partial class CreateGlobalTableRequest : AmazonDynamoDBRequest
     {
         private string _globalTableName;
-        private List<Replica> _replicationGroup = new List<Replica>();
+        private List<Replica> _replicationGroup = AWSConfigs.InitializeCollections ? new List<Replica>() : null;
 
         /// <summary>
         /// Gets and sets the property GlobalTableName. 
@@ -150,7 +151,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if ReplicationGroup property is set
         internal bool IsSetReplicationGroup()
         {
-            return this._replicationGroup != null && this._replicationGroup.Count > 0; 
+            return this._replicationGroup != null && (this._replicationGroup.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

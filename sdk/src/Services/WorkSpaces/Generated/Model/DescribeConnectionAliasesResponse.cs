@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.WorkSpaces.Model
     /// </summary>
     public partial class DescribeConnectionAliasesResponse : AmazonWebServiceResponse
     {
-        private List<ConnectionAlias> _connectionAliases = new List<ConnectionAlias>();
+        private List<ConnectionAlias> _connectionAliases = AWSConfigs.InitializeCollections ? new List<ConnectionAlias>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if ConnectionAliases property is set
         internal bool IsSetConnectionAliases()
         {
-            return this._connectionAliases != null && this._connectionAliases.Count > 0; 
+            return this._connectionAliases != null && (this._connectionAliases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

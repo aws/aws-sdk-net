@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Neptune.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -84,6 +85,10 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DBClusters/DBCluster", targetDepth))
                     {
                         var unmarshaller = DBClusterUnmarshaller.Instance;
+                        if (response.DBClusters == null)
+                        {
+                            response.DBClusters = new List<DBCluster>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.DBClusters.Add(item);
                         continue;

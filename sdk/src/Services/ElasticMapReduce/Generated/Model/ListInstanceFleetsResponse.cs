@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     public partial class ListInstanceFleetsResponse : AmazonWebServiceResponse
     {
-        private List<InstanceFleet> _instanceFleets = new List<InstanceFleet>();
+        private List<InstanceFleet> _instanceFleets = AWSConfigs.InitializeCollections ? new List<InstanceFleet>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if InstanceFleets property is set
         internal bool IsSetInstanceFleets()
         {
-            return this._instanceFleets != null && this._instanceFleets.Count > 0; 
+            return this._instanceFleets != null && (this._instanceFleets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

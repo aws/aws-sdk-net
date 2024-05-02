@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.CodeGuruProfiler.Model
     public partial class ListProfilingGroupsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<string> _profilingGroupNames = new List<string>();
-        private List<ProfilingGroupDescription> _profilingGroups = new List<ProfilingGroupDescription>();
+        private List<string> _profilingGroupNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<ProfilingGroupDescription> _profilingGroups = AWSConfigs.InitializeCollections ? new List<ProfilingGroupDescription>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -77,7 +78,7 @@ namespace Amazon.CodeGuruProfiler.Model
         // Check to see if ProfilingGroupNames property is set
         internal bool IsSetProfilingGroupNames()
         {
-            return this._profilingGroupNames != null && this._profilingGroupNames.Count > 0; 
+            return this._profilingGroupNames != null && (this._profilingGroupNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -98,7 +99,7 @@ namespace Amazon.CodeGuruProfiler.Model
         // Check to see if ProfilingGroups property is set
         internal bool IsSetProfilingGroups()
         {
-            return this._profilingGroups != null && this._profilingGroups.Count > 0; 
+            return this._profilingGroups != null && (this._profilingGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

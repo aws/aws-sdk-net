@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.CloudTrail.Model
         /// Enumerable containing all of the PublicKeyList
         /// </summary>
         public IPaginatedEnumerable<PublicKey> PublicKeyList => 
-            new PaginatedResultKeyResponse<ListPublicKeysResponse, PublicKey>(this, (i) => i.PublicKeyList);
+            new PaginatedResultKeyResponse<ListPublicKeysResponse, PublicKey>(this, (i) => i.PublicKeyList ?? new List<PublicKey>());
 
         internal ListPublicKeysPaginator(IAmazonCloudTrail client, ListPublicKeysRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.CloudTrail.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListPublicKeysResponse> IPaginator<ListPublicKeysResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListPublicKeysResponse> IPaginator<ListPublicKeysResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

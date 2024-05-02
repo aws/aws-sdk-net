@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AmplifyBackend.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.AmplifyBackend.Model
         private string _amplifyMetaConfig;
         private string _appId;
         private string _appName;
-        private List<string> _backendEnvironmentList = new List<string>();
+        private List<string> _backendEnvironmentList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _backendEnvironmentName;
         private string _error;
 
@@ -128,7 +129,7 @@ namespace Amazon.AmplifyBackend.Model
         // Check to see if BackendEnvironmentList property is set
         internal bool IsSetBackendEnvironmentList()
         {
-            return this._backendEnvironmentList != null && this._backendEnvironmentList.Count > 0; 
+            return this._backendEnvironmentList != null && (this._backendEnvironmentList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

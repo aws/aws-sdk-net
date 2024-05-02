@@ -70,7 +70,7 @@ namespace Amazon.Runtime.CredentialManagement
         /// The desired <see cref="DefaultConfiguration.Name"/> that
         /// <see cref="IDefaultConfigurationProvider"/> should use.
         /// <para />
-        /// If this is null/empty, then the <see cref="DefaultConfigurationMode.Legacy"/> Mode will be used.
+        /// If this is null/empty, then the <see cref="DefaultConfigurationMode.Standard"/> Mode will be used.
         /// </summary>
         public string DefaultConfigurationModeName { get; set; }
 
@@ -93,11 +93,6 @@ namespace Amazon.Runtime.CredentialManagement
         /// If true, the use of multi-region access points is disabled.
         /// </summary>
         public bool? S3DisableMultiRegionAccessPoints { get; set; }
-        
-        /// <summary>
-        /// The Sts Regional Endpoints Value as either legacy or regional
-        /// </summary>
-        public StsRegionalEndpointsValue? StsRegionalEndpoints { get; set; }
 
         /// <summary>
         /// The S3 Regional Endpoint Value as either legacy or regional
@@ -105,7 +100,7 @@ namespace Amazon.Runtime.CredentialManagement
         public S3UsEast1RegionalEndpointValue? S3RegionalEndpoint { get; set; }
 
         /// <summary>
-        /// The request retry mode  as legacy, standard, or adaptive
+        /// The request retry mode as standard or adaptive
         /// </summary>
         public RequestRetryMode? RetryMode { get; set; }
 

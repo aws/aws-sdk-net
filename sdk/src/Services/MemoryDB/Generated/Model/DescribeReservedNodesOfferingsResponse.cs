@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.MemoryDB.Model
     public partial class DescribeReservedNodesOfferingsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ReservedNodesOffering> _reservedNodesOfferings = new List<ReservedNodesOffering>();
+        private List<ReservedNodesOffering> _reservedNodesOfferings = AWSConfigs.InitializeCollections ? new List<ReservedNodesOffering>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.MemoryDB.Model
         // Check to see if ReservedNodesOfferings property is set
         internal bool IsSetReservedNodesOfferings()
         {
-            return this._reservedNodesOfferings != null && this._reservedNodesOfferings.Count > 0; 
+            return this._reservedNodesOfferings != null && (this._reservedNodesOfferings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

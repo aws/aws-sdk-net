@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTFleetWise.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.IoTFleetWise.Model
     #endif
     public partial class InvalidNodeException : AmazonIoTFleetWiseException
     {
-        private List<Node> _invalidNodes = new List<Node>();
+        private List<Node> _invalidNodes = AWSConfigs.InitializeCollections ? new List<Node>() : null;
         private string _reason;
 
         /// <summary>
@@ -138,7 +139,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if InvalidNodes property is set
         internal bool IsSetInvalidNodes()
         {
-            return this._invalidNodes != null && this._invalidNodes.Count > 0; 
+            return this._invalidNodes != null && (this._invalidNodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

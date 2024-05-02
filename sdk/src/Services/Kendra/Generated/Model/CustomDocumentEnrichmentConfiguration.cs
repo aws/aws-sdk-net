@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class CustomDocumentEnrichmentConfiguration
     {
-        private List<InlineCustomDocumentEnrichmentConfiguration> _inlineConfigurations = new List<InlineCustomDocumentEnrichmentConfiguration>();
+        private List<InlineCustomDocumentEnrichmentConfiguration> _inlineConfigurations = AWSConfigs.InitializeCollections ? new List<InlineCustomDocumentEnrichmentConfiguration>() : null;
         private HookConfiguration _postExtractionHookConfiguration;
         private HookConfiguration _preExtractionHookConfiguration;
         private string _roleArn;
@@ -62,7 +63,7 @@ namespace Amazon.Kendra.Model
         // Check to see if InlineConfigurations property is set
         internal bool IsSetInlineConfigurations()
         {
-            return this._inlineConfigurations != null && this._inlineConfigurations.Count > 0; 
+            return this._inlineConfigurations != null && (this._inlineConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

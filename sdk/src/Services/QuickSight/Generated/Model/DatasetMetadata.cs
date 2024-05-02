@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -33,14 +34,14 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class DatasetMetadata
     {
-        private List<TopicCalculatedField> _calculatedFields = new List<TopicCalculatedField>();
-        private List<TopicColumn> _columns = new List<TopicColumn>();
+        private List<TopicCalculatedField> _calculatedFields = AWSConfigs.InitializeCollections ? new List<TopicCalculatedField>() : null;
+        private List<TopicColumn> _columns = AWSConfigs.InitializeCollections ? new List<TopicColumn>() : null;
         private DataAggregation _dataAggregation;
         private string _datasetArn;
         private string _datasetDescription;
         private string _datasetName;
-        private List<TopicFilter> _filters = new List<TopicFilter>();
-        private List<TopicNamedEntity> _namedEntities = new List<TopicNamedEntity>();
+        private List<TopicFilter> _filters = AWSConfigs.InitializeCollections ? new List<TopicFilter>() : null;
+        private List<TopicNamedEntity> _namedEntities = AWSConfigs.InitializeCollections ? new List<TopicNamedEntity>() : null;
 
         /// <summary>
         /// Gets and sets the property CalculatedFields. 
@@ -57,7 +58,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if CalculatedFields property is set
         internal bool IsSetCalculatedFields()
         {
-            return this._calculatedFields != null && this._calculatedFields.Count > 0; 
+            return this._calculatedFields != null && (this._calculatedFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Columns property is set
         internal bool IsSetColumns()
         {
-            return this._columns != null && this._columns.Count > 0; 
+            return this._columns != null && (this._columns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -168,7 +169,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -186,7 +187,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if NamedEntities property is set
         internal bool IsSetNamedEntities()
         {
-            return this._namedEntities != null && this._namedEntities.Count > 0; 
+            return this._namedEntities != null && (this._namedEntities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

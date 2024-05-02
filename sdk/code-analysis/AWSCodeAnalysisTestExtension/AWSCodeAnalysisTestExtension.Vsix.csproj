@@ -716,10 +716,6 @@
       <Project>{1FF0B940-2F0B-4D80-90CC-AB3795ACE6E0}</Project>
       <Name>AWSSDK.IoTJobsDataPlane.CodeAnalysis</Name>
     </ProjectReference>
-    <ProjectReference Include="../ServiceAnalysis/IoTRoboRunner/AWSSDK.IoTRoboRunner.CodeAnalysis.csproj">
-      <Project>{F48080DA-9ED4-4F99-BB12-96C55371B9FC}</Project>
-      <Name>AWSSDK.IoTRoboRunner.CodeAnalysis</Name>
-    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/IoTSecureTunneling/AWSSDK.IoTSecureTunneling.CodeAnalysis.csproj">
       <Project>{A91AAA7A-2E05-4F9A-BCDA-0EBDF580147D}</Project>
       <Name>AWSSDK.IoTSecureTunneling.CodeAnalysis</Name>

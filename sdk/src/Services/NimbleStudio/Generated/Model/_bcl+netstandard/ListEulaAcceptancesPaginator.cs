@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.NimbleStudio.Model
         /// Enumerable containing all of the EulaAcceptances
         /// </summary>
         public IPaginatedEnumerable<EulaAcceptance> EulaAcceptances => 
-            new PaginatedResultKeyResponse<ListEulaAcceptancesResponse, EulaAcceptance>(this, (i) => i.EulaAcceptances);
+            new PaginatedResultKeyResponse<ListEulaAcceptancesResponse, EulaAcceptance>(this, (i) => i.EulaAcceptances ?? new List<EulaAcceptance>());
 
         internal ListEulaAcceptancesPaginator(IAmazonNimbleStudio client, ListEulaAcceptancesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.NimbleStudio.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListEulaAcceptancesResponse> IPaginator<ListEulaAcceptancesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListEulaAcceptancesResponse> IPaginator<ListEulaAcceptancesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

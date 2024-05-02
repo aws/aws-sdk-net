@@ -80,6 +80,10 @@ namespace Amazon.AWSSupport.Internal
                     {
                         return new Endpoint("https://support.us-gov-west-1.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""support"",""signingRegion"":""us-gov-west-1""}]}", refs), InterpolateJson(@"", refs));
                     }
+                    if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-us-gov") && Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], false))
+                    {
+                        return new Endpoint("https://support.us-gov-west-1.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""support"",""signingRegion"":""us-gov-west-1""}]}", refs), InterpolateJson(@"", refs));
+                    }
                     if (Equals(GetAttr(refs["PartitionResult"], "name"), "aws-iso") && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
                     {
                         return new Endpoint("https://support.us-iso-east-1.c2s.ic.gov", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""support"",""signingRegion"":""us-iso-east-1""}]}", refs), InterpolateJson(@"", refs));

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.CodeCommit.Model
         private string _baseCommitId;
         private ConflictMetadata _conflictMetadata;
         private string _destinationCommitId;
-        private List<MergeHunk> _mergeHunks = new List<MergeHunk>();
+        private List<MergeHunk> _mergeHunks = AWSConfigs.InitializeCollections ? new List<MergeHunk>() : null;
         private string _nextToken;
         private string _sourceCommitId;
 
@@ -112,7 +113,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if MergeHunks property is set
         internal bool IsSetMergeHunks()
         {
-            return this._mergeHunks != null && this._mergeHunks.Count > 0; 
+            return this._mergeHunks != null && (this._mergeHunks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

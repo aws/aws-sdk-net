@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkManager.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.NetworkManager.Model
     public partial class GetLinksRequest : AmazonNetworkManagerRequest
     {
         private string _globalNetworkId;
-        private List<string> _linkIds = new List<string>();
+        private List<string> _linkIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
         private string _provider;
@@ -82,7 +83,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if LinkIds property is set
         internal bool IsSetLinkIds()
         {
-            return this._linkIds != null && this._linkIds.Count > 0; 
+            return this._linkIds != null && (this._linkIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

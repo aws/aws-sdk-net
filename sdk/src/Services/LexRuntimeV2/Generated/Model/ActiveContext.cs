@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexRuntimeV2.Model
 {
     /// <summary>
@@ -43,7 +44,7 @@ namespace Amazon.LexRuntimeV2.Model
     /// </summary>
     public partial class ActiveContext
     {
-        private Dictionary<string, string> _contextAttributes = new Dictionary<string, string>();
+        private Dictionary<string, string> _contextAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _name;
         private ActiveContextTimeToLive _timeToLive;
 
@@ -70,7 +71,7 @@ namespace Amazon.LexRuntimeV2.Model
         // Check to see if ContextAttributes property is set
         internal bool IsSetContextAttributes()
         {
-            return this._contextAttributes != null && this._contextAttributes.Count > 0; 
+            return this._contextAttributes != null && (this._contextAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

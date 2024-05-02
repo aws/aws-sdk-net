@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AlexaForBusiness.Model
 {
     /// <summary>
@@ -38,8 +39,8 @@ namespace Amazon.AlexaForBusiness.Model
         private string _firstName;
         private string _lastName;
         private string _phoneNumber;
-        private List<PhoneNumber> _phoneNumbers = new List<PhoneNumber>();
-        private List<SipAddress> _sipAddresses = new List<SipAddress>();
+        private List<PhoneNumber> _phoneNumbers = AWSConfigs.InitializeCollections ? new List<PhoneNumber>() : null;
+        private List<SipAddress> _sipAddresses = AWSConfigs.InitializeCollections ? new List<SipAddress>() : null;
 
         /// <summary>
         /// Gets and sets the property ContactArn. 
@@ -153,7 +154,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if PhoneNumbers property is set
         internal bool IsSetPhoneNumbers()
         {
-            return this._phoneNumbers != null && this._phoneNumbers.Count > 0; 
+            return this._phoneNumbers != null && (this._phoneNumbers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -172,7 +173,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if SipAddresses property is set
         internal bool IsSetSipAddresses()
         {
-            return this._sipAddresses != null && this._sipAddresses.Count > 0; 
+            return this._sipAddresses != null && (this._sipAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

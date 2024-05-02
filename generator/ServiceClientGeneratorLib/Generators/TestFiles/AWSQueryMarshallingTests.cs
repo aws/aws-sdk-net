@@ -19,7 +19,7 @@ namespace ServiceClientGenerator.Generators.TestFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
+    #line 1 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class AWSQueryMarshallingTests : Generators.BaseGenerator
     {
@@ -30,7 +30,7 @@ namespace ServiceClientGenerator.Generators.TestFiles
         public override string TransformText()
         {
             
-            #line 7 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
+            #line 7 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
 
 	AddLicenseHeader();
 
@@ -40,21 +40,21 @@ namespace ServiceClientGenerator.Generators.TestFiles
             this.Write("\r\n\r\nusing System;\r\nusing System.IO;\r\nusing System.Linq;\r\nusing System.Text;\r\nusin" +
                     "g Microsoft.VisualStudio.TestTools.UnitTesting;\r\n\r\nusing ");
             
-            #line 18 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
+            #line 18 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(";\r\nusing ");
             
-            #line 19 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
+            #line 19 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Model;\r\nusing ");
             
-            #line 20 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
+            #line 20 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
@@ -64,7 +64,7 @@ namespace ServiceClientGenerator.Generators.TestFiles
                     "\r\nnamespace AWSSDK_DotNet.UnitTests.Marshalling\r\n{\r\n    [TestClass]\r\n    public " +
                     "class ");
             
-            #line 30 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
+            #line 30 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -72,14 +72,14 @@ namespace ServiceClientGenerator.Generators.TestFiles
             this.Write("MarshallingTests\r\n    {\r\n        static readonly ServiceModel service_model = Uti" +
                     "ls.LoadServiceModel(\"");
             
-            #line 32 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
+            #line 32 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceDirectoryName));
             
             #line default
             #line hidden
             this.Write("\");\r\n\t\t");
             
-            #line 33 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
+            #line 33 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
 
 		foreach(var operation in this.Config.ServiceModel.Operations)
 		{
@@ -90,21 +90,21 @@ namespace ServiceClientGenerator.Generators.TestFiles
             this.Write("\r\n        [TestMethod]\r\n        [TestCategory(\"UnitTest\")]\r\n        [TestCategory" +
                     "(\"");
             
-            #line 40 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
+            #line 40 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceModel.Type));
             
             #line default
             #line hidden
             this.Write("\")]\r\n        [TestCategory(\"");
             
-            #line 41 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
+            #line 41 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.TestCategory));
             
             #line default
             #line hidden
             this.Write("\")]\r\n        public void ");
             
-            #line 42 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
+            #line 42 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -112,21 +112,21 @@ namespace ServiceClientGenerator.Generators.TestFiles
             this.Write("MarshallTest()\r\n        {\r\n            var operation = service_model.FindOperatio" +
                     "n(\"");
             
-            #line 44 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
+            #line 44 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("\");\r\n\r\n            var request = InstantiateClassGenerator.Execute<");
             
-            #line 46 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
+            #line 46 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request>(operation);\r\n            var marshaller = new ");
             
-            #line 47 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
+            #line 47 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -136,7 +136,7 @@ namespace ServiceClientGenerator.Generators.TestFiles
                     "rs, request, service_model, operation);\r\n            validator.Validate();\r\n\r\n\r\n" +
                     "");
             
-            #line 53 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
+            #line 53 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
 
             if(operation.ResponseStructure != null)
             {
@@ -148,14 +148,14 @@ namespace ServiceClientGenerator.Generators.TestFiles
                     ").Execute();\r\n\t\t\tvar context = new XmlUnmarshallerContext(Utils.CreateStreamFrom" +
                     "String(payloadResponse), false, null);\r\n            var response = ");
             
-            #line 59 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
+            #line 59 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("ResponseUnmarshaller.Instance.Unmarshall(context)\r\n\t\t\t\tas ");
             
-            #line 60 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
+            #line 60 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -163,7 +163,7 @@ namespace ServiceClientGenerator.Generators.TestFiles
             this.Write("Response;   \r\n            InstantiateClassGenerator.ValidateObjectFullyInstantiat" +
                     "ed(response);       \r\n");
             
-            #line 62 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
+            #line 62 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
 
             }
 
@@ -172,7 +172,7 @@ namespace ServiceClientGenerator.Generators.TestFiles
             #line hidden
             this.Write("        }\r\n");
             
-            #line 66 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
+            #line 66 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
 
             foreach (var exception in operation.Exceptions)
             {
@@ -183,28 +183,28 @@ namespace ServiceClientGenerator.Generators.TestFiles
             this.Write("\r\n        [TestMethod]\r\n        [TestCategory(\"UnitTest\")]\r\n        [TestCategory" +
                     "(\"");
             
-            #line 73 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
+            #line 73 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ServiceModel.Type));
             
             #line default
             #line hidden
             this.Write("\")]\r\n        [TestCategory(\"");
             
-            #line 74 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
+            #line 74 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.TestCategory));
             
             #line default
             #line hidden
             this.Write("\")]\r\n        public void ");
             
-            #line 75 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
+            #line 75 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("_");
             
-            #line 75 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
+            #line 75 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(exception.Name));
             
             #line default
@@ -212,21 +212,21 @@ namespace ServiceClientGenerator.Generators.TestFiles
             this.Write("MarshallTest()\r\n        {\r\n            var operation = service_model.FindOperatio" +
                     "n(\"");
             
-            #line 77 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
+            #line 77 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("\");\r\n\r\n            var request = InstantiateClassGenerator.Execute<");
             
-            #line 79 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
+            #line 79 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
             #line hidden
             this.Write("Request>(operation);\r\n            var marshaller = new ");
             
-            #line 80 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
+            #line 80 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -239,7 +239,7 @@ namespace ServiceClientGenerator.Generators.TestFiles
 
             var exception = operation.Exceptions.First(e => e.Name.Equals(""");
             
-            #line 86 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
+            #line 86 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(exception.Name));
             
             #line default
@@ -249,7 +249,7 @@ namespace ServiceClientGenerator.Generators.TestFiles
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = ");
             
-            #line 89 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
+            #line 89 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(operation.Name));
             
             #line default
@@ -258,7 +258,7 @@ namespace ServiceClientGenerator.Generators.TestFiles
                     "tatusCode.OK);\r\n\r\n            InstantiateClassGenerator.ValidateObjectFullyInsta" +
                     "ntiated(response);\r\n        }\r\n");
             
-            #line 93 "C:\Projects\aws-sdk-net\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
+            #line 93 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\TestFiles\AWSQueryMarshallingTests.tt"
 
             }
         }

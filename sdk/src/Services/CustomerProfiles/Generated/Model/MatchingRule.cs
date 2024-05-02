@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
@@ -104,7 +105,7 @@ namespace Amazon.CustomerProfiles.Model
     /// </summary>
     public partial class MatchingRule
     {
-        private List<string> _rule = new List<string>();
+        private List<string> _rule = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Rule. 
@@ -123,7 +124,7 @@ namespace Amazon.CustomerProfiles.Model
         // Check to see if Rule property is set
         internal bool IsSetRule()
         {
-            return this._rule != null && this._rule.Count > 0; 
+            return this._rule != null && (this._rule.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

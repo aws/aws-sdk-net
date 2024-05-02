@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
@@ -36,13 +37,13 @@ namespace Amazon.DataZone.Model
         private DateTime? _createdAt;
         private DeploymentProperties _deploymentProperties;
         private string _description;
-        private List<string> _glossaryTerms = new List<string>();
+        private List<string> _glossaryTerms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _id;
         private string _name;
         private string _provider;
         private ProvisioningProperties _provisioningProperties;
         private DateTime? _updatedAt;
-        private List<CustomParameter> _userParameters = new List<CustomParameter>();
+        private List<CustomParameter> _userParameters = AWSConfigs.InitializeCollections ? new List<CustomParameter>() : null;
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -115,7 +116,7 @@ namespace Amazon.DataZone.Model
         // Check to see if GlossaryTerms property is set
         internal bool IsSetGlossaryTerms()
         {
-            return this._glossaryTerms != null && this._glossaryTerms.Count > 0; 
+            return this._glossaryTerms != null && (this._glossaryTerms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -227,7 +228,7 @@ namespace Amazon.DataZone.Model
         // Check to see if UserParameters property is set
         internal bool IsSetUserParameters()
         {
-            return this._userParameters != null && this._userParameters.Count > 0; 
+            return this._userParameters != null && (this._userParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

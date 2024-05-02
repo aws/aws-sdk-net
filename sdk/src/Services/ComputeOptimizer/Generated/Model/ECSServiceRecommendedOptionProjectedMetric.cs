@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.ComputeOptimizer.Model
     /// </summary>
     public partial class ECSServiceRecommendedOptionProjectedMetric
     {
-        private List<ECSServiceProjectedMetric> _projectedMetrics = new List<ECSServiceProjectedMetric>();
+        private List<ECSServiceProjectedMetric> _projectedMetrics = AWSConfigs.InitializeCollections ? new List<ECSServiceProjectedMetric>() : null;
         private int? _recommendedCpuUnits;
         private int? _recommendedMemorySize;
 
@@ -59,7 +60,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if ProjectedMetrics property is set
         internal bool IsSetProjectedMetrics()
         {
-            return this._projectedMetrics != null && this._projectedMetrics.Count > 0; 
+            return this._projectedMetrics != null && (this._projectedMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

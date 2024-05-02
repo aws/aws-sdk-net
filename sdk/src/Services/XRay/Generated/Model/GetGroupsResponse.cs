@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.XRay.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.XRay.Model
     /// </summary>
     public partial class GetGroupsResponse : AmazonWebServiceResponse
     {
-        private List<GroupSummary> _groups = new List<GroupSummary>();
+        private List<GroupSummary> _groups = AWSConfigs.InitializeCollections ? new List<GroupSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.XRay.Model
         // Check to see if Groups property is set
         internal bool IsSetGroups()
         {
-            return this._groups != null && this._groups.Count > 0; 
+            return this._groups != null && (this._groups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DirectConnect.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.DirectConnect.Model
     public partial class AssociateMacSecKeyResponse : AmazonWebServiceResponse
     {
         private string _connectionId;
-        private List<MacSecKey> _macSecKeys = new List<MacSecKey>();
+        private List<MacSecKey> _macSecKeys = AWSConfigs.InitializeCollections ? new List<MacSecKey>() : null;
 
         /// <summary>
         /// Gets and sets the property ConnectionId. 
@@ -69,7 +70,7 @@ namespace Amazon.DirectConnect.Model
         // Check to see if MacSecKeys property is set
         internal bool IsSetMacSecKeys()
         {
-            return this._macSecKeys != null && this._macSecKeys.Count > 0; 
+            return this._macSecKeys != null && (this._macSecKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

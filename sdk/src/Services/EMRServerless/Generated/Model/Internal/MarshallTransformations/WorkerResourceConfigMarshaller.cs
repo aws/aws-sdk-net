@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(WorkerResourceConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetCpu())
             {
                 context.Writer.WritePropertyName("cpu");
@@ -55,6 +58,12 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("disk");
                 context.Writer.Write(requestObject.Disk);
+            }
+
+            if(requestObject.IsSetDiskType())
+            {
+                context.Writer.WritePropertyName("diskType");
+                context.Writer.Write(requestObject.DiskType);
             }
 
             if(requestObject.IsSetMemory())

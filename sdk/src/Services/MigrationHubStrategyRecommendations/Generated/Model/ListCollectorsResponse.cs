@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MigrationHubStrategyRecommendations.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
     /// </summary>
     public partial class ListCollectorsResponse : AmazonWebServiceResponse
     {
-        private List<Collector> _collectors = new List<Collector>();
+        private List<Collector> _collectors = AWSConfigs.InitializeCollections ? new List<Collector>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         // Check to see if Collectors property is set
         internal bool IsSetCollectors()
         {
-            return this._collectors != null && this._collectors.Count > 0; 
+            return this._collectors != null && (this._collectors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

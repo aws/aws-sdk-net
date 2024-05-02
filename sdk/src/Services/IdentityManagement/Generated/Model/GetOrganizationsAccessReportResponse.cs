@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IdentityManagement.Model
     /// </summary>
     public partial class GetOrganizationsAccessReportResponse : AmazonWebServiceResponse
     {
-        private List<AccessDetail> _accessDetails = new List<AccessDetail>();
+        private List<AccessDetail> _accessDetails = AWSConfigs.InitializeCollections ? new List<AccessDetail>() : null;
         private ErrorDetails _errorDetails;
         private bool? _isTruncated;
         private DateTime? _jobCompletionDate;
@@ -58,7 +59,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if AccessDetails property is set
         internal bool IsSetAccessDetails()
         {
-            return this._accessDetails != null && this._accessDetails.Count > 0; 
+            return this._accessDetails != null && (this._accessDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

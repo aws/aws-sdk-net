@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchRUM.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.CloudWatchRUM.Model
     /// </summary>
     public partial class MetricDefinition
     {
-        private Dictionary<string, string> _dimensionKeys = new Dictionary<string, string>();
+        private Dictionary<string, string> _dimensionKeys = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _eventPattern;
         private string _metricDefinitionId;
         private string _name;
@@ -62,7 +63,7 @@ namespace Amazon.CloudWatchRUM.Model
         // Check to see if DimensionKeys property is set
         internal bool IsSetDimensionKeys()
         {
-            return this._dimensionKeys != null && this._dimensionKeys.Count > 0; 
+            return this._dimensionKeys != null && (this._dimensionKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

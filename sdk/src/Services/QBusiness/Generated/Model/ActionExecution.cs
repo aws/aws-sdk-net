@@ -26,14 +26,15 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// Performs an Amazon Q plugin action during a non-streaming chat conversation.
+    /// Performs an Amazon Q Business plugin action during a non-streaming chat conversation.
     /// </summary>
     public partial class ActionExecution
     {
-        private Dictionary<string, ActionExecutionPayloadField> _payload = new Dictionary<string, ActionExecutionPayloadField>();
+        private Dictionary<string, ActionExecutionPayloadField> _payload = AWSConfigs.InitializeCollections ? new Dictionary<string, ActionExecutionPayloadField>() : null;
         private string _payloadFieldNameSeparator;
         private string _pluginId;
 
@@ -41,7 +42,7 @@ namespace Amazon.QBusiness.Model
         /// Gets and sets the property Payload. 
         /// <para>
         /// A mapping of field names to the field values in input that an end user provides to
-        /// Amazon Q requests to perform their plugin action. 
+        /// Amazon Q Business requests to perform their plugin action. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -54,7 +55,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if Payload property is set
         internal bool IsSetPayload()
         {
-            return this._payload != null && this._payload.Count > 0; 
+            return this._payload != null && (this._payload.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

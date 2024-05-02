@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VoiceID.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.VoiceID.Model
     /// </summary>
     public partial class ListDomainsResponse : AmazonWebServiceResponse
     {
-        private List<DomainSummary> _domainSummaries = new List<DomainSummary>();
+        private List<DomainSummary> _domainSummaries = AWSConfigs.InitializeCollections ? new List<DomainSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.VoiceID.Model
         // Check to see if DomainSummaries property is set
         internal bool IsSetDomainSummaries()
         {
-            return this._domainSummaries != null && this._domainSummaries.Count > 0; 
+            return this._domainSummaries != null && (this._domainSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

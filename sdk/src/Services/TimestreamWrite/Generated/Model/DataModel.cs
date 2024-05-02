@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.TimestreamWrite.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.TimestreamWrite.Model
     /// </summary>
     public partial class DataModel
     {
-        private List<DimensionMapping> _dimensionMappings = new List<DimensionMapping>();
+        private List<DimensionMapping> _dimensionMappings = AWSConfigs.InitializeCollections ? new List<DimensionMapping>() : null;
         private string _measureNameColumn;
-        private List<MixedMeasureMapping> _mixedMeasureMappings = new List<MixedMeasureMapping>();
+        private List<MixedMeasureMapping> _mixedMeasureMappings = AWSConfigs.InitializeCollections ? new List<MixedMeasureMapping>() : null;
         private MultiMeasureMappings _multiMeasureMappings;
         private string _timeColumn;
         private TimeUnit _timeUnit;
@@ -56,7 +57,7 @@ namespace Amazon.TimestreamWrite.Model
         // Check to see if DimensionMappings property is set
         internal bool IsSetDimensionMappings()
         {
-            return this._dimensionMappings != null && this._dimensionMappings.Count > 0; 
+            return this._dimensionMappings != null && (this._dimensionMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace Amazon.TimestreamWrite.Model
         // Check to see if MixedMeasureMappings property is set
         internal bool IsSetMixedMeasureMappings()
         {
-            return this._mixedMeasureMappings != null && this._mixedMeasureMappings.Count > 0; 
+            return this._mixedMeasureMappings != null && (this._mixedMeasureMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

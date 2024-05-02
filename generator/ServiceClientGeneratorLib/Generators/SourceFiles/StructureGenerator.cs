@@ -88,16 +88,16 @@ if(structureIsEvent || structureIsEventStream)
             
             #line default
             #line hidden
-            this.Write("\r\nnamespace ");
+            this.Write("\r\n#pragma warning disable CS0612,CS0618,CS1570\r\nnamespace ");
             
-            #line 42 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 43 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.Namespace));
             
             #line default
             #line hidden
             this.Write(".Model\r\n{\r\n");
             
-            #line 44 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 45 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
   
     if(this.StructureType == StructureType.Request)
         this.FormatOperationRequestDocumentation(this.Operation);
@@ -111,14 +111,14 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("    /// <summary>\r\n    /// This is the response object from the ");
             
-            #line 53 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 54 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.Name));
             
             #line default
             #line hidden
             this.Write(" operation.\r\n    /// </summary>\r\n");
             
-            #line 55 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 56 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
     }
     else
@@ -128,7 +128,7 @@ if(structureIsEvent || structureIsEventStream)
             #line default
             #line hidden
             
-            #line 60 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 61 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
       
     if(this.Structure != null && this.Structure.IsDeprecated)
         {
@@ -138,14 +138,14 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("    [Obsolete(\"");
             
-            #line 64 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 65 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.DeprecationMessage));
             
             #line default
             #line hidden
             this.Write("\")]\r\n");
             
-            #line 65 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 66 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
         }
     if(this.Structure is ExceptionShape)
@@ -156,7 +156,7 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("    #if !NETSTANDARD\r\n    [Serializable]\r\n    #endif\r\n");
             
-            #line 73 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 74 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
         }
 
@@ -164,7 +164,7 @@ if(structureIsEvent || structureIsEventStream)
             #line default
             #line hidden
             
-            #line 76 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 77 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
 
     if(this.Structure != null && this.Structure.IsEventStream)
@@ -181,14 +181,14 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("    ");
             
-            #line 87 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 88 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(EventStreamOutput));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 88 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 89 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
     }
 
@@ -196,7 +196,7 @@ if(structureIsEvent || structureIsEventStream)
             #line default
             #line hidden
             
-            #line 91 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 92 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
     bool hasStreamingMember = this.Structure?.Members.Any(member => member.IsStreaming) ?? false;
         
@@ -214,20 +214,20 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("    public partial class ");
             
-            #line 103 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 104 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.ClassName));
             
             #line default
             #line hidden
             
-            #line 103 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 104 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.BaseClassString));
             
             #line default
             #line hidden
             this.Write(", IDisposable\r\n    {\r\n");
             
-            #line 105 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 106 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
         }
     else 
@@ -237,7 +237,7 @@ if(structureIsEvent || structureIsEventStream)
             #line default
             #line hidden
             
-            #line 110 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 111 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
         if( (this.Structure == null) || (structureIsNotEventStream))
         {
@@ -247,20 +247,20 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("    public partial class ");
             
-            #line 114 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 115 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.ClassName));
             
             #line default
             #line hidden
             
-            #line 114 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 115 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.BaseClassString));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 115 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 116 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
             if(structureIsEvent)
             {
@@ -270,7 +270,7 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("        : IEventStreamEvent\r\n");
             
-            #line 120 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 121 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
             }
 
@@ -279,7 +279,7 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("    {\r\n");
             
-            #line 124 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 125 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
         }
 
@@ -287,7 +287,7 @@ if(structureIsEvent || structureIsEventStream)
             #line default
             #line hidden
             
-            #line 127 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 128 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
     }
 
@@ -295,7 +295,7 @@ if(structureIsEvent || structureIsEventStream)
             #line default
             #line hidden
             
-            #line 130 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 131 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
         if(structureIsNotEventStream)
         {
@@ -307,28 +307,28 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("        private ");
             
-            #line 136 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 137 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
             #line hidden
             this.Write(" _response;\r\n\r\n        /// <summary>\r\n        /// Gets and sets the ");
             
-            #line 139 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 140 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
             #line hidden
             this.Write(" property.\r\n        /// </summary>\r\n        public ");
             
-            #line 141 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 142 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 141 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 142 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Structure.Name));
             
             #line default
@@ -336,7 +336,7 @@ if(structureIsEvent || structureIsEventStream)
             this.Write("\r\n        {\r\n            get { return this._response; }\r\n            set { this._" +
                     "response = value; }\r\n        }\r\n");
             
-            #line 146 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 147 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
             }
             else
@@ -346,32 +346,40 @@ if(structureIsEvent || structureIsEventStream)
                     if (member.IsExcluded)
                         continue;
 
+                    // If the shape is an exception then skip adding RequestId and ErrorCode because those properties comes from the base class.
+                    if (this.Structure is ExceptionShape && (member.PropertyName == "RequestId" || member.PropertyName == "ErrorCode"))
+                        continue;
+
+                    // If the shape is a response then skip adding ContentLength because the property comes from the base class.
+                    if (this.StructureType == StructureType.Response && member.PropertyName == "ContentLength")
+                        continue;
+
             
             #line default
             #line hidden
             this.Write("        private ");
             
-            #line 155 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 164 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.DetermineType()));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 155 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 164 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.VariableName));
             
             #line default
             #line hidden
             
-            #line 155 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(member.ShouldInstantiate ? string.Format(" = new {0}();", member.DetermineType()) : ";"));
+            #line 164 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.IsCollection ? string.Format(" = AWSConfigs.InitializeCollections ? new {0}() : null;", member.DetermineType()) : ";"));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 156 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 165 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                 }
 
@@ -380,7 +388,7 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("\r\n");
             
-            #line 160 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 169 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                 AddSimpleRequestConstructors(this.ClassName, this.Structure, this.Config.Namespace);
 
@@ -395,14 +403,14 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("        private RetryableDetails _retryableDetails = new RetryableDetails(");
             
-            #line 169 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 178 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(exceptionShape.Throttling.ToString().ToLower()));
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 170 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 179 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
 
             
@@ -410,7 +418,7 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("\r\n");
             
-            #line 173 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 182 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                     }
 
@@ -637,7 +645,7 @@ if(structureIsEvent || structureIsEventStream)
             this.Write("        }\r\n#endif\r\n");
             this.Write("\r\n");
             
-            #line 178 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 187 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                 }
                 foreach(var member in this.Structure.Members)
@@ -645,17 +653,25 @@ if(structureIsEvent || structureIsEventStream)
                     if (member.IsExcluded)
                         continue;
 
+                    // If the shape is an exception then skip adding RequestId and ErrorCode because those properties come from the base class.
+                    if (this.Structure is ExceptionShape && (member.PropertyName == "RequestId" || member.PropertyName == "ErrorCode"))
+                        continue;
+
+                    // If the shape is a response then skip adding ContentLength because the property comes from the base class.
+                    if (this.StructureType == StructureType.Response && member.PropertyName == "ContentLength")
+                        continue;
+
             
             #line default
             #line hidden
             
-            #line 185 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 202 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
  this.FormatPropertyDocumentation(member); 
             
             #line default
             #line hidden
             
-            #line 186 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 203 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
       
                     if(member.IsDeprecated)
                     {
@@ -665,14 +681,14 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("        [Obsolete(\"");
             
-            #line 190 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 207 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.DeprecationMessage));
             
             #line default
             #line hidden
             this.Write("\")]\r\n");
             
-            #line 191 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 208 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                     }
 
@@ -701,71 +717,74 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("        [AWSProperty(");
             
-            #line 214 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 231 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(string.Join(", ", propertyAttributes)));
             
             #line default
             #line hidden
             this.Write(")]\r\n");
             
-            #line 215 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 232 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                     }
+
+                    // Because some services have model properties named "Equals" which conflicts with .NET's Equals operation. Add the "new" keyword to override the behavior.
+                    // The Retryable is there because the CloudHsmServiceException exception from CloudHSM models Retryable with a different return then what comes from the base class.
 
             
             #line default
             #line hidden
             this.Write("        ");
             
-            #line 218 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 238 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.AccessModifier));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 218 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(member.DetermineType()));
+            #line 238 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName.Equals("Equals") || (this.Structure is ExceptionShape && member.PropertyName.Equals("Retryable")) ? "new " : ""));
             
             #line default
             #line hidden
             
-            #line 218 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(member.UseNullable ? "?" : ""));
+            #line 238 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.DetermineType()));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 218 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 238 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write("\r\n        {\r\n            get { return this.");
             
-            #line 220 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 240 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.VariableName));
             
             #line default
             #line hidden
             this.Write("; }\r\n            set { ");
             
-            #line 221 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 241 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.IsBackwardsCompatibleDateTimeProperty ? "this." + member.BackwardCompatibilityVariableName + " = " : ""));
             
             #line default
             #line hidden
             this.Write("this.");
             
-            #line 221 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 241 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.VariableName));
             
             #line default
             #line hidden
             this.Write(" = value; }\r\n        }\r\n\r\n");
             
-            #line 224 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 244 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                     if (member.EmitIsSetProperties)
                     {
@@ -776,7 +795,7 @@ if(structureIsEvent || structureIsEventStream)
             this.Write("        /// <summary>\r\n        /// This property is set to true if the property <" +
                     "seealso cref=\"");
             
-            #line 229 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 249 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
@@ -792,7 +811,7 @@ if(structureIsEvent || structureIsEventStream)
         /// </returns>
 ");
             
-            #line 238 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 258 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
       
                         if(member.IsDeprecated)
                         {
@@ -802,14 +821,14 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("        [Obsolete(\"");
             
-            #line 242 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 262 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.DeprecationMessage));
             
             #line default
             #line hidden
             this.Write("\")]\r\n");
             
-            #line 243 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 263 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                         }
 
@@ -818,7 +837,7 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("        public bool Is");
             
-            #line 246 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 266 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
@@ -826,7 +845,7 @@ if(structureIsEvent || structureIsEventStream)
             this.Write("Set\r\n        {\r\n            get\r\n            {\r\n                return Amazon.Uti" +
                     "l.Internal.InternalSDKUtils.GetIsSet(this.");
             
-            #line 250 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 270 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.VariableName));
             
             #line default
@@ -834,14 +853,14 @@ if(structureIsEvent || structureIsEventStream)
             this.Write(");\r\n            }\r\n            set\r\n            {\r\n                Amazon.Util.In" +
                     "ternal.InternalSDKUtils.SetIsSet(value, ref this.");
             
-            #line 254 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 274 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.VariableName));
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 255 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 275 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                         if(member.IsBackwardsCompatibleDateTimeProperty)
                         {
@@ -852,14 +871,14 @@ if(structureIsEvent || structureIsEventStream)
             this.Write("  \r\n                Amazon.Util.Internal.InternalSDKUtils.SetIsSet(value, ref thi" +
                     "s.");
             
-            #line 259 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 279 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.BackwardCompatibilityVariableName));
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 260 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 280 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                         }
 
@@ -868,7 +887,7 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("            }\r\n        }\r\n\r\n");
             
-            #line 266 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 286 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                     }
 
@@ -877,21 +896,21 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("        // Check to see if ");
             
-            #line 269 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 289 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(" property is set\r\n        internal bool IsSet");
             
-            #line 270 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 290 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write("()\r\n        {\r\n");
             
-            #line 272 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 292 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                     if (member.EmitIsSetProperties)
                     {
@@ -901,14 +920,14 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("            return this.Is");
             
-            #line 276 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 296 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write("Set; \r\n");
             
-            #line 277 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 297 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                     }
                     else if (member.IsNullable)
@@ -919,14 +938,14 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("            return this.");
             
-            #line 282 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 302 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.VariableName));
             
             #line default
             #line hidden
             this.Write(".HasValue; \r\n");
             
-            #line 283 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 303 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                     }
                     else if (member.IsMap || member.IsList)
@@ -937,21 +956,21 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("            return this.");
             
-            #line 288 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 308 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.VariableName));
             
             #line default
             #line hidden
-            this.Write(" != null && this.");
+            this.Write(" != null && (this.");
             
-            #line 288 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 308 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.VariableName));
             
             #line default
             #line hidden
-            this.Write(".Count > 0; \r\n");
+            this.Write(".Count > 0 || !AWSConfigs.InitializeCollections); \r\n");
             
-            #line 289 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 309 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                     }
                     else if (member.IsDocument)
@@ -962,14 +981,14 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("            return !this.");
             
-            #line 294 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 314 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.VariableName));
             
             #line default
             #line hidden
             this.Write(".IsNull();\r\n");
             
-            #line 295 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 315 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                     }
                     else
@@ -980,14 +999,14 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("            return this.");
             
-            #line 300 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 320 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.VariableName));
             
             #line default
             #line hidden
             this.Write(" != null;\r\n");
             
-            #line 301 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 321 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                     }
 
@@ -996,7 +1015,7 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("        }\r\n\r\n");
             
-            #line 306 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 326 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                 }
 
@@ -1010,7 +1029,7 @@ if(structureIsEvent || structureIsEventStream)
                     "   /// </summary>\r\n        /// <returns>A signer for this request.</returns>\r\n  " +
                     "      override protected AbstractAWSSigner CreateSigner()\r\n        {\r\n");
             
-            #line 318 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 338 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                     switch (this.Operation.AuthType.Value)
                     {
@@ -1021,7 +1040,7 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("            return new NullSigner();\r\n");
             
-            #line 324 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 344 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                         break;
                         case OperationAuthType.V4:
@@ -1031,7 +1050,7 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("            return new AWS4Signer();\r\n");
             
-            #line 329 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 349 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                         break;
                         case OperationAuthType.V4UnsignedBody:
@@ -1041,7 +1060,7 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("            return new AWS4Signer(false);\r\n");
             
-            #line 334 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 354 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                         break;
                         case OperationAuthType.Bearer:
@@ -1051,7 +1070,7 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("            return new BearerTokenSigner();\r\n");
             
-            #line 339 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 359 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                         break;
                         default:
@@ -1063,7 +1082,7 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("        }\r\n");
             
-            #line 346 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 366 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                 }
                 // Flexible checksum overrides to allow response validation configuration on the request
@@ -1084,7 +1103,7 @@ if(structureIsEvent || structureIsEventStream)
             {
                 if (IsSet");
             
-            #line 360 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 380 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.ChecksumConfiguration.RequestValidationModeMember));
             
             #line default
@@ -1092,7 +1111,7 @@ if(structureIsEvent || structureIsEventStream)
             this.Write("())\r\n                {\r\n                    return (CoreChecksumResponseBehavior)" +
                     "Enum.Parse(typeof(CoreChecksumResponseBehavior), this.");
             
-            #line 362 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 382 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Operation.ChecksumConfiguration.RequestValidationModeMember));
             
             #line default
@@ -1102,7 +1121,7 @@ if(structureIsEvent || structureIsEventStream)
                     "ithm> _supportedChecksumAlgorithms = new List<CoreChecksumAlgorithm>\r\n        {\r" +
                     "\n            ");
             
-            #line 371 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 391 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(string.Join(", ", Operation.ChecksumConfiguration?.ResponseAlgorithms?.Select(s => $"CoreChecksumAlgorithm.{s}").ToArray())));
             
             #line default
@@ -1117,7 +1136,7 @@ if(structureIsEvent || structureIsEventStream)
 #endregion
 ");
             
-            #line 379 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 399 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                 }
 
@@ -1129,7 +1148,7 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("#region Backwards compatible properties\r\n");
             
-            #line 386 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 406 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                     foreach(var member in this.Structure.Members)
                     {
@@ -1141,27 +1160,27 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("        private ");
             
-            #line 392 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 412 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.DetermineType()));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 392 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 412 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.BackwardCompatibilityVariableName));
             
             #line default
             #line hidden
             
-            #line 392 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(member.ShouldInstantiate ? string.Format(" = new {0}();", member.DetermineType()) : ";"));
+            #line 412 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(member.IsCollection ? string.Format(" = AWSConfigs.InitializeCollections ? new {0}() : null;", member.DetermineType()) : ";"));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 393 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 413 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                     }
 
@@ -1170,7 +1189,7 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("\r\n");
             
-            #line 397 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 417 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                     foreach(var member in this.Structure.Members)
                     {
@@ -1181,7 +1200,7 @@ if(structureIsEvent || structureIsEventStream)
             #line default
             #line hidden
             
-            #line 403 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 423 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
  this.FormatPropertyDocumentation(member, "This property is deprecated. Setting this property results in non-UTC DateTimes " +
         "not being marshalled correctly. Use " + member.PropertyName + " instead. Setting either " + member.BackwardCompatibilityPropertyName +
         " or " + member.PropertyName + " results in both " + member.BackwardCompatibilityPropertyName + " and " + 
@@ -1194,35 +1213,35 @@ if(structureIsEvent || structureIsEventStream)
             this.Write("        [Obsolete(\"Setting this property results in non-UTC DateTimes not being m" +
                     "arshalled correctly. \" +\r\n            \"Use ");
             
-            #line 410 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 430 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(" instead. Setting either ");
             
-            #line 410 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 430 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.BackwardCompatibilityPropertyName));
             
             #line default
             #line hidden
             this.Write(" or ");
             
-            #line 410 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 430 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(" results in both ");
             
-            #line 410 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 430 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.BackwardCompatibilityPropertyName));
             
             #line default
             #line hidden
             this.Write(" and \" +\r\n            \"");
             
-            #line 411 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 431 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
@@ -1230,7 +1249,7 @@ if(structureIsEvent || structureIsEventStream)
             this.Write(" being assigned, the latest assignment to either one of the two property is \" + \r" +
                     "\n            \"reflected in the value of both. ");
             
-            #line 412 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 432 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.BackwardCompatibilityPropertyName));
             
             #line default
@@ -1239,41 +1258,41 @@ if(structureIsEvent || structureIsEventStream)
                     "on-Utc DateTime to it results in the wrong timestamp being passed to the service" +
                     ".\", false)]\r\n        ");
             
-            #line 414 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 434 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.AccessModifier));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 414 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 434 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.DetermineType()));
             
             #line default
             #line hidden
             
-            #line 414 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 434 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.UseNullable ? "?" : ""));
             
             #line default
             #line hidden
             this.Write(" ");
             
-            #line 414 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 434 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.BackwardCompatibilityPropertyName));
             
             #line default
             #line hidden
             this.Write("\r\n        {\r\n            get { return this.");
             
-            #line 416 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 436 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.BackwardCompatibilityVariableName));
             
             #line default
             #line hidden
             this.Write(".GetValueOrDefault(); }\r\n            set\r\n            {\r\n                this.");
             
-            #line 419 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 439 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.BackwardCompatibilityVariableName));
             
             #line default
@@ -1281,7 +1300,7 @@ if(structureIsEvent || structureIsEventStream)
             this.Write(" = value;\r\n                if (value != null)\r\n                {\r\n               " +
                     "     this.");
             
-            #line 422 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 442 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.VariableName));
             
             #line default
@@ -1289,14 +1308,14 @@ if(structureIsEvent || structureIsEventStream)
             this.Write(" = new DateTime(value.Value.Ticks, DateTimeKind.Utc);\r\n                }\r\n       " +
                     "         else\r\n                {\r\n                    this.");
             
-            #line 426 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 446 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.VariableName));
             
             #line default
             #line hidden
             this.Write(" = null;\r\n                }\r\n            }\r\n        }\r\n");
             
-            #line 430 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 450 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                         if (member.EmitIsSetProperties)
                         {
@@ -1307,7 +1326,7 @@ if(structureIsEvent || structureIsEventStream)
             this.Write("        /// <summary>\r\n        /// This property is set to true if the property <" +
                     "seealso cref=\"");
             
-            #line 435 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 455 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.BackwardCompatibilityPropertyName));
             
             #line default
@@ -1323,42 +1342,42 @@ if(structureIsEvent || structureIsEventStream)
         /// </returns>
         [Obsolete(""Setting ");
             
-            #line 444 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 464 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.BackwardCompatibilityPropertyName));
             
             #line default
             #line hidden
             this.Write(" results in non-UTC DateTimes not being marshalled correctly. Use ");
             
-            #line 444 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 464 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write(" instead.\", false)]\r\n        public bool Is");
             
-            #line 445 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 465 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.BackwardCompatibilityPropertyName));
             
             #line default
             #line hidden
             this.Write("Set\r\n        {\r\n            get\r\n            {\r\n                return this.Is");
             
-            #line 449 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 469 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write("Set;\r\n            }\r\n            set\r\n            {\r\n                this.Is");
             
-            #line 453 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 473 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.PropertyName));
             
             #line default
             #line hidden
             this.Write("Set = value;;\r\n            }\r\n        }\r\n");
             
-            #line 456 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 476 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                         }
                     }
@@ -1369,7 +1388,7 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("#endregion\r\n");
             
-            #line 462 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 482 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                 }
                 if (this.Structure is ExceptionShape)
@@ -1394,7 +1413,7 @@ if(structureIsEvent || structureIsEventStream)
         }
 ");
             
-            #line 481 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 501 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                     }
                 }
@@ -1409,7 +1428,7 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("\r\n");
             
-            #line 491 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 511 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
         }
         if (this.StructureType == StructureType.Response && hasStreamingMember) 
@@ -1431,6 +1450,9 @@ if(structureIsEvent || structureIsEventStream)
             GC.SuppressFinalize(this);
         }
 
+        /// <summary>
+        /// Disposes of all managed and unmanaged resources.
+        /// </summary>
         protected virtual void Dispose(bool disposing)
         {
             if (_disposed)
@@ -1440,7 +1462,7 @@ if(structureIsEvent || structureIsEventStream)
             {
 ");
             
-            #line 516 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 539 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                 if (this.Structure != null) 
                 {
@@ -1454,21 +1476,21 @@ if(structureIsEvent || structureIsEventStream)
             #line hidden
             this.Write("                this.");
             
-            #line 524 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 547 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.VariableName));
             
             #line default
             #line hidden
             this.Write("?.Dispose();\r\n                this.");
             
-            #line 525 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 548 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(member.VariableName));
             
             #line default
             #line hidden
             this.Write(" = null;\r\n");
             
-            #line 526 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 549 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
                         }
                     }
@@ -1480,18 +1502,18 @@ if(structureIsEvent || structureIsEventStream)
             this.Write("            }\r\n\r\n            this._disposed = true;\r\n         }\r\n\r\n         #endr" +
                     "egion\r\n");
             
-            #line 537 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+            #line 560 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
         }
 
             
             #line default
             #line hidden
-            this.Write("    }\r\n}\r\n\r\n\r\n");
+            this.Write("    }\r\n}\r\n\r\n");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 544 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
+        #line 566 "C:\codebase\v3\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\StructureGenerator.tt"
 
     // Set to true when the service model specifies a shape that should be wrapped in a response. ElastiCache CreateCacheCluster is an example of this.
     public bool IsWrapped { get; set; }

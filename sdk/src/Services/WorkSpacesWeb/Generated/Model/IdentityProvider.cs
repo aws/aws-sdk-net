@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkSpacesWeb.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.WorkSpacesWeb.Model
     public partial class IdentityProvider
     {
         private string _identityProviderArn;
-        private Dictionary<string, string> _identityProviderDetails = new Dictionary<string, string>();
+        private Dictionary<string, string> _identityProviderDetails = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _identityProviderName;
         private IdentityProviderType _identityProviderType;
 
@@ -177,7 +178,20 @@ namespace Amazon.WorkSpacesWeb.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>IDPSignout</c> <i>optional</i> 
+        ///  <c>IDPSignout</c> (boolean) <i>optional</i> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>IDPInit</c> (boolean) <i>optional</i> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>RequestSigningAlgorithm</c> (string) <i>optional</i> - Only accepts <c>rsa-sha256</c>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>EncryptedResponses</c> (boolean) <i>optional</i> 
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
@@ -191,7 +205,7 @@ namespace Amazon.WorkSpacesWeb.Model
         // Check to see if IdentityProviderDetails property is set
         internal bool IsSetIdentityProviderDetails()
         {
-            return this._identityProviderDetails != null && this._identityProviderDetails.Count > 0; 
+            return this._identityProviderDetails != null && (this._identityProviderDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

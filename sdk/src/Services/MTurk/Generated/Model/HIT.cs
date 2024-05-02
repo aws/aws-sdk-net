@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MTurk.Model
 {
     /// <summary>
@@ -50,7 +51,7 @@ namespace Amazon.MTurk.Model
         private int? _numberOfAssignmentsAvailable;
         private int? _numberOfAssignmentsCompleted;
         private int? _numberOfAssignmentsPending;
-        private List<QualificationRequirement> _qualificationRequirements = new List<QualificationRequirement>();
+        private List<QualificationRequirement> _qualificationRequirements = AWSConfigs.InitializeCollections ? new List<QualificationRequirement>() : null;
         private string _question;
         private string _requesterAnnotation;
         private string _reward;
@@ -376,7 +377,7 @@ namespace Amazon.MTurk.Model
         // Check to see if QualificationRequirements property is set
         internal bool IsSetQualificationRequirements()
         {
-            return this._qualificationRequirements != null && this._qualificationRequirements.Count > 0; 
+            return this._qualificationRequirements != null && (this._qualificationRequirements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

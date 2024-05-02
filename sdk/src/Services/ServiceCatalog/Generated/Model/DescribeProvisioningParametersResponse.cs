@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
@@ -33,13 +34,13 @@ namespace Amazon.ServiceCatalog.Model
     /// </summary>
     public partial class DescribeProvisioningParametersResponse : AmazonWebServiceResponse
     {
-        private List<ConstraintSummary> _constraintSummaries = new List<ConstraintSummary>();
-        private List<ProvisioningArtifactOutput> _provisioningArtifactOutputKeys = new List<ProvisioningArtifactOutput>();
-        private List<ProvisioningArtifactOutput> _provisioningArtifactOutputs = new List<ProvisioningArtifactOutput>();
-        private List<ProvisioningArtifactParameter> _provisioningArtifactParameters = new List<ProvisioningArtifactParameter>();
+        private List<ConstraintSummary> _constraintSummaries = AWSConfigs.InitializeCollections ? new List<ConstraintSummary>() : null;
+        private List<ProvisioningArtifactOutput> _provisioningArtifactOutputKeys = AWSConfigs.InitializeCollections ? new List<ProvisioningArtifactOutput>() : null;
+        private List<ProvisioningArtifactOutput> _provisioningArtifactOutputs = AWSConfigs.InitializeCollections ? new List<ProvisioningArtifactOutput>() : null;
+        private List<ProvisioningArtifactParameter> _provisioningArtifactParameters = AWSConfigs.InitializeCollections ? new List<ProvisioningArtifactParameter>() : null;
         private ProvisioningArtifactPreferences _provisioningArtifactPreferences;
-        private List<TagOptionSummary> _tagOptions = new List<TagOptionSummary>();
-        private List<UsageInstruction> _usageInstructions = new List<UsageInstruction>();
+        private List<TagOptionSummary> _tagOptions = AWSConfigs.InitializeCollections ? new List<TagOptionSummary>() : null;
+        private List<UsageInstruction> _usageInstructions = AWSConfigs.InitializeCollections ? new List<UsageInstruction>() : null;
 
         /// <summary>
         /// Gets and sets the property ConstraintSummaries. 
@@ -56,7 +57,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if ConstraintSummaries property is set
         internal bool IsSetConstraintSummaries()
         {
-            return this._constraintSummaries != null && this._constraintSummaries.Count > 0; 
+            return this._constraintSummaries != null && (this._constraintSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -76,7 +77,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if ProvisioningArtifactOutputKeys property is set
         internal bool IsSetProvisioningArtifactOutputKeys()
         {
-            return this._provisioningArtifactOutputKeys != null && this._provisioningArtifactOutputKeys.Count > 0; 
+            return this._provisioningArtifactOutputKeys != null && (this._provisioningArtifactOutputKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -96,7 +97,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if ProvisioningArtifactOutputs property is set
         internal bool IsSetProvisioningArtifactOutputs()
         {
-            return this._provisioningArtifactOutputs != null && this._provisioningArtifactOutputs.Count > 0; 
+            return this._provisioningArtifactOutputs != null && (this._provisioningArtifactOutputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -114,7 +115,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if ProvisioningArtifactParameters property is set
         internal bool IsSetProvisioningArtifactParameters()
         {
-            return this._provisioningArtifactParameters != null && this._provisioningArtifactParameters.Count > 0; 
+            return this._provisioningArtifactParameters != null && (this._provisioningArtifactParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -151,7 +152,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if TagOptions property is set
         internal bool IsSetTagOptions()
         {
-            return this._tagOptions != null && this._tagOptions.Count > 0; 
+            return this._tagOptions != null && (this._tagOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -170,7 +171,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if UsageInstructions property is set
         internal bool IsSetUsageInstructions()
         {
-            return this._usageInstructions != null && this._usageInstructions.Count > 0; 
+            return this._usageInstructions != null && (this._usageInstructions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

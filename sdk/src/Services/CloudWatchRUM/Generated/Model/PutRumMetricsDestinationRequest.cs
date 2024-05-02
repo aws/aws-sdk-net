@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchRUM.Model
 {
     /// <summary>
@@ -110,13 +111,20 @@ namespace Amazon.CloudWatchRUM.Model
         /// Gets and sets the property IamRoleArn. 
         /// <para>
         /// This parameter is required if <c>Destination</c> is <c>Evidently</c>. If <c>Destination</c>
-        /// is <c>CloudWatch</c>, do not use this parameter.
+        /// is <c>CloudWatch</c>, don't use this parameter.
         /// </para>
         ///  
         /// <para>
         /// This parameter specifies the ARN of an IAM role that RUM will assume to write to the
         /// Evidently experiment that you are sending metrics to. This role must have permission
         /// to write to that experiment.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify this parameter, you must be signed on to a role that has <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">PassRole</a>
+        /// permissions attached to it, to allow the role to be passed. The <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/auth-and-access-control-cw.html#managed-policies-cloudwatch-RUM">
+        /// CloudWatchAmazonCloudWatchRUMFullAccess</a> policy doesn't include <c>PassRole</c>
+        /// permissions.
         /// </para>
         /// </summary>
         public string IamRoleArn

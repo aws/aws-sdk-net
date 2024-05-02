@@ -189,6 +189,10 @@ namespace Amazon.CodeBuild
         /// </summary>
         public static readonly AuthType BASIC_AUTH = new AuthType("BASIC_AUTH");
         /// <summary>
+        /// Constant CODECONNECTIONS for AuthType
+        /// </summary>
+        public static readonly AuthType CODECONNECTIONS = new AuthType("CODECONNECTIONS");
+        /// <summary>
         /// Constant OAUTH for AuthType
         /// </summary>
         public static readonly AuthType OAUTH = new AuthType("OAUTH");
@@ -949,6 +953,56 @@ namespace Amazon.CodeBuild
 
 
     /// <summary>
+    /// Constants used for properties of type FleetOverflowBehavior.
+    /// </summary>
+    public class FleetOverflowBehavior : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ON_DEMAND for FleetOverflowBehavior
+        /// </summary>
+        public static readonly FleetOverflowBehavior ON_DEMAND = new FleetOverflowBehavior("ON_DEMAND");
+        /// <summary>
+        /// Constant QUEUE for FleetOverflowBehavior
+        /// </summary>
+        public static readonly FleetOverflowBehavior QUEUE = new FleetOverflowBehavior("QUEUE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FleetOverflowBehavior(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FleetOverflowBehavior FindValue(string value)
+        {
+            return FindValue<FleetOverflowBehavior>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FleetOverflowBehavior(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FleetScalingMetricType.
     /// </summary>
     public class FleetScalingMetricType : ConstantClass
@@ -1116,6 +1170,10 @@ namespace Amazon.CodeBuild
         /// Constant DELETING for FleetStatusCode
         /// </summary>
         public static readonly FleetStatusCode DELETING = new FleetStatusCode("DELETING");
+        /// <summary>
+        /// Constant PENDING_DELETION for FleetStatusCode
+        /// </summary>
+        public static readonly FleetStatusCode PENDING_DELETION = new FleetStatusCode("PENDING_DELETION");
         /// <summary>
         /// Constant ROTATING for FleetStatusCode
         /// </summary>
@@ -2020,6 +2078,14 @@ namespace Amazon.CodeBuild
         /// Constant GITHUB_ENTERPRISE for ServerType
         /// </summary>
         public static readonly ServerType GITHUB_ENTERPRISE = new ServerType("GITHUB_ENTERPRISE");
+        /// <summary>
+        /// Constant GITLAB for ServerType
+        /// </summary>
+        public static readonly ServerType GITLAB = new ServerType("GITLAB");
+        /// <summary>
+        /// Constant GITLAB_SELF_MANAGED for ServerType
+        /// </summary>
+        public static readonly ServerType GITLAB_SELF_MANAGED = new ServerType("GITLAB_SELF_MANAGED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2163,6 +2229,10 @@ namespace Amazon.CodeBuild
     {
 
         /// <summary>
+        /// Constant CODECONNECTIONS for SourceAuthType
+        /// </summary>
+        public static readonly SourceAuthType CODECONNECTIONS = new SourceAuthType("CODECONNECTIONS");
+        /// <summary>
         /// Constant OAUTH for SourceAuthType
         /// </summary>
         public static readonly SourceAuthType OAUTH = new SourceAuthType("OAUTH");
@@ -2228,6 +2298,14 @@ namespace Amazon.CodeBuild
         /// Constant GITHUB_ENTERPRISE for SourceType
         /// </summary>
         public static readonly SourceType GITHUB_ENTERPRISE = new SourceType("GITHUB_ENTERPRISE");
+        /// <summary>
+        /// Constant GITLAB for SourceType
+        /// </summary>
+        public static readonly SourceType GITLAB = new SourceType("GITLAB");
+        /// <summary>
+        /// Constant GITLAB_SELF_MANAGED for SourceType
+        /// </summary>
+        public static readonly SourceType GITLAB_SELF_MANAGED = new SourceType("GITLAB_SELF_MANAGED");
         /// <summary>
         /// Constant NO_SOURCE for SourceType
         /// </summary>
@@ -2418,6 +2496,18 @@ namespace Amazon.CodeBuild
         /// Constant HEAD_REF for WebhookFilterType
         /// </summary>
         public static readonly WebhookFilterType HEAD_REF = new WebhookFilterType("HEAD_REF");
+        /// <summary>
+        /// Constant RELEASE_NAME for WebhookFilterType
+        /// </summary>
+        public static readonly WebhookFilterType RELEASE_NAME = new WebhookFilterType("RELEASE_NAME");
+        /// <summary>
+        /// Constant TAG_NAME for WebhookFilterType
+        /// </summary>
+        public static readonly WebhookFilterType TAG_NAME = new WebhookFilterType("TAG_NAME");
+        /// <summary>
+        /// Constant WORKFLOW_NAME for WebhookFilterType
+        /// </summary>
+        public static readonly WebhookFilterType WORKFLOW_NAME = new WebhookFilterType("WORKFLOW_NAME");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(BookingOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAutoAcceptRequests())
             {
                 context.Writer.WritePropertyName("AutoAcceptRequests");

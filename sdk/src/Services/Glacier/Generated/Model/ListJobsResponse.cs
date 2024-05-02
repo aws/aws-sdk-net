@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glacier.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Glacier.Model
     /// </summary>
     public partial class ListJobsResponse : AmazonWebServiceResponse
     {
-        private List<GlacierJobDescription> _jobList = new List<GlacierJobDescription>();
+        private List<GlacierJobDescription> _jobList = AWSConfigs.InitializeCollections ? new List<GlacierJobDescription>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Glacier.Model
         // Check to see if JobList property is set
         internal bool IsSetJobList()
         {
-            return this._jobList != null && this._jobList.Count > 0; 
+            return this._jobList != null && (this._jobList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

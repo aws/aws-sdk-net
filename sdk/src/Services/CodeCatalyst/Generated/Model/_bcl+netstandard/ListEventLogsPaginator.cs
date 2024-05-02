@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CodeCatalyst.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.CodeCatalyst.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<EventLogEntry> Items => 
-            new PaginatedResultKeyResponse<ListEventLogsResponse, EventLogEntry>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListEventLogsResponse, EventLogEntry>(this, (i) => i.Items ?? new List<EventLogEntry>());
 
         internal ListEventLogsPaginator(IAmazonCodeCatalyst client, ListEventLogsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.CodeCatalyst.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListEventLogsResponse> IPaginator<ListEventLogsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListEventLogsResponse> IPaginator<ListEventLogsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

@@ -30,6 +30,7 @@ using Amazon.Runtime.EventStreams.Internal;
 using Amazon.Lambda.Model.Internal.MarshallTransformations;
 using Amazon.Runtime.EventStreams.Utils;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lambda.Model
 {
     /// <summary>

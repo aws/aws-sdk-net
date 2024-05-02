@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class InsightConfiguration
     {
-        private List<Computation> _computations = new List<Computation>();
+        private List<Computation> _computations = AWSConfigs.InitializeCollections ? new List<Computation>() : null;
         private CustomNarrativeOptions _customNarrative;
         private VisualInteractionOptions _interactions;
 
@@ -53,7 +54,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Computations property is set
         internal bool IsSetComputations()
         {
-            return this._computations != null && this._computations.Count > 0; 
+            return this._computations != null && (this._computations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

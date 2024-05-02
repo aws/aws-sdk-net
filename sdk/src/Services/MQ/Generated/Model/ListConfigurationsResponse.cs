@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MQ.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MQ.Model
     /// </summary>
     public partial class ListConfigurationsResponse : AmazonWebServiceResponse
     {
-        private List<Configuration> _configurations = new List<Configuration>();
+        private List<Configuration> _configurations = AWSConfigs.InitializeCollections ? new List<Configuration>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -52,7 +53,7 @@ namespace Amazon.MQ.Model
         // Check to see if Configurations property is set
         internal bool IsSetConfigurations()
         {
-            return this._configurations != null && this._configurations.Count > 0; 
+            return this._configurations != null && (this._configurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

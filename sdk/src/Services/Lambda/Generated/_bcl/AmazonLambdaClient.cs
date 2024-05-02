@@ -33,6 +33,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.Lambda
 {
     /// <summary>
@@ -1631,7 +1632,7 @@ namespace Amazon.Lambda
         /// trigger in the service where you originally configured it.
         /// </para>
         /// </summary>
-        /// <param name="functionName">The name of the Lambda function or version. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> – <c>my-function</c> (name-only), <c>my-function:1</c> (with version). </li> <li>  <b>Function ARN</b> – <c>arn:aws:lambda:us-west-2:123456789012:function:my-function</c>. </li> <li>  <b>Partial ARN</b> – <c>123456789012:function:my-function</c>. </li> </ul> You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
+        /// <param name="functionName">The name or ARN of the Lambda function or version. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> – <c>my-function</c> (name-only), <c>my-function:1</c> (with version). </li> <li>  <b>Function ARN</b> – <c>arn:aws:lambda:us-west-2:123456789012:function:my-function</c>. </li> <li>  <b>Partial ARN</b> – <c>123456789012:function:my-function</c>. </li> </ul> You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
         /// 
         /// <returns>The response from the DeleteFunction service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
@@ -1713,7 +1714,7 @@ namespace Amazon.Lambda
         /// trigger in the service where you originally configured it.
         /// </para>
         /// </summary>
-        /// <param name="functionName">The name of the Lambda function or version. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> – <c>my-function</c> (name-only), <c>my-function:1</c> (with version). </li> <li>  <b>Function ARN</b> – <c>arn:aws:lambda:us-west-2:123456789012:function:my-function</c>. </li> <li>  <b>Partial ARN</b> – <c>123456789012:function:my-function</c>. </li> </ul> You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
+        /// <param name="functionName">The name or ARN of the Lambda function or version. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> – <c>my-function</c> (name-only), <c>my-function:1</c> (with version). </li> <li>  <b>Function ARN</b> – <c>arn:aws:lambda:us-west-2:123456789012:function:my-function</c>. </li> <li>  <b>Partial ARN</b> – <c>123456789012:function:my-function</c>. </li> </ul> You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -2490,7 +2491,7 @@ namespace Amazon.Lambda
         /// the deployment package that's valid for 10 minutes. If you specify a function version,
         /// only details that are specific to that version are returned.
         /// </summary>
-        /// <param name="functionName">The name of the Lambda function, version, or alias. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> – <c>my-function</c> (name-only), <c>my-function:v1</c> (with alias). </li> <li>  <b>Function ARN</b> – <c>arn:aws:lambda:us-west-2:123456789012:function:my-function</c>. </li> <li>  <b>Partial ARN</b> – <c>123456789012:function:my-function</c>. </li> </ul> You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
+        /// <param name="functionName">The name or ARN of the Lambda function, version, or alias. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> – <c>my-function</c> (name-only), <c>my-function:v1</c> (with alias). </li> <li>  <b>Function ARN</b> – <c>arn:aws:lambda:us-west-2:123456789012:function:my-function</c>. </li> <li>  <b>Partial ARN</b> – <c>123456789012:function:my-function</c>. </li> </ul> You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
         /// 
         /// <returns>The response from the GetFunction service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
@@ -2552,7 +2553,7 @@ namespace Amazon.Lambda
         /// the deployment package that's valid for 10 minutes. If you specify a function version,
         /// only details that are specific to that version are returned.
         /// </summary>
-        /// <param name="functionName">The name of the Lambda function, version, or alias. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> – <c>my-function</c> (name-only), <c>my-function:v1</c> (with alias). </li> <li>  <b>Function ARN</b> – <c>arn:aws:lambda:us-west-2:123456789012:function:my-function</c>. </li> <li>  <b>Partial ARN</b> – <c>123456789012:function:my-function</c>. </li> </ul> You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
+        /// <param name="functionName">The name or ARN of the Lambda function, version, or alias. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> – <c>my-function</c> (name-only), <c>my-function:v1</c> (with alias). </li> <li>  <b>Function ARN</b> – <c>arn:aws:lambda:us-west-2:123456789012:function:my-function</c>. </li> <li>  <b>Partial ARN</b> – <c>123456789012:function:my-function</c>. </li> </ul> You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -2765,7 +2766,7 @@ namespace Amazon.Lambda
         /// To get all of a function's details, including function-level settings, use <a>GetFunction</a>.
         /// </para>
         /// </summary>
-        /// <param name="functionName">The name of the Lambda function, version, or alias. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> – <c>my-function</c> (name-only), <c>my-function:v1</c> (with alias). </li> <li>  <b>Function ARN</b> – <c>arn:aws:lambda:us-west-2:123456789012:function:my-function</c>. </li> <li>  <b>Partial ARN</b> – <c>123456789012:function:my-function</c>. </li> </ul> You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
+        /// <param name="functionName">The name or ARN of the Lambda function, version, or alias. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> – <c>my-function</c> (name-only), <c>my-function:v1</c> (with alias). </li> <li>  <b>Function ARN</b> – <c>arn:aws:lambda:us-west-2:123456789012:function:my-function</c>. </li> <li>  <b>Partial ARN</b> – <c>123456789012:function:my-function</c>. </li> </ul> You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
         /// 
         /// <returns>The response from the GetFunctionConfiguration service method, as returned by Lambda.</returns>
         /// <exception cref="Amazon.Lambda.Model.InvalidParameterValueException">
@@ -2837,7 +2838,7 @@ namespace Amazon.Lambda
         /// To get all of a function's details, including function-level settings, use <a>GetFunction</a>.
         /// </para>
         /// </summary>
-        /// <param name="functionName">The name of the Lambda function, version, or alias. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> – <c>my-function</c> (name-only), <c>my-function:v1</c> (with alias). </li> <li>  <b>Function ARN</b> – <c>arn:aws:lambda:us-west-2:123456789012:function:my-function</c>. </li> <li>  <b>Partial ARN</b> – <c>123456789012:function:my-function</c>. </li> </ul> You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
+        /// <param name="functionName">The name or ARN of the Lambda function, version, or alias. <p class="title"> <b>Name formats</b>  <ul> <li>  <b>Function name</b> – <c>my-function</c> (name-only), <c>my-function:v1</c> (with alias). </li> <li>  <b>Function ARN</b> – <c>arn:aws:lambda:us-west-2:123456789012:function:my-function</c>. </li> <li>  <b>Partial ARN</b> – <c>123456789012:function:my-function</c>. </li> </ul> You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>

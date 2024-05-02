@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppStream.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AppStream.Model
     /// </summary>
     public partial class DescribeAppBlockBuildersResponse : AmazonWebServiceResponse
     {
-        private List<AppBlockBuilder> _appBlockBuilders = new List<AppBlockBuilder>();
+        private List<AppBlockBuilder> _appBlockBuilders = AWSConfigs.InitializeCollections ? new List<AppBlockBuilder>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.AppStream.Model
         // Check to see if AppBlockBuilders property is set
         internal bool IsSetAppBlockBuilders()
         {
-            return this._appBlockBuilders != null && this._appBlockBuilders.Count > 0; 
+            return this._appBlockBuilders != null && (this._appBlockBuilders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

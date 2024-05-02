@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.QuickSight.Model
     public partial class WaterfallChartSortConfiguration
     {
         private ItemsLimitConfiguration _breakdownItemsLimit;
-        private List<FieldSortOptions> _categorySort = new List<FieldSortOptions>();
+        private List<FieldSortOptions> _categorySort = AWSConfigs.InitializeCollections ? new List<FieldSortOptions>() : null;
 
         /// <summary>
         /// Gets and sets the property BreakdownItemsLimit. 
@@ -70,7 +71,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if CategorySort property is set
         internal bool IsSetCategorySort()
         {
-            return this._categorySort != null && this._categorySort.Count > 0; 
+            return this._categorySort != null && (this._categorySort.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

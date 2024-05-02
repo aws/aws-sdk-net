@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Personalize.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Personalize.Model
     public partial class ListSolutionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SolutionSummary> _solutions = new List<SolutionSummary>();
+        private List<SolutionSummary> _solutions = AWSConfigs.InitializeCollections ? new List<SolutionSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.Personalize.Model
         // Check to see if Solutions property is set
         internal bool IsSetSolutions()
         {
-            return this._solutions != null && this._solutions.Count > 0; 
+            return this._solutions != null && (this._solutions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

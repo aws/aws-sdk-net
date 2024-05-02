@@ -33,6 +33,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.Connect
 {
     /// <summary>
@@ -5157,7 +5158,29 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deletes a quick connect.
+        /// Deletes a quick connect. 
+        /// 
+        ///  <important> 
+        /// <para>
+        /// After calling <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteUser.html">DeleteUser</a>,
+        /// it's important to call <c>DeleteQuickConnect</c> to delete any records related to
+        /// the deleted users. This will help you:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Avoid dangling resources that impact your service quotas.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Remove deleted users so they don't appear to agents as transfer options.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Avoid the disruption of other Amazon Connect processes, such as instance replication
+        /// and syncing if you're using <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-connect-global-resiliency.html">Amazon
+        /// Connect Global Resiliency</a>. 
+        /// </para>
+        ///  </li> </ul> </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteQuickConnect service method.</param>
         /// 
@@ -5189,7 +5212,29 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deletes a quick connect.
+        /// Deletes a quick connect. 
+        /// 
+        ///  <important> 
+        /// <para>
+        /// After calling <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteUser.html">DeleteUser</a>,
+        /// it's important to call <c>DeleteQuickConnect</c> to delete any records related to
+        /// the deleted users. This will help you:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Avoid dangling resources that impact your service quotas.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Remove deleted users so they don't appear to agents as transfer options.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Avoid the disruption of other Amazon Connect processes, such as instance replication
+        /// and syncing if you're using <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-connect-global-resiliency.html">Amazon
+        /// Connect Global Resiliency</a>. 
+        /// </para>
+        ///  </li> </ul> </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteQuickConnect service method.</param>
         /// <param name="cancellationToken">
@@ -5689,6 +5734,26 @@ namespace Amazon.Connect
         /// Users from Your Amazon Connect Instance</a> in the <i>Amazon Connect Administrator
         /// Guide</i>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// After calling DeleteUser, call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteQuickConnect.html">DeleteQuickConnect</a>
+        /// to delete any records related to the deleted users. This will help you:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Avoid dangling resources that impact your service quotas.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Remove deleted users so they don't appear to agents as transfer options.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Avoid the disruption of other Amazon Connect processes, such as instance replication
+        /// and syncing if you're using <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-connect-global-resiliency.html">Amazon
+        /// Connect Global Resiliency</a>. 
+        /// </para>
+        ///  </li> </ul> </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteUser service method.</param>
         /// 
@@ -5729,6 +5794,26 @@ namespace Amazon.Connect
         /// Users from Your Amazon Connect Instance</a> in the <i>Amazon Connect Administrator
         /// Guide</i>.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// After calling DeleteUser, call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteQuickConnect.html">DeleteQuickConnect</a>
+        /// to delete any records related to the deleted users. This will help you:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Avoid dangling resources that impact your service quotas.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Remove deleted users so they don't appear to agents as transfer options.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Avoid the disruption of other Amazon Connect processes, such as instance replication
+        /// and syncing if you're using <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-connect-global-resiliency.html">Amazon
+        /// Connect Global Resiliency</a>. 
+        /// </para>
+        ///  </li> </ul> </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteUser service method.</param>
         /// <param name="cancellationToken">
@@ -10572,7 +10657,8 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// For the specified <c>referenceTypes</c>, returns a list of references associated with
-        /// the contact. 
+        /// the contact. <i>References</i> are links to documents that are related to a contact,
+        /// such as emails, attachments, or URLs.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListContactReferences service method.</param>
@@ -10610,7 +10696,8 @@ namespace Amazon.Connect
         ///  
         /// <para>
         /// For the specified <c>referenceTypes</c>, returns a list of references associated with
-        /// the contact. 
+        /// the contact. <i>References</i> are links to documents that are related to a contact,
+        /// such as emails, attachments, or URLs.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListContactReferences service method.</param>
@@ -15993,8 +16080,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Ends the specified contact. This call does not work for voice contacts that use the
-        /// following initiation methods:
+        /// Ends the specified contact. Use this API to stop queued callbacks. It does not work
+        /// for voice contacts that use the following initiation methods:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -16010,8 +16097,7 @@ namespace Amazon.Connect
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Chat and task contacts, however, can be terminated in any state, regardless of initiation
-        /// method.
+        /// Chat and task contacts can be terminated in any state, regardless of initiation method.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopContact service method.</param>
@@ -16045,8 +16131,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Ends the specified contact. This call does not work for voice contacts that use the
-        /// following initiation methods:
+        /// Ends the specified contact. Use this API to stop queued callbacks. It does not work
+        /// for voice contacts that use the following initiation methods:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -16062,8 +16148,7 @@ namespace Amazon.Connect
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Chat and task contacts, however, can be terminated in any state, regardless of initiation
-        /// method.
+        /// Chat and task contacts can be terminated in any state, regardless of initiation method.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopContact service method.</param>

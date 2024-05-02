@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CodeCommit.Model
     /// </summary>
     public partial class GetDifferencesResponse : AmazonWebServiceResponse
     {
-        private List<Difference> _differences = new List<Difference>();
+        private List<Difference> _differences = AWSConfigs.InitializeCollections ? new List<Difference>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if Differences property is set
         internal bool IsSetDifferences()
         {
-            return this._differences != null && this._differences.Count > 0; 
+            return this._differences != null && (this._differences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EC2.Model
     public partial class GetVpnConnectionDeviceTypesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<VpnConnectionDeviceType> _vpnConnectionDeviceTypes = new List<VpnConnectionDeviceType>();
+        private List<VpnConnectionDeviceType> _vpnConnectionDeviceTypes = AWSConfigs.InitializeCollections ? new List<VpnConnectionDeviceType>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +74,7 @@ namespace Amazon.EC2.Model
         // Check to see if VpnConnectionDeviceTypes property is set
         internal bool IsSetVpnConnectionDeviceTypes()
         {
-            return this._vpnConnectionDeviceTypes != null && this._vpnConnectionDeviceTypes.Count > 0; 
+            return this._vpnConnectionDeviceTypes != null && (this._vpnConnectionDeviceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

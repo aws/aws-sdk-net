@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -42,10 +43,10 @@ namespace Amazon.Glue.Model
         private AuditContext _auditContext;
         private string _catalogId;
         private string _databaseName;
-        private List<string> _partitionValues = new List<string>();
+        private List<string> _partitionValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private QuerySessionContext _querySessionContext;
         private string _region;
-        private List<string> _supportedPermissionTypes = new List<string>();
+        private List<string> _supportedPermissionTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _tableName;
 
         /// <summary>
@@ -120,7 +121,7 @@ namespace Amazon.Glue.Model
         // Check to see if PartitionValues property is set
         internal bool IsSetPartitionValues()
         {
-            return this._partitionValues != null && this._partitionValues.Count > 0; 
+            return this._partitionValues != null && (this._partitionValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -178,7 +179,7 @@ namespace Amazon.Glue.Model
         // Check to see if SupportedPermissionTypes property is set
         internal bool IsSetSupportedPermissionTypes()
         {
-            return this._supportedPermissionTypes != null && this._supportedPermissionTypes.Count > 0; 
+            return this._supportedPermissionTypes != null && (this._supportedPermissionTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

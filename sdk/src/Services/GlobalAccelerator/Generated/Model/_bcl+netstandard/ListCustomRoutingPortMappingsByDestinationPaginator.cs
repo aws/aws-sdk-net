@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// Enumerable containing all of the DestinationPortMappings
         /// </summary>
         public IPaginatedEnumerable<DestinationPortMapping> DestinationPortMappings => 
-            new PaginatedResultKeyResponse<ListCustomRoutingPortMappingsByDestinationResponse, DestinationPortMapping>(this, (i) => i.DestinationPortMappings);
+            new PaginatedResultKeyResponse<ListCustomRoutingPortMappingsByDestinationResponse, DestinationPortMapping>(this, (i) => i.DestinationPortMappings ?? new List<DestinationPortMapping>());
 
         internal ListCustomRoutingPortMappingsByDestinationPaginator(IAmazonGlobalAccelerator client, ListCustomRoutingPortMappingsByDestinationRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.GlobalAccelerator.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListCustomRoutingPortMappingsByDestinationResponse> IPaginator<ListCustomRoutingPortMappingsByDestinationResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListCustomRoutingPortMappingsByDestinationResponse> IPaginator<ListCustomRoutingPortMappingsByDestinationResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

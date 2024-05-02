@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.NetworkFirewall.Model
     /// </summary>
     public partial class ListFirewallPoliciesResponse : AmazonWebServiceResponse
     {
-        private List<FirewallPolicyMetadata> _firewallPolicies = new List<FirewallPolicyMetadata>();
+        private List<FirewallPolicyMetadata> _firewallPolicies = AWSConfigs.InitializeCollections ? new List<FirewallPolicyMetadata>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.NetworkFirewall.Model
         // Check to see if FirewallPolicies property is set
         internal bool IsSetFirewallPolicies()
         {
-            return this._firewallPolicies != null && this._firewallPolicies.Count > 0; 
+            return this._firewallPolicies != null && (this._firewallPolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

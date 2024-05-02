@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     public partial class DescribePhoneNumbersResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PhoneNumberInformation> _phoneNumbers = new List<PhoneNumberInformation>();
+        private List<PhoneNumberInformation> _phoneNumbers = AWSConfigs.InitializeCollections ? new List<PhoneNumberInformation>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if PhoneNumbers property is set
         internal bool IsSetPhoneNumbers()
         {
-            return this._phoneNumbers != null && this._phoneNumbers.Count > 0; 
+            return this._phoneNumbers != null && (this._phoneNumbers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UserProficiency requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAttributeName())
             {
                 context.Writer.WritePropertyName("AttributeName");
@@ -60,7 +63,14 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLevel())
             {
                 context.Writer.WritePropertyName("Level");
-                context.Writer.Write(requestObject.Level.Value);
+                if(StringUtils.IsSpecialFloatValue(requestObject.Level.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Level.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Level.Value);
+                }
             }
 
         }

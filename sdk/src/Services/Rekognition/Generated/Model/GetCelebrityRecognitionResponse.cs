@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class GetCelebrityRecognitionResponse : AmazonWebServiceResponse
     {
-        private List<CelebrityRecognition> _celebrities = new List<CelebrityRecognition>();
+        private List<CelebrityRecognition> _celebrities = AWSConfigs.InitializeCollections ? new List<CelebrityRecognition>() : null;
         private string _jobId;
         private VideoJobStatus _jobStatus;
         private string _jobTag;
@@ -57,7 +58,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if Celebrities property is set
         internal bool IsSetCelebrities()
         {
-            return this._celebrities != null && this._celebrities.Count > 0; 
+            return this._celebrities != null && (this._celebrities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

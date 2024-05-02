@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CloudDirectory.Model
     /// </summary>
     public partial class BatchReadResponse : AmazonWebServiceResponse
     {
-        private List<BatchReadOperationResponse> _responses = new List<BatchReadOperationResponse>();
+        private List<BatchReadOperationResponse> _responses = AWSConfigs.InitializeCollections ? new List<BatchReadOperationResponse>() : null;
 
         /// <summary>
         /// Gets and sets the property Responses. 
@@ -50,7 +51,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if Responses property is set
         internal bool IsSetResponses()
         {
-            return this._responses != null && this._responses.Count > 0; 
+            return this._responses != null && (this._responses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

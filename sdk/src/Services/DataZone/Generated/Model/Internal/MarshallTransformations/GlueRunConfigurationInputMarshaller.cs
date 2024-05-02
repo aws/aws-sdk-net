@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,14 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GlueRunConfigurationInput requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
+            if(requestObject.IsSetAutoImportDataQualityResult())
+            {
+                context.Writer.WritePropertyName("autoImportDataQualityResult");
+                context.Writer.Write(requestObject.AutoImportDataQualityResult.Value);
+            }
+
             if(requestObject.IsSetDataAccessRole())
             {
                 context.Writer.WritePropertyName("dataAccessRole");

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.KinesisVideo.Model
     public partial class ListTagsForStreamResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -44,7 +45,7 @@ namespace Amazon.KinesisVideo.Model
         /// set of tags.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=512)]
+        [AWSProperty(Min=0, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -73,7 +74,7 @@ namespace Amazon.KinesisVideo.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

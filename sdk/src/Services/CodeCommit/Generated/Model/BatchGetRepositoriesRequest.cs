@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
@@ -44,7 +45,7 @@ namespace Amazon.CodeCommit.Model
     /// </summary>
     public partial class BatchGetRepositoriesRequest : AmazonCodeCommitRequest
     {
-        private List<string> _repositoryNames = new List<string>();
+        private List<string> _repositoryNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property RepositoryNames. 
@@ -68,7 +69,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if RepositoryNames property is set
         internal bool IsSetRepositoryNames()
         {
-            return this._repositoryNames != null && this._repositoryNames.Count > 0; 
+            return this._repositoryNames != null && (this._repositoryNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

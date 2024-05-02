@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
@@ -35,14 +36,17 @@ namespace Amazon.CloudFormation.Model
     public partial class ResourceChange
     {
         private ChangeAction _action;
+        private string _afterContext;
+        private string _beforeContext;
         private string _changeSetId;
-        private List<ResourceChangeDetail> _details = new List<ResourceChangeDetail>();
+        private List<ResourceChangeDetail> _details = AWSConfigs.InitializeCollections ? new List<ResourceChangeDetail>() : null;
         private string _logicalResourceId;
         private ModuleInfo _moduleInfo;
         private string _physicalResourceId;
+        private PolicyAction _policyAction;
         private Replacement _replacement;
         private string _resourceType;
-        private List<string> _scope = new List<string>();
+        private List<string> _scope = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Action. 
@@ -63,6 +67,44 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetAction()
         {
             return this._action != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AfterContext. 
+        /// <para>
+        /// An encoded JSON string containing the context of the resource after the change is
+        /// executed.
+        /// </para>
+        /// </summary>
+        public string AfterContext
+        {
+            get { return this._afterContext; }
+            set { this._afterContext = value; }
+        }
+
+        // Check to see if AfterContext property is set
+        internal bool IsSetAfterContext()
+        {
+            return this._afterContext != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BeforeContext. 
+        /// <para>
+        /// An encoded JSON string containing the context of the resource before the change is
+        /// executed.
+        /// </para>
+        /// </summary>
+        public string BeforeContext
+        {
+            get { return this._beforeContext; }
+            set { this._beforeContext = value; }
+        }
+
+        // Check to see if BeforeContext property is set
+        internal bool IsSetBeforeContext()
+        {
+            return this._beforeContext != null;
         }
 
         /// <summary>
@@ -100,7 +142,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Details property is set
         internal bool IsSetDetails()
         {
-            return this._details != null && this._details.Count > 0; 
+            return this._details != null && (this._details.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -157,6 +199,50 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetPhysicalResourceId()
         {
             return this._physicalResourceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PolicyAction. 
+        /// <para>
+        /// The action that will be taken on the physical resource when the change set is executed.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Delete</c> The resource will be deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Retain</c> The resource will be retained.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Snapshot</c> The resource will have a snapshot taken.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ReplaceAndDelete</c> The resource will be replaced and then deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ReplaceAndRetain</c> The resource will be replaced and then retained.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ReplaceAndSnapshot</c> The resource will be replaced and then have a snapshot
+        /// taken.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public PolicyAction PolicyAction
+        {
+            get { return this._policyAction; }
+            set { this._policyAction = value; }
+        }
+
+        // Check to see if PolicyAction property is set
+        internal bool IsSetPolicyAction()
+        {
+            return this._policyAction != null;
         }
 
         /// <summary>
@@ -226,7 +312,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Scope property is set
         internal bool IsSetScope()
         {
-            return this._scope != null && this._scope.Count > 0; 
+            return this._scope != null && (this._scope.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppIntegrationsService.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.AppIntegrationsService.Model
     /// </summary>
     public partial class FileConfiguration
     {
-        private Dictionary<string, List<string>> _filters = new Dictionary<string, List<string>>();
-        private List<string> _folders = new List<string>();
+        private Dictionary<string, List<string>> _filters = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
+        private List<string> _folders = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -51,7 +52,7 @@ namespace Amazon.AppIntegrationsService.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.AppIntegrationsService.Model
         // Check to see if Folders property is set
         internal bool IsSetFolders()
         {
-            return this._folders != null && this._folders.Count > 0; 
+            return this._folders != null && (this._folders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

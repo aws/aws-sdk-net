@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FSx.Model
 {
     /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.FSx.Model
     /// </summary>
     public partial class DescribeFileSystemsRequest : AmazonFSxRequest
     {
-        private List<string> _fileSystemIds = new List<string>();
+        private List<string> _fileSystemIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -89,7 +90,7 @@ namespace Amazon.FSx.Model
         // Check to see if FileSystemIds property is set
         internal bool IsSetFileSystemIds()
         {
-            return this._fileSystemIds != null && this._fileSystemIds.Count > 0; 
+            return this._fileSystemIds != null && (this._fileSystemIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

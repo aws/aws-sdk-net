@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTDeviceAdvisor.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
     public partial class ListSuiteDefinitionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SuiteDefinitionInformation> _suiteDefinitionInformationList = new List<SuiteDefinitionInformation>();
+        private List<SuiteDefinitionInformation> _suiteDefinitionInformationList = AWSConfigs.InitializeCollections ? new List<SuiteDefinitionInformation>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         // Check to see if SuiteDefinitionInformationList property is set
         internal bool IsSetSuiteDefinitionInformationList()
         {
-            return this._suiteDefinitionInformationList != null && this._suiteDefinitionInformationList.Count > 0; 
+            return this._suiteDefinitionInformationList != null && (this._suiteDefinitionInformationList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

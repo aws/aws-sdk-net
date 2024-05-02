@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class ListFleetMetricsResponse : AmazonWebServiceResponse
     {
-        private List<FleetMetricNameAndArn> _fleetMetrics = new List<FleetMetricNameAndArn>();
+        private List<FleetMetricNameAndArn> _fleetMetrics = AWSConfigs.InitializeCollections ? new List<FleetMetricNameAndArn>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.IoT.Model
         // Check to see if FleetMetrics property is set
         internal bool IsSetFleetMetrics()
         {
-            return this._fleetMetrics != null && this._fleetMetrics.Count > 0; 
+            return this._fleetMetrics != null && (this._fleetMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

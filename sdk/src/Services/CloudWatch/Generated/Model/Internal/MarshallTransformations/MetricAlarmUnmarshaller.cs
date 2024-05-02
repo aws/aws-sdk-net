@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -63,6 +64,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AlarmActions/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.AlarmActions == null)
+                        {
+                            unmarshalledObject.AlarmActions = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AlarmActions.Add(item);
                         continue;
@@ -106,6 +111,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Dimensions/member", targetDepth))
                     {
                         var unmarshaller = DimensionUnmarshaller.Instance;
+                        if (unmarshalledObject.Dimensions == null)
+                        {
+                            unmarshalledObject.Dimensions = new List<Dimension>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Dimensions.Add(item);
                         continue;
@@ -137,6 +146,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("InsufficientDataActions/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.InsufficientDataActions == null)
+                        {
+                            unmarshalledObject.InsufficientDataActions = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.InsufficientDataActions.Add(item);
                         continue;
@@ -150,6 +163,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Metrics/member", targetDepth))
                     {
                         var unmarshaller = MetricDataQueryUnmarshaller.Instance;
+                        if (unmarshalledObject.Metrics == null)
+                        {
+                            unmarshalledObject.Metrics = new List<MetricDataQuery>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Metrics.Add(item);
                         continue;
@@ -163,6 +180,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("OKActions/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.OKActions == null)
+                        {
+                            unmarshalledObject.OKActions = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.OKActions.Add(item);
                         continue;

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
     public partial class DescribeImportTasksResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ImportTask> _tasks = new List<ImportTask>();
+        private List<ImportTask> _tasks = AWSConfigs.InitializeCollections ? new List<ImportTask>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         // Check to see if Tasks property is set
         internal bool IsSetTasks()
         {
-            return this._tasks != null && this._tasks.Count > 0; 
+            return this._tasks != null && (this._tasks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

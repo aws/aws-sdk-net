@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.OpenSearchService.Model
     public partial class AdditionalLimit
     {
         private string _limitName;
-        private List<string> _limitValues = new List<string>();
+        private List<string> _limitValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property LimitName. <ul> <li> 
@@ -78,7 +79,7 @@ namespace Amazon.OpenSearchService.Model
         // Check to see if LimitValues property is set
         internal bool IsSetLimitValues()
         {
-            return this._limitValues != null && this._limitValues.Count > 0; 
+            return this._limitValues != null && (this._limitValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

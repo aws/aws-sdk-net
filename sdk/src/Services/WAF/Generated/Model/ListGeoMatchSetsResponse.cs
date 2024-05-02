@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAF.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.WAF.Model
     /// </summary>
     public partial class ListGeoMatchSetsResponse : AmazonWebServiceResponse
     {
-        private List<GeoMatchSetSummary> _geoMatchSets = new List<GeoMatchSetSummary>();
+        private List<GeoMatchSetSummary> _geoMatchSets = AWSConfigs.InitializeCollections ? new List<GeoMatchSetSummary>() : null;
         private string _nextMarker;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.WAF.Model
         // Check to see if GeoMatchSets property is set
         internal bool IsSetGeoMatchSets()
         {
-            return this._geoMatchSets != null && this._geoMatchSets.Count > 0; 
+            return this._geoMatchSets != null && (this._geoMatchSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

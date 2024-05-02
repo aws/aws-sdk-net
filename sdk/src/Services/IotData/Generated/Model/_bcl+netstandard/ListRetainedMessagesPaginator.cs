@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IotData.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.IotData.Model
         /// Enumerable containing all of the RetainedTopics
         /// </summary>
         public IPaginatedEnumerable<RetainedMessageSummary> RetainedTopics => 
-            new PaginatedResultKeyResponse<ListRetainedMessagesResponse, RetainedMessageSummary>(this, (i) => i.RetainedTopics);
+            new PaginatedResultKeyResponse<ListRetainedMessagesResponse, RetainedMessageSummary>(this, (i) => i.RetainedTopics ?? new List<RetainedMessageSummary>());
 
         internal ListRetainedMessagesPaginator(IAmazonIotData client, ListRetainedMessagesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.IotData.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListRetainedMessagesResponse> IPaginator<ListRetainedMessagesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListRetainedMessagesResponse> IPaginator<ListRetainedMessagesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTFleetWise.Model
 {
     /// <summary>
@@ -56,9 +57,9 @@ namespace Amazon.IoTFleetWise.Model
         private string _description;
         private string _modelManifestArn;
         private string _name;
-        private List<NetworkInterface> _networkInterfaces = new List<NetworkInterface>();
-        private List<SignalDecoder> _signalDecoders = new List<SignalDecoder>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<NetworkInterface> _networkInterfaces = AWSConfigs.InitializeCollections ? new List<NetworkInterface>() : null;
+        private List<SignalDecoder> _signalDecoders = AWSConfigs.InitializeCollections ? new List<SignalDecoder>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -133,7 +134,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if NetworkInterfaces property is set
         internal bool IsSetNetworkInterfaces()
         {
-            return this._networkInterfaces != null && this._networkInterfaces.Count > 0; 
+            return this._networkInterfaces != null && (this._networkInterfaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -152,7 +153,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if SignalDecoders property is set
         internal bool IsSetSignalDecoders()
         {
-            return this._signalDecoders != null && this._signalDecoders.Count > 0; 
+            return this._signalDecoders != null && (this._signalDecoders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -171,7 +172,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

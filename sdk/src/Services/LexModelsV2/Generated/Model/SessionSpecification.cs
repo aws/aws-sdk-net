@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.LexModelsV2.Model
         private ConversationEndState _conversationEndState;
         private DateTime? _conversationEndTime;
         private DateTime? _conversationStartTime;
-        private List<InvokedIntentSample> _invokedIntentSamples = new List<InvokedIntentSample>();
+        private List<InvokedIntentSample> _invokedIntentSamples = AWSConfigs.InitializeCollections ? new List<InvokedIntentSample>() : null;
         private string _localeId;
         private AnalyticsModality _mode;
         private long? _numberOfTurns;
@@ -195,7 +196,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if InvokedIntentSamples property is set
         internal bool IsSetInvokedIntentSamples()
         {
-            return this._invokedIntentSamples != null && this._invokedIntentSamples.Count > 0; 
+            return this._invokedIntentSamples != null && (this._invokedIntentSamples.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

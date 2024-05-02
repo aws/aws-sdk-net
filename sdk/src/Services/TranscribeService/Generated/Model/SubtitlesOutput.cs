@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.TranscribeService.Model
     /// </summary>
     public partial class SubtitlesOutput
     {
-        private List<string> _formats = new List<string>();
+        private List<string> _formats = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _outputStartIndex;
-        private List<string> _subtitleFileUris = new List<string>();
+        private List<string> _subtitleFileUris = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Formats. 
@@ -54,7 +55,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if Formats property is set
         internal bool IsSetFormats()
         {
-            return this._formats != null && this._formats.Count > 0; 
+            return this._formats != null && (this._formats.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -113,7 +114,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if SubtitleFileUris property is set
         internal bool IsSetSubtitleFileUris()
         {
-            return this._subtitleFileUris != null && this._subtitleFileUris.Count > 0; 
+            return this._subtitleFileUris != null && (this._subtitleFileUris.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

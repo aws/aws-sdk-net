@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class ScanResourceCriteria
     {
-        private Dictionary<string, ScanCondition> _exclude = new Dictionary<string, ScanCondition>();
-        private Dictionary<string, ScanCondition> _include = new Dictionary<string, ScanCondition>();
+        private Dictionary<string, ScanCondition> _exclude = AWSConfigs.InitializeCollections ? new Dictionary<string, ScanCondition>() : null;
+        private Dictionary<string, ScanCondition> _include = AWSConfigs.InitializeCollections ? new Dictionary<string, ScanCondition>() : null;
 
         /// <summary>
         /// Gets and sets the property Exclude. 
@@ -52,7 +53,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if Exclude property is set
         internal bool IsSetExclude()
         {
-            return this._exclude != null && this._exclude.Count > 0; 
+            return this._exclude != null && (this._exclude.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if Include property is set
         internal bool IsSetInclude()
         {
-            return this._include != null && this._include.Count > 0; 
+            return this._include != null && (this._include.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

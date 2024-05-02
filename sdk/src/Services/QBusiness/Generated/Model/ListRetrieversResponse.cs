@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
@@ -34,13 +35,13 @@ namespace Amazon.QBusiness.Model
     public partial class ListRetrieversResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Retriever> _retrievers = new List<Retriever>();
+        private List<Retriever> _retrievers = AWSConfigs.InitializeCollections ? new List<Retriever>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the response is truncated, Amazon Q returns this token, which you can use in a
-        /// later request to list the next set of retrievers.
+        /// If the response is truncated, Amazon Q Business returns this token, which you can
+        /// use in a later request to list the next set of retrievers.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=800)]
@@ -71,7 +72,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if Retrievers property is set
         internal bool IsSetRetrievers()
         {
-            return this._retrievers != null && this._retrievers.Count > 0; 
+            return this._retrievers != null && (this._retrievers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

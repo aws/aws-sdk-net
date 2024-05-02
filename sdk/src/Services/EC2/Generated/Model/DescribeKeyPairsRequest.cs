@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -40,10 +41,10 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeKeyPairsRequest : AmazonEC2Request
     {
-        private List<Filter> _filters = new List<Filter>();
+        private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
         private bool? _includePublicKey;
-        private List<string> _keyNames = new List<string>();
-        private List<string> _keyPairIds = new List<string>();
+        private List<string> _keyNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _keyPairIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -85,7 +86,7 @@ namespace Amazon.EC2.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -129,7 +130,7 @@ namespace Amazon.EC2.Model
         // Check to see if KeyNames property is set
         internal bool IsSetKeyNames()
         {
-            return this._keyNames != null && this._keyNames.Count > 0; 
+            return this._keyNames != null && (this._keyNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -147,7 +148,7 @@ namespace Amazon.EC2.Model
         // Check to see if KeyPairIds property is set
         internal bool IsSetKeyPairIds()
         {
-            return this._keyPairIds != null && this._keyPairIds.Count > 0; 
+            return this._keyPairIds != null && (this._keyPairIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

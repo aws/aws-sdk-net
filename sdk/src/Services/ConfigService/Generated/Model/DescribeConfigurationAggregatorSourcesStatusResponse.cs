@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class DescribeConfigurationAggregatorSourcesStatusResponse : AmazonWebServiceResponse
     {
-        private List<AggregatedSourceStatus> _aggregatedSourceStatusList = new List<AggregatedSourceStatus>();
+        private List<AggregatedSourceStatus> _aggregatedSourceStatusList = AWSConfigs.InitializeCollections ? new List<AggregatedSourceStatus>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if AggregatedSourceStatusList property is set
         internal bool IsSetAggregatedSourceStatusList()
         {
-            return this._aggregatedSourceStatusList != null && this._aggregatedSourceStatusList.Count > 0; 
+            return this._aggregatedSourceStatusList != null && (this._aggregatedSourceStatusList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

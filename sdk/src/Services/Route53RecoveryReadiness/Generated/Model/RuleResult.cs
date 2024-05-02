@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
     public partial class RuleResult
     {
         private DateTime? _lastCheckedTimestamp;
-        private List<Message> _messages = new List<Message>();
+        private List<Message> _messages = AWSConfigs.InitializeCollections ? new List<Message>() : null;
         private Readiness _readiness;
         private string _ruleId;
 
@@ -73,7 +74,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
         // Check to see if Messages property is set
         internal bool IsSetMessages()
         {
-            return this._messages != null && this._messages.Count > 0; 
+            return this._messages != null && (this._messages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

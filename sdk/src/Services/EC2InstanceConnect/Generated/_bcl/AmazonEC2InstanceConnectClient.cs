@@ -33,14 +33,29 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.EC2InstanceConnect
 {
     /// <summary>
     /// <para>Implementation for accessing EC2InstanceConnect</para>
     ///
+    /// This is the <i> Amazon EC2 Instance Connect API Reference</i>. It provides descriptions,
+    /// syntax, and usage examples for each of the actions for Amazon EC2 Instance Connect.
     /// Amazon EC2 Instance Connect enables system administrators to publish one-time use
     /// SSH public keys to EC2, providing users a simple and secure way to connect to their
     /// instances.
+    /// 
+    ///  
+    /// <para>
+    /// To view the Amazon EC2 Instance Connect content in the <i> Amazon EC2 User Guide</i>,
+    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect.html">Connect
+    /// to your Linux instance using EC2 Instance Connect</a>.
+    /// </para>
+    ///  
+    /// <para>
+    /// For Amazon EC2 APIs, see the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Welcome.html">Amazon
+    /// EC2 API Reference</a>.
+    /// </para>
     /// </summary>
     public partial class AmazonEC2InstanceConnectClient : AmazonServiceClient, IAmazonEC2InstanceConnect
     {
@@ -294,6 +309,10 @@ namespace Amazon.EC2InstanceConnect
         /// <exception cref="Amazon.EC2InstanceConnect.Model.SerialConsoleSessionUnavailableException">
         /// Unable to start a serial console session. Please try again.
         /// </exception>
+        /// <exception cref="Amazon.EC2InstanceConnect.Model.SerialConsoleSessionUnsupportedException">
+        /// Your instance's BIOS version is unsupported for serial console connection. Reboot
+        /// your instance to update its BIOS, and then try again to connect.
+        /// </exception>
         /// <exception cref="Amazon.EC2InstanceConnect.Model.ServiceException">
         /// The service encountered an error. Follow the instructions in the error message and
         /// try again.
@@ -357,6 +376,10 @@ namespace Amazon.EC2InstanceConnect
         /// </exception>
         /// <exception cref="Amazon.EC2InstanceConnect.Model.SerialConsoleSessionUnavailableException">
         /// Unable to start a serial console session. Please try again.
+        /// </exception>
+        /// <exception cref="Amazon.EC2InstanceConnect.Model.SerialConsoleSessionUnsupportedException">
+        /// Your instance's BIOS version is unsupported for serial console connection. Reboot
+        /// your instance to update its BIOS, and then try again to connect.
         /// </exception>
         /// <exception cref="Amazon.EC2InstanceConnect.Model.ServiceException">
         /// The service encountered an error. Follow the instructions in the error message and

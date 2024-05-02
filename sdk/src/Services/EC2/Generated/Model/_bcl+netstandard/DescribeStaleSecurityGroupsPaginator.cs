@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the StaleSecurityGroupSet
         /// </summary>
         public IPaginatedEnumerable<StaleSecurityGroup> StaleSecurityGroupSet => 
-            new PaginatedResultKeyResponse<DescribeStaleSecurityGroupsResponse, StaleSecurityGroup>(this, (i) => i.StaleSecurityGroupSet);
+            new PaginatedResultKeyResponse<DescribeStaleSecurityGroupsResponse, StaleSecurityGroup>(this, (i) => i.StaleSecurityGroupSet ?? new List<StaleSecurityGroup>());
 
         internal DescribeStaleSecurityGroupsPaginator(IAmazonEC2 client, DescribeStaleSecurityGroupsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.EC2.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeStaleSecurityGroupsResponse> IPaginator<DescribeStaleSecurityGroupsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeStaleSecurityGroupsResponse> IPaginator<DescribeStaleSecurityGroupsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

@@ -26,17 +26,23 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Configures ingestion for a vector knowledge base
+    /// Contains details about how to ingest the documents in a data source.
     /// </summary>
     public partial class VectorIngestionConfiguration
     {
         private ChunkingConfiguration _chunkingConfiguration;
 
         /// <summary>
-        /// Gets and sets the property ChunkingConfiguration.
+        /// Gets and sets the property ChunkingConfiguration. 
+        /// <para>
+        /// Details about how to chunk the documents in the data source. A <i>chunk</i> refers
+        /// to an excerpt from a data source that is returned when the knowledge base that it
+        /// belongs to is queried.
+        /// </para>
         /// </summary>
         public ChunkingConfiguration ChunkingConfiguration
         {

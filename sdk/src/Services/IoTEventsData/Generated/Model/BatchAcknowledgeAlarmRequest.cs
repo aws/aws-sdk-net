@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTEventsData.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.IoTEventsData.Model
     /// </summary>
     public partial class BatchAcknowledgeAlarmRequest : AmazonIoTEventsDataRequest
     {
-        private List<AcknowledgeAlarmActionRequest> _acknowledgeActionRequests = new List<AcknowledgeAlarmActionRequest>();
+        private List<AcknowledgeAlarmActionRequest> _acknowledgeActionRequests = AWSConfigs.InitializeCollections ? new List<AcknowledgeAlarmActionRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property AcknowledgeActionRequests. 
@@ -53,7 +54,7 @@ namespace Amazon.IoTEventsData.Model
         // Check to see if AcknowledgeActionRequests property is set
         internal bool IsSetAcknowledgeActionRequests()
         {
-            return this._acknowledgeActionRequests != null && this._acknowledgeActionRequests.Count > 0; 
+            return this._acknowledgeActionRequests != null && (this._acknowledgeActionRequests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

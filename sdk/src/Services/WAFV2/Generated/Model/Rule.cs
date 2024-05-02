@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.WAFV2.Model
         private string _name;
         private OverrideAction _overrideAction;
         private int? _priority;
-        private List<Label> _ruleLabels = new List<Label>();
+        private List<Label> _ruleLabels = AWSConfigs.InitializeCollections ? new List<Label>() : null;
         private Statement _statement;
         private VisibilityConfig _visibilityConfig;
 
@@ -255,7 +256,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if RuleLabels property is set
         internal bool IsSetRuleLabels()
         {
-            return this._ruleLabels != null && this._ruleLabels.Count > 0; 
+            return this._ruleLabels != null && (this._ruleLabels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

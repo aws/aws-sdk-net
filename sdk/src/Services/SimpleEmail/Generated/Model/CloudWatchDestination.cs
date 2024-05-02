@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.SimpleEmail.Model
     /// </summary>
     public partial class CloudWatchDestination
     {
-        private List<CloudWatchDimensionConfiguration> _dimensionConfigurations = new List<CloudWatchDimensionConfiguration>();
+        private List<CloudWatchDimensionConfiguration> _dimensionConfigurations = AWSConfigs.InitializeCollections ? new List<CloudWatchDimensionConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property DimensionConfigurations. 
@@ -61,7 +62,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if DimensionConfigurations property is set
         internal bool IsSetDimensionConfigurations()
         {
-            return this._dimensionConfigurations != null && this._dimensionConfigurations.Count > 0; 
+            return this._dimensionConfigurations != null && (this._dimensionConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

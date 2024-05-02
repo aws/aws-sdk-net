@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the TransitGatewayRouteTables
         /// </summary>
         public IPaginatedEnumerable<TransitGatewayRouteTable> TransitGatewayRouteTables => 
-            new PaginatedResultKeyResponse<DescribeTransitGatewayRouteTablesResponse, TransitGatewayRouteTable>(this, (i) => i.TransitGatewayRouteTables);
+            new PaginatedResultKeyResponse<DescribeTransitGatewayRouteTablesResponse, TransitGatewayRouteTable>(this, (i) => i.TransitGatewayRouteTables ?? new List<TransitGatewayRouteTable>());
 
         internal DescribeTransitGatewayRouteTablesPaginator(IAmazonEC2 client, DescribeTransitGatewayRouteTablesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.EC2.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeTransitGatewayRouteTablesResponse> IPaginator<DescribeTransitGatewayRouteTablesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeTransitGatewayRouteTablesResponse> IPaginator<DescribeTransitGatewayRouteTablesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

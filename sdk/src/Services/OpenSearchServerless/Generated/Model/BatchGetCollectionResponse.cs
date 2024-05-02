@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpenSearchServerless.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.OpenSearchServerless.Model
     /// </summary>
     public partial class BatchGetCollectionResponse : AmazonWebServiceResponse
     {
-        private List<CollectionDetail> _collectionDetails = new List<CollectionDetail>();
-        private List<CollectionErrorDetail> _collectionErrorDetails = new List<CollectionErrorDetail>();
+        private List<CollectionDetail> _collectionDetails = AWSConfigs.InitializeCollections ? new List<CollectionDetail>() : null;
+        private List<CollectionErrorDetail> _collectionErrorDetails = AWSConfigs.InitializeCollections ? new List<CollectionErrorDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property CollectionDetails. 
@@ -51,7 +52,7 @@ namespace Amazon.OpenSearchServerless.Model
         // Check to see if CollectionDetails property is set
         internal bool IsSetCollectionDetails()
         {
-            return this._collectionDetails != null && this._collectionDetails.Count > 0; 
+            return this._collectionDetails != null && (this._collectionDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.OpenSearchServerless.Model
         // Check to see if CollectionErrorDetails property is set
         internal bool IsSetCollectionErrorDetails()
         {
-            return this._collectionErrorDetails != null && this._collectionErrorDetails.Count > 0; 
+            return this._collectionErrorDetails != null && (this._collectionErrorDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

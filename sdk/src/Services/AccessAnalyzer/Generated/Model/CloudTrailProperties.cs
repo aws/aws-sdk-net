@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.AccessAnalyzer.Model
     {
         private DateTime? _endTime;
         private DateTime? _startTime;
-        private List<TrailProperties> _trailProperties = new List<TrailProperties>();
+        private List<TrailProperties> _trailProperties = AWSConfigs.InitializeCollections ? new List<TrailProperties>() : null;
 
         /// <summary>
         /// Gets and sets the property EndTime. 
@@ -95,7 +96,7 @@ namespace Amazon.AccessAnalyzer.Model
         // Check to see if TrailProperties property is set
         internal bool IsSetTrailProperties()
         {
-            return this._trailProperties != null && this._trailProperties.Count > 0; 
+            return this._trailProperties != null && (this._trailProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

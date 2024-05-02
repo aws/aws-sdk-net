@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class EnableFastSnapshotRestoresResponse : AmazonWebServiceResponse
     {
-        private List<EnableFastSnapshotRestoreSuccessItem> _successful = new List<EnableFastSnapshotRestoreSuccessItem>();
-        private List<EnableFastSnapshotRestoreErrorItem> _unsuccessful = new List<EnableFastSnapshotRestoreErrorItem>();
+        private List<EnableFastSnapshotRestoreSuccessItem> _successful = AWSConfigs.InitializeCollections ? new List<EnableFastSnapshotRestoreSuccessItem>() : null;
+        private List<EnableFastSnapshotRestoreErrorItem> _unsuccessful = AWSConfigs.InitializeCollections ? new List<EnableFastSnapshotRestoreErrorItem>() : null;
 
         /// <summary>
         /// Gets and sets the property Successful. 
@@ -52,7 +53,7 @@ namespace Amazon.EC2.Model
         // Check to see if Successful property is set
         internal bool IsSetSuccessful()
         {
-            return this._successful != null && this._successful.Count > 0; 
+            return this._successful != null && (this._successful.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.EC2.Model
         // Check to see if Unsuccessful property is set
         internal bool IsSetUnsuccessful()
         {
-            return this._unsuccessful != null && this._unsuccessful.Count > 0; 
+            return this._unsuccessful != null && (this._unsuccessful.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

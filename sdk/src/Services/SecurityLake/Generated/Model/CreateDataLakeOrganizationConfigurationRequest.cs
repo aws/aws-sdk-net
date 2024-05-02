@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.SecurityLake.Model
     /// </summary>
     public partial class CreateDataLakeOrganizationConfigurationRequest : AmazonSecurityLakeRequest
     {
-        private List<DataLakeAutoEnableNewAccountConfiguration> _autoEnableNewAccount = new List<DataLakeAutoEnableNewAccountConfiguration>();
+        private List<DataLakeAutoEnableNewAccountConfiguration> _autoEnableNewAccount = AWSConfigs.InitializeCollections ? new List<DataLakeAutoEnableNewAccountConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property AutoEnableNewAccount. 
@@ -45,7 +46,7 @@ namespace Amazon.SecurityLake.Model
         /// security data for new accounts in your organization.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Min=1)]
         public List<DataLakeAutoEnableNewAccountConfiguration> AutoEnableNewAccount
         {
             get { return this._autoEnableNewAccount; }
@@ -55,7 +56,7 @@ namespace Amazon.SecurityLake.Model
         // Check to see if AutoEnableNewAccount property is set
         internal bool IsSetAutoEnableNewAccount()
         {
-            return this._autoEnableNewAccount != null && this._autoEnableNewAccount.Count > 0; 
+            return this._autoEnableNewAccount != null && (this._autoEnableNewAccount.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -39,8 +40,8 @@ namespace Amazon.Kendra.Model
         private int? _maxLinksPerPage;
         private int? _maxUrlsPerMinuteCrawlRate;
         private ProxyConfiguration _proxyConfiguration;
-        private List<string> _urlExclusionPatterns = new List<string>();
-        private List<string> _urlInclusionPatterns = new List<string>();
+        private List<string> _urlExclusionPatterns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _urlInclusionPatterns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Urls _urls;
 
         /// <summary>
@@ -228,7 +229,7 @@ namespace Amazon.Kendra.Model
         // Check to see if UrlExclusionPatterns property is set
         internal bool IsSetUrlExclusionPatterns()
         {
-            return this._urlExclusionPatterns != null && this._urlExclusionPatterns.Count > 0; 
+            return this._urlExclusionPatterns != null && (this._urlExclusionPatterns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -250,7 +251,7 @@ namespace Amazon.Kendra.Model
         // Check to see if UrlInclusionPatterns property is set
         internal bool IsSetUrlInclusionPatterns()
         {
-            return this._urlInclusionPatterns != null && this._urlInclusionPatterns.Count > 0; 
+            return this._urlInclusionPatterns != null && (this._urlInclusionPatterns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

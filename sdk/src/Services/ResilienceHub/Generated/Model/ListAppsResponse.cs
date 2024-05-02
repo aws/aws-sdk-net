@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ResilienceHub.Model
     /// </summary>
     public partial class ListAppsResponse : AmazonWebServiceResponse
     {
-        private List<AppSummary> _appSummaries = new List<AppSummary>();
+        private List<AppSummary> _appSummaries = AWSConfigs.InitializeCollections ? new List<AppSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if AppSummaries property is set
         internal bool IsSetAppSummaries()
         {
-            return this._appSummaries != null && this._appSummaries.Count > 0; 
+            return this._appSummaries != null && (this._appSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

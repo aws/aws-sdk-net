@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppRunner.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AppRunner.Model
     /// </summary>
     public partial class CustomDomain
     {
-        private List<CertificateValidationRecord> _certificateValidationRecords = new List<CertificateValidationRecord>();
+        private List<CertificateValidationRecord> _certificateValidationRecords = AWSConfigs.InitializeCollections ? new List<CertificateValidationRecord>() : null;
         private string _domainName;
         private bool? _enableWWWSubdomain;
         private CustomDomainAssociationStatus _status;
@@ -53,7 +54,7 @@ namespace Amazon.AppRunner.Model
         // Check to see if CertificateValidationRecords property is set
         internal bool IsSetCertificateValidationRecords()
         {
-            return this._certificateValidationRecords != null && this._certificateValidationRecords.Count > 0; 
+            return this._certificateValidationRecords != null && (this._certificateValidationRecords.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Drs.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.Drs.Model
     public partial class DescribeSourceServersRequestFilters
     {
         private string _hardwareId;
-        private List<string> _sourceServerIDs = new List<string>();
-        private List<string> _stagingAccountIDs = new List<string>();
+        private List<string> _sourceServerIDs = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _stagingAccountIDs = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property HardwareId. 
@@ -74,7 +75,7 @@ namespace Amazon.Drs.Model
         // Check to see if SourceServerIDs property is set
         internal bool IsSetSourceServerIDs()
         {
-            return this._sourceServerIDs != null && this._sourceServerIDs.Count > 0; 
+            return this._sourceServerIDs != null && (this._sourceServerIDs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -94,7 +95,7 @@ namespace Amazon.Drs.Model
         // Check to see if StagingAccountIDs property is set
         internal bool IsSetStagingAccountIDs()
         {
-            return this._stagingAccountIDs != null && this._stagingAccountIDs.Count > 0; 
+            return this._stagingAccountIDs != null && (this._stagingAccountIDs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

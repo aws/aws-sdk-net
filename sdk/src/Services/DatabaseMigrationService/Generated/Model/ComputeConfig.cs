@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private bool? _multiAZ;
         private string _preferredMaintenanceWindow;
         private string _replicationSubnetGroupId;
-        private List<string> _vpcSecurityGroupIds = new List<string>();
+        private List<string> _vpcSecurityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
@@ -249,7 +250,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if VpcSecurityGroupIds property is set
         internal bool IsSetVpcSecurityGroupIds()
         {
-            return this._vpcSecurityGroupIds != null && this._vpcSecurityGroupIds.Count > 0; 
+            return this._vpcSecurityGroupIds != null && (this._vpcSecurityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -117,6 +118,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("PolicyVersionList/member", targetDepth))
                     {
                         var unmarshaller = PolicyVersionUnmarshaller.Instance;
+                        if (unmarshalledObject.PolicyVersionList == null)
+                        {
+                            unmarshalledObject.PolicyVersionList = new List<PolicyVersion>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.PolicyVersionList.Add(item);
                         continue;

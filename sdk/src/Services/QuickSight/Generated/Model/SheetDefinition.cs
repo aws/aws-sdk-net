@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -37,15 +38,15 @@ namespace Amazon.QuickSight.Model
     {
         private SheetContentType _contentType;
         private string _description;
-        private List<FilterControl> _filterControls = new List<FilterControl>();
-        private List<Layout> _layouts = new List<Layout>();
+        private List<FilterControl> _filterControls = AWSConfigs.InitializeCollections ? new List<FilterControl>() : null;
+        private List<Layout> _layouts = AWSConfigs.InitializeCollections ? new List<Layout>() : null;
         private string _name;
-        private List<ParameterControl> _parameterControls = new List<ParameterControl>();
-        private List<SheetControlLayout> _sheetControlLayouts = new List<SheetControlLayout>();
+        private List<ParameterControl> _parameterControls = AWSConfigs.InitializeCollections ? new List<ParameterControl>() : null;
+        private List<SheetControlLayout> _sheetControlLayouts = AWSConfigs.InitializeCollections ? new List<SheetControlLayout>() : null;
         private string _sheetId;
-        private List<SheetTextBox> _textBoxes = new List<SheetTextBox>();
+        private List<SheetTextBox> _textBoxes = AWSConfigs.InitializeCollections ? new List<SheetTextBox>() : null;
         private string _title;
-        private List<Visual> _visuals = new List<Visual>();
+        private List<Visual> _visuals = AWSConfigs.InitializeCollections ? new List<Visual>() : null;
 
         /// <summary>
         /// Gets and sets the property ContentType. 
@@ -114,7 +115,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if FilterControls property is set
         internal bool IsSetFilterControls()
         {
-            return this._filterControls != null && this._filterControls.Count > 0; 
+            return this._filterControls != null && (this._filterControls.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -138,7 +139,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Layouts property is set
         internal bool IsSetLayouts()
         {
-            return this._layouts != null && this._layouts.Count > 0; 
+            return this._layouts != null && (this._layouts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -183,7 +184,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if ParameterControls property is set
         internal bool IsSetParameterControls()
         {
-            return this._parameterControls != null && this._parameterControls.Count > 0; 
+            return this._parameterControls != null && (this._parameterControls.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -202,7 +203,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if SheetControlLayouts property is set
         internal bool IsSetSheetControlLayouts()
         {
-            return this._sheetControlLayouts != null && this._sheetControlLayouts.Count > 0; 
+            return this._sheetControlLayouts != null && (this._sheetControlLayouts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -240,7 +241,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if TextBoxes property is set
         internal bool IsSetTextBoxes()
         {
-            return this._textBoxes != null && this._textBoxes.Count > 0; 
+            return this._textBoxes != null && (this._textBoxes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -279,7 +280,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Visuals property is set
         internal bool IsSetVisuals()
         {
-            return this._visuals != null && this._visuals.Count > 0; 
+            return this._visuals != null && (this._visuals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

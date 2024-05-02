@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ServiceCatalog.Model
     public partial class ListProvisioningArtifactsForServiceActionResponse : AmazonWebServiceResponse
     {
         private string _nextPageToken;
-        private List<ProvisioningArtifactView> _provisioningArtifactViews = new List<ProvisioningArtifactView>();
+        private List<ProvisioningArtifactView> _provisioningArtifactViews = AWSConfigs.InitializeCollections ? new List<ProvisioningArtifactView>() : null;
 
         /// <summary>
         /// Gets and sets the property NextPageToken. 
@@ -71,7 +72,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if ProvisioningArtifactViews property is set
         internal bool IsSetProvisioningArtifactViews()
         {
-            return this._provisioningArtifactViews != null && this._provisioningArtifactViews.Count > 0; 
+            return this._provisioningArtifactViews != null && (this._provisioningArtifactViews.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

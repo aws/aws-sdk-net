@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CodeBuild.Model
     public partial class ListReportsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<string> _reports = new List<string>();
+        private List<string> _reports = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -76,7 +77,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if Reports property is set
         internal bool IsSetReports()
         {
-            return this._reports != null && this._reports.Count > 0; 
+            return this._reports != null && (this._reports.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

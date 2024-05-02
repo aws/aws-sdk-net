@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EKS.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EKS.Model
     /// </summary>
     public partial class ListAccessPoliciesResponse : AmazonWebServiceResponse
     {
-        private List<AccessPolicy> _accessPolicies = new List<AccessPolicy>();
+        private List<AccessPolicy> _accessPolicies = AWSConfigs.InitializeCollections ? new List<AccessPolicy>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.EKS.Model
         // Check to see if AccessPolicies property is set
         internal bool IsSetAccessPolicies()
         {
-            return this._accessPolicies != null && this._accessPolicies.Count > 0; 
+            return this._accessPolicies != null && (this._accessPolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

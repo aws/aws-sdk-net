@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lambda.Model
 {
     /// <summary>
@@ -35,8 +36,8 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class ImageConfig
     {
-        private List<string> _command = new List<string>();
-        private List<string> _entryPoint = new List<string>();
+        private List<string> _command = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _entryPoint = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _workingDirectory;
 
         /// <summary>

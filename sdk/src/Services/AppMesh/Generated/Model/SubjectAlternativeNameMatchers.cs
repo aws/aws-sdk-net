@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.AppMesh.Model
     /// </summary>
     public partial class SubjectAlternativeNameMatchers
     {
-        private List<string> _exact = new List<string>();
+        private List<string> _exact = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Exact. 
@@ -52,7 +53,7 @@ namespace Amazon.AppMesh.Model
         // Check to see if Exact property is set
         internal bool IsSetExact()
         {
-            return this._exact != null && this._exact.Count > 0; 
+            return this._exact != null && (this._exact.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

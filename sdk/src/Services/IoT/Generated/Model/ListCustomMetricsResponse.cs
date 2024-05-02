@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class ListCustomMetricsResponse : AmazonWebServiceResponse
     {
-        private List<string> _metricNames = new List<string>();
+        private List<string> _metricNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.IoT.Model
         // Check to see if MetricNames property is set
         internal bool IsSetMetricNames()
         {
-            return this._metricNames != null && this._metricNames.Count > 0; 
+            return this._metricNames != null && (this._metricNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

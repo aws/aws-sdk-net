@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.DataZone.Model
         private string _clientToken;
         private string _domainIdentifier;
         private string _identifier;
-        private List<RejectChoice> _rejectChoices = new List<RejectChoice>();
+        private List<RejectChoice> _rejectChoices = AWSConfigs.InitializeCollections ? new List<RejectChoice>() : null;
         private RejectRule _rejectRule;
         private string _revision;
 
@@ -101,7 +102,11 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RejectChoices.
+        /// Gets and sets the property RejectChoices. 
+        /// <para>
+        /// Specifies the prediction (aka, the automatically generated piece of metadata) and
+        /// the target (for example, a column name) that can be rejected.
+        /// </para>
         /// </summary>
         public List<RejectChoice> RejectChoices
         {
@@ -112,11 +117,14 @@ namespace Amazon.DataZone.Model
         // Check to see if RejectChoices property is set
         internal bool IsSetRejectChoices()
         {
-            return this._rejectChoices != null && this._rejectChoices.Count > 0; 
+            return this._rejectChoices != null && (this._rejectChoices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
-        /// Gets and sets the property RejectRule.
+        /// Gets and sets the property RejectRule. 
+        /// <para>
+        /// Specifies the rule (or the conditions) under which a prediction can be rejected.
+        /// </para>
         /// </summary>
         public RejectRule RejectRule
         {
@@ -131,7 +139,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Revision.
+        /// Gets and sets the property Revision. 
+        /// <para>
+        /// The revision that is to be made to the asset.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
         public string Revision

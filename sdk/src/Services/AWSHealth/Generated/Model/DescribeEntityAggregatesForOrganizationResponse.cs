@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AWSHealth.Model
     /// </summary>
     public partial class DescribeEntityAggregatesForOrganizationResponse : AmazonWebServiceResponse
     {
-        private List<OrganizationEntityAggregate> _organizationEntityAggregates = new List<OrganizationEntityAggregate>();
+        private List<OrganizationEntityAggregate> _organizationEntityAggregates = AWSConfigs.InitializeCollections ? new List<OrganizationEntityAggregate>() : null;
 
         /// <summary>
         /// Gets and sets the property OrganizationEntityAggregates. 
@@ -51,7 +52,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if OrganizationEntityAggregates property is set
         internal bool IsSetOrganizationEntityAggregates()
         {
-            return this._organizationEntityAggregates != null && this._organizationEntityAggregates.Count > 0; 
+            return this._organizationEntityAggregates != null && (this._organizationEntityAggregates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SavingsPlans.Model
 {
     /// <summary>
@@ -40,22 +41,23 @@ namespace Amazon.SavingsPlans.Model
         private string _end;
         private string _offeringId;
         private SavingsPlanPaymentOption _paymentOption;
-        private List<string> _productTypes = new List<string>();
+        private List<string> _productTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _recurringPaymentAmount;
         private string _region;
+        private string _returnableUntil;
         private string _savingsPlanArn;
         private string _savingsPlanId;
         private SavingsPlanType _savingsPlanType;
         private string _start;
         private SavingsPlanState _state;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private long? _termDurationInSeconds;
         private string _upfrontPaymentAmount;
 
         /// <summary>
         /// Gets and sets the property Commitment. 
         /// <para>
-        /// The hourly commitment, in USD.
+        /// The hourly commitment amount in the specified currency.
         /// </para>
         /// </summary>
         public string Commitment
@@ -193,7 +195,7 @@ namespace Amazon.SavingsPlans.Model
         // Check to see if ProductTypes property is set
         internal bool IsSetProductTypes()
         {
-            return this._productTypes != null && this._productTypes.Count > 0; 
+            return this._productTypes != null && (this._productTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -217,7 +219,7 @@ namespace Amazon.SavingsPlans.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The AWS Region.
+        /// The Amazon Web Services Region.
         /// </para>
         /// </summary>
         public string Region
@@ -230,6 +232,25 @@ namespace Amazon.SavingsPlans.Model
         internal bool IsSetRegion()
         {
             return this._region != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReturnableUntil. 
+        /// <para>
+        /// The time until when a return for the Savings Plan can be requested. If the Savings
+        /// Plan is not returnable, the field reflects the Savings Plan start time.
+        /// </para>
+        /// </summary>
+        public string ReturnableUntil
+        {
+            get { return this._returnableUntil; }
+            set { this._returnableUntil = value; }
+        }
+
+        // Check to see if ReturnableUntil property is set
+        internal bool IsSetReturnableUntil()
+        {
+            return this._returnableUntil != null;
         }
 
         /// <summary>
@@ -307,7 +328,7 @@ namespace Amazon.SavingsPlans.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state.
+        /// The current state.
         /// </para>
         /// </summary>
         public SavingsPlanState State
@@ -337,7 +358,7 @@ namespace Amazon.SavingsPlans.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

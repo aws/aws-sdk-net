@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.WellArchitected.Model
     /// </summary>
     public partial class AssociateLensesRequest : AmazonWellArchitectedRequest
     {
-        private List<string> _lensAliases = new List<string>();
+        private List<string> _lensAliases = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _workloadId;
 
         /// <summary>
@@ -68,7 +69,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if LensAliases property is set
         internal bool IsSetLensAliases()
         {
-            return this._lensAliases != null && this._lensAliases.Count > 0; 
+            return this._lensAliases != null && (this._lensAliases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

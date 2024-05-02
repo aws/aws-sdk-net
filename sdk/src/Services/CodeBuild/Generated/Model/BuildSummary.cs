@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.CodeBuild.Model
         private StatusType _buildStatus;
         private ResolvedArtifact _primaryArtifact;
         private DateTime? _requestedOn;
-        private List<ResolvedArtifact> _secondaryArtifacts = new List<ResolvedArtifact>();
+        private List<ResolvedArtifact> _secondaryArtifacts = AWSConfigs.InitializeCollections ? new List<ResolvedArtifact>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -153,7 +154,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if SecondaryArtifacts property is set
         internal bool IsSetSecondaryArtifacts()
         {
-            return this._secondaryArtifacts != null && this._secondaryArtifacts.Count > 0; 
+            return this._secondaryArtifacts != null && (this._secondaryArtifacts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
@@ -42,17 +43,17 @@ namespace Amazon.CodeBuild.Model
         private string _description;
         private string _encryptionKey;
         private ProjectEnvironment _environment;
-        private List<ProjectFileSystemLocation> _fileSystemLocations = new List<ProjectFileSystemLocation>();
+        private List<ProjectFileSystemLocation> _fileSystemLocations = AWSConfigs.InitializeCollections ? new List<ProjectFileSystemLocation>() : null;
         private LogsConfig _logsConfig;
         private string _name;
         private int? _queuedTimeoutInMinutes;
-        private List<ProjectArtifacts> _secondaryArtifacts = new List<ProjectArtifacts>();
-        private List<ProjectSource> _secondarySources = new List<ProjectSource>();
-        private List<ProjectSourceVersion> _secondarySourceVersions = new List<ProjectSourceVersion>();
+        private List<ProjectArtifacts> _secondaryArtifacts = AWSConfigs.InitializeCollections ? new List<ProjectArtifacts>() : null;
+        private List<ProjectSource> _secondarySources = AWSConfigs.InitializeCollections ? new List<ProjectSource>() : null;
+        private List<ProjectSourceVersion> _secondarySourceVersions = AWSConfigs.InitializeCollections ? new List<ProjectSourceVersion>() : null;
         private string _serviceRole;
         private ProjectSource _source;
         private string _sourceVersion;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private int? _timeoutInMinutes;
         private VpcConfig _vpcConfig;
 
@@ -238,7 +239,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if FileSystemLocations property is set
         internal bool IsSetFileSystemLocations()
         {
-            return this._fileSystemLocations != null && this._fileSystemLocations.Count > 0; 
+            return this._fileSystemLocations != null && (this._fileSystemLocations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -319,7 +320,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if SecondaryArtifacts property is set
         internal bool IsSetSecondaryArtifacts()
         {
-            return this._secondaryArtifacts != null && this._secondaryArtifacts.Count > 0; 
+            return this._secondaryArtifacts != null && (this._secondaryArtifacts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -338,7 +339,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if SecondarySources property is set
         internal bool IsSetSecondarySources()
         {
-            return this._secondarySources != null && this._secondarySources.Count > 0; 
+            return this._secondarySources != null && (this._secondarySources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -359,7 +360,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if SecondarySourceVersions property is set
         internal bool IsSetSecondarySourceVersions()
         {
-            return this._secondarySourceVersions != null && this._secondarySourceVersions.Count > 0; 
+            return this._secondarySourceVersions != null && (this._secondarySourceVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -473,7 +474,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

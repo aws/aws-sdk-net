@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Chime.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Chime.Model
     public partial class PhoneNumberCountry
     {
         private string _countryCode;
-        private List<string> _supportedPhoneNumberTypes = new List<string>();
+        private List<string> _supportedPhoneNumberTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CountryCode. 
@@ -69,7 +70,7 @@ namespace Amazon.Chime.Model
         // Check to see if SupportedPhoneNumberTypes property is set
         internal bool IsSetSupportedPhoneNumberTypes()
         {
-            return this._supportedPhoneNumberTypes != null && this._supportedPhoneNumberTypes.Count > 0; 
+            return this._supportedPhoneNumberTypes != null && (this._supportedPhoneNumberTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

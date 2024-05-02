@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
@@ -55,9 +56,9 @@ namespace Amazon.TranscribeService.Model
         private bool? _identifyMultipleLanguages;
         private JobExecutionSettings _jobExecutionSettings;
         private LanguageCode _languageCode;
-        private List<LanguageCodeItem> _languageCodes = new List<LanguageCodeItem>();
-        private Dictionary<string, LanguageIdSettings> _languageIdSettings = new Dictionary<string, LanguageIdSettings>();
-        private List<string> _languageOptions = new List<string>();
+        private List<LanguageCodeItem> _languageCodes = AWSConfigs.InitializeCollections ? new List<LanguageCodeItem>() : null;
+        private Dictionary<string, LanguageIdSettings> _languageIdSettings = AWSConfigs.InitializeCollections ? new Dictionary<string, LanguageIdSettings>() : null;
+        private List<string> _languageOptions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Media _media;
         private MediaFormat _mediaFormat;
         private int? _mediaSampleRateHertz;
@@ -65,8 +66,8 @@ namespace Amazon.TranscribeService.Model
         private Settings _settings;
         private DateTime? _startTime;
         private SubtitlesOutput _subtitles;
-        private List<Tag> _tags = new List<Tag>();
-        private List<ToxicityDetectionSettings> _toxicityDetection = new List<ToxicityDetectionSettings>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<ToxicityDetectionSettings> _toxicityDetection = AWSConfigs.InitializeCollections ? new List<ToxicityDetectionSettings>() : null;
         private Transcript _transcript;
         private string _transcriptionJobName;
         private TranscriptionJobStatus _transcriptionJobStatus;
@@ -335,7 +336,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if LanguageCodes property is set
         internal bool IsSetLanguageCodes()
         {
-            return this._languageCodes != null && this._languageCodes.Count > 0; 
+            return this._languageCodes != null && (this._languageCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -355,7 +356,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if LanguageIdSettings property is set
         internal bool IsSetLanguageIdSettings()
         {
-            return this._languageIdSettings != null && this._languageIdSettings.Count > 0; 
+            return this._languageIdSettings != null && (this._languageIdSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -374,7 +375,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if LanguageOptions property is set
         internal bool IsSetLanguageOptions()
         {
-            return this._languageOptions != null && this._languageOptions.Count > 0; 
+            return this._languageOptions != null && (this._languageOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -529,7 +530,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -548,7 +549,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if ToxicityDetection property is set
         internal bool IsSetToxicityDetection()
         {
-            return this._toxicityDetection != null && this._toxicityDetection.Count > 0; 
+            return this._toxicityDetection != null && (this._toxicityDetection.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

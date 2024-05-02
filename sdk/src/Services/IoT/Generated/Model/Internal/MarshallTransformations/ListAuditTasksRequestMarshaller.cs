@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -60,7 +61,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
 
             
             if (publicRequest.IsSetEndTimeUtc())
-                request.Parameters.Add("endTime", StringUtils.FromDateTimeToISO8601(publicRequest.EndTimeUtc));
+                request.Parameters.Add("endTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.EndTimeUtc));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
@@ -69,7 +70,7 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             
             if (publicRequest.IsSetStartTimeUtc())
-                request.Parameters.Add("startTime", StringUtils.FromDateTimeToISO8601(publicRequest.StartTimeUtc));
+                request.Parameters.Add("startTime", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.StartTimeUtc));
             
             if (publicRequest.IsSetTaskStatus())
                 request.Parameters.Add("taskStatus", StringUtils.FromString(publicRequest.TaskStatus));

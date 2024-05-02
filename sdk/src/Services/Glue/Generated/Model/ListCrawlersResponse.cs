@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class ListCrawlersResponse : AmazonWebServiceResponse
     {
-        private List<string> _crawlerNames = new List<string>();
+        private List<string> _crawlerNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.Glue.Model
         // Check to see if CrawlerNames property is set
         internal bool IsSetCrawlerNames()
         {
-            return this._crawlerNames != null && this._crawlerNames.Count > 0; 
+            return this._crawlerNames != null && (this._crawlerNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

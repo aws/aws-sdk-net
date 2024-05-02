@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class CandidateProperties
     {
         private CandidateArtifactLocations _candidateArtifactLocations;
-        private List<MetricDatum> _candidateMetrics = new List<MetricDatum>();
+        private List<MetricDatum> _candidateMetrics = AWSConfigs.InitializeCollections ? new List<MetricDatum>() : null;
 
         /// <summary>
         /// Gets and sets the property CandidateArtifactLocations. 
@@ -70,7 +71,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if CandidateMetrics property is set
         internal bool IsSetCandidateMetrics()
         {
-            return this._candidateMetrics != null && this._candidateMetrics.Count > 0; 
+            return this._candidateMetrics != null && (this._candidateMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

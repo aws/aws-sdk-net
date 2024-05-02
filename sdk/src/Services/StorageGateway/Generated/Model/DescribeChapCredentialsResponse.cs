@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class DescribeChapCredentialsResponse : AmazonWebServiceResponse
     {
-        private List<ChapInfo> _chapCredentials = new List<ChapInfo>();
+        private List<ChapInfo> _chapCredentials = AWSConfigs.InitializeCollections ? new List<ChapInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property ChapCredentials. 
@@ -72,7 +73,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if ChapCredentials property is set
         internal bool IsSetChapCredentials()
         {
-            return this._chapCredentials != null && this._chapCredentials.Count > 0; 
+            return this._chapCredentials != null && (this._chapCredentials.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

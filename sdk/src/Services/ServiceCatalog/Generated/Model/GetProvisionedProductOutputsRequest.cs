@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.ServiceCatalog.Model
     public partial class GetProvisionedProductOutputsRequest : AmazonServiceCatalogRequest
     {
         private string _acceptLanguage;
-        private List<string> _outputKeys = new List<string>();
+        private List<string> _outputKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _pageSize;
         private string _pageToken;
         private string _provisionedProductId;
@@ -88,7 +89,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if OutputKeys property is set
         internal bool IsSetOutputKeys()
         {
-            return this._outputKeys != null && this._outputKeys.Count > 0; 
+            return this._outputKeys != null && (this._outputKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
@@ -34,13 +35,13 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class CreateAnalysisTemplateRequest : AmazonCleanRoomsRequest
     {
-        private List<AnalysisParameter> _analysisParameters = new List<AnalysisParameter>();
+        private List<AnalysisParameter> _analysisParameters = AWSConfigs.InitializeCollections ? new List<AnalysisParameter>() : null;
         private string _description;
         private AnalysisFormat _format;
         private string _membershipIdentifier;
         private string _name;
         private AnalysisSource _source;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AnalysisParameters. 
@@ -58,7 +59,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if AnalysisParameters property is set
         internal bool IsSetAnalysisParameters()
         {
-            return this._analysisParameters != null && this._analysisParameters.Count > 0; 
+            return this._analysisParameters != null && (this._analysisParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -175,7 +176,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

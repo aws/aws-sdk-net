@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.TimestreamQuery.Model
 {
     /// <summary>
@@ -33,11 +34,11 @@ namespace Amazon.TimestreamQuery.Model
     /// </summary>
     public partial class QueryResponse : AmazonWebServiceResponse
     {
-        private List<ColumnInfo> _columnInfo = new List<ColumnInfo>();
+        private List<ColumnInfo> _columnInfo = AWSConfigs.InitializeCollections ? new List<ColumnInfo>() : null;
         private string _nextToken;
         private string _queryId;
         private QueryStatus _queryStatus;
-        private List<Row> _rows = new List<Row>();
+        private List<Row> _rows = AWSConfigs.InitializeCollections ? new List<Row>() : null;
 
         /// <summary>
         /// Gets and sets the property ColumnInfo. 
@@ -55,7 +56,7 @@ namespace Amazon.TimestreamQuery.Model
         // Check to see if ColumnInfo property is set
         internal bool IsSetColumnInfo()
         {
-            return this._columnInfo != null && this._columnInfo.Count > 0; 
+            return this._columnInfo != null && (this._columnInfo.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -131,7 +132,7 @@ namespace Amazon.TimestreamQuery.Model
         // Check to see if Rows property is set
         internal bool IsSetRows()
         {
-            return this._rows != null && this._rows.Count > 0; 
+            return this._rows != null && (this._rows.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

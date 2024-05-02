@@ -8,6 +8,7 @@
 
     AddCommonUsingStatements();
 #>
+#pragma warning disable CS0612,CS0618
 namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -69,9 +70,13 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
 <#
-					if (member.IsList)
+					if (member.IsMap || member.IsList)
 					{
 #>
+                        if (response.<#=MemberAccessorFor(member.PropertyName)#> == null)
+                        {
+                            response.<#=MemberAccessorFor(member.PropertyName)#> = new <#=member.DetermineType()#>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.<#=MemberAccessorFor(member.PropertyName)#>.Add(item);
 <#
@@ -127,6 +132,7 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 #>
     }
 }
+
 <#+
 // if the result fields have been wrapped in a subordinate structure, wire the accessor
 // to use it when addressing a member

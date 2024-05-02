@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListMonitoringSchedulesResponse : AmazonWebServiceResponse
     {
-        private List<MonitoringScheduleSummary> _monitoringScheduleSummaries = new List<MonitoringScheduleSummary>();
+        private List<MonitoringScheduleSummary> _monitoringScheduleSummaries = AWSConfigs.InitializeCollections ? new List<MonitoringScheduleSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if MonitoringScheduleSummaries property is set
         internal bool IsSetMonitoringScheduleSummaries()
         {
-            return this._monitoringScheduleSummaries != null && this._monitoringScheduleSummaries.Count > 0; 
+            return this._monitoringScheduleSummaries != null && (this._monitoringScheduleSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,11 +26,34 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteQuickConnect operation.
-    /// Deletes a quick connect.
+    /// Deletes a quick connect. 
+    /// 
+    ///  <important> 
+    /// <para>
+    /// After calling <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteUser.html">DeleteUser</a>,
+    /// it's important to call <c>DeleteQuickConnect</c> to delete any records related to
+    /// the deleted users. This will help you:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Avoid dangling resources that impact your service quotas.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Remove deleted users so they don't appear to agents as transfer options.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Avoid the disruption of other Amazon Connect processes, such as instance replication
+    /// and syncing if you're using <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-connect-global-resiliency.html">Amazon
+    /// Connect Global Resiliency</a>. 
+    /// </para>
+    ///  </li> </ul> </important>
     /// </summary>
     public partial class DeleteQuickConnectRequest : AmazonConnectRequest
     {

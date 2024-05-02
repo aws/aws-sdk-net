@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeReservedInstancesListingsResponse : AmazonWebServiceResponse
     {
-        private List<ReservedInstancesListing> _reservedInstancesListings = new List<ReservedInstancesListing>();
+        private List<ReservedInstancesListing> _reservedInstancesListings = AWSConfigs.InitializeCollections ? new List<ReservedInstancesListing>() : null;
 
         /// <summary>
         /// Gets and sets the property ReservedInstancesListings. 
@@ -50,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if ReservedInstancesListings property is set
         internal bool IsSetReservedInstancesListings()
         {
-            return this._reservedInstancesListings != null && this._reservedInstancesListings.Count > 0; 
+            return this._reservedInstancesListings != null && (this._reservedInstancesListings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

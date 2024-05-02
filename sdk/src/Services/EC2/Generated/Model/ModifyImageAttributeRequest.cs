@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -56,11 +57,11 @@ namespace Amazon.EC2.Model
         private string _imdsSupport;
         private LaunchPermissionModifications _launchPermission;
         private OperationType _operationType;
-        private List<string> _organizationalUnitArns = new List<string>();
-        private List<string> _organizationArns = new List<string>();
-        private List<string> _productCodes = new List<string>();
-        private List<string> _userGroups = new List<string>();
-        private List<string> _userIds = new List<string>();
+        private List<string> _organizationalUnitArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _organizationArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _productCodes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _userGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _userIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _value;
 
         /// <summary>
@@ -221,7 +222,7 @@ namespace Amazon.EC2.Model
         // Check to see if OrganizationalUnitArns property is set
         internal bool IsSetOrganizationalUnitArns()
         {
-            return this._organizationalUnitArns != null && this._organizationalUnitArns.Count > 0; 
+            return this._organizationalUnitArns != null && (this._organizationalUnitArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -240,7 +241,7 @@ namespace Amazon.EC2.Model
         // Check to see if OrganizationArns property is set
         internal bool IsSetOrganizationArns()
         {
-            return this._organizationArns != null && this._organizationArns.Count > 0; 
+            return this._organizationArns != null && (this._organizationArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -258,7 +259,7 @@ namespace Amazon.EC2.Model
         // Check to see if ProductCodes property is set
         internal bool IsSetProductCodes()
         {
-            return this._productCodes != null && this._productCodes.Count > 0; 
+            return this._productCodes != null && (this._productCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -277,7 +278,7 @@ namespace Amazon.EC2.Model
         // Check to see if UserGroups property is set
         internal bool IsSetUserGroups()
         {
-            return this._userGroups != null && this._userGroups.Count > 0; 
+            return this._userGroups != null && (this._userGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -296,7 +297,7 @@ namespace Amazon.EC2.Model
         // Check to see if UserIds property is set
         internal bool IsSetUserIds()
         {
-            return this._userIds != null && this._userIds.Count > 0; 
+            return this._userIds != null && (this._userIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

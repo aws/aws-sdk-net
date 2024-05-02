@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.OpsWorks.Model
     /// </summary>
     public partial class DescribeRdsDbInstancesResponse : AmazonWebServiceResponse
     {
-        private List<RdsDbInstance> _rdsDbInstances = new List<RdsDbInstance>();
+        private List<RdsDbInstance> _rdsDbInstances = AWSConfigs.InitializeCollections ? new List<RdsDbInstance>() : null;
 
         /// <summary>
         /// Gets and sets the property RdsDbInstances. 
@@ -50,7 +51,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if RdsDbInstances property is set
         internal bool IsSetRdsDbInstances()
         {
-            return this._rdsDbInstances != null && this._rdsDbInstances.Count > 0; 
+            return this._rdsDbInstances != null && (this._rdsDbInstances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

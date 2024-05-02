@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.XRay.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.XRay.Model
     /// </summary>
     public partial class FaultRootCauseEntity
     {
-        private List<RootCauseException> _exceptions = new List<RootCauseException>();
+        private List<RootCauseException> _exceptions = AWSConfigs.InitializeCollections ? new List<RootCauseException>() : null;
         private string _name;
         private bool? _remote;
 
@@ -53,7 +54,7 @@ namespace Amazon.XRay.Model
         // Check to see if Exceptions property is set
         internal bool IsSetExceptions()
         {
-            return this._exceptions != null && this._exceptions.Count > 0; 
+            return this._exceptions != null && (this._exceptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

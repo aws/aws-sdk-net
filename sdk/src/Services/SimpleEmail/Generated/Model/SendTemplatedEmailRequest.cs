@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
@@ -92,12 +93,12 @@ namespace Amazon.SimpleEmail.Model
     {
         private string _configurationSetName;
         private Destination _destination;
-        private List<string> _replyToAddresses = new List<string>();
+        private List<string> _replyToAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _returnPath;
         private string _returnPathArn;
         private string _source;
         private string _sourceArn;
-        private List<MessageTag> _tags = new List<MessageTag>();
+        private List<MessageTag> _tags = AWSConfigs.InitializeCollections ? new List<MessageTag>() : null;
         private string _template;
         private string _templateArn;
         private string _templateData;
@@ -156,7 +157,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if ReplyToAddresses property is set
         internal bool IsSetReplyToAddresses()
         {
-            return this._replyToAddresses != null && this._replyToAddresses.Count > 0; 
+            return this._replyToAddresses != null && (this._replyToAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -306,7 +307,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

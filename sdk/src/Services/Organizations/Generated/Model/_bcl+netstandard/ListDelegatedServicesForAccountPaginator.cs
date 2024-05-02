@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Organizations.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Organizations.Model
         /// Enumerable containing all of the DelegatedServices
         /// </summary>
         public IPaginatedEnumerable<DelegatedService> DelegatedServices => 
-            new PaginatedResultKeyResponse<ListDelegatedServicesForAccountResponse, DelegatedService>(this, (i) => i.DelegatedServices);
+            new PaginatedResultKeyResponse<ListDelegatedServicesForAccountResponse, DelegatedService>(this, (i) => i.DelegatedServices ?? new List<DelegatedService>());
 
         internal ListDelegatedServicesForAccountPaginator(IAmazonOrganizations client, ListDelegatedServicesForAccountRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Organizations.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListDelegatedServicesForAccountResponse> IPaginator<ListDelegatedServicesForAccountResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListDelegatedServicesForAccountResponse> IPaginator<ListDelegatedServicesForAccountResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.GlobalAccelerator.Model
     /// </summary>
     public partial class ListCrossAccountAttachmentsResponse : AmazonWebServiceResponse
     {
-        private List<Attachment> _crossAccountAttachments = new List<Attachment>();
+        private List<Attachment> _crossAccountAttachments = AWSConfigs.InitializeCollections ? new List<Attachment>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if CrossAccountAttachments property is set
         internal bool IsSetCrossAccountAttachments()
         {
-            return this._crossAccountAttachments != null && this._crossAccountAttachments.Count > 0; 
+            return this._crossAccountAttachments != null && (this._crossAccountAttachments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class SpellCorrectedQuery
     {
-        private List<Correction> _corrections = new List<Correction>();
+        private List<Correction> _corrections = AWSConfigs.InitializeCollections ? new List<Correction>() : null;
         private string _suggestedQueryText;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Kendra.Model
         // Check to see if Corrections property is set
         internal bool IsSetCorrections()
         {
-            return this._corrections != null && this._corrections.Count > 0; 
+            return this._corrections != null && (this._corrections.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

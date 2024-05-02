@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudControlApi.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CloudControlApi.Model
     public partial class ListResourcesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ResourceDescription> _resourceDescriptions = new List<ResourceDescription>();
+        private List<ResourceDescription> _resourceDescriptions = AWSConfigs.InitializeCollections ? new List<ResourceDescription>() : null;
         private string _typeName;
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace Amazon.CloudControlApi.Model
         // Check to see if ResourceDescriptions property is set
         internal bool IsSetResourceDescriptions()
         {
-            return this._resourceDescriptions != null && this._resourceDescriptions.Count > 0; 
+            return this._resourceDescriptions != null && (this._resourceDescriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

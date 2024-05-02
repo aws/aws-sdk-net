@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
@@ -294,7 +295,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property HttpVersion. 
         /// <para>
-        /// (Optional) Specify the maximum HTTP version(s) that you want viewers to use to communicate
+        /// (Optional) Specify the HTTP version(s) that you want viewers to use to communicate
         /// with CloudFront. The default value for new web distributions is <c>http2</c>. Viewers
         /// that don't support HTTP/2 automatically use an earlier HTTP version.
         /// </para>
@@ -543,8 +544,8 @@ namespace Amazon.CloudFront.Model
         /// <para>
         /// A unique identifier that specifies the WAF web ACL, if any, to associate with this
         /// distribution. To specify a web ACL created using the latest version of WAF, use the
-        /// ACL ARN, for example <c>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
-        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <c>473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
+        /// ACL ARN, for example <c>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</c>.
+        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <c>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</c>.
         /// </para>
         ///  
         /// <para>

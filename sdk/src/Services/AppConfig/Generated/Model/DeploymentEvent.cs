@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppConfig.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AppConfig.Model
     /// </summary>
     public partial class DeploymentEvent
     {
-        private List<ActionInvocation> _actionInvocations = new List<ActionInvocation>();
+        private List<ActionInvocation> _actionInvocations = AWSConfigs.InitializeCollections ? new List<ActionInvocation>() : null;
         private string _description;
         private DeploymentEventType _eventType;
         private DateTime? _occurredAt;
@@ -54,7 +55,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if ActionInvocations property is set
         internal bool IsSetActionInvocations()
         {
-            return this._actionInvocations != null && this._actionInvocations.Count > 0; 
+            return this._actionInvocations != null && (this._actionInvocations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -33,10 +34,10 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsEc2RouteTableDetails
     {
-        private List<AssociationSetDetails> _associationSet = new List<AssociationSetDetails>();
+        private List<AssociationSetDetails> _associationSet = AWSConfigs.InitializeCollections ? new List<AssociationSetDetails>() : null;
         private string _ownerId;
-        private List<PropagatingVgwSetDetails> _propagatingVgwSet = new List<PropagatingVgwSetDetails>();
-        private List<RouteSetDetails> _routeSet = new List<RouteSetDetails>();
+        private List<PropagatingVgwSetDetails> _propagatingVgwSet = AWSConfigs.InitializeCollections ? new List<PropagatingVgwSetDetails>() : null;
+        private List<RouteSetDetails> _routeSet = AWSConfigs.InitializeCollections ? new List<RouteSetDetails>() : null;
         private string _routeTableId;
         private string _vpcId;
 
@@ -55,7 +56,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if AssociationSet property is set
         internal bool IsSetAssociationSet()
         {
-            return this._associationSet != null && this._associationSet.Count > 0; 
+            return this._associationSet != null && (this._associationSet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if PropagatingVgwSet property is set
         internal bool IsSetPropagatingVgwSet()
         {
-            return this._propagatingVgwSet != null && this._propagatingVgwSet.Count > 0; 
+            return this._propagatingVgwSet != null && (this._propagatingVgwSet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -109,7 +110,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if RouteSet property is set
         internal bool IsSetRouteSet()
         {
-            return this._routeSet != null && this._routeSet.Count > 0; 
+            return this._routeSet != null && (this._routeSet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

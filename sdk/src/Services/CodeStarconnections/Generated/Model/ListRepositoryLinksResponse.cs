@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeStarconnections.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CodeStarconnections.Model
     public partial class ListRepositoryLinksResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RepositoryLinkInfo> _repositoryLinks = new List<RepositoryLinkInfo>();
+        private List<RepositoryLinkInfo> _repositoryLinks = AWSConfigs.InitializeCollections ? new List<RepositoryLinkInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.CodeStarconnections.Model
         // Check to see if RepositoryLinks property is set
         internal bool IsSetRepositoryLinks()
         {
-            return this._repositoryLinks != null && this._repositoryLinks.Count > 0; 
+            return this._repositoryLinks != null && (this._repositoryLinks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

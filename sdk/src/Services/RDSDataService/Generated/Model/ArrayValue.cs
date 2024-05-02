@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDSDataService.Model
 {
     /// <summary>
@@ -33,11 +34,11 @@ namespace Amazon.RDSDataService.Model
     /// </summary>
     public partial class ArrayValue
     {
-        private List<ArrayValue> _arrayValues = new List<ArrayValue>();
-        private List<bool> _booleanValues = new List<bool>();
-        private List<double> _doubleValues = new List<double>();
-        private List<long> _longValues = new List<long>();
-        private List<string> _stringValues = new List<string>();
+        private List<ArrayValue> _arrayValues = AWSConfigs.InitializeCollections ? new List<ArrayValue>() : null;
+        private List<bool> _booleanValues = AWSConfigs.InitializeCollections ? new List<bool>() : null;
+        private List<double> _doubleValues = AWSConfigs.InitializeCollections ? new List<double>() : null;
+        private List<long> _longValues = AWSConfigs.InitializeCollections ? new List<long>() : null;
+        private List<string> _stringValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ArrayValues. 
@@ -54,7 +55,7 @@ namespace Amazon.RDSDataService.Model
         // Check to see if ArrayValues property is set
         internal bool IsSetArrayValues()
         {
-            return this._arrayValues != null && this._arrayValues.Count > 0; 
+            return this._arrayValues != null && (this._arrayValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.RDSDataService.Model
         // Check to see if BooleanValues property is set
         internal bool IsSetBooleanValues()
         {
-            return this._booleanValues != null && this._booleanValues.Count > 0; 
+            return this._booleanValues != null && (this._booleanValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -90,7 +91,7 @@ namespace Amazon.RDSDataService.Model
         // Check to see if DoubleValues property is set
         internal bool IsSetDoubleValues()
         {
-            return this._doubleValues != null && this._doubleValues.Count > 0; 
+            return this._doubleValues != null && (this._doubleValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -108,7 +109,7 @@ namespace Amazon.RDSDataService.Model
         // Check to see if LongValues property is set
         internal bool IsSetLongValues()
         {
-            return this._longValues != null && this._longValues.Count > 0; 
+            return this._longValues != null && (this._longValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -126,7 +127,7 @@ namespace Amazon.RDSDataService.Model
         // Check to see if StringValues property is set
         internal bool IsSetStringValues()
         {
-            return this._stringValues != null && this._stringValues.Count > 0; 
+            return this._stringValues != null && (this._stringValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -33,15 +34,15 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class DataQualityResult
     {
-        private List<DataQualityAnalyzerResult> _analyzerResults = new List<DataQualityAnalyzerResult>();
+        private List<DataQualityAnalyzerResult> _analyzerResults = AWSConfigs.InitializeCollections ? new List<DataQualityAnalyzerResult>() : null;
         private DateTime? _completedOn;
         private DataSource _dataSource;
         private string _evaluationContext;
         private string _jobName;
         private string _jobRunId;
-        private List<DataQualityObservation> _observations = new List<DataQualityObservation>();
+        private List<DataQualityObservation> _observations = AWSConfigs.InitializeCollections ? new List<DataQualityObservation>() : null;
         private string _resultId;
-        private List<DataQualityRuleResult> _ruleResults = new List<DataQualityRuleResult>();
+        private List<DataQualityRuleResult> _ruleResults = AWSConfigs.InitializeCollections ? new List<DataQualityRuleResult>() : null;
         private string _rulesetEvaluationRunId;
         private string _rulesetName;
         private double? _score;
@@ -64,7 +65,7 @@ namespace Amazon.Glue.Model
         // Check to see if AnalyzerResults property is set
         internal bool IsSetAnalyzerResults()
         {
-            return this._analyzerResults != null && this._analyzerResults.Count > 0; 
+            return this._analyzerResults != null && (this._analyzerResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -178,7 +179,7 @@ namespace Amazon.Glue.Model
         // Check to see if Observations property is set
         internal bool IsSetObservations()
         {
-            return this._observations != null && this._observations.Count > 0; 
+            return this._observations != null && (this._observations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -217,7 +218,7 @@ namespace Amazon.Glue.Model
         // Check to see if RuleResults property is set
         internal bool IsSetRuleResults()
         {
-            return this._ruleResults != null && this._ruleResults.Count > 0; 
+            return this._ruleResults != null && (this._ruleResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

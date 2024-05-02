@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CodeCommit.Model
     /// </summary>
     public partial class GetCommentsForPullRequestResponse : AmazonWebServiceResponse
     {
-        private List<CommentsForPullRequest> _commentsForPullRequestData = new List<CommentsForPullRequest>();
+        private List<CommentsForPullRequest> _commentsForPullRequestData = AWSConfigs.InitializeCollections ? new List<CommentsForPullRequest>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if CommentsForPullRequestData property is set
         internal bool IsSetCommentsForPullRequestData()
         {
-            return this._commentsForPullRequestData != null && this._commentsForPullRequestData.Count > 0; 
+            return this._commentsForPullRequestData != null && (this._commentsForPullRequestData.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

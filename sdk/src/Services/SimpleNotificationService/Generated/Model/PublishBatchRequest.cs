@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
@@ -76,7 +77,7 @@ namespace Amazon.SimpleNotificationService.Model
     /// </summary>
     public partial class PublishBatchRequest : AmazonSimpleNotificationServiceRequest
     {
-        private List<PublishBatchRequestEntry> _publishBatchRequestEntries = new List<PublishBatchRequestEntry>();
+        private List<PublishBatchRequestEntry> _publishBatchRequestEntries = AWSConfigs.InitializeCollections ? new List<PublishBatchRequestEntry>() : null;
         private string _topicArn;
 
         /// <summary>
@@ -95,7 +96,7 @@ namespace Amazon.SimpleNotificationService.Model
         // Check to see if PublishBatchRequestEntries property is set
         internal bool IsSetPublishBatchRequestEntries()
         {
-            return this._publishBatchRequestEntries != null && this._publishBatchRequestEntries.Count > 0; 
+            return this._publishBatchRequestEntries != null && (this._publishBatchRequestEntries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

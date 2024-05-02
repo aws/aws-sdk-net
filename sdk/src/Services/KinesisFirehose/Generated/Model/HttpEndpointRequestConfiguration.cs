@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.KinesisFirehose.Model
     /// </summary>
     public partial class HttpEndpointRequestConfiguration
     {
-        private List<HttpEndpointCommonAttribute> _commonAttributes = new List<HttpEndpointCommonAttribute>();
+        private List<HttpEndpointCommonAttribute> _commonAttributes = AWSConfigs.InitializeCollections ? new List<HttpEndpointCommonAttribute>() : null;
         private ContentEncoding _contentEncoding;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.KinesisFirehose.Model
         // Check to see if CommonAttributes property is set
         internal bool IsSetCommonAttributes()
         {
-            return this._commonAttributes != null && this._commonAttributes.Count > 0; 
+            return this._commonAttributes != null && (this._commonAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

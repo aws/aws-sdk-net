@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
@@ -58,7 +59,7 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class ExpectedAttributeValue
     {
-        private List<AttributeValue> _attributeValueList = new List<AttributeValue>();
+        private List<AttributeValue> _attributeValueList = AWSConfigs.InitializeCollections ? new List<AttributeValue>() : null;
         private ComparisonOperator _comparisonOperator;
         private bool? _exists;
         private AttributeValue _value;
@@ -122,7 +123,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if AttributeValueList property is set
         internal bool IsSetAttributeValueList()
         {
-            return this._attributeValueList != null && this._attributeValueList.Count > 0; 
+            return this._attributeValueList != null && (this._attributeValueList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

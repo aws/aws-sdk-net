@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -84,6 +85,10 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     if (context.TestExpression("MailFromDomainAttributes/entry", targetDepth))
                     {
                         var unmarshaller = new KeyValueUnmarshaller<string, IdentityMailFromDomainAttributes, StringUnmarshaller, IdentityMailFromDomainAttributesUnmarshaller>(StringUnmarshaller.Instance, IdentityMailFromDomainAttributesUnmarshaller.Instance);
+                        if (response.MailFromDomainAttributes == null)
+                        {
+                            response.MailFromDomainAttributes = new Dictionary<string, IdentityMailFromDomainAttributes>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.MailFromDomainAttributes.Add(item);
                         continue;

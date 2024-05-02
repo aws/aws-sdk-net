@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -67,6 +68,12 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
                     unmarshalledObject.DbPaths = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("onDemand", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.OnDemand = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("volumeName", targetDepth))

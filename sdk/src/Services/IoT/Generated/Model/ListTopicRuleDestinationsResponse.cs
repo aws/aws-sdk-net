@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class ListTopicRuleDestinationsResponse : AmazonWebServiceResponse
     {
-        private List<TopicRuleDestinationSummary> _destinationSummaries = new List<TopicRuleDestinationSummary>();
+        private List<TopicRuleDestinationSummary> _destinationSummaries = AWSConfigs.InitializeCollections ? new List<TopicRuleDestinationSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.IoT.Model
         // Check to see if DestinationSummaries property is set
         internal bool IsSetDestinationSummaries()
         {
-            return this._destinationSummaries != null && this._destinationSummaries.Count > 0; 
+            return this._destinationSummaries != null && (this._destinationSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

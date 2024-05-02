@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GameLift.Model
 {
     /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.GameLift.Model
     {
         private string _fleetId;
         private int? _limit;
-        private List<string> _locations = new List<string>();
+        private List<string> _locations = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -133,7 +134,7 @@ namespace Amazon.GameLift.Model
         // Check to see if Locations property is set
         internal bool IsSetLocations()
         {
-            return this._locations != null && this._locations.Count > 0; 
+            return this._locations != null && (this._locations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

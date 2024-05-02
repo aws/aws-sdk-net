@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTDeviceAdvisor.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
     public partial class UntagResourceRequest : AmazonIoTDeviceAdvisorRequest
     {
         private string _resourceArn;
-        private List<string> _tagKeys = new List<string>();
+        private List<string> _tagKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceArn. 
@@ -79,7 +80,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         // Check to see if TagKeys property is set
         internal bool IsSetTagKeys()
         {
-            return this._tagKeys != null && this._tagKeys.Count > 0; 
+            return this._tagKeys != null && (this._tagKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

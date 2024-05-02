@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -44,12 +45,12 @@ namespace Amazon.EC2.Model
         private OfferingClassType _offeringClass;
         private OfferingTypeValues _offeringType;
         private RIProductDescription _productDescription;
-        private List<RecurringCharge> _recurringCharges = new List<RecurringCharge>();
+        private List<RecurringCharge> _recurringCharges = AWSConfigs.InitializeCollections ? new List<RecurringCharge>() : null;
         private string _reservedInstancesId;
         private Scope _scope;
         private DateTime? _start;
         private ReservedInstanceState _state;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private float? _usagePrice;
 
         /// <summary>
@@ -266,7 +267,7 @@ namespace Amazon.EC2.Model
         // Check to see if RecurringCharges property is set
         internal bool IsSetRecurringCharges()
         {
-            return this._recurringCharges != null && this._recurringCharges.Count > 0; 
+            return this._recurringCharges != null && (this._recurringCharges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -356,7 +357,7 @@ namespace Amazon.EC2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
@@ -36,10 +37,10 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class GeneralLabelsSettings
     {
-        private List<string> _labelCategoryExclusionFilters = new List<string>();
-        private List<string> _labelCategoryInclusionFilters = new List<string>();
-        private List<string> _labelExclusionFilters = new List<string>();
-        private List<string> _labelInclusionFilters = new List<string>();
+        private List<string> _labelCategoryExclusionFilters = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _labelCategoryInclusionFilters = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _labelExclusionFilters = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _labelInclusionFilters = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property LabelCategoryExclusionFilters. 
@@ -57,7 +58,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if LabelCategoryExclusionFilters property is set
         internal bool IsSetLabelCategoryExclusionFilters()
         {
-            return this._labelCategoryExclusionFilters != null && this._labelCategoryExclusionFilters.Count > 0; 
+            return this._labelCategoryExclusionFilters != null && (this._labelCategoryExclusionFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -76,7 +77,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if LabelCategoryInclusionFilters property is set
         internal bool IsSetLabelCategoryInclusionFilters()
         {
-            return this._labelCategoryInclusionFilters != null && this._labelCategoryInclusionFilters.Count > 0; 
+            return this._labelCategoryInclusionFilters != null && (this._labelCategoryInclusionFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -95,7 +96,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if LabelExclusionFilters property is set
         internal bool IsSetLabelExclusionFilters()
         {
-            return this._labelExclusionFilters != null && this._labelExclusionFilters.Count > 0; 
+            return this._labelExclusionFilters != null && (this._labelExclusionFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -114,7 +115,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if LabelInclusionFilters property is set
         internal bool IsSetLabelInclusionFilters()
         {
-            return this._labelInclusionFilters != null && this._labelInclusionFilters.Count > 0; 
+            return this._labelInclusionFilters != null && (this._labelInclusionFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

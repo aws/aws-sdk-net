@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.TranscribeService.Model
         private MedicalTranscriptionSetting _settings;
         private Specialty _specialty;
         private DateTime? _startTime;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private MedicalTranscript _transcript;
         private TranscriptionJobStatus _transcriptionJobStatus;
         private Type _type;
@@ -375,7 +376,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

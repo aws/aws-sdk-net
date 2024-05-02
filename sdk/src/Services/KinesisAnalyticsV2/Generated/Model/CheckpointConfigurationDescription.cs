@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes checkpointing parameters for a Flink-based Kinesis Data Analytics application.
+    /// Describes checkpointing parameters for a Managed Service for Apache Flink application.
     /// </summary>
     public partial class CheckpointConfigurationDescription
     {
@@ -41,7 +42,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property CheckpointingEnabled. 
         /// <para>
-        /// Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics
+        /// Describes whether checkpointing is enabled for a Managed Service for Apache Flink
         /// application.
         /// </para>
         ///  <note> 
@@ -93,8 +94,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ConfigurationType. 
         /// <para>
-        /// Describes whether the application uses the default checkpointing behavior in Kinesis
-        /// Data Analytics. 
+        /// Describes whether the application uses the default checkpointing behavior in Managed
+        /// Service for Apache Flink. 
         /// </para>
         ///  <note> 
         /// <para>

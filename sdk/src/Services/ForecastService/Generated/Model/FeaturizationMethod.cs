@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ForecastService.Model
 {
     /// <summary>
@@ -58,7 +59,7 @@ namespace Amazon.ForecastService.Model
     public partial class FeaturizationMethod
     {
         private FeaturizationMethodName _featurizationMethodName;
-        private Dictionary<string, string> _featurizationMethodParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _featurizationMethodParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property FeaturizationMethodName. 
@@ -148,7 +149,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if FeaturizationMethodParameters property is set
         internal bool IsSetFeaturizationMethodParameters()
         {
-            return this._featurizationMethodParameters != null && this._featurizationMethodParameters.Count > 0; 
+            return this._featurizationMethodParameters != null && (this._featurizationMethodParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

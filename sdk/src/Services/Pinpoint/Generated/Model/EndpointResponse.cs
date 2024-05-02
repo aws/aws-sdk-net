@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Pinpoint.Model
     {
         private string _address;
         private string _applicationId;
-        private Dictionary<string, List<string>> _attributes = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private ChannelType _channelType;
         private string _cohortId;
         private string _creationDate;
@@ -44,7 +45,7 @@ namespace Amazon.Pinpoint.Model
         private string _endpointStatus;
         private string _id;
         private EndpointLocation _location;
-        private Dictionary<string, double> _metrics = new Dictionary<string, double>();
+        private Dictionary<string, double> _metrics = AWSConfigs.InitializeCollections ? new Dictionary<string, double>() : null;
         private string _optOut;
         private string _requestId;
         private EndpointUser _user;
@@ -108,7 +109,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -284,7 +285,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Metrics property is set
         internal bool IsSetMetrics()
         {
-            return this._metrics != null && this._metrics.Count > 0; 
+            return this._metrics != null && (this._metrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FMS.Model
 {
     /// <summary>
@@ -50,6 +51,11 @@ namespace Amazon.FMS.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
+    ///  <b>WAF policy</b> - This policy applies WAF web ACL protections to specified accounts
+    /// and resources. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <b>Shield Advanced policy</b> - This policy applies Shield Advanced protection to
     /// specified accounts and resources. 
     /// </para>
@@ -58,6 +64,12 @@ namespace Amazon.FMS.Model
     ///  <b>Security Groups policy</b> - This type of policy gives you control over security
     /// groups that are in use throughout your organization in Organizations and lets you
     /// enforce a baseline set of rules across your organization. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <b>Network ACL policy</b> - This type of policy gives you control over the network
+    /// ACLs that are in use throughout your organization in Organizations and lets you enforce
+    /// a baseline set of first and last network ACL rules across your organization. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -94,7 +106,7 @@ namespace Amazon.FMS.Model
     public partial class PutPolicyRequest : AmazonFMSRequest
     {
         private Policy _policy;
-        private List<Tag> _tagList = new List<Tag>();
+        private List<Tag> _tagList = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Policy. 
@@ -131,7 +143,7 @@ namespace Amazon.FMS.Model
         // Check to see if TagList property is set
         internal bool IsSetTagList()
         {
-            return this._tagList != null && this._tagList.Count > 0; 
+            return this._tagList != null && (this._tagList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

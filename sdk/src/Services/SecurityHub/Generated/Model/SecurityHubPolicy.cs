@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class SecurityHubPolicy
     {
-        private List<string> _enabledStandardIdentifiers = new List<string>();
+        private List<string> _enabledStandardIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SecurityControlsConfiguration _securityControlsConfiguration;
         private bool? _serviceEnabled;
 
@@ -60,7 +61,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if EnabledStandardIdentifiers property is set
         internal bool IsSetEnabledStandardIdentifiers()
         {
-            return this._enabledStandardIdentifiers != null && this._enabledStandardIdentifiers.Count > 0; 
+            return this._enabledStandardIdentifiers != null && (this._enabledStandardIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

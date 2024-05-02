@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Organizations.Model
 {
     /// <summary>
@@ -64,7 +65,7 @@ namespace Amazon.Organizations.Model
         /// The text content of the policy.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000000)]
+        [AWSProperty(Min=1)]
         public string PolicyContent
         {
             get { return this._policyContent; }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Keyspaces.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Keyspaces.Model
     public partial class GetKeyspaceResponse : AmazonWebServiceResponse
     {
         private string _keyspaceName;
-        private List<string> _replicationRegions = new List<string>();
+        private List<string> _replicationRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Rs _replicationStrategy;
         private string _resourceArn;
 
@@ -74,7 +75,7 @@ namespace Amazon.Keyspaces.Model
         // Check to see if ReplicationRegions property is set
         internal bool IsSetReplicationRegions()
         {
-            return this._replicationRegions != null && this._replicationRegions.Count > 0; 
+            return this._replicationRegions != null && (this._replicationRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

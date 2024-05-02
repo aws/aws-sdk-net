@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class ListBuiltInIntentsResponse : AmazonWebServiceResponse
     {
-        private List<BuiltInIntentSummary> _builtInIntentSummaries = new List<BuiltInIntentSummary>();
+        private List<BuiltInIntentSummary> _builtInIntentSummaries = AWSConfigs.InitializeCollections ? new List<BuiltInIntentSummary>() : null;
         private string _localeId;
         private string _nextToken;
 
@@ -55,7 +56,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if BuiltInIntentSummaries property is set
         internal bool IsSetBuiltInIntentSummaries()
         {
-            return this._builtInIntentSummaries != null && this._builtInIntentSummaries.Count > 0; 
+            return this._builtInIntentSummaries != null && (this._builtInIntentSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

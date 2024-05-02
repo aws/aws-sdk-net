@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.WellArchitected.Model
     {
         private string _nextToken;
         private string _workloadId;
-        private List<WorkloadShareSummary> _workloadShareSummaries = new List<WorkloadShareSummary>();
+        private List<WorkloadShareSummary> _workloadShareSummaries = AWSConfigs.InitializeCollections ? new List<WorkloadShareSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken.
@@ -80,7 +81,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if WorkloadShareSummaries property is set
         internal bool IsSetWorkloadShareSummaries()
         {
-            return this._workloadShareSummaries != null && this._workloadShareSummaries.Count > 0; 
+            return this._workloadShareSummaries != null && (this._workloadShareSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

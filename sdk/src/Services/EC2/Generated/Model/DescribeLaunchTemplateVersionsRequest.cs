@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeLaunchTemplateVersionsRequest : AmazonEC2Request
     {
-        private List<Filter> _filters = new List<Filter>();
+        private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
         private string _launchTemplateId;
         private string _launchTemplateName;
         private int? _maxResults;
@@ -44,7 +45,7 @@ namespace Amazon.EC2.Model
         private string _minVersion;
         private string _nextToken;
         private bool? _resolveAlias;
-        private List<string> _versions = new List<string>();
+        private List<string> _versions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -124,7 +125,7 @@ namespace Amazon.EC2.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -135,7 +136,7 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// To describe one or more versions of a specified launch template, you must specify
-        /// either the <c>LaunchTemplateId</c> or the <c>LaunchTemplateName</c>, but not both.
+        /// either the launch template ID or the launch template name, but not both.
         /// </para>
         ///  
         /// <para>
@@ -163,7 +164,7 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// To describe one or more versions of a specified launch template, you must specify
-        /// either the <c>LaunchTemplateName</c> or the <c>LaunchTemplateId</c>, but not both.
+        /// either the launch template name or the launch template ID, but not both.
         /// </para>
         ///  
         /// <para>
@@ -322,7 +323,7 @@ namespace Amazon.EC2.Model
         // Check to see if Versions property is set
         internal bool IsSetVersions()
         {
-            return this._versions != null && this._versions.Count > 0; 
+            return this._versions != null && (this._versions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

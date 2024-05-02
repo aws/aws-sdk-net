@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SSMIncidents.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SSMIncidents.Model
     public partial class ListResponsePlansResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ResponsePlanSummary> _responsePlanSummaries = new List<ResponsePlanSummary>();
+        private List<ResponsePlanSummary> _responsePlanSummaries = AWSConfigs.InitializeCollections ? new List<ResponsePlanSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.SSMIncidents.Model
         // Check to see if ResponsePlanSummaries property is set
         internal bool IsSetResponsePlanSummaries()
         {
-            return this._responsePlanSummaries != null && this._responsePlanSummaries.Count > 0; 
+            return this._responsePlanSummaries != null && (this._responsePlanSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

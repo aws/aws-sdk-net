@@ -175,6 +175,114 @@ namespace Amazon.Outposts
 
 
     /// <summary>
+    /// Constants used for properties of type CapacityTaskFailureType.
+    /// </summary>
+    public class CapacityTaskFailureType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant UNSUPPORTED_CAPACITY_CONFIGURATION for CapacityTaskFailureType
+        /// </summary>
+        public static readonly CapacityTaskFailureType UNSUPPORTED_CAPACITY_CONFIGURATION = new CapacityTaskFailureType("UNSUPPORTED_CAPACITY_CONFIGURATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityTaskFailureType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityTaskFailureType FindValue(string value)
+        {
+            return FindValue<CapacityTaskFailureType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityTaskFailureType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CapacityTaskStatus.
+    /// </summary>
+    public class CapacityTaskStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CANCELLED for CapacityTaskStatus
+        /// </summary>
+        public static readonly CapacityTaskStatus CANCELLED = new CapacityTaskStatus("CANCELLED");
+        /// <summary>
+        /// Constant COMPLETED for CapacityTaskStatus
+        /// </summary>
+        public static readonly CapacityTaskStatus COMPLETED = new CapacityTaskStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for CapacityTaskStatus
+        /// </summary>
+        public static readonly CapacityTaskStatus FAILED = new CapacityTaskStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for CapacityTaskStatus
+        /// </summary>
+        public static readonly CapacityTaskStatus IN_PROGRESS = new CapacityTaskStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant REQUESTED for CapacityTaskStatus
+        /// </summary>
+        public static readonly CapacityTaskStatus REQUESTED = new CapacityTaskStatus("REQUESTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CapacityTaskStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CapacityTaskStatus FindValue(string value)
+        {
+            return FindValue<CapacityTaskStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CapacityTaskStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CatalogItemClass.
     /// </summary>
     public class CatalogItemClass : ConstantClass
@@ -1128,6 +1236,10 @@ namespace Amazon.Outposts
         /// Constant DHL for ShipmentCarrier
         /// </summary>
         public static readonly ShipmentCarrier DHL = new ShipmentCarrier("DHL");
+        /// <summary>
+        /// Constant EXPEDITORS for ShipmentCarrier
+        /// </summary>
+        public static readonly ShipmentCarrier EXPEDITORS = new ShipmentCarrier("EXPEDITORS");
         /// <summary>
         /// Constant FEDEX for ShipmentCarrier
         /// </summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ComputeOptimizer.Model
     /// </summary>
     public partial class GpuInfo
     {
-        private List<Gpu> _gpus = new List<Gpu>();
+        private List<Gpu> _gpus = AWSConfigs.InitializeCollections ? new List<Gpu>() : null;
 
         /// <summary>
         /// Gets and sets the property Gpus. 
@@ -50,7 +51,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if Gpus property is set
         internal bool IsSetGpus()
         {
-            return this._gpus != null && this._gpus.Count > 0; 
+            return this._gpus != null && (this._gpus.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

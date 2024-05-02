@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Neptunedata.Model
 {
     /// <summary>
@@ -34,13 +35,13 @@ namespace Amazon.Neptunedata.Model
     /// </summary>
     public partial class RDFGraphSummary
     {
-        private List<string> _classes = new List<string>();
+        private List<string> _classes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private long? _numClasses;
         private long? _numDistinctPredicates;
         private long? _numDistinctSubjects;
         private long? _numQuads;
-        private List<Dictionary<string, long>> _predicates = new List<Dictionary<string, long>>();
-        private List<SubjectStructure> _subjectStructures = new List<SubjectStructure>();
+        private List<Dictionary<string, long>> _predicates = AWSConfigs.InitializeCollections ? new List<Dictionary<string, long>>() : null;
+        private List<SubjectStructure> _subjectStructures = AWSConfigs.InitializeCollections ? new List<SubjectStructure>() : null;
 
         /// <summary>
         /// Gets and sets the property Classes. 
@@ -57,7 +58,7 @@ namespace Amazon.Neptunedata.Model
         // Check to see if Classes property is set
         internal bool IsSetClasses()
         {
-            return this._classes != null && this._classes.Count > 0; 
+            return this._classes != null && (this._classes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -147,7 +148,7 @@ namespace Amazon.Neptunedata.Model
         // Check to see if Predicates property is set
         internal bool IsSetPredicates()
         {
-            return this._predicates != null && this._predicates.Count > 0; 
+            return this._predicates != null && (this._predicates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -166,7 +167,7 @@ namespace Amazon.Neptunedata.Model
         // Check to see if SubjectStructures property is set
         internal bool IsSetSubjectStructures()
         {
-            return this._subjectStructures != null && this._subjectStructures.Count > 0; 
+            return this._subjectStructures != null && (this._subjectStructures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

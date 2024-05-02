@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class Snapshot
     {
-        private List<AccountWithRestoreAccess> _accountsWithRestoreAccess = new List<AccountWithRestoreAccess>();
+        private List<AccountWithRestoreAccess> _accountsWithRestoreAccess = AWSConfigs.InitializeCollections ? new List<AccountWithRestoreAccess>() : null;
         private double? _actualIncrementalBackupSizeInMegaBytes;
         private string _availabilityZone;
         private double? _backupProgressInMegaBytes;
@@ -59,14 +60,15 @@ namespace Amazon.Redshift.Model
         private int? _numberOfNodes;
         private string _ownerAccount;
         private int? _port;
-        private List<string> _restorableNodeTypes = new List<string>();
+        private List<string> _restorableNodeTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private string _snapshotArn;
         private DateTime? _snapshotCreateTime;
         private string _snapshotIdentifier;
         private DateTime? _snapshotRetentionStartTime;
         private string _snapshotType;
         private string _sourceRegion;
         private string _status;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private double? _totalBackupSizeInMegaBytes;
         private string _vpcId;
 
@@ -86,7 +88,7 @@ namespace Amazon.Redshift.Model
         // Check to see if AccountsWithRestoreAccess property is set
         internal bool IsSetAccountsWithRestoreAccess()
         {
-            return this._accountsWithRestoreAccess != null && this._accountsWithRestoreAccess.Count > 0; 
+            return this._accountsWithRestoreAccess != null && (this._accountsWithRestoreAccess.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -592,7 +594,26 @@ namespace Amazon.Redshift.Model
         // Check to see if RestorableNodeTypes property is set
         internal bool IsSetRestorableNodeTypes()
         {
-            return this._restorableNodeTypes != null && this._restorableNodeTypes.Count > 0; 
+            return this._restorableNodeTypes != null && (this._restorableNodeTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnapshotArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the snapshot.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string SnapshotArn
+        {
+            get { return this._snapshotArn; }
+            set { this._snapshotArn = value; }
+        }
+
+        // Check to see if SnapshotArn property is set
+        internal bool IsSetSnapshotArn()
+        {
+            return this._snapshotArn != null;
         }
 
         /// <summary>
@@ -739,7 +760,7 @@ namespace Amazon.Redshift.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

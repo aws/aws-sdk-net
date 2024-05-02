@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class GetMetricStatisticsResponse : AmazonWebServiceResponse
     {
-        private List<Datapoint> _datapoints = new List<Datapoint>();
+        private List<Datapoint> _datapoints = AWSConfigs.InitializeCollections ? new List<Datapoint>() : null;
         private string _label;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if Datapoints property is set
         internal bool IsSetDatapoints()
         {
-            return this._datapoints != null && this._datapoints.Count > 0; 
+            return this._datapoints != null && (this._datapoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class GetUnfilteredPartitionMetadataResponse : AmazonWebServiceResponse
     {
-        private List<string> _authorizedColumns = new List<string>();
+        private List<string> _authorizedColumns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _isRegisteredWithLakeFormation;
         private Partition _partition;
 
@@ -52,7 +53,7 @@ namespace Amazon.Glue.Model
         // Check to see if AuthorizedColumns property is set
         internal bool IsSetAuthorizedColumns()
         {
-            return this._authorizedColumns != null && this._authorizedColumns.Count > 0; 
+            return this._authorizedColumns != null && (this._authorizedColumns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

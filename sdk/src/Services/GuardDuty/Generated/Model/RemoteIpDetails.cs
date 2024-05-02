@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
@@ -37,6 +38,7 @@ namespace Amazon.GuardDuty.Model
         private Country _country;
         private GeoLocation _geoLocation;
         private string _ipAddressV4;
+        private string _ipAddressV6;
         private Organization _organization;
 
         /// <summary>
@@ -110,6 +112,25 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetIpAddressV4()
         {
             return this._ipAddressV4 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAddressV6. 
+        /// <para>
+        /// The IPv6 remote address of the connection.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public string IpAddressV6
+        {
+            get { return this._ipAddressV6; }
+            set { this._ipAddressV6 = value; }
+        }
+
+        // Check to see if IpAddressV6 property is set
+        internal bool IsSetIpAddressV6()
+        {
+            return this._ipAddressV6 != null;
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class Mapping
     {
-        private List<Mapping> _children = new List<Mapping>();
+        private List<Mapping> _children = AWSConfigs.InitializeCollections ? new List<Mapping>() : null;
         private bool? _dropped;
-        private List<string> _fromPath = new List<string>();
+        private List<string> _fromPath = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _fromType;
         private string _toKey;
         private string _toType;
@@ -78,7 +79,7 @@ namespace Amazon.Glue.Model
         // Check to see if Children property is set
         internal bool IsSetChildren()
         {
-            return this._children != null && this._children.Count > 0; 
+            return this._children != null && (this._children.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -114,7 +115,7 @@ namespace Amazon.Glue.Model
         // Check to see if FromPath property is set
         internal bool IsSetFromPath()
         {
-            return this._fromPath != null && this._fromPath.Count > 0; 
+            return this._fromPath != null && (this._fromPath.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

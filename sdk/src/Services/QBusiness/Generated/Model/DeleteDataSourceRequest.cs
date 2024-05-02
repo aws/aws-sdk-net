@@ -26,13 +26,14 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDataSource operation.
-    /// Deletes an Amazon Q data source connector. While the data source is being deleted,
-    /// the <c>Status</c> field returned by a call to the <c>DescribeDataSource</c> API is
-    /// set to <c>DELETING</c>.
+    /// Deletes an Amazon Q Business data source connector. While the data source is being
+    /// deleted, the <c>Status</c> field returned by a call to the <c>DescribeDataSource</c>
+    /// API is set to <c>DELETING</c>.
     /// </summary>
     public partial class DeleteDataSourceRequest : AmazonQBusinessRequest
     {
@@ -43,7 +44,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The identifier of the Amazon Q application used with the data source connector.
+        /// The identifier of the Amazon Q Business application used with the data source connector.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

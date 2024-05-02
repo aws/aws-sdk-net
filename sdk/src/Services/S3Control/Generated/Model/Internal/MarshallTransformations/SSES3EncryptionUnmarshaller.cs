@@ -30,12 +30,13 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SSES3Encryption Object
     /// </summary>  
-    public class SSES3EncryptionUnmarshaller : IUnmarshaller<SSES3Encryption, XmlUnmarshallerContext>
+    public class SSES3EncryptionUnmarshaller : IUnmarshaller<SSES3Encryption, XmlUnmarshallerContext>, IUnmarshaller<SSES3Encryption, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -62,6 +63,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public SSES3Encryption Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static SSES3EncryptionUnmarshaller _instance = new SSES3EncryptionUnmarshaller();        

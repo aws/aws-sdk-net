@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Macie2.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Macie2.Model
         /// Enumerable containing all of the MatchingResources
         /// </summary>
         public IPaginatedEnumerable<MatchingResource> MatchingResources => 
-            new PaginatedResultKeyResponse<SearchResourcesResponse, MatchingResource>(this, (i) => i.MatchingResources);
+            new PaginatedResultKeyResponse<SearchResourcesResponse, MatchingResource>(this, (i) => i.MatchingResources ?? new List<MatchingResource>());
 
         internal SearchResourcesPaginator(IAmazonMacie2 client, SearchResourcesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Macie2.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<SearchResourcesResponse> IPaginator<SearchResourcesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<SearchResourcesResponse> IPaginator<SearchResourcesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

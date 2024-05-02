@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class StartOnDemandAuditTaskRequest : AmazonIoTRequest
     {
-        private List<string> _targetCheckNames = new List<string>();
+        private List<string> _targetCheckNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property TargetCheckNames. 
@@ -61,7 +62,7 @@ namespace Amazon.IoT.Model
         // Check to see if TargetCheckNames property is set
         internal bool IsSetTargetCheckNames()
         {
-            return this._targetCheckNames != null && this._targetCheckNames.Count > 0; 
+            return this._targetCheckNames != null && (this._targetCheckNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

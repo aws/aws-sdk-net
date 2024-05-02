@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Pricing.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Pricing.Model
     {
         private string _formatVersion;
         private string _nextToken;
-        private List<string> _priceList = new List<string>();
+        private List<string> _priceList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property FormatVersion. 
@@ -89,7 +90,7 @@ namespace Amazon.Pricing.Model
         // Check to see if PriceList property is set
         internal bool IsSetPriceList()
         {
-            return this._priceList != null && this._priceList.Count > 0; 
+            return this._priceList != null && (this._priceList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

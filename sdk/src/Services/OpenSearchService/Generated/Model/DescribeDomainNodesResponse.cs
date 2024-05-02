@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.OpenSearchService.Model
     /// </summary>
     public partial class DescribeDomainNodesResponse : AmazonWebServiceResponse
     {
-        private List<DomainNodesStatus> _domainNodesStatusList = new List<DomainNodesStatus>();
+        private List<DomainNodesStatus> _domainNodesStatusList = AWSConfigs.InitializeCollections ? new List<DomainNodesStatus>() : null;
 
         /// <summary>
         /// Gets and sets the property DomainNodesStatusList. 
@@ -52,7 +53,7 @@ namespace Amazon.OpenSearchService.Model
         // Check to see if DomainNodesStatusList property is set
         internal bool IsSetDomainNodesStatusList()
         {
-            return this._domainNodesStatusList != null && this._domainNodesStatusList.Count > 0; 
+            return this._domainNodesStatusList != null && (this._domainNodesStatusList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

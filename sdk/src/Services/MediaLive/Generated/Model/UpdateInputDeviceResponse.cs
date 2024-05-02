@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
@@ -41,12 +42,12 @@ namespace Amazon.MediaLive.Model
         private InputDeviceHdSettings _hdDeviceSettings;
         private string _id;
         private string _macAddress;
-        private List<string> _medialiveInputArns = new List<string>();
+        private List<string> _medialiveInputArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private InputDeviceNetworkSettings _networkSettings;
         private InputDeviceOutputType _outputType;
         private string _serialNumber;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private InputDeviceType _type;
         private InputDeviceUhdSettings _uhdDeviceSettings;
 
@@ -191,7 +192,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if MedialiveInputArns property is set
         internal bool IsSetMedialiveInputArns()
         {
-            return this._medialiveInputArns != null && this._medialiveInputArns.Count > 0; 
+            return this._medialiveInputArns != null && (this._medialiveInputArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -268,7 +269,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

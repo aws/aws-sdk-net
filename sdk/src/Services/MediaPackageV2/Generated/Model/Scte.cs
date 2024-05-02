@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaPackageV2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MediaPackageV2.Model
     /// </summary>
     public partial class Scte
     {
-        private List<string> _scteFilter = new List<string>();
+        private List<string> _scteFilter = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ScteFilter. 
@@ -51,7 +52,7 @@ namespace Amazon.MediaPackageV2.Model
         // Check to see if ScteFilter property is set
         internal bool IsSetScteFilter()
         {
-            return this._scteFilter != null && this._scteFilter.Count > 0; 
+            return this._scteFilter != null && (this._scteFilter.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

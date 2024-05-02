@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PersonalizeRuntime.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.PersonalizeRuntime.Model
     /// </summary>
     public partial class GetActionRecommendationsResponse : AmazonWebServiceResponse
     {
-        private List<PredictedAction> _actionList = new List<PredictedAction>();
+        private List<PredictedAction> _actionList = AWSConfigs.InitializeCollections ? new List<PredictedAction>() : null;
         private string _recommendationId;
 
         /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.PersonalizeRuntime.Model
         // Check to see if ActionList property is set
         internal bool IsSetActionList()
         {
-            return this._actionList != null && this._actionList.Count > 0; 
+            return this._actionList != null && (this._actionList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

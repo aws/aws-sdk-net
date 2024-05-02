@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Mgn.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.Mgn.Model
         private PostLaunchActionsDeploymentType _deployment;
         private string _s3LogBucket;
         private string _s3OutputKeyPrefix;
-        private List<SsmDocument> _ssmDocuments = new List<SsmDocument>();
+        private List<SsmDocument> _ssmDocuments = AWSConfigs.InitializeCollections ? new List<SsmDocument>() : null;
 
         /// <summary>
         /// Gets and sets the property CloudWatchLogGroupName. 
@@ -130,7 +131,7 @@ namespace Amazon.Mgn.Model
         // Check to see if SsmDocuments property is set
         internal bool IsSetSsmDocuments()
         {
-            return this._ssmDocuments != null && this._ssmDocuments.Count > 0; 
+            return this._ssmDocuments != null && (this._ssmDocuments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,16 +46,32 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(GPSCoordinates requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetLatitude())
             {
                 context.Writer.WritePropertyName("Latitude");
-                context.Writer.Write(requestObject.Latitude.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Latitude.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Latitude.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Latitude.Value);
+                }
             }
 
             if(requestObject.IsSetLongitude())
             {
                 context.Writer.WritePropertyName("Longitude");
-                context.Writer.Write(requestObject.Longitude.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Longitude.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Longitude.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Longitude.Value);
+                }
             }
 
         }

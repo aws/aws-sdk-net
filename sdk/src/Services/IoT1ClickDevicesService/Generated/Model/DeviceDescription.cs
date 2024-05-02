@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT1ClickDevicesService.Model
 {
     /// <summary>
@@ -34,11 +35,11 @@ namespace Amazon.IoT1ClickDevicesService.Model
     public partial class DeviceDescription
     {
         private string _arn;
-        private Dictionary<string, string> _attributes = new Dictionary<string, string>();
+        private Dictionary<string, string> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _deviceId;
         private bool? _enabled;
         private double? _remainingLife;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _type;
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace Amazon.IoT1ClickDevicesService.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -148,7 +149,7 @@ namespace Amazon.IoT1ClickDevicesService.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
@@ -52,8 +53,8 @@ namespace Amazon.NetworkFirewall.Model
         private string _firewallPolicyArn;
         private bool? _firewallPolicyChangeProtection;
         private bool? _subnetChangeProtection;
-        private List<SubnetMapping> _subnetMappings = new List<SubnetMapping>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<SubnetMapping> _subnetMappings = AWSConfigs.InitializeCollections ? new List<SubnetMapping>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _vpcId;
 
         /// <summary>
@@ -257,7 +258,7 @@ namespace Amazon.NetworkFirewall.Model
         // Check to see if SubnetMappings property is set
         internal bool IsSetSubnetMappings()
         {
-            return this._subnetMappings != null && this._subnetMappings.Count > 0; 
+            return this._subnetMappings != null && (this._subnetMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -273,7 +274,7 @@ namespace Amazon.NetworkFirewall.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -741,7 +741,7 @@ namespace Amazon.SsmSap
         /// <summary>
         /// Constant Equals for FilterOperator
         /// </summary>
-        public static readonly FilterOperator Equals = new FilterOperator("Equals");
+        public new static readonly FilterOperator Equals = new FilterOperator("Equals");
         /// <summary>
         /// Constant GreaterThanOrEquals for FilterOperator
         /// </summary>

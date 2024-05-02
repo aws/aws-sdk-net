@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class AssignPrivateIpAddressesResponse : AmazonWebServiceResponse
     {
-        private List<Ipv4PrefixSpecification> _assignedIpv4Prefixes = new List<Ipv4PrefixSpecification>();
-        private List<AssignedPrivateIpAddress> _assignedPrivateIpAddresses = new List<AssignedPrivateIpAddress>();
+        private List<Ipv4PrefixSpecification> _assignedIpv4Prefixes = AWSConfigs.InitializeCollections ? new List<Ipv4PrefixSpecification>() : null;
+        private List<AssignedPrivateIpAddress> _assignedPrivateIpAddresses = AWSConfigs.InitializeCollections ? new List<AssignedPrivateIpAddress>() : null;
         private string _networkInterfaceId;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.EC2.Model
         // Check to see if AssignedIpv4Prefixes property is set
         internal bool IsSetAssignedIpv4Prefixes()
         {
-            return this._assignedIpv4Prefixes != null && this._assignedIpv4Prefixes.Count > 0; 
+            return this._assignedIpv4Prefixes != null && (this._assignedIpv4Prefixes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.EC2.Model
         // Check to see if AssignedPrivateIpAddresses property is set
         internal bool IsSetAssignedPrivateIpAddresses()
         {
-            return this._assignedPrivateIpAddresses != null && this._assignedPrivateIpAddresses.Count > 0; 
+            return this._assignedPrivateIpAddresses != null && (this._assignedPrivateIpAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

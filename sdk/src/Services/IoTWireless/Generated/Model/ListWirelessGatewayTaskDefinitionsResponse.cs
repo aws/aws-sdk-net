@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IoTWireless.Model
     public partial class ListWirelessGatewayTaskDefinitionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<UpdateWirelessGatewayTaskEntry> _taskDefinitions = new List<UpdateWirelessGatewayTaskEntry>();
+        private List<UpdateWirelessGatewayTaskEntry> _taskDefinitions = AWSConfigs.InitializeCollections ? new List<UpdateWirelessGatewayTaskEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if TaskDefinitions property is set
         internal bool IsSetTaskDefinitions()
         {
-            return this._taskDefinitions != null && this._taskDefinitions.Count > 0; 
+            return this._taskDefinitions != null && (this._taskDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

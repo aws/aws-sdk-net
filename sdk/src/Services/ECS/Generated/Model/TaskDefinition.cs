@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECS.Model
 {
     /// <summary>
@@ -36,30 +37,30 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class TaskDefinition
     {
-        private List<string> _compatibilities = new List<string>();
-        private List<ContainerDefinition> _containerDefinitions = new List<ContainerDefinition>();
+        private List<string> _compatibilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<ContainerDefinition> _containerDefinitions = AWSConfigs.InitializeCollections ? new List<ContainerDefinition>() : null;
         private string _cpu;
         private DateTime? _deregisteredAt;
         private EphemeralStorage _ephemeralStorage;
         private string _executionRoleArn;
         private string _family;
-        private List<InferenceAccelerator> _inferenceAccelerators = new List<InferenceAccelerator>();
+        private List<InferenceAccelerator> _inferenceAccelerators = AWSConfigs.InitializeCollections ? new List<InferenceAccelerator>() : null;
         private IpcMode _ipcMode;
         private string _memory;
         private NetworkMode _networkMode;
         private PidMode _pidMode;
-        private List<TaskDefinitionPlacementConstraint> _placementConstraints = new List<TaskDefinitionPlacementConstraint>();
+        private List<TaskDefinitionPlacementConstraint> _placementConstraints = AWSConfigs.InitializeCollections ? new List<TaskDefinitionPlacementConstraint>() : null;
         private ProxyConfiguration _proxyConfiguration;
         private DateTime? _registeredAt;
         private string _registeredBy;
-        private List<Attribute> _requiresAttributes = new List<Attribute>();
-        private List<string> _requiresCompatibilities = new List<string>();
+        private List<Attribute> _requiresAttributes = AWSConfigs.InitializeCollections ? new List<Attribute>() : null;
+        private List<string> _requiresCompatibilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _revision;
         private RuntimePlatform _runtimePlatform;
         private TaskDefinitionStatus _status;
         private string _taskDefinitionArn;
         private string _taskRoleArn;
-        private List<Volume> _volumes = new List<Volume>();
+        private List<Volume> _volumes = AWSConfigs.InitializeCollections ? new List<Volume>() : null;
 
         /// <summary>
         /// Gets and sets the property Compatibilities. 
@@ -78,7 +79,7 @@ namespace Amazon.ECS.Model
         // Check to see if Compatibilities property is set
         internal bool IsSetCompatibilities()
         {
-            return this._compatibilities != null && this._compatibilities.Count > 0; 
+            return this._compatibilities != null && (this._compatibilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -99,7 +100,7 @@ namespace Amazon.ECS.Model
         // Check to see if ContainerDefinitions property is set
         internal bool IsSetContainerDefinitions()
         {
-            return this._containerDefinitions != null && this._containerDefinitions.Count > 0; 
+            return this._containerDefinitions != null && (this._containerDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -269,7 +270,7 @@ namespace Amazon.ECS.Model
         // Check to see if InferenceAccelerators property is set
         internal bool IsSetInferenceAccelerators()
         {
-            return this._inferenceAccelerators != null && this._inferenceAccelerators.Count > 0; 
+            return this._inferenceAccelerators != null && (this._inferenceAccelerators.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -537,7 +538,7 @@ namespace Amazon.ECS.Model
         // Check to see if PlacementConstraints property is set
         internal bool IsSetPlacementConstraints()
         {
-            return this._placementConstraints != null && this._placementConstraints.Count > 0; 
+            return this._placementConstraints != null && (this._placementConstraints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -629,7 +630,7 @@ namespace Amazon.ECS.Model
         // Check to see if RequiresAttributes property is set
         internal bool IsSetRequiresAttributes()
         {
-            return this._requiresAttributes != null && this._requiresAttributes.Count > 0; 
+            return this._requiresAttributes != null && (this._requiresAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -650,7 +651,7 @@ namespace Amazon.ECS.Model
         // Check to see if RequiresCompatibilities property is set
         internal bool IsSetRequiresCompatibilities()
         {
-            return this._requiresCompatibilities != null && this._requiresCompatibilities.Count > 0; 
+            return this._requiresCompatibilities != null && (this._requiresCompatibilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -785,7 +786,7 @@ namespace Amazon.ECS.Model
         // Check to see if Volumes property is set
         internal bool IsSetVolumes()
         {
-            return this._volumes != null && this._volumes.Count > 0; 
+            return this._volumes != null && (this._volumes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

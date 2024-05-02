@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MedicalImaging.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.MedicalImaging.Model
         /// Enumerable containing all of the JobSummaries
         /// </summary>
         public IPaginatedEnumerable<DICOMImportJobSummary> JobSummaries => 
-            new PaginatedResultKeyResponse<ListDICOMImportJobsResponse, DICOMImportJobSummary>(this, (i) => i.JobSummaries);
+            new PaginatedResultKeyResponse<ListDICOMImportJobsResponse, DICOMImportJobSummary>(this, (i) => i.JobSummaries ?? new List<DICOMImportJobSummary>());
 
         internal ListDICOMImportJobsPaginator(IAmazonMedicalImaging client, ListDICOMImportJobsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.MedicalImaging.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListDICOMImportJobsResponse> IPaginator<ListDICOMImportJobsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListDICOMImportJobsResponse> IPaginator<ListDICOMImportJobsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

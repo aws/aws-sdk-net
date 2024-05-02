@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
@@ -40,14 +41,15 @@ namespace Amazon.DataZone.Model
         private string _externalIdentifier;
         private DateTime? _firstRevisionCreatedAt;
         private string _firstRevisionCreatedBy;
-        private List<FormOutput> _formsOutput = new List<FormOutput>();
-        private List<string> _glossaryTerms = new List<string>();
+        private List<FormOutput> _formsOutput = AWSConfigs.InitializeCollections ? new List<FormOutput>() : null;
+        private List<string> _glossaryTerms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _id;
+        private List<TimeSeriesDataPointSummaryFormOutput> _latestTimeSeriesDataPointFormsOutput = AWSConfigs.InitializeCollections ? new List<TimeSeriesDataPointSummaryFormOutput>() : null;
         private AssetListingDetails _listing;
         private string _name;
         private string _owningProjectId;
         private PredictionConfiguration _predictionConfiguration;
-        private List<FormOutput> _readOnlyFormsOutput = new List<FormOutput>();
+        private List<FormOutput> _readOnlyFormsOutput = AWSConfigs.InitializeCollections ? new List<FormOutput>() : null;
         private string _revision;
         private string _typeIdentifier;
         private string _typeRevision;
@@ -127,7 +129,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExternalIdentifier.
+        /// Gets and sets the property ExternalIdentifier. 
+        /// <para>
+        /// The external identifier of the asset.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=256)]
         public string ExternalIdentifier
@@ -194,7 +199,7 @@ namespace Amazon.DataZone.Model
         // Check to see if FormsOutput property is set
         internal bool IsSetFormsOutput()
         {
-            return this._formsOutput != null && this._formsOutput.Count > 0; 
+            return this._formsOutput != null && (this._formsOutput.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -213,7 +218,7 @@ namespace Amazon.DataZone.Model
         // Check to see if GlossaryTerms property is set
         internal bool IsSetGlossaryTerms()
         {
-            return this._glossaryTerms != null && this._glossaryTerms.Count > 0; 
+            return this._glossaryTerms != null && (this._glossaryTerms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -236,7 +241,28 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Listing.
+        /// Gets and sets the property LatestTimeSeriesDataPointFormsOutput. 
+        /// <para>
+        /// The latest data point that was imported into the time series form for the asset. 
+        /// </para>
+        /// </summary>
+        public List<TimeSeriesDataPointSummaryFormOutput> LatestTimeSeriesDataPointFormsOutput
+        {
+            get { return this._latestTimeSeriesDataPointFormsOutput; }
+            set { this._latestTimeSeriesDataPointFormsOutput = value; }
+        }
+
+        // Check to see if LatestTimeSeriesDataPointFormsOutput property is set
+        internal bool IsSetLatestTimeSeriesDataPointFormsOutput()
+        {
+            return this._latestTimeSeriesDataPointFormsOutput != null && (this._latestTimeSeriesDataPointFormsOutput.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Listing. 
+        /// <para>
+        /// The details of an asset published in an Amazon DataZone catalog.
+        /// </para>
         /// </summary>
         public AssetListingDetails Listing
         {
@@ -323,7 +349,7 @@ namespace Amazon.DataZone.Model
         // Check to see if ReadOnlyFormsOutput property is set
         internal bool IsSetReadOnlyFormsOutput()
         {
-            return this._readOnlyFormsOutput != null && this._readOnlyFormsOutput.Count > 0; 
+            return this._readOnlyFormsOutput != null && (this._readOnlyFormsOutput.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -351,7 +377,7 @@ namespace Amazon.DataZone.Model
         /// The identifier of the created asset type.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=385)]
+        [AWSProperty(Required=true, Min=1, Max=513)]
         public string TypeIdentifier
         {
             get { return this._typeIdentifier; }

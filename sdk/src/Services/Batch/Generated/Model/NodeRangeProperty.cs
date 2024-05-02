@@ -26,15 +26,18 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// An object that represents the properties of the node range for a multi-node parallel
-    /// job.
+    /// This is an object that represents the properties of the node range for a multi-node
+    /// parallel job.
     /// </summary>
     public partial class NodeRangeProperty
     {
         private ContainerProperties _container;
+        private EcsProperties _ecsProperties;
+        private List<string> _instanceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _targetNodes;
 
         /// <summary>
@@ -53,6 +56,53 @@ namespace Amazon.Batch.Model
         internal bool IsSetContainer()
         {
             return this._container != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EcsProperties. 
+        /// <para>
+        /// This is an object that represents the properties of the node range for a multi-node
+        /// parallel job.
+        /// </para>
+        /// </summary>
+        public EcsProperties EcsProperties
+        {
+            get { return this._ecsProperties; }
+            set { this._ecsProperties = value; }
+        }
+
+        // Check to see if EcsProperties property is set
+        internal bool IsSetEcsProperties()
+        {
+            return this._ecsProperties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceTypes. 
+        /// <para>
+        /// The instance types of the underlying host infrastructure of a multi-node parallel
+        /// job.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter isn't applicable to jobs that are running on Fargate resources.
+        /// </para>
+        ///  
+        /// <para>
+        /// In addition, this list object is currently limited to one element.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public List<string> InstanceTypes
+        {
+            get { return this._instanceTypes; }
+            set { this._instanceTypes = value; }
+        }
+
+        // Check to see if InstanceTypes property is set
+        internal bool IsSetInstanceTypes()
+        {
+            return this._instanceTypes != null && (this._instanceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

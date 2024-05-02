@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.ComputeOptimizer.Model
     /// </summary>
     public partial class GetECSServiceRecommendationsResponse : AmazonWebServiceResponse
     {
-        private List<ECSServiceRecommendation> _ecsServiceRecommendations = new List<ECSServiceRecommendation>();
-        private List<GetRecommendationError> _errors = new List<GetRecommendationError>();
+        private List<ECSServiceRecommendation> _ecsServiceRecommendations = AWSConfigs.InitializeCollections ? new List<ECSServiceRecommendation>() : null;
+        private List<GetRecommendationError> _errors = AWSConfigs.InitializeCollections ? new List<GetRecommendationError>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if EcsServiceRecommendations property is set
         internal bool IsSetEcsServiceRecommendations()
         {
-            return this._ecsServiceRecommendations != null && this._ecsServiceRecommendations.Count > 0; 
+            return this._ecsServiceRecommendations != null && (this._ecsServiceRecommendations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

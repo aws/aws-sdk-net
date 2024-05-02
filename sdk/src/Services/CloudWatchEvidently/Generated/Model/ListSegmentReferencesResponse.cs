@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchEvidently.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CloudWatchEvidently.Model
     public partial class ListSegmentReferencesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RefResource> _referencedBy = new List<RefResource>();
+        private List<RefResource> _referencedBy = AWSConfigs.InitializeCollections ? new List<RefResource>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if ReferencedBy property is set
         internal bool IsSetReferencedBy()
         {
-            return this._referencedBy != null && this._referencedBy.Count > 0; 
+            return this._referencedBy != null && (this._referencedBy.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

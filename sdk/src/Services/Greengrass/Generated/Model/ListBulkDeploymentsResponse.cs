@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Greengrass.Model
     /// </summary>
     public partial class ListBulkDeploymentsResponse : AmazonWebServiceResponse
     {
-        private List<BulkDeployment> _bulkDeployments = new List<BulkDeployment>();
+        private List<BulkDeployment> _bulkDeployments = AWSConfigs.InitializeCollections ? new List<BulkDeployment>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -48,7 +49,7 @@ namespace Amazon.Greengrass.Model
         // Check to see if BulkDeployments property is set
         internal bool IsSetBulkDeployments()
         {
-            return this._bulkDeployments != null && this._bulkDeployments.Count > 0; 
+            return this._bulkDeployments != null && (this._bulkDeployments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

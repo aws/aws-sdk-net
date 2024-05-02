@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class DescribeMaintenanceWindowExecutionTasksResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<MaintenanceWindowExecutionTaskIdentity> _windowExecutionTaskIdentities = new List<MaintenanceWindowExecutionTaskIdentity>();
+        private List<MaintenanceWindowExecutionTaskIdentity> _windowExecutionTaskIdentities = AWSConfigs.InitializeCollections ? new List<MaintenanceWindowExecutionTaskIdentity>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if WindowExecutionTaskIdentities property is set
         internal bool IsSetWindowExecutionTaskIdentities()
         {
-            return this._windowExecutionTaskIdentities != null && this._windowExecutionTaskIdentities.Count > 0; 
+            return this._windowExecutionTaskIdentities != null && (this._windowExecutionTaskIdentities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

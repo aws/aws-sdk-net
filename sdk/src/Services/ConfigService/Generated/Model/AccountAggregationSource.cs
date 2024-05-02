@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class AccountAggregationSource
     {
-        private List<string> _accountIds = new List<string>();
+        private List<string> _accountIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _allAwsRegions;
-        private List<string> _awsRegions = new List<string>();
+        private List<string> _awsRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountIds. 
@@ -53,7 +54,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if AccountIds property is set
         internal bool IsSetAccountIds()
         {
-            return this._accountIds != null && this._accountIds.Count > 0; 
+            return this._accountIds != null && (this._accountIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -90,7 +91,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if AwsRegions property is set
         internal bool IsSetAwsRegions()
         {
-            return this._awsRegions != null && this._awsRegions.Count > 0; 
+            return this._awsRegions != null && (this._awsRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ResilienceHub.Model
     /// </summary>
     public partial class ListAppInputSourcesResponse : AmazonWebServiceResponse
     {
-        private List<AppInputSource> _appInputSources = new List<AppInputSource>();
+        private List<AppInputSource> _appInputSources = AWSConfigs.InitializeCollections ? new List<AppInputSource>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if AppInputSources property is set
         internal bool IsSetAppInputSources()
         {
-            return this._appInputSources != null && this._appInputSources.Count > 0; 
+            return this._appInputSources != null && (this._appInputSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

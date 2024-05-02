@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Shield.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Shield.Model
         /// Enumerable containing all of the Protections
         /// </summary>
         public IPaginatedEnumerable<Protection> Protections => 
-            new PaginatedResultKeyResponse<ListProtectionsResponse, Protection>(this, (i) => i.Protections);
+            new PaginatedResultKeyResponse<ListProtectionsResponse, Protection>(this, (i) => i.Protections ?? new List<Protection>());
 
         internal ListProtectionsPaginator(IAmazonShield client, ListProtectionsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Shield.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListProtectionsResponse> IPaginator<ListProtectionsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListProtectionsResponse> IPaginator<ListProtectionsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

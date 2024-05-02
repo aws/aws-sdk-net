@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
@@ -39,10 +40,10 @@ namespace Amazon.WAFV2.Model
         private string _action;
         private CaptchaResponse _captchaResponse;
         private ChallengeResponse _challengeResponse;
-        private List<Label> _labels = new List<Label>();
+        private List<Label> _labels = AWSConfigs.InitializeCollections ? new List<Label>() : null;
         private string _overriddenAction;
         private HTTPRequest _request;
-        private List<HTTPHeader> _requestHeadersInserted = new List<HTTPHeader>();
+        private List<HTTPHeader> _requestHeadersInserted = AWSConfigs.InitializeCollections ? new List<HTTPHeader>() : null;
         private int? _responseCodeSent;
         private string _ruleNameWithinRuleGroup;
         private DateTime? _timestamp;
@@ -125,7 +126,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if Labels property is set
         internal bool IsSetLabels()
         {
-            return this._labels != null && this._labels.Count > 0; 
+            return this._labels != null && (this._labels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -184,7 +185,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if RequestHeadersInserted property is set
         internal bool IsSetRequestHeadersInserted()
         {
-            return this._requestHeadersInserted != null && this._requestHeadersInserted.Count > 0; 
+            return this._requestHeadersInserted != null && (this._requestHeadersInserted.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

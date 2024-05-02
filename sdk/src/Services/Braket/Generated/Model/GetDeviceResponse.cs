@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Braket.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Braket.Model
         private string _deviceArn;
         private string _deviceCapabilities;
         private string _deviceName;
-        private List<DeviceQueueInfo> _deviceQueueInfo = new List<DeviceQueueInfo>();
+        private List<DeviceQueueInfo> _deviceQueueInfo = AWSConfigs.InitializeCollections ? new List<DeviceQueueInfo>() : null;
         private DeviceStatus _deviceStatus;
         private DeviceType _deviceType;
         private string _providerName;
@@ -113,7 +114,7 @@ namespace Amazon.Braket.Model
         // Check to see if DeviceQueueInfo property is set
         internal bool IsSetDeviceQueueInfo()
         {
-            return this._deviceQueueInfo != null && this._deviceQueueInfo.Count > 0; 
+            return this._deviceQueueInfo != null && (this._deviceQueueInfo.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.XRay.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.XRay.Model
         private DateTime? _approximateTime;
         private string _nextToken;
         private long? _tracesProcessedCount;
-        private List<TraceSummary> _traceSummaries = new List<TraceSummary>();
+        private List<TraceSummary> _traceSummaries = AWSConfigs.InitializeCollections ? new List<TraceSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property ApproximateTime. 
@@ -110,7 +111,7 @@ namespace Amazon.XRay.Model
         // Check to see if TraceSummaries property is set
         internal bool IsSetTraceSummaries()
         {
-            return this._traceSummaries != null && this._traceSummaries.Count > 0; 
+            return this._traceSummaries != null && (this._traceSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

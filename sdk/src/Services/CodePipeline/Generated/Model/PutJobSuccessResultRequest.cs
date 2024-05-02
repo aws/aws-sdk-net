@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.CodePipeline.Model
         private CurrentRevision _currentRevision;
         private ExecutionDetails _executionDetails;
         private string _jobId;
-        private Dictionary<string, string> _outputVariables = new Dictionary<string, string>();
+        private Dictionary<string, string> _outputVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ContinuationToken. 
@@ -138,7 +139,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if OutputVariables property is set
         internal bool IsSetOutputVariables()
         {
-            return this._outputVariables != null && this._outputVariables.Count > 0; 
+            return this._outputVariables != null && (this._outputVariables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

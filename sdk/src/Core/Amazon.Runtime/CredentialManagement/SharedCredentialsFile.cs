@@ -46,7 +46,6 @@ namespace Amazon.Runtime.CredentialManagement
         private const string DefaultFileName = "credentials";
         private const string DefaultConfigurationModeField = "defaults_mode";
         private const string CredentialProcess = "credential_process";
-        private const string StsRegionalEndpointsField = "sts_regional_endpoints";
         private const string S3UseArnRegionField = "s3_use_arn_region";
         private const string S3DisableExpressSessionAuthField = "s3_disable_express_session_auth";
         private const string S3RegionalEndpointField = "s3_us_east_1_regional_endpoint";
@@ -78,7 +77,6 @@ namespace Amazon.Runtime.CredentialManagement
             RegionField,
             EndpointDiscoveryEnabledField,
             CredentialProcess,
-            StsRegionalEndpointsField,
             S3UseArnRegionField,
             S3DisableExpressSessionAuthField,
             S3RegionalEndpointField,
@@ -387,9 +385,6 @@ namespace Amazon.Runtime.CredentialManagement
             if (profile.EndpointDiscoveryEnabled != null)
                 reservedProperties[EndpointDiscoveryEnabledField] = profile.EndpointDiscoveryEnabled.Value.ToString().ToLowerInvariant();
 
-            if (profile.StsRegionalEndpoints != null)
-                reservedProperties[StsRegionalEndpointsField] = profile.StsRegionalEndpoints.ToString().ToLowerInvariant();
-
             if (profile.S3UseArnRegion != null)
                 reservedProperties[S3UseArnRegionField] = profile.S3UseArnRegion.Value.ToString().ToLowerInvariant();
 
@@ -474,7 +469,7 @@ namespace Amazon.Runtime.CredentialManagement
 
 
             if (configProperties.TryGetValue(SsoSession, out var session)
-                && _configFile.TryGetSection(session, true, out var ssoSessionProperties))
+                && _configFile.TryGetSection(session, true, false, out var ssoSessionProperties, out _))
             {
                 // Skip SsoSession properties as it might be used by other profiles
                 var ssoSessionPropertiesNames = ssoSessionProperties.Keys.ToArray();
@@ -666,18 +661,6 @@ namespace Amazon.Runtime.CredentialManagement
                     endpointDiscoveryEnabled = endpointDiscoveryEnabledOut;
                 }
 
-                StsRegionalEndpointsValue? stsRegionalEndpoints = null;
-                if (reservedProperties.TryGetValue(StsRegionalEndpointsField, out var stsRegionalEndpointsString))
-                {
-                    if (!Enum.TryParse<StsRegionalEndpointsValue>(stsRegionalEndpointsString, true, out var stsRegionalEndpointsTemp))
-                    {
-                        _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string regional/legacy is expected.", stsRegionalEndpointsString, StsRegionalEndpointsField, profileName);
-                        profile = null;
-                        return false;
-                    }
-                    stsRegionalEndpoints = stsRegionalEndpointsTemp;
-                }
-
                 string s3UseArnRegionString;
                 bool? s3UseArnRegion = null;
                 if (reservedProperties.TryGetValue(S3UseArnRegionField, out s3UseArnRegionString))
@@ -736,7 +719,7 @@ namespace Amazon.Runtime.CredentialManagement
                 {
                     if (!Enum.TryParse<RequestRetryMode>(retryModeString, true, out var retryModeTemp))
                     {
-                        _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string legacy/standard/adaptive is expected.", retryModeString, RetryModeField, profileName);
+                        _logger.InfoFormat("Invalid value {0} for {1} in profile {2}. A string standard/adaptive is expected.", retryModeString, RetryModeField, profileName);
                         profile = null;
                         return false;
                     }
@@ -887,7 +870,6 @@ namespace Amazon.Runtime.CredentialManagement
                     CredentialProfileStore = this,
                     DefaultConfigurationModeName = defaultConfigurationModeName,
                     EndpointDiscoveryEnabled = endpointDiscoveryEnabled,
-                    StsRegionalEndpoints = stsRegionalEndpoints,
                     S3UseArnRegion = s3UseArnRegion,
                     S3DisableExpressSessionAuth = s3DisableExpressSessionAuth,
                     S3RegionalEndpoint = s3RegionalEndpoint,

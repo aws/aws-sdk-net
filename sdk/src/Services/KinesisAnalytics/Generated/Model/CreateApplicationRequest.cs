@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
@@ -82,10 +83,10 @@ namespace Amazon.KinesisAnalytics.Model
         private string _applicationCode;
         private string _applicationDescription;
         private string _applicationName;
-        private List<CloudWatchLoggingOption> _cloudWatchLoggingOptions = new List<CloudWatchLoggingOption>();
-        private List<Input> _inputs = new List<Input>();
-        private List<Output> _outputs = new List<Output>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<CloudWatchLoggingOption> _cloudWatchLoggingOptions = AWSConfigs.InitializeCollections ? new List<CloudWatchLoggingOption>() : null;
+        private List<Input> _inputs = AWSConfigs.InitializeCollections ? new List<Input>() : null;
+        private List<Output> _outputs = AWSConfigs.InitializeCollections ? new List<Output>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationCode. 
@@ -179,7 +180,7 @@ namespace Amazon.KinesisAnalytics.Model
         // Check to see if CloudWatchLoggingOptions property is set
         internal bool IsSetCloudWatchLoggingOptions()
         {
-            return this._cloudWatchLoggingOptions != null && this._cloudWatchLoggingOptions.Count > 0; 
+            return this._cloudWatchLoggingOptions != null && (this._cloudWatchLoggingOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -217,7 +218,7 @@ namespace Amazon.KinesisAnalytics.Model
         // Check to see if Inputs property is set
         internal bool IsSetInputs()
         {
-            return this._inputs != null && this._inputs.Count > 0; 
+            return this._inputs != null && (this._inputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -255,7 +256,7 @@ namespace Amazon.KinesisAnalytics.Model
         // Check to see if Outputs property is set
         internal bool IsSetOutputs()
         {
-            return this._outputs != null && this._outputs.Count > 0; 
+            return this._outputs != null && (this._outputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -278,7 +279,7 @@ namespace Amazon.KinesisAnalytics.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

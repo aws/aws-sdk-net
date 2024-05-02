@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
@@ -50,7 +51,7 @@ namespace Amazon.ResourceGroups.Model
     /// </summary>
     public partial class PutGroupConfigurationRequest : AmazonResourceGroupsRequest
     {
-        private List<GroupConfigurationItem> _configuration = new List<GroupConfigurationItem>();
+        private List<GroupConfigurationItem> _configuration = AWSConfigs.InitializeCollections ? new List<GroupConfigurationItem>() : null;
         private string _group;
 
         /// <summary>
@@ -83,7 +84,7 @@ namespace Amazon.ResourceGroups.Model
         // Check to see if Configuration property is set
         internal bool IsSetConfiguration()
         {
-            return this._configuration != null && this._configuration.Count > 0; 
+            return this._configuration != null && (this._configuration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

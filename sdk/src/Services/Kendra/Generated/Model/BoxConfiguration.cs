@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -33,19 +34,19 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class BoxConfiguration
     {
-        private List<DataSourceToIndexFieldMapping> _commentFieldMappings = new List<DataSourceToIndexFieldMapping>();
+        private List<DataSourceToIndexFieldMapping> _commentFieldMappings = AWSConfigs.InitializeCollections ? new List<DataSourceToIndexFieldMapping>() : null;
         private bool? _crawlComments;
         private bool? _crawlTasks;
         private bool? _crawlWebLinks;
         private string _enterpriseId;
-        private List<string> _exclusionPatterns = new List<string>();
-        private List<DataSourceToIndexFieldMapping> _fileFieldMappings = new List<DataSourceToIndexFieldMapping>();
-        private List<string> _inclusionPatterns = new List<string>();
+        private List<string> _exclusionPatterns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<DataSourceToIndexFieldMapping> _fileFieldMappings = AWSConfigs.InitializeCollections ? new List<DataSourceToIndexFieldMapping>() : null;
+        private List<string> _inclusionPatterns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _secretArn;
-        private List<DataSourceToIndexFieldMapping> _taskFieldMappings = new List<DataSourceToIndexFieldMapping>();
+        private List<DataSourceToIndexFieldMapping> _taskFieldMappings = AWSConfigs.InitializeCollections ? new List<DataSourceToIndexFieldMapping>() : null;
         private bool? _useChangeLog;
         private DataSourceVpcConfiguration _vpcConfiguration;
-        private List<DataSourceToIndexFieldMapping> _webLinkFieldMappings = new List<DataSourceToIndexFieldMapping>();
+        private List<DataSourceToIndexFieldMapping> _webLinkFieldMappings = AWSConfigs.InitializeCollections ? new List<DataSourceToIndexFieldMapping>() : null;
 
         /// <summary>
         /// Gets and sets the property CommentFieldMappings. 
@@ -67,7 +68,7 @@ namespace Amazon.Kendra.Model
         // Check to see if CommentFieldMappings property is set
         internal bool IsSetCommentFieldMappings()
         {
-            return this._commentFieldMappings != null && this._commentFieldMappings.Count > 0; 
+            return this._commentFieldMappings != null && (this._commentFieldMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -165,7 +166,7 @@ namespace Amazon.Kendra.Model
         // Check to see if ExclusionPatterns property is set
         internal bool IsSetExclusionPatterns()
         {
-            return this._exclusionPatterns != null && this._exclusionPatterns.Count > 0; 
+            return this._exclusionPatterns != null && (this._exclusionPatterns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -188,7 +189,7 @@ namespace Amazon.Kendra.Model
         // Check to see if FileFieldMappings property is set
         internal bool IsSetFileFieldMappings()
         {
-            return this._fileFieldMappings != null && this._fileFieldMappings.Count > 0; 
+            return this._fileFieldMappings != null && (this._fileFieldMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -211,7 +212,7 @@ namespace Amazon.Kendra.Model
         // Check to see if InclusionPatterns property is set
         internal bool IsSetInclusionPatterns()
         {
-            return this._inclusionPatterns != null && this._inclusionPatterns.Count > 0; 
+            return this._inclusionPatterns != null && (this._inclusionPatterns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -283,7 +284,7 @@ namespace Amazon.Kendra.Model
         // Check to see if TaskFieldMappings property is set
         internal bool IsSetTaskFieldMappings()
         {
-            return this._taskFieldMappings != null && this._taskFieldMappings.Count > 0; 
+            return this._taskFieldMappings != null && (this._taskFieldMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -346,7 +347,7 @@ namespace Amazon.Kendra.Model
         // Check to see if WebLinkFieldMappings property is set
         internal bool IsSetWebLinkFieldMappings()
         {
-            return this._webLinkFieldMappings != null && this._webLinkFieldMappings.Count > 0; 
+            return this._webLinkFieldMappings != null && (this._webLinkFieldMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

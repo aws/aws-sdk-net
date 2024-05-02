@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -40,16 +41,17 @@ namespace Amazon.LexModelsV2.Model
         private DialogCodeHookSettings _dialogCodeHook;
         private FulfillmentCodeHookSettings _fulfillmentCodeHook;
         private InitialResponseSetting _initialResponseSetting;
-        private List<InputContext> _inputContexts = new List<InputContext>();
+        private List<InputContext> _inputContexts = AWSConfigs.InitializeCollections ? new List<InputContext>() : null;
         private IntentClosingSetting _intentClosingSetting;
         private IntentConfirmationSetting _intentConfirmationSetting;
         private string _intentId;
         private string _intentName;
         private KendraConfiguration _kendraConfiguration;
         private string _localeId;
-        private List<OutputContext> _outputContexts = new List<OutputContext>();
+        private List<OutputContext> _outputContexts = AWSConfigs.InitializeCollections ? new List<OutputContext>() : null;
         private string _parentIntentSignature;
-        private List<SampleUtterance> _sampleUtterances = new List<SampleUtterance>();
+        private QnAIntentConfiguration _qnaIntentConfiguration;
+        private List<SampleUtterance> _sampleUtterances = AWSConfigs.InitializeCollections ? new List<SampleUtterance>() : null;
 
         /// <summary>
         /// Gets and sets the property BotId. 
@@ -197,7 +199,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if InputContexts property is set
         internal bool IsSetInputContexts()
         {
-            return this._inputContexts != null && this._inputContexts.Count > 0; 
+            return this._inputContexts != null && (this._inputContexts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -326,7 +328,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if OutputContexts property is set
         internal bool IsSetOutputContexts()
         {
-            return this._outputContexts != null && this._outputContexts.Count > 0; 
+            return this._outputContexts != null && (this._outputContexts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -348,6 +350,24 @@ namespace Amazon.LexModelsV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property QnAIntentConfiguration. 
+        /// <para>
+        /// Details about the the configuration of the built-in <c>Amazon.QnAIntent</c>.
+        /// </para>
+        /// </summary>
+        public QnAIntentConfiguration QnAIntentConfiguration
+        {
+            get { return this._qnaIntentConfiguration; }
+            set { this._qnaIntentConfiguration = value; }
+        }
+
+        // Check to see if QnAIntentConfiguration property is set
+        internal bool IsSetQnAIntentConfiguration()
+        {
+            return this._qnaIntentConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SampleUtterances. 
         /// <para>
         /// The sample utterances specified for the intent.
@@ -362,7 +382,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if SampleUtterances property is set
         internal bool IsSetSampleUtterances()
         {
-            return this._sampleUtterances != null && this._sampleUtterances.Count > 0; 
+            return this._sampleUtterances != null && (this._sampleUtterances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

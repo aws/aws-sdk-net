@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.WAFV2.Model
         private FieldToMatch _fieldToMatch;
         private PositionalConstraint _positionalConstraint;
         private MemoryStream _searchString;
-        private List<TextTransformation> _textTransformations = new List<TextTransformation>();
+        private List<TextTransformation> _textTransformations = AWSConfigs.InitializeCollections ? new List<TextTransformation>() : null;
 
         /// <summary>
         /// Gets and sets the property FieldToMatch. 
@@ -248,7 +249,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if TextTransformations property is set
         internal bool IsSetTextTransformations()
         {
-            return this._textTransformations != null && this._textTransformations.Count > 0; 
+            return this._textTransformations != null && (this._textTransformations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaPackageVod.Model
 {
     /// <summary>
@@ -33,11 +34,11 @@ namespace Amazon.MediaPackageVod.Model
     /// </summary>
     public partial class DashPackage
     {
-        private List<DashManifest> _dashManifests = new List<DashManifest>();
+        private List<DashManifest> _dashManifests = AWSConfigs.InitializeCollections ? new List<DashManifest>() : null;
         private DashEncryption _encryption;
         private bool? _includeEncoderConfigurationInSegments;
         private bool? _includeIframeOnlyStream;
-        private List<string> _periodTriggers = new List<string>();
+        private List<string> _periodTriggers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _segmentDurationSeconds;
         private SegmentTemplateFormat _segmentTemplateFormat;
 
@@ -54,7 +55,7 @@ namespace Amazon.MediaPackageVod.Model
         // Check to see if DashManifests property is set
         internal bool IsSetDashManifests()
         {
-            return this._dashManifests != null && this._dashManifests.Count > 0; 
+            return this._dashManifests != null && (this._dashManifests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -123,7 +124,7 @@ namespace Amazon.MediaPackageVod.Model
         // Check to see if PeriodTriggers property is set
         internal bool IsSetPeriodTriggers()
         {
-            return this._periodTriggers != null && this._periodTriggers.Count > 0; 
+            return this._periodTriggers != null && (this._periodTriggers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

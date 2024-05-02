@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ForecastService.Model
 {
     /// <summary>
@@ -43,7 +44,7 @@ namespace Amazon.ForecastService.Model
     public partial class InputDataConfig
     {
         private string _datasetGroupArn;
-        private List<SupplementaryFeature> _supplementaryFeatures = new List<SupplementaryFeature>();
+        private List<SupplementaryFeature> _supplementaryFeatures = AWSConfigs.InitializeCollections ? new List<SupplementaryFeature>() : null;
 
         /// <summary>
         /// Gets and sets the property DatasetGroupArn. 
@@ -80,7 +81,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if SupplementaryFeatures property is set
         internal bool IsSetSupplementaryFeatures()
         {
-            return this._supplementaryFeatures != null && this._supplementaryFeatures.Count > 0; 
+            return this._supplementaryFeatures != null && (this._supplementaryFeatures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

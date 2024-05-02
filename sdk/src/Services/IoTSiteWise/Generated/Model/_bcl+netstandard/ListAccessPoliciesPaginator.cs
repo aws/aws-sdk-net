@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.IoTSiteWise.Model
         /// Enumerable containing all of the AccessPolicySummaries
         /// </summary>
         public IPaginatedEnumerable<AccessPolicySummary> AccessPolicySummaries => 
-            new PaginatedResultKeyResponse<ListAccessPoliciesResponse, AccessPolicySummary>(this, (i) => i.AccessPolicySummaries);
+            new PaginatedResultKeyResponse<ListAccessPoliciesResponse, AccessPolicySummary>(this, (i) => i.AccessPolicySummaries ?? new List<AccessPolicySummary>());
 
         internal ListAccessPoliciesPaginator(IAmazonIoTSiteWise client, ListAccessPoliciesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.IoTSiteWise.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListAccessPoliciesResponse> IPaginator<ListAccessPoliciesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListAccessPoliciesResponse> IPaginator<ListAccessPoliciesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

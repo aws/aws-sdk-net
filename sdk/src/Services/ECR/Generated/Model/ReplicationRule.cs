@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECR.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.ECR.Model
     /// </summary>
     public partial class ReplicationRule
     {
-        private List<ReplicationDestination> _destinations = new List<ReplicationDestination>();
-        private List<RepositoryFilter> _repositoryFilters = new List<RepositoryFilter>();
+        private List<ReplicationDestination> _destinations = AWSConfigs.InitializeCollections ? new List<ReplicationDestination>() : null;
+        private List<RepositoryFilter> _repositoryFilters = AWSConfigs.InitializeCollections ? new List<RepositoryFilter>() : null;
 
         /// <summary>
         /// Gets and sets the property Destinations. 
@@ -53,7 +54,7 @@ namespace Amazon.ECR.Model
         // Check to see if Destinations property is set
         internal bool IsSetDestinations()
         {
-            return this._destinations != null && this._destinations.Count > 0; 
+            return this._destinations != null && (this._destinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.ECR.Model
         // Check to see if RepositoryFilters property is set
         internal bool IsSetRepositoryFilters()
         {
-            return this._repositoryFilters != null && this._repositoryFilters.Count > 0; 
+            return this._repositoryFilters != null && (this._repositoryFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

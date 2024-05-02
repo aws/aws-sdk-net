@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.XRay.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.XRay.Model
         /// Enumerable containing all of the ResourcePolicies
         /// </summary>
         public IPaginatedEnumerable<ResourcePolicy> ResourcePolicies => 
-            new PaginatedResultKeyResponse<ListResourcePoliciesResponse, ResourcePolicy>(this, (i) => i.ResourcePolicies);
+            new PaginatedResultKeyResponse<ListResourcePoliciesResponse, ResourcePolicy>(this, (i) => i.ResourcePolicies ?? new List<ResourcePolicy>());
 
         internal ListResourcePoliciesPaginator(IAmazonXRay client, ListResourcePoliciesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.XRay.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListResourcePoliciesResponse> IPaginator<ListResourcePoliciesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListResourcePoliciesResponse> IPaginator<ListResourcePoliciesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

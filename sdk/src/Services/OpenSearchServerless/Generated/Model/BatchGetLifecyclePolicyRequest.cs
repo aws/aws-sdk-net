@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpenSearchServerless.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.OpenSearchServerless.Model
     /// </summary>
     public partial class BatchGetLifecyclePolicyRequest : AmazonOpenSearchServerlessRequest
     {
-        private List<LifecyclePolicyIdentifier> _identifiers = new List<LifecyclePolicyIdentifier>();
+        private List<LifecyclePolicyIdentifier> _identifiers = AWSConfigs.InitializeCollections ? new List<LifecyclePolicyIdentifier>() : null;
 
         /// <summary>
         /// Gets and sets the property Identifiers. 
@@ -54,7 +55,7 @@ namespace Amazon.OpenSearchServerless.Model
         // Check to see if Identifiers property is set
         internal bool IsSetIdentifiers()
         {
-            return this._identifiers != null && this._identifiers.Count > 0; 
+            return this._identifiers != null && (this._identifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

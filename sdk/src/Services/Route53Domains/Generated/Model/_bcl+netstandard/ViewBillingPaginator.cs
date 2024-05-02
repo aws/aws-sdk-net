@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Route53Domains.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Route53Domains.Model
         /// Enumerable containing all of the BillingRecords
         /// </summary>
         public IPaginatedEnumerable<BillingRecord> BillingRecords => 
-            new PaginatedResultKeyResponse<ViewBillingResponse, BillingRecord>(this, (i) => i.BillingRecords);
+            new PaginatedResultKeyResponse<ViewBillingResponse, BillingRecord>(this, (i) => i.BillingRecords ?? new List<BillingRecord>());
 
         internal ViewBillingPaginator(IAmazonRoute53Domains client, ViewBillingRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Route53Domains.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ViewBillingResponse> IPaginator<ViewBillingResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ViewBillingResponse> IPaginator<ViewBillingResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

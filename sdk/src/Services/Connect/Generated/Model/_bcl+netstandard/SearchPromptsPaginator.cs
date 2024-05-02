@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the Prompts
         /// </summary>
         public IPaginatedEnumerable<Prompt> Prompts => 
-            new PaginatedResultKeyResponse<SearchPromptsResponse, Prompt>(this, (i) => i.Prompts);
+            new PaginatedResultKeyResponse<SearchPromptsResponse, Prompt>(this, (i) => i.Prompts ?? new List<Prompt>());
 
         internal SearchPromptsPaginator(IAmazonConnect client, SearchPromptsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Connect.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<SearchPromptsResponse> IPaginator<SearchPromptsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<SearchPromptsResponse> IPaginator<SearchPromptsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

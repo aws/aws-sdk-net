@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.AppMesh.Model
         /// Enumerable containing all of the GatewayRoutes
         /// </summary>
         public IPaginatedEnumerable<GatewayRouteRef> GatewayRoutes => 
-            new PaginatedResultKeyResponse<ListGatewayRoutesResponse, GatewayRouteRef>(this, (i) => i.GatewayRoutes);
+            new PaginatedResultKeyResponse<ListGatewayRoutesResponse, GatewayRouteRef>(this, (i) => i.GatewayRoutes ?? new List<GatewayRouteRef>());
 
         internal ListGatewayRoutesPaginator(IAmazonAppMesh client, ListGatewayRoutesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.AppMesh.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListGatewayRoutesResponse> IPaginator<ListGatewayRoutesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListGatewayRoutesResponse> IPaginator<ListGatewayRoutesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

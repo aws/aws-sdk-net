@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -36,8 +37,8 @@ namespace Amazon.RDS.Model
     {
         private bool? _applyImmediately;
         private string _optionGroupName;
-        private List<OptionConfiguration> _optionsToInclude = new List<OptionConfiguration>();
-        private List<string> _optionsToRemove = new List<string>();
+        private List<OptionConfiguration> _optionsToInclude = AWSConfigs.InitializeCollections ? new List<OptionConfiguration>() : null;
+        private List<string> _optionsToRemove = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplyImmediately. 
@@ -99,7 +100,7 @@ namespace Amazon.RDS.Model
         // Check to see if OptionsToInclude property is set
         internal bool IsSetOptionsToInclude()
         {
-            return this._optionsToInclude != null && this._optionsToInclude.Count > 0; 
+            return this._optionsToInclude != null && (this._optionsToInclude.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -117,7 +118,7 @@ namespace Amazon.RDS.Model
         // Check to see if OptionsToRemove property is set
         internal bool IsSetOptionsToRemove()
         {
-            return this._optionsToRemove != null && this._optionsToRemove.Count > 0; 
+            return this._optionsToRemove != null && (this._optionsToRemove.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

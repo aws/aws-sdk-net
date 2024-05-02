@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.APIGateway.Model
     /// </summary>
     public partial class UpdateRequestValidatorRequest : AmazonAPIGatewayRequest
     {
-        private List<PatchOperation> _patchOperations = new List<PatchOperation>();
+        private List<PatchOperation> _patchOperations = AWSConfigs.InitializeCollections ? new List<PatchOperation>() : null;
         private string _requestValidatorId;
         private string _restApiId;
 
@@ -54,7 +55,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if PatchOperations property is set
         internal bool IsSetPatchOperations()
         {
-            return this._patchOperations != null && this._patchOperations.Count > 0; 
+            return this._patchOperations != null && (this._patchOperations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

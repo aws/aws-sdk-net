@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FSx.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.FSx.Model
     /// </summary>
     public partial class DescribeDataRepositoryTasksResponse : AmazonWebServiceResponse
     {
-        private List<DataRepositoryTask> _dataRepositoryTasks = new List<DataRepositoryTask>();
+        private List<DataRepositoryTask> _dataRepositoryTasks = AWSConfigs.InitializeCollections ? new List<DataRepositoryTask>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.FSx.Model
         // Check to see if DataRepositoryTasks property is set
         internal bool IsSetDataRepositoryTasks()
         {
-            return this._dataRepositoryTasks != null && this._dataRepositoryTasks.Count > 0; 
+            return this._dataRepositoryTasks != null && (this._dataRepositoryTasks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

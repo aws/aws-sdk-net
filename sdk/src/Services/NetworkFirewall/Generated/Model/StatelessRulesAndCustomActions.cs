@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.NetworkFirewall.Model
     /// </summary>
     public partial class StatelessRulesAndCustomActions
     {
-        private List<CustomAction> _customActions = new List<CustomAction>();
-        private List<StatelessRule> _statelessRules = new List<StatelessRule>();
+        private List<CustomAction> _customActions = AWSConfigs.InitializeCollections ? new List<CustomAction>() : null;
+        private List<StatelessRule> _statelessRules = AWSConfigs.InitializeCollections ? new List<StatelessRule>() : null;
 
         /// <summary>
         /// Gets and sets the property CustomActions. 
@@ -55,7 +56,7 @@ namespace Amazon.NetworkFirewall.Model
         // Check to see if CustomActions property is set
         internal bool IsSetCustomActions()
         {
-            return this._customActions != null && this._customActions.Count > 0; 
+            return this._customActions != null && (this._customActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.NetworkFirewall.Model
         // Check to see if StatelessRules property is set
         internal bool IsSetStatelessRules()
         {
-            return this._statelessRules != null && this._statelessRules.Count > 0; 
+            return this._statelessRules != null && (this._statelessRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

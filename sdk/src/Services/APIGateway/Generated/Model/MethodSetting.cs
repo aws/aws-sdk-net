@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
@@ -104,7 +105,9 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property DataTraceEnabled. 
         /// <para>
         /// Specifies whether data trace logging is enabled for this method, which affects the
-        /// log entries pushed to Amazon CloudWatch Logs.
+        /// log entries pushed to Amazon CloudWatch Logs. This can be useful to troubleshoot APIs,
+        /// but can result in logging sensitive data. We recommend that you don't enable this
+        /// option for production APIs.
         /// </para>
         /// </summary>
         public bool? DataTraceEnabled

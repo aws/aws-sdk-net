@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Enumerable containing all of the Tags
         /// </summary>
         public IPaginatedEnumerable<ConfigurationTag> Tags => 
-            new PaginatedResultKeyResponse<DescribeTagsResponse, ConfigurationTag>(this, (i) => i.Tags);
+            new PaginatedResultKeyResponse<DescribeTagsResponse, ConfigurationTag>(this, (i) => i.Tags ?? new List<ConfigurationTag>());
 
         internal DescribeTagsPaginator(IAmazonApplicationDiscoveryService client, DescribeTagsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeTagsResponse> IPaginator<DescribeTagsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeTagsResponse> IPaginator<DescribeTagsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

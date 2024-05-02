@@ -26,10 +26,22 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Customer input of the turn
+    /// Contains the query made to the knowledge base.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is used in the following API operations:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_RequestSyntax">RetrieveAndGenerate
+    /// request</a> – in the <c>input</c> field
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class RetrieveAndGenerateInput
     {
@@ -38,7 +50,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property Text. 
         /// <para>
-        /// Customer input of the turn in text
+        /// The query made to the knowledge base.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1000)]

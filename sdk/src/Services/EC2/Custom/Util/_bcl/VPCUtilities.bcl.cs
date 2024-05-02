@@ -283,13 +283,14 @@ namespace Amazon.EC2.Util
                 }).GroupId;
                 WriteProgress(request.ProgressCallback, "Created security group for NAT configuration");
 
-
+#pragma warning disable CS0612,CS0618
                 IpPermission spec = new IpPermission
                 {
                     IpProtocol = "-1",
                     IpRanges = new List<string>{ "0.0.0.0/0"},
                     UserIdGroupPairs = new List<UserIdGroupPair>() { new UserIdGroupPair() { GroupId = groupId } }
                 };
+#pragma warning restore CS0612,CS0618
 
                 ec2Client.AuthorizeSecurityGroupIngress(new AuthorizeSecurityGroupIngressRequest()
                 {

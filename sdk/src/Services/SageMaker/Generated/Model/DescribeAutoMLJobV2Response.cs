@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.SageMaker.Model
     {
         private string _autoMLJobArn;
         private AutoMLJobArtifacts _autoMLJobArtifacts;
-        private List<AutoMLJobChannel> _autoMLJobInputDataConfig = new List<AutoMLJobChannel>();
+        private List<AutoMLJobChannel> _autoMLJobInputDataConfig = AWSConfigs.InitializeCollections ? new List<AutoMLJobChannel>() : null;
         private string _autoMLJobName;
         private AutoMLJobObjective _autoMLJobObjective;
         private AutoMLJobSecondaryStatus _autoMLJobSecondaryStatus;
@@ -51,7 +52,7 @@ namespace Amazon.SageMaker.Model
         private ModelDeployConfig _modelDeployConfig;
         private ModelDeployResult _modelDeployResult;
         private AutoMLOutputDataConfig _outputDataConfig;
-        private List<AutoMLPartialFailureReason> _partialFailureReasons = new List<AutoMLPartialFailureReason>();
+        private List<AutoMLPartialFailureReason> _partialFailureReasons = AWSConfigs.InitializeCollections ? new List<AutoMLPartialFailureReason>() : null;
         private AutoMLResolvedAttributes _resolvedAttributes;
         private string _roleArn;
         private AutoMLSecurityConfig _securityConfig;
@@ -106,7 +107,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if AutoMLJobInputDataConfig property is set
         internal bool IsSetAutoMLJobInputDataConfig()
         {
-            return this._autoMLJobInputDataConfig != null && this._autoMLJobInputDataConfig.Count > 0; 
+            return this._autoMLJobInputDataConfig != null && (this._autoMLJobInputDataConfig.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -405,7 +406,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if PartialFailureReasons property is set
         internal bool IsSetPartialFailureReasons()
         {
-            return this._partialFailureReasons != null && this._partialFailureReasons.Count > 0; 
+            return this._partialFailureReasons != null && (this._partialFailureReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

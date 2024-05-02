@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SSMIncidents.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.SSMIncidents.Model
         /// Enumerable containing all of the ResourcePolicies
         /// </summary>
         public IPaginatedEnumerable<ResourcePolicy> ResourcePolicies => 
-            new PaginatedResultKeyResponse<GetResourcePoliciesResponse, ResourcePolicy>(this, (i) => i.ResourcePolicies);
+            new PaginatedResultKeyResponse<GetResourcePoliciesResponse, ResourcePolicy>(this, (i) => i.ResourcePolicies ?? new List<ResourcePolicy>());
 
         internal GetResourcePoliciesPaginator(IAmazonSSMIncidents client, GetResourcePoliciesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.SSMIncidents.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<GetResourcePoliciesResponse> IPaginator<GetResourcePoliciesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<GetResourcePoliciesResponse> IPaginator<GetResourcePoliciesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

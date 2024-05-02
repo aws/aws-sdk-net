@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -35,8 +36,8 @@ namespace Amazon.SecurityHub.Model
     {
         private string _groupId;
         private string _groupName;
-        private List<AwsEc2SecurityGroupIpPermission> _ipPermissions = new List<AwsEc2SecurityGroupIpPermission>();
-        private List<AwsEc2SecurityGroupIpPermission> _ipPermissionsEgress = new List<AwsEc2SecurityGroupIpPermission>();
+        private List<AwsEc2SecurityGroupIpPermission> _ipPermissions = AWSConfigs.InitializeCollections ? new List<AwsEc2SecurityGroupIpPermission>() : null;
+        private List<AwsEc2SecurityGroupIpPermission> _ipPermissionsEgress = AWSConfigs.InitializeCollections ? new List<AwsEc2SecurityGroupIpPermission>() : null;
         private string _ownerId;
         private string _vpcId;
 
@@ -91,7 +92,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if IpPermissions property is set
         internal bool IsSetIpPermissions()
         {
-            return this._ipPermissions != null && this._ipPermissions.Count > 0; 
+            return this._ipPermissions != null && (this._ipPermissions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -109,7 +110,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if IpPermissionsEgress property is set
         internal bool IsSetIpPermissionsEgress()
         {
-            return this._ipPermissionsEgress != null && this._ipPermissionsEgress.Count > 0; 
+            return this._ipPermissionsEgress != null && (this._ipPermissionsEgress.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

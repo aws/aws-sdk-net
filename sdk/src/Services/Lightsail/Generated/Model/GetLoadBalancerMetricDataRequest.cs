@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
@@ -46,7 +47,7 @@ namespace Amazon.Lightsail.Model
         private LoadBalancerMetricName _metricName;
         private int? _period;
         private DateTime? _startTime;
-        private List<string> _statistics = new List<string>();
+        private List<string> _statistics = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private MetricUnit _unit;
 
         /// <summary>
@@ -375,7 +376,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Statistics property is set
         internal bool IsSetStatistics()
         {
-            return this._statistics != null && this._statistics.Count > 0; 
+            return this._statistics != null && (this._statistics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

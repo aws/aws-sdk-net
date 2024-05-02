@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Finspace.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Finspace.Model
     public partial class KxScalingGroup
     {
         private string _availabilityZoneId;
-        private List<string> _clusters = new List<string>();
+        private List<string> _clusters = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _createdTimestamp;
         private string _hostType;
         private DateTime? _lastModifiedTimestamp;
@@ -48,6 +49,7 @@ namespace Amazon.Finspace.Model
         /// The identifier of the availability zones.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=8, Max=12)]
         public string AvailabilityZoneId
         {
             get { return this._availabilityZoneId; }
@@ -75,7 +77,7 @@ namespace Amazon.Finspace.Model
         // Check to see if Clusters property is set
         internal bool IsSetClusters()
         {
-            return this._clusters != null && this._clusters.Count > 0; 
+            return this._clusters != null && (this._clusters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -102,8 +104,43 @@ namespace Amazon.Finspace.Model
         /// Gets and sets the property HostType. 
         /// <para>
         ///  The memory and CPU capabilities of the scaling group host on which FinSpace Managed
-        /// kdb clusters will be placed. 
+        /// kdb clusters will be placed.
         /// </para>
+        ///  
+        /// <para>
+        /// You can add one of the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>kx.sg.4xlarge</c> – The host type with a configuration of 108 GiB memory and 16
+        /// vCPUs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>kx.sg.8xlarge</c> – The host type with a configuration of 216 GiB memory and 32
+        /// vCPUs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>kx.sg.16xlarge</c> – The host type with a configuration of 432 GiB memory and
+        /// 64 vCPUs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>kx.sg.32xlarge</c> – The host type with a configuration of 864 GiB memory and
+        /// 128 vCPUs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>kx.sg1.16xlarge</c> – The host type with a configuration of 1949 GiB memory and
+        /// 64 vCPUs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>kx.sg1.24xlarge</c> – The host type with a configuration of 2948 GiB memory and
+        /// 96 vCPUs.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
         public string HostType

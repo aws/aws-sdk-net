@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkDocs.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.WorkDocs.Model
     /// </summary>
     public partial class DescribeFolderContentsResponse : AmazonWebServiceResponse
     {
-        private List<DocumentMetadata> _documents = new List<DocumentMetadata>();
-        private List<FolderMetadata> _folders = new List<FolderMetadata>();
+        private List<DocumentMetadata> _documents = AWSConfigs.InitializeCollections ? new List<DocumentMetadata>() : null;
+        private List<FolderMetadata> _folders = AWSConfigs.InitializeCollections ? new List<FolderMetadata>() : null;
         private string _marker;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.WorkDocs.Model
         // Check to see if Documents property is set
         internal bool IsSetDocuments()
         {
-            return this._documents != null && this._documents.Count > 0; 
+            return this._documents != null && (this._documents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.WorkDocs.Model
         // Check to see if Folders property is set
         internal bool IsSetFolders()
         {
-            return this._folders != null && this._folders.Count > 0; 
+            return this._folders != null && (this._folders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

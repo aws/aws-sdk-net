@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
@@ -36,12 +37,12 @@ namespace Amazon.MemoryDB.Model
     public partial class ACL
     {
         private string _arn;
-        private List<string> _clusters = new List<string>();
+        private List<string> _clusters = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _minimumEngineVersion;
         private string _name;
         private ACLPendingChanges _pendingChanges;
         private string _status;
-        private List<string> _userNames = new List<string>();
+        private List<string> _userNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ARN. 
@@ -76,7 +77,7 @@ namespace Amazon.MemoryDB.Model
         // Check to see if Clusters property is set
         internal bool IsSetClusters()
         {
-            return this._clusters != null && this._clusters.Count > 0; 
+            return this._clusters != null && (this._clusters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -166,7 +167,7 @@ namespace Amazon.MemoryDB.Model
         // Check to see if UserNames property is set
         internal bool IsSetUserNames()
         {
-            return this._userNames != null && this._userNames.Count > 0; 
+            return this._userNames != null && (this._userNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

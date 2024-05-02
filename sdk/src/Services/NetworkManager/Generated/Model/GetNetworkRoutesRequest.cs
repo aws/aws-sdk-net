@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkManager.Model
 {
     /// <summary>
@@ -34,16 +35,16 @@ namespace Amazon.NetworkManager.Model
     /// </summary>
     public partial class GetNetworkRoutesRequest : AmazonNetworkManagerRequest
     {
-        private Dictionary<string, List<string>> _destinationFilters = new Dictionary<string, List<string>>();
-        private List<string> _exactCidrMatches = new List<string>();
+        private Dictionary<string, List<string>> _destinationFilters = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
+        private List<string> _exactCidrMatches = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _globalNetworkId;
-        private List<string> _longestPrefixMatches = new List<string>();
-        private List<string> _prefixListIds = new List<string>();
+        private List<string> _longestPrefixMatches = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _prefixListIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private RouteTableIdentifier _routeTableIdentifier;
-        private List<string> _states = new List<string>();
-        private List<string> _subnetOfMatches = new List<string>();
-        private List<string> _supernetOfMatches = new List<string>();
-        private List<string> _types = new List<string>();
+        private List<string> _states = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _subnetOfMatches = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _supernetOfMatches = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _types = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DestinationFilters. 
@@ -61,7 +62,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if DestinationFilters property is set
         internal bool IsSetDestinationFilters()
         {
-            return this._destinationFilters != null && this._destinationFilters.Count > 0; 
+            return this._destinationFilters != null && (this._destinationFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -79,7 +80,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if ExactCidrMatches property is set
         internal bool IsSetExactCidrMatches()
         {
-            return this._exactCidrMatches != null && this._exactCidrMatches.Count > 0; 
+            return this._exactCidrMatches != null && (this._exactCidrMatches.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -116,7 +117,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if LongestPrefixMatches property is set
         internal bool IsSetLongestPrefixMatches()
         {
-            return this._longestPrefixMatches != null && this._longestPrefixMatches.Count > 0; 
+            return this._longestPrefixMatches != null && (this._longestPrefixMatches.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -134,7 +135,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if PrefixListIds property is set
         internal bool IsSetPrefixListIds()
         {
-            return this._prefixListIds != null && this._prefixListIds.Count > 0; 
+            return this._prefixListIds != null && (this._prefixListIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -171,7 +172,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if States property is set
         internal bool IsSetStates()
         {
-            return this._states != null && this._states.Count > 0; 
+            return this._states != null && (this._states.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -189,7 +190,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if SubnetOfMatches property is set
         internal bool IsSetSubnetOfMatches()
         {
-            return this._subnetOfMatches != null && this._subnetOfMatches.Count > 0; 
+            return this._subnetOfMatches != null && (this._subnetOfMatches.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -208,7 +209,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if SupernetOfMatches property is set
         internal bool IsSetSupernetOfMatches()
         {
-            return this._supernetOfMatches != null && this._supernetOfMatches.Count > 0; 
+            return this._supernetOfMatches != null && (this._supernetOfMatches.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -226,7 +227,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if Types property is set
         internal bool IsSetTypes()
         {
-            return this._types != null && this._types.Count > 0; 
+            return this._types != null && (this._types.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

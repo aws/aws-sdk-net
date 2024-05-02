@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class DescribeConfigurationAggregatorsResponse : AmazonWebServiceResponse
     {
-        private List<ConfigurationAggregator> _configurationAggregators = new List<ConfigurationAggregator>();
+        private List<ConfigurationAggregator> _configurationAggregators = AWSConfigs.InitializeCollections ? new List<ConfigurationAggregator>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if ConfigurationAggregators property is set
         internal bool IsSetConfigurationAggregators()
         {
-            return this._configurationAggregators != null && this._configurationAggregators.Count > 0; 
+            return this._configurationAggregators != null && (this._configurationAggregators.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

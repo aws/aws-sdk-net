@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.InternetMonitor.Model
 {
     /// <summary>
@@ -86,7 +87,7 @@ namespace Amazon.InternetMonitor.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't set a minimum traffic impact threshold, the default value is 0.01%.
+        /// If you don't set a minimum traffic impact threshold, the default value is 0.1%.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

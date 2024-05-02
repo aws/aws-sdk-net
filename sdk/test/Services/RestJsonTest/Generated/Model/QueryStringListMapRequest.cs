@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RestJsonTest.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.RestJsonTest.Model
     /// </summary>
     public partial class QueryStringListMapRequest : AmazonRestJsonTestRequest
     {
-        private Dictionary<string, List<string>> _queryParamsMapOfStringList = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _queryParamsMapOfStringList = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
 
         /// <summary>
         /// Gets and sets the property QueryParamsMapOfStringList.
@@ -48,7 +49,7 @@ namespace Amazon.RestJsonTest.Model
         // Check to see if QueryParamsMapOfStringList property is set
         internal bool IsSetQueryParamsMapOfStringList()
         {
-            return this._queryParamsMapOfStringList != null && this._queryParamsMapOfStringList.Count > 0; 
+            return this._queryParamsMapOfStringList != null && (this._queryParamsMapOfStringList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

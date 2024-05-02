@@ -21,8 +21,16 @@ using Amazon.Runtime.Internal.Transform;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
+    /// <summary>
+    /// QueueConfiguration unmarshaller
+    /// </summary>
     public class QueueConfigurationUnmarshaller : IUnmarshaller<QueueConfiguration, XmlUnmarshallerContext>, IUnmarshaller<QueueConfiguration, JsonUnmarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public QueueConfiguration Unmarshall(XmlUnmarshallerContext context)
         {
             QueueConfiguration queueConfiguration = new QueueConfiguration();
@@ -44,6 +52,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Event", targetDepth))
                     {
+                        if (queueConfiguration.Events == null)
+                        {
+                            queueConfiguration.Events = new List<EventType>();
+                        }
+
                         queueConfiguration.Events.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
 
                         continue;
@@ -70,6 +83,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return queueConfiguration;
         }
 
+        /// <summary>
+        /// Not implemented and always returns null.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public QueueConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -77,6 +95,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static QueueConfigurationUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static QueueConfigurationUnmarshaller Instance
         {
             get

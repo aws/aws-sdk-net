@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
@@ -33,11 +34,11 @@ namespace Amazon.CodeGuruProfiler.Model
     /// </summary>
     public partial class GetRecommendationsResponse : AmazonWebServiceResponse
     {
-        private List<Anomaly> _anomalies = new List<Anomaly>();
+        private List<Anomaly> _anomalies = AWSConfigs.InitializeCollections ? new List<Anomaly>() : null;
         private DateTime? _profileEndTime;
         private DateTime? _profileStartTime;
         private string _profilingGroupName;
-        private List<Recommendation> _recommendations = new List<Recommendation>();
+        private List<Recommendation> _recommendations = AWSConfigs.InitializeCollections ? new List<Recommendation>() : null;
 
         /// <summary>
         /// Gets and sets the property Anomalies. 
@@ -55,7 +56,7 @@ namespace Amazon.CodeGuruProfiler.Model
         // Check to see if Anomalies property is set
         internal bool IsSetAnomalies()
         {
-            return this._anomalies != null && this._anomalies.Count > 0; 
+            return this._anomalies != null && (this._anomalies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -135,7 +136,7 @@ namespace Amazon.CodeGuruProfiler.Model
         // Check to see if Recommendations property is set
         internal bool IsSetRecommendations()
         {
-            return this._recommendations != null && this._recommendations.Count > 0; 
+            return this._recommendations != null && (this._recommendations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

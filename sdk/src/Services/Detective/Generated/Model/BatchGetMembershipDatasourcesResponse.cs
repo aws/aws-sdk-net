@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Detective.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Detective.Model
     /// </summary>
     public partial class BatchGetMembershipDatasourcesResponse : AmazonWebServiceResponse
     {
-        private List<MembershipDatasources> _membershipDatasources = new List<MembershipDatasources>();
-        private List<UnprocessedGraph> _unprocessedGraphs = new List<UnprocessedGraph>();
+        private List<MembershipDatasources> _membershipDatasources = AWSConfigs.InitializeCollections ? new List<MembershipDatasources>() : null;
+        private List<UnprocessedGraph> _unprocessedGraphs = AWSConfigs.InitializeCollections ? new List<UnprocessedGraph>() : null;
 
         /// <summary>
         /// Gets and sets the property MembershipDatasources. 
@@ -51,7 +52,7 @@ namespace Amazon.Detective.Model
         // Check to see if MembershipDatasources property is set
         internal bool IsSetMembershipDatasources()
         {
-            return this._membershipDatasources != null && this._membershipDatasources.Count > 0; 
+            return this._membershipDatasources != null && (this._membershipDatasources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.Detective.Model
         // Check to see if UnprocessedGraphs property is set
         internal bool IsSetUnprocessedGraphs()
         {
-            return this._unprocessedGraphs != null && this._unprocessedGraphs.Count > 0; 
+            return this._unprocessedGraphs != null && (this._unprocessedGraphs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

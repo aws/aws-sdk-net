@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IdentityStore.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.IdentityStore.Model
     {
         private string _groupId;
         private string _identityStoreId;
-        private List<AttributeOperation> _operations = new List<AttributeOperation>();
+        private List<AttributeOperation> _operations = AWSConfigs.InitializeCollections ? new List<AttributeOperation>() : null;
 
         /// <summary>
         /// Gets and sets the property GroupId. 
@@ -94,7 +95,7 @@ namespace Amazon.IdentityStore.Model
         // Check to see if Operations property is set
         internal bool IsSetOperations()
         {
-            return this._operations != null && this._operations.Count > 0; 
+            return this._operations != null && (this._operations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

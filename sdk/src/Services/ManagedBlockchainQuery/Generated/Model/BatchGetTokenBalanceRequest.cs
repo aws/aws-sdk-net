@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ManagedBlockchainQuery.Model
 {
     /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
     /// </summary>
     public partial class BatchGetTokenBalanceRequest : AmazonManagedBlockchainQueryRequest
     {
-        private List<BatchGetTokenBalanceInputItem> _getTokenBalanceInputs = new List<BatchGetTokenBalanceInputItem>();
+        private List<BatchGetTokenBalanceInputItem> _getTokenBalanceInputs = AWSConfigs.InitializeCollections ? new List<BatchGetTokenBalanceInputItem>() : null;
 
         /// <summary>
         /// Gets and sets the property GetTokenBalanceInputs. 
@@ -60,7 +61,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
         // Check to see if GetTokenBalanceInputs property is set
         internal bool IsSetGetTokenBalanceInputs()
         {
-            return this._getTokenBalanceInputs != null && this._getTokenBalanceInputs.Count > 0; 
+            return this._getTokenBalanceInputs != null && (this._getTokenBalanceInputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

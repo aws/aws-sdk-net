@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Backup.Model
 {
     /// <summary>
@@ -35,8 +36,8 @@ namespace Amazon.Backup.Model
     public partial class RecoveryPointSelection
     {
         private DateRange _dateRange;
-        private List<string> _resourceIdentifiers = new List<string>();
-        private List<string> _vaultNames = new List<string>();
+        private List<string> _resourceIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _vaultNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DateRange.
@@ -69,7 +70,7 @@ namespace Amazon.Backup.Model
         // Check to see if ResourceIdentifiers property is set
         internal bool IsSetResourceIdentifiers()
         {
-            return this._resourceIdentifiers != null && this._resourceIdentifiers.Count > 0; 
+            return this._resourceIdentifiers != null && (this._resourceIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -87,7 +88,7 @@ namespace Amazon.Backup.Model
         // Check to see if VaultNames property is set
         internal bool IsSetVaultNames()
         {
-            return this._vaultNames != null && this._vaultNames.Count > 0; 
+            return this._vaultNames != null && (this._vaultNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

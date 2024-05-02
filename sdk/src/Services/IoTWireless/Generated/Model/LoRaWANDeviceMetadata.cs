@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
@@ -37,7 +38,8 @@ namespace Amazon.IoTWireless.Model
         private string _devEui;
         private int? _fPort;
         private int? _frequency;
-        private List<LoRaWANGatewayMetadata> _gateways = new List<LoRaWANGatewayMetadata>();
+        private List<LoRaWANGatewayMetadata> _gateways = AWSConfigs.InitializeCollections ? new List<LoRaWANGatewayMetadata>() : null;
+        private List<LoRaWANPublicGatewayMetadata> _publicGateways = AWSConfigs.InitializeCollections ? new List<LoRaWANPublicGatewayMetadata>() : null;
         private string _timestamp;
 
         /// <summary>
@@ -127,7 +129,25 @@ namespace Amazon.IoTWireless.Model
         // Check to see if Gateways property is set
         internal bool IsSetGateways()
         {
-            return this._gateways != null && this._gateways.Count > 0; 
+            return this._gateways != null && (this._gateways.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublicGateways. 
+        /// <para>
+        /// Information about the LoRaWAN public network accessed by the device.
+        /// </para>
+        /// </summary>
+        public List<LoRaWANPublicGatewayMetadata> PublicGateways
+        {
+            get { return this._publicGateways; }
+            set { this._publicGateways = value; }
+        }
+
+        // Check to see if PublicGateways property is set
+        internal bool IsSetPublicGateways()
+        {
+            return this._publicGateways != null && (this._publicGateways.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

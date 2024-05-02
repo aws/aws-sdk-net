@@ -30,12 +30,13 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for StorageLensGroupLevelSelectionCriteria Object
     /// </summary>  
-    public class StorageLensGroupLevelSelectionCriteriaUnmarshaller : IUnmarshaller<StorageLensGroupLevelSelectionCriteria, XmlUnmarshallerContext>
+    public class StorageLensGroupLevelSelectionCriteriaUnmarshaller : IUnmarshaller<StorageLensGroupLevelSelectionCriteria, XmlUnmarshallerContext>, IUnmarshaller<StorageLensGroupLevelSelectionCriteria, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -57,12 +58,20 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Exclude/Arn", targetDepth))
                     {
+                        if (unmarshalledObject.Exclude == null)
+                        {
+                            unmarshalledObject.Exclude = new List<string>();
+                        }
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Exclude.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
                     if (context.TestExpression("Include/Arn", targetDepth))
                     {
+                        if (unmarshalledObject.Include == null)
+                        {
+                            unmarshalledObject.Include = new List<string>();
+                        }
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.Include.Add(unmarshaller.Unmarshall(context));
                         continue;
@@ -74,6 +83,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public StorageLensGroupLevelSelectionCriteria Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static StorageLensGroupLevelSelectionCriteriaUnmarshaller _instance = new StorageLensGroupLevelSelectionCriteriaUnmarshaller();        

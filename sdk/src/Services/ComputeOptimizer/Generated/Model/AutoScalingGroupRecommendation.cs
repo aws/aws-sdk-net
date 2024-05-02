@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
@@ -41,11 +42,11 @@ namespace Amazon.ComputeOptimizer.Model
         private CurrentPerformanceRisk _currentPerformanceRisk;
         private EffectiveRecommendationPreferences _effectiveRecommendationPreferences;
         private Finding _finding;
-        private List<string> _inferredWorkloadTypes = new List<string>();
+        private List<string> _inferredWorkloadTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _lastRefreshTimestamp;
         private double? _lookBackPeriodInDays;
-        private List<AutoScalingGroupRecommendationOption> _recommendationOptions = new List<AutoScalingGroupRecommendationOption>();
-        private List<UtilizationMetric> _utilizationMetrics = new List<UtilizationMetric>();
+        private List<AutoScalingGroupRecommendationOption> _recommendationOptions = AWSConfigs.InitializeCollections ? new List<AutoScalingGroupRecommendationOption>() : null;
+        private List<UtilizationMetric> _utilizationMetrics = AWSConfigs.InitializeCollections ? new List<UtilizationMetric>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -271,7 +272,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if InferredWorkloadTypes property is set
         internal bool IsSetInferredWorkloadTypes()
         {
-            return this._inferredWorkloadTypes != null && this._inferredWorkloadTypes.Count > 0; 
+            return this._inferredWorkloadTypes != null && (this._inferredWorkloadTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -327,7 +328,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if RecommendationOptions property is set
         internal bool IsSetRecommendationOptions()
         {
-            return this._recommendationOptions != null && this._recommendationOptions.Count > 0; 
+            return this._recommendationOptions != null && (this._recommendationOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -345,7 +346,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if UtilizationMetrics property is set
         internal bool IsSetUtilizationMetrics()
         {
-            return this._utilizationMetrics != null && this._utilizationMetrics.Count > 0; 
+            return this._utilizationMetrics != null && (this._utilizationMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

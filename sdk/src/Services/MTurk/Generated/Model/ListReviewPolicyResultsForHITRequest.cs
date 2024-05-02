@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MTurk.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.MTurk.Model
         private string _hitId;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _policyLevels = new List<string>();
+        private List<string> _policyLevels = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _retrieveActions;
         private bool? _retrieveResults;
 
@@ -119,7 +120,7 @@ namespace Amazon.MTurk.Model
         // Check to see if PolicyLevels property is set
         internal bool IsSetPolicyLevels()
         {
-            return this._policyLevels != null && this._policyLevels.Count > 0; 
+            return this._policyLevels != null && (this._policyLevels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ServiceCatalog.Model
     /// </summary>
     public partial class UpdateProvisioningArtifactResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, string> _info = new Dictionary<string, string>();
+        private Dictionary<string, string> _info = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ProvisioningArtifactDetail _provisioningArtifactDetail;
         private Status _status;
 
@@ -53,7 +54,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if Info property is set
         internal bool IsSetInfo()
         {
-            return this._info != null && this._info.Count > 0; 
+            return this._info != null && (this._info.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

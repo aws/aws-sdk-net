@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Transfer.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Transfer.Model
     /// </summary>
     public partial class ListAccessesResponse : AmazonWebServiceResponse
     {
-        private List<ListedAccess> _accesses = new List<ListedAccess>();
+        private List<ListedAccess> _accesses = AWSConfigs.InitializeCollections ? new List<ListedAccess>() : null;
         private string _nextToken;
         private string _serverId;
 
@@ -53,7 +54,7 @@ namespace Amazon.Transfer.Model
         // Check to see if Accesses property is set
         internal bool IsSetAccesses()
         {
-            return this._accesses != null && this._accesses.Count > 0; 
+            return this._accesses != null && (this._accesses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConnectWisdomService.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ConnectWisdomService.Model
     public partial class SearchQuickResponsesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<QuickResponseSearchResultData> _results = new List<QuickResponseSearchResultData>();
+        private List<QuickResponseSearchResultData> _results = AWSConfigs.InitializeCollections ? new List<QuickResponseSearchResultData>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.ConnectWisdomService.Model
         // Check to see if Results property is set
         internal bool IsSetResults()
         {
-            return this._results != null && this._results.Count > 0; 
+            return this._results != null && (this._results.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

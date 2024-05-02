@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BCMDataExports.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.BCMDataExports.Model
     public partial class UntagResourceRequest : AmazonBCMDataExportsRequest
     {
         private string _resourceArn;
-        private List<string> _resourceTagKeys = new List<string>();
+        private List<string> _resourceTagKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceArn. 
@@ -72,7 +73,7 @@ namespace Amazon.BCMDataExports.Model
         // Check to see if ResourceTagKeys property is set
         internal bool IsSetResourceTagKeys()
         {
-            return this._resourceTagKeys != null && this._resourceTagKeys.Count > 0; 
+            return this._resourceTagKeys != null && (this._resourceTagKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

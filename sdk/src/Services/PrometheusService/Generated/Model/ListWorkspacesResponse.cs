@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PrometheusService.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.PrometheusService.Model
     public partial class ListWorkspacesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<WorkspaceSummary> _workspaces = new List<WorkspaceSummary>();
+        private List<WorkspaceSummary> _workspaces = AWSConfigs.InitializeCollections ? new List<WorkspaceSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +74,7 @@ namespace Amazon.PrometheusService.Model
         // Check to see if Workspaces property is set
         internal bool IsSetWorkspaces()
         {
-            return this._workspaces != null && this._workspaces.Count > 0; 
+            return this._workspaces != null && (this._workspaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

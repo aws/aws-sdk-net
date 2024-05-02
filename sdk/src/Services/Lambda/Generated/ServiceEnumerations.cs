@@ -1174,6 +1174,10 @@ namespace Amazon.Lambda
         /// Constant Ruby32 for Runtime
         /// </summary>
         public static readonly Runtime Ruby32 = new Runtime("ruby3.2");
+        /// <summary>
+        /// Constant Ruby33 for Runtime
+        /// </summary>
+        public static readonly Runtime Ruby33 = new Runtime("ruby3.3");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

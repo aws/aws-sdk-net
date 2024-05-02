@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         private CodegenJobAsset _asset;
         private bool? _autoGenerateForms;
         private DateTime? _createdAt;
-        private List<CodegenDependency> _dependencies = new List<CodegenDependency>();
+        private List<CodegenDependency> _dependencies = AWSConfigs.InitializeCollections ? new List<CodegenDependency>() : null;
         private string _environmentName;
         private CodegenFeatureFlags _features;
         private CodegenJobGenericDataSchema _genericDataSchema;
@@ -47,7 +48,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         private CodegenJobRenderConfig _renderConfig;
         private CodegenJobStatus _status;
         private string _statusMessage;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AppId. 
@@ -137,7 +138,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if Dependencies property is set
         internal bool IsSetDependencies()
         {
-            return this._dependencies != null && this._dependencies.Count > 0; 
+            return this._dependencies != null && (this._dependencies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -292,7 +293,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

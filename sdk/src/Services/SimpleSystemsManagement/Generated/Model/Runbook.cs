@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -44,11 +45,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _documentVersion;
         private string _maxConcurrency;
         private string _maxErrors;
-        private Dictionary<string, List<string>> _parameters = new Dictionary<string, List<string>>();
-        private List<TargetLocation> _targetLocations = new List<TargetLocation>();
-        private List<Dictionary<string, List<string>>> _targetMaps = new List<Dictionary<string, List<string>>>();
+        private Dictionary<string, List<string>> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
+        private List<TargetLocation> _targetLocations = AWSConfigs.InitializeCollections ? new List<TargetLocation>() : null;
+        private List<Dictionary<string, List<string>>> _targetMaps = AWSConfigs.InitializeCollections ? new List<Dictionary<string, List<string>>>() : null;
         private string _targetParameterName;
-        private List<Target> _targets = new List<Target>();
+        private List<Target> _targets = AWSConfigs.InitializeCollections ? new List<Target>() : null;
 
         /// <summary>
         /// Gets and sets the property DocumentName. 
@@ -145,7 +146,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -165,7 +166,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if TargetLocations property is set
         internal bool IsSetTargetLocations()
         {
-            return this._targetLocations != null && this._targetLocations.Count > 0; 
+            return this._targetLocations != null && (this._targetLocations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -185,7 +186,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if TargetMaps property is set
         internal bool IsSetTargetMaps()
         {
-            return this._targetMaps != null && this._targetMaps.Count > 0; 
+            return this._targetMaps != null && (this._targetMaps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -225,7 +226,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Targets property is set
         internal bool IsSetTargets()
         {
-            return this._targets != null && this._targets.Count > 0; 
+            return this._targets != null && (this._targets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

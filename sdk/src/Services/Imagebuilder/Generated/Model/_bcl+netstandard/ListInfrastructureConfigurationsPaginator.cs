@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Imagebuilder.Model
         /// Enumerable containing all of the InfrastructureConfigurationSummaryList
         /// </summary>
         public IPaginatedEnumerable<InfrastructureConfigurationSummary> InfrastructureConfigurationSummaryList => 
-            new PaginatedResultKeyResponse<ListInfrastructureConfigurationsResponse, InfrastructureConfigurationSummary>(this, (i) => i.InfrastructureConfigurationSummaryList);
+            new PaginatedResultKeyResponse<ListInfrastructureConfigurationsResponse, InfrastructureConfigurationSummary>(this, (i) => i.InfrastructureConfigurationSummaryList ?? new List<InfrastructureConfigurationSummary>());
 
         internal ListInfrastructureConfigurationsPaginator(IAmazonImagebuilder client, ListInfrastructureConfigurationsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Imagebuilder.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListInfrastructureConfigurationsResponse> IPaginator<ListInfrastructureConfigurationsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListInfrastructureConfigurationsResponse> IPaginator<ListInfrastructureConfigurationsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

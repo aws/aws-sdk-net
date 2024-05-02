@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Represents an attribute for describing the key schema for the table and indexes.
+    /// Represents an attribute for describing the schema for the table and indexes.
     /// </summary>
     public partial class AttributeDefinition
     {

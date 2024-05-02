@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpenSearchServerless.Model
 {
     /// <summary>
@@ -36,8 +37,8 @@ namespace Amazon.OpenSearchServerless.Model
     /// </summary>
     public partial class BatchGetCollectionRequest : AmazonOpenSearchServerlessRequest
     {
-        private List<string> _ids = new List<string>();
-        private List<string> _names = new List<string>();
+        private List<string> _ids = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _names = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Ids. 
@@ -57,7 +58,7 @@ namespace Amazon.OpenSearchServerless.Model
         // Check to see if Ids property is set
         internal bool IsSetIds()
         {
-            return this._ids != null && this._ids.Count > 0; 
+            return this._ids != null && (this._ids.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -76,7 +77,7 @@ namespace Amazon.OpenSearchServerless.Model
         // Check to see if Names property is set
         internal bool IsSetNames()
         {
-            return this._names != null && this._names.Count > 0; 
+            return this._names != null && (this._names.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
@@ -103,10 +104,10 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property CurrentApplicationVersionId. 
         /// <para>
-        /// The version ID of the Kinesis Data Analytics application. You must provide the <c>CurrentApplicationVersionId</c>
-        /// or the <c>ConditionalToken</c>.You can retrieve the application version ID using <a>DescribeApplication</a>.
-        /// For better concurrency support, use the <c>ConditionalToken</c> parameter instead
-        /// of <c>CurrentApplicationVersionId</c>.
+        /// The version ID of the SQL-based Kinesis Data Analytics application. You must provide
+        /// the <c>CurrentApplicationVersionId</c> or the <c>ConditionalToken</c>.You can retrieve
+        /// the application version ID using <a>DescribeApplication</a>. For better concurrency
+        /// support, use the <c>ConditionalToken</c> parameter instead of <c>CurrentApplicationVersionId</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=999999999)]

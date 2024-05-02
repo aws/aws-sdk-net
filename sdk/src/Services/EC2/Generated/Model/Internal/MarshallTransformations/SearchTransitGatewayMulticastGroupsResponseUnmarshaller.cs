@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -58,6 +59,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("multicastGroups/item", targetDepth))
                     {
                         var unmarshaller = TransitGatewayMulticastGroupUnmarshaller.Instance;
+                        if (response.MulticastGroups == null)
+                        {
+                            response.MulticastGroups = new List<TransitGatewayMulticastGroup>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.MulticastGroups.Add(item);
                         continue;

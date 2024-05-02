@@ -483,11 +483,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             do
             {
                 var listResponse = Client.ListTopics(listRequest);
-                allTopics.AddRange(listResponse.Topics);
+
+                if (listResponse.Topics != null)
+                {
+                    allTopics.AddRange(listResponse.Topics);
+                }
 
                 listRequest.NextToken = listResponse.NextToken;
             } while (!string.IsNullOrEmpty(listRequest.NextToken));
-            return allTopics;
+            return allTopics ?? new List<Topic>();
         }
 
         private PublishRequest GetPublishRequest(string topicArn)

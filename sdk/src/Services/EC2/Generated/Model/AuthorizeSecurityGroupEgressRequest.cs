@@ -26,50 +26,50 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the AuthorizeSecurityGroupEgress operation.
-    /// Adds the specified outbound (egress) rules to a security group for use with a VPC.
+    /// Adds the specified outbound (egress) rules to a security group.
     /// 
     ///  
     /// <para>
-    /// An outbound rule permits instances to send traffic to the specified IPv4 or IPv6 CIDR
-    /// address ranges, or to the instances that are associated with the specified source
-    /// security groups. When specifying an outbound rule for your security group in a VPC,
-    /// the <c>IpPermissions</c> must include a destination for the traffic.
+    /// An outbound rule permits instances to send traffic to the specified IPv4 or IPv6 address
+    /// ranges, the IP address ranges specified by a prefix list, or the instances that are
+    /// associated with a source security group. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/security-group-rules.html">Security
+    /// group rules</a>.
     /// </para>
     ///  
     /// <para>
-    /// You specify a protocol for each rule (for example, TCP). For the TCP and UDP protocols,
-    /// you must also specify the destination port or port range. For the ICMP protocol, you
-    /// must also specify the ICMP type and code. You can use -1 for the type or code to mean
-    /// all types or all codes.
+    /// You must specify exactly one of the following destinations: an IPv4 or IPv6 address
+    /// range, a prefix list, or a security group. You must specify a protocol for each rule
+    /// (for example, TCP). If the protocol is TCP or UDP, you must also specify a port or
+    /// port range. If the protocol is ICMP or ICMPv6, you must also specify the ICMP type
+    /// and code.
     /// </para>
     ///  
     /// <para>
-    /// Rule changes are propagated to affected instances as quickly as possible. However,
-    /// a small delay might occur.
+    /// Rule changes are propagated to instances associated with the security group as quickly
+    /// as possible. However, a small delay might occur.
     /// </para>
     ///  
     /// <para>
-    /// For information about VPC security group quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
-    /// VPC quotas</a>.
+    /// For examples of rules that you can add to security groups for specific access scenarios,
+    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-rules-reference.html">Security
+    /// group rules for different use cases</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
-    ///  <note> 
+    ///  
     /// <para>
-    /// If you want to reference a security group across VPCs attached to a transit gateway
-    /// using the <a href="https://docs.aws.amazon.com/vpc/latest/tgw/tgw-transit-gateways.html#create-tgw">security
-    /// group referencing feature</a>, note that you can only reference security groups for
-    /// ingress rules. You cannot reference a security group for egress rules.
+    /// For information about security group quotas, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html">Amazon
+    /// VPC quotas</a> in the <i>Amazon VPC User Guide</i>.
     /// </para>
-    ///  </note>
     /// </summary>
     public partial class AuthorizeSecurityGroupEgressRequest : AmazonEC2Request
     {
         private string _groupId;
-        private List<IpPermission> _ipPermissions = new List<IpPermission>();
-        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
+        private List<IpPermission> _ipPermissions = AWSConfigs.InitializeCollections ? new List<IpPermission>() : null;
+        private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
 
         /// <summary>
         /// Gets and sets the property GroupId. 
@@ -93,8 +93,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IpPermissions. 
         /// <para>
-        /// The sets of IP permissions. You can't specify a destination security group and a CIDR
-        /// IP address range in the same set of permissions.
+        /// The permissions for the security group rules.
         /// </para>
         /// </summary>
         public List<IpPermission> IpPermissions
@@ -106,7 +105,7 @@ namespace Amazon.EC2.Model
         // Check to see if IpPermissions property is set
         internal bool IsSetIpPermissions()
         {
-            return this._ipPermissions != null && this._ipPermissions.Count > 0; 
+            return this._ipPermissions != null && (this._ipPermissions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -124,7 +123,7 @@ namespace Amazon.EC2.Model
         // Check to see if TagSpecifications property is set
         internal bool IsSetTagSpecifications()
         {
-            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
+            return this._tagSpecifications != null && (this._tagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

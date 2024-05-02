@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaTailor.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.MediaTailor.Model
         private AccessConfiguration _accessConfiguration;
         private DefaultSegmentDeliveryConfiguration _defaultSegmentDeliveryConfiguration;
         private HttpConfiguration _httpConfiguration;
-        private List<SegmentDeliveryConfiguration> _segmentDeliveryConfigurations = new List<SegmentDeliveryConfiguration>();
+        private List<SegmentDeliveryConfiguration> _segmentDeliveryConfigurations = AWSConfigs.InitializeCollections ? new List<SegmentDeliveryConfiguration>() : null;
         private string _sourceLocationName;
 
         /// <summary>
@@ -113,7 +114,7 @@ namespace Amazon.MediaTailor.Model
         // Check to see if SegmentDeliveryConfigurations property is set
         internal bool IsSetSegmentDeliveryConfigurations()
         {
-            return this._segmentDeliveryConfigurations != null && this._segmentDeliveryConfigurations.Count > 0; 
+            return this._segmentDeliveryConfigurations != null && (this._segmentDeliveryConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

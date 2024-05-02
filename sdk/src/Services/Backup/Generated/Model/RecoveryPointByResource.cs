@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Backup.Model
 {
     /// <summary>
@@ -43,6 +44,7 @@ namespace Amazon.Backup.Model
         private string _resourceName;
         private RecoveryPointStatus _status;
         private string _statusMessage;
+        private VaultType _vaultType;
 
         /// <summary>
         /// Gets and sets the property BackupSizeBytes. 
@@ -228,6 +230,24 @@ namespace Amazon.Backup.Model
         internal bool IsSetStatusMessage()
         {
             return this._statusMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VaultType. 
+        /// <para>
+        /// This is the type of vault in which the described recovery point is stored.
+        /// </para>
+        /// </summary>
+        public VaultType VaultType
+        {
+            get { return this._vaultType; }
+            set { this._vaultType = value; }
+        }
+
+        // Check to see if VaultType property is set
+        internal bool IsSetVaultType()
+        {
+            return this._vaultType != null;
         }
 
     }

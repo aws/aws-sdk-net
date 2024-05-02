@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECS.Model
 {
     /// <summary>
@@ -36,20 +37,20 @@ namespace Amazon.ECS.Model
     {
         private bool? _agentConnected;
         private AgentUpdateStatus _agentUpdateStatus;
-        private List<Attachment> _attachments = new List<Attachment>();
-        private List<Attribute> _attributes = new List<Attribute>();
+        private List<Attachment> _attachments = AWSConfigs.InitializeCollections ? new List<Attachment>() : null;
+        private List<Attribute> _attributes = AWSConfigs.InitializeCollections ? new List<Attribute>() : null;
         private string _capacityProviderName;
         private string _containerInstanceArn;
         private string _ec2InstanceId;
         private ContainerInstanceHealthStatus _healthStatus;
         private int? _pendingTasksCount;
         private DateTime? _registeredAt;
-        private List<Resource> _registeredResources = new List<Resource>();
-        private List<Resource> _remainingResources = new List<Resource>();
+        private List<Resource> _registeredResources = AWSConfigs.InitializeCollections ? new List<Resource>() : null;
+        private List<Resource> _remainingResources = AWSConfigs.InitializeCollections ? new List<Resource>() : null;
         private int? _runningTasksCount;
         private string _status;
         private string _statusReason;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private long? _version;
         private VersionInfo _versionInfo;
 
@@ -107,7 +108,7 @@ namespace Amazon.ECS.Model
         // Check to see if Attachments property is set
         internal bool IsSetAttachments()
         {
-            return this._attachments != null && this._attachments.Count > 0; 
+            return this._attachments != null && (this._attachments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -126,7 +127,7 @@ namespace Amazon.ECS.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -261,7 +262,7 @@ namespace Amazon.ECS.Model
         // Check to see if RegisteredResources property is set
         internal bool IsSetRegisteredResources()
         {
-            return this._registeredResources != null && this._registeredResources.Count > 0; 
+            return this._registeredResources != null && (this._registeredResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -284,7 +285,7 @@ namespace Amazon.ECS.Model
         // Check to see if RemainingResources property is set
         internal bool IsSetRemainingResources()
         {
-            return this._remainingResources != null && this._remainingResources.Count > 0; 
+            return this._remainingResources != null && (this._remainingResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -419,7 +420,7 @@ namespace Amazon.ECS.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

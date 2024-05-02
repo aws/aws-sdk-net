@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class DescribeClusterTracksResponse : AmazonWebServiceResponse
     {
-        private List<MaintenanceTrack> _maintenanceTracks = new List<MaintenanceTrack>();
+        private List<MaintenanceTrack> _maintenanceTracks = AWSConfigs.InitializeCollections ? new List<MaintenanceTrack>() : null;
         private string _marker;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.Redshift.Model
         // Check to see if MaintenanceTracks property is set
         internal bool IsSetMaintenanceTracks()
         {
-            return this._maintenanceTracks != null && this._maintenanceTracks.Count > 0; 
+            return this._maintenanceTracks != null && (this._maintenanceTracks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

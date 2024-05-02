@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Enumerable containing all of the Events
         /// </summary>
         public IPaginatedEnumerable<HistoryEvent> Events => 
-            new PaginatedResultKeyResponse<GetWorkflowExecutionHistoryResponse, HistoryEvent>(this, (i) => i.History.Events);
+            new PaginatedResultKeyResponse<GetWorkflowExecutionHistoryResponse, HistoryEvent>(this, (i) => i.History.Events ?? new List<HistoryEvent>());
 
         internal GetWorkflowExecutionHistoryPaginator(IAmazonSimpleWorkflow client, GetWorkflowExecutionHistoryRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.SimpleWorkflow.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<GetWorkflowExecutionHistoryResponse> IPaginator<GetWorkflowExecutionHistoryResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<GetWorkflowExecutionHistoryResponse> IPaginator<GetWorkflowExecutionHistoryResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

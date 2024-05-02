@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Greengrass.Model
     /// </summary>
     public partial class SecretsManagerSecretResourceData
     {
-        private List<string> _additionalStagingLabelsToDownload = new List<string>();
+        private List<string> _additionalStagingLabelsToDownload = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _arn;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Greengrass.Model
         // Check to see if AdditionalStagingLabelsToDownload property is set
         internal bool IsSetAdditionalStagingLabelsToDownload()
         {
-            return this._additionalStagingLabelsToDownload != null && this._additionalStagingLabelsToDownload.Count > 0; 
+            return this._additionalStagingLabelsToDownload != null && (this._additionalStagingLabelsToDownload.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

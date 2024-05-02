@@ -191,6 +191,106 @@ namespace Amazon.PaymentCryptographyData
 
 
     /// <summary>
+    /// Constants used for properties of type EmvEncryptionMode.
+    /// </summary>
+    public class EmvEncryptionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CBC for EmvEncryptionMode
+        /// </summary>
+        public static readonly EmvEncryptionMode CBC = new EmvEncryptionMode("CBC");
+        /// <summary>
+        /// Constant ECB for EmvEncryptionMode
+        /// </summary>
+        public static readonly EmvEncryptionMode ECB = new EmvEncryptionMode("ECB");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EmvEncryptionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EmvEncryptionMode FindValue(string value)
+        {
+            return FindValue<EmvEncryptionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EmvEncryptionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EmvMajorKeyDerivationMode.
+    /// </summary>
+    public class EmvMajorKeyDerivationMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EMV_OPTION_A for EmvMajorKeyDerivationMode
+        /// </summary>
+        public static readonly EmvMajorKeyDerivationMode EMV_OPTION_A = new EmvMajorKeyDerivationMode("EMV_OPTION_A");
+        /// <summary>
+        /// Constant EMV_OPTION_B for EmvMajorKeyDerivationMode
+        /// </summary>
+        public static readonly EmvMajorKeyDerivationMode EMV_OPTION_B = new EmvMajorKeyDerivationMode("EMV_OPTION_B");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EmvMajorKeyDerivationMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EmvMajorKeyDerivationMode FindValue(string value)
+        {
+            return FindValue<EmvMajorKeyDerivationMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EmvMajorKeyDerivationMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type EncryptionMode.
     /// </summary>
     public class EncryptionMode : ConstantClass

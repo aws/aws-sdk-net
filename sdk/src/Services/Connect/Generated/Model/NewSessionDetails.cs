@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -33,10 +34,10 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class NewSessionDetails
     {
-        private Dictionary<string, string> _attributes = new Dictionary<string, string>();
+        private Dictionary<string, string> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ParticipantDetails _participantDetails;
         private ChatStreamingConfiguration _streamingConfiguration;
-        private List<string> _supportedMessagingContentTypes = new List<string>();
+        private List<string> _supportedMessagingContentTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Attributes. 
@@ -60,7 +61,7 @@ namespace Amazon.Connect.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -118,7 +119,7 @@ namespace Amazon.Connect.Model
         // Check to see if SupportedMessagingContentTypes property is set
         internal bool IsSetSupportedMessagingContentTypes()
         {
-            return this._supportedMessagingContentTypes != null && this._supportedMessagingContentTypes.Count > 0; 
+            return this._supportedMessagingContentTypes != null && (this._supportedMessagingContentTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

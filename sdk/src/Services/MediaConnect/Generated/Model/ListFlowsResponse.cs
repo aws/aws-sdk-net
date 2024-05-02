@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MediaConnect.Model
     /// </summary>
     public partial class ListFlowsResponse : AmazonWebServiceResponse
     {
-        private List<ListedFlow> _flows = new List<ListedFlow>();
+        private List<ListedFlow> _flows = AWSConfigs.InitializeCollections ? new List<ListedFlow>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -48,7 +49,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if Flows property is set
         internal bool IsSetFlows()
         {
-            return this._flows != null && this._flows.Count > 0; 
+            return this._flows != null && (this._flows.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

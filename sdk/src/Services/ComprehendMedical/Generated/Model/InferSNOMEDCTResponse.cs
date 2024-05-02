@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ComprehendMedical.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ComprehendMedical.Model
     public partial class InferSNOMEDCTResponse : AmazonWebServiceResponse
     {
         private Characters _characters;
-        private List<SNOMEDCTEntity> _entities = new List<SNOMEDCTEntity>();
+        private List<SNOMEDCTEntity> _entities = AWSConfigs.InitializeCollections ? new List<SNOMEDCTEntity>() : null;
         private string _modelVersion;
         private string _paginationToken;
         private SNOMEDCTDetails _snomedctDetails;
@@ -77,7 +78,7 @@ namespace Amazon.ComprehendMedical.Model
         // Check to see if Entities property is set
         internal bool IsSetEntities()
         {
-            return this._entities != null && this._entities.Count > 0; 
+            return this._entities != null && (this._entities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

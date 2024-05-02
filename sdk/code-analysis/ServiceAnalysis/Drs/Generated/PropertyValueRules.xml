@@ -896,6 +896,12 @@
     <pattern>^(us(-gov)?|ap|ca|cn|eu|sa|af|me|il)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9][a-z]$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Drs.Model.DataReplicationInfo.StagingOutpostArn</property>
+    <min>20</min>
+    <max>255</max>
+    <pattern>^arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/op-[a-f0-9]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Drs.Model.DataReplicationInfoReplicatedDisk.BackloggedStorageBytes</property>
     <min>0</min>
   </property-value-rule>
@@ -1215,6 +1221,12 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Drs.Model.ProductCode.ProductCodeId</property>
+    <min>25</min>
+    <max>25</max>
+    <pattern>^([A-Za-z0-9])+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Drs.Model.RecoveryInstance.AgentVersion</property>
     <pattern>^[0-9]{1,5}.[0-9]{1,5}.[0-9]{1,5}(.[0-9]{4}.[0-9]{3}.[0-9]{4})?$</pattern>
   </property-value-rule>
@@ -1255,6 +1267,12 @@
     <pattern>^i-[0-9a-fA-F]{8,}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Drs.Model.RecoveryInstance.SourceOutpostArn</property>
+    <min>20</min>
+    <max>255</max>
+    <pattern>^arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/op-[a-f0-9]{17}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Drs.Model.RecoveryInstance.SourceServerID</property>
     <min>19</min>
     <max>19</max>
@@ -1282,6 +1300,12 @@
     <min>0</min>
     <max>255</max>
     <pattern>^(us(-gov)?|ap|ca|cn|eu|sa|af|me|il)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9][a-z]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.RecoveryInstanceDataReplicationInfo.StagingOutpostArn</property>
+    <min>20</min>
+    <max>255</max>
+    <pattern>^arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/op-[a-f0-9]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.RecoveryInstanceDataReplicationInfoReplicatedDisk.BackloggedStorageBytes</property>
@@ -1476,6 +1500,12 @@
     <min>0</min>
     <max>255</max>
     <pattern>^(us(-gov)?|ap|ca|cn|eu|sa|af|me|il)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-[0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Drs.Model.SourceCloudProperties.SourceOutpostArn</property>
+    <min>20</min>
+    <max>255</max>
+    <pattern>^arn:aws([a-z-]+)?:outposts:[a-z\d-]+:\d{12}:outpost/op-[a-f0-9]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Drs.Model.SourceNetwork.Arn</property>

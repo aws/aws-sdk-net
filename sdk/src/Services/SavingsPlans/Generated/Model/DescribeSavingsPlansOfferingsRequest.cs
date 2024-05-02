@@ -26,27 +26,28 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SavingsPlans.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSavingsPlansOfferings operation.
-    /// Describes the specified Savings Plans offerings.
+    /// Describes the offerings for the specified Savings Plans.
     /// </summary>
     public partial class DescribeSavingsPlansOfferingsRequest : AmazonSavingsPlansRequest
     {
-        private List<string> _currencies = new List<string>();
-        private List<string> _descriptions = new List<string>();
-        private List<long> _durations = new List<long>();
-        private List<SavingsPlanOfferingFilterElement> _filters = new List<SavingsPlanOfferingFilterElement>();
+        private List<string> _currencies = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _descriptions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<long> _durations = AWSConfigs.InitializeCollections ? new List<long>() : null;
+        private List<SavingsPlanOfferingFilterElement> _filters = AWSConfigs.InitializeCollections ? new List<SavingsPlanOfferingFilterElement>() : null;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _offeringIds = new List<string>();
-        private List<string> _operations = new List<string>();
-        private List<string> _paymentOptions = new List<string>();
-        private List<string> _planTypes = new List<string>();
+        private List<string> _offeringIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _operations = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _paymentOptions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _planTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SavingsPlanProductType _productType;
-        private List<string> _serviceCodes = new List<string>();
-        private List<string> _usageTypes = new List<string>();
+        private List<string> _serviceCodes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _usageTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Currencies. 
@@ -63,7 +64,7 @@ namespace Amazon.SavingsPlans.Model
         // Check to see if Currencies property is set
         internal bool IsSetCurrencies()
         {
-            return this._currencies != null && this._currencies.Count > 0; 
+            return this._currencies != null && (this._currencies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -81,13 +82,13 @@ namespace Amazon.SavingsPlans.Model
         // Check to see if Descriptions property is set
         internal bool IsSetDescriptions()
         {
-            return this._descriptions != null && this._descriptions.Count > 0; 
+            return this._descriptions != null && (this._descriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property Durations. 
         /// <para>
-        /// The durations, in seconds.
+        /// The duration, in seconds.
         /// </para>
         /// </summary>
         public List<long> Durations
@@ -99,7 +100,7 @@ namespace Amazon.SavingsPlans.Model
         // Check to see if Durations property is set
         internal bool IsSetDurations()
         {
-            return this._durations != null && this._durations.Count > 0; 
+            return this._durations != null && (this._durations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -117,7 +118,7 @@ namespace Amazon.SavingsPlans.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -174,13 +175,13 @@ namespace Amazon.SavingsPlans.Model
         // Check to see if OfferingIds property is set
         internal bool IsSetOfferingIds()
         {
-            return this._offeringIds != null && this._offeringIds.Count > 0; 
+            return this._offeringIds != null && (this._offeringIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property Operations. 
         /// <para>
-        /// The specific AWS operation for the line item in the billing report.
+        /// The specific Amazon Web Services operation for the line item in the billing report.
         /// </para>
         /// </summary>
         public List<string> Operations
@@ -192,7 +193,7 @@ namespace Amazon.SavingsPlans.Model
         // Check to see if Operations property is set
         internal bool IsSetOperations()
         {
-            return this._operations != null && this._operations.Count > 0; 
+            return this._operations != null && (this._operations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -210,13 +211,13 @@ namespace Amazon.SavingsPlans.Model
         // Check to see if PaymentOptions property is set
         internal bool IsSetPaymentOptions()
         {
-            return this._paymentOptions != null && this._paymentOptions.Count > 0; 
+            return this._paymentOptions != null && (this._paymentOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property PlanTypes. 
         /// <para>
-        /// The plan type.
+        /// The plan types.
         /// </para>
         /// </summary>
         public List<string> PlanTypes
@@ -228,7 +229,7 @@ namespace Amazon.SavingsPlans.Model
         // Check to see if PlanTypes property is set
         internal bool IsSetPlanTypes()
         {
-            return this._planTypes != null && this._planTypes.Count > 0; 
+            return this._planTypes != null && (this._planTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -264,7 +265,7 @@ namespace Amazon.SavingsPlans.Model
         // Check to see if ServiceCodes property is set
         internal bool IsSetServiceCodes()
         {
-            return this._serviceCodes != null && this._serviceCodes.Count > 0; 
+            return this._serviceCodes != null && (this._serviceCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -282,7 +283,7 @@ namespace Amazon.SavingsPlans.Model
         // Check to see if UsageTypes property is set
         internal bool IsSetUsageTypes()
         {
-            return this._usageTypes != null && this._usageTypes.Count > 0; 
+            return this._usageTypes != null && (this._usageTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

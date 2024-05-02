@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -43,9 +44,9 @@ namespace Amazon.EC2.Model
     public partial class CreateNetworkInsightsAccessScopeRequest : AmazonEC2Request
     {
         private string _clientToken;
-        private List<AccessScopePathRequest> _excludePaths = new List<AccessScopePathRequest>();
-        private List<AccessScopePathRequest> _matchPaths = new List<AccessScopePathRequest>();
-        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
+        private List<AccessScopePathRequest> _excludePaths = AWSConfigs.InitializeCollections ? new List<AccessScopePathRequest>() : null;
+        private List<AccessScopePathRequest> _matchPaths = AWSConfigs.InitializeCollections ? new List<AccessScopePathRequest>() : null;
+        private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -82,7 +83,7 @@ namespace Amazon.EC2.Model
         // Check to see if ExcludePaths property is set
         internal bool IsSetExcludePaths()
         {
-            return this._excludePaths != null && this._excludePaths.Count > 0; 
+            return this._excludePaths != null && (this._excludePaths.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -100,7 +101,7 @@ namespace Amazon.EC2.Model
         // Check to see if MatchPaths property is set
         internal bool IsSetMatchPaths()
         {
-            return this._matchPaths != null && this._matchPaths.Count > 0; 
+            return this._matchPaths != null && (this._matchPaths.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -118,7 +119,7 @@ namespace Amazon.EC2.Model
         // Check to see if TagSpecifications property is set
         internal bool IsSetTagSpecifications()
         {
-            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
+            return this._tagSpecifications != null && (this._tagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

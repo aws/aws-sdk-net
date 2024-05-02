@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.ChimeSDKVoice.Model
     /// </summary>
     public partial class DeleteVoiceConnectorTerminationCredentialsRequest : AmazonChimeSDKVoiceRequest
     {
-        private List<string> _usernames = new List<string>();
+        private List<string> _usernames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _voiceConnectorId;
 
         /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.ChimeSDKVoice.Model
         // Check to see if Usernames property is set
         internal bool IsSetUsernames()
         {
-            return this._usernames != null && this._usernames.Count > 0; 
+            return this._usernames != null && (this._usernames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

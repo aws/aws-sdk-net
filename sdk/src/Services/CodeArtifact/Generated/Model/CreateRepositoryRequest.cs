@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeArtifact.Model
 {
     /// <summary>
@@ -38,8 +39,8 @@ namespace Amazon.CodeArtifact.Model
         private string _domain;
         private string _domainOwner;
         private string _repository;
-        private List<Tag> _tags = new List<Tag>();
-        private List<UpstreamRepository> _upstreams = new List<UpstreamRepository>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<UpstreamRepository> _upstreams = AWSConfigs.InitializeCollections ? new List<UpstreamRepository>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -102,7 +103,7 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Repository. 
         /// <para>
-        ///  The name of the repository to create. 
+        /// The name of the repository to create. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=100)]
@@ -134,7 +135,7 @@ namespace Amazon.CodeArtifact.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -155,7 +156,7 @@ namespace Amazon.CodeArtifact.Model
         // Check to see if Upstreams property is set
         internal bool IsSetUpstreams()
         {
-            return this._upstreams != null && this._upstreams.Count > 0; 
+            return this._upstreams != null && (this._upstreams.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

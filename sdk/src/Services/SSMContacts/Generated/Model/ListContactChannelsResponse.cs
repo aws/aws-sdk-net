@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SSMContacts.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SSMContacts.Model
     /// </summary>
     public partial class ListContactChannelsResponse : AmazonWebServiceResponse
     {
-        private List<ContactChannel> _contactChannels = new List<ContactChannel>();
+        private List<ContactChannel> _contactChannels = AWSConfigs.InitializeCollections ? new List<ContactChannel>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.SSMContacts.Model
         // Check to see if ContactChannels property is set
         internal bool IsSetContactChannels()
         {
-            return this._contactChannels != null && this._contactChannels.Count > 0; 
+            return this._contactChannels != null && (this._contactChannels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

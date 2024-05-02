@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     public partial class ListUserPoolClientsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<UserPoolClientDescription> _userPoolClients = new List<UserPoolClientDescription>();
+        private List<UserPoolClientDescription> _userPoolClients = AWSConfigs.InitializeCollections ? new List<UserPoolClientDescription>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if UserPoolClients property is set
         internal bool IsSetUserPoolClients()
         {
-            return this._userPoolClients != null && this._userPoolClients.Count > 0; 
+            return this._userPoolClients != null && (this._userPoolClients.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

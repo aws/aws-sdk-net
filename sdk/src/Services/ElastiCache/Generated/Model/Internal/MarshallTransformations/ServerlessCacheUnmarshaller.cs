@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -123,6 +124,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("SecurityGroupIds/SecurityGroupId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.SecurityGroupIds == null)
+                        {
+                            unmarshalledObject.SecurityGroupIds = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SecurityGroupIds.Add(item);
                         continue;
@@ -148,6 +153,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("SubnetIds/SubnetId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.SubnetIds == null)
+                        {
+                            unmarshalledObject.SubnetIds = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SubnetIds.Add(item);
                         continue;

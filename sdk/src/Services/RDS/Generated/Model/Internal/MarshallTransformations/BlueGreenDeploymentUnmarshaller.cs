@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -99,6 +100,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("SwitchoverDetails/member", targetDepth))
                     {
                         var unmarshaller = SwitchoverDetailUnmarshaller.Instance;
+                        if (unmarshalledObject.SwitchoverDetails == null)
+                        {
+                            unmarshalledObject.SwitchoverDetails = new List<SwitchoverDetail>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SwitchoverDetails.Add(item);
                         continue;
@@ -106,6 +111,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("TagList/Tag", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.TagList == null)
+                        {
+                            unmarshalledObject.TagList = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.TagList.Add(item);
                         continue;
@@ -119,6 +128,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Tasks/member", targetDepth))
                     {
                         var unmarshaller = BlueGreenDeploymentTaskUnmarshaller.Instance;
+                        if (unmarshalledObject.Tasks == null)
+                        {
+                            unmarshalledObject.Tasks = new List<BlueGreenDeploymentTask>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tasks.Add(item);
                         continue;

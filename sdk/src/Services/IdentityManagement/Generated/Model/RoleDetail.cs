@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
@@ -41,16 +42,16 @@ namespace Amazon.IdentityManagement.Model
     {
         private string _arn;
         private string _assumeRolePolicyDocument;
-        private List<AttachedPolicyType> _attachedManagedPolicies = new List<AttachedPolicyType>();
+        private List<AttachedPolicyType> _attachedManagedPolicies = AWSConfigs.InitializeCollections ? new List<AttachedPolicyType>() : null;
         private DateTime? _createDate;
-        private List<InstanceProfile> _instanceProfileList = new List<InstanceProfile>();
+        private List<InstanceProfile> _instanceProfileList = AWSConfigs.InitializeCollections ? new List<InstanceProfile>() : null;
         private string _path;
         private AttachedPermissionsBoundary _permissionsBoundary;
         private string _roleId;
         private RoleLastUsed _roleLastUsed;
         private string _roleName;
-        private List<PolicyDetail> _rolePolicyList = new List<PolicyDetail>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<PolicyDetail> _rolePolicyList = AWSConfigs.InitializeCollections ? new List<PolicyDetail>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn.
@@ -103,7 +104,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if AttachedManagedPolicies property is set
         internal bool IsSetAttachedManagedPolicies()
         {
-            return this._attachedManagedPolicies != null && this._attachedManagedPolicies.Count > 0; 
+            return this._attachedManagedPolicies != null && (this._attachedManagedPolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -140,7 +141,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if InstanceProfileList property is set
         internal bool IsSetInstanceProfileList()
         {
-            return this._instanceProfileList != null && this._instanceProfileList.Count > 0; 
+            return this._instanceProfileList != null && (this._instanceProfileList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -265,7 +266,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if RolePolicyList property is set
         internal bool IsSetRolePolicyList()
         {
-            return this._rolePolicyList != null && this._rolePolicyList.Count > 0; 
+            return this._rolePolicyList != null && (this._rolePolicyList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -286,7 +287,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

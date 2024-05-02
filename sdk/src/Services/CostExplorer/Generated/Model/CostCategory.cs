@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
@@ -39,10 +40,10 @@ namespace Amazon.CostExplorer.Model
         private string _effectiveEnd;
         private string _effectiveStart;
         private string _name;
-        private List<CostCategoryProcessingStatus> _processingStatus = new List<CostCategoryProcessingStatus>();
-        private List<CostCategoryRule> _rules = new List<CostCategoryRule>();
+        private List<CostCategoryProcessingStatus> _processingStatus = AWSConfigs.InitializeCollections ? new List<CostCategoryProcessingStatus>() : null;
+        private List<CostCategoryRule> _rules = AWSConfigs.InitializeCollections ? new List<CostCategoryRule>() : null;
         private CostCategoryRuleVersion _ruleVersion;
-        private List<CostCategorySplitChargeRule> _splitChargeRules = new List<CostCategorySplitChargeRule>();
+        private List<CostCategorySplitChargeRule> _splitChargeRules = AWSConfigs.InitializeCollections ? new List<CostCategorySplitChargeRule>() : null;
 
         /// <summary>
         /// Gets and sets the property CostCategoryArn. 
@@ -149,7 +150,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if ProcessingStatus property is set
         internal bool IsSetProcessingStatus()
         {
-            return this._processingStatus != null && this._processingStatus.Count > 0; 
+            return this._processingStatus != null && (this._processingStatus.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -170,7 +171,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if Rules property is set
         internal bool IsSetRules()
         {
-            return this._rules != null && this._rules.Count > 0; 
+            return this._rules != null && (this._rules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -206,7 +207,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if SplitChargeRules property is set
         internal bool IsSetSplitChargeRules()
         {
-            return this._splitChargeRules != null && this._splitChargeRules.Count > 0; 
+            return this._splitChargeRules != null && (this._splitChargeRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

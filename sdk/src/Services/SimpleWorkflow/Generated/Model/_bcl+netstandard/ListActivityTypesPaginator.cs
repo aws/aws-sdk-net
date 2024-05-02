@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Enumerable containing all of the TypeInfos
         /// </summary>
         public IPaginatedEnumerable<ActivityTypeInfo> TypeInfos => 
-            new PaginatedResultKeyResponse<ListActivityTypesResponse, ActivityTypeInfo>(this, (i) => i.ActivityTypeInfos.TypeInfos);
+            new PaginatedResultKeyResponse<ListActivityTypesResponse, ActivityTypeInfo>(this, (i) => i.ActivityTypeInfos.TypeInfos ?? new List<ActivityTypeInfo>());
 
         internal ListActivityTypesPaginator(IAmazonSimpleWorkflow client, ListActivityTypesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.SimpleWorkflow.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListActivityTypesResponse> IPaginator<ListActivityTypesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListActivityTypesResponse> IPaginator<ListActivityTypesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

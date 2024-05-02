@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.DeviceFarm.Model
     /// </summary>
     public partial class GetOfferingStatusResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, OfferingStatus> _current = new Dictionary<string, OfferingStatus>();
-        private Dictionary<string, OfferingStatus> _nextPeriod = new Dictionary<string, OfferingStatus>();
+        private Dictionary<string, OfferingStatus> _current = AWSConfigs.InitializeCollections ? new Dictionary<string, OfferingStatus>() : null;
+        private Dictionary<string, OfferingStatus> _nextPeriod = AWSConfigs.InitializeCollections ? new Dictionary<string, OfferingStatus>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if Current property is set
         internal bool IsSetCurrent()
         {
-            return this._current != null && this._current.Count > 0; 
+            return this._current != null && (this._current.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if NextPeriod property is set
         internal bool IsSetNextPeriod()
         {
-            return this._nextPeriod != null && this._nextPeriod.Count > 0; 
+            return this._nextPeriod != null && (this._nextPeriod.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

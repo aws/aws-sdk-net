@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -63,15 +64,15 @@ namespace Amazon.EC2.Model
         private ClientData _clientData;
         private string _clientToken;
         private string _description;
-        private List<ImageDiskContainer> _diskContainers = new List<ImageDiskContainer>();
+        private List<ImageDiskContainer> _diskContainers = AWSConfigs.InitializeCollections ? new List<ImageDiskContainer>() : null;
         private bool? _encrypted;
         private string _hypervisor;
         private string _kmsKeyId;
-        private List<ImportImageLicenseConfigurationRequest> _licenseSpecifications = new List<ImportImageLicenseConfigurationRequest>();
+        private List<ImportImageLicenseConfigurationRequest> _licenseSpecifications = AWSConfigs.InitializeCollections ? new List<ImportImageLicenseConfigurationRequest>() : null;
         private string _licenseType;
         private string _platform;
         private string _roleName;
-        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
+        private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
         private string _usageOperation;
 
         /// <summary>
@@ -190,7 +191,7 @@ namespace Amazon.EC2.Model
         // Check to see if DiskContainers property is set
         internal bool IsSetDiskContainers()
         {
-            return this._diskContainers != null && this._diskContainers.Count > 0; 
+            return this._diskContainers != null && (this._diskContainers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -311,7 +312,7 @@ namespace Amazon.EC2.Model
         // Check to see if LicenseSpecifications property is set
         internal bool IsSetLicenseSpecifications()
         {
-            return this._licenseSpecifications != null && this._licenseSpecifications.Count > 0; 
+            return this._licenseSpecifications != null && (this._licenseSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -404,7 +405,7 @@ namespace Amazon.EC2.Model
         // Check to see if TagSpecifications property is set
         internal bool IsSetTagSpecifications()
         {
-            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
+            return this._tagSpecifications != null && (this._tagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.MachineLearning.Model
         /// Enumerable containing all of the Results
         /// </summary>
         public IPaginatedEnumerable<BatchPrediction> Results => 
-            new PaginatedResultKeyResponse<DescribeBatchPredictionsResponse, BatchPrediction>(this, (i) => i.Results);
+            new PaginatedResultKeyResponse<DescribeBatchPredictionsResponse, BatchPrediction>(this, (i) => i.Results ?? new List<BatchPrediction>());
 
         internal DescribeBatchPredictionsPaginator(IAmazonMachineLearning client, DescribeBatchPredictionsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.MachineLearning.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeBatchPredictionsResponse> IPaginator<DescribeBatchPredictionsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeBatchPredictionsResponse> IPaginator<DescribeBatchPredictionsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

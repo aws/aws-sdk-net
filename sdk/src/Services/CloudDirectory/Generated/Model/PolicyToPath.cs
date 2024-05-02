@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.CloudDirectory.Model
     public partial class PolicyToPath
     {
         private string _path;
-        private List<PolicyAttachment> _policies = new List<PolicyAttachment>();
+        private List<PolicyAttachment> _policies = AWSConfigs.InitializeCollections ? new List<PolicyAttachment>() : null;
 
         /// <summary>
         /// Gets and sets the property Path. 
@@ -70,7 +71,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if Policies property is set
         internal bool IsSetPolicies()
         {
-            return this._policies != null && this._policies.Count > 0; 
+            return this._policies != null && (this._policies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

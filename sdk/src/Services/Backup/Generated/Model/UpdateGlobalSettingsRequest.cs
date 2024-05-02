@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Backup.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class UpdateGlobalSettingsRequest : AmazonBackupRequest
     {
-        private Dictionary<string, string> _globalSettings = new Dictionary<string, string>();
+        private Dictionary<string, string> _globalSettings = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property GlobalSettings. 
@@ -54,7 +55,7 @@ namespace Amazon.Backup.Model
         // Check to see if GlobalSettings property is set
         internal bool IsSetGlobalSettings()
         {
-            return this._globalSettings != null && this._globalSettings.Count > 0; 
+            return this._globalSettings != null && (this._globalSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

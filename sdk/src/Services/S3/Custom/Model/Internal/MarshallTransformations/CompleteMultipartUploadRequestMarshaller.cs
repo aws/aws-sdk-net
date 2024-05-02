@@ -86,48 +86,52 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 xmlWriter.WriteStartElement("CompleteMultipartUpload", S3Constants.S3RequestXmlNamespace);
                 var multipartUploadMultipartUploadpartsList = completeMultipartUploadRequest.PartETags;
-                multipartUploadMultipartUploadpartsList.Sort();
-
-                if (multipartUploadMultipartUploadpartsList != null && multipartUploadMultipartUploadpartsList.Count > 0)
+                if (multipartUploadMultipartUploadpartsList != null)
                 {
-                    foreach (var multipartUploadMultipartUploadpartsListValue in multipartUploadMultipartUploadpartsList)
+                    multipartUploadMultipartUploadpartsList.Sort();
+
+                    if (multipartUploadMultipartUploadpartsList != null && multipartUploadMultipartUploadpartsList.Count > 0)
                     {
-                        xmlWriter.WriteStartElement("Part");
-                        if (multipartUploadMultipartUploadpartsListValue.IsSetETag())
+                        foreach (var multipartUploadMultipartUploadpartsListValue in multipartUploadMultipartUploadpartsList)
                         {
-                            xmlWriter.WriteElementString("ETag", 
-                                                         S3Transforms.ToXmlStringValue(multipartUploadMultipartUploadpartsListValue.ETag));
-                        }
-                        if (multipartUploadMultipartUploadpartsListValue.IsSetPartNumber())
-                        {
-                            xmlWriter.WriteElementString("PartNumber", 
-                                                         S3Transforms.ToXmlStringValue(multipartUploadMultipartUploadpartsListValue.PartNumber.Value));
-                        }
-                        if (multipartUploadMultipartUploadpartsListValue.IsSetChecksumCRC32())
-                        {
-                            xmlWriter.WriteElementString("ChecksumCRC32", 
-                                S3Transforms.ToXmlStringValue(multipartUploadMultipartUploadpartsListValue.ChecksumCRC32));
-                        }
-                        if (multipartUploadMultipartUploadpartsListValue.IsSetChecksumCRC32C())
-                        {
-                            xmlWriter.WriteElementString("ChecksumCRC32C", 
-                                S3Transforms.ToXmlStringValue(multipartUploadMultipartUploadpartsListValue.ChecksumCRC32C));
-                        }
+                            xmlWriter.WriteStartElement("Part");
+                            if (multipartUploadMultipartUploadpartsListValue.IsSetETag())
+                            {
+                                xmlWriter.WriteElementString("ETag",
+                                                             S3Transforms.ToXmlStringValue(multipartUploadMultipartUploadpartsListValue.ETag));
+                            }
+                            if (multipartUploadMultipartUploadpartsListValue.IsSetPartNumber())
+                            {
+                                xmlWriter.WriteElementString("PartNumber",
+                                                             S3Transforms.ToXmlStringValue(multipartUploadMultipartUploadpartsListValue.PartNumber.Value));
+                            }
+                            if (multipartUploadMultipartUploadpartsListValue.IsSetChecksumCRC32())
+                            {
+                                xmlWriter.WriteElementString("ChecksumCRC32",
+                                    S3Transforms.ToXmlStringValue(multipartUploadMultipartUploadpartsListValue.ChecksumCRC32));
+                            }
+                            if (multipartUploadMultipartUploadpartsListValue.IsSetChecksumCRC32C())
+                            {
+                                xmlWriter.WriteElementString("ChecksumCRC32C",
+                                    S3Transforms.ToXmlStringValue(multipartUploadMultipartUploadpartsListValue.ChecksumCRC32C));
+                            }
 
-                        if (multipartUploadMultipartUploadpartsListValue.IsSetChecksumSHA1())
-                        {
-                            xmlWriter.WriteElementString("ChecksumSHA1", 
-                                S3Transforms.ToXmlStringValue(multipartUploadMultipartUploadpartsListValue.ChecksumSHA1));
-                        }
+                            if (multipartUploadMultipartUploadpartsListValue.IsSetChecksumSHA1())
+                            {
+                                xmlWriter.WriteElementString("ChecksumSHA1",
+                                    S3Transforms.ToXmlStringValue(multipartUploadMultipartUploadpartsListValue.ChecksumSHA1));
+                            }
 
-                        if (multipartUploadMultipartUploadpartsListValue.IsSetChecksumSHA256())
-                        {
-                            xmlWriter.WriteElementString("ChecksumSHA256", 
-                                S3Transforms.ToXmlStringValue(multipartUploadMultipartUploadpartsListValue.ChecksumSHA256));
+                            if (multipartUploadMultipartUploadpartsListValue.IsSetChecksumSHA256())
+                            {
+                                xmlWriter.WriteElementString("ChecksumSHA256",
+                                    S3Transforms.ToXmlStringValue(multipartUploadMultipartUploadpartsListValue.ChecksumSHA256));
+                            }
+                            xmlWriter.WriteEndElement();
                         }
-                        xmlWriter.WriteEndElement();
                     }
                 }
+
                 xmlWriter.WriteEndElement();
             }
 
@@ -150,7 +154,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
 	    private static CompleteMultipartUploadRequestMarshaller _instance;
 
-	    public static CompleteMultipartUploadRequestMarshaller Instance
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
+        public static CompleteMultipartUploadRequestMarshaller Instance
 	    {
 	        get
 	        {

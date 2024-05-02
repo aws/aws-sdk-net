@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FMS.Model
 {
     /// <summary>
@@ -80,6 +81,10 @@ namespace Amazon.FMS.Model
         ///  </li> <li> 
         /// <para>
         /// Security group content audit
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Network ACL
         /// </para>
         ///  </li> <li> 
         /// <para>

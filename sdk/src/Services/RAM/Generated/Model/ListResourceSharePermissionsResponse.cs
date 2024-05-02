@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RAM.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.RAM.Model
     public partial class ListResourceSharePermissionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ResourceSharePermissionSummary> _permissions = new List<ResourceSharePermissionSummary>();
+        private List<ResourceSharePermissionSummary> _permissions = AWSConfigs.InitializeCollections ? new List<ResourceSharePermissionSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +74,7 @@ namespace Amazon.RAM.Model
         // Check to see if Permissions property is set
         internal bool IsSetPermissions()
         {
-            return this._permissions != null && this._permissions.Count > 0; 
+            return this._permissions != null && (this._permissions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

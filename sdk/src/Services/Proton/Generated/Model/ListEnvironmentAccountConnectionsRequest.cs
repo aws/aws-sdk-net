@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Proton.Model
 {
     /// <summary>
@@ -44,7 +45,7 @@ namespace Amazon.Proton.Model
         private int? _maxResults;
         private string _nextToken;
         private EnvironmentAccountConnectionRequesterAccountType _requestedBy;
-        private List<string> _statuses = new List<string>();
+        private List<string> _statuses = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property EnvironmentName. 
@@ -138,7 +139,7 @@ namespace Amazon.Proton.Model
         // Check to see if Statuses property is set
         internal bool IsSetStatuses()
         {
-            return this._statuses != null && this._statuses.Count > 0; 
+            return this._statuses != null && (this._statuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Inspector.Model
     /// </summary>
     public partial class DescribeResourceGroupsResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, FailedItemDetails> _failedItems = new Dictionary<string, FailedItemDetails>();
-        private List<ResourceGroup> _resourceGroups = new List<ResourceGroup>();
+        private Dictionary<string, FailedItemDetails> _failedItems = AWSConfigs.InitializeCollections ? new Dictionary<string, FailedItemDetails>() : null;
+        private List<ResourceGroup> _resourceGroups = AWSConfigs.InitializeCollections ? new List<ResourceGroup>() : null;
 
         /// <summary>
         /// Gets and sets the property FailedItems. 
@@ -53,7 +54,7 @@ namespace Amazon.Inspector.Model
         // Check to see if FailedItems property is set
         internal bool IsSetFailedItems()
         {
-            return this._failedItems != null && this._failedItems.Count > 0; 
+            return this._failedItems != null && (this._failedItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.Inspector.Model
         // Check to see if ResourceGroups property is set
         internal bool IsSetResourceGroups()
         {
-            return this._resourceGroups != null && this._resourceGroups.Count > 0; 
+            return this._resourceGroups != null && (this._resourceGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

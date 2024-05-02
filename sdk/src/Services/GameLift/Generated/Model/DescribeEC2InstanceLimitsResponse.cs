@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GameLift.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class DescribeEC2InstanceLimitsResponse : AmazonWebServiceResponse
     {
-        private List<EC2InstanceLimit> _ec2InstanceLimits = new List<EC2InstanceLimit>();
+        private List<EC2InstanceLimit> _ec2InstanceLimits = AWSConfigs.InitializeCollections ? new List<EC2InstanceLimit>() : null;
 
         /// <summary>
         /// Gets and sets the property EC2InstanceLimits. 
@@ -50,7 +51,7 @@ namespace Amazon.GameLift.Model
         // Check to see if EC2InstanceLimits property is set
         internal bool IsSetEC2InstanceLimits()
         {
-            return this._ec2InstanceLimits != null && this._ec2InstanceLimits.Count > 0; 
+            return this._ec2InstanceLimits != null && (this._ec2InstanceLimits.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

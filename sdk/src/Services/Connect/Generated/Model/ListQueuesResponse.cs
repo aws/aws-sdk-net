@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Connect.Model
     public partial class ListQueuesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<QueueSummary> _queueSummaryList = new List<QueueSummary>();
+        private List<QueueSummary> _queueSummaryList = AWSConfigs.InitializeCollections ? new List<QueueSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +70,7 @@ namespace Amazon.Connect.Model
         // Check to see if QueueSummaryList property is set
         internal bool IsSetQueueSummaryList()
         {
-            return this._queueSummaryList != null && this._queueSummaryList.Count > 0; 
+            return this._queueSummaryList != null && (this._queueSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

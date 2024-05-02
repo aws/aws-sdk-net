@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
@@ -68,7 +69,7 @@ namespace Amazon.TranscribeService.Model
         private bool? _negate;
         private ParticipantRole _participantRole;
         private RelativeTimeRange _relativeTimeRange;
-        private List<string> _sentiments = new List<string>();
+        private List<string> _sentiments = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AbsoluteTimeRange. 
@@ -162,7 +163,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if Sentiments property is set
         internal bool IsSetSentiments()
         {
-            return this._sentiments != null && this._sentiments.Count > 0; 
+            return this._sentiments != null && (this._sentiments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

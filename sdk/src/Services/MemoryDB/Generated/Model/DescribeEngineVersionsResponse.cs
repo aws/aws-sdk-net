@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MemoryDB.Model
     /// </summary>
     public partial class DescribeEngineVersionsResponse : AmazonWebServiceResponse
     {
-        private List<EngineVersionInfo> _engineVersions = new List<EngineVersionInfo>();
+        private List<EngineVersionInfo> _engineVersions = AWSConfigs.InitializeCollections ? new List<EngineVersionInfo>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.MemoryDB.Model
         // Check to see if EngineVersions property is set
         internal bool IsSetEngineVersions()
         {
-            return this._engineVersions != null && this._engineVersions.Count > 0; 
+            return this._engineVersions != null && (this._engineVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

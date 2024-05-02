@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.MachineLearning.Model
     {
         private string _mlModelId;
         private string _predictEndpoint;
-        private Dictionary<string, string> _record = new Dictionary<string, string>();
+        private Dictionary<string, string> _record = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property MLModelId. 
@@ -92,7 +93,7 @@ namespace Amazon.MachineLearning.Model
         // Check to see if Record property is set
         internal bool IsSetRecord()
         {
-            return this._record != null && this._record.Count > 0; 
+            return this._record != null && (this._record.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

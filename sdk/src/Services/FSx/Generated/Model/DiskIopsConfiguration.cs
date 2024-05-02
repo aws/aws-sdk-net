@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FSx.Model
 {
     /// <summary>
@@ -76,7 +77,7 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property Mode. 
         /// <para>
         /// Specifies whether the file system is using the <c>AUTOMATIC</c> setting of SSD IOPS
-        /// of 3 IOPS per GB of storage capacity, , or if it using a <c>USER_PROVISIONED</c> value.
+        /// of 3 IOPS per GB of storage capacity, or if it using a <c>USER_PROVISIONED</c> value.
         /// </para>
         /// </summary>
         public DiskIopsConfigurationMode Mode

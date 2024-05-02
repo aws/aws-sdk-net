@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataSync.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.DataSync.Model
     /// </summary>
     public partial class ResourceDetails
     {
-        private List<NetAppONTAPCluster> _netAppONTAPClusters = new List<NetAppONTAPCluster>();
-        private List<NetAppONTAPSVM> _netAppONTAPSVMs = new List<NetAppONTAPSVM>();
-        private List<NetAppONTAPVolume> _netAppONTAPVolumes = new List<NetAppONTAPVolume>();
+        private List<NetAppONTAPCluster> _netAppONTAPClusters = AWSConfigs.InitializeCollections ? new List<NetAppONTAPCluster>() : null;
+        private List<NetAppONTAPSVM> _netAppONTAPSVMs = AWSConfigs.InitializeCollections ? new List<NetAppONTAPSVM>() : null;
+        private List<NetAppONTAPVolume> _netAppONTAPVolumes = AWSConfigs.InitializeCollections ? new List<NetAppONTAPVolume>() : null;
 
         /// <summary>
         /// Gets and sets the property NetAppONTAPClusters. 
@@ -54,7 +55,7 @@ namespace Amazon.DataSync.Model
         // Check to see if NetAppONTAPClusters property is set
         internal bool IsSetNetAppONTAPClusters()
         {
-            return this._netAppONTAPClusters != null && this._netAppONTAPClusters.Count > 0; 
+            return this._netAppONTAPClusters != null && (this._netAppONTAPClusters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.DataSync.Model
         // Check to see if NetAppONTAPSVMs property is set
         internal bool IsSetNetAppONTAPSVMs()
         {
-            return this._netAppONTAPSVMs != null && this._netAppONTAPSVMs.Count > 0; 
+            return this._netAppONTAPSVMs != null && (this._netAppONTAPSVMs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.DataSync.Model
         // Check to see if NetAppONTAPVolumes property is set
         internal bool IsSetNetAppONTAPVolumes()
         {
-            return this._netAppONTAPVolumes != null && this._netAppONTAPVolumes.Count > 0; 
+            return this._netAppONTAPVolumes != null && (this._netAppONTAPVolumes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

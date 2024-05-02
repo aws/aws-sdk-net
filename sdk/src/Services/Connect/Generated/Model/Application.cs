@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class Application
     {
-        private List<string> _applicationPermissions = new List<string>();
+        private List<string> _applicationPermissions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _awsNamespace;
 
         /// <summary>
@@ -58,7 +59,7 @@ namespace Amazon.Connect.Model
         // Check to see if ApplicationPermissions property is set
         internal bool IsSetApplicationPermissions()
         {
-            return this._applicationPermissions != null && this._applicationPermissions.Count > 0; 
+            return this._applicationPermissions != null && (this._applicationPermissions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

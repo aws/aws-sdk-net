@@ -30,12 +30,13 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for FunctionList Object
     /// </summary>  
-    public class FunctionListUnmarshaller : IUnmarshaller<FunctionList, XmlUnmarshallerContext>
+    public class FunctionListUnmarshaller : IUnmarshaller<FunctionList, XmlUnmarshallerContext>, IUnmarshaller<FunctionList, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -57,6 +58,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Items/FunctionSummary", targetDepth))
                     {
+                        if (unmarshalledObject.Items == null)
+                        {
+                            unmarshalledObject.Items = new List<FunctionSummary>();
+                        }
                         var unmarshaller = FunctionSummaryUnmarshaller.Instance;
                         unmarshalledObject.Items.Add(unmarshaller.Unmarshall(context));
                         continue;
@@ -86,6 +91,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public FunctionList Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static FunctionListUnmarshaller _instance = new FunctionListUnmarshaller();        

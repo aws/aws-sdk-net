@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class OneDriveUsers
     {
-        private List<string> _oneDriveUserList = new List<string>();
+        private List<string> _oneDriveUserList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private S3Path _oneDriveUserS3Path;
 
         /// <summary>
@@ -55,7 +56,7 @@ namespace Amazon.Kendra.Model
         // Check to see if OneDriveUserList property is set
         internal bool IsSetOneDriveUserList()
         {
-            return this._oneDriveUserList != null && this._oneDriveUserList.Count > 0; 
+            return this._oneDriveUserList != null && (this._oneDriveUserList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

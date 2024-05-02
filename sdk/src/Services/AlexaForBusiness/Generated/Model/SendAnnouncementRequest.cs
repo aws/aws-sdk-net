@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AlexaForBusiness.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.AlexaForBusiness.Model
     {
         private string _clientRequestToken;
         private Content _content;
-        private List<Filter> _roomFilters = new List<Filter>();
+        private List<Filter> _roomFilters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
         private int? _timeToLiveInSeconds;
 
         /// <summary>
@@ -97,7 +98,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if RoomFilters property is set
         internal bool IsSetRoomFilters()
         {
-            return this._roomFilters != null && this._roomFilters.Count > 0; 
+            return this._roomFilters != null && (this._roomFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.SSOAdmin.Model
         /// Enumerable containing all of the TrustedTokenIssuers
         /// </summary>
         public IPaginatedEnumerable<TrustedTokenIssuerMetadata> TrustedTokenIssuers => 
-            new PaginatedResultKeyResponse<ListTrustedTokenIssuersResponse, TrustedTokenIssuerMetadata>(this, (i) => i.TrustedTokenIssuers);
+            new PaginatedResultKeyResponse<ListTrustedTokenIssuersResponse, TrustedTokenIssuerMetadata>(this, (i) => i.TrustedTokenIssuers ?? new List<TrustedTokenIssuerMetadata>());
 
         internal ListTrustedTokenIssuersPaginator(IAmazonSSOAdmin client, ListTrustedTokenIssuersRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.SSOAdmin.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListTrustedTokenIssuersResponse> IPaginator<ListTrustedTokenIssuersResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListTrustedTokenIssuersResponse> IPaginator<ListTrustedTokenIssuersResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

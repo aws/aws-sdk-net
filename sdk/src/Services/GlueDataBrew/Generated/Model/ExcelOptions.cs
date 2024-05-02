@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
@@ -35,8 +36,8 @@ namespace Amazon.GlueDataBrew.Model
     public partial class ExcelOptions
     {
         private bool? _headerRow;
-        private List<int> _sheetIndexes = new List<int>();
-        private List<string> _sheetNames = new List<string>();
+        private List<int> _sheetIndexes = AWSConfigs.InitializeCollections ? new List<int>() : null;
+        private List<string> _sheetNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property HeaderRow. 
@@ -73,7 +74,7 @@ namespace Amazon.GlueDataBrew.Model
         // Check to see if SheetIndexes property is set
         internal bool IsSetSheetIndexes()
         {
-            return this._sheetIndexes != null && this._sheetIndexes.Count > 0; 
+            return this._sheetIndexes != null && (this._sheetIndexes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.GlueDataBrew.Model
         // Check to see if SheetNames property is set
         internal bool IsSetSheetNames()
         {
-            return this._sheetNames != null && this._sheetNames.Count > 0; 
+            return this._sheetNames != null && (this._sheetNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

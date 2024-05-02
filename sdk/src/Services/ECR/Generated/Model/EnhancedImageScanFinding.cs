@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECR.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.ECR.Model
         private DateTime? _lastObservedAt;
         private PackageVulnerabilityDetails _packageVulnerabilityDetails;
         private Remediation _remediation;
-        private List<Resource> _resources = new List<Resource>();
+        private List<Resource> _resources = AWSConfigs.InitializeCollections ? new List<Resource>() : null;
         private double? _score;
         private ScoreDetails _scoreDetails;
         private string _severity;
@@ -191,7 +192,7 @@ namespace Amazon.ECR.Model
         // Check to see if Resources property is set
         internal bool IsSetResources()
         {
-            return this._resources != null && this._resources.Count > 0; 
+            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

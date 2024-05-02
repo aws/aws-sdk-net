@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FMS.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.FMS.Model
     {
         private string _conflictingPolicyId;
         private int? _conflictingPriority;
-        private List<int> _unavailablePriorities = new List<int>();
+        private List<int> _unavailablePriorities = AWSConfigs.InitializeCollections ? new List<int>() : null;
         private string _violationTarget;
         private string _violationTargetDescription;
 
@@ -96,7 +97,7 @@ namespace Amazon.FMS.Model
         // Check to see if UnavailablePriorities property is set
         internal bool IsSetUnavailablePriorities()
         {
-            return this._unavailablePriorities != null && this._unavailablePriorities.Count > 0; 
+            return this._unavailablePriorities != null && (this._unavailablePriorities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
@@ -49,14 +50,14 @@ namespace Amazon.Route53Resolver.Model
     {
         private string _creatorRequestId;
         private ResolverEndpointDirection _direction;
-        private List<IpAddressRequest> _ipAddresses = new List<IpAddressRequest>();
+        private List<IpAddressRequest> _ipAddresses = AWSConfigs.InitializeCollections ? new List<IpAddressRequest>() : null;
         private string _name;
         private string _outpostArn;
         private string _preferredInstanceType;
-        private List<string> _protocols = new List<string>();
+        private List<string> _protocols = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ResolverEndpointType _resolverEndpointType;
-        private List<string> _securityGroupIds = new List<string>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property CreatorRequestId. 
@@ -132,7 +133,7 @@ namespace Amazon.Route53Resolver.Model
         // Check to see if IpAddresses property is set
         internal bool IsSetIpAddresses()
         {
-            return this._ipAddresses != null && this._ipAddresses.Count > 0; 
+            return this._ipAddresses != null && (this._ipAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -260,7 +261,7 @@ namespace Amazon.Route53Resolver.Model
         // Check to see if Protocols property is set
         internal bool IsSetProtocols()
         {
-            return this._protocols != null && this._protocols.Count > 0; 
+            return this._protocols != null && (this._protocols.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -292,6 +293,15 @@ namespace Amazon.Route53Resolver.Model
         /// and outbound rules must allow TCP and UDP access. For inbound access, open port 53.
         /// For outbound access, open the port that you're using for DNS queries on your network.
         /// </para>
+        ///  
+        /// <para>
+        /// Some security group rules will cause your connection to be tracked. For outbound resolver
+        /// endpoint, it can potentially impact the maximum queries per second from outbound endpoint
+        /// to your target name server. For inbound resolver endpoint, it can bring down the overall
+        /// maximum queries per second per IP address to as low as 1500. To avoid connection tracking
+        /// caused by security group, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html#untracked-connectionsl">Untracked
+        /// connections</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> SecurityGroupIds
@@ -303,7 +313,7 @@ namespace Amazon.Route53Resolver.Model
         // Check to see if SecurityGroupIds property is set
         internal bool IsSetSecurityGroupIds()
         {
-            return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+            return this._securityGroupIds != null && (this._securityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -322,7 +332,7 @@ namespace Amazon.Route53Resolver.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

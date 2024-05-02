@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Comprehend.Model
     public partial class BatchDetectDominantLanguageItemResult
     {
         private int? _index;
-        private List<DominantLanguage> _languages = new List<DominantLanguage>();
+        private List<DominantLanguage> _languages = AWSConfigs.InitializeCollections ? new List<DominantLanguage>() : null;
 
         /// <summary>
         /// Gets and sets the property Index. 
@@ -71,7 +72,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if Languages property is set
         internal bool IsSetLanguages()
         {
-            return this._languages != null && this._languages.Count > 0; 
+            return this._languages != null && (this._languages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

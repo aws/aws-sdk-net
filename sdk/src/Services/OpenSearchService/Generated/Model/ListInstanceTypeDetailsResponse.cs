@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.OpenSearchService.Model
     /// </summary>
     public partial class ListInstanceTypeDetailsResponse : AmazonWebServiceResponse
     {
-        private List<InstanceTypeDetails> _instanceTypeDetails = new List<InstanceTypeDetails>();
+        private List<InstanceTypeDetails> _instanceTypeDetails = AWSConfigs.InitializeCollections ? new List<InstanceTypeDetails>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.OpenSearchService.Model
         // Check to see if InstanceTypeDetails property is set
         internal bool IsSetInstanceTypeDetails()
         {
-            return this._instanceTypeDetails != null && this._instanceTypeDetails.Count > 0; 
+            return this._instanceTypeDetails != null && (this._instanceTypeDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

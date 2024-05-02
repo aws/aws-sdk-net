@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Inspector2.Model
         /// Enumerable containing all of the Totals
         /// </summary>
         public IPaginatedEnumerable<UsageTotal> Totals => 
-            new PaginatedResultKeyResponse<ListUsageTotalsResponse, UsageTotal>(this, (i) => i.Totals);
+            new PaginatedResultKeyResponse<ListUsageTotalsResponse, UsageTotal>(this, (i) => i.Totals ?? new List<UsageTotal>());
 
         internal ListUsageTotalsPaginator(IAmazonInspector2 client, ListUsageTotalsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Inspector2.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListUsageTotalsResponse> IPaginator<ListUsageTotalsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListUsageTotalsResponse> IPaginator<ListUsageTotalsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

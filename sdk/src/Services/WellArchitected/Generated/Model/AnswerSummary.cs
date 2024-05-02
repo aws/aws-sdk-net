@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
@@ -33,16 +34,17 @@ namespace Amazon.WellArchitected.Model
     /// </summary>
     public partial class AnswerSummary
     {
-        private List<ChoiceAnswerSummary> _choiceAnswerSummaries = new List<ChoiceAnswerSummary>();
-        private List<Choice> _choices = new List<Choice>();
+        private List<ChoiceAnswerSummary> _choiceAnswerSummaries = AWSConfigs.InitializeCollections ? new List<ChoiceAnswerSummary>() : null;
+        private List<Choice> _choices = AWSConfigs.InitializeCollections ? new List<Choice>() : null;
         private bool? _isApplicable;
+        private JiraConfiguration _jiraConfiguration;
         private string _pillarId;
         private string _questionId;
         private string _questionTitle;
         private QuestionType _questionType;
         private AnswerReason _reason;
         private Risk _risk;
-        private List<string> _selectedChoices = new List<string>();
+        private List<string> _selectedChoices = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ChoiceAnswerSummaries. 
@@ -59,7 +61,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if ChoiceAnswerSummaries property is set
         internal bool IsSetChoiceAnswerSummaries()
         {
-            return this._choiceAnswerSummaries != null && this._choiceAnswerSummaries.Count > 0; 
+            return this._choiceAnswerSummaries != null && (this._choiceAnswerSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +76,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if Choices property is set
         internal bool IsSetChoices()
         {
-            return this._choices != null && this._choices.Count > 0; 
+            return this._choices != null && (this._choices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -90,6 +92,24 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetIsApplicable()
         {
             return this._isApplicable.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property JiraConfiguration. 
+        /// <para>
+        /// Configuration of the Jira integration.
+        /// </para>
+        /// </summary>
+        public JiraConfiguration JiraConfiguration
+        {
+            get { return this._jiraConfiguration; }
+            set { this._jiraConfiguration = value; }
+        }
+
+        // Check to see if JiraConfiguration property is set
+        internal bool IsSetJiraConfiguration()
+        {
+            return this._jiraConfiguration != null;
         }
 
         /// <summary>
@@ -203,7 +223,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if SelectedChoices property is set
         internal bool IsSetSelectedChoices()
         {
-            return this._selectedChoices != null && this._selectedChoices.Count > 0; 
+            return this._selectedChoices != null && (this._selectedChoices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

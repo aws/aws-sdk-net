@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -33,10 +34,10 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class JupyterLabAppSettings
     {
-        private List<CodeRepository> _codeRepositories = new List<CodeRepository>();
-        private List<CustomImage> _customImages = new List<CustomImage>();
+        private List<CodeRepository> _codeRepositories = AWSConfigs.InitializeCollections ? new List<CodeRepository>() : null;
+        private List<CustomImage> _customImages = AWSConfigs.InitializeCollections ? new List<CustomImage>() : null;
         private ResourceSpec _defaultResourceSpec;
-        private List<string> _lifecycleConfigArns = new List<string>();
+        private List<string> _lifecycleConfigArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CodeRepositories. 
@@ -55,7 +56,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if CodeRepositories property is set
         internal bool IsSetCodeRepositories()
         {
-            return this._codeRepositories != null && this._codeRepositories.Count > 0; 
+            return this._codeRepositories != null && (this._codeRepositories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if CustomImages property is set
         internal bool IsSetCustomImages()
         {
-            return this._customImages != null && this._customImages.Count > 0; 
+            return this._customImages != null && (this._customImages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -109,7 +110,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if LifecycleConfigArns property is set
         internal bool IsSetLifecycleConfigArns()
         {
-            return this._lifecycleConfigArns != null && this._lifecycleConfigArns.Count > 0; 
+            return this._lifecycleConfigArns != null && (this._lifecycleConfigArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

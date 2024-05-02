@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.IoTSiteWise.Model
     /// </summary>
     public partial class ExecuteQueryResponse : AmazonWebServiceResponse
     {
-        private List<ColumnInfo> _columns = new List<ColumnInfo>();
+        private List<ColumnInfo> _columns = AWSConfigs.InitializeCollections ? new List<ColumnInfo>() : null;
         private string _nextToken;
-        private List<Row> _rows = new List<Row>();
+        private List<Row> _rows = AWSConfigs.InitializeCollections ? new List<Row>() : null;
 
         /// <summary>
         /// Gets and sets the property Columns. 
@@ -52,7 +53,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if Columns property is set
         internal bool IsSetColumns()
         {
-            return this._columns != null && this._columns.Count > 0; 
+            return this._columns != null && (this._columns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -89,7 +90,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if Rows property is set
         internal bool IsSetRows()
         {
-            return this._rows != null && this._rows.Count > 0; 
+            return this._rows != null && (this._rows.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

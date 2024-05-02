@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class ListDocumentsResponse : AmazonWebServiceResponse
     {
-        private List<DocumentIdentifier> _documentIdentifiers = new List<DocumentIdentifier>();
+        private List<DocumentIdentifier> _documentIdentifiers = AWSConfigs.InitializeCollections ? new List<DocumentIdentifier>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if DocumentIdentifiers property is set
         internal bool IsSetDocumentIdentifiers()
         {
-            return this._documentIdentifiers != null && this._documentIdentifiers.Count > 0; 
+            return this._documentIdentifiers != null && (this._documentIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

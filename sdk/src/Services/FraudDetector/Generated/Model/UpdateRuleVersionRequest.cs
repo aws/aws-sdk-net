@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FraudDetector.Model
 {
     /// <summary>
@@ -38,9 +39,9 @@ namespace Amazon.FraudDetector.Model
         private string _description;
         private string _expression;
         private Language _language;
-        private List<string> _outcomes = new List<string>();
+        private List<string> _outcomes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Rule _rule;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -115,7 +116,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if Outcomes property is set
         internal bool IsSetOutcomes()
         {
-            return this._outcomes != null && this._outcomes.Count > 0; 
+            return this._outcomes != null && (this._outcomes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -153,7 +154,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

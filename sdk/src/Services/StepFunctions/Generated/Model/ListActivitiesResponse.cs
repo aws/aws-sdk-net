@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.StepFunctions.Model
     /// </summary>
     public partial class ListActivitiesResponse : AmazonWebServiceResponse
     {
-        private List<ActivityListItem> _activities = new List<ActivityListItem>();
+        private List<ActivityListItem> _activities = AWSConfigs.InitializeCollections ? new List<ActivityListItem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.StepFunctions.Model
         // Check to see if Activities property is set
         internal bool IsSetActivities()
         {
-            return this._activities != null && this._activities.Count > 0; 
+            return this._activities != null && (this._activities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataSync.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.DataSync.Model
     public partial class Recommendation
     {
         private string _estimatedMonthlyStorageCost;
-        private Dictionary<string, string> _storageConfiguration = new Dictionary<string, string>();
+        private Dictionary<string, string> _storageConfiguration = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _storageType;
 
         /// <summary>
@@ -78,7 +79,7 @@ namespace Amazon.DataSync.Model
         // Check to see if StorageConfiguration property is set
         internal bool IsSetStorageConfiguration()
         {
-            return this._storageConfiguration != null && this._storageConfiguration.Count > 0; 
+            return this._storageConfiguration != null && (this._storageConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

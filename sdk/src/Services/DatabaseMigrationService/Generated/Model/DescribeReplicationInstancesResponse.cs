@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.DatabaseMigrationService.Model
     public partial class DescribeReplicationInstancesResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<ReplicationInstance> _replicationInstances = new List<ReplicationInstance>();
+        private List<ReplicationInstance> _replicationInstances = AWSConfigs.InitializeCollections ? new List<ReplicationInstance>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -71,7 +72,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if ReplicationInstances property is set
         internal bool IsSetReplicationInstances()
         {
-            return this._replicationInstances != null && this._replicationInstances.Count > 0; 
+            return this._replicationInstances != null && (this._replicationInstances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

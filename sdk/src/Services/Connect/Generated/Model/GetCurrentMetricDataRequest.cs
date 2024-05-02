@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -40,13 +41,13 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class GetCurrentMetricDataRequest : AmazonConnectRequest
     {
-        private List<CurrentMetric> _currentMetrics = new List<CurrentMetric>();
+        private List<CurrentMetric> _currentMetrics = AWSConfigs.InitializeCollections ? new List<CurrentMetric>() : null;
         private Filters _filters;
-        private List<string> _groupings = new List<string>();
+        private List<string> _groupings = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _instanceId;
         private int? _maxResults;
         private string _nextToken;
-        private List<CurrentMetricSortCriteria> _sortCriteria = new List<CurrentMetricSortCriteria>();
+        private List<CurrentMetricSortCriteria> _sortCriteria = AWSConfigs.InitializeCollections ? new List<CurrentMetricSortCriteria>() : null;
 
         /// <summary>
         /// Gets and sets the property CurrentMetrics. 
@@ -210,7 +211,7 @@ namespace Amazon.Connect.Model
         // Check to see if CurrentMetrics property is set
         internal bool IsSetCurrentMetrics()
         {
-            return this._currentMetrics != null && this._currentMetrics.Count > 0; 
+            return this._currentMetrics != null && (this._currentMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -303,7 +304,7 @@ namespace Amazon.Connect.Model
         // Check to see if Groupings property is set
         internal bool IsSetGroupings()
         {
-            return this._groupings != null && this._groupings.Count > 0; 
+            return this._groupings != null && (this._groupings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -397,7 +398,7 @@ namespace Amazon.Connect.Model
         // Check to see if SortCriteria property is set
         internal bool IsSetSortCriteria()
         {
-            return this._sortCriteria != null && this._sortCriteria.Count > 0; 
+            return this._sortCriteria != null && (this._sortCriteria.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

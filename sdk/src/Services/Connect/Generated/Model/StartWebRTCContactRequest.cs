@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -37,13 +38,13 @@ namespace Amazon.Connect.Model
     public partial class StartWebRTCContactRequest : AmazonConnectRequest
     {
         private AllowedCapabilities _allowedCapabilities;
-        private Dictionary<string, string> _attributes = new Dictionary<string, string>();
+        private Dictionary<string, string> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _clientToken;
         private string _contactFlowId;
         private string _description;
         private string _instanceId;
         private ParticipantDetails _participantDetails;
-        private Dictionary<string, Reference> _references = new Dictionary<string, Reference>();
+        private Dictionary<string, Reference> _references = AWSConfigs.InitializeCollections ? new Dictionary<string, Reference>() : null;
         private string _relatedContactId;
 
         /// <summary>
@@ -85,7 +86,7 @@ namespace Amazon.Connect.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -216,7 +217,7 @@ namespace Amazon.Connect.Model
         // Check to see if References property is set
         internal bool IsSetReferences()
         {
-            return this._references != null && this._references.Count > 0; 
+            return this._references != null && (this._references.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

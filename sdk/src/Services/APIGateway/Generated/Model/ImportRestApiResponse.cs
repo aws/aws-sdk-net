@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.APIGateway.Model
     public partial class ImportRestApiResponse : AmazonWebServiceResponse
     {
         private ApiKeySourceType _apiKeySource;
-        private List<string> _binaryMediaTypes = new List<string>();
+        private List<string> _binaryMediaTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _createdDate;
         private string _description;
         private bool? _disableExecuteApiEndpoint;
@@ -44,9 +45,9 @@ namespace Amazon.APIGateway.Model
         private string _name;
         private string _policy;
         private string _rootResourceId;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _version;
-        private List<string> _warnings = new List<string>();
+        private List<string> _warnings = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ApiKeySource. 
@@ -85,7 +86,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if BinaryMediaTypes property is set
         internal bool IsSetBinaryMediaTypes()
         {
-            return this._binaryMediaTypes != null && this._binaryMediaTypes.Count > 0; 
+            return this._binaryMediaTypes != null && (this._binaryMediaTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -274,7 +275,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -310,7 +311,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if Warnings property is set
         internal bool IsSetWarnings()
         {
-            return this._warnings != null && this._warnings.Count > 0; 
+            return this._warnings != null && (this._warnings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

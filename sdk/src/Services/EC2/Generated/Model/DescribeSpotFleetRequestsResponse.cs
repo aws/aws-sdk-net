@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EC2.Model
     public partial class DescribeSpotFleetRequestsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SpotFleetRequestConfig> _spotFleetRequestConfigs = new List<SpotFleetRequestConfig>();
+        private List<SpotFleetRequestConfig> _spotFleetRequestConfigs = AWSConfigs.InitializeCollections ? new List<SpotFleetRequestConfig>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.EC2.Model
         // Check to see if SpotFleetRequestConfigs property is set
         internal bool IsSetSpotFleetRequestConfigs()
         {
-            return this._spotFleetRequestConfigs != null && this._spotFleetRequestConfigs.Count > 0; 
+            return this._spotFleetRequestConfigs != null && (this._spotFleetRequestConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

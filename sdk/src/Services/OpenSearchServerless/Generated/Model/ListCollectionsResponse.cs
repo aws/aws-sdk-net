@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpenSearchServerless.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.OpenSearchServerless.Model
     /// </summary>
     public partial class ListCollectionsResponse : AmazonWebServiceResponse
     {
-        private List<CollectionSummary> _collectionSummaries = new List<CollectionSummary>();
+        private List<CollectionSummary> _collectionSummaries = AWSConfigs.InitializeCollections ? new List<CollectionSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.OpenSearchServerless.Model
         // Check to see if CollectionSummaries property is set
         internal bool IsSetCollectionSummaries()
         {
-            return this._collectionSummaries != null && this._collectionSummaries.Count > 0; 
+            return this._collectionSummaries != null && (this._collectionSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

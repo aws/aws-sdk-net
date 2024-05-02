@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.SageMaker.Model
     {
         private string _artifactUrl;
         private DeployedImage _deployedImage;
-        private Dictionary<string, string> _environment = new Dictionary<string, string>();
+        private Dictionary<string, string> _environment = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ArtifactUrl. 
@@ -77,7 +78,7 @@ namespace Amazon.SageMaker.Model
         /// The environment variables to set in the Docker container.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=16)]
+        [AWSProperty(Max=100)]
         public Dictionary<string, string> Environment
         {
             get { return this._environment; }
@@ -87,7 +88,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Environment property is set
         internal bool IsSetEnvironment()
         {
-            return this._environment != null && this._environment.Count > 0; 
+            return this._environment != null && (this._environment.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

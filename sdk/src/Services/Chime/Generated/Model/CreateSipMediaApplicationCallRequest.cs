@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Chime.Model
 {
     /// <summary>
@@ -50,7 +51,7 @@ namespace Amazon.Chime.Model
     public partial class CreateSipMediaApplicationCallRequest : AmazonChimeRequest
     {
         private string _fromPhoneNumber;
-        private Dictionary<string, string> _sipHeaders = new Dictionary<string, string>();
+        private Dictionary<string, string> _sipHeaders = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _sipMediaApplicationId;
         private string _toPhoneNumber;
 
@@ -90,7 +91,7 @@ namespace Amazon.Chime.Model
         // Check to see if SipHeaders property is set
         internal bool IsSetSipHeaders()
         {
-            return this._sipHeaders != null && this._sipHeaders.Count > 0; 
+            return this._sipHeaders != null && (this._sipHeaders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

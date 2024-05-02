@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -35,8 +36,8 @@ namespace Amazon.SageMaker.Model
     public partial class RegisterDevicesRequest : AmazonSageMakerRequest
     {
         private string _deviceFleetName;
-        private List<Device> _devices = new List<Device>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<Device> _devices = AWSConfigs.InitializeCollections ? new List<Device>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property DeviceFleetName. 
@@ -73,7 +74,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Devices property is set
         internal bool IsSetDevices()
         {
-            return this._devices != null && this._devices.Count > 0; 
+            return this._devices != null && (this._devices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

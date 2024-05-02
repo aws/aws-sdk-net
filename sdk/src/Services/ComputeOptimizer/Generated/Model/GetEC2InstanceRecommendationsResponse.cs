@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.ComputeOptimizer.Model
     /// </summary>
     public partial class GetEC2InstanceRecommendationsResponse : AmazonWebServiceResponse
     {
-        private List<GetRecommendationError> _errors = new List<GetRecommendationError>();
-        private List<InstanceRecommendation> _instanceRecommendations = new List<InstanceRecommendation>();
+        private List<GetRecommendationError> _errors = AWSConfigs.InitializeCollections ? new List<GetRecommendationError>() : null;
+        private List<InstanceRecommendation> _instanceRecommendations = AWSConfigs.InitializeCollections ? new List<InstanceRecommendation>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -57,7 +58,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if InstanceRecommendations property is set
         internal bool IsSetInstanceRecommendations()
         {
-            return this._instanceRecommendations != null && this._instanceRecommendations.Count > 0; 
+            return this._instanceRecommendations != null && (this._instanceRecommendations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IoT.Model
     public partial class ListThingsResponse : AmazonWebServiceResponse
     {
         private string _nextMarker;
-        private List<ThingAttribute> _things = new List<ThingAttribute>();
+        private List<ThingAttribute> _things = AWSConfigs.InitializeCollections ? new List<ThingAttribute>() : null;
 
         /// <summary>
         /// Gets and sets the property NextMarker. 
@@ -70,7 +71,7 @@ namespace Amazon.IoT.Model
         // Check to see if Things property is set
         internal bool IsSetThings()
         {
-            return this._things != null && this._things.Count > 0; 
+            return this._things != null && (this._things.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

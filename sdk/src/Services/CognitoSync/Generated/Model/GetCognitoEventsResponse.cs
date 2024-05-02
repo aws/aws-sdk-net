@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CognitoSync.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CognitoSync.Model
     /// </summary>
     public partial class GetCognitoEventsResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, string> _events = new Dictionary<string, string>();
+        private Dictionary<string, string> _events = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Events. 
@@ -51,7 +52,7 @@ namespace Amazon.CognitoSync.Model
         // Check to see if Events property is set
         internal bool IsSetEvents()
         {
-            return this._events != null && this._events.Count > 0; 
+            return this._events != null && (this._events.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

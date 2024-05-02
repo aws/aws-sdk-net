@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAF.Model
 {
     /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.WAF.Model
     {
         private string _name;
         private string _xssMatchSetId;
-        private List<XssMatchTuple> _xssMatchTuples = new List<XssMatchTuple>();
+        private List<XssMatchTuple> _xssMatchTuples = AWSConfigs.InitializeCollections ? new List<XssMatchTuple>() : null;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -119,7 +120,7 @@ namespace Amazon.WAF.Model
         // Check to see if XssMatchTuples property is set
         internal bool IsSetXssMatchTuples()
         {
-            return this._xssMatchTuples != null && this._xssMatchTuples.Count > 0; 
+            return this._xssMatchTuples != null && (this._xssMatchTuples.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

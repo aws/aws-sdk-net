@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECR.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.ECR.Model
         private int? _appliedRulePriority;
         private string _imageDigest;
         private DateTime? _imagePushedAt;
-        private List<string> _imageTags = new List<string>();
+        private List<string> _imageTags = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Action. 
@@ -128,7 +129,7 @@ namespace Amazon.ECR.Model
         // Check to see if ImageTags property is set
         internal bool IsSetImageTags()
         {
-            return this._imageTags != null && this._imageTags.Count > 0; 
+            return this._imageTags != null && (this._imageTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

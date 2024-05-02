@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class GetCloudFormationStackRecordsResponse : AmazonWebServiceResponse
     {
-        private List<CloudFormationStackRecord> _cloudFormationStackRecords = new List<CloudFormationStackRecord>();
+        private List<CloudFormationStackRecord> _cloudFormationStackRecords = AWSConfigs.InitializeCollections ? new List<CloudFormationStackRecord>() : null;
         private string _nextPageToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if CloudFormationStackRecords property is set
         internal bool IsSetCloudFormationStackRecords()
         {
-            return this._cloudFormationStackRecords != null && this._cloudFormationStackRecords.Count > 0; 
+            return this._cloudFormationStackRecords != null && (this._cloudFormationStackRecords.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

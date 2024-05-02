@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.ElasticMapReduce.Model
     public partial class ModifyInstanceGroupsRequest : AmazonElasticMapReduceRequest
     {
         private string _clusterId;
-        private List<InstanceGroupModifyConfig> _instanceGroups = new List<InstanceGroupModifyConfig>();
+        private List<InstanceGroupModifyConfig> _instanceGroups = AWSConfigs.InitializeCollections ? new List<InstanceGroupModifyConfig>() : null;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -86,7 +87,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if InstanceGroups property is set
         internal bool IsSetInstanceGroups()
         {
-            return this._instanceGroups != null && this._instanceGroups.Count > 0; 
+            return this._instanceGroups != null && (this._instanceGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

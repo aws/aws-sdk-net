@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Appflow.Model
 {
     /// <summary>
@@ -43,7 +44,7 @@ namespace Amazon.Appflow.Model
     public partial class DescribeConnectorProfilesRequest : AmazonAppflowRequest
     {
         private string _connectorLabel;
-        private List<string> _connectorProfileNames = new List<string>();
+        private List<string> _connectorProfileNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ConnectorType _connectorType;
         private int? _maxResults;
         private string _nextToken;
@@ -86,7 +87,7 @@ namespace Amazon.Appflow.Model
         // Check to see if ConnectorProfileNames property is set
         internal bool IsSetConnectorProfileNames()
         {
-            return this._connectorProfileNames != null && this._connectorProfileNames.Count > 0; 
+            return this._connectorProfileNames != null && (this._connectorProfileNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

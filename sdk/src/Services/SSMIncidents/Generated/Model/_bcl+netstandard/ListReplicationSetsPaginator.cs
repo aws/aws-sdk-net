@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SSMIncidents.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.SSMIncidents.Model
         /// Enumerable containing all of the ReplicationSetArns
         /// </summary>
         public IPaginatedEnumerable<string> ReplicationSetArns => 
-            new PaginatedResultKeyResponse<ListReplicationSetsResponse, string>(this, (i) => i.ReplicationSetArns);
+            new PaginatedResultKeyResponse<ListReplicationSetsResponse, string>(this, (i) => i.ReplicationSetArns ?? new List<string>());
 
         internal ListReplicationSetsPaginator(IAmazonSSMIncidents client, ListReplicationSetsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.SSMIncidents.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListReplicationSetsResponse> IPaginator<ListReplicationSetsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListReplicationSetsResponse> IPaginator<ListReplicationSetsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

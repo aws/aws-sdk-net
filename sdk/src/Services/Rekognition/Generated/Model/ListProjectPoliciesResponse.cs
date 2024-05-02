@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Rekognition.Model
     public partial class ListProjectPoliciesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ProjectPolicy> _projectPolicies = new List<ProjectPolicy>();
+        private List<ProjectPolicy> _projectPolicies = AWSConfigs.InitializeCollections ? new List<ProjectPolicy>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if ProjectPolicies property is set
         internal bool IsSetProjectPolicies()
         {
-            return this._projectPolicies != null && this._projectPolicies.Count > 0; 
+            return this._projectPolicies != null && (this._projectPolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

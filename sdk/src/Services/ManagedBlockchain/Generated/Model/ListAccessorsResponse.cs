@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ManagedBlockchain.Model
     /// </summary>
     public partial class ListAccessorsResponse : AmazonWebServiceResponse
     {
-        private List<AccessorSummary> _accessors = new List<AccessorSummary>();
+        private List<AccessorSummary> _accessors = AWSConfigs.InitializeCollections ? new List<AccessorSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.ManagedBlockchain.Model
         // Check to see if Accessors property is set
         internal bool IsSetAccessors()
         {
-            return this._accessors != null && this._accessors.Count > 0; 
+            return this._accessors != null && (this._accessors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AlexaForBusiness.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.AlexaForBusiness.Model
     {
         private string _roomArn;
         private string _roomName;
-        private List<RoomSkillParameter> _roomSkillParameters = new List<RoomSkillParameter>();
+        private List<RoomSkillParameter> _roomSkillParameters = AWSConfigs.InitializeCollections ? new List<RoomSkillParameter>() : null;
 
         /// <summary>
         /// Gets and sets the property RoomArn. 
@@ -89,7 +90,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if RoomSkillParameters property is set
         internal bool IsSetRoomSkillParameters()
         {
-            return this._roomSkillParameters != null && this._roomSkillParameters.Count > 0; 
+            return this._roomSkillParameters != null && (this._roomSkillParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

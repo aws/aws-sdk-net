@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ChimeSDKMeetings.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         private string _meetingHostId;
         private string _meetingId;
         private string _primaryMeetingId;
-        private List<string> _tenantIds = new List<string>();
+        private List<string> _tenantIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ExternalMeetingId. 
@@ -226,7 +227,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         // Check to see if TenantIds property is set
         internal bool IsSetTenantIds()
         {
-            return this._tenantIds != null && this._tenantIds.Count > 0; 
+            return this._tenantIds != null && (this._tenantIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

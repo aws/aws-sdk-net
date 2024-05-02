@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.AmplifyUIBuilder.Model
     /// </summary>
     public partial class ValueMappings
     {
-        private Dictionary<string, FormInputBindingPropertiesValue> _bindingProperties = new Dictionary<string, FormInputBindingPropertiesValue>();
-        private List<ValueMapping> _values = new List<ValueMapping>();
+        private Dictionary<string, FormInputBindingPropertiesValue> _bindingProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, FormInputBindingPropertiesValue>() : null;
+        private List<ValueMapping> _values = AWSConfigs.InitializeCollections ? new List<ValueMapping>() : null;
 
         /// <summary>
         /// Gets and sets the property BindingProperties. 
@@ -51,7 +52,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if BindingProperties property is set
         internal bool IsSetBindingProperties()
         {
-            return this._bindingProperties != null && this._bindingProperties.Count > 0; 
+            return this._bindingProperties != null && (this._bindingProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if Values property is set
         internal bool IsSetValues()
         {
-            return this._values != null && this._values.Count > 0; 
+            return this._values != null && (this._values.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

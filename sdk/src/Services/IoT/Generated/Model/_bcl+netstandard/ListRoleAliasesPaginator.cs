@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the RoleAliases
         /// </summary>
         public IPaginatedEnumerable<string> RoleAliases => 
-            new PaginatedResultKeyResponse<ListRoleAliasesResponse, string>(this, (i) => i.RoleAliases);
+            new PaginatedResultKeyResponse<ListRoleAliasesResponse, string>(this, (i) => i.RoleAliases ?? new List<string>());
 
         internal ListRoleAliasesPaginator(IAmazonIoT client, ListRoleAliasesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.IoT.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListRoleAliasesResponse> IPaginator<ListRoleAliasesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListRoleAliasesResponse> IPaginator<ListRoleAliasesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

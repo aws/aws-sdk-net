@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -87,6 +88,12 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
                     unmarshalledObject.ProviderType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PublishDeploymentStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PublishDeploymentStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RepositoryLinkId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -115,6 +122,12 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SyncType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TriggerResourceUpdateOn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TriggerResourceUpdateOn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

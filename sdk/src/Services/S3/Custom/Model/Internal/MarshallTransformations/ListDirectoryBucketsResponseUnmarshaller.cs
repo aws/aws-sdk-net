@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net;
 
@@ -53,6 +54,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Buckets/Bucket", targetDepth))
                     {
+                        if (response.Buckets == null)
+                        {
+                            response.Buckets = new List<S3Bucket>();
+                        }
                         var unmarshaller = BucketUnmarshaller.Instance;
                         response.Buckets.Add(unmarshaller.Unmarshall(context));
                         continue;

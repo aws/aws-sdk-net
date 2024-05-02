@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -67,6 +68,12 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = GridConfigurationUnmarshaller.Instance;
                     unmarshalledObject.Grid = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("pip", targetDepth))
+                {
+                    var unmarshaller = PipConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.Pip = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

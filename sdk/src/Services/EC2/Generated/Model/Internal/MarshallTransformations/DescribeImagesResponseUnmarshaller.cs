@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -58,6 +59,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("imagesSet/item", targetDepth))
                     {
                         var unmarshaller = ImageUnmarshaller.Instance;
+                        if (response.Images == null)
+                        {
+                            response.Images = new List<Image>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Images.Add(item);
                         continue;

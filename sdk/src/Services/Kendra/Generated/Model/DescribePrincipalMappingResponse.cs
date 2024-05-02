@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Kendra.Model
     {
         private string _dataSourceId;
         private string _groupId;
-        private List<GroupOrderingIdSummary> _groupOrderingIdSummaries = new List<GroupOrderingIdSummary>();
+        private List<GroupOrderingIdSummary> _groupOrderingIdSummaries = AWSConfigs.InitializeCollections ? new List<GroupOrderingIdSummary>() : null;
         private string _indexId;
 
         /// <summary>
@@ -117,7 +118,7 @@ namespace Amazon.Kendra.Model
         // Check to see if GroupOrderingIdSummaries property is set
         internal bool IsSetGroupOrderingIdSummaries()
         {
-            return this._groupOrderingIdSummaries != null && this._groupOrderingIdSummaries.Count > 0; 
+            return this._groupOrderingIdSummaries != null && (this._groupOrderingIdSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

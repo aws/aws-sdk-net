@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECR.Model
 {
     /// <summary>
@@ -44,7 +45,7 @@ namespace Amazon.ECR.Model
     public partial class DescribeImagesRequest : AmazonECRRequest
     {
         private DescribeImagesFilter _filter;
-        private List<ImageIdentifier> _imageIds = new List<ImageIdentifier>();
+        private List<ImageIdentifier> _imageIds = AWSConfigs.InitializeCollections ? new List<ImageIdentifier>() : null;
         private int? _maxResults;
         private string _nextToken;
         private string _registryId;
@@ -84,7 +85,7 @@ namespace Amazon.ECR.Model
         // Check to see if ImageIds property is set
         internal bool IsSetImageIds()
         {
-            return this._imageIds != null && this._imageIds.Count > 0; 
+            return this._imageIds != null && (this._imageIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

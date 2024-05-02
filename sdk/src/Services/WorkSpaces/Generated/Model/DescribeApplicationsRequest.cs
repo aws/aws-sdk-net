@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
@@ -35,12 +36,12 @@ namespace Amazon.WorkSpaces.Model
     /// </summary>
     public partial class DescribeApplicationsRequest : AmazonWorkSpacesRequest
     {
-        private List<string> _applicationIds = new List<string>();
-        private List<string> _computeTypeNames = new List<string>();
+        private List<string> _applicationIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _computeTypeNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private WorkSpaceApplicationLicenseType _licenseType;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _operatingSystemNames = new List<string>();
+        private List<string> _operatingSystemNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _owner;
 
         /// <summary>
@@ -59,7 +60,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if ApplicationIds property is set
         internal bool IsSetApplicationIds()
         {
-            return this._applicationIds != null && this._applicationIds.Count > 0; 
+            return this._applicationIds != null && (this._applicationIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -77,7 +78,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if ComputeTypeNames property is set
         internal bool IsSetComputeTypeNames()
         {
-            return this._computeTypeNames != null && this._computeTypeNames.Count > 0; 
+            return this._computeTypeNames != null && (this._computeTypeNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -152,7 +153,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if OperatingSystemNames property is set
         internal bool IsSetOperatingSystemNames()
         {
-            return this._operatingSystemNames != null && this._operatingSystemNames.Count > 0; 
+            return this._operatingSystemNames != null && (this._operatingSystemNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

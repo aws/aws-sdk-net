@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
@@ -35,8 +36,8 @@ namespace Amazon.CloudFormation.Model
     /// </summary>
     public partial class ResourceIdentifierSummary
     {
-        private List<string> _logicalResourceIds = new List<string>();
-        private List<string> _resourceIdentifiers = new List<string>();
+        private List<string> _logicalResourceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _resourceIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _resourceType;
 
         /// <summary>
@@ -56,7 +57,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if LogicalResourceIds property is set
         internal bool IsSetLogicalResourceIds()
         {
-            return this._logicalResourceIds != null && this._logicalResourceIds.Count > 0; 
+            return this._logicalResourceIds != null && (this._logicalResourceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -76,7 +77,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if ResourceIdentifiers property is set
         internal bool IsSetResourceIdentifiers()
         {
-            return this._resourceIdentifiers != null && this._resourceIdentifiers.Count > 0; 
+            return this._resourceIdentifiers != null && (this._resourceIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

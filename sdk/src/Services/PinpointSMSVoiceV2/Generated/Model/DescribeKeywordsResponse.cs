@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// </summary>
     public partial class DescribeKeywordsResponse : AmazonWebServiceResponse
     {
-        private List<KeywordInformation> _keywords = new List<KeywordInformation>();
+        private List<KeywordInformation> _keywords = AWSConfigs.InitializeCollections ? new List<KeywordInformation>() : null;
         private string _nextToken;
         private string _originationIdentity;
         private string _originationIdentityArn;
@@ -53,7 +54,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if Keywords property is set
         internal bool IsSetKeywords()
         {
-            return this._keywords != null && this._keywords.Count > 0; 
+            return this._keywords != null && (this._keywords.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

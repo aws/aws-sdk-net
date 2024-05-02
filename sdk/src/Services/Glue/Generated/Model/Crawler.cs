@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class Crawler
     {
-        private List<string> _classifiers = new List<string>();
+        private List<string> _classifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _configuration;
         private long? _crawlElapsedTime;
         private string _crawlerSecurityConfiguration;
@@ -72,7 +73,7 @@ namespace Amazon.Glue.Model
         // Check to see if Classifiers property is set
         internal bool IsSetClassifiers()
         {
-            return this._classifiers != null && this._classifiers.Count > 0; 
+            return this._classifiers != null && (this._classifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

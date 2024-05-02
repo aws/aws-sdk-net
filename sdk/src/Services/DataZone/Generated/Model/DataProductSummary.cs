@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
@@ -35,10 +36,10 @@ namespace Amazon.DataZone.Model
     {
         private DateTime? _createdAt;
         private string _createdBy;
-        private List<DataProductItem> _dataProductItems = new List<DataProductItem>();
+        private List<DataProductItem> _dataProductItems = AWSConfigs.InitializeCollections ? new List<DataProductItem>() : null;
         private string _description;
         private string _domainId;
-        private List<string> _glossaryTerms = new List<string>();
+        private List<string> _glossaryTerms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _id;
         private string _name;
         private string _owningProjectId;
@@ -88,7 +89,7 @@ namespace Amazon.DataZone.Model
         // Check to see if DataProductItems property is set
         internal bool IsSetDataProductItems()
         {
-            return this._dataProductItems != null && this._dataProductItems.Count > 0; 
+            return this._dataProductItems != null && (this._dataProductItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -136,7 +137,7 @@ namespace Amazon.DataZone.Model
         // Check to see if GlossaryTerms property is set
         internal bool IsSetGlossaryTerms()
         {
-            return this._glossaryTerms != null && this._glossaryTerms.Count > 0; 
+            return this._glossaryTerms != null && (this._glossaryTerms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

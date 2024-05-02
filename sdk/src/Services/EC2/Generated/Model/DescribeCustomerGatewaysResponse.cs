@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeCustomerGatewaysResponse : AmazonWebServiceResponse
     {
-        private List<CustomerGateway> _customerGateways = new List<CustomerGateway>();
+        private List<CustomerGateway> _customerGateways = AWSConfigs.InitializeCollections ? new List<CustomerGateway>() : null;
 
         /// <summary>
         /// Gets and sets the property CustomerGateways. 
@@ -50,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if CustomerGateways property is set
         internal bool IsSetCustomerGateways()
         {
-            return this._customerGateways != null && this._customerGateways.Count > 0; 
+            return this._customerGateways != null && (this._customerGateways.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -84,6 +85,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Listeners/member", targetDepth))
                     {
                         var unmarshaller = ListenerUnmarshaller.Instance;
+                        if (response.Listeners == null)
+                        {
+                            response.Listeners = new List<Listener>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Listeners.Add(item);
                         continue;

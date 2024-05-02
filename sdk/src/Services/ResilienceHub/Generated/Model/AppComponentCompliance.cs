@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ResilienceHub.Model
     public partial class AppComponentCompliance
     {
         private string _appComponentName;
-        private Dictionary<string, DisruptionCompliance> _compliance = new Dictionary<string, DisruptionCompliance>();
+        private Dictionary<string, DisruptionCompliance> _compliance = AWSConfigs.InitializeCollections ? new Dictionary<string, DisruptionCompliance>() : null;
         private Cost _cost;
         private string _message;
         private ResiliencyScore _resiliencyScore;
@@ -73,7 +74,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if Compliance property is set
         internal bool IsSetCompliance()
         {
-            return this._compliance != null && this._compliance.Count > 0; 
+            return this._compliance != null && (this._compliance.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

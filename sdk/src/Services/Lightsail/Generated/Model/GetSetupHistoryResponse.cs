@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Lightsail.Model
     public partial class GetSetupHistoryResponse : AmazonWebServiceResponse
     {
         private string _nextPageToken;
-        private List<SetupHistory> _setupHistory = new List<SetupHistory>();
+        private List<SetupHistory> _setupHistory = AWSConfigs.InitializeCollections ? new List<SetupHistory>() : null;
 
         /// <summary>
         /// Gets and sets the property NextPageToken. 
@@ -79,7 +80,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if SetupHistory property is set
         internal bool IsSetSetupHistory()
         {
-            return this._setupHistory != null && this._setupHistory.Count > 0; 
+            return this._setupHistory != null && (this._setupHistory.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

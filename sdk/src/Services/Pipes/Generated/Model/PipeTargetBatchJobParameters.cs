@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Pipes.Model
 {
     /// <summary>
@@ -35,10 +36,10 @@ namespace Amazon.Pipes.Model
     {
         private BatchArrayProperties _arrayProperties;
         private BatchContainerOverrides _containerOverrides;
-        private List<BatchJobDependency> _dependsOn = new List<BatchJobDependency>();
+        private List<BatchJobDependency> _dependsOn = AWSConfigs.InitializeCollections ? new List<BatchJobDependency>() : null;
         private string _jobDefinition;
         private string _jobName;
-        private Dictionary<string, string> _parameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private BatchRetryStrategy _retryStrategy;
 
         /// <summary>
@@ -100,7 +101,7 @@ namespace Amazon.Pipes.Model
         // Check to see if DependsOn property is set
         internal bool IsSetDependsOn()
         {
-            return this._dependsOn != null && this._dependsOn.Count > 0; 
+            return this._dependsOn != null && (this._dependsOn.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -163,7 +164,7 @@ namespace Amazon.Pipes.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ResourceGroupsTaggingAPI.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// Enumerable containing all of the TagValues
         /// </summary>
         public IPaginatedEnumerable<string> TagValues => 
-            new PaginatedResultKeyResponse<GetTagValuesResponse, string>(this, (i) => i.TagValues);
+            new PaginatedResultKeyResponse<GetTagValuesResponse, string>(this, (i) => i.TagValues ?? new List<string>());
 
         internal GetTagValuesPaginator(IAmazonResourceGroupsTaggingAPI client, GetTagValuesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<GetTagValuesResponse> IPaginator<GetTagValuesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<GetTagValuesResponse> IPaginator<GetTagValuesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

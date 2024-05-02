@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelBuildingService.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.LexModelBuildingService.Model
     /// </summary>
     public partial class MigrationAlert
     {
-        private List<string> _details = new List<string>();
+        private List<string> _details = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _message;
-        private List<string> _referenceurLs = new List<string>();
+        private List<string> _referenceurLs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private MigrationAlertType _type;
 
         /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.LexModelBuildingService.Model
         // Check to see if Details property is set
         internal bool IsSetDetails()
         {
-            return this._details != null && this._details.Count > 0; 
+            return this._details != null && (this._details.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -90,7 +91,7 @@ namespace Amazon.LexModelBuildingService.Model
         // Check to see if ReferenceURLs property is set
         internal bool IsSetReferenceURLs()
         {
-            return this._referenceurLs != null && this._referenceurLs.Count > 0; 
+            return this._referenceurLs != null && (this._referenceurLs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

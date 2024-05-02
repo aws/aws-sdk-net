@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -42,10 +43,10 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class ModifyClusterIamRolesRequest : AmazonRedshiftRequest
     {
-        private List<string> _addIamRoles = new List<string>();
+        private List<string> _addIamRoles = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _clusterIdentifier;
         private string _defaultIamRoleArn;
-        private List<string> _removeIamRoles = new List<string>();
+        private List<string> _removeIamRoles = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AddIamRoles. 
@@ -63,7 +64,7 @@ namespace Amazon.Redshift.Model
         // Check to see if AddIamRoles property is set
         internal bool IsSetAddIamRoles()
         {
-            return this._addIamRoles != null && this._addIamRoles.Count > 0; 
+            return this._addIamRoles != null && (this._addIamRoles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -121,7 +122,7 @@ namespace Amazon.Redshift.Model
         // Check to see if RemoveIamRoles property is set
         internal bool IsSetRemoveIamRoles()
         {
-            return this._removeIamRoles != null && this._removeIamRoles.Count > 0; 
+            return this._removeIamRoles != null && (this._removeIamRoles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

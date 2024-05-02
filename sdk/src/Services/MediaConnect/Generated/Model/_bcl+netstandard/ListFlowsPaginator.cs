@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.MediaConnect.Model
         /// Enumerable containing all of the Flows
         /// </summary>
         public IPaginatedEnumerable<ListedFlow> Flows => 
-            new PaginatedResultKeyResponse<ListFlowsResponse, ListedFlow>(this, (i) => i.Flows);
+            new PaginatedResultKeyResponse<ListFlowsResponse, ListedFlow>(this, (i) => i.Flows ?? new List<ListedFlow>());
 
         internal ListFlowsPaginator(IAmazonMediaConnect client, ListFlowsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.MediaConnect.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListFlowsResponse> IPaginator<ListFlowsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListFlowsResponse> IPaginator<ListFlowsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

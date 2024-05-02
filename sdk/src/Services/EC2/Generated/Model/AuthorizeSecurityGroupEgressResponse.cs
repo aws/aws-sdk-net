@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EC2.Model
     public partial class AuthorizeSecurityGroupEgressResponse : AmazonWebServiceResponse
     {
         private bool? _return;
-        private List<SecurityGroupRule> _securityGroupRules = new List<SecurityGroupRule>();
+        private List<SecurityGroupRule> _securityGroupRules = AWSConfigs.InitializeCollections ? new List<SecurityGroupRule>() : null;
 
         /// <summary>
         /// Gets and sets the property Return. 
@@ -69,7 +70,7 @@ namespace Amazon.EC2.Model
         // Check to see if SecurityGroupRules property is set
         internal bool IsSetSecurityGroupRules()
         {
-            return this._securityGroupRules != null && this._securityGroupRules.Count > 0; 
+            return this._securityGroupRules != null && (this._securityGroupRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

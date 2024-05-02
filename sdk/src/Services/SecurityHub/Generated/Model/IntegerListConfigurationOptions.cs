@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class IntegerListConfigurationOptions
     {
-        private List<int> _defaultValue = new List<int>();
+        private List<int> _defaultValue = AWSConfigs.InitializeCollections ? new List<int>() : null;
         private int? _max;
         private int? _maxItems;
         private int? _min;
@@ -54,7 +55,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if DefaultValue property is set
         internal bool IsSetDefaultValue()
         {
-            return this._defaultValue != null && this._defaultValue.Count > 0; 
+            return this._defaultValue != null && (this._defaultValue.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

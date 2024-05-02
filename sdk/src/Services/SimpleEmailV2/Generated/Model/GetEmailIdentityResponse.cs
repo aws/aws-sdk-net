@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
@@ -38,8 +39,8 @@ namespace Amazon.SimpleEmailV2.Model
         private bool? _feedbackForwardingStatus;
         private IdentityType _identityType;
         private MailFromAttributes _mailFromAttributes;
-        private Dictionary<string, string> _policies = new Dictionary<string, string>();
-        private List<Tag> _tags = new List<Tag>();
+        private Dictionary<string, string> _policies = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private VerificationInfo _verificationInfo;
         private VerificationStatus _verificationStatus;
         private bool? _verifiedForSendingStatus;
@@ -162,7 +163,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if Policies property is set
         internal bool IsSetPolicies()
         {
-            return this._policies != null && this._policies.Count > 0; 
+            return this._policies != null && (this._policies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -181,7 +182,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

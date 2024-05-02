@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
@@ -33,13 +34,13 @@ namespace Amazon.GlobalAccelerator.Model
     /// </summary>
     public partial class ListCrossAccountResourceAccountsResponse : AmazonWebServiceResponse
     {
-        private List<string> _resourceOwnerAwsAccountIds = new List<string>();
+        private List<string> _resourceOwnerAwsAccountIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceOwnerAwsAccountIds. 
         /// <para>
         /// The account IDs of principals (resource owners) in a cross-account attachment who
-        /// can add endpoints (resources) listed in the same attachment.
+        /// can work with resources listed in the same attachment.
         /// </para>
         /// </summary>
         public List<string> ResourceOwnerAwsAccountIds
@@ -51,7 +52,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if ResourceOwnerAwsAccountIds property is set
         internal bool IsSetResourceOwnerAwsAccountIds()
         {
-            return this._resourceOwnerAwsAccountIds != null && this._resourceOwnerAwsAccountIds.Count > 0; 
+            return this._resourceOwnerAwsAccountIds != null && (this._resourceOwnerAwsAccountIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
@@ -37,8 +38,8 @@ namespace Amazon.Rekognition.Model
     {
         private StreamProcessorDataSharingPreference _dataSharingPreferenceForUpdate;
         private string _name;
-        private List<string> _parametersToDelete = new List<string>();
-        private List<RegionOfInterest> _regionsOfInterestForUpdate = new List<RegionOfInterest>();
+        private List<string> _parametersToDelete = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<RegionOfInterest> _regionsOfInterestForUpdate = AWSConfigs.InitializeCollections ? new List<RegionOfInterest>() : null;
         private StreamProcessorSettingsForUpdate _settingsForUpdate;
 
         /// <summary>
@@ -96,7 +97,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if ParametersToDelete property is set
         internal bool IsSetParametersToDelete()
         {
-            return this._parametersToDelete != null && this._parametersToDelete.Count > 0; 
+            return this._parametersToDelete != null && (this._parametersToDelete.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -116,7 +117,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if RegionsOfInterestForUpdate property is set
         internal bool IsSetRegionsOfInterestForUpdate()
         {
-            return this._regionsOfInterestForUpdate != null && this._regionsOfInterestForUpdate.Count > 0; 
+            return this._regionsOfInterestForUpdate != null && (this._regionsOfInterestForUpdate.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

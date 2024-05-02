@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListCompilationJobsResponse : AmazonWebServiceResponse
     {
-        private List<CompilationJobSummary> _compilationJobSummaries = new List<CompilationJobSummary>();
+        private List<CompilationJobSummary> _compilationJobSummaries = AWSConfigs.InitializeCollections ? new List<CompilationJobSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if CompilationJobSummaries property is set
         internal bool IsSetCompilationJobSummaries()
         {
-            return this._compilationJobSummaries != null && this._compilationJobSummaries.Count > 0; 
+            return this._compilationJobSummaries != null && (this._compilationJobSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

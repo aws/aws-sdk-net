@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lambda.Model
 {
     /// <summary>
@@ -37,10 +38,10 @@ namespace Amazon.Lambda.Model
     public partial class Cors
     {
         private bool? _allowCredentials;
-        private List<string> _allowHeaders = new List<string>();
-        private List<string> _allowMethods = new List<string>();
-        private List<string> _allowOrigins = new List<string>();
-        private List<string> _exposeHeaders = new List<string>();
+        private List<string> _allowHeaders = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _allowMethods = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _allowOrigins = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _exposeHeaders = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxAge;
 
         /// <summary>
@@ -79,7 +80,7 @@ namespace Amazon.Lambda.Model
         // Check to see if AllowHeaders property is set
         internal bool IsSetAllowHeaders()
         {
-            return this._allowHeaders != null && this._allowHeaders.Count > 0; 
+            return this._allowHeaders != null && (this._allowHeaders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -99,7 +100,7 @@ namespace Amazon.Lambda.Model
         // Check to see if AllowMethods property is set
         internal bool IsSetAllowMethods()
         {
-            return this._allowMethods != null && this._allowMethods.Count > 0; 
+            return this._allowMethods != null && (this._allowMethods.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -123,7 +124,7 @@ namespace Amazon.Lambda.Model
         // Check to see if AllowOrigins property is set
         internal bool IsSetAllowOrigins()
         {
-            return this._allowOrigins != null && this._allowOrigins.Count > 0; 
+            return this._allowOrigins != null && (this._allowOrigins.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -143,7 +144,7 @@ namespace Amazon.Lambda.Model
         // Check to see if ExposeHeaders property is set
         internal bool IsSetExposeHeaders()
         {
-            return this._exposeHeaders != null && this._exposeHeaders.Count > 0; 
+            return this._exposeHeaders != null && (this._exposeHeaders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

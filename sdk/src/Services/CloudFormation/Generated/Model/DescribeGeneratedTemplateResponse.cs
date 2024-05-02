@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.CloudFormation.Model
         private string _generatedTemplateName;
         private DateTime? _lastUpdatedTime;
         private TemplateProgress _progress;
-        private List<ResourceDetail> _resources = new List<ResourceDetail>();
+        private List<ResourceDetail> _resources = AWSConfigs.InitializeCollections ? new List<ResourceDetail>() : null;
         private string _stackId;
         private GeneratedTemplateStatus _status;
         private string _statusReason;
@@ -155,7 +156,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Resources property is set
         internal bool IsSetResources()
         {
-            return this._resources != null && this._resources.Count > 0; 
+            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

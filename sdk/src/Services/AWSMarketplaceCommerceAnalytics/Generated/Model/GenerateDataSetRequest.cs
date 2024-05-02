@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
 {
     /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
     /// </summary>
     public partial class GenerateDataSetRequest : AmazonAWSMarketplaceCommerceAnalyticsRequest
     {
-        private Dictionary<string, string> _customerDefinedValues = new Dictionary<string, string>();
+        private Dictionary<string, string> _customerDefinedValues = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DateTime? _dataSetPublicationDate;
         private DataSetType _dataSetType;
         private string _destinations3BucketName;
@@ -66,7 +67,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model
         // Check to see if CustomerDefinedValues property is set
         internal bool IsSetCustomerDefinedValues()
         {
-            return this._customerDefinedValues != null && this._customerDefinedValues.Count > 0; 
+            return this._customerDefinedValues != null && (this._customerDefinedValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

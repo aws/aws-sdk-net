@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -67,6 +68,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.EndOffsetMillis = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StartOffsetMillis", targetDepth))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.StartOffsetMillis = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

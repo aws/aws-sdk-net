@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class UserTurnInputSpecification
     {
-        private Dictionary<string, string> _requestAttributes = new Dictionary<string, string>();
+        private Dictionary<string, string> _requestAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private InputSessionStateSpecification _sessionState;
         private UtteranceInputSpecification _utteranceInput;
 
@@ -52,7 +53,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if RequestAttributes property is set
         internal bool IsSetRequestAttributes()
         {
-            return this._requestAttributes != null && this._requestAttributes.Count > 0; 
+            return this._requestAttributes != null && (this._requestAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

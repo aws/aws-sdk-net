@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IAMRolesAnywhere.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.IAMRolesAnywhere.Model
     public partial class SubjectDetail
     {
         private DateTime? _createdAt;
-        private List<CredentialSummary> _credentials = new List<CredentialSummary>();
+        private List<CredentialSummary> _credentials = AWSConfigs.InitializeCollections ? new List<CredentialSummary>() : null;
         private bool? _enabled;
-        private List<InstanceProperty> _instanceProperties = new List<InstanceProperty>();
+        private List<InstanceProperty> _instanceProperties = AWSConfigs.InitializeCollections ? new List<InstanceProperty>() : null;
         private DateTime? _lastSeenAt;
         private string _subjectArn;
         private string _subjectId;
@@ -77,7 +78,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         // Check to see if Credentials property is set
         internal bool IsSetCredentials()
         {
-            return this._credentials != null && this._credentials.Count > 0; 
+            return this._credentials != null && (this._credentials.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -113,7 +114,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         // Check to see if InstanceProperties property is set
         internal bool IsSetInstanceProperties()
         {
-            return this._instanceProperties != null && this._instanceProperties.Count > 0; 
+            return this._instanceProperties != null && (this._instanceProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

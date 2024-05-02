@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class DescribeInstanceAssociationsStatusResponse : AmazonWebServiceResponse
     {
-        private List<InstanceAssociationStatusInfo> _instanceAssociationStatusInfos = new List<InstanceAssociationStatusInfo>();
+        private List<InstanceAssociationStatusInfo> _instanceAssociationStatusInfos = AWSConfigs.InitializeCollections ? new List<InstanceAssociationStatusInfo>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if InstanceAssociationStatusInfos property is set
         internal bool IsSetInstanceAssociationStatusInfos()
         {
-            return this._instanceAssociationStatusInfos != null && this._instanceAssociationStatusInfos.Count > 0; 
+            return this._instanceAssociationStatusInfos != null && (this._instanceAssociationStatusInfos.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

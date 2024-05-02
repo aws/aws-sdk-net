@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkManager.Model
 {
     /// <summary>
@@ -36,10 +37,10 @@ namespace Amazon.NetworkManager.Model
         private long? _asn;
         private string _cidr;
         private string _destinationIdentifier;
-        private List<string> _edgeLocations = new List<string>();
-        private List<string> _insideCidrBlocks = new List<string>();
+        private List<string> _edgeLocations = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _insideCidrBlocks = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _segmentName;
-        private List<string> _sharedSegments = new List<string>();
+        private List<string> _sharedSegments = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Asn. 
@@ -112,7 +113,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if EdgeLocations property is set
         internal bool IsSetEdgeLocations()
         {
-            return this._edgeLocations != null && this._edgeLocations.Count > 0; 
+            return this._edgeLocations != null && (this._edgeLocations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -130,7 +131,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if InsideCidrBlocks property is set
         internal bool IsSetInsideCidrBlocks()
         {
-            return this._insideCidrBlocks != null && this._insideCidrBlocks.Count > 0; 
+            return this._insideCidrBlocks != null && (this._insideCidrBlocks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -167,7 +168,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if SharedSegments property is set
         internal bool IsSetSharedSegments()
         {
-            return this._sharedSegments != null && this._sharedSegments.Count > 0; 
+            return this._sharedSegments != null && (this._sharedSegments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

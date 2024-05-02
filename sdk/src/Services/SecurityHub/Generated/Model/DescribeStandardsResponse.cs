@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SecurityHub.Model
     public partial class DescribeStandardsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Standard> _standards = new List<Standard>();
+        private List<Standard> _standards = AWSConfigs.InitializeCollections ? new List<Standard>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +70,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Standards property is set
         internal bool IsSetStandards()
         {
-            return this._standards != null && this._standards.Count > 0; 
+            return this._standards != null && (this._standards.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

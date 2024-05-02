@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.APIGateway.Model
     /// </summary>
     public partial class GetApiKeysResponse : AmazonWebServiceResponse
     {
-        private List<ApiKey> _items = new List<ApiKey>();
+        private List<ApiKey> _items = AWSConfigs.InitializeCollections ? new List<ApiKey>() : null;
         private string _position;
-        private List<string> _warnings = new List<string>();
+        private List<string> _warnings = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Items. 
@@ -52,7 +53,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -86,7 +87,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if Warnings property is set
         internal bool IsSetWarnings()
         {
-            return this._warnings != null && this._warnings.Count > 0; 
+            return this._warnings != null && (this._warnings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

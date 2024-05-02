@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class ProcessingOutputConfig
     {
         private string _kmsKeyId;
-        private List<ProcessingOutput> _outputs = new List<ProcessingOutput>();
+        private List<ProcessingOutput> _outputs = AWSConfigs.InitializeCollections ? new List<ProcessingOutput>() : null;
 
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
@@ -74,7 +75,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Outputs property is set
         internal bool IsSetOutputs()
         {
-            return this._outputs != null && this._outputs.Count > 0; 
+            return this._outputs != null && (this._outputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

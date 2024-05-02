@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private ResourceDataSyncAwsOrganizationsSource _awsOrganizationsSource;
         private bool? _enableAllOpsDataSources;
         private bool? _includeFutureRegions;
-        private List<string> _sourceRegions = new List<string>();
+        private List<string> _sourceRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _sourceType;
 
         /// <summary>
@@ -64,9 +65,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// When you create a resource data sync, if you choose one of the Organizations options,
         /// then Systems Manager automatically enables all OpsData sources in the selected Amazon
         /// Web Services Regions for all Amazon Web Services accounts in your organization (or
-        /// in the selected organization units). For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resouce-data-sync-multiple-accounts-and-regions.html">About
-        /// multiple account and Region resource data syncs</a> in the <i>Amazon Web Services
-        /// Systems Manager User Guide</i>.
+        /// in the selected organization units). For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting
+        /// up Systems Manager Explorer to display data from multiple accounts and Regions</a>
+        /// in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         public bool? EnableAllOpsDataSources
@@ -116,7 +117,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if SourceRegions property is set
         internal bool IsSetSourceRegions()
         {
-            return this._sourceRegions != null && this._sourceRegions.Count > 0; 
+            return this._sourceRegions != null && (this._sourceRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DocDB.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.DocDB.Model
         private string _engineVersion;
         private string _globalClusterArn;
         private string _globalClusterIdentifier;
-        private List<GlobalClusterMember> _globalClusterMembers = new List<GlobalClusterMember>();
+        private List<GlobalClusterMember> _globalClusterMembers = AWSConfigs.InitializeCollections ? new List<GlobalClusterMember>() : null;
         private string _globalClusterResourceId;
         private string _status;
         private bool? _storageEncrypted;
@@ -170,7 +171,7 @@ namespace Amazon.DocDB.Model
         // Check to see if GlobalClusterMembers property is set
         internal bool IsSetGlobalClusterMembers()
         {
-            return this._globalClusterMembers != null && this._globalClusterMembers.Count > 0; 
+            return this._globalClusterMembers != null && (this._globalClusterMembers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

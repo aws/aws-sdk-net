@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECS.Model
 {
     /// <summary>
@@ -37,13 +38,9 @@ namespace Amazon.ECS.Model
     /// 
     ///  <note> 
     /// <para>
-    /// Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon
-    /// Elastic Inference (EI), and will help current customers migrate their workloads to
-    /// options that offer better price and performance. After April 15, 2023, new customers
-    /// will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker,
-    /// Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once
-    /// during the past 30-day period are considered current customers and will be able to
-    /// continue using the service. 
+    /// On March 21, 2024, a change was made to resolve the task definition revision before
+    /// authorization. When a task definition revision is not specified, authorization will
+    /// occur using the latest revision of a task definition.
     /// </para>
     ///  </note> 
     /// <para>
@@ -151,12 +148,23 @@ namespace Amazon.ECS.Model
     /// <para>
     /// When the service scheduler launches new tasks, it determines task placement. For information
     /// about task placement and task placement strategies, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement.html">Amazon
-    /// ECS task placement</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// ECS task placement</a> in the <i>Amazon Elastic Container Service Developer Guide</i>
+    /// 
+    /// </para>
+    ///  
+    /// <para>
+    /// Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon
+    /// Elastic Inference (EI), and will help current customers migrate their workloads to
+    /// options that offer better price and performance. After April 15, 2023, new customers
+    /// will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker,
+    /// Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once
+    /// during the past 30-day period are considered current customers and will be able to
+    /// continue using the service. 
     /// </para>
     /// </summary>
     public partial class CreateServiceRequest : AmazonECSRequest
     {
-        private List<CapacityProviderStrategyItem> _capacityProviderStrategy = new List<CapacityProviderStrategyItem>();
+        private List<CapacityProviderStrategyItem> _capacityProviderStrategy = AWSConfigs.InitializeCollections ? new List<CapacityProviderStrategyItem>() : null;
         private string _clientToken;
         private string _cluster;
         private DeploymentConfiguration _deploymentConfiguration;
@@ -166,20 +174,20 @@ namespace Amazon.ECS.Model
         private bool? _enableExecuteCommand;
         private int? _healthCheckGracePeriodSeconds;
         private LaunchType _launchType;
-        private List<LoadBalancer> _loadBalancers = new List<LoadBalancer>();
+        private List<LoadBalancer> _loadBalancers = AWSConfigs.InitializeCollections ? new List<LoadBalancer>() : null;
         private NetworkConfiguration _networkConfiguration;
-        private List<PlacementConstraint> _placementConstraints = new List<PlacementConstraint>();
-        private List<PlacementStrategy> _placementStrategy = new List<PlacementStrategy>();
+        private List<PlacementConstraint> _placementConstraints = AWSConfigs.InitializeCollections ? new List<PlacementConstraint>() : null;
+        private List<PlacementStrategy> _placementStrategy = AWSConfigs.InitializeCollections ? new List<PlacementStrategy>() : null;
         private string _platformVersion;
         private PropagateTags _propagateTags;
         private string _role;
         private SchedulingStrategy _schedulingStrategy;
         private ServiceConnectConfiguration _serviceConnectConfiguration;
         private string _serviceName;
-        private List<ServiceRegistry> _serviceRegistries = new List<ServiceRegistry>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<ServiceRegistry> _serviceRegistries = AWSConfigs.InitializeCollections ? new List<ServiceRegistry>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _taskDefinition;
-        private List<ServiceVolumeConfiguration> _volumeConfigurations = new List<ServiceVolumeConfiguration>();
+        private List<ServiceVolumeConfiguration> _volumeConfigurations = AWSConfigs.InitializeCollections ? new List<ServiceVolumeConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property CapacityProviderStrategy. 
@@ -206,7 +214,7 @@ namespace Amazon.ECS.Model
         // Check to see if CapacityProviderStrategy property is set
         internal bool IsSetCapacityProviderStrategy()
         {
-            return this._capacityProviderStrategy != null && this._capacityProviderStrategy.Count > 0; 
+            return this._capacityProviderStrategy != null && (this._capacityProviderStrategy.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -406,7 +414,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// Fargate Spot infrastructure is available for use but a capacity provider strategy
         /// must be used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/fargate-capacity-providers.html">Fargate
-        /// capacity providers</a> in the <i>Amazon ECS User Guide for Fargate</i>.
+        /// capacity providers</a> in the <i>Amazon ECS Developer Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -505,7 +513,7 @@ namespace Amazon.ECS.Model
         // Check to see if LoadBalancers property is set
         internal bool IsSetLoadBalancers()
         {
-            return this._loadBalancers != null && this._loadBalancers.Count > 0; 
+            return this._loadBalancers != null && (this._loadBalancers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -546,7 +554,7 @@ namespace Amazon.ECS.Model
         // Check to see if PlacementConstraints property is set
         internal bool IsSetPlacementConstraints()
         {
-            return this._placementConstraints != null && this._placementConstraints.Count > 0; 
+            return this._placementConstraints != null && (this._placementConstraints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -565,7 +573,7 @@ namespace Amazon.ECS.Model
         // Check to see if PlacementStrategy property is set
         internal bool IsSetPlacementStrategy()
         {
-            return this._placementStrategy != null && this._placementStrategy.Count > 0; 
+            return this._placementStrategy != null && (this._placementStrategy.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -596,6 +604,12 @@ namespace Amazon.ECS.Model
         /// value is specified, the tags aren't propagated. Tags can only be propagated to the
         /// task during task creation. To add tags to a task after task creation, use the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a>
         /// API action.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must set this to a value other than <c>NONE</c> when you use Cost Explorer. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/usage-reports.html">Amazon
+        /// ECS usage reports</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -773,7 +787,7 @@ namespace Amazon.ECS.Model
         // Check to see if ServiceRegistries property is set
         internal bool IsSetServiceRegistries()
         {
-            return this._serviceRegistries != null && this._serviceRegistries.Count > 0; 
+            return this._serviceRegistries != null && (this._serviceRegistries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -834,7 +848,7 @@ namespace Amazon.ECS.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -884,7 +898,7 @@ namespace Amazon.ECS.Model
         // Check to see if VolumeConfigurations property is set
         internal bool IsSetVolumeConfigurations()
         {
-            return this._volumeConfigurations != null && this._volumeConfigurations.Count > 0; 
+            return this._volumeConfigurations != null && (this._volumeConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

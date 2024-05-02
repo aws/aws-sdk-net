@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the ViewsSummaryList
         /// </summary>
         public IPaginatedEnumerable<ViewSummary> ViewsSummaryList => 
-            new PaginatedResultKeyResponse<ListViewsResponse, ViewSummary>(this, (i) => i.ViewsSummaryList);
+            new PaginatedResultKeyResponse<ListViewsResponse, ViewSummary>(this, (i) => i.ViewsSummaryList ?? new List<ViewSummary>());
 
         internal ListViewsPaginator(IAmazonConnect client, ListViewsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Connect.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListViewsResponse> IPaginator<ListViewsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListViewsResponse> IPaginator<ListViewsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

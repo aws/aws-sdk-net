@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FMS.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.FMS.Model
     public partial class RegionScope
     {
         private bool? _allRegionsEnabled;
-        private List<string> _regions = new List<string>();
+        private List<string> _regions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AllRegionsEnabled. 
@@ -73,7 +74,7 @@ namespace Amazon.FMS.Model
         // Check to see if Regions property is set
         internal bool IsSetRegions()
         {
-            return this._regions != null && this._regions.Count > 0; 
+            return this._regions != null && (this._regions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

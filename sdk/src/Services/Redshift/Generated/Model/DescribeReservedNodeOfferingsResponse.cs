@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Redshift.Model
     public partial class DescribeReservedNodeOfferingsResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<ReservedNodeOffering> _reservedNodeOfferings = new List<ReservedNodeOffering>();
+        private List<ReservedNodeOffering> _reservedNodeOfferings = AWSConfigs.InitializeCollections ? new List<ReservedNodeOffering>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -74,7 +75,7 @@ namespace Amazon.Redshift.Model
         // Check to see if ReservedNodeOfferings property is set
         internal bool IsSetReservedNodeOfferings()
         {
-            return this._reservedNodeOfferings != null && this._reservedNodeOfferings.Count > 0; 
+            return this._reservedNodeOfferings != null && (this._reservedNodeOfferings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

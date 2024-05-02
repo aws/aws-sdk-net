@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.MediaConvert.Model
     public partial class CmafAdditionalManifest
     {
         private string _manifestNameModifier;
-        private List<string> _selectedOutputs = new List<string>();
+        private List<string> _selectedOutputs = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ManifestNameModifier. Specify a name modifier that the
@@ -74,7 +75,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if SelectedOutputs property is set
         internal bool IsSetSelectedOutputs()
         {
-            return this._selectedOutputs != null && this._selectedOutputs.Count > 0; 
+            return this._selectedOutputs != null && (this._selectedOutputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

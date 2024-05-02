@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Private5G.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Private5G.Model
         /// Enumerable containing all of the Orders
         /// </summary>
         public IPaginatedEnumerable<Order> Orders => 
-            new PaginatedResultKeyResponse<ListOrdersResponse, Order>(this, (i) => i.Orders);
+            new PaginatedResultKeyResponse<ListOrdersResponse, Order>(this, (i) => i.Orders ?? new List<Order>());
 
         internal ListOrdersPaginator(IAmazonPrivate5G client, ListOrdersRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Private5G.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListOrdersResponse> IPaginator<ListOrdersResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListOrdersResponse> IPaginator<ListOrdersResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

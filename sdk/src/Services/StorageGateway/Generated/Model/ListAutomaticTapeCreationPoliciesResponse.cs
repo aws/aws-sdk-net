@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class ListAutomaticTapeCreationPoliciesResponse : AmazonWebServiceResponse
     {
-        private List<AutomaticTapeCreationPolicyInfo> _automaticTapeCreationPolicyInfos = new List<AutomaticTapeCreationPolicyInfo>();
+        private List<AutomaticTapeCreationPolicyInfo> _automaticTapeCreationPolicyInfos = AWSConfigs.InitializeCollections ? new List<AutomaticTapeCreationPolicyInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property AutomaticTapeCreationPolicyInfos. 
@@ -51,7 +52,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if AutomaticTapeCreationPolicyInfos property is set
         internal bool IsSetAutomaticTapeCreationPolicyInfos()
         {
-            return this._automaticTapeCreationPolicyInfos != null && this._automaticTapeCreationPolicyInfos.Count > 0; 
+            return this._automaticTapeCreationPolicyInfos != null && (this._automaticTapeCreationPolicyInfos.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

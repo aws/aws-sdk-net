@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeGuruSecurity.Model
 {
     /// <summary>
@@ -36,8 +37,7 @@ namespace Amazon.CodeGuruSecurity.Model
     #endif
     public partial class ValidationException : AmazonCodeGuruSecurityException
     {
-        private string _errorCode;
-        private List<ValidationExceptionField> _fieldList = new List<ValidationExceptionField>();
+        private List<ValidationExceptionField> _fieldList = AWSConfigs.InitializeCollections ? new List<ValidationExceptionField>() : null;
         private ValidationExceptionReason _reason;
 
         /// <summary>
@@ -125,25 +125,6 @@ namespace Amazon.CodeGuruSecurity.Model
 #endif
 
         /// <summary>
-        /// Gets and sets the property ErrorCode. 
-        /// <para>
-        /// The identifier for the error.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string ErrorCode
-        {
-            get { return this._errorCode; }
-            set { this._errorCode = value; }
-        }
-
-        // Check to see if ErrorCode property is set
-        internal bool IsSetErrorCode()
-        {
-            return this._errorCode != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property FieldList. 
         /// <para>
         /// The field that caused the error, if applicable.
@@ -158,7 +139,7 @@ namespace Amazon.CodeGuruSecurity.Model
         // Check to see if FieldList property is set
         internal bool IsSetFieldList()
         {
-            return this._fieldList != null && this._fieldList.Count > 0; 
+            return this._fieldList != null && (this._fieldList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

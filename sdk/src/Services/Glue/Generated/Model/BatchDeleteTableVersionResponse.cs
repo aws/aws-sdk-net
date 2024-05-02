@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class BatchDeleteTableVersionResponse : AmazonWebServiceResponse
     {
-        private List<TableVersionError> _errors = new List<TableVersionError>();
+        private List<TableVersionError> _errors = AWSConfigs.InitializeCollections ? new List<TableVersionError>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. 
@@ -50,7 +51,7 @@ namespace Amazon.Glue.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

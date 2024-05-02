@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SQS.Model
 {
     /// <summary>
@@ -73,8 +74,8 @@ namespace Amazon.SQS.Model
     /// </summary>
     public partial class AddPermissionRequest : AmazonSQSRequest
     {
-        private List<string> _actions = new List<string>();
-        private List<string> _awsAccountIds = new List<string>();
+        private List<string> _actions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _awsAccountIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _label;
         private string _queueUrl;
 
@@ -127,7 +128,7 @@ namespace Amazon.SQS.Model
         // Check to see if Actions property is set
         internal bool IsSetActions()
         {
-            return this._actions != null && this._actions.Count > 0; 
+            return this._actions != null && (this._actions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -149,7 +150,7 @@ namespace Amazon.SQS.Model
         // Check to see if AWSAccountIds property is set
         internal bool IsSetAWSAccountIds()
         {
-            return this._awsAccountIds != null && this._awsAccountIds.Count > 0; 
+            return this._awsAccountIds != null && (this._awsAccountIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.CloudTrail.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.CloudTrail
 {
     /// <summary>
@@ -833,6 +834,9 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterCombinationException">
         /// This exception is thrown when the combination of parameters provided is not valid.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
+        /// The request includes a parameter that is not valid.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidS3BucketNameException">
         /// This exception is thrown when the provided S3 bucket name is not valid.
         /// </exception>
@@ -993,6 +997,9 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterCombinationException">
         /// This exception is thrown when the combination of parameters provided is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
+        /// The request includes a parameter that is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidS3BucketNameException">
         /// This exception is thrown when the provided S3 bucket name is not valid.
@@ -1823,6 +1830,25 @@ namespace Amazon.CloudTrail
         /// </summary>
         /// 
         /// <returns>The response from the DescribeTrails service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.CloudTrailARNInvalidException">
+        /// This exception is thrown when an operation is called with an ARN that is not valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following is the format of a trail ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of an event data store ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a channel ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</c>
+        /// 
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
         /// This exception is thrown when the provided trail name is not valid. Trail names must
         /// meet the following requirements:
@@ -1872,6 +1898,25 @@ namespace Amazon.CloudTrail
         /// <param name="request">Container for the necessary parameters to execute the DescribeTrails service method.</param>
         /// 
         /// <returns>The response from the DescribeTrails service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.CloudTrailARNInvalidException">
+        /// This exception is thrown when an operation is called with an ARN that is not valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following is the format of a trail ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of an event data store ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a channel ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</c>
+        /// 
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
         /// This exception is thrown when the provided trail name is not valid. Trail names must
         /// meet the following requirements:
@@ -1923,6 +1968,25 @@ namespace Amazon.CloudTrail
         /// </param>
         /// 
         /// <returns>The response from the DescribeTrails service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.CloudTrailARNInvalidException">
+        /// This exception is thrown when an operation is called with an ARN that is not valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following is the format of a trail ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of an event data store ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a channel ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</c>
+        /// 
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
         /// This exception is thrown when the provided trail name is not valid. Trail names must
         /// meet the following requirements:
@@ -1976,6 +2040,25 @@ namespace Amazon.CloudTrail
         /// </param>
         /// 
         /// <returns>The response from the DescribeTrails service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.CloudTrailARNInvalidException">
+        /// This exception is thrown when an operation is called with an ARN that is not valid.
+        /// 
+        ///  
+        /// <para>
+        /// The following is the format of a trail ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of an event data store ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// The following is the format of a channel ARN: <c>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</c>
+        /// 
+        /// </para>
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
         /// This exception is thrown when the provided trail name is not valid. Trail names must
         /// meet the following requirements:
@@ -3552,6 +3635,9 @@ namespace Amazon.CloudTrail
         /// A token that is not valid, or a token that was previously used in a request with different
         /// parameters. This exception is thrown if the token is not valid.
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
+        /// The request includes a parameter that is not valid.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.
         /// </exception>
@@ -3575,6 +3661,9 @@ namespace Amazon.CloudTrail
         /// <exception cref="Amazon.CloudTrail.Model.InvalidNextTokenException">
         /// A token that is not valid, or a token that was previously used in a request with different
         /// parameters. This exception is thrown if the token is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
+        /// The request includes a parameter that is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
         /// This exception is thrown when the requested operation is not permitted.

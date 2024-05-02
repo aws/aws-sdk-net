@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MQ.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MQ.Model
     /// </summary>
     public partial class DescribeBrokerInstanceOptionsResponse : AmazonWebServiceResponse
     {
-        private List<BrokerInstanceOption> _brokerInstanceOptions = new List<BrokerInstanceOption>();
+        private List<BrokerInstanceOption> _brokerInstanceOptions = AWSConfigs.InitializeCollections ? new List<BrokerInstanceOption>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -52,7 +53,7 @@ namespace Amazon.MQ.Model
         // Check to see if BrokerInstanceOptions property is set
         internal bool IsSetBrokerInstanceOptions()
         {
-            return this._brokerInstanceOptions != null && this._brokerInstanceOptions.Count > 0; 
+            return this._brokerInstanceOptions != null && (this._brokerInstanceOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

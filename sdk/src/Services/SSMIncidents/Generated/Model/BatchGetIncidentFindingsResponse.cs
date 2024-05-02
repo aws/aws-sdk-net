@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SSMIncidents.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.SSMIncidents.Model
     /// </summary>
     public partial class BatchGetIncidentFindingsResponse : AmazonWebServiceResponse
     {
-        private List<BatchGetIncidentFindingsError> _errors = new List<BatchGetIncidentFindingsError>();
-        private List<Finding> _findings = new List<Finding>();
+        private List<BatchGetIncidentFindingsError> _errors = AWSConfigs.InitializeCollections ? new List<BatchGetIncidentFindingsError>() : null;
+        private List<Finding> _findings = AWSConfigs.InitializeCollections ? new List<Finding>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. 
@@ -52,7 +53,7 @@ namespace Amazon.SSMIncidents.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.SSMIncidents.Model
         // Check to see if Findings property is set
         internal bool IsSetFindings()
         {
-            return this._findings != null && this._findings.Count > 0; 
+            return this._findings != null && (this._findings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Outposts.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Outposts.Model
     /// </summary>
     public partial class ListCatalogItemsResponse : AmazonWebServiceResponse
     {
-        private List<CatalogItem> _catalogItems = new List<CatalogItem>();
+        private List<CatalogItem> _catalogItems = AWSConfigs.InitializeCollections ? new List<CatalogItem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Outposts.Model
         // Check to see if CatalogItems property is set
         internal bool IsSetCatalogItems()
         {
-            return this._catalogItems != null && this._catalogItems.Count > 0; 
+            return this._catalogItems != null && (this._catalogItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

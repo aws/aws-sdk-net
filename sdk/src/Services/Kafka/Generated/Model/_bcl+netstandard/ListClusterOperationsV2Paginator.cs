@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Kafka.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Kafka.Model
         /// Enumerable containing all of the ClusterOperationInfoList
         /// </summary>
         public IPaginatedEnumerable<ClusterOperationV2Summary> ClusterOperationInfoList => 
-            new PaginatedResultKeyResponse<ListClusterOperationsV2Response, ClusterOperationV2Summary>(this, (i) => i.ClusterOperationInfoList);
+            new PaginatedResultKeyResponse<ListClusterOperationsV2Response, ClusterOperationV2Summary>(this, (i) => i.ClusterOperationInfoList ?? new List<ClusterOperationV2Summary>());
 
         internal ListClusterOperationsV2Paginator(IAmazonKafka client, ListClusterOperationsV2Request request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Kafka.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListClusterOperationsV2Response> IPaginator<ListClusterOperationsV2Response>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListClusterOperationsV2Response> IPaginator<ListClusterOperationsV2Response>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

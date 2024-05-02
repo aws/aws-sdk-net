@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -57,6 +58,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("AuthorizedTokenIssuerList/member", targetDepth))
                     {
                         var unmarshaller = AuthorizedTokenIssuerUnmarshaller.Instance;
+                        if (unmarshalledObject.AuthorizedTokenIssuerList == null)
+                        {
+                            unmarshalledObject.AuthorizedTokenIssuerList = new List<AuthorizedTokenIssuer>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.AuthorizedTokenIssuerList.Add(item);
                         continue;
@@ -112,6 +117,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ServiceIntegrations/member", targetDepth))
                     {
                         var unmarshaller = ServiceIntegrationsUnionUnmarshaller.Instance;
+                        if (unmarshalledObject.ServiceIntegrations == null)
+                        {
+                            unmarshalledObject.ServiceIntegrations = new List<ServiceIntegrationsUnion>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ServiceIntegrations.Add(item);
                         continue;

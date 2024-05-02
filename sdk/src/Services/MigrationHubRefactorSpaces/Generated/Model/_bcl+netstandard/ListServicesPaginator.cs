@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MigrationHubRefactorSpaces.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// Enumerable containing all of the ServiceSummaryList
         /// </summary>
         public IPaginatedEnumerable<ServiceSummary> ServiceSummaryList => 
-            new PaginatedResultKeyResponse<ListServicesResponse, ServiceSummary>(this, (i) => i.ServiceSummaryList);
+            new PaginatedResultKeyResponse<ListServicesResponse, ServiceSummary>(this, (i) => i.ServiceSummaryList ?? new List<ServiceSummary>());
 
         internal ListServicesPaginator(IAmazonMigrationHubRefactorSpaces client, ListServicesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListServicesResponse> IPaginator<ListServicesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListServicesResponse> IPaginator<ListServicesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

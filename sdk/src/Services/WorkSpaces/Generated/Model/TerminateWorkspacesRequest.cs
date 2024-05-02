@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.WorkSpaces.Model
     /// </summary>
     public partial class TerminateWorkspacesRequest : AmazonWorkSpacesRequest
     {
-        private List<TerminateRequest> _terminateWorkspaceRequests = new List<TerminateRequest>();
+        private List<TerminateRequest> _terminateWorkspaceRequests = AWSConfigs.InitializeCollections ? new List<TerminateRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property TerminateWorkspaceRequests. 
@@ -89,7 +90,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if TerminateWorkspaceRequests property is set
         internal bool IsSetTerminateWorkspaceRequests()
         {
-            return this._terminateWorkspaceRequests != null && this._terminateWorkspaceRequests.Count > 0; 
+            return this._terminateWorkspaceRequests != null && (this._terminateWorkspaceRequests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

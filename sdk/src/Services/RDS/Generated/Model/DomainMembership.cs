@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.RDS.Model
     public partial class DomainMembership
     {
         private string _authSecretArn;
-        private List<string> _dnsIps = new List<string>();
+        private List<string> _dnsIps = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _domain;
         private string _fqdn;
         private string _iamRoleName;
@@ -75,7 +76,7 @@ namespace Amazon.RDS.Model
         // Check to see if DnsIps property is set
         internal bool IsSetDnsIps()
         {
-            return this._dnsIps != null && this._dnsIps.Count > 0; 
+            return this._dnsIps != null && (this._dnsIps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

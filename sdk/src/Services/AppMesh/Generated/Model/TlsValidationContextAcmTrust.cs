@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.AppMesh.Model
     /// </summary>
     public partial class TlsValidationContextAcmTrust
     {
-        private List<string> _certificateAuthorityArns = new List<string>();
+        private List<string> _certificateAuthorityArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CertificateAuthorityArns. 
@@ -52,7 +53,7 @@ namespace Amazon.AppMesh.Model
         // Check to see if CertificateAuthorityArns property is set
         internal bool IsSetCertificateAuthorityArns()
         {
-            return this._certificateAuthorityArns != null && this._certificateAuthorityArns.Count > 0; 
+            return this._certificateAuthorityArns != null && (this._certificateAuthorityArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

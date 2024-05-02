@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class DataSetConfiguration
     {
-        private List<ColumnGroupSchema> _columnGroupSchemaList = new List<ColumnGroupSchema>();
+        private List<ColumnGroupSchema> _columnGroupSchemaList = AWSConfigs.InitializeCollections ? new List<ColumnGroupSchema>() : null;
         private DataSetSchema _dataSetSchema;
         private string _placeholder;
 
@@ -53,7 +54,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if ColumnGroupSchemaList property is set
         internal bool IsSetColumnGroupSchemaList()
         {
-            return this._columnGroupSchemaList != null && this._columnGroupSchemaList.Count > 0; 
+            return this._columnGroupSchemaList != null && (this._columnGroupSchemaList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

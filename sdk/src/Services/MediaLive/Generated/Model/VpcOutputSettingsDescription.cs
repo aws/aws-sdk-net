@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
@@ -33,10 +34,10 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class VpcOutputSettingsDescription
     {
-        private List<string> _availabilityZones = new List<string>();
-        private List<string> _networkInterfaceIds = new List<string>();
-        private List<string> _securityGroupIds = new List<string>();
-        private List<string> _subnetIds = new List<string>();
+        private List<string> _availabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _networkInterfaceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AvailabilityZones. The Availability Zones where the vpc
@@ -52,7 +53,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+            return this._availabilityZones != null && (this._availabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -68,7 +69,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if NetworkInterfaceIds property is set
         internal bool IsSetNetworkInterfaceIds()
         {
-            return this._networkInterfaceIds != null && this._networkInterfaceIds.Count > 0; 
+            return this._networkInterfaceIds != null && (this._networkInterfaceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -84,7 +85,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if SecurityGroupIds property is set
         internal bool IsSetSecurityGroupIds()
         {
-            return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+            return this._securityGroupIds != null && (this._securityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -100,7 +101,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if SubnetIds property is set
         internal bool IsSetSubnetIds()
         {
-            return this._subnetIds != null && this._subnetIds.Count > 0; 
+            return this._subnetIds != null && (this._subnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the greengrassv2-2020-11-30.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.GreengrassV2.Model
 {
     /// <summary>

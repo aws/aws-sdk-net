@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Polly.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Polly.Model
     public partial class DescribeVoicesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Voice> _voices = new List<Voice>();
+        private List<Voice> _voices = AWSConfigs.InitializeCollections ? new List<Voice>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.Polly.Model
         // Check to see if Voices property is set
         internal bool IsSetVoices()
         {
-            return this._voices != null && this._voices.Count > 0; 
+            return this._voices != null && (this._voices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

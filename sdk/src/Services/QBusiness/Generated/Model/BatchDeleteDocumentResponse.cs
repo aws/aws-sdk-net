@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
@@ -33,14 +34,14 @@ namespace Amazon.QBusiness.Model
     /// </summary>
     public partial class BatchDeleteDocumentResponse : AmazonWebServiceResponse
     {
-        private List<FailedDocument> _failedDocuments = new List<FailedDocument>();
+        private List<FailedDocument> _failedDocuments = AWSConfigs.InitializeCollections ? new List<FailedDocument>() : null;
 
         /// <summary>
         /// Gets and sets the property FailedDocuments. 
         /// <para>
-        /// A list of documents that couldn't be removed from the Amazon Q index. Each entry contains
-        /// an error message that indicates why the document couldn't be removed from the index.
-        /// 
+        /// A list of documents that couldn't be removed from the Amazon Q Business index. Each
+        /// entry contains an error message that indicates why the document couldn't be removed
+        /// from the index. 
         /// </para>
         /// </summary>
         public List<FailedDocument> FailedDocuments
@@ -52,7 +53,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if FailedDocuments property is set
         internal bool IsSetFailedDocuments()
         {
-            return this._failedDocuments != null && this._failedDocuments.Count > 0; 
+            return this._failedDocuments != null && (this._failedDocuments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SSOAdmin.Model
     /// </summary>
     public partial class ListApplicationAssignmentsForPrincipalResponse : AmazonWebServiceResponse
     {
-        private List<ApplicationAssignmentForPrincipal> _applicationAssignments = new List<ApplicationAssignmentForPrincipal>();
+        private List<ApplicationAssignmentForPrincipal> _applicationAssignments = AWSConfigs.InitializeCollections ? new List<ApplicationAssignmentForPrincipal>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.SSOAdmin.Model
         // Check to see if ApplicationAssignments property is set
         internal bool IsSetApplicationAssignments()
         {
-            return this._applicationAssignments != null && this._applicationAssignments.Count > 0; 
+            return this._applicationAssignments != null && (this._applicationAssignments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

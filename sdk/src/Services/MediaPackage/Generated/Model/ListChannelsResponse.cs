@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaPackage.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MediaPackage.Model
     /// </summary>
     public partial class ListChannelsResponse : AmazonWebServiceResponse
     {
-        private List<Channel> _channels = new List<Channel>();
+        private List<Channel> _channels = AWSConfigs.InitializeCollections ? new List<Channel>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -48,7 +49,7 @@ namespace Amazon.MediaPackage.Model
         // Check to see if Channels property is set
         internal bool IsSetChannels()
         {
-            return this._channels != null && this._channels.Count > 0; 
+            return this._channels != null && (this._channels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

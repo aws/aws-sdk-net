@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.QuickSight.Model
         private string _assignmentName;
         private AssignmentStatus _assignmentStatus;
         private string _awsAccountId;
-        private Dictionary<string, List<string>> _identities = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _identities = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private string _awsNamespace;
         private string _policyArn;
 
@@ -131,7 +132,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Identities property is set
         internal bool IsSetIdentities()
         {
-            return this._identities != null && this._identities.Count > 0; 
+            return this._identities != null && (this._identities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

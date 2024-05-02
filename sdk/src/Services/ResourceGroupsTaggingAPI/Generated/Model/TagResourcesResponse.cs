@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ResourceGroupsTaggingAPI.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     /// </summary>
     public partial class TagResourcesResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, FailureInfo> _failedResourcesMap = new Dictionary<string, FailureInfo>();
+        private Dictionary<string, FailureInfo> _failedResourcesMap = AWSConfigs.InitializeCollections ? new Dictionary<string, FailureInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property FailedResourcesMap. 
@@ -53,7 +54,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         // Check to see if FailedResourcesMap property is set
         internal bool IsSetFailedResourcesMap()
         {
-            return this._failedResourcesMap != null && this._failedResourcesMap.Count > 0; 
+            return this._failedResourcesMap != null && (this._failedResourcesMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -79,6 +80,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.JobQueueName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("jobStateTimeLimitActions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<JobStateTimeLimitAction, JobStateTimeLimitActionUnmarshaller>(JobStateTimeLimitActionUnmarshaller.Instance);
+                    unmarshalledObject.JobStateTimeLimitActions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("priority", targetDepth))

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.KeyManagementService.Model
     {
         private KeyMetadata _replicaKeyMetadata;
         private string _replicaPolicy;
-        private List<Tag> _replicaTags = new List<Tag>();
+        private List<Tag> _replicaTags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ReplicaKeyMetadata. 
@@ -94,7 +95,7 @@ namespace Amazon.KeyManagementService.Model
         // Check to see if ReplicaTags property is set
         internal bool IsSetReplicaTags()
         {
-            return this._replicaTags != null && this._replicaTags.Count > 0; 
+            return this._replicaTags != null && (this._replicaTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

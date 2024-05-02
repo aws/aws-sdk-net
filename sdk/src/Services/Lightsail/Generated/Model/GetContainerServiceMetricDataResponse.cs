@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class GetContainerServiceMetricDataResponse : AmazonWebServiceResponse
     {
-        private List<MetricDatapoint> _metricData = new List<MetricDatapoint>();
+        private List<MetricDatapoint> _metricData = AWSConfigs.InitializeCollections ? new List<MetricDatapoint>() : null;
         private ContainerServiceMetricName _metricName;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if MetricData property is set
         internal bool IsSetMetricData()
         {
-            return this._metricData != null && this._metricData.Count > 0; 
+            return this._metricData != null && (this._metricData.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

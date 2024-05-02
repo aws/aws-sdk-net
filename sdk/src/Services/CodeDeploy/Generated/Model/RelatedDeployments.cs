@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CodeDeploy.Model
     /// </summary>
     public partial class RelatedDeployments
     {
-        private List<string> _autoUpdateOutdatedInstancesDeploymentIds = new List<string>();
+        private List<string> _autoUpdateOutdatedInstancesDeploymentIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _autoUpdateOutdatedInstancesRootDeploymentId;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if AutoUpdateOutdatedInstancesDeploymentIds property is set
         internal bool IsSetAutoUpdateOutdatedInstancesDeploymentIds()
         {
-            return this._autoUpdateOutdatedInstancesDeploymentIds != null && this._autoUpdateOutdatedInstancesDeploymentIds.Count > 0; 
+            return this._autoUpdateOutdatedInstancesDeploymentIds != null && (this._autoUpdateOutdatedInstancesDeploymentIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IAMRolesAnywhere.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         private DateTime? _createdAt;
         private bool? _enabled;
         private string _name;
-        private List<NotificationSettingDetail> _notificationSettings = new List<NotificationSettingDetail>();
+        private List<NotificationSettingDetail> _notificationSettings = AWSConfigs.InitializeCollections ? new List<NotificationSettingDetail>() : null;
         private Source _source;
         private string _trustAnchorArn;
         private string _trustAnchorId;
@@ -113,7 +114,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         // Check to see if NotificationSettings property is set
         internal bool IsSetNotificationSettings()
         {
-            return this._notificationSettings != null && this._notificationSettings.Count > 0; 
+            return this._notificationSettings != null && (this._notificationSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

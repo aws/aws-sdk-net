@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.LocationService.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.LocationService.Model
         /// Enumerable containing all of the Entries
         /// </summary>
         public IPaginatedEnumerable<ListKeysResponseEntry> Entries => 
-            new PaginatedResultKeyResponse<ListKeysResponse, ListKeysResponseEntry>(this, (i) => i.Entries);
+            new PaginatedResultKeyResponse<ListKeysResponse, ListKeysResponseEntry>(this, (i) => i.Entries ?? new List<ListKeysResponseEntry>());
 
         internal ListKeysPaginator(IAmazonLocationService client, ListKeysRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.LocationService.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListKeysResponse> IPaginator<ListKeysResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListKeysResponse> IPaginator<ListKeysResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

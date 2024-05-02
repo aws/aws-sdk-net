@@ -26,12 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PaymentCryptographyData.Model
 {
     /// <summary>
     /// Container for the parameters to the DecryptData operation.
-    /// Decrypts ciphertext data to plaintext using symmetric, asymmetric, or DUKPT data encryption
-    /// key. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/decrypt-data.html">Decrypt
+    /// Decrypts ciphertext data to plaintext using a symmetric (TDES, AES), asymmetric (RSA),
+    /// or derived (DUKPT or EMV) encryption key scheme. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/decrypt-data.html">Decrypt
     /// data</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.
     /// 
     ///  
@@ -47,10 +48,15 @@ namespace Amazon.PaymentCryptographyData.Model
     ///  
     /// <para>
     /// For symmetric and DUKPT decryption, Amazon Web Services Payment Cryptography supports
-    /// <c>TDES</c> and <c>AES</c> algorithms. For asymmetric decryption, Amazon Web Services
-    /// Payment Cryptography supports <c>RSA</c>. When you use DUKPT, for <c>TDES</c> algorithm,
-    /// the ciphertext data length must be a multiple of 16 bytes. For <c>AES</c> algorithm,
-    /// the ciphertext data length must be a multiple of 32 bytes.
+    /// <c>TDES</c> and <c>AES</c> algorithms. For EMV decryption, Amazon Web Services Payment
+    /// Cryptography supports <c>TDES</c> algorithms. For asymmetric decryption, Amazon Web
+    /// Services Payment Cryptography supports <c>RSA</c>. 
+    /// </para>
+    ///  
+    /// <para>
+    /// When you use TDES or TDES DUKPT, the ciphertext data length must be a multiple of
+    /// 8 bytes. For AES or AES DUKPT, the ciphertext data length must be a multiple of 16
+    /// bytes. For RSA, it sould be equal to the key size unless padding is enabled.
     /// </para>
     ///  
     /// <para>

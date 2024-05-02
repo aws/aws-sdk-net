@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class AssetBundleImportJobVPCConnectionOverrideTags
     {
-        private List<Tag> _tags = new List<Tag>();
-        private List<string> _vpcConnectionIds = new List<string>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<string> _vpcConnectionIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Tags. 
@@ -53,7 +54,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if VPCConnectionIds property is set
         internal bool IsSetVPCConnectionIds()
         {
-            return this._vpcConnectionIds != null && this._vpcConnectionIds.Count > 0; 
+            return this._vpcConnectionIds != null && (this._vpcConnectionIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

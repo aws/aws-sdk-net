@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SuiteDefinitionConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDevicePermissionRoleArn())
             {
                 context.Writer.WritePropertyName("devicePermissionRoleArn");

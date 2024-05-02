@@ -26,11 +26,22 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateApplication operation.
-    /// Creates an Amazon Q application.
+    /// Creates an Amazon Q Business application.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// There are new tiers for Amazon Q Business. Not all features in Amazon Q Business Pro
+    /// are also available in Amazon Q Business Lite. For information on what's included in
+    /// Amazon Q Business Lite and what's included in Amazon Q Business Pro, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/what-is.html#tiers">Amazon
+    /// Q Business tiers</a>. You must use the Amazon Q Business console to assign subscription
+    /// tiers to users.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateApplicationRequest : AmazonQBusinessRequest
     {
@@ -39,8 +50,9 @@ namespace Amazon.QBusiness.Model
         private string _description;
         private string _displayName;
         private EncryptionConfiguration _encryptionConfiguration;
+        private string _identityCenterInstanceArn;
         private string _roleArn;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AttachmentsConfiguration. 
@@ -63,7 +75,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A token that you provide to identify the request to create your Amazon Q application.
+        /// A token that you provide to identify the request to create your Amazon Q Business
+        /// application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -82,7 +95,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description for the Amazon Q application. 
+        /// A description for the Amazon Q Business application. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -101,7 +114,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// A name for the Amazon Q application. 
+        /// A name for the Amazon Q Business application. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]
@@ -120,8 +133,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property EncryptionConfiguration. 
         /// <para>
-        /// The identifier of the KMS key that is used to encrypt your data. Amazon Q doesn't
-        /// support asymmetric keys.
+        /// The identifier of the KMS key that is used to encrypt your data. Amazon Q Business
+        /// doesn't support asymmetric keys.
         /// </para>
         /// </summary>
         public EncryptionConfiguration EncryptionConfiguration
@@ -137,13 +150,33 @@ namespace Amazon.QBusiness.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IdentityCenterInstanceArn. 
+        /// <para>
+        ///  The Amazon Resource Name (ARN) of the IAM Identity Center instance you are either
+        /// creating for—or connecting to—your Amazon Q Business application.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=10, Max=1224)]
+        public string IdentityCenterInstanceArn
+        {
+            get { return this._identityCenterInstanceArn; }
+            set { this._identityCenterInstanceArn = value; }
+        }
+
+        // Check to see if IdentityCenterInstanceArn property is set
+        internal bool IsSetIdentityCenterInstanceArn()
+        {
+            return this._identityCenterInstanceArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
         ///  The Amazon Resource Name (ARN) of an IAM role with permissions to access your Amazon
         /// CloudWatch logs and metrics.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=1284)]
+        [AWSProperty(Min=0, Max=1284)]
         public string RoleArn
         {
             get { return this._roleArn; }
@@ -159,9 +192,9 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of key-value pairs that identify or categorize your Amazon Q application. You
-        /// can also use tags to help control access to the application. Tag keys and values can
-        /// consist of Unicode letters, digits, white space, and any of the following symbols:
+        /// A list of key-value pairs that identify or categorize your Amazon Q Business application.
+        /// You can also use tags to help control access to the application. Tag keys and values
+        /// can consist of Unicode letters, digits, white space, and any of the following symbols:
         /// _ . : / = + - @.
         /// </para>
         /// </summary>
@@ -175,7 +208,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

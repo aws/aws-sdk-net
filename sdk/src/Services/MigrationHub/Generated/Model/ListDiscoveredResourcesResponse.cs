@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MigrationHub.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MigrationHub.Model
     /// </summary>
     public partial class ListDiscoveredResourcesResponse : AmazonWebServiceResponse
     {
-        private List<DiscoveredResource> _discoveredResourceList = new List<DiscoveredResource>();
+        private List<DiscoveredResource> _discoveredResourceList = AWSConfigs.InitializeCollections ? new List<DiscoveredResource>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.MigrationHub.Model
         // Check to see if DiscoveredResourceList property is set
         internal bool IsSetDiscoveredResourceList()
         {
-            return this._discoveredResourceList != null && this._discoveredResourceList.Count > 0; 
+            return this._discoveredResourceList != null && (this._discoveredResourceList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

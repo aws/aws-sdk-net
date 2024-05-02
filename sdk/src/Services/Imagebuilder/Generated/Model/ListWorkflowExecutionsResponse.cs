@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.Imagebuilder.Model
         private string _message;
         private string _nextToken;
         private string _requestId;
-        private List<WorkflowExecutionMetadata> _workflowExecutions = new List<WorkflowExecutionMetadata>();
+        private List<WorkflowExecutionMetadata> _workflowExecutions = AWSConfigs.InitializeCollections ? new List<WorkflowExecutionMetadata>() : null;
 
         /// <summary>
         /// Gets and sets the property ImageBuildVersionArn. 
@@ -133,7 +134,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if WorkflowExecutions property is set
         internal bool IsSetWorkflowExecutions()
         {
-            return this._workflowExecutions != null && this._workflowExecutions.Count > 0; 
+            return this._workflowExecutions != null && (this._workflowExecutions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

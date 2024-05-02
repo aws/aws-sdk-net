@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Connect.Model
         private string _lastModifiedRegion;
         private DateTime? _lastModifiedTime;
         private string _nextToken;
-        private List<QuickConnectSummary> _quickConnectSummaryList = new List<QuickConnectSummary>();
+        private List<QuickConnectSummary> _quickConnectSummaryList = AWSConfigs.InitializeCollections ? new List<QuickConnectSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property LastModifiedRegion. 
@@ -107,7 +108,7 @@ namespace Amazon.Connect.Model
         // Check to see if QuickConnectSummaryList property is set
         internal bool IsSetQuickConnectSummaryList()
         {
-            return this._quickConnectSummaryList != null && this._quickConnectSummaryList.Count > 0; 
+            return this._quickConnectSummaryList != null && (this._quickConnectSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

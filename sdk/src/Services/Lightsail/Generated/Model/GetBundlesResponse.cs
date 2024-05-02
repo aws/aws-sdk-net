@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class GetBundlesResponse : AmazonWebServiceResponse
     {
-        private List<Bundle> _bundles = new List<Bundle>();
+        private List<Bundle> _bundles = AWSConfigs.InitializeCollections ? new List<Bundle>() : null;
         private string _nextPageToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Bundles property is set
         internal bool IsSetBundles()
         {
-            return this._bundles != null && this._bundles.Count > 0; 
+            return this._bundles != null && (this._bundles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

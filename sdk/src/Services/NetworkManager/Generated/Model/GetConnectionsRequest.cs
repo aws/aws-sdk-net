@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkManager.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.NetworkManager.Model
     /// </summary>
     public partial class GetConnectionsRequest : AmazonNetworkManagerRequest
     {
-        private List<string> _connectionIds = new List<string>();
+        private List<string> _connectionIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _deviceId;
         private string _globalNetworkId;
         private int? _maxResults;
@@ -55,7 +56,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if ConnectionIds property is set
         internal bool IsSetConnectionIds()
         {
-            return this._connectionIds != null && this._connectionIds.Count > 0; 
+            return this._connectionIds != null && (this._connectionIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.MediaLive.Model
     public partial class ListReservationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Reservation> _reservations = new List<Reservation>();
+        private List<Reservation> _reservations = AWSConfigs.InitializeCollections ? new List<Reservation>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. Token to retrieve the next page of results
@@ -63,7 +64,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if Reservations property is set
         internal bool IsSetReservations()
         {
-            return this._reservations != null && this._reservations.Count > 0; 
+            return this._reservations != null && (this._reservations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

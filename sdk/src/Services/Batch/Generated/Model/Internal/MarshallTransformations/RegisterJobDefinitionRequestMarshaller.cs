@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -63,6 +64,7 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetContainerProperties())
@@ -72,6 +74,17 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
 
                     var marshaller = ContainerPropertiesMarshaller.Instance;
                     marshaller.Marshall(publicRequest.ContainerProperties, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetEcsProperties())
+                {
+                    context.Writer.WritePropertyName("ecsProperties");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EcsPropertiesMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EcsProperties, context);
 
                     context.Writer.WriteObjectEnd();
                 }

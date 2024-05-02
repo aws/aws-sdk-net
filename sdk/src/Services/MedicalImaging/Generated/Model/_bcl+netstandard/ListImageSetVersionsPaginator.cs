@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MedicalImaging.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.MedicalImaging.Model
         /// Enumerable containing all of the ImageSetPropertiesList
         /// </summary>
         public IPaginatedEnumerable<ImageSetProperties> ImageSetPropertiesList => 
-            new PaginatedResultKeyResponse<ListImageSetVersionsResponse, ImageSetProperties>(this, (i) => i.ImageSetPropertiesList);
+            new PaginatedResultKeyResponse<ListImageSetVersionsResponse, ImageSetProperties>(this, (i) => i.ImageSetPropertiesList ?? new List<ImageSetProperties>());
 
         internal ListImageSetVersionsPaginator(IAmazonMedicalImaging client, ListImageSetVersionsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.MedicalImaging.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListImageSetVersionsResponse> IPaginator<ListImageSetVersionsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListImageSetVersionsResponse> IPaginator<ListImageSetVersionsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

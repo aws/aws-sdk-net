@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
@@ -33,11 +34,11 @@ namespace Amazon.WAFV2.Model
     /// </summary>
     public partial class DescribeManagedRuleGroupResponse : AmazonWebServiceResponse
     {
-        private List<LabelSummary> _availableLabels = new List<LabelSummary>();
+        private List<LabelSummary> _availableLabels = AWSConfigs.InitializeCollections ? new List<LabelSummary>() : null;
         private long? _capacity;
-        private List<LabelSummary> _consumedLabels = new List<LabelSummary>();
+        private List<LabelSummary> _consumedLabels = AWSConfigs.InitializeCollections ? new List<LabelSummary>() : null;
         private string _labelNamespace;
-        private List<RuleSummary> _rules = new List<RuleSummary>();
+        private List<RuleSummary> _rules = AWSConfigs.InitializeCollections ? new List<RuleSummary>() : null;
         private string _snsTopicArn;
         private string _versionName;
 
@@ -57,7 +58,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if AvailableLabels property is set
         internal bool IsSetAvailableLabels()
         {
-            return this._availableLabels != null && this._availableLabels.Count > 0; 
+            return this._availableLabels != null && (this._availableLabels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -106,7 +107,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if ConsumedLabels property is set
         internal bool IsSetConsumedLabels()
         {
-            return this._consumedLabels != null && this._consumedLabels.Count > 0; 
+            return this._consumedLabels != null && (this._consumedLabels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -162,7 +163,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if Rules property is set
         internal bool IsSetRules()
         {
-            return this._rules != null && this._rules.Count > 0; 
+            return this._rules != null && (this._rules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

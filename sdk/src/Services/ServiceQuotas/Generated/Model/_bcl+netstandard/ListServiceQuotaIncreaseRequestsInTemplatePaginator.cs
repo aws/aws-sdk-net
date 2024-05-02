@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ServiceQuotas.Model
         /// Enumerable containing all of the ServiceQuotaIncreaseRequestInTemplateList
         /// </summary>
         public IPaginatedEnumerable<ServiceQuotaIncreaseRequestInTemplate> ServiceQuotaIncreaseRequestInTemplateList => 
-            new PaginatedResultKeyResponse<ListServiceQuotaIncreaseRequestsInTemplateResponse, ServiceQuotaIncreaseRequestInTemplate>(this, (i) => i.ServiceQuotaIncreaseRequestInTemplateList);
+            new PaginatedResultKeyResponse<ListServiceQuotaIncreaseRequestsInTemplateResponse, ServiceQuotaIncreaseRequestInTemplate>(this, (i) => i.ServiceQuotaIncreaseRequestInTemplateList ?? new List<ServiceQuotaIncreaseRequestInTemplate>());
 
         internal ListServiceQuotaIncreaseRequestsInTemplatePaginator(IAmazonServiceQuotas client, ListServiceQuotaIncreaseRequestsInTemplateRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ServiceQuotas.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListServiceQuotaIncreaseRequestsInTemplateResponse> IPaginator<ListServiceQuotaIncreaseRequestsInTemplateResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListServiceQuotaIncreaseRequestsInTemplateResponse> IPaginator<ListServiceQuotaIncreaseRequestsInTemplateResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

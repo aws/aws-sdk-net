@@ -29,6 +29,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>
     public class ListBucketInventoryConfigurationsResponseUnmarshaller : S3ReponseUnmarshaller
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
         {
             ListBucketInventoryConfigurationsResponse response = new ListBucketInventoryConfigurationsResponse();
@@ -69,8 +74,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("InventoryConfiguration", targetDepth))
                     {
+                        if (response.InventoryConfigurationList == null)
+                        {
+                            response.InventoryConfigurationList = new List<InventoryConfiguration>();
+                        }
                         response.InventoryConfigurationList.Add(InventoryConfigurationUnmarshaller.Instance.Unmarshall(context));
-
                         continue;
                     }
                     if (context.TestExpression("IsTruncated", targetDepth))
@@ -99,6 +107,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static ListBucketInventoryConfigurationsResponseUnmarshaller _instance = new ListBucketInventoryConfigurationsResponseUnmarshaller();
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static ListBucketInventoryConfigurationsResponseUnmarshaller Instance
         {
             get

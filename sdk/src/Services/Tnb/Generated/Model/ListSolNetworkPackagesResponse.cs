@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Tnb.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Tnb.Model
     /// </summary>
     public partial class ListSolNetworkPackagesResponse : AmazonWebServiceResponse
     {
-        private List<ListSolNetworkPackageInfo> _networkPackages = new List<ListSolNetworkPackageInfo>();
+        private List<ListSolNetworkPackageInfo> _networkPackages = AWSConfigs.InitializeCollections ? new List<ListSolNetworkPackageInfo>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.Tnb.Model
         // Check to see if NetworkPackages property is set
         internal bool IsSetNetworkPackages()
         {
-            return this._networkPackages != null && this._networkPackages.Count > 0; 
+            return this._networkPackages != null && (this._networkPackages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

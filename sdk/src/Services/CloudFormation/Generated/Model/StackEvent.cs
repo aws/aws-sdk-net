@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
@@ -34,6 +35,7 @@ namespace Amazon.CloudFormation.Model
     public partial class StackEvent
     {
         private string _clientRequestToken;
+        private DetailedStatus _detailedStatus;
         private string _eventId;
         private HookFailureMode _hookFailureMode;
         private HookInvocationPoint _hookInvocationPoint;
@@ -82,6 +84,37 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetClientRequestToken()
         {
             return this._clientRequestToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DetailedStatus. 
+        /// <para>
+        /// An optional field containing information about the detailed status of the stack event.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>CONFIGURATION_COMPLETE</c> - all of the resources in the stack have reached that
+        /// event. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stack-resource-configuration-complete.html">CloudFormation
+        /// stack deployment</a> in the <i>CloudFormation User Guide</i>.
+        /// </para>
+        ///  </li> </ul> <ul> <li> 
+        /// <para>
+        ///  <c>VALIDATION_FAILED</c> - template validation failed because of invalid properties
+        /// in the template. The <c>ResourceStatusReason</c> field shows what properties are defined
+        /// incorrectly.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public DetailedStatus DetailedStatus
+        {
+            get { return this._detailedStatus; }
+            set { this._detailedStatus = value; }
+        }
+
+        // Check to see if DetailedStatus property is set
+        internal bool IsSetDetailedStatus()
+        {
+            return this._detailedStatus != null;
         }
 
         /// <summary>
@@ -298,7 +331,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property ResourceType. 
         /// <para>
         /// Type of resource. (For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
-        /// Web Services Resource Types Reference</a> in the CloudFormation User Guide.)
+        /// Web Services Resource Types Reference</a> in the <i>CloudFormation User Guide</i>.)
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

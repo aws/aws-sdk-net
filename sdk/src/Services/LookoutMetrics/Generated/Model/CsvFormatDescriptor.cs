@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LookoutMetrics.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.LookoutMetrics.Model
         private bool? _containsHeader;
         private string _delimiter;
         private CSVFileCompression _fileCompression;
-        private List<string> _headerList = new List<string>();
+        private List<string> _headerList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _quoteSymbol;
 
         /// <summary>
@@ -129,7 +130,7 @@ namespace Amazon.LookoutMetrics.Model
         // Check to see if HeaderList property is set
         internal bool IsSetHeaderList()
         {
-            return this._headerList != null && this._headerList.Count > 0; 
+            return this._headerList != null && (this._headerList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

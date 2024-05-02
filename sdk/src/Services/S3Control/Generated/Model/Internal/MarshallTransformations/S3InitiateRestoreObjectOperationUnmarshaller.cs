@@ -30,12 +30,13 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for S3InitiateRestoreObjectOperation Object
     /// </summary>  
-    public class S3InitiateRestoreObjectOperationUnmarshaller : IUnmarshaller<S3InitiateRestoreObjectOperation, XmlUnmarshallerContext>
+    public class S3InitiateRestoreObjectOperationUnmarshaller : IUnmarshaller<S3InitiateRestoreObjectOperation, XmlUnmarshallerContext>, IUnmarshaller<S3InitiateRestoreObjectOperation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -74,6 +75,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public S3InitiateRestoreObjectOperation Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static S3InitiateRestoreObjectOperationUnmarshaller _instance = new S3InitiateRestoreObjectOperationUnmarshaller();        

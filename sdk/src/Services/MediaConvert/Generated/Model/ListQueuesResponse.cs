@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.MediaConvert.Model
     public partial class ListQueuesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Queue> _queues = new List<Queue>();
+        private List<Queue> _queues = AWSConfigs.InitializeCollections ? new List<Queue>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. Use this string to request the next batch of
@@ -64,7 +65,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if Queues property is set
         internal bool IsSetQueues()
         {
-            return this._queues != null && this._queues.Count > 0; 
+            return this._queues != null && (this._queues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

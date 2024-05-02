@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -41,8 +42,8 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class RoutingProfileSearchCriteria
     {
-        private List<RoutingProfileSearchCriteria> _andConditions = new List<RoutingProfileSearchCriteria>();
-        private List<RoutingProfileSearchCriteria> _orConditions = new List<RoutingProfileSearchCriteria>();
+        private List<RoutingProfileSearchCriteria> _andConditions = AWSConfigs.InitializeCollections ? new List<RoutingProfileSearchCriteria>() : null;
+        private List<RoutingProfileSearchCriteria> _orConditions = AWSConfigs.InitializeCollections ? new List<RoutingProfileSearchCriteria>() : null;
         private StringCondition _stringCondition;
 
         /// <summary>
@@ -60,7 +61,7 @@ namespace Amazon.Connect.Model
         // Check to see if AndConditions property is set
         internal bool IsSetAndConditions()
         {
-            return this._andConditions != null && this._andConditions.Count > 0; 
+            return this._andConditions != null && (this._andConditions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -78,7 +79,7 @@ namespace Amazon.Connect.Model
         // Check to see if OrConditions property is set
         internal bool IsSetOrConditions()
         {
-            return this._orConditions != null && this._orConditions.Count > 0; 
+            return this._orConditions != null && (this._orConditions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpsWorksCM.Model
 {
     /// <summary>
@@ -49,7 +50,7 @@ namespace Amazon.OpsWorksCM.Model
     public partial class ExportServerEngineAttributeRequest : AmazonOpsWorksCMRequest
     {
         private string _exportAttributeName;
-        private List<EngineAttribute> _inputAttributes = new List<EngineAttribute>();
+        private List<EngineAttribute> _inputAttributes = AWSConfigs.InitializeCollections ? new List<EngineAttribute>() : null;
         private string _serverName;
 
         /// <summary>
@@ -112,7 +113,7 @@ namespace Amazon.OpsWorksCM.Model
         // Check to see if InputAttributes property is set
         internal bool IsSetInputAttributes()
         {
-            return this._inputAttributes != null && this._inputAttributes.Count > 0; 
+            return this._inputAttributes != null && (this._inputAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

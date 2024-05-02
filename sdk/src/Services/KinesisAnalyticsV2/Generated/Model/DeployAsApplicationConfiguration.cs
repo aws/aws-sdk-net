@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// The information required to deploy a Kinesis Data Analytics Studio notebook as an
-    /// application with durable state.
+    /// The information required to deploy a Managed Service for Apache Flink Studio notebook
+    /// as an application with durable state.
     /// </summary>
     public partial class DeployAsApplicationConfiguration
     {

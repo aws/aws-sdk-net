@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -63,8 +64,18 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Dimensions/member", targetDepth))
                     {
                         var unmarshaller = DimensionUnmarshaller.Instance;
+                        if (unmarshalledObject.Dimensions == null)
+                        {
+                            unmarshalledObject.Dimensions = new List<Dimension>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Dimensions.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("MetricCharacteristics", targetDepth))
+                    {
+                        var unmarshaller = MetricCharacteristicsUnmarshaller.Instance;
+                        unmarshalledObject.MetricCharacteristics = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("MetricMathAnomalyDetector", targetDepth))

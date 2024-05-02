@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.NetworkFirewall.Model
     /// </summary>
     public partial class RuleGroupResponse
     {
-        private List<AnalysisResult> _analysisResults = new List<AnalysisResult>();
+        private List<AnalysisResult> _analysisResults = AWSConfigs.InitializeCollections ? new List<AnalysisResult>() : null;
         private int? _capacity;
         private int? _consumedCapacity;
         private string _description;
@@ -47,7 +48,7 @@ namespace Amazon.NetworkFirewall.Model
         private ResourceStatus _ruleGroupStatus;
         private string _snsTopic;
         private SourceMetadata _sourceMetadata;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private RuleGroupType _type;
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.NetworkFirewall.Model
         // Check to see if AnalysisResults property is set
         internal bool IsSetAnalysisResults()
         {
-            return this._analysisResults != null && this._analysisResults.Count > 0; 
+            return this._analysisResults != null && (this._analysisResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -333,7 +334,7 @@ namespace Amazon.NetworkFirewall.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

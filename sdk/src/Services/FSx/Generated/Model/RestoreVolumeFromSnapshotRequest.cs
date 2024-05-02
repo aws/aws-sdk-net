@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FSx.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.FSx.Model
     public partial class RestoreVolumeFromSnapshotRequest : AmazonFSxRequest
     {
         private string _clientRequestToken;
-        private List<string> _options = new List<string>();
+        private List<string> _options = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _snapshotId;
         private string _volumeId;
 
@@ -84,7 +85,7 @@ namespace Amazon.FSx.Model
         // Check to see if Options property is set
         internal bool IsSetOptions()
         {
-            return this._options != null && this._options.Count > 0; 
+            return this._options != null && (this._options.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

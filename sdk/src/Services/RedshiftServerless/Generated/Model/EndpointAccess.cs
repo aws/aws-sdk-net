@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RedshiftServerless.Model
 {
     /// <summary>
@@ -39,9 +40,9 @@ namespace Amazon.RedshiftServerless.Model
         private string _endpointName;
         private string _endpointStatus;
         private int? _port;
-        private List<string> _subnetIds = new List<string>();
+        private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private VpcEndpoint _vpcEndpoint;
-        private List<VpcSecurityGroupMembership> _vpcSecurityGroups = new List<VpcSecurityGroupMembership>();
+        private List<VpcSecurityGroupMembership> _vpcSecurityGroups = AWSConfigs.InitializeCollections ? new List<VpcSecurityGroupMembership>() : null;
         private string _workgroupName;
 
         /// <summary>
@@ -168,7 +169,7 @@ namespace Amazon.RedshiftServerless.Model
         // Check to see if SubnetIds property is set
         internal bool IsSetSubnetIds()
         {
-            return this._subnetIds != null && this._subnetIds.Count > 0; 
+            return this._subnetIds != null && (this._subnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -204,7 +205,7 @@ namespace Amazon.RedshiftServerless.Model
         // Check to see if VpcSecurityGroups property is set
         internal bool IsSetVpcSecurityGroups()
         {
-            return this._vpcSecurityGroups != null && this._vpcSecurityGroups.Count > 0; 
+            return this._vpcSecurityGroups != null && (this._vpcSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

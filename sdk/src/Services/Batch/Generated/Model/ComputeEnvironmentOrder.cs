@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Batch.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Batch.Model
     /// value is tried for job placement first. Compute environments must be in the <c>VALID</c>
     /// state before you can associate them with a job queue. All of the compute environments
     /// must be either EC2 (<c>EC2</c> or <c>SPOT</c>) or Fargate (<c>FARGATE</c> or <c>FARGATE_SPOT</c>);
-    /// EC2 and Fargate compute environments can't be mixed.
+    /// Amazon EC2 and Fargate compute environments can't be mixed.
     /// 
     ///  <note> 
     /// <para>

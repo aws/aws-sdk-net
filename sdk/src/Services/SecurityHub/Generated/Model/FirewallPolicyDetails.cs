@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -33,11 +34,11 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class FirewallPolicyDetails
     {
-        private List<FirewallPolicyStatefulRuleGroupReferencesDetails> _statefulRuleGroupReferences = new List<FirewallPolicyStatefulRuleGroupReferencesDetails>();
-        private List<FirewallPolicyStatelessCustomActionsDetails> _statelessCustomActions = new List<FirewallPolicyStatelessCustomActionsDetails>();
-        private List<string> _statelessDefaultActions = new List<string>();
-        private List<string> _statelessFragmentDefaultActions = new List<string>();
-        private List<FirewallPolicyStatelessRuleGroupReferencesDetails> _statelessRuleGroupReferences = new List<FirewallPolicyStatelessRuleGroupReferencesDetails>();
+        private List<FirewallPolicyStatefulRuleGroupReferencesDetails> _statefulRuleGroupReferences = AWSConfigs.InitializeCollections ? new List<FirewallPolicyStatefulRuleGroupReferencesDetails>() : null;
+        private List<FirewallPolicyStatelessCustomActionsDetails> _statelessCustomActions = AWSConfigs.InitializeCollections ? new List<FirewallPolicyStatelessCustomActionsDetails>() : null;
+        private List<string> _statelessDefaultActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _statelessFragmentDefaultActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<FirewallPolicyStatelessRuleGroupReferencesDetails> _statelessRuleGroupReferences = AWSConfigs.InitializeCollections ? new List<FirewallPolicyStatelessRuleGroupReferencesDetails>() : null;
 
         /// <summary>
         /// Gets and sets the property StatefulRuleGroupReferences. 
@@ -54,7 +55,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if StatefulRuleGroupReferences property is set
         internal bool IsSetStatefulRuleGroupReferences()
         {
-            return this._statefulRuleGroupReferences != null && this._statefulRuleGroupReferences.Count > 0; 
+            return this._statefulRuleGroupReferences != null && (this._statefulRuleGroupReferences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if StatelessCustomActions property is set
         internal bool IsSetStatelessCustomActions()
         {
-            return this._statelessCustomActions != null && this._statelessCustomActions.Count > 0; 
+            return this._statelessCustomActions != null && (this._statelessCustomActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -97,7 +98,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if StatelessDefaultActions property is set
         internal bool IsSetStatelessDefaultActions()
         {
-            return this._statelessDefaultActions != null && this._statelessDefaultActions.Count > 0; 
+            return this._statelessDefaultActions != null && (this._statelessDefaultActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -121,7 +122,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if StatelessFragmentDefaultActions property is set
         internal bool IsSetStatelessFragmentDefaultActions()
         {
-            return this._statelessFragmentDefaultActions != null && this._statelessFragmentDefaultActions.Count > 0; 
+            return this._statelessFragmentDefaultActions != null && (this._statelessFragmentDefaultActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -139,7 +140,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if StatelessRuleGroupReferences property is set
         internal bool IsSetStatelessRuleGroupReferences()
         {
-            return this._statelessRuleGroupReferences != null && this._statelessRuleGroupReferences.Count > 0; 
+            return this._statelessRuleGroupReferences != null && (this._statelessRuleGroupReferences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

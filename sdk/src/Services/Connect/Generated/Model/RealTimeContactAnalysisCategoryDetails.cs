@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class RealTimeContactAnalysisCategoryDetails
     {
-        private List<RealTimeContactAnalysisPointOfInterest> _pointsOfInterest = new List<RealTimeContactAnalysisPointOfInterest>();
+        private List<RealTimeContactAnalysisPointOfInterest> _pointsOfInterest = AWSConfigs.InitializeCollections ? new List<RealTimeContactAnalysisPointOfInterest>() : null;
 
         /// <summary>
         /// Gets and sets the property PointsOfInterest. 
@@ -51,7 +52,7 @@ namespace Amazon.Connect.Model
         // Check to see if PointsOfInterest property is set
         internal bool IsSetPointsOfInterest()
         {
-            return this._pointsOfInterest != null && this._pointsOfInterest.Count > 0; 
+            return this._pointsOfInterest != null && (this._pointsOfInterest.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

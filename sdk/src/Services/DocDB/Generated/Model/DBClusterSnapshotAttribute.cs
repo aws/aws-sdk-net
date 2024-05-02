@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DocDB.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.DocDB.Model
     public partial class DBClusterSnapshotAttribute
     {
         private string _attributeName;
-        private List<string> _attributeValues = new List<string>();
+        private List<string> _attributeValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AttributeName. 
@@ -88,7 +89,7 @@ namespace Amazon.DocDB.Model
         // Check to see if AttributeValues property is set
         internal bool IsSetAttributeValues()
         {
-            return this._attributeValues != null && this._attributeValues.Count > 0; 
+            return this._attributeValues != null && (this._attributeValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

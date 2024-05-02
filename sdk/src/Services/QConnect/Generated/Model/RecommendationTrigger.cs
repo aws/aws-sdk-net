@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QConnect.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.QConnect.Model
     {
         private RecommendationTriggerData _data;
         private string _id;
-        private List<string> _recommendationIds = new List<string>();
+        private List<string> _recommendationIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private RecommendationSourceType _source;
         private RecommendationTriggerType _type;
 
@@ -95,7 +96,7 @@ namespace Amazon.QConnect.Model
         // Check to see if RecommendationIds property is set
         internal bool IsSetRecommendationIds()
         {
-            return this._recommendationIds != null && this._recommendationIds.Count > 0; 
+            return this._recommendationIds != null && (this._recommendationIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// Enumerable containing all of the Accelerators
         /// </summary>
         public IPaginatedEnumerable<Accelerator> Accelerators => 
-            new PaginatedResultKeyResponse<ListAcceleratorsResponse, Accelerator>(this, (i) => i.Accelerators);
+            new PaginatedResultKeyResponse<ListAcceleratorsResponse, Accelerator>(this, (i) => i.Accelerators ?? new List<Accelerator>());
 
         internal ListAcceleratorsPaginator(IAmazonGlobalAccelerator client, ListAcceleratorsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.GlobalAccelerator.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListAcceleratorsResponse> IPaginator<ListAcceleratorsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListAcceleratorsResponse> IPaginator<ListAcceleratorsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GameLift.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class DescribeGameSessionDetailsResponse : AmazonWebServiceResponse
     {
-        private List<GameSessionDetail> _gameSessionDetails = new List<GameSessionDetail>();
+        private List<GameSessionDetail> _gameSessionDetails = AWSConfigs.InitializeCollections ? new List<GameSessionDetail>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.GameLift.Model
         // Check to see if GameSessionDetails property is set
         internal bool IsSetGameSessionDetails()
         {
-            return this._gameSessionDetails != null && this._gameSessionDetails.Count > 0; 
+            return this._gameSessionDetails != null && (this._gameSessionDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

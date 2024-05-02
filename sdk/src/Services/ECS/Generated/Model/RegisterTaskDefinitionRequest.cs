@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECS.Model
 {
     /// <summary>
@@ -57,23 +58,23 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class RegisterTaskDefinitionRequest : AmazonECSRequest
     {
-        private List<ContainerDefinition> _containerDefinitions = new List<ContainerDefinition>();
+        private List<ContainerDefinition> _containerDefinitions = AWSConfigs.InitializeCollections ? new List<ContainerDefinition>() : null;
         private string _cpu;
         private EphemeralStorage _ephemeralStorage;
         private string _executionRoleArn;
         private string _family;
-        private List<InferenceAccelerator> _inferenceAccelerators = new List<InferenceAccelerator>();
+        private List<InferenceAccelerator> _inferenceAccelerators = AWSConfigs.InitializeCollections ? new List<InferenceAccelerator>() : null;
         private IpcMode _ipcMode;
         private string _memory;
         private NetworkMode _networkMode;
         private PidMode _pidMode;
-        private List<TaskDefinitionPlacementConstraint> _placementConstraints = new List<TaskDefinitionPlacementConstraint>();
+        private List<TaskDefinitionPlacementConstraint> _placementConstraints = AWSConfigs.InitializeCollections ? new List<TaskDefinitionPlacementConstraint>() : null;
         private ProxyConfiguration _proxyConfiguration;
-        private List<string> _requiresCompatibilities = new List<string>();
+        private List<string> _requiresCompatibilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private RuntimePlatform _runtimePlatform;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _taskRoleArn;
-        private List<Volume> _volumes = new List<Volume>();
+        private List<Volume> _volumes = AWSConfigs.InitializeCollections ? new List<Volume>() : null;
 
         /// <summary>
         /// Gets and sets the property ContainerDefinitions. 
@@ -92,7 +93,7 @@ namespace Amazon.ECS.Model
         // Check to see if ContainerDefinitions property is set
         internal bool IsSetContainerDefinitions()
         {
-            return this._containerDefinitions != null && this._containerDefinitions.Count > 0; 
+            return this._containerDefinitions != null && (this._containerDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -273,7 +274,7 @@ namespace Amazon.ECS.Model
         // Check to see if InferenceAccelerators property is set
         internal bool IsSetInferenceAccelerators()
         {
-            return this._inferenceAccelerators != null && this._inferenceAccelerators.Count > 0; 
+            return this._inferenceAccelerators != null && (this._inferenceAccelerators.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -546,7 +547,7 @@ namespace Amazon.ECS.Model
         // Check to see if PlacementConstraints property is set
         internal bool IsSetPlacementConstraints()
         {
-            return this._placementConstraints != null && this._placementConstraints.Count > 0; 
+            return this._placementConstraints != null && (this._placementConstraints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -595,7 +596,7 @@ namespace Amazon.ECS.Model
         // Check to see if RequiresCompatibilities property is set
         internal bool IsSetRequiresCompatibilities()
         {
-            return this._requiresCompatibilities != null && this._requiresCompatibilities.Count > 0; 
+            return this._requiresCompatibilities != null && (this._requiresCompatibilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -679,7 +680,7 @@ namespace Amazon.ECS.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -718,7 +719,7 @@ namespace Amazon.ECS.Model
         // Check to see if Volumes property is set
         internal bool IsSetVolumes()
         {
-            return this._volumes != null && this._volumes.Count > 0; 
+            return this._volumes != null && (this._volumes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

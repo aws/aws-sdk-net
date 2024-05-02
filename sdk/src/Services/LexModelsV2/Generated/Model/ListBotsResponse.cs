@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class ListBotsResponse : AmazonWebServiceResponse
     {
-        private List<BotSummary> _botSummaries = new List<BotSummary>();
+        private List<BotSummary> _botSummaries = AWSConfigs.InitializeCollections ? new List<BotSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if BotSummaries property is set
         internal bool IsSetBotSummaries()
         {
-            return this._botSummaries != null && this._botSummaries.Count > 0; 
+            return this._botSummaries != null && (this._botSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

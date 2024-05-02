@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.Kendra.Model
     public partial class ExperiencesSummary
     {
         private DateTime? _createdAt;
-        private List<ExperienceEndpoint> _endpoints = new List<ExperienceEndpoint>();
+        private List<ExperienceEndpoint> _endpoints = AWSConfigs.InitializeCollections ? new List<ExperienceEndpoint>() : null;
         private string _id;
         private string _name;
         private ExperienceStatus _status;
@@ -77,7 +78,7 @@ namespace Amazon.Kendra.Model
         // Check to see if Endpoints property is set
         internal bool IsSetEndpoints()
         {
-            return this._endpoints != null && this._endpoints.Count > 0; 
+            return this._endpoints != null && (this._endpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

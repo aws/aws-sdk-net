@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.ResilienceHub.Model
     public partial class ComponentRecommendation
     {
         private string _appComponentName;
-        private List<ConfigRecommendation> _configRecommendations = new List<ConfigRecommendation>();
+        private List<ConfigRecommendation> _configRecommendations = AWSConfigs.InitializeCollections ? new List<ConfigRecommendation>() : null;
         private RecommendationComplianceStatus _recommendationStatus;
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if ConfigRecommendations property is set
         internal bool IsSetConfigRecommendations()
         {
-            return this._configRecommendations != null && this._configRecommendations.Count > 0; 
+            return this._configRecommendations != null && (this._configRecommendations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

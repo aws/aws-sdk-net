@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AuditManager.Model
     /// </summary>
     public partial class ListAssessmentReportsResponse : AmazonWebServiceResponse
     {
-        private List<AssessmentReportMetadata> _assessmentReports = new List<AssessmentReportMetadata>();
+        private List<AssessmentReportMetadata> _assessmentReports = AWSConfigs.InitializeCollections ? new List<AssessmentReportMetadata>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if AssessmentReports property is set
         internal bool IsSetAssessmentReports()
         {
-            return this._assessmentReports != null && this._assessmentReports.Count > 0; 
+            return this._assessmentReports != null && (this._assessmentReports.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

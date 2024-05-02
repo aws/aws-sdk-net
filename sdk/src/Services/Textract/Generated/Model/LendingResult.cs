@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Textract.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Textract.Model
     /// </summary>
     public partial class LendingResult
     {
-        private List<Extraction> _extractions = new List<Extraction>();
+        private List<Extraction> _extractions = AWSConfigs.InitializeCollections ? new List<Extraction>() : null;
         private int? _page;
         private PageClassification _pageClassification;
 
@@ -53,7 +54,7 @@ namespace Amazon.Textract.Model
         // Check to see if Extractions property is set
         internal bool IsSetExtractions()
         {
-            return this._extractions != null && this._extractions.Count > 0; 
+            return this._extractions != null && (this._extractions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

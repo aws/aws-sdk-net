@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PIIDetection requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetEntityTypesToDetect())
             {
                 context.Writer.WritePropertyName("EntityTypesToDetect");
@@ -94,13 +97,27 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSampleFraction())
             {
                 context.Writer.WritePropertyName("SampleFraction");
-                context.Writer.Write(requestObject.SampleFraction.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.SampleFraction.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.SampleFraction.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.SampleFraction.Value);
+                }
             }
 
             if(requestObject.IsSetThresholdFraction())
             {
                 context.Writer.WritePropertyName("ThresholdFraction");
-                context.Writer.Write(requestObject.ThresholdFraction.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.ThresholdFraction.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ThresholdFraction.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.ThresholdFraction.Value);
+                }
             }
 
         }

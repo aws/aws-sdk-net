@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkManager.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.NetworkManager.Model
     public partial class GetNetworkResourceRelationshipsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Relationship> _relationships = new List<Relationship>();
+        private List<Relationship> _relationships = AWSConfigs.InitializeCollections ? new List<Relationship>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if Relationships property is set
         internal bool IsSetRelationships()
         {
-            return this._relationships != null && this._relationships.Count > 0; 
+            return this._relationships != null && (this._relationships.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

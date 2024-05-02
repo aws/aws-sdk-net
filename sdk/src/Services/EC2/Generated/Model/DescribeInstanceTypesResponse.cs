@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,14 +34,13 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeInstanceTypesResponse : AmazonWebServiceResponse
     {
-        private List<InstanceTypeInfo> _instanceTypes = new List<InstanceTypeInfo>();
+        private List<InstanceTypeInfo> _instanceTypes = AWSConfigs.InitializeCollections ? new List<InstanceTypeInfo>() : null;
         private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property InstanceTypes. 
         /// <para>
-        /// The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// types</a> in the <i>Amazon EC2 User Guide</i>.
+        /// The instance type.
         /// </para>
         /// </summary>
         public List<InstanceTypeInfo> InstanceTypes
@@ -52,7 +52,7 @@ namespace Amazon.EC2.Model
         // Check to see if InstanceTypes property is set
         internal bool IsSetInstanceTypes()
         {
-            return this._instanceTypes != null && this._instanceTypes.Count > 0; 
+            return this._instanceTypes != null && (this._instanceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

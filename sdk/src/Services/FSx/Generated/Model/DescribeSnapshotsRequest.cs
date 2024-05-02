@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FSx.Model
 {
     /// <summary>
@@ -69,11 +70,11 @@ namespace Amazon.FSx.Model
     /// </summary>
     public partial class DescribeSnapshotsRequest : AmazonFSxRequest
     {
-        private List<SnapshotFilter> _filters = new List<SnapshotFilter>();
+        private List<SnapshotFilter> _filters = AWSConfigs.InitializeCollections ? new List<SnapshotFilter>() : null;
         private bool? _includeShared;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _snapshotIds = new List<string>();
+        private List<string> _snapshotIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Filters. 
@@ -91,15 +92,15 @@ namespace Amazon.FSx.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property IncludeShared. 
         /// <para>
-        /// Set to <c>false</c> (default) if you want to only see the snapshots in your Amazon
-        /// Web Services account. Set to <c>true</c> if you want to see the snapshots in your
-        /// account and the ones shared with you from another account.
+        /// Set to <c>false</c> (default) if you want to only see the snapshots owned by your
+        /// Amazon Web Services account. Set to <c>true</c> if you want to see the snapshots in
+        /// your account and the ones shared with you from another account.
         /// </para>
         /// </summary>
         public bool? IncludeShared
@@ -163,7 +164,7 @@ namespace Amazon.FSx.Model
         // Check to see if SnapshotIds property is set
         internal bool IsSetSnapshotIds()
         {
-            return this._snapshotIds != null && this._snapshotIds.Count > 0; 
+            return this._snapshotIds != null && (this._snapshotIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

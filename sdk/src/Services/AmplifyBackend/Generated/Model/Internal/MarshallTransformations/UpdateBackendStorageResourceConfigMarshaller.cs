@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(UpdateBackendStorageResourceConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetPermissions())
             {
                 context.Writer.WritePropertyName("permissions");

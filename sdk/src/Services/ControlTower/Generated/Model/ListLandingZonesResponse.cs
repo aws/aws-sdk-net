@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ControlTower.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ControlTower.Model
     /// </summary>
     public partial class ListLandingZonesResponse : AmazonWebServiceResponse
     {
-        private List<LandingZoneSummary> _landingZones = new List<LandingZoneSummary>();
+        private List<LandingZoneSummary> _landingZones = AWSConfigs.InitializeCollections ? new List<LandingZoneSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.ControlTower.Model
         // Check to see if LandingZones property is set
         internal bool IsSetLandingZones()
         {
-            return this._landingZones != null && this._landingZones.Count > 0; 
+            return this._landingZones != null && (this._landingZones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

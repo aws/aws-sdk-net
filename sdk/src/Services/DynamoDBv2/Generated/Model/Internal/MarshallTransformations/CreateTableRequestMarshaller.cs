@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -65,6 +66,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAttributeDefinitions())
@@ -152,6 +154,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.ProvisionedThroughput, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetResourcePolicy())
+                {
+                    context.Writer.WritePropertyName("ResourcePolicy");
+                    context.Writer.Write(publicRequest.ResourcePolicy);
                 }
 
                 if(publicRequest.IsSetSSESpecification())

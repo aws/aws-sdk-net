@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.DirectoryService.Model
     public partial class DescribeTrustsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Trust> _trusts = new List<Trust>();
+        private List<Trust> _trusts = AWSConfigs.InitializeCollections ? new List<Trust>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -78,7 +79,7 @@ namespace Amazon.DirectoryService.Model
         // Check to see if Trusts property is set
         internal bool IsSetTrusts()
         {
-            return this._trusts != null && this._trusts.Count > 0; 
+            return this._trusts != null && (this._trusts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

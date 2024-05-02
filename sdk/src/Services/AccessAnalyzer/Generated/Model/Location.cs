@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.AccessAnalyzer.Model
     /// </summary>
     public partial class Location
     {
-        private List<PathElement> _path = new List<PathElement>();
+        private List<PathElement> _path = AWSConfigs.InitializeCollections ? new List<PathElement>() : null;
         private Span _span;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.AccessAnalyzer.Model
         // Check to see if Path property is set
         internal bool IsSetPath()
         {
-            return this._path != null && this._path.Count > 0; 
+            return this._path != null && (this._path.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

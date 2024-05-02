@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ComputeOptimizer.Model
     public partial class DescribeRecommendationExportJobsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RecommendationExportJob> _recommendationExportJobs = new List<RecommendationExportJob>();
+        private List<RecommendationExportJob> _recommendationExportJobs = AWSConfigs.InitializeCollections ? new List<RecommendationExportJob>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +74,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if RecommendationExportJobs property is set
         internal bool IsSetRecommendationExportJobs()
         {
-            return this._recommendationExportJobs != null && this._recommendationExportJobs.Count > 0; 
+            return this._recommendationExportJobs != null && (this._recommendationExportJobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

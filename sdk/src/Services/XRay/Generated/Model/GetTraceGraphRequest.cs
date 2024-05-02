@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.XRay.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.XRay.Model
     public partial class GetTraceGraphRequest : AmazonXRayRequest
     {
         private string _nextToken;
-        private List<string> _traceIds = new List<string>();
+        private List<string> _traceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.XRay.Model
         // Check to see if TraceIds property is set
         internal bool IsSetTraceIds()
         {
-            return this._traceIds != null && this._traceIds.Count > 0; 
+            return this._traceIds != null && (this._traceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

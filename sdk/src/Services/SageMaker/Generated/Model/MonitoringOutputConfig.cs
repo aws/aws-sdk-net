@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class MonitoringOutputConfig
     {
         private string _kmsKeyId;
-        private List<MonitoringOutput> _monitoringOutputs = new List<MonitoringOutput>();
+        private List<MonitoringOutput> _monitoringOutputs = AWSConfigs.InitializeCollections ? new List<MonitoringOutput>() : null;
 
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
@@ -73,7 +74,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if MonitoringOutputs property is set
         internal bool IsSetMonitoringOutputs()
         {
-            return this._monitoringOutputs != null && this._monitoringOutputs.Count > 0; 
+            return this._monitoringOutputs != null && (this._monitoringOutputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

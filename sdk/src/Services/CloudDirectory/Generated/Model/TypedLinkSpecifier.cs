@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.CloudDirectory.Model
     /// </summary>
     public partial class TypedLinkSpecifier
     {
-        private List<AttributeNameAndValue> _identityAttributeValues = new List<AttributeNameAndValue>();
+        private List<AttributeNameAndValue> _identityAttributeValues = AWSConfigs.InitializeCollections ? new List<AttributeNameAndValue>() : null;
         private ObjectReference _sourceObjectReference;
         private ObjectReference _targetObjectReference;
         private TypedLinkSchemaAndFacetName _typedLinkFacet;
@@ -59,7 +60,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if IdentityAttributeValues property is set
         internal bool IsSetIdentityAttributeValues()
         {
-            return this._identityAttributeValues != null && this._identityAttributeValues.Count > 0; 
+            return this._identityAttributeValues != null && (this._identityAttributeValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

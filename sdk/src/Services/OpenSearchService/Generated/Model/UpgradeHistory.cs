@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.OpenSearchService.Model
     public partial class UpgradeHistory
     {
         private DateTime? _startTimestamp;
-        private List<UpgradeStepItem> _stepsList = new List<UpgradeStepItem>();
+        private List<UpgradeStepItem> _stepsList = AWSConfigs.InitializeCollections ? new List<UpgradeStepItem>() : null;
         private string _upgradeName;
         private UpgradeStatus _upgradeStatus;
 
@@ -73,7 +74,7 @@ namespace Amazon.OpenSearchService.Model
         // Check to see if StepsList property is set
         internal bool IsSetStepsList()
         {
-            return this._stepsList != null && this._stepsList.Count > 0; 
+            return this._stepsList != null && (this._stepsList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

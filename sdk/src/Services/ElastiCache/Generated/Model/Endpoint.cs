@@ -26,10 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Represents the information required for client programs to connect to a cache node.
+    /// This value is read-only.
     /// </summary>
     public partial class Endpoint
     {

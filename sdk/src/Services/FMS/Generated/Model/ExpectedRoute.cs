@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FMS.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.FMS.Model
     /// </summary>
     public partial class ExpectedRoute
     {
-        private List<string> _allowedTargets = new List<string>();
-        private List<string> _contributingSubnets = new List<string>();
+        private List<string> _allowedTargets = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _contributingSubnets = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _ipV4Cidr;
         private string _ipV6Cidr;
         private string _prefixListId;
@@ -55,7 +56,7 @@ namespace Amazon.FMS.Model
         // Check to see if AllowedTargets property is set
         internal bool IsSetAllowedTargets()
         {
-            return this._allowedTargets != null && this._allowedTargets.Count > 0; 
+            return this._allowedTargets != null && (this._allowedTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.FMS.Model
         // Check to see if ContributingSubnets property is set
         internal bool IsSetContributingSubnets()
         {
-            return this._contributingSubnets != null && this._contributingSubnets.Count > 0; 
+            return this._contributingSubnets != null && (this._contributingSubnets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -46,7 +47,7 @@ namespace Amazon.SageMaker.Model
         private string _baseModelName;
         private AutoMLJobCompletionCriteria _completionCriteria;
         private ModelAccessConfig _modelAccessConfig;
-        private Dictionary<string, string> _textGenerationHyperParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _textGenerationHyperParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property BaseModelName. 
@@ -158,7 +159,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if TextGenerationHyperParameters property is set
         internal bool IsSetTextGenerationHyperParameters()
         {
-            return this._textGenerationHyperParameters != null && this._textGenerationHyperParameters.Count > 0; 
+            return this._textGenerationHyperParameters != null && (this._textGenerationHyperParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

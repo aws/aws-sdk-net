@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
@@ -33,17 +34,36 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class AudioDescription
     {
+        private List<string> _audioDashRoles = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AudioNormalizationSettings _audioNormalizationSettings;
         private string _audioSelectorName;
         private AudioType _audioType;
         private AudioDescriptionAudioTypeControl _audioTypeControl;
         private AudioWatermarkSettings _audioWatermarkingSettings;
         private AudioCodecSettings _codecSettings;
+        private DvbDashAccessibility _dvbDashAccessibility;
         private string _languageCode;
         private AudioDescriptionLanguageCodeControl _languageCodeControl;
         private string _name;
         private RemixSettings _remixSettings;
         private string _streamName;
+
+        /// <summary>
+        /// Gets and sets the property AudioDashRoles. Identifies the DASH roles to assign to
+        /// this audio output. Applies only when the audio output is configured for DVB DASH accessibility
+        /// signaling.
+        /// </summary>
+        public List<string> AudioDashRoles
+        {
+            get { return this._audioDashRoles; }
+            set { this._audioDashRoles = value; }
+        }
+
+        // Check to see if AudioDashRoles property is set
+        internal bool IsSetAudioDashRoles()
+        {
+            return this._audioDashRoles != null && (this._audioDashRoles.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property AudioNormalizationSettings. Advanced audio normalization
@@ -143,6 +163,23 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetCodecSettings()
         {
             return this._codecSettings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DvbDashAccessibility. Identifies DVB DASH accessibility
+        /// signaling in this audio output. Used in Microsoft Smooth Streaming outputs to signal
+        /// accessibility information to packagers.
+        /// </summary>
+        public DvbDashAccessibility DvbDashAccessibility
+        {
+            get { return this._dvbDashAccessibility; }
+            set { this._dvbDashAccessibility = value; }
+        }
+
+        // Check to see if DvbDashAccessibility property is set
+        internal bool IsSetDvbDashAccessibility()
+        {
+            return this._dvbDashAccessibility != null;
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.WellArchitected.Model
     public partial class WorkloadDiscoveryConfig
     {
         private TrustedAdvisorIntegrationStatus _trustedAdvisorIntegrationStatus;
-        private List<string> _workloadResourceDefinition = new List<string>();
+        private List<string> _workloadResourceDefinition = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property TrustedAdvisorIntegrationStatus. 
@@ -73,7 +74,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if WorkloadResourceDefinition property is set
         internal bool IsSetWorkloadResourceDefinition()
         {
-            return this._workloadResourceDefinition != null && this._workloadResourceDefinition.Count > 0; 
+            return this._workloadResourceDefinition != null && (this._workloadResourceDefinition.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

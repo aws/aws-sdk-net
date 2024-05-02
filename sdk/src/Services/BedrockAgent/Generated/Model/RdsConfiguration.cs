@@ -26,10 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Contains the configurations to use RDS to store knowledge base data.
+    /// Contains details about the storage configuration of the knowledge base in Amazon RDS.
+    /// For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-rds.html">Create
+    /// a vector index in Amazon RDS</a>.
     /// </summary>
     public partial class RdsConfiguration
     {
@@ -40,7 +43,11 @@ namespace Amazon.BedrockAgent.Model
         private string _tableName;
 
         /// <summary>
-        /// Gets and sets the property CredentialsSecretArn.
+        /// Gets and sets the property CredentialsSecretArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the secret that you created in Secrets Manager that
+        /// is linked to your Amazon RDS database.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string CredentialsSecretArn
@@ -56,7 +63,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DatabaseName.
+        /// Gets and sets the property DatabaseName. 
+        /// <para>
+        /// The name of your Amazon RDS database.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=63)]
         public string DatabaseName
@@ -72,7 +82,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FieldMapping.
+        /// Gets and sets the property FieldMapping. 
+        /// <para>
+        /// Contains the names of the fields to which to map information about the vector store.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public RdsFieldMapping FieldMapping
@@ -88,7 +101,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ResourceArn.
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the vector store.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string ResourceArn
@@ -104,7 +120,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TableName.
+        /// Gets and sets the property TableName. 
+        /// <para>
+        /// The name of the table in the database.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=63)]
         public string TableName

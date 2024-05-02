@@ -8,6 +8,7 @@
 
     AddCommonUsingStatements();
 #>
+#pragma warning disable CS0612,CS0618
 namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -47,6 +48,10 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
             if (member.IsMap || member.IsList)
             {
 #>
+                        if (unmarshalledObject.<#=member.PropertyName#> == null)
+                        {
+                            unmarshalledObject.<#=member.PropertyName#> = new <#=member.DetermineType()#>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.<#=member.PropertyName#>.Add(item);
 <#

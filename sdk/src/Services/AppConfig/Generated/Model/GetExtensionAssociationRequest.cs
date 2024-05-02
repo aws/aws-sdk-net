@@ -26,13 +26,14 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppConfig.Model
 {
     /// <summary>
     /// Container for the parameters to the GetExtensionAssociation operation.
     /// Returns information about an AppConfig extension association. For more information
-    /// about extensions and associations, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
-    /// with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+    /// about extensions and associations, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Extending
+    /// workflows</a> in the <i>AppConfig User Guide</i>.
     /// </summary>
     public partial class GetExtensionAssociationRequest : AmazonAppConfigRequest
     {

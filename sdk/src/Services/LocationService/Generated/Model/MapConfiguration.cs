@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LocationService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.LocationService.Model
     /// </summary>
     public partial class MapConfiguration
     {
-        private List<string> _customLayers = new List<string>();
+        private List<string> _customLayers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _politicalView;
         private string _style;
 
@@ -62,7 +63,7 @@ namespace Amazon.LocationService.Model
         // Check to see if CustomLayers property is set
         internal bool IsSetCustomLayers()
         {
-            return this._customLayers != null && this._customLayers.Count > 0; 
+            return this._customLayers != null && (this._customLayers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

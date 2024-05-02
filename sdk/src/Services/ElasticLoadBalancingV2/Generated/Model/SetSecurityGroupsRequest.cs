@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
@@ -48,7 +49,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     {
         private EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum _enforceSecurityGroupInboundRulesOnPrivateLinkTraffic;
         private string _loadBalancerArn;
-        private List<string> _securityGroups = new List<string>();
+        private List<string> _securityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property EnforceSecurityGroupInboundRulesOnPrivateLinkTraffic. 
@@ -104,7 +105,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this._securityGroups != null && this._securityGroups.Count > 0; 
+            return this._securityGroups != null && (this._securityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

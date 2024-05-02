@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class SearchFacesByImageResponse : AmazonWebServiceResponse
     {
-        private List<FaceMatch> _faceMatches = new List<FaceMatch>();
+        private List<FaceMatch> _faceMatches = AWSConfigs.InitializeCollections ? new List<FaceMatch>() : null;
         private string _faceModelVersion;
         private BoundingBox _searchedFaceBoundingBox;
         private float? _searchedFaceConfidence;
@@ -53,7 +54,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if FaceMatches property is set
         internal bool IsSetFaceMatches()
         {
-            return this._faceMatches != null && this._faceMatches.Count > 0; 
+            return this._faceMatches != null && (this._faceMatches.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

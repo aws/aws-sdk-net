@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
     /// </summary>
     public partial class StreamChannelDefinition
     {
-        private List<ChannelDefinition> _channelDefinitions = new List<ChannelDefinition>();
+        private List<ChannelDefinition> _channelDefinitions = AWSConfigs.InitializeCollections ? new List<ChannelDefinition>() : null;
         private int? _numberOfChannels;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         // Check to see if ChannelDefinitions property is set
         internal bool IsSetChannelDefinitions()
         {
-            return this._channelDefinitions != null && this._channelDefinitions.Count > 0; 
+            return this._channelDefinitions != null && (this._channelDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

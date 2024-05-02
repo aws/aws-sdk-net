@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LakeFormation.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.LakeFormation.Model
     public partial class LFTagPolicyResource
     {
         private string _catalogId;
-        private List<LFTag> _expression = new List<LFTag>();
+        private List<LFTag> _expression = AWSConfigs.InitializeCollections ? new List<LFTag>() : null;
         private ResourceType _resourceType;
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if Expression property is set
         internal bool IsSetExpression()
         {
-            return this._expression != null && this._expression.Count > 0; 
+            return this._expression != null && (this._expression.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

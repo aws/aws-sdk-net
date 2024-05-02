@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ElasticMapReduce.Model
     public partial class AddInstanceGroupsResponse : AmazonWebServiceResponse
     {
         private string _clusterArn;
-        private List<string> _instanceGroupIds = new List<string>();
+        private List<string> _instanceGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _jobFlowId;
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if InstanceGroupIds property is set
         internal bool IsSetInstanceGroupIds()
         {
-            return this._instanceGroupIds != null && this._instanceGroupIds.Count > 0; 
+            return this._instanceGroupIds != null && (this._instanceGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

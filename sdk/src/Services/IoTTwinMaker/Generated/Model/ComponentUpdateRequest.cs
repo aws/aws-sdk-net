@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTTwinMaker.Model
 {
     /// <summary>
@@ -35,8 +36,8 @@ namespace Amazon.IoTTwinMaker.Model
     {
         private string _componentTypeId;
         private string _description;
-        private Dictionary<string, ComponentPropertyGroupRequest> _propertyGroupUpdates = new Dictionary<string, ComponentPropertyGroupRequest>();
-        private Dictionary<string, PropertyRequest> _propertyUpdates = new Dictionary<string, PropertyRequest>();
+        private Dictionary<string, ComponentPropertyGroupRequest> _propertyGroupUpdates = AWSConfigs.InitializeCollections ? new Dictionary<string, ComponentPropertyGroupRequest>() : null;
+        private Dictionary<string, PropertyRequest> _propertyUpdates = AWSConfigs.InitializeCollections ? new Dictionary<string, PropertyRequest>() : null;
         private ComponentUpdateType _updateType;
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if PropertyGroupUpdates property is set
         internal bool IsSetPropertyGroupUpdates()
         {
-            return this._propertyGroupUpdates != null && this._propertyGroupUpdates.Count > 0; 
+            return this._propertyGroupUpdates != null && (this._propertyGroupUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -111,7 +112,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if PropertyUpdates property is set
         internal bool IsSetPropertyUpdates()
         {
-            return this._propertyUpdates != null && this._propertyUpdates.Count > 0; 
+            return this._propertyUpdates != null && (this._propertyUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

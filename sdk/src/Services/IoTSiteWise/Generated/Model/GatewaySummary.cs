@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IoTSiteWise.Model
     public partial class GatewaySummary
     {
         private DateTime? _creationDate;
-        private List<GatewayCapabilitySummary> _gatewayCapabilitySummaries = new List<GatewayCapabilitySummary>();
+        private List<GatewayCapabilitySummary> _gatewayCapabilitySummaries = AWSConfigs.InitializeCollections ? new List<GatewayCapabilitySummary>() : null;
         private string _gatewayId;
         private string _gatewayName;
         private GatewayPlatform _gatewayPlatform;
@@ -76,7 +77,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if GatewayCapabilitySummaries property is set
         internal bool IsSetGatewayCapabilitySummaries()
         {
-            return this._gatewayCapabilitySummaries != null && this._gatewayCapabilitySummaries.Count > 0; 
+            return this._gatewayCapabilitySummaries != null && (this._gatewayCapabilitySummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

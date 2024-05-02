@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AutoScaling.Model
     /// </summary>
     public partial class DescribeAutoScalingGroupsResponse : AmazonWebServiceResponse
     {
-        private List<AutoScalingGroup> _autoScalingGroups = new List<AutoScalingGroup>();
+        private List<AutoScalingGroup> _autoScalingGroups = AWSConfigs.InitializeCollections ? new List<AutoScalingGroup>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AutoScalingGroups property is set
         internal bool IsSetAutoScalingGroups()
         {
-            return this._autoScalingGroups != null && this._autoScalingGroups.Count > 0; 
+            return this._autoScalingGroups != null && (this._autoScalingGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

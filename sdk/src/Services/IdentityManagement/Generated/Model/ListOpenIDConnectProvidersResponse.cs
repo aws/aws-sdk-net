@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IdentityManagement.Model
     /// </summary>
     public partial class ListOpenIDConnectProvidersResponse : AmazonWebServiceResponse
     {
-        private List<OpenIDConnectProviderListEntry> _openIDConnectProviderList = new List<OpenIDConnectProviderListEntry>();
+        private List<OpenIDConnectProviderListEntry> _openIDConnectProviderList = AWSConfigs.InitializeCollections ? new List<OpenIDConnectProviderListEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property OpenIDConnectProviderList. 
@@ -51,7 +52,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if OpenIDConnectProviderList property is set
         internal bool IsSetOpenIDConnectProviderList()
         {
-            return this._openIDConnectProviderList != null && this._openIDConnectProviderList.Count > 0; 
+            return this._openIDConnectProviderList != null && (this._openIDConnectProviderList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

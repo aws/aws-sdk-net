@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EvaluationAnswerData requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetNotApplicable())
             {
                 context.Writer.WritePropertyName("NotApplicable");
@@ -54,7 +57,14 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumericValue())
             {
                 context.Writer.WritePropertyName("NumericValue");
-                context.Writer.Write(requestObject.NumericValue.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.NumericValue.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.NumericValue.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.NumericValue.Value);
+                }
             }
 
             if(requestObject.IsSetStringValue())

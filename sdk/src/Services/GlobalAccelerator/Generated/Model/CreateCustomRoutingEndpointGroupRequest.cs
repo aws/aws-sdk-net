@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.GlobalAccelerator.Model
     /// </summary>
     public partial class CreateCustomRoutingEndpointGroupRequest : AmazonGlobalAcceleratorRequest
     {
-        private List<CustomRoutingDestinationConfiguration> _destinationConfigurations = new List<CustomRoutingDestinationConfiguration>();
+        private List<CustomRoutingDestinationConfiguration> _destinationConfigurations = AWSConfigs.InitializeCollections ? new List<CustomRoutingDestinationConfiguration>() : null;
         private string _endpointGroupRegion;
         private string _idempotencyToken;
         private string _listenerArn;
@@ -57,7 +58,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if DestinationConfigurations property is set
         internal bool IsSetDestinationConfigurations()
         {
-            return this._destinationConfigurations != null && this._destinationConfigurations.Count > 0; 
+            return this._destinationConfigurations != null && (this._destinationConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

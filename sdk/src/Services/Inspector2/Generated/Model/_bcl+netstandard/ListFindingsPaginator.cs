@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Inspector2.Model
         /// Enumerable containing all of the Findings
         /// </summary>
         public IPaginatedEnumerable<Finding> Findings => 
-            new PaginatedResultKeyResponse<ListFindingsResponse, Finding>(this, (i) => i.Findings);
+            new PaginatedResultKeyResponse<ListFindingsResponse, Finding>(this, (i) => i.Findings ?? new List<Finding>());
 
         internal ListFindingsPaginator(IAmazonInspector2 client, ListFindingsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Inspector2.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListFindingsResponse> IPaginator<ListFindingsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListFindingsResponse> IPaginator<ListFindingsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

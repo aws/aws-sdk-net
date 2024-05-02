@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -66,7 +67,7 @@ namespace Amazon.Connect.Model
         /// The maximum number of results to return per page.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Min=1, Max=500)]
         public int? MaxResults
         {
             get { return this._maxResults; }

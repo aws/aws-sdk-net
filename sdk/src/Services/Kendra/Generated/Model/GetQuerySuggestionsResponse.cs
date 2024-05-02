@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Kendra.Model
     public partial class GetQuerySuggestionsResponse : AmazonWebServiceResponse
     {
         private string _querySuggestionsId;
-        private List<Suggestion> _suggestions = new List<Suggestion>();
+        private List<Suggestion> _suggestions = AWSConfigs.InitializeCollections ? new List<Suggestion>() : null;
 
         /// <summary>
         /// Gets and sets the property QuerySuggestionsId. 
@@ -70,7 +71,7 @@ namespace Amazon.Kendra.Model
         // Check to see if Suggestions property is set
         internal bool IsSetSuggestions()
         {
-            return this._suggestions != null && this._suggestions.Count > 0; 
+            return this._suggestions != null && (this._suggestions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

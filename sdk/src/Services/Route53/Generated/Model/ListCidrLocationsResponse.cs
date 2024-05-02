@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Route53.Model
     public partial class ListCidrLocationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<LocationSummary> _cidrLocations = new List<LocationSummary>();
+        private List<LocationSummary> _cidrLocations = AWSConfigs.InitializeCollections ? new List<LocationSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -74,7 +75,7 @@ namespace Amazon.Route53.Model
         // Check to see if CidrLocations property is set
         internal bool IsSetCidrLocations()
         {
-            return this._cidrLocations != null && this._cidrLocations.Count > 0; 
+            return this._cidrLocations != null && (this._cidrLocations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

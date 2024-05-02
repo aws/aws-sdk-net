@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.GlobalAccelerator.Model
     public partial class CustomRoutingDestinationDescription
     {
         private int? _fromPort;
-        private List<string> _protocols = new List<string>();
+        private List<string> _protocols = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _toPort;
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if Protocols property is set
         internal bool IsSetProtocols()
         {
-            return this._protocols != null && this._protocols.Count > 0; 
+            return this._protocols != null && (this._protocols.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// Enumerable containing all of the EntitySummaryList
         /// </summary>
         public IPaginatedEnumerable<EntitySummary> EntitySummaryList => 
-            new PaginatedResultKeyResponse<ListEntitiesResponse, EntitySummary>(this, (i) => i.EntitySummaryList);
+            new PaginatedResultKeyResponse<ListEntitiesResponse, EntitySummary>(this, (i) => i.EntitySummaryList ?? new List<EntitySummary>());
 
         internal ListEntitiesPaginator(IAmazonMarketplaceCatalog client, ListEntitiesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.MarketplaceCatalog.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListEntitiesResponse> IPaginator<ListEntitiesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListEntitiesResponse> IPaginator<ListEntitiesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

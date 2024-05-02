@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.GroundStation.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.GroundStation.Model
         /// Enumerable containing all of the ContactList
         /// </summary>
         public IPaginatedEnumerable<ContactData> ContactList => 
-            new PaginatedResultKeyResponse<ListContactsResponse, ContactData>(this, (i) => i.ContactList);
+            new PaginatedResultKeyResponse<ListContactsResponse, ContactData>(this, (i) => i.ContactList ?? new List<ContactData>());
 
         internal ListContactsPaginator(IAmazonGroundStation client, ListContactsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.GroundStation.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListContactsResponse> IPaginator<ListContactsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListContactsResponse> IPaginator<ListContactsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

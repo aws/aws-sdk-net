@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Batch.Model
 {
     /// <summary>
@@ -76,8 +77,8 @@ namespace Amazon.Batch.Model
         ///  </note> </dd> <dt>type="MEMORY"</dt> <dd> 
         /// <para>
         /// The memory hard limit (in MiB) present to the container. This parameter is supported
-        /// for jobs that are running on EC2 resources. If your container attempts to exceed the
-        /// memory specified, the container is terminated. This parameter maps to <c>Memory</c>
+        /// for jobs that are running on Amazon EC2 resources. If your container attempts to exceed
+        /// the memory specified, the container is terminated. This parameter maps to <c>Memory</c>
         /// in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
         /// Remote API</a> and the <c>--memory</c> option to <a href="https://docs.docker.com/engine/reference/run/">docker
@@ -165,8 +166,8 @@ namespace Amazon.Batch.Model
         /// in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
         /// Remote API</a> and the <c>--cpu-shares</c> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-        /// run</a>. Each vCPU is equivalent to 1,024 CPU shares. For EC2 resources, you must
-        /// specify at least one vCPU. This is required but can be specified in several places;
+        /// run</a>. Each vCPU is equivalent to 1,024 CPU shares. For Amazon EC2 resources, you
+        /// must specify at least one vCPU. This is required but can be specified in several places;
         /// it must be specified for each node at least once.
         /// </para>
         ///  

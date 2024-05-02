@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.QuickSight.Model
     public partial class DescribeTemplateDefinitionResponse : AmazonWebServiceResponse
     {
         private TemplateVersionDefinition _definition;
-        private List<TemplateError> _errors = new List<TemplateError>();
+        private List<TemplateError> _errors = AWSConfigs.InitializeCollections ? new List<TemplateError>() : null;
         private string _name;
         private string _requestId;
         private ResourceStatus _resourceStatus;
@@ -80,7 +81,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DevOpsGuru.Model
     /// </summary>
     public partial class LogAnomalyShowcase
     {
-        private List<LogAnomalyClass> _logAnomalyClasses = new List<LogAnomalyClass>();
+        private List<LogAnomalyClass> _logAnomalyClasses = AWSConfigs.InitializeCollections ? new List<LogAnomalyClass>() : null;
 
         /// <summary>
         /// Gets and sets the property LogAnomalyClasses. 
@@ -51,7 +52,7 @@ namespace Amazon.DevOpsGuru.Model
         // Check to see if LogAnomalyClasses property is set
         internal bool IsSetLogAnomalyClasses()
         {
-            return this._logAnomalyClasses != null && this._logAnomalyClasses.Count > 0; 
+            return this._logAnomalyClasses != null && (this._logAnomalyClasses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

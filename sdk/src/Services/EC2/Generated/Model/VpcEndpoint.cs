@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -34,21 +35,21 @@ namespace Amazon.EC2.Model
     public partial class VpcEndpoint
     {
         private DateTime? _creationTimestamp;
-        private List<DnsEntry> _dnsEntries = new List<DnsEntry>();
+        private List<DnsEntry> _dnsEntries = AWSConfigs.InitializeCollections ? new List<DnsEntry>() : null;
         private DnsOptions _dnsOptions;
-        private List<SecurityGroupIdentifier> _groups = new List<SecurityGroupIdentifier>();
+        private List<SecurityGroupIdentifier> _groups = AWSConfigs.InitializeCollections ? new List<SecurityGroupIdentifier>() : null;
         private IpAddressType _ipAddressType;
         private LastError _lastError;
-        private List<string> _networkInterfaceIds = new List<string>();
+        private List<string> _networkInterfaceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _ownerId;
         private string _policyDocument;
         private bool? _privateDnsEnabled;
         private bool? _requesterManaged;
-        private List<string> _routeTableIds = new List<string>();
+        private List<string> _routeTableIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _serviceName;
         private State _state;
-        private List<string> _subnetIds = new List<string>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _vpcEndpointId;
         private VpcEndpointType _vpcEndpointType;
         private string _vpcId;
@@ -86,7 +87,7 @@ namespace Amazon.EC2.Model
         // Check to see if DnsEntries property is set
         internal bool IsSetDnsEntries()
         {
-            return this._dnsEntries != null && this._dnsEntries.Count > 0; 
+            return this._dnsEntries != null && (this._dnsEntries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -123,7 +124,7 @@ namespace Amazon.EC2.Model
         // Check to see if Groups property is set
         internal bool IsSetGroups()
         {
-            return this._groups != null && this._groups.Count > 0; 
+            return this._groups != null && (this._groups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -177,7 +178,7 @@ namespace Amazon.EC2.Model
         // Check to see if NetworkInterfaceIds property is set
         internal bool IsSetNetworkInterfaceIds()
         {
-            return this._networkInterfaceIds != null && this._networkInterfaceIds.Count > 0; 
+            return this._networkInterfaceIds != null && (this._networkInterfaceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -268,7 +269,7 @@ namespace Amazon.EC2.Model
         // Check to see if RouteTableIds property is set
         internal bool IsSetRouteTableIds()
         {
-            return this._routeTableIds != null && this._routeTableIds.Count > 0; 
+            return this._routeTableIds != null && (this._routeTableIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -322,7 +323,7 @@ namespace Amazon.EC2.Model
         // Check to see if SubnetIds property is set
         internal bool IsSetSubnetIds()
         {
-            return this._subnetIds != null && this._subnetIds.Count > 0; 
+            return this._subnetIds != null && (this._subnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -340,7 +341,7 @@ namespace Amazon.EC2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

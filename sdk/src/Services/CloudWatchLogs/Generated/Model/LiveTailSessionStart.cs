@@ -30,6 +30,7 @@ using Amazon.Runtime.EventStreams.Internal;
 using Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations;
 using Amazon.Runtime.EventStreams.Utils;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
@@ -40,9 +41,9 @@ namespace Amazon.CloudWatchLogs.Model
         : IEventStreamEvent
     {
         private string _logEventFilterPattern;
-        private List<string> _logGroupIdentifiers = new List<string>();
-        private List<string> _logStreamNamePrefixes = new List<string>();
-        private List<string> _logStreamNames = new List<string>();
+        private List<string> _logGroupIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _logStreamNamePrefixes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _logStreamNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _requestId;
         private string _sessionId;
 
@@ -88,7 +89,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if LogGroupIdentifiers property is set
         internal bool IsSetLogGroupIdentifiers()
         {
-            return this._logGroupIdentifiers != null && this._logGroupIdentifiers.Count > 0; 
+            return this._logGroupIdentifiers != null && (this._logGroupIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -109,7 +110,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if LogStreamNamePrefixes property is set
         internal bool IsSetLogStreamNamePrefixes()
         {
-            return this._logStreamNamePrefixes != null && this._logStreamNamePrefixes.Count > 0; 
+            return this._logStreamNamePrefixes != null && (this._logStreamNamePrefixes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -130,7 +131,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if LogStreamNames property is set
         internal bool IsSetLogStreamNames()
         {
-            return this._logStreamNames != null && this._logStreamNames.Count > 0; 
+            return this._logStreamNames != null && (this._logStreamNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

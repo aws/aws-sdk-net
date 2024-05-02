@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GameLift.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.GameLift.Model
         private string _dnsName;
         private string _gameSessionArn;
         private string _ipAddress;
-        private List<MatchedPlayerSession> _matchedPlayerSessions = new List<MatchedPlayerSession>();
+        private List<MatchedPlayerSession> _matchedPlayerSessions = AWSConfigs.InitializeCollections ? new List<MatchedPlayerSession>() : null;
         private int? _port;
 
         /// <summary>
@@ -131,7 +132,7 @@ namespace Amazon.GameLift.Model
         // Check to see if MatchedPlayerSessions property is set
         internal bool IsSetMatchedPlayerSessions()
         {
-            return this._matchedPlayerSessions != null && this._matchedPlayerSessions.Count > 0; 
+            return this._matchedPlayerSessions != null && (this._matchedPlayerSessions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

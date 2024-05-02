@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.ElasticMapReduce.Model
     {
         private string _executionRoleArn;
         private string _jobFlowId;
-        private List<StepConfig> _steps = new List<StepConfig>();
+        private List<StepConfig> _steps = AWSConfigs.InitializeCollections ? new List<StepConfig>() : null;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -159,7 +160,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if Steps property is set
         internal bool IsSetSteps()
         {
-            return this._steps != null && this._steps.Count > 0; 
+            return this._steps != null && (this._steps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

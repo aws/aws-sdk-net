@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -35,10 +36,10 @@ namespace Amazon.Glue.Model
     public partial class CreateJobRequest : AmazonGlueRequest
     {
         private int? _allocatedCapacity;
-        private Dictionary<string, CodeGenConfigurationNode> _codeGenConfigurationNodes = new Dictionary<string, CodeGenConfigurationNode>();
+        private Dictionary<string, CodeGenConfigurationNode> _codeGenConfigurationNodes = AWSConfigs.InitializeCollections ? new Dictionary<string, CodeGenConfigurationNode>() : null;
         private JobCommand _command;
         private ConnectionsList _connections;
-        private Dictionary<string, string> _defaultArguments = new Dictionary<string, string>();
+        private Dictionary<string, string> _defaultArguments = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _description;
         private ExecutionClass _executionClass;
         private ExecutionProperty _executionProperty;
@@ -47,13 +48,13 @@ namespace Amazon.Glue.Model
         private double? _maxCapacity;
         private int? _maxRetries;
         private string _name;
-        private Dictionary<string, string> _nonOverridableArguments = new Dictionary<string, string>();
+        private Dictionary<string, string> _nonOverridableArguments = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private NotificationProperty _notificationProperty;
         private int? _numberOfWorkers;
         private string _role;
         private string _securityConfiguration;
         private SourceControlDetails _sourceControlDetails;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private int? _timeout;
         private WorkerType _workerType;
 
@@ -100,7 +101,7 @@ namespace Amazon.Glue.Model
         // Check to see if CodeGenConfigurationNodes property is set
         internal bool IsSetCodeGenConfigurationNodes()
         {
-            return this._codeGenConfigurationNodes != null && this._codeGenConfigurationNodes.Count > 0; 
+            return this._codeGenConfigurationNodes != null && (this._codeGenConfigurationNodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -184,7 +185,7 @@ namespace Amazon.Glue.Model
         // Check to see if DefaultArguments property is set
         internal bool IsSetDefaultArguments()
         {
-            return this._defaultArguments != null && this._defaultArguments.Count > 0; 
+            return this._defaultArguments != null && (this._defaultArguments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -415,7 +416,7 @@ namespace Amazon.Glue.Model
         // Check to see if NonOverridableArguments property is set
         internal bool IsSetNonOverridableArguments()
         {
-            return this._nonOverridableArguments != null && this._nonOverridableArguments.Count > 0; 
+            return this._nonOverridableArguments != null && (this._nonOverridableArguments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -530,7 +531,7 @@ namespace Amazon.Glue.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

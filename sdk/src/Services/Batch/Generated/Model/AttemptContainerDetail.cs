@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Batch.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Batch.Model
         private string _containerInstanceArn;
         private int? _exitCode;
         private string _logStreamName;
-        private List<NetworkInterface> _networkInterfaces = new List<NetworkInterface>();
+        private List<NetworkInterface> _networkInterfaces = AWSConfigs.InitializeCollections ? new List<NetworkInterface>() : null;
         private string _reason;
         private string _taskArn;
 
@@ -112,7 +113,7 @@ namespace Amazon.Batch.Model
         // Check to see if NetworkInterfaces property is set
         internal bool IsSetNetworkInterfaces()
         {
-            return this._networkInterfaces != null && this._networkInterfaces.Count > 0; 
+            return this._networkInterfaces != null && (this._networkInterfaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

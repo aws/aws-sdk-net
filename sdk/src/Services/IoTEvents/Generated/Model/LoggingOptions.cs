@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTEvents.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoTEvents.Model
     /// </summary>
     public partial class LoggingOptions
     {
-        private List<DetectorDebugOption> _detectorDebugOptions = new List<DetectorDebugOption>();
+        private List<DetectorDebugOption> _detectorDebugOptions = AWSConfigs.InitializeCollections ? new List<DetectorDebugOption>() : null;
         private bool? _enabled;
         private LoggingLevel _level;
         private string _roleArn;
@@ -55,7 +56,7 @@ namespace Amazon.IoTEvents.Model
         // Check to see if DetectorDebugOptions property is set
         internal bool IsSetDetectorDebugOptions()
         {
-            return this._detectorDebugOptions != null && this._detectorDebugOptions.Count > 0; 
+            return this._detectorDebugOptions != null && (this._detectorDebugOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

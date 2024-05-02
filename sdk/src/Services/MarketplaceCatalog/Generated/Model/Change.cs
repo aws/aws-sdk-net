@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.MarketplaceCatalog.Model
         private string _details;
         private Amazon.Runtime.Documents.Document _detailsDocument;
         private Entity _entity;
-        private List<Tag> _entityTags = new List<Tag>();
+        private List<Tag> _entityTags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ChangeName. 
@@ -162,7 +163,7 @@ namespace Amazon.MarketplaceCatalog.Model
         // Check to see if EntityTags property is set
         internal bool IsSetEntityTags()
         {
-            return this._entityTags != null && this._entityTags.Count > 0; 
+            return this._entityTags != null && (this._entityTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

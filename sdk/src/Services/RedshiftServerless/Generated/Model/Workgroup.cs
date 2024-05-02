@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RedshiftServerless.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.RedshiftServerless.Model
     public partial class Workgroup
     {
         private int? _baseCapacity;
-        private List<ConfigParameter> _configParameters = new List<ConfigParameter>();
+        private List<ConfigParameter> _configParameters = AWSConfigs.InitializeCollections ? new List<ConfigParameter>() : null;
         private DateTime? _creationDate;
-        private List<string> _crossAccountVpcs = new List<string>();
+        private List<string> _crossAccountVpcs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _customDomainCertificateArn;
         private DateTime? _customDomainCertificateExpiryTime;
         private string _customDomainName;
@@ -47,9 +48,9 @@ namespace Amazon.RedshiftServerless.Model
         private string _patchVersion;
         private int? _port;
         private bool? _publiclyAccessible;
-        private List<string> _securityGroupIds = new List<string>();
+        private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private WorkgroupStatus _status;
-        private List<string> _subnetIds = new List<string>();
+        private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _workgroupArn;
         private string _workgroupId;
         private string _workgroupName;
@@ -93,7 +94,7 @@ namespace Amazon.RedshiftServerless.Model
         // Check to see if ConfigParameters property is set
         internal bool IsSetConfigParameters()
         {
-            return this._configParameters != null && this._configParameters.Count > 0; 
+            return this._configParameters != null && (this._configParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -131,7 +132,7 @@ namespace Amazon.RedshiftServerless.Model
         // Check to see if CrossAccountVpcs property is set
         internal bool IsSetCrossAccountVpcs()
         {
-            return this._crossAccountVpcs != null && this._crossAccountVpcs.Count > 0; 
+            return this._crossAccountVpcs != null && (this._crossAccountVpcs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -336,7 +337,7 @@ namespace Amazon.RedshiftServerless.Model
         // Check to see if SecurityGroupIds property is set
         internal bool IsSetSecurityGroupIds()
         {
-            return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+            return this._securityGroupIds != null && (this._securityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -372,7 +373,7 @@ namespace Amazon.RedshiftServerless.Model
         // Check to see if SubnetIds property is set
         internal bool IsSetSubnetIds()
         {
-            return this._subnetIds != null && this._subnetIds.Count > 0; 
+            return this._subnetIds != null && (this._subnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

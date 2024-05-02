@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
+    /// Describes whether snapshots are enabled for a Managed Service for Apache Flink application.
     /// </summary>
     public partial class ApplicationSnapshotConfiguration
     {
@@ -38,7 +39,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property SnapshotsEnabled. 
         /// <para>
-        /// Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
+        /// Describes whether snapshots are enabled for a Managed Service for Apache Flink application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

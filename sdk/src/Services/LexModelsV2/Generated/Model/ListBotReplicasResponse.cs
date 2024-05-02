@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.LexModelsV2.Model
     public partial class ListBotReplicasResponse : AmazonWebServiceResponse
     {
         private string _botId;
-        private List<BotReplicaSummary> _botReplicaSummaries = new List<BotReplicaSummary>();
+        private List<BotReplicaSummary> _botReplicaSummaries = AWSConfigs.InitializeCollections ? new List<BotReplicaSummary>() : null;
         private string _sourceRegion;
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if BotReplicaSummaries property is set
         internal bool IsSetBotReplicaSummaries()
         {
-            return this._botReplicaSummaries != null && this._botReplicaSummaries.Count > 0; 
+            return this._botReplicaSummaries != null && (this._botReplicaSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

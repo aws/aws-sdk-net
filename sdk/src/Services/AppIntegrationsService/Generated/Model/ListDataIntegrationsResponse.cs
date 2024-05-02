@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppIntegrationsService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AppIntegrationsService.Model
     /// </summary>
     public partial class ListDataIntegrationsResponse : AmazonWebServiceResponse
     {
-        private List<DataIntegrationSummary> _dataIntegrations = new List<DataIntegrationSummary>();
+        private List<DataIntegrationSummary> _dataIntegrations = AWSConfigs.InitializeCollections ? new List<DataIntegrationSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.AppIntegrationsService.Model
         // Check to see if DataIntegrations property is set
         internal bool IsSetDataIntegrations()
         {
-            return this._dataIntegrations != null && this._dataIntegrations.Count > 0; 
+            return this._dataIntegrations != null && (this._dataIntegrations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

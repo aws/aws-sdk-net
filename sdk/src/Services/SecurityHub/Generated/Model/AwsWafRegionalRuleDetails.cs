@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.SecurityHub.Model
     {
         private string _metricName;
         private string _name;
-        private List<AwsWafRegionalRulePredicateListDetails> _predicateList = new List<AwsWafRegionalRulePredicateListDetails>();
+        private List<AwsWafRegionalRulePredicateListDetails> _predicateList = AWSConfigs.InitializeCollections ? new List<AwsWafRegionalRulePredicateListDetails>() : null;
         private string _ruleId;
 
         /// <summary>
@@ -93,7 +94,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if PredicateList property is set
         internal bool IsSetPredicateList()
         {
-            return this._predicateList != null && this._predicateList.Count > 0; 
+            return this._predicateList != null && (this._predicateList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

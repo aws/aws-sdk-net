@@ -33,6 +33,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.WorkSpacesWeb
 {
     /// <summary>
@@ -2990,6 +2991,9 @@ namespace Amazon.WorkSpacesWeb
         /// </exception>
         /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
         /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
         /// </exception>
         /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
         /// There is a throttling error.

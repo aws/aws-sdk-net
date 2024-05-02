@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.GlueDataBrew.Model
     /// </summary>
     public partial class StatisticsConfiguration
     {
-        private List<string> _includedStatistics = new List<string>();
-        private List<StatisticOverride> _overrides = new List<StatisticOverride>();
+        private List<string> _includedStatistics = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<StatisticOverride> _overrides = AWSConfigs.InitializeCollections ? new List<StatisticOverride>() : null;
 
         /// <summary>
         /// Gets and sets the property IncludedStatistics. 
@@ -54,7 +55,7 @@ namespace Amazon.GlueDataBrew.Model
         // Check to see if IncludedStatistics property is set
         internal bool IsSetIncludedStatistics()
         {
-            return this._includedStatistics != null && this._includedStatistics.Count > 0; 
+            return this._includedStatistics != null && (this._includedStatistics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.GlueDataBrew.Model
         // Check to see if Overrides property is set
         internal bool IsSetOverrides()
         {
-            return this._overrides != null && this._overrides.Count > 0; 
+            return this._overrides != null && (this._overrides.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.Pinpoint.Model
         private string _creationDate;
         private ImportJobResource _definition;
         private int? _failedPieces;
-        private List<string> _failures = new List<string>();
+        private List<string> _failures = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _id;
         private JobStatus _jobStatus;
         private int? _totalFailures;
@@ -179,7 +180,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Failures property is set
         internal bool IsSetFailures()
         {
-            return this._failures != null && this._failures.Count > 0; 
+            return this._failures != null && (this._failures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SSO.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.SSO.Model
         /// Enumerable containing all of the AccountList
         /// </summary>
         public IPaginatedEnumerable<AccountInfo> AccountList => 
-            new PaginatedResultKeyResponse<ListAccountsResponse, AccountInfo>(this, (i) => i.AccountList);
+            new PaginatedResultKeyResponse<ListAccountsResponse, AccountInfo>(this, (i) => i.AccountList ?? new List<AccountInfo>());
 
         internal ListAccountsPaginator(IAmazonSSO client, ListAccountsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.SSO.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListAccountsResponse> IPaginator<ListAccountsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListAccountsResponse> IPaginator<ListAccountsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

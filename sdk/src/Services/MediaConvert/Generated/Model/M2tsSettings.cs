@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
@@ -44,13 +45,13 @@ namespace Amazon.MediaConvert.Model
         private M2tsAudioBufferModel _audioBufferModel;
         private M2tsAudioDuration _audioDuration;
         private int? _audioFramesPerPes;
-        private List<int> _audioPids = new List<int>();
+        private List<int> _audioPids = AWSConfigs.InitializeCollections ? new List<int>() : null;
         private int? _bitrate;
         private M2tsBufferModel _bufferModel;
         private M2tsDataPtsControl _dataPTSControl;
         private DvbNitSettings _dvbNitSettings;
         private DvbSdtSettings _dvbSdtSettings;
-        private List<int> _dvbSubPids = new List<int>();
+        private List<int> _dvbSubPids = AWSConfigs.InitializeCollections ? new List<int>() : null;
         private DvbTdtSettings _dvbTdtSettings;
         private int? _dvbTeletextPid;
         private M2tsEbpAudioInterval _ebpAudioInterval;
@@ -68,6 +69,7 @@ namespace Amazon.MediaConvert.Model
         private int? _pcrPid;
         private int? _pmtInterval;
         private int? _pmtPid;
+        private M2tsPreventBufferUnderflow _preventBufferUnderflow;
         private int? _privateMetadataPid;
         private int? _programNumber;
         private int? _ptsOffset;
@@ -156,7 +158,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if AudioPids property is set
         internal bool IsSetAudioPids()
         {
-            return this._audioPids != null && this._audioPids.Count > 0; 
+            return this._audioPids != null && (this._audioPids.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -259,7 +261,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if DvbSubPids property is set
         internal bool IsSetDvbSubPids()
         {
-            return this._dvbSubPids != null && this._dvbSubPids.Count > 0; 
+            return this._dvbSubPids != null && (this._dvbSubPids.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -557,6 +559,27 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetPmtPid()
         {
             return this._pmtPid.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PreventBufferUnderflow. Specify whether MediaConvert automatically
+        /// attempts to prevent decoder buffer underflows in your transport stream output. Use
+        /// if you are seeing decoder buffer underflows in your output and are unable to increase
+        /// your transport stream's bitrate. For most workflows: We recommend that you keep the
+        /// default value, Disabled. To prevent decoder buffer underflows in your output, when
+        /// possible: Choose Enabled. Note that if MediaConvert prevents a decoder buffer underflow
+        /// in your output, output video quality is reduced and your job will take longer to complete.
+        /// </summary>
+        public M2tsPreventBufferUnderflow PreventBufferUnderflow
+        {
+            get { return this._preventBufferUnderflow; }
+            set { this._preventBufferUnderflow = value; }
+        }
+
+        // Check to see if PreventBufferUnderflow property is set
+        internal bool IsSetPreventBufferUnderflow()
+        {
+            return this._preventBufferUnderflow != null;
         }
 
         /// <summary>

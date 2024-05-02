@@ -26,7 +26,7 @@ namespace Amazon.S3.Model
     public class CORSConfiguration
     {
         
-        private List<CORSRule> rules = new List<CORSRule>();
+        private List<CORSRule> rules = AWSConfigs.InitializeCollections ? new List<CORSRule>() : null;
 
         /// <summary>
         /// The collection of rules in this configuration.
@@ -40,7 +40,7 @@ namespace Amazon.S3.Model
         // Check to see if Rules property is set
         internal bool IsSetRules()
         {
-            return this.rules.Count > 0;
+            return this.rules != null && (this.rules.Count > 0 || !AWSConfigs.InitializeCollections);
         }
     }
 }

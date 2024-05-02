@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class Volume
     {
-        private List<VolumeAttachment> _attachments = new List<VolumeAttachment>();
+        private List<VolumeAttachment> _attachments = AWSConfigs.InitializeCollections ? new List<VolumeAttachment>() : null;
         private string _availabilityZone;
         private DateTime? _createTime;
         private bool? _encrypted;
@@ -46,7 +47,7 @@ namespace Amazon.EC2.Model
         private string _snapshotId;
         private SSEType _sseType;
         private VolumeState _state;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private int? _throughput;
         private string _volumeId;
         private VolumeType _volumeType;
@@ -66,7 +67,7 @@ namespace Amazon.EC2.Model
         // Check to see if Attachments property is set
         internal bool IsSetAttachments()
         {
-            return this._attachments != null && this._attachments.Count > 0; 
+            return this._attachments != null && (this._attachments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -304,7 +305,7 @@ namespace Amazon.EC2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

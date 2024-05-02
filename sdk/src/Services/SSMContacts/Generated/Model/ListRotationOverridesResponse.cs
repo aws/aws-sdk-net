@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SSMContacts.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SSMContacts.Model
     public partial class ListRotationOverridesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RotationOverride> _rotationOverrides = new List<RotationOverride>();
+        private List<RotationOverride> _rotationOverrides = AWSConfigs.InitializeCollections ? new List<RotationOverride>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.SSMContacts.Model
         // Check to see if RotationOverrides property is set
         internal bool IsSetRotationOverrides()
         {
-            return this._rotationOverrides != null && this._rotationOverrides.Count > 0; 
+            return this._rotationOverrides != null && (this._rotationOverrides.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

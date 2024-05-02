@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class LogDeliveryConfigurationType
     {
-        private List<LogConfigurationType> _logConfigurations = new List<LogConfigurationType>();
+        private List<LogConfigurationType> _logConfigurations = AWSConfigs.InitializeCollections ? new List<LogConfigurationType>() : null;
         private string _userPoolId;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if LogConfigurations property is set
         internal bool IsSetLogConfigurations()
         {
-            return this._logConfigurations != null && this._logConfigurations.Count > 0; 
+            return this._logConfigurations != null && (this._logConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

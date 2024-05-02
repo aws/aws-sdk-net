@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
@@ -39,8 +40,8 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class TargetedSentimentEntity
     {
-        private List<int> _descriptiveMentionIndex = new List<int>();
-        private List<TargetedSentimentMention> _mentions = new List<TargetedSentimentMention>();
+        private List<int> _descriptiveMentionIndex = AWSConfigs.InitializeCollections ? new List<int>() : null;
+        private List<TargetedSentimentMention> _mentions = AWSConfigs.InitializeCollections ? new List<TargetedSentimentMention>() : null;
 
         /// <summary>
         /// Gets and sets the property DescriptiveMentionIndex. 
@@ -58,7 +59,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if DescriptiveMentionIndex property is set
         internal bool IsSetDescriptiveMentionIndex()
         {
-            return this._descriptiveMentionIndex != null && this._descriptiveMentionIndex.Count > 0; 
+            return this._descriptiveMentionIndex != null && (this._descriptiveMentionIndex.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -78,7 +79,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if Mentions property is set
         internal bool IsSetMentions()
         {
-            return this._mentions != null && this._mentions.Count > 0; 
+            return this._mentions != null && (this._mentions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

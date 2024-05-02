@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CodePipeline.Model
     /// </summary>
     public partial class ActionTypePermissions
     {
-        private List<string> _allowedAccounts = new List<string>();
+        private List<string> _allowedAccounts = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AllowedAccounts. 
@@ -52,7 +53,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if AllowedAccounts property is set
         internal bool IsSetAllowedAccounts()
         {
-            return this._allowedAccounts != null && this._allowedAccounts.Count > 0; 
+            return this._allowedAccounts != null && (this._allowedAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

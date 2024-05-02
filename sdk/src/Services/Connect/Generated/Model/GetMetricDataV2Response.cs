@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class GetMetricDataV2Response : AmazonWebServiceResponse
     {
-        private List<MetricResultV2> _metricResults = new List<MetricResultV2>();
+        private List<MetricResultV2> _metricResults = AWSConfigs.InitializeCollections ? new List<MetricResultV2>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.Connect.Model
         // Check to see if MetricResults property is set
         internal bool IsSetMetricResults()
         {
-            return this._metricResults != null && this._metricResults.Count > 0; 
+            return this._metricResults != null && (this._metricResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

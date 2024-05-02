@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class UpdateUserAttributesResponse : AmazonWebServiceResponse
     {
-        private List<CodeDeliveryDetailsType> _codeDeliveryDetailsList = new List<CodeDeliveryDetailsType>();
+        private List<CodeDeliveryDetailsType> _codeDeliveryDetailsList = AWSConfigs.InitializeCollections ? new List<CodeDeliveryDetailsType>() : null;
 
         /// <summary>
         /// Gets and sets the property CodeDeliveryDetailsList. 
@@ -50,7 +51,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if CodeDeliveryDetailsList property is set
         internal bool IsSetCodeDeliveryDetailsList()
         {
-            return this._codeDeliveryDetailsList != null && this._codeDeliveryDetailsList.Count > 0; 
+            return this._codeDeliveryDetailsList != null && (this._codeDeliveryDetailsList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

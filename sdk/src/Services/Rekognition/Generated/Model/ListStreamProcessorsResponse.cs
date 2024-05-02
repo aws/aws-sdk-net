@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Rekognition.Model
     public partial class ListStreamProcessorsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<StreamProcessor> _streamProcessors = new List<StreamProcessor>();
+        private List<StreamProcessor> _streamProcessors = AWSConfigs.InitializeCollections ? new List<StreamProcessor>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if StreamProcessors property is set
         internal bool IsSetStreamProcessors()
         {
-            return this._streamProcessors != null && this._streamProcessors.Count > 0; 
+            return this._streamProcessors != null && (this._streamProcessors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

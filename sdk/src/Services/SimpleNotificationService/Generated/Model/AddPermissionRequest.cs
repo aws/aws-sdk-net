@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
@@ -43,8 +44,8 @@ namespace Amazon.SimpleNotificationService.Model
     /// </summary>
     public partial class AddPermissionRequest : AmazonSimpleNotificationServiceRequest
     {
-        private List<string> _actionName = new List<string>();
-        private List<string> _awsAccountId = new List<string>();
+        private List<string> _actionName = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _awsAccountId = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _label;
         private string _topicArn;
 
@@ -88,7 +89,7 @@ namespace Amazon.SimpleNotificationService.Model
         // Check to see if ActionName property is set
         internal bool IsSetActionName()
         {
-            return this._actionName != null && this._actionName.Count > 0; 
+            return this._actionName != null && (this._actionName.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -109,7 +110,7 @@ namespace Amazon.SimpleNotificationService.Model
         // Check to see if AWSAccountId property is set
         internal bool IsSetAWSAccountId()
         {
-            return this._awsAccountId != null && this._awsAccountId.Count > 0; 
+            return this._awsAccountId != null && (this._awsAccountId.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

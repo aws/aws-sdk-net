@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -33,15 +34,15 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class LabelParameterVersionResponse : AmazonWebServiceResponse
     {
-        private List<string> _invalidLabels = new List<string>();
+        private List<string> _invalidLabels = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private long? _parameterVersion;
 
         /// <summary>
         /// Gets and sets the property InvalidLabels. 
         /// <para>
         /// The label doesn't meet the requirements. For information about parameter label requirements,
-        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Labeling
-        /// parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html">Working
+        /// with parameter labels</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -54,7 +55,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if InvalidLabels property is set
         internal bool IsSetInvalidLabels()
         {
-            return this._invalidLabels != null && this._invalidLabels.Count > 0; 
+            return this._invalidLabels != null && (this._invalidLabels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

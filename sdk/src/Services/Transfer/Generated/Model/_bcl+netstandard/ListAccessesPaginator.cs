@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Transfer.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Transfer.Model
         /// Enumerable containing all of the Accesses
         /// </summary>
         public IPaginatedEnumerable<ListedAccess> Accesses => 
-            new PaginatedResultKeyResponse<ListAccessesResponse, ListedAccess>(this, (i) => i.Accesses);
+            new PaginatedResultKeyResponse<ListAccessesResponse, ListedAccess>(this, (i) => i.Accesses ?? new List<ListedAccess>());
 
         internal ListAccessesPaginator(IAmazonTransfer client, ListAccessesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Transfer.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListAccessesResponse> IPaginator<ListAccessesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListAccessesResponse> IPaginator<ListAccessesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

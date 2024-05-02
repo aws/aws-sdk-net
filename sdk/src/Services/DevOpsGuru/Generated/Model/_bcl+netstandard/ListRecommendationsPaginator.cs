@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.DevOpsGuru.Model
         /// Enumerable containing all of the Recommendations
         /// </summary>
         public IPaginatedEnumerable<Recommendation> Recommendations => 
-            new PaginatedResultKeyResponse<ListRecommendationsResponse, Recommendation>(this, (i) => i.Recommendations);
+            new PaginatedResultKeyResponse<ListRecommendationsResponse, Recommendation>(this, (i) => i.Recommendations ?? new List<Recommendation>());
 
         internal ListRecommendationsPaginator(IAmazonDevOpsGuru client, ListRecommendationsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.DevOpsGuru.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListRecommendationsResponse> IPaginator<ListRecommendationsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListRecommendationsResponse> IPaginator<ListRecommendationsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

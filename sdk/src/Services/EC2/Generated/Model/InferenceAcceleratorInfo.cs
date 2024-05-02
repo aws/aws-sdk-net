@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class InferenceAcceleratorInfo
     {
-        private List<InferenceDeviceInfo> _accelerators = new List<InferenceDeviceInfo>();
+        private List<InferenceDeviceInfo> _accelerators = AWSConfigs.InitializeCollections ? new List<InferenceDeviceInfo>() : null;
         private int? _totalInferenceMemoryInMiB;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.EC2.Model
         // Check to see if Accelerators property is set
         internal bool IsSetAccelerators()
         {
-            return this._accelerators != null && this._accelerators.Count > 0; 
+            return this._accelerators != null && (this._accelerators.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

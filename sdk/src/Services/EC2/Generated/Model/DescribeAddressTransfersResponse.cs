@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeAddressTransfersResponse : AmazonWebServiceResponse
     {
-        private List<AddressTransfer> _addressTransfers = new List<AddressTransfer>();
+        private List<AddressTransfer> _addressTransfers = AWSConfigs.InitializeCollections ? new List<AddressTransfer>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.EC2.Model
         // Check to see if AddressTransfers property is set
         internal bool IsSetAddressTransfers()
         {
-            return this._addressTransfers != null && this._addressTransfers.Count > 0; 
+            return this._addressTransfers != null && (this._addressTransfers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

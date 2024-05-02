@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class HyperParameterTuningJobWarmStartConfig
     {
-        private List<ParentHyperParameterTuningJob> _parentHyperParameterTuningJobs = new List<ParentHyperParameterTuningJob>();
+        private List<ParentHyperParameterTuningJob> _parentHyperParameterTuningJobs = AWSConfigs.InitializeCollections ? new List<ParentHyperParameterTuningJob>() : null;
         private HyperParameterTuningJobWarmStartType _warmStartType;
 
         /// <summary>
@@ -78,7 +79,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ParentHyperParameterTuningJobs property is set
         internal bool IsSetParentHyperParameterTuningJobs()
         {
-            return this._parentHyperParameterTuningJobs != null && this._parentHyperParameterTuningJobs.Count > 0; 
+            return this._parentHyperParameterTuningJobs != null && (this._parentHyperParameterTuningJobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

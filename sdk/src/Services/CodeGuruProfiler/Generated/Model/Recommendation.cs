@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.CodeGuruProfiler.Model
         private DateTime? _endTime;
         private Pattern _pattern;
         private DateTime? _startTime;
-        private List<Match> _topMatches = new List<Match>();
+        private List<Match> _topMatches = AWSConfigs.InitializeCollections ? new List<Match>() : null;
 
         /// <summary>
         /// Gets and sets the property AllMatchesCount. 
@@ -155,7 +156,7 @@ namespace Amazon.CodeGuruProfiler.Model
         // Check to see if TopMatches property is set
         internal bool IsSetTopMatches()
         {
-            return this._topMatches != null && this._topMatches.Count > 0; 
+            return this._topMatches != null && (this._topMatches.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

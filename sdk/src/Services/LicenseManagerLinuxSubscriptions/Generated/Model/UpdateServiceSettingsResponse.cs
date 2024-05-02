@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LicenseManagerLinuxSubscriptions.Model
 {
     /// <summary>
@@ -33,11 +34,11 @@ namespace Amazon.LicenseManagerLinuxSubscriptions.Model
     /// </summary>
     public partial class UpdateServiceSettingsResponse : AmazonWebServiceResponse
     {
-        private List<string> _homeRegions = new List<string>();
+        private List<string> _homeRegions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private LinuxSubscriptionsDiscovery _linuxSubscriptionsDiscovery;
         private LinuxSubscriptionsDiscoverySettings _linuxSubscriptionsDiscoverySettings;
         private Status _status;
-        private Dictionary<string, string> _statusMessage = new Dictionary<string, string>();
+        private Dictionary<string, string> _statusMessage = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property HomeRegions. 
@@ -55,7 +56,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions.Model
         // Check to see if HomeRegions property is set
         internal bool IsSetHomeRegions()
         {
-            return this._homeRegions != null && this._homeRegions.Count > 0; 
+            return this._homeRegions != null && (this._homeRegions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -128,7 +129,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions.Model
         // Check to see if StatusMessage property is set
         internal bool IsSetStatusMessage()
         {
-            return this._statusMessage != null && this._statusMessage.Count > 0; 
+            return this._statusMessage != null && (this._statusMessage.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

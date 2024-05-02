@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -82,19 +83,19 @@ namespace Amazon.EC2.Model
     public partial class InstanceRequirementsRequest
     {
         private AcceleratorCountRequest _acceleratorCount;
-        private List<string> _acceleratorManufacturers = new List<string>();
-        private List<string> _acceleratorNames = new List<string>();
+        private List<string> _acceleratorManufacturers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _acceleratorNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AcceleratorTotalMemoryMiBRequest _acceleratorTotalMemoryMiB;
-        private List<string> _acceleratorTypes = new List<string>();
-        private List<string> _allowedInstanceTypes = new List<string>();
+        private List<string> _acceleratorTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _allowedInstanceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private BareMetal _bareMetal;
         private BaselineEbsBandwidthMbpsRequest _baselineEbsBandwidthMbps;
         private BurstablePerformance _burstablePerformance;
-        private List<string> _cpuManufacturers = new List<string>();
-        private List<string> _excludedInstanceTypes = new List<string>();
-        private List<string> _instanceGenerations = new List<string>();
+        private List<string> _cpuManufacturers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _excludedInstanceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _instanceGenerations = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private LocalStorage _localStorage;
-        private List<string> _localStorageTypes = new List<string>();
+        private List<string> _localStorageTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxSpotPriceAsPercentageOfOptimalOnDemandPrice;
         private MemoryGiBPerVCpuRequest _memoryGiBPerVCpu;
         private MemoryMiBRequest _memoryMiB;
@@ -172,7 +173,7 @@ namespace Amazon.EC2.Model
         // Check to see if AcceleratorManufacturers property is set
         internal bool IsSetAcceleratorManufacturers()
         {
-            return this._acceleratorManufacturers != null && this._acceleratorManufacturers.Count > 0; 
+            return this._acceleratorManufacturers != null && (this._acceleratorManufacturers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -242,7 +243,7 @@ namespace Amazon.EC2.Model
         // Check to see if AcceleratorNames property is set
         internal bool IsSetAcceleratorNames()
         {
-            return this._acceleratorNames != null && this._acceleratorNames.Count > 0; 
+            return this._acceleratorNames != null && (this._acceleratorNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -298,7 +299,7 @@ namespace Amazon.EC2.Model
         // Check to see if AcceleratorTypes property is set
         internal bool IsSetAcceleratorTypes()
         {
-            return this._acceleratorTypes != null && this._acceleratorTypes.Count > 0; 
+            return this._acceleratorTypes != null && (this._acceleratorTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -338,7 +339,7 @@ namespace Amazon.EC2.Model
         // Check to see if AllowedInstanceTypes property is set
         internal bool IsSetAllowedInstanceTypes()
         {
-            return this._allowedInstanceTypes != null && this._allowedInstanceTypes.Count > 0; 
+            return this._allowedInstanceTypes != null && (this._allowedInstanceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -472,7 +473,7 @@ namespace Amazon.EC2.Model
         // Check to see if CpuManufacturers property is set
         internal bool IsSetCpuManufacturers()
         {
-            return this._cpuManufacturers != null && this._cpuManufacturers.Count > 0; 
+            return this._cpuManufacturers != null && (this._cpuManufacturers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -511,7 +512,7 @@ namespace Amazon.EC2.Model
         // Check to see if ExcludedInstanceTypes property is set
         internal bool IsSetExcludedInstanceTypes()
         {
-            return this._excludedInstanceTypes != null && this._excludedInstanceTypes.Count > 0; 
+            return this._excludedInstanceTypes != null && (this._excludedInstanceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -545,7 +546,7 @@ namespace Amazon.EC2.Model
         // Check to see if InstanceGenerations property is set
         internal bool IsSetInstanceGenerations()
         {
-            return this._instanceGenerations != null && this._instanceGenerations.Count > 0; 
+            return this._instanceGenerations != null && (this._instanceGenerations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -611,7 +612,7 @@ namespace Amazon.EC2.Model
         // Check to see if LocalStorageTypes property is set
         internal bool IsSetLocalStorageTypes()
         {
-            return this._localStorageTypes != null && this._localStorageTypes.Count > 0; 
+            return this._localStorageTypes != null && (this._localStorageTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -632,10 +633,6 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// To indicate no price protection threshold, specify a high value, such as <c>999999</c>.
-        /// </para>
-        ///  
-        /// <para>
         /// If you set <c>DesiredCapacityType</c> to <c>vcpu</c> or <c>memory-mib</c>, the price
         /// protection threshold is based on the per vCPU or per memory price instead of the per
         /// instance price.
@@ -643,8 +640,11 @@ namespace Amazon.EC2.Model
         ///  <note> 
         /// <para>
         /// Only one of <c>SpotMaxPricePercentageOverLowestPrice</c> or <c>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</c>
-        /// can be specified. If you don't specify either, then <c>SpotMaxPricePercentageOverLowestPrice</c>
-        /// is used and the value for that parameter defaults to <c>100</c>.
+        /// can be specified. If you don't specify either, Amazon EC2 will automatically apply
+        /// optimal price protection to consistently select from a wide range of instance types.
+        /// To indicate no price protection threshold for Spot Instances, meaning you want to
+        /// consider all instance types that match your attributes, include one of these parameters
+        /// and specify a high value, such as <c>999999</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -836,10 +836,6 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// To indicate no price protection threshold, specify a high value, such as <c>999999</c>.
-        /// </para>
-        ///  
-        /// <para>
         /// If you set <c>TargetCapacityUnitType</c> to <c>vcpu</c> or <c>memory-mib</c>, the
         /// price protection threshold is applied based on the per-vCPU or per-memory price instead
         /// of the per-instance price.
@@ -852,8 +848,11 @@ namespace Amazon.EC2.Model
         ///  <note> 
         /// <para>
         /// Only one of <c>SpotMaxPricePercentageOverLowestPrice</c> or <c>MaxSpotPriceAsPercentageOfOptimalOnDemandPrice</c>
-        /// can be specified. If you don't specify either, then <c>SpotMaxPricePercentageOverLowestPrice</c>
-        /// is used and the value for that parameter defaults to <c>100</c>.
+        /// can be specified. If you don't specify either, Amazon EC2 will automatically apply
+        /// optimal price protection to consistently select from a wide range of instance types.
+        /// To indicate no price protection threshold for Spot Instances, meaning you want to
+        /// consider all instance types that match your attributes, include one of these parameters
+        /// and specify a high value, such as <c>999999</c>.
         /// </para>
         ///  </note> 
         /// <para>

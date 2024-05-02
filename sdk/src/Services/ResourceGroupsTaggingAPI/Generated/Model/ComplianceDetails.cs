@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ResourceGroupsTaggingAPI.Model
 {
     /// <summary>
@@ -35,8 +36,8 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     public partial class ComplianceDetails
     {
         private bool? _complianceStatus;
-        private List<string> _keysWithNoncompliantValues = new List<string>();
-        private List<string> _noncompliantKeys = new List<string>();
+        private List<string> _keysWithNoncompliantValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _noncompliantKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ComplianceStatus. 
@@ -72,7 +73,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         // Check to see if KeysWithNoncompliantValues property is set
         internal bool IsSetKeysWithNoncompliantValues()
         {
-            return this._keysWithNoncompliantValues != null && this._keysWithNoncompliantValues.Count > 0; 
+            return this._keysWithNoncompliantValues != null && (this._keysWithNoncompliantValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -90,7 +91,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         // Check to see if NoncompliantKeys property is set
         internal bool IsSetNoncompliantKeys()
         {
-            return this._noncompliantKeys != null && this._noncompliantKeys.Count > 0; 
+            return this._noncompliantKeys != null && (this._noncompliantKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

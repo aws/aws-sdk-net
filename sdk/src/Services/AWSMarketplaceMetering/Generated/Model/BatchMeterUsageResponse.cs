@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AWSMarketplaceMetering.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.AWSMarketplaceMetering.Model
     /// </summary>
     public partial class BatchMeterUsageResponse : AmazonWebServiceResponse
     {
-        private List<UsageRecordResult> _results = new List<UsageRecordResult>();
-        private List<UsageRecord> _unprocessedRecords = new List<UsageRecord>();
+        private List<UsageRecordResult> _results = AWSConfigs.InitializeCollections ? new List<UsageRecordResult>() : null;
+        private List<UsageRecord> _unprocessedRecords = AWSConfigs.InitializeCollections ? new List<UsageRecord>() : null;
 
         /// <summary>
         /// Gets and sets the property Results. 
@@ -54,7 +55,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         // Check to see if Results property is set
         internal bool IsSetResults()
         {
-            return this._results != null && this._results.Count > 0; 
+            return this._results != null && (this._results.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         // Check to see if UnprocessedRecords property is set
         internal bool IsSetUnprocessedRecords()
         {
-            return this._unprocessedRecords != null && this._unprocessedRecords.Count > 0; 
+            return this._unprocessedRecords != null && (this._unprocessedRecords.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

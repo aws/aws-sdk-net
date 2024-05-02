@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
@@ -68,7 +69,7 @@ namespace Amazon.KinesisAnalytics.Model
     public partial class StartApplicationRequest : AmazonKinesisAnalyticsRequest
     {
         private string _applicationName;
-        private List<InputConfiguration> _inputConfigurations = new List<InputConfiguration>();
+        private List<InputConfiguration> _inputConfigurations = AWSConfigs.InitializeCollections ? new List<InputConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationName. 
@@ -108,7 +109,7 @@ namespace Amazon.KinesisAnalytics.Model
         // Check to see if InputConfigurations property is set
         internal bool IsSetInputConfigurations()
         {
-            return this._inputConfigurations != null && this._inputConfigurations.Count > 0; 
+            return this._inputConfigurations != null && (this._inputConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

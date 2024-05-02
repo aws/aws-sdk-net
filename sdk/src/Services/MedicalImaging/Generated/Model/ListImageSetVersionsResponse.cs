@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MedicalImaging.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MedicalImaging.Model
     /// </summary>
     public partial class ListImageSetVersionsResponse : AmazonWebServiceResponse
     {
-        private List<ImageSetProperties> _imageSetPropertiesList = new List<ImageSetProperties>();
+        private List<ImageSetProperties> _imageSetPropertiesList = AWSConfigs.InitializeCollections ? new List<ImageSetProperties>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.MedicalImaging.Model
         // Check to see if ImageSetPropertiesList property is set
         internal bool IsSetImageSetPropertiesList()
         {
-            return this._imageSetPropertiesList != null && this._imageSetPropertiesList.Count > 0; 
+            return this._imageSetPropertiesList != null && (this._imageSetPropertiesList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

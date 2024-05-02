@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.DataPipeline.Model
     {
         private bool? _hasMoreResults;
         private string _marker;
-        private List<PipelineObject> _pipelineObjects = new List<PipelineObject>();
+        private List<PipelineObject> _pipelineObjects = AWSConfigs.InitializeCollections ? new List<PipelineObject>() : null;
 
         /// <summary>
         /// Gets and sets the property HasMoreResults. 
@@ -92,7 +93,7 @@ namespace Amazon.DataPipeline.Model
         // Check to see if PipelineObjects property is set
         internal bool IsSetPipelineObjects()
         {
-            return this._pipelineObjects != null && this._pipelineObjects.Count > 0; 
+            return this._pipelineObjects != null && (this._pipelineObjects.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

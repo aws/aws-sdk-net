@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Translate.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.Translate.Model
     public partial class AppliedTerminology
     {
         private string _name;
-        private List<Term> _terms = new List<Term>();
+        private List<Term> _terms = AWSConfigs.InitializeCollections ? new List<Term>() : null;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -76,7 +77,7 @@ namespace Amazon.Translate.Model
         // Check to see if Terms property is set
         internal bool IsSetTerms()
         {
-            return this._terms != null && this._terms.Count > 0; 
+            return this._terms != null && (this._terms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

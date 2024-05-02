@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private DateTime? _lastModifiedDate;
         private string _lastModifiedUser;
         private string _name;
-        private List<ParameterInlinePolicy> _policies = new List<ParameterInlinePolicy>();
+        private List<ParameterInlinePolicy> _policies = AWSConfigs.InitializeCollections ? new List<ParameterInlinePolicy>() : null;
         private ParameterTier _tier;
         private ParameterType _type;
         private long? _version;
@@ -217,7 +218,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Policies property is set
         internal bool IsSetPolicies()
         {
-            return this._policies != null && this._policies.Count > 0; 
+            return this._policies != null && (this._policies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

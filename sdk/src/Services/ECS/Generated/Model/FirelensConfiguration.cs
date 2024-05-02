@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECS.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class FirelensConfiguration
     {
-        private Dictionary<string, string> _options = new Dictionary<string, string>();
+        private Dictionary<string, string> _options = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private FirelensConfigurationType _type;
 
         /// <summary>
@@ -64,7 +65,7 @@ namespace Amazon.ECS.Model
         // Check to see if Options property is set
         internal bool IsSetOptions()
         {
-            return this._options != null && this._options.Count > 0; 
+            return this._options != null && (this._options.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

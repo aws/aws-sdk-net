@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// Enumerable containing all of the ChangeSetSummaryList
         /// </summary>
         public IPaginatedEnumerable<ChangeSetSummaryListItem> ChangeSetSummaryList => 
-            new PaginatedResultKeyResponse<ListChangeSetsResponse, ChangeSetSummaryListItem>(this, (i) => i.ChangeSetSummaryList);
+            new PaginatedResultKeyResponse<ListChangeSetsResponse, ChangeSetSummaryListItem>(this, (i) => i.ChangeSetSummaryList ?? new List<ChangeSetSummaryListItem>());
 
         internal ListChangeSetsPaginator(IAmazonMarketplaceCatalog client, ListChangeSetsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.MarketplaceCatalog.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListChangeSetsResponse> IPaginator<ListChangeSetsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListChangeSetsResponse> IPaginator<ListChangeSetsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

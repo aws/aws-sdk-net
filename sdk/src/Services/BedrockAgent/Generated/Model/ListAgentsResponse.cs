@@ -26,18 +26,22 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// List Agent Response
+    /// This is the response object from the ListAgents operation.
     /// </summary>
     public partial class ListAgentsResponse : AmazonWebServiceResponse
     {
-        private List<AgentSummary> _agentSummaries = new List<AgentSummary>();
+        private List<AgentSummary> _agentSummaries = AWSConfigs.InitializeCollections ? new List<AgentSummary>() : null;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property AgentSummaries.
+        /// Gets and sets the property AgentSummaries. 
+        /// <para>
+        /// A list of objects, each of which contains information about an agent.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10)]
         public List<AgentSummary> AgentSummaries
@@ -49,11 +53,16 @@ namespace Amazon.BedrockAgent.Model
         // Check to see if AgentSummaries property is set
         internal bool IsSetAgentSummaries()
         {
-            return this._agentSummaries != null && this._agentSummaries.Count > 0; 
+            return this._agentSummaries != null && (this._agentSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// If the total number of results is greater than the <c>maxResults</c> value provided
+        /// in the request, use this token when making another request in the <c>nextToken</c>
+        /// field to return the next batch of results.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
         public string NextToken

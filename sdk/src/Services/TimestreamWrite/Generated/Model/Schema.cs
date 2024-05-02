@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.TimestreamWrite.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.TimestreamWrite.Model
     /// </summary>
     public partial class Schema
     {
-        private List<PartitionKey> _compositePartitionKey = new List<PartitionKey>();
+        private List<PartitionKey> _compositePartitionKey = AWSConfigs.InitializeCollections ? new List<PartitionKey>() : null;
 
         /// <summary>
         /// Gets and sets the property CompositePartitionKey. 
@@ -55,7 +56,7 @@ namespace Amazon.TimestreamWrite.Model
         // Check to see if CompositePartitionKey property is set
         internal bool IsSetCompositePartitionKey()
         {
-            return this._compositePartitionKey != null && this._compositePartitionKey.Count > 0; 
+            return this._compositePartitionKey != null && (this._compositePartitionKey.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

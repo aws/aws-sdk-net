@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.EC2.Model
     {
         private PathStatementRequest _destination;
         private PathStatementRequest _source;
-        private List<ThroughResourcesStatementRequest> _throughResources = new List<ThroughResourcesStatementRequest>();
+        private List<ThroughResourcesStatementRequest> _throughResources = AWSConfigs.InitializeCollections ? new List<ThroughResourcesStatementRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property Destination. 
@@ -88,7 +89,7 @@ namespace Amazon.EC2.Model
         // Check to see if ThroughResources property is set
         internal bool IsSetThroughResources()
         {
-            return this._throughResources != null && this._throughResources.Count > 0; 
+            return this._throughResources != null && (this._throughResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

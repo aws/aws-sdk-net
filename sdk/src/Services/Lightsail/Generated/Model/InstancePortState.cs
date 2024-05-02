@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
@@ -34,10 +35,10 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class InstancePortState
     {
-        private List<string> _cidrListAliases = new List<string>();
-        private List<string> _cidrs = new List<string>();
+        private List<string> _cidrListAliases = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _cidrs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _fromPort;
-        private List<string> _ipv6Cidrs = new List<string>();
+        private List<string> _ipv6Cidrs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private NetworkProtocol _protocol;
         private PortState _state;
         private int? _toPort;
@@ -62,7 +63,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if CidrListAliases property is set
         internal bool IsSetCidrListAliases()
         {
-            return this._cidrListAliases != null && this._cidrListAliases.Count > 0; 
+            return this._cidrListAliases != null && (this._cidrListAliases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Cidrs property is set
         internal bool IsSetCidrs()
         {
-            return this._cidrs != null && this._cidrs.Count > 0; 
+            return this._cidrs != null && (this._cidrs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -163,7 +164,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Ipv6Cidrs property is set
         internal bool IsSetIpv6Cidrs()
         {
-            return this._ipv6Cidrs != null && this._ipv6Cidrs.Count > 0; 
+            return this._ipv6Cidrs != null && (this._ipv6Cidrs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

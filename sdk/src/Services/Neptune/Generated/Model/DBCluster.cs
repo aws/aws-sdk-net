@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Neptune.Model
 {
     /// <summary>
@@ -39,9 +40,9 @@ namespace Amazon.Neptune.Model
     public partial class DBCluster
     {
         private int? _allocatedStorage;
-        private List<DBClusterRole> _associatedRoles = new List<DBClusterRole>();
+        private List<DBClusterRole> _associatedRoles = AWSConfigs.InitializeCollections ? new List<DBClusterRole>() : null;
         private DateTime? _automaticRestartTime;
-        private List<string> _availabilityZones = new List<string>();
+        private List<string> _availabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _backupRetentionPeriod;
         private string _characterSetName;
         private string _cloneGroupId;
@@ -51,14 +52,14 @@ namespace Amazon.Neptune.Model
         private string _databaseName;
         private string _dbClusterArn;
         private string _dbClusterIdentifier;
-        private List<DBClusterMember> _dbClusterMembers = new List<DBClusterMember>();
-        private List<DBClusterOptionGroupStatus> _dbClusterOptionGroupMemberships = new List<DBClusterOptionGroupStatus>();
+        private List<DBClusterMember> _dbClusterMembers = AWSConfigs.InitializeCollections ? new List<DBClusterMember>() : null;
+        private List<DBClusterOptionGroupStatus> _dbClusterOptionGroupMemberships = AWSConfigs.InitializeCollections ? new List<DBClusterOptionGroupStatus>() : null;
         private string _dbClusterParameterGroup;
         private string _dbClusterResourceId;
         private string _dbSubnetGroup;
         private bool? _deletionProtection;
         private DateTime? _earliestRestorableTime;
-        private List<string> _enabledCloudwatchLogsExports = new List<string>();
+        private List<string> _enabledCloudwatchLogsExports = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _endpoint;
         private string _engine;
         private string _engineVersion;
@@ -76,13 +77,13 @@ namespace Amazon.Neptune.Model
         private string _preferredBackupWindow;
         private string _preferredMaintenanceWindow;
         private string _readerEndpoint;
-        private List<string> _readReplicaIdentifiers = new List<string>();
+        private List<string> _readReplicaIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _replicationSourceIdentifier;
         private ServerlessV2ScalingConfigurationInfo _serverlessV2ScalingConfiguration;
         private string _status;
         private bool? _storageEncrypted;
         private string _storageType;
-        private List<VpcSecurityGroupMembership> _vpcSecurityGroups = new List<VpcSecurityGroupMembership>();
+        private List<VpcSecurityGroupMembership> _vpcSecurityGroups = AWSConfigs.InitializeCollections ? new List<VpcSecurityGroupMembership>() : null;
 
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
@@ -120,7 +121,7 @@ namespace Amazon.Neptune.Model
         // Check to see if AssociatedRoles property is set
         internal bool IsSetAssociatedRoles()
         {
-            return this._associatedRoles != null && this._associatedRoles.Count > 0; 
+            return this._associatedRoles != null && (this._associatedRoles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -157,7 +158,7 @@ namespace Amazon.Neptune.Model
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+            return this._availabilityZones != null && (this._availabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -342,7 +343,7 @@ namespace Amazon.Neptune.Model
         // Check to see if DBClusterMembers property is set
         internal bool IsSetDBClusterMembers()
         {
-            return this._dbClusterMembers != null && this._dbClusterMembers.Count > 0; 
+            return this._dbClusterMembers != null && (this._dbClusterMembers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -360,7 +361,7 @@ namespace Amazon.Neptune.Model
         // Check to see if DBClusterOptionGroupMemberships property is set
         internal bool IsSetDBClusterOptionGroupMemberships()
         {
-            return this._dbClusterOptionGroupMemberships != null && this._dbClusterOptionGroupMemberships.Count > 0; 
+            return this._dbClusterOptionGroupMemberships != null && (this._dbClusterOptionGroupMemberships.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -476,7 +477,7 @@ namespace Amazon.Neptune.Model
         // Check to see if EnabledCloudwatchLogsExports property is set
         internal bool IsSetEnabledCloudwatchLogsExports()
         {
-            return this._enabledCloudwatchLogsExports != null && this._enabledCloudwatchLogsExports.Count > 0; 
+            return this._enabledCloudwatchLogsExports != null && (this._enabledCloudwatchLogsExports.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -818,7 +819,7 @@ namespace Amazon.Neptune.Model
         // Check to see if ReadReplicaIdentifiers property is set
         internal bool IsSetReadReplicaIdentifiers()
         {
-            return this._readReplicaIdentifiers != null && this._readReplicaIdentifiers.Count > 0; 
+            return this._readReplicaIdentifiers != null && (this._readReplicaIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -931,7 +932,7 @@ namespace Amazon.Neptune.Model
         // Check to see if VpcSecurityGroups property is set
         internal bool IsSetVpcSecurityGroups()
         {
-            return this._vpcSecurityGroups != null && this._vpcSecurityGroups.Count > 0; 
+            return this._vpcSecurityGroups != null && (this._vpcSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

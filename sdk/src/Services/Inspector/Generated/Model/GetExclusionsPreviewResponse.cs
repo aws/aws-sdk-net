@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Inspector.Model
     /// </summary>
     public partial class GetExclusionsPreviewResponse : AmazonWebServiceResponse
     {
-        private List<ExclusionPreview> _exclusionPreviews = new List<ExclusionPreview>();
+        private List<ExclusionPreview> _exclusionPreviews = AWSConfigs.InitializeCollections ? new List<ExclusionPreview>() : null;
         private string _nextToken;
         private PreviewStatus _previewStatus;
 
@@ -53,7 +54,7 @@ namespace Amazon.Inspector.Model
         // Check to see if ExclusionPreviews property is set
         internal bool IsSetExclusionPreviews()
         {
-            return this._exclusionPreviews != null && this._exclusionPreviews.Count > 0; 
+            return this._exclusionPreviews != null && (this._exclusionPreviews.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

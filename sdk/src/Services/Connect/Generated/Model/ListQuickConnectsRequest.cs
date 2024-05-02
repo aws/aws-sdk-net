@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.Connect.Model
         private string _instanceId;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _quickConnectTypes = new List<string>();
+        private List<string> _quickConnectTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property InstanceId. 
@@ -115,7 +116,7 @@ namespace Amazon.Connect.Model
         // Check to see if QuickConnectTypes property is set
         internal bool IsSetQuickConnectTypes()
         {
-            return this._quickConnectTypes != null && this._quickConnectTypes.Count > 0; 
+            return this._quickConnectTypes != null && (this._quickConnectTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

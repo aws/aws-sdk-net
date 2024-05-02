@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Neptune.Model
 {
     /// <summary>
@@ -43,7 +44,7 @@ namespace Amazon.Neptune.Model
         private string _dbSubnetGroupDescription;
         private string _dbSubnetGroupName;
         private string _subnetGroupStatus;
-        private List<Subnet> _subnets = new List<Subnet>();
+        private List<Subnet> _subnets = AWSConfigs.InitializeCollections ? new List<Subnet>() : null;
         private string _vpcId;
 
         /// <summary>
@@ -133,7 +134,7 @@ namespace Amazon.Neptune.Model
         // Check to see if Subnets property is set
         internal bool IsSetSubnets()
         {
-            return this._subnets != null && this._subnets.Count > 0; 
+            return this._subnets != null && (this._subnets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

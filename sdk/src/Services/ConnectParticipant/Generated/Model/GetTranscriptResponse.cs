@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConnectParticipant.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.ConnectParticipant.Model
     {
         private string _initialContactId;
         private string _nextToken;
-        private List<Item> _transcript = new List<Item>();
+        private List<Item> _transcript = AWSConfigs.InitializeCollections ? new List<Item>() : null;
 
         /// <summary>
         /// Gets and sets the property InitialContactId. 
@@ -91,7 +92,7 @@ namespace Amazon.ConnectParticipant.Model
         // Check to see if Transcript property is set
         internal bool IsSetTranscript()
         {
-            return this._transcript != null && this._transcript.Count > 0; 
+            return this._transcript != null && (this._transcript.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

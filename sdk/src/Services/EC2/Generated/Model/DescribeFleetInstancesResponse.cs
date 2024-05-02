@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeFleetInstancesResponse : AmazonWebServiceResponse
     {
-        private List<ActiveInstance> _activeInstances = new List<ActiveInstance>();
+        private List<ActiveInstance> _activeInstances = AWSConfigs.InitializeCollections ? new List<ActiveInstance>() : null;
         private string _fleetId;
         private string _nextToken;
 
@@ -52,7 +53,7 @@ namespace Amazon.EC2.Model
         // Check to see if ActiveInstances property is set
         internal bool IsSetActiveInstances()
         {
-            return this._activeInstances != null && this._activeInstances.Count > 0; 
+            return this._activeInstances != null && (this._activeInstances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

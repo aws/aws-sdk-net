@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.ResilienceHub.Model
     public partial class ComplianceDrift
     {
         private string _actualReferenceId;
-        private Dictionary<string, DisruptionCompliance> _actualValue = new Dictionary<string, DisruptionCompliance>();
+        private Dictionary<string, DisruptionCompliance> _actualValue = AWSConfigs.InitializeCollections ? new Dictionary<string, DisruptionCompliance>() : null;
         private string _appId;
         private string _appVersion;
         private DifferenceType _diffType;
@@ -43,7 +44,7 @@ namespace Amazon.ResilienceHub.Model
         private string _entityId;
         private string _entityType;
         private string _expectedReferenceId;
-        private Dictionary<string, DisruptionCompliance> _expectedValue = new Dictionary<string, DisruptionCompliance>();
+        private Dictionary<string, DisruptionCompliance> _expectedValue = AWSConfigs.InitializeCollections ? new Dictionary<string, DisruptionCompliance>() : null;
 
         /// <summary>
         /// Gets and sets the property ActualReferenceId. 
@@ -79,7 +80,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if ActualValue property is set
         internal bool IsSetActualValue()
         {
-            return this._actualValue != null && this._actualValue.Count > 0; 
+            return this._actualValue != null && (this._actualValue.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -235,7 +236,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if ExpectedValue property is set
         internal bool IsSetExpectedValue()
         {
-            return this._expectedValue != null && this._expectedValue.Count > 0; 
+            return this._expectedValue != null && (this._expectedValue.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

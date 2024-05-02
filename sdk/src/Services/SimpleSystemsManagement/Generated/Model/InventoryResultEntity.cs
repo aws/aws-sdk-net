@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class InventoryResultEntity
     {
-        private Dictionary<string, InventoryResultItem> _data = new Dictionary<string, InventoryResultItem>();
+        private Dictionary<string, InventoryResultItem> _data = AWSConfigs.InitializeCollections ? new Dictionary<string, InventoryResultItem>() : null;
         private string _id;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Data property is set
         internal bool IsSetData()
         {
-            return this._data != null && this._data.Count > 0; 
+            return this._data != null && (this._data.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

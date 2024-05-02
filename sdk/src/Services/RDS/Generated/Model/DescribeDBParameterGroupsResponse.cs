@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DescribeDBParameterGroupsResponse : AmazonWebServiceResponse
     {
-        private List<DBParameterGroup> _dbParameterGroups = new List<DBParameterGroup>();
+        private List<DBParameterGroup> _dbParameterGroups = AWSConfigs.InitializeCollections ? new List<DBParameterGroup>() : null;
         private string _marker;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.RDS.Model
         // Check to see if DBParameterGroups property is set
         internal bool IsSetDBParameterGroups()
         {
-            return this._dbParameterGroups != null && this._dbParameterGroups.Count > 0; 
+            return this._dbParameterGroups != null && (this._dbParameterGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

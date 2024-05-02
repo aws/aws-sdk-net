@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SageMakerGeospatial.Model
     /// </summary>
     public partial class ListEarthObservationJobsResponse : AmazonWebServiceResponse
     {
-        private List<ListEarthObservationJobOutputConfig> _earthObservationJobSummaries = new List<ListEarthObservationJobOutputConfig>();
+        private List<ListEarthObservationJobOutputConfig> _earthObservationJobSummaries = AWSConfigs.InitializeCollections ? new List<ListEarthObservationJobOutputConfig>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.SageMakerGeospatial.Model
         // Check to see if EarthObservationJobSummaries property is set
         internal bool IsSetEarthObservationJobSummaries()
         {
-            return this._earthObservationJobSummaries != null && this._earthObservationJobSummaries.Count > 0; 
+            return this._earthObservationJobSummaries != null && (this._earthObservationJobSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

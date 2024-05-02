@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lex.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Lex.Model
     public partial class GenericAttachment
     {
         private string _attachmentLinkUrl;
-        private List<Button> _buttons = new List<Button>();
+        private List<Button> _buttons = AWSConfigs.InitializeCollections ? new List<Button>() : null;
         private string _imageUrl;
         private string _subTitle;
         private string _title;
@@ -75,7 +76,7 @@ namespace Amazon.Lex.Model
         // Check to see if Buttons property is set
         internal bool IsSetButtons()
         {
-            return this._buttons != null && this._buttons.Count > 0; 
+            return this._buttons != null && (this._buttons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SSMIncidents.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.SSMIncidents.Model
     /// </summary>
     public partial class AttributeValueList
     {
-        private List<int> _integerValues = new List<int>();
-        private List<string> _stringValues = new List<string>();
+        private List<int> _integerValues = AWSConfigs.InitializeCollections ? new List<int>() : null;
+        private List<string> _stringValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property IntegerValues. 
@@ -52,7 +53,7 @@ namespace Amazon.SSMIncidents.Model
         // Check to see if IntegerValues property is set
         internal bool IsSetIntegerValues()
         {
-            return this._integerValues != null && this._integerValues.Count > 0; 
+            return this._integerValues != null && (this._integerValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.SSMIncidents.Model
         // Check to see if StringValues property is set
         internal bool IsSetStringValues()
         {
-            return this._stringValues != null && this._stringValues.Count > 0; 
+            return this._stringValues != null && (this._stringValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

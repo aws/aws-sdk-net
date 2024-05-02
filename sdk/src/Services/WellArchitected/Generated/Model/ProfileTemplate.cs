@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.WellArchitected.Model
     {
         private DateTime? _createdAt;
         private string _templateName;
-        private List<ProfileTemplateQuestion> _templateQuestions = new List<ProfileTemplateQuestion>();
+        private List<ProfileTemplateQuestion> _templateQuestions = AWSConfigs.InitializeCollections ? new List<ProfileTemplateQuestion>() : null;
         private DateTime? _updatedAt;
 
         /// <summary>
@@ -87,7 +88,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if TemplateQuestions property is set
         internal bool IsSetTemplateQuestions()
         {
-            return this._templateQuestions != null && this._templateQuestions.Count > 0; 
+            return this._templateQuestions != null && (this._templateQuestions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class AssetBundleImportJobDashboardOverridePermissions
     {
-        private List<string> _dashboardIds = new List<string>();
+        private List<string> _dashboardIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AssetBundleResourceLinkSharingConfiguration _linkSharingConfiguration;
         private AssetBundleResourcePermissions _permissions;
 
@@ -55,7 +56,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if DashboardIds property is set
         internal bool IsSetDashboardIds()
         {
-            return this._dashboardIds != null && this._dashboardIds.Count > 0; 
+            return this._dashboardIds != null && (this._dashboardIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

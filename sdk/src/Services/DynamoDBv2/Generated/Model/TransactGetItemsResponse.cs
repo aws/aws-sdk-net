@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class TransactGetItemsResponse : AmazonWebServiceResponse
     {
-        private List<ConsumedCapacity> _consumedCapacity = new List<ConsumedCapacity>();
-        private List<ItemResponse> _responses = new List<ItemResponse>();
+        private List<ConsumedCapacity> _consumedCapacity = AWSConfigs.InitializeCollections ? new List<ConsumedCapacity>() : null;
+        private List<ItemResponse> _responses = AWSConfigs.InitializeCollections ? new List<ItemResponse>() : null;
 
         /// <summary>
         /// Gets and sets the property ConsumedCapacity. 
@@ -54,7 +55,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if ConsumedCapacity property is set
         internal bool IsSetConsumedCapacity()
         {
-            return this._consumedCapacity != null && this._consumedCapacity.Count > 0; 
+            return this._consumedCapacity != null && (this._consumedCapacity.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -82,7 +83,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if Responses property is set
         internal bool IsSetResponses()
         {
-            return this._responses != null && this._responses.Count > 0; 
+            return this._responses != null && (this._responses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

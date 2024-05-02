@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConnectCases.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ConnectCases.Model
     /// </summary>
     public partial class ContactFilter
     {
-        private List<string> _channel = new List<string>();
+        private List<string> _channel = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _contactArn;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.ConnectCases.Model
         // Check to see if Channel property is set
         internal bool IsSetChannel()
         {
-            return this._channel != null && this._channel.Count > 0; 
+            return this._channel != null && (this._channel.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

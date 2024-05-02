@@ -26,18 +26,19 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// The input doesn't meet the constraints set by the Amazon Q service. Provide the correct
-    /// input and try again.
+    /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+    /// the correct input and try again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
     public partial class ValidationException : AmazonQBusinessException
     {
-        private List<ValidationExceptionField> _fields = new List<ValidationExceptionField>();
+        private List<ValidationExceptionField> _fields = AWSConfigs.InitializeCollections ? new List<ValidationExceptionField>() : null;
         private ValidationExceptionReason _reason;
 
         /// <summary>
@@ -137,7 +138,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if Fields property is set
         internal bool IsSetFields()
         {
-            return this._fields != null && this._fields.Count > 0; 
+            return this._fields != null && (this._fields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

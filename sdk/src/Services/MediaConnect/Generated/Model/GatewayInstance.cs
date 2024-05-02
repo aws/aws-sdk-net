@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.MediaConnect.Model
         private string _gatewayArn;
         private string _gatewayInstanceArn;
         private string _instanceId;
-        private List<MessageDetail> _instanceMessages = new List<MessageDetail>();
+        private List<MessageDetail> _instanceMessages = AWSConfigs.InitializeCollections ? new List<MessageDetail>() : null;
         private InstanceState _instanceState;
         private int? _runningBridgeCount;
 
@@ -139,7 +140,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if InstanceMessages property is set
         internal bool IsSetInstanceMessages()
         {
-            return this._instanceMessages != null && this._instanceMessages.Count > 0; 
+            return this._instanceMessages != null && (this._instanceMessages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

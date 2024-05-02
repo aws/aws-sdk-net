@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.Kinesis.Model
     /// </summary>
     public partial class EnableEnhancedMonitoringRequest : AmazonKinesisRequest
     {
-        private List<string> _shardLevelMetrics = new List<string>();
+        private List<string> _shardLevelMetrics = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _streamARN;
         private string _streamName;
 
@@ -105,7 +106,7 @@ namespace Amazon.Kinesis.Model
         // Check to see if ShardLevelMetrics property is set
         internal bool IsSetShardLevelMetrics()
         {
-            return this._shardLevelMetrics != null && this._shardLevelMetrics.Count > 0; 
+            return this._shardLevelMetrics != null && (this._shardLevelMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

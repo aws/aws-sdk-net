@@ -185,7 +185,6 @@ namespace Amazon.Runtime
         /// <summary>
         /// Performs the SSO flow to authenticate and get credentials
         /// </summary>
-        /// <param name="oidc">SSO OIDC client</param>
         /// <param name="sso">SSO client</param>
         /// <returns>Resolved credentials</returns>
         private ImmutableCredentials GetSsoCredentials(ICoreAmazonSSO sso)
@@ -197,6 +196,7 @@ namespace Amazon.Runtime
                 SsoVerificationCallback = Options.SsoVerificationCallback,
                 StartUrl = StartUrl,
                 Session = Options.SessionName,
+                Scopes = Options.Scopes,
                 SupportsGettingNewToken = Options.SupportsGettingNewToken
             };
 
@@ -221,6 +221,7 @@ namespace Amazon.Runtime
                 SsoVerificationCallback = Options.SsoVerificationCallback,
                 StartUrl = StartUrl,
                 Session = Options.SessionName,
+                Scopes = Options.Scopes,
                 SupportsGettingNewToken = Options.SupportsGettingNewToken
             };
 

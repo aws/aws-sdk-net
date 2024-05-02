@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.IoTAnalytics.Model
         private string _executionRoleArn;
         private string _image;
         private ResourceConfiguration _resourceConfiguration;
-        private List<Variable> _variables = new List<Variable>();
+        private List<Variable> _variables = AWSConfigs.InitializeCollections ? new List<Variable>() : null;
 
         /// <summary>
         /// Gets and sets the property ExecutionRoleArn. 
@@ -117,7 +118,7 @@ namespace Amazon.IoTAnalytics.Model
         // Check to see if Variables property is set
         internal bool IsSetVariables()
         {
-            return this._variables != null && this._variables.Count > 0; 
+            return this._variables != null && (this._variables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

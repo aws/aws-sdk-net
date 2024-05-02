@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Pinpoint.Model
     /// </summary>
     public partial class ActivitiesResponse
     {
-        private List<ActivityResponse> _item = new List<ActivityResponse>();
+        private List<ActivityResponse> _item = AWSConfigs.InitializeCollections ? new List<ActivityResponse>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Item property is set
         internal bool IsSetItem()
         {
-            return this._item != null && this._item.Count > 0; 
+            return this._item != null && (this._item.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

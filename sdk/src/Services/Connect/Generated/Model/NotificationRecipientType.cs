@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class NotificationRecipientType
     {
-        private List<string> _userIds = new List<string>();
-        private Dictionary<string, string> _userTags = new Dictionary<string, string>();
+        private List<string> _userIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _userTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property UserIds. 
@@ -51,7 +52,7 @@ namespace Amazon.Connect.Model
         // Check to see if UserIds property is set
         internal bool IsSetUserIds()
         {
-            return this._userIds != null && this._userIds.Count > 0; 
+            return this._userIds != null && (this._userIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.Connect.Model
         // Check to see if UserTags property is set
         internal bool IsSetUserTags()
         {
-            return this._userTags != null && this._userTags.Count > 0; 
+            return this._userTags != null && (this._userTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

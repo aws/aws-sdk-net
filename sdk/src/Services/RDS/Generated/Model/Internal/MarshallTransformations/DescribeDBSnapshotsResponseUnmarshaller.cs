@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -84,6 +85,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DBSnapshots/DBSnapshot", targetDepth))
                     {
                         var unmarshaller = DBSnapshotUnmarshaller.Instance;
+                        if (response.DBSnapshots == null)
+                        {
+                            response.DBSnapshots = new List<DBSnapshot>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.DBSnapshots.Add(item);
                         continue;

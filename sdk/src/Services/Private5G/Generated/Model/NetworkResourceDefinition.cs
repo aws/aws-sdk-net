@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Private5G.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Private5G.Model
     public partial class NetworkResourceDefinition
     {
         private int? _count;
-        private List<NameValuePair> _options = new List<NameValuePair>();
+        private List<NameValuePair> _options = AWSConfigs.InitializeCollections ? new List<NameValuePair>() : null;
         private NetworkResourceDefinitionType _type;
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.Private5G.Model
         // Check to see if Options property is set
         internal bool IsSetOptions()
         {
-            return this._options != null && this._options.Count > 0; 
+            return this._options != null && (this._options.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

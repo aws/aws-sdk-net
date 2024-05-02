@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MigrationHubOrchestrator.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
     public partial class ListWorkflowStepGroupsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<WorkflowStepGroupSummary> _workflowStepGroupsSummary = new List<WorkflowStepGroupSummary>();
+        private List<WorkflowStepGroupSummary> _workflowStepGroupsSummary = AWSConfigs.InitializeCollections ? new List<WorkflowStepGroupSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         // Check to see if WorkflowStepGroupsSummary property is set
         internal bool IsSetWorkflowStepGroupsSummary()
         {
-            return this._workflowStepGroupsSummary != null && this._workflowStepGroupsSummary.Count > 0; 
+            return this._workflowStepGroupsSummary != null && (this._workflowStepGroupsSummary.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Pinpoint.Model
     /// </summary>
     public partial class RandomSplitActivity
     {
-        private List<RandomSplitEntry> _branches = new List<RandomSplitEntry>();
+        private List<RandomSplitEntry> _branches = AWSConfigs.InitializeCollections ? new List<RandomSplitEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property Branches. 
@@ -53,7 +54,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Branches property is set
         internal bool IsSetBranches()
         {
-            return this._branches != null && this._branches.Count > 0; 
+            return this._branches != null && (this._branches.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

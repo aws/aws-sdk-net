@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ManagedGrafana.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ManagedGrafana.Model
         /// Enumerable containing all of the GrafanaVersions
         /// </summary>
         public IPaginatedEnumerable<string> GrafanaVersions => 
-            new PaginatedResultKeyResponse<ListVersionsResponse, string>(this, (i) => i.GrafanaVersions);
+            new PaginatedResultKeyResponse<ListVersionsResponse, string>(this, (i) => i.GrafanaVersions ?? new List<string>());
 
         internal ListVersionsPaginator(IAmazonManagedGrafana client, ListVersionsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ManagedGrafana.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListVersionsResponse> IPaginator<ListVersionsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListVersionsResponse> IPaginator<ListVersionsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

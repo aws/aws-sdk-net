@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -63,6 +64,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("RollbackTriggers/member", targetDepth))
                     {
                         var unmarshaller = RollbackTriggerUnmarshaller.Instance;
+                        if (unmarshalledObject.RollbackTriggers == null)
+                        {
+                            unmarshalledObject.RollbackTriggers = new List<RollbackTrigger>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.RollbackTriggers.Add(item);
                         continue;

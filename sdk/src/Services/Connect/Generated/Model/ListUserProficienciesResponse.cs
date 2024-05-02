@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Connect.Model
         private string _lastModifiedRegion;
         private DateTime? _lastModifiedTime;
         private string _nextToken;
-        private List<UserProficiency> _userProficiencyList = new List<UserProficiency>();
+        private List<UserProficiency> _userProficiencyList = AWSConfigs.InitializeCollections ? new List<UserProficiency>() : null;
 
         /// <summary>
         /// Gets and sets the property LastModifiedRegion. 
@@ -107,7 +108,7 @@ namespace Amazon.Connect.Model
         // Check to see if UserProficiencyList property is set
         internal bool IsSetUserProficiencyList()
         {
-            return this._userProficiencyList != null && this._userProficiencyList.Count > 0; 
+            return this._userProficiencyList != null && (this._userProficiencyList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

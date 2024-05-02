@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
@@ -88,18 +89,18 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class ScanRequest : AmazonDynamoDBRequest
     {
-        private List<string> _attributesToGet = new List<string>();
+        private List<string> _attributesToGet = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ConditionalOperator _conditionalOperator;
         private bool? _consistentRead;
-        private Dictionary<string, AttributeValue> _exclusiveStartKey = new Dictionary<string, AttributeValue>();
-        private Dictionary<string, string> _expressionAttributeNames = new Dictionary<string, string>();
-        private Dictionary<string, AttributeValue> _expressionAttributeValues = new Dictionary<string, AttributeValue>();
+        private Dictionary<string, AttributeValue> _exclusiveStartKey = AWSConfigs.InitializeCollections ? new Dictionary<string, AttributeValue>() : null;
+        private Dictionary<string, string> _expressionAttributeNames = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, AttributeValue> _expressionAttributeValues = AWSConfigs.InitializeCollections ? new Dictionary<string, AttributeValue>() : null;
         private string _filterExpression;
         private string _indexName;
         private int? _limit;
         private string _projectionExpression;
         private ReturnConsumedCapacity _returnConsumedCapacity;
-        private Dictionary<string, Condition> _scanFilter = new Dictionary<string, Condition>();
+        private Dictionary<string, Condition> _scanFilter = AWSConfigs.InitializeCollections ? new Dictionary<string, Condition>() : null;
         private int? _segment;
         private Select _select;
         private string _tableName;
@@ -113,7 +114,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Instantiates ScanRequest with the parameterized properties
         /// </summary>
-        /// <param name="tableName">The name of the table containing the requested items; or, if you provide <c>IndexName</c>, the name of the table to which that index belongs.</param>
+        /// <param name="tableName">The name of the table containing the requested items or if you provide <c>IndexName</c>, the name of the table to which that index belongs. You can also provide the Amazon Resource Name (ARN) of the table in this parameter.</param>
         public ScanRequest(string tableName)
         {
             _tableName = tableName;
@@ -137,7 +138,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if AttributesToGet property is set
         internal bool IsSetAttributesToGet()
         {
-            return this._attributesToGet != null && this._attributesToGet.Count > 0; 
+            return this._attributesToGet != null && (this._attributesToGet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -226,7 +227,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if ExclusiveStartKey property is set
         internal bool IsSetExclusiveStartKey()
         {
-            return this._exclusiveStartKey != null && this._exclusiveStartKey.Count > 0; 
+            return this._exclusiveStartKey != null && (this._exclusiveStartKey.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -296,7 +297,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if ExpressionAttributeNames property is set
         internal bool IsSetExpressionAttributeNames()
         {
-            return this._expressionAttributeNames != null && this._expressionAttributeNames.Count > 0; 
+            return this._expressionAttributeNames != null && (this._expressionAttributeNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -346,7 +347,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if ExpressionAttributeValues property is set
         internal bool IsSetExpressionAttributeValues()
         {
-            return this._expressionAttributeValues != null && this._expressionAttributeValues.Count > 0; 
+            return this._expressionAttributeValues != null && (this._expressionAttributeValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -511,7 +512,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if ScanFilter property is set
         internal bool IsSetScanFilter()
         {
-            return this._scanFilter != null && this._scanFilter.Count > 0; 
+            return this._scanFilter != null && (this._scanFilter.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -656,11 +657,15 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property TableName. 
         /// <para>
-        /// The name of the table containing the requested items; or, if you provide <c>IndexName</c>,
+        /// The name of the table containing the requested items or if you provide <c>IndexName</c>,
         /// the name of the table to which that index belongs.
         /// </para>
+        ///  
+        /// <para>
+        /// You can also provide the Amazon Resource Name (ARN) of the table in this parameter.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=1024)]
         public string TableName
         {
             get { return this._tableName; }

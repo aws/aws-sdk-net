@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoTSiteWise.Model
     /// </summary>
     public partial class BatchDisassociateProjectAssetsResponse : AmazonWebServiceResponse
     {
-        private List<AssetErrorDetails> _errors = new List<AssetErrorDetails>();
+        private List<AssetErrorDetails> _errors = AWSConfigs.InitializeCollections ? new List<AssetErrorDetails>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. 
@@ -50,7 +51,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

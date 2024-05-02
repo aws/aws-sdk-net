@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VerifiedPermissions.Model
 {
     /// <summary>
@@ -33,12 +34,31 @@ namespace Amazon.VerifiedPermissions.Model
     /// </summary>
     public partial class GetIdentitySourceResponse : AmazonWebServiceResponse
     {
+        private ConfigurationDetail _configuration;
         private DateTime? _createdDate;
         private IdentitySourceDetails _details;
         private string _identitySourceId;
         private DateTime? _lastUpdatedDate;
         private string _policyStoreId;
         private string _principalEntityType;
+
+        /// <summary>
+        /// Gets and sets the property Configuration. 
+        /// <para>
+        /// Contains configuration information about an identity source.
+        /// </para>
+        /// </summary>
+        public ConfigurationDetail Configuration
+        {
+            get { return this._configuration; }
+            set { this._configuration = value; }
+        }
+
+        // Check to see if Configuration property is set
+        internal bool IsSetConfiguration()
+        {
+            return this._configuration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedDate. 
@@ -65,7 +85,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// A structure that describes the configuration of the identity source.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [Obsolete("This attribute has been replaced by configuration.cognitoUserPoolConfiguration")]
         public IdentitySourceDetails Details
         {
             get { return this._details; }

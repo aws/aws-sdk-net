@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Omics.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Omics.Model
     /// </summary>
     public partial class AnnotationImportJobItem
     {
-        private Dictionary<string, string> _annotationFields = new Dictionary<string, string>();
+        private Dictionary<string, string> _annotationFields = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DateTime? _completionTime;
         private DateTime? _creationTime;
         private string _destinationName;
@@ -59,7 +60,7 @@ namespace Amazon.Omics.Model
         // Check to see if AnnotationFields property is set
         internal bool IsSetAnnotationFields()
         {
-            return this._annotationFields != null && this._annotationFields.Count > 0; 
+            return this._annotationFields != null && (this._annotationFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

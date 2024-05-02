@@ -7,6 +7,7 @@ using Amazon;
 using Amazon.CloudFormation;
 using Amazon.CloudFormation.Model;
 using Amazon.Runtime;
+using System.Collections.Generic;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
@@ -103,8 +104,15 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         private static void VerifyTemplateSummary(GetTemplateSummaryResponse response)
         {
             Assert.IsNotNull(response.ResponseMetadata.RequestId);
-            Assert.IsNotNull(response.Capabilities);
-            Assert.AreEqual(0, response.Capabilities.Count);
+            if (AWSConfigs.InitializeCollections)
+            {
+                Assert.IsNotNull(response.Capabilities);
+                Assert.AreEqual(0, response.Capabilities.Count);
+            }
+            else
+            {
+                Assert.IsNull(response.Capabilities);
+            }
             Assert.IsNull(response.CapabilitiesReason);
             Assert.IsNotNull(response.Description);
             Assert.IsNotNull(response.Parameters);
@@ -163,19 +171,21 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 CreateStackRequest createRequest = new CreateStackRequest
                 {
                     StackName = stackName,
-                    TemplateBody = TEMPLATE_TEXT
-                };
-
-                createRequest.Parameters.Add(new Parameter
+                    TemplateBody = TEMPLATE_TEXT,
+                    Parameters = new List<Parameter>
                     {
-                        ParameterKey = "TopicName",
-                        ParameterValue = "MyTopic" + DateTime.Now.Ticks
-                    });
-                createRequest.Parameters.Add(new Parameter
-                {
-                    ParameterKey = "QueueName",
-                    ParameterValue = "MyQueue" + DateTime.Now.Ticks
-                });
+                        new Parameter
+                        {
+                            ParameterKey = "TopicName",
+                            ParameterValue = "MyTopic" + DateTime.Now.Ticks
+                        },
+                        new Parameter
+                        {
+                            ParameterKey = "QueueName",
+                            ParameterValue = "MyQueue" + DateTime.Now.Ticks
+                        }
+                    }
+                };
 
                 Client.CreateStack(createRequest);
 

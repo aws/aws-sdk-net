@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -35,9 +36,9 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class SecurityControlsConfiguration
     {
-        private List<string> _disabledSecurityControlIdentifiers = new List<string>();
-        private List<string> _enabledSecurityControlIdentifiers = new List<string>();
-        private List<SecurityControlCustomParameter> _securityControlCustomParameters = new List<SecurityControlCustomParameter>();
+        private List<string> _disabledSecurityControlIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _enabledSecurityControlIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<SecurityControlCustomParameter> _securityControlCustomParameters = AWSConfigs.InitializeCollections ? new List<SecurityControlCustomParameter>() : null;
 
         /// <summary>
         /// Gets and sets the property DisabledSecurityControlIdentifiers. 
@@ -56,7 +57,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if DisabledSecurityControlIdentifiers property is set
         internal bool IsSetDisabledSecurityControlIdentifiers()
         {
-            return this._disabledSecurityControlIdentifiers != null && this._disabledSecurityControlIdentifiers.Count > 0; 
+            return this._disabledSecurityControlIdentifiers != null && (this._disabledSecurityControlIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -76,7 +77,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if EnabledSecurityControlIdentifiers property is set
         internal bool IsSetEnabledSecurityControlIdentifiers()
         {
-            return this._enabledSecurityControlIdentifiers != null && this._enabledSecurityControlIdentifiers.Count > 0; 
+            return this._enabledSecurityControlIdentifiers != null && (this._enabledSecurityControlIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -95,7 +96,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if SecurityControlCustomParameters property is set
         internal bool IsSetSecurityControlCustomParameters()
         {
-            return this._securityControlCustomParameters != null && this._securityControlCustomParameters.Count > 0; 
+            return this._securityControlCustomParameters != null && (this._securityControlCustomParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

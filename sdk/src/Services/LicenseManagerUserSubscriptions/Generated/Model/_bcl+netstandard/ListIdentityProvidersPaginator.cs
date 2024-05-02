@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.LicenseManagerUserSubscriptions.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         /// Enumerable containing all of the IdentityProviderSummaries
         /// </summary>
         public IPaginatedEnumerable<IdentityProviderSummary> IdentityProviderSummaries => 
-            new PaginatedResultKeyResponse<ListIdentityProvidersResponse, IdentityProviderSummary>(this, (i) => i.IdentityProviderSummaries);
+            new PaginatedResultKeyResponse<ListIdentityProvidersResponse, IdentityProviderSummary>(this, (i) => i.IdentityProviderSummaries ?? new List<IdentityProviderSummary>());
 
         internal ListIdentityProvidersPaginator(IAmazonLicenseManagerUserSubscriptions client, ListIdentityProvidersRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListIdentityProvidersResponse> IPaginator<ListIdentityProvidersResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListIdentityProvidersResponse> IPaginator<ListIdentityProvidersResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

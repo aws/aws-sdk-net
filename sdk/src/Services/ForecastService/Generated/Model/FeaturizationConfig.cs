@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ForecastService.Model
 {
     /// <summary>
@@ -56,8 +57,8 @@ namespace Amazon.ForecastService.Model
     /// </summary>
     public partial class FeaturizationConfig
     {
-        private List<Featurization> _featurizations = new List<Featurization>();
-        private List<string> _forecastDimensions = new List<string>();
+        private List<Featurization> _featurizations = AWSConfigs.InitializeCollections ? new List<Featurization>() : null;
+        private List<string> _forecastDimensions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _forecastFrequency;
 
         /// <summary>
@@ -76,7 +77,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if Featurizations property is set
         internal bool IsSetFeaturizations()
         {
-            return this._featurizations != null && this._featurizations.Count > 0; 
+            return this._featurizations != null && (this._featurizations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -108,7 +109,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if ForecastDimensions property is set
         internal bool IsSetForecastDimensions()
         {
-            return this._forecastDimensions != null && this._forecastDimensions.Count > 0; 
+            return this._forecastDimensions != null && (this._forecastDimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

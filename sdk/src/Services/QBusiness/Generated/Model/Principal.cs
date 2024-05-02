@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Provides user and group information used for filtering documents to use for generating
-    /// Amazon Q conversation responses.
+    /// Amazon Q Business conversation responses.
     /// </summary>
     public partial class Principal
     {

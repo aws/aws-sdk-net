@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Organizations.Model
 {
     /// <summary>
@@ -66,7 +67,8 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique identifier (ID) associated with this OU.
+        /// The unique identifier (ID) associated with this OU. The ID is unique to the organization
+        /// only.
         /// </para>
         ///  
         /// <para>

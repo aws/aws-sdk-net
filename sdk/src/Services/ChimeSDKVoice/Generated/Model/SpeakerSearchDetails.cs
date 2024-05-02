@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ChimeSDKVoice.Model
     /// </summary>
     public partial class SpeakerSearchDetails
     {
-        private List<SpeakerSearchResult> _results = new List<SpeakerSearchResult>();
+        private List<SpeakerSearchResult> _results = AWSConfigs.InitializeCollections ? new List<SpeakerSearchResult>() : null;
         private string _voiceprintGenerationStatus;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ChimeSDKVoice.Model
         // Check to see if Results property is set
         internal bool IsSetResults()
         {
-            return this._results != null && this._results.Count > 0; 
+            return this._results != null && (this._results.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Personalize.Model
 {
     /// <summary>
@@ -34,7 +35,8 @@ namespace Amazon.Personalize.Model
     public partial class CampaignConfig
     {
         private bool? _enableMetadataWithRecommendations;
-        private Dictionary<string, string> _itemExplorationConfig = new Dictionary<string, string>();
+        private Dictionary<string, string> _itemExplorationConfig = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private bool? _syncWithLatestSolutionVersion;
 
         /// <summary>
         /// Gets and sets the property EnableMetadataWithRecommendations. 
@@ -84,7 +86,34 @@ namespace Amazon.Personalize.Model
         // Check to see if ItemExplorationConfig property is set
         internal bool IsSetItemExplorationConfig()
         {
-            return this._itemExplorationConfig != null && this._itemExplorationConfig.Count > 0; 
+            return this._itemExplorationConfig != null && (this._itemExplorationConfig.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SyncWithLatestSolutionVersion. 
+        /// <para>
+        /// Whether the campaign automatically updates to use the latest solution version (trained
+        /// model) of a solution. If you specify <c>True</c>, you must specify the ARN of your
+        /// <i>solution</i> for the <c>SolutionVersionArn</c> parameter. It must be in <c>SolutionArn/$LATEST</c>
+        /// format. The default is <c>False</c> and you must manually update the campaign to deploy
+        /// the latest solution version. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  For more information about automatic campaign updates, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update">Enabling
+        /// automatic campaign updates</a>. 
+        /// </para>
+        /// </summary>
+        public bool? SyncWithLatestSolutionVersion
+        {
+            get { return this._syncWithLatestSolutionVersion; }
+            set { this._syncWithLatestSolutionVersion = value; }
+        }
+
+        // Check to see if SyncWithLatestSolutionVersion property is set
+        internal bool IsSetSyncWithLatestSolutionVersion()
+        {
+            return this._syncWithLatestSolutionVersion.HasValue; 
         }
 
     }

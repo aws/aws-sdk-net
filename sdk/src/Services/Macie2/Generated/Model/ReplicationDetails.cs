@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Macie2.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.Macie2.Model
     {
         private bool? _replicated;
         private bool? _replicatedExternally;
-        private List<string> _replicationAccounts = new List<string>();
+        private List<string> _replicationAccounts = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Replicated. 
@@ -96,7 +97,7 @@ namespace Amazon.Macie2.Model
         // Check to see if ReplicationAccounts property is set
         internal bool IsSetReplicationAccounts()
         {
-            return this._replicationAccounts != null && this._replicationAccounts.Count > 0; 
+            return this._replicationAccounts != null && (this._replicationAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

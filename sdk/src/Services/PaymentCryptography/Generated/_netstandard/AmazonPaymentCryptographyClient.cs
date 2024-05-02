@@ -33,6 +33,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.PaymentCryptography
 {
     /// <summary>
@@ -326,9 +327,10 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  
         /// <para>
-        /// To change the key that's associated with the alias, call <a>UpdateAlias</a>. To delete
-        /// the alias, call <a>DeleteAlias</a>. These operations don't affect the underlying key.
-        /// To get the alias that you created, call <a>ListAliases</a>.
+        /// To change the key that's associated with the alias, call <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_UpdateAlias.html">UpdateAlias</a>.
+        /// To delete the alias, call <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteAlias.html">DeleteAlias</a>.
+        /// These operations don't affect the underlying key. To get the alias that you created,
+        /// call <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListAliases.html">ListAliases</a>.
         /// </para>
         ///  
         /// <para>
@@ -341,19 +343,23 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DeleteAlias</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteAlias.html">DeleteAlias</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetAlias</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetAlias.html">GetAlias</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListAliases</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListAliases.html">ListAliases</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateAlias</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_UpdateAlias.html">UpdateAlias</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -452,15 +458,18 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DeleteKey</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteKey.html">DeleteKey</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetKey</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetKey.html">GetKey</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListKeys</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListKeys.html">ListKeys</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -524,10 +533,11 @@ namespace Amazon.PaymentCryptography
         /// 
         ///  
         /// <para>
-        /// Each key can have multiple aliases. To get the aliases of all keys, use the <a>ListAliases</a>
-        /// operation. To change the alias of a key, first use <a>DeleteAlias</a> to delete the
-        /// current alias and then use <a>CreateAlias</a> to create a new alias. To associate
-        /// an existing alias with a different key, call <a>UpdateAlias</a>.
+        /// Each key can have multiple aliases. To get the aliases of all keys, use the <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_UpdateAlias.html">UpdateAlias</a>
+        /// operation. To change the alias of a key, first use <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteAlias.html">DeleteAlias</a>
+        /// to delete the current alias and then use <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateAlias.html">CreateAlias</a>
+        /// to create a new alias. To associate an existing alias with a different key, call <a
+        /// href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_UpdateAlias.html">UpdateAlias</a>.
         /// </para>
         ///  
         /// <para>
@@ -540,19 +550,23 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateAlias</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateAlias.html">CreateAlias</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetAlias</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetAlias.html">GetAlias</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListAliases</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListAliases.html">ListAliases</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateAlias</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_UpdateAlias.html">UpdateAlias</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -628,7 +642,7 @@ namespace Amazon.PaymentCryptography
         /// <para>
         /// You should delete a key only when you are sure that you don't need to use it anymore
         /// and no other parties are utilizing this key. If you aren't sure, consider deactivating
-        /// it instead by calling <a>StopKeyUsage</a>.
+        /// it instead by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_StopKeyUsage.html">StopKeyUsage</a>.
         /// </para>
         ///  
         /// <para>
@@ -641,15 +655,18 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>RestoreKey</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_RestoreKey.html">RestoreKey</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>StartKeyUsage</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_StartKeyUsage.html">StartKeyUsage</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>StopKeyUsage</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_StopKeyUsage.html">StopKeyUsage</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -747,6 +764,27 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  
         /// <para>
+        /// For key exchange using TR-31 or TR-34 key blocks, you can also export optional blocks
+        /// within the key block header which contain additional attribute information about the
+        /// key. The <c>KeyVersion</c> within <c>KeyBlockHeaders</c> indicates the version of
+        /// the key within the key block. Furthermore, <c>KeyExportability</c> within <c>KeyBlockHeaders</c>
+        /// can be used to further restrict exportability of the key after export from Amazon
+        /// Web Services Payment Cryptography.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>OptionalBlocks</c> contain the additional data related to the key. For information
+        /// on data type that can be included within optional blocks, refer to <a href="https://webstore.ansi.org/standards/ascx9/ansix91432022">ASC
+        /// X9.143-2022</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Data included in key block headers is signed but transmitted in clear text. Sensitive
+        /// or confidential information should not be included in optional blocks. Refer to ASC
+        /// X9.143-2022 standard for information on allowed data type.
+        /// </para>
+        ///  </note> 
+        /// <para>
         ///  <b>To export initial keys (KEK) or IPEK using TR-34</b> 
         /// </para>
         ///  
@@ -760,7 +798,7 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  
         /// <para>
-        /// To initiate TR-34 key export, the KRD must obtain an export token by calling <a>GetParametersForExport</a>.
+        /// To initiate TR-34 key export, the KRD must obtain an export token by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForExport.html">GetParametersForExport</a>.
         /// This operation also generates a key pair for the purpose of key export, signs the
         /// key and returns back the signing public key certificate (also known as KDH signing
         /// certificate) and root certificate chain. The KDH uses the private key to sign the
@@ -774,11 +812,11 @@ namespace Amazon.PaymentCryptography
         /// Next the KRD generates a key pair for the the purpose of encrypting the KDH key and
         /// provides the public key cerificate (also known as KRD wrapping certificate) back to
         /// KDH. The KRD will also import the root cerificate chain into Amazon Web Services Payment
-        /// Cryptography by calling <a>ImportKey</a> for <c>RootCertificatePublicKey</c>. The
-        /// KDH, Amazon Web Services Payment Cryptography, will use the KRD wrapping cerificate
-        /// to encrypt (wrap) the key under export and signs it with signing private key to generate
-        /// a TR-34 WrappedKeyBlock. For more information on TR-34 key export, see section <a
-        /// href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-export.html">Exporting
+        /// Cryptography by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>
+        /// for <c>RootCertificatePublicKey</c>. The KDH, Amazon Web Services Payment Cryptography,
+        /// will use the KRD wrapping cerificate to encrypt (wrap) the key under export and signs
+        /// it with signing private key to generate a TR-34 WrappedKeyBlock. For more information
+        /// on TR-34 key export, see section <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-export.html">Exporting
         /// symmetric keys</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.
         /// 
         /// </para>
@@ -807,7 +845,7 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ExportToken</c>: Obtained from KDH by calling <a>GetParametersForImport</a>.
+        ///  <c>ExportToken</c>: Obtained from KDH by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForImport.html">GetParametersForImport</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -832,7 +870,8 @@ namespace Amazon.PaymentCryptography
         /// key exchange method. To initiate export, generate an asymmetric key pair on the receiving
         /// HSM and obtain the public key certificate in PEM format (base64 encoded) for the purpose
         /// of wrapping and the root certifiate chain. Import the root certificate into Amazon
-        /// Web Services Payment Cryptography by calling <a>ImportKey</a> for <c>RootCertificatePublicKey</c>.
+        /// Web Services Payment Cryptography by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>
+        /// for <c>RootCertificatePublicKey</c>.
         /// </para>
         ///  
         /// <para>
@@ -867,7 +906,8 @@ namespace Amazon.PaymentCryptography
         /// <para>
         /// Using this operation, you can export working keys or IPEK using TR-31 symmetric key
         /// exchange. In TR-31, you must use an initial key such as KEK to encrypt or wrap the
-        /// key under export. To establish a KEK, you can use <a>CreateKey</a> or <a>ImportKey</a>.
+        /// key under export. To establish a KEK, you can use <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>
+        /// or <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>.
         /// 
         /// </para>
         ///  
@@ -904,11 +944,13 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetParametersForExport</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForExport.html">GetParametersForExport</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ImportKey</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -978,19 +1020,23 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateAlias</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateAlias.html">CreateAlias</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteAlias</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteAlias.html">DeleteAlias</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListAliases</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListAliases.html">ListAliases</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateAlias</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_UpdateAlias.html">UpdateAlias</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1058,15 +1104,18 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateKey</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteKey</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteKey.html">DeleteKey</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListKeys</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListKeys.html">ListKeys</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1127,8 +1176,9 @@ namespace Amazon.PaymentCryptography
         /// <para>
         /// The signing key certificate signs the wrapped key under export within the TR-34 key
         /// payload. The export token and signing key certificate must be in place and operational
-        /// before calling <a>ExportKey</a>. The export token expires in 7 days. You can use the
-        /// same export token to export multiple keys from your service account.
+        /// before calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ExportKey.html">ExportKey</a>.
+        /// The export token expires in 7 days. You can use the same export token to export multiple
+        /// keys from your service account.
         /// </para>
         ///  
         /// <para>
@@ -1141,11 +1191,13 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ExportKey</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ExportKey.html">ExportKey</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetParametersForImport</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForImport.html">GetParametersForImport</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1212,7 +1264,7 @@ namespace Amazon.PaymentCryptography
         ///  
         /// <para>
         /// The wrapping key certificate wraps the key under import. The import token and wrapping
-        /// key certificate must be in place and operational before calling <a>ImportKey</a>.
+        /// key certificate must be in place and operational before calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>.
         /// The import token expires in 7 days. You can use the same import token to import multiple
         /// keys into your service account.
         /// </para>
@@ -1227,11 +1279,13 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>GetParametersForExport</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForExport.html">GetParametersForExport</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ImportKey</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1480,7 +1534,7 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  
         /// <para>
-        /// To initiate TR-34 key import, the KDH must obtain an import token by calling <a>GetParametersForImport</a>.
+        /// To initiate TR-34 key import, the KDH must obtain an import token by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForImport.html">GetParametersForImport</a>.
         /// This operation generates an encryption keypair for the purpose of key import, signs
         /// the key and returns back the wrapping key certificate (also known as KRD wrapping
         /// certificate) and the root certificate chain. The KDH must trust and install the KRD
@@ -1512,7 +1566,7 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>ImportToken</c>: Obtained from KRD by calling <a>GetParametersForImport</a>.
+        ///  <c>ImportToken</c>: Obtained from KRD by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForImport.html">GetParametersForImport</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1534,12 +1588,12 @@ namespace Amazon.PaymentCryptography
         ///  
         /// <para>
         /// Using this operation, you can import initial key using asymmetric RSA wrap and unwrap
-        /// key exchange method. To initiate import, call <a>GetParametersForImport</a> with <c>KeyMaterial</c>
-        /// set to <c>KEY_CRYPTOGRAM</c> to generate an import token. This operation also generates
-        /// an encryption keypair for the purpose of key import, signs the key and returns back
-        /// the wrapping key certificate in PEM format (base64 encoded) and its root certificate
-        /// chain. The import token and associated KRD wrapping certificate expires after 7 days.
-        /// 
+        /// key exchange method. To initiate import, call <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForImport.html">GetParametersForImport</a>
+        /// with <c>KeyMaterial</c> set to <c>KEY_CRYPTOGRAM</c> to generate an import token.
+        /// This operation also generates an encryption keypair for the purpose of key import,
+        /// signs the key and returns back the wrapping key certificate in PEM format (base64
+        /// encoded) and its root certificate chain. The import token and associated KRD wrapping
+        /// certificate expires after 7 days. 
         /// </para>
         ///  
         /// <para>
@@ -1556,8 +1610,8 @@ namespace Amazon.PaymentCryptography
         /// <para>
         /// Amazon Web Services Payment Cryptography uses TR-31 symmetric key exchange norm to
         /// import working keys. A KEK must be established within Amazon Web Services Payment
-        /// Cryptography by using TR-34 key import or by using <a>CreateKey</a>. To initiate a
-        /// TR-31 key import, set the following parameters:
+        /// Cryptography by using TR-34 key import or by using <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>.
+        /// To initiate a TR-31 key import, set the following parameters:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1585,11 +1639,13 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ExportKey</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ExportKey.html">ExportKey</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetParametersForImport</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetParametersForImport.html">GetParametersForImport</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1673,19 +1729,23 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateAlias</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateAlias.html">CreateAlias</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteAlias</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteAlias.html">DeleteAlias</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetAlias</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetAlias.html">GetAlias</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UpdateAlias</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_UpdateAlias.html">UpdateAlias</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1761,15 +1821,18 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateKey</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteKey</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteKey.html">DeleteKey</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetKey</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetKey.html">GetKey</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1844,11 +1907,13 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>TagResource</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_TagResource.html">TagResource</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UntagResource</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_UntagResource.html">UntagResource</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1923,15 +1988,18 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DeleteKey</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteKey.html">DeleteKey</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>StartKeyUsage</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_StartKeyUsage.html">StartKeyUsage</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>StopKeyUsage</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_StopKeyUsage.html">StopKeyUsage</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2005,7 +2073,8 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>StopKeyUsage</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_StopKeyUsage.html">StopKeyUsage</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2070,8 +2139,8 @@ namespace Amazon.PaymentCryptography
         /// 
         ///  
         /// <para>
-        /// You can use this operation instead of <a>DeleteKey</a> to deactivate a key. You can
-        /// enable the key in the future by calling <a>StartKeyUsage</a>.
+        /// You can use this operation instead of <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteKey.html">DeleteKey</a>
+        /// to deactivate a key. You can enable the key in the future by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_StartKeyUsage.html">StartKeyUsage</a>.
         /// </para>
         ///  
         /// <para>
@@ -2084,11 +2153,13 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>DeleteKey</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteKey.html">DeleteKey</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>StartKeyUsage</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_StartKeyUsage.html">StartKeyUsage</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2161,7 +2232,7 @@ namespace Amazon.PaymentCryptography
         /// The tag value can be an empty (null) string. To add a tag, specify a new tag key and
         /// a tag value. To edit a tag, specify an existing tag key and a new tag value. You can
         /// also add tags to an Amazon Web Services Payment Cryptography key when you create it
-        /// with <a>CreateKey</a>.
+        /// with <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>.
         /// </para>
         ///  
         /// <para>
@@ -2174,11 +2245,13 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListTagsForResource</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>UntagResource</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_UntagResource.html">UntagResource</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2256,11 +2329,13 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ListTagsForResource</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListTagsForResource.html">ListTagsForResource</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>TagResource</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_TagResource.html">TagResource</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2334,19 +2409,23 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>CreateAlias</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateAlias.html">CreateAlias</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>DeleteAlias</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_DeleteAlias.html">DeleteAlias</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>GetAlias</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_GetAlias.html">GetAlias</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ListAliases</a> 
+        ///  <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ListAliases.html">ListAliases</a>
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>

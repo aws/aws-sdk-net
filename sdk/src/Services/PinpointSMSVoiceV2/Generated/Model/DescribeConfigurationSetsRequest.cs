@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
@@ -47,8 +48,8 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// </summary>
     public partial class DescribeConfigurationSetsRequest : AmazonPinpointSMSVoiceV2Request
     {
-        private List<string> _configurationSetNames = new List<string>();
-        private List<ConfigurationSetFilter> _filters = new List<ConfigurationSetFilter>();
+        private List<string> _configurationSetNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<ConfigurationSetFilter> _filters = AWSConfigs.InitializeCollections ? new List<ConfigurationSetFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -68,7 +69,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if ConfigurationSetNames property is set
         internal bool IsSetConfigurationSetNames()
         {
-            return this._configurationSetNames != null && this._configurationSetNames.Count > 0; 
+            return this._configurationSetNames != null && (this._configurationSetNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -87,7 +88,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

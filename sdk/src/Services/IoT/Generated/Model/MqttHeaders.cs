@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.IoT.Model
         private string _messageExpiry;
         private string _payloadFormatIndicator;
         private string _responseTopic;
-        private List<UserProperty> _userProperties = new List<UserProperty>();
+        private List<UserProperty> _userProperties = AWSConfigs.InitializeCollections ? new List<UserProperty>() : null;
 
         /// <summary>
         /// Gets and sets the property ContentType. 
@@ -214,7 +215,7 @@ namespace Amazon.IoT.Model
         // Check to see if UserProperties property is set
         internal bool IsSetUserProperties()
         {
-            return this._userProperties != null && this._userProperties.Count > 0; 
+            return this._userProperties != null && (this._userProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

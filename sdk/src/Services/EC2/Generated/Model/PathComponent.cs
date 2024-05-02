@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -34,12 +35,12 @@ namespace Amazon.EC2.Model
     public partial class PathComponent
     {
         private AnalysisAclRule _aclRule;
-        private List<AdditionalDetail> _additionalDetails = new List<AdditionalDetail>();
+        private List<AdditionalDetail> _additionalDetails = AWSConfigs.InitializeCollections ? new List<AdditionalDetail>() : null;
         private AnalysisComponent _attachedTo;
         private AnalysisComponent _component;
         private AnalysisComponent _destinationVpc;
         private AnalysisComponent _elasticLoadBalancerListener;
-        private List<Explanation> _explanations = new List<Explanation>();
+        private List<Explanation> _explanations = AWSConfigs.InitializeCollections ? new List<Explanation>() : null;
         private FirewallStatefulRule _firewallStatefulRule;
         private FirewallStatelessRule _firewallStatelessRule;
         private AnalysisPacketHeader _inboundHeader;
@@ -87,7 +88,7 @@ namespace Amazon.EC2.Model
         // Check to see if AdditionalDetails property is set
         internal bool IsSetAdditionalDetails()
         {
-            return this._additionalDetails != null && this._additionalDetails.Count > 0; 
+            return this._additionalDetails != null && (this._additionalDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -177,7 +178,7 @@ namespace Amazon.EC2.Model
         // Check to see if Explanations property is set
         internal bool IsSetExplanations()
         {
-            return this._explanations != null && this._explanations.Count > 0; 
+            return this._explanations != null && (this._explanations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

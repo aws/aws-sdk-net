@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MigrationHubOrchestrator.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
     public partial class WorkflowStepOutputUnion
     {
         private int? _integerValue;
-        private List<string> _listOfStringValue = new List<string>();
+        private List<string> _listOfStringValue = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _stringValue;
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         // Check to see if ListOfStringValue property is set
         internal bool IsSetListOfStringValue()
         {
-            return this._listOfStringValue != null && this._listOfStringValue.Count > 0; 
+            return this._listOfStringValue != null && (this._listOfStringValue.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -79,7 +80,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         /// The string value.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
+        [AWSProperty(Min=0, Max=2048)]
         public string StringValue
         {
             get { return this._stringValue; }

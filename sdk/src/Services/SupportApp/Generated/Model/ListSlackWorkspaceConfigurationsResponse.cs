@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SupportApp.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SupportApp.Model
     public partial class ListSlackWorkspaceConfigurationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SlackWorkspaceConfiguration> _slackWorkspaceConfigurations = new List<SlackWorkspaceConfiguration>();
+        private List<SlackWorkspaceConfiguration> _slackWorkspaceConfigurations = AWSConfigs.InitializeCollections ? new List<SlackWorkspaceConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.SupportApp.Model
         // Check to see if SlackWorkspaceConfigurations property is set
         internal bool IsSetSlackWorkspaceConfigurations()
         {
-            return this._slackWorkspaceConfigurations != null && this._slackWorkspaceConfigurations.Count > 0; 
+            return this._slackWorkspaceConfigurations != null && (this._slackWorkspaceConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -27,6 +27,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>
     public class GetCORSConfigurationResponseUnmarshaller : S3ReponseUnmarshaller
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             GetCORSConfigurationResponse response = new GetCORSConfigurationResponse();
@@ -61,6 +66,8 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     {
                         if (response.Configuration == null)
                             response.Configuration = new CORSConfiguration();
+                        if (response.Configuration.Rules == null)
+                            response.Configuration.Rules = new List<CORSRule>();
 
                         response.Configuration.Rules.Add(CORSRuleUnmarshaller.Instance.Unmarshall(context));
                             
@@ -80,6 +87,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static GetCORSConfigurationResponseUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static GetCORSConfigurationResponseUnmarshaller Instance
         {
             get

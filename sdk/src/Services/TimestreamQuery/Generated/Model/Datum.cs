@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.TimestreamQuery.Model
 {
     /// <summary>
@@ -33,11 +34,11 @@ namespace Amazon.TimestreamQuery.Model
     /// </summary>
     public partial class Datum
     {
-        private List<Datum> _arrayValue = new List<Datum>();
+        private List<Datum> _arrayValue = AWSConfigs.InitializeCollections ? new List<Datum>() : null;
         private bool? _nullValue;
         private Row _rowValue;
         private string _scalarValue;
-        private List<TimeSeriesDataPoint> _timeSeriesValue = new List<TimeSeriesDataPoint>();
+        private List<TimeSeriesDataPoint> _timeSeriesValue = AWSConfigs.InitializeCollections ? new List<TimeSeriesDataPoint>() : null;
 
         /// <summary>
         /// Gets and sets the property ArrayValue. 
@@ -54,7 +55,7 @@ namespace Amazon.TimestreamQuery.Model
         // Check to see if ArrayValue property is set
         internal bool IsSetArrayValue()
         {
-            return this._arrayValue != null && this._arrayValue.Count > 0; 
+            return this._arrayValue != null && (this._arrayValue.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -127,7 +128,7 @@ namespace Amazon.TimestreamQuery.Model
         // Check to see if TimeSeriesValue property is set
         internal bool IsSetTimeSeriesValue()
         {
-            return this._timeSeriesValue != null && this._timeSeriesValue.Count > 0; 
+            return this._timeSeriesValue != null && (this._timeSeriesValue.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

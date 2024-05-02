@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataSync.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.DataSync.Model
     public partial class ListStorageSystemsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<StorageSystemListEntry> _storageSystems = new List<StorageSystemListEntry>();
+        private List<StorageSystemListEntry> _storageSystems = AWSConfigs.InitializeCollections ? new List<StorageSystemListEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.DataSync.Model
         // Check to see if StorageSystems property is set
         internal bool IsSetStorageSystems()
         {
-            return this._storageSystems != null && this._storageSystems.Count > 0; 
+            return this._storageSystems != null && (this._storageSystems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

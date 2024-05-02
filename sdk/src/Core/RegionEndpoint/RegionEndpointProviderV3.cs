@@ -325,8 +325,7 @@ namespace Amazon.Internal
         /// <summary>
         /// Builds the set used to identify a specific endpoint variant
         /// </summary>
-        /// <param name="dualStack">Whether to use a dualstack (IPv6 enabled) endpoint</param>
-        /// <param name="fips">Whether to use a FIPS-compliant endpoint</param>
+        /// <param name="options"></param>
         /// <returns>Set used to identify the combined variant in endpoints.json</returns>
         private static HashSet<string> BuildVariantHashSet(GetEndpointForServiceOptions options)
         {

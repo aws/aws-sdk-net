@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CloudTrail.Model
     /// </summary>
     public partial class ListImportFailuresResponse : AmazonWebServiceResponse
     {
-        private List<ImportFailureListItem> _failures = new List<ImportFailureListItem>();
+        private List<ImportFailureListItem> _failures = AWSConfigs.InitializeCollections ? new List<ImportFailureListItem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.CloudTrail.Model
         // Check to see if Failures property is set
         internal bool IsSetFailures()
         {
-            return this._failures != null && this._failures.Count > 0; 
+            return this._failures != null && (this._failures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

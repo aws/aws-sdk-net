@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.ServerMigrationService.Model
     {
         private int? _launchOrder;
         private string _serverGroupId;
-        private List<ServerLaunchConfiguration> _serverLaunchConfigurations = new List<ServerLaunchConfiguration>();
+        private List<ServerLaunchConfiguration> _serverLaunchConfigurations = AWSConfigs.InitializeCollections ? new List<ServerLaunchConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property LaunchOrder. 
@@ -88,7 +89,7 @@ namespace Amazon.ServerMigrationService.Model
         // Check to see if ServerLaunchConfigurations property is set
         internal bool IsSetServerLaunchConfigurations()
         {
-            return this._serverLaunchConfigurations != null && this._serverLaunchConfigurations.Count > 0; 
+            return this._serverLaunchConfigurations != null && (this._serverLaunchConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

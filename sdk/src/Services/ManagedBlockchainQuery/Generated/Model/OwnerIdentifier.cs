@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ManagedBlockchainQuery.Model
 {
     /// <summary>
-    /// The container for the identifier of the owner.
+    /// The container for the owner identifier.
     /// </summary>
     public partial class OwnerIdentifier
     {

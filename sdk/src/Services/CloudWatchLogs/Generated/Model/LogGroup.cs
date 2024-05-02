@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.CloudWatchLogs.Model
         private string _arn;
         private DateTime? _creationTime;
         private DataProtectionStatus _dataProtectionStatus;
-        private List<string> _inheritedProperties = new List<string>();
+        private List<string> _inheritedProperties = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _kmsKeyId;
         private string _logGroupArn;
         private LogGroupClass _logGroupClass;
@@ -127,7 +128,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if InheritedProperties property is set
         internal bool IsSetInheritedProperties()
         {
-            return this._inheritedProperties != null && this._inheritedProperties.Count > 0; 
+            return this._inheritedProperties != null && (this._inheritedProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

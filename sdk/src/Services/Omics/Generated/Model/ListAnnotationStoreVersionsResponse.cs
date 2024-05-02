@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Omics.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Omics.Model
     /// </summary>
     public partial class ListAnnotationStoreVersionsResponse : AmazonWebServiceResponse
     {
-        private List<AnnotationStoreVersionItem> _annotationStoreVersions = new List<AnnotationStoreVersionItem>();
+        private List<AnnotationStoreVersionItem> _annotationStoreVersions = AWSConfigs.InitializeCollections ? new List<AnnotationStoreVersionItem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Omics.Model
         // Check to see if AnnotationStoreVersions property is set
         internal bool IsSetAnnotationStoreVersions()
         {
-            return this._annotationStoreVersions != null && this._annotationStoreVersions.Count > 0; 
+            return this._annotationStoreVersions != null && (this._annotationStoreVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

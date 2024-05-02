@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Route53Domains.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Route53Domains.Model
         /// Enumerable containing all of the Prices
         /// </summary>
         public IPaginatedEnumerable<DomainPrice> Prices => 
-            new PaginatedResultKeyResponse<ListPricesResponse, DomainPrice>(this, (i) => i.Prices);
+            new PaginatedResultKeyResponse<ListPricesResponse, DomainPrice>(this, (i) => i.Prices ?? new List<DomainPrice>());
 
         internal ListPricesPaginator(IAmazonRoute53Domains client, ListPricesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Route53Domains.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListPricesResponse> IPaginator<ListPricesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListPricesResponse> IPaginator<ListPricesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

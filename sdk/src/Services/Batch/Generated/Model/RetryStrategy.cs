@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Batch.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Batch.Model
     public partial class RetryStrategy
     {
         private int? _attempts;
-        private List<EvaluateOnExit> _evaluateOnExit = new List<EvaluateOnExit>();
+        private List<EvaluateOnExit> _evaluateOnExit = AWSConfigs.InitializeCollections ? new List<EvaluateOnExit>() : null;
 
         /// <summary>
         /// Gets and sets the property Attempts. 
@@ -74,7 +75,7 @@ namespace Amazon.Batch.Model
         // Check to see if EvaluateOnExit property is set
         internal bool IsSetEvaluateOnExit()
         {
-            return this._evaluateOnExit != null && this._evaluateOnExit.Count > 0; 
+            return this._evaluateOnExit != null && (this._evaluateOnExit.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

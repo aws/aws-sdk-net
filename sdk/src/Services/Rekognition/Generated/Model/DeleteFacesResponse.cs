@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class DeleteFacesResponse : AmazonWebServiceResponse
     {
-        private List<string> _deletedFaces = new List<string>();
-        private List<UnsuccessfulFaceDeletion> _unsuccessfulFaceDeletions = new List<UnsuccessfulFaceDeletion>();
+        private List<string> _deletedFaces = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<UnsuccessfulFaceDeletion> _unsuccessfulFaceDeletions = AWSConfigs.InitializeCollections ? new List<UnsuccessfulFaceDeletion>() : null;
 
         /// <summary>
         /// Gets and sets the property DeletedFaces. 
@@ -52,7 +53,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if DeletedFaces property is set
         internal bool IsSetDeletedFaces()
         {
-            return this._deletedFaces != null && this._deletedFaces.Count > 0; 
+            return this._deletedFaces != null && (this._deletedFaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if UnsuccessfulFaceDeletions property is set
         internal bool IsSetUnsuccessfulFaceDeletions()
         {
-            return this._unsuccessfulFaceDeletions != null && this._unsuccessfulFaceDeletions.Count > 0; 
+            return this._unsuccessfulFaceDeletions != null && (this._unsuccessfulFaceDeletions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

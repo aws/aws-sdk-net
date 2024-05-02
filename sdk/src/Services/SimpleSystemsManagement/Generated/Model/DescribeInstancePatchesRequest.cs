@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class DescribeInstancePatchesRequest : AmazonSimpleSystemsManagementRequest
     {
-        private List<PatchOrchestratorFilter> _filters = new List<PatchOrchestratorFilter>();
+        private List<PatchOrchestratorFilter> _filters = AWSConfigs.InitializeCollections ? new List<PatchOrchestratorFilter>() : null;
         private string _instanceId;
         private int? _maxResults;
         private string _nextToken;
@@ -100,7 +101,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

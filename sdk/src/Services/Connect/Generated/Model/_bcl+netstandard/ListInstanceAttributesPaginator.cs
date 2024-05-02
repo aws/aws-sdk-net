@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the Attributes
         /// </summary>
         public IPaginatedEnumerable<Attribute> Attributes => 
-            new PaginatedResultKeyResponse<ListInstanceAttributesResponse, Attribute>(this, (i) => i.Attributes);
+            new PaginatedResultKeyResponse<ListInstanceAttributesResponse, Attribute>(this, (i) => i.Attributes ?? new List<Attribute>());
 
         internal ListInstanceAttributesPaginator(IAmazonConnect client, ListInstanceAttributesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Connect.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListInstanceAttributesResponse> IPaginator<ListInstanceAttributesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListInstanceAttributesResponse> IPaginator<ListInstanceAttributesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -44,14 +45,14 @@ namespace Amazon.EC2.Model
     public partial class ModifyVpcEndpointServiceConfigurationRequest : AmazonEC2Request
     {
         private bool? _acceptanceRequired;
-        private List<string> _addGatewayLoadBalancerArns = new List<string>();
-        private List<string> _addNetworkLoadBalancerArns = new List<string>();
-        private List<string> _addSupportedIpAddressTypes = new List<string>();
+        private List<string> _addGatewayLoadBalancerArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _addNetworkLoadBalancerArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _addSupportedIpAddressTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _privateDnsName;
-        private List<string> _removeGatewayLoadBalancerArns = new List<string>();
-        private List<string> _removeNetworkLoadBalancerArns = new List<string>();
+        private List<string> _removeGatewayLoadBalancerArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _removeNetworkLoadBalancerArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _removePrivateDnsName;
-        private List<string> _removeSupportedIpAddressTypes = new List<string>();
+        private List<string> _removeSupportedIpAddressTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _serviceId;
 
         /// <summary>
@@ -88,7 +89,7 @@ namespace Amazon.EC2.Model
         // Check to see if AddGatewayLoadBalancerArns property is set
         internal bool IsSetAddGatewayLoadBalancerArns()
         {
-            return this._addGatewayLoadBalancerArns != null && this._addGatewayLoadBalancerArns.Count > 0; 
+            return this._addGatewayLoadBalancerArns != null && (this._addGatewayLoadBalancerArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -107,7 +108,7 @@ namespace Amazon.EC2.Model
         // Check to see if AddNetworkLoadBalancerArns property is set
         internal bool IsSetAddNetworkLoadBalancerArns()
         {
-            return this._addNetworkLoadBalancerArns != null && this._addNetworkLoadBalancerArns.Count > 0; 
+            return this._addNetworkLoadBalancerArns != null && (this._addNetworkLoadBalancerArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -125,7 +126,7 @@ namespace Amazon.EC2.Model
         // Check to see if AddSupportedIpAddressTypes property is set
         internal bool IsSetAddSupportedIpAddressTypes()
         {
-            return this._addSupportedIpAddressTypes != null && this._addSupportedIpAddressTypes.Count > 0; 
+            return this._addSupportedIpAddressTypes != null && (this._addSupportedIpAddressTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -163,7 +164,7 @@ namespace Amazon.EC2.Model
         // Check to see if RemoveGatewayLoadBalancerArns property is set
         internal bool IsSetRemoveGatewayLoadBalancerArns()
         {
-            return this._removeGatewayLoadBalancerArns != null && this._removeGatewayLoadBalancerArns.Count > 0; 
+            return this._removeGatewayLoadBalancerArns != null && (this._removeGatewayLoadBalancerArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -182,7 +183,7 @@ namespace Amazon.EC2.Model
         // Check to see if RemoveNetworkLoadBalancerArns property is set
         internal bool IsSetRemoveNetworkLoadBalancerArns()
         {
-            return this._removeNetworkLoadBalancerArns != null && this._removeNetworkLoadBalancerArns.Count > 0; 
+            return this._removeNetworkLoadBalancerArns != null && (this._removeNetworkLoadBalancerArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -218,7 +219,7 @@ namespace Amazon.EC2.Model
         // Check to see if RemoveSupportedIpAddressTypes property is set
         internal bool IsSetRemoveSupportedIpAddressTypes()
         {
-            return this._removeSupportedIpAddressTypes != null && this._removeSupportedIpAddressTypes.Count > 0; 
+            return this._removeSupportedIpAddressTypes != null && (this._removeSupportedIpAddressTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Omics.Model
 {
     /// <summary>
@@ -127,8 +128,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Etag. 
         /// <para>
-        ///  The entity tag (ETag) is a hash of the object representing its semantic content.
-        /// 
+        /// The entity tag (ETag) is a hash of the object representing its semantic content.
         /// </para>
         /// </summary>
         public ETag Etag

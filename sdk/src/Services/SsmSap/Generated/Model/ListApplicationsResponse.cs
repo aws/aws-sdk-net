@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SsmSap.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SsmSap.Model
     /// </summary>
     public partial class ListApplicationsResponse : AmazonWebServiceResponse
     {
-        private List<ApplicationSummary> _applications = new List<ApplicationSummary>();
+        private List<ApplicationSummary> _applications = AWSConfigs.InitializeCollections ? new List<ApplicationSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.SsmSap.Model
         // Check to see if Applications property is set
         internal bool IsSetApplications()
         {
-            return this._applications != null && this._applications.Count > 0; 
+            return this._applications != null && (this._applications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

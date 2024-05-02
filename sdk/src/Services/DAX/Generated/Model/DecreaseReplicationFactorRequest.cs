@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DAX.Model
 {
     /// <summary>
@@ -41,10 +42,10 @@ namespace Amazon.DAX.Model
     /// </summary>
     public partial class DecreaseReplicationFactorRequest : AmazonDAXRequest
     {
-        private List<string> _availabilityZones = new List<string>();
+        private List<string> _availabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _clusterName;
         private int? _newReplicationFactor;
-        private List<string> _nodeIdsToRemove = new List<string>();
+        private List<string> _nodeIdsToRemove = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
@@ -61,7 +62,7 @@ namespace Amazon.DAX.Model
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+            return this._availabilityZones != null && (this._availabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -117,7 +118,7 @@ namespace Amazon.DAX.Model
         // Check to see if NodeIdsToRemove property is set
         internal bool IsSetNodeIdsToRemove()
         {
-            return this._nodeIdsToRemove != null && this._nodeIdsToRemove.Count > 0; 
+            return this._nodeIdsToRemove != null && (this._nodeIdsToRemove.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

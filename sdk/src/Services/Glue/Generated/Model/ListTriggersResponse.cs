@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Glue.Model
     public partial class ListTriggersResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<string> _triggerNames = new List<string>();
+        private List<string> _triggerNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +70,7 @@ namespace Amazon.Glue.Model
         // Check to see if TriggerNames property is set
         internal bool IsSetTriggerNames()
         {
-            return this._triggerNames != null && this._triggerNames.Count > 0; 
+            return this._triggerNames != null && (this._triggerNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

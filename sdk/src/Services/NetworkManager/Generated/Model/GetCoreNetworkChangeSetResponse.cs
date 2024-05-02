@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkManager.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.NetworkManager.Model
     /// </summary>
     public partial class GetCoreNetworkChangeSetResponse : AmazonWebServiceResponse
     {
-        private List<CoreNetworkChange> _coreNetworkChanges = new List<CoreNetworkChange>();
+        private List<CoreNetworkChange> _coreNetworkChanges = AWSConfigs.InitializeCollections ? new List<CoreNetworkChange>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if CoreNetworkChanges property is set
         internal bool IsSetCoreNetworkChanges()
         {
-            return this._coreNetworkChanges != null && this._coreNetworkChanges.Count > 0; 
+            return this._coreNetworkChanges != null && (this._coreNetworkChanges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

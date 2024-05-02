@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.SageMaker.Model
     {
         private FlatInvocations _flatInvocations;
         private int? _maxInvocations;
-        private List<ModelLatencyThreshold> _modelLatencyThresholds = new List<ModelLatencyThreshold>();
+        private List<ModelLatencyThreshold> _modelLatencyThresholds = AWSConfigs.InitializeCollections ? new List<ModelLatencyThreshold>() : null;
 
         /// <summary>
         /// Gets and sets the property FlatInvocations. 
@@ -95,7 +96,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ModelLatencyThresholds property is set
         internal bool IsSetModelLatencyThresholds()
         {
-            return this._modelLatencyThresholds != null && this._modelLatencyThresholds.Count > 0; 
+            return this._modelLatencyThresholds != null && (this._modelLatencyThresholds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

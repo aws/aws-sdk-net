@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -35,9 +36,9 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class Merge
     {
-        private List<string> _inputs = new List<string>();
+        private List<string> _inputs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
-        private List<List<string>> _primaryKeys = new List<List<string>>();
+        private List<List<string>> _primaryKeys = AWSConfigs.InitializeCollections ? new List<List<string>>() : null;
         private string _source;
 
         /// <summary>
@@ -56,7 +57,7 @@ namespace Amazon.Glue.Model
         // Check to see if Inputs property is set
         internal bool IsSetInputs()
         {
-            return this._inputs != null && this._inputs.Count > 0; 
+            return this._inputs != null && (this._inputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -95,7 +96,7 @@ namespace Amazon.Glue.Model
         // Check to see if PrimaryKeys property is set
         internal bool IsSetPrimaryKeys()
         {
-            return this._primaryKeys != null && this._primaryKeys.Count > 0; 
+            return this._primaryKeys != null && (this._primaryKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ARCZonalShift.Model
 {
     /// <summary>
@@ -33,13 +34,13 @@ namespace Amazon.ARCZonalShift.Model
     /// </summary>
     public partial class GetManagedResourceResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, float> _appliedWeights = new Dictionary<string, float>();
+        private Dictionary<string, float> _appliedWeights = AWSConfigs.InitializeCollections ? new Dictionary<string, float>() : null;
         private string _arn;
-        private List<AutoshiftInResource> _autoshifts = new List<AutoshiftInResource>();
+        private List<AutoshiftInResource> _autoshifts = AWSConfigs.InitializeCollections ? new List<AutoshiftInResource>() : null;
         private string _name;
         private PracticeRunConfiguration _practiceRunConfiguration;
         private ZonalAutoshiftStatus _zonalAutoshiftStatus;
-        private List<ZonalShiftInResource> _zonalShifts = new List<ZonalShiftInResource>();
+        private List<ZonalShiftInResource> _zonalShifts = AWSConfigs.InitializeCollections ? new List<ZonalShiftInResource>() : null;
 
         /// <summary>
         /// Gets and sets the property AppliedWeights. 
@@ -59,7 +60,7 @@ namespace Amazon.ARCZonalShift.Model
         // Check to see if AppliedWeights property is set
         internal bool IsSetAppliedWeights()
         {
-            return this._appliedWeights != null && this._appliedWeights.Count > 0; 
+            return this._appliedWeights != null && (this._appliedWeights.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -96,7 +97,7 @@ namespace Amazon.ARCZonalShift.Model
         // Check to see if Autoshifts property is set
         internal bool IsSetAutoshifts()
         {
-            return this._autoshifts != null && this._autoshifts.Count > 0; 
+            return this._autoshifts != null && (this._autoshifts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -173,7 +174,7 @@ namespace Amazon.ARCZonalShift.Model
         // Check to see if ZonalShifts property is set
         internal bool IsSetZonalShifts()
         {
-            return this._zonalShifts != null && this._zonalShifts.Count > 0; 
+            return this._zonalShifts != null && (this._zonalShifts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

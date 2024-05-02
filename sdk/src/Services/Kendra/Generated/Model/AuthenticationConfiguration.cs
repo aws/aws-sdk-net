@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class AuthenticationConfiguration
     {
-        private List<BasicAuthenticationConfiguration> _basicAuthentication = new List<BasicAuthenticationConfiguration>();
+        private List<BasicAuthenticationConfiguration> _basicAuthentication = AWSConfigs.InitializeCollections ? new List<BasicAuthenticationConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property BasicAuthentication. 
@@ -56,7 +57,7 @@ namespace Amazon.Kendra.Model
         // Check to see if BasicAuthentication property is set
         internal bool IsSetBasicAuthentication()
         {
-            return this._basicAuthentication != null && this._basicAuthentication.Count > 0; 
+            return this._basicAuthentication != null && (this._basicAuthentication.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

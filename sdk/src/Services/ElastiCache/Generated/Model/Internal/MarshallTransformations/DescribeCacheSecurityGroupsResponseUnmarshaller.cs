@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -84,6 +85,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("CacheSecurityGroups/CacheSecurityGroup", targetDepth))
                     {
                         var unmarshaller = CacheSecurityGroupUnmarshaller.Instance;
+                        if (response.CacheSecurityGroups == null)
+                        {
+                            response.CacheSecurityGroups = new List<CacheSecurityGroup>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.CacheSecurityGroups.Add(item);
                         continue;

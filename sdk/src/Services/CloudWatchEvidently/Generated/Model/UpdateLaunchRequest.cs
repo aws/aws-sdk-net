@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchEvidently.Model
 {
     /// <summary>
@@ -42,9 +43,9 @@ namespace Amazon.CloudWatchEvidently.Model
     public partial class UpdateLaunchRequest : AmazonCloudWatchEvidentlyRequest
     {
         private string _description;
-        private List<LaunchGroupConfig> _groups = new List<LaunchGroupConfig>();
+        private List<LaunchGroupConfig> _groups = AWSConfigs.InitializeCollections ? new List<LaunchGroupConfig>() : null;
         private string _launch;
-        private List<MetricMonitorConfig> _metricMonitors = new List<MetricMonitorConfig>();
+        private List<MetricMonitorConfig> _metricMonitors = AWSConfigs.InitializeCollections ? new List<MetricMonitorConfig>() : null;
         private string _project;
         private string _randomizationSalt;
         private ScheduledSplitsLaunchConfig _scheduledSplitsConfig;
@@ -85,7 +86,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if Groups property is set
         internal bool IsSetGroups()
         {
-            return this._groups != null && this._groups.Count > 0; 
+            return this._groups != null && (this._groups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -124,7 +125,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if MetricMonitors property is set
         internal bool IsSetMetricMonitors()
         {
-            return this._metricMonitors != null && this._metricMonitors.Count > 0; 
+            return this._metricMonitors != null && (this._metricMonitors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

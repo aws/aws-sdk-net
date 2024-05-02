@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     public partial class ListUserImportJobsResponse : AmazonWebServiceResponse
     {
         private string _paginationToken;
-        private List<UserImportJobType> _userImportJobs = new List<UserImportJobType>();
+        private List<UserImportJobType> _userImportJobs = AWSConfigs.InitializeCollections ? new List<UserImportJobType>() : null;
 
         /// <summary>
         /// Gets and sets the property PaginationToken. 
@@ -74,7 +75,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if UserImportJobs property is set
         internal bool IsSetUserImportJobs()
         {
-            return this._userImportJobs != null && this._userImportJobs.Count > 0; 
+            return this._userImportJobs != null && (this._userImportJobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

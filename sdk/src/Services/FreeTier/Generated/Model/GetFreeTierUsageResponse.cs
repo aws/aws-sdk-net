@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FreeTier.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.FreeTier.Model
     /// </summary>
     public partial class GetFreeTierUsageResponse : AmazonWebServiceResponse
     {
-        private List<FreeTierUsage> _freeTierUsages = new List<FreeTierUsage>();
+        private List<FreeTierUsage> _freeTierUsages = AWSConfigs.InitializeCollections ? new List<FreeTierUsage>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.FreeTier.Model
         // Check to see if FreeTierUsages property is set
         internal bool IsSetFreeTierUsages()
         {
-            return this._freeTierUsages != null && this._freeTierUsages.Count > 0; 
+            return this._freeTierUsages != null && (this._freeTierUsages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

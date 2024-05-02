@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Connect.Model
         private string _lastModifiedRegion;
         private DateTime? _lastModifiedTime;
         private string _nextToken;
-        private List<RoutingProfileQueueConfigSummary> _routingProfileQueueConfigSummaryList = new List<RoutingProfileQueueConfigSummary>();
+        private List<RoutingProfileQueueConfigSummary> _routingProfileQueueConfigSummaryList = AWSConfigs.InitializeCollections ? new List<RoutingProfileQueueConfigSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property LastModifiedRegion. 
@@ -107,7 +108,7 @@ namespace Amazon.Connect.Model
         // Check to see if RoutingProfileQueueConfigSummaryList property is set
         internal bool IsSetRoutingProfileQueueConfigSummaryList()
         {
-            return this._routingProfileQueueConfigSummaryList != null && this._routingProfileQueueConfigSummaryList.Count > 0; 
+            return this._routingProfileQueueConfigSummaryList != null && (this._routingProfileQueueConfigSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

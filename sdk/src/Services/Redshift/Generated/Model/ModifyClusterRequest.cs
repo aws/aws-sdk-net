@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -55,7 +56,7 @@ namespace Amazon.Redshift.Model
         private bool? _availabilityZoneRelocation;
         private string _clusterIdentifier;
         private string _clusterParameterGroupName;
-        private List<string> _clusterSecurityGroups = new List<string>();
+        private List<string> _clusterSecurityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _clusterType;
         private string _clusterVersion;
         private string _elasticIp;
@@ -77,7 +78,7 @@ namespace Amazon.Redshift.Model
         private int? _port;
         private string _preferredMaintenanceWindow;
         private bool? _publiclyAccessible;
-        private List<string> _vpcSecurityGroupIds = new List<string>();
+        private List<string> _vpcSecurityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AllowVersionUpgrade. 
@@ -271,7 +272,7 @@ namespace Amazon.Redshift.Model
         // Check to see if ClusterSecurityGroups property is set
         internal bool IsSetClusterSecurityGroups()
         {
-            return this._clusterSecurityGroups != null && this._clusterSecurityGroups.Count > 0; 
+            return this._clusterSecurityGroups != null && (this._clusterSecurityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -781,6 +782,21 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// The option to change the port of an Amazon Redshift cluster.
         /// </para>
+        ///  
+        /// <para>
+        /// Valid Values: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For clusters with ra3 nodes - Select a port within the ranges <c>5431-5455</c> or
+        /// <c>8191-8215</c>. (If you have an existing cluster with ra3 nodes, it isn't required
+        /// that you change the port to these ranges.)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For clusters with ds2 or dc2 nodes - Select a port within the range <c>1150-65535</c>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public int? Port
         {
@@ -871,7 +887,7 @@ namespace Amazon.Redshift.Model
         // Check to see if VpcSecurityGroupIds property is set
         internal bool IsSetVpcSecurityGroupIds()
         {
-            return this._vpcSecurityGroupIds != null && this._vpcSecurityGroupIds.Count > 0; 
+            return this._vpcSecurityGroupIds != null && (this._vpcSecurityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

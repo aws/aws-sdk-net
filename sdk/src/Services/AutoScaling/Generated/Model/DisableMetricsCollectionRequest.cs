@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.AutoScaling.Model
     public partial class DisableMetricsCollectionRequest : AmazonAutoScalingRequest
     {
         private string _autoScalingGroupName;
-        private List<string> _metrics = new List<string>();
+        private List<string> _metrics = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
@@ -164,7 +165,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Metrics property is set
         internal bool IsSetMetrics()
         {
-            return this._metrics != null && this._metrics.Count > 0; 
+            return this._metrics != null && (this._metrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

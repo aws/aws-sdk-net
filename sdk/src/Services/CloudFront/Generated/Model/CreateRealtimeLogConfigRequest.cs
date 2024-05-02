@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
@@ -45,8 +46,8 @@ namespace Amazon.CloudFront.Model
     /// </summary>
     public partial class CreateRealtimeLogConfigRequest : AmazonCloudFrontRequest
     {
-        private List<EndPoint> _endPoints = new List<EndPoint>();
-        private List<string> _fields = new List<string>();
+        private List<EndPoint> _endPoints = AWSConfigs.InitializeCollections ? new List<EndPoint>() : null;
+        private List<string> _fields = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private long? _samplingRate;
 
@@ -67,7 +68,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if EndPoints property is set
         internal bool IsSetEndPoints()
         {
-            return this._endPoints != null && this._endPoints.Count > 0; 
+            return this._endPoints != null && (this._endPoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if Fields property is set
         internal bool IsSetFields()
         {
-            return this._fields != null && this._fields.Count > 0; 
+            return this._fields != null && (this._fields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -116,9 +117,9 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property SamplingRate. 
         /// <para>
-        /// The sampling rate for this real-time log configuration. The sampling rate determines
-        /// the percentage of viewer requests that are represented in the real-time log data.
-        /// You must provide an integer between 1 and 100, inclusive.
+        /// The sampling rate for this real-time log configuration. You can specify a whole number
+        /// between 1 and 100 (inclusive) to determine the percentage of viewer requests that
+        /// are represented in the real-time log data.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

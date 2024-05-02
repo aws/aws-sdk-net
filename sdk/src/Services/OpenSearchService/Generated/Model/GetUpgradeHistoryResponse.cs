@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.OpenSearchService.Model
     public partial class GetUpgradeHistoryResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<UpgradeHistory> _upgradeHistories = new List<UpgradeHistory>();
+        private List<UpgradeHistory> _upgradeHistories = AWSConfigs.InitializeCollections ? new List<UpgradeHistory>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.OpenSearchService.Model
         // Check to see if UpgradeHistories property is set
         internal bool IsSetUpgradeHistories()
         {
-            return this._upgradeHistories != null && this._upgradeHistories.Count > 0; 
+            return this._upgradeHistories != null && (this._upgradeHistories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

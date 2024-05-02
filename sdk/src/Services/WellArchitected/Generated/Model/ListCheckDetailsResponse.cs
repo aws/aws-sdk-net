@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.WellArchitected.Model
     /// </summary>
     public partial class ListCheckDetailsResponse : AmazonWebServiceResponse
     {
-        private List<CheckDetail> _checkDetails = new List<CheckDetail>();
+        private List<CheckDetail> _checkDetails = AWSConfigs.InitializeCollections ? new List<CheckDetail>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if CheckDetails property is set
         internal bool IsSetCheckDetails()
         {
-            return this._checkDetails != null && this._checkDetails.Count > 0; 
+            return this._checkDetails != null && (this._checkDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

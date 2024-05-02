@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ForecastService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ForecastService.Model
     /// </summary>
     public partial class ListForecastsResponse : AmazonWebServiceResponse
     {
-        private List<ForecastSummary> _forecasts = new List<ForecastSummary>();
+        private List<ForecastSummary> _forecasts = AWSConfigs.InitializeCollections ? new List<ForecastSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if Forecasts property is set
         internal bool IsSetForecasts()
         {
-            return this._forecasts != null && this._forecasts.Count > 0; 
+            return this._forecasts != null && (this._forecasts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

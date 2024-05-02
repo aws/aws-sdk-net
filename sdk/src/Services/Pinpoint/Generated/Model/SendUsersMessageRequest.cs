@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
@@ -34,11 +35,11 @@ namespace Amazon.Pinpoint.Model
     /// </summary>
     public partial class SendUsersMessageRequest
     {
-        private Dictionary<string, string> _context = new Dictionary<string, string>();
+        private Dictionary<string, string> _context = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DirectMessageConfiguration _messageConfiguration;
         private TemplateConfiguration _templateConfiguration;
         private string _traceId;
-        private Dictionary<string, EndpointSendConfiguration> _users = new Dictionary<string, EndpointSendConfiguration>();
+        private Dictionary<string, EndpointSendConfiguration> _users = AWSConfigs.InitializeCollections ? new Dictionary<string, EndpointSendConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property Context. 
@@ -58,7 +59,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Context property is set
         internal bool IsSetContext()
         {
-            return this._context != null && this._context.Count > 0; 
+            return this._context != null && (this._context.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -137,7 +138,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Users property is set
         internal bool IsSetUsers()
         {
-            return this._users != null && this._users.Count > 0; 
+            return this._users != null && (this._users.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

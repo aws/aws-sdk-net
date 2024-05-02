@@ -26,17 +26,17 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateTask operation.
-    /// Configures a transfer task, which defines where and how DataSync moves your data.
+    /// Configures a <i>task</i>, which defines where and how DataSync transfers your data.
     /// 
     ///  
     /// <para>
-    /// A task includes a source location, destination location, and the options for how and
-    /// when you want to transfer your data (such as bandwidth limits, scheduling, among other
-    /// options).
+    /// A task includes a source location, destination location, and transfer options (such
+    /// as bandwidth limits, scheduling, and more).
     /// </para>
     ///  <important> 
     /// <para>
@@ -50,21 +50,21 @@ namespace Amazon.DataSync.Model
     {
         private string _cloudWatchLogGroupArn;
         private string _destinationLocationArn;
-        private List<FilterRule> _excludes = new List<FilterRule>();
-        private List<FilterRule> _includes = new List<FilterRule>();
+        private List<FilterRule> _excludes = AWSConfigs.InitializeCollections ? new List<FilterRule>() : null;
+        private List<FilterRule> _includes = AWSConfigs.InitializeCollections ? new List<FilterRule>() : null;
         private ManifestConfig _manifestConfig;
         private string _name;
         private Options _options;
         private TaskSchedule _schedule;
         private string _sourceLocationArn;
-        private List<TagListEntry> _tags = new List<TagListEntry>();
+        private List<TagListEntry> _tags = AWSConfigs.InitializeCollections ? new List<TagListEntry>() : null;
         private TaskReportConfig _taskReportConfig;
 
         /// <summary>
         /// Gets and sets the property CloudWatchLogGroupArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to
-        /// monitor and log events in the task. 
+        /// Specifies the Amazon Resource Name (ARN) of an Amazon CloudWatch log group for monitoring
+        /// your task.
         /// </para>
         /// </summary>
         [AWSProperty(Max=562)]
@@ -83,8 +83,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property DestinationLocationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an Amazon Web Services storage resource's location.
-        /// 
+        /// Specifies the ARN of your transfer's destination location. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]
@@ -103,9 +102,10 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Excludes. 
         /// <para>
-        /// Specifies a list of filter rules that exclude specific data during your transfer.
-        /// For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
-        /// data transferred by DataSync</a>.
+        /// Specifies exclude filters that define the files, objects, and folders in your source
+        /// location that you don't want DataSync to transfer. For more information and examples,
+        /// see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying
+        /// what DataSync transfers by using filters</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
@@ -118,15 +118,15 @@ namespace Amazon.DataSync.Model
         // Check to see if Excludes property is set
         internal bool IsSetExcludes()
         {
-            return this._excludes != null && this._excludes.Count > 0; 
+            return this._excludes != null && (this._excludes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property Includes. 
         /// <para>
-        /// Specifies a list of filter rules that include specific data during your transfer.
-        /// For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Filtering
-        /// data transferred by DataSync</a>.
+        /// Specifies include filters define the files, objects, and folders in your source location
+        /// that you want DataSync to transfer. For more information and examples, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">Specifying
+        /// what DataSync transfers by using filters</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
@@ -139,7 +139,7 @@ namespace Amazon.DataSync.Model
         // Check to see if Includes property is set
         internal bool IsSetIncludes()
         {
-            return this._includes != null && this._includes.Count > 0; 
+            return this._includes != null && (this._includes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -171,11 +171,10 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of a task. This value is a text reference that is used to identify the task
-        /// in the console. 
+        /// Specifies the name of your task.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -191,13 +190,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Options. 
         /// <para>
-        /// Specifies the configuration options for a task. Some options include preserving file
-        /// or object metadata and verifying data integrity.
-        /// </para>
-        ///  
-        /// <para>
-        /// You can also override these options before starting an individual run of a task (also
-        /// known as a <i>task execution</i>). For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>.
+        /// Specifies your task's settings, such as preserving file metadata, verifying data integrity,
+        /// among other options.
         /// </para>
         /// </summary>
         public Options Options
@@ -215,8 +209,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Schedule. 
         /// <para>
-        /// Specifies a schedule used to periodically transfer files from a source to a destination
-        /// location. The schedule should be specified in UTC time. For more information, see
+        /// Specifies a schedule for when you want your task to run. For more information, see
         /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling
         /// your task</a>.
         /// </para>
@@ -236,7 +229,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property SourceLocationArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the source location for the task.
+        /// Specifies the ARN of your transfer's source location.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]
@@ -255,8 +248,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Specifies the tags that you want to apply to the Amazon Resource Name (ARN) representing
-        /// the task.
+        /// Specifies the tags that you want to apply to your task.
         /// </para>
         ///  
         /// <para>
@@ -274,7 +266,7 @@ namespace Amazon.DataSync.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

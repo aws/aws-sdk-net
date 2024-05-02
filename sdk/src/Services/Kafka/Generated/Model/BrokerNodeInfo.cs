@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kafka.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.Kafka.Model
         private string _clientSubnet;
         private string _clientVpcIpAddress;
         private BrokerSoftwareInfo _currentBrokerSoftwareInfo;
-        private List<string> _endpoints = new List<string>();
+        private List<string> _endpoints = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AttachedENIId.             
@@ -146,7 +147,7 @@ namespace Amazon.Kafka.Model
         // Check to see if Endpoints property is set
         internal bool IsSetEndpoints()
         {
-            return this._endpoints != null && this._endpoints.Count > 0; 
+            return this._endpoints != null && (this._endpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

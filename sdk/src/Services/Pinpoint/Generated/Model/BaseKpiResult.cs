@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Pinpoint.Model
     /// </summary>
     public partial class BaseKpiResult
     {
-        private List<ResultRow> _rows = new List<ResultRow>();
+        private List<ResultRow> _rows = AWSConfigs.InitializeCollections ? new List<ResultRow>() : null;
 
         /// <summary>
         /// Gets and sets the property Rows. 
@@ -53,7 +54,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Rows property is set
         internal bool IsSetRows()
         {
-            return this._rows != null && this._rows.Count > 0; 
+            return this._rows != null && (this._rows.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

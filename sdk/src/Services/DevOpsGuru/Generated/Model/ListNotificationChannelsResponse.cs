@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DevOpsGuru.Model
     /// </summary>
     public partial class ListNotificationChannelsResponse : AmazonWebServiceResponse
     {
-        private List<NotificationChannel> _channels = new List<NotificationChannel>();
+        private List<NotificationChannel> _channels = AWSConfigs.InitializeCollections ? new List<NotificationChannel>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.DevOpsGuru.Model
         // Check to see if Channels property is set
         internal bool IsSetChannels()
         {
-            return this._channels != null && this._channels.Count > 0; 
+            return this._channels != null && (this._channels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

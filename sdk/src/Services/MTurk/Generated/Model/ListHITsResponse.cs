@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MTurk.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MTurk.Model
     /// </summary>
     public partial class ListHITsResponse : AmazonWebServiceResponse
     {
-        private List<HIT> _hiTs = new List<HIT>();
+        private List<HIT> _hiTs = AWSConfigs.InitializeCollections ? new List<HIT>() : null;
         private string _nextToken;
         private int? _numResults;
 
@@ -52,7 +53,7 @@ namespace Amazon.MTurk.Model
         // Check to see if HITs property is set
         internal bool IsSetHITs()
         {
-            return this._hiTs != null && this._hiTs.Count > 0; 
+            return this._hiTs != null && (this._hiTs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

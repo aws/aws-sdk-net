@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.WorkMail.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.WorkMail.Model
         /// Enumerable containing all of the AvailabilityConfigurations
         /// </summary>
         public IPaginatedEnumerable<AvailabilityConfiguration> AvailabilityConfigurations => 
-            new PaginatedResultKeyResponse<ListAvailabilityConfigurationsResponse, AvailabilityConfiguration>(this, (i) => i.AvailabilityConfigurations);
+            new PaginatedResultKeyResponse<ListAvailabilityConfigurationsResponse, AvailabilityConfiguration>(this, (i) => i.AvailabilityConfigurations ?? new List<AvailabilityConfiguration>());
 
         internal ListAvailabilityConfigurationsPaginator(IAmazonWorkMail client, ListAvailabilityConfigurationsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.WorkMail.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListAvailabilityConfigurationsResponse> IPaginator<ListAvailabilityConfigurationsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListAvailabilityConfigurationsResponse> IPaginator<ListAvailabilityConfigurationsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

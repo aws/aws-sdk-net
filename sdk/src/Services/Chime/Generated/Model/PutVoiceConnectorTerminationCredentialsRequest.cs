@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Chime.Model
 {
     /// <summary>
@@ -48,7 +49,7 @@ namespace Amazon.Chime.Model
     /// </summary>
     public partial class PutVoiceConnectorTerminationCredentialsRequest : AmazonChimeRequest
     {
-        private List<Credential> _credentials = new List<Credential>();
+        private List<Credential> _credentials = AWSConfigs.InitializeCollections ? new List<Credential>() : null;
         private string _voiceConnectorId;
 
         /// <summary>
@@ -66,7 +67,7 @@ namespace Amazon.Chime.Model
         // Check to see if Credentials property is set
         internal bool IsSetCredentials()
         {
-            return this._credentials != null && this._credentials.Count > 0; 
+            return this._credentials != null && (this._credentials.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -24,7 +24,7 @@ namespace Amazon.S3.Model
     /// </summary>
     public class OwnershipControls
     {
-        private List<OwnershipControlsRule> rules = new List<OwnershipControlsRule>();
+        private List<OwnershipControlsRule> rules = AWSConfigs.InitializeCollections ? new List<OwnershipControlsRule>() : null;
 
         /// <summary>
         /// A bucket's ownership control rules

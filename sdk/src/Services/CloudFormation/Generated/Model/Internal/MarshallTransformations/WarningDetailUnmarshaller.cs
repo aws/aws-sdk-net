@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -57,6 +58,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Properties/member", targetDepth))
                     {
                         var unmarshaller = WarningPropertyUnmarshaller.Instance;
+                        if (unmarshalledObject.Properties == null)
+                        {
+                            unmarshalledObject.Properties = new List<WarningProperty>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Properties.Add(item);
                         continue;

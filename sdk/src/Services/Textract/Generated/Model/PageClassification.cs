@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Textract.Model
 {
     /// <summary>
@@ -35,8 +36,8 @@ namespace Amazon.Textract.Model
     /// </summary>
     public partial class PageClassification
     {
-        private List<Prediction> _pageNumber = new List<Prediction>();
-        private List<Prediction> _pageType = new List<Prediction>();
+        private List<Prediction> _pageNumber = AWSConfigs.InitializeCollections ? new List<Prediction>() : null;
+        private List<Prediction> _pageType = AWSConfigs.InitializeCollections ? new List<Prediction>() : null;
 
         /// <summary>
         /// Gets and sets the property PageNumber. 
@@ -55,7 +56,7 @@ namespace Amazon.Textract.Model
         // Check to see if PageNumber property is set
         internal bool IsSetPageNumber()
         {
-            return this._pageNumber != null && this._pageNumber.Count > 0; 
+            return this._pageNumber != null && (this._pageNumber.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace Amazon.Textract.Model
         // Check to see if PageType property is set
         internal bool IsSetPageType()
         {
-            return this._pageType != null && this._pageType.Count > 0; 
+            return this._pageType != null && (this._pageType.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

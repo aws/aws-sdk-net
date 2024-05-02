@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the Amazon Q application. 
+        ///  The Amazon Resource Name (ARN) of the Amazon Q Business application. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1284)]
@@ -58,7 +59,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The identifier of the Amazon Q application.
+        /// The identifier of the Amazon Q Business application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]

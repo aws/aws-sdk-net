@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class BatchGetDocumentStatusResponse : AmazonWebServiceResponse
     {
-        private List<Status> _documentStatusList = new List<Status>();
-        private List<BatchGetDocumentStatusResponseError> _errors = new List<BatchGetDocumentStatusResponseError>();
+        private List<Status> _documentStatusList = AWSConfigs.InitializeCollections ? new List<Status>() : null;
+        private List<BatchGetDocumentStatusResponseError> _errors = AWSConfigs.InitializeCollections ? new List<BatchGetDocumentStatusResponseError>() : null;
 
         /// <summary>
         /// Gets and sets the property DocumentStatusList. 
@@ -53,7 +54,7 @@ namespace Amazon.Kendra.Model
         // Check to see if DocumentStatusList property is set
         internal bool IsSetDocumentStatusList()
         {
-            return this._documentStatusList != null && this._documentStatusList.Count > 0; 
+            return this._documentStatusList != null && (this._documentStatusList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.Kendra.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

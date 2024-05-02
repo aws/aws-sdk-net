@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -67,6 +68,12 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
                     unmarshalledObject.BytesMetered = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CumulativeBytesScanned", targetDepth))
+                {
+                    var unmarshaller = NullableLongUnmarshaller.Instance;
+                    unmarshalledObject.CumulativeBytesScanned = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DataWrites", targetDepth))

@@ -28,6 +28,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>
     public class DeleteObjectsResponseUnmarshaller : S3ReponseUnmarshaller
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {   
             DeleteObjectsResponse response = new DeleteObjectsResponse();
@@ -63,14 +68,22 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Deleted", targetDepth))
                     {
+                        if (response.DeletedObjects == null)
+                        {
+                            response.DeletedObjects = new List<DeletedObject>();
+                        }
+
                         response.DeletedObjects.Add(DeletedObjectUnmarshaller.Instance.Unmarshall(context));
-                            
                         continue;
                     }
                     if (context.TestExpression("Error", targetDepth))
                     {
+                        if (response.DeleteErrors == null)
+                        {
+                            response.DeleteErrors = new List<DeleteError>();
+                        }
+
                         response.DeleteErrors.Add(ErrorsItemUnmarshaller.Instance.Unmarshall(context));
-                            
                         continue;
                     }
                 }
@@ -85,6 +98,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static DeleteObjectsResponseUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static DeleteObjectsResponseUnmarshaller Instance
         {
             get

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.GreengrassV2.Model
     {
         private string _componentName;
         private string _componentVersion;
-        private Dictionary<string, string> _versionRequirements = new Dictionary<string, string>();
+        private Dictionary<string, string> _versionRequirements = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ComponentName. 
@@ -97,7 +98,7 @@ namespace Amazon.GreengrassV2.Model
         // Check to see if VersionRequirements property is set
         internal bool IsSetVersionRequirements()
         {
-            return this._versionRequirements != null && this._versionRequirements.Count > 0; 
+            return this._versionRequirements != null && (this._versionRequirements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

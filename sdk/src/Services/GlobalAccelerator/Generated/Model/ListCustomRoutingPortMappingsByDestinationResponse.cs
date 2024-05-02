@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.GlobalAccelerator.Model
     /// </summary>
     public partial class ListCustomRoutingPortMappingsByDestinationResponse : AmazonWebServiceResponse
     {
-        private List<DestinationPortMapping> _destinationPortMappings = new List<DestinationPortMapping>();
+        private List<DestinationPortMapping> _destinationPortMappings = AWSConfigs.InitializeCollections ? new List<DestinationPortMapping>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if DestinationPortMappings property is set
         internal bool IsSetDestinationPortMappings()
         {
-            return this._destinationPortMappings != null && this._destinationPortMappings.Count > 0; 
+            return this._destinationPortMappings != null && (this._destinationPortMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

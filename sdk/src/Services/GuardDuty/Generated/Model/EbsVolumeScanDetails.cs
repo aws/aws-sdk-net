@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.GuardDuty.Model
         private string _scanId;
         private DateTime? _scanStartedAt;
         private ScanType _scanType;
-        private List<string> _sources = new List<string>();
+        private List<string> _sources = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _triggerFindingId;
 
         /// <summary>
@@ -146,7 +147,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if Sources property is set
         internal bool IsSetSources()
         {
-            return this._sources != null && this._sources.Count > 0; 
+            return this._sources != null && (this._sources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppFabric.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AppFabric.Model
     /// </summary>
     public partial class ListIngestionDestinationsResponse : AmazonWebServiceResponse
     {
-        private List<IngestionDestinationSummary> _ingestionDestinations = new List<IngestionDestinationSummary>();
+        private List<IngestionDestinationSummary> _ingestionDestinations = AWSConfigs.InitializeCollections ? new List<IngestionDestinationSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.AppFabric.Model
         // Check to see if IngestionDestinations property is set
         internal bool IsSetIngestionDestinations()
         {
-            return this._ingestionDestinations != null && this._ingestionDestinations.Count > 0; 
+            return this._ingestionDestinations != null && (this._ingestionDestinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

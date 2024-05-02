@@ -262,6 +262,21 @@ namespace ServiceClientGenerator
             }
         }
 
+        /// <summary>
+        /// Determines if the operation pagination should end when the response equal to the request token
+        /// </summary>
+        public bool StopPaginationOnSameToken
+        {
+            get
+            {
+                var modifiers = this.model.Customizations.GetOperationModifiers(this.name);
+                if (modifiers != null)
+                    return modifiers.StopPaginationOnSameToken;
+
+                return false;
+            }
+        }
+
         public bool WrapsResultShape(string shapeName)
         {
             var modifiers = this.model.Customizations.GetOperationModifiers(this.name);
@@ -288,7 +303,9 @@ namespace ServiceClientGenerator
                     var payload = this.RequestStructure.PayloadMemberName;
                     if (!string.IsNullOrWhiteSpace(payload))
                     {
-                        return this.RequestStructure.Members.Single(m => m.MarshallName.Equals(payload, StringComparison.InvariantCultureIgnoreCase));
+                        return this.RequestStructure.Members.Single(m => 
+                            (m.HasModifier && m.MarshallName.Equals(payload, StringComparison.InvariantCultureIgnoreCase))
+                            || (!m.HasModifier && m.ModeledName.Equals(payload, StringComparison.InvariantCultureIgnoreCase)));
                     }
                 }
 
@@ -308,7 +325,7 @@ namespace ServiceClientGenerator
                     var payload = this.ResponseStructure.PayloadMemberName;
                     if (!string.IsNullOrWhiteSpace(payload))
                     {
-                        return this.ResponseStructure.Members.Single(m => m.MarshallName.Equals(payload, StringComparison.InvariantCultureIgnoreCase));
+                        return this.ResponseStructure.Members.Single(m => m.ModeledName.Equals(payload, StringComparison.InvariantCultureIgnoreCase));
                     }
                 }
 
@@ -319,15 +336,38 @@ namespace ServiceClientGenerator
         /// <summary>
         /// Gets the namespace of the payload for an XML object
         /// </summary>
-        public string XmlNamespace
+        public new string XmlNamespace
         {
             get
             {
                 if (this.RequestPayloadMember != null)
                 {
-                    return RequestPayloadMember.XmlNamespace;
+                    return !string.IsNullOrEmpty(RequestPayloadMember.XmlNamespace) 
+                        ? RequestPayloadMember.XmlNamespace
+                        : RequestPayloadMember.Shape.XmlNamespace;
                 }
-                return this.Input.XmlNamespace;
+                return !string.IsNullOrEmpty(this.Input.XmlNamespace)
+                    ? this.Input.XmlNamespace 
+                    : RequestStructure.XmlNamespace;
+            }
+        }
+
+        /// <summary>
+        /// Gets the namespace prefix of the payload for an XML object
+        /// </summary>
+        public new string XmlNamespacePrefix
+        {
+            get
+            {
+                if (this.RequestPayloadMember != null)
+                {
+                    return !string.IsNullOrEmpty(RequestPayloadMember.XmlNamespacePrefix)
+                        ? RequestPayloadMember.XmlNamespacePrefix
+                        : RequestPayloadMember.Shape.XmlNamespacePrefix;
+                }
+                return !string.IsNullOrEmpty(this.Input.XmlNamespacePrefix)
+                    ? this.Input.XmlNamespacePrefix
+                    : RequestStructure.XmlNamespacePrefix;
             }
         }
 

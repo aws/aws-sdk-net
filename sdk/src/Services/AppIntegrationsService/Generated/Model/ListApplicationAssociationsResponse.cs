@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppIntegrationsService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AppIntegrationsService.Model
     /// </summary>
     public partial class ListApplicationAssociationsResponse : AmazonWebServiceResponse
     {
-        private List<ApplicationAssociationSummary> _applicationAssociations = new List<ApplicationAssociationSummary>();
+        private List<ApplicationAssociationSummary> _applicationAssociations = AWSConfigs.InitializeCollections ? new List<ApplicationAssociationSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.AppIntegrationsService.Model
         // Check to see if ApplicationAssociations property is set
         internal bool IsSetApplicationAssociations()
         {
-            return this._applicationAssociations != null && this._applicationAssociations.Count > 0; 
+            return this._applicationAssociations != null && (this._applicationAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

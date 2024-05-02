@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeGuruSecurity.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CodeGuruSecurity.Model
     /// </summary>
     public partial class BatchGetFindingsRequest : AmazonCodeGuruSecurityRequest
     {
-        private List<FindingIdentifier> _findingIdentifiers = new List<FindingIdentifier>();
+        private List<FindingIdentifier> _findingIdentifiers = AWSConfigs.InitializeCollections ? new List<FindingIdentifier>() : null;
 
         /// <summary>
         /// Gets and sets the property FindingIdentifiers. 
@@ -53,7 +54,7 @@ namespace Amazon.CodeGuruSecurity.Model
         // Check to see if FindingIdentifiers property is set
         internal bool IsSetFindingIdentifiers()
         {
-            return this._findingIdentifiers != null && this._findingIdentifiers.Count > 0; 
+            return this._findingIdentifiers != null && (this._findingIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

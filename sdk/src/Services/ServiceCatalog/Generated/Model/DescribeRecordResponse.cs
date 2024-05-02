@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.ServiceCatalog.Model
     {
         private string _nextPageToken;
         private RecordDetail _recordDetail;
-        private List<RecordOutput> _recordOutputs = new List<RecordOutput>();
+        private List<RecordOutput> _recordOutputs = AWSConfigs.InitializeCollections ? new List<RecordOutput>() : null;
 
         /// <summary>
         /// Gets and sets the property NextPageToken. 
@@ -92,7 +93,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if RecordOutputs property is set
         internal bool IsSetRecordOutputs()
         {
-            return this._recordOutputs != null && this._recordOutputs.Count > 0; 
+            return this._recordOutputs != null && (this._recordOutputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

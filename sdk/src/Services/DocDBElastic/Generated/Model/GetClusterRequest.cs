@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DocDBElastic.Model
 {
     /// <summary>
     /// Container for the parameters to the GetCluster operation.
-    /// Returns information about a specific Elastic DocumentDB cluster.
+    /// Returns information about a specific elastic cluster.
     /// </summary>
     public partial class GetClusterRequest : AmazonDocDBElasticRequest
     {
@@ -39,7 +40,7 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property ClusterArn. 
         /// <para>
-        /// The arn of the Elastic DocumentDB cluster.
+        /// The ARN identifier of the elastic cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

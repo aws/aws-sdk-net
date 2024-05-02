@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
@@ -34,10 +35,29 @@ namespace Amazon.WellArchitected.Model
     /// </summary>
     public partial class UpdateLensReviewRequest : AmazonWellArchitectedRequest
     {
+        private JiraSelectedQuestionConfiguration _jiraConfiguration;
         private string _lensAlias;
         private string _lensNotes;
-        private Dictionary<string, string> _pillarNotes = new Dictionary<string, string>();
+        private Dictionary<string, string> _pillarNotes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _workloadId;
+
+        /// <summary>
+        /// Gets and sets the property JiraConfiguration. 
+        /// <para>
+        /// Configuration of the Jira integration.
+        /// </para>
+        /// </summary>
+        public JiraSelectedQuestionConfiguration JiraConfiguration
+        {
+            get { return this._jiraConfiguration; }
+            set { this._jiraConfiguration = value; }
+        }
+
+        // Check to see if JiraConfiguration property is set
+        internal bool IsSetJiraConfiguration()
+        {
+            return this._jiraConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LensAlias.
@@ -83,7 +103,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if PillarNotes property is set
         internal bool IsSetPillarNotes()
         {
-            return this._pillarNotes != null && this._pillarNotes.Count > 0; 
+            return this._pillarNotes != null && (this._pillarNotes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

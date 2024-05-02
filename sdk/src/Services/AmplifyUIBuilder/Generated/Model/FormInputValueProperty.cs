@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.AmplifyUIBuilder.Model
     public partial class FormInputValueProperty
     {
         private FormInputValuePropertyBindingProperties _bindingProperties;
-        private List<FormInputValueProperty> _concat = new List<FormInputValueProperty>();
+        private List<FormInputValueProperty> _concat = AWSConfigs.InitializeCollections ? new List<FormInputValueProperty>() : null;
         private string _value;
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if Concat property is set
         internal bool IsSetConcat()
         {
-            return this._concat != null && this._concat.Count > 0; 
+            return this._concat != null && (this._concat.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

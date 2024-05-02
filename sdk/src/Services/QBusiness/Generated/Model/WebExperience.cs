@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// Provides information for an Amazon Q web experience.
+    /// Provides information for an Amazon Q Business web experience.
     /// </summary>
     public partial class WebExperience
     {
@@ -42,7 +43,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix timestamp when the Amazon Q application was last updated.
+        /// The Unix timestamp when the Amazon Q Business application was last updated.
         /// </para>
         /// </summary>
         public DateTime? CreatedAt
@@ -60,8 +61,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property DefaultEndpoint. 
         /// <para>
-        /// The endpoint URLs for your Amazon Q web experience. The URLs are unique and fully
-        /// hosted by Amazon Web Services.
+        /// The endpoint URLs for your Amazon Q Business web experience. The URLs are unique and
+        /// fully hosted by Amazon Web Services.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -80,7 +81,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of your Amazon Q web experience.
+        /// The status of your Amazon Q Business web experience.
         /// </para>
         /// </summary>
         public WebExperienceStatus Status
@@ -98,7 +99,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The Unix timestamp when your Amazon Q web experience was updated.
+        /// The Unix timestamp when your Amazon Q Business web experience was updated.
         /// </para>
         /// </summary>
         public DateTime? UpdatedAt
@@ -116,7 +117,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property WebExperienceId. 
         /// <para>
-        /// The identifier of your Amazon Q web experience.
+        /// The identifier of your Amazon Q Business web experience.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]

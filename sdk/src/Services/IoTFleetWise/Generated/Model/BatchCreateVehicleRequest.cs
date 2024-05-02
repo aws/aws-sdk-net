@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTFleetWise.Model
 {
     /// <summary>
@@ -46,7 +47,7 @@ namespace Amazon.IoTFleetWise.Model
     /// </summary>
     public partial class BatchCreateVehicleRequest : AmazonIoTFleetWiseRequest
     {
-        private List<CreateVehicleRequestItem> _vehicles = new List<CreateVehicleRequestItem>();
+        private List<CreateVehicleRequestItem> _vehicles = AWSConfigs.InitializeCollections ? new List<CreateVehicleRequestItem>() : null;
 
         /// <summary>
         /// Gets and sets the property Vehicles. 
@@ -65,7 +66,7 @@ namespace Amazon.IoTFleetWise.Model
         // Check to see if Vehicles property is set
         internal bool IsSetVehicles()
         {
-            return this._vehicles != null && this._vehicles.Count > 0; 
+            return this._vehicles != null && (this._vehicles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

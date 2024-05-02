@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkManager.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.NetworkManager.Model
     /// </summary>
     public partial class ListAttachmentsResponse : AmazonWebServiceResponse
     {
-        private List<Attachment> _attachments = new List<Attachment>();
+        private List<Attachment> _attachments = AWSConfigs.InitializeCollections ? new List<Attachment>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if Attachments property is set
         internal bool IsSetAttachments()
         {
-            return this._attachments != null && this._attachments.Count > 0; 
+            return this._attachments != null && (this._attachments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

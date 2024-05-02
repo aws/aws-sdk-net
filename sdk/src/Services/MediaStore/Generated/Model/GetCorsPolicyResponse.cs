@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaStore.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MediaStore.Model
     /// </summary>
     public partial class GetCorsPolicyResponse : AmazonWebServiceResponse
     {
-        private List<CorsRule> _corsPolicy = new List<CorsRule>();
+        private List<CorsRule> _corsPolicy = AWSConfigs.InitializeCollections ? new List<CorsRule>() : null;
 
         /// <summary>
         /// Gets and sets the property CorsPolicy. 
@@ -51,7 +52,7 @@ namespace Amazon.MediaStore.Model
         // Check to see if CorsPolicy property is set
         internal bool IsSetCorsPolicy()
         {
-            return this._corsPolicy != null && this._corsPolicy.Count > 0; 
+            return this._corsPolicy != null && (this._corsPolicy.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

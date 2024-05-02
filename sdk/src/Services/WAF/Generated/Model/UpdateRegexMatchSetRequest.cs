@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAF.Model
 {
     /// <summary>
@@ -103,7 +104,7 @@ namespace Amazon.WAF.Model
     {
         private string _changeToken;
         private string _regexMatchSetId;
-        private List<RegexMatchSetUpdate> _updates = new List<RegexMatchSetUpdate>();
+        private List<RegexMatchSetUpdate> _updates = AWSConfigs.InitializeCollections ? new List<RegexMatchSetUpdate>() : null;
 
         /// <summary>
         /// Gets and sets the property ChangeToken. 
@@ -161,7 +162,7 @@ namespace Amazon.WAF.Model
         // Check to see if Updates property is set
         internal bool IsSetUpdates()
         {
-            return this._updates != null && this._updates.Count > 0; 
+            return this._updates != null && (this._updates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

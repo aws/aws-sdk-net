@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.DeviceFarm.Model
     public partial class ListUploadsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Upload> _uploads = new List<Upload>();
+        private List<Upload> _uploads = AWSConfigs.InitializeCollections ? new List<Upload>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if Uploads property is set
         internal bool IsSetUploads()
         {
-            return this._uploads != null && this._uploads.Count > 0; 
+            return this._uploads != null && (this._uploads.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -84,6 +85,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Clusters/Cluster", targetDepth))
                     {
                         var unmarshaller = ClusterUnmarshaller.Instance;
+                        if (response.Clusters == null)
+                        {
+                            response.Clusters = new List<Cluster>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Clusters.Add(item);
                         continue;

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTTwinMaker.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IoTTwinMaker.Model
     /// </summary>
     public partial class BatchPutPropertyValuesRequest : AmazonIoTTwinMakerRequest
     {
-        private List<PropertyValueEntry> _entries = new List<PropertyValueEntry>();
+        private List<PropertyValueEntry> _entries = AWSConfigs.InitializeCollections ? new List<PropertyValueEntry>() : null;
         private string _workspaceId;
 
         /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if Entries property is set
         internal bool IsSetEntries()
         {
-            return this._entries != null && this._entries.Count > 0; 
+            return this._entries != null && (this._entries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

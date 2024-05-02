@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECS.Model
 {
     /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class DeploymentAlarms
     {
-        private List<string> _alarmNames = new List<string>();
+        private List<string> _alarmNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _enable;
         private bool? _rollback;
 
@@ -71,7 +72,7 @@ namespace Amazon.ECS.Model
         // Check to see if AlarmNames property is set
         internal bool IsSetAlarmNames()
         {
-            return this._alarmNames != null && this._alarmNames.Count > 0; 
+            return this._alarmNames != null && (this._alarmNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

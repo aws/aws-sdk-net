@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.KinesisFirehose.Model
         private string _deliveryStreamName;
         private DeliveryStreamStatus _deliveryStreamStatus;
         private DeliveryStreamType _deliveryStreamType;
-        private List<DestinationDescription> _destinations = new List<DestinationDescription>();
+        private List<DestinationDescription> _destinations = AWSConfigs.InitializeCollections ? new List<DestinationDescription>() : null;
         private FailureDescription _failureDescription;
         private bool? _hasMoreDestinations;
         private DateTime? _lastUpdateTimestamp;
@@ -189,7 +190,7 @@ namespace Amazon.KinesisFirehose.Model
         // Check to see if Destinations property is set
         internal bool IsSetDestinations()
         {
-            return this._destinations != null && this._destinations.Count > 0; 
+            return this._destinations != null && (this._destinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

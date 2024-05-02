@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Snowball.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property EKSAnywhereVersion. 
         /// <para>
-        /// The version of EKS Anywhere on the Snow Family device.
+        /// The optional version of EKS Anywhere on the Snow Family device.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

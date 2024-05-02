@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -40,10 +41,10 @@ namespace Amazon.RDS.Model
         private string _majorEngineVersion;
         private string _minimumRequiredMinorEngineVersion;
         private string _name;
-        private List<OptionGroupOptionSetting> _optionGroupOptionSettings = new List<OptionGroupOptionSetting>();
-        private List<OptionVersion> _optionGroupOptionVersions = new List<OptionVersion>();
-        private List<string> _optionsConflictsWith = new List<string>();
-        private List<string> _optionsDependedOn = new List<string>();
+        private List<OptionGroupOptionSetting> _optionGroupOptionSettings = AWSConfigs.InitializeCollections ? new List<OptionGroupOptionSetting>() : null;
+        private List<OptionVersion> _optionGroupOptionVersions = AWSConfigs.InitializeCollections ? new List<OptionVersion>() : null;
+        private List<string> _optionsConflictsWith = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _optionsDependedOn = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _permanent;
         private bool? _persistent;
         private bool? _portRequired;
@@ -193,7 +194,7 @@ namespace Amazon.RDS.Model
         // Check to see if OptionGroupOptionSettings property is set
         internal bool IsSetOptionGroupOptionSettings()
         {
-            return this._optionGroupOptionSettings != null && this._optionGroupOptionSettings.Count > 0; 
+            return this._optionGroupOptionSettings != null && (this._optionGroupOptionSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -211,7 +212,7 @@ namespace Amazon.RDS.Model
         // Check to see if OptionGroupOptionVersions property is set
         internal bool IsSetOptionGroupOptionVersions()
         {
-            return this._optionGroupOptionVersions != null && this._optionGroupOptionVersions.Count > 0; 
+            return this._optionGroupOptionVersions != null && (this._optionGroupOptionVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -229,7 +230,7 @@ namespace Amazon.RDS.Model
         // Check to see if OptionsConflictsWith property is set
         internal bool IsSetOptionsConflictsWith()
         {
-            return this._optionsConflictsWith != null && this._optionsConflictsWith.Count > 0; 
+            return this._optionsConflictsWith != null && (this._optionsConflictsWith.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -247,7 +248,7 @@ namespace Amazon.RDS.Model
         // Check to see if OptionsDependedOn property is set
         internal bool IsSetOptionsDependedOn()
         {
-            return this._optionsDependedOn != null && this._optionsDependedOn.Count > 0; 
+            return this._optionsDependedOn != null && (this._optionsDependedOn.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

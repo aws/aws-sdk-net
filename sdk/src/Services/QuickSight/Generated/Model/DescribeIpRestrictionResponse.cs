@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -35,9 +36,11 @@ namespace Amazon.QuickSight.Model
     {
         private string _awsAccountId;
         private bool? _enabled;
-        private Dictionary<string, string> _ipRestrictionRuleMap = new Dictionary<string, string>();
+        private Dictionary<string, string> _ipRestrictionRuleMap = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _requestId;
         private int? _status;
+        private Dictionary<string, string> _vpcEndpointIdRestrictionRuleMap = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, string> _vpcIdRestrictionRuleMap = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AwsAccountId. 
@@ -91,7 +94,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if IpRestrictionRuleMap property is set
         internal bool IsSetIpRestrictionRuleMap()
         {
-            return this._ipRestrictionRuleMap != null && this._ipRestrictionRuleMap.Count > 0; 
+            return this._ipRestrictionRuleMap != null && (this._ipRestrictionRuleMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -128,6 +131,42 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetStatus()
         {
             return this._status.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcEndpointIdRestrictionRuleMap. 
+        /// <para>
+        /// A map of allowed VPC endpoint IDs and their rule descriptions.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> VpcEndpointIdRestrictionRuleMap
+        {
+            get { return this._vpcEndpointIdRestrictionRuleMap; }
+            set { this._vpcEndpointIdRestrictionRuleMap = value; }
+        }
+
+        // Check to see if VpcEndpointIdRestrictionRuleMap property is set
+        internal bool IsSetVpcEndpointIdRestrictionRuleMap()
+        {
+            return this._vpcEndpointIdRestrictionRuleMap != null && (this._vpcEndpointIdRestrictionRuleMap.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcIdRestrictionRuleMap. 
+        /// <para>
+        /// A map of allowed VPC IDs and their rule descriptions.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> VpcIdRestrictionRuleMap
+        {
+            get { return this._vpcIdRestrictionRuleMap; }
+            set { this._vpcIdRestrictionRuleMap = value; }
+        }
+
+        // Check to see if VpcIdRestrictionRuleMap property is set
+        internal bool IsSetVpcIdRestrictionRuleMap()
+        {
+            return this._vpcIdRestrictionRuleMap != null && (this._vpcIdRestrictionRuleMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Textract.Model
 {
     /// <summary>
@@ -35,11 +36,11 @@ namespace Amazon.Textract.Model
     {
         private string _analyzeExpenseModelVersion;
         private DocumentMetadata _documentMetadata;
-        private List<ExpenseDocument> _expenseDocuments = new List<ExpenseDocument>();
+        private List<ExpenseDocument> _expenseDocuments = AWSConfigs.InitializeCollections ? new List<ExpenseDocument>() : null;
         private JobStatus _jobStatus;
         private string _nextToken;
         private string _statusMessage;
-        private List<Warning> _warnings = new List<Warning>();
+        private List<Warning> _warnings = AWSConfigs.InitializeCollections ? new List<Warning>() : null;
 
         /// <summary>
         /// Gets and sets the property AnalyzeExpenseModelVersion. 
@@ -93,7 +94,7 @@ namespace Amazon.Textract.Model
         // Check to see if ExpenseDocuments property is set
         internal bool IsSetExpenseDocuments()
         {
-            return this._expenseDocuments != null && this._expenseDocuments.Count > 0; 
+            return this._expenseDocuments != null && (this._expenseDocuments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -168,7 +169,7 @@ namespace Amazon.Textract.Model
         // Check to see if Warnings property is set
         internal bool IsSetWarnings()
         {
-            return this._warnings != null && this._warnings.Count > 0; 
+            return this._warnings != null && (this._warnings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

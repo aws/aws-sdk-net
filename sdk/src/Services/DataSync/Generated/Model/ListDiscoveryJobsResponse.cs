@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataSync.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DataSync.Model
     /// </summary>
     public partial class ListDiscoveryJobsResponse : AmazonWebServiceResponse
     {
-        private List<DiscoveryJobListEntry> _discoveryJobs = new List<DiscoveryJobListEntry>();
+        private List<DiscoveryJobListEntry> _discoveryJobs = AWSConfigs.InitializeCollections ? new List<DiscoveryJobListEntry>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.DataSync.Model
         // Check to see if DiscoveryJobs property is set
         internal bool IsSetDiscoveryJobs()
         {
-            return this._discoveryJobs != null && this._discoveryJobs.Count > 0; 
+            return this._discoveryJobs != null && (this._discoveryJobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

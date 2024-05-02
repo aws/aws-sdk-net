@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Kinesis.Model
     /// </summary>
     public partial class ListStreamConsumersResponse : AmazonWebServiceResponse
     {
-        private List<Consumer> _consumers = new List<Consumer>();
+        private List<Consumer> _consumers = AWSConfigs.InitializeCollections ? new List<Consumer>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Kinesis.Model
         // Check to see if Consumers property is set
         internal bool IsSetConsumers()
         {
-            return this._consumers != null && this._consumers.Count > 0; 
+            return this._consumers != null && (this._consumers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

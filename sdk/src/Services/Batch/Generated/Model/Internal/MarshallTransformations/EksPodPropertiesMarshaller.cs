@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EksPodProperties requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetContainers())
             {
                 context.Writer.WritePropertyName("containers");
@@ -73,6 +76,38 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.HostNetwork.Value);
             }
 
+            if(requestObject.IsSetImagePullSecrets())
+            {
+                context.Writer.WritePropertyName("imagePullSecrets");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectImagePullSecretsListValue in requestObject.ImagePullSecrets)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ImagePullSecretMarshaller.Instance;
+                    marshaller.Marshall(requestObjectImagePullSecretsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetInitContainers())
+            {
+                context.Writer.WritePropertyName("initContainers");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectInitContainersListValue in requestObject.InitContainers)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EksContainerMarshaller.Instance;
+                    marshaller.Marshall(requestObjectInitContainersListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetMetadata())
             {
                 context.Writer.WritePropertyName("metadata");
@@ -88,6 +123,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("serviceAccountName");
                 context.Writer.Write(requestObject.ServiceAccountName);
+            }
+
+            if(requestObject.IsSetShareProcessNamespace())
+            {
+                context.Writer.WritePropertyName("shareProcessNamespace");
+                context.Writer.Write(requestObject.ShareProcessNamespace.Value);
             }
 
             if(requestObject.IsSetVolumes())

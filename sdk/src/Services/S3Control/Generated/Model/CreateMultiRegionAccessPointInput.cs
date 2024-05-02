@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3Control.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.S3Control.Model
     {
         private string _name;
         private PublicAccessBlockConfiguration _publicAccessBlock;
-        private List<Region> _regions = new List<Region>();
+        private List<Region> _regions = AWSConfigs.InitializeCollections ? new List<Region>() : null;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -89,7 +90,7 @@ namespace Amazon.S3Control.Model
         // Check to see if Regions property is set
         internal bool IsSetRegions()
         {
-            return this._regions != null && this._regions.Count > 0; 
+            return this._regions != null && (this._regions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

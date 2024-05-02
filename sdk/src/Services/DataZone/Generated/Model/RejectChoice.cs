@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class RejectChoice
     {
-        private List<int> _predictionChoices = new List<int>();
+        private List<int> _predictionChoices = AWSConfigs.InitializeCollections ? new List<int>() : null;
         private string _predictionTarget;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.DataZone.Model
         // Check to see if PredictionChoices property is set
         internal bool IsSetPredictionChoices()
         {
-            return this._predictionChoices != null && this._predictionChoices.Count > 0; 
+            return this._predictionChoices != null && (this._predictionChoices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -60,6 +61,7 @@ namespace Amazon.DataZone.Model
         /// Specifies the target (for example, a column name) where a prediction can be rejected.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string PredictionTarget
         {
             get { return this._predictionTarget; }

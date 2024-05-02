@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.KinesisFirehose.Model
     /// </summary>
     public partial class ListDeliveryStreamsResponse : AmazonWebServiceResponse
     {
-        private List<string> _deliveryStreamNames = new List<string>();
+        private List<string> _deliveryStreamNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _hasMoreDeliveryStreams;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.KinesisFirehose.Model
         // Check to see if DeliveryStreamNames property is set
         internal bool IsSetDeliveryStreamNames()
         {
-            return this._deliveryStreamNames != null && this._deliveryStreamNames.Count > 0; 
+            return this._deliveryStreamNames != null && (this._deliveryStreamNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

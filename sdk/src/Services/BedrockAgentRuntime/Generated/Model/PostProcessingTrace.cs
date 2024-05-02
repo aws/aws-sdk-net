@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Trace Part which contains information related to post processing step
+    /// Details about the post-processing step, in which the agent shapes the response.
     /// </summary>
     public partial class PostProcessingTrace
     {
@@ -37,7 +38,25 @@ namespace Amazon.BedrockAgentRuntime.Model
         private PostProcessingModelInvocationOutput _modelInvocationOutput;
 
         /// <summary>
-        /// Gets and sets the property ModelInvocationInput.
+        /// Gets and sets the property ModelInvocationInput. 
+        /// <para>
+        /// The input for the post-processing step.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <c>type</c> is <c>POST_PROCESSING</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <c>text</c> contains the prompt.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <c>inferenceConfiguration</c>, <c>parserMode</c>, and <c>overrideLambda</c> values
+        /// are set in the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent_PromptOverrideConfiguration.html">PromptOverrideConfiguration</a>
+        /// object that was set when the agent was created or updated.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public ModelInvocationInput ModelInvocationInput
@@ -53,7 +72,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ModelInvocationOutput.
+        /// Gets and sets the property ModelInvocationOutput. 
+        /// <para>
+        /// The foundation model output from the post-processing step.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public PostProcessingModelInvocationOutput ModelInvocationOutput

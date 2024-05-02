@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glacier.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.Glacier.Model
         private DateTime? _creationDate;
         private string _marker;
         private string _multipartUploadId;
-        private List<PartListElement> _parts = new List<PartListElement>();
+        private List<PartListElement> _parts = AWSConfigs.InitializeCollections ? new List<PartListElement>() : null;
         private long? _partSizeInBytes;
         private string _vaultARN;
 
@@ -132,7 +133,7 @@ namespace Amazon.Glacier.Model
         // Check to see if Parts property is set
         internal bool IsSetParts()
         {
-            return this._parts != null && this._parts.Count > 0; 
+            return this._parts != null && (this._parts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
     /// Specifies either the application code, or the location of the application code, for
-    /// a Flink-based Kinesis Data Analytics application.
+    /// a Managed Service for Apache Flink application.
     /// </summary>
     public partial class CodeContent
     {
@@ -59,7 +60,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property TextContent. 
         /// <para>
-        /// The text-format code for a Flink-based Kinesis Data Analytics application.
+        /// The text-format code for a Managed Service for Apache Flink application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=102400)]
@@ -78,7 +79,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ZipFileContent. 
         /// <para>
-        /// The zip-format code for a Flink-based Kinesis Data Analytics application.
+        /// The zip-format code for a Managed Service for Apache Flink application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=52428800)]

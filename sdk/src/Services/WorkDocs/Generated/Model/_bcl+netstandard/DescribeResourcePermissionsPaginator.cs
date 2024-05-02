@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.WorkDocs.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.WorkDocs.Model
         /// Enumerable containing all of the Principals
         /// </summary>
         public IPaginatedEnumerable<Principal> Principals => 
-            new PaginatedResultKeyResponse<DescribeResourcePermissionsResponse, Principal>(this, (i) => i.Principals);
+            new PaginatedResultKeyResponse<DescribeResourcePermissionsResponse, Principal>(this, (i) => i.Principals ?? new List<Principal>());
 
         internal DescribeResourcePermissionsPaginator(IAmazonWorkDocs client, DescribeResourcePermissionsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.WorkDocs.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeResourcePermissionsResponse> IPaginator<DescribeResourcePermissionsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeResourcePermissionsResponse> IPaginator<DescribeResourcePermissionsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

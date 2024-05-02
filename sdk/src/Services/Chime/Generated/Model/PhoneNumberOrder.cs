@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Chime.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Chime.Model
     public partial class PhoneNumberOrder
     {
         private DateTime? _createdTimestamp;
-        private List<OrderedPhoneNumber> _orderedPhoneNumbers = new List<OrderedPhoneNumber>();
+        private List<OrderedPhoneNumber> _orderedPhoneNumbers = AWSConfigs.InitializeCollections ? new List<OrderedPhoneNumber>() : null;
         private string _phoneNumberOrderId;
         private PhoneNumberProductType _productType;
         private PhoneNumberOrderStatus _status;
@@ -74,7 +75,7 @@ namespace Amazon.Chime.Model
         // Check to see if OrderedPhoneNumbers property is set
         internal bool IsSetOrderedPhoneNumbers()
         {
-            return this._orderedPhoneNumbers != null && this._orderedPhoneNumbers.Count > 0; 
+            return this._orderedPhoneNumbers != null && (this._orderedPhoneNumbers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

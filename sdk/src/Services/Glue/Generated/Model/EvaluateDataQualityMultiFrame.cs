@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class EvaluateDataQualityMultiFrame
     {
-        private Dictionary<string, string> _additionalDataSources = new Dictionary<string, string>();
-        private Dictionary<string, string> _additionalOptions = new Dictionary<string, string>();
-        private List<string> _inputs = new List<string>();
+        private Dictionary<string, string> _additionalDataSources = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, string> _additionalOptions = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<string> _inputs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private DQResultsPublishingOptions _publishingOptions;
         private string _ruleset;
@@ -56,7 +57,7 @@ namespace Amazon.Glue.Model
         // Check to see if AdditionalDataSources property is set
         internal bool IsSetAdditionalDataSources()
         {
-            return this._additionalDataSources != null && this._additionalDataSources.Count > 0; 
+            return this._additionalDataSources != null && (this._additionalDataSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.Glue.Model
         // Check to see if AdditionalOptions property is set
         internal bool IsSetAdditionalOptions()
         {
-            return this._additionalOptions != null && this._additionalOptions.Count > 0; 
+            return this._additionalOptions != null && (this._additionalOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -94,7 +95,7 @@ namespace Amazon.Glue.Model
         // Check to see if Inputs property is set
         internal bool IsSetInputs()
         {
-            return this._inputs != null && this._inputs.Count > 0; 
+            return this._inputs != null && (this._inputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

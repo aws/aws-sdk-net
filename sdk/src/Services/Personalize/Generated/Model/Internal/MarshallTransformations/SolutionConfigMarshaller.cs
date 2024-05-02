@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SolutionConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetAlgorithmHyperParameters())
             {
                 context.Writer.WritePropertyName("algorithmHyperParameters");
@@ -66,6 +69,17 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 
                 var marshaller = AutoMLConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.AutoMLConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAutoTrainingConfig())
+            {
+                context.Writer.WritePropertyName("autoTrainingConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AutoTrainingConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.AutoTrainingConfig, context);
 
                 context.Writer.WriteObjectEnd();
             }

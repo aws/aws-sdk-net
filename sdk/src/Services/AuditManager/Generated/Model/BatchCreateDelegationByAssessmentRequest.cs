@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.AuditManager.Model
     public partial class BatchCreateDelegationByAssessmentRequest : AmazonAuditManagerRequest
     {
         private string _assessmentId;
-        private List<CreateDelegationRequest> _createDelegationRequests = new List<CreateDelegationRequest>();
+        private List<CreateDelegationRequest> _createDelegationRequests = AWSConfigs.InitializeCollections ? new List<CreateDelegationRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property AssessmentId. 
@@ -72,7 +73,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if CreateDelegationRequests property is set
         internal bool IsSetCreateDelegationRequests()
         {
-            return this._createDelegationRequests != null && this._createDelegationRequests.Count > 0; 
+            return this._createDelegationRequests != null && (this._createDelegationRequests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

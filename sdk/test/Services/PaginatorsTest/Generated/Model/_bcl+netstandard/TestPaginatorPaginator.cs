@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.PaginatorsTest.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.PaginatorsTest.Model
         /// Enumerable containing all of the List
         /// </summary>
         public IPaginatedEnumerable<string> List => 
-            new PaginatedResultKeyResponse<TestPaginatorResponse, string>(this, (i) => i.List);
+            new PaginatedResultKeyResponse<TestPaginatorResponse, string>(this, (i) => i.List ?? new List<string>());
 
         internal TestPaginatorPaginator(IAmazonPaginatorsTest client, TestPaginatorRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.PaginatorsTest.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<TestPaginatorResponse> IPaginator<TestPaginatorResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<TestPaginatorResponse> IPaginator<TestPaginatorResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

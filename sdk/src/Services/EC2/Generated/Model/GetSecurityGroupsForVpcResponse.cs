@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EC2.Model
     public partial class GetSecurityGroupsForVpcResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SecurityGroupForVpc> _securityGroupForVpcs = new List<SecurityGroupForVpc>();
+        private List<SecurityGroupForVpc> _securityGroupForVpcs = AWSConfigs.InitializeCollections ? new List<SecurityGroupForVpc>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.EC2.Model
         // Check to see if SecurityGroupForVpcs property is set
         internal bool IsSetSecurityGroupForVpcs()
         {
-            return this._securityGroupForVpcs != null && this._securityGroupForVpcs.Count > 0; 
+            return this._securityGroupForVpcs != null && (this._securityGroupForVpcs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

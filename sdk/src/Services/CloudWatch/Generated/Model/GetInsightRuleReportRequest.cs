@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
@@ -84,7 +85,7 @@ namespace Amazon.CloudWatch.Model
     {
         private DateTime? _endTime;
         private int? _maxContributorCount;
-        private List<string> _metrics = new List<string>();
+        private List<string> _metrics = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _orderBy;
         private int? _period;
         private string _ruleName;
@@ -186,7 +187,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if Metrics property is set
         internal bool IsSetMetrics()
         {
-            return this._metrics != null && this._metrics.Count > 0; 
+            return this._metrics != null && (this._metrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

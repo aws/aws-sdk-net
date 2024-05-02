@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.CostExplorer.Model
     /// </summary>
     public partial class GetCostCategoriesResponse : AmazonWebServiceResponse
     {
-        private List<string> _costCategoryNames = new List<string>();
-        private List<string> _costCategoryValues = new List<string>();
+        private List<string> _costCategoryNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _costCategoryValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextPageToken;
         private int? _returnSize;
         private int? _totalSize;
@@ -54,7 +55,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if CostCategoryNames property is set
         internal bool IsSetCostCategoryNames()
         {
-            return this._costCategoryNames != null && this._costCategoryNames.Count > 0; 
+            return this._costCategoryNames != null && (this._costCategoryNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -77,7 +78,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if CostCategoryValues property is set
         internal bool IsSetCostCategoryValues()
         {
-            return this._costCategoryValues != null && this._costCategoryValues.Count > 0; 
+            return this._costCategoryValues != null && (this._costCategoryValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

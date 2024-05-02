@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class ListTrialsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TrialSummary> _trialSummaries = new List<TrialSummary>();
+        private List<TrialSummary> _trialSummaries = AWSConfigs.InitializeCollections ? new List<TrialSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if TrialSummaries property is set
         internal bool IsSetTrialSummaries()
         {
-            return this._trialSummaries != null && this._trialSummaries.Count > 0; 
+            return this._trialSummaries != null && (this._trialSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

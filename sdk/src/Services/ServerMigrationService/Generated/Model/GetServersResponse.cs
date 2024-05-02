@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.ServerMigrationService.Model
         private DateTime? _lastModifiedOn;
         private string _nextToken;
         private ServerCatalogStatus _serverCatalogStatus;
-        private List<Server> _serverList = new List<Server>();
+        private List<Server> _serverList = AWSConfigs.InitializeCollections ? new List<Server>() : null;
 
         /// <summary>
         /// Gets and sets the property LastModifiedOn. 
@@ -108,7 +109,7 @@ namespace Amazon.ServerMigrationService.Model
         // Check to see if ServerList property is set
         internal bool IsSetServerList()
         {
-            return this._serverList != null && this._serverList.Count > 0; 
+            return this._serverList != null && (this._serverList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

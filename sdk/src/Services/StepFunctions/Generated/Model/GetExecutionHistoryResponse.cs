@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.StepFunctions.Model
     /// </summary>
     public partial class GetExecutionHistoryResponse : AmazonWebServiceResponse
     {
-        private List<HistoryEvent> _events = new List<HistoryEvent>();
+        private List<HistoryEvent> _events = AWSConfigs.InitializeCollections ? new List<HistoryEvent>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.StepFunctions.Model
         // Check to see if Events property is set
         internal bool IsSetEvents()
         {
-            return this._events != null && this._events.Count > 0; 
+            return this._events != null && (this._events.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

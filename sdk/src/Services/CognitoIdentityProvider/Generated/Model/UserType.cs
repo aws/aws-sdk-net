@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class UserType
     {
-        private List<AttributeType> _attributes = new List<AttributeType>();
+        private List<AttributeType> _attributes = AWSConfigs.InitializeCollections ? new List<AttributeType>() : null;
         private bool? _enabled;
-        private List<MFAOptionType> _mfaOptions = new List<MFAOptionType>();
+        private List<MFAOptionType> _mfaOptions = AWSConfigs.InitializeCollections ? new List<MFAOptionType>() : null;
         private DateTime? _userCreateDate;
         private DateTime? _userLastModifiedDate;
         private string _username;
@@ -56,7 +57,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if MFAOptions property is set
         internal bool IsSetMFAOptions()
         {
-            return this._mfaOptions != null && this._mfaOptions.Count > 0; 
+            return this._mfaOptions != null && (this._mfaOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -116,8 +117,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserLastModifiedDate. 
         /// <para>
-        /// The date and time, in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
-        /// 8601</a> format, when the item was modified.
+        /// The date and time when the item was modified. Amazon Cognito returns this timestamp
+        /// in UNIX epoch time format. Your SDK might render the output in a human-readable format
+        /// like ISO 8601 or a Java <c>Date</c> object.
         /// </para>
         /// </summary>
         public DateTime? UserLastModifiedDate

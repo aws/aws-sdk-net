@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ElasticFileSystem.Model
     public partial class DescribeMountTargetsResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<MountTargetDescription> _mountTargets = new List<MountTargetDescription>();
+        private List<MountTargetDescription> _mountTargets = AWSConfigs.InitializeCollections ? new List<MountTargetDescription>() : null;
         private string _nextMarker;
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.ElasticFileSystem.Model
         // Check to see if MountTargets property is set
         internal bool IsSetMountTargets()
         {
-            return this._mountTargets != null && this._mountTargets.Count > 0; 
+            return this._mountTargets != null && (this._mountTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SageMakerGeospatial.Model
     /// </summary>
     public partial class ItemSource
     {
-        private Dictionary<string, AssetValue> _assets = new Dictionary<string, AssetValue>();
+        private Dictionary<string, AssetValue> _assets = AWSConfigs.InitializeCollections ? new Dictionary<string, AssetValue>() : null;
         private DateTime? _dateTime;
         private Geometry _geometry;
         private string _id;
@@ -55,7 +56,7 @@ namespace Amazon.SageMakerGeospatial.Model
         // Check to see if Assets property is set
         internal bool IsSetAssets()
         {
-            return this._assets != null && this._assets.Count > 0; 
+            return this._assets != null && (this._assets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -49,12 +50,6 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  
     /// <para>
-    /// For an example that calls this method when deploying a model to SageMaker hosting
-    /// services, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/realtime-endpoints-deployment.html#realtime-endpoints-deployment-create-model">Create
-    /// a Model (Amazon Web Services SDK for Python (Boto 3)).</a> 
-    /// </para>
-    ///  
-    /// <para>
     /// To run a batch transform using your model, you start a job with the <c>CreateTransformJob</c>
     /// API. SageMaker uses your model and your dataset to get inferences which are then saved
     /// to a specified S3 location.
@@ -70,13 +65,13 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class CreateModelRequest : AmazonSageMakerRequest
     {
-        private List<ContainerDefinition> _containers = new List<ContainerDefinition>();
+        private List<ContainerDefinition> _containers = AWSConfigs.InitializeCollections ? new List<ContainerDefinition>() : null;
         private bool? _enableNetworkIsolation;
         private string _executionRoleArn;
         private InferenceExecutionConfig _inferenceExecutionConfig;
         private string _modelName;
         private ContainerDefinition _primaryContainer;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private VpcConfig _vpcConfig;
 
         /// <summary>
@@ -95,7 +90,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Containers property is set
         internal bool IsSetContainers()
         {
-            return this._containers != null && this._containers.Count > 0; 
+            return this._containers != null && (this._containers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -222,7 +217,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

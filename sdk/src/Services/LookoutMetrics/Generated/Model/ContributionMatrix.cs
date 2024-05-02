@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LookoutMetrics.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.LookoutMetrics.Model
     /// </summary>
     public partial class ContributionMatrix
     {
-        private List<DimensionContribution> _dimensionContributionList = new List<DimensionContribution>();
+        private List<DimensionContribution> _dimensionContributionList = AWSConfigs.InitializeCollections ? new List<DimensionContribution>() : null;
 
         /// <summary>
         /// Gets and sets the property DimensionContributionList. 
@@ -50,7 +51,7 @@ namespace Amazon.LookoutMetrics.Model
         // Check to see if DimensionContributionList property is set
         internal bool IsSetDimensionContributionList()
         {
-            return this._dimensionContributionList != null && this._dimensionContributionList.Count > 0; 
+            return this._dimensionContributionList != null && (this._dimensionContributionList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

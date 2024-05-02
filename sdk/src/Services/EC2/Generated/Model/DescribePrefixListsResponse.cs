@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EC2.Model
     public partial class DescribePrefixListsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PrefixList> _prefixLists = new List<PrefixList>();
+        private List<PrefixList> _prefixLists = AWSConfigs.InitializeCollections ? new List<PrefixList>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.EC2.Model
         // Check to see if PrefixLists property is set
         internal bool IsSetPrefixLists()
         {
-            return this._prefixLists != null && this._prefixLists.Count > 0; 
+            return this._prefixLists != null && (this._prefixLists.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

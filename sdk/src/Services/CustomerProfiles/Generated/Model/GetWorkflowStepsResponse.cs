@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CustomerProfiles.Model
     /// </summary>
     public partial class GetWorkflowStepsResponse : AmazonWebServiceResponse
     {
-        private List<WorkflowStepItem> _items = new List<WorkflowStepItem>();
+        private List<WorkflowStepItem> _items = AWSConfigs.InitializeCollections ? new List<WorkflowStepItem>() : null;
         private string _nextToken;
         private string _workflowId;
         private WorkflowType _workflowType;
@@ -53,7 +54,7 @@ namespace Amazon.CustomerProfiles.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

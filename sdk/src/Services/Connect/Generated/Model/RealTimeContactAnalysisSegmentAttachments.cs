@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class RealTimeContactAnalysisSegmentAttachments
     {
-        private List<RealTimeContactAnalysisAttachment> _attachments = new List<RealTimeContactAnalysisAttachment>();
+        private List<RealTimeContactAnalysisAttachment> _attachments = AWSConfigs.InitializeCollections ? new List<RealTimeContactAnalysisAttachment>() : null;
         private string _displayName;
         private string _id;
         private string _participantId;
@@ -56,7 +57,7 @@ namespace Amazon.Connect.Model
         // Check to see if Attachments property is set
         internal bool IsSetAttachments()
         {
-            return this._attachments != null && this._attachments.Count > 0; 
+            return this._attachments != null && (this._attachments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

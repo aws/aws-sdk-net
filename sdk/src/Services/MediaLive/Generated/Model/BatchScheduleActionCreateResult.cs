@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class BatchScheduleActionCreateResult
     {
-        private List<ScheduleAction> _scheduleActions = new List<ScheduleAction>();
+        private List<ScheduleAction> _scheduleActions = AWSConfigs.InitializeCollections ? new List<ScheduleAction>() : null;
 
         /// <summary>
         /// Gets and sets the property ScheduleActions. List of actions that have been created
@@ -49,7 +50,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if ScheduleActions property is set
         internal bool IsSetScheduleActions()
         {
-            return this._scheduleActions != null && this._scheduleActions.Count > 0; 
+            return this._scheduleActions != null && (this._scheduleActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

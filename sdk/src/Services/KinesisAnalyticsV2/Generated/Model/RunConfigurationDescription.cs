@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes the starting properties for a Kinesis Data Analytics application.
+    /// Describes the starting properties for a Managed Service for Apache Flink application.
     /// </summary>
     public partial class RunConfigurationDescription
     {

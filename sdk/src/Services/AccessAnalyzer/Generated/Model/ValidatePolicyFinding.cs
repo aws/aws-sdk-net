@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.AccessAnalyzer.Model
         private ValidatePolicyFindingType _findingType;
         private string _issueCode;
         private string _learnMoreLink;
-        private List<Location> _locations = new List<Location>();
+        private List<Location> _locations = AWSConfigs.InitializeCollections ? new List<Location>() : null;
 
         /// <summary>
         /// Gets and sets the property FindingDetails. 
@@ -151,7 +152,7 @@ namespace Amazon.AccessAnalyzer.Model
         // Check to see if Locations property is set
         internal bool IsSetLocations()
         {
-            return this._locations != null && this._locations.Count > 0; 
+            return this._locations != null && (this._locations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

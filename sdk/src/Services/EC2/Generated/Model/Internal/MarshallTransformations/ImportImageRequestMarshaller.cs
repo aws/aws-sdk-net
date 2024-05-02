@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if(publicRequest.ClientData.IsSetUploadEndUtc())
                     {
-                        request.Parameters.Add("ClientData" + "." + "UploadEnd", StringUtils.FromDateTimeToISO8601(publicRequest.ClientData.UploadEndUtc));
+                        request.Parameters.Add("ClientData" + "." + "UploadEnd", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ClientData.UploadEndUtc));
                     }
                     if(publicRequest.ClientData.IsSetUploadSize())
                     {
@@ -82,7 +83,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if(publicRequest.ClientData.IsSetUploadStartUtc())
                     {
-                        request.Parameters.Add("ClientData" + "." + "UploadStart", StringUtils.FromDateTimeToISO8601(publicRequest.ClientData.UploadStartUtc));
+                        request.Parameters.Add("ClientData" + "." + "UploadStart", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ClientData.UploadStartUtc));
                     }
                 }
                 if(publicRequest.IsSetClientToken())

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MigrationHub.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MigrationHub.Model
     /// </summary>
     public partial class ListMigrationTasksResponse : AmazonWebServiceResponse
     {
-        private List<MigrationTaskSummary> _migrationTaskSummaryList = new List<MigrationTaskSummary>();
+        private List<MigrationTaskSummary> _migrationTaskSummaryList = AWSConfigs.InitializeCollections ? new List<MigrationTaskSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.MigrationHub.Model
         // Check to see if MigrationTaskSummaryList property is set
         internal bool IsSetMigrationTaskSummaryList()
         {
-            return this._migrationTaskSummaryList != null && this._migrationTaskSummaryList.Count > 0; 
+            return this._migrationTaskSummaryList != null && (this._migrationTaskSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

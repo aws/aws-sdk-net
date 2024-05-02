@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
@@ -45,13 +46,13 @@ namespace Amazon.DevOpsGuru.Model
         /// Enumerable containing all of the StackNames
         /// </summary>
         public IPaginatedEnumerable<string> StackNames => 
-            new PaginatedResultKeyResponse<GetResourceCollectionResponse, string>(this, (i) => i.ResourceCollection.CloudFormation.StackNames);
+            new PaginatedResultKeyResponse<GetResourceCollectionResponse, string>(this, (i) => i.ResourceCollection.CloudFormation.StackNames ?? new List<string>());
 
         /// <summary>
         /// Enumerable containing all of the Tags
         /// </summary>
         public IPaginatedEnumerable<TagCollectionFilter> Tags => 
-            new PaginatedResultKeyResponse<GetResourceCollectionResponse, TagCollectionFilter>(this, (i) => i.ResourceCollection.Tags);
+            new PaginatedResultKeyResponse<GetResourceCollectionResponse, TagCollectionFilter>(this, (i) => i.ResourceCollection.Tags ?? new List<TagCollectionFilter>());
 
         internal GetResourceCollectionPaginator(IAmazonDevOpsGuru client, GetResourceCollectionRequest request)
         {
@@ -79,7 +80,7 @@ namespace Amazon.DevOpsGuru.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<GetResourceCollectionResponse> IPaginator<GetResourceCollectionResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<GetResourceCollectionResponse> IPaginator<GetResourceCollectionResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

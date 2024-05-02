@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpenSearchServerless.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.OpenSearchServerless.Model
     {
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _resources = new List<string>();
+        private List<string> _resources = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private LifecyclePolicyType _type;
 
         /// <summary>
@@ -98,7 +99,7 @@ namespace Amazon.OpenSearchServerless.Model
         // Check to see if Resources property is set
         internal bool IsSetResources()
         {
-            return this._resources != null && this._resources.Count > 0; 
+            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.DataZone.Model
         private string _externalIdentifier;
         private DateTime? _firstRevisionCreatedAt;
         private string _firstRevisionCreatedBy;
-        private List<string> _glossaryTerms = new List<string>();
+        private List<string> _glossaryTerms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _identifier;
         private string _name;
         private string _owningProjectId;
@@ -211,7 +212,7 @@ namespace Amazon.DataZone.Model
         // Check to see if GlossaryTerms property is set
         internal bool IsSetGlossaryTerms()
         {
-            return this._glossaryTerms != null && this._glossaryTerms.Count > 0; 
+            return this._glossaryTerms != null && (this._glossaryTerms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -277,7 +278,7 @@ namespace Amazon.DataZone.Model
         /// The identifier of the asset type of the specified Amazon DataZone inventory asset.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=385)]
+        [AWSProperty(Required=true, Min=1, Max=513)]
         public string TypeIdentifier
         {
             get { return this._typeIdentifier; }

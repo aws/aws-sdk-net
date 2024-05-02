@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class AggregateColumn
     {
-        private List<string> _columnNames = new List<string>();
+        private List<string> _columnNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AggregateFunctionName _function;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if ColumnNames property is set
         internal bool IsSetColumnNames()
         {
-            return this._columnNames != null && this._columnNames.Count > 0; 
+            return this._columnNames != null && (this._columnNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

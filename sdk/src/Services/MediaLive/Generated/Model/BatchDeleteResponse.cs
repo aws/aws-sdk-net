@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class BatchDeleteResponse : AmazonWebServiceResponse
     {
-        private List<BatchFailedResultModel> _failed = new List<BatchFailedResultModel>();
-        private List<BatchSuccessfulResultModel> _successful = new List<BatchSuccessfulResultModel>();
+        private List<BatchFailedResultModel> _failed = AWSConfigs.InitializeCollections ? new List<BatchFailedResultModel>() : null;
+        private List<BatchSuccessfulResultModel> _successful = AWSConfigs.InitializeCollections ? new List<BatchSuccessfulResultModel>() : null;
 
         /// <summary>
         /// Gets and sets the property Failed. List of failed operations
@@ -48,7 +49,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if Failed property is set
         internal bool IsSetFailed()
         {
-            return this._failed != null && this._failed.Count > 0; 
+            return this._failed != null && (this._failed.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -63,7 +64,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if Successful property is set
         internal bool IsSetSuccessful()
         {
-            return this._successful != null && this._successful.Count > 0; 
+            return this._successful != null && (this._successful.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

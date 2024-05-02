@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTTwinMaker.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.IoTTwinMaker.Model
     public partial class GetPropertyValueResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private Dictionary<string, PropertyLatestValue> _propertyValues = new Dictionary<string, PropertyLatestValue>();
-        private List<List<Dictionary<string, DataValue>>> _tabularPropertyValues = new List<List<Dictionary<string, DataValue>>>();
+        private Dictionary<string, PropertyLatestValue> _propertyValues = AWSConfigs.InitializeCollections ? new Dictionary<string, PropertyLatestValue>() : null;
+        private List<List<Dictionary<string, DataValue>>> _tabularPropertyValues = AWSConfigs.InitializeCollections ? new List<List<Dictionary<string, DataValue>>>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if PropertyValues property is set
         internal bool IsSetPropertyValues()
         {
-            return this._propertyValues != null && this._propertyValues.Count > 0; 
+            return this._propertyValues != null && (this._propertyValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -90,7 +91,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if TabularPropertyValues property is set
         internal bool IsSetTabularPropertyValues()
         {
-            return this._tabularPropertyValues != null && this._tabularPropertyValues.Count > 0; 
+            return this._tabularPropertyValues != null && (this._tabularPropertyValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

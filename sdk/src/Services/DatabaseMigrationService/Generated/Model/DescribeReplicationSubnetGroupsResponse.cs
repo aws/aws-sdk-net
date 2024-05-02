@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.DatabaseMigrationService.Model
     public partial class DescribeReplicationSubnetGroupsResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<ReplicationSubnetGroup> _replicationSubnetGroups = new List<ReplicationSubnetGroup>();
+        private List<ReplicationSubnetGroup> _replicationSubnetGroups = AWSConfigs.InitializeCollections ? new List<ReplicationSubnetGroup>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -71,7 +72,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if ReplicationSubnetGroups property is set
         internal bool IsSetReplicationSubnetGroups()
         {
-            return this._replicationSubnetGroups != null && this._replicationSubnetGroups.Count > 0; 
+            return this._replicationSubnetGroups != null && (this._replicationSubnetGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

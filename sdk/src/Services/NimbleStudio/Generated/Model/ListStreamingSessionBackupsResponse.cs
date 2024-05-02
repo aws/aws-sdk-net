@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.NimbleStudio.Model
     public partial class ListStreamingSessionBackupsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<StreamingSessionBackup> _streamingSessionBackups = new List<StreamingSessionBackup>();
+        private List<StreamingSessionBackup> _streamingSessionBackups = AWSConfigs.InitializeCollections ? new List<StreamingSessionBackup>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +70,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if StreamingSessionBackups property is set
         internal bool IsSetStreamingSessionBackups()
         {
-            return this._streamingSessionBackups != null && this._streamingSessionBackups.Count > 0; 
+            return this._streamingSessionBackups != null && (this._streamingSessionBackups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SQS.Model
 {
     /// <summary>
@@ -35,11 +36,11 @@ namespace Amazon.SQS.Model
     {
         private int? _delaySeconds;
         private string _id;
-        private Dictionary<string, MessageAttributeValue> _messageAttributes = new Dictionary<string, MessageAttributeValue>();
+        private Dictionary<string, MessageAttributeValue> _messageAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, MessageAttributeValue>() : null;
         private string _messageBody;
         private string _messageDeduplicationId;
         private string _messageGroupId;
-        private Dictionary<string, MessageSystemAttributeValue> _messageSystemAttributes = new Dictionary<string, MessageSystemAttributeValue>();
+        private Dictionary<string, MessageSystemAttributeValue> _messageSystemAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, MessageSystemAttributeValue>() : null;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -130,7 +131,7 @@ namespace Amazon.SQS.Model
         // Check to see if MessageAttributes property is set
         internal bool IsSetMessageAttributes()
         {
-            return this._messageAttributes != null && this._messageAttributes.Count > 0; 
+            return this._messageAttributes != null && (this._messageAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -323,7 +324,7 @@ namespace Amazon.SQS.Model
         // Check to see if MessageSystemAttributes property is set
         internal bool IsSetMessageSystemAttributes()
         {
-            return this._messageSystemAttributes != null && this._messageSystemAttributes.Count > 0; 
+            return this._messageSystemAttributes != null && (this._messageSystemAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

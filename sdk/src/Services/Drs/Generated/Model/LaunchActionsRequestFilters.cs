@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Drs.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Drs.Model
     /// </summary>
     public partial class LaunchActionsRequestFilters
     {
-        private List<string> _actionIds = new List<string>();
+        private List<string> _actionIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ActionIds. 
@@ -51,7 +52,7 @@ namespace Amazon.Drs.Model
         // Check to see if ActionIds property is set
         internal bool IsSetActionIds()
         {
-            return this._actionIds != null && this._actionIds.Count > 0; 
+            return this._actionIds != null && (this._actionIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

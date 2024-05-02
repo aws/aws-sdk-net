@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
@@ -83,7 +84,7 @@ namespace Amazon.IdentityManagement.Model
     {
         private string _arn;
         private string _marker;
-        private List<string> _serviceNamespaces = new List<string>();
+        private List<string> _serviceNamespaces = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -151,7 +152,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if ServiceNamespaces property is set
         internal bool IsSetServiceNamespaces()
         {
-            return this._serviceNamespaces != null && this._serviceNamespaces.Count > 0; 
+            return this._serviceNamespaces != null && (this._serviceNamespaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

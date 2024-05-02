@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
@@ -64,7 +65,7 @@ namespace Amazon.DevOpsGuru.Model
     /// </summary>
     public partial class PerformanceInsightsMetricDimensionGroup
     {
-        private List<string> _dimensions = new List<string>();
+        private List<string> _dimensions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _group;
         private int? _limit;
 
@@ -164,7 +165,7 @@ namespace Amazon.DevOpsGuru.Model
         // Check to see if Dimensions property is set
         internal bool IsSetDimensions()
         {
-            return this._dimensions != null && this._dimensions.Count > 0; 
+            return this._dimensions != null && (this._dimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SecurityLake.Model
     public partial class GetDataLakeSourcesResponse : AmazonWebServiceResponse
     {
         private string _dataLakeArn;
-        private List<DataLakeSource> _dataLakeSources = new List<DataLakeSource>();
+        private List<DataLakeSource> _dataLakeSources = AWSConfigs.InitializeCollections ? new List<DataLakeSource>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.SecurityLake.Model
         // Check to see if DataLakeSources property is set
         internal bool IsSetDataLakeSources()
         {
-            return this._dataLakeSources != null && this._dataLakeSources.Count > 0; 
+            return this._dataLakeSources != null && (this._dataLakeSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.NetworkFirewall.Model
     public partial class ListRuleGroupsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RuleGroupMetadata> _ruleGroups = new List<RuleGroupMetadata>();
+        private List<RuleGroupMetadata> _ruleGroups = AWSConfigs.InitializeCollections ? new List<RuleGroupMetadata>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -75,7 +76,7 @@ namespace Amazon.NetworkFirewall.Model
         // Check to see if RuleGroups property is set
         internal bool IsSetRuleGroups()
         {
-            return this._ruleGroups != null && this._ruleGroups.Count > 0; 
+            return this._ruleGroups != null && (this._ruleGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -129,6 +130,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                     if (context.TestExpression("NodeSnapshots/NodeSnapshot", targetDepth))
                     {
                         var unmarshaller = NodeSnapshotUnmarshaller.Instance;
+                        if (unmarshalledObject.NodeSnapshots == null)
+                        {
+                            unmarshalledObject.NodeSnapshots = new List<NodeSnapshot>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.NodeSnapshots.Add(item);
                         continue;

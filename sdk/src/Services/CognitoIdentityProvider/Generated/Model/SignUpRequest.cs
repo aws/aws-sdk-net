@@ -27,6 +27,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
@@ -69,13 +70,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     {
         private AnalyticsMetadataType _analyticsMetadata;
         private string _clientId;
-        private Dictionary<string, string> _clientMetadata = new Dictionary<string, string>();
+        private Dictionary<string, string> _clientMetadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _password;
         private string _secretHash;
-        private List<AttributeType> _userAttributes = new List<AttributeType>();
+        private List<AttributeType> _userAttributes = AWSConfigs.InitializeCollections ? new List<AttributeType>() : null;
         private UserContextDataType _userContextData;
         private string _username;
-        private List<AttributeType> _validationData = new List<AttributeType>();
+        private List<AttributeType> _validationData = AWSConfigs.InitializeCollections ? new List<AttributeType>() : null;
 
         /// <summary>
         /// Gets and sets the property AnalyticsMetadata. 
@@ -168,7 +169,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if ClientMetadata property is set
         internal bool IsSetClientMetadata()
         {
-            return this._clientMetadata != null && this._clientMetadata.Count > 0; 
+            return this._clientMetadata != null && (this._clientMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -230,7 +231,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if UserAttributes property is set
         internal bool IsSetUserAttributes()
         {
-            return this._userAttributes != null && this._userAttributes.Count > 0; 
+            return this._userAttributes != null && (this._userAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -305,7 +306,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if ValidationData property is set
         internal bool IsSetValidationData()
         {
-            return this._validationData != null && this._validationData.Count > 0; 
+            return this._validationData != null && (this._validationData.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

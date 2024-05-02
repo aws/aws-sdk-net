@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -58,12 +59,12 @@ namespace Amazon.SageMaker.Model
         private string _description;
         private string _endpointName;
         private string _kmsKey;
-        private List<ModelVariantConfig> _modelVariants = new List<ModelVariantConfig>();
+        private List<ModelVariantConfig> _modelVariants = AWSConfigs.InitializeCollections ? new List<ModelVariantConfig>() : null;
         private string _name;
         private string _roleArn;
         private InferenceExperimentSchedule _schedule;
         private ShadowModeConfig _shadowModeConfig;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private InferenceExperimentType _type;
 
         /// <summary>
@@ -223,7 +224,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ModelVariants property is set
         internal bool IsSetModelVariants()
         {
-            return this._modelVariants != null && this._modelVariants.Count > 0; 
+            return this._modelVariants != null && (this._modelVariants.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -328,7 +329,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

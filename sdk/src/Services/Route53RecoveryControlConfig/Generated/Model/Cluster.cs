@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53RecoveryControlConfig.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
     public partial class Cluster
     {
         private string _clusterArn;
-        private List<ClusterEndpoint> _clusterEndpoints = new List<ClusterEndpoint>();
+        private List<ClusterEndpoint> _clusterEndpoints = AWSConfigs.InitializeCollections ? new List<ClusterEndpoint>() : null;
         private string _name;
         private string _owner;
         private Status _status;
@@ -81,7 +82,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         // Check to see if ClusterEndpoints property is set
         internal bool IsSetClusterEndpoints()
         {
-            return this._clusterEndpoints != null && this._clusterEndpoints.Count > 0; 
+            return this._clusterEndpoints != null && (this._clusterEndpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

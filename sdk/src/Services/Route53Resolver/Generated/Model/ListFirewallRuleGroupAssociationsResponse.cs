@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Route53Resolver.Model
     /// </summary>
     public partial class ListFirewallRuleGroupAssociationsResponse : AmazonWebServiceResponse
     {
-        private List<FirewallRuleGroupAssociation> _firewallRuleGroupAssociations = new List<FirewallRuleGroupAssociation>();
+        private List<FirewallRuleGroupAssociation> _firewallRuleGroupAssociations = AWSConfigs.InitializeCollections ? new List<FirewallRuleGroupAssociation>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -56,7 +57,7 @@ namespace Amazon.Route53Resolver.Model
         // Check to see if FirewallRuleGroupAssociations property is set
         internal bool IsSetFirewallRuleGroupAssociations()
         {
-            return this._firewallRuleGroupAssociations != null && this._firewallRuleGroupAssociations.Count > 0; 
+            return this._firewallRuleGroupAssociations != null && (this._firewallRuleGroupAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

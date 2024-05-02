@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -63,6 +64,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     if (context.TestExpression("LoadAverage/member", targetDepth))
                     {
                         var unmarshaller = DoubleUnmarshaller.Instance;
+                        if (unmarshalledObject.LoadAverage == null)
+                        {
+                            unmarshalledObject.LoadAverage = new List<double>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.LoadAverage.Add(item);
                         continue;

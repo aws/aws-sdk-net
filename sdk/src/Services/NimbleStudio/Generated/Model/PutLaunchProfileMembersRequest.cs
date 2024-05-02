@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.NimbleStudio.Model
         private string _clientToken;
         private string _identityStoreId;
         private string _launchProfileId;
-        private List<NewLaunchProfileMember> _members = new List<NewLaunchProfileMember>();
+        private List<NewLaunchProfileMember> _members = AWSConfigs.InitializeCollections ? new List<NewLaunchProfileMember>() : null;
         private string _studioId;
 
         /// <summary>
@@ -115,7 +116,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if Members property is set
         internal bool IsSetMembers()
         {
-            return this._members != null && this._members.Count > 0; 
+            return this._members != null && (this._members.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.WAFV2.Model
     public partial class GetDecryptedAPIKeyResponse : AmazonWebServiceResponse
     {
         private DateTime? _creationTimestamp;
-        private List<string> _tokenDomains = new List<string>();
+        private List<string> _tokenDomains = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CreationTimestamp. 
@@ -69,7 +70,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if TokenDomains property is set
         internal bool IsSetTokenDomains()
         {
-            return this._tokenDomains != null && this._tokenDomains.Count > 0; 
+            return this._tokenDomains != null && (this._tokenDomains.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

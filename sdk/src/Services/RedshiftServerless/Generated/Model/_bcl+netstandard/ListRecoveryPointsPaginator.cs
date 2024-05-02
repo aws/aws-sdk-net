@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RedshiftServerless.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.RedshiftServerless.Model
         /// Enumerable containing all of the RecoveryPoints
         /// </summary>
         public IPaginatedEnumerable<RecoveryPoint> RecoveryPoints => 
-            new PaginatedResultKeyResponse<ListRecoveryPointsResponse, RecoveryPoint>(this, (i) => i.RecoveryPoints);
+            new PaginatedResultKeyResponse<ListRecoveryPointsResponse, RecoveryPoint>(this, (i) => i.RecoveryPoints ?? new List<RecoveryPoint>());
 
         internal ListRecoveryPointsPaginator(IAmazonRedshiftServerless client, ListRecoveryPointsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.RedshiftServerless.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListRecoveryPointsResponse> IPaginator<ListRecoveryPointsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListRecoveryPointsResponse> IPaginator<ListRecoveryPointsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

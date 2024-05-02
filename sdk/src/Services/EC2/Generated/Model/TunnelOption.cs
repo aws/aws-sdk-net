@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -36,16 +37,16 @@ namespace Amazon.EC2.Model
         private string _dpdTimeoutAction;
         private int? _dpdTimeoutSeconds;
         private bool? _enableTunnelLifecycleControl;
-        private List<IKEVersionsListValue> _ikeVersions = new List<IKEVersionsListValue>();
+        private List<IKEVersionsListValue> _ikeVersions = AWSConfigs.InitializeCollections ? new List<IKEVersionsListValue>() : null;
         private VpnTunnelLogOptions _logOptions;
         private string _outsideIpAddress;
-        private List<Phase1DHGroupNumbersListValue> _phase1DHGroupNumbers = new List<Phase1DHGroupNumbersListValue>();
-        private List<Phase1EncryptionAlgorithmsListValue> _phase1EncryptionAlgorithms = new List<Phase1EncryptionAlgorithmsListValue>();
-        private List<Phase1IntegrityAlgorithmsListValue> _phase1IntegrityAlgorithms = new List<Phase1IntegrityAlgorithmsListValue>();
+        private List<Phase1DHGroupNumbersListValue> _phase1DHGroupNumbers = AWSConfigs.InitializeCollections ? new List<Phase1DHGroupNumbersListValue>() : null;
+        private List<Phase1EncryptionAlgorithmsListValue> _phase1EncryptionAlgorithms = AWSConfigs.InitializeCollections ? new List<Phase1EncryptionAlgorithmsListValue>() : null;
+        private List<Phase1IntegrityAlgorithmsListValue> _phase1IntegrityAlgorithms = AWSConfigs.InitializeCollections ? new List<Phase1IntegrityAlgorithmsListValue>() : null;
         private int? _phase1LifetimeSeconds;
-        private List<Phase2DHGroupNumbersListValue> _phase2DHGroupNumbers = new List<Phase2DHGroupNumbersListValue>();
-        private List<Phase2EncryptionAlgorithmsListValue> _phase2EncryptionAlgorithms = new List<Phase2EncryptionAlgorithmsListValue>();
-        private List<Phase2IntegrityAlgorithmsListValue> _phase2IntegrityAlgorithms = new List<Phase2IntegrityAlgorithmsListValue>();
+        private List<Phase2DHGroupNumbersListValue> _phase2DHGroupNumbers = AWSConfigs.InitializeCollections ? new List<Phase2DHGroupNumbersListValue>() : null;
+        private List<Phase2EncryptionAlgorithmsListValue> _phase2EncryptionAlgorithms = AWSConfigs.InitializeCollections ? new List<Phase2EncryptionAlgorithmsListValue>() : null;
+        private List<Phase2IntegrityAlgorithmsListValue> _phase2IntegrityAlgorithms = AWSConfigs.InitializeCollections ? new List<Phase2IntegrityAlgorithmsListValue>() : null;
         private int? _phase2LifetimeSeconds;
         private string _preSharedKey;
         private int? _rekeyFuzzPercentage;
@@ -124,7 +125,7 @@ namespace Amazon.EC2.Model
         // Check to see if IkeVersions property is set
         internal bool IsSetIkeVersions()
         {
-            return this._ikeVersions != null && this._ikeVersions.Count > 0; 
+            return this._ikeVersions != null && (this._ikeVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -178,7 +179,7 @@ namespace Amazon.EC2.Model
         // Check to see if Phase1DHGroupNumbers property is set
         internal bool IsSetPhase1DHGroupNumbers()
         {
-            return this._phase1DHGroupNumbers != null && this._phase1DHGroupNumbers.Count > 0; 
+            return this._phase1DHGroupNumbers != null && (this._phase1DHGroupNumbers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -196,7 +197,7 @@ namespace Amazon.EC2.Model
         // Check to see if Phase1EncryptionAlgorithms property is set
         internal bool IsSetPhase1EncryptionAlgorithms()
         {
-            return this._phase1EncryptionAlgorithms != null && this._phase1EncryptionAlgorithms.Count > 0; 
+            return this._phase1EncryptionAlgorithms != null && (this._phase1EncryptionAlgorithms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -214,7 +215,7 @@ namespace Amazon.EC2.Model
         // Check to see if Phase1IntegrityAlgorithms property is set
         internal bool IsSetPhase1IntegrityAlgorithms()
         {
-            return this._phase1IntegrityAlgorithms != null && this._phase1IntegrityAlgorithms.Count > 0; 
+            return this._phase1IntegrityAlgorithms != null && (this._phase1IntegrityAlgorithms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -250,7 +251,7 @@ namespace Amazon.EC2.Model
         // Check to see if Phase2DHGroupNumbers property is set
         internal bool IsSetPhase2DHGroupNumbers()
         {
-            return this._phase2DHGroupNumbers != null && this._phase2DHGroupNumbers.Count > 0; 
+            return this._phase2DHGroupNumbers != null && (this._phase2DHGroupNumbers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -268,7 +269,7 @@ namespace Amazon.EC2.Model
         // Check to see if Phase2EncryptionAlgorithms property is set
         internal bool IsSetPhase2EncryptionAlgorithms()
         {
-            return this._phase2EncryptionAlgorithms != null && this._phase2EncryptionAlgorithms.Count > 0; 
+            return this._phase2EncryptionAlgorithms != null && (this._phase2EncryptionAlgorithms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -286,7 +287,7 @@ namespace Amazon.EC2.Model
         // Check to see if Phase2IntegrityAlgorithms property is set
         internal bool IsSetPhase2IntegrityAlgorithms()
         {
-            return this._phase2IntegrityAlgorithms != null && this._phase2IntegrityAlgorithms.Count > 0; 
+            return this._phase2IntegrityAlgorithms != null && (this._phase2IntegrityAlgorithms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

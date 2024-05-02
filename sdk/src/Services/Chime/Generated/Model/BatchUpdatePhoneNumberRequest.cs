@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Chime.Model
 {
     /// <summary>
@@ -48,7 +49,7 @@ namespace Amazon.Chime.Model
     /// </summary>
     public partial class BatchUpdatePhoneNumberRequest : AmazonChimeRequest
     {
-        private List<UpdatePhoneNumberRequestItem> _updatePhoneNumberRequestItems = new List<UpdatePhoneNumberRequestItem>();
+        private List<UpdatePhoneNumberRequestItem> _updatePhoneNumberRequestItems = AWSConfigs.InitializeCollections ? new List<UpdatePhoneNumberRequestItem>() : null;
 
         /// <summary>
         /// Gets and sets the property UpdatePhoneNumberRequestItems. 
@@ -67,7 +68,7 @@ namespace Amazon.Chime.Model
         // Check to see if UpdatePhoneNumberRequestItems property is set
         internal bool IsSetUpdatePhoneNumberRequestItems()
         {
-            return this._updatePhoneNumberRequestItems != null && this._updatePhoneNumberRequestItems.Count > 0; 
+            return this._updatePhoneNumberRequestItems != null && (this._updatePhoneNumberRequestItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

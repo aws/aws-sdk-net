@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Omics.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.Omics.Model
         private string _id;
         private string _roleArn;
         private string _sequenceStoreId;
-        private List<ImportReadSetSourceItem> _sources = new List<ImportReadSetSourceItem>();
+        private List<ImportReadSetSourceItem> _sources = AWSConfigs.InitializeCollections ? new List<ImportReadSetSourceItem>() : null;
         private ReadSetImportJobStatus _status;
         private string _statusMessage;
 
@@ -152,7 +153,7 @@ namespace Amazon.Omics.Model
         // Check to see if Sources property is set
         internal bool IsSetSources()
         {
-            return this._sources != null && this._sources.Count > 0; 
+            return this._sources != null && (this._sources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

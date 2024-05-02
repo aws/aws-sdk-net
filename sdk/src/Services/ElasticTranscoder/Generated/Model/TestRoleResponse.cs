@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ElasticTranscoder.Model
     [Obsolete("This type is deprecated")]
     public partial class TestRoleResponse : AmazonWebServiceResponse
     {
-        private List<string> _messages = new List<string>();
+        private List<string> _messages = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _success;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.ElasticTranscoder.Model
         // Check to see if Messages property is set
         internal bool IsSetMessages()
         {
-            return this._messages != null && this._messages.Count > 0; 
+            return this._messages != null && (this._messages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

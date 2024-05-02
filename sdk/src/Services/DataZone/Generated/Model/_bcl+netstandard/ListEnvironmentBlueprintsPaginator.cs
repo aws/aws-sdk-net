@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.DataZone.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<EnvironmentBlueprintSummary> Items => 
-            new PaginatedResultKeyResponse<ListEnvironmentBlueprintsResponse, EnvironmentBlueprintSummary>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListEnvironmentBlueprintsResponse, EnvironmentBlueprintSummary>(this, (i) => i.Items ?? new List<EnvironmentBlueprintSummary>());
 
         internal ListEnvironmentBlueprintsPaginator(IAmazonDataZone client, ListEnvironmentBlueprintsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.DataZone.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListEnvironmentBlueprintsResponse> IPaginator<ListEnvironmentBlueprintsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListEnvironmentBlueprintsResponse> IPaginator<ListEnvironmentBlueprintsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

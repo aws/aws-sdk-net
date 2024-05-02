@@ -19,6 +19,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Util;
 using Amazon.Runtime;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
      /// <summary>
@@ -26,6 +27,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// </summary>
     public class RulesItemUnmarshaller : IUnmarshaller<LifecycleRule, XmlUnmarshallerContext>, IUnmarshaller<LifecycleRule, JsonUnmarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public LifecycleRule Unmarshall(XmlUnmarshallerContext context) 
         {
             LifecycleRule rulesItem = new LifecycleRule();
@@ -83,14 +89,20 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Transition", targetDepth))
                     {
+                        if (rulesItem.Transitions == null)
+                        {
+                            rulesItem.Transitions = new List<LifecycleTransition>();
+                        }
                         rulesItem.Transitions.Add(TransitionUnmarshaller.Instance.Unmarshall(context));
-                            
                         continue;
                     }
                     if (context.TestExpression("NoncurrentVersionTransition", targetDepth))
                     {
+                        if (rulesItem.NoncurrentVersionTransitions == null)
+                        {
+                            rulesItem.NoncurrentVersionTransitions = new List<LifecycleRuleNoncurrentVersionTransition>();
+                        }
                         rulesItem.NoncurrentVersionTransitions.Add(LifecycleRuleNoncurrentVersionTransitionUnmarshaller.Instance.Unmarshall(context));
-
                         continue;
                     }
                     if (context.TestExpression("NoncurrentVersionExpiration", targetDepth))
@@ -117,6 +129,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return rulesItem;
         }
 
+        /// <summary>
+        /// Not implemented and always returns null.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public LifecycleRule Unmarshall(JsonUnmarshallerContext context) 
         {
             return null;
@@ -124,6 +141,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static RulesItemUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static RulesItemUnmarshaller Instance
         {
             get
@@ -137,4 +157,3 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
     }
 }
-    

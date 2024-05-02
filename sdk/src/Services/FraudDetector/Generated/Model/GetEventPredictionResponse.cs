@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FraudDetector.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class GetEventPredictionResponse : AmazonWebServiceResponse
     {
-        private List<ExternalModelOutputs> _externalModelOutputs = new List<ExternalModelOutputs>();
-        private List<ModelScores> _modelScores = new List<ModelScores>();
-        private List<RuleResult> _ruleResults = new List<RuleResult>();
+        private List<ExternalModelOutputs> _externalModelOutputs = AWSConfigs.InitializeCollections ? new List<ExternalModelOutputs>() : null;
+        private List<ModelScores> _modelScores = AWSConfigs.InitializeCollections ? new List<ModelScores>() : null;
+        private List<RuleResult> _ruleResults = AWSConfigs.InitializeCollections ? new List<RuleResult>() : null;
 
         /// <summary>
         /// Gets and sets the property ExternalModelOutputs. 
@@ -52,7 +53,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if ExternalModelOutputs property is set
         internal bool IsSetExternalModelOutputs()
         {
-            return this._externalModelOutputs != null && this._externalModelOutputs.Count > 0; 
+            return this._externalModelOutputs != null && (this._externalModelOutputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if ModelScores property is set
         internal bool IsSetModelScores()
         {
-            return this._modelScores != null && this._modelScores.Count > 0; 
+            return this._modelScores != null && (this._modelScores.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if RuleResults property is set
         internal bool IsSetRuleResults()
         {
-            return this._ruleResults != null && this._ruleResults.Count > 0; 
+            return this._ruleResults != null && (this._ruleResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

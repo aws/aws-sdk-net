@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.SimpleWorkflow.Model
     public partial class TagResourceRequest : AmazonSimpleWorkflowRequest
     {
         private string _resourceArn;
-        private List<ResourceTag> _tags = new List<ResourceTag>();
+        private List<ResourceTag> _tags = AWSConfigs.InitializeCollections ? new List<ResourceTag>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceArn. 
@@ -83,7 +84,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

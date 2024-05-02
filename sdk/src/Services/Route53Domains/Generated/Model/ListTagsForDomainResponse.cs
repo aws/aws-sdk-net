@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53Domains.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Route53Domains.Model
     /// </summary>
     public partial class ListTagsForDomainResponse : AmazonWebServiceResponse
     {
-        private List<Tag> _tagList = new List<Tag>();
+        private List<Tag> _tagList = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property TagList. 
@@ -50,7 +51,7 @@ namespace Amazon.Route53Domains.Model
         // Check to see if TagList property is set
         internal bool IsSetTagList()
         {
-            return this._tagList != null && this._tagList.Count > 0; 
+            return this._tagList != null && (this._tagList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,19 +26,24 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// History event for an alias for an Agent.
+    /// Contains details about the history of the alias.
     /// </summary>
     public partial class AgentAliasHistoryEvent
     {
         private DateTime? _endDate;
-        private List<AgentAliasRoutingConfigurationListItem> _routingConfiguration = new List<AgentAliasRoutingConfigurationListItem>();
+        private List<AgentAliasRoutingConfigurationListItem> _routingConfiguration = AWSConfigs.InitializeCollections ? new List<AgentAliasRoutingConfigurationListItem>() : null;
         private DateTime? _startDate;
 
         /// <summary>
-        /// Gets and sets the property EndDate.
+        /// Gets and sets the property EndDate. 
+        /// <para>
+        /// The date that the alias stopped being associated to the version in the <c>routingConfiguration</c>
+        /// object
+        /// </para>
         /// </summary>
         public DateTime? EndDate
         {
@@ -53,7 +58,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RoutingConfiguration.
+        /// Gets and sets the property RoutingConfiguration. 
+        /// <para>
+        /// Contains details about the version of the agent with which the alias is associated.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
         public List<AgentAliasRoutingConfigurationListItem> RoutingConfiguration
@@ -65,11 +73,15 @@ namespace Amazon.BedrockAgent.Model
         // Check to see if RoutingConfiguration property is set
         internal bool IsSetRoutingConfiguration()
         {
-            return this._routingConfiguration != null && this._routingConfiguration.Count > 0; 
+            return this._routingConfiguration != null && (this._routingConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
-        /// Gets and sets the property StartDate.
+        /// Gets and sets the property StartDate. 
+        /// <para>
+        /// The date that the alias began being associated to the version in the <c>routingConfiguration</c>
+        /// object.
+        /// </para>
         /// </summary>
         public DateTime? StartDate
         {

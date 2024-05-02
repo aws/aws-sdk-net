@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.InternetMonitor.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.InternetMonitor.Model
     /// </summary>
     public partial class GetQueryResultsResponse : AmazonWebServiceResponse
     {
-        private List<List<string>> _data = new List<List<string>>();
-        private List<QueryField> _fields = new List<QueryField>();
+        private List<List<string>> _data = AWSConfigs.InitializeCollections ? new List<List<string>>() : null;
+        private List<QueryField> _fields = AWSConfigs.InitializeCollections ? new List<QueryField>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -56,7 +57,7 @@ namespace Amazon.InternetMonitor.Model
         // Check to see if Data property is set
         internal bool IsSetData()
         {
-            return this._data != null && this._data.Count > 0; 
+            return this._data != null && (this._data.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -76,7 +77,7 @@ namespace Amazon.InternetMonitor.Model
         // Check to see if Fields property is set
         internal bool IsSetFields()
         {
-            return this._fields != null && this._fields.Count > 0; 
+            return this._fields != null && (this._fields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

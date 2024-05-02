@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class MetricMathAnomalyDetector
     {
-        private List<MetricDataQuery> _metricDataQueries = new List<MetricDataQuery>();
+        private List<MetricDataQuery> _metricDataQueries = AWSConfigs.InitializeCollections ? new List<MetricDataQuery>() : null;
 
         /// <summary>
         /// Gets and sets the property MetricDataQueries. 
@@ -57,7 +58,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if MetricDataQueries property is set
         internal bool IsSetMetricDataQueries()
         {
-            return this._metricDataQueries != null && this._metricDataQueries.Count > 0; 
+            return this._metricDataQueries != null && (this._metricDataQueries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

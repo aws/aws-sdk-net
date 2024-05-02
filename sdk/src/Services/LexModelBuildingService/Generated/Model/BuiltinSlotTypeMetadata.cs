@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelBuildingService.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.LexModelBuildingService.Model
     public partial class BuiltinSlotTypeMetadata
     {
         private string _signature;
-        private List<string> _supportedLocales = new List<string>();
+        private List<string> _supportedLocales = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Signature. 
@@ -71,7 +72,7 @@ namespace Amazon.LexModelBuildingService.Model
         // Check to see if SupportedLocales property is set
         internal bool IsSetSupportedLocales()
         {
-            return this._supportedLocales != null && this._supportedLocales.Count > 0; 
+            return this._supportedLocales != null && (this._supportedLocales.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RoboMaker.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.RoboMaker.Model
     {
         private string _arn;
         private DateTime? _createdAt;
-        private List<DeploymentApplicationConfig> _deploymentApplicationConfigs = new List<DeploymentApplicationConfig>();
+        private List<DeploymentApplicationConfig> _deploymentApplicationConfigs = AWSConfigs.InitializeCollections ? new List<DeploymentApplicationConfig>() : null;
         private DeploymentConfig _deploymentConfig;
         private DeploymentJobErrorCode _failureCode;
         private string _failureReason;
@@ -95,7 +96,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if DeploymentApplicationConfigs property is set
         internal bool IsSetDeploymentApplicationConfigs()
         {
-            return this._deploymentApplicationConfigs != null && this._deploymentApplicationConfigs.Count > 0; 
+            return this._deploymentApplicationConfigs != null && (this._deploymentApplicationConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

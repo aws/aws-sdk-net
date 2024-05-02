@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FinSpaceData.Model
 {
     /// <summary>
@@ -44,7 +45,7 @@ namespace Amazon.FinSpaceData.Model
     /// </summary>
     public partial class PermissionGroupParams
     {
-        private List<ResourcePermission> _datasetPermissions = new List<ResourcePermission>();
+        private List<ResourcePermission> _datasetPermissions = AWSConfigs.InitializeCollections ? new List<ResourcePermission>() : null;
         private string _permissionGroupId;
 
         /// <summary>
@@ -62,7 +63,7 @@ namespace Amazon.FinSpaceData.Model
         // Check to see if DatasetPermissions property is set
         internal bool IsSetDatasetPermissions()
         {
-            return this._datasetPermissions != null && this._datasetPermissions.Count > 0; 
+            return this._datasetPermissions != null && (this._datasetPermissions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

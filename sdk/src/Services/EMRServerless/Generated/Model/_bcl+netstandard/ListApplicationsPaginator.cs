@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EMRServerless.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.EMRServerless.Model
         /// Enumerable containing all of the Applications
         /// </summary>
         public IPaginatedEnumerable<ApplicationSummary> Applications => 
-            new PaginatedResultKeyResponse<ListApplicationsResponse, ApplicationSummary>(this, (i) => i.Applications);
+            new PaginatedResultKeyResponse<ListApplicationsResponse, ApplicationSummary>(this, (i) => i.Applications ?? new List<ApplicationSummary>());
 
         internal ListApplicationsPaginator(IAmazonEMRServerless client, ListApplicationsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.EMRServerless.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListApplicationsResponse> IPaginator<ListApplicationsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListApplicationsResponse> IPaginator<ListApplicationsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

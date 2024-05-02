@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Personalize.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Personalize.Model
         /// Enumerable containing all of the Metrics
         /// </summary>
         public IPaginatedEnumerable<MetricAttribute> Metrics => 
-            new PaginatedResultKeyResponse<ListMetricAttributionMetricsResponse, MetricAttribute>(this, (i) => i.Metrics);
+            new PaginatedResultKeyResponse<ListMetricAttributionMetricsResponse, MetricAttribute>(this, (i) => i.Metrics ?? new List<MetricAttribute>());
 
         internal ListMetricAttributionMetricsPaginator(IAmazonPersonalize client, ListMetricAttributionMetricsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Personalize.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListMetricAttributionMetricsResponse> IPaginator<ListMetricAttributionMetricsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListMetricAttributionMetricsResponse> IPaginator<ListMetricAttributionMetricsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

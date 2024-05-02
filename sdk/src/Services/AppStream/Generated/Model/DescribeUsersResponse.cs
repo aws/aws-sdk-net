@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppStream.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.AppStream.Model
     public partial class DescribeUsersResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<User> _users = new List<User>();
+        private List<User> _users = AWSConfigs.InitializeCollections ? new List<User>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.AppStream.Model
         // Check to see if Users property is set
         internal bool IsSetUsers()
         {
-            return this._users != null && this._users.Count > 0; 
+            return this._users != null && (this._users.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

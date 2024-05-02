@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
@@ -46,7 +47,7 @@ namespace Amazon.CloudTrail.Model
         private string _s3BucketName;
         private string _s3KeyPrefix;
         private string _snsTopicName;
-        private List<Tag> _tagsList = new List<Tag>();
+        private List<Tag> _tagsList = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property CloudWatchLogsLogGroupArn. 
@@ -343,7 +344,7 @@ namespace Amazon.CloudTrail.Model
         // Check to see if TagsList property is set
         internal bool IsSetTagsList()
         {
-            return this._tagsList != null && this._tagsList.Count > 0; 
+            return this._tagsList != null && (this._tagsList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
@@ -85,7 +86,7 @@ namespace Amazon.ServiceDiscovery.Model
     /// </summary>
     public partial class RegisterInstanceRequest : AmazonServiceDiscoveryRequest
     {
-        private Dictionary<string, string> _attributes = new Dictionary<string, string>();
+        private Dictionary<string, string> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _creatorRequestId;
         private string _instanceId;
         private string _serviceId;
@@ -104,14 +105,14 @@ namespace Amazon.ServiceDiscovery.Model
         /// <para>
         /// For each attribute, the applicable value.
         /// </para>
-        ///  </li> </ul> <note> 
+        ///  </li> </ul> <important> 
         /// <para>
         /// Do not include sensitive information in the attributes if the namespace is discoverable
         /// by public DNS queries.
         /// </para>
-        ///  </note> 
+        ///  </important> 
         /// <para>
-        /// Supported attribute keys include the following:
+        /// The following are the supported attribute keys.
         /// </para>
         ///  <dl> <dt>AWS_ALIAS_DNS_NAME</dt> <dd> 
         /// <para>
@@ -150,6 +151,10 @@ namespace Amazon.ServiceDiscovery.Model
         /// <para>
         /// If you specify a value for <c>AWS_ALIAS_DNS_NAME</c>, don't specify values for any
         /// of the <c>AWS_INSTANCE</c> attributes.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <c>AWS_ALIAS_DNS_NAME</c> is not supported in the GovCloud (US) Regions.
         /// </para>
         ///  </li> </ul> </dd> <dt>AWS_EC2_INSTANCE_ID</dt> <dd> 
         /// <para>
@@ -234,7 +239,7 @@ namespace Amazon.ServiceDiscovery.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

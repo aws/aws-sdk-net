@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using Amazon.Runtime.Documents;
@@ -104,6 +105,61 @@ namespace AWSSDK.UnitTests
             
             var json = Marshall(doc);
             Assert.AreEqual("{\"document\":{\"0\":null,\"1\":true,\"2\":1.7976931348623157E+308,\"3\":2147483647,\"4\":9223372036854775807,\"5\":\"string\",\"6\":[1,2,3],\"7\":{\"Hello\":\"World\"}}}", json);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void MarshallDiverseObjectFromObjectDocument()
+        {
+            var doc = new Document
+            {
+                new Document(),
+                true,
+                double.MaxValue,
+                int.MaxValue,
+                long.MaxValue,
+                "string",
+                new Document(1,2,3),
+                Document.FromObject(new
+                    {
+                        foo = new {
+                            baz = new int[] { 3, 4 }
+                        }
+                    }
+                )
+            };
+            
+            var json = Marshall(doc);
+            Assert.AreEqual("{\"document\":[null,true,1.7976931348623157E+308,2147483647,9223372036854775807,\"string\",[1,2,3],{\"foo\":{\"baz\":[3,4]}}]}", json);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Runtime")]
+        public void MarshallDiverseObjectDocument()
+        {
+            var doc = new Document
+            {
+                new Document(),
+                true,
+                double.MaxValue,
+                int.MaxValue,
+                long.MaxValue,
+                "string",
+                new Document(1,2,3),
+                new Document(new Dictionary<string, Document>
+                {
+                    { "foo", new Document(new Dictionary<string, Document>
+                        {
+                            {"baz", new Document(3, 4) }
+                        })
+                    }
+                })
+            };
+            
+            var json = Marshall(doc);
+            Assert.AreEqual("{\"document\":[null,true,1.7976931348623157E+308,2147483647,9223372036854775807,\"string\",[1,2,3],{\"foo\":{\"baz\":[3,4]}}]}", json);
         }
 
         [TestMethod]

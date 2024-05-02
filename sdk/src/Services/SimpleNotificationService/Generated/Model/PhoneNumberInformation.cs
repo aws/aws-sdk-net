@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.SimpleNotificationService.Model
     {
         private DateTime? _createdAt;
         private string _iso2CountryCode;
-        private List<string> _numberCapabilities = new List<string>();
+        private List<string> _numberCapabilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _phoneNumber;
         private RouteType _routeType;
         private string _status;
@@ -92,7 +93,7 @@ namespace Amazon.SimpleNotificationService.Model
         // Check to see if NumberCapabilities property is set
         internal bool IsSetNumberCapabilities()
         {
-            return this._numberCapabilities != null && this._numberCapabilities.Count > 0; 
+            return this._numberCapabilities != null && (this._numberCapabilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

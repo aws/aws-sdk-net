@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class ValidateSecurityProfileBehaviorsRequest : AmazonIoTRequest
     {
-        private List<Behavior> _behaviors = new List<Behavior>();
+        private List<Behavior> _behaviors = AWSConfigs.InitializeCollections ? new List<Behavior>() : null;
 
         /// <summary>
         /// Gets and sets the property Behaviors. 
@@ -58,7 +59,7 @@ namespace Amazon.IoT.Model
         // Check to see if Behaviors property is set
         internal bool IsSetBehaviors()
         {
-            return this._behaviors != null && this._behaviors.Count > 0; 
+            return this._behaviors != null && (this._behaviors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

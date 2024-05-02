@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
@@ -55,12 +56,12 @@ namespace Amazon.GreengrassV2.Model
     public partial class CreateDeploymentRequest : AmazonGreengrassV2Request
     {
         private string _clientToken;
-        private Dictionary<string, ComponentDeploymentSpecification> _components = new Dictionary<string, ComponentDeploymentSpecification>();
+        private Dictionary<string, ComponentDeploymentSpecification> _components = AWSConfigs.InitializeCollections ? new Dictionary<string, ComponentDeploymentSpecification>() : null;
         private string _deploymentName;
         private DeploymentPolicies _deploymentPolicies;
         private DeploymentIoTJobConfiguration _iotJobConfiguration;
         private string _parentTargetArn;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _targetArn;
 
         /// <summary>
@@ -103,7 +104,7 @@ namespace Amazon.GreengrassV2.Model
         // Check to see if Components property is set
         internal bool IsSetComponents()
         {
-            return this._components != null && this._components.Count > 0; 
+            return this._components != null && (this._components.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -200,7 +201,7 @@ namespace Amazon.GreengrassV2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

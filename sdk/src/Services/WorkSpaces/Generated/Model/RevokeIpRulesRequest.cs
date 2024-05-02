@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.WorkSpaces.Model
     public partial class RevokeIpRulesRequest : AmazonWorkSpacesRequest
     {
         private string _groupId;
-        private List<string> _userRules = new List<string>();
+        private List<string> _userRules = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property GroupId. 
@@ -72,7 +73,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if UserRules property is set
         internal bool IsSetUserRules()
         {
-            return this._userRules != null && this._userRules.Count > 0; 
+            return this._userRules != null && (this._userRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

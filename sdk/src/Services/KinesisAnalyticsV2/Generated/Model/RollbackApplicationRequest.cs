@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
@@ -41,11 +42,12 @@ namespace Amazon.KinesisAnalyticsV2.Model
     ///  
     /// <para>
     /// When you rollback an application, it loads state data from the last successful snapshot.
-    /// If the application has no snapshots, Kinesis Data Analytics rejects the rollback request.
+    /// If the application has no snapshots, Managed Service for Apache Flink rejects the
+    /// rollback request.
     /// </para>
     ///  
     /// <para>
-    /// This action is not supported for Kinesis Data Analytics for SQL applications.
+    /// This action is not supported for Managed Service for Apache Flink for SQL applications.
     /// </para>
     /// </summary>
     public partial class RollbackApplicationRequest : AmazonKinesisAnalyticsV2Request

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
@@ -62,7 +63,7 @@ namespace Amazon.AWSSupport.Model
     /// </summary>
     public partial class DescribeTrustedAdvisorCheckSummariesRequest : AmazonAWSSupportRequest
     {
-        private List<string> _checkIds = new List<string>();
+        private List<string> _checkIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CheckIds. 
@@ -80,7 +81,7 @@ namespace Amazon.AWSSupport.Model
         // Check to see if CheckIds property is set
         internal bool IsSetCheckIds()
         {
-            return this._checkIds != null && this._checkIds.Count > 0; 
+            return this._checkIds != null && (this._checkIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

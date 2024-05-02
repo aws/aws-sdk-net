@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EMRContainers.Model
 {
     /// <summary>
@@ -40,11 +41,11 @@ namespace Amazon.EMRContainers.Model
         private string _executionRoleArn;
         private JobDriver _jobDriver;
         private string _jobTemplateId;
-        private Dictionary<string, string> _jobTemplateParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _jobTemplateParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _name;
         private string _releaseLabel;
         private RetryPolicyConfiguration _retryPolicyConfiguration;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _virtualClusterId;
 
         /// <summary>
@@ -146,7 +147,7 @@ namespace Amazon.EMRContainers.Model
         /// The values of job template parameters to start a job run.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=20)]
+        [AWSProperty(Max=100)]
         public Dictionary<string, string> JobTemplateParameters
         {
             get { return this._jobTemplateParameters; }
@@ -156,7 +157,7 @@ namespace Amazon.EMRContainers.Model
         // Check to see if JobTemplateParameters property is set
         internal bool IsSetJobTemplateParameters()
         {
-            return this._jobTemplateParameters != null && this._jobTemplateParameters.Count > 0; 
+            return this._jobTemplateParameters != null && (this._jobTemplateParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -231,7 +232,7 @@ namespace Amazon.EMRContainers.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

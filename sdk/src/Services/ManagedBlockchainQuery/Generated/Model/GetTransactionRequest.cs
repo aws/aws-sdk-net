@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ManagedBlockchainQuery.Model
 {
     /// <summary>
@@ -44,6 +45,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
     {
         private QueryNetwork _network;
         private string _transactionHash;
+        private string _transactionId;
 
         /// <summary>
         /// Gets and sets the property Network. 
@@ -67,11 +69,9 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// <summary>
         /// Gets and sets the property TransactionHash. 
         /// <para>
-        /// The hash of the transaction. It is generated whenever a transaction is verified and
-        /// added to the blockchain.
+        /// The hash of a transaction. It is generated when a transaction is created.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string TransactionHash
         {
             get { return this._transactionHash; }
@@ -82,6 +82,29 @@ namespace Amazon.ManagedBlockchainQuery.Model
         internal bool IsSetTransactionHash()
         {
             return this._transactionHash != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TransactionId. 
+        /// <para>
+        /// The identifier of a Bitcoin transaction. It is generated when a transaction is created.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <c>transactionId</c> is only supported on the Bitcoin networks.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string TransactionId
+        {
+            get { return this._transactionId; }
+            set { this._transactionId = value; }
+        }
+
+        // Check to see if TransactionId property is set
+        internal bool IsSetTransactionId()
+        {
+            return this._transactionId != null;
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -62,8 +63,8 @@ namespace Amazon.EC2.Model
     public partial class RevokeSecurityGroupEgressRequest : AmazonEC2Request
     {
         private string _groupId;
-        private List<IpPermission> _ipPermissions = new List<IpPermission>();
-        private List<string> _securityGroupRuleIds = new List<string>();
+        private List<IpPermission> _ipPermissions = AWSConfigs.InitializeCollections ? new List<IpPermission>() : null;
+        private List<string> _securityGroupRuleIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property GroupId. 
@@ -100,7 +101,7 @@ namespace Amazon.EC2.Model
         // Check to see if IpPermissions property is set
         internal bool IsSetIpPermissions()
         {
-            return this._ipPermissions != null && this._ipPermissions.Count > 0; 
+            return this._ipPermissions != null && (this._ipPermissions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -118,7 +119,7 @@ namespace Amazon.EC2.Model
         // Check to see if SecurityGroupRuleIds property is set
         internal bool IsSetSecurityGroupRuleIds()
         {
-            return this._securityGroupRuleIds != null && this._securityGroupRuleIds.Count > 0; 
+            return this._securityGroupRuleIds != null && (this._securityGroupRuleIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

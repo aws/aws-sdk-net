@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -36,8 +37,8 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class TimeSeriesTransformations
     {
-        private Dictionary<string, string> _aggregation = new Dictionary<string, string>();
-        private Dictionary<string, Dictionary<string, string>> _filling = new Dictionary<string, Dictionary<string, string>>();
+        private Dictionary<string, string> _aggregation = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, Dictionary<string, string>> _filling = AWSConfigs.InitializeCollections ? new Dictionary<string, Dictionary<string, string>>() : null;
 
         /// <summary>
         /// Gets and sets the property Aggregation. 
@@ -66,7 +67,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Aggregation property is set
         internal bool IsSetAggregation()
         {
-            return this._aggregation != null && this._aggregation.Count > 0; 
+            return this._aggregation != null && (this._aggregation.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -118,7 +119,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Filling property is set
         internal bool IsSetFilling()
         {
-            return this._filling != null && this._filling.Count > 0; 
+            return this._filling != null && (this._filling.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LookoutMetrics.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.LookoutMetrics.Model
     /// </summary>
     public partial class ListMetricSetsResponse : AmazonWebServiceResponse
     {
-        private List<MetricSetSummary> _metricSetSummaryList = new List<MetricSetSummary>();
+        private List<MetricSetSummary> _metricSetSummaryList = AWSConfigs.InitializeCollections ? new List<MetricSetSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.LookoutMetrics.Model
         // Check to see if MetricSetSummaryList property is set
         internal bool IsSetMetricSetSummaryList()
         {
-            return this._metricSetSummaryList != null && this._metricSetSummaryList.Count > 0; 
+            return this._metricSetSummaryList != null && (this._metricSetSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

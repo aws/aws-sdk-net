@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -64,6 +65,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("transitGatewayVpcAttachments/item", targetDepth))
                     {
                         var unmarshaller = TransitGatewayVpcAttachmentUnmarshaller.Instance;
+                        if (response.TransitGatewayVpcAttachments == null)
+                        {
+                            response.TransitGatewayVpcAttachments = new List<TransitGatewayVpcAttachment>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.TransitGatewayVpcAttachments.Add(item);
                         continue;

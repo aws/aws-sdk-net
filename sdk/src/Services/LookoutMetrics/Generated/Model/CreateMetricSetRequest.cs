@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LookoutMetrics.Model
 {
     /// <summary>
@@ -35,15 +36,15 @@ namespace Amazon.LookoutMetrics.Model
     public partial class CreateMetricSetRequest : AmazonLookoutMetricsRequest
     {
         private string _anomalyDetectorArn;
-        private List<MetricSetDimensionFilter> _dimensionFilterList = new List<MetricSetDimensionFilter>();
-        private List<string> _dimensionList = new List<string>();
-        private List<Metric> _metricList = new List<Metric>();
+        private List<MetricSetDimensionFilter> _dimensionFilterList = AWSConfigs.InitializeCollections ? new List<MetricSetDimensionFilter>() : null;
+        private List<string> _dimensionList = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Metric> _metricList = AWSConfigs.InitializeCollections ? new List<Metric>() : null;
         private string _metricSetDescription;
         private Frequency _metricSetFrequency;
         private string _metricSetName;
         private MetricSource _metricSource;
         private int? _offset;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private TimestampColumn _timestampColumn;
         private string _timezone;
 
@@ -81,7 +82,7 @@ namespace Amazon.LookoutMetrics.Model
         // Check to see if DimensionFilterList property is set
         internal bool IsSetDimensionFilterList()
         {
-            return this._dimensionFilterList != null && this._dimensionFilterList.Count > 0; 
+            return this._dimensionFilterList != null && (this._dimensionFilterList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -100,7 +101,7 @@ namespace Amazon.LookoutMetrics.Model
         // Check to see if DimensionList property is set
         internal bool IsSetDimensionList()
         {
-            return this._dimensionList != null && this._dimensionList.Count > 0; 
+            return this._dimensionList != null && (this._dimensionList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -119,7 +120,7 @@ namespace Amazon.LookoutMetrics.Model
         // Check to see if MetricList property is set
         internal bool IsSetMetricList()
         {
-            return this._metricList != null && this._metricList.Count > 0; 
+            return this._metricList != null && (this._metricList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -234,7 +235,7 @@ namespace Amazon.LookoutMetrics.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the forecast-2018-06-26.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ForecastService.Model
 {
     /// <summary>

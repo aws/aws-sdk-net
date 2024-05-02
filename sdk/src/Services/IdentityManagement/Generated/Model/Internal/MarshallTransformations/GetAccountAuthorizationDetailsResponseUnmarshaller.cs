@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -84,6 +85,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("GroupDetailList/member", targetDepth))
                     {
                         var unmarshaller = GroupDetailUnmarshaller.Instance;
+                        if (response.GroupDetailList == null)
+                        {
+                            response.GroupDetailList = new List<GroupDetail>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.GroupDetailList.Add(item);
                         continue;
@@ -103,6 +108,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Policies/member", targetDepth))
                     {
                         var unmarshaller = ManagedPolicyDetailUnmarshaller.Instance;
+                        if (response.Policies == null)
+                        {
+                            response.Policies = new List<ManagedPolicyDetail>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Policies.Add(item);
                         continue;
@@ -110,6 +119,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("RoleDetailList/member", targetDepth))
                     {
                         var unmarshaller = RoleDetailUnmarshaller.Instance;
+                        if (response.RoleDetailList == null)
+                        {
+                            response.RoleDetailList = new List<RoleDetail>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.RoleDetailList.Add(item);
                         continue;
@@ -117,6 +130,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("UserDetailList/member", targetDepth))
                     {
                         var unmarshaller = UserDetailUnmarshaller.Instance;
+                        if (response.UserDetailList == null)
+                        {
+                            response.UserDetailList = new List<UserDetail>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.UserDetailList.Add(item);
                         continue;

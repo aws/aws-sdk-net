@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.CloudSearch.Model
     {
         private bool? _deployed;
         private string _domainName;
-        private List<string> _expressionNames = new List<string>();
+        private List<string> _expressionNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Deployed. 
@@ -97,7 +98,7 @@ namespace Amazon.CloudSearch.Model
         // Check to see if ExpressionNames property is set
         internal bool IsSetExpressionNames()
         {
-            return this._expressionNames != null && this._expressionNames.Count > 0; 
+            return this._expressionNames != null && (this._expressionNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

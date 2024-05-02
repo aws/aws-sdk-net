@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Macie2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Macie2.Model
     public partial class ListSensitivityInspectionTemplatesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SensitivityInspectionTemplatesEntry> _sensitivityInspectionTemplates = new List<SensitivityInspectionTemplatesEntry>();
+        private List<SensitivityInspectionTemplatesEntry> _sensitivityInspectionTemplates = AWSConfigs.InitializeCollections ? new List<SensitivityInspectionTemplatesEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.Macie2.Model
         // Check to see if SensitivityInspectionTemplates property is set
         internal bool IsSetSensitivityInspectionTemplates()
         {
-            return this._sensitivityInspectionTemplates != null && this._sensitivityInspectionTemplates.Count > 0; 
+            return this._sensitivityInspectionTemplates != null && (this._sensitivityInspectionTemplates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

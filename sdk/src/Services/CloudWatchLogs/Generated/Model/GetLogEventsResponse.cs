@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// </summary>
     public partial class GetLogEventsResponse : AmazonWebServiceResponse
     {
-        private List<OutputLogEvent> _events = new List<OutputLogEvent>();
+        private List<OutputLogEvent> _events = AWSConfigs.InitializeCollections ? new List<OutputLogEvent>() : null;
         private string _nextBackwardToken;
         private string _nextForwardToken;
 
@@ -52,7 +53,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if Events property is set
         internal bool IsSetEvents()
         {
-            return this._events != null && this._events.Count > 0; 
+            return this._events != null && (this._events.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

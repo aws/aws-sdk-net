@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IoT.Model
     public partial class ListRelatedResourcesForAuditFindingResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RelatedResource> _relatedResources = new List<RelatedResource>();
+        private List<RelatedResource> _relatedResources = AWSConfigs.InitializeCollections ? new List<RelatedResource>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.IoT.Model
         // Check to see if RelatedResources property is set
         internal bool IsSetRelatedResources()
         {
-            return this._relatedResources != null && this._relatedResources.Count > 0; 
+            return this._relatedResources != null && (this._relatedResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

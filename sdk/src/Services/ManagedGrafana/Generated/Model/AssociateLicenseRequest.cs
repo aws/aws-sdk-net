@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ManagedGrafana.Model
 {
     /// <summary>
@@ -36,14 +37,41 @@ namespace Amazon.ManagedGrafana.Model
     /// </summary>
     public partial class AssociateLicenseRequest : AmazonManagedGrafanaRequest
     {
+        private string _grafanaToken;
         private LicenseType _licenseType;
         private string _workspaceId;
+
+        /// <summary>
+        /// Gets and sets the property GrafanaToken. 
+        /// <para>
+        /// A token from Grafana Labs that ties your Amazon Web Services account with a Grafana
+        /// Labs account. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html#AMG-workspace-register-enterprise">Register
+        /// with Grafana Labs</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=36)]
+        public string GrafanaToken
+        {
+            get { return this._grafanaToken; }
+            set { this._grafanaToken = value; }
+        }
+
+        // Check to see if GrafanaToken property is set
+        internal bool IsSetGrafanaToken()
+        {
+            return this._grafanaToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LicenseType. 
         /// <para>
         /// The type of license to associate with the workspace.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Amazon Managed Grafana workspaces no longer support Grafana Enterprise free trials.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public LicenseType LicenseType

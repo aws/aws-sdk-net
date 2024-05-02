@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTThingsGraph.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.IoTThingsGraph.Model
     public partial class SystemInstanceFilter
     {
         private SystemInstanceFilterName _name;
-        private List<string> _value = new List<string>();
+        private List<string> _value = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -73,7 +74,7 @@ namespace Amazon.IoTThingsGraph.Model
         // Check to see if Value property is set
         internal bool IsSetValue()
         {
-            return this._value != null && this._value.Count > 0; 
+            return this._value != null && (this._value.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

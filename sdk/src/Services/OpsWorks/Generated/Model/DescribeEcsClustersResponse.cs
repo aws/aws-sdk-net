@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.OpsWorks.Model
     /// </summary>
     public partial class DescribeEcsClustersResponse : AmazonWebServiceResponse
     {
-        private List<EcsCluster> _ecsClusters = new List<EcsCluster>();
+        private List<EcsCluster> _ecsClusters = AWSConfigs.InitializeCollections ? new List<EcsCluster>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if EcsClusters property is set
         internal bool IsSetEcsClusters()
         {
-            return this._ecsClusters != null && this._ecsClusters.Count > 0; 
+            return this._ecsClusters != null && (this._ecsClusters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

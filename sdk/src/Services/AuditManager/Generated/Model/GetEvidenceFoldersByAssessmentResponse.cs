@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AuditManager.Model
     /// </summary>
     public partial class GetEvidenceFoldersByAssessmentResponse : AmazonWebServiceResponse
     {
-        private List<AssessmentEvidenceFolder> _evidenceFolders = new List<AssessmentEvidenceFolder>();
+        private List<AssessmentEvidenceFolder> _evidenceFolders = AWSConfigs.InitializeCollections ? new List<AssessmentEvidenceFolder>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if EvidenceFolders property is set
         internal bool IsSetEvidenceFolders()
         {
-            return this._evidenceFolders != null && this._evidenceFolders.Count > 0; 
+            return this._evidenceFolders != null && (this._evidenceFolders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

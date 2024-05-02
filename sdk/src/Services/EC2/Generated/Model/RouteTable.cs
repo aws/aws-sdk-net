@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,12 +34,12 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class RouteTable
     {
-        private List<RouteTableAssociation> _associations = new List<RouteTableAssociation>();
+        private List<RouteTableAssociation> _associations = AWSConfigs.InitializeCollections ? new List<RouteTableAssociation>() : null;
         private string _ownerId;
-        private List<PropagatingVgw> _propagatingVgws = new List<PropagatingVgw>();
-        private List<Route> _routes = new List<Route>();
+        private List<PropagatingVgw> _propagatingVgws = AWSConfigs.InitializeCollections ? new List<PropagatingVgw>() : null;
+        private List<Route> _routes = AWSConfigs.InitializeCollections ? new List<Route>() : null;
         private string _routeTableId;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _vpcId;
 
         /// <summary>
@@ -56,7 +57,7 @@ namespace Amazon.EC2.Model
         // Check to see if Associations property is set
         internal bool IsSetAssociations()
         {
-            return this._associations != null && this._associations.Count > 0; 
+            return this._associations != null && (this._associations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.EC2.Model
         // Check to see if PropagatingVgws property is set
         internal bool IsSetPropagatingVgws()
         {
-            return this._propagatingVgws != null && this._propagatingVgws.Count > 0; 
+            return this._propagatingVgws != null && (this._propagatingVgws.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -110,7 +111,7 @@ namespace Amazon.EC2.Model
         // Check to see if Routes property is set
         internal bool IsSetRoutes()
         {
-            return this._routes != null && this._routes.Count > 0; 
+            return this._routes != null && (this._routes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -146,7 +147,7 @@ namespace Amazon.EC2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

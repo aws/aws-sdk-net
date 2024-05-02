@@ -26,12 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the StartDataSourceSyncJob operation.
     /// Starts a data source connector synchronization job. If a synchronization job is already
-    /// in progress, Amazon Q returns a <c>ConflictException</c>.
+    /// in progress, Amazon Q Business returns a <c>ConflictException</c>.
     /// </summary>
     public partial class StartDataSourceSyncJobRequest : AmazonQBusinessRequest
     {
@@ -42,7 +43,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The identifier of Amazon Q application the data source is connected to.
+        /// The identifier of Amazon Q Business application the data source is connected to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

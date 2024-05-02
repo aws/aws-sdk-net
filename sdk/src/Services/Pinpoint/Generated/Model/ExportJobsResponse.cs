@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Pinpoint.Model
     /// </summary>
     public partial class ExportJobsResponse
     {
-        private List<ExportJobResponse> _item = new List<ExportJobResponse>();
+        private List<ExportJobResponse> _item = AWSConfigs.InitializeCollections ? new List<ExportJobResponse>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Item property is set
         internal bool IsSetItem()
         {
-            return this._item != null && this._item.Count > 0; 
+            return this._item != null && (this._item.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

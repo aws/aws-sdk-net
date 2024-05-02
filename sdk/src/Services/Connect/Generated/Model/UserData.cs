@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -33,11 +34,11 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class UserData
     {
-        private Dictionary<string, int> _activeSlotsByChannel = new Dictionary<string, int>();
-        private Dictionary<string, int> _availableSlotsByChannel = new Dictionary<string, int>();
-        private List<AgentContactReference> _contacts = new List<AgentContactReference>();
+        private Dictionary<string, int> _activeSlotsByChannel = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
+        private Dictionary<string, int> _availableSlotsByChannel = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
+        private List<AgentContactReference> _contacts = AWSConfigs.InitializeCollections ? new List<AgentContactReference>() : null;
         private HierarchyPathReference _hierarchyPath;
-        private Dictionary<string, int> _maxSlotsByChannel = new Dictionary<string, int>();
+        private Dictionary<string, int> _maxSlotsByChannel = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
         private string _nextStatus;
         private RoutingProfileReference _routingProfile;
         private AgentStatusReference _status;
@@ -59,7 +60,7 @@ namespace Amazon.Connect.Model
         // Check to see if ActiveSlotsByChannel property is set
         internal bool IsSetActiveSlotsByChannel()
         {
-            return this._activeSlotsByChannel != null && this._activeSlotsByChannel.Count > 0; 
+            return this._activeSlotsByChannel != null && (this._activeSlotsByChannel.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -78,7 +79,7 @@ namespace Amazon.Connect.Model
         // Check to see if AvailableSlotsByChannel property is set
         internal bool IsSetAvailableSlotsByChannel()
         {
-            return this._availableSlotsByChannel != null && this._availableSlotsByChannel.Count > 0; 
+            return this._availableSlotsByChannel != null && (this._availableSlotsByChannel.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -96,7 +97,7 @@ namespace Amazon.Connect.Model
         // Check to see if Contacts property is set
         internal bool IsSetContacts()
         {
-            return this._contacts != null && this._contacts.Count > 0; 
+            return this._contacts != null && (this._contacts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -134,7 +135,7 @@ namespace Amazon.Connect.Model
         // Check to see if MaxSlotsByChannel property is set
         internal bool IsSetMaxSlotsByChannel()
         {
-            return this._maxSlotsByChannel != null && this._maxSlotsByChannel.Count > 0; 
+            return this._maxSlotsByChannel != null && (this._maxSlotsByChannel.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

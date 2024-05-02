@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the PublicIpv4Pools
         /// </summary>
         public IPaginatedEnumerable<PublicIpv4Pool> PublicIpv4Pools => 
-            new PaginatedResultKeyResponse<DescribePublicIpv4PoolsResponse, PublicIpv4Pool>(this, (i) => i.PublicIpv4Pools);
+            new PaginatedResultKeyResponse<DescribePublicIpv4PoolsResponse, PublicIpv4Pool>(this, (i) => i.PublicIpv4Pools ?? new List<PublicIpv4Pool>());
 
         internal DescribePublicIpv4PoolsPaginator(IAmazonEC2 client, DescribePublicIpv4PoolsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.EC2.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribePublicIpv4PoolsResponse> IPaginator<DescribePublicIpv4PoolsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribePublicIpv4PoolsResponse> IPaginator<DescribePublicIpv4PoolsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
@@ -34,15 +35,15 @@ namespace Amazon.MediaLive.Model
     public partial class StopMultiplexResponse : AmazonWebServiceResponse
     {
         private string _arn;
-        private List<string> _availabilityZones = new List<string>();
-        private List<MultiplexOutputDestination> _destinations = new List<MultiplexOutputDestination>();
+        private List<string> _availabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<MultiplexOutputDestination> _destinations = AWSConfigs.InitializeCollections ? new List<MultiplexOutputDestination>() : null;
         private string _id;
         private MultiplexSettings _multiplexSettings;
         private string _name;
         private int? _pipelinesRunningCount;
         private int? _programCount;
         private MultiplexState _state;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. The unique arn of the multiplex.
@@ -72,7 +73,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+            return this._availabilityZones != null && (this._availabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -87,7 +88,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if Destinations property is set
         internal bool IsSetDestinations()
         {
-            return this._destinations != null && this._destinations.Count > 0; 
+            return this._destinations != null && (this._destinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -193,7 +194,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

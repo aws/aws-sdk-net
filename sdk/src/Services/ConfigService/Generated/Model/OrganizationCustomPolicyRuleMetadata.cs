@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -37,15 +38,15 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class OrganizationCustomPolicyRuleMetadata
     {
-        private List<string> _debugLogDeliveryAccounts = new List<string>();
+        private List<string> _debugLogDeliveryAccounts = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _description;
         private string _inputParameters;
         private MaximumExecutionFrequency _maximumExecutionFrequency;
-        private List<string> _organizationConfigRuleTriggerTypes = new List<string>();
+        private List<string> _organizationConfigRuleTriggerTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _policyRuntime;
         private string _policyText;
         private string _resourceIdScope;
-        private List<string> _resourceTypesScope = new List<string>();
+        private List<string> _resourceTypesScope = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _tagKeyScope;
         private string _tagValueScope;
 
@@ -66,7 +67,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if DebugLogDeliveryAccounts property is set
         internal bool IsSetDebugLogDeliveryAccounts()
         {
-            return this._debugLogDeliveryAccounts != null && this._debugLogDeliveryAccounts.Count > 0; 
+            return this._debugLogDeliveryAccounts != null && (this._debugLogDeliveryAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -157,7 +158,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if OrganizationConfigRuleTriggerTypes property is set
         internal bool IsSetOrganizationConfigRuleTriggerTypes()
         {
-            return this._organizationConfigRuleTriggerTypes != null && this._organizationConfigRuleTriggerTypes.Count > 0; 
+            return this._organizationConfigRuleTriggerTypes != null && (this._organizationConfigRuleTriggerTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -237,7 +238,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if ResourceTypesScope property is set
         internal bool IsSetResourceTypesScope()
         {
-            return this._resourceTypesScope != null && this._resourceTypesScope.Count > 0; 
+            return this._resourceTypesScope != null && (this._resourceTypesScope.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

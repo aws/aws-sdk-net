@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Chime.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.Chime.Model
     {
         private int? _dataRetentionInHours;
         private bool? _disabled;
-        private List<StreamingNotificationTarget> _streamingNotificationTargets = new List<StreamingNotificationTarget>();
+        private List<StreamingNotificationTarget> _streamingNotificationTargets = AWSConfigs.InitializeCollections ? new List<StreamingNotificationTarget>() : null;
 
         /// <summary>
         /// Gets and sets the property DataRetentionInHours. 
@@ -92,7 +93,7 @@ namespace Amazon.Chime.Model
         // Check to see if StreamingNotificationTargets property is set
         internal bool IsSetStreamingNotificationTargets()
         {
-            return this._streamingNotificationTargets != null && this._streamingNotificationTargets.Count > 0; 
+            return this._streamingNotificationTargets != null && (this._streamingNotificationTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

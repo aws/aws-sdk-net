@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkMail.Model
 {
     /// <summary>
@@ -57,7 +58,7 @@ namespace Amazon.WorkMail.Model
         private string _alias;
         private string _clientToken;
         private string _directoryId;
-        private List<Domain> _domains = new List<Domain>();
+        private List<Domain> _domains = AWSConfigs.InitializeCollections ? new List<Domain>() : null;
         private bool? _enableInteroperability;
         private string _kmsKeyArn;
 
@@ -134,7 +135,7 @@ namespace Amazon.WorkMail.Model
         // Check to see if Domains property is set
         internal bool IsSetDomains()
         {
-            return this._domains != null && this._domains.Count > 0; 
+            return this._domains != null && (this._domains.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

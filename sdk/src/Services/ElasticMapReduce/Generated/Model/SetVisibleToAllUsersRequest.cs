@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
@@ -59,7 +60,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     public partial class SetVisibleToAllUsersRequest : AmazonElasticMapReduceRequest
     {
-        private List<string> _jobFlowIds = new List<string>();
+        private List<string> _jobFlowIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _visibleToAllUsers;
 
         /// <summary>
@@ -78,7 +79,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if JobFlowIds property is set
         internal bool IsSetJobFlowIds()
         {
-            return this._jobFlowIds != null && this._jobFlowIds.Count > 0; 
+            return this._jobFlowIds != null && (this._jobFlowIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

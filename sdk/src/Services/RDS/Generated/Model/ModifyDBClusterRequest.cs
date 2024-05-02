@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -55,6 +56,7 @@ namespace Amazon.RDS.Model
         private string _awsBackupRecoveryPointArn;
         private long? _backtrackWindow;
         private int? _backupRetentionPeriod;
+        private string _caCertificateIdentifier;
         private CloudwatchLogsExportConfiguration _cloudwatchLogsExportConfiguration;
         private bool? _copyTagsToSnapshot;
         private string _dbClusterIdentifier;
@@ -90,7 +92,7 @@ namespace Amazon.RDS.Model
         private ScalingConfiguration _scalingConfiguration;
         private ServerlessV2ScalingConfiguration _serverlessV2ScalingConfiguration;
         private string _storageType;
-        private List<string> _vpcSecurityGroupIds = new List<string>();
+        private List<string> _vpcSecurityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
@@ -327,6 +329,33 @@ namespace Amazon.RDS.Model
         internal bool IsSetBackupRetentionPeriod()
         {
             return this._backupRetentionPeriod.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CACertificateIdentifier. 
+        /// <para>
+        /// The CA certificate identifier to use for the DB cluster's server certificate.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.SSL.html">Using
+        /// SSL/TLS to encrypt a connection to a DB instance</a> in the <i>Amazon RDS User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid for Cluster Type: Multi-AZ DB clusters
+        /// </para>
+        /// </summary>
+        public string CACertificateIdentifier
+        {
+            get { return this._caCertificateIdentifier; }
+            set { this._caCertificateIdentifier = value; }
+        }
+
+        // Check to see if CACertificateIdentifier property is set
+        internal bool IsSetCACertificateIdentifier()
+        {
+            return this._caCertificateIdentifier != null;
         }
 
         /// <summary>
@@ -1564,7 +1593,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Multi-AZ DB clusters - <c>io1</c> 
+        /// Multi-AZ DB clusters - <c>io1 | io2 | gp3</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1611,7 +1640,7 @@ namespace Amazon.RDS.Model
         // Check to see if VpcSecurityGroupIds property is set
         internal bool IsSetVpcSecurityGroupIds()
         {
-            return this._vpcSecurityGroupIds != null && this._vpcSecurityGroupIds.Count > 0; 
+            return this._vpcSecurityGroupIds != null && (this._vpcSecurityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

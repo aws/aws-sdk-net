@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppSync.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AppSync.Model
     /// </summary>
     public partial class ListDataSourcesResponse : AmazonWebServiceResponse
     {
-        private List<DataSource> _dataSources = new List<DataSource>();
+        private List<DataSource> _dataSources = AWSConfigs.InitializeCollections ? new List<DataSource>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.AppSync.Model
         // Check to see if DataSources property is set
         internal bool IsSetDataSources()
         {
-            return this._dataSources != null && this._dataSources.Count > 0; 
+            return this._dataSources != null && (this._dataSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

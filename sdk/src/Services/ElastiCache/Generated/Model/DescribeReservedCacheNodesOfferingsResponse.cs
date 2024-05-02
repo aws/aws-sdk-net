@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ElastiCache.Model
     public partial class DescribeReservedCacheNodesOfferingsResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<ReservedCacheNodesOffering> _reservedCacheNodesOfferings = new List<ReservedCacheNodesOffering>();
+        private List<ReservedCacheNodesOffering> _reservedCacheNodesOfferings = AWSConfigs.InitializeCollections ? new List<ReservedCacheNodesOffering>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -70,7 +71,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if ReservedCacheNodesOfferings property is set
         internal bool IsSetReservedCacheNodesOfferings()
         {
-            return this._reservedCacheNodesOfferings != null && this._reservedCacheNodesOfferings.Count > 0; 
+            return this._reservedCacheNodesOfferings != null && (this._reservedCacheNodesOfferings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

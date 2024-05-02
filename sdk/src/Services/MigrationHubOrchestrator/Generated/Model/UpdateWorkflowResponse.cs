@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MigrationHubOrchestrator.Model
 {
     /// <summary>
@@ -41,10 +42,10 @@ namespace Amazon.MigrationHubOrchestrator.Model
         private DateTime? _lastModifiedTime;
         private string _name;
         private MigrationWorkflowStatusEnum _status;
-        private List<string> _stepTargets = new List<string>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<string> _stepTargets = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _templateId;
-        private Dictionary<string, StepInput> _workflowInputs = new Dictionary<string, StepInput>();
+        private Dictionary<string, StepInput> _workflowInputs = AWSConfigs.InitializeCollections ? new Dictionary<string, StepInput>() : null;
 
         /// <summary>
         /// Gets and sets the property AdsApplicationConfigurationId. 
@@ -206,7 +207,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         // Check to see if StepTargets property is set
         internal bool IsSetStepTargets()
         {
-            return this._stepTargets != null && this._stepTargets.Count > 0; 
+            return this._stepTargets != null && (this._stepTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -224,7 +225,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -261,7 +262,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         // Check to see if WorkflowInputs property is set
         internal bool IsSetWorkflowInputs()
         {
-            return this._workflowInputs != null && this._workflowInputs.Count > 0; 
+            return this._workflowInputs != null && (this._workflowInputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

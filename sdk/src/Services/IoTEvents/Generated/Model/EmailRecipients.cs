@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTEvents.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.IoTEvents.Model
     /// </summary>
     public partial class EmailRecipients
     {
-        private List<RecipientDetail> _to = new List<RecipientDetail>();
+        private List<RecipientDetail> _to = AWSConfigs.InitializeCollections ? new List<RecipientDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property To. 
@@ -58,7 +59,7 @@ namespace Amazon.IoTEvents.Model
         // Check to see if To property is set
         internal bool IsSetTo()
         {
-            return this._to != null && this._to.Count > 0; 
+            return this._to != null && (this._to.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

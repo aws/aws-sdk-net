@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Finspace.Model
 {
     /// <summary>
@@ -47,6 +48,7 @@ namespace Amazon.Finspace.Model
         /// The identifier of the availability zones.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=8, Max=12)]
         public string AvailabilityZoneId
         {
             get { return this._availabilityZoneId; }

@@ -26,17 +26,21 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Input to lambda used in action group
+    /// Contains details about the results from looking up the knowledge base.
     /// </summary>
     public partial class KnowledgeBaseLookupOutput
     {
-        private List<RetrievedReference> _retrievedReferences = new List<RetrievedReference>();
+        private List<RetrievedReference> _retrievedReferences = AWSConfigs.InitializeCollections ? new List<RetrievedReference>() : null;
 
         /// <summary>
-        /// Gets and sets the property RetrievedReferences.
+        /// Gets and sets the property RetrievedReferences. 
+        /// <para>
+        /// Contains metadata about the sources cited for the generated response.
+        /// </para>
         /// </summary>
         public List<RetrievedReference> RetrievedReferences
         {
@@ -47,7 +51,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         // Check to see if RetrievedReferences property is set
         internal bool IsSetRetrievedReferences()
         {
-            return this._retrievedReferences != null && this._retrievedReferences.Count > 0; 
+            return this._retrievedReferences != null && (this._retrievedReferences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

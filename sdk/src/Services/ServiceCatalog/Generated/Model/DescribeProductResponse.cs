@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
@@ -33,10 +34,10 @@ namespace Amazon.ServiceCatalog.Model
     /// </summary>
     public partial class DescribeProductResponse : AmazonWebServiceResponse
     {
-        private List<BudgetDetail> _budgets = new List<BudgetDetail>();
-        private List<LaunchPath> _launchPaths = new List<LaunchPath>();
+        private List<BudgetDetail> _budgets = AWSConfigs.InitializeCollections ? new List<BudgetDetail>() : null;
+        private List<LaunchPath> _launchPaths = AWSConfigs.InitializeCollections ? new List<LaunchPath>() : null;
         private ProductViewSummary _productViewSummary;
-        private List<ProvisioningArtifact> _provisioningArtifacts = new List<ProvisioningArtifact>();
+        private List<ProvisioningArtifact> _provisioningArtifacts = AWSConfigs.InitializeCollections ? new List<ProvisioningArtifact>() : null;
 
         /// <summary>
         /// Gets and sets the property Budgets. 
@@ -53,7 +54,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if Budgets property is set
         internal bool IsSetBudgets()
         {
-            return this._budgets != null && this._budgets.Count > 0; 
+            return this._budgets != null && (this._budgets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if LaunchPaths property is set
         internal bool IsSetLaunchPaths()
         {
-            return this._launchPaths != null && this._launchPaths.Count > 0; 
+            return this._launchPaths != null && (this._launchPaths.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -107,7 +108,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if ProvisioningArtifacts property is set
         internal bool IsSetProvisioningArtifacts()
         {
-            return this._provisioningArtifacts != null && this._provisioningArtifacts.Count > 0; 
+            return this._provisioningArtifacts != null && (this._provisioningArtifacts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

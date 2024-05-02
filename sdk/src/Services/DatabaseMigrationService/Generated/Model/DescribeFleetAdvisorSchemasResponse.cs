@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DatabaseMigrationService.Model
     /// </summary>
     public partial class DescribeFleetAdvisorSchemasResponse : AmazonWebServiceResponse
     {
-        private List<SchemaResponse> _fleetAdvisorSchemas = new List<SchemaResponse>();
+        private List<SchemaResponse> _fleetAdvisorSchemas = AWSConfigs.InitializeCollections ? new List<SchemaResponse>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if FleetAdvisorSchemas property is set
         internal bool IsSetFleetAdvisorSchemas()
         {
-            return this._fleetAdvisorSchemas != null && this._fleetAdvisorSchemas.Count > 0; 
+            return this._fleetAdvisorSchemas != null && (this._fleetAdvisorSchemas.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

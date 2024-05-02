@@ -26,10 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// The input failed to meet the constraints specified by Amazon Q in a specified field.
+    /// The input failed to meet the constraints specified by Amazon Q Business in a specified
+    /// field.
     /// </summary>
     public partial class ValidationExceptionField
     {

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class HumanLoopDataAttributes
     {
-        private List<string> _contentClassifiers = new List<string>();
+        private List<string> _contentClassifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ContentClassifiers. 
@@ -52,7 +53,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if ContentClassifiers property is set
         internal bool IsSetContentClassifiers()
         {
-            return this._contentClassifiers != null && this._contentClassifiers.Count > 0; 
+            return this._contentClassifiers != null && (this._contentClassifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

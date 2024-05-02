@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.SSOAdmin.Model
         /// Enumerable containing all of the AccountAssignmentsDeletionStatus
         /// </summary>
         public IPaginatedEnumerable<AccountAssignmentOperationStatusMetadata> AccountAssignmentsDeletionStatus => 
-            new PaginatedResultKeyResponse<ListAccountAssignmentDeletionStatusResponse, AccountAssignmentOperationStatusMetadata>(this, (i) => i.AccountAssignmentsDeletionStatus);
+            new PaginatedResultKeyResponse<ListAccountAssignmentDeletionStatusResponse, AccountAssignmentOperationStatusMetadata>(this, (i) => i.AccountAssignmentsDeletionStatus ?? new List<AccountAssignmentOperationStatusMetadata>());
 
         internal ListAccountAssignmentDeletionStatusPaginator(IAmazonSSOAdmin client, ListAccountAssignmentDeletionStatusRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.SSOAdmin.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListAccountAssignmentDeletionStatusResponse> IPaginator<ListAccountAssignmentDeletionStatusResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListAccountAssignmentDeletionStatusResponse> IPaginator<ListAccountAssignmentDeletionStatusResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

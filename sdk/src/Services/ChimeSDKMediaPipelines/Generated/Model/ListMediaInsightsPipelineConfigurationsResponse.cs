@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
     /// </summary>
     public partial class ListMediaInsightsPipelineConfigurationsResponse : AmazonWebServiceResponse
     {
-        private List<MediaInsightsPipelineConfigurationSummary> _mediaInsightsPipelineConfigurations = new List<MediaInsightsPipelineConfigurationSummary>();
+        private List<MediaInsightsPipelineConfigurationSummary> _mediaInsightsPipelineConfigurations = AWSConfigs.InitializeCollections ? new List<MediaInsightsPipelineConfigurationSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         // Check to see if MediaInsightsPipelineConfigurations property is set
         internal bool IsSetMediaInsightsPipelineConfigurations()
         {
-            return this._mediaInsightsPipelineConfigurations != null && this._mediaInsightsPipelineConfigurations.Count > 0; 
+            return this._mediaInsightsPipelineConfigurations != null && (this._mediaInsightsPipelineConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

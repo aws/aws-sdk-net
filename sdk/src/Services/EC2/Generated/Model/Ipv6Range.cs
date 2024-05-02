@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes an IPv6 range.
+    /// Describes an IPv6 address range.
     /// </summary>
     public partial class Ipv6Range
     {
@@ -39,7 +40,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CidrIpv6. 
         /// <para>
-        /// The IPv6 CIDR range. You can either specify a CIDR range or a source security group,
+        /// The IPv6 address range. You can either specify a CIDR block or a source security group,
         /// not both. To specify a single IPv6 address, use the /128 prefix length.
         /// </para>
         /// </summary>

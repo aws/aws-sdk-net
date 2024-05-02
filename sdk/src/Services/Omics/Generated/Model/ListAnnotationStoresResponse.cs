@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Omics.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Omics.Model
     /// </summary>
     public partial class ListAnnotationStoresResponse : AmazonWebServiceResponse
     {
-        private List<AnnotationStoreItem> _annotationStores = new List<AnnotationStoreItem>();
+        private List<AnnotationStoreItem> _annotationStores = AWSConfigs.InitializeCollections ? new List<AnnotationStoreItem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Omics.Model
         // Check to see if AnnotationStores property is set
         internal bool IsSetAnnotationStores()
         {
-            return this._annotationStores != null && this._annotationStores.Count > 0; 
+            return this._annotationStores != null && (this._annotationStores.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

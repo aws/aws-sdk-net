@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.CloudWatchLogs.Model
     public partial class PatternToken
     {
         private int? _dynamicTokenPosition;
-        private Dictionary<string, long> _enumerations = new Dictionary<string, long>();
+        private Dictionary<string, long> _enumerations = AWSConfigs.InitializeCollections ? new Dictionary<string, long>() : null;
         private bool? _isDynamic;
         private string _tokenString;
 
@@ -80,7 +81,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if Enumerations property is set
         internal bool IsSetEnumerations()
         {
-            return this._enumerations != null && this._enumerations.Count > 0; 
+            return this._enumerations != null && (this._enumerations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

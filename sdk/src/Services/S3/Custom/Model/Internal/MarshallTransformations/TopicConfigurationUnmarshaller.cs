@@ -24,6 +24,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
      /// </summary>
     public class TopicConfigurationUnmarshaller : IUnmarshaller<TopicConfiguration, XmlUnmarshallerContext>, IUnmarshaller<TopicConfiguration, JsonUnmarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public TopicConfiguration Unmarshall(XmlUnmarshallerContext context) 
         {
             TopicConfiguration topicConfiguration = new TopicConfiguration();
@@ -45,6 +50,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Event", targetDepth))
                     {
+                        if (topicConfiguration.Events == null)
+                        {
+                            topicConfiguration.Events = new List<EventType>();
+                        }
+
                         topicConfiguration.Events.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
                             
                         continue;
@@ -73,6 +83,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return topicConfiguration;
         }
 
+        /// <summary>
+        /// Not implemented and always returns null.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public TopicConfiguration Unmarshall(JsonUnmarshallerContext context) 
         {
             return null;
@@ -80,6 +95,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static TopicConfigurationUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static TopicConfigurationUnmarshaller Instance
         {
             get

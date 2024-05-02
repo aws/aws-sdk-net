@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.IdentityManagement.Model
     {
         private bool? _isTruncated;
         private string _marker;
-        private List<string> _policyNames = new List<string>();
+        private List<string> _policyNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property IsTruncated. 
@@ -94,7 +95,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if PolicyNames property is set
         internal bool IsSetPolicyNames()
         {
-            return this._policyNames != null && this._policyNames.Count > 0; 
+            return this._policyNames != null && (this._policyNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

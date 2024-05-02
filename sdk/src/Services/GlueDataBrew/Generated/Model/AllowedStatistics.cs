@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.GlueDataBrew.Model
     /// </summary>
     public partial class AllowedStatistics
     {
-        private List<string> _statistics = new List<string>();
+        private List<string> _statistics = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Statistics. 
@@ -53,7 +54,7 @@ namespace Amazon.GlueDataBrew.Model
         // Check to see if Statistics property is set
         internal bool IsSetStatistics()
         {
-            return this._statistics != null && this._statistics.Count > 0; 
+            return this._statistics != null && (this._statistics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

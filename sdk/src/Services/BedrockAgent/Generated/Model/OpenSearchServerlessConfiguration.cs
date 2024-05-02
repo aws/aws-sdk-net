@@ -26,10 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Contains the configurations to use OpenSearch Serverless to store knowledge base data.
+    /// Contains details about the storage configuration of the knowledge base in Amazon OpenSearch
+    /// Service. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-setup-oss.html">Create
+    /// a vector index in Amazon OpenSearch Service</a>.
     /// </summary>
     public partial class OpenSearchServerlessConfiguration
     {
@@ -38,7 +41,10 @@ namespace Amazon.BedrockAgent.Model
         private string _vectorIndexName;
 
         /// <summary>
-        /// Gets and sets the property CollectionArn.
+        /// Gets and sets the property CollectionArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the OpenSearch Service vector store.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]
         public string CollectionArn
@@ -54,7 +60,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FieldMapping.
+        /// Gets and sets the property FieldMapping. 
+        /// <para>
+        /// Contains the names of the fields to which to map information about the vector store.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public OpenSearchServerlessFieldMapping FieldMapping
@@ -70,7 +79,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VectorIndexName.
+        /// Gets and sets the property VectorIndexName. 
+        /// <para>
+        /// The name of the vector store.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2048)]
         public string VectorIndexName

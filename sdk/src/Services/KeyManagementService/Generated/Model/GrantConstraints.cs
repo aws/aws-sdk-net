@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
@@ -65,8 +66,8 @@ namespace Amazon.KeyManagementService.Model
     /// </summary>
     public partial class GrantConstraints
     {
-        private Dictionary<string, string> _encryptionContextEquals = new Dictionary<string, string>();
-        private Dictionary<string, string> _encryptionContextSubset = new Dictionary<string, string>();
+        private Dictionary<string, string> _encryptionContextEquals = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, string> _encryptionContextSubset = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property EncryptionContextEquals. 
@@ -85,7 +86,7 @@ namespace Amazon.KeyManagementService.Model
         // Check to see if EncryptionContextEquals property is set
         internal bool IsSetEncryptionContextEquals()
         {
-            return this._encryptionContextEquals != null && this._encryptionContextEquals.Count > 0; 
+            return this._encryptionContextEquals != null && (this._encryptionContextEquals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -107,7 +108,7 @@ namespace Amazon.KeyManagementService.Model
         // Check to see if EncryptionContextSubset property is set
         internal bool IsSetEncryptionContextSubset()
         {
-            return this._encryptionContextSubset != null && this._encryptionContextSubset.Count > 0; 
+            return this._encryptionContextSubset != null && (this._encryptionContextSubset.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

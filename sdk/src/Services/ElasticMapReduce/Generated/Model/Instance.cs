@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     public partial class Instance
     {
-        private List<EbsVolume> _ebsVolumes = new List<EbsVolume>();
+        private List<EbsVolume> _ebsVolumes = AWSConfigs.InitializeCollections ? new List<EbsVolume>() : null;
         private string _ec2InstanceId;
         private string _id;
         private string _instanceFleetId;
@@ -61,7 +62,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if EbsVolumes property is set
         internal bool IsSetEbsVolumes()
         {
-            return this._ebsVolumes != null && this._ebsVolumes.Count > 0; 
+            return this._ebsVolumes != null && (this._ebsVolumes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

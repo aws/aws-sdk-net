@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Trace Part which contains information related to postprocessing
+    /// The foundation model output from the post-processing step.
     /// </summary>
     public partial class PostProcessingModelInvocationOutput
     {
@@ -37,7 +38,11 @@ namespace Amazon.BedrockAgentRuntime.Model
         private string _traceId;
 
         /// <summary>
-        /// Gets and sets the property ParsedResponse.
+        /// Gets and sets the property ParsedResponse. 
+        /// <para>
+        /// Details about the response from the Lambda parsing of the output of the post-processing
+        /// step.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public PostProcessingParsedResponse ParsedResponse
@@ -53,7 +58,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TraceId.
+        /// Gets and sets the property TraceId. 
+        /// <para>
+        /// The unique identifier of the trace.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=16)]
         public string TraceId

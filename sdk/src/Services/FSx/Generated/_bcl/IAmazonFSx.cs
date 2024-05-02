@@ -26,6 +26,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.FSx.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.FSx
 {
     /// <summary>
@@ -3017,8 +3018,8 @@ namespace Amazon.FSx
         /// <summary>
         /// Indicates whether participant accounts in your organization can create Amazon FSx
         /// for NetApp ONTAP Multi-AZ file systems in subnets that are shared by a virtual private
-        /// cloud (VPC) owner. For more information, see the <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/maz-shared-vpc.html">Amazon
-        /// FSx for NetApp ONTAP User Guide</a>.
+        /// cloud (VPC) owner. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/creating-file-systems.html#fsxn-vpc-shared-subnets">Creating
+        /// FSx for ONTAP file systems in shared subnets</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSharedVpcConfiguration service method.</param>
         /// 
@@ -3037,8 +3038,8 @@ namespace Amazon.FSx
         /// <summary>
         /// Indicates whether participant accounts in your organization can create Amazon FSx
         /// for NetApp ONTAP Multi-AZ file systems in subnets that are shared by a virtual private
-        /// cloud (VPC) owner. For more information, see the <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/maz-shared-vpc.html">Amazon
-        /// FSx for NetApp ONTAP User Guide</a>.
+        /// cloud (VPC) owner. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/creating-file-systems.html#fsxn-vpc-shared-subnets">Creating
+        /// FSx for ONTAP file systems in shared subnets</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeSharedVpcConfiguration service method.</param>
         /// <param name="cancellationToken">

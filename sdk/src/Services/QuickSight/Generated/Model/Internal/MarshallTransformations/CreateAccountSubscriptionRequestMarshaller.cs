@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -66,6 +67,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAccountName())
@@ -91,6 +93,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetAdminProGroup())
+                {
+                    context.Writer.WritePropertyName("AdminProGroup");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAdminProGroupListValue in publicRequest.AdminProGroup)
+                    {
+                            context.Writer.Write(publicRequestAdminProGroupListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetAuthenticationMethod())
                 {
                     context.Writer.WritePropertyName("AuthenticationMethod");
@@ -104,6 +117,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     foreach(var publicRequestAuthorGroupListValue in publicRequest.AuthorGroup)
                     {
                             context.Writer.Write(publicRequestAuthorGroupListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetAuthorProGroup())
+                {
+                    context.Writer.WritePropertyName("AuthorProGroup");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAuthorProGroupListValue in publicRequest.AuthorProGroup)
+                    {
+                            context.Writer.Write(publicRequestAuthorProGroupListValue);
                     }
                     context.Writer.WriteArrayEnd();
                 }
@@ -138,6 +162,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.FirstName);
                 }
 
+                if(publicRequest.IsSetIAMIdentityCenterInstanceArn())
+                {
+                    context.Writer.WritePropertyName("IAMIdentityCenterInstanceArn");
+                    context.Writer.Write(publicRequest.IAMIdentityCenterInstanceArn);
+                }
+
                 if(publicRequest.IsSetLastName())
                 {
                     context.Writer.WritePropertyName("LastName");
@@ -157,6 +187,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     foreach(var publicRequestReaderGroupListValue in publicRequest.ReaderGroup)
                     {
                             context.Writer.Write(publicRequestReaderGroupListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetReaderProGroup())
+                {
+                    context.Writer.WritePropertyName("ReaderProGroup");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestReaderProGroupListValue in publicRequest.ReaderProGroup)
+                    {
+                            context.Writer.Write(publicRequestReaderProGroupListValue);
                     }
                     context.Writer.WriteArrayEnd();
                 }

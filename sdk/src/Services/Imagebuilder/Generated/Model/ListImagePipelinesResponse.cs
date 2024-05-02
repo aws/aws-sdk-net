@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Imagebuilder.Model
     /// </summary>
     public partial class ListImagePipelinesResponse : AmazonWebServiceResponse
     {
-        private List<ImagePipeline> _imagePipelineList = new List<ImagePipeline>();
+        private List<ImagePipeline> _imagePipelineList = AWSConfigs.InitializeCollections ? new List<ImagePipeline>() : null;
         private string _nextToken;
         private string _requestId;
 
@@ -52,7 +53,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if ImagePipelineList property is set
         internal bool IsSetImagePipelineList()
         {
-            return this._imagePipelineList != null && this._imagePipelineList.Count > 0; 
+            return this._imagePipelineList != null && (this._imagePipelineList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

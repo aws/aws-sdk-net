@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Shield.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Shield.Model
     public partial class ListProtectionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Protection> _protections = new List<Protection>();
+        private List<Protection> _protections = AWSConfigs.InitializeCollections ? new List<Protection>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -86,7 +87,7 @@ namespace Amazon.Shield.Model
         // Check to see if Protections property is set
         internal bool IsSetProtections()
         {
-            return this._protections != null && this._protections.Count > 0; 
+            return this._protections != null && (this._protections.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

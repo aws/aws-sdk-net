@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Outposts.Model
 {
     /// <summary>
@@ -42,11 +43,11 @@ namespace Amazon.Outposts.Model
     /// </summary>
     public partial class ListCatalogItemsRequest : AmazonOutpostsRequest
     {
-        private List<string> _ec2FamilyFilter = new List<string>();
-        private List<string> _itemClassFilter = new List<string>();
+        private List<string> _ec2FamilyFilter = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _itemClassFilter = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _supportedStorageFilter = new List<string>();
+        private List<string> _supportedStorageFilter = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property EC2FamilyFilter. 
@@ -63,7 +64,7 @@ namespace Amazon.Outposts.Model
         // Check to see if EC2FamilyFilter property is set
         internal bool IsSetEC2FamilyFilter()
         {
-            return this._ec2FamilyFilter != null && this._ec2FamilyFilter.Count > 0; 
+            return this._ec2FamilyFilter != null && (this._ec2FamilyFilter.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -81,7 +82,7 @@ namespace Amazon.Outposts.Model
         // Check to see if ItemClassFilter property is set
         internal bool IsSetItemClassFilter()
         {
-            return this._itemClassFilter != null && this._itemClassFilter.Count > 0; 
+            return this._itemClassFilter != null && (this._itemClassFilter.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -131,7 +132,7 @@ namespace Amazon.Outposts.Model
         // Check to see if SupportedStorageFilter property is set
         internal bool IsSetSupportedStorageFilter()
         {
-            return this._supportedStorageFilter != null && this._supportedStorageFilter.Count > 0; 
+            return this._supportedStorageFilter != null && (this._supportedStorageFilter.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

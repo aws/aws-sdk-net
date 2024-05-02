@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -33,12 +34,12 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsCodeBuildProjectDetails
     {
-        private List<AwsCodeBuildProjectArtifactsDetails> _artifacts = new List<AwsCodeBuildProjectArtifactsDetails>();
+        private List<AwsCodeBuildProjectArtifactsDetails> _artifacts = AWSConfigs.InitializeCollections ? new List<AwsCodeBuildProjectArtifactsDetails>() : null;
         private string _encryptionKey;
         private AwsCodeBuildProjectEnvironment _environment;
         private AwsCodeBuildProjectLogsConfigDetails _logsConfig;
         private string _name;
-        private List<AwsCodeBuildProjectArtifactsDetails> _secondaryArtifacts = new List<AwsCodeBuildProjectArtifactsDetails>();
+        private List<AwsCodeBuildProjectArtifactsDetails> _secondaryArtifacts = AWSConfigs.InitializeCollections ? new List<AwsCodeBuildProjectArtifactsDetails>() : null;
         private string _serviceRole;
         private AwsCodeBuildProjectSource _source;
         private AwsCodeBuildProjectVpcConfig _vpcConfig;
@@ -58,7 +59,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Artifacts property is set
         internal bool IsSetArtifacts()
         {
-            return this._artifacts != null && this._artifacts.Count > 0; 
+            return this._artifacts != null && (this._artifacts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -153,7 +154,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if SecondaryArtifacts property is set
         internal bool IsSetSecondaryArtifacts()
         {
-            return this._secondaryArtifacts != null && this._secondaryArtifacts.Count > 0; 
+            return this._secondaryArtifacts != null && (this._secondaryArtifacts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

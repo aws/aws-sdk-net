@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.NetworkFirewall.Model
     public partial class RuleOption
     {
         private string _keyword;
-        private List<string> _settings = new List<string>();
+        private List<string> _settings = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Keyword. 
@@ -76,7 +77,7 @@ namespace Amazon.NetworkFirewall.Model
         // Check to see if Settings property is set
         internal bool IsSetSettings()
         {
-            return this._settings != null && this._settings.Count > 0; 
+            return this._settings != null && (this._settings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

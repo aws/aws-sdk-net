@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RoboMaker.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.RoboMaker.Model
     /// </summary>
     public partial class BatchDescribeSimulationJobResponse : AmazonWebServiceResponse
     {
-        private List<SimulationJob> _jobs = new List<SimulationJob>();
-        private List<string> _unprocessedJobs = new List<string>();
+        private List<SimulationJob> _jobs = AWSConfigs.InitializeCollections ? new List<SimulationJob>() : null;
+        private List<string> _unprocessedJobs = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Jobs. 
@@ -51,7 +52,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if Jobs property is set
         internal bool IsSetJobs()
         {
-            return this._jobs != null && this._jobs.Count > 0; 
+            return this._jobs != null && (this._jobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if UnprocessedJobs property is set
         internal bool IsSetUnprocessedJobs()
         {
-            return this._unprocessedJobs != null && this._unprocessedJobs.Count > 0; 
+            return this._unprocessedJobs != null && (this._unprocessedJobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Inspector.Model
     /// </summary>
     public partial class ListFindingsRequest : AmazonInspectorRequest
     {
-        private List<string> _assessmentRunArns = new List<string>();
+        private List<string> _assessmentRunArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private FindingFilter _filter;
         private int? _maxResults;
         private string _nextToken;
@@ -56,7 +57,7 @@ namespace Amazon.Inspector.Model
         // Check to see if AssessmentRunArns property is set
         internal bool IsSetAssessmentRunArns()
         {
-            return this._assessmentRunArns != null && this._assessmentRunArns.Count > 0; 
+            return this._assessmentRunArns != null && (this._assessmentRunArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

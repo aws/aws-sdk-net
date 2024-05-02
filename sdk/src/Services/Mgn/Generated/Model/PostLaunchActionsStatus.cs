@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Mgn.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Mgn.Model
     /// </summary>
     public partial class PostLaunchActionsStatus
     {
-        private List<JobPostLaunchActionsLaunchStatus> _postLaunchActionsLaunchStatusList = new List<JobPostLaunchActionsLaunchStatus>();
+        private List<JobPostLaunchActionsLaunchStatus> _postLaunchActionsLaunchStatusList = AWSConfigs.InitializeCollections ? new List<JobPostLaunchActionsLaunchStatus>() : null;
         private string _ssmAgentDiscoveryDatetime;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Mgn.Model
         // Check to see if PostLaunchActionsLaunchStatusList property is set
         internal bool IsSetPostLaunchActionsLaunchStatusList()
         {
-            return this._postLaunchActionsLaunchStatusList != null && this._postLaunchActionsLaunchStatusList.Count > 0; 
+            return this._postLaunchActionsLaunchStatusList != null && (this._postLaunchActionsLaunchStatusList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

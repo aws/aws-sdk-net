@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MigrationHubOrchestrator.Model
 {
     /// <summary>
@@ -37,9 +38,9 @@ namespace Amazon.MigrationHubOrchestrator.Model
         private string _description;
         private string _id;
         private string _name;
-        private List<string> _next = new List<string>();
-        private List<string> _previous = new List<string>();
-        private List<Tool> _tools = new List<Tool>();
+        private List<string> _next = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _previous = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Tool> _tools = AWSConfigs.InitializeCollections ? new List<Tool>() : null;
         private string _workflowId;
 
         /// <summary>
@@ -129,7 +130,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         // Check to see if Next property is set
         internal bool IsSetNext()
         {
-            return this._next != null && this._next.Count > 0; 
+            return this._next != null && (this._next.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -147,7 +148,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         // Check to see if Previous property is set
         internal bool IsSetPrevious()
         {
-            return this._previous != null && this._previous.Count > 0; 
+            return this._previous != null && (this._previous.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -165,7 +166,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         // Check to see if Tools property is set
         internal bool IsSetTools()
         {
-            return this._tools != null && this._tools.Count > 0; 
+            return this._tools != null && (this._tools.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class ListPipelineParametersForExecutionResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Parameter> _pipelineParameters = new List<Parameter>();
+        private List<Parameter> _pipelineParameters = AWSConfigs.InitializeCollections ? new List<Parameter>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +74,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if PipelineParameters property is set
         internal bool IsSetPipelineParameters()
         {
-            return this._pipelineParameters != null && this._pipelineParameters.Count > 0; 
+            return this._pipelineParameters != null && (this._pipelineParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

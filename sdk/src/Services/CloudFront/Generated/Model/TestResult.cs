@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.CloudFront.Model
     {
         private string _computeUtilization;
         private string _functionErrorMessage;
-        private List<string> _functionExecutionLogs = new List<string>();
+        private List<string> _functionExecutionLogs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _functionOutput;
         private FunctionSummary _functionSummary;
 
@@ -95,7 +96,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if FunctionExecutionLogs property is set
         internal bool IsSetFunctionExecutionLogs()
         {
-            return this._functionExecutionLogs != null && this._functionExecutionLogs.Count > 0; 
+            return this._functionExecutionLogs != null && (this._functionExecutionLogs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

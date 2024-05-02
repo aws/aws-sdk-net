@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IVSRealTime.Model
 {
     /// <summary>
@@ -34,6 +35,7 @@ namespace Amazon.IVSRealTime.Model
     public partial class LayoutConfiguration
     {
         private GridConfiguration _grid;
+        private PipConfiguration _pip;
 
         /// <summary>
         /// Gets and sets the property Grid. 
@@ -51,6 +53,24 @@ namespace Amazon.IVSRealTime.Model
         internal bool IsSetGrid()
         {
             return this._grid != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Pip. 
+        /// <para>
+        /// Configuration related to PiP layout.
+        /// </para>
+        /// </summary>
+        public PipConfiguration Pip
+        {
+            get { return this._pip; }
+            set { this._pip = value; }
+        }
+
+        // Check to see if Pip property is set
+        internal bool IsSetPip()
+        {
+            return this._pip != null;
         }
 
     }

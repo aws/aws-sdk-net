@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ManagedBlockchainQuery.Model
 {
     /// <summary>
@@ -66,7 +67,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// </para>
         ///  
         /// <para>
-        /// Default:<c>100</c> 
+        /// Default: <c>100</c> 
         /// </para>
         ///  <note> 
         /// <para>

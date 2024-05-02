@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListModelPackagesResponse : AmazonWebServiceResponse
     {
-        private List<ModelPackageSummary> _modelPackageSummaryList = new List<ModelPackageSummary>();
+        private List<ModelPackageSummary> _modelPackageSummaryList = AWSConfigs.InitializeCollections ? new List<ModelPackageSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ModelPackageSummaryList property is set
         internal bool IsSetModelPackageSummaryList()
         {
-            return this._modelPackageSummaryList != null && this._modelPackageSummaryList.Count > 0; 
+            return this._modelPackageSummaryList != null && (this._modelPackageSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

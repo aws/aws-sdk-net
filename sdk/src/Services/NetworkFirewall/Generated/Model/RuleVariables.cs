@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.NetworkFirewall.Model
     /// </summary>
     public partial class RuleVariables
     {
-        private Dictionary<string, IPSet> _ipSets = new Dictionary<string, IPSet>();
-        private Dictionary<string, PortSet> _portSets = new Dictionary<string, PortSet>();
+        private Dictionary<string, IPSet> _ipSets = AWSConfigs.InitializeCollections ? new Dictionary<string, IPSet>() : null;
+        private Dictionary<string, PortSet> _portSets = AWSConfigs.InitializeCollections ? new Dictionary<string, PortSet>() : null;
 
         /// <summary>
         /// Gets and sets the property IPSets. 
@@ -52,7 +53,7 @@ namespace Amazon.NetworkFirewall.Model
         // Check to see if IPSets property is set
         internal bool IsSetIPSets()
         {
-            return this._ipSets != null && this._ipSets.Count > 0; 
+            return this._ipSets != null && (this._ipSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.NetworkFirewall.Model
         // Check to see if PortSets property is set
         internal bool IsSetPortSets()
         {
-            return this._portSets != null && this._portSets.Count > 0; 
+            return this._portSets != null && (this._portSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

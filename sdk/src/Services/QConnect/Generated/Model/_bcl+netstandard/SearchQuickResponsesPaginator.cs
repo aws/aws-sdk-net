@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.QConnect.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.QConnect.Model
         /// Enumerable containing all of the Results
         /// </summary>
         public IPaginatedEnumerable<QuickResponseSearchResultData> Results => 
-            new PaginatedResultKeyResponse<SearchQuickResponsesResponse, QuickResponseSearchResultData>(this, (i) => i.Results);
+            new PaginatedResultKeyResponse<SearchQuickResponsesResponse, QuickResponseSearchResultData>(this, (i) => i.Results ?? new List<QuickResponseSearchResultData>());
 
         internal SearchQuickResponsesPaginator(IAmazonQConnect client, SearchQuickResponsesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.QConnect.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<SearchQuickResponsesResponse> IPaginator<SearchQuickResponsesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<SearchQuickResponsesResponse> IPaginator<SearchQuickResponsesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

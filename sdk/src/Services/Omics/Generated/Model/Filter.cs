@@ -26,21 +26,24 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Omics.Model
 {
     /// <summary>
-    /// Use filters to focus the returned annotation store versions on a specific parameter,
-    /// such as the status of the annotation store.
+    /// Use filters to return a subset of resources. You can define filters for specific parameters,
+    /// such as the resource status.
     /// </summary>
     public partial class Filter
     {
-        private List<string> _resourceArns = new List<string>();
-        private List<string> _status = new List<string>();
+        private List<string> _resourceArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _status = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _type = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceArns. 
         /// <para>
-        ///  The Amazon Resource Number (Arn) for an analytics store. 
+        /// Filter based on the Amazon Resource Number (ARN) of the resource. You can specify
+        /// up to 10 values.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -53,15 +56,16 @@ namespace Amazon.Omics.Model
         // Check to see if ResourceArns property is set
         internal bool IsSetResourceArns()
         {
-            return this._resourceArns != null && this._resourceArns.Count > 0; 
+            return this._resourceArns != null && (this._resourceArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The status of an annotation store version. 
+        /// Filter based on the resource status. You can specify up to 10 values.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=10)]
         public List<string> Status
         {
             get { return this._status; }
@@ -71,7 +75,27 @@ namespace Amazon.Omics.Model
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this._status != null && this._status.Count > 0; 
+            return this._status != null && (this._status.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of resources to be filtered. You can specify one or more of the resource
+        /// types.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<string> Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null && (this._type.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

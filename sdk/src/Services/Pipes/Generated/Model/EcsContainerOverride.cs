@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Pipes.Model
 {
     /// <summary>
@@ -36,14 +37,14 @@ namespace Amazon.Pipes.Model
     /// </summary>
     public partial class EcsContainerOverride
     {
-        private List<string> _command = new List<string>();
+        private List<string> _command = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _cpu;
-        private List<EcsEnvironmentVariable> _environment = new List<EcsEnvironmentVariable>();
-        private List<EcsEnvironmentFile> _environmentFiles = new List<EcsEnvironmentFile>();
+        private List<EcsEnvironmentVariable> _environment = AWSConfigs.InitializeCollections ? new List<EcsEnvironmentVariable>() : null;
+        private List<EcsEnvironmentFile> _environmentFiles = AWSConfigs.InitializeCollections ? new List<EcsEnvironmentFile>() : null;
         private int? _memory;
         private int? _memoryReservation;
         private string _name;
-        private List<EcsResourceRequirement> _resourceRequirements = new List<EcsResourceRequirement>();
+        private List<EcsResourceRequirement> _resourceRequirements = AWSConfigs.InitializeCollections ? new List<EcsResourceRequirement>() : null;
 
         /// <summary>
         /// Gets and sets the property Command. 
@@ -61,7 +62,7 @@ namespace Amazon.Pipes.Model
         // Check to see if Command property is set
         internal bool IsSetCommand()
         {
-            return this._command != null && this._command.Count > 0; 
+            return this._command != null && (this._command.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -101,7 +102,7 @@ namespace Amazon.Pipes.Model
         // Check to see if Environment property is set
         internal bool IsSetEnvironment()
         {
-            return this._environment != null && this._environment.Count > 0; 
+            return this._environment != null && (this._environment.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -120,7 +121,7 @@ namespace Amazon.Pipes.Model
         // Check to see if EnvironmentFiles property is set
         internal bool IsSetEnvironmentFiles()
         {
-            return this._environmentFiles != null && this._environmentFiles.Count > 0; 
+            return this._environmentFiles != null && (this._environmentFiles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -197,7 +198,7 @@ namespace Amazon.Pipes.Model
         // Check to see if ResourceRequirements property is set
         internal bool IsSetResourceRequirements()
         {
-            return this._resourceRequirements != null && this._resourceRequirements.Count > 0; 
+            return this._resourceRequirements != null && (this._resourceRequirements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

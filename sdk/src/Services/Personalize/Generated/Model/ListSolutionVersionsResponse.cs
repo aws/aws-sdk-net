@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Personalize.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Personalize.Model
     public partial class ListSolutionVersionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SolutionVersionSummary> _solutionVersions = new List<SolutionVersionSummary>();
+        private List<SolutionVersionSummary> _solutionVersions = AWSConfigs.InitializeCollections ? new List<SolutionVersionSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.Personalize.Model
         // Check to see if SolutionVersions property is set
         internal bool IsSetSolutionVersions()
         {
-            return this._solutionVersions != null && this._solutionVersions.Count > 0; 
+            return this._solutionVersions != null && (this._solutionVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

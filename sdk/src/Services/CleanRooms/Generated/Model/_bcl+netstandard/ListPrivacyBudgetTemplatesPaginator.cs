@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.CleanRooms.Model
         /// Enumerable containing all of the PrivacyBudgetTemplateSummaries
         /// </summary>
         public IPaginatedEnumerable<PrivacyBudgetTemplateSummary> PrivacyBudgetTemplateSummaries => 
-            new PaginatedResultKeyResponse<ListPrivacyBudgetTemplatesResponse, PrivacyBudgetTemplateSummary>(this, (i) => i.PrivacyBudgetTemplateSummaries);
+            new PaginatedResultKeyResponse<ListPrivacyBudgetTemplatesResponse, PrivacyBudgetTemplateSummary>(this, (i) => i.PrivacyBudgetTemplateSummaries ?? new List<PrivacyBudgetTemplateSummary>());
 
         internal ListPrivacyBudgetTemplatesPaginator(IAmazonCleanRooms client, ListPrivacyBudgetTemplatesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.CleanRooms.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListPrivacyBudgetTemplatesResponse> IPaginator<ListPrivacyBudgetTemplatesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListPrivacyBudgetTemplatesResponse> IPaginator<ListPrivacyBudgetTemplatesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

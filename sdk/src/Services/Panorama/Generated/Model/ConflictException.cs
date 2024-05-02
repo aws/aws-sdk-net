@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Panorama.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Panorama.Model
     #endif
     public partial class ConflictException : AmazonPanoramaException
     {
-        private List<ConflictExceptionErrorArgument> _errorArguments = new List<ConflictExceptionErrorArgument>();
+        private List<ConflictExceptionErrorArgument> _errorArguments = AWSConfigs.InitializeCollections ? new List<ConflictExceptionErrorArgument>() : null;
         private string _errorId;
         private string _resourceId;
         private string _resourceType;
@@ -142,7 +143,7 @@ namespace Amazon.Panorama.Model
         // Check to see if ErrorArguments property is set
         internal bool IsSetErrorArguments()
         {
-            return this._errorArguments != null && this._errorArguments.Count > 0; 
+            return this._errorArguments != null && (this._errorArguments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// Enumerable containing all of the AccessPoints
         /// </summary>
         public IPaginatedEnumerable<AccessPointDescription> AccessPoints => 
-            new PaginatedResultKeyResponse<DescribeAccessPointsResponse, AccessPointDescription>(this, (i) => i.AccessPoints);
+            new PaginatedResultKeyResponse<DescribeAccessPointsResponse, AccessPointDescription>(this, (i) => i.AccessPoints ?? new List<AccessPointDescription>());
 
         internal DescribeAccessPointsPaginator(IAmazonElasticFileSystem client, DescribeAccessPointsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ElasticFileSystem.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeAccessPointsResponse> IPaginator<DescribeAccessPointsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeAccessPointsResponse> IPaginator<DescribeAccessPointsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

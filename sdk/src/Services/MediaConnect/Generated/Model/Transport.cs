@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MediaConnect.Model
     /// </summary>
     public partial class Transport
     {
-        private List<string> _cidrAllowList = new List<string>();
+        private List<string> _cidrAllowList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxBitrate;
         private int? _maxLatency;
         private int? _maxSyncBuffer;
@@ -61,7 +62,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if CidrAllowList property is set
         internal bool IsSetCidrAllowList()
         {
-            return this._cidrAllowList != null && this._cidrAllowList.Count > 0; 
+            return this._cidrAllowList != null && (this._cidrAllowList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

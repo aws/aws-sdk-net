@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Neptune.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -87,6 +88,10 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     if (context.TestExpression("GlobalClusterMembers/GlobalClusterMember", targetDepth))
                     {
                         var unmarshaller = GlobalClusterMemberUnmarshaller.Instance;
+                        if (unmarshalledObject.GlobalClusterMembers == null)
+                        {
+                            unmarshalledObject.GlobalClusterMembers = new List<GlobalClusterMember>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.GlobalClusterMembers.Add(item);
                         continue;

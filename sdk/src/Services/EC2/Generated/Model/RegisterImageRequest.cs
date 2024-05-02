@@ -26,12 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterImage operation.
-    /// Registers an AMI. When you're creating an AMI, this is the final step you must complete
-    /// before you can launch an instance from the AMI. For more information about creating
+    /// Registers an AMI. When you're creating an instance-store backed AMI, registering the
+    /// AMI is the final step in the creation process. For more information about creating
     /// AMIs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Create
     /// your own AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// 
@@ -109,8 +110,8 @@ namespace Amazon.EC2.Model
     public partial class RegisterImageRequest : AmazonEC2Request
     {
         private ArchitectureValues _architecture;
-        private List<string> _billingProducts = new List<string>();
-        private List<BlockDeviceMapping> _blockDeviceMappings = new List<BlockDeviceMapping>();
+        private List<string> _billingProducts = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<BlockDeviceMapping> _blockDeviceMappings = AWSConfigs.InitializeCollections ? new List<BlockDeviceMapping>() : null;
         private BootModeValues _bootMode;
         private string _description;
         private bool? _enaSupport;
@@ -121,6 +122,7 @@ namespace Amazon.EC2.Model
         private string _ramdiskId;
         private string _rootDeviceName;
         private string _sriovNetSupport;
+        private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
         private TpmSupportValues _tpmSupport;
         private string _uefiData;
         private string _virtualizationType;
@@ -187,7 +189,7 @@ namespace Amazon.EC2.Model
         // Check to see if BillingProducts property is set
         internal bool IsSetBillingProducts()
         {
-            return this._billingProducts != null && this._billingProducts.Count > 0; 
+            return this._billingProducts != null && (this._billingProducts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -205,8 +207,8 @@ namespace Amazon.EC2.Model
         /// If you create an AMI on an Outpost, then all backing snapshots must be on the same
         /// Outpost or in the Region of that Outpost. AMIs on an Outpost that include local snapshots
         /// can be used to launch instances on the same Outpost only. For more information, <a
-        /// href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#ami">Amazon
-        /// EBS local snapshots on Outposts</a> in the <i>Amazon EC2 User Guide</i>.
+        /// href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">Amazon
+        /// EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.
         /// </para>
         /// </summary>
         public List<BlockDeviceMapping> BlockDeviceMappings
@@ -218,7 +220,7 @@ namespace Amazon.EC2.Model
         // Check to see if BlockDeviceMappings property is set
         internal bool IsSetBlockDeviceMappings()
         {
-            return this._blockDeviceMappings != null && this._blockDeviceMappings.Count > 0; 
+            return this._blockDeviceMappings != null && (this._blockDeviceMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -447,6 +449,33 @@ namespace Amazon.EC2.Model
         internal bool IsSetSriovNetSupport()
         {
             return this._sriovNetSupport != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagSpecifications. 
+        /// <para>
+        /// The tags to apply to the AMI.
+        /// </para>
+        ///  
+        /// <para>
+        /// To tag the AMI, the value for <c>ResourceType</c> must be <c>image</c>. If you specify
+        /// another value for <c>ResourceType</c>, the request fails.
+        /// </para>
+        ///  
+        /// <para>
+        /// To tag an AMI after it has been registered, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+        /// </para>
+        /// </summary>
+        public List<TagSpecification> TagSpecifications
+        {
+            get { return this._tagSpecifications; }
+            set { this._tagSpecifications = value; }
+        }
+
+        // Check to see if TagSpecifications property is set
+        internal bool IsSetTagSpecifications()
+        {
+            return this._tagSpecifications != null && (this._tagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Pinpoint.Model
     public partial class DefaultMessage
     {
         private string _body;
-        private Dictionary<string, List<string>> _substitutions = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _substitutions = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
 
         /// <summary>
         /// Gets and sets the property Body. 
@@ -70,7 +71,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Substitutions property is set
         internal bool IsSetSubstitutions()
         {
-            return this._substitutions != null && this._substitutions.Count > 0; 
+            return this._substitutions != null && (this._substitutions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

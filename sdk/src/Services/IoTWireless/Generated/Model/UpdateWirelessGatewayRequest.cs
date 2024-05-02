@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
@@ -36,10 +37,10 @@ namespace Amazon.IoTWireless.Model
     {
         private string _description;
         private string _id;
-        private List<List<string>> _joinEuiFilters = new List<List<string>>();
+        private List<List<string>> _joinEuiFilters = AWSConfigs.InitializeCollections ? new List<List<string>>() : null;
         private float? _maxEirp;
         private string _name;
-        private List<string> _netIdFilters = new List<string>();
+        private List<string> _netIdFilters = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -92,7 +93,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if JoinEuiFilters property is set
         internal bool IsSetJoinEuiFilters()
         {
-            return this._joinEuiFilters != null && this._joinEuiFilters.Count > 0; 
+            return this._joinEuiFilters != null && (this._joinEuiFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -146,7 +147,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if NetIdFilters property is set
         internal bool IsSetNetIdFilters()
         {
-            return this._netIdFilters != null && this._netIdFilters.Count > 0; 
+            return this._netIdFilters != null && (this._netIdFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

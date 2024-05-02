@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsCloudFrontDistributionCacheBehaviors
     {
-        private List<AwsCloudFrontDistributionCacheBehavior> _items = new List<AwsCloudFrontDistributionCacheBehavior>();
+        private List<AwsCloudFrontDistributionCacheBehavior> _items = AWSConfigs.InitializeCollections ? new List<AwsCloudFrontDistributionCacheBehavior>() : null;
 
         /// <summary>
         /// Gets and sets the property Items. 
@@ -50,7 +51,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

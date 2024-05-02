@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.WorkDocs.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.WorkDocs.Model
         /// Enumerable containing all of the Subscriptions
         /// </summary>
         public IPaginatedEnumerable<Subscription> Subscriptions => 
-            new PaginatedResultKeyResponse<DescribeNotificationSubscriptionsResponse, Subscription>(this, (i) => i.Subscriptions);
+            new PaginatedResultKeyResponse<DescribeNotificationSubscriptionsResponse, Subscription>(this, (i) => i.Subscriptions ?? new List<Subscription>());
 
         internal DescribeNotificationSubscriptionsPaginator(IAmazonWorkDocs client, DescribeNotificationSubscriptionsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.WorkDocs.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeNotificationSubscriptionsResponse> IPaginator<DescribeNotificationSubscriptionsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeNotificationSubscriptionsResponse> IPaginator<DescribeNotificationSubscriptionsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

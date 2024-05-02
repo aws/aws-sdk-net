@@ -26,17 +26,19 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppConfig.Model
 {
     /// <summary>
     /// A value such as an Amazon Resource Name (ARN) or an Amazon Simple Notification Service
     /// topic entered in an extension when invoked. Parameter values are specified in an extension
-    /// association. For more information about extensions, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
-    /// with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
+    /// association. For more information about extensions, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Extending
+    /// workflows</a> in the <i>AppConfig User Guide</i>.
     /// </summary>
     public partial class Parameter
     {
         private string _description;
+        private bool? _dynamic;
         private bool? _required;
 
         /// <summary>
@@ -56,6 +58,26 @@ namespace Amazon.AppConfig.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Dynamic. 
+        /// <para>
+        /// Indicates whether this parameter's value can be supplied at the extension's action
+        /// point instead of during extension association. Dynamic parameters can't be marked
+        /// <c>Required</c>.
+        /// </para>
+        /// </summary>
+        public bool? Dynamic
+        {
+            get { return this._dynamic; }
+            set { this._dynamic = value; }
+        }
+
+        // Check to see if Dynamic property is set
+        internal bool IsSetDynamic()
+        {
+            return this._dynamic.HasValue; 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
@@ -49,8 +50,8 @@ namespace Amazon.CustomerProfiles.Model
         private string _domainName;
         private FlowDefinition _flowDefinition;
         private string _objectTypeName;
-        private Dictionary<string, string> _objectTypeNames = new Dictionary<string, string>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _objectTypeNames = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _uri;
 
         /// <summary>
@@ -129,7 +130,7 @@ namespace Amazon.CustomerProfiles.Model
         // Check to see if ObjectTypeNames property is set
         internal bool IsSetObjectTypeNames()
         {
-            return this._objectTypeNames != null && this._objectTypeNames.Count > 0; 
+            return this._objectTypeNames != null && (this._objectTypeNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -148,7 +149,7 @@ namespace Amazon.CustomerProfiles.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

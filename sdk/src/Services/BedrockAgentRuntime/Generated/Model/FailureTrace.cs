@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Trace Part which is emitted when agent trace could not be generated
+    /// Contains information about the failure of the interaction.
     /// </summary>
     public partial class FailureTrace
     {
@@ -37,7 +38,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         private string _traceId;
 
         /// <summary>
-        /// Gets and sets the property FailureReason.
+        /// Gets and sets the property FailureReason. 
+        /// <para>
+        /// The reason the interaction failed.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string FailureReason
@@ -53,7 +57,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TraceId.
+        /// Gets and sets the property TraceId. 
+        /// <para>
+        /// The unique identifier of the trace.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=16)]
         public string TraceId

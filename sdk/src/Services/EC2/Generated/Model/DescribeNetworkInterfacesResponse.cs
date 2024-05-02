@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,13 +34,13 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeNetworkInterfacesResponse : AmazonWebServiceResponse
     {
-        private List<NetworkInterface> _networkInterfaces = new List<NetworkInterface>();
+        private List<NetworkInterface> _networkInterfaces = AWSConfigs.InitializeCollections ? new List<NetworkInterface>() : null;
         private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property NetworkInterfaces. 
         /// <para>
-        /// Information about one or more network interfaces.
+        /// Information about the network interfaces.
         /// </para>
         /// </summary>
         public List<NetworkInterface> NetworkInterfaces
@@ -51,7 +52,7 @@ namespace Amazon.EC2.Model
         // Check to see if NetworkInterfaces property is set
         internal bool IsSetNetworkInterfaces()
         {
-            return this._networkInterfaces != null && this._networkInterfaces.Count > 0; 
+            return this._networkInterfaces != null && (this._networkInterfaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

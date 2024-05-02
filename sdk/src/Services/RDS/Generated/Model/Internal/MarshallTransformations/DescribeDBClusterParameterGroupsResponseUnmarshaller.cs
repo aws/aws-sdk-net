@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -84,6 +85,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DBClusterParameterGroups/DBClusterParameterGroup", targetDepth))
                     {
                         var unmarshaller = DBClusterParameterGroupUnmarshaller.Instance;
+                        if (response.DBClusterParameterGroups == null)
+                        {
+                            response.DBClusterParameterGroups = new List<DBClusterParameterGroup>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.DBClusterParameterGroups.Add(item);
                         continue;

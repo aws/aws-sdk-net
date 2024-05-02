@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class TableExcerpt
     {
-        private List<TableRow> _rows = new List<TableRow>();
+        private List<TableRow> _rows = AWSConfigs.InitializeCollections ? new List<TableRow>() : null;
         private int? _totalNumberOfRows;
 
         /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.Kendra.Model
         // Check to see if Rows property is set
         internal bool IsSetRows()
         {
-            return this._rows != null && this._rows.Count > 0; 
+            return this._rows != null && (this._rows.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,49 +26,38 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateCrossAccountAttachment operation.
     /// Update a cross-account attachment to add or remove principals or resources. When you
     /// update an attachment to remove a principal (account ID or accelerator) or a resource,
-    /// Global Accelerator revokes the permission for specific resources by doing the following:
+    /// Global Accelerator revokes the permission for specific resources. 
     /// 
-    ///  <ul> <li> 
+    ///  
     /// <para>
-    /// If the principal is an account ID, Global Accelerator reviews every accelerator in
-    /// the account and removes cross-account endpoints from all accelerators.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// If the principal is an accelerator, Global Accelerator reviews just that accelerator
-    /// and removes cross-account endpoints from it.
-    /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// If there are overlapping permissions provided by multiple cross-account attachments,
-    /// Global Accelerator only removes endpoints if there are no current cross-account attachments
-    /// that provide access permission. For example, if you delete a cross-account attachment
-    /// that lists an accelerator as a principal, but another cross-account attachment includes
-    /// the account ID that owns that accelerator, endpoints will not be removed from the
-    /// accelerator.
+    /// For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/cross-account-resources.html">
+    /// Working with cross-account attachments and resources in Global Accelerator</a> in
+    /// the <i> Global Accelerator Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class UpdateCrossAccountAttachmentRequest : AmazonGlobalAcceleratorRequest
     {
-        private List<string> _addPrincipals = new List<string>();
-        private List<Resource> _addResources = new List<Resource>();
+        private List<string> _addPrincipals = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Resource> _addResources = AWSConfigs.InitializeCollections ? new List<Resource>() : null;
         private string _attachmentArn;
         private string _name;
-        private List<string> _removePrincipals = new List<string>();
-        private List<Resource> _removeResources = new List<Resource>();
+        private List<string> _removePrincipals = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Resource> _removeResources = AWSConfigs.InitializeCollections ? new List<Resource>() : null;
 
         /// <summary>
         /// Gets and sets the property AddPrincipals. 
         /// <para>
         /// The principals to add to the cross-account attachment. A principal is an account or
         /// the Amazon Resource Name (ARN) of an accelerator that the attachment gives permission
-        /// to add the resources from another account, listed in the attachment.
+        /// to work with resources from another account. The resources are also listed in the
+        /// attachment.
         /// </para>
         ///  
         /// <para>
@@ -85,14 +74,14 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if AddPrincipals property is set
         internal bool IsSetAddPrincipals()
         {
-            return this._addPrincipals != null && this._addPrincipals.Count > 0; 
+            return this._addPrincipals != null && (this._addPrincipals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property AddResources. 
         /// <para>
         /// The resources to add to the cross-account attachment. A resource listed in a cross-account
-        /// attachment can be added to an accelerator by the principals that are listed in the
+        /// attachment can be used with an accelerator by the principals that are listed in the
         /// attachment.
         /// </para>
         ///  
@@ -109,7 +98,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if AddResources property is set
         internal bool IsSetAddResources()
         {
-            return this._addResources != null && this._addResources.Count > 0; 
+            return this._addResources != null && (this._addResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -154,8 +143,9 @@ namespace Amazon.GlobalAccelerator.Model
         /// Gets and sets the property RemovePrincipals. 
         /// <para>
         /// The principals to remove from the cross-account attachment. A principal is an account
-        /// or the Amazon Resource Name (ARN) of an accelerator that is given permission to add
-        /// the resources from another account, listed in the cross-account attachment.
+        /// or the Amazon Resource Name (ARN) of an accelerator that the attachment gives permission
+        /// to work with resources from another account. The resources are also listed in the
+        /// attachment.
         /// </para>
         ///  
         /// <para>
@@ -172,15 +162,15 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if RemovePrincipals property is set
         internal bool IsSetRemovePrincipals()
         {
-            return this._removePrincipals != null && this._removePrincipals.Count > 0; 
+            return this._removePrincipals != null && (this._removePrincipals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property RemoveResources. 
         /// <para>
         /// The resources to remove from the cross-account attachment. A resource listed in a
-        /// cross-account attachment can be added to an accelerator fy principals that are listed
-        /// in the cross-account attachment.
+        /// cross-account attachment can be used with an accelerator by the principals that are
+        /// listed in the attachment.
         /// </para>
         ///  
         /// <para>
@@ -196,7 +186,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if RemoveResources property is set
         internal bool IsSetRemoveResources()
         {
-            return this._removeResources != null && this._removeResources.Count > 0; 
+            return this._removeResources != null && (this._removeResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
@@ -34,10 +35,10 @@ namespace Amazon.ElastiCache.Model
     public partial class UpdateAction
     {
         private string _cacheClusterId;
-        private List<CacheNodeUpdateStatus> _cacheNodeUpdateStatus = new List<CacheNodeUpdateStatus>();
+        private List<CacheNodeUpdateStatus> _cacheNodeUpdateStatus = AWSConfigs.InitializeCollections ? new List<CacheNodeUpdateStatus>() : null;
         private string _engine;
         private string _estimatedUpdateTime;
-        private List<NodeGroupUpdateStatus> _nodeGroupUpdateStatus = new List<NodeGroupUpdateStatus>();
+        private List<NodeGroupUpdateStatus> _nodeGroupUpdateStatus = AWSConfigs.InitializeCollections ? new List<NodeGroupUpdateStatus>() : null;
         private string _nodesUpdated;
         private string _replicationGroupId;
         private string _serviceUpdateName;
@@ -84,7 +85,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheNodeUpdateStatus property is set
         internal bool IsSetCacheNodeUpdateStatus()
         {
-            return this._cacheNodeUpdateStatus != null && this._cacheNodeUpdateStatus.Count > 0; 
+            return this._cacheNodeUpdateStatus != null && (this._cacheNodeUpdateStatus.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -138,7 +139,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if NodeGroupUpdateStatus property is set
         internal bool IsSetNodeGroupUpdateStatus()
         {
-            return this._nodeGroupUpdateStatus != null && this._nodeGroupUpdateStatus.Count > 0; 
+            return this._nodeGroupUpdateStatus != null && (this._nodeGroupUpdateStatus.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

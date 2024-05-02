@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -40,18 +41,18 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class CreateOTAUpdateRequest : AmazonIoTRequest
     {
-        private Dictionary<string, string> _additionalParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _additionalParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private AwsJobAbortConfig _awsJobAbortConfig;
         private AwsJobExecutionsRolloutConfig _awsJobExecutionsRolloutConfig;
         private AwsJobPresignedUrlConfig _awsJobPresignedUrlConfig;
         private AwsJobTimeoutConfig _awsJobTimeoutConfig;
         private string _description;
-        private List<OTAUpdateFile> _files = new List<OTAUpdateFile>();
+        private List<OTAUpdateFile> _files = AWSConfigs.InitializeCollections ? new List<OTAUpdateFile>() : null;
         private string _otaUpdateId;
-        private List<string> _protocols = new List<string>();
+        private List<string> _protocols = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _roleArn;
-        private List<Tag> _tags = new List<Tag>();
-        private List<string> _targets = new List<string>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<string> _targets = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TargetSelection _targetSelection;
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.IoT.Model
         // Check to see if AdditionalParameters property is set
         internal bool IsSetAdditionalParameters()
         {
-            return this._additionalParameters != null && this._additionalParameters.Count > 0; 
+            return this._additionalParameters != null && (this._additionalParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -183,7 +184,7 @@ namespace Amazon.IoT.Model
         // Check to see if Files property is set
         internal bool IsSetFiles()
         {
-            return this._files != null && this._files.Count > 0; 
+            return this._files != null && (this._files.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -223,7 +224,7 @@ namespace Amazon.IoT.Model
         // Check to see if Protocols property is set
         internal bool IsSetProtocols()
         {
-            return this._protocols != null && this._protocols.Count > 0; 
+            return this._protocols != null && (this._protocols.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -261,7 +262,7 @@ namespace Amazon.IoT.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -280,7 +281,7 @@ namespace Amazon.IoT.Model
         // Check to see if Targets property is set
         internal bool IsSetTargets()
         {
-            return this._targets != null && this._targets.Count > 0; 
+            return this._targets != null && (this._targets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

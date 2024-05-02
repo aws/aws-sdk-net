@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Kendra.Model
     public partial class RetrieveResultItem
     {
         private string _content;
-        private List<DocumentAttribute> _documentAttributes = new List<DocumentAttribute>();
+        private List<DocumentAttribute> _documentAttributes = AWSConfigs.InitializeCollections ? new List<DocumentAttribute>() : null;
         private string _documentId;
         private string _documentTitle;
         private string _documentURI;
@@ -76,7 +77,7 @@ namespace Amazon.Kendra.Model
         // Check to see if DocumentAttributes property is set
         internal bool IsSetDocumentAttributes()
         {
-            return this._documentAttributes != null && this._documentAttributes.Count > 0; 
+            return this._documentAttributes != null && (this._documentAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

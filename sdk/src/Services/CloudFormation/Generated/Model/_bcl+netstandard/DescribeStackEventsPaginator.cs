@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.CloudFormation.Model
         /// Enumerable containing all of the StackEvents
         /// </summary>
         public IPaginatedEnumerable<StackEvent> StackEvents => 
-            new PaginatedResultKeyResponse<DescribeStackEventsResponse, StackEvent>(this, (i) => i.StackEvents);
+            new PaginatedResultKeyResponse<DescribeStackEventsResponse, StackEvent>(this, (i) => i.StackEvents ?? new List<StackEvent>());
 
         internal DescribeStackEventsPaginator(IAmazonCloudFormation client, DescribeStackEventsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.CloudFormation.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeStackEventsResponse> IPaginator<DescribeStackEventsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeStackEventsResponse> IPaginator<DescribeStackEventsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

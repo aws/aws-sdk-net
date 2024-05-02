@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
@@ -45,8 +46,8 @@ namespace Amazon.WAFV2.Model
     public partial class CookieMatchPattern
     {
         private All _all;
-        private List<string> _excludedCookies = new List<string>();
-        private List<string> _includedCookies = new List<string>();
+        private List<string> _excludedCookies = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _includedCookies = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property All. 
@@ -83,7 +84,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if ExcludedCookies property is set
         internal bool IsSetExcludedCookies()
         {
-            return this._excludedCookies != null && this._excludedCookies.Count > 0; 
+            return this._excludedCookies != null && (this._excludedCookies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -103,7 +104,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if IncludedCookies property is set
         internal bool IsSetIncludedCookies()
         {
-            return this._includedCookies != null && this._includedCookies.Count > 0; 
+            return this._includedCookies != null && (this._includedCookies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

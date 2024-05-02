@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class ContainsPiiEntitiesResponse : AmazonWebServiceResponse
     {
-        private List<EntityLabel> _labels = new List<EntityLabel>();
+        private List<EntityLabel> _labels = AWSConfigs.InitializeCollections ? new List<EntityLabel>() : null;
 
         /// <summary>
         /// Gets and sets the property Labels. 
@@ -51,7 +52,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if Labels property is set
         internal bool IsSetLabels()
         {
-            return this._labels != null && this._labels.Count > 0; 
+            return this._labels != null && (this._labels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

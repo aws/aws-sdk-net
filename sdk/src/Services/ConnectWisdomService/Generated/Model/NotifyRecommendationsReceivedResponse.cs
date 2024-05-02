@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConnectWisdomService.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.ConnectWisdomService.Model
     /// </summary>
     public partial class NotifyRecommendationsReceivedResponse : AmazonWebServiceResponse
     {
-        private List<NotifyRecommendationsReceivedError> _errors = new List<NotifyRecommendationsReceivedError>();
-        private List<string> _recommendationIds = new List<string>();
+        private List<NotifyRecommendationsReceivedError> _errors = AWSConfigs.InitializeCollections ? new List<NotifyRecommendationsReceivedError>() : null;
+        private List<string> _recommendationIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. 
@@ -51,7 +52,7 @@ namespace Amazon.ConnectWisdomService.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.ConnectWisdomService.Model
         // Check to see if RecommendationIds property is set
         internal bool IsSetRecommendationIds()
         {
-            return this._recommendationIds != null && this._recommendationIds.Count > 0; 
+            return this._recommendationIds != null && (this._recommendationIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

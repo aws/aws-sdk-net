@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
@@ -35,8 +36,8 @@ namespace Amazon.DynamoDBv2.Model
     /// </summary>
     public partial class ItemCollectionMetrics
     {
-        private Dictionary<string, AttributeValue> _itemCollectionKey = new Dictionary<string, AttributeValue>();
-        private List<double> _sizeEstimateRangeGB = new List<double>();
+        private Dictionary<string, AttributeValue> _itemCollectionKey = AWSConfigs.InitializeCollections ? new Dictionary<string, AttributeValue>() : null;
+        private List<double> _sizeEstimateRangeGB = AWSConfigs.InitializeCollections ? new List<double>() : null;
 
         /// <summary>
         /// Gets and sets the property ItemCollectionKey. 
@@ -54,7 +55,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if ItemCollectionKey property is set
         internal bool IsSetItemCollectionKey()
         {
-            return this._itemCollectionKey != null && this._itemCollectionKey.Count > 0; 
+            return this._itemCollectionKey != null && (this._itemCollectionKey.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -81,7 +82,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if SizeEstimateRangeGB property is set
         internal bool IsSetSizeEstimateRangeGB()
         {
-            return this._sizeEstimateRangeGB != null && this._sizeEstimateRangeGB.Count > 0; 
+            return this._sizeEstimateRangeGB != null && (this._sizeEstimateRangeGB.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MigrationHub.Model
 {
     /// <summary>
@@ -59,7 +60,7 @@ namespace Amazon.MigrationHub.Model
         private bool? _dryRun;
         private string _migrationTaskName;
         private string _progressUpdateStream;
-        private List<ResourceAttribute> _resourceAttributeList = new List<ResourceAttribute>();
+        private List<ResourceAttribute> _resourceAttributeList = AWSConfigs.InitializeCollections ? new List<ResourceAttribute>() : null;
 
         /// <summary>
         /// Gets and sets the property DryRun. 
@@ -160,7 +161,7 @@ namespace Amazon.MigrationHub.Model
         // Check to see if ResourceAttributeList property is set
         internal bool IsSetResourceAttributeList()
         {
-            return this._resourceAttributeList != null && this._resourceAttributeList.Count > 0; 
+            return this._resourceAttributeList != null && (this._resourceAttributeList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -48,6 +49,13 @@ namespace Amazon.Connect.Model
         /// The <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">state
         /// of the contact</a>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// When <c>AgentContactState</c> is set to <c>CONNECTED_ONHOLD</c>, <c>StateStartTimestamp</c>
+        /// is not changed. Instead, <c>StateStartTimestamp</c> reflects the time the contact
+        /// was <c>CONNECTED</c> to the agent.
+        /// </para>
+        ///  </note>
         /// </summary>
         public ContactState AgentContactState
         {

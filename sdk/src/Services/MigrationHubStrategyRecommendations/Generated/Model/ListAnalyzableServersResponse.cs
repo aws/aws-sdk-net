@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MigrationHubStrategyRecommendations.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
     /// </summary>
     public partial class ListAnalyzableServersResponse : AmazonWebServiceResponse
     {
-        private List<AnalyzableServerSummary> _analyzableServers = new List<AnalyzableServerSummary>();
+        private List<AnalyzableServerSummary> _analyzableServers = AWSConfigs.InitializeCollections ? new List<AnalyzableServerSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         // Check to see if AnalyzableServers property is set
         internal bool IsSetAnalyzableServers()
         {
-            return this._analyzableServers != null && this._analyzableServers.Count > 0; 
+            return this._analyzableServers != null && (this._analyzableServers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CloudFormation.Model
     public partial class ListStackResourcesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<StackResourceSummary> _stackResourceSummaries = new List<StackResourceSummary>();
+        private List<StackResourceSummary> _stackResourceSummaries = AWSConfigs.InitializeCollections ? new List<StackResourceSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if StackResourceSummaries property is set
         internal bool IsSetStackResourceSummaries()
         {
-            return this._stackResourceSummaries != null && this._stackResourceSummaries.Count > 0; 
+            return this._stackResourceSummaries != null && (this._stackResourceSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

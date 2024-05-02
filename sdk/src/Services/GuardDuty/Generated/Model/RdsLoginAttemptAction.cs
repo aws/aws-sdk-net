@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class RdsLoginAttemptAction
     {
-        private List<LoginAttribute> _loginAttributes = new List<LoginAttribute>();
+        private List<LoginAttribute> _loginAttributes = AWSConfigs.InitializeCollections ? new List<LoginAttribute>() : null;
         private RemoteIpDetails _remoteIpDetails;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if LoginAttributes property is set
         internal bool IsSetLoginAttributes()
         {
-            return this._loginAttributes != null && this._loginAttributes.Count > 0; 
+            return this._loginAttributes != null && (this._loginAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

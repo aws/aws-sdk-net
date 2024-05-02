@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AmplifyBackend.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AmplifyBackend.Model
     /// </summary>
     public partial class Settings
     {
-        private List<string> _mfaTypes = new List<string>();
+        private List<string> _mfaTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _smsMessage;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.AmplifyBackend.Model
         // Check to see if MfaTypes property is set
         internal bool IsSetMfaTypes()
         {
-            return this._mfaTypes != null && this._mfaTypes.Count > 0; 
+            return this._mfaTypes != null && (this._mfaTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchRUM.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CloudWatchRUM.Model
     /// </summary>
     public partial class ListAppMonitorsResponse : AmazonWebServiceResponse
     {
-        private List<AppMonitorSummary> _appMonitorSummaries = new List<AppMonitorSummary>();
+        private List<AppMonitorSummary> _appMonitorSummaries = AWSConfigs.InitializeCollections ? new List<AppMonitorSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.CloudWatchRUM.Model
         // Check to see if AppMonitorSummaries property is set
         internal bool IsSetAppMonitorSummaries()
         {
-            return this._appMonitorSummaries != null && this._appMonitorSummaries.Count > 0; 
+            return this._appMonitorSummaries != null && (this._appMonitorSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

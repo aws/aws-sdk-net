@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.GreengrassV2.Model
     public partial class CloudComponentStatus
     {
         private CloudComponentState _componentState;
-        private Dictionary<string, string> _errors = new Dictionary<string, string>();
+        private Dictionary<string, string> _errors = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _message;
         private VendorGuidance _vendorGuidance;
         private string _vendorGuidanceMessage;
@@ -75,7 +76,7 @@ namespace Amazon.GreengrassV2.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

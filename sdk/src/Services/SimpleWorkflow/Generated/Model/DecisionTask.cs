@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// </summary>
     public partial class DecisionTask
     {
-        private List<HistoryEvent> _events = new List<HistoryEvent>();
+        private List<HistoryEvent> _events = AWSConfigs.InitializeCollections ? new List<HistoryEvent>() : null;
         private string _nextPageToken;
         private long? _previousStartedEventId;
         private long? _startedEventId;
@@ -59,7 +60,7 @@ namespace Amazon.SimpleWorkflow.Model
         // Check to see if Events property is set
         internal bool IsSetEvents()
         {
-            return this._events != null && this._events.Count > 0; 
+            return this._events != null && (this._events.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

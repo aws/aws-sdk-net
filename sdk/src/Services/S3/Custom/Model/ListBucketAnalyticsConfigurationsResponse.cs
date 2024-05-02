@@ -27,7 +27,7 @@ namespace Amazon.S3.Model
     public partial class ListBucketAnalyticsConfigurationsResponse : AmazonWebServiceResponse
     {
         private string token;
-        private List<AnalyticsConfiguration> analyticsConfigurationList = new List<AnalyticsConfiguration>();
+        private List<AnalyticsConfiguration> analyticsConfigurationList = AWSConfigs.InitializeCollections ? new List<AnalyticsConfiguration>() : null;
         private bool? isTruncated;
         private string nextToken;
 
@@ -55,10 +55,13 @@ namespace Amazon.S3.Model
             set { this.analyticsConfigurationList = value; }
         }
 
-        // Check to see if AnalyticsConfigurationList property is set
+        /// <summary>
+        /// Check to see if AnalyticsConfigurationList property is set
+        /// </summary>
+        /// <returns></returns>
         public bool IsSetAnalyticsConfigurationList()
         {
-            return this.analyticsConfigurationList.Count > 0;
+            return this.analyticsConfigurationList != null && (this.analyticsConfigurationList.Count > 0 || !AWSConfigs.InitializeCollections);
         }
 
         /// <summary>

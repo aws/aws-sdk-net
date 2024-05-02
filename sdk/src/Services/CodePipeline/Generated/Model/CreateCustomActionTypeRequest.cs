@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
@@ -36,12 +37,12 @@ namespace Amazon.CodePipeline.Model
     public partial class CreateCustomActionTypeRequest : AmazonCodePipelineRequest
     {
         private ActionCategory _category;
-        private List<ActionConfigurationProperty> _configurationProperties = new List<ActionConfigurationProperty>();
+        private List<ActionConfigurationProperty> _configurationProperties = AWSConfigs.InitializeCollections ? new List<ActionConfigurationProperty>() : null;
         private ArtifactDetails _inputArtifactDetails;
         private ArtifactDetails _outputArtifactDetails;
         private string _provider;
         private ActionTypeSettings _settings;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _version;
 
         /// <summary>
@@ -87,7 +88,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if ConfigurationProperties property is set
         internal bool IsSetConfigurationProperties()
         {
-            return this._configurationProperties != null && this._configurationProperties.Count > 0; 
+            return this._configurationProperties != null && (this._configurationProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -180,7 +181,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

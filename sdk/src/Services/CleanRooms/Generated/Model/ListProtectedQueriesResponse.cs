@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CleanRooms.Model
     public partial class ListProtectedQueriesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ProtectedQuerySummary> _protectedQueries = new List<ProtectedQuerySummary>();
+        private List<ProtectedQuerySummary> _protectedQueries = AWSConfigs.InitializeCollections ? new List<ProtectedQuerySummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if ProtectedQueries property is set
         internal bool IsSetProtectedQueries()
         {
-            return this._protectedQueries != null && this._protectedQueries.Count > 0; 
+            return this._protectedQueries != null && (this._protectedQueries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

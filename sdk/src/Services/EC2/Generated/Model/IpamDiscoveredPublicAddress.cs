@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -46,7 +47,7 @@ namespace Amazon.EC2.Model
         private string _networkInterfaceId;
         private string _publicIpv4PoolId;
         private DateTime? _sampleTime;
-        private List<IpamPublicAddressSecurityGroup> _securityGroups = new List<IpamPublicAddressSecurityGroup>();
+        private List<IpamPublicAddressSecurityGroup> _securityGroups = AWSConfigs.InitializeCollections ? new List<IpamPublicAddressSecurityGroup>() : null;
         private IpamPublicAddressAwsService _service;
         private string _serviceResource;
         private string _subnetId;
@@ -302,7 +303,7 @@ namespace Amazon.EC2.Model
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this._securityGroups != null && this._securityGroups.Count > 0; 
+            return this._securityGroups != null && (this._securityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

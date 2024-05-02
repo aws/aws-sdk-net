@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -36,9 +37,9 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class CreateOpsMetadataRequest : AmazonSimpleSystemsManagementRequest
     {
-        private Dictionary<string, MetadataValue> _metadata = new Dictionary<string, MetadataValue>();
+        private Dictionary<string, MetadataValue> _metadata = AWSConfigs.InitializeCollections ? new Dictionary<string, MetadataValue>() : null;
         private string _resourceId;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Metadata. 
@@ -56,7 +57,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Metadata property is set
         internal bool IsSetMetadata()
         {
-            return this._metadata != null && this._metadata.Count > 0; 
+            return this._metadata != null && (this._metadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -107,7 +108,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

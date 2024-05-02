@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
@@ -123,7 +124,7 @@ namespace Amazon.AWSSupport.Model
     {
         private string _caseId;
         private string _categoryCode;
-        private List<string> _ccEmailAddresses = new List<string>();
+        private List<string> _ccEmailAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _displayId;
         private string _language;
         private RecentCaseCommunications _recentCommunications;
@@ -188,7 +189,7 @@ namespace Amazon.AWSSupport.Model
         // Check to see if CcEmailAddresses property is set
         internal bool IsSetCcEmailAddresses()
         {
-            return this._ccEmailAddresses != null && this._ccEmailAddresses.Count > 0; 
+            return this._ccEmailAddresses != null && (this._ccEmailAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

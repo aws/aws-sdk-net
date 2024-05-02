@@ -26,12 +26,21 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDetector operation.
-    /// Updates the GuardDuty detector specified by the detectorId.
+    /// Updates the GuardDuty detector specified by the detector ID.
     /// 
+    ///  
+    /// <para>
+    /// Specifying both EKS Runtime Monitoring (<c>EKS_RUNTIME_MONITORING</c>) and Runtime
+    /// Monitoring (<c>RUNTIME_MONITORING</c>) will cause an error. You can add only one of
+    /// these two features because Runtime Monitoring already includes the threat detection
+    /// for Amazon EKS resources. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/runtime-monitoring.html">Runtime
+    /// Monitoring</a>.
+    /// </para>
     ///  
     /// <para>
     /// There might be regional differences because some data sources might not be available
@@ -45,7 +54,7 @@ namespace Amazon.GuardDuty.Model
         private DataSourceConfigurations _dataSources;
         private string _detectorId;
         private bool? _enable;
-        private List<DetectorFeatureConfiguration> _features = new List<DetectorFeatureConfiguration>();
+        private List<DetectorFeatureConfiguration> _features = AWSConfigs.InitializeCollections ? new List<DetectorFeatureConfiguration>() : null;
         private FindingPublishingFrequency _findingPublishingFrequency;
 
         /// <summary>
@@ -126,7 +135,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if Features property is set
         internal bool IsSetFeatures()
         {
-            return this._features != null && this._features.Count > 0; 
+            return this._features != null && (this._features.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

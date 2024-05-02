@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Backup.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Backup.Model
         private ReportDeliveryChannel _reportDeliveryChannel;
         private string _reportPlanDescription;
         private string _reportPlanName;
-        private Dictionary<string, string> _reportPlanTags = new Dictionary<string, string>();
+        private Dictionary<string, string> _reportPlanTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ReportSetting _reportSetting;
 
         /// <summary>
@@ -144,7 +145,7 @@ namespace Amazon.Backup.Model
         // Check to see if ReportPlanTags property is set
         internal bool IsSetReportPlanTags()
         {
-            return this._reportPlanTags != null && this._reportPlanTags.Count > 0; 
+            return this._reportPlanTags != null && (this._reportPlanTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the HostReservationSet
         /// </summary>
         public IPaginatedEnumerable<HostReservation> HostReservationSet => 
-            new PaginatedResultKeyResponse<DescribeHostReservationsResponse, HostReservation>(this, (i) => i.HostReservationSet);
+            new PaginatedResultKeyResponse<DescribeHostReservationsResponse, HostReservation>(this, (i) => i.HostReservationSet ?? new List<HostReservation>());
 
         internal DescribeHostReservationsPaginator(IAmazonEC2 client, DescribeHostReservationsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.EC2.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeHostReservationsResponse> IPaginator<DescribeHostReservationsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeHostReservationsResponse> IPaginator<DescribeHostReservationsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

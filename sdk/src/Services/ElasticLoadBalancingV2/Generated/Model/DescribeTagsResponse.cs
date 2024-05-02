@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class DescribeTagsResponse : AmazonWebServiceResponse
     {
-        private List<TagDescription> _tagDescriptions = new List<TagDescription>();
+        private List<TagDescription> _tagDescriptions = AWSConfigs.InitializeCollections ? new List<TagDescription>() : null;
 
         /// <summary>
         /// Gets and sets the property TagDescriptions. 
@@ -50,7 +51,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if TagDescriptions property is set
         internal bool IsSetTagDescriptions()
         {
-            return this._tagDescriptions != null && this._tagDescriptions.Count > 0; 
+            return this._tagDescriptions != null && (this._tagDescriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

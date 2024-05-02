@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
@@ -33,11 +34,11 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class CisScanResultDetailsFilterCriteria
     {
-        private List<CisStringFilter> _checkIdFilters = new List<CisStringFilter>();
-        private List<CisStringFilter> _findingArnFilters = new List<CisStringFilter>();
-        private List<CisFindingStatusFilter> _findingStatusFilters = new List<CisFindingStatusFilter>();
-        private List<CisSecurityLevelFilter> _securityLevelFilters = new List<CisSecurityLevelFilter>();
-        private List<CisStringFilter> _titleFilters = new List<CisStringFilter>();
+        private List<CisStringFilter> _checkIdFilters = AWSConfigs.InitializeCollections ? new List<CisStringFilter>() : null;
+        private List<CisStringFilter> _findingArnFilters = AWSConfigs.InitializeCollections ? new List<CisStringFilter>() : null;
+        private List<CisFindingStatusFilter> _findingStatusFilters = AWSConfigs.InitializeCollections ? new List<CisFindingStatusFilter>() : null;
+        private List<CisSecurityLevelFilter> _securityLevelFilters = AWSConfigs.InitializeCollections ? new List<CisSecurityLevelFilter>() : null;
+        private List<CisStringFilter> _titleFilters = AWSConfigs.InitializeCollections ? new List<CisStringFilter>() : null;
 
         /// <summary>
         /// Gets and sets the property CheckIdFilters. 
@@ -55,7 +56,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if CheckIdFilters property is set
         internal bool IsSetCheckIdFilters()
         {
-            return this._checkIdFilters != null && this._checkIdFilters.Count > 0; 
+            return this._checkIdFilters != null && (this._checkIdFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if FindingArnFilters property is set
         internal bool IsSetFindingArnFilters()
         {
-            return this._findingArnFilters != null && this._findingArnFilters.Count > 0; 
+            return this._findingArnFilters != null && (this._findingArnFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -93,7 +94,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if FindingStatusFilters property is set
         internal bool IsSetFindingStatusFilters()
         {
-            return this._findingStatusFilters != null && this._findingStatusFilters.Count > 0; 
+            return this._findingStatusFilters != null && (this._findingStatusFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -113,7 +114,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if SecurityLevelFilters property is set
         internal bool IsSetSecurityLevelFilters()
         {
-            return this._securityLevelFilters != null && this._securityLevelFilters.Count > 0; 
+            return this._securityLevelFilters != null && (this._securityLevelFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -132,7 +133,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if TitleFilters property is set
         internal bool IsSetTitleFilters()
         {
-            return this._titleFilters != null && this._titleFilters.Count > 0; 
+            return this._titleFilters != null && (this._titleFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.DirectoryService.Model
     public partial class DescribeRegionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RegionDescription> _regionsDescription = new List<RegionDescription>();
+        private List<RegionDescription> _regionsDescription = AWSConfigs.InitializeCollections ? new List<RegionDescription>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.DirectoryService.Model
         // Check to see if RegionsDescription property is set
         internal bool IsSetRegionsDescription()
         {
-            return this._regionsDescription != null && this._regionsDescription.Count > 0; 
+            return this._regionsDescription != null && (this._regionsDescription.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

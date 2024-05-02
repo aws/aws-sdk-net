@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaPackage.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.MediaPackage.Model
     public partial class ListOriginEndpointsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<OriginEndpoint> _originEndpoints = new List<OriginEndpoint>();
+        private List<OriginEndpoint> _originEndpoints = AWSConfigs.InitializeCollections ? new List<OriginEndpoint>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. A token that can be used to resume pagination
@@ -64,7 +65,7 @@ namespace Amazon.MediaPackage.Model
         // Check to see if OriginEndpoints property is set
         internal bool IsSetOriginEndpoints()
         {
-            return this._originEndpoints != null && this._originEndpoints.Count > 0; 
+            return this._originEndpoints != null && (this._originEndpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

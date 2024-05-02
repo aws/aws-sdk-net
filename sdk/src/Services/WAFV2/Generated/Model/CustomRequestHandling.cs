@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.WAFV2.Model
     /// </summary>
     public partial class CustomRequestHandling
     {
-        private List<CustomHTTPHeader> _insertHeaders = new List<CustomHTTPHeader>();
+        private List<CustomHTTPHeader> _insertHeaders = AWSConfigs.InitializeCollections ? new List<CustomHTTPHeader>() : null;
 
         /// <summary>
         /// Gets and sets the property InsertHeaders. 
@@ -67,7 +68,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if InsertHeaders property is set
         internal bool IsSetInsertHeaders()
         {
-            return this._insertHeaders != null && this._insertHeaders.Count > 0; 
+            return this._insertHeaders != null && (this._insertHeaders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

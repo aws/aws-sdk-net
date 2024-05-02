@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
@@ -39,8 +40,8 @@ namespace Amazon.APIGateway.Model
         private bool? _enabled;
         private bool? _generateDistinctId;
         private string _name;
-        private List<StageKey> _stageKeys = new List<StageKey>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<StageKey> _stageKeys = AWSConfigs.InitializeCollections ? new List<StageKey>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _value;
 
         /// <summary>
@@ -150,7 +151,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if StageKeys property is set
         internal bool IsSetStageKeys()
         {
-            return this._stageKeys != null && this._stageKeys.Count > 0; 
+            return this._stageKeys != null && (this._stageKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -170,7 +171,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

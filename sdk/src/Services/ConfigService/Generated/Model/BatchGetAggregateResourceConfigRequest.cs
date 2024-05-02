@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -48,7 +49,7 @@ namespace Amazon.ConfigService.Model
     public partial class BatchGetAggregateResourceConfigRequest : AmazonConfigServiceRequest
     {
         private string _configurationAggregatorName;
-        private List<AggregateResourceIdentifier> _resourceIdentifiers = new List<AggregateResourceIdentifier>();
+        private List<AggregateResourceIdentifier> _resourceIdentifiers = AWSConfigs.InitializeCollections ? new List<AggregateResourceIdentifier>() : null;
 
         /// <summary>
         /// Gets and sets the property ConfigurationAggregatorName. 
@@ -85,7 +86,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if ResourceIdentifiers property is set
         internal bool IsSetResourceIdentifiers()
         {
-            return this._resourceIdentifiers != null && this._resourceIdentifiers.Count > 0; 
+            return this._resourceIdentifiers != null && (this._resourceIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

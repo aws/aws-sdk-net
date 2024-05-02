@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CognitoSync.Model
 {
     /// <summary>
@@ -38,9 +39,9 @@ namespace Amazon.CognitoSync.Model
         private bool? _datasetExists;
         private long? _datasetSyncCount;
         private string _lastModifiedBy;
-        private List<string> _mergedDatasetNames = new List<string>();
+        private List<string> _mergedDatasetNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
-        private List<Record> _records = new List<Record>();
+        private List<Record> _records = AWSConfigs.InitializeCollections ? new List<Record>() : null;
         private string _syncSessionToken;
 
         /// <summary>
@@ -132,7 +133,7 @@ namespace Amazon.CognitoSync.Model
         // Check to see if MergedDatasetNames property is set
         internal bool IsSetMergedDatasetNames()
         {
-            return this._mergedDatasetNames != null && this._mergedDatasetNames.Count > 0; 
+            return this._mergedDatasetNames != null && (this._mergedDatasetNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -163,7 +164,7 @@ namespace Amazon.CognitoSync.Model
         // Check to see if Records property is set
         internal bool IsSetRecords()
         {
-            return this._records != null && this._records.Count > 0; 
+            return this._records != null && (this._records.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

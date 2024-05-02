@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Kendra.Model
     {
         private DateTime? _dateValue;
         private long? _longValue;
-        private List<string> _stringListValue = new List<string>();
+        private List<string> _stringListValue = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _stringValue;
 
         /// <summary>
@@ -95,7 +96,7 @@ namespace Amazon.Kendra.Model
         // Check to see if StringListValue property is set
         internal bool IsSetStringListValue()
         {
-            return this._stringListValue != null && this._stringListValue.Count > 0; 
+            return this._stringListValue != null && (this._stringListValue.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

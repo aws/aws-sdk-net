@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.Connect.Model
         private int? _maxResults;
         private string _nextToken;
         private RealTimeContactAnalysisOutputType _outputType;
-        private List<string> _segmentTypes = new List<string>();
+        private List<string> _segmentTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ContactId. 
@@ -156,7 +157,7 @@ namespace Amazon.Connect.Model
         // Check to see if SegmentTypes property is set
         internal bool IsSetSegmentTypes()
         {
-            return this._segmentTypes != null && this._segmentTypes.Count > 0; 
+            return this._segmentTypes != null && (this._segmentTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

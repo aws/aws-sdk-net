@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Batch.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class DescribeJobQueuesResponse : AmazonWebServiceResponse
     {
-        private List<JobQueueDetail> _jobQueues = new List<JobQueueDetail>();
+        private List<JobQueueDetail> _jobQueues = AWSConfigs.InitializeCollections ? new List<JobQueueDetail>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Batch.Model
         // Check to see if JobQueues property is set
         internal bool IsSetJobQueues()
         {
-            return this._jobQueues != null && this._jobQueues.Count > 0; 
+            return this._jobQueues != null && (this._jobQueues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

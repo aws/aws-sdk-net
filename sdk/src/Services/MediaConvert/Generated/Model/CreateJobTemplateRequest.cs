@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
@@ -38,13 +39,13 @@ namespace Amazon.MediaConvert.Model
         private AccelerationSettings _accelerationSettings;
         private string _category;
         private string _description;
-        private List<HopDestination> _hopDestinations = new List<HopDestination>();
+        private List<HopDestination> _hopDestinations = AWSConfigs.InitializeCollections ? new List<HopDestination>() : null;
         private string _name;
         private int? _priority;
         private string _queue;
         private JobTemplateSettings _settings;
         private StatusUpdateInterval _statusUpdateInterval;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AccelerationSettings. Accelerated transcoding can significantly
@@ -111,7 +112,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if HopDestinations property is set
         internal bool IsSetHopDestinations()
         {
-            return this._hopDestinations != null && this._hopDestinations.Count > 0; 
+            return this._hopDestinations != null && (this._hopDestinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -215,7 +216,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTEvents.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoTEvents.Model
     /// </summary>
     public partial class AlarmNotification
     {
-        private List<NotificationAction> _notificationActions = new List<NotificationAction>();
+        private List<NotificationAction> _notificationActions = AWSConfigs.InitializeCollections ? new List<NotificationAction>() : null;
 
         /// <summary>
         /// Gets and sets the property NotificationActions. 
@@ -52,7 +53,7 @@ namespace Amazon.IoTEvents.Model
         // Check to see if NotificationActions property is set
         internal bool IsSetNotificationActions()
         {
-            return this._notificationActions != null && this._notificationActions.Count > 0; 
+            return this._notificationActions != null && (this._notificationActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

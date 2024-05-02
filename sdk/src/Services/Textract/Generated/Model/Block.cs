@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Textract.Model
 {
     /// <summary>
@@ -55,12 +56,12 @@ namespace Amazon.Textract.Model
         private int? _columnIndex;
         private int? _columnSpan;
         private float? _confidence;
-        private List<string> _entityTypes = new List<string>();
+        private List<string> _entityTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Geometry _geometry;
         private string _id;
         private int? _page;
         private Query _query;
-        private List<Relationship> _relationships = new List<Relationship>();
+        private List<Relationship> _relationships = AWSConfigs.InitializeCollections ? new List<Relationship>() : null;
         private int? _rowIndex;
         private int? _rowSpan;
         private SelectionStatus _selectionStatus;
@@ -348,7 +349,7 @@ namespace Amazon.Textract.Model
         // Check to see if EntityTypes property is set
         internal bool IsSetEntityTypes()
         {
-            return this._entityTypes != null && this._entityTypes.Count > 0; 
+            return this._entityTypes != null && (this._entityTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -447,7 +448,7 @@ namespace Amazon.Textract.Model
         // Check to see if Relationships property is set
         internal bool IsSetRelationships()
         {
-            return this._relationships != null && this._relationships.Count > 0; 
+            return this._relationships != null && (this._relationships.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

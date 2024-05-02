@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.IoTSiteWise.Model
         private string _entryId;
         private string _propertyAlias;
         private string _propertyId;
-        private List<AssetPropertyValue> _propertyValues = new List<AssetPropertyValue>();
+        private List<AssetPropertyValue> _propertyValues = AWSConfigs.InitializeCollections ? new List<AssetPropertyValue>() : null;
 
         /// <summary>
         /// Gets and sets the property AssetId. 
@@ -138,7 +139,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if PropertyValues property is set
         internal bool IsSetPropertyValues()
         {
-            return this._propertyValues != null && this._propertyValues.Count > 0; 
+            return this._propertyValues != null && (this._propertyValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

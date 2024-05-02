@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
@@ -33,13 +34,13 @@ namespace Amazon.AmplifyUIBuilder.Model
     /// </summary>
     public partial class CodegenGenericDataRelationshipType
     {
-        private List<string> _associatedFields = new List<string>();
+        private List<string> _associatedFields = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _belongsToFieldOnRelatedModel;
         private bool? _canUnlinkAssociatedModel;
         private bool? _isHasManyIndex;
         private string _relatedJoinFieldName;
         private string _relatedJoinTableName;
-        private List<string> _relatedModelFields = new List<string>();
+        private List<string> _relatedModelFields = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _relatedModelName;
         private GenericDataRelationshipType _type;
 
@@ -58,7 +59,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if AssociatedFields property is set
         internal bool IsSetAssociatedFields()
         {
-            return this._associatedFields != null && this._associatedFields.Count > 0; 
+            return this._associatedFields != null && (this._associatedFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -167,7 +168,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if RelatedModelFields property is set
         internal bool IsSetRelatedModelFields()
         {
-            return this._relatedModelFields != null && this._relatedModelFields.Count > 0; 
+            return this._relatedModelFields != null && (this._relatedModelFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

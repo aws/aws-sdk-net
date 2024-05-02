@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// The configuration for the file system and kernels in a SageMaker image running as
-    /// a JupyterLab app.
+    /// a JupyterLab app. The <c>FileSystemConfig</c> object is not supported.
     /// </summary>
     public partial class JupyterLabAppImageConfig
     {

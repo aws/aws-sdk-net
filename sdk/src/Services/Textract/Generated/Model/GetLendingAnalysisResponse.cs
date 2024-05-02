@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Textract.Model
 {
     /// <summary>
@@ -37,9 +38,9 @@ namespace Amazon.Textract.Model
         private DocumentMetadata _documentMetadata;
         private JobStatus _jobStatus;
         private string _nextToken;
-        private List<LendingResult> _results = new List<LendingResult>();
+        private List<LendingResult> _results = AWSConfigs.InitializeCollections ? new List<LendingResult>() : null;
         private string _statusMessage;
-        private List<Warning> _warnings = new List<Warning>();
+        private List<Warning> _warnings = AWSConfigs.InitializeCollections ? new List<Warning>() : null;
 
         /// <summary>
         /// Gets and sets the property AnalyzeLendingModelVersion. 
@@ -128,7 +129,7 @@ namespace Amazon.Textract.Model
         // Check to see if Results property is set
         internal bool IsSetResults()
         {
-            return this._results != null && this._results.Count > 0; 
+            return this._results != null && (this._results.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -165,7 +166,7 @@ namespace Amazon.Textract.Model
         // Check to see if Warnings property is set
         internal bool IsSetWarnings()
         {
-            return this._warnings != null && this._warnings.Count > 0; 
+            return this._warnings != null && (this._warnings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

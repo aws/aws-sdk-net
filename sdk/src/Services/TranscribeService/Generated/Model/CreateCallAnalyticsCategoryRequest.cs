@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
@@ -66,7 +67,7 @@ namespace Amazon.TranscribeService.Model
     {
         private string _categoryName;
         private InputType _inputType;
-        private List<Rule> _rules = new List<Rule>();
+        private List<Rule> _rules = AWSConfigs.InitializeCollections ? new List<Rule>() : null;
 
         /// <summary>
         /// Gets and sets the property CategoryName. 
@@ -148,7 +149,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if Rules property is set
         internal bool IsSetRules()
         {
-            return this._rules != null && this._rules.Count > 0; 
+            return this._rules != null && (this._rules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

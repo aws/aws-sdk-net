@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.APIGateway.Model
     public partial class DeploymentCanarySettings
     {
         private double? _percentTraffic;
-        private Dictionary<string, string> _stageVariableOverrides = new Dictionary<string, string>();
+        private Dictionary<string, string> _stageVariableOverrides = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private bool? _useStageCache;
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if StageVariableOverrides property is set
         internal bool IsSetStageVariableOverrides()
         {
-            return this._stageVariableOverrides != null && this._stageVariableOverrides.Count > 0; 
+            return this._stageVariableOverrides != null && (this._stageVariableOverrides.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

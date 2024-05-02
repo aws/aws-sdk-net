@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.MemoryDB.Model
     public partial class DescribeServiceUpdatesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ServiceUpdate> _serviceUpdates = new List<ServiceUpdate>();
+        private List<ServiceUpdate> _serviceUpdates = AWSConfigs.InitializeCollections ? new List<ServiceUpdate>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +74,7 @@ namespace Amazon.MemoryDB.Model
         // Check to see if ServiceUpdates property is set
         internal bool IsSetServiceUpdates()
         {
-            return this._serviceUpdates != null && this._serviceUpdates.Count > 0; 
+            return this._serviceUpdates != null && (this._serviceUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

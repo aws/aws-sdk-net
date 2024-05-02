@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -57,6 +58,10 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Actions/member", targetDepth))
                     {
                         var unmarshaller = ReceiptActionUnmarshaller.Instance;
+                        if (unmarshalledObject.Actions == null)
+                        {
+                            unmarshalledObject.Actions = new List<ReceiptAction>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Actions.Add(item);
                         continue;
@@ -76,6 +81,10 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Recipients/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.Recipients == null)
+                        {
+                            unmarshalledObject.Recipients = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Recipients.Add(item);
                         continue;

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class SendCisSessionTelemetryRequest : AmazonInspector2Request
     {
-        private List<CisSessionMessage> _messages = new List<CisSessionMessage>();
+        private List<CisSessionMessage> _messages = AWSConfigs.InitializeCollections ? new List<CisSessionMessage>() : null;
         private string _scanJobId;
         private string _sessionToken;
 
@@ -56,7 +57,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if Messages property is set
         internal bool IsSetMessages()
         {
-            return this._messages != null && this._messages.Count > 0; 
+            return this._messages != null && (this._messages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

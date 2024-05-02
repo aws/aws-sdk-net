@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Translate.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Translate.Model
     public partial class ListTextTranslationJobsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TextTranslationJobProperties> _textTranslationJobPropertiesList = new List<TextTranslationJobProperties>();
+        private List<TextTranslationJobProperties> _textTranslationJobPropertiesList = AWSConfigs.InitializeCollections ? new List<TextTranslationJobProperties>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.Translate.Model
         // Check to see if TextTranslationJobPropertiesList property is set
         internal bool IsSetTextTranslationJobPropertiesList()
         {
-            return this._textTranslationJobPropertiesList != null && this._textTranslationJobPropertiesList.Count > 0; 
+            return this._textTranslationJobPropertiesList != null && (this._textTranslationJobPropertiesList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

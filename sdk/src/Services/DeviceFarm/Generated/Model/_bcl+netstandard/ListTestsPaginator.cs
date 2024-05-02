@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.DeviceFarm.Model
         /// Enumerable containing all of the Tests
         /// </summary>
         public IPaginatedEnumerable<Test> Tests => 
-            new PaginatedResultKeyResponse<ListTestsResponse, Test>(this, (i) => i.Tests);
+            new PaginatedResultKeyResponse<ListTestsResponse, Test>(this, (i) => i.Tests ?? new List<Test>());
 
         internal ListTestsPaginator(IAmazonDeviceFarm client, ListTestsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.DeviceFarm.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListTestsResponse> IPaginator<ListTestsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListTestsResponse> IPaginator<ListTestsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

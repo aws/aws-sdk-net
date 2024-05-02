@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FIS.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.FIS.Model
     /// </summary>
     public partial class ListActionsResponse : AmazonWebServiceResponse
     {
-        private List<ActionSummary> _actions = new List<ActionSummary>();
+        private List<ActionSummary> _actions = AWSConfigs.InitializeCollections ? new List<ActionSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.FIS.Model
         // Check to see if Actions property is set
         internal bool IsSetActions()
         {
-            return this._actions != null && this._actions.Count > 0; 
+            return this._actions != null && (this._actions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the Users
         /// </summary>
         public IPaginatedEnumerable<UserSearchSummary> Users => 
-            new PaginatedResultKeyResponse<SearchUsersResponse, UserSearchSummary>(this, (i) => i.Users);
+            new PaginatedResultKeyResponse<SearchUsersResponse, UserSearchSummary>(this, (i) => i.Users ?? new List<UserSearchSummary>());
 
         internal SearchUsersPaginator(IAmazonConnect client, SearchUsersRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Connect.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<SearchUsersResponse> IPaginator<SearchUsersResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<SearchUsersResponse> IPaginator<SearchUsersResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

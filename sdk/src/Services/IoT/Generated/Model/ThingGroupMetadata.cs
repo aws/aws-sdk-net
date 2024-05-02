@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.IoT.Model
     {
         private DateTime? _creationDate;
         private string _parentGroupName;
-        private List<GroupNameAndArn> _rootToParentThingGroups = new List<GroupNameAndArn>();
+        private List<GroupNameAndArn> _rootToParentThingGroups = AWSConfigs.InitializeCollections ? new List<GroupNameAndArn>() : null;
 
         /// <summary>
         /// Gets and sets the property CreationDate. 
@@ -89,7 +90,7 @@ namespace Amazon.IoT.Model
         // Check to see if RootToParentThingGroups property is set
         internal bool IsSetRootToParentThingGroups()
         {
-            return this._rootToParentThingGroups != null && this._rootToParentThingGroups.Count > 0; 
+            return this._rootToParentThingGroups != null && (this._rootToParentThingGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

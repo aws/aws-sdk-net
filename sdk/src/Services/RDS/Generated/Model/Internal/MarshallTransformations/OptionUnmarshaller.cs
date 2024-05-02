@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -57,6 +58,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DBSecurityGroupMemberships/DBSecurityGroup", targetDepth))
                     {
                         var unmarshaller = DBSecurityGroupMembershipUnmarshaller.Instance;
+                        if (unmarshalledObject.DBSecurityGroupMemberships == null)
+                        {
+                            unmarshalledObject.DBSecurityGroupMemberships = new List<DBSecurityGroupMembership>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.DBSecurityGroupMemberships.Add(item);
                         continue;
@@ -76,6 +81,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("OptionSettings/OptionSetting", targetDepth))
                     {
                         var unmarshaller = OptionSettingUnmarshaller.Instance;
+                        if (unmarshalledObject.OptionSettings == null)
+                        {
+                            unmarshalledObject.OptionSettings = new List<OptionSetting>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.OptionSettings.Add(item);
                         continue;
@@ -107,6 +116,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("VpcSecurityGroupMemberships/VpcSecurityGroupMembership", targetDepth))
                     {
                         var unmarshaller = VpcSecurityGroupMembershipUnmarshaller.Instance;
+                        if (unmarshalledObject.VpcSecurityGroupMemberships == null)
+                        {
+                            unmarshalledObject.VpcSecurityGroupMemberships = new List<VpcSecurityGroupMembership>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.VpcSecurityGroupMemberships.Add(item);
                         continue;

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.APIGateway.Model
         private string _parentId;
         private string _path;
         private string _pathPart;
-        private Dictionary<string, Method> _resourceMethods = new Dictionary<string, Method>();
+        private Dictionary<string, Method> _resourceMethods = AWSConfigs.InitializeCollections ? new Dictionary<string, Method>() : null;
 
         /// <summary>
         /// Gets and sets the property Id. 
@@ -126,7 +127,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if ResourceMethods property is set
         internal bool IsSetResourceMethods()
         {
-            return this._resourceMethods != null && this._resourceMethods.Count > 0; 
+            return this._resourceMethods != null && (this._resourceMethods.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

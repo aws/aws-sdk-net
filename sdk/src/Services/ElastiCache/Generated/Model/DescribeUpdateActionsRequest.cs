@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
@@ -34,16 +35,16 @@ namespace Amazon.ElastiCache.Model
     /// </summary>
     public partial class DescribeUpdateActionsRequest : AmazonElastiCacheRequest
     {
-        private List<string> _cacheClusterIds = new List<string>();
+        private List<string> _cacheClusterIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _engine;
         private string _marker;
         private int? _maxRecords;
-        private List<string> _replicationGroupIds = new List<string>();
+        private List<string> _replicationGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _serviceUpdateName;
-        private List<string> _serviceUpdateStatus = new List<string>();
+        private List<string> _serviceUpdateStatus = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TimeRangeFilter _serviceUpdateTimeRange;
         private bool? _showNodeLevelUpdateStatus;
-        private List<string> _updateActionStatus = new List<string>();
+        private List<string> _updateActionStatus = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CacheClusterIds. 
@@ -61,7 +62,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheClusterIds property is set
         internal bool IsSetCacheClusterIds()
         {
-            return this._cacheClusterIds != null && this._cacheClusterIds.Count > 0; 
+            return this._cacheClusterIds != null && (this._cacheClusterIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -136,7 +137,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if ReplicationGroupIds property is set
         internal bool IsSetReplicationGroupIds()
         {
-            return this._replicationGroupIds != null && this._replicationGroupIds.Count > 0; 
+            return this._replicationGroupIds != null && (this._replicationGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -173,7 +174,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if ServiceUpdateStatus property is set
         internal bool IsSetServiceUpdateStatus()
         {
-            return this._serviceUpdateStatus != null && this._serviceUpdateStatus.Count > 0; 
+            return this._serviceUpdateStatus != null && (this._serviceUpdateStatus.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -228,7 +229,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if UpdateActionStatus property is set
         internal bool IsSetUpdateActionStatus()
         {
-            return this._updateActionStatus != null && this._updateActionStatus.Count > 0; 
+            return this._updateActionStatus != null && (this._updateActionStatus.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

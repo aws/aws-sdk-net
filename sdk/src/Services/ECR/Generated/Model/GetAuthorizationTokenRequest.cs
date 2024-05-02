@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECR.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ECR.Model
     /// </summary>
     public partial class GetAuthorizationTokenRequest : AmazonECRRequest
     {
-        private List<string> _registryIds = new List<string>();
+        private List<string> _registryIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property RegistryIds. 
@@ -66,7 +67,7 @@ namespace Amazon.ECR.Model
         // Check to see if RegistryIds property is set
         internal bool IsSetRegistryIds()
         {
-            return this._registryIds != null && this._registryIds.Count > 0; 
+            return this._registryIds != null && (this._registryIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class GetContainerServicesResponse : AmazonWebServiceResponse
     {
-        private List<ContainerService> _containerServices = new List<ContainerService>();
+        private List<ContainerService> _containerServices = AWSConfigs.InitializeCollections ? new List<ContainerService>() : null;
 
         /// <summary>
         /// Gets and sets the property ContainerServices. 
@@ -50,7 +51,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if ContainerServices property is set
         internal bool IsSetContainerServices()
         {
-            return this._containerServices != null && this._containerServices.Count > 0; 
+            return this._containerServices != null && (this._containerServices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ElasticTranscoder.Model
     public partial class PipelineOutputConfig
     {
         private string _bucket;
-        private List<Permission> _permissions = new List<Permission>();
+        private List<Permission> _permissions = AWSConfigs.InitializeCollections ? new List<Permission>() : null;
         private string _storageClass;
 
         /// <summary>
@@ -114,7 +115,7 @@ namespace Amazon.ElasticTranscoder.Model
         // Check to see if Permissions property is set
         internal bool IsSetPermissions()
         {
-            return this._permissions != null && this._permissions.Count > 0; 
+            return this._permissions != null && (this._permissions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

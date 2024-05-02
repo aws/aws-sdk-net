@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CodePipeline.Model
     public partial class ListPipelineExecutionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PipelineExecutionSummary> _pipelineExecutionSummaries = new List<PipelineExecutionSummary>();
+        private List<PipelineExecutionSummary> _pipelineExecutionSummaries = AWSConfigs.InitializeCollections ? new List<PipelineExecutionSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if PipelineExecutionSummaries property is set
         internal bool IsSetPipelineExecutionSummaries()
         {
-            return this._pipelineExecutionSummaries != null && this._pipelineExecutionSummaries.Count > 0; 
+            return this._pipelineExecutionSummaries != null && (this._pipelineExecutionSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

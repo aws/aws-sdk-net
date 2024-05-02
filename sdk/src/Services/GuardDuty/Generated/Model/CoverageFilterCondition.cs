@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class CoverageFilterCondition
     {
-        private List<string> _equals = new List<string>();
-        private List<string> _notEquals = new List<string>();
+        private List<string> _equals = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _notEquals = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Equals. 
@@ -43,7 +44,7 @@ namespace Amazon.GuardDuty.Model
         /// coverage details.
         /// </para>
         /// </summary>
-        public List<string> Equals
+        public new List<string> Equals
         {
             get { return this._equals; }
             set { this._equals = value; }
@@ -52,7 +53,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if Equals property is set
         internal bool IsSetEquals()
         {
-            return this._equals != null && this._equals.Count > 0; 
+            return this._equals != null && (this._equals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if NotEquals property is set
         internal bool IsSetNotEquals()
         {
-            return this._notEquals != null && this._notEquals.Count > 0; 
+            return this._notEquals != null && (this._notEquals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ForecastService.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ForecastService.Model
         /// Enumerable containing all of the ForecastExportJobs
         /// </summary>
         public IPaginatedEnumerable<ForecastExportJobSummary> ForecastExportJobs => 
-            new PaginatedResultKeyResponse<ListForecastExportJobsResponse, ForecastExportJobSummary>(this, (i) => i.ForecastExportJobs);
+            new PaginatedResultKeyResponse<ListForecastExportJobsResponse, ForecastExportJobSummary>(this, (i) => i.ForecastExportJobs ?? new List<ForecastExportJobSummary>());
 
         internal ListForecastExportJobsPaginator(IAmazonForecastService client, ListForecastExportJobsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ForecastService.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListForecastExportJobsResponse> IPaginator<ListForecastExportJobsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListForecastExportJobsResponse> IPaginator<ListForecastExportJobsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

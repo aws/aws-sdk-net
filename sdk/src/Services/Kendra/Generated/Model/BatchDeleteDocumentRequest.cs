@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -49,7 +50,7 @@ namespace Amazon.Kendra.Model
     public partial class BatchDeleteDocumentRequest : AmazonKendraRequest
     {
         private DataSourceSyncJobMetricTarget _dataSourceSyncJobMetricTarget;
-        private List<string> _documentIdList = new List<string>();
+        private List<string> _documentIdList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _indexId;
 
         /// <summary>
@@ -83,7 +84,7 @@ namespace Amazon.Kendra.Model
         // Check to see if DocumentIdList property is set
         internal bool IsSetDocumentIdList()
         {
-            return this._documentIdList != null && this._documentIdList.Count > 0; 
+            return this._documentIdList != null && (this._documentIdList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.WellArchitected.Model
     public partial class ReviewTemplateSummary
     {
         private string _description;
-        private List<string> _lenses = new List<string>();
+        private List<string> _lenses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _owner;
         private string _templateArn;
         private string _templateName;
@@ -75,7 +76,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if Lenses property is set
         internal bool IsSetLenses()
         {
-            return this._lenses != null && this._lenses.Count > 0; 
+            return this._lenses != null && (this._lenses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

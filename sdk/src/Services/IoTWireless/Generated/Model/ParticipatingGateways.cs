@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.IoTWireless.Model
     public partial class ParticipatingGateways
     {
         private DownlinkMode _downlinkMode;
-        private List<GatewayListItem> _gatewayList = new List<GatewayListItem>();
+        private List<GatewayListItem> _gatewayList = AWSConfigs.InitializeCollections ? new List<GatewayListItem>() : null;
         private int? _transmissionInterval;
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if GatewayList property is set
         internal bool IsSetGatewayList()
         {
-            return this._gatewayList != null && this._gatewayList.Count > 0; 
+            return this._gatewayList != null && (this._gatewayList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

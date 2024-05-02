@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.Glue.Model
     {
         private BlueprintDetails _blueprintDetails;
         private DateTime? _createdOn;
-        private Dictionary<string, string> _defaultRunProperties = new Dictionary<string, string>();
+        private Dictionary<string, string> _defaultRunProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _description;
         private WorkflowGraph _graph;
         private DateTime? _lastModifiedOn;
@@ -99,7 +100,7 @@ namespace Amazon.Glue.Model
         // Check to see if DefaultRunProperties property is set
         internal bool IsSetDefaultRunProperties()
         {
-            return this._defaultRunProperties != null && this._defaultRunProperties.Count > 0; 
+            return this._defaultRunProperties != null && (this._defaultRunProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

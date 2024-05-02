@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ResilienceHub.Model
     public partial class ListRecommendationTemplatesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RecommendationTemplate> _recommendationTemplates = new List<RecommendationTemplate>();
+        private List<RecommendationTemplate> _recommendationTemplates = AWSConfigs.InitializeCollections ? new List<RecommendationTemplate>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +70,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if RecommendationTemplates property is set
         internal bool IsSetRecommendationTemplates()
         {
-            return this._recommendationTemplates != null && this._recommendationTemplates.Count > 0; 
+            return this._recommendationTemplates != null && (this._recommendationTemplates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

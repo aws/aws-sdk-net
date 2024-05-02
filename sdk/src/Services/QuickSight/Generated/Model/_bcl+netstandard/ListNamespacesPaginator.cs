@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.QuickSight.Model
         /// Enumerable containing all of the Namespaces
         /// </summary>
         public IPaginatedEnumerable<NamespaceInfoV2> Namespaces => 
-            new PaginatedResultKeyResponse<ListNamespacesResponse, NamespaceInfoV2>(this, (i) => i.Namespaces);
+            new PaginatedResultKeyResponse<ListNamespacesResponse, NamespaceInfoV2>(this, (i) => i.Namespaces ?? new List<NamespaceInfoV2>());
 
         internal ListNamespacesPaginator(IAmazonQuickSight client, ListNamespacesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.QuickSight.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListNamespacesResponse> IPaginator<ListNamespacesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListNamespacesResponse> IPaginator<ListNamespacesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

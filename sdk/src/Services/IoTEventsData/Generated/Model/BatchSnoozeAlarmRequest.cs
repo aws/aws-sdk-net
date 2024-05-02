@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTEventsData.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.IoTEventsData.Model
     /// </summary>
     public partial class BatchSnoozeAlarmRequest : AmazonIoTEventsDataRequest
     {
-        private List<SnoozeAlarmActionRequest> _snoozeActionRequests = new List<SnoozeAlarmActionRequest>();
+        private List<SnoozeAlarmActionRequest> _snoozeActionRequests = AWSConfigs.InitializeCollections ? new List<SnoozeAlarmActionRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property SnoozeActionRequests. 
@@ -53,7 +54,7 @@ namespace Amazon.IoTEventsData.Model
         // Check to see if SnoozeActionRequests property is set
         internal bool IsSetSnoozeActionRequests()
         {
-            return this._snoozeActionRequests != null && this._snoozeActionRequests.Count > 0; 
+            return this._snoozeActionRequests != null && (this._snoozeActionRequests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

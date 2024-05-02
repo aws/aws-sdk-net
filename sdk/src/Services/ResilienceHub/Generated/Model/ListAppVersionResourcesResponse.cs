@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ResilienceHub.Model
     public partial class ListAppVersionResourcesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PhysicalResource> _physicalResources = new List<PhysicalResource>();
+        private List<PhysicalResource> _physicalResources = AWSConfigs.InitializeCollections ? new List<PhysicalResource>() : null;
         private string _resolutionId;
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if PhysicalResources property is set
         internal bool IsSetPhysicalResources()
         {
-            return this._physicalResources != null && this._physicalResources.Count > 0; 
+            return this._physicalResources != null && (this._physicalResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAF.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.WAF.Model
     public partial class ListRegexMatchSetsResponse : AmazonWebServiceResponse
     {
         private string _nextMarker;
-        private List<RegexMatchSetSummary> _regexMatchSets = new List<RegexMatchSetSummary>();
+        private List<RegexMatchSetSummary> _regexMatchSets = AWSConfigs.InitializeCollections ? new List<RegexMatchSetSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextMarker. 
@@ -74,7 +75,7 @@ namespace Amazon.WAF.Model
         // Check to see if RegexMatchSets property is set
         internal bool IsSetRegexMatchSets()
         {
-            return this._regexMatchSets != null && this._regexMatchSets.Count > 0; 
+            return this._regexMatchSets != null && (this._regexMatchSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

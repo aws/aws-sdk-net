@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.KinesisVideo.Model
     {
         private ImageGenerationDestinationConfig _destinationConfig;
         private Format _format;
-        private Dictionary<string, string> _formatConfig = new Dictionary<string, string>();
+        private Dictionary<string, string> _formatConfig = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private int? _heightPixels;
         private ImageSelectorType _imageSelectorType;
         private int? _samplingInterval;
@@ -103,7 +104,7 @@ namespace Amazon.KinesisVideo.Model
         // Check to see if FormatConfig property is set
         internal bool IsSetFormatConfig()
         {
-            return this._formatConfig != null && this._formatConfig.Count > 0; 
+            return this._formatConfig != null && (this._formatConfig.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeCoipPoolsResponse : AmazonWebServiceResponse
     {
-        private List<CoipPool> _coipPools = new List<CoipPool>();
+        private List<CoipPool> _coipPools = AWSConfigs.InitializeCollections ? new List<CoipPool>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.EC2.Model
         // Check to see if CoipPools property is set
         internal bool IsSetCoipPools()
         {
-            return this._coipPools != null && this._coipPools.Count > 0; 
+            return this._coipPools != null && (this._coipPools.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

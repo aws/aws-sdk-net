@@ -30,12 +30,13 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DistributionList Object
     /// </summary>  
-    public class DistributionListUnmarshaller : IUnmarshaller<DistributionList, XmlUnmarshallerContext>
+    public class DistributionListUnmarshaller : IUnmarshaller<DistributionList, XmlUnmarshallerContext>, IUnmarshaller<DistributionList, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -63,6 +64,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Items/DistributionSummary", targetDepth))
                     {
+                        if (unmarshalledObject.Items == null)
+                        {
+                            unmarshalledObject.Items = new List<DistributionSummary>();
+                        }
                         var unmarshaller = DistributionSummaryUnmarshaller.Instance;
                         unmarshalledObject.Items.Add(unmarshaller.Unmarshall(context));
                         continue;
@@ -98,6 +103,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public DistributionList Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static DistributionListUnmarshaller _instance = new DistributionListUnmarshaller();        

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3Control.Model
 {
     /// <summary>
@@ -37,8 +38,8 @@ namespace Amazon.S3Control.Model
         private DateTime? _createdBefore;
         private bool? _eligibleForReplication;
         private KeyNameConstraint _keyNameConstraint;
-        private List<string> _matchAnyStorageClass = new List<string>();
-        private List<string> _objectReplicationStatuses = new List<string>();
+        private List<string> _matchAnyStorageClass = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _objectReplicationStatuses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private long? _objectSizeGreaterThanBytes;
         private long? _objectSizeLessThanBytes;
 
@@ -135,7 +136,7 @@ namespace Amazon.S3Control.Model
         // Check to see if MatchAnyStorageClass property is set
         internal bool IsSetMatchAnyStorageClass()
         {
-            return this._matchAnyStorageClass != null && this._matchAnyStorageClass.Count > 0; 
+            return this._matchAnyStorageClass != null && (this._matchAnyStorageClass.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -154,7 +155,7 @@ namespace Amazon.S3Control.Model
         // Check to see if ObjectReplicationStatuses property is set
         internal bool IsSetObjectReplicationStatuses()
         {
-            return this._objectReplicationStatuses != null && this._objectReplicationStatuses.Count > 0; 
+            return this._objectReplicationStatuses != null && (this._objectReplicationStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelBuildingService.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.LexModelBuildingService.Model
     public partial class GetUtterancesViewResponse : AmazonWebServiceResponse
     {
         private string _botName;
-        private List<UtteranceList> _utterances = new List<UtteranceList>();
+        private List<UtteranceList> _utterances = AWSConfigs.InitializeCollections ? new List<UtteranceList>() : null;
 
         /// <summary>
         /// Gets and sets the property BotName. 
@@ -73,7 +74,7 @@ namespace Amazon.LexModelBuildingService.Model
         // Check to see if Utterances property is set
         internal bool IsSetUtterances()
         {
-            return this._utterances != null && this._utterances.Count > 0; 
+            return this._utterances != null && (this._utterances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

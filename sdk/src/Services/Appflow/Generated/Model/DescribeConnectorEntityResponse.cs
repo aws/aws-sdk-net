@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Appflow.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Appflow.Model
     /// </summary>
     public partial class DescribeConnectorEntityResponse : AmazonWebServiceResponse
     {
-        private List<ConnectorEntityField> _connectorEntityFields = new List<ConnectorEntityField>();
+        private List<ConnectorEntityField> _connectorEntityFields = AWSConfigs.InitializeCollections ? new List<ConnectorEntityField>() : null;
 
         /// <summary>
         /// Gets and sets the property ConnectorEntityFields. 
@@ -52,7 +53,7 @@ namespace Amazon.Appflow.Model
         // Check to see if ConnectorEntityFields property is set
         internal bool IsSetConnectorEntityFields()
         {
-            return this._connectorEntityFields != null && this._connectorEntityFields.Count > 0; 
+            return this._connectorEntityFields != null && (this._connectorEntityFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

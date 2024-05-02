@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAFRegional.Model
 {
     /// <summary>
@@ -59,7 +60,7 @@ namespace Amazon.WAFRegional.Model
     {
         private string _name;
         private string _regexMatchSetId;
-        private List<RegexMatchTuple> _regexMatchTuples = new List<RegexMatchTuple>();
+        private List<RegexMatchTuple> _regexMatchTuples = AWSConfigs.InitializeCollections ? new List<RegexMatchTuple>() : null;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -140,7 +141,7 @@ namespace Amazon.WAFRegional.Model
         // Check to see if RegexMatchTuples property is set
         internal bool IsSetRegexMatchTuples()
         {
-            return this._regexMatchTuples != null && this._regexMatchTuples.Count > 0; 
+            return this._regexMatchTuples != null && (this._regexMatchTuples.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

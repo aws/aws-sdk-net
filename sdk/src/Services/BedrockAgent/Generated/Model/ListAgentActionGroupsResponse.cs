@@ -26,18 +26,22 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// List Action Groups Response
+    /// This is the response object from the ListAgentActionGroups operation.
     /// </summary>
     public partial class ListAgentActionGroupsResponse : AmazonWebServiceResponse
     {
-        private List<ActionGroupSummary> _actionGroupSummaries = new List<ActionGroupSummary>();
+        private List<ActionGroupSummary> _actionGroupSummaries = AWSConfigs.InitializeCollections ? new List<ActionGroupSummary>() : null;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property ActionGroupSummaries.
+        /// Gets and sets the property ActionGroupSummaries. 
+        /// <para>
+        /// A list of objects, each of which contains information about an action group.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10)]
         public List<ActionGroupSummary> ActionGroupSummaries
@@ -49,11 +53,16 @@ namespace Amazon.BedrockAgent.Model
         // Check to see if ActionGroupSummaries property is set
         internal bool IsSetActionGroupSummaries()
         {
-            return this._actionGroupSummaries != null && this._actionGroupSummaries.Count > 0; 
+            return this._actionGroupSummaries != null && (this._actionGroupSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// If the total number of results is greater than the <c>maxResults</c> value provided
+        /// in the request, use this token when making another request in the <c>nextToken</c>
+        /// field to return the next batch of results.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
         public string NextToken

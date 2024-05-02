@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MQ.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MQ.Model
     /// </summary>
     public partial class DescribeBrokerEngineTypesResponse : AmazonWebServiceResponse
     {
-        private List<BrokerEngineType> _brokerEngineTypes = new List<BrokerEngineType>();
+        private List<BrokerEngineType> _brokerEngineTypes = AWSConfigs.InitializeCollections ? new List<BrokerEngineType>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -52,7 +53,7 @@ namespace Amazon.MQ.Model
         // Check to see if BrokerEngineTypes property is set
         internal bool IsSetBrokerEngineTypes()
         {
-            return this._brokerEngineTypes != null && this._brokerEngineTypes.Count > 0; 
+            return this._brokerEngineTypes != null && (this._brokerEngineTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

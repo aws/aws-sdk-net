@@ -33,15 +33,16 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.FIS
 {
     /// <summary>
     /// <para>Implementation for accessing FIS</para>
     ///
-    /// Fault Injection Simulator is a managed service that enables you to perform fault injection
+    /// Fault Injection Service is a managed service that enables you to perform fault injection
     /// experiments on your Amazon Web Services workloads. For more information, see the <a
-    /// href="https://docs.aws.amazon.com/fis/latest/userguide/">Fault Injection Simulator
-    /// User Guide</a>.
+    /// href="https://docs.aws.amazon.com/fis/latest/userguide/">Fault Injection Service User
+    /// Guide</a>.
     /// </summary>
     public partial class AmazonFISClient : AmazonServiceClient, IAmazonFIS
     {
@@ -296,7 +297,7 @@ namespace Amazon.FIS
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html">experiment
-        /// templates</a> in the <i>Fault Injection Simulator User Guide</i>.
+        /// templates</a> in the <i>Fault Injection Service User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateExperimentTemplate service method.</param>
@@ -352,7 +353,7 @@ namespace Amazon.FIS
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-templates.html">experiment
-        /// templates</a> in the <i>Fault Injection Simulator User Guide</i>.
+        /// templates</a> in the <i>Fault Injection Service User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateExperimentTemplate service method.</param>
@@ -392,7 +393,7 @@ namespace Amazon.FIS
         /// Creates a target account configuration for the experiment template. A target account
         /// configuration is required when <c>accountTargeting</c> of <c>experimentOptions</c>
         /// is set to <c>multi-account</c>. For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-options.html">experiment
-        /// options</a> in the <i>Fault Injection Simulator User Guide</i>.
+        /// options</a> in the <i>Fault Injection Service User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTargetAccountConfiguration service method.</param>
         /// 
@@ -424,7 +425,7 @@ namespace Amazon.FIS
         /// Creates a target account configuration for the experiment template. A target account
         /// configuration is required when <c>accountTargeting</c> of <c>experimentOptions</c>
         /// is set to <c>multi-account</c>. For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-options.html">experiment
-        /// options</a> in the <i>Fault Injection Simulator User Guide</i>.
+        /// options</a> in the <i>Fault Injection Service User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTargetAccountConfiguration service method.</param>
         /// <param name="cancellationToken">

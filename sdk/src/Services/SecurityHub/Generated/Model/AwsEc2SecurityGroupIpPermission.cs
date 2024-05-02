@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -35,11 +36,11 @@ namespace Amazon.SecurityHub.Model
     {
         private int? _fromPort;
         private string _ipProtocol;
-        private List<AwsEc2SecurityGroupIpRange> _ipRanges = new List<AwsEc2SecurityGroupIpRange>();
-        private List<AwsEc2SecurityGroupIpv6Range> _ipv6Ranges = new List<AwsEc2SecurityGroupIpv6Range>();
-        private List<AwsEc2SecurityGroupPrefixListId> _prefixListIds = new List<AwsEc2SecurityGroupPrefixListId>();
+        private List<AwsEc2SecurityGroupIpRange> _ipRanges = AWSConfigs.InitializeCollections ? new List<AwsEc2SecurityGroupIpRange>() : null;
+        private List<AwsEc2SecurityGroupIpv6Range> _ipv6Ranges = AWSConfigs.InitializeCollections ? new List<AwsEc2SecurityGroupIpv6Range>() : null;
+        private List<AwsEc2SecurityGroupPrefixListId> _prefixListIds = AWSConfigs.InitializeCollections ? new List<AwsEc2SecurityGroupPrefixListId>() : null;
         private int? _toPort;
-        private List<AwsEc2SecurityGroupUserIdGroupPair> _userIdGroupPairs = new List<AwsEc2SecurityGroupUserIdGroupPair>();
+        private List<AwsEc2SecurityGroupUserIdGroupPair> _userIdGroupPairs = AWSConfigs.InitializeCollections ? new List<AwsEc2SecurityGroupUserIdGroupPair>() : null;
 
         /// <summary>
         /// Gets and sets the property FromPort. 
@@ -117,7 +118,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if IpRanges property is set
         internal bool IsSetIpRanges()
         {
-            return this._ipRanges != null && this._ipRanges.Count > 0; 
+            return this._ipRanges != null && (this._ipRanges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -135,7 +136,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Ipv6Ranges property is set
         internal bool IsSetIpv6Ranges()
         {
-            return this._ipv6Ranges != null && this._ipv6Ranges.Count > 0; 
+            return this._ipv6Ranges != null && (this._ipv6Ranges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -155,7 +156,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if PrefixListIds property is set
         internal bool IsSetPrefixListIds()
         {
-            return this._prefixListIds != null && this._prefixListIds.Count > 0; 
+            return this._prefixListIds != null && (this._prefixListIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -196,7 +197,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if UserIdGroupPairs property is set
         internal bool IsSetUserIdGroupPairs()
         {
-            return this._userIdGroupPairs != null && this._userIdGroupPairs.Count > 0; 
+            return this._userIdGroupPairs != null && (this._userIdGroupPairs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SimpleEmailV2.Model
     /// </summary>
     public partial class ListDedicatedIpPoolsResponse : AmazonWebServiceResponse
     {
-        private List<string> _dedicatedIpPools = new List<string>();
+        private List<string> _dedicatedIpPools = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if DedicatedIpPools property is set
         internal bool IsSetDedicatedIpPools()
         {
-            return this._dedicatedIpPools != null && this._dedicatedIpPools.Count > 0; 
+            return this._dedicatedIpPools != null && (this._dedicatedIpPools.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataExchange.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.DataExchange.Model
         private string _arn;
         private DateTime? _createdAt;
         private ResponseDetails _details;
-        private List<JobError> _errors = new List<JobError>();
+        private List<JobError> _errors = AWSConfigs.InitializeCollections ? new List<JobError>() : null;
         private string _id;
         private State _state;
         private Type _type;
@@ -118,7 +119,7 @@ namespace Amazon.DataExchange.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

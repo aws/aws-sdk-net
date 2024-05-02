@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -50,7 +51,7 @@ namespace Amazon.Glue.Model
     {
         private string _catalogId;
         private string _databaseName;
-        private List<string> _tablesToDelete = new List<string>();
+        private List<string> _tablesToDelete = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _transactionId;
 
         /// <summary>
@@ -109,7 +110,7 @@ namespace Amazon.Glue.Model
         // Check to see if TablesToDelete property is set
         internal bool IsSetTablesToDelete()
         {
-            return this._tablesToDelete != null && this._tablesToDelete.Count > 0; 
+            return this._tablesToDelete != null && (this._tablesToDelete.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

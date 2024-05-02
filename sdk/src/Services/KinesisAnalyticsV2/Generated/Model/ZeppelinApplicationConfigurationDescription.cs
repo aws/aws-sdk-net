@@ -26,23 +26,24 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// The configuration of a Kinesis Data Analytics Studio notebook.
+    /// The configuration of a Managed Service for Apache Flink Studio notebook.
     /// </summary>
     public partial class ZeppelinApplicationConfigurationDescription
     {
         private CatalogConfigurationDescription _catalogConfigurationDescription;
-        private List<CustomArtifactConfigurationDescription> _customArtifactsConfigurationDescription = new List<CustomArtifactConfigurationDescription>();
+        private List<CustomArtifactConfigurationDescription> _customArtifactsConfigurationDescription = AWSConfigs.InitializeCollections ? new List<CustomArtifactConfigurationDescription>() : null;
         private DeployAsApplicationConfigurationDescription _deployAsApplicationConfigurationDescription;
         private ZeppelinMonitoringConfigurationDescription _monitoringConfigurationDescription;
 
         /// <summary>
         /// Gets and sets the property CatalogConfigurationDescription. 
         /// <para>
-        /// The Amazon Glue Data Catalog that is associated with the Kinesis Data Analytics Studio
-        /// notebook.
+        /// The Amazon Glue Data Catalog that is associated with the Managed Service for Apache
+        /// Flink Studio notebook.
         /// </para>
         /// </summary>
         public CatalogConfigurationDescription CatalogConfigurationDescription
@@ -73,14 +74,14 @@ namespace Amazon.KinesisAnalyticsV2.Model
         // Check to see if CustomArtifactsConfigurationDescription property is set
         internal bool IsSetCustomArtifactsConfigurationDescription()
         {
-            return this._customArtifactsConfigurationDescription != null && this._customArtifactsConfigurationDescription.Count > 0; 
+            return this._customArtifactsConfigurationDescription != null && (this._customArtifactsConfigurationDescription.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property DeployAsApplicationConfigurationDescription. 
         /// <para>
-        /// The parameters required to deploy a Kinesis Data Analytics Studio notebook as an application
-        /// with durable state.
+        /// The parameters required to deploy a Managed Service for Apache Flink Studio notebook
+        /// as an application with durable state.
         /// </para>
         /// </summary>
         public DeployAsApplicationConfigurationDescription DeployAsApplicationConfigurationDescription
@@ -98,7 +99,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property MonitoringConfigurationDescription. 
         /// <para>
-        /// The monitoring configuration of a Kinesis Data Analytics Studio notebook.
+        /// The monitoring configuration of a Managed Service for Apache Flink Studio notebook.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

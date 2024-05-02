@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.ConfigService.Model
     public partial class Scope
     {
         private string _complianceResourceId;
-        private List<string> _complianceResourceTypes = new List<string>();
+        private List<string> _complianceResourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _tagKey;
         private string _tagValue;
 
@@ -81,7 +82,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if ComplianceResourceTypes property is set
         internal bool IsSetComplianceResourceTypes()
         {
-            return this._complianceResourceTypes != null && this._complianceResourceTypes.Count > 0; 
+            return this._complianceResourceTypes != null && (this._complianceResourceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

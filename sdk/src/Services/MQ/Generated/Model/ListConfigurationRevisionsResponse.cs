@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MQ.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.MQ.Model
         private string _configurationId;
         private int? _maxResults;
         private string _nextToken;
-        private List<ConfigurationRevision> _revisions = new List<ConfigurationRevision>();
+        private List<ConfigurationRevision> _revisions = AWSConfigs.InitializeCollections ? new List<ConfigurationRevision>() : null;
 
         /// <summary>
         /// Gets and sets the property ConfigurationId. 
@@ -109,7 +110,7 @@ namespace Amazon.MQ.Model
         // Check to see if Revisions property is set
         internal bool IsSetRevisions()
         {
-            return this._revisions != null && this._revisions.Count > 0; 
+            return this._revisions != null && (this._revisions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

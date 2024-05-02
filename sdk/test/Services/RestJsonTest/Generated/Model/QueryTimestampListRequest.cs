@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RestJsonTest.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.RestJsonTest.Model
     /// </summary>
     public partial class QueryTimestampListRequest : AmazonRestJsonTestRequest
     {
-        private List<DateTime> _queryTimestampList = new List<DateTime>();
+        private List<DateTime> _queryTimestampList = AWSConfigs.InitializeCollections ? new List<DateTime>() : null;
 
         /// <summary>
         /// Gets and sets the property QueryTimestampList.
@@ -48,7 +49,7 @@ namespace Amazon.RestJsonTest.Model
         // Check to see if QueryTimestampList property is set
         internal bool IsSetQueryTimestampList()
         {
-            return this._queryTimestampList != null && this._queryTimestampList.Count > 0; 
+            return this._queryTimestampList != null && (this._queryTimestampList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.DatabaseMigrationService.Model
     /// </summary>
     public partial class ExportMetadataModelAssessmentRequest : AmazonDatabaseMigrationServiceRequest
     {
-        private List<string> _assessmentReportTypes = new List<string>();
+        private List<string> _assessmentReportTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _fileName;
         private string _migrationProjectIdentifier;
         private string _selectionRules;
@@ -56,7 +57,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if AssessmentReportTypes property is set
         internal bool IsSetAssessmentReportTypes()
         {
-            return this._assessmentReportTypes != null && this._assessmentReportTypes.Count > 0; 
+            return this._assessmentReportTypes != null && (this._assessmentReportTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

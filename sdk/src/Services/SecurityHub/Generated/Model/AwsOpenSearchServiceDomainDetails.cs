@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.SecurityHub.Model
         private AwsOpenSearchServiceDomainClusterConfigDetails _clusterConfig;
         private string _domainEndpoint;
         private AwsOpenSearchServiceDomainDomainEndpointOptionsDetails _domainEndpointOptions;
-        private Dictionary<string, string> _domainEndpoints = new Dictionary<string, string>();
+        private Dictionary<string, string> _domainEndpoints = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _domainName;
         private AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails _encryptionAtRestOptions;
         private string _engineVersion;
@@ -177,7 +178,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if DomainEndpoints property is set
         internal bool IsSetDomainEndpoints()
         {
-            return this._domainEndpoints != null && this._domainEndpoints.Count > 0; 
+            return this._domainEndpoints != null && (this._domainEndpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

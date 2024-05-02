@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// Enumerable containing all of the RetrievalResults
         /// </summary>
         public IPaginatedEnumerable<KnowledgeBaseRetrievalResult> RetrievalResults => 
-            new PaginatedResultKeyResponse<RetrieveResponse, KnowledgeBaseRetrievalResult>(this, (i) => i.RetrievalResults);
+            new PaginatedResultKeyResponse<RetrieveResponse, KnowledgeBaseRetrievalResult>(this, (i) => i.RetrievalResults ?? new List<KnowledgeBaseRetrievalResult>());
 
         internal RetrievePaginator(IAmazonBedrockAgentRuntime client, RetrieveRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<RetrieveResponse> IPaginator<RetrieveResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<RetrieveResponse> IPaginator<RetrieveResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
@@ -36,15 +37,15 @@ namespace Amazon.MediaConnect.Model
     public partial class Bridge
     {
         private string _bridgeArn;
-        private List<MessageDetail> _bridgeMessages = new List<MessageDetail>();
+        private List<MessageDetail> _bridgeMessages = AWSConfigs.InitializeCollections ? new List<MessageDetail>() : null;
         private BridgeState _bridgeState;
         private EgressGatewayBridge _egressGatewayBridge;
         private IngressGatewayBridge _ingressGatewayBridge;
         private string _name;
-        private List<BridgeOutput> _outputs = new List<BridgeOutput>();
+        private List<BridgeOutput> _outputs = AWSConfigs.InitializeCollections ? new List<BridgeOutput>() : null;
         private string _placementArn;
         private FailoverConfig _sourceFailoverConfig;
-        private List<BridgeSource> _sources = new List<BridgeSource>();
+        private List<BridgeSource> _sources = AWSConfigs.InitializeCollections ? new List<BridgeSource>() : null;
 
         /// <summary>
         /// Gets and sets the property BridgeArn. The Amazon Resource Number (ARN) of the bridge.
@@ -74,7 +75,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if BridgeMessages property is set
         internal bool IsSetBridgeMessages()
         {
-            return this._bridgeMessages != null && this._bridgeMessages.Count > 0; 
+            return this._bridgeMessages != null && (this._bridgeMessages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -151,7 +152,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if Outputs property is set
         internal bool IsSetOutputs()
         {
-            return this._outputs != null && this._outputs.Count > 0; 
+            return this._outputs != null && (this._outputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -198,7 +199,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if Sources property is set
         internal bool IsSetSources()
         {
-            return this._sources != null && this._sources.Count > 0; 
+            return this._sources != null && (this._sources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

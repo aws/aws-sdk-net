@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.CodePipeline.Model
         /// Enumerable containing all of the ActionExecutionDetails
         /// </summary>
         public IPaginatedEnumerable<ActionExecutionDetail> ActionExecutionDetails => 
-            new PaginatedResultKeyResponse<ListActionExecutionsResponse, ActionExecutionDetail>(this, (i) => i.ActionExecutionDetails);
+            new PaginatedResultKeyResponse<ListActionExecutionsResponse, ActionExecutionDetail>(this, (i) => i.ActionExecutionDetails ?? new List<ActionExecutionDetail>());
 
         internal ListActionExecutionsPaginator(IAmazonCodePipeline client, ListActionExecutionsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.CodePipeline.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListActionExecutionsResponse> IPaginator<ListActionExecutionsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListActionExecutionsResponse> IPaginator<ListActionExecutionsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

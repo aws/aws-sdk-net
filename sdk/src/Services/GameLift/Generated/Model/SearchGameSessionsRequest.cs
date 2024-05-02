@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GameLift.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.GameLift.Model
     /// This operation is not designed to continually track game session status because that
     /// practice can cause you to exceed your API limit and generate errors. Instead, configure
     /// an Amazon Simple Notification Service (Amazon SNS) topic to receive notifications
-    /// from a matchmaker or game session placement queue.
+    /// from a matchmaker or a game session placement queue.
     /// </para>
     ///  
     /// <para>

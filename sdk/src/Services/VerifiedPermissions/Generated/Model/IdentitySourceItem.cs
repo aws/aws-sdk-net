@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VerifiedPermissions.Model
 {
     /// <summary>
@@ -33,18 +34,37 @@ namespace Amazon.VerifiedPermissions.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used as a request parameter for the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListIdentityStores.html">ListIdentityStores</a>
+    /// This data type is a response parameter to the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_ListIdentitySources.html">ListIdentitySources</a>
     /// operation.
     /// </para>
     /// </summary>
     public partial class IdentitySourceItem
     {
+        private ConfigurationItem _configuration;
         private DateTime? _createdDate;
         private IdentitySourceItemDetails _details;
         private string _identitySourceId;
         private DateTime? _lastUpdatedDate;
         private string _policyStoreId;
         private string _principalEntityType;
+
+        /// <summary>
+        /// Gets and sets the property Configuration. 
+        /// <para>
+        /// Contains configuration information about an identity source.
+        /// </para>
+        /// </summary>
+        public ConfigurationItem Configuration
+        {
+            get { return this._configuration; }
+            set { this._configuration = value; }
+        }
+
+        // Check to see if Configuration property is set
+        internal bool IsSetConfiguration()
+        {
+            return this._configuration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CreatedDate. 
@@ -71,7 +91,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// A structure that contains the details of the associated identity provider (IdP).
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [Obsolete("This attribute has been replaced by configuration.cognitoUserPoolConfiguration")]
         public IdentitySourceItemDetails Details
         {
             get { return this._details; }

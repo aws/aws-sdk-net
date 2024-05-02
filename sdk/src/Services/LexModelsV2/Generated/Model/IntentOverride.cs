@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.LexModelsV2.Model
     public partial class IntentOverride
     {
         private string _name;
-        private Dictionary<string, SlotValueOverride> _slots = new Dictionary<string, SlotValueOverride>();
+        private Dictionary<string, SlotValueOverride> _slots = AWSConfigs.InitializeCollections ? new Dictionary<string, SlotValueOverride>() : null;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -71,7 +72,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if Slots property is set
         internal bool IsSetSlots()
         {
-            return this._slots != null && this._slots.Count > 0; 
+            return this._slots != null && (this._slots.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

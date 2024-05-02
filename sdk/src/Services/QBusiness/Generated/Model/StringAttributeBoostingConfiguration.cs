@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
@@ -41,14 +42,14 @@ namespace Amazon.QBusiness.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// For more information on how boosting document attributes work in Amazon Q, see <a
-    /// href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/metadata-boosting.html">Boosting
+    /// For more information on how boosting document attributes work in Amazon Q Business,
+    /// see <a href="https://docs.aws.amazon.com/amazonq/latest/business-use-dg/metadata-boosting.html">Boosting
     /// using document attributes</a>.
     /// </para>
     /// </summary>
     public partial class StringAttributeBoostingConfiguration
     {
-        private Dictionary<string, string> _attributeValueBoosting = new Dictionary<string, string>();
+        private Dictionary<string, string> _attributeValueBoosting = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DocumentAttributeBoostingLevel _boostingLevel;
 
         /// <summary>
@@ -67,7 +68,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if AttributeValueBoosting property is set
         internal bool IsSetAttributeValueBoosting()
         {
-            return this._attributeValueBoosting != null && this._attributeValueBoosting.Count > 0; 
+            return this._attributeValueBoosting != null && (this._attributeValueBoosting.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

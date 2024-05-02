@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RedshiftDataAPIService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.RedshiftDataAPIService.Model
     /// </summary>
     public partial class DescribeTableResponse : AmazonWebServiceResponse
     {
-        private List<ColumnMetadata> _columnList = new List<ColumnMetadata>();
+        private List<ColumnMetadata> _columnList = AWSConfigs.InitializeCollections ? new List<ColumnMetadata>() : null;
         private string _nextToken;
         private string _tableName;
 
@@ -52,7 +53,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         // Check to see if ColumnList property is set
         internal bool IsSetColumnList()
         {
-            return this._columnList != null && this._columnList.Count > 0; 
+            return this._columnList != null && (this._columnList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

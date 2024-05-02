@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Athena.Model
 {
     /// <summary>
@@ -33,10 +34,10 @@ namespace Amazon.Athena.Model
     /// </summary>
     public partial class QueryStagePlanNode
     {
-        private List<QueryStagePlanNode> _children = new List<QueryStagePlanNode>();
+        private List<QueryStagePlanNode> _children = AWSConfigs.InitializeCollections ? new List<QueryStagePlanNode>() : null;
         private string _identifier;
         private string _name;
-        private List<string> _remoteSources = new List<string>();
+        private List<string> _remoteSources = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Children. 
@@ -54,7 +55,7 @@ namespace Amazon.Athena.Model
         // Check to see if Children property is set
         internal bool IsSetChildren()
         {
-            return this._children != null && this._children.Count > 0; 
+            return this._children != null && (this._children.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -109,7 +110,7 @@ namespace Amazon.Athena.Model
         // Check to see if RemoteSources property is set
         internal bool IsSetRemoteSources()
         {
-            return this._remoteSources != null && this._remoteSources.Count > 0; 
+            return this._remoteSources != null && (this._remoteSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

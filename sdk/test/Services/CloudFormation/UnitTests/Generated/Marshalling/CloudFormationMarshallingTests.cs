@@ -3215,6 +3215,51 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("CloudFormation")]
+        public void ListStackSetAutoDeploymentTargetsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListStackSetAutoDeploymentTargets");
+
+            var request = InstantiateClassGenerator.Execute<ListStackSetAutoDeploymentTargetsRequest>(operation);
+            var marshaller = new ListStackSetAutoDeploymentTargetsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ListStackSetAutoDeploymentTargetsResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListStackSetAutoDeploymentTargetsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
+        public void ListStackSetAutoDeploymentTargets_StackSetNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListStackSetAutoDeploymentTargets");
+
+            var request = InstantiateClassGenerator.Execute<ListStackSetAutoDeploymentTargetsRequest>(operation);
+            var marshaller = new ListStackSetAutoDeploymentTargetsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("StackSetNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ListStackSetAutoDeploymentTargetsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("CloudFormation")]
         public void ListStackSetOperationResultsMarshallTest()
         {
             var operation = service_model.FindOperation("ListStackSetOperationResults");

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Honeycode.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.Honeycode.Model
     /// </summary>
     public partial class QueryTableRowsResponse : AmazonWebServiceResponse
     {
-        private List<string> _columnIds = new List<string>();
+        private List<string> _columnIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
-        private List<TableRow> _rows = new List<TableRow>();
+        private List<TableRow> _rows = AWSConfigs.InitializeCollections ? new List<TableRow>() : null;
         private long? _workbookCursor;
 
         /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.Honeycode.Model
         // Check to see if ColumnIds property is set
         internal bool IsSetColumnIds()
         {
-            return this._columnIds != null && this._columnIds.Count > 0; 
+            return this._columnIds != null && (this._columnIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -94,7 +95,7 @@ namespace Amazon.Honeycode.Model
         // Check to see if Rows property is set
         internal bool IsSetRows()
         {
-            return this._rows != null && this._rows.Count > 0; 
+            return this._rows != null && (this._rows.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

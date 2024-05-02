@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoTAnalytics.Model
     /// </summary>
     public partial class ListChannelsResponse : AmazonWebServiceResponse
     {
-        private List<ChannelSummary> _channelSummaries = new List<ChannelSummary>();
+        private List<ChannelSummary> _channelSummaries = AWSConfigs.InitializeCollections ? new List<ChannelSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.IoTAnalytics.Model
         // Check to see if ChannelSummaries property is set
         internal bool IsSetChannelSummaries()
         {
-            return this._channelSummaries != null && this._channelSummaries.Count > 0; 
+            return this._channelSummaries != null && (this._channelSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,12 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
     /// Container for the parameters to the GetProvisionedModelThroughput operation.
-    /// Get details for a provisioned throughput. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Provisioned
-    /// throughput</a> in the Bedrock User Guide.
+    /// Returns details for a Provisioned Throughput. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
+    /// Throughput</a> in the Amazon Bedrock User Guide.
     /// </summary>
     public partial class GetProvisionedModelThroughputRequest : AmazonBedrockRequest
     {
@@ -40,7 +41,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property ProvisionedModelId. 
         /// <para>
-        /// The ARN or name of the provisioned throughput.
+        /// The Amazon Resource Name (ARN) or name of the Provisioned Throughput.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

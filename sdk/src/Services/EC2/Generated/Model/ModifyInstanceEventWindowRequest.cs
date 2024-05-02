@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -58,7 +59,7 @@ namespace Amazon.EC2.Model
         private string _cronExpression;
         private string _instanceEventWindowId;
         private string _name;
-        private List<InstanceEventWindowTimeRangeRequest> _timeRanges = new List<InstanceEventWindowTimeRangeRequest>();
+        private List<InstanceEventWindowTimeRangeRequest> _timeRanges = AWSConfigs.InitializeCollections ? new List<InstanceEventWindowTimeRangeRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property CronExpression. 
@@ -165,7 +166,7 @@ namespace Amazon.EC2.Model
         // Check to see if TimeRanges property is set
         internal bool IsSetTimeRanges()
         {
-            return this._timeRanges != null && this._timeRanges.Count > 0; 
+            return this._timeRanges != null && (this._timeRanges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

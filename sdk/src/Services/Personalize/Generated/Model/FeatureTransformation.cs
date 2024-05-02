@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Personalize.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Personalize.Model
     public partial class FeatureTransformation
     {
         private DateTime? _creationDateTime;
-        private Dictionary<string, string> _defaultParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _defaultParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _featureTransformationArn;
         private DateTime? _lastUpdatedDateTime;
         private string _name;
@@ -75,7 +76,7 @@ namespace Amazon.Personalize.Model
         // Check to see if DefaultParameters property is set
         internal bool IsSetDefaultParameters()
         {
-            return this._defaultParameters != null && this._defaultParameters.Count > 0; 
+            return this._defaultParameters != null && (this._defaultParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

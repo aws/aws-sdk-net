@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Finspace.Model
 {
     /// <summary>
@@ -45,8 +46,9 @@ namespace Amazon.Finspace.Model
         private string _dataviewName;
         private string _description;
         private string _environmentId;
-        private List<KxDataviewSegmentConfiguration> _segmentConfigurations = new List<KxDataviewSegmentConfiguration>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private bool? _readWrite;
+        private List<KxDataviewSegmentConfiguration> _segmentConfigurations = AWSConfigs.InitializeCollections ? new List<KxDataviewSegmentConfiguration>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AutoUpdate. 
@@ -74,6 +76,7 @@ namespace Amazon.Finspace.Model
         ///  The identifier of the availability zones. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=8, Max=12)]
         public string AvailabilityZoneId
         {
             get { return this._availabilityZoneId; }
@@ -89,18 +92,9 @@ namespace Amazon.Finspace.Model
         /// <summary>
         /// Gets and sets the property AzMode. 
         /// <para>
-        /// The number of availability zones you want to assign per cluster. This can be one of
-        /// the following 
+        /// The number of availability zones you want to assign per volume. Currently, FinSpace
+        /// only supports <c>SINGLE</c> for volumes. This places dataview in a single AZ.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <c>SINGLE</c> – Assigns one availability zone per cluster.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <c>MULTI</c> – Assigns all the availability zones per cluster.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public KxAzMode AzMode
@@ -231,6 +225,46 @@ namespace Amazon.Finspace.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ReadWrite. 
+        /// <para>
+        ///  The option to specify whether you want to make the dataview writable to perform database
+        /// maintenance. The following are some considerations related to writable dataviews.&#x2028;&#x2028;
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You cannot create partial writable dataviews. When you create writeable dataviews
+        /// you must provide the entire database path.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You cannot perform updates on a writeable dataview. Hence, <c>autoUpdate</c> must
+        /// be set as <b>False</b> if <c>readWrite</c> is <b>True</b> for a dataview.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must also use a unique volume for creating a writeable dataview. So, if you choose
+        /// a volume that is already in use by another dataview, the dataview creation fails.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Once you create a dataview as writeable, you cannot change it to read-only. So, you
+        /// cannot update the <c>readWrite</c> parameter later.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public bool? ReadWrite
+        {
+            get { return this._readWrite; }
+            set { this._readWrite = value; }
+        }
+
+        // Check to see if ReadWrite property is set
+        internal bool IsSetReadWrite()
+        {
+            return this._readWrite.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SegmentConfigurations. 
         /// <para>
         ///  The configuration that contains the database path of the data that you want to place
@@ -249,7 +283,7 @@ namespace Amazon.Finspace.Model
         // Check to see if SegmentConfigurations property is set
         internal bool IsSetSegmentConfigurations()
         {
-            return this._segmentConfigurations != null && this._segmentConfigurations.Count > 0; 
+            return this._segmentConfigurations != null && (this._segmentConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -269,7 +303,7 @@ namespace Amazon.Finspace.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

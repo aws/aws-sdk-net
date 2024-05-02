@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class Reservation
     {
-        private List<string> _groupNames = new List<string>();
-        private List<GroupIdentifier> _groups = new List<GroupIdentifier>();
-        private List<Instance> _instances = new List<Instance>();
+        private List<string> _groupNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<GroupIdentifier> _groups = AWSConfigs.InitializeCollections ? new List<GroupIdentifier>() : null;
+        private List<Instance> _instances = AWSConfigs.InitializeCollections ? new List<Instance>() : null;
         private string _ownerId;
         private string _requesterId;
         private string _reservationId;
@@ -56,7 +57,7 @@ namespace Amazon.EC2.Model
         // Check to see if GroupNames property is set
         internal bool IsSetGroupNames()
         {
-            return this._groupNames != null && this._groupNames.Count > 0; 
+            return this._groupNames != null && (this._groupNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.EC2.Model
         // Check to see if Groups property is set
         internal bool IsSetGroups()
         {
-            return this._groups != null && this._groups.Count > 0; 
+            return this._groups != null && (this._groups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.EC2.Model
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this._instances != null && this._instances.Count > 0; 
+            return this._instances != null && (this._instances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

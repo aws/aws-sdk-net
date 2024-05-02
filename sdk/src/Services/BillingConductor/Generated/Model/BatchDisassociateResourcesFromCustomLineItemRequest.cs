@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BillingConductor.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.BillingConductor.Model
     public partial class BatchDisassociateResourcesFromCustomLineItemRequest : AmazonBillingConductorRequest
     {
         private CustomLineItemBillingPeriodRange _billingPeriodRange;
-        private List<string> _resourceArns = new List<string>();
+        private List<string> _resourceArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _targetArn;
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.BillingConductor.Model
         // Check to see if ResourceArns property is set
         internal bool IsSetResourceArns()
         {
-            return this._resourceArns != null && this._resourceArns.Count > 0; 
+            return this._resourceArns != null && (this._resourceArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

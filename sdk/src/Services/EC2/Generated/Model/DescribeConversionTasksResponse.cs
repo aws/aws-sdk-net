@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeConversionTasksResponse : AmazonWebServiceResponse
     {
-        private List<ConversionTask> _conversionTasks = new List<ConversionTask>();
+        private List<ConversionTask> _conversionTasks = AWSConfigs.InitializeCollections ? new List<ConversionTask>() : null;
 
         /// <summary>
         /// Gets and sets the property ConversionTasks. 
@@ -50,7 +51,7 @@ namespace Amazon.EC2.Model
         // Check to see if ConversionTasks property is set
         internal bool IsSetConversionTasks()
         {
-            return this._conversionTasks != null && this._conversionTasks.Count > 0; 
+            return this._conversionTasks != null && (this._conversionTasks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

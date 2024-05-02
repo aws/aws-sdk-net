@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RAM.Model
 {
     /// <summary>
@@ -47,11 +48,11 @@ namespace Amazon.RAM.Model
         private bool? _allowExternalPrincipals;
         private string _clientToken;
         private string _name;
-        private List<string> _permissionArns = new List<string>();
-        private List<string> _principals = new List<string>();
-        private List<string> _resourceArns = new List<string>();
-        private List<string> _sources = new List<string>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<string> _permissionArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _principals = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _resourceArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _sources = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AllowExternalPrincipals. 
@@ -146,7 +147,7 @@ namespace Amazon.RAM.Model
         // Check to see if PermissionArns property is set
         internal bool IsSetPermissionArns()
         {
-            return this._permissionArns != null && this._permissionArns.Count > 0; 
+            return this._permissionArns != null && (this._permissionArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -198,7 +199,7 @@ namespace Amazon.RAM.Model
         // Check to see if Principals property is set
         internal bool IsSetPrincipals()
         {
-            return this._principals != null && this._principals.Count > 0; 
+            return this._principals != null && (this._principals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -217,7 +218,7 @@ namespace Amazon.RAM.Model
         // Check to see if ResourceArns property is set
         internal bool IsSetResourceArns()
         {
-            return this._resourceArns != null && this._resourceArns.Count > 0; 
+            return this._resourceArns != null && (this._resourceArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -236,7 +237,7 @@ namespace Amazon.RAM.Model
         // Check to see if Sources property is set
         internal bool IsSetSources()
         {
-            return this._sources != null && this._sources.Count > 0; 
+            return this._sources != null && (this._sources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -255,7 +256,7 @@ namespace Amazon.RAM.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

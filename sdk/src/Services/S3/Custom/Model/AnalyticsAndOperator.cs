@@ -31,6 +31,10 @@ namespace Amazon.S3.Model
     /// and any number of AnalyticsTagPredicates.
     public sealed class AnalyticsAndOperator : AnalyticsNAryOperator
     {
+        /// <summary>
+        /// Constructs an instance of AnalyticsAndOperator
+        /// </summary>
+        /// <param name="operands"></param>
         public AnalyticsAndOperator(List<AnalyticsFilterPredicate> operands) :
             base(operands)
         { }

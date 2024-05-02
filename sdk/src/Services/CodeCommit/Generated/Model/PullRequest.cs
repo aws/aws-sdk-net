@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CodeCommit.Model
     /// </summary>
     public partial class PullRequest
     {
-        private List<ApprovalRule> _approvalRules = new List<ApprovalRule>();
+        private List<ApprovalRule> _approvalRules = AWSConfigs.InitializeCollections ? new List<ApprovalRule>() : null;
         private string _authorArn;
         private string _clientRequestToken;
         private DateTime? _creationDate;
@@ -41,7 +42,7 @@ namespace Amazon.CodeCommit.Model
         private DateTime? _lastActivityDate;
         private string _pullRequestId;
         private PullRequestStatusEnum _pullRequestStatus;
-        private List<PullRequestTarget> _pullRequestTargets = new List<PullRequestTarget>();
+        private List<PullRequestTarget> _pullRequestTargets = AWSConfigs.InitializeCollections ? new List<PullRequestTarget>() : null;
         private string _revisionId;
         private string _title;
 
@@ -60,7 +61,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if ApprovalRules property is set
         internal bool IsSetApprovalRules()
         {
-            return this._approvalRules != null && this._approvalRules.Count > 0; 
+            return this._approvalRules != null && (this._approvalRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -212,7 +213,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if PullRequestTargets property is set
         internal bool IsSetPullRequestTargets()
         {
-            return this._pullRequestTargets != null && this._pullRequestTargets.Count > 0; 
+            return this._pullRequestTargets != null && (this._pullRequestTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

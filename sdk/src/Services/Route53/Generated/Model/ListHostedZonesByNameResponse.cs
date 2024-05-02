@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Route53.Model
     /// </summary>
     public partial class ListHostedZonesByNameResponse : AmazonWebServiceResponse
     {
-        private List<HostedZone> _hostedZones = new List<HostedZone>();
+        private List<HostedZone> _hostedZones = AWSConfigs.InitializeCollections ? new List<HostedZone>() : null;
         private string _dnsName;
         private string _hostedZoneId;
         private bool? _isTruncated;
@@ -57,7 +58,7 @@ namespace Amazon.Route53.Model
         // Check to see if HostedZones property is set
         internal bool IsSetHostedZones()
         {
-            return this._hostedZones != null && this._hostedZones.Count > 0; 
+            return this._hostedZones != null && (this._hostedZones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

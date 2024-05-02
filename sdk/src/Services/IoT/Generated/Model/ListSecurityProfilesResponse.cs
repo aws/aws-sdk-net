@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IoT.Model
     public partial class ListSecurityProfilesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SecurityProfileIdentifier> _securityProfileIdentifiers = new List<SecurityProfileIdentifier>();
+        private List<SecurityProfileIdentifier> _securityProfileIdentifiers = AWSConfigs.InitializeCollections ? new List<SecurityProfileIdentifier>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.IoT.Model
         // Check to see if SecurityProfileIdentifiers property is set
         internal bool IsSetSecurityProfileIdentifiers()
         {
-            return this._securityProfileIdentifiers != null && this._securityProfileIdentifiers.Count > 0; 
+            return this._securityProfileIdentifiers != null && (this._securityProfileIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

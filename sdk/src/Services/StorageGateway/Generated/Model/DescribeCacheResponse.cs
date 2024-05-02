@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.StorageGateway.Model
         private double? _cacheHitPercentage;
         private double? _cacheMissPercentage;
         private double? _cacheUsedPercentage;
-        private List<string> _diskIds = new List<string>();
+        private List<string> _diskIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _gatewayARN;
 
         /// <summary>
@@ -153,7 +154,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if DiskIds property is set
         internal bool IsSetDiskIds()
         {
-            return this._diskIds != null && this._diskIds.Count > 0; 
+            return this._diskIds != null && (this._diskIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

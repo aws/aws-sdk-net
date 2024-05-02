@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppSync.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.AppSync.Model
     /// </summary>
     public partial class DataSourceIntrospectionModel
     {
-        private List<DataSourceIntrospectionModelField> _fields = new List<DataSourceIntrospectionModelField>();
-        private List<DataSourceIntrospectionModelIndex> _indexes = new List<DataSourceIntrospectionModelIndex>();
+        private List<DataSourceIntrospectionModelField> _fields = AWSConfigs.InitializeCollections ? new List<DataSourceIntrospectionModelField>() : null;
+        private List<DataSourceIntrospectionModelIndex> _indexes = AWSConfigs.InitializeCollections ? new List<DataSourceIntrospectionModelIndex>() : null;
         private string _name;
         private DataSourceIntrospectionModelIndex _primaryKey;
         private string _sdl;
@@ -54,7 +55,7 @@ namespace Amazon.AppSync.Model
         // Check to see if Fields property is set
         internal bool IsSetFields()
         {
-            return this._fields != null && this._fields.Count > 0; 
+            return this._fields != null && (this._fields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.AppSync.Model
         // Check to see if Indexes property is set
         internal bool IsSetIndexes()
         {
-            return this._indexes != null && this._indexes.Count > 0; 
+            return this._indexes != null && (this._indexes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

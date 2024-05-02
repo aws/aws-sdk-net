@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DocDB.Model
 {
     /// <summary>
@@ -51,8 +52,8 @@ namespace Amazon.DocDB.Model
     {
         private string _attributeName;
         private string _dbClusterSnapshotIdentifier;
-        private List<string> _valuesToAdd = new List<string>();
-        private List<string> _valuesToRemove = new List<string>();
+        private List<string> _valuesToAdd = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _valuesToRemove = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AttributeName. 
@@ -121,7 +122,7 @@ namespace Amazon.DocDB.Model
         // Check to see if ValuesToAdd property is set
         internal bool IsSetValuesToAdd()
         {
-            return this._valuesToAdd != null && this._valuesToAdd.Count > 0; 
+            return this._valuesToAdd != null && (this._valuesToAdd.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -148,7 +149,7 @@ namespace Amazon.DocDB.Model
         // Check to see if ValuesToRemove property is set
         internal bool IsSetValuesToRemove()
         {
-            return this._valuesToRemove != null && this._valuesToRemove.Count > 0; 
+            return this._valuesToRemove != null && (this._valuesToRemove.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

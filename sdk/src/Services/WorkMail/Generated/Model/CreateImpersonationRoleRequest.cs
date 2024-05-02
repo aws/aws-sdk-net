@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkMail.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.WorkMail.Model
         private string _description;
         private string _name;
         private string _organizationId;
-        private List<ImpersonationRule> _rules = new List<ImpersonationRule>();
+        private List<ImpersonationRule> _rules = AWSConfigs.InitializeCollections ? new List<ImpersonationRule>() : null;
         private ImpersonationRoleType _type;
 
         /// <summary>
@@ -140,7 +141,7 @@ namespace Amazon.WorkMail.Model
         // Check to see if Rules property is set
         internal bool IsSetRules()
         {
-            return this._rules != null && this._rules.Count > 0; 
+            return this._rules != null && (this._rules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

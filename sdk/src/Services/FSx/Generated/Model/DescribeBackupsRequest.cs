@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FSx.Model
 {
     /// <summary>
@@ -69,8 +70,8 @@ namespace Amazon.FSx.Model
     /// </summary>
     public partial class DescribeBackupsRequest : AmazonFSxRequest
     {
-        private List<string> _backupIds = new List<string>();
-        private List<Filter> _filters = new List<Filter>();
+        private List<string> _backupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -91,7 +92,7 @@ namespace Amazon.FSx.Model
         // Check to see if BackupIds property is set
         internal bool IsSetBackupIds()
         {
-            return this._backupIds != null && this._backupIds.Count > 0; 
+            return this._backupIds != null && (this._backupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -111,7 +112,7 @@ namespace Amazon.FSx.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

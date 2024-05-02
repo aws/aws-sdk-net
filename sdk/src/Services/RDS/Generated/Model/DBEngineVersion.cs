@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -45,27 +46,28 @@ namespace Amazon.RDS.Model
         private CharacterSet _defaultCharacterSet;
         private string _engine;
         private string _engineVersion;
-        private List<string> _exportableLogTypes = new List<string>();
+        private List<string> _exportableLogTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private CustomDBEngineVersionAMI _image;
         private string _kmsKeyId;
         private string _majorEngineVersion;
         private string _status;
-        private List<string> _supportedCACertificateIdentifiers = new List<string>();
-        private List<CharacterSet> _supportedCharacterSets = new List<CharacterSet>();
-        private List<string> _supportedEngineModes = new List<string>();
-        private List<string> _supportedFeatureNames = new List<string>();
-        private List<CharacterSet> _supportedNcharCharacterSets = new List<CharacterSet>();
-        private List<Timezone> _supportedTimezones = new List<Timezone>();
+        private List<string> _supportedCACertificateIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<CharacterSet> _supportedCharacterSets = AWSConfigs.InitializeCollections ? new List<CharacterSet>() : null;
+        private List<string> _supportedEngineModes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _supportedFeatureNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<CharacterSet> _supportedNcharCharacterSets = AWSConfigs.InitializeCollections ? new List<CharacterSet>() : null;
+        private List<Timezone> _supportedTimezones = AWSConfigs.InitializeCollections ? new List<Timezone>() : null;
         private bool? _supportsBabelfish;
         private bool? _supportsCertificateRotationWithoutRestart;
         private bool? _supportsGlobalDatabases;
         private bool? _supportsIntegrations;
+        private bool? _supportsLimitlessDatabase;
         private bool? _supportsLocalWriteForwarding;
         private bool? _supportsLogExportsToCloudwatchLogs;
         private bool? _supportsParallelQuery;
         private bool? _supportsReadReplica;
-        private List<Tag> _tagList = new List<Tag>();
-        private List<UpgradeTarget> _validUpgradeTarget = new List<UpgradeTarget>();
+        private List<Tag> _tagList = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<UpgradeTarget> _validUpgradeTarget = AWSConfigs.InitializeCollections ? new List<UpgradeTarget>() : null;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -313,7 +315,7 @@ namespace Amazon.RDS.Model
         // Check to see if ExportableLogTypes property is set
         internal bool IsSetExportableLogTypes()
         {
-            return this._exportableLogTypes != null && this._exportableLogTypes.Count > 0; 
+            return this._exportableLogTypes != null && (this._exportableLogTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -412,7 +414,7 @@ namespace Amazon.RDS.Model
         // Check to see if SupportedCACertificateIdentifiers property is set
         internal bool IsSetSupportedCACertificateIdentifiers()
         {
-            return this._supportedCACertificateIdentifiers != null && this._supportedCACertificateIdentifiers.Count > 0; 
+            return this._supportedCACertificateIdentifiers != null && (this._supportedCACertificateIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -431,7 +433,7 @@ namespace Amazon.RDS.Model
         // Check to see if SupportedCharacterSets property is set
         internal bool IsSetSupportedCharacterSets()
         {
-            return this._supportedCharacterSets != null && this._supportedCharacterSets.Count > 0; 
+            return this._supportedCharacterSets != null && (this._supportedCharacterSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -449,7 +451,7 @@ namespace Amazon.RDS.Model
         // Check to see if SupportedEngineModes property is set
         internal bool IsSetSupportedEngineModes()
         {
-            return this._supportedEngineModes != null && this._supportedEngineModes.Count > 0; 
+            return this._supportedEngineModes != null && (this._supportedEngineModes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -495,7 +497,7 @@ namespace Amazon.RDS.Model
         // Check to see if SupportedFeatureNames property is set
         internal bool IsSetSupportedFeatureNames()
         {
-            return this._supportedFeatureNames != null && this._supportedFeatureNames.Count > 0; 
+            return this._supportedFeatureNames != null && (this._supportedFeatureNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -514,7 +516,7 @@ namespace Amazon.RDS.Model
         // Check to see if SupportedNcharCharacterSets property is set
         internal bool IsSetSupportedNcharCharacterSets()
         {
-            return this._supportedNcharCharacterSets != null && this._supportedNcharCharacterSets.Count > 0; 
+            return this._supportedNcharCharacterSets != null && (this._supportedNcharCharacterSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -533,7 +535,7 @@ namespace Amazon.RDS.Model
         // Check to see if SupportedTimezones property is set
         internal bool IsSetSupportedTimezones()
         {
-            return this._supportedTimezones != null && this._supportedTimezones.Count > 0; 
+            return this._supportedTimezones != null && (this._supportedTimezones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -608,6 +610,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetSupportsIntegrations()
         {
             return this._supportsIntegrations.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportsLimitlessDatabase. 
+        /// <para>
+        /// Indicates whether the DB engine version supports Aurora Limitless Database.
+        /// </para>
+        /// </summary>
+        public bool? SupportsLimitlessDatabase
+        {
+            get { return this._supportsLimitlessDatabase; }
+            set { this._supportsLimitlessDatabase = value; }
+        }
+
+        // Check to see if SupportsLimitlessDatabase property is set
+        internal bool IsSetSupportsLimitlessDatabase()
+        {
+            return this._supportsLimitlessDatabase.HasValue; 
         }
 
         /// <summary>
@@ -701,7 +721,7 @@ namespace Amazon.RDS.Model
         // Check to see if TagList property is set
         internal bool IsSetTagList()
         {
-            return this._tagList != null && this._tagList.Count > 0; 
+            return this._tagList != null && (this._tagList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -719,7 +739,7 @@ namespace Amazon.RDS.Model
         // Check to see if ValidUpgradeTarget property is set
         internal bool IsSetValidUpgradeTarget()
         {
-            return this._validUpgradeTarget != null && this._validUpgradeTarget.Count > 0; 
+            return this._validUpgradeTarget != null && (this._validUpgradeTarget.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EventBridge.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.EventBridge.Model
     public partial class UpdateEndpointRequest : AmazonEventBridgeRequest
     {
         private string _description;
-        private List<EndpointEventBus> _eventBuses = new List<EndpointEventBus>();
+        private List<EndpointEventBus> _eventBuses = AWSConfigs.InitializeCollections ? new List<EndpointEventBus>() : null;
         private string _name;
         private ReplicationConfig _replicationConfig;
         private string _roleArn;
@@ -78,7 +79,7 @@ namespace Amazon.EventBridge.Model
         // Check to see if EventBuses property is set
         internal bool IsSetEventBuses()
         {
-            return this._eventBuses != null && this._eventBuses.Count > 0; 
+            return this._eventBuses != null && (this._eventBuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

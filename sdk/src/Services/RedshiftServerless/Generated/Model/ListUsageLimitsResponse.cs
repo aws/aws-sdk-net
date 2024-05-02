@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RedshiftServerless.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.RedshiftServerless.Model
     public partial class ListUsageLimitsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<UsageLimit> _usageLimits = new List<UsageLimit>();
+        private List<UsageLimit> _usageLimits = AWSConfigs.InitializeCollections ? new List<UsageLimit>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +74,7 @@ namespace Amazon.RedshiftServerless.Model
         // Check to see if UsageLimits property is set
         internal bool IsSetUsageLimits()
         {
-            return this._usageLimits != null && this._usageLimits.Count > 0; 
+            return this._usageLimits != null && (this._usageLimits.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

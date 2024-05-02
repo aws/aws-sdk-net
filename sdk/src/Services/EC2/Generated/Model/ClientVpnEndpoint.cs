@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ClientVpnEndpoint
     {
-        private List<AssociatedTargetNetwork> _associatedTargetNetworks = new List<AssociatedTargetNetwork>();
-        private List<ClientVpnAuthentication> _authenticationOptions = new List<ClientVpnAuthentication>();
+        private List<AssociatedTargetNetwork> _associatedTargetNetworks = AWSConfigs.InitializeCollections ? new List<AssociatedTargetNetwork>() : null;
+        private List<ClientVpnAuthentication> _authenticationOptions = AWSConfigs.InitializeCollections ? new List<ClientVpnAuthentication>() : null;
         private string _clientCidrBlock;
         private ClientConnectResponseOptions _clientConnectOptions;
         private ClientLoginBannerResponseOptions _clientLoginBannerOptions;
@@ -44,14 +45,14 @@ namespace Amazon.EC2.Model
         private string _deletionTime;
         private string _description;
         private string _dnsName;
-        private List<string> _dnsServers = new List<string>();
-        private List<string> _securityGroupIds = new List<string>();
+        private List<string> _dnsServers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _selfServicePortalUrl;
         private string _serverCertificateArn;
         private int? _sessionTimeoutHours;
         private bool? _splitTunnel;
         private ClientVpnEndpointStatus _status;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private TransportProtocol _transportProtocol;
         private string _vpcId;
         private int? _vpnPort;
@@ -74,7 +75,7 @@ namespace Amazon.EC2.Model
         // Check to see if AssociatedTargetNetworks property is set
         internal bool IsSetAssociatedTargetNetworks()
         {
-            return this._associatedTargetNetworks != null && this._associatedTargetNetworks.Count > 0; 
+            return this._associatedTargetNetworks != null && (this._associatedTargetNetworks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.EC2.Model
         // Check to see if AuthenticationOptions property is set
         internal bool IsSetAuthenticationOptions()
         {
-            return this._authenticationOptions != null && this._authenticationOptions.Count > 0; 
+            return this._authenticationOptions != null && (this._authenticationOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -273,7 +274,7 @@ namespace Amazon.EC2.Model
         // Check to see if DnsServers property is set
         internal bool IsSetDnsServers()
         {
-            return this._dnsServers != null && this._dnsServers.Count > 0; 
+            return this._dnsServers != null && (this._dnsServers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -291,7 +292,7 @@ namespace Amazon.EC2.Model
         // Check to see if SecurityGroupIds property is set
         internal bool IsSetSecurityGroupIds()
         {
-            return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+            return this._securityGroupIds != null && (this._securityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -412,7 +413,7 @@ namespace Amazon.EC2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

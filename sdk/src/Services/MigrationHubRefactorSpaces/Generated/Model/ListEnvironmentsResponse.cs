@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MigrationHubRefactorSpaces.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
     /// </summary>
     public partial class ListEnvironmentsResponse : AmazonWebServiceResponse
     {
-        private List<EnvironmentSummary> _environmentSummaryList = new List<EnvironmentSummary>();
+        private List<EnvironmentSummary> _environmentSummaryList = AWSConfigs.InitializeCollections ? new List<EnvironmentSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         // Check to see if EnvironmentSummaryList property is set
         internal bool IsSetEnvironmentSummaryList()
         {
-            return this._environmentSummaryList != null && this._environmentSummaryList.Count > 0; 
+            return this._environmentSummaryList != null && (this._environmentSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

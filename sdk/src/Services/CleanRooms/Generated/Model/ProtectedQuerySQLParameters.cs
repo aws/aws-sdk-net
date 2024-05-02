@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CleanRooms.Model
     public partial class ProtectedQuerySQLParameters
     {
         private string _analysisTemplateArn;
-        private Dictionary<string, string> _parameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _queryString;
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

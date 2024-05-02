@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         private string _isoCountryCode;
         private MessageType _messageType;
         private string _monthlyLeasingPrice;
-        private List<string> _numberCapabilities = new List<string>();
+        private List<string> _numberCapabilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private NumberType _numberType;
         private string _optOutListName;
         private string _phoneNumber;
@@ -130,7 +131,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// Specifies if the number could be used for text messages, voice, or both.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2)]
+        [AWSProperty(Min=1, Max=3)]
         public List<string> NumberCapabilities
         {
             get { return this._numberCapabilities; }
@@ -140,7 +141,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if NumberCapabilities property is set
         internal bool IsSetNumberCapabilities()
         {
-            return this._numberCapabilities != null && this._numberCapabilities.Count > 0; 
+            return this._numberCapabilities != null && (this._numberCapabilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

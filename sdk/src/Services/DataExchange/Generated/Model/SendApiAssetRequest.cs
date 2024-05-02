@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataExchange.Model
 {
     /// <summary>
@@ -40,8 +41,8 @@ namespace Amazon.DataExchange.Model
         private string _dataSetId;
         private string _method;
         private string _path;
-        private Dictionary<string, string> _queryStringParameters = new Dictionary<string, string>();
-        private Dictionary<string, string> _requestHeaders = new Dictionary<string, string>();
+        private Dictionary<string, string> _queryStringParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, string> _requestHeaders = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _revisionId;
 
         /// <summary>
@@ -153,7 +154,7 @@ namespace Amazon.DataExchange.Model
         // Check to see if QueryStringParameters property is set
         internal bool IsSetQueryStringParameters()
         {
-            return this._queryStringParameters != null && this._queryStringParameters.Count > 0; 
+            return this._queryStringParameters != null && (this._queryStringParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -174,7 +175,7 @@ namespace Amazon.DataExchange.Model
         // Check to see if RequestHeaders property is set
         internal bool IsSetRequestHeaders()
         {
-            return this._requestHeaders != null && this._requestHeaders.Count > 0; 
+            return this._requestHeaders != null && (this._requestHeaders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

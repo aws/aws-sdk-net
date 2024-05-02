@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.BCMDataExports.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.BCMDataExports.Model
         /// Enumerable containing all of the Executions
         /// </summary>
         public IPaginatedEnumerable<ExecutionReference> Executions => 
-            new PaginatedResultKeyResponse<ListExecutionsResponse, ExecutionReference>(this, (i) => i.Executions);
+            new PaginatedResultKeyResponse<ListExecutionsResponse, ExecutionReference>(this, (i) => i.Executions ?? new List<ExecutionReference>());
 
         internal ListExecutionsPaginator(IAmazonBCMDataExports client, ListExecutionsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.BCMDataExports.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListExecutionsResponse> IPaginator<ListExecutionsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListExecutionsResponse> IPaginator<ListExecutionsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

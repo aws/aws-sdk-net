@@ -26,19 +26,23 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Untag a resource
+    /// Remove tags from a resource.
     /// </summary>
     public partial class UntagResourceRequest : AmazonBedrockAgentRequest
     {
         private string _resourceArn;
-        private List<string> _tagKeys = new List<string>();
+        private List<string> _tagKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
-        /// Gets and sets the property ResourceArn.
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the resource from which to remove tags.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=1011)]
         public string ResourceArn
@@ -54,7 +58,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TagKeys.
+        /// Gets and sets the property TagKeys. 
+        /// <para>
+        /// A list of keys of the tags to remove from the resource.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=200)]
         public List<string> TagKeys
@@ -66,7 +73,7 @@ namespace Amazon.BedrockAgent.Model
         // Check to see if TagKeys property is set
         internal bool IsSetTagKeys()
         {
-            return this._tagKeys != null && this._tagKeys.Count > 0; 
+            return this._tagKeys != null && (this._tagKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

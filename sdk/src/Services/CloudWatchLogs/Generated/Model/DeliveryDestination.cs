@@ -26,13 +26,14 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// This structure contains information about one <i>delivery destination</i> in your
     /// account. A delivery destination is an Amazon Web Services resource that represents
     /// an Amazon Web Services service that logs can be sent to. CloudWatch Logs, Amazon S3,
-    /// are supported as Kinesis Data Firehose delivery destinations.
+    /// are supported as Firehose delivery destinations.
     /// 
     ///  
     /// <para>
@@ -74,7 +75,7 @@ namespace Amazon.CloudWatchLogs.Model
         private DeliveryDestinationType _deliveryDestinationType;
         private string _name;
         private OutputFormat _outputFormat;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -116,8 +117,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property DeliveryDestinationType. 
         /// <para>
-        /// Displays whether this delivery destination is CloudWatch Logs, Amazon S3, or Kinesis
-        /// Data Firehose.
+        /// Displays whether this delivery destination is CloudWatch Logs, Amazon S3, or Firehose.
         /// </para>
         /// </summary>
         public DeliveryDestinationType DeliveryDestinationType
@@ -185,7 +185,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

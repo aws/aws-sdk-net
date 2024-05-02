@@ -35,7 +35,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <remarks>
         /// Using this method can avoid latency and thread starvation due to blocking asynchronous 
-        /// <see cref="IAmazonDynamoDB.DescribeTable(string)"/> calls that are used to populate 
+        /// IAmazonDynamoDB.DescribeTable(string) calls that are used to populate 
         /// the SDK's cache of table metadata. It requires that the table's index schema described accurately, 
         /// otherwise exceptions may be thrown and/or the results of certain DynamoDB operations may change. 
         /// </remarks>

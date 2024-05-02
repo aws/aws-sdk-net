@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class UpdateDataSourceRequest : AmazonDataZoneRequest
     {
-        private List<FormInput> _assetFormsInput = new List<FormInput>();
+        private List<FormInput> _assetFormsInput = AWSConfigs.InitializeCollections ? new List<FormInput>() : null;
         private DataSourceConfigurationInput _configuration;
         private string _description;
         private string _domainIdentifier;
@@ -61,7 +62,7 @@ namespace Amazon.DataZone.Model
         // Check to see if AssetFormsInput property is set
         internal bool IsSetAssetFormsInput()
         {
-            return this._assetFormsInput != null && this._assetFormsInput.Count > 0; 
+            return this._assetFormsInput != null && (this._assetFormsInput.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Honeycode.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Honeycode.Model
     public partial class CreateRowData
     {
         private string _batchItemId;
-        private Dictionary<string, CellInput> _cellsToCreate = new Dictionary<string, CellInput>();
+        private Dictionary<string, CellInput> _cellsToCreate = AWSConfigs.InitializeCollections ? new Dictionary<string, CellInput>() : null;
 
         /// <summary>
         /// Gets and sets the property BatchItemId. 
@@ -77,7 +78,7 @@ namespace Amazon.Honeycode.Model
         // Check to see if CellsToCreate property is set
         internal bool IsSetCellsToCreate()
         {
-            return this._cellsToCreate != null && this._cellsToCreate.Count > 0; 
+            return this._cellsToCreate != null && (this._cellsToCreate.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

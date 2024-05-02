@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.FIS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -58,6 +59,9 @@ namespace Amazon.FIS.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2020-12-01";
             request.HttpMethod = "GET";
 
+            
+            if (publicRequest.IsSetExperimentTemplateId())
+                request.Parameters.Add("experimentTemplateId", StringUtils.FromString(publicRequest.ExperimentTemplateId));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));

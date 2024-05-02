@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BillingConductor.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.BillingConductor.Model
     /// </summary>
     public partial class ListBillingGroupCostReportsResponse : AmazonWebServiceResponse
     {
-        private List<BillingGroupCostReportElement> _billingGroupCostReports = new List<BillingGroupCostReportElement>();
+        private List<BillingGroupCostReportElement> _billingGroupCostReports = AWSConfigs.InitializeCollections ? new List<BillingGroupCostReportElement>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.BillingConductor.Model
         // Check to see if BillingGroupCostReports property is set
         internal bool IsSetBillingGroupCostReports()
         {
-            return this._billingGroupCostReports != null && this._billingGroupCostReports.Count > 0; 
+            return this._billingGroupCostReports != null && (this._billingGroupCostReports.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

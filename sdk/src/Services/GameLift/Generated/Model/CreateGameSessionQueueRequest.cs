@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GameLift.Model
 {
     /// <summary>
@@ -98,13 +99,13 @@ namespace Amazon.GameLift.Model
     public partial class CreateGameSessionQueueRequest : AmazonGameLiftRequest
     {
         private string _customEventData;
-        private List<GameSessionQueueDestination> _destinations = new List<GameSessionQueueDestination>();
+        private List<GameSessionQueueDestination> _destinations = AWSConfigs.InitializeCollections ? new List<GameSessionQueueDestination>() : null;
         private FilterConfiguration _filterConfiguration;
         private string _name;
         private string _notificationTarget;
-        private List<PlayerLatencyPolicy> _playerLatencyPolicies = new List<PlayerLatencyPolicy>();
+        private List<PlayerLatencyPolicy> _playerLatencyPolicies = AWSConfigs.InitializeCollections ? new List<PlayerLatencyPolicy>() : null;
         private PriorityConfiguration _priorityConfiguration;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private int? _timeoutInSeconds;
 
         /// <summary>
@@ -143,7 +144,7 @@ namespace Amazon.GameLift.Model
         // Check to see if Destinations property is set
         internal bool IsSetDestinations()
         {
-            return this._destinations != null && this._destinations.Count > 0; 
+            return this._destinations != null && (this._destinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -226,7 +227,7 @@ namespace Amazon.GameLift.Model
         // Check to see if PlayerLatencyPolicies property is set
         internal bool IsSetPlayerLatencyPolicies()
         {
-            return this._playerLatencyPolicies != null && this._playerLatencyPolicies.Count > 0; 
+            return this._playerLatencyPolicies != null && (this._playerLatencyPolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -269,7 +270,7 @@ namespace Amazon.GameLift.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

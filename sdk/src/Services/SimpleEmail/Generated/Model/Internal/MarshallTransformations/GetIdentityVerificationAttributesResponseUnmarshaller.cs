@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -84,6 +85,10 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
                     if (context.TestExpression("VerificationAttributes/entry", targetDepth))
                     {
                         var unmarshaller = new KeyValueUnmarshaller<string, IdentityVerificationAttributes, StringUnmarshaller, IdentityVerificationAttributesUnmarshaller>(StringUnmarshaller.Instance, IdentityVerificationAttributesUnmarshaller.Instance);
+                        if (response.VerificationAttributes == null)
+                        {
+                            response.VerificationAttributes = new Dictionary<string, IdentityVerificationAttributes>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.VerificationAttributes.Add(item);
                         continue;

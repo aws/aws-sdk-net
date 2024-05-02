@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
@@ -38,10 +39,10 @@ namespace Amazon.AppMesh.Model
     /// </summary>
     public partial class HttpRetryPolicy
     {
-        private List<string> _httpRetryEvents = new List<string>();
+        private List<string> _httpRetryEvents = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private long? _maxRetries;
         private Duration _perRetryTimeout;
-        private List<string> _tcpRetryEvents = new List<string>();
+        private List<string> _tcpRetryEvents = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property HttpRetryEvents. 
@@ -77,7 +78,7 @@ namespace Amazon.AppMesh.Model
         // Check to see if HttpRetryEvents property is set
         internal bool IsSetHttpRetryEvents()
         {
-            return this._httpRetryEvents != null && this._httpRetryEvents.Count > 0; 
+            return this._httpRetryEvents != null && (this._httpRetryEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -135,7 +136,7 @@ namespace Amazon.AppMesh.Model
         // Check to see if TcpRetryEvents property is set
         internal bool IsSetTcpRetryEvents()
         {
-            return this._tcpRetryEvents != null && this._tcpRetryEvents.Count > 0; 
+            return this._tcpRetryEvents != null && (this._tcpRetryEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

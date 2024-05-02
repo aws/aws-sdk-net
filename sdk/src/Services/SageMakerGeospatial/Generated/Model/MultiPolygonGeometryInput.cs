@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SageMakerGeospatial.Model
     /// </summary>
     public partial class MultiPolygonGeometryInput
     {
-        private List<List<List<List<double>>>> _coordinates = new List<List<List<List<double>>>>();
+        private List<List<List<List<double>>>> _coordinates = AWSConfigs.InitializeCollections ? new List<List<List<List<double>>>>() : null;
 
         /// <summary>
         /// Gets and sets the property Coordinates. 
@@ -52,7 +53,7 @@ namespace Amazon.SageMakerGeospatial.Model
         // Check to see if Coordinates property is set
         internal bool IsSetCoordinates()
         {
-            return this._coordinates != null && this._coordinates.Count > 0; 
+            return this._coordinates != null && (this._coordinates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

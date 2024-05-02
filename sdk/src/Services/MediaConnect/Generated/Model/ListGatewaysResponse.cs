@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MediaConnect.Model
     /// </summary>
     public partial class ListGatewaysResponse : AmazonWebServiceResponse
     {
-        private List<ListedGateway> _gateways = new List<ListedGateway>();
+        private List<ListedGateway> _gateways = AWSConfigs.InitializeCollections ? new List<ListedGateway>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -48,7 +49,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if Gateways property is set
         internal bool IsSetGateways()
         {
-            return this._gateways != null && this._gateways.Count > 0; 
+            return this._gateways != null && (this._gateways.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

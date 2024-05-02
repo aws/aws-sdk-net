@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PaymentCryptographyData.Model
 {
     /// <summary>
@@ -62,10 +63,11 @@ namespace Amazon.PaymentCryptographyData.Model
         /// Gets and sets the property EncryptionKeyCheckValue. 
         /// <para>
         /// The key check value (KCV) of the encryption key. The KCV is used to check if all parties
-        /// holding a given key have the same key or to detect that a key has changed. Amazon
-        /// Web Services Payment Cryptography calculates the KCV by using standard algorithms,
-        /// typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result
-        /// to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.
+        /// holding a given key have the same key or to detect that a key has changed.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Web Services Payment Cryptography computes the KCV according to the CMAC specification.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=4, Max=16)]
@@ -105,10 +107,11 @@ namespace Amazon.PaymentCryptographyData.Model
         /// Gets and sets the property VerificationKeyCheckValue. 
         /// <para>
         /// The key check value (KCV) of the encryption key. The KCV is used to check if all parties
-        /// holding a given key have the same key or to detect that a key has changed. Amazon
-        /// Web Services Payment Cryptography calculates the KCV by using standard algorithms,
-        /// typically by encrypting 8 or 16 bytes or "00" or "01" and then truncating the result
-        /// to the first 3 bytes, or 6 hex digits, of the resulting cryptogram.
+        /// holding a given key have the same key or to detect that a key has changed.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Web Services Payment Cryptography computes the KCV according to the CMAC specification.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=4, Max=16)]

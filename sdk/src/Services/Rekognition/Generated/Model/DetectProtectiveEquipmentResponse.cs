@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class DetectProtectiveEquipmentResponse : AmazonWebServiceResponse
     {
-        private List<ProtectiveEquipmentPerson> _persons = new List<ProtectiveEquipmentPerson>();
+        private List<ProtectiveEquipmentPerson> _persons = AWSConfigs.InitializeCollections ? new List<ProtectiveEquipmentPerson>() : null;
         private string _protectiveEquipmentModelVersion;
         private ProtectiveEquipmentSummary _summary;
 
@@ -52,7 +53,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if Persons property is set
         internal bool IsSetPersons()
         {
-            return this._persons != null && this._persons.Count > 0; 
+            return this._persons != null && (this._persons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

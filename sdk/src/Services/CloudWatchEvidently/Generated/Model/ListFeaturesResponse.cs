@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchEvidently.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CloudWatchEvidently.Model
     /// </summary>
     public partial class ListFeaturesResponse : AmazonWebServiceResponse
     {
-        private List<FeatureSummary> _features = new List<FeatureSummary>();
+        private List<FeatureSummary> _features = AWSConfigs.InitializeCollections ? new List<FeatureSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if Features property is set
         internal bool IsSetFeatures()
         {
-            return this._features != null && this._features.Count > 0; 
+            return this._features != null && (this._features.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

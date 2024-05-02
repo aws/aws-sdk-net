@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3Control.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.S3Control.Model
     /// </summary>
     public partial class StorageLensGroupAndOperator
     {
-        private List<string> _matchAnyPrefix = new List<string>();
-        private List<string> _matchAnySuffix = new List<string>();
-        private List<S3Tag> _matchAnyTag = new List<S3Tag>();
+        private List<string> _matchAnyPrefix = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _matchAnySuffix = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<S3Tag> _matchAnyTag = AWSConfigs.InitializeCollections ? new List<S3Tag>() : null;
         private MatchObjectAge _matchObjectAge;
         private MatchObjectSize _matchObjectSize;
 
@@ -56,7 +57,7 @@ namespace Amazon.S3Control.Model
         // Check to see if MatchAnyPrefix property is set
         internal bool IsSetMatchAnyPrefix()
         {
-            return this._matchAnyPrefix != null && this._matchAnyPrefix.Count > 0; 
+            return this._matchAnyPrefix != null && (this._matchAnyPrefix.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace Amazon.S3Control.Model
         // Check to see if MatchAnySuffix property is set
         internal bool IsSetMatchAnySuffix()
         {
-            return this._matchAnySuffix != null && this._matchAnySuffix.Count > 0; 
+            return this._matchAnySuffix != null && (this._matchAnySuffix.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -94,7 +95,7 @@ namespace Amazon.S3Control.Model
         // Check to see if MatchAnyTag property is set
         internal bool IsSetMatchAnyTag()
         {
-            return this._matchAnyTag != null && this._matchAnyTag.Count > 0; 
+            return this._matchAnyTag != null && (this._matchAnyTag.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

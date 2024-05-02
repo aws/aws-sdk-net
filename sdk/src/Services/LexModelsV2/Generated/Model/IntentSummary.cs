@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -34,11 +35,11 @@ namespace Amazon.LexModelsV2.Model
     public partial class IntentSummary
     {
         private string _description;
-        private List<InputContext> _inputContexts = new List<InputContext>();
+        private List<InputContext> _inputContexts = AWSConfigs.InitializeCollections ? new List<InputContext>() : null;
         private string _intentId;
         private string _intentName;
         private DateTime? _lastUpdatedDateTime;
-        private List<OutputContext> _outputContexts = new List<OutputContext>();
+        private List<OutputContext> _outputContexts = AWSConfigs.InitializeCollections ? new List<OutputContext>() : null;
         private string _parentIntentSignature;
 
         /// <summary>
@@ -76,7 +77,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if InputContexts property is set
         internal bool IsSetInputContexts()
         {
-            return this._inputContexts != null && this._inputContexts.Count > 0; 
+            return this._inputContexts != null && (this._inputContexts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -152,7 +153,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if OutputContexts property is set
         internal bool IsSetOutputContexts()
         {
-            return this._outputContexts != null && this._outputContexts.Count > 0; 
+            return this._outputContexts != null && (this._outputContexts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

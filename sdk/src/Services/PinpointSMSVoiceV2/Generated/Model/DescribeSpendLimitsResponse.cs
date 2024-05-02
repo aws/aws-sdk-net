@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     public partial class DescribeSpendLimitsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SpendLimit> _spendLimits = new List<SpendLimit>();
+        private List<SpendLimit> _spendLimits = AWSConfigs.InitializeCollections ? new List<SpendLimit>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if SpendLimits property is set
         internal bool IsSetSpendLimits()
         {
-            return this._spendLimits != null && this._spendLimits.Count > 0; 
+            return this._spendLimits != null && (this._spendLimits.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

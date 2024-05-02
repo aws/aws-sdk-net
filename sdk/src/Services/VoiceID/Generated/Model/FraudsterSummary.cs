@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VoiceID.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.VoiceID.Model
         private DateTime? _createdAt;
         private string _domainId;
         private string _generatedFraudsterId;
-        private List<string> _watchlistIds = new List<string>();
+        private List<string> _watchlistIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CreatedAt. 
@@ -109,7 +110,7 @@ namespace Amazon.VoiceID.Model
         // Check to see if WatchlistIds property is set
         internal bool IsSetWatchlistIds()
         {
-            return this._watchlistIds != null && this._watchlistIds.Count > 0; 
+            return this._watchlistIds != null && (this._watchlistIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

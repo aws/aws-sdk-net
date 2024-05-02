@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTTwinMaker.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IoTTwinMaker.Model
     /// </summary>
     public partial class BatchPutPropertyErrorEntry
     {
-        private List<BatchPutPropertyError> _errors = new List<BatchPutPropertyError>();
+        private List<BatchPutPropertyError> _errors = AWSConfigs.InitializeCollections ? new List<BatchPutPropertyError>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. 
@@ -53,7 +54,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

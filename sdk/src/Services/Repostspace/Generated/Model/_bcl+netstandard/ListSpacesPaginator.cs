@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Repostspace.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Repostspace.Model
         /// Enumerable containing all of the Spaces
         /// </summary>
         public IPaginatedEnumerable<SpaceData> Spaces => 
-            new PaginatedResultKeyResponse<ListSpacesResponse, SpaceData>(this, (i) => i.Spaces);
+            new PaginatedResultKeyResponse<ListSpacesResponse, SpaceData>(this, (i) => i.Spaces ?? new List<SpaceData>());
 
         internal ListSpacesPaginator(IAmazonRepostspace client, ListSpacesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Repostspace.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListSpacesResponse> IPaginator<ListSpacesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListSpacesResponse> IPaginator<ListSpacesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

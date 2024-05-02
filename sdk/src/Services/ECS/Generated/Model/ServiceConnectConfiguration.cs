@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECS.Model
 {
     /// <summary>
@@ -48,7 +49,7 @@ namespace Amazon.ECS.Model
         private bool? _enabled;
         private LogConfiguration _logConfiguration;
         private string _awsNamespace;
-        private List<ServiceConnectService> _services = new List<ServiceConnectService>();
+        private List<ServiceConnectService> _services = AWSConfigs.InitializeCollections ? new List<ServiceConnectService>() : null;
 
         /// <summary>
         /// Gets and sets the property Enabled. 
@@ -136,7 +137,7 @@ namespace Amazon.ECS.Model
         // Check to see if Services property is set
         internal bool IsSetServices()
         {
-            return this._services != null && this._services.Count > 0; 
+            return this._services != null && (this._services.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

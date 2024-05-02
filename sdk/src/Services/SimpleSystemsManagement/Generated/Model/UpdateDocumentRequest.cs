@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class UpdateDocumentRequest : AmazonSimpleSystemsManagementRequest
     {
-        private List<AttachmentsSource> _attachments = new List<AttachmentsSource>();
+        private List<AttachmentsSource> _attachments = AWSConfigs.InitializeCollections ? new List<AttachmentsSource>() : null;
         private string _content;
         private string _displayName;
         private DocumentFormat _documentFormat;
@@ -59,7 +60,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Attachments property is set
         internal bool IsSetAttachments()
         {
-            return this._attachments != null && this._attachments.Count > 0; 
+            return this._attachments != null && (this._attachments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
@@ -63,10 +64,10 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property S3ReferenceDataSource. 
         /// <para>
-        /// Identifies the S3 bucket and object that contains the reference data. A Kinesis Data
-        /// Analytics application loads reference data only once. If the data changes, you call
-        /// the <a>UpdateApplication</a> operation to trigger reloading of data into your application.
-        /// 
+        /// Identifies the S3 bucket and object that contains the reference data. A SQL-based
+        /// Kinesis Data Analytics application loads reference data only once. If the data changes,
+        /// you call the <a>UpdateApplication</a> operation to trigger reloading of data into
+        /// your application. 
         /// </para>
         /// </summary>
         public S3ReferenceDataSource S3ReferenceDataSource

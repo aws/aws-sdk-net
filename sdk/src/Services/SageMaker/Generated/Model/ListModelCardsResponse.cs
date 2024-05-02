@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListModelCardsResponse : AmazonWebServiceResponse
     {
-        private List<ModelCardSummary> _modelCardSummaries = new List<ModelCardSummary>();
+        private List<ModelCardSummary> _modelCardSummaries = AWSConfigs.InitializeCollections ? new List<ModelCardSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ModelCardSummaries property is set
         internal bool IsSetModelCardSummaries()
         {
-            return this._modelCardSummaries != null && this._modelCardSummaries.Count > 0; 
+            return this._modelCardSummaries != null && (this._modelCardSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

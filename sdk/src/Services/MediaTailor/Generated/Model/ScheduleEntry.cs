@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaTailor.Model
 {
     /// <summary>
@@ -36,10 +37,11 @@ namespace Amazon.MediaTailor.Model
         private long? _approximateDurationSeconds;
         private DateTime? _approximateStartTime;
         private string _arn;
+        private List<string> _audiences = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _channelName;
         private string _liveSourceName;
         private string _programName;
-        private List<ScheduleAdBreak> _scheduleAdBreaks = new List<ScheduleAdBreak>();
+        private List<ScheduleAdBreak> _scheduleAdBreaks = AWSConfigs.InitializeCollections ? new List<ScheduleAdBreak>() : null;
         private ScheduleEntryType _scheduleEntryType;
         private string _sourceLocationName;
         private string _vodSourceName;
@@ -97,6 +99,24 @@ namespace Amazon.MediaTailor.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Audiences. 
+        /// <para>
+        /// The list of audiences defined in ScheduleEntry.
+        /// </para>
+        /// </summary>
+        public List<string> Audiences
+        {
+            get { return this._audiences; }
+            set { this._audiences = value; }
+        }
+
+        // Check to see if Audiences property is set
+        internal bool IsSetAudiences()
+        {
+            return this._audiences != null && (this._audiences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -170,7 +190,7 @@ namespace Amazon.MediaTailor.Model
         // Check to see if ScheduleAdBreaks property is set
         internal bool IsSetScheduleAdBreaks()
         {
-            return this._scheduleAdBreaks != null && this._scheduleAdBreaks.Count > 0; 
+            return this._scheduleAdBreaks != null && (this._scheduleAdBreaks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

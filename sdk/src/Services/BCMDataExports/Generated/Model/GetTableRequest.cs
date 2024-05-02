@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BCMDataExports.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.BCMDataExports.Model
     public partial class GetTableRequest : AmazonBCMDataExportsRequest
     {
         private string _tableName;
-        private Dictionary<string, string> _tableProperties = new Dictionary<string, string>();
+        private Dictionary<string, string> _tableProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property TableName. 
@@ -75,7 +76,7 @@ namespace Amazon.BCMDataExports.Model
         // Check to see if TableProperties property is set
         internal bool IsSetTableProperties()
         {
-            return this._tableProperties != null && this._tableProperties.Count > 0; 
+            return this._tableProperties != null && (this._tableProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

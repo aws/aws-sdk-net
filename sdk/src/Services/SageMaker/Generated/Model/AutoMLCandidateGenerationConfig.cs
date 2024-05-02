@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class AutoMLCandidateGenerationConfig
     {
-        private List<AutoMLAlgorithmConfig> _algorithmsConfig = new List<AutoMLAlgorithmConfig>();
+        private List<AutoMLAlgorithmConfig> _algorithmsConfig = AWSConfigs.InitializeCollections ? new List<AutoMLAlgorithmConfig>() : null;
         private string _featureSpecificationS3Uri;
 
         /// <summary>
@@ -89,7 +90,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if AlgorithmsConfig property is set
         internal bool IsSetAlgorithmsConfig()
         {
-            return this._algorithmsConfig != null && this._algorithmsConfig.Count > 0; 
+            return this._algorithmsConfig != null && (this._algorithmsConfig.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

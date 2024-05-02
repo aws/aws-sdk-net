@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListModelCardExportJobsResponse : AmazonWebServiceResponse
     {
-        private List<ModelCardExportJobSummary> _modelCardExportJobSummaries = new List<ModelCardExportJobSummary>();
+        private List<ModelCardExportJobSummary> _modelCardExportJobSummaries = AWSConfigs.InitializeCollections ? new List<ModelCardExportJobSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ModelCardExportJobSummaries property is set
         internal bool IsSetModelCardExportJobSummaries()
         {
-            return this._modelCardExportJobSummaries != null && this._modelCardExportJobSummaries.Count > 0; 
+            return this._modelCardExportJobSummaries != null && (this._modelCardExportJobSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConnectWisdomService.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ConnectWisdomService.Model
     /// </summary>
     public partial class UpdateQuickResponseRequest : AmazonConnectWisdomServiceRequest
     {
-        private List<string> _channels = new List<string>();
+        private List<string> _channels = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private QuickResponseDataProvider _content;
         private string _contentType;
         private string _description;
@@ -65,7 +66,7 @@ namespace Amazon.ConnectWisdomService.Model
         // Check to see if Channels property is set
         internal bool IsSetChannels()
         {
-            return this._channels != null && this._channels.Count > 0; 
+            return this._channels != null && (this._channels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

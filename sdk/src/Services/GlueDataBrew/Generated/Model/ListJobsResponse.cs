@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.GlueDataBrew.Model
     /// </summary>
     public partial class ListJobsResponse : AmazonWebServiceResponse
     {
-        private List<Job> _jobs = new List<Job>();
+        private List<Job> _jobs = AWSConfigs.InitializeCollections ? new List<Job>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.GlueDataBrew.Model
         // Check to see if Jobs property is set
         internal bool IsSetJobs()
         {
-            return this._jobs != null && this._jobs.Count > 0; 
+            return this._jobs != null && (this._jobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

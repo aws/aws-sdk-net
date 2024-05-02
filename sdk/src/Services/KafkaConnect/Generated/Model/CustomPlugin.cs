@@ -26,10 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KafkaConnect.Model
 {
     /// <summary>
-    /// A plugin is an AWS resource that contains the code that defines a connector's logic.
+    /// A plugin is an Amazon Web Services resource that contains the code that defines a
+    /// connector's logic.
     /// </summary>
     public partial class CustomPlugin
     {

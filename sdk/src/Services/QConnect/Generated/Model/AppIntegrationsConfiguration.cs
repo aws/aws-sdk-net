@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QConnect.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.QConnect.Model
     public partial class AppIntegrationsConfiguration
     {
         private string _appIntegrationArn;
-        private List<string> _objectFields = new List<string>();
+        private List<string> _objectFields = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AppIntegrationArn. 
@@ -101,8 +102,8 @@ namespace Amazon.QConnect.Model
         /// <summary>
         /// Gets and sets the property ObjectFields. 
         /// <para>
-        /// The fields from the source that are made available to your agents in Amazon Q. Optional
-        /// if ObjectConfiguration is included in the provided DataIntegration. 
+        /// The fields from the source that are made available to your agents in Amazon Q in Connect.
+        /// Optional if ObjectConfiguration is included in the provided DataIntegration. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -138,7 +139,7 @@ namespace Amazon.QConnect.Model
         // Check to see if ObjectFields property is set
         internal bool IsSetObjectFields()
         {
-            return this._objectFields != null && this._objectFields.Count > 0; 
+            return this._objectFields != null && (this._objectFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

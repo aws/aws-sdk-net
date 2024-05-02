@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -46,7 +47,7 @@ namespace Amazon.SageMaker.Model
     public partial class HyperParameterTuningResourceConfig
     {
         private HyperParameterTuningAllocationStrategy _allocationStrategy;
-        private List<HyperParameterTuningInstanceConfig> _instanceConfigs = new List<HyperParameterTuningInstanceConfig>();
+        private List<HyperParameterTuningInstanceConfig> _instanceConfigs = AWSConfigs.InitializeCollections ? new List<HyperParameterTuningInstanceConfig>() : null;
         private int? _instanceCount;
         private TrainingInstanceType _instanceType;
         private string _volumeKmsKeyId;
@@ -99,7 +100,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if InstanceConfigs property is set
         internal bool IsSetInstanceConfigs()
         {
-            return this._instanceConfigs != null && this._instanceConfigs.Count > 0; 
+            return this._instanceConfigs != null && (this._instanceConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

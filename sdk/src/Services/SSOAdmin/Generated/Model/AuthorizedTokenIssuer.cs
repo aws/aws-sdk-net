@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SSOAdmin.Model
     /// </summary>
     public partial class AuthorizedTokenIssuer
     {
-        private List<string> _authorizedAudiences = new List<string>();
+        private List<string> _authorizedAudiences = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _trustedTokenIssuerArn;
 
         /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.SSOAdmin.Model
         // Check to see if AuthorizedAudiences property is set
         internal bool IsSetAuthorizedAudiences()
         {
-            return this._authorizedAudiences != null && this._authorizedAudiences.Count > 0; 
+            return this._authorizedAudiences != null && (this._authorizedAudiences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

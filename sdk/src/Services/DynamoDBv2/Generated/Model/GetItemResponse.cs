@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.DynamoDBv2.Model
     public partial class GetItemResponse : AmazonWebServiceResponse
     {
         private ConsumedCapacity _consumedCapacity;
-        private Dictionary<string, AttributeValue> _item = new Dictionary<string, AttributeValue>();
+        private Dictionary<string, AttributeValue> _item = AWSConfigs.InitializeCollections ? new Dictionary<string, AttributeValue>() : null;
 
         /// <summary>
         /// Gets and sets the property ConsumedCapacity. 

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kafka.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Kafka.Model
     /// </summary>
     public partial class Tls
     {
-        private List<string> _certificateAuthorityArnList = new List<string>();
+        private List<string> _certificateAuthorityArnList = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _enabled;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Kafka.Model
         // Check to see if CertificateAuthorityArnList property is set
         internal bool IsSetCertificateAuthorityArnList()
         {
-            return this._certificateAuthorityArnList != null && this._certificateAuthorityArnList.Count > 0; 
+            return this._certificateAuthorityArnList != null && (this._certificateAuthorityArnList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

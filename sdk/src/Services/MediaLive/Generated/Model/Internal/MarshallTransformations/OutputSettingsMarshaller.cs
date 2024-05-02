@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(OutputSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetArchiveOutputSettings())
             {
                 context.Writer.WritePropertyName("archiveOutputSettings");
@@ -52,6 +55,17 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 
                 var marshaller = ArchiveOutputSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ArchiveOutputSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetCmafIngestOutputSettings())
+            {
+                context.Writer.WritePropertyName("cmafIngestOutputSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CmafIngestOutputSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.CmafIngestOutputSettings, context);
 
                 context.Writer.WriteObjectEnd();
             }

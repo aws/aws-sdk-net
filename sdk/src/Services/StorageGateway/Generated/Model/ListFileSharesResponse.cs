@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class ListFileSharesResponse : AmazonWebServiceResponse
     {
-        private List<FileShareInfo> _fileShareInfoList = new List<FileShareInfo>();
+        private List<FileShareInfo> _fileShareInfoList = AWSConfigs.InitializeCollections ? new List<FileShareInfo>() : null;
         private string _marker;
         private string _nextMarker;
 
@@ -52,7 +53,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if FileShareInfoList property is set
         internal bool IsSetFileShareInfoList()
         {
-            return this._fileShareInfoList != null && this._fileShareInfoList.Count > 0; 
+            return this._fileShareInfoList != null && (this._fileShareInfoList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

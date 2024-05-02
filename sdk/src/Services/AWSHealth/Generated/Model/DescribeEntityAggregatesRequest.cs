@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.AWSHealth.Model
     /// </summary>
     public partial class DescribeEntityAggregatesRequest : AmazonAWSHealthRequest
     {
-        private List<string> _eventArns = new List<string>();
+        private List<string> _eventArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property EventArns. 
@@ -54,7 +55,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if EventArns property is set
         internal bool IsSetEventArns()
         {
-            return this._eventArns != null && this._eventArns.Count > 0; 
+            return this._eventArns != null && (this._eventArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

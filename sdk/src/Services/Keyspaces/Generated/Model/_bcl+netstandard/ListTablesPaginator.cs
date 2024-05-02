@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Keyspaces.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Keyspaces.Model
         /// Enumerable containing all of the Tables
         /// </summary>
         public IPaginatedEnumerable<TableSummary> Tables => 
-            new PaginatedResultKeyResponse<ListTablesResponse, TableSummary>(this, (i) => i.Tables);
+            new PaginatedResultKeyResponse<ListTablesResponse, TableSummary>(this, (i) => i.Tables ?? new List<TableSummary>());
 
         internal ListTablesPaginator(IAmazonKeyspaces client, ListTablesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Keyspaces.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListTablesResponse> IPaginator<ListTablesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListTablesResponse> IPaginator<ListTablesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

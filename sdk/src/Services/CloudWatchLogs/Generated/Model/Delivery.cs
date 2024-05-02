@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.CloudWatchLogs.Model
         private DeliveryDestinationType _deliveryDestinationType;
         private string _deliverySourceName;
         private string _id;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -94,7 +95,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property DeliveryDestinationType. 
         /// <para>
         /// Displays whether the delivery destination associated with this delivery is CloudWatch
-        /// Logs, Amazon S3, or Kinesis Data Firehose.
+        /// Logs, Amazon S3, or Firehose.
         /// </para>
         /// </summary>
         public DeliveryDestinationType DeliveryDestinationType
@@ -163,7 +164,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -14,6 +14,7 @@
  */
 using Amazon.Runtime;
 using Amazon.Runtime.Internal.Transform;
+using System.Collections.Generic;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
@@ -22,6 +23,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>
     public class GetObjectTaggingResponseUnmarshaller : S3ReponseUnmarshaller
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {
             GetObjectTaggingResponse response = new GetObjectTaggingResponse();
@@ -51,8 +57,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Tag", targetDepth))
                     {
+                        if (response.Tagging == null)
+                        {
+                            response.Tagging = new List<Tag>();
+                        }
                         response.Tagging.Add(TagUnmarshaller.Instance.Unmarshall(context));
-
                         continue;
                     }
                 }
@@ -65,7 +74,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
 
         private static GetObjectTaggingResponseUnmarshaller _instance;
-        
+
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static GetObjectTaggingResponseUnmarshaller Instance
         {
             get

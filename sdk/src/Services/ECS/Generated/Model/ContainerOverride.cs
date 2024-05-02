@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECS.Model
 {
     /// <summary>
@@ -43,14 +44,14 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class ContainerOverride
     {
-        private List<string> _command = new List<string>();
+        private List<string> _command = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _cpu;
-        private List<KeyValuePair> _environment = new List<KeyValuePair>();
-        private List<EnvironmentFile> _environmentFiles = new List<EnvironmentFile>();
+        private List<KeyValuePair> _environment = AWSConfigs.InitializeCollections ? new List<KeyValuePair>() : null;
+        private List<EnvironmentFile> _environmentFiles = AWSConfigs.InitializeCollections ? new List<EnvironmentFile>() : null;
         private int? _memory;
         private int? _memoryReservation;
         private string _name;
-        private List<ResourceRequirement> _resourceRequirements = new List<ResourceRequirement>();
+        private List<ResourceRequirement> _resourceRequirements = AWSConfigs.InitializeCollections ? new List<ResourceRequirement>() : null;
 
         /// <summary>
         /// Gets and sets the property Command. 
@@ -68,7 +69,7 @@ namespace Amazon.ECS.Model
         // Check to see if Command property is set
         internal bool IsSetCommand()
         {
-            return this._command != null && this._command.Count > 0; 
+            return this._command != null && (this._command.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -108,7 +109,7 @@ namespace Amazon.ECS.Model
         // Check to see if Environment property is set
         internal bool IsSetEnvironment()
         {
-            return this._environment != null && this._environment.Count > 0; 
+            return this._environment != null && (this._environment.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -127,7 +128,7 @@ namespace Amazon.ECS.Model
         // Check to see if EnvironmentFiles property is set
         internal bool IsSetEnvironmentFiles()
         {
-            return this._environmentFiles != null && this._environmentFiles.Count > 0; 
+            return this._environmentFiles != null && (this._environmentFiles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -204,7 +205,7 @@ namespace Amazon.ECS.Model
         // Check to see if ResourceRequirements property is set
         internal bool IsSetResourceRequirements()
         {
-            return this._resourceRequirements != null && this._resourceRequirements.Count > 0; 
+            return this._resourceRequirements != null && (this._resourceRequirements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

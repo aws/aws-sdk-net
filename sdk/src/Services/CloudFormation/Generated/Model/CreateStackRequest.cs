@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
@@ -36,21 +37,21 @@ namespace Amazon.CloudFormation.Model
     /// </summary>
     public partial class CreateStackRequest : AmazonCloudFormationRequest
     {
-        private List<string> _capabilities = new List<string>();
+        private List<string> _capabilities = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _clientRequestToken;
         private bool? _disableRollback;
         private bool? _enableTerminationProtection;
-        private List<string> _notificationARNs = new List<string>();
+        private List<string> _notificationARNs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private OnFailure _onFailure;
-        private List<Parameter> _parameters = new List<Parameter>();
-        private List<string> _resourceTypes = new List<string>();
+        private List<Parameter> _parameters = AWSConfigs.InitializeCollections ? new List<Parameter>() : null;
+        private List<string> _resourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _retainExceptOnCreate;
         private string _roleARN;
         private RollbackConfiguration _rollbackConfiguration;
         private string _stackName;
         private string _stackPolicyBody;
         private string _stackPolicyURL;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _templateBody;
         private string _templateURL;
         private int? _timeoutInMinutes;
@@ -97,13 +98,13 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">
-        /// AWS::IAM::AccessKey</a> 
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">
-        /// AWS::IAM::Group</a> 
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -112,18 +113,18 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">
-        /// AWS::IAM::Policy</a> 
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">
-        /// AWS::IAM::Role</a> 
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html">AWS::IAM::Role</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">
-        /// AWS::IAM::User</a> 
+        ///  <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -188,7 +189,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Capabilities property is set
         internal bool IsSetCapabilities()
         {
-            return this._capabilities != null && this._capabilities.Count > 0; 
+            return this._capabilities != null && (this._capabilities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -297,7 +298,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if NotificationARNs property is set
         internal bool IsSetNotificationARNs()
         {
-            return this._notificationARNs != null && this._notificationARNs.Count > 0; 
+            return this._notificationARNs != null && (this._notificationARNs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -341,7 +342,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -378,7 +379,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if ResourceTypes property is set
         internal bool IsSetResourceTypes()
         {
-            return this._resourceTypes != null && this._resourceTypes.Count > 0; 
+            return this._resourceTypes != null && (this._resourceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -505,9 +506,9 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property StackPolicyURL. 
         /// <para>
         /// Location of a file containing the stack policy. The URL must point to a policy (maximum
-        /// size: 16 KB) located in an S3 bucket in the same Region as the stack. You can specify
-        /// either the <c>StackPolicyBody</c> or the <c>StackPolicyURL</c> parameter, but not
-        /// both.
+        /// size: 16 KB) located in an S3 bucket in the same Region as the stack. The location
+        /// for an Amazon S3 bucket must start with <c>https://</c>. You can specify either the
+        /// <c>StackPolicyBody</c> or the <c>StackPolicyURL</c> parameter, but not both.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1350)]
@@ -540,7 +541,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -575,7 +576,8 @@ namespace Amazon.CloudFormation.Model
         /// Location of file containing the template body. The URL must point to a template (max
         /// size: 460,800 bytes) that's located in an Amazon S3 bucket or a Systems Manager document.
         /// For more information, go to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
-        /// anatomy</a> in the <i>CloudFormation User Guide</i>.
+        /// anatomy</a> in the <i>CloudFormation User Guide</i>. The location for an Amazon S3
+        /// bucket must start with <c>https://</c>.
         /// </para>
         ///  
         /// <para>

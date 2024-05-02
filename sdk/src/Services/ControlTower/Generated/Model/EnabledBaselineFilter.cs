@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ControlTower.Model
 {
     /// <summary>
@@ -35,8 +36,8 @@ namespace Amazon.ControlTower.Model
     /// </summary>
     public partial class EnabledBaselineFilter
     {
-        private List<string> _baselineIdentifiers = new List<string>();
-        private List<string> _targetIdentifiers = new List<string>();
+        private List<string> _baselineIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _targetIdentifiers = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property BaselineIdentifiers. 
@@ -54,7 +55,7 @@ namespace Amazon.ControlTower.Model
         // Check to see if BaselineIdentifiers property is set
         internal bool IsSetBaselineIdentifiers()
         {
-            return this._baselineIdentifiers != null && this._baselineIdentifiers.Count > 0; 
+            return this._baselineIdentifiers != null && (this._baselineIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.ControlTower.Model
         // Check to see if TargetIdentifiers property is set
         internal bool IsSetTargetIdentifiers()
         {
-            return this._targetIdentifiers != null && this._targetIdentifiers.Count > 0; 
+            return this._targetIdentifiers != null && (this._targetIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.DevOpsGuru.Model
         private string _id;
         private string _name;
         private ResourceCollection _resourceCollection;
-        private List<EventResource> _resources = new List<EventResource>();
+        private List<EventResource> _resources = AWSConfigs.InitializeCollections ? new List<EventResource>() : null;
         private DateTime? _time;
 
         /// <summary>
@@ -169,7 +170,7 @@ namespace Amazon.DevOpsGuru.Model
         // Check to see if Resources property is set
         internal bool IsSetResources()
         {
-            return this._resources != null && this._resources.Count > 0; 
+            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

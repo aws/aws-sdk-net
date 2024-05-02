@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -34,10 +35,11 @@ namespace Amazon.EC2.Model
     public partial class Image
     {
         private ArchitectureValues _architecture;
-        private List<BlockDeviceMapping> _blockDeviceMappings = new List<BlockDeviceMapping>();
+        private List<BlockDeviceMapping> _blockDeviceMappings = AWSConfigs.InitializeCollections ? new List<BlockDeviceMapping>() : null;
         private BootModeValues _bootMode;
         private string _creationDate;
         private string _deprecationTime;
+        private string _deregistrationProtection;
         private string _description;
         private bool? _enaSupport;
         private HypervisorType _hypervisor;
@@ -47,11 +49,12 @@ namespace Amazon.EC2.Model
         private ImageTypeValues _imageType;
         private ImdsSupportValues _imdsSupport;
         private string _kernelId;
+        private string _lastLaunchedTime;
         private string _name;
         private string _ownerId;
         private PlatformValues _platform;
         private string _platformDetails;
-        private List<ProductCode> _productCodes = new List<ProductCode>();
+        private List<ProductCode> _productCodes = AWSConfigs.InitializeCollections ? new List<ProductCode>() : null;
         private bool? _public;
         private string _ramdiskId;
         private string _rootDeviceName;
@@ -60,7 +63,7 @@ namespace Amazon.EC2.Model
         private string _sriovNetSupport;
         private ImageState _state;
         private StateReason _stateReason;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private TpmSupportValues _tpmSupport;
         private string _usageOperation;
         private VirtualizationType _virtualizationType;
@@ -98,7 +101,7 @@ namespace Amazon.EC2.Model
         // Check to see if BlockDeviceMappings property is set
         internal bool IsSetBlockDeviceMappings()
         {
-            return this._blockDeviceMappings != null && this._blockDeviceMappings.Count > 0; 
+            return this._blockDeviceMappings != null && (this._blockDeviceMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -156,6 +159,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetDeprecationTime()
         {
             return this._deprecationTime != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeregistrationProtection. 
+        /// <para>
+        /// Indicates whether deregistration protection is enabled for the AMI.
+        /// </para>
+        /// </summary>
+        public string DeregistrationProtection
+        {
+            get { return this._deregistrationProtection; }
+            set { this._deregistrationProtection = value; }
+        }
+
+        // Check to see if DeregistrationProtection property is set
+        internal bool IsSetDeregistrationProtection()
+        {
+            return this._deregistrationProtection != null;
         }
 
         /// <summary>
@@ -252,8 +273,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImageOwnerAlias. 
         /// <para>
-        /// The Amazon Web Services account alias (for example, <c>amazon</c>, <c>self</c>) or
-        /// the Amazon Web Services account ID of the AMI owner.
+        /// The owner alias (<c>amazon</c> | <c>aws-marketplace</c>).
         /// </para>
         /// </summary>
         public string ImageOwnerAlias
@@ -325,6 +345,31 @@ namespace Amazon.EC2.Model
         internal bool IsSetKernelId()
         {
             return this._kernelId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastLaunchedTime. 
+        /// <para>
+        /// The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time
+        /// format</a>, when the AMI was last used to launch an EC2 instance. When the AMI is
+        /// used to launch an instance, there is a 24-hour delay before that usage is reported.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        ///  <c>lastLaunchedTime</c> data is available starting April 2017.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public string LastLaunchedTime
+        {
+            get { return this._lastLaunchedTime; }
+            set { this._lastLaunchedTime = value; }
+        }
+
+        // Check to see if LastLaunchedTime property is set
+        internal bool IsSetLastLaunchedTime()
+        {
+            return this._lastLaunchedTime != null;
         }
 
         /// <summary>
@@ -416,7 +461,7 @@ namespace Amazon.EC2.Model
         // Check to see if ProductCodes property is set
         internal bool IsSetProductCodes()
         {
-            return this._productCodes != null && this._productCodes.Count > 0; 
+            return this._productCodes != null && (this._productCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -585,7 +630,7 @@ namespace Amazon.EC2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

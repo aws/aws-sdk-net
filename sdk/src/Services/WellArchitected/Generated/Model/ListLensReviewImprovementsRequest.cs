@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
     /// Container for the parameters to the ListLensReviewImprovements operation.
-    /// List lens review improvements.
+    /// List the improvements of a particular lens review.
     /// </summary>
     public partial class ListLensReviewImprovementsRequest : AmazonWellArchitectedRequest
     {

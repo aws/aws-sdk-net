@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.QuickSight.Model
         private string _arn;
         private DateTime? _createdTime;
         private string _folderId;
-        private List<string> _folderPath = new List<string>();
+        private List<string> _folderPath = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private FolderType _folderType;
         private DateTime? _lastUpdatedTime;
         private string _name;
@@ -113,7 +114,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if FolderPath property is set
         internal bool IsSetFolderPath()
         {
-            return this._folderPath != null && this._folderPath.Count > 0; 
+            return this._folderPath != null && (this._folderPath.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

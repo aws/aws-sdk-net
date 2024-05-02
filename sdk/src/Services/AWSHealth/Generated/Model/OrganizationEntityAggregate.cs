@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
@@ -34,10 +35,10 @@ namespace Amazon.AWSHealth.Model
     /// </summary>
     public partial class OrganizationEntityAggregate
     {
-        private List<AccountEntityAggregate> _accounts = new List<AccountEntityAggregate>();
+        private List<AccountEntityAggregate> _accounts = AWSConfigs.InitializeCollections ? new List<AccountEntityAggregate>() : null;
         private int? _count;
         private string _eventArn;
-        private Dictionary<string, int> _statuses = new Dictionary<string, int>();
+        private Dictionary<string, int> _statuses = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
 
         /// <summary>
         /// Gets and sets the property Accounts. 
@@ -56,7 +57,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if Accounts property is set
         internal bool IsSetAccounts()
         {
-            return this._accounts != null && this._accounts.Count > 0; 
+            return this._accounts != null && (this._accounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -114,7 +115,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if Statuses property is set
         internal bool IsSetStatuses()
         {
-            return this._statuses != null && this._statuses.Count > 0; 
+            return this._statuses != null && (this._statuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

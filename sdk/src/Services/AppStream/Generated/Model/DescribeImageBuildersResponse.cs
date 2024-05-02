@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppStream.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AppStream.Model
     /// </summary>
     public partial class DescribeImageBuildersResponse : AmazonWebServiceResponse
     {
-        private List<ImageBuilder> _imageBuilders = new List<ImageBuilder>();
+        private List<ImageBuilder> _imageBuilders = AWSConfigs.InitializeCollections ? new List<ImageBuilder>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.AppStream.Model
         // Check to see if ImageBuilders property is set
         internal bool IsSetImageBuilders()
         {
-            return this._imageBuilders != null && this._imageBuilders.Count > 0; 
+            return this._imageBuilders != null && (this._imageBuilders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

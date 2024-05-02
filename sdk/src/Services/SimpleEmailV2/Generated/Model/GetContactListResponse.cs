@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
@@ -37,8 +38,8 @@ namespace Amazon.SimpleEmailV2.Model
         private DateTime? _createdTimestamp;
         private string _description;
         private DateTime? _lastUpdatedTimestamp;
-        private List<Tag> _tags = new List<Tag>();
-        private List<Topic> _topics = new List<Topic>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<Topic> _topics = AWSConfigs.InitializeCollections ? new List<Topic>() : null;
 
         /// <summary>
         /// Gets and sets the property ContactListName. 
@@ -127,7 +128,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -146,7 +147,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if Topics property is set
         internal bool IsSetTopics()
         {
-            return this._topics != null && this._topics.Count > 0; 
+            return this._topics != null && (this._topics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the IpamDiscoveredResourceCidrs
         /// </summary>
         public IPaginatedEnumerable<IpamDiscoveredResourceCidr> IpamDiscoveredResourceCidrs => 
-            new PaginatedResultKeyResponse<GetIpamDiscoveredResourceCidrsResponse, IpamDiscoveredResourceCidr>(this, (i) => i.IpamDiscoveredResourceCidrs);
+            new PaginatedResultKeyResponse<GetIpamDiscoveredResourceCidrsResponse, IpamDiscoveredResourceCidr>(this, (i) => i.IpamDiscoveredResourceCidrs ?? new List<IpamDiscoveredResourceCidr>());
 
         internal GetIpamDiscoveredResourceCidrsPaginator(IAmazonEC2 client, GetIpamDiscoveredResourceCidrsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.EC2.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<GetIpamDiscoveredResourceCidrsResponse> IPaginator<GetIpamDiscoveredResourceCidrsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<GetIpamDiscoveredResourceCidrsResponse> IPaginator<GetIpamDiscoveredResourceCidrsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

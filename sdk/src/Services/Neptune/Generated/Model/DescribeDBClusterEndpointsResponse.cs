@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Neptune.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Neptune.Model
     /// </summary>
     public partial class DescribeDBClusterEndpointsResponse : AmazonWebServiceResponse
     {
-        private List<DBClusterEndpoint> _dbClusterEndpoints = new List<DBClusterEndpoint>();
+        private List<DBClusterEndpoint> _dbClusterEndpoints = AWSConfigs.InitializeCollections ? new List<DBClusterEndpoint>() : null;
         private string _marker;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.Neptune.Model
         // Check to see if DBClusterEndpoints property is set
         internal bool IsSetDBClusterEndpoints()
         {
-            return this._dbClusterEndpoints != null && this._dbClusterEndpoints.Count > 0; 
+            return this._dbClusterEndpoints != null && (this._dbClusterEndpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

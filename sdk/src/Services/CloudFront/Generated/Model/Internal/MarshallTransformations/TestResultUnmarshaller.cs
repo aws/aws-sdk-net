@@ -30,12 +30,13 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TestResult Object
     /// </summary>  
-    public class TestResultUnmarshaller : IUnmarshaller<TestResult, XmlUnmarshallerContext>
+    public class TestResultUnmarshaller : IUnmarshaller<TestResult, XmlUnmarshallerContext>, IUnmarshaller<TestResult, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -69,6 +70,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("FunctionExecutionLogs/member", targetDepth))
                     {
+                        if (unmarshalledObject.FunctionExecutionLogs == null)
+                        {
+                            unmarshalledObject.FunctionExecutionLogs = new List<string>();
+                        }
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.FunctionExecutionLogs.Add(unmarshaller.Unmarshall(context));
                         continue;
@@ -92,6 +97,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public TestResult Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static TestResultUnmarshaller _instance = new TestResultUnmarshaller();        

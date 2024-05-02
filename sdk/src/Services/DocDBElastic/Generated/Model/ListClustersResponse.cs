@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DocDBElastic.Model
 {
     /// <summary>
@@ -33,13 +34,13 @@ namespace Amazon.DocDBElastic.Model
     /// </summary>
     public partial class ListClustersResponse : AmazonWebServiceResponse
     {
-        private List<ClusterInList> _clusters = new List<ClusterInList>();
+        private List<ClusterInList> _clusters = AWSConfigs.InitializeCollections ? new List<ClusterInList>() : null;
         private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property Clusters. 
         /// <para>
-        /// A list of Elastic DocumentDB cluster.
+        /// A list of Amazon DocumentDB elastic clusters.
         /// </para>
         /// </summary>
         public List<ClusterInList> Clusters
@@ -51,17 +52,19 @@ namespace Amazon.DocDBElastic.Model
         // Check to see if Clusters property is set
         internal bool IsSetClusters()
         {
-            return this._clusters != null && this._clusters.Count > 0; 
+            return this._clusters != null && (this._clusters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The response will provide a nextToken if there is more data beyond the maxResults.
+        /// A pagination token provided by a previous request. If this parameter is specified,
+        /// the response includes only records beyond this token, up to the value specified by
+        /// <c>max-results</c>.
         /// </para>
         ///  
         /// <para>
-        /// If there is no more data in the responce, the nextToken will not be returned.
+        /// If there is no more data in the responce, the <c>nextToken</c> will not be returned.
         /// </para>
         /// </summary>
         public string NextToken

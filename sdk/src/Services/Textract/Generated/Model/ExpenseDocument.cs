@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Textract.Model
 {
     /// <summary>
@@ -33,10 +34,10 @@ namespace Amazon.Textract.Model
     /// </summary>
     public partial class ExpenseDocument
     {
-        private List<Block> _blocks = new List<Block>();
+        private List<Block> _blocks = AWSConfigs.InitializeCollections ? new List<Block>() : null;
         private int? _expenseIndex;
-        private List<LineItemGroup> _lineItemGroups = new List<LineItemGroup>();
-        private List<ExpenseField> _summaryFields = new List<ExpenseField>();
+        private List<LineItemGroup> _lineItemGroups = AWSConfigs.InitializeCollections ? new List<LineItemGroup>() : null;
+        private List<ExpenseField> _summaryFields = AWSConfigs.InitializeCollections ? new List<ExpenseField>() : null;
 
         /// <summary>
         /// Gets and sets the property Blocks. 
@@ -54,7 +55,7 @@ namespace Amazon.Textract.Model
         // Check to see if Blocks property is set
         internal bool IsSetBlocks()
         {
-            return this._blocks != null && this._blocks.Count > 0; 
+            return this._blocks != null && (this._blocks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.Textract.Model
         // Check to see if LineItemGroups property is set
         internal bool IsSetLineItemGroups()
         {
-            return this._lineItemGroups != null && this._lineItemGroups.Count > 0; 
+            return this._lineItemGroups != null && (this._lineItemGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -110,7 +111,7 @@ namespace Amazon.Textract.Model
         // Check to see if SummaryFields property is set
         internal bool IsSetSummaryFields()
         {
-            return this._summaryFields != null && this._summaryFields.Count > 0; 
+            return this._summaryFields != null && (this._summaryFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

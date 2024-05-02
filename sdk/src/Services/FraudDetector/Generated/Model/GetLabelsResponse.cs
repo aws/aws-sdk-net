@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FraudDetector.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class GetLabelsResponse : AmazonWebServiceResponse
     {
-        private List<Label> _labels = new List<Label>();
+        private List<Label> _labels = AWSConfigs.InitializeCollections ? new List<Label>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if Labels property is set
         internal bool IsSetLabels()
         {
-            return this._labels != null && this._labels.Count > 0; 
+            return this._labels != null && (this._labels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

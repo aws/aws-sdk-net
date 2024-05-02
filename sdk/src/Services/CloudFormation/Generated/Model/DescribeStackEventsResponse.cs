@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CloudFormation.Model
     public partial class DescribeStackEventsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<StackEvent> _stackEvents = new List<StackEvent>();
+        private List<StackEvent> _stackEvents = AWSConfigs.InitializeCollections ? new List<StackEvent>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if StackEvents property is set
         internal bool IsSetStackEvents()
         {
-            return this._stackEvents != null && this._stackEvents.Count > 0; 
+            return this._stackEvents != null && (this._stackEvents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

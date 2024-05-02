@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.OpsWorks.Model
     /// </summary>
     public partial class DescribeStacksResponse : AmazonWebServiceResponse
     {
-        private List<Stack> _stacks = new List<Stack>();
+        private List<Stack> _stacks = AWSConfigs.InitializeCollections ? new List<Stack>() : null;
 
         /// <summary>
         /// Gets and sets the property Stacks. 
@@ -50,7 +51,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if Stacks property is set
         internal bool IsSetStacks()
         {
-            return this._stacks != null && this._stacks.Count > 0; 
+            return this._stacks != null && (this._stacks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

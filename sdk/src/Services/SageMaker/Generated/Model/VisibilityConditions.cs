@@ -26,10 +26,16 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The list of key-value pairs that you specify for your resources.
+    /// The list of key-value pairs used to filter your search results. If a search result
+    /// contains a key from your list, it is included in the final search response if the
+    /// value associated with the key in the result matches the value you specified. If the
+    /// value doesn't match, the result is excluded from the search response. Any resources
+    /// that don't have a key from the list that you've provided will also be included in
+    /// the search response.
     /// </summary>
     public partial class VisibilityConditions
     {
@@ -40,7 +46,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property Key. 
         /// <para>
         /// The key that specifies the tag that you're using to filter the search results. It
-        /// must be in the following format: <c>Tags.&lt;key&gt;/EqualsIfExists</c>.
+        /// must be in the following format: <c>Tags.&lt;key&gt;</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

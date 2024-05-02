@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Pinpoint.Model
     public partial class EventsBatch
     {
         private PublicEndpoint _endpoint;
-        private Dictionary<string, Event> _events = new Dictionary<string, Event>();
+        private Dictionary<string, Event> _events = AWSConfigs.InitializeCollections ? new Dictionary<string, Event>() : null;
 
         /// <summary>
         /// Gets and sets the property Endpoint. 
@@ -71,7 +72,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Events property is set
         internal bool IsSetEvents()
         {
-            return this._events != null && this._events.Count > 0; 
+            return this._events != null && (this._events.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

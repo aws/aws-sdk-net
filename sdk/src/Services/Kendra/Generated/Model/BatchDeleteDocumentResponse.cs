@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class BatchDeleteDocumentResponse : AmazonWebServiceResponse
     {
-        private List<BatchDeleteDocumentResponseFailedDocument> _failedDocuments = new List<BatchDeleteDocumentResponseFailedDocument>();
+        private List<BatchDeleteDocumentResponseFailedDocument> _failedDocuments = AWSConfigs.InitializeCollections ? new List<BatchDeleteDocumentResponseFailedDocument>() : null;
 
         /// <summary>
         /// Gets and sets the property FailedDocuments. 
@@ -51,7 +52,7 @@ namespace Amazon.Kendra.Model
         // Check to see if FailedDocuments property is set
         internal bool IsSetFailedDocuments()
         {
-            return this._failedDocuments != null && this._failedDocuments.Count > 0; 
+            return this._failedDocuments != null && (this._failedDocuments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

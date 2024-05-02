@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53Domains.Model
 {
     /// <summary>
@@ -94,7 +95,7 @@ namespace Amazon.Route53Domains.Model
         private string _domainName;
         private int? _durationInYears;
         private string _idnLangCode;
-        private List<Nameserver> _nameservers = new List<Nameserver>();
+        private List<Nameserver> _nameservers = AWSConfigs.InitializeCollections ? new List<Nameserver>() : null;
         private bool? _privacyProtectAdminContact;
         private bool? _privacyProtectBillingContact;
         private bool? _privacyProtectRegistrantContact;
@@ -284,7 +285,7 @@ namespace Amazon.Route53Domains.Model
         // Check to see if Nameservers property is set
         internal bool IsSetNameservers()
         {
-            return this._nameservers != null && this._nameservers.Count > 0; 
+            return this._nameservers != null && (this._nameservers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

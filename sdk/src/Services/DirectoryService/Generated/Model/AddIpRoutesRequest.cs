@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
@@ -47,7 +48,7 @@ namespace Amazon.DirectoryService.Model
     public partial class AddIpRoutesRequest : AmazonDirectoryServiceRequest
     {
         private string _directoryId;
-        private List<IpRoute> _ipRoutes = new List<IpRoute>();
+        private List<IpRoute> _ipRoutes = AWSConfigs.InitializeCollections ? new List<IpRoute>() : null;
         private bool? _updateSecurityGroupForDirectoryControllers;
 
         /// <summary>
@@ -86,7 +87,7 @@ namespace Amazon.DirectoryService.Model
         // Check to see if IpRoutes property is set
         internal bool IsSetIpRoutes()
         {
-            return this._ipRoutes != null && this._ipRoutes.Count > 0; 
+            return this._ipRoutes != null && (this._ipRoutes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

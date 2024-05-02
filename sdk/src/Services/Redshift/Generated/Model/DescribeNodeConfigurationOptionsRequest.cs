@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.Redshift.Model
     {
         private ActionType _actionType;
         private string _clusterIdentifier;
-        private List<NodeConfigurationOptionsFilter> _filters = new List<NodeConfigurationOptionsFilter>();
+        private List<NodeConfigurationOptionsFilter> _filters = AWSConfigs.InitializeCollections ? new List<NodeConfigurationOptionsFilter>() : null;
         private string _marker;
         private int? _maxRecords;
         private string _ownerAccount;
@@ -101,7 +102,7 @@ namespace Amazon.Redshift.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

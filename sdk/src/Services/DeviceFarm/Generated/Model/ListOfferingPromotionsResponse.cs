@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.DeviceFarm.Model
     public partial class ListOfferingPromotionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<OfferingPromotion> _offeringPromotions = new List<OfferingPromotion>();
+        private List<OfferingPromotion> _offeringPromotions = AWSConfigs.InitializeCollections ? new List<OfferingPromotion>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if OfferingPromotions property is set
         internal bool IsSetOfferingPromotions()
         {
-            return this._offeringPromotions != null && this._offeringPromotions.Count > 0; 
+            return this._offeringPromotions != null && (this._offeringPromotions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

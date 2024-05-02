@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ApiGatewayV2.Model
 {
     /// <summary>
@@ -35,13 +36,13 @@ namespace Amazon.ApiGatewayV2.Model
     {
         private bool? _apiGatewayManaged;
         private bool? _apiKeyRequired;
-        private List<string> _authorizationScopes = new List<string>();
+        private List<string> _authorizationScopes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AuthorizationType _authorizationType;
         private string _authorizerId;
         private string _modelSelectionExpression;
         private string _operationName;
-        private Dictionary<string, string> _requestModels = new Dictionary<string, string>();
-        private Dictionary<string, ParameterConstraints> _requestParameters = new Dictionary<string, ParameterConstraints>();
+        private Dictionary<string, string> _requestModels = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, ParameterConstraints> _requestParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, ParameterConstraints>() : null;
         private string _routeId;
         private string _routeKey;
         private string _routeResponseSelectionExpression;
@@ -107,7 +108,7 @@ namespace Amazon.ApiGatewayV2.Model
         // Check to see if AuthorizationScopes property is set
         internal bool IsSetAuthorizationScopes()
         {
-            return this._authorizationScopes != null && this._authorizationScopes.Count > 0; 
+            return this._authorizationScopes != null && (this._authorizationScopes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -201,7 +202,7 @@ namespace Amazon.ApiGatewayV2.Model
         // Check to see if RequestModels property is set
         internal bool IsSetRequestModels()
         {
-            return this._requestModels != null && this._requestModels.Count > 0; 
+            return this._requestModels != null && (this._requestModels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -219,7 +220,7 @@ namespace Amazon.ApiGatewayV2.Model
         // Check to see if RequestParameters property is set
         internal bool IsSetRequestParameters()
         {
-            return this._requestParameters != null && this._requestParameters.Count > 0; 
+            return this._requestParameters != null && (this._requestParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

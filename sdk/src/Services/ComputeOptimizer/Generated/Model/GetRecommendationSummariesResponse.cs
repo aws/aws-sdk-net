@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ComputeOptimizer.Model
     public partial class GetRecommendationSummariesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RecommendationSummary> _recommendationSummaries = new List<RecommendationSummary>();
+        private List<RecommendationSummary> _recommendationSummaries = AWSConfigs.InitializeCollections ? new List<RecommendationSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +74,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if RecommendationSummaries property is set
         internal bool IsSetRecommendationSummaries()
         {
-            return this._recommendationSummaries != null && this._recommendationSummaries.Count > 0; 
+            return this._recommendationSummaries != null && (this._recommendationSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

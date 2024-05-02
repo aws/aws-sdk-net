@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DocDB.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DocDB.Model
     /// </summary>
     public partial class DescribeGlobalClustersResponse : AmazonWebServiceResponse
     {
-        private List<GlobalCluster> _globalClusters = new List<GlobalCluster>();
+        private List<GlobalCluster> _globalClusters = AWSConfigs.InitializeCollections ? new List<GlobalCluster>() : null;
         private string _marker;
 
         /// <summary>
@@ -48,7 +49,7 @@ namespace Amazon.DocDB.Model
         // Check to see if GlobalClusters property is set
         internal bool IsSetGlobalClusters()
         {
-            return this._globalClusters != null && this._globalClusters.Count > 0; 
+            return this._globalClusters != null && (this._globalClusters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

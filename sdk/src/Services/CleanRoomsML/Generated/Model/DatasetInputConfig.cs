@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CleanRoomsML.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CleanRoomsML.Model
     public partial class DatasetInputConfig
     {
         private DataSource _dataSource;
-        private List<ColumnSchema> _schema = new List<ColumnSchema>();
+        private List<ColumnSchema> _schema = AWSConfigs.InitializeCollections ? new List<ColumnSchema>() : null;
 
         /// <summary>
         /// Gets and sets the property DataSource. 
@@ -71,7 +72,7 @@ namespace Amazon.CleanRoomsML.Model
         // Check to see if Schema property is set
         internal bool IsSetSchema()
         {
-            return this._schema != null && this._schema.Count > 0; 
+            return this._schema != null && (this._schema.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

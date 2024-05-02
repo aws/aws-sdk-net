@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAF.Model
 {
     /// <summary>
@@ -102,7 +103,7 @@ namespace Amazon.WAF.Model
     public partial class UpdateXssMatchSetRequest : AmazonWAFRequest
     {
         private string _changeToken;
-        private List<XssMatchSetUpdate> _updates = new List<XssMatchSetUpdate>();
+        private List<XssMatchSetUpdate> _updates = AWSConfigs.InitializeCollections ? new List<XssMatchSetUpdate>() : null;
         private string _xssMatchSetId;
 
         /// <summary>
@@ -155,7 +156,7 @@ namespace Amazon.WAF.Model
         // Check to see if Updates property is set
         internal bool IsSetUpdates()
         {
-            return this._updates != null && this._updates.Count > 0; 
+            return this._updates != null && (this._updates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class GetCalendarStateRequest : AmazonSimpleSystemsManagementRequest
     {
         private string _atTime;
-        private List<string> _calendarNames = new List<string>();
+        private List<string> _calendarNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AtTime. 
@@ -93,7 +94,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if CalendarNames property is set
         internal bool IsSetCalendarNames()
         {
-            return this._calendarNames != null && this._calendarNames.Count > 0; 
+            return this._calendarNames != null && (this._calendarNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

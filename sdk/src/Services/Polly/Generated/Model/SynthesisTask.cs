@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Polly.Model
 {
     /// <summary>
@@ -36,13 +37,13 @@ namespace Amazon.Polly.Model
         private DateTime? _creationTime;
         private Engine _engine;
         private LanguageCode _languageCode;
-        private List<string> _lexiconNames = new List<string>();
+        private List<string> _lexiconNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private OutputFormat _outputFormat;
         private string _outputUri;
         private int? _requestCharacters;
         private string _sampleRate;
         private string _snsTopicArn;
-        private List<string> _speechMarkTypes = new List<string>();
+        private List<string> _speechMarkTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _taskId;
         private TaskStatus _taskStatus;
         private string _taskStatusReason;
@@ -133,7 +134,7 @@ namespace Amazon.Polly.Model
         // Check to see if LexiconNames property is set
         internal bool IsSetLexiconNames()
         {
-            return this._lexiconNames != null && this._lexiconNames.Count > 0; 
+            return this._lexiconNames != null && (this._lexiconNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -254,7 +255,7 @@ namespace Amazon.Polly.Model
         // Check to see if SpeechMarkTypes property is set
         internal bool IsSetSpeechMarkTypes()
         {
-            return this._speechMarkTypes != null && this._speechMarkTypes.Count > 0; 
+            return this._speechMarkTypes != null && (this._speechMarkTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

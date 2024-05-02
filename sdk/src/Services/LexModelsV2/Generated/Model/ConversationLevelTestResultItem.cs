@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -35,8 +36,8 @@ namespace Amazon.LexModelsV2.Model
     {
         private string _conversationId;
         private TestResultMatchStatus _endToEndResult;
-        private List<ConversationLevelIntentClassificationResultItem> _intentClassificationResults = new List<ConversationLevelIntentClassificationResultItem>();
-        private List<ConversationLevelSlotResolutionResultItem> _slotResolutionResults = new List<ConversationLevelSlotResolutionResultItem>();
+        private List<ConversationLevelIntentClassificationResultItem> _intentClassificationResults = AWSConfigs.InitializeCollections ? new List<ConversationLevelIntentClassificationResultItem>() : null;
+        private List<ConversationLevelSlotResolutionResultItem> _slotResolutionResults = AWSConfigs.InitializeCollections ? new List<ConversationLevelSlotResolutionResultItem>() : null;
         private TestResultMatchStatus _speechTranscriptionResult;
 
         /// <summary>
@@ -93,7 +94,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if IntentClassificationResults property is set
         internal bool IsSetIntentClassificationResults()
         {
-            return this._intentClassificationResults != null && this._intentClassificationResults.Count > 0; 
+            return this._intentClassificationResults != null && (this._intentClassificationResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -112,7 +113,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if SlotResolutionResults property is set
         internal bool IsSetSlotResolutionResults()
         {
-            return this._slotResolutionResults != null && this._slotResolutionResults.Count > 0; 
+            return this._slotResolutionResults != null && (this._slotResolutionResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

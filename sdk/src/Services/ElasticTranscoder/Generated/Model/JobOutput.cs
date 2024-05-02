@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
@@ -46,7 +47,7 @@ namespace Amazon.ElasticTranscoder.Model
         private JobAlbumArt _albumArt;
         private string _appliedColorSpaceConversion;
         private Captions _captions;
-        private List<Clip> _composition = new List<Clip>();
+        private List<Clip> _composition = AWSConfigs.InitializeCollections ? new List<Clip>() : null;
         private long? _duration;
         private long? _durationMillis;
         private Encryption _encryption;
@@ -62,7 +63,7 @@ namespace Amazon.ElasticTranscoder.Model
         private string _statusDetail;
         private Encryption _thumbnailEncryption;
         private string _thumbnailPattern;
-        private List<JobWatermark> _watermarks = new List<JobWatermark>();
+        private List<JobWatermark> _watermarks = AWSConfigs.InitializeCollections ? new List<JobWatermark>() : null;
         private int? _width;
 
         /// <summary>
@@ -206,7 +207,7 @@ namespace Amazon.ElasticTranscoder.Model
         // Check to see if Composition property is set
         internal bool IsSetComposition()
         {
-            return this._composition != null && this._composition.Count > 0; 
+            return this._composition != null && (this._composition.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -625,7 +626,7 @@ namespace Amazon.ElasticTranscoder.Model
         // Check to see if Watermarks property is set
         internal bool IsSetWatermarks()
         {
-            return this._watermarks != null && this._watermarks.Count > 0; 
+            return this._watermarks != null && (this._watermarks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

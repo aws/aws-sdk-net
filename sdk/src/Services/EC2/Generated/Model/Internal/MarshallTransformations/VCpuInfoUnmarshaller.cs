@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -75,6 +76,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("validCores/item", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
+                        if (unmarshalledObject.ValidCores == null)
+                        {
+                            unmarshalledObject.ValidCores = new List<int>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ValidCores.Add(item);
                         continue;
@@ -82,6 +87,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("validThreadsPerCore/item", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
+                        if (unmarshalledObject.ValidThreadsPerCore == null)
+                        {
+                            unmarshalledObject.ValidThreadsPerCore = new List<int>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ValidThreadsPerCore.Add(item);
                         continue;

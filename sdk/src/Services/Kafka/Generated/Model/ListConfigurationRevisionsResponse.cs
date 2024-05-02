@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kafka.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Kafka.Model
     public partial class ListConfigurationRevisionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ConfigurationRevision> _revisions = new List<ConfigurationRevision>();
+        private List<ConfigurationRevision> _revisions = AWSConfigs.InitializeCollections ? new List<ConfigurationRevision>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken.             
@@ -69,7 +70,7 @@ namespace Amazon.Kafka.Model
         // Check to see if Revisions property is set
         internal bool IsSetRevisions()
         {
-            return this._revisions != null && this._revisions.Count > 0; 
+            return this._revisions != null && (this._revisions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

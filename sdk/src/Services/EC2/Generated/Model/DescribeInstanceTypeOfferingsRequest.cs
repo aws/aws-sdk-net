@@ -26,17 +26,18 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeInstanceTypeOfferings operation.
-    /// Returns a list of all instance types offered. The results can be filtered by location
-    /// (Region or Availability Zone). If no location is specified, the instance types offered
-    /// in the current Region are returned.
+    /// Lists the instance types that are offered for the specified location. If no location
+    /// is specified, the default is to list the instance types that are offered in the current
+    /// Region.
     /// </summary>
     public partial class DescribeInstanceTypeOfferingsRequest : AmazonEC2Request
     {
-        private List<Filter> _filters = new List<Filter>();
+        private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
         private LocationType _locationType;
         private int? _maxResults;
         private string _nextToken;
@@ -48,12 +49,12 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>location</c> - This depends on the location type. For example, if the location
-        /// type is <c>region</c> (default), the location is the Region code (for example, <c>us-east-2</c>.)
+        ///  <c>instance-type</c> - The instance type. For a list of possible values, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Instance.html">Instance</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>instance-type</c> - The instance type. For example, <c>c5.2xlarge</c>.
+        ///  <c>location</c> - The location. For a list of possible identifiers, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html">Regions
+        /// and Zones</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -66,7 +67,7 @@ namespace Amazon.EC2.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,6 +75,27 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The location type.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>availability-zone</c> - The Availability Zone. When you specify a location filter,
+        /// it must be an Availability Zone for the current Region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>availability-zone-id</c> - The AZ ID. When you specify a location filter, it must
+        /// be an AZ ID for the current Region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>outpost</c> - The Outpost ARN. When you specify a location filter, it must be
+        /// an Outpost ARN for the current Region.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>region</c> - The current Region. If you specify a location filter, it must match
+        /// the current Region.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public LocationType LocationType
         {

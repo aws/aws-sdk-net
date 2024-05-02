@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Drs.Model
 {
     /// <summary>
@@ -33,11 +34,11 @@ namespace Amazon.Drs.Model
     /// </summary>
     public partial class RecoveryInstanceProperties
     {
-        private List<CPU> _cpus = new List<CPU>();
-        private List<RecoveryInstanceDisk> _disks = new List<RecoveryInstanceDisk>();
+        private List<CPU> _cpus = AWSConfigs.InitializeCollections ? new List<CPU>() : null;
+        private List<RecoveryInstanceDisk> _disks = AWSConfigs.InitializeCollections ? new List<RecoveryInstanceDisk>() : null;
         private IdentificationHints _identificationHints;
         private string _lastUpdatedDateTime;
-        private List<NetworkInterface> _networkInterfaces = new List<NetworkInterface>();
+        private List<NetworkInterface> _networkInterfaces = AWSConfigs.InitializeCollections ? new List<NetworkInterface>() : null;
         private OS _os;
         private long? _ramBytes;
 
@@ -57,7 +58,7 @@ namespace Amazon.Drs.Model
         // Check to see if Cpus property is set
         internal bool IsSetCpus()
         {
-            return this._cpus != null && this._cpus.Count > 0; 
+            return this._cpus != null && (this._cpus.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -76,7 +77,7 @@ namespace Amazon.Drs.Model
         // Check to see if Disks property is set
         internal bool IsSetDisks()
         {
-            return this._disks != null && this._disks.Count > 0; 
+            return this._disks != null && (this._disks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -132,7 +133,7 @@ namespace Amazon.Drs.Model
         // Check to see if NetworkInterfaces property is set
         internal bool IsSetNetworkInterfaces()
         {
-            return this._networkInterfaces != null && this._networkInterfaces.Count > 0; 
+            return this._networkInterfaces != null && (this._networkInterfaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

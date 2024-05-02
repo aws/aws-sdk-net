@@ -26,23 +26,18 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTFleetHub.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
     /// Adds to or modifies the tags of the specified resource. Tags are metadata which can
     /// be used to manage a resource.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class TagResourceRequest : AmazonIoTFleetHubRequest
     {
         private string _resourceArn;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceArn. 
@@ -79,7 +74,7 @@ namespace Amazon.IoTFleetHub.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

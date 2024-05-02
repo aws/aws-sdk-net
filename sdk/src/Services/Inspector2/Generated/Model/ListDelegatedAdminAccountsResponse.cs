@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class ListDelegatedAdminAccountsResponse : AmazonWebServiceResponse
     {
-        private List<DelegatedAdminAccount> _delegatedAdminAccounts = new List<DelegatedAdminAccount>();
+        private List<DelegatedAdminAccount> _delegatedAdminAccounts = AWSConfigs.InitializeCollections ? new List<DelegatedAdminAccount>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if DelegatedAdminAccounts property is set
         internal bool IsSetDelegatedAdminAccounts()
         {
-            return this._delegatedAdminAccounts != null && this._delegatedAdminAccounts.Count > 0; 
+            return this._delegatedAdminAccounts != null && (this._delegatedAdminAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

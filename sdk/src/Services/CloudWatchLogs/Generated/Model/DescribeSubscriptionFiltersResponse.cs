@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CloudWatchLogs.Model
     public partial class DescribeSubscriptionFiltersResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SubscriptionFilter> _subscriptionFilters = new List<SubscriptionFilter>();
+        private List<SubscriptionFilter> _subscriptionFilters = AWSConfigs.InitializeCollections ? new List<SubscriptionFilter>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken.
@@ -67,7 +68,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if SubscriptionFilters property is set
         internal bool IsSetSubscriptionFilters()
         {
-            return this._subscriptionFilters != null && this._subscriptionFilters.Count > 0; 
+            return this._subscriptionFilters != null && (this._subscriptionFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

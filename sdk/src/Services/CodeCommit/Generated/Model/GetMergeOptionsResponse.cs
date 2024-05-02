@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.CodeCommit.Model
     {
         private string _baseCommitId;
         private string _destinationCommitId;
-        private List<string> _mergeOptions = new List<string>();
+        private List<string> _mergeOptions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _sourceCommitId;
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if MergeOptions property is set
         internal bool IsSetMergeOptions()
         {
-            return this._mergeOptions != null && this._mergeOptions.Count > 0; 
+            return this._mergeOptions != null && (this._mergeOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
@@ -67,7 +68,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     public partial class DeregisterTargetsRequest : AmazonElasticLoadBalancingV2Request
     {
         private string _targetGroupArn;
-        private List<TargetDescription> _targets = new List<TargetDescription>();
+        private List<TargetDescription> _targets = AWSConfigs.InitializeCollections ? new List<TargetDescription>() : null;
 
         /// <summary>
         /// Gets and sets the property TargetGroupArn. 
@@ -105,7 +106,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if Targets property is set
         internal bool IsSetTargets()
         {
-            return this._targets != null && this._targets.Count > 0; 
+            return this._targets != null && (this._targets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

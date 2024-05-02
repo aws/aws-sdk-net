@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CertificateManager.Model
 {
     /// <summary>
@@ -60,12 +61,12 @@ namespace Amazon.CertificateManager.Model
     {
         private string _certificateAuthorityArn;
         private string _domainName;
-        private List<DomainValidationOption> _domainValidationOptions = new List<DomainValidationOption>();
+        private List<DomainValidationOption> _domainValidationOptions = AWSConfigs.InitializeCollections ? new List<DomainValidationOption>() : null;
         private string _idempotencyToken;
         private KeyAlgorithm _keyAlgorithm;
         private CertificateOptions _options;
-        private List<string> _subjectAlternativeNames = new List<string>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<string> _subjectAlternativeNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private ValidationMethod _validationMethod;
 
         /// <summary>
@@ -144,7 +145,7 @@ namespace Amazon.CertificateManager.Model
         // Check to see if DomainValidationOptions property is set
         internal bool IsSetDomainValidationOptions()
         {
-            return this._domainValidationOptions != null && this._domainValidationOptions.Count > 0; 
+            return this._domainValidationOptions != null && (this._domainValidationOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -265,7 +266,7 @@ namespace Amazon.CertificateManager.Model
         // Check to see if SubjectAlternativeNames property is set
         internal bool IsSetSubjectAlternativeNames()
         {
-            return this._subjectAlternativeNames != null && this._subjectAlternativeNames.Count > 0; 
+            return this._subjectAlternativeNames != null && (this._subjectAlternativeNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -284,7 +285,7 @@ namespace Amazon.CertificateManager.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

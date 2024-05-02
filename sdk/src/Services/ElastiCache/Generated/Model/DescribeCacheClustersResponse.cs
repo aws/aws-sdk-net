@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ElastiCache.Model
     /// </summary>
     public partial class DescribeCacheClustersResponse : AmazonWebServiceResponse
     {
-        private List<CacheCluster> _cacheClusters = new List<CacheCluster>();
+        private List<CacheCluster> _cacheClusters = AWSConfigs.InitializeCollections ? new List<CacheCluster>() : null;
         private string _marker;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheClusters property is set
         internal bool IsSetCacheClusters()
         {
-            return this._cacheClusters != null && this._cacheClusters.Count > 0; 
+            return this._cacheClusters != null && (this._cacheClusters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.QuickSight.Model
         private string _nextToken;
         private string _requestId;
         private int? _status;
-        private List<User> _userList = new List<User>();
+        private List<User> _userList = AWSConfigs.InitializeCollections ? new List<User>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -107,7 +108,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if UserList property is set
         internal bool IsSetUserList()
         {
-            return this._userList != null && this._userList.Count > 0; 
+            return this._userList != null && (this._userList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

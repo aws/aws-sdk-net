@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// Enumerable containing all of the FindingDetails
         /// </summary>
         public IPaginatedEnumerable<FindingDetails> FindingDetails => 
-            new PaginatedResultKeyResponse<GetFindingV2Response, FindingDetails>(this, (i) => i.FindingDetails);
+            new PaginatedResultKeyResponse<GetFindingV2Response, FindingDetails>(this, (i) => i.FindingDetails ?? new List<FindingDetails>());
 
         internal GetFindingV2Paginator(IAmazonAccessAnalyzer client, GetFindingV2Request request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.AccessAnalyzer.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<GetFindingV2Response> IPaginator<GetFindingV2Response>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<GetFindingV2Response> IPaginator<GetFindingV2Response>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

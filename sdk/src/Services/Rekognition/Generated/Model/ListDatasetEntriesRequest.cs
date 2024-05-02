@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
@@ -61,7 +62,7 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class ListDatasetEntriesRequest : AmazonRekognitionRequest
     {
-        private List<string> _containsLabels = new List<string>();
+        private List<string> _containsLabels = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _datasetArn;
         private bool? _hasErrors;
         private bool? _labeled;
@@ -86,7 +87,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if ContainsLabels property is set
         internal bool IsSetContainsLabels()
         {
-            return this._containsLabels != null && this._containsLabels.Count > 0; 
+            return this._containsLabels != null && (this._containsLabels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

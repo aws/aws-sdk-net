@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Proton.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Proton.Model
         /// Enumerable containing all of the ProvisionedResources
         /// </summary>
         public IPaginatedEnumerable<ProvisionedResource> ProvisionedResources => 
-            new PaginatedResultKeyResponse<ListServiceInstanceProvisionedResourcesResponse, ProvisionedResource>(this, (i) => i.ProvisionedResources);
+            new PaginatedResultKeyResponse<ListServiceInstanceProvisionedResourcesResponse, ProvisionedResource>(this, (i) => i.ProvisionedResources ?? new List<ProvisionedResource>());
 
         internal ListServiceInstanceProvisionedResourcesPaginator(IAmazonProton client, ListServiceInstanceProvisionedResourcesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Proton.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListServiceInstanceProvisionedResourcesResponse> IPaginator<ListServiceInstanceProvisionedResourcesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListServiceInstanceProvisionedResourcesResponse> IPaginator<ListServiceInstanceProvisionedResourcesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class GetSearchSuggestionsResponse : AmazonWebServiceResponse
     {
-        private List<PropertyNameSuggestion> _propertyNameSuggestions = new List<PropertyNameSuggestion>();
+        private List<PropertyNameSuggestion> _propertyNameSuggestions = AWSConfigs.InitializeCollections ? new List<PropertyNameSuggestion>() : null;
 
         /// <summary>
         /// Gets and sets the property PropertyNameSuggestions. 
@@ -50,7 +51,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if PropertyNameSuggestions property is set
         internal bool IsSetPropertyNameSuggestions()
         {
-            return this._propertyNameSuggestions != null && this._propertyNameSuggestions.Count > 0; 
+            return this._propertyNameSuggestions != null && (this._propertyNameSuggestions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

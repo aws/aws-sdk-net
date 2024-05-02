@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
@@ -38,12 +39,12 @@ namespace Amazon.WorkSpaces.Model
     /// </summary>
     public partial class ImportWorkspaceImageRequest : AmazonWorkSpacesRequest
     {
-        private List<string> _applications = new List<string>();
+        private List<string> _applications = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _ec2ImageId;
         private string _imageDescription;
         private string _imageName;
         private WorkspaceImageIngestionProcess _ingestionProcess;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Applications. 
@@ -73,7 +74,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if Applications property is set
         internal bool IsSetApplications()
         {
-            return this._applications != null && this._applications.Count > 0; 
+            return this._applications != null && (this._applications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -185,7 +186,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

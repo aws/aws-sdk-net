@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FSx.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.FSx.Model
     /// </summary>
     public partial class Volume
     {
-        private List<AdministrativeAction> _administrativeActions = new List<AdministrativeAction>();
+        private List<AdministrativeAction> _administrativeActions = AWSConfigs.InitializeCollections ? new List<AdministrativeAction>() : null;
         private DateTime? _creationTime;
         private string _fileSystemId;
         private VolumeLifecycle _lifecycle;
@@ -42,7 +43,7 @@ namespace Amazon.FSx.Model
         private OntapVolumeConfiguration _ontapConfiguration;
         private OpenZFSVolumeConfiguration _openZFSConfiguration;
         private string _resourceARN;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _volumeId;
         private VolumeType _volumeType;
 
@@ -64,7 +65,7 @@ namespace Amazon.FSx.Model
         // Check to see if AdministrativeActions property is set
         internal bool IsSetAdministrativeActions()
         {
-            return this._administrativeActions != null && this._administrativeActions.Count > 0; 
+            return this._administrativeActions != null && (this._administrativeActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -244,7 +245,7 @@ namespace Amazon.FSx.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

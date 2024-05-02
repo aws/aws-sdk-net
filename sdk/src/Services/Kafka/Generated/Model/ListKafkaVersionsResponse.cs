@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kafka.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Kafka.Model
     /// </summary>
     public partial class ListKafkaVersionsResponse : AmazonWebServiceResponse
     {
-        private List<KafkaVersion> _kafkaVersions = new List<KafkaVersion>();
+        private List<KafkaVersion> _kafkaVersions = AWSConfigs.InitializeCollections ? new List<KafkaVersion>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -48,7 +49,7 @@ namespace Amazon.Kafka.Model
         // Check to see if KafkaVersions property is set
         internal bool IsSetKafkaVersions()
         {
-            return this._kafkaVersions != null && this._kafkaVersions.Count > 0; 
+            return this._kafkaVersions != null && (this._kafkaVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

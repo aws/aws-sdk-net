@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Batch.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Batch.Model
     /// </summary>
     public partial class DescribeJobsResponse : AmazonWebServiceResponse
     {
-        private List<JobDetail> _jobs = new List<JobDetail>();
+        private List<JobDetail> _jobs = AWSConfigs.InitializeCollections ? new List<JobDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property Jobs. 
@@ -50,7 +51,7 @@ namespace Amazon.Batch.Model
         // Check to see if Jobs property is set
         internal bool IsSetJobs()
         {
-            return this._jobs != null && this._jobs.Count > 0; 
+            return this._jobs != null && (this._jobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EC2.Model
     public partial class RuleGroupRuleOptionsPair
     {
         private string _ruleGroupArn;
-        private List<RuleOption> _ruleOptions = new List<RuleOption>();
+        private List<RuleOption> _ruleOptions = AWSConfigs.InitializeCollections ? new List<RuleOption>() : null;
 
         /// <summary>
         /// Gets and sets the property RuleGroupArn. 
@@ -70,7 +71,7 @@ namespace Amazon.EC2.Model
         // Check to see if RuleOptions property is set
         internal bool IsSetRuleOptions()
         {
-            return this._ruleOptions != null && this._ruleOptions.Count > 0; 
+            return this._ruleOptions != null && (this._ruleOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,12 +26,21 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkMonitor.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteProbe operation.
-    /// Deletes the specified monitor. Once a probe is deleted you'll no longer incur any
-    /// billing fees for that probe.
+    /// Deletes the specified probe. Once a probe is deleted you'll no longer incur any billing
+    /// fees for that probe.
+    /// 
+    ///  
+    /// <para>
+    /// This action requires both the <c>monitorName</c> and <c>probeId</c> parameters. Run
+    /// <c>ListMonitors</c> to get a list of monitor names. Run <c>GetMonitor</c> to get a
+    /// list of probes and probe IDs. You can only delete a single probe at a time using this
+    /// action. 
+    /// </para>
     /// </summary>
     public partial class DeleteProbeRequest : AmazonNetworkMonitorRequest
     {
@@ -41,11 +50,10 @@ namespace Amazon.NetworkMonitor.Model
         /// <summary>
         /// Gets and sets the property MonitorName. 
         /// <para>
-        /// The name of the monitor to delete. For a list of the available monitors, use the <c>ListMonitors</c>
-        /// action.
+        /// The name of the monitor to delete. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=200)]
         public string MonitorName
         {
             get { return this._monitorName; }
@@ -61,8 +69,7 @@ namespace Amazon.NetworkMonitor.Model
         /// <summary>
         /// Gets and sets the property ProbeId. 
         /// <para>
-        /// The ID of the probe to delete. Run <c>GetMonitor</c> to get a lst of all probes and
-        /// probe IDs associated with the monitor.
+        /// The ID of the probe to delete. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

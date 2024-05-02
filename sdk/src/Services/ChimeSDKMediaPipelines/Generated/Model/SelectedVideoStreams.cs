@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
     /// </summary>
     public partial class SelectedVideoStreams
     {
-        private List<string> _attendeeIds = new List<string>();
-        private List<string> _externalUserIds = new List<string>();
+        private List<string> _attendeeIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _externalUserIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AttendeeIds. 
@@ -53,7 +54,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         // Check to see if AttendeeIds property is set
         internal bool IsSetAttendeeIds()
         {
-            return this._attendeeIds != null && this._attendeeIds.Count > 0; 
+            return this._attendeeIds != null && (this._attendeeIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         // Check to see if ExternalUserIds property is set
         internal bool IsSetExternalUserIds()
         {
-            return this._externalUserIds != null && this._externalUserIds.Count > 0; 
+            return this._externalUserIds != null && (this._externalUserIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

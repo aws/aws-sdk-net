@@ -28,6 +28,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -60,11 +61,11 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if(publicRequest.IsSetAnalysisStartTimeBegin())
                 {
-                    request.Parameters.Add("AnalysisStartTimeBegin", StringUtils.FromDateTimeToISO8601(publicRequest.AnalysisStartTimeBegin));
+                    request.Parameters.Add("AnalysisStartTimeBegin", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.AnalysisStartTimeBegin));
                 }
                 if(publicRequest.IsSetAnalysisStartTimeEnd())
                 {
-                    request.Parameters.Add("AnalysisStartTimeEnd", StringUtils.FromDateTimeToISO8601(publicRequest.AnalysisStartTimeEnd));
+                    request.Parameters.Add("AnalysisStartTimeEnd", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.AnalysisStartTimeEnd));
                 }
                 if(publicRequest.IsSetFilters())
                 {

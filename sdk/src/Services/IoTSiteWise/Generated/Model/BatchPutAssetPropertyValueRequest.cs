@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.IoTSiteWise.Model
     /// </summary>
     public partial class BatchPutAssetPropertyValueRequest : AmazonIoTSiteWiseRequest
     {
-        private List<PutAssetPropertyValueEntry> _entries = new List<PutAssetPropertyValueEntry>();
+        private List<PutAssetPropertyValueEntry> _entries = AWSConfigs.InitializeCollections ? new List<PutAssetPropertyValueEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property Entries. 
@@ -88,7 +89,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if Entries property is set
         internal bool IsSetEntries()
         {
-            return this._entries != null && this._entries.Count > 0; 
+            return this._entries != null && (this._entries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

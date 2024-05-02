@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CloudWatchLogs.Model
     public partial class GetQueryResultsResponse : AmazonWebServiceResponse
     {
         private string _encryptionKey;
-        private List<List<ResultField>> _results = new List<List<ResultField>>();
+        private List<List<ResultField>> _results = AWSConfigs.InitializeCollections ? new List<List<ResultField>>() : null;
         private QueryStatistics _statistics;
         private QueryStatus _status;
 
@@ -81,7 +82,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if Results property is set
         internal bool IsSetResults()
         {
-            return this._results != null && this._results.Count > 0; 
+            return this._results != null && (this._results.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

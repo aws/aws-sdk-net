@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.FinSpaceData.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.FinSpaceData.Model
         /// Enumerable containing all of the PermissionGroups
         /// </summary>
         public IPaginatedEnumerable<PermissionGroup> PermissionGroups => 
-            new PaginatedResultKeyResponse<ListPermissionGroupsResponse, PermissionGroup>(this, (i) => i.PermissionGroups);
+            new PaginatedResultKeyResponse<ListPermissionGroupsResponse, PermissionGroup>(this, (i) => i.PermissionGroups ?? new List<PermissionGroup>());
 
         internal ListPermissionGroupsPaginator(IAmazonFinSpaceData client, ListPermissionGroupsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.FinSpaceData.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListPermissionGroupsResponse> IPaginator<ListPermissionGroupsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListPermissionGroupsResponse> IPaginator<ListPermissionGroupsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

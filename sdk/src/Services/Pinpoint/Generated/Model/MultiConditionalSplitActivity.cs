@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
@@ -44,7 +45,7 @@ namespace Amazon.Pinpoint.Model
     /// </summary>
     public partial class MultiConditionalSplitActivity
     {
-        private List<MultiConditionalBranch> _branches = new List<MultiConditionalBranch>();
+        private List<MultiConditionalBranch> _branches = AWSConfigs.InitializeCollections ? new List<MultiConditionalBranch>() : null;
         private string _defaultActivity;
         private WaitTime _evaluationWaitTime;
 
@@ -64,7 +65,7 @@ namespace Amazon.Pinpoint.Model
         // Check to see if Branches property is set
         internal bool IsSetBranches()
         {
-            return this._branches != null && this._branches.Count > 0; 
+            return this._branches != null && (this._branches.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

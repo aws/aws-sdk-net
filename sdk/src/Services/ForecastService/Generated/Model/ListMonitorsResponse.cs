@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ForecastService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ForecastService.Model
     /// </summary>
     public partial class ListMonitorsResponse : AmazonWebServiceResponse
     {
-        private List<MonitorSummary> _monitors = new List<MonitorSummary>();
+        private List<MonitorSummary> _monitors = AWSConfigs.InitializeCollections ? new List<MonitorSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if Monitors property is set
         internal bool IsSetMonitors()
         {
-            return this._monitors != null && this._monitors.Count > 0; 
+            return this._monitors != null && (this._monitors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

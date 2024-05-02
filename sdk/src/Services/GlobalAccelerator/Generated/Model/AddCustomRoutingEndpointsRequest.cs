@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.GlobalAccelerator.Model
     /// </summary>
     public partial class AddCustomRoutingEndpointsRequest : AmazonGlobalAcceleratorRequest
     {
-        private List<CustomRoutingEndpointConfiguration> _endpointConfigurations = new List<CustomRoutingEndpointConfiguration>();
+        private List<CustomRoutingEndpointConfiguration> _endpointConfigurations = AWSConfigs.InitializeCollections ? new List<CustomRoutingEndpointConfiguration>() : null;
         private string _endpointGroupArn;
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if EndpointConfigurations property is set
         internal bool IsSetEndpointConfigurations()
         {
-            return this._endpointConfigurations != null && this._endpointConfigurations.Count > 0; 
+            return this._endpointConfigurations != null && (this._endpointConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EKS.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EKS.Model
     public partial class ListNodegroupsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<string> _nodegroups = new List<string>();
+        private List<string> _nodegroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -78,7 +79,7 @@ namespace Amazon.EKS.Model
         // Check to see if Nodegroups property is set
         internal bool IsSetNodegroups()
         {
-            return this._nodegroups != null && this._nodegroups.Count > 0; 
+            return this._nodegroups != null && (this._nodegroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -19,11 +19,16 @@ using Amazon.Runtime.Internal.Transform;
 
 namespace Amazon.S3.Model.Internal.MarshallTransformations
 {
-     /// <summary>
-     ///   Grant Unmarshaller
-     /// </summary>
+    /// <summary>
+    ///   S3KeyFilter Unmarshaller
+    /// </summary>
     public class S3KeyFilterUnmarshaller : IUnmarshaller<S3KeyFilter, XmlUnmarshallerContext>, IUnmarshaller<S3KeyFilter, JsonUnmarshallerContext> 
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public S3KeyFilter Unmarshall(XmlUnmarshallerContext context) 
         {
             S3KeyFilter s3KeyFilter = new S3KeyFilter();
@@ -39,7 +44,12 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("FilterRule", targetDepth))
                     {
-                        s3KeyFilter.FilterRules.Add(FilterRuleUnmarshaller.Instance.Unmarshall(context));                            
+                        if (s3KeyFilter.FilterRules == null)
+                        {
+                            s3KeyFilter.FilterRules = new List<FilterRule>();
+                        }
+
+                        s3KeyFilter.FilterRules.Add(FilterRuleUnmarshaller.Instance.Unmarshall(context));
                         continue;
                     }
                 }
@@ -52,6 +62,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return s3KeyFilter;
         }
 
+        /// <summary>
+        /// Not implemented and always returns null.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public S3KeyFilter Unmarshall(JsonUnmarshallerContext context) 
         {
             return null;
@@ -59,6 +74,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static S3KeyFilterUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static S3KeyFilterUnmarshaller Instance
         {
             get

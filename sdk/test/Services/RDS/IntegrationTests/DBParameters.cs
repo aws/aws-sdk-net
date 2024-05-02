@@ -94,8 +94,9 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.RDS
                 var modifyDbParameterGroupRequest = new ModifyDBParameterGroupRequest
                 {
                     DBParameterGroupName = parameterGroupName,
+                    Parameters = new List<Parameter> { newParameter }
                 };
-                modifyDbParameterGroupRequest.Parameters.Add(newParameter);
+
                 var modifiedParameterGroupName = Client.ModifyDBParameterGroup(modifyDbParameterGroupRequest)
                     .DBParameterGroupName;
                 Assert.AreEqual(parameterGroupName, modifiedParameterGroupName);

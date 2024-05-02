@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CloudWatchEvents.Model
     public partial class ListPartnerEventSourcesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PartnerEventSource> _partnerEventSources = new List<PartnerEventSource>();
+        private List<PartnerEventSource> _partnerEventSources = AWSConfigs.InitializeCollections ? new List<PartnerEventSource>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.CloudWatchEvents.Model
         // Check to see if PartnerEventSources property is set
         internal bool IsSetPartnerEventSources()
         {
-            return this._partnerEventSources != null && this._partnerEventSources.Count > 0; 
+            return this._partnerEventSources != null && (this._partnerEventSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

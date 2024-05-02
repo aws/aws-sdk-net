@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SimpleEmail.Model
     public partial class DescribeReceiptRuleSetResponse : AmazonWebServiceResponse
     {
         private ReceiptRuleSetMetadata _metadata;
-        private List<ReceiptRule> _rules = new List<ReceiptRule>();
+        private List<ReceiptRule> _rules = AWSConfigs.InitializeCollections ? new List<ReceiptRule>() : null;
 
         /// <summary>
         /// Gets and sets the property Metadata. 
@@ -70,7 +71,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if Rules property is set
         internal bool IsSetRules()
         {
-            return this._rules != null && this._rules.Count > 0; 
+            return this._rules != null && (this._rules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

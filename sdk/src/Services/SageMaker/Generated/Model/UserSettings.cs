@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -44,7 +45,7 @@ namespace Amazon.SageMaker.Model
     {
         private CanvasAppSettings _canvasAppSettings;
         private CodeEditorAppSettings _codeEditorAppSettings;
-        private List<CustomFileSystemConfig> _customFileSystemConfigs = new List<CustomFileSystemConfig>();
+        private List<CustomFileSystemConfig> _customFileSystemConfigs = AWSConfigs.InitializeCollections ? new List<CustomFileSystemConfig>() : null;
         private CustomPosixUserConfig _customPosixUserConfig;
         private string _defaultLandingUri;
         private string _executionRole;
@@ -53,7 +54,7 @@ namespace Amazon.SageMaker.Model
         private KernelGatewayAppSettings _kernelGatewayAppSettings;
         private RSessionAppSettings _rSessionAppSettings;
         private RStudioServerProAppSettings _rStudioServerProAppSettings;
-        private List<string> _securityGroups = new List<string>();
+        private List<string> _securityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SharingSettings _sharingSettings;
         private DefaultSpaceStorageSettings _spaceStorageSettings;
         private StudioWebPortal _studioWebPortal;
@@ -112,7 +113,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if CustomFileSystemConfigs property is set
         internal bool IsSetCustomFileSystemConfigs()
         {
-            return this._customFileSystemConfigs != null && this._customFileSystemConfigs.Count > 0; 
+            return this._customFileSystemConfigs != null && (this._customFileSystemConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -305,7 +306,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this._securityGroups != null && this._securityGroups.Count > 0; 
+            return this._securityGroups != null && (this._securityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -329,7 +330,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SpaceStorageSettings. 
         /// <para>
-        /// The storage settings for a private space.
+        /// The storage settings for a space.
         /// </para>
         /// </summary>
         public DefaultSpaceStorageSettings SpaceStorageSettings

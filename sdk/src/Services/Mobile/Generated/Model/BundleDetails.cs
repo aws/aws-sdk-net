@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Mobile.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Mobile.Model
     /// </summary>
     public partial class BundleDetails
     {
-        private List<string> _availablePlatforms = new List<string>();
+        private List<string> _availablePlatforms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _bundleId;
         private string _description;
         private string _iconUrl;
@@ -52,7 +53,7 @@ namespace Amazon.Mobile.Model
         // Check to see if AvailablePlatforms property is set
         internal bool IsSetAvailablePlatforms()
         {
-            return this._availablePlatforms != null && this._availablePlatforms.Count > 0; 
+            return this._availablePlatforms != null && (this._availablePlatforms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

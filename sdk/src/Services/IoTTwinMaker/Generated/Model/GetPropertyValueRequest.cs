@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTTwinMaker.Model
 {
     /// <summary>
@@ -47,7 +48,7 @@ namespace Amazon.IoTTwinMaker.Model
         private int? _maxResults;
         private string _nextToken;
         private string _propertyGroupName;
-        private List<string> _selectedProperties = new List<string>();
+        private List<string> _selectedProperties = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TabularConditions _tabularConditions;
         private string _workspaceId;
 
@@ -205,7 +206,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if SelectedProperties property is set
         internal bool IsSetSelectedProperties()
         {
-            return this._selectedProperties != null && this._selectedProperties.Count > 0; 
+            return this._selectedProperties != null && (this._selectedProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

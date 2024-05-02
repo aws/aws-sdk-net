@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EKS.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EKS.Model
     /// </summary>
     public partial class AddonHealth
     {
-        private List<AddonIssue> _issues = new List<AddonIssue>();
+        private List<AddonIssue> _issues = AWSConfigs.InitializeCollections ? new List<AddonIssue>() : null;
 
         /// <summary>
         /// Gets and sets the property Issues. 
@@ -50,7 +51,7 @@ namespace Amazon.EKS.Model
         // Check to see if Issues property is set
         internal bool IsSetIssues()
         {
-            return this._issues != null && this._issues.Count > 0; 
+            return this._issues != null && (this._issues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

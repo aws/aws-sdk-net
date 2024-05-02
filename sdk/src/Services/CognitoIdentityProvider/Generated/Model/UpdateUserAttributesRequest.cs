@@ -27,6 +27,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
@@ -75,8 +76,8 @@ namespace Amazon.CognitoIdentityProvider.Model
     public partial class UpdateUserAttributesRequest : AmazonCognitoIdentityProviderRequest
     {
         private string _accessToken;
-        private Dictionary<string, string> _clientMetadata = new Dictionary<string, string>();
-        private List<AttributeType> _userAttributes = new List<AttributeType>();
+        private Dictionary<string, string> _clientMetadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<AttributeType> _userAttributes = AWSConfigs.InitializeCollections ? new List<AttributeType>() : null;
 
         /// <summary>
         /// Gets and sets the property AccessToken. 
@@ -151,7 +152,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if ClientMetadata property is set
         internal bool IsSetClientMetadata()
         {
-            return this._clientMetadata != null && this._clientMetadata.Count > 0; 
+            return this._clientMetadata != null && (this._clientMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -183,7 +184,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if UserAttributes property is set
         internal bool IsSetUserAttributes()
         {
-            return this._userAttributes != null && this._userAttributes.Count > 0; 
+            return this._userAttributes != null && (this._userAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.AuditManager.Model
     public partial class Evidence
     {
         private string _assessmentReportSelection;
-        private Dictionary<string, string> _attributes = new Dictionary<string, string>();
+        private Dictionary<string, string> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _awsAccountId;
         private string _awsOrganization;
         private string _complianceCheck;
@@ -48,7 +49,7 @@ namespace Amazon.AuditManager.Model
         private string _evidenceFolderId;
         private string _iamId;
         private string _id;
-        private List<Resource> _resourcesIncluded = new List<Resource>();
+        private List<Resource> _resourcesIncluded = AWSConfigs.InitializeCollections ? new List<Resource>() : null;
         private DateTime? _time;
 
         /// <summary>
@@ -87,7 +88,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -336,7 +337,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if ResourcesIncluded property is set
         internal bool IsSetResourcesIncluded()
         {
-            return this._resourcesIncluded != null && this._resourcesIncluded.Count > 0; 
+            return this._resourcesIncluded != null && (this._resourcesIncluded.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FraudDetector.Model
 {
     /// <summary>
@@ -37,12 +38,12 @@ namespace Amazon.FraudDetector.Model
     {
         private string _detectorId;
         private string _detectorVersionId;
-        private List<Entity> _entities = new List<Entity>();
+        private List<Entity> _entities = AWSConfigs.InitializeCollections ? new List<Entity>() : null;
         private string _eventId;
         private string _eventTimestamp;
         private string _eventTypeName;
-        private Dictionary<string, string> _eventVariables = new Dictionary<string, string>();
-        private Dictionary<string, ModelEndpointDataBlob> _externalModelEndpointDataBlobs = new Dictionary<string, ModelEndpointDataBlob>();
+        private Dictionary<string, string> _eventVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, ModelEndpointDataBlob> _externalModelEndpointDataBlobs = AWSConfigs.InitializeCollections ? new Dictionary<string, ModelEndpointDataBlob>() : null;
 
         /// <summary>
         /// Gets and sets the property DetectorId. 
@@ -99,7 +100,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if Entities property is set
         internal bool IsSetEntities()
         {
-            return this._entities != null && this._entities.Count > 0; 
+            return this._entities != null && (this._entities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -208,7 +209,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if EventVariables property is set
         internal bool IsSetEventVariables()
         {
-            return this._eventVariables != null && this._eventVariables.Count > 0; 
+            return this._eventVariables != null && (this._eventVariables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -227,7 +228,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if ExternalModelEndpointDataBlobs property is set
         internal bool IsSetExternalModelEndpointDataBlobs()
         {
-            return this._externalModelEndpointDataBlobs != null && this._externalModelEndpointDataBlobs.Count > 0; 
+            return this._externalModelEndpointDataBlobs != null && (this._externalModelEndpointDataBlobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

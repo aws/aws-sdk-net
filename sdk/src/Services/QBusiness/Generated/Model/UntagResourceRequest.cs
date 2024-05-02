@@ -26,22 +26,23 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes a tag from an Amazon Q application or a data source.
+    /// Removes a tag from an Amazon Q Business application or a data source.
     /// </summary>
     public partial class UntagResourceRequest : AmazonQBusinessRequest
     {
         private string _resourcearn;
-        private List<string> _tagKeys = new List<string>();
+        private List<string> _tagKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon Q application, or data source to remove
-        /// the tag from.
+        /// The Amazon Resource Name (ARN) of the Amazon Q Business application, or data source
+        /// to remove the tag from.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]
@@ -60,8 +61,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// A list of tag keys to remove from the Amazon Q application or data source. If a tag
-        /// key does not exist on the resource, it is ignored.
+        /// A list of tag keys to remove from the Amazon Q Business application or data source.
+        /// If a tag key does not exist on the resource, it is ignored.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=200)]
@@ -74,7 +75,7 @@ namespace Amazon.QBusiness.Model
         // Check to see if TagKeys property is set
         internal bool IsSetTagKeys()
         {
-            return this._tagKeys != null && this._tagKeys.Count > 0; 
+            return this._tagKeys != null && (this._tagKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

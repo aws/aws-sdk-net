@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.KinesisVideo.Model
     public partial class ListStreamsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<StreamInfo> _streamInfoList = new List<StreamInfo>();
+        private List<StreamInfo> _streamInfoList = AWSConfigs.InitializeCollections ? new List<StreamInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -43,7 +44,7 @@ namespace Amazon.KinesisVideo.Model
         /// next batch of streams, use this token in your next request. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=512)]
+        [AWSProperty(Min=0, Max=1024)]
         public string NextToken
         {
             get { return this._nextToken; }
@@ -71,7 +72,7 @@ namespace Amazon.KinesisVideo.Model
         // Check to see if StreamInfoList property is set
         internal bool IsSetStreamInfoList()
         {
-            return this._streamInfoList != null && this._streamInfoList.Count > 0; 
+            return this._streamInfoList != null && (this._streamInfoList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

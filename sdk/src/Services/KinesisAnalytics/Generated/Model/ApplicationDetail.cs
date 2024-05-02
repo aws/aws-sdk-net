@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
@@ -50,12 +51,12 @@ namespace Amazon.KinesisAnalytics.Model
         private string _applicationName;
         private ApplicationStatus _applicationStatus;
         private long? _applicationVersionId;
-        private List<CloudWatchLoggingOptionDescription> _cloudWatchLoggingOptionDescriptions = new List<CloudWatchLoggingOptionDescription>();
+        private List<CloudWatchLoggingOptionDescription> _cloudWatchLoggingOptionDescriptions = AWSConfigs.InitializeCollections ? new List<CloudWatchLoggingOptionDescription>() : null;
         private DateTime? _createTimestamp;
-        private List<InputDescription> _inputDescriptions = new List<InputDescription>();
+        private List<InputDescription> _inputDescriptions = AWSConfigs.InitializeCollections ? new List<InputDescription>() : null;
         private DateTime? _lastUpdateTimestamp;
-        private List<OutputDescription> _outputDescriptions = new List<OutputDescription>();
-        private List<ReferenceDataSourceDescription> _referenceDataSourceDescriptions = new List<ReferenceDataSourceDescription>();
+        private List<OutputDescription> _outputDescriptions = AWSConfigs.InitializeCollections ? new List<OutputDescription>() : null;
+        private List<ReferenceDataSourceDescription> _referenceDataSourceDescriptions = AWSConfigs.InitializeCollections ? new List<ReferenceDataSourceDescription>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationARN. 
@@ -190,7 +191,7 @@ namespace Amazon.KinesisAnalytics.Model
         // Check to see if CloudWatchLoggingOptionDescriptions property is set
         internal bool IsSetCloudWatchLoggingOptionDescriptions()
         {
-            return this._cloudWatchLoggingOptionDescriptions != null && this._cloudWatchLoggingOptionDescriptions.Count > 0; 
+            return this._cloudWatchLoggingOptionDescriptions != null && (this._cloudWatchLoggingOptionDescriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -227,7 +228,7 @@ namespace Amazon.KinesisAnalytics.Model
         // Check to see if InputDescriptions property is set
         internal bool IsSetInputDescriptions()
         {
-            return this._inputDescriptions != null && this._inputDescriptions.Count > 0; 
+            return this._inputDescriptions != null && (this._inputDescriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -264,7 +265,7 @@ namespace Amazon.KinesisAnalytics.Model
         // Check to see if OutputDescriptions property is set
         internal bool IsSetOutputDescriptions()
         {
-            return this._outputDescriptions != null && this._outputDescriptions.Count > 0; 
+            return this._outputDescriptions != null && (this._outputDescriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -284,7 +285,7 @@ namespace Amazon.KinesisAnalytics.Model
         // Check to see if ReferenceDataSourceDescriptions property is set
         internal bool IsSetReferenceDataSourceDescriptions()
         {
-            return this._referenceDataSourceDescriptions != null && this._referenceDataSourceDescriptions.Count > 0; 
+            return this._referenceDataSourceDescriptions != null && (this._referenceDataSourceDescriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

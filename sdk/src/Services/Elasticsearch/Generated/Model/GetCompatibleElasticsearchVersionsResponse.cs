@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Elasticsearch.Model
     /// </summary>
     public partial class GetCompatibleElasticsearchVersionsResponse : AmazonWebServiceResponse
     {
-        private List<CompatibleVersionsMap> _compatibleElasticsearchVersions = new List<CompatibleVersionsMap>();
+        private List<CompatibleVersionsMap> _compatibleElasticsearchVersions = AWSConfigs.InitializeCollections ? new List<CompatibleVersionsMap>() : null;
 
         /// <summary>
         /// Gets and sets the property CompatibleElasticsearchVersions. 
@@ -52,7 +53,7 @@ namespace Amazon.Elasticsearch.Model
         // Check to see if CompatibleElasticsearchVersions property is set
         internal bool IsSetCompatibleElasticsearchVersions()
         {
-            return this._compatibleElasticsearchVersions != null && this._compatibleElasticsearchVersions.Count > 0; 
+            return this._compatibleElasticsearchVersions != null && (this._compatibleElasticsearchVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

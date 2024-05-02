@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MigrationHub.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.MigrationHub.Model
         /// Enumerable containing all of the CreatedArtifactList
         /// </summary>
         public IPaginatedEnumerable<CreatedArtifact> CreatedArtifactList => 
-            new PaginatedResultKeyResponse<ListCreatedArtifactsResponse, CreatedArtifact>(this, (i) => i.CreatedArtifactList);
+            new PaginatedResultKeyResponse<ListCreatedArtifactsResponse, CreatedArtifact>(this, (i) => i.CreatedArtifactList ?? new List<CreatedArtifact>());
 
         internal ListCreatedArtifactsPaginator(IAmazonMigrationHub client, ListCreatedArtifactsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.MigrationHub.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListCreatedArtifactsResponse> IPaginator<ListCreatedArtifactsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListCreatedArtifactsResponse> IPaginator<ListCreatedArtifactsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

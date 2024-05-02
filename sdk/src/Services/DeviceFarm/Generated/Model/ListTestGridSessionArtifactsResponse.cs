@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DeviceFarm.Model
     /// </summary>
     public partial class ListTestGridSessionArtifactsResponse : AmazonWebServiceResponse
     {
-        private List<TestGridSessionArtifact> _artifacts = new List<TestGridSessionArtifact>();
+        private List<TestGridSessionArtifact> _artifacts = AWSConfigs.InitializeCollections ? new List<TestGridSessionArtifact>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if Artifacts property is set
         internal bool IsSetArtifacts()
         {
-            return this._artifacts != null && this._artifacts.Count > 0; 
+            return this._artifacts != null && (this._artifacts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

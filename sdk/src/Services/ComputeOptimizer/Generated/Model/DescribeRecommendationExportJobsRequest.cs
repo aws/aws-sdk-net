@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
@@ -41,8 +42,8 @@ namespace Amazon.ComputeOptimizer.Model
     /// </summary>
     public partial class DescribeRecommendationExportJobsRequest : AmazonComputeOptimizerRequest
     {
-        private List<JobFilter> _filters = new List<JobFilter>();
-        private List<string> _jobIds = new List<string>();
+        private List<JobFilter> _filters = AWSConfigs.InitializeCollections ? new List<JobFilter>() : null;
+        private List<string> _jobIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -62,7 +63,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -89,7 +90,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if JobIds property is set
         internal bool IsSetJobIds()
         {
-            return this._jobIds != null && this._jobIds.Count > 0; 
+            return this._jobIds != null && (this._jobIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BillingConductor.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.BillingConductor.Model
     /// </summary>
     public partial class CustomLineItemPercentageChargeDetails
     {
-        private List<string> _associatedValues = new List<string>();
+        private List<string> _associatedValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private double? _percentageValue;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.BillingConductor.Model
         // Check to see if AssociatedValues property is set
         internal bool IsSetAssociatedValues()
         {
-            return this._associatedValues != null && this._associatedValues.Count > 0; 
+            return this._associatedValues != null && (this._associatedValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

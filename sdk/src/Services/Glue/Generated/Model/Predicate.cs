@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class Predicate
     {
-        private List<Condition> _conditions = new List<Condition>();
+        private List<Condition> _conditions = AWSConfigs.InitializeCollections ? new List<Condition>() : null;
         private Logical _logical;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Glue.Model
         // Check to see if Conditions property is set
         internal bool IsSetConditions()
         {
-            return this._conditions != null && this._conditions.Count > 0; 
+            return this._conditions != null && (this._conditions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

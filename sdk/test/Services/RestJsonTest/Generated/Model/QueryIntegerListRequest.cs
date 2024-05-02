@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RestJsonTest.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.RestJsonTest.Model
     /// </summary>
     public partial class QueryIntegerListRequest : AmazonRestJsonTestRequest
     {
-        private List<int> _queryIntegerList = new List<int>();
+        private List<int> _queryIntegerList = AWSConfigs.InitializeCollections ? new List<int>() : null;
 
         /// <summary>
         /// Gets and sets the property QueryIntegerList.
@@ -48,7 +49,7 @@ namespace Amazon.RestJsonTest.Model
         // Check to see if QueryIntegerList property is set
         internal bool IsSetQueryIntegerList()
         {
-            return this._queryIntegerList != null && this._queryIntegerList.Count > 0; 
+            return this._queryIntegerList != null && (this._queryIntegerList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

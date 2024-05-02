@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -69,6 +70,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("poolAddressRangeSet/item", targetDepth))
                     {
                         var unmarshaller = PublicIpv4PoolRangeUnmarshaller.Instance;
+                        if (unmarshalledObject.PoolAddressRanges == null)
+                        {
+                            unmarshalledObject.PoolAddressRanges = new List<PublicIpv4PoolRange>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.PoolAddressRanges.Add(item);
                         continue;
@@ -82,6 +87,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("tagSet/item", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (unmarshalledObject.Tags == null)
+                        {
+                            unmarshalledObject.Tags = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Tags.Add(item);
                         continue;

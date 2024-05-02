@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.GlueDataBrew.Model
     /// </summary>
     public partial class ColumnStatisticsConfiguration
     {
-        private List<ColumnSelector> _selectors = new List<ColumnSelector>();
+        private List<ColumnSelector> _selectors = AWSConfigs.InitializeCollections ? new List<ColumnSelector>() : null;
         private StatisticsConfiguration _statistics;
 
         /// <summary>
@@ -56,7 +57,7 @@ namespace Amazon.GlueDataBrew.Model
         // Check to see if Selectors property is set
         internal bool IsSetSelectors()
         {
-            return this._selectors != null && this._selectors.Count > 0; 
+            return this._selectors != null && (this._selectors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

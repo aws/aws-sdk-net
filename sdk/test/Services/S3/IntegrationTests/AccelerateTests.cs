@@ -229,7 +229,11 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         {
             // All other operations should hit accelerate endpoint
             var objects = client.ListObjects(bucketName).S3Objects;
-            Assert.IsNotNull(objects);
+
+            if (objects == null)
+                Assert.IsFalse(AWSConfigs.InitializeCollections);
+            else
+                Assert.IsNotNull(objects);
         }
 
         void TestAccelerateUnsupportedOperations(IAmazonS3 client)

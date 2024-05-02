@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class InputDeviceConfigurableSettings
     {
-        private List<InputDeviceConfigurableAudioChannelPairConfig> _audioChannelPairs = new List<InputDeviceConfigurableAudioChannelPairConfig>();
+        private List<InputDeviceConfigurableAudioChannelPairConfig> _audioChannelPairs = AWSConfigs.InitializeCollections ? new List<InputDeviceConfigurableAudioChannelPairConfig>() : null;
         private InputDeviceCodec _codec;
         private InputDeviceConfiguredInput _configuredInput;
         private int? _latencyMs;
@@ -57,7 +58,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if AudioChannelPairs property is set
         internal bool IsSetAudioChannelPairs()
         {
-            return this._audioChannelPairs != null && this._audioChannelPairs.Count > 0; 
+            return this._audioChannelPairs != null && (this._audioChannelPairs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

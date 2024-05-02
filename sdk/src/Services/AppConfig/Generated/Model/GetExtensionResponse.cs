@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppConfig.Model
 {
     /// <summary>
@@ -33,12 +34,12 @@ namespace Amazon.AppConfig.Model
     /// </summary>
     public partial class GetExtensionResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, List<Action>> _actions = new Dictionary<string, List<Action>>();
+        private Dictionary<string, List<Action>> _actions = AWSConfigs.InitializeCollections ? new Dictionary<string, List<Action>>() : null;
         private string _arn;
         private string _description;
         private string _id;
         private string _name;
-        private Dictionary<string, Parameter> _parameters = new Dictionary<string, Parameter>();
+        private Dictionary<string, Parameter> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, Parameter>() : null;
         private int? _versionNumber;
 
         /// <summary>
@@ -57,7 +58,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if Actions property is set
         internal bool IsSetActions()
         {
-            return this._actions != null && this._actions.Count > 0; 
+            return this._actions != null && (this._actions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -144,7 +145,7 @@ namespace Amazon.AppConfig.Model
         /// request object.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=5)]
+        [AWSProperty(Min=1, Max=10)]
         public Dictionary<string, Parameter> Parameters
         {
             get { return this._parameters; }
@@ -154,7 +155,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

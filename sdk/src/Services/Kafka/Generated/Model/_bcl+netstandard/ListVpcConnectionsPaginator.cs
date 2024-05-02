@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Kafka.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Kafka.Model
         /// Enumerable containing all of the VpcConnections
         /// </summary>
         public IPaginatedEnumerable<VpcConnection> VpcConnections => 
-            new PaginatedResultKeyResponse<ListVpcConnectionsResponse, VpcConnection>(this, (i) => i.VpcConnections);
+            new PaginatedResultKeyResponse<ListVpcConnectionsResponse, VpcConnection>(this, (i) => i.VpcConnections ?? new List<VpcConnection>());
 
         internal ListVpcConnectionsPaginator(IAmazonKafka client, ListVpcConnectionsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Kafka.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListVpcConnectionsResponse> IPaginator<ListVpcConnectionsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListVpcConnectionsResponse> IPaginator<ListVpcConnectionsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

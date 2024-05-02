@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.QuickSight.Model
     public partial class DecimalParameterDeclaration
     {
         private DecimalDefaultValues _defaultValues;
-        private List<MappedDataSetParameter> _mappedDataSetParameters = new List<MappedDataSetParameter>();
+        private List<MappedDataSetParameter> _mappedDataSetParameters = AWSConfigs.InitializeCollections ? new List<MappedDataSetParameter>() : null;
         private string _name;
         private ParameterValueType _parameterValueType;
         private DecimalValueWhenUnsetConfiguration _valueWhenUnset;
@@ -71,7 +72,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if MappedDataSetParameters property is set
         internal bool IsSetMappedDataSetParameters()
         {
-            return this._mappedDataSetParameters != null && this._mappedDataSetParameters.Count > 0; 
+            return this._mappedDataSetParameters != null && (this._mappedDataSetParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

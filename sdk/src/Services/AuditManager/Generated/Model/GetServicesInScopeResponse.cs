@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AuditManager.Model
     /// </summary>
     public partial class GetServicesInScopeResponse : AmazonWebServiceResponse
     {
-        private List<ServiceMetadata> _serviceMetadata = new List<ServiceMetadata>();
+        private List<ServiceMetadata> _serviceMetadata = AWSConfigs.InitializeCollections ? new List<ServiceMetadata>() : null;
 
         /// <summary>
         /// Gets and sets the property ServiceMetadata. 
@@ -50,7 +51,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if ServiceMetadata property is set
         internal bool IsSetServiceMetadata()
         {
-            return this._serviceMetadata != null && this._serviceMetadata.Count > 0; 
+            return this._serviceMetadata != null && (this._serviceMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

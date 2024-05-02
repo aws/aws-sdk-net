@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECS.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class DeleteAttributesRequest : AmazonECSRequest
     {
-        private List<Attribute> _attributes = new List<Attribute>();
+        private List<Attribute> _attributes = AWSConfigs.InitializeCollections ? new List<Attribute>() : null;
         private string _cluster;
 
         /// <summary>
@@ -56,7 +57,7 @@ namespace Amazon.ECS.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

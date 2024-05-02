@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.QBusiness.Model
         /// Enumerable containing all of the Indices
         /// </summary>
         public IPaginatedEnumerable<Index> Indices => 
-            new PaginatedResultKeyResponse<ListIndicesResponse, Index>(this, (i) => i.Indices);
+            new PaginatedResultKeyResponse<ListIndicesResponse, Index>(this, (i) => i.Indices ?? new List<Index>());
 
         internal ListIndicesPaginator(IAmazonQBusiness client, ListIndicesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.QBusiness.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListIndicesResponse> IPaginator<ListIndicesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListIndicesResponse> IPaginator<ListIndicesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

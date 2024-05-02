@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Kendra.Model
     public partial class FacetResult
     {
         private string _documentAttributeKey;
-        private List<DocumentAttributeValueCountPair> _documentAttributeValueCountPairs = new List<DocumentAttributeValueCountPair>();
+        private List<DocumentAttributeValueCountPair> _documentAttributeValueCountPairs = AWSConfigs.InitializeCollections ? new List<DocumentAttributeValueCountPair>() : null;
         private DocumentAttributeValueType _documentAttributeValueType;
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.Kendra.Model
         // Check to see if DocumentAttributeValueCountPairs property is set
         internal bool IsSetDocumentAttributeValueCountPairs()
         {
-            return this._documentAttributeValueCountPairs != null && this._documentAttributeValueCountPairs.Count > 0; 
+            return this._documentAttributeValueCountPairs != null && (this._documentAttributeValueCountPairs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

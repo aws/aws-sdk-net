@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class ConformancePackComplianceScoresFilters
     {
-        private List<string> _conformancePackNames = new List<string>();
+        private List<string> _conformancePackNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ConformancePackNames. 
@@ -54,7 +55,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if ConformancePackNames property is set
         internal bool IsSetConformancePackNames()
         {
-            return this._conformancePackNames != null && this._conformancePackNames.Count > 0; 
+            return this._conformancePackNames != null && (this._conformancePackNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Lambda.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Lambda.Model
         /// Enumerable containing all of the FunctionArns
         /// </summary>
         public IPaginatedEnumerable<string> FunctionArns => 
-            new PaginatedResultKeyResponse<ListFunctionsByCodeSigningConfigResponse, string>(this, (i) => i.FunctionArns);
+            new PaginatedResultKeyResponse<ListFunctionsByCodeSigningConfigResponse, string>(this, (i) => i.FunctionArns ?? new List<string>());
 
         internal ListFunctionsByCodeSigningConfigPaginator(IAmazonLambda client, ListFunctionsByCodeSigningConfigRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Lambda.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListFunctionsByCodeSigningConfigResponse> IPaginator<ListFunctionsByCodeSigningConfigResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListFunctionsByCodeSigningConfigResponse> IPaginator<ListFunctionsByCodeSigningConfigResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

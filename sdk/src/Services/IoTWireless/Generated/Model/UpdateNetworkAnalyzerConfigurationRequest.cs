@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
@@ -36,13 +37,13 @@ namespace Amazon.IoTWireless.Model
     {
         private string _configurationName;
         private string _description;
-        private List<string> _multicastGroupsToAdd = new List<string>();
-        private List<string> _multicastGroupsToRemove = new List<string>();
+        private List<string> _multicastGroupsToAdd = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _multicastGroupsToRemove = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TraceContent _traceContent;
-        private List<string> _wirelessDevicesToAdd = new List<string>();
-        private List<string> _wirelessDevicesToRemove = new List<string>();
-        private List<string> _wirelessGatewaysToAdd = new List<string>();
-        private List<string> _wirelessGatewaysToRemove = new List<string>();
+        private List<string> _wirelessDevicesToAdd = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _wirelessDevicesToRemove = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _wirelessGatewaysToAdd = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _wirelessGatewaysToRemove = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ConfigurationName.
@@ -93,7 +94,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if MulticastGroupsToAdd property is set
         internal bool IsSetMulticastGroupsToAdd()
         {
-            return this._multicastGroupsToAdd != null && this._multicastGroupsToAdd.Count > 0; 
+            return this._multicastGroupsToAdd != null && (this._multicastGroupsToAdd.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -113,7 +114,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if MulticastGroupsToRemove property is set
         internal bool IsSetMulticastGroupsToRemove()
         {
-            return this._multicastGroupsToRemove != null && this._multicastGroupsToRemove.Count > 0; 
+            return this._multicastGroupsToRemove != null && (this._multicastGroupsToRemove.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -148,7 +149,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if WirelessDevicesToAdd property is set
         internal bool IsSetWirelessDevicesToAdd()
         {
-            return this._wirelessDevicesToAdd != null && this._wirelessDevicesToAdd.Count > 0; 
+            return this._wirelessDevicesToAdd != null && (this._wirelessDevicesToAdd.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -168,7 +169,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if WirelessDevicesToRemove property is set
         internal bool IsSetWirelessDevicesToRemove()
         {
-            return this._wirelessDevicesToRemove != null && this._wirelessDevicesToRemove.Count > 0; 
+            return this._wirelessDevicesToRemove != null && (this._wirelessDevicesToRemove.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -187,7 +188,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if WirelessGatewaysToAdd property is set
         internal bool IsSetWirelessGatewaysToAdd()
         {
-            return this._wirelessGatewaysToAdd != null && this._wirelessGatewaysToAdd.Count > 0; 
+            return this._wirelessGatewaysToAdd != null && (this._wirelessGatewaysToAdd.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -206,7 +207,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if WirelessGatewaysToRemove property is set
         internal bool IsSetWirelessGatewaysToRemove()
         {
-            return this._wirelessGatewaysToRemove != null && this._wirelessGatewaysToRemove.Count > 0; 
+            return this._wirelessGatewaysToRemove != null && (this._wirelessGatewaysToRemove.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

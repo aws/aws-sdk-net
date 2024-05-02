@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Glue.Model
     public partial class AggregateOperation
     {
         private AggFunction _aggFunc;
-        private List<string> _column = new List<string>();
+        private List<string> _column = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AggFunc. 
@@ -76,7 +77,7 @@ namespace Amazon.Glue.Model
         // Check to see if Column property is set
         internal bool IsSetColumn()
         {
-            return this._column != null && this._column.Count > 0; 
+            return this._column != null && (this._column.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

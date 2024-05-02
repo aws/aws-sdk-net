@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EntityResolution.Model
     public partial class UpdateSchemaMappingResponse : AmazonWebServiceResponse
     {
         private string _description;
-        private List<SchemaInputAttribute> _mappedInputFields = new List<SchemaInputAttribute>();
+        private List<SchemaInputAttribute> _mappedInputFields = AWSConfigs.InitializeCollections ? new List<SchemaInputAttribute>() : null;
         private string _schemaArn;
         private string _schemaName;
 
@@ -75,7 +76,7 @@ namespace Amazon.EntityResolution.Model
         // Check to see if MappedInputFields property is set
         internal bool IsSetMappedInputFields()
         {
-            return this._mappedInputFields != null && this._mappedInputFields.Count > 0; 
+            return this._mappedInputFields != null && (this._mappedInputFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

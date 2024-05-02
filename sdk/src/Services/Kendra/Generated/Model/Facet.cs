@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -47,7 +48,7 @@ namespace Amazon.Kendra.Model
     public partial class Facet
     {
         private string _documentAttributeKey;
-        private List<Facet> _facets = new List<Facet>();
+        private List<Facet> _facets = AWSConfigs.InitializeCollections ? new List<Facet>() : null;
         private int? _maxResults;
 
         /// <summary>
@@ -98,7 +99,7 @@ namespace Amazon.Kendra.Model
         // Check to see if Facets property is set
         internal bool IsSetFacets()
         {
-            return this._facets != null && this._facets.Count > 0; 
+            return this._facets != null && (this._facets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

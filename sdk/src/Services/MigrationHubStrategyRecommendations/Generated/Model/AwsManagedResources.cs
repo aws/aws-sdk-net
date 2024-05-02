@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MigrationHubStrategyRecommendations.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
     /// </summary>
     public partial class AwsManagedResources
     {
-        private List<string> _targetDestination = new List<string>();
+        private List<string> _targetDestination = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property TargetDestination. 
@@ -51,7 +52,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         // Check to see if TargetDestination property is set
         internal bool IsSetTargetDestination()
         {
-            return this._targetDestination != null && this._targetDestination.Count > 0; 
+            return this._targetDestination != null && (this._targetDestination.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

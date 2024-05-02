@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
@@ -47,7 +48,7 @@ namespace Amazon.StorageGateway.Model
     {
         private int? _limit;
         private string _marker;
-        private List<string> _poolARNs = new List<string>();
+        private List<string> _poolARNs = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Limit. 
@@ -104,7 +105,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if PoolARNs property is set
         internal bool IsSetPoolARNs()
         {
-            return this._poolARNs != null && this._poolARNs.Count > 0; 
+            return this._poolARNs != null && (this._poolARNs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

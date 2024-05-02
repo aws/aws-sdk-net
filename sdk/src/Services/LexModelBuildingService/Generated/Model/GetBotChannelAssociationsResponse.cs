@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelBuildingService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// </summary>
     public partial class GetBotChannelAssociationsResponse : AmazonWebServiceResponse
     {
-        private List<BotChannelAssociation> _botChannelAssociations = new List<BotChannelAssociation>();
+        private List<BotChannelAssociation> _botChannelAssociations = AWSConfigs.InitializeCollections ? new List<BotChannelAssociation>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.LexModelBuildingService.Model
         // Check to see if BotChannelAssociations property is set
         internal bool IsSetBotChannelAssociations()
         {
-            return this._botChannelAssociations != null && this._botChannelAssociations.Count > 0; 
+            return this._botChannelAssociations != null && (this._botChannelAssociations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

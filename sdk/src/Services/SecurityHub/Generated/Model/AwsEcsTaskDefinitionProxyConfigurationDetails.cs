@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SecurityHub.Model
     public partial class AwsEcsTaskDefinitionProxyConfigurationDetails
     {
         private string _containerName;
-        private List<AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails> _proxyConfigurationProperties = new List<AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails>();
+        private List<AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails> _proxyConfigurationProperties = AWSConfigs.InitializeCollections ? new List<AwsEcsTaskDefinitionProxyConfigurationProxyConfigurationPropertiesDetails>() : null;
         private string _type;
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ProxyConfigurationProperties property is set
         internal bool IsSetProxyConfigurationProperties()
         {
-            return this._proxyConfigurationProperties != null && this._proxyConfigurationProperties.Count > 0; 
+            return this._proxyConfigurationProperties != null && (this._proxyConfigurationProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

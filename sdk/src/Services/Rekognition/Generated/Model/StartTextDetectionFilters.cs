@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class StartTextDetectionFilters
     {
-        private List<RegionOfInterest> _regionsOfInterest = new List<RegionOfInterest>();
+        private List<RegionOfInterest> _regionsOfInterest = AWSConfigs.InitializeCollections ? new List<RegionOfInterest>() : null;
         private DetectionFilter _wordFilter;
 
         /// <summary>
@@ -56,7 +57,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if RegionsOfInterest property is set
         internal bool IsSetRegionsOfInterest()
         {
-            return this._regionsOfInterest != null && this._regionsOfInterest.Count > 0; 
+            return this._regionsOfInterest != null && (this._regionsOfInterest.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

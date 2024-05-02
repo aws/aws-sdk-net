@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.CloudFormation.Model
     public partial class ListStacksRequest : AmazonCloudFormationRequest
     {
         private string _nextToken;
-        private List<string> _stackStatusFilter = new List<string>();
+        private List<string> _stackStatusFilter = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -76,7 +77,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if StackStatusFilter property is set
         internal bool IsSetStackStatusFilter()
         {
-            return this._stackStatusFilter != null && this._stackStatusFilter.Count > 0; 
+            return this._stackStatusFilter != null && (this._stackStatusFilter.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

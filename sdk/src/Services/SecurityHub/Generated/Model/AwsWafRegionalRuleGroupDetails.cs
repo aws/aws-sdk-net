@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.SecurityHub.Model
         private string _metricName;
         private string _name;
         private string _ruleGroupId;
-        private List<AwsWafRegionalRuleGroupRulesDetails> _rules = new List<AwsWafRegionalRuleGroupRulesDetails>();
+        private List<AwsWafRegionalRuleGroupRulesDetails> _rules = AWSConfigs.InitializeCollections ? new List<AwsWafRegionalRuleGroupRulesDetails>() : null;
 
         /// <summary>
         /// Gets and sets the property MetricName. 
@@ -109,7 +110,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Rules property is set
         internal bool IsSetRules()
         {
-            return this._rules != null && this._rules.Count > 0; 
+            return this._rules != null && (this._rules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

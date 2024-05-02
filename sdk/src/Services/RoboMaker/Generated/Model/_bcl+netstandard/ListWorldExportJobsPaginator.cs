@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RoboMaker.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.RoboMaker.Model
         /// Enumerable containing all of the WorldExportJobSummaries
         /// </summary>
         public IPaginatedEnumerable<WorldExportJobSummary> WorldExportJobSummaries => 
-            new PaginatedResultKeyResponse<ListWorldExportJobsResponse, WorldExportJobSummary>(this, (i) => i.WorldExportJobSummaries);
+            new PaginatedResultKeyResponse<ListWorldExportJobsResponse, WorldExportJobSummary>(this, (i) => i.WorldExportJobSummaries ?? new List<WorldExportJobSummary>());
 
         internal ListWorldExportJobsPaginator(IAmazonRoboMaker client, ListWorldExportJobsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.RoboMaker.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListWorldExportJobsResponse> IPaginator<ListWorldExportJobsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListWorldExportJobsResponse> IPaginator<ListWorldExportJobsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

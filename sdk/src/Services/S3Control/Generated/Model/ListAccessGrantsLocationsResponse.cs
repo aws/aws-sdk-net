@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3Control.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.S3Control.Model
     /// </summary>
     public partial class ListAccessGrantsLocationsResponse : AmazonWebServiceResponse
     {
-        private List<ListAccessGrantsLocationsEntry> _accessGrantsLocationsList = new List<ListAccessGrantsLocationsEntry>();
+        private List<ListAccessGrantsLocationsEntry> _accessGrantsLocationsList = AWSConfigs.InitializeCollections ? new List<ListAccessGrantsLocationsEntry>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.S3Control.Model
         // Check to see if AccessGrantsLocationsList property is set
         internal bool IsSetAccessGrantsLocationsList()
         {
-            return this._accessGrantsLocationsList != null && this._accessGrantsLocationsList.Count > 0; 
+            return this._accessGrantsLocationsList != null && (this._accessGrantsLocationsList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

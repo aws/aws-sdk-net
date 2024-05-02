@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Chatbot.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Chatbot.Model
     public partial class DescribeSlackUserIdentitiesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SlackUserIdentity> _slackUserIdentities = new List<SlackUserIdentity>();
+        private List<SlackUserIdentity> _slackUserIdentities = AWSConfigs.InitializeCollections ? new List<SlackUserIdentity>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. An optional token returned from a prior request.
@@ -67,7 +68,7 @@ namespace Amazon.Chatbot.Model
         // Check to see if SlackUserIdentities property is set
         internal bool IsSetSlackUserIdentities()
         {
-            return this._slackUserIdentities != null && this._slackUserIdentities.Count > 0; 
+            return this._slackUserIdentities != null && (this._slackUserIdentities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

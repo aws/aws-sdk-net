@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class CustomDataIdentifiersResult
     {
-        private List<CustomDataIdentifiersDetections> _detections = new List<CustomDataIdentifiersDetections>();
+        private List<CustomDataIdentifiersDetections> _detections = AWSConfigs.InitializeCollections ? new List<CustomDataIdentifiersDetections>() : null;
         private long? _totalCount;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Detections property is set
         internal bool IsSetDetections()
         {
-            return this._detections != null && this._detections.Count > 0; 
+            return this._detections != null && (this._detections.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

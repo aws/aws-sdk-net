@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ComprehendMedical.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ComprehendMedical.Model
     /// </summary>
     public partial class InferICD10CMResponse : AmazonWebServiceResponse
     {
-        private List<ICD10CMEntity> _entities = new List<ICD10CMEntity>();
+        private List<ICD10CMEntity> _entities = AWSConfigs.InitializeCollections ? new List<ICD10CMEntity>() : null;
         private string _modelVersion;
         private string _paginationToken;
 
@@ -55,7 +56,7 @@ namespace Amazon.ComprehendMedical.Model
         // Check to see if Entities property is set
         internal bool IsSetEntities()
         {
-            return this._entities != null && this._entities.Count > 0; 
+            return this._entities != null && (this._entities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

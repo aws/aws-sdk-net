@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AlexaForBusiness.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AlexaForBusiness.Model
     /// </summary>
     public partial class SearchNetworkProfilesResponse : AmazonWebServiceResponse
     {
-        private List<NetworkProfileData> _networkProfiles = new List<NetworkProfileData>();
+        private List<NetworkProfileData> _networkProfiles = AWSConfigs.InitializeCollections ? new List<NetworkProfileData>() : null;
         private string _nextToken;
         private int? _totalCount;
 
@@ -53,7 +54,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if NetworkProfiles property is set
         internal bool IsSetNetworkProfiles()
         {
-            return this._networkProfiles != null && this._networkProfiles.Count > 0; 
+            return this._networkProfiles != null && (this._networkProfiles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

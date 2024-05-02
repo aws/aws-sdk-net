@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.AWSSupport.Model
     /// </summary>
     public partial class DescribeTrustedAdvisorCheckRefreshStatusesResponse : AmazonWebServiceResponse
     {
-        private List<TrustedAdvisorCheckRefreshStatus> _statuses = new List<TrustedAdvisorCheckRefreshStatus>();
+        private List<TrustedAdvisorCheckRefreshStatus> _statuses = AWSConfigs.InitializeCollections ? new List<TrustedAdvisorCheckRefreshStatus>() : null;
 
         /// <summary>
         /// Gets and sets the property Statuses. 
@@ -52,7 +53,7 @@ namespace Amazon.AWSSupport.Model
         // Check to see if Statuses property is set
         internal bool IsSetStatuses()
         {
-            return this._statuses != null && this._statuses.Count > 0; 
+            return this._statuses != null && (this._statuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

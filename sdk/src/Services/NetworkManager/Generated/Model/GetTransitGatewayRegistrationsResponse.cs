@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkManager.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.NetworkManager.Model
     public partial class GetTransitGatewayRegistrationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TransitGatewayRegistration> _transitGatewayRegistrations = new List<TransitGatewayRegistration>();
+        private List<TransitGatewayRegistration> _transitGatewayRegistrations = AWSConfigs.InitializeCollections ? new List<TransitGatewayRegistration>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if TransitGatewayRegistrations property is set
         internal bool IsSetTransitGatewayRegistrations()
         {
-            return this._transitGatewayRegistrations != null && this._transitGatewayRegistrations.Count > 0; 
+            return this._transitGatewayRegistrations != null && (this._transitGatewayRegistrations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

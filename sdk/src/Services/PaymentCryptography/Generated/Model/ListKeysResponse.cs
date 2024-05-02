@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PaymentCryptography.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.PaymentCryptography.Model
     /// </summary>
     public partial class ListKeysResponse : AmazonWebServiceResponse
     {
-        private List<KeySummary> _keys = new List<KeySummary>();
+        private List<KeySummary> _keys = AWSConfigs.InitializeCollections ? new List<KeySummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.PaymentCryptography.Model
         // Check to see if Keys property is set
         internal bool IsSetKeys()
         {
-            return this._keys != null && this._keys.Count > 0; 
+            return this._keys != null && (this._keys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

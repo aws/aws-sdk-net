@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.NetworkFirewall.Model
     public partial class AnalysisResult
     {
         private string _analysisDetail;
-        private List<string> _identifiedRuleIds = new List<string>();
+        private List<string> _identifiedRuleIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private IdentifiedType _identifiedType;
 
         /// <summary>
@@ -76,7 +77,7 @@ namespace Amazon.NetworkFirewall.Model
         // Check to see if IdentifiedRuleIds property is set
         internal bool IsSetIdentifiedRuleIds()
         {
-            return this._identifiedRuleIds != null && this._identifiedRuleIds.Count > 0; 
+            return this._identifiedRuleIds != null && (this._identifiedRuleIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

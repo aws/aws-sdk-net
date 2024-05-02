@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
@@ -45,8 +46,8 @@ namespace Amazon.CloudWatch.Model
     {
         private string _actionPrefix;
         private string _alarmNamePrefix;
-        private List<string> _alarmNames = new List<string>();
-        private List<string> _alarmTypes = new List<string>();
+        private List<string> _alarmNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _alarmTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _childrenOfAlarmName;
         private int? _maxRecords;
         private string _nextToken;
@@ -114,7 +115,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if AlarmNames property is set
         internal bool IsSetAlarmNames()
         {
-            return this._alarmNames != null && this._alarmNames.Count > 0; 
+            return this._alarmNames != null && (this._alarmNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -145,7 +146,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if AlarmTypes property is set
         internal bool IsSetAlarmTypes()
         {
-            return this._alarmTypes != null && this._alarmTypes.Count > 0; 
+            return this._alarmTypes != null && (this._alarmTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

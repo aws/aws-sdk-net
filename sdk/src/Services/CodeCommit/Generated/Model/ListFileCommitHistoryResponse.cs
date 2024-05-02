@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CodeCommit.Model
     public partial class ListFileCommitHistoryResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<FileVersion> _revisionDag = new List<FileVersion>();
+        private List<FileVersion> _revisionDag = AWSConfigs.InitializeCollections ? new List<FileVersion>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if RevisionDag property is set
         internal bool IsSetRevisionDag()
         {
-            return this._revisionDag != null && this._revisionDag.Count > 0; 
+            return this._revisionDag != null && (this._revisionDag.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

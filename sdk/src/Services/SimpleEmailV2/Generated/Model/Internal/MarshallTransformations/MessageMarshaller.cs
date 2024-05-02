@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Message requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBody())
             {
                 context.Writer.WritePropertyName("Body");
@@ -54,6 +57,22 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.Body, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetHeaders())
+            {
+                context.Writer.WritePropertyName("Headers");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectHeadersListValue in requestObject.Headers)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MessageHeaderMarshaller.Instance;
+                    marshaller.Marshall(requestObjectHeadersListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
             if(requestObject.IsSetSubject())

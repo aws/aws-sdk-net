@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Appflow.Model
 {
     /// <summary>
@@ -40,12 +41,12 @@ namespace Amazon.Appflow.Model
         private string _connectorDescription;
         private string _connectorLabel;
         private ConnectorMetadata _connectorMetadata;
-        private List<string> _connectorModes = new List<string>();
+        private List<string> _connectorModes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _connectorName;
         private string _connectorOwner;
         private ConnectorProvisioningConfig _connectorProvisioningConfig;
         private ConnectorProvisioningType _connectorProvisioningType;
-        private List<ConnectorRuntimeSetting> _connectorRuntimeSettings = new List<ConnectorRuntimeSetting>();
+        private List<ConnectorRuntimeSetting> _connectorRuntimeSettings = AWSConfigs.InitializeCollections ? new List<ConnectorRuntimeSetting>() : null;
         private ConnectorType _connectorType;
         private string _connectorVersion;
         private bool? _isPrivateLinkEnabled;
@@ -53,14 +54,14 @@ namespace Amazon.Appflow.Model
         private string _logourl;
         private DateTime? _registeredAt;
         private string _registeredBy;
-        private List<string> _supportedApiVersions = new List<string>();
-        private List<DataTransferApi> _supportedDataTransferApis = new List<DataTransferApi>();
-        private List<string> _supportedDataTransferTypes = new List<string>();
-        private List<string> _supportedDestinationConnectors = new List<string>();
-        private List<string> _supportedOperators = new List<string>();
-        private List<string> _supportedSchedulingFrequencies = new List<string>();
-        private List<string> _supportedTriggerTypes = new List<string>();
-        private List<string> _supportedWriteOperations = new List<string>();
+        private List<string> _supportedApiVersions = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<DataTransferApi> _supportedDataTransferApis = AWSConfigs.InitializeCollections ? new List<DataTransferApi>() : null;
+        private List<string> _supportedDataTransferTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _supportedDestinationConnectors = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _supportedOperators = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _supportedSchedulingFrequencies = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _supportedTriggerTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _supportedWriteOperations = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AuthenticationConfig. 
@@ -207,7 +208,7 @@ namespace Amazon.Appflow.Model
         // Check to see if ConnectorModes property is set
         internal bool IsSetConnectorModes()
         {
-            return this._connectorModes != null && this._connectorModes.Count > 0; 
+            return this._connectorModes != null && (this._connectorModes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -299,7 +300,7 @@ namespace Amazon.Appflow.Model
         // Check to see if ConnectorRuntimeSettings property is set
         internal bool IsSetConnectorRuntimeSettings()
         {
-            return this._connectorRuntimeSettings != null && this._connectorRuntimeSettings.Count > 0; 
+            return this._connectorRuntimeSettings != null && (this._connectorRuntimeSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -446,7 +447,7 @@ namespace Amazon.Appflow.Model
         // Check to see if SupportedApiVersions property is set
         internal bool IsSetSupportedApiVersions()
         {
-            return this._supportedApiVersions != null && this._supportedApiVersions.Count > 0; 
+            return this._supportedApiVersions != null && (this._supportedApiVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -465,7 +466,7 @@ namespace Amazon.Appflow.Model
         // Check to see if SupportedDataTransferApis property is set
         internal bool IsSetSupportedDataTransferApis()
         {
-            return this._supportedDataTransferApis != null && this._supportedDataTransferApis.Count > 0; 
+            return this._supportedDataTransferApis != null && (this._supportedDataTransferApis.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -492,7 +493,7 @@ namespace Amazon.Appflow.Model
         // Check to see if SupportedDataTransferTypes property is set
         internal bool IsSetSupportedDataTransferTypes()
         {
-            return this._supportedDataTransferTypes != null && this._supportedDataTransferTypes.Count > 0; 
+            return this._supportedDataTransferTypes != null && (this._supportedDataTransferTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -511,7 +512,7 @@ namespace Amazon.Appflow.Model
         // Check to see if SupportedDestinationConnectors property is set
         internal bool IsSetSupportedDestinationConnectors()
         {
-            return this._supportedDestinationConnectors != null && this._supportedDestinationConnectors.Count > 0; 
+            return this._supportedDestinationConnectors != null && (this._supportedDestinationConnectors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -529,7 +530,7 @@ namespace Amazon.Appflow.Model
         // Check to see if SupportedOperators property is set
         internal bool IsSetSupportedOperators()
         {
-            return this._supportedOperators != null && this._supportedOperators.Count > 0; 
+            return this._supportedOperators != null && (this._supportedOperators.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -547,7 +548,7 @@ namespace Amazon.Appflow.Model
         // Check to see if SupportedSchedulingFrequencies property is set
         internal bool IsSetSupportedSchedulingFrequencies()
         {
-            return this._supportedSchedulingFrequencies != null && this._supportedSchedulingFrequencies.Count > 0; 
+            return this._supportedSchedulingFrequencies != null && (this._supportedSchedulingFrequencies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -565,7 +566,7 @@ namespace Amazon.Appflow.Model
         // Check to see if SupportedTriggerTypes property is set
         internal bool IsSetSupportedTriggerTypes()
         {
-            return this._supportedTriggerTypes != null && this._supportedTriggerTypes.Count > 0; 
+            return this._supportedTriggerTypes != null && (this._supportedTriggerTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -583,7 +584,7 @@ namespace Amazon.Appflow.Model
         // Check to see if SupportedWriteOperations property is set
         internal bool IsSetSupportedWriteOperations()
         {
-            return this._supportedWriteOperations != null && this._supportedWriteOperations.Count > 0; 
+            return this._supportedWriteOperations != null && (this._supportedWriteOperations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

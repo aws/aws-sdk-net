@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the PrefixListAssociations
         /// </summary>
         public IPaginatedEnumerable<PrefixListAssociation> PrefixListAssociations => 
-            new PaginatedResultKeyResponse<GetManagedPrefixListAssociationsResponse, PrefixListAssociation>(this, (i) => i.PrefixListAssociations);
+            new PaginatedResultKeyResponse<GetManagedPrefixListAssociationsResponse, PrefixListAssociation>(this, (i) => i.PrefixListAssociations ?? new List<PrefixListAssociation>());
 
         internal GetManagedPrefixListAssociationsPaginator(IAmazonEC2 client, GetManagedPrefixListAssociationsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.EC2.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<GetManagedPrefixListAssociationsResponse> IPaginator<GetManagedPrefixListAssociationsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<GetManagedPrefixListAssociationsResponse> IPaginator<GetManagedPrefixListAssociationsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

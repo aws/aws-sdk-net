@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.MediaLive.Model
     {
         private ChannelClass _channelClass;
         private string _channelId;
-        private List<OutputDestination> _destinations = new List<OutputDestination>();
+        private List<OutputDestination> _destinations = AWSConfigs.InitializeCollections ? new List<OutputDestination>() : null;
 
         /// <summary>
         /// Gets and sets the property ChannelClass. The channel class that you wish to update
@@ -84,7 +85,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if Destinations property is set
         internal bool IsSetDestinations()
         {
-            return this._destinations != null && this._destinations.Count > 0; 
+            return this._destinations != null && (this._destinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

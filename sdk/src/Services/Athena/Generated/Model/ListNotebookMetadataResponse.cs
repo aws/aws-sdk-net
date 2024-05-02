@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Athena.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Athena.Model
     public partial class ListNotebookMetadataResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<NotebookMetadata> _notebookMetadataList = new List<NotebookMetadata>();
+        private List<NotebookMetadata> _notebookMetadataList = AWSConfigs.InitializeCollections ? new List<NotebookMetadata>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.Athena.Model
         // Check to see if NotebookMetadataList property is set
         internal bool IsSetNotebookMetadataList()
         {
-            return this._notebookMetadataList != null && this._notebookMetadataList.Count > 0; 
+            return this._notebookMetadataList != null && (this._notebookMetadataList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

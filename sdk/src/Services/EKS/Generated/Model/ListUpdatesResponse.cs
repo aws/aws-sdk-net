@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EKS.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EKS.Model
     public partial class ListUpdatesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<string> _updateIds = new List<string>();
+        private List<string> _updateIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -78,7 +79,7 @@ namespace Amazon.EKS.Model
         // Check to see if UpdateIds property is set
         internal bool IsSetUpdateIds()
         {
-            return this._updateIds != null && this._updateIds.Count > 0; 
+            return this._updateIds != null && (this._updateIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

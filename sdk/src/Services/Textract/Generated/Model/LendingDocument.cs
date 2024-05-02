@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Textract.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Textract.Model
     /// </summary>
     public partial class LendingDocument
     {
-        private List<LendingField> _lendingFields = new List<LendingField>();
-        private List<SignatureDetection> _signatureDetections = new List<SignatureDetection>();
+        private List<LendingField> _lendingFields = AWSConfigs.InitializeCollections ? new List<LendingField>() : null;
+        private List<SignatureDetection> _signatureDetections = AWSConfigs.InitializeCollections ? new List<SignatureDetection>() : null;
 
         /// <summary>
         /// Gets and sets the property LendingFields. 
@@ -51,7 +52,7 @@ namespace Amazon.Textract.Model
         // Check to see if LendingFields property is set
         internal bool IsSetLendingFields()
         {
-            return this._lendingFields != null && this._lendingFields.Count > 0; 
+            return this._lendingFields != null && (this._lendingFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.Textract.Model
         // Check to see if SignatureDetections property is set
         internal bool IsSetSignatureDetections()
         {
-            return this._signatureDetections != null && this._signatureDetections.Count > 0; 
+            return this._signatureDetections != null && (this._signatureDetections.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
@@ -48,8 +49,8 @@ namespace Amazon.NetworkFirewall.Model
     {
         private string _certificateAuthorityArn;
         private CheckCertificateRevocationStatusActions _checkCertificateRevocationStatus;
-        private List<ServerCertificateScope> _scopes = new List<ServerCertificateScope>();
-        private List<ServerCertificate> _serverCertificates = new List<ServerCertificate>();
+        private List<ServerCertificateScope> _scopes = AWSConfigs.InitializeCollections ? new List<ServerCertificateScope>() : null;
+        private List<ServerCertificate> _serverCertificates = AWSConfigs.InitializeCollections ? new List<ServerCertificate>() : null;
 
         /// <summary>
         /// Gets and sets the property CertificateAuthorityArn. 
@@ -133,7 +134,7 @@ namespace Amazon.NetworkFirewall.Model
         // Check to see if Scopes property is set
         internal bool IsSetScopes()
         {
-            return this._scopes != null && this._scopes.Count > 0; 
+            return this._scopes != null && (this._scopes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -151,7 +152,7 @@ namespace Amazon.NetworkFirewall.Model
         // Check to see if ServerCertificates property is set
         internal bool IsSetServerCertificates()
         {
-            return this._serverCertificates != null && this._serverCertificates.Count > 0; 
+            return this._serverCertificates != null && (this._serverCertificates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

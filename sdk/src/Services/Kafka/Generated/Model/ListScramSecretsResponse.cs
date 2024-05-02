@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kafka.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Kafka.Model
     public partial class ListScramSecretsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<string> _secretArnList = new List<string>();
+        private List<string> _secretArnList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken.             
@@ -69,7 +70,7 @@ namespace Amazon.Kafka.Model
         // Check to see if SecretArnList property is set
         internal bool IsSetSecretArnList()
         {
-            return this._secretArnList != null && this._secretArnList.Count > 0; 
+            return this._secretArnList != null && (this._secretArnList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

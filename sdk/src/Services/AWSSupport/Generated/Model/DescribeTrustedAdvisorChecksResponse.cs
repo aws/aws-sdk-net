@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.AWSSupport.Model
     /// </summary>
     public partial class DescribeTrustedAdvisorChecksResponse : AmazonWebServiceResponse
     {
-        private List<TrustedAdvisorCheckDescription> _checks = new List<TrustedAdvisorCheckDescription>();
+        private List<TrustedAdvisorCheckDescription> _checks = AWSConfigs.InitializeCollections ? new List<TrustedAdvisorCheckDescription>() : null;
 
         /// <summary>
         /// Gets and sets the property Checks. 
@@ -52,7 +53,7 @@ namespace Amazon.AWSSupport.Model
         // Check to see if Checks property is set
         internal bool IsSetChecks()
         {
-            return this._checks != null && this._checks.Count > 0; 
+            return this._checks != null && (this._checks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

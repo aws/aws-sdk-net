@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeIndex operation.
-    /// Gets information about an existing Amazon Kendra index.
+    /// Gets information about an Amazon Kendra index.
     /// </summary>
     public partial class DescribeIndexRequest : AmazonKendraRequest
     {

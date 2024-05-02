@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,15 +34,16 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ImageAttribute
     {
-        private List<BlockDeviceMapping> _blockDeviceMappings = new List<BlockDeviceMapping>();
+        private List<BlockDeviceMapping> _blockDeviceMappings = AWSConfigs.InitializeCollections ? new List<BlockDeviceMapping>() : null;
         private string _bootMode;
+        private string _deregistrationProtection;
         private string _description;
         private string _imageId;
         private string _imdsSupport;
         private string _kernelId;
         private string _lastLaunchedTime;
-        private List<LaunchPermission> _launchPermissions = new List<LaunchPermission>();
-        private List<ProductCode> _productCodes = new List<ProductCode>();
+        private List<LaunchPermission> _launchPermissions = AWSConfigs.InitializeCollections ? new List<LaunchPermission>() : null;
+        private List<ProductCode> _productCodes = AWSConfigs.InitializeCollections ? new List<ProductCode>() : null;
         private string _ramdiskId;
         private string _sriovNetSupport;
         private string _tpmSupport;
@@ -62,7 +64,7 @@ namespace Amazon.EC2.Model
         // Check to see if BlockDeviceMappings property is set
         internal bool IsSetBlockDeviceMappings()
         {
-            return this._blockDeviceMappings != null && this._blockDeviceMappings.Count > 0; 
+            return this._blockDeviceMappings != null && (this._blockDeviceMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -81,6 +83,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetBootMode()
         {
             return this._bootMode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeregistrationProtection. 
+        /// <para>
+        /// Indicates whether deregistration protection is enabled for the AMI.
+        /// </para>
+        /// </summary>
+        public string DeregistrationProtection
+        {
+            get { return this._deregistrationProtection; }
+            set { this._deregistrationProtection = value; }
+        }
+
+        // Check to see if DeregistrationProtection property is set
+        internal bool IsSetDeregistrationProtection()
+        {
+            return this._deregistrationProtection != null;
         }
 
         /// <summary>
@@ -200,7 +220,7 @@ namespace Amazon.EC2.Model
         // Check to see if LaunchPermissions property is set
         internal bool IsSetLaunchPermissions()
         {
-            return this._launchPermissions != null && this._launchPermissions.Count > 0; 
+            return this._launchPermissions != null && (this._launchPermissions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -218,7 +238,7 @@ namespace Amazon.EC2.Model
         // Check to see if ProductCodes property is set
         internal bool IsSetProductCodes()
         {
-            return this._productCodes != null && this._productCodes.Count > 0; 
+            return this._productCodes != null && (this._productCodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

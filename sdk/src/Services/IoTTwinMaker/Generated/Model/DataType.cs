@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTTwinMaker.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoTTwinMaker.Model
     /// </summary>
     public partial class DataType
     {
-        private List<DataValue> _allowedValues = new List<DataValue>();
+        private List<DataValue> _allowedValues = AWSConfigs.InitializeCollections ? new List<DataValue>() : null;
         private DataType _nestedType;
         private Relationship _relationship;
         private Type _type;
@@ -55,7 +56,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if AllowedValues property is set
         internal bool IsSetAllowedValues()
         {
-            return this._allowedValues != null && this._allowedValues.Count > 0; 
+            return this._allowedValues != null && (this._allowedValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

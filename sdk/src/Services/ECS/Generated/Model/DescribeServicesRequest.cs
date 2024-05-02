@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECS.Model
 {
     /// <summary>
@@ -35,8 +36,8 @@ namespace Amazon.ECS.Model
     public partial class DescribeServicesRequest : AmazonECSRequest
     {
         private string _cluster;
-        private List<string> _include = new List<string>();
-        private List<string> _services = new List<string>();
+        private List<string> _include = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _services = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Cluster. 
@@ -76,7 +77,7 @@ namespace Amazon.ECS.Model
         // Check to see if Include property is set
         internal bool IsSetInclude()
         {
-            return this._include != null && this._include.Count > 0; 
+            return this._include != null && (this._include.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -96,7 +97,7 @@ namespace Amazon.ECS.Model
         // Check to see if Services property is set
         internal bool IsSetServices()
         {
-            return this._services != null && this._services.Count > 0; 
+            return this._services != null && (this._services.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

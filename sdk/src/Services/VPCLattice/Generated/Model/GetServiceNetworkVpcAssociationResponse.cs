@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VPCLattice.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.VPCLattice.Model
         private string _failureMessage;
         private string _id;
         private DateTime? _lastUpdatedAt;
-        private List<string> _securityGroupIds = new List<string>();
+        private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _serviceNetworkArn;
         private string _serviceNetworkId;
         private string _serviceNetworkName;
@@ -191,7 +192,7 @@ namespace Amazon.VPCLattice.Model
         // Check to see if SecurityGroupIds property is set
         internal bool IsSetSecurityGroupIds()
         {
-            return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+            return this._securityGroupIds != null && (this._securityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

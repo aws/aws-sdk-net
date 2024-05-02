@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ResourceExplorer2.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.ResourceExplorer2.Model
     {
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _regions = new List<string>();
+        private List<string> _regions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private IndexType _type;
 
         /// <summary>
@@ -111,7 +112,7 @@ namespace Amazon.ResourceExplorer2.Model
         // Check to see if Regions property is set
         internal bool IsSetRegions()
         {
-            return this._regions != null && this._regions.Count > 0; 
+            return this._regions != null && (this._regions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

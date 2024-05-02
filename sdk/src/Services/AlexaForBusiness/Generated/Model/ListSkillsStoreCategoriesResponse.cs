@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AlexaForBusiness.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AlexaForBusiness.Model
     /// </summary>
     public partial class ListSkillsStoreCategoriesResponse : AmazonWebServiceResponse
     {
-        private List<Category> _categoryList = new List<Category>();
+        private List<Category> _categoryList = AWSConfigs.InitializeCollections ? new List<Category>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if CategoryList property is set
         internal bool IsSetCategoryList()
         {
-            return this._categoryList != null && this._categoryList.Count > 0; 
+            return this._categoryList != null && (this._categoryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

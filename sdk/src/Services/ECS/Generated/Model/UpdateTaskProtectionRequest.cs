@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECS.Model
 {
     /// <summary>
@@ -75,7 +76,7 @@ namespace Amazon.ECS.Model
         private string _cluster;
         private int? _expiresInMinutes;
         private bool? _protectionEnabled;
-        private List<string> _tasks = new List<string>();
+        private List<string> _tasks = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Cluster. 
@@ -160,7 +161,7 @@ namespace Amazon.ECS.Model
         // Check to see if Tasks property is set
         internal bool IsSetTasks()
         {
-            return this._tasks != null && this._tasks.Count > 0; 
+            return this._tasks != null && (this._tasks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

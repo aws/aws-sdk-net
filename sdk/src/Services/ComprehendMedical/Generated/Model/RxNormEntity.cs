@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ComprehendMedical.Model
 {
     /// <summary>
@@ -37,15 +38,15 @@ namespace Amazon.ComprehendMedical.Model
     /// </summary>
     public partial class RxNormEntity
     {
-        private List<RxNormAttribute> _attributes = new List<RxNormAttribute>();
+        private List<RxNormAttribute> _attributes = AWSConfigs.InitializeCollections ? new List<RxNormAttribute>() : null;
         private int? _beginOffset;
         private RxNormEntityCategory _category;
         private int? _endOffset;
         private int? _id;
-        private List<RxNormConcept> _rxNormConcepts = new List<RxNormConcept>();
+        private List<RxNormConcept> _rxNormConcepts = AWSConfigs.InitializeCollections ? new List<RxNormConcept>() : null;
         private float? _score;
         private string _text;
-        private List<RxNormTrait> _traits = new List<RxNormTrait>();
+        private List<RxNormTrait> _traits = AWSConfigs.InitializeCollections ? new List<RxNormTrait>() : null;
         private RxNormEntityType _type;
 
         /// <summary>
@@ -65,7 +66,7 @@ namespace Amazon.ComprehendMedical.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -159,7 +160,7 @@ namespace Amazon.ComprehendMedical.Model
         // Check to see if RxNormConcepts property is set
         internal bool IsSetRxNormConcepts()
         {
-            return this._rxNormConcepts != null && this._rxNormConcepts.Count > 0; 
+            return this._rxNormConcepts != null && (this._rxNormConcepts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -215,7 +216,7 @@ namespace Amazon.ComprehendMedical.Model
         // Check to see if Traits property is set
         internal bool IsSetTraits()
         {
-            return this._traits != null && this._traits.Count > 0; 
+            return this._traits != null && (this._traits.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
@@ -64,7 +65,7 @@ namespace Amazon.DynamoDBv2.Model
     public partial class TransactGetItemsRequest : AmazonDynamoDBRequest
     {
         private ReturnConsumedCapacity _returnConsumedCapacity;
-        private List<TransactGetItem> _transactItems = new List<TransactGetItem>();
+        private List<TransactGetItem> _transactItems = AWSConfigs.InitializeCollections ? new List<TransactGetItem>() : null;
 
         /// <summary>
         /// Gets and sets the property ReturnConsumedCapacity. 
@@ -103,7 +104,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if TransactItems property is set
         internal bool IsSetTransactItems()
         {
-            return this._transactItems != null && this._transactItems.Count > 0; 
+            return this._transactItems != null && (this._transactItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

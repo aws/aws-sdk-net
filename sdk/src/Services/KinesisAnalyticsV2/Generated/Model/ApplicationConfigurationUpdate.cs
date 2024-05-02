@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         private EnvironmentPropertyUpdates _environmentPropertyUpdates;
         private FlinkApplicationConfigurationUpdate _flinkApplicationConfigurationUpdate;
         private SqlApplicationConfigurationUpdate _sqlApplicationConfigurationUpdate;
-        private List<VpcConfigurationUpdate> _vpcConfigurationUpdates = new List<VpcConfigurationUpdate>();
+        private List<VpcConfigurationUpdate> _vpcConfigurationUpdates = AWSConfigs.InitializeCollections ? new List<VpcConfigurationUpdate>() : null;
         private ZeppelinApplicationConfigurationUpdate _zeppelinApplicationConfigurationUpdate;
 
         /// <summary>
@@ -62,7 +63,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ApplicationSnapshotConfigurationUpdate. 
         /// <para>
-        /// Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
+        /// Describes whether snapshots are enabled for a Managed Service for Apache Flink application.
         /// </para>
         /// </summary>
         public ApplicationSnapshotConfigurationUpdate ApplicationSnapshotConfigurationUpdate
@@ -80,7 +81,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property EnvironmentPropertyUpdates. 
         /// <para>
-        /// Describes updates to the environment properties for a Flink-based Kinesis Data Analytics
+        /// Describes updates to the environment properties for a Managed Service for Apache Flink
         /// application.
         /// </para>
         /// </summary>
@@ -99,7 +100,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property FlinkApplicationConfigurationUpdate. 
         /// <para>
-        /// Describes updates to a Flink-based Kinesis Data Analytics application's configuration.
+        /// Describes updates to a Managed Service for Apache Flink application's configuration.
         /// </para>
         /// </summary>
         public FlinkApplicationConfigurationUpdate FlinkApplicationConfigurationUpdate
@@ -147,13 +148,13 @@ namespace Amazon.KinesisAnalyticsV2.Model
         // Check to see if VpcConfigurationUpdates property is set
         internal bool IsSetVpcConfigurationUpdates()
         {
-            return this._vpcConfigurationUpdates != null && this._vpcConfigurationUpdates.Count > 0; 
+            return this._vpcConfigurationUpdates != null && (this._vpcConfigurationUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property ZeppelinApplicationConfigurationUpdate. 
         /// <para>
-        /// Updates to the configuration of a Kinesis Data Analytics Studio notebook.
+        /// Updates to the configuration of a Managed Service for Apache Flink Studio notebook.
         /// </para>
         /// </summary>
         public ZeppelinApplicationConfigurationUpdate ZeppelinApplicationConfigurationUpdate

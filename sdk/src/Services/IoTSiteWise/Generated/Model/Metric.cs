@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
@@ -50,7 +51,7 @@ namespace Amazon.IoTSiteWise.Model
     {
         private string _expression;
         private MetricProcessingConfig _processingConfig;
-        private List<ExpressionVariable> _variables = new List<ExpressionVariable>();
+        private List<ExpressionVariable> _variables = AWSConfigs.InitializeCollections ? new List<ExpressionVariable>() : null;
         private MetricWindow _window;
 
         /// <summary>
@@ -115,7 +116,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if Variables property is set
         internal bool IsSetVariables()
         {
-            return this._variables != null && this._variables.Count > 0; 
+            return this._variables != null && (this._variables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

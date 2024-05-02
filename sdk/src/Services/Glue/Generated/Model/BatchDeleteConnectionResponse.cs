@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class BatchDeleteConnectionResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, ErrorDetail> _errors = new Dictionary<string, ErrorDetail>();
-        private List<string> _succeeded = new List<string>();
+        private Dictionary<string, ErrorDetail> _errors = AWSConfigs.InitializeCollections ? new Dictionary<string, ErrorDetail>() : null;
+        private List<string> _succeeded = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. 
@@ -51,7 +52,7 @@ namespace Amazon.Glue.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.Glue.Model
         // Check to see if Succeeded property is set
         internal bool IsSetSucceeded()
         {
-            return this._succeeded != null && this._succeeded.Count > 0; 
+            return this._succeeded != null && (this._succeeded.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AmplifyUIBuilder.Model
     /// </summary>
     public partial class ListCodegenJobsResponse : AmazonWebServiceResponse
     {
-        private List<CodegenJobSummary> _entities = new List<CodegenJobSummary>();
+        private List<CodegenJobSummary> _entities = AWSConfigs.InitializeCollections ? new List<CodegenJobSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if Entities property is set
         internal bool IsSetEntities()
         {
-            return this._entities != null && this._entities.Count > 0; 
+            return this._entities != null && (this._entities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

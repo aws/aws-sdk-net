@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class DescribeAggregateComplianceByConformancePacksResponse : AmazonWebServiceResponse
     {
-        private List<AggregateComplianceByConformancePack> _aggregateComplianceByConformancePacks = new List<AggregateComplianceByConformancePack>();
+        private List<AggregateComplianceByConformancePack> _aggregateComplianceByConformancePacks = AWSConfigs.InitializeCollections ? new List<AggregateComplianceByConformancePack>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if AggregateComplianceByConformancePacks property is set
         internal bool IsSetAggregateComplianceByConformancePacks()
         {
-            return this._aggregateComplianceByConformancePacks != null && this._aggregateComplianceByConformancePacks.Count > 0; 
+            return this._aggregateComplianceByConformancePacks != null && (this._aggregateComplianceByConformancePacks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.TimestreamQuery.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.TimestreamQuery.Model
         /// Enumerable containing all of the Rows
         /// </summary>
         public IPaginatedEnumerable<Row> Rows => 
-            new PaginatedResultKeyResponse<QueryResponse, Row>(this, (i) => i.Rows);
+            new PaginatedResultKeyResponse<QueryResponse, Row>(this, (i) => i.Rows ?? new List<Row>());
 
         internal QueryPaginator(IAmazonTimestreamQuery client, QueryRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.TimestreamQuery.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<QueryResponse> IPaginator<QueryResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<QueryResponse> IPaginator<QueryResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

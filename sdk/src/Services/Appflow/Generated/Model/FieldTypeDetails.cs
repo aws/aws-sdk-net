@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Appflow.Model
 {
     /// <summary>
@@ -37,9 +38,9 @@ namespace Amazon.Appflow.Model
         private Range _fieldLengthRange;
         private string _fieldType;
         private Range _fieldValueRange;
-        private List<string> _filterOperators = new List<string>();
+        private List<string> _filterOperators = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _supportedDateFormat;
-        private List<string> _supportedValues = new List<string>();
+        private List<string> _supportedValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _valueRegexPattern;
 
         /// <summary>
@@ -113,7 +114,7 @@ namespace Amazon.Appflow.Model
         // Check to see if FilterOperators property is set
         internal bool IsSetFilterOperators()
         {
-            return this._filterOperators != null && this._filterOperators.Count > 0; 
+            return this._filterOperators != null && (this._filterOperators.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -151,7 +152,7 @@ namespace Amazon.Appflow.Model
         // Check to see if SupportedValues property is set
         internal bool IsSetSupportedValues()
         {
-            return this._supportedValues != null && this._supportedValues.Count > 0; 
+            return this._supportedValues != null && (this._supportedValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

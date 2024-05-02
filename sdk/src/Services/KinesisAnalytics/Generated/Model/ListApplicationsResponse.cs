@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.KinesisAnalytics.Model
     /// </summary>
     public partial class ListApplicationsResponse : AmazonWebServiceResponse
     {
-        private List<ApplicationSummary> _applicationSummaries = new List<ApplicationSummary>();
+        private List<ApplicationSummary> _applicationSummaries = AWSConfigs.InitializeCollections ? new List<ApplicationSummary>() : null;
         private bool? _hasMoreApplications;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.KinesisAnalytics.Model
         // Check to see if ApplicationSummaries property is set
         internal bool IsSetApplicationSummaries()
         {
-            return this._applicationSummaries != null && this._applicationSummaries.Count > 0; 
+            return this._applicationSummaries != null && (this._applicationSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

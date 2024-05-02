@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Imagebuilder.Model
     public partial class ListWorkflowBuildVersionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<WorkflowSummary> _workflowSummaryList = new List<WorkflowSummary>();
+        private List<WorkflowSummary> _workflowSummaryList = AWSConfigs.InitializeCollections ? new List<WorkflowSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +74,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if WorkflowSummaryList property is set
         internal bool IsSetWorkflowSummaryList()
         {
-            return this._workflowSummaryList != null && this._workflowSummaryList.Count > 0; 
+            return this._workflowSummaryList != null && (this._workflowSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Personalize.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Personalize.Model
     /// </summary>
     public partial class ListEventTrackersResponse : AmazonWebServiceResponse
     {
-        private List<EventTrackerSummary> _eventTrackers = new List<EventTrackerSummary>();
+        private List<EventTrackerSummary> _eventTrackers = AWSConfigs.InitializeCollections ? new List<EventTrackerSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.Personalize.Model
         // Check to see if EventTrackers property is set
         internal bool IsSetEventTrackers()
         {
-            return this._eventTrackers != null && this._eventTrackers.Count > 0; 
+            return this._eventTrackers != null && (this._eventTrackers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

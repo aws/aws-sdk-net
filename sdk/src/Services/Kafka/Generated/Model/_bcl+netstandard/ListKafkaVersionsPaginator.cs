@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Kafka.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Kafka.Model
         /// Enumerable containing all of the KafkaVersions
         /// </summary>
         public IPaginatedEnumerable<KafkaVersion> KafkaVersions => 
-            new PaginatedResultKeyResponse<ListKafkaVersionsResponse, KafkaVersion>(this, (i) => i.KafkaVersions);
+            new PaginatedResultKeyResponse<ListKafkaVersionsResponse, KafkaVersion>(this, (i) => i.KafkaVersions ?? new List<KafkaVersion>());
 
         internal ListKafkaVersionsPaginator(IAmazonKafka client, ListKafkaVersionsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Kafka.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListKafkaVersionsResponse> IPaginator<ListKafkaVersionsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListKafkaVersionsResponse> IPaginator<ListKafkaVersionsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

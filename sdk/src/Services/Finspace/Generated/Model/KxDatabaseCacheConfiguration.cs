@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Finspace.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Finspace.Model
     {
         private string _cacheType;
         private string _dataviewName;
-        private List<string> _dbPaths = new List<string>();
+        private List<string> _dbPaths = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CacheType. 
@@ -98,7 +99,7 @@ namespace Amazon.Finspace.Model
         // Check to see if DbPaths property is set
         internal bool IsSetDbPaths()
         {
-            return this._dbPaths != null && this._dbPaths.Count > 0; 
+            return this._dbPaths != null && (this._dbPaths.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

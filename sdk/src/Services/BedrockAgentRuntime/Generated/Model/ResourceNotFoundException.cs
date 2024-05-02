@@ -26,10 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// This exception is thrown when a resource referenced by the operation does not exist
+    /// The specified resource Amazon Resource Name (ARN) was not found. Check the Amazon
+    /// Resource Name (ARN) and try your request again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

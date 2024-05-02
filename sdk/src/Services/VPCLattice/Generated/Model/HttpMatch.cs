@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VPCLattice.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.VPCLattice.Model
     /// </summary>
     public partial class HttpMatch
     {
-        private List<HeaderMatch> _headerMatches = new List<HeaderMatch>();
+        private List<HeaderMatch> _headerMatches = AWSConfigs.InitializeCollections ? new List<HeaderMatch>() : null;
         private string _method;
         private PathMatch _pathMatch;
 
@@ -54,7 +55,7 @@ namespace Amazon.VPCLattice.Model
         // Check to see if HeaderMatches property is set
         internal bool IsSetHeaderMatches()
         {
-            return this._headerMatches != null && this._headerMatches.Count > 0; 
+            return this._headerMatches != null && (this._headerMatches.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

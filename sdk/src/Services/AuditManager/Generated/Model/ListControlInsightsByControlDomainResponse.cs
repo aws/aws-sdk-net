@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AuditManager.Model
     /// </summary>
     public partial class ListControlInsightsByControlDomainResponse : AmazonWebServiceResponse
     {
-        private List<ControlInsightsMetadataItem> _controlInsightsMetadata = new List<ControlInsightsMetadataItem>();
+        private List<ControlInsightsMetadataItem> _controlInsightsMetadata = AWSConfigs.InitializeCollections ? new List<ControlInsightsMetadataItem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if ControlInsightsMetadata property is set
         internal bool IsSetControlInsightsMetadata()
         {
-            return this._controlInsightsMetadata != null && this._controlInsightsMetadata.Count > 0; 
+            return this._controlInsightsMetadata != null && (this._controlInsightsMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

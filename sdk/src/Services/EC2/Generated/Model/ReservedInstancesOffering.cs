@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -42,9 +43,9 @@ namespace Amazon.EC2.Model
         private bool? _marketplace;
         private OfferingClassType _offeringClass;
         private OfferingTypeValues _offeringType;
-        private List<PricingDetail> _pricingDetails = new List<PricingDetail>();
+        private List<PricingDetail> _pricingDetails = AWSConfigs.InitializeCollections ? new List<PricingDetail>() : null;
         private RIProductDescription _productDescription;
-        private List<RecurringCharge> _recurringCharges = new List<RecurringCharge>();
+        private List<RecurringCharge> _recurringCharges = AWSConfigs.InitializeCollections ? new List<RecurringCharge>() : null;
         private string _reservedInstancesOfferingId;
         private Scope _scope;
         private float? _usagePrice;
@@ -232,7 +233,7 @@ namespace Amazon.EC2.Model
         // Check to see if PricingDetails property is set
         internal bool IsSetPricingDetails()
         {
-            return this._pricingDetails != null && this._pricingDetails.Count > 0; 
+            return this._pricingDetails != null && (this._pricingDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -268,7 +269,7 @@ namespace Amazon.EC2.Model
         // Check to see if RecurringCharges property is set
         internal bool IsSetRecurringCharges()
         {
-            return this._recurringCharges != null && this._recurringCharges.Count > 0; 
+            return this._recurringCharges != null && (this._recurringCharges.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

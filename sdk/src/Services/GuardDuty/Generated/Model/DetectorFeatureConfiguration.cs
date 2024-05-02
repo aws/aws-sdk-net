@@ -26,14 +26,24 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Contains information about a GuardDuty feature.
+    /// 
+    ///  
+    /// <para>
+    /// Specifying both EKS Runtime Monitoring (<c>EKS_RUNTIME_MONITORING</c>) and Runtime
+    /// Monitoring (<c>RUNTIME_MONITORING</c>) will cause an error. You can add only one of
+    /// these two features because Runtime Monitoring already includes the threat detection
+    /// for Amazon EKS resources. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/runtime-monitoring.html">Runtime
+    /// Monitoring</a>.
+    /// </para>
     /// </summary>
     public partial class DetectorFeatureConfiguration
     {
-        private List<DetectorAdditionalConfiguration> _additionalConfiguration = new List<DetectorAdditionalConfiguration>();
+        private List<DetectorAdditionalConfiguration> _additionalConfiguration = AWSConfigs.InitializeCollections ? new List<DetectorAdditionalConfiguration>() : null;
         private DetectorFeature _name;
         private FeatureStatus _status;
 
@@ -52,7 +62,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if AdditionalConfiguration property is set
         internal bool IsSetAdditionalConfiguration()
         {
-            return this._additionalConfiguration != null && this._additionalConfiguration.Count > 0; 
+            return this._additionalConfiguration != null && (this._additionalConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Information about the field values that an end user can use to provide to Amazon Q
-    /// for Amazon Q to perform the requested plugin action.
+    /// Business for Amazon Q Business to perform the requested plugin action.
     /// </summary>
     public partial class ActionReviewPayloadFieldAllowedValue
     {

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Glue.Model
         private string _connectionName;
         private string _dlqEventQueueArn;
         private string _eventQueueArn;
-        private List<string> _exclusions = new List<string>();
+        private List<string> _exclusions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _path;
         private int? _sampleSize;
 
@@ -112,7 +113,7 @@ namespace Amazon.Glue.Model
         // Check to see if Exclusions property is set
         internal bool IsSetExclusions()
         {
-            return this._exclusions != null && this._exclusions.Count > 0; 
+            return this._exclusions != null && (this._exclusions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

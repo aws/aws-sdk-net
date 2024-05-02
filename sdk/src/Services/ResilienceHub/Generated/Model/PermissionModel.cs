@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ResilienceHub.Model
     /// </summary>
     public partial class PermissionModel
     {
-        private List<string> _crossAccountRoleArns = new List<string>();
+        private List<string> _crossAccountRoleArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _invokerRoleName;
         private PermissionModelType _type;
 
@@ -68,7 +69,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if CrossAccountRoleArns property is set
         internal bool IsSetCrossAccountRoleArns()
         {
-            return this._crossAccountRoleArns != null && this._crossAccountRoleArns.Count > 0; 
+            return this._crossAccountRoleArns != null && (this._crossAccountRoleArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

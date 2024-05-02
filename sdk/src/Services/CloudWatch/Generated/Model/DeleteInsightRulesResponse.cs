@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class DeleteInsightRulesResponse : AmazonWebServiceResponse
     {
-        private List<PartialFailure> _failures = new List<PartialFailure>();
+        private List<PartialFailure> _failures = AWSConfigs.InitializeCollections ? new List<PartialFailure>() : null;
 
         /// <summary>
         /// Gets and sets the property Failures. 
@@ -50,7 +51,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if Failures property is set
         internal bool IsSetFailures()
         {
-            return this._failures != null && this._failures.Count > 0; 
+            return this._failures != null && (this._failures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

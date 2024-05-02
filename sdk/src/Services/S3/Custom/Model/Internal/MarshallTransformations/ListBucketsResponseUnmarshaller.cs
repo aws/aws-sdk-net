@@ -29,6 +29,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>
     public class ListBucketsResponseUnmarshaller : S3ReponseUnmarshaller
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {   
             ListBucketsResponse response = new ListBucketsResponse();
@@ -61,8 +66,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Bucket", targetDepth + 1))
                     {
+                        if (response.Buckets == null)
+                        {
+                            response.Buckets = new List<S3Bucket>();
+                        }
                         response.Buckets.Add(BucketUnmarshaller.Instance.Unmarshall(context));
-                            
                         continue;
                     }
                     if (context.TestExpression("Owner", targetDepth))
@@ -85,6 +93,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static ListBucketsResponseUnmarshaller _instance = new ListBucketsResponseUnmarshaller();
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static ListBucketsResponseUnmarshaller Instance
         {
             get

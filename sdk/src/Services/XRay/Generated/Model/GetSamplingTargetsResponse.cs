@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.XRay.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.XRay.Model
     public partial class GetSamplingTargetsResponse : AmazonWebServiceResponse
     {
         private DateTime? _lastRuleModification;
-        private List<SamplingTargetDocument> _samplingTargetDocuments = new List<SamplingTargetDocument>();
-        private List<UnprocessedStatistics> _unprocessedStatistics = new List<UnprocessedStatistics>();
+        private List<SamplingTargetDocument> _samplingTargetDocuments = AWSConfigs.InitializeCollections ? new List<SamplingTargetDocument>() : null;
+        private List<UnprocessedStatistics> _unprocessedStatistics = AWSConfigs.InitializeCollections ? new List<UnprocessedStatistics>() : null;
 
         /// <summary>
         /// Gets and sets the property LastRuleModification. 
@@ -73,7 +74,7 @@ namespace Amazon.XRay.Model
         // Check to see if SamplingTargetDocuments property is set
         internal bool IsSetSamplingTargetDocuments()
         {
-            return this._samplingTargetDocuments != null && this._samplingTargetDocuments.Count > 0; 
+            return this._samplingTargetDocuments != null && (this._samplingTargetDocuments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.XRay.Model
         // Check to see if UnprocessedStatistics property is set
         internal bool IsSetUnprocessedStatistics()
         {
-            return this._unprocessedStatistics != null && this._unprocessedStatistics.Count > 0; 
+            return this._unprocessedStatistics != null && (this._unprocessedStatistics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

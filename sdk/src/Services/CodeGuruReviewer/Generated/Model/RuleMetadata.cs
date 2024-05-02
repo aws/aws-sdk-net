@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeGuruReviewer.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.CodeGuruReviewer.Model
         private string _longDescription;
         private string _ruleId;
         private string _ruleName;
-        private List<string> _ruleTags = new List<string>();
+        private List<string> _ruleTags = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _shortDescription;
 
         /// <summary>
@@ -115,7 +116,7 @@ namespace Amazon.CodeGuruReviewer.Model
         // Check to see if RuleTags property is set
         internal bool IsSetRuleTags()
         {
-            return this._ruleTags != null && this._ruleTags.Count > 0; 
+            return this._ruleTags != null && (this._ruleTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

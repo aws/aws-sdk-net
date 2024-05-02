@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -84,6 +85,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Granularities/member", targetDepth))
                     {
                         var unmarshaller = MetricGranularityTypeUnmarshaller.Instance;
+                        if (response.Granularities == null)
+                        {
+                            response.Granularities = new List<MetricGranularityType>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Granularities.Add(item);
                         continue;
@@ -91,6 +96,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Metrics/member", targetDepth))
                     {
                         var unmarshaller = MetricCollectionTypeUnmarshaller.Instance;
+                        if (response.Metrics == null)
+                        {
+                            response.Metrics = new List<MetricCollectionType>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Metrics.Add(item);
                         continue;

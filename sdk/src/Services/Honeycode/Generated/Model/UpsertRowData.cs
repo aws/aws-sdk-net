@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Honeycode.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Honeycode.Model
     public partial class UpsertRowData
     {
         private string _batchItemId;
-        private Dictionary<string, CellInput> _cellsToUpdate = new Dictionary<string, CellInput>();
+        private Dictionary<string, CellInput> _cellsToUpdate = AWSConfigs.InitializeCollections ? new Dictionary<string, CellInput>() : null;
         private Filter _filter;
 
         /// <summary>
@@ -79,7 +80,7 @@ namespace Amazon.Honeycode.Model
         // Check to see if CellsToUpdate property is set
         internal bool IsSetCellsToUpdate()
         {
-            return this._cellsToUpdate != null && this._cellsToUpdate.Count > 0; 
+            return this._cellsToUpdate != null && (this._cellsToUpdate.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

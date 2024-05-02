@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Greengrass.Model
     /// </summary>
     public partial class CoreDefinitionVersion
     {
-        private List<Core> _cores = new List<Core>();
+        private List<Core> _cores = AWSConfigs.InitializeCollections ? new List<Core>() : null;
 
         /// <summary>
         /// Gets and sets the property Cores. A list of cores in the core definition version.
@@ -47,7 +48,7 @@ namespace Amazon.Greengrass.Model
         // Check to see if Cores property is set
         internal bool IsSetCores()
         {
-            return this._cores != null && this._cores.Count > 0; 
+            return this._cores != null && (this._cores.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LocationService.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.LocationService.Model
     /// </summary>
     public partial class BatchPutGeofenceResponse : AmazonWebServiceResponse
     {
-        private List<BatchPutGeofenceError> _errors = new List<BatchPutGeofenceError>();
-        private List<BatchPutGeofenceSuccess> _successes = new List<BatchPutGeofenceSuccess>();
+        private List<BatchPutGeofenceError> _errors = AWSConfigs.InitializeCollections ? new List<BatchPutGeofenceError>() : null;
+        private List<BatchPutGeofenceSuccess> _successes = AWSConfigs.InitializeCollections ? new List<BatchPutGeofenceSuccess>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. 
@@ -53,7 +54,7 @@ namespace Amazon.LocationService.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.LocationService.Model
         // Check to see if Successes property is set
         internal bool IsSetSuccesses()
         {
-            return this._successes != null && this._successes.Count > 0; 
+            return this._successes != null && (this._successes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

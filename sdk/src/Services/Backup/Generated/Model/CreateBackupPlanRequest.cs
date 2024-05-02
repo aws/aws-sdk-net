@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Backup.Model
 {
     /// <summary>
@@ -43,7 +44,7 @@ namespace Amazon.Backup.Model
     public partial class CreateBackupPlanRequest : AmazonBackupRequest
     {
         private BackupPlanInput _backupPlan;
-        private Dictionary<string, string> _backupPlanTags = new Dictionary<string, string>();
+        private Dictionary<string, string> _backupPlanTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _creatorRequestId;
 
         /// <summary>
@@ -84,7 +85,7 @@ namespace Amazon.Backup.Model
         // Check to see if BackupPlanTags property is set
         internal bool IsSetBackupPlanTags()
         {
-            return this._backupPlanTags != null && this._backupPlanTags.Count > 0; 
+            return this._backupPlanTags != null && (this._backupPlanTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

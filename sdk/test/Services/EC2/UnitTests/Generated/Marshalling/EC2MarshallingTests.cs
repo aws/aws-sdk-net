@@ -6918,6 +6918,30 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DescribeMacHostsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeMacHosts");
+
+            var request = InstantiateClassGenerator.Execute<DescribeMacHostsRequest>(operation);
+            var marshaller = new DescribeMacHostsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DescribeMacHostsResponseUnmarshaller.Instance.Unmarshall(context)
+                as DescribeMacHostsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DescribeManagedPrefixListsMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeManagedPrefixLists");
@@ -9063,6 +9087,30 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void DisableImageDeregistrationProtectionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisableImageDeregistrationProtection");
+
+            var request = InstantiateClassGenerator.Execute<DisableImageDeregistrationProtectionRequest>(operation);
+            var marshaller = new DisableImageDeregistrationProtectionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = DisableImageDeregistrationProtectionResponseUnmarshaller.Instance.Unmarshall(context)
+                as DisableImageDeregistrationProtectionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void DisableIpamOrganizationAdminAccountMarshallTest()
         {
             var operation = service_model.FindOperation("DisableIpamOrganizationAdminAccount");
@@ -9768,6 +9816,30 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("EC2")]
+        public void EnableImageDeregistrationProtectionMarshallTest()
+        {
+            var operation = service_model.FindOperation("EnableImageDeregistrationProtection");
+
+            var request = InstantiateClassGenerator.Execute<EnableImageDeregistrationProtectionRequest>(operation);
+            var marshaller = new EnableImageDeregistrationProtectionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = EnableImageDeregistrationProtectionResponseUnmarshaller.Instance.Unmarshall(context)
+                as EnableImageDeregistrationProtectionResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
         public void EnableIpamOrganizationAdminAccountMarshallTest()
         {
             var operation = service_model.FindOperation("EnableIpamOrganizationAdminAccount");
@@ -10397,6 +10469,30 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = GetImageBlockPublicAccessStateResponseUnmarshaller.Instance.Unmarshall(context)
                 as GetImageBlockPublicAccessStateResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void GetInstanceMetadataDefaultsMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetInstanceMetadataDefaults");
+
+            var request = InstantiateClassGenerator.Execute<GetInstanceMetadataDefaultsRequest>(operation);
+            var marshaller = new GetInstanceMetadataDefaultsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = GetInstanceMetadataDefaultsResponseUnmarshaller.Instance.Unmarshall(context)
+                as GetInstanceMetadataDefaultsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 
@@ -11841,6 +11937,30 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
             UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
             var response = ModifyInstanceMaintenanceOptionsResponseUnmarshaller.Instance.Unmarshall(context)
                 as ModifyInstanceMaintenanceOptionsResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("EC2")]
+        public void ModifyInstanceMetadataDefaultsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyInstanceMetadataDefaults");
+
+            var request = InstantiateClassGenerator.Execute<ModifyInstanceMetadataDefaultsRequest>(operation);
+            var marshaller = new ModifyInstanceMetadataDefaultsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            UnmarshallerContext context = new EC2UnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, new WebResponseData());
+            var response = ModifyInstanceMetadataDefaultsResponseUnmarshaller.Instance.Unmarshall(context)
+                as ModifyInstanceMetadataDefaultsResponse;   
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
         }
 

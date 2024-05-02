@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTDeviceAdvisor.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         private string _testCaseDefinitionId;
         private string _testCaseDefinitionName;
         private string _testCaseRunId;
-        private List<TestCaseScenario> _testScenarios = new List<TestCaseScenario>();
+        private List<TestCaseScenario> _testScenarios = AWSConfigs.InitializeCollections ? new List<TestCaseScenario>() : null;
         private string _warnings;
 
         /// <summary>
@@ -240,7 +241,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         // Check to see if TestScenarios property is set
         internal bool IsSetTestScenarios()
         {
-            return this._testScenarios != null && this._testScenarios.Count > 0; 
+            return this._testScenarios != null && (this._testScenarios.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

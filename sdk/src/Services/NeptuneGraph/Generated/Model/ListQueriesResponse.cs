@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NeptuneGraph.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.NeptuneGraph.Model
     /// </summary>
     public partial class ListQueriesResponse : AmazonWebServiceResponse
     {
-        private List<QuerySummary> _queries = new List<QuerySummary>();
+        private List<QuerySummary> _queries = AWSConfigs.InitializeCollections ? new List<QuerySummary>() : null;
 
         /// <summary>
         /// Gets and sets the property Queries. 
@@ -51,7 +52,7 @@ namespace Amazon.NeptuneGraph.Model
         // Check to see if Queries property is set
         internal bool IsSetQueries()
         {
-            return this._queries != null && this._queries.Count > 0; 
+            return this._queries != null && (this._queries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

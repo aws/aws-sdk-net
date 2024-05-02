@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.WorkSpaces.Model
         private int? _limit;
         private string _nextToken;
         private string _userName;
-        private List<string> _workspaceIds = new List<string>();
+        private List<string> _workspaceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _workspaceName;
 
         /// <summary>
@@ -169,7 +170,7 @@ namespace Amazon.WorkSpaces.Model
         // Check to see if WorkspaceIds property is set
         internal bool IsSetWorkspaceIds()
         {
-            return this._workspaceIds != null && this._workspaceIds.Count > 0; 
+            return this._workspaceIds != null && (this._workspaceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

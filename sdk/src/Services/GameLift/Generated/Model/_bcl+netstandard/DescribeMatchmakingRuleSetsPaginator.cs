@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.GameLift.Model
         /// Enumerable containing all of the RuleSets
         /// </summary>
         public IPaginatedEnumerable<MatchmakingRuleSet> RuleSets => 
-            new PaginatedResultKeyResponse<DescribeMatchmakingRuleSetsResponse, MatchmakingRuleSet>(this, (i) => i.RuleSets);
+            new PaginatedResultKeyResponse<DescribeMatchmakingRuleSetsResponse, MatchmakingRuleSet>(this, (i) => i.RuleSets ?? new List<MatchmakingRuleSet>());
 
         internal DescribeMatchmakingRuleSetsPaginator(IAmazonGameLift client, DescribeMatchmakingRuleSetsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.GameLift.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeMatchmakingRuleSetsResponse> IPaginator<DescribeMatchmakingRuleSetsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeMatchmakingRuleSetsResponse> IPaginator<DescribeMatchmakingRuleSetsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

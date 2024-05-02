@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Connect.Model
     {
         private EvaluationFormSingleSelectQuestionAutomation _automation;
         private EvaluationFormSingleSelectQuestionDisplayMode _displayAs;
-        private List<EvaluationFormSingleSelectQuestionOption> _options = new List<EvaluationFormSingleSelectQuestionOption>();
+        private List<EvaluationFormSingleSelectQuestionOption> _options = AWSConfigs.InitializeCollections ? new List<EvaluationFormSingleSelectQuestionOption>() : null;
 
         /// <summary>
         /// Gets and sets the property Automation. 
@@ -89,7 +90,7 @@ namespace Amazon.Connect.Model
         // Check to see if Options property is set
         internal bool IsSetOptions()
         {
-            return this._options != null && this._options.Count > 0; 
+            return this._options != null && (this._options.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

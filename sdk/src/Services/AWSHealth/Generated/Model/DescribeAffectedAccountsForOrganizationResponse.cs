@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AWSHealth.Model
     /// </summary>
     public partial class DescribeAffectedAccountsForOrganizationResponse : AmazonWebServiceResponse
     {
-        private List<string> _affectedAccounts = new List<string>();
+        private List<string> _affectedAccounts = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private EventScopeCode _eventScopeCode;
         private string _nextToken;
 
@@ -52,7 +53,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if AffectedAccounts property is set
         internal bool IsSetAffectedAccounts()
         {
-            return this._affectedAccounts != null && this._affectedAccounts.Count > 0; 
+            return this._affectedAccounts != null && (this._affectedAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

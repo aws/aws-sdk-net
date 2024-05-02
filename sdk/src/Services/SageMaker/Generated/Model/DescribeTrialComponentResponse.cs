@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -37,16 +38,16 @@ namespace Amazon.SageMaker.Model
         private DateTime? _creationTime;
         private string _displayName;
         private DateTime? _endTime;
-        private Dictionary<string, TrialComponentArtifact> _inputArtifacts = new Dictionary<string, TrialComponentArtifact>();
+        private Dictionary<string, TrialComponentArtifact> _inputArtifacts = AWSConfigs.InitializeCollections ? new Dictionary<string, TrialComponentArtifact>() : null;
         private UserContext _lastModifiedBy;
         private DateTime? _lastModifiedTime;
         private string _lineageGroupArn;
         private MetadataProperties _metadataProperties;
-        private List<TrialComponentMetricSummary> _metrics = new List<TrialComponentMetricSummary>();
-        private Dictionary<string, TrialComponentArtifact> _outputArtifacts = new Dictionary<string, TrialComponentArtifact>();
-        private Dictionary<string, TrialComponentParameterValue> _parameters = new Dictionary<string, TrialComponentParameterValue>();
+        private List<TrialComponentMetricSummary> _metrics = AWSConfigs.InitializeCollections ? new List<TrialComponentMetricSummary>() : null;
+        private Dictionary<string, TrialComponentArtifact> _outputArtifacts = AWSConfigs.InitializeCollections ? new Dictionary<string, TrialComponentArtifact>() : null;
+        private Dictionary<string, TrialComponentParameterValue> _parameters = AWSConfigs.InitializeCollections ? new Dictionary<string, TrialComponentParameterValue>() : null;
         private TrialComponentSource _source;
-        private List<TrialComponentSource> _sources = new List<TrialComponentSource>();
+        private List<TrialComponentSource> _sources = AWSConfigs.InitializeCollections ? new List<TrialComponentSource>() : null;
         private DateTime? _startTime;
         private TrialComponentStatus _status;
         private string _trialComponentArn;
@@ -142,7 +143,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if InputArtifacts property is set
         internal bool IsSetInputArtifacts()
         {
-            return this._inputArtifacts != null && this._inputArtifacts.Count > 0; 
+            return this._inputArtifacts != null && (this._inputArtifacts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -230,7 +231,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Metrics property is set
         internal bool IsSetMetrics()
         {
-            return this._metrics != null && this._metrics.Count > 0; 
+            return this._metrics != null && (this._metrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -249,7 +250,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if OutputArtifacts property is set
         internal bool IsSetOutputArtifacts()
         {
-            return this._outputArtifacts != null && this._outputArtifacts.Count > 0; 
+            return this._outputArtifacts != null && (this._outputArtifacts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -268,7 +269,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -305,7 +306,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Sources property is set
         internal bool IsSetSources()
         {
-            return this._sources != null && this._sources.Count > 0; 
+            return this._sources != null && (this._sources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAF.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.WAF.Model
     /// </summary>
     public partial class ListByteMatchSetsResponse : AmazonWebServiceResponse
     {
-        private List<ByteMatchSetSummary> _byteMatchSets = new List<ByteMatchSetSummary>();
+        private List<ByteMatchSetSummary> _byteMatchSets = AWSConfigs.InitializeCollections ? new List<ByteMatchSetSummary>() : null;
         private string _nextMarker;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.WAF.Model
         // Check to see if ByteMatchSets property is set
         internal bool IsSetByteMatchSets()
         {
-            return this._byteMatchSets != null && this._byteMatchSets.Count > 0; 
+            return this._byteMatchSets != null && (this._byteMatchSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

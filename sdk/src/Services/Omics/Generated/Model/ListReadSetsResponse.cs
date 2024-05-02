@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Omics.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Omics.Model
     public partial class ListReadSetsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ReadSetListItem> _readSets = new List<ReadSetListItem>();
+        private List<ReadSetListItem> _readSets = AWSConfigs.InitializeCollections ? new List<ReadSetListItem>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.Omics.Model
         // Check to see if ReadSets property is set
         internal bool IsSetReadSets()
         {
-            return this._readSets != null && this._readSets.Count > 0; 
+            return this._readSets != null && (this._readSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

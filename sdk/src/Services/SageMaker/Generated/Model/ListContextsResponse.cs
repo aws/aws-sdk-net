@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListContextsResponse : AmazonWebServiceResponse
     {
-        private List<ContextSummary> _contextSummaries = new List<ContextSummary>();
+        private List<ContextSummary> _contextSummaries = AWSConfigs.InitializeCollections ? new List<ContextSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ContextSummaries property is set
         internal bool IsSetContextSummaries()
         {
-            return this._contextSummaries != null && this._contextSummaries.Count > 0; 
+            return this._contextSummaries != null && (this._contextSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

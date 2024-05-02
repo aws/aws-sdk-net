@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
@@ -39,12 +40,12 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class Label
     {
-        private List<LabelAlias> _aliases = new List<LabelAlias>();
-        private List<LabelCategory> _categories = new List<LabelCategory>();
+        private List<LabelAlias> _aliases = AWSConfigs.InitializeCollections ? new List<LabelAlias>() : null;
+        private List<LabelCategory> _categories = AWSConfigs.InitializeCollections ? new List<LabelCategory>() : null;
         private float? _confidence;
-        private List<Instance> _instances = new List<Instance>();
+        private List<Instance> _instances = AWSConfigs.InitializeCollections ? new List<Instance>() : null;
         private string _name;
-        private List<Parent> _parents = new List<Parent>();
+        private List<Parent> _parents = AWSConfigs.InitializeCollections ? new List<Parent>() : null;
 
         /// <summary>
         /// Gets and sets the property Aliases. 
@@ -61,7 +62,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if Aliases property is set
         internal bool IsSetAliases()
         {
-            return this._aliases != null && this._aliases.Count > 0; 
+            return this._aliases != null && (this._aliases.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -79,7 +80,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if Categories property is set
         internal bool IsSetCategories()
         {
-            return this._categories != null && this._categories.Count > 0; 
+            return this._categories != null && (this._categories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -118,7 +119,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this._instances != null && this._instances.Count > 0; 
+            return this._instances != null && (this._instances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -154,7 +155,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if Parents property is set
         internal bool IsSetParents()
         {
-            return this._parents != null && this._parents.Count > 0; 
+            return this._parents != null && (this._parents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

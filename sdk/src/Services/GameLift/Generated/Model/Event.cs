@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GameLift.Model
 {
     /// <summary>
@@ -35,12 +36,32 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class Event
     {
+        private long? _count;
         private EventCode _eventCode;
         private string _eventId;
         private DateTime? _eventTime;
         private string _message;
         private string _preSignedLogUrl;
         private string _resourceId;
+
+        /// <summary>
+        /// Gets and sets the property Count. 
+        /// <para>
+        /// The number of times that this event occurred.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=101)]
+        public long? Count
+        {
+            get { return this._count; }
+            set { this._count = value; }
+        }
+
+        // Check to see if Count property is set
+        internal bool IsSetCount()
+        {
+            return this._count.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property EventCode. 

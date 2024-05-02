@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
@@ -127,7 +128,7 @@ namespace Amazon.Kinesis.Model
     /// </summary>
     public partial class PutRecordsRequest : AmazonKinesisRequest
     {
-        private List<PutRecordsRequestEntry> _records = new List<PutRecordsRequestEntry>();
+        private List<PutRecordsRequestEntry> _records = AWSConfigs.InitializeCollections ? new List<PutRecordsRequestEntry>() : null;
         private string _streamARN;
         private string _streamName;
 
@@ -147,7 +148,7 @@ namespace Amazon.Kinesis.Model
         // Check to see if Records property is set
         internal bool IsSetRecords()
         {
-            return this._records != null && this._records.Count > 0; 
+            return this._records != null && (this._records.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

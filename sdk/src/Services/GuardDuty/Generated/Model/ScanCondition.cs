@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class ScanCondition
     {
-        private List<ScanConditionPair> _mapEquals = new List<ScanConditionPair>();
+        private List<ScanConditionPair> _mapEquals = AWSConfigs.InitializeCollections ? new List<ScanConditionPair>() : null;
 
         /// <summary>
         /// Gets and sets the property MapEquals. 
@@ -52,7 +53,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if MapEquals property is set
         internal bool IsSetMapEquals()
         {
-            return this._mapEquals != null && this._mapEquals.Count > 0; 
+            return this._mapEquals != null && (this._mapEquals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

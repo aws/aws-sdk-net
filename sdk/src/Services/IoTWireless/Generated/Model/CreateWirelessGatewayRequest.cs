@@ -26,11 +26,33 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateWirelessGateway operation.
     /// Provisions a wireless gateway.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// When provisioning a wireless gateway, you might run into duplication errors for the
+    /// following reasons.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// If you specify a <c>GatewayEui</c> value that already exists.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If you used a <c>ClientRequestToken</c> with the same parameters within the last 10
+    /// minutes.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// To avoid this error, make sure that you use unique identifiers and parameters for
+    /// each request within the specified time period.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateWirelessGatewayRequest : AmazonIoTWirelessRequest
     {
@@ -38,15 +60,19 @@ namespace Amazon.IoTWireless.Model
         private string _description;
         private LoRaWANGateway _loRaWAN;
         private string _name;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// Each resource must have a unique client request token. If you try to create a new
-        /// resource with the same token as a resource that already exists, an exception occurs.
-        /// If you omit this value, AWS SDKs will automatically generate a unique client request.
-        /// 
+        /// Each resource must have a unique client request token. The client token is used to
+        /// implement idempotency. It ensures that the request completes no more than one time.
+        /// If you retry a request with the same token and the same parameters, the request will
+        /// complete successfully. However, if you try to create a new resource using the same
+        /// token but different parameters, an HTTP 409 conflict occurs. If you omit this value,
+        /// AWS SDKs will automatically generate a unique client request. For more information
+        /// about idempotency, see <a href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensuring
+        /// idempotency in Amazon EC2 API requests</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -136,7 +162,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

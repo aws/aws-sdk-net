@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SimpleEmailV2.Model
     /// </summary>
     public partial class ListDeliverabilityTestReportsResponse : AmazonWebServiceResponse
     {
-        private List<DeliverabilityTestReport> _deliverabilityTestReports = new List<DeliverabilityTestReport>();
+        private List<DeliverabilityTestReport> _deliverabilityTestReports = AWSConfigs.InitializeCollections ? new List<DeliverabilityTestReport>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if DeliverabilityTestReports property is set
         internal bool IsSetDeliverabilityTestReports()
         {
-            return this._deliverabilityTestReports != null && this._deliverabilityTestReports.Count > 0; 
+            return this._deliverabilityTestReports != null && (this._deliverabilityTestReports.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

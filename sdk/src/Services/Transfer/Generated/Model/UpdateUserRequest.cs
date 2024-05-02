@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Transfer.Model
 {
     /// <summary>
@@ -38,11 +39,31 @@ namespace Amazon.Transfer.Model
     /// <para>
     /// The response returns the <c>ServerId</c> and the <c>UserName</c> for the updated user.
     /// </para>
+    ///  
+    /// <para>
+    /// In the console, you can select <i>Restricted</i> when you create or update a user.
+    /// This ensures that the user can't access anything outside of their home directory.
+    /// The programmatic way to configure this behavior is to update the user. Set their <c>HomeDirectoryType</c>
+    /// to <c>LOGICAL</c>, and specify <c>HomeDirectoryMappings</c> with <c>Entry</c> as root
+    /// (<c>/</c>) and <c>Target</c> as their home directory.
+    /// </para>
+    ///  
+    /// <para>
+    /// For example, if the user's home directory is <c>/test/admin-user</c>, the following
+    /// command updates the user so that their configuration in the console shows the <i>Restricted</i>
+    /// flag as selected.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <c> aws transfer update-user --server-id &lt;server-id&gt; --user-name admin-user
+    /// --home-directory-type LOGICAL --home-directory-mappings "[{\"Entry\":\"/\", \"Target\":\"/test/admin-user\"}]"</c>
+    /// 
+    /// </para>
     /// </summary>
     public partial class UpdateUserRequest : AmazonTransferRequest
     {
         private string _homeDirectory;
-        private List<HomeDirectoryMapEntry> _homeDirectoryMappings = new List<HomeDirectoryMapEntry>();
+        private List<HomeDirectoryMapEntry> _homeDirectoryMappings = AWSConfigs.InitializeCollections ? new List<HomeDirectoryMapEntry>() : null;
         private HomeDirectoryType _homeDirectoryType;
         private string _policy;
         private PosixProfile _posixProfile;
@@ -125,7 +146,7 @@ namespace Amazon.Transfer.Model
         // Check to see if HomeDirectoryMappings property is set
         internal bool IsSetHomeDirectoryMappings()
         {
-            return this._homeDirectoryMappings != null && this._homeDirectoryMappings.Count > 0; 
+            return this._homeDirectoryMappings != null && (this._homeDirectoryMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

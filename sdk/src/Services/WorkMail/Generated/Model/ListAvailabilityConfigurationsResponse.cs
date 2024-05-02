@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkMail.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.WorkMail.Model
     /// </summary>
     public partial class ListAvailabilityConfigurationsResponse : AmazonWebServiceResponse
     {
-        private List<AvailabilityConfiguration> _availabilityConfigurations = new List<AvailabilityConfiguration>();
+        private List<AvailabilityConfiguration> _availabilityConfigurations = AWSConfigs.InitializeCollections ? new List<AvailabilityConfiguration>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.WorkMail.Model
         // Check to see if AvailabilityConfigurations property is set
         internal bool IsSetAvailabilityConfigurations()
         {
-            return this._availabilityConfigurations != null && this._availabilityConfigurations.Count > 0; 
+            return this._availabilityConfigurations != null && (this._availabilityConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

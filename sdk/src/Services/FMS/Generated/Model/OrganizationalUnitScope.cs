@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FMS.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.FMS.Model
     {
         private bool? _allOrganizationalUnitsEnabled;
         private bool? _excludeSpecifiedOrganizationalUnits;
-        private List<string> _organizationalUnits = new List<string>();
+        private List<string> _organizationalUnits = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AllOrganizationalUnitsEnabled. 
@@ -106,7 +107,7 @@ namespace Amazon.FMS.Model
         // Check to see if OrganizationalUnits property is set
         internal bool IsSetOrganizationalUnits()
         {
-            return this._organizationalUnits != null && this._organizationalUnits.Count > 0; 
+            return this._organizationalUnits != null && (this._organizationalUnits.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

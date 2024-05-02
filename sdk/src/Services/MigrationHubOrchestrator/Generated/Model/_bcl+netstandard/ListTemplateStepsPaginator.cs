@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MigrationHubOrchestrator.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         /// Enumerable containing all of the TemplateStepSummaryList
         /// </summary>
         public IPaginatedEnumerable<TemplateStepSummary> TemplateStepSummaryList => 
-            new PaginatedResultKeyResponse<ListTemplateStepsResponse, TemplateStepSummary>(this, (i) => i.TemplateStepSummaryList);
+            new PaginatedResultKeyResponse<ListTemplateStepsResponse, TemplateStepSummary>(this, (i) => i.TemplateStepSummaryList ?? new List<TemplateStepSummary>());
 
         internal ListTemplateStepsPaginator(IAmazonMigrationHubOrchestrator client, ListTemplateStepsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListTemplateStepsResponse> IPaginator<ListTemplateStepsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListTemplateStepsResponse> IPaginator<ListTemplateStepsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

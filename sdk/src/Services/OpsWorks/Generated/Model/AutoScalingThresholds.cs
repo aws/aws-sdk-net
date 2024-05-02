@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.OpsWorks.Model
     /// </summary>
     public partial class AutoScalingThresholds
     {
-        private List<string> _alarms = new List<string>();
+        private List<string> _alarms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private double? _cpuThreshold;
         private int? _ignoreMetricsTime;
         private int? _instanceCount;
@@ -67,7 +68,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if Alarms property is set
         internal bool IsSetAlarms()
         {
-            return this._alarms != null && this._alarms.Count > 0; 
+            return this._alarms != null && (this._alarms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

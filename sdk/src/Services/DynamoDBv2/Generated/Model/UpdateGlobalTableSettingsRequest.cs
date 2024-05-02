@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
@@ -48,11 +49,11 @@ namespace Amazon.DynamoDBv2.Model
     public partial class UpdateGlobalTableSettingsRequest : AmazonDynamoDBRequest
     {
         private BillingMode _globalTableBillingMode;
-        private List<GlobalTableGlobalSecondaryIndexSettingsUpdate> _globalTableGlobalSecondaryIndexSettingsUpdate = new List<GlobalTableGlobalSecondaryIndexSettingsUpdate>();
+        private List<GlobalTableGlobalSecondaryIndexSettingsUpdate> _globalTableGlobalSecondaryIndexSettingsUpdate = AWSConfigs.InitializeCollections ? new List<GlobalTableGlobalSecondaryIndexSettingsUpdate>() : null;
         private string _globalTableName;
         private AutoScalingSettingsUpdate _globalTableProvisionedWriteCapacityAutoScalingSettingsUpdate;
         private long? _globalTableProvisionedWriteCapacityUnits;
-        private List<ReplicaSettingsUpdate> _replicaSettingsUpdate = new List<ReplicaSettingsUpdate>();
+        private List<ReplicaSettingsUpdate> _replicaSettingsUpdate = AWSConfigs.InitializeCollections ? new List<ReplicaSettingsUpdate>() : null;
 
         /// <summary>
         /// Gets and sets the property GlobalTableBillingMode. 
@@ -103,7 +104,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if GlobalTableGlobalSecondaryIndexSettingsUpdate property is set
         internal bool IsSetGlobalTableGlobalSecondaryIndexSettingsUpdate()
         {
-            return this._globalTableGlobalSecondaryIndexSettingsUpdate != null && this._globalTableGlobalSecondaryIndexSettingsUpdate.Count > 0; 
+            return this._globalTableGlobalSecondaryIndexSettingsUpdate != null && (this._globalTableGlobalSecondaryIndexSettingsUpdate.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -180,7 +181,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if ReplicaSettingsUpdate property is set
         internal bool IsSetReplicaSettingsUpdate()
         {
-            return this._replicaSettingsUpdate != null && this._replicaSettingsUpdate.Count > 0; 
+            return this._replicaSettingsUpdate != null && (this._replicaSettingsUpdate.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

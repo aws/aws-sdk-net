@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SQS.Model
 {
     /// <summary>
@@ -35,8 +36,8 @@ namespace Amazon.SQS.Model
     /// </summary>
     public partial class DeleteMessageBatchResponse : AmazonWebServiceResponse
     {
-        private List<BatchResultErrorEntry> _failed = new List<BatchResultErrorEntry>();
-        private List<DeleteMessageBatchResultEntry> _successful = new List<DeleteMessageBatchResultEntry>();
+        private List<BatchResultErrorEntry> _failed = AWSConfigs.InitializeCollections ? new List<BatchResultErrorEntry>() : null;
+        private List<DeleteMessageBatchResultEntry> _successful = AWSConfigs.InitializeCollections ? new List<DeleteMessageBatchResultEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property Failed. 
@@ -54,7 +55,7 @@ namespace Amazon.SQS.Model
         // Check to see if Failed property is set
         internal bool IsSetFailed()
         {
-            return this._failed != null && this._failed.Count > 0; 
+            return this._failed != null && (this._failed.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.SQS.Model
         // Check to see if Successful property is set
         internal bool IsSetSuccessful()
         {
-            return this._successful != null && this._successful.Count > 0; 
+            return this._successful != null && (this._successful.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

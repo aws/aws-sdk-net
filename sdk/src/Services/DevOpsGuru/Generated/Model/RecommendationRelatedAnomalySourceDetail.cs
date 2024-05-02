@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.DevOpsGuru.Model
     /// </summary>
     public partial class RecommendationRelatedAnomalySourceDetail
     {
-        private List<RecommendationRelatedCloudWatchMetricsSourceDetail> _cloudWatchMetrics = new List<RecommendationRelatedCloudWatchMetricsSourceDetail>();
+        private List<RecommendationRelatedCloudWatchMetricsSourceDetail> _cloudWatchMetrics = AWSConfigs.InitializeCollections ? new List<RecommendationRelatedCloudWatchMetricsSourceDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property CloudWatchMetrics. 
@@ -52,7 +53,7 @@ namespace Amazon.DevOpsGuru.Model
         // Check to see if CloudWatchMetrics property is set
         internal bool IsSetCloudWatchMetrics()
         {
-            return this._cloudWatchMetrics != null && this._cloudWatchMetrics.Count > 0; 
+            return this._cloudWatchMetrics != null && (this._cloudWatchMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

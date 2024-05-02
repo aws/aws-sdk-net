@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
@@ -33,12 +34,12 @@ namespace Amazon.CodeGuruProfiler.Model
     /// </summary>
     public partial class Pattern
     {
-        private List<string> _countersToAggregate = new List<string>();
+        private List<string> _countersToAggregate = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _description;
         private string _id;
         private string _name;
         private string _resolutionSteps;
-        private List<List<string>> _targetFrames = new List<List<string>>();
+        private List<List<string>> _targetFrames = AWSConfigs.InitializeCollections ? new List<List<string>>() : null;
         private double? _thresholdPercent;
 
         /// <summary>
@@ -56,7 +57,7 @@ namespace Amazon.CodeGuruProfiler.Model
         // Check to see if CountersToAggregate property is set
         internal bool IsSetCountersToAggregate()
         {
-            return this._countersToAggregate != null && this._countersToAggregate.Count > 0; 
+            return this._countersToAggregate != null && (this._countersToAggregate.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -148,7 +149,7 @@ namespace Amazon.CodeGuruProfiler.Model
         // Check to see if TargetFrames property is set
         internal bool IsSetTargetFrames()
         {
-            return this._targetFrames != null && this._targetFrames.Count > 0; 
+            return this._targetFrames != null && (this._targetFrames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

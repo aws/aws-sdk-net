@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataSync.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.DataSync.Model
     /// </summary>
     public partial class UpdateLocationHdfsRequest : AmazonDataSyncRequest
     {
-        private List<string> _agentArns = new List<string>();
+        private List<string> _agentArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private HdfsAuthenticationType _authenticationType;
         private int? _blockSize;
         private MemoryStream _kerberosKeytab;
@@ -43,7 +44,7 @@ namespace Amazon.DataSync.Model
         private string _kerberosPrincipal;
         private string _kmsKeyProviderUri;
         private string _locationArn;
-        private List<HdfsNameNode> _nameNodes = new List<HdfsNameNode>();
+        private List<HdfsNameNode> _nameNodes = AWSConfigs.InitializeCollections ? new List<HdfsNameNode>() : null;
         private QopConfiguration _qopConfiguration;
         private int? _replicationFactor;
         private string _simpleUser;
@@ -65,7 +66,7 @@ namespace Amazon.DataSync.Model
         // Check to see if AgentArns property is set
         internal bool IsSetAgentArns()
         {
-            return this._agentArns != null && this._agentArns.Count > 0; 
+            return this._agentArns != null && (this._agentArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -224,7 +225,7 @@ namespace Amazon.DataSync.Model
         // Check to see if NameNodes property is set
         internal bool IsSetNameNodes()
         {
-            return this._nameNodes != null && this._nameNodes.Count > 0; 
+            return this._nameNodes != null && (this._nameNodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

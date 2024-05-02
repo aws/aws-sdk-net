@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Enumerable containing all of the Anomalies
         /// </summary>
         public IPaginatedEnumerable<Anomaly> Anomalies => 
-            new PaginatedResultKeyResponse<ListAnomaliesResponse, Anomaly>(this, (i) => i.Anomalies);
+            new PaginatedResultKeyResponse<ListAnomaliesResponse, Anomaly>(this, (i) => i.Anomalies ?? new List<Anomaly>());
 
         internal ListAnomaliesPaginator(IAmazonCloudWatchLogs client, ListAnomaliesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.CloudWatchLogs.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListAnomaliesResponse> IPaginator<ListAnomaliesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListAnomaliesResponse> IPaginator<ListAnomaliesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

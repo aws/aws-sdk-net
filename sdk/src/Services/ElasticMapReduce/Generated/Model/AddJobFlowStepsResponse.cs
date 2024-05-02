@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// </summary>
     public partial class AddJobFlowStepsResponse : AmazonWebServiceResponse
     {
-        private List<string> _stepIds = new List<string>();
+        private List<string> _stepIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property StepIds. 
@@ -50,7 +51,7 @@ namespace Amazon.ElasticMapReduce.Model
         // Check to see if StepIds property is set
         internal bool IsSetStepIds()
         {
-            return this._stepIds != null && this._stepIds.Count > 0; 
+            return this._stepIds != null && (this._stepIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

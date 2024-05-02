@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ElastiCache.Model
     /// </summary>
     public partial class DescribeCacheSubnetGroupsResponse : AmazonWebServiceResponse
     {
-        private List<CacheSubnetGroup> _cacheSubnetGroups = new List<CacheSubnetGroup>();
+        private List<CacheSubnetGroup> _cacheSubnetGroups = AWSConfigs.InitializeCollections ? new List<CacheSubnetGroup>() : null;
         private string _marker;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheSubnetGroups property is set
         internal bool IsSetCacheSubnetGroups()
         {
-            return this._cacheSubnetGroups != null && this._cacheSubnetGroups.Count > 0; 
+            return this._cacheSubnetGroups != null && (this._cacheSubnetGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

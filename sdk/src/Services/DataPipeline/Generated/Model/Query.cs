@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DataPipeline.Model
     /// </summary>
     public partial class Query
     {
-        private List<Selector> _selectors = new List<Selector>();
+        private List<Selector> _selectors = AWSConfigs.InitializeCollections ? new List<Selector>() : null;
 
         /// <summary>
         /// Gets and sets the property Selectors. 
@@ -51,7 +52,7 @@ namespace Amazon.DataPipeline.Model
         // Check to see if Selectors property is set
         internal bool IsSetSelectors()
         {
-            return this._selectors != null && this._selectors.Count > 0; 
+            return this._selectors != null && (this._selectors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

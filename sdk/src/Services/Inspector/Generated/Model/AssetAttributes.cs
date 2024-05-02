@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector.Model
 {
     /// <summary>
@@ -37,10 +38,10 @@ namespace Amazon.Inspector.Model
         private string _amiId;
         private string _autoScalingGroup;
         private string _hostname;
-        private List<string> _ipv4Addresses = new List<string>();
-        private List<NetworkInterface> _networkInterfaces = new List<NetworkInterface>();
+        private List<string> _ipv4Addresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<NetworkInterface> _networkInterfaces = AWSConfigs.InitializeCollections ? new List<NetworkInterface>() : null;
         private int? _schemaVersion;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AgentId. 
@@ -135,7 +136,7 @@ namespace Amazon.Inspector.Model
         // Check to see if Ipv4Addresses property is set
         internal bool IsSetIpv4Addresses()
         {
-            return this._ipv4Addresses != null && this._ipv4Addresses.Count > 0; 
+            return this._ipv4Addresses != null && (this._ipv4Addresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -154,7 +155,7 @@ namespace Amazon.Inspector.Model
         // Check to see if NetworkInterfaces property is set
         internal bool IsSetNetworkInterfaces()
         {
-            return this._networkInterfaces != null && this._networkInterfaces.Count > 0; 
+            return this._networkInterfaces != null && (this._networkInterfaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -191,7 +192,7 @@ namespace Amazon.Inspector.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Backup.Model
 {
     /// <summary>
@@ -43,9 +44,9 @@ namespace Amazon.Backup.Model
     {
         private Conditions _conditions;
         private string _iamRoleArn;
-        private List<Condition> _listOfTags = new List<Condition>();
-        private List<string> _notResources = new List<string>();
-        private List<string> _resources = new List<string>();
+        private List<Condition> _listOfTags = AWSConfigs.InitializeCollections ? new List<Condition>() : null;
+        private List<string> _notResources = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _resources = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _selectionName;
 
         /// <summary>
@@ -135,7 +136,7 @@ namespace Amazon.Backup.Model
         // Check to see if ListOfTags property is set
         internal bool IsSetListOfTags()
         {
-            return this._listOfTags != null && this._listOfTags.Count > 0; 
+            return this._listOfTags != null && (this._listOfTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -160,7 +161,7 @@ namespace Amazon.Backup.Model
         // Check to see if NotResources property is set
         internal bool IsSetNotResources()
         {
-            return this._notResources != null && this._notResources.Count > 0; 
+            return this._notResources != null && (this._notResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -185,7 +186,7 @@ namespace Amazon.Backup.Model
         // Check to see if Resources property is set
         internal bool IsSetResources()
         {
-            return this._resources != null && this._resources.Count > 0; 
+            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

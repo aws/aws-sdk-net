@@ -26,16 +26,36 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FMS.Model
 {
     /// <summary>
-    /// Contains the Network Firewall firewall policy options to configure the policy's deployment
-    /// model and third-party firewall policy settings.
+    /// Contains the settings to configure a network ACL policy, a Network Firewall firewall
+    /// policy deployment model, or a third-party firewall policy.
     /// </summary>
     public partial class PolicyOption
     {
+        private NetworkAclCommonPolicy _networkAclCommonPolicy;
         private NetworkFirewallPolicy _networkFirewallPolicy;
         private ThirdPartyFirewallPolicy _thirdPartyFirewallPolicy;
+
+        /// <summary>
+        /// Gets and sets the property NetworkAclCommonPolicy. 
+        /// <para>
+        /// Defines a Firewall Manager network ACL policy. 
+        /// </para>
+        /// </summary>
+        public NetworkAclCommonPolicy NetworkAclCommonPolicy
+        {
+            get { return this._networkAclCommonPolicy; }
+            set { this._networkAclCommonPolicy = value; }
+        }
+
+        // Check to see if NetworkAclCommonPolicy property is set
+        internal bool IsSetNetworkAclCommonPolicy()
+        {
+            return this._networkAclCommonPolicy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property NetworkFirewallPolicy. 

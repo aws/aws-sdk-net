@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class ListSpacesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SpaceDetails> _spaces = new List<SpaceDetails>();
+        private List<SpaceDetails> _spaces = AWSConfigs.InitializeCollections ? new List<SpaceDetails>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Spaces property is set
         internal bool IsSetSpaces()
         {
-            return this._spaces != null && this._spaces.Count > 0; 
+            return this._spaces != null && (this._spaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

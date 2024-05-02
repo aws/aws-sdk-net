@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class SourceIpConfig
     {
-        private List<string> _cidrs = new List<string>();
+        private List<string> _cidrs = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Cidrs. 
@@ -65,7 +66,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Cidrs property is set
         internal bool IsSetCidrs()
         {
-            return this._cidrs != null && this._cidrs.Count > 0; 
+            return this._cidrs != null && (this._cidrs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

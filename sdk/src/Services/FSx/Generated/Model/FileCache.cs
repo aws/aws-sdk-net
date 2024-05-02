@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FSx.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.FSx.Model
     public partial class FileCache
     {
         private DateTime? _creationTime;
-        private List<string> _dataRepositoryAssociationIds = new List<string>();
+        private List<string> _dataRepositoryAssociationIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _dnsName;
         private FileCacheFailureDetails _failureDetails;
         private string _fileCacheId;
@@ -44,11 +45,11 @@ namespace Amazon.FSx.Model
         private string _kmsKeyId;
         private FileCacheLifecycle _lifecycle;
         private FileCacheLustreConfiguration _lustreConfiguration;
-        private List<string> _networkInterfaceIds = new List<string>();
+        private List<string> _networkInterfaceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _ownerId;
         private string _resourceARN;
         private int? _storageCapacity;
-        private List<string> _subnetIds = new List<string>();
+        private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _vpcId;
 
         /// <summary>
@@ -82,7 +83,7 @@ namespace Amazon.FSx.Model
         // Check to see if DataRepositoryAssociationIds property is set
         internal bool IsSetDataRepositoryAssociationIds()
         {
-            return this._dataRepositoryAssociationIds != null && this._dataRepositoryAssociationIds.Count > 0; 
+            return this._dataRepositoryAssociationIds != null && (this._dataRepositoryAssociationIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -273,7 +274,7 @@ namespace Amazon.FSx.Model
         // Check to see if NetworkInterfaceIds property is set
         internal bool IsSetNetworkInterfaceIds()
         {
-            return this._networkInterfaceIds != null && this._networkInterfaceIds.Count > 0; 
+            return this._networkInterfaceIds != null && (this._networkInterfaceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -340,7 +341,7 @@ namespace Amazon.FSx.Model
         // Check to see if SubnetIds property is set
         internal bool IsSetSubnetIds()
         {
-            return this._subnetIds != null && this._subnetIds.Count > 0; 
+            return this._subnetIds != null && (this._subnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

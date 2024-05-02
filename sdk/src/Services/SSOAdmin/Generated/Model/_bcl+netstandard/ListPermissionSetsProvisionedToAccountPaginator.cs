@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.SSOAdmin.Model
         /// Enumerable containing all of the PermissionSets
         /// </summary>
         public IPaginatedEnumerable<string> PermissionSets => 
-            new PaginatedResultKeyResponse<ListPermissionSetsProvisionedToAccountResponse, string>(this, (i) => i.PermissionSets);
+            new PaginatedResultKeyResponse<ListPermissionSetsProvisionedToAccountResponse, string>(this, (i) => i.PermissionSets ?? new List<string>());
 
         internal ListPermissionSetsProvisionedToAccountPaginator(IAmazonSSOAdmin client, ListPermissionSetsProvisionedToAccountRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.SSOAdmin.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListPermissionSetsProvisionedToAccountResponse> IPaginator<ListPermissionSetsProvisionedToAccountResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListPermissionSetsProvisionedToAccountResponse> IPaginator<ListPermissionSetsProvisionedToAccountResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

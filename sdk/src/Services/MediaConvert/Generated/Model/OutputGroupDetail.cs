@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class OutputGroupDetail
     {
-        private List<OutputDetail> _outputDetails = new List<OutputDetail>();
+        private List<OutputDetail> _outputDetails = AWSConfigs.InitializeCollections ? new List<OutputDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property OutputDetails. Details about the output
@@ -47,7 +48,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if OutputDetails property is set
         internal bool IsSetOutputDetails()
         {
-            return this._outputDetails != null && this._outputDetails.Count > 0; 
+            return this._outputDetails != null && (this._outputDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SecurityHub.Model
     public partial class AwsEcsContainerDetails
     {
         private string _image;
-        private List<AwsMountPoint> _mountPoints = new List<AwsMountPoint>();
+        private List<AwsMountPoint> _mountPoints = AWSConfigs.InitializeCollections ? new List<AwsMountPoint>() : null;
         private string _name;
         private bool? _privileged;
 
@@ -71,7 +72,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if MountPoints property is set
         internal bool IsSetMountPoints()
         {
-            return this._mountPoints != null && this._mountPoints.Count > 0; 
+            return this._mountPoints != null && (this._mountPoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

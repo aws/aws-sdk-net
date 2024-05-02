@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.SageMaker.Model
         /// Enumerable containing all of the SubscribedWorkteams
         /// </summary>
         public IPaginatedEnumerable<SubscribedWorkteam> SubscribedWorkteams => 
-            new PaginatedResultKeyResponse<ListSubscribedWorkteamsResponse, SubscribedWorkteam>(this, (i) => i.SubscribedWorkteams);
+            new PaginatedResultKeyResponse<ListSubscribedWorkteamsResponse, SubscribedWorkteam>(this, (i) => i.SubscribedWorkteams ?? new List<SubscribedWorkteam>());
 
         internal ListSubscribedWorkteamsPaginator(IAmazonSageMaker client, ListSubscribedWorkteamsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.SageMaker.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListSubscribedWorkteamsResponse> IPaginator<ListSubscribedWorkteamsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListSubscribedWorkteamsResponse> IPaginator<ListSubscribedWorkteamsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

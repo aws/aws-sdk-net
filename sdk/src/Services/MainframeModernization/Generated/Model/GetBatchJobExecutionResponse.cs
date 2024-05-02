@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MainframeModernization.Model
 {
     /// <summary>
@@ -39,6 +40,7 @@ namespace Amazon.MainframeModernization.Model
         private string _executionId;
         private string _jobId;
         private string _jobName;
+        private JobStepRestartMarker _jobStepRestartMarker;
         private BatchJobType _jobType;
         private string _jobUser;
         private string _returnCode;
@@ -154,6 +156,24 @@ namespace Amazon.MainframeModernization.Model
         internal bool IsSetJobName()
         {
             return this._jobName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobStepRestartMarker. 
+        /// <para>
+        /// The restart steps information for the most recent restart operation.
+        /// </para>
+        /// </summary>
+        public JobStepRestartMarker JobStepRestartMarker
+        {
+            get { return this._jobStepRestartMarker; }
+            set { this._jobStepRestartMarker = value; }
+        }
+
+        // Check to see if JobStepRestartMarker property is set
+        internal bool IsSetJobStepRestartMarker()
+        {
+            return this._jobStepRestartMarker != null;
         }
 
         /// <summary>

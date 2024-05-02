@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeStarconnections.Model
 {
     /// <summary>
@@ -38,10 +39,12 @@ namespace Amazon.CodeStarconnections.Model
     {
         private string _branch;
         private string _configFile;
+        private PublishDeploymentStatus _publishDeploymentStatus;
         private string _repositoryLinkId;
         private string _resourceName;
         private string _roleArn;
         private SyncConfigurationType _syncType;
+        private TriggerResourceUpdateOn _triggerResourceUpdateOn;
 
         /// <summary>
         /// Gets and sets the property Branch. 
@@ -80,6 +83,24 @@ namespace Amazon.CodeStarconnections.Model
         internal bool IsSetConfigFile()
         {
             return this._configFile != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PublishDeploymentStatus. 
+        /// <para>
+        /// Whether to enable or disable publishing of deployment status to source providers.
+        /// </para>
+        /// </summary>
+        public PublishDeploymentStatus PublishDeploymentStatus
+        {
+            get { return this._publishDeploymentStatus; }
+            set { this._publishDeploymentStatus = value; }
+        }
+
+        // Check to see if PublishDeploymentStatus property is set
+        internal bool IsSetPublishDeploymentStatus()
+        {
+            return this._publishDeploymentStatus != null;
         }
 
         /// <summary>
@@ -159,6 +180,24 @@ namespace Amazon.CodeStarconnections.Model
         internal bool IsSetSyncType()
         {
             return this._syncType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TriggerResourceUpdateOn. 
+        /// <para>
+        /// When to trigger Git sync to begin the stack update.
+        /// </para>
+        /// </summary>
+        public TriggerResourceUpdateOn TriggerResourceUpdateOn
+        {
+            get { return this._triggerResourceUpdateOn; }
+            set { this._triggerResourceUpdateOn = value; }
+        }
+
+        // Check to see if TriggerResourceUpdateOn property is set
+        internal bool IsSetTriggerResourceUpdateOn()
+        {
+            return this._triggerResourceUpdateOn != null;
         }
 
     }

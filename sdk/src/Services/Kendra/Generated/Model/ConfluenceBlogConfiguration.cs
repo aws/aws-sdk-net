@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class ConfluenceBlogConfiguration
     {
-        private List<ConfluenceBlogToIndexFieldMapping> _blogFieldMappings = new List<ConfluenceBlogToIndexFieldMapping>();
+        private List<ConfluenceBlogToIndexFieldMapping> _blogFieldMappings = AWSConfigs.InitializeCollections ? new List<ConfluenceBlogToIndexFieldMapping>() : null;
 
         /// <summary>
         /// Gets and sets the property BlogFieldMappings. 
@@ -62,7 +63,7 @@ namespace Amazon.Kendra.Model
         // Check to see if BlogFieldMappings property is set
         internal bool IsSetBlogFieldMappings()
         {
-            return this._blogFieldMappings != null && this._blogFieldMappings.Count > 0; 
+            return this._blogFieldMappings != null && (this._blogFieldMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

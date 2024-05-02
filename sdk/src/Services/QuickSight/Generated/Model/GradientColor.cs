@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class GradientColor
     {
-        private List<GradientStop> _stops = new List<GradientStop>();
+        private List<GradientStop> _stops = AWSConfigs.InitializeCollections ? new List<GradientStop>() : null;
 
         /// <summary>
         /// Gets and sets the property Stops. 
@@ -51,7 +52,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Stops property is set
         internal bool IsSetStops()
         {
-            return this._stops != null && this._stops.Count > 0; 
+            return this._stops != null && (this._stops.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

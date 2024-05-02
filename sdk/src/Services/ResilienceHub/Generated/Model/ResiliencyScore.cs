@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.ResilienceHub.Model
     /// </summary>
     public partial class ResiliencyScore
     {
-        private Dictionary<string, ScoringComponentResiliencyScore> _componentScore = new Dictionary<string, ScoringComponentResiliencyScore>();
-        private Dictionary<string, double> _disruptionScore = new Dictionary<string, double>();
+        private Dictionary<string, ScoringComponentResiliencyScore> _componentScore = AWSConfigs.InitializeCollections ? new Dictionary<string, ScoringComponentResiliencyScore>() : null;
+        private Dictionary<string, double> _disruptionScore = AWSConfigs.InitializeCollections ? new Dictionary<string, double>() : null;
         private double? _score;
 
         /// <summary>
@@ -58,7 +59,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if ComponentScore property is set
         internal bool IsSetComponentScore()
         {
-            return this._componentScore != null && this._componentScore.Count > 0; 
+            return this._componentScore != null && (this._componentScore.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -77,7 +78,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if DisruptionScore property is set
         internal bool IsSetDisruptionScore()
         {
-            return this._disruptionScore != null && this._disruptionScore.Count > 0; 
+            return this._disruptionScore != null && (this._disruptionScore.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
@@ -60,7 +61,7 @@ namespace Amazon.ElasticFileSystem.Model
     public partial class ModifyMountTargetSecurityGroupsRequest : AmazonElasticFileSystemRequest
     {
         private string _mountTargetId;
-        private List<string> _securityGroups = new List<string>();
+        private List<string> _securityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property MountTargetId. 
@@ -97,7 +98,7 @@ namespace Amazon.ElasticFileSystem.Model
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this._securityGroups != null && this._securityGroups.Count > 0; 
+            return this._securityGroups != null && (this._securityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

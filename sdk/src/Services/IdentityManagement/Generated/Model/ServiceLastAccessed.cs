@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.IdentityManagement.Model
         private string _serviceName;
         private string _serviceNamespace;
         private int? _totalAuthenticatedEntities;
-        private List<TrackedActionLastAccessed> _trackedActionsLastAccessed = new List<TrackedActionLastAccessed>();
+        private List<TrackedActionLastAccessed> _trackedActionsLastAccessed = AWSConfigs.InitializeCollections ? new List<TrackedActionLastAccessed>() : null;
 
         /// <summary>
         /// Gets and sets the property LastAuthenticated. 
@@ -220,7 +221,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if TrackedActionsLastAccessed property is set
         internal bool IsSetTrackedActionsLastAccessed()
         {
-            return this._trackedActionsLastAccessed != null && this._trackedActionsLastAccessed.Count > 0; 
+            return this._trackedActionsLastAccessed != null && (this._trackedActionsLastAccessed.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

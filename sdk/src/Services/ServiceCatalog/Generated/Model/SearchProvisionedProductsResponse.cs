@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ServiceCatalog.Model
     public partial class SearchProvisionedProductsResponse : AmazonWebServiceResponse
     {
         private string _nextPageToken;
-        private List<ProvisionedProductAttribute> _provisionedProducts = new List<ProvisionedProductAttribute>();
+        private List<ProvisionedProductAttribute> _provisionedProducts = AWSConfigs.InitializeCollections ? new List<ProvisionedProductAttribute>() : null;
         private int? _totalResultsCount;
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if ProvisionedProducts property is set
         internal bool IsSetProvisionedProducts()
         {
-            return this._provisionedProducts != null && this._provisionedProducts.Count > 0; 
+            return this._provisionedProducts != null && (this._provisionedProducts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

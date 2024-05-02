@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
@@ -105,7 +106,7 @@ namespace Amazon.ElasticFileSystem.Model
     public partial class PutLifecycleConfigurationRequest : AmazonElasticFileSystemRequest
     {
         private string _fileSystemId;
-        private List<LifecyclePolicy> _lifecyclePolicies = new List<LifecyclePolicy>();
+        private List<LifecyclePolicy> _lifecyclePolicies = AWSConfigs.InitializeCollections ? new List<LifecyclePolicy>() : null;
 
         /// <summary>
         /// Gets and sets the property FileSystemId. 
@@ -180,7 +181,7 @@ namespace Amazon.ElasticFileSystem.Model
         // Check to see if LifecyclePolicies property is set
         internal bool IsSetLifecyclePolicies()
         {
-            return this._lifecyclePolicies != null && this._lifecyclePolicies.Count > 0; 
+            return this._lifecyclePolicies != null && (this._lifecyclePolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

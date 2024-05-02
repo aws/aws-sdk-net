@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Signer.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Signer.Model
     /// </summary>
     public partial class GetRevocationStatusResponse : AmazonWebServiceResponse
     {
-        private List<string> _revokedEntities = new List<string>();
+        private List<string> _revokedEntities = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property RevokedEntities. 
@@ -51,7 +52,7 @@ namespace Amazon.Signer.Model
         // Check to see if RevokedEntities property is set
         internal bool IsSetRevokedEntities()
         {
-            return this._revokedEntities != null && this._revokedEntities.Count > 0; 
+            return this._revokedEntities != null && (this._revokedEntities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

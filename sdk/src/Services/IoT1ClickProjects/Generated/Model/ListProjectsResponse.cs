@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT1ClickProjects.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IoT1ClickProjects.Model
     public partial class ListProjectsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ProjectSummary> _projects = new List<ProjectSummary>();
+        private List<ProjectSummary> _projects = AWSConfigs.InitializeCollections ? new List<ProjectSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.IoT1ClickProjects.Model
         // Check to see if Projects property is set
         internal bool IsSetProjects()
         {
-            return this._projects != null && this._projects.Count > 0; 
+            return this._projects != null && (this._projects.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

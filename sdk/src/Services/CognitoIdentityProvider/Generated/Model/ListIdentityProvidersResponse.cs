@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     public partial class ListIdentityProvidersResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ProviderDescription> _providers = new List<ProviderDescription>();
+        private List<ProviderDescription> _providers = AWSConfigs.InitializeCollections ? new List<ProviderDescription>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if Providers property is set
         internal bool IsSetProviders()
         {
-            return this._providers != null && this._providers.Count > 0; 
+            return this._providers != null && (this._providers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

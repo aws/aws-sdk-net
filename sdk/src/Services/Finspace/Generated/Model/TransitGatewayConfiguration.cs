@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Finspace.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Finspace.Model
     /// </summary>
     public partial class TransitGatewayConfiguration
     {
-        private List<NetworkACLEntry> _attachmentNetworkAclConfiguration = new List<NetworkACLEntry>();
+        private List<NetworkACLEntry> _attachmentNetworkAclConfiguration = AWSConfigs.InitializeCollections ? new List<NetworkACLEntry>() : null;
         private string _routablecidrSpace;
         private string _transitGatewayID;
 
@@ -55,7 +56,7 @@ namespace Amazon.Finspace.Model
         // Check to see if AttachmentNetworkAclConfiguration property is set
         internal bool IsSetAttachmentNetworkAclConfiguration()
         {
-            return this._attachmentNetworkAclConfiguration != null && this._attachmentNetworkAclConfiguration.Count > 0; 
+            return this._attachmentNetworkAclConfiguration != null && (this._attachmentNetworkAclConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

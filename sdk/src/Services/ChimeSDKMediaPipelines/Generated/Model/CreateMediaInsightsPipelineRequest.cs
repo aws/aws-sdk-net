@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
@@ -38,9 +39,9 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         private KinesisVideoStreamRecordingSourceRuntimeConfiguration _kinesisVideoStreamRecordingSourceRuntimeConfiguration;
         private KinesisVideoStreamSourceRuntimeConfiguration _kinesisVideoStreamSourceRuntimeConfiguration;
         private string _mediaInsightsPipelineConfigurationArn;
-        private Dictionary<string, string> _mediaInsightsRuntimeMetadata = new Dictionary<string, string>();
+        private Dictionary<string, string> _mediaInsightsRuntimeMetadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private S3RecordingSinkRuntimeConfiguration _s3RecordingSinkRuntimeConfiguration;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
@@ -135,7 +136,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         // Check to see if MediaInsightsRuntimeMetadata property is set
         internal bool IsSetMediaInsightsRuntimeMetadata()
         {
-            return this._mediaInsightsRuntimeMetadata != null && this._mediaInsightsRuntimeMetadata.Count > 0; 
+            return this._mediaInsightsRuntimeMetadata != null && (this._mediaInsightsRuntimeMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -173,7 +174,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

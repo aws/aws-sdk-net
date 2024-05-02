@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Chime.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Chime.Model
     /// </summary>
     public partial class InviteUsersResponse : AmazonWebServiceResponse
     {
-        private List<Invite> _invites = new List<Invite>();
+        private List<Invite> _invites = AWSConfigs.InitializeCollections ? new List<Invite>() : null;
 
         /// <summary>
         /// Gets and sets the property Invites. 
@@ -50,7 +51,7 @@ namespace Amazon.Chime.Model
         // Check to see if Invites property is set
         internal bool IsSetInvites()
         {
-            return this._invites != null && this._invites.Count > 0; 
+            return this._invites != null && (this._invites.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

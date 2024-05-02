@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.AWSHealth.Model
     {
         private string _accountId;
         private int? _count;
-        private Dictionary<string, int> _statuses = new Dictionary<string, int>();
+        private Dictionary<string, int> _statuses = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -90,7 +91,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if Statuses property is set
         internal bool IsSetStatuses()
         {
-            return this._statuses != null && this._statuses.Count > 0; 
+            return this._statuses != null && (this._statuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

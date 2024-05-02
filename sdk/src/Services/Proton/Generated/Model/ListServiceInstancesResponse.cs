@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Proton.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Proton.Model
     public partial class ListServiceInstancesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ServiceInstanceSummary> _serviceInstances = new List<ServiceInstanceSummary>();
+        private List<ServiceInstanceSummary> _serviceInstances = AWSConfigs.InitializeCollections ? new List<ServiceInstanceSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.Proton.Model
         // Check to see if ServiceInstances property is set
         internal bool IsSetServiceInstances()
         {
-            return this._serviceInstances != null && this._serviceInstances.Count > 0; 
+            return this._serviceInstances != null && (this._serviceInstances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

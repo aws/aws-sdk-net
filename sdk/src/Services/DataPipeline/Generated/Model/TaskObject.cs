@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataPipeline.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.DataPipeline.Model
     public partial class TaskObject
     {
         private string _attemptId;
-        private Dictionary<string, PipelineObject> _objects = new Dictionary<string, PipelineObject>();
+        private Dictionary<string, PipelineObject> _objects = AWSConfigs.InitializeCollections ? new Dictionary<string, PipelineObject>() : null;
         private string _pipelineId;
         private string _taskId;
 
@@ -74,7 +75,7 @@ namespace Amazon.DataPipeline.Model
         // Check to see if Objects property is set
         internal bool IsSetObjects()
         {
-            return this._objects != null && this._objects.Count > 0; 
+            return this._objects != null && (this._objects.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

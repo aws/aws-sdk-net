@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Backup.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class ListBackupPlansResponse : AmazonWebServiceResponse
     {
-        private List<BackupPlansListMember> _backupPlansList = new List<BackupPlansListMember>();
+        private List<BackupPlansListMember> _backupPlansList = AWSConfigs.InitializeCollections ? new List<BackupPlansListMember>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Backup.Model
         // Check to see if BackupPlansList property is set
         internal bool IsSetBackupPlansList()
         {
-            return this._backupPlansList != null && this._backupPlansList.Count > 0; 
+            return this._backupPlansList != null && (this._backupPlansList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

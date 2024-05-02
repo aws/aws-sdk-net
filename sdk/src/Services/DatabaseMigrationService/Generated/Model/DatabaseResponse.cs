@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DatabaseMigrationService.Model
     /// </summary>
     public partial class DatabaseResponse
     {
-        private List<CollectorShortInfoResponse> _collectors = new List<CollectorShortInfoResponse>();
+        private List<CollectorShortInfoResponse> _collectors = AWSConfigs.InitializeCollections ? new List<CollectorShortInfoResponse>() : null;
         private string _databaseId;
         private string _databaseName;
         private string _ipAddress;
@@ -56,7 +57,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if Collectors property is set
         internal bool IsSetCollectors()
         {
-            return this._collectors != null && this._collectors.Count > 0; 
+            return this._collectors != null && (this._collectors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Enumerable containing all of the AuthEvents
         /// </summary>
         public IPaginatedEnumerable<AuthEventType> AuthEvents => 
-            new PaginatedResultKeyResponse<AdminListUserAuthEventsResponse, AuthEventType>(this, (i) => i.AuthEvents);
+            new PaginatedResultKeyResponse<AdminListUserAuthEventsResponse, AuthEventType>(this, (i) => i.AuthEvents ?? new List<AuthEventType>());
 
         internal AdminListUserAuthEventsPaginator(IAmazonCognitoIdentityProvider client, AdminListUserAuthEventsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<AdminListUserAuthEventsResponse> IPaginator<AdminListUserAuthEventsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<AdminListUserAuthEventsResponse> IPaginator<AdminListUserAuthEventsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

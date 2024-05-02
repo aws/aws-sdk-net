@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DatabaseMigrationService.Model
     /// </summary>
     public partial class DescribeEventsResponse : AmazonWebServiceResponse
     {
-        private List<DMSEvent> _events = new List<DMSEvent>();
+        private List<DMSEvent> _events = AWSConfigs.InitializeCollections ? new List<DMSEvent>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if Events property is set
         internal bool IsSetEvents()
         {
-            return this._events != null && this._events.Count > 0; 
+            return this._events != null && (this._events.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

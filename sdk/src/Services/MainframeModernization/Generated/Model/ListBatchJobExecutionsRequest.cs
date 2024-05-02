@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MainframeModernization.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.MainframeModernization.Model
     public partial class ListBatchJobExecutionsRequest : AmazonMainframeModernizationRequest
     {
         private string _applicationId;
-        private List<string> _executionIds = new List<string>();
+        private List<string> _executionIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _jobName;
         private int? _maxResults;
         private string _nextToken;
@@ -78,7 +79,7 @@ namespace Amazon.MainframeModernization.Model
         // Check to see if ExecutionIds property is set
         internal bool IsSetExecutionIds()
         {
-            return this._executionIds != null && this._executionIds.Count > 0; 
+            return this._executionIds != null && (this._executionIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

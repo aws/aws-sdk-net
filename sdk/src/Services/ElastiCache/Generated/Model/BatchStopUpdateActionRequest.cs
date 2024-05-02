@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
@@ -36,8 +37,8 @@ namespace Amazon.ElastiCache.Model
     /// </summary>
     public partial class BatchStopUpdateActionRequest : AmazonElastiCacheRequest
     {
-        private List<string> _cacheClusterIds = new List<string>();
-        private List<string> _replicationGroupIds = new List<string>();
+        private List<string> _cacheClusterIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _replicationGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _serviceUpdateName;
 
         /// <summary>
@@ -56,7 +57,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CacheClusterIds property is set
         internal bool IsSetCacheClusterIds()
         {
-            return this._cacheClusterIds != null && this._cacheClusterIds.Count > 0; 
+            return this._cacheClusterIds != null && (this._cacheClusterIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if ReplicationGroupIds property is set
         internal bool IsSetReplicationGroupIds()
         {
-            return this._replicationGroupIds != null && this._replicationGroupIds.Count > 0; 
+            return this._replicationGroupIds != null && (this._replicationGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3Control.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.S3Control.Model
     {
         private string _functionArn;
         private string _invocationSchemaVersion;
-        private Dictionary<string, string> _userArguments = new Dictionary<string, string>();
+        private Dictionary<string, string> _userArguments = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property FunctionArn. 
@@ -63,9 +64,9 @@ namespace Amazon.S3Control.Model
         /// Specifies the schema version for the payload that Batch Operations sends when invoking
         /// an Lambda function. Version <c>1.0</c> is the default. Version <c>2.0</c> is required
         /// when you use Batch Operations to invoke Lambda functions that act on directory buckets,
-        /// or if you need to specify <c>UserArguments</c>. For more information, see <a href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using
-        /// Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the <i>Amazon
-        /// Web Services Storage Blog</i>.
+        /// or if you need to specify <c>UserArguments</c>. For more information, see <a href="https://aws.amazon.com/blogs/storage/automate-object-processing-in-amazon-s3-directory-buckets-with-s3-batch-operations-and-aws-lambda/">Automate
+        /// object processing in Amazon S3 directory buckets with S3 Batch Operations and Lambda</a>
+        /// in the <i>Amazon Web Services Storage Blog</i>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -100,9 +101,9 @@ namespace Amazon.S3Control.Model
         /// Key-value pairs that are passed in the payload that Batch Operations sends when invoking
         /// an Lambda function. You must specify <c>InvocationSchemaVersion</c> <b>2.0</b> for
         /// <c>LambdaInvoke</c> operations that include <c>UserArguments</c>. For more information,
-        /// see <a href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using
-        /// Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the <i>Amazon
-        /// Web Services Storage Blog</i>.
+        /// see <a href="https://aws.amazon.com/blogs/storage/automate-object-processing-in-amazon-s3-directory-buckets-with-s3-batch-operations-and-aws-lambda/">Automate
+        /// object processing in Amazon S3 directory buckets with S3 Batch Operations and Lambda</a>
+        /// in the <i>Amazon Web Services Storage Blog</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -115,7 +116,7 @@ namespace Amazon.S3Control.Model
         // Check to see if UserArguments property is set
         internal bool IsSetUserArguments()
         {
-            return this._userArguments != null && this._userArguments.Count > 0; 
+            return this._userArguments != null && (this._userArguments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

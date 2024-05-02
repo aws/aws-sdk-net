@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SimpleEmail.Model
     /// </summary>
     public partial class GetIdentityMailFromDomainAttributesResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, IdentityMailFromDomainAttributes> _mailFromDomainAttributes = new Dictionary<string, IdentityMailFromDomainAttributes>();
+        private Dictionary<string, IdentityMailFromDomainAttributes> _mailFromDomainAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, IdentityMailFromDomainAttributes>() : null;
 
         /// <summary>
         /// Gets and sets the property MailFromDomainAttributes. 
@@ -51,7 +52,7 @@ namespace Amazon.SimpleEmail.Model
         // Check to see if MailFromDomainAttributes property is set
         internal bool IsSetMailFromDomainAttributes()
         {
-            return this._mailFromDomainAttributes != null && this._mailFromDomainAttributes.Count > 0; 
+            return this._mailFromDomainAttributes != null && (this._mailFromDomainAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

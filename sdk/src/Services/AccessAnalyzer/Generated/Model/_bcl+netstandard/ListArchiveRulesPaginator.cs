@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// Enumerable containing all of the ArchiveRules
         /// </summary>
         public IPaginatedEnumerable<ArchiveRuleSummary> ArchiveRules => 
-            new PaginatedResultKeyResponse<ListArchiveRulesResponse, ArchiveRuleSummary>(this, (i) => i.ArchiveRules);
+            new PaginatedResultKeyResponse<ListArchiveRulesResponse, ArchiveRuleSummary>(this, (i) => i.ArchiveRules ?? new List<ArchiveRuleSummary>());
 
         internal ListArchiveRulesPaginator(IAmazonAccessAnalyzer client, ListArchiveRulesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.AccessAnalyzer.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListArchiveRulesResponse> IPaginator<ListArchiveRulesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListArchiveRulesResponse> IPaginator<ListArchiveRulesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

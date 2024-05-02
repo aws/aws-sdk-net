@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FraudDetector.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.FraudDetector.Model
     public partial class UpdateListRequest : AmazonFraudDetectorRequest
     {
         private string _description;
-        private List<string> _elements = new List<string>();
+        private List<string> _elements = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private ListUpdateMode _updateMode;
         private string _variableType;
@@ -81,7 +82,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if Elements property is set
         internal bool IsSetElements()
         {
-            return this._elements != null && this._elements.Count > 0; 
+            return this._elements != null && (this._elements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

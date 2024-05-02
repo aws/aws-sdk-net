@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class DescribeComplianceByResourceResponse : AmazonWebServiceResponse
     {
-        private List<ComplianceByResource> _complianceByResources = new List<ComplianceByResource>();
+        private List<ComplianceByResource> _complianceByResources = AWSConfigs.InitializeCollections ? new List<ComplianceByResource>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if ComplianceByResources property is set
         internal bool IsSetComplianceByResources()
         {
-            return this._complianceByResources != null && this._complianceByResources.Count > 0; 
+            return this._complianceByResources != null && (this._complianceByResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

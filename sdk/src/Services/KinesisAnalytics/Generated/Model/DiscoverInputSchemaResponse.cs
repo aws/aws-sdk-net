@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.KinesisAnalytics.Model
     public partial class DiscoverInputSchemaResponse : AmazonWebServiceResponse
     {
         private SourceSchema _inputSchema;
-        private List<List<string>> _parsedInputRecords = new List<List<string>>();
-        private List<string> _processedInputRecords = new List<string>();
-        private List<string> _rawInputRecords = new List<string>();
+        private List<List<string>> _parsedInputRecords = AWSConfigs.InitializeCollections ? new List<List<string>>() : null;
+        private List<string> _processedInputRecords = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _rawInputRecords = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property InputSchema. 
@@ -74,7 +75,7 @@ namespace Amazon.KinesisAnalytics.Model
         // Check to see if ParsedInputRecords property is set
         internal bool IsSetParsedInputRecords()
         {
-            return this._parsedInputRecords != null && this._parsedInputRecords.Count > 0; 
+            return this._parsedInputRecords != null && (this._parsedInputRecords.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -93,7 +94,7 @@ namespace Amazon.KinesisAnalytics.Model
         // Check to see if ProcessedInputRecords property is set
         internal bool IsSetProcessedInputRecords()
         {
-            return this._processedInputRecords != null && this._processedInputRecords.Count > 0; 
+            return this._processedInputRecords != null && (this._processedInputRecords.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -111,7 +112,7 @@ namespace Amazon.KinesisAnalytics.Model
         // Check to see if RawInputRecords property is set
         internal bool IsSetRawInputRecords()
         {
-            return this._rawInputRecords != null && this._rawInputRecords.Count > 0; 
+            return this._rawInputRecords != null && (this._rawInputRecords.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

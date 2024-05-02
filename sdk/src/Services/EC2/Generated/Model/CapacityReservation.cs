@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.EC2.Model
         private string _availabilityZone;
         private string _availabilityZoneId;
         private int? _availableInstanceCount;
-        private List<CapacityAllocation> _capacityAllocations = new List<CapacityAllocation>();
+        private List<CapacityAllocation> _capacityAllocations = AWSConfigs.InitializeCollections ? new List<CapacityAllocation>() : null;
         private string _capacityReservationArn;
         private string _capacityReservationFleetId;
         private string _capacityReservationId;
@@ -54,7 +55,7 @@ namespace Amazon.EC2.Model
         private CapacityReservationType _reservationType;
         private DateTime? _startDate;
         private CapacityReservationState _state;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private CapacityReservationTenancy _tenancy;
         private int? _totalInstanceCount;
 
@@ -128,7 +129,7 @@ namespace Amazon.EC2.Model
         // Check to see if CapacityAllocations property is set
         internal bool IsSetCapacityAllocations()
         {
-            return this._capacityAllocations != null && this._capacityAllocations.Count > 0; 
+            return this._capacityAllocations != null && (this._capacityAllocations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -518,7 +519,7 @@ namespace Amazon.EC2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

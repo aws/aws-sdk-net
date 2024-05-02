@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListInferenceComponentsResponse : AmazonWebServiceResponse
     {
-        private List<InferenceComponentSummary> _inferenceComponents = new List<InferenceComponentSummary>();
+        private List<InferenceComponentSummary> _inferenceComponents = AWSConfigs.InitializeCollections ? new List<InferenceComponentSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if InferenceComponents property is set
         internal bool IsSetInferenceComponents()
         {
-            return this._inferenceComponents != null && this._inferenceComponents.Count > 0; 
+            return this._inferenceComponents != null && (this._inferenceComponents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

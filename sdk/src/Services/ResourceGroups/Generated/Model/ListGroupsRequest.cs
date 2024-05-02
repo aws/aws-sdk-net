@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
@@ -48,7 +49,7 @@ namespace Amazon.ResourceGroups.Model
     /// </summary>
     public partial class ListGroupsRequest : AmazonResourceGroupsRequest
     {
-        private List<GroupFilter> _filters = new List<GroupFilter>();
+        private List<GroupFilter> _filters = AWSConfigs.InitializeCollections ? new List<GroupFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -60,9 +61,10 @@ namespace Amazon.ResourceGroups.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <c>resource-type</c> - Filter the results to include only those of the specified
-        /// resource types. Specify up to five resource types in the format <c>AWS::<i>ServiceCode</i>::<i>ResourceType</i>
-        /// </c>. For example, <c>AWS::EC2::Instance</c>, or <c>AWS::S3::Bucket</c>.
+        ///  <c>resource-type</c> - Filter the results to include only those resource groups that
+        /// have the specified resource type in their <c>ResourceTypeFilter</c>. For example,
+        /// <c>AWS::EC2::Instance</c> would return any resource group with a <c>ResourceTypeFilter</c>
+        /// that includes <c>AWS::EC2::Instance</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -71,11 +73,27 @@ namespace Amazon.ResourceGroups.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <c>AWS::AppRegistry::Application</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::AppRegistry::ApplicationResourceGroups</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::CloudFormation::Stack</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <c>AWS::EC2::CapacityReservationPool</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <c>AWS::EC2::HostManagement</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AWS::NetworkFirewall::RuleGroup</c> 
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
@@ -88,7 +106,7 @@ namespace Amazon.ResourceGroups.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.DirectoryService.Model
         private string _description;
         private int? _desiredNumberOfDomainControllers;
         private string _directoryId;
-        private List<string> _dnsIpAddrs = new List<string>();
+        private List<string> _dnsIpAddrs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DirectoryEdition _edition;
         private DateTime? _launchTime;
         private string _name;
@@ -197,7 +198,7 @@ namespace Amazon.DirectoryService.Model
         // Check to see if DnsIpAddrs property is set
         internal bool IsSetDnsIpAddrs()
         {
-            return this._dnsIpAddrs != null && this._dnsIpAddrs.Count > 0; 
+            return this._dnsIpAddrs != null && (this._dnsIpAddrs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

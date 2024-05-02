@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.QuickSight.Model
         /// Enumerable containing all of the TemplateSummaryList
         /// </summary>
         public IPaginatedEnumerable<TemplateSummary> TemplateSummaryList => 
-            new PaginatedResultKeyResponse<ListTemplatesResponse, TemplateSummary>(this, (i) => i.TemplateSummaryList);
+            new PaginatedResultKeyResponse<ListTemplatesResponse, TemplateSummary>(this, (i) => i.TemplateSummaryList ?? new List<TemplateSummary>());
 
         internal ListTemplatesPaginator(IAmazonQuickSight client, ListTemplatesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.QuickSight.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListTemplatesResponse> IPaginator<ListTemplatesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListTemplatesResponse> IPaginator<ListTemplatesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

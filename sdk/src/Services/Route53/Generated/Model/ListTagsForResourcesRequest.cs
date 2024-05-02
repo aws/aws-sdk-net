@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.Route53.Model
     public partial class ListTagsForResourcesRequest : AmazonRoute53Request
     {
         private TagResourceType _resourceType;
-        private List<string> _resourceIds = new List<string>();
+        private List<string> _resourceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceType. 
@@ -88,7 +89,7 @@ namespace Amazon.Route53.Model
         // Check to see if ResourceIds property is set
         internal bool IsSetResourceIds()
         {
-            return this._resourceIds != null && this._resourceIds.Count > 0; 
+            return this._resourceIds != null && (this._resourceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

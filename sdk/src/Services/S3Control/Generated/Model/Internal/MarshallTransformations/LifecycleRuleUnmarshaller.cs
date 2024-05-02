@@ -30,12 +30,13 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LifecycleRule Object
     /// </summary>  
-    public class LifecycleRuleUnmarshaller : IUnmarshaller<LifecycleRule, XmlUnmarshallerContext>
+    public class LifecycleRuleUnmarshaller : IUnmarshaller<LifecycleRule, XmlUnmarshallerContext>, IUnmarshaller<LifecycleRule, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -87,6 +88,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("NoncurrentVersionTransitions/NoncurrentVersionTransition", targetDepth))
                     {
+                        if (unmarshalledObject.NoncurrentVersionTransitions == null)
+                        {
+                            unmarshalledObject.NoncurrentVersionTransitions = new List<NoncurrentVersionTransition>();
+                        }
                         var unmarshaller = NoncurrentVersionTransitionUnmarshaller.Instance;
                         unmarshalledObject.NoncurrentVersionTransitions.Add(unmarshaller.Unmarshall(context));
                         continue;
@@ -99,6 +104,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Transitions/Transition", targetDepth))
                     {
+                        if (unmarshalledObject.Transitions == null)
+                        {
+                            unmarshalledObject.Transitions = new List<Transition>();
+                        }
                         var unmarshaller = TransitionUnmarshaller.Instance;
                         unmarshalledObject.Transitions.Add(unmarshaller.Unmarshall(context));
                         continue;
@@ -110,6 +119,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public LifecycleRule Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static LifecycleRuleUnmarshaller _instance = new LifecycleRuleUnmarshaller();        

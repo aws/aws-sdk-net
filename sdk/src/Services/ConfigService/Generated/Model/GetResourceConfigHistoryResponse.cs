@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class GetResourceConfigHistoryResponse : AmazonWebServiceResponse
     {
-        private List<ConfigurationItem> _configurationItems = new List<ConfigurationItem>();
+        private List<ConfigurationItem> _configurationItems = AWSConfigs.InitializeCollections ? new List<ConfigurationItem>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if ConfigurationItems property is set
         internal bool IsSetConfigurationItems()
         {
-            return this._configurationItems != null && this._configurationItems.Count > 0; 
+            return this._configurationItems != null && (this._configurationItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

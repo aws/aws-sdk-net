@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -33,11 +34,11 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ModelDashboardModel
     {
-        private List<ModelDashboardEndpoint> _endpoints = new List<ModelDashboardEndpoint>();
+        private List<ModelDashboardEndpoint> _endpoints = AWSConfigs.InitializeCollections ? new List<ModelDashboardEndpoint>() : null;
         private TransformJob _lastBatchTransformJob;
         private Model _model;
         private ModelDashboardModelCard _modelCard;
-        private List<ModelDashboardMonitoringSchedule> _monitoringSchedules = new List<ModelDashboardMonitoringSchedule>();
+        private List<ModelDashboardMonitoringSchedule> _monitoringSchedules = AWSConfigs.InitializeCollections ? new List<ModelDashboardMonitoringSchedule>() : null;
 
         /// <summary>
         /// Gets and sets the property Endpoints. 
@@ -54,7 +55,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Endpoints property is set
         internal bool IsSetEndpoints()
         {
-            return this._endpoints != null && this._endpoints.Count > 0; 
+            return this._endpoints != null && (this._endpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -123,7 +124,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if MonitoringSchedules property is set
         internal bool IsSetMonitoringSchedules()
         {
-            return this._monitoringSchedules != null && this._monitoringSchedules.Count > 0; 
+            return this._monitoringSchedules != null && (this._monitoringSchedules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

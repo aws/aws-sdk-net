@@ -26,23 +26,25 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes one or more tags from a Kinesis Data Analytics application. For more information,
-    /// see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using
+    /// Removes one or more tags from a Managed Service for Apache Flink application. For
+    /// more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using
     /// Tagging</a>.
     /// </summary>
     public partial class UntagResourceRequest : AmazonKinesisAnalyticsV2Request
     {
         private string _resourceARN;
-        private List<string> _tagKeys = new List<string>();
+        private List<string> _tagKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        /// The ARN of the Kinesis Data Analytics application from which to remove the tags.
+        /// The ARN of the Managed Service for Apache Flink application from which to remove the
+        /// tags.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -74,7 +76,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         // Check to see if TagKeys property is set
         internal bool IsSetTagKeys()
         {
-            return this._tagKeys != null && this._tagKeys.Count > 0; 
+            return this._tagKeys != null && (this._tagKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -43,7 +44,7 @@ namespace Amazon.IoT.Model
         private long? _expectedVersion;
         private bool? _force;
         private string _jobId;
-        private Dictionary<string, string> _statusDetails = new Dictionary<string, string>();
+        private Dictionary<string, string> _statusDetails = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _thingName;
 
         /// <summary>
@@ -133,7 +134,7 @@ namespace Amazon.IoT.Model
         // Check to see if StatusDetails property is set
         internal bool IsSetStatusDetails()
         {
-            return this._statusDetails != null && this._statusDetails.Count > 0; 
+            return this._statusDetails != null && (this._statusDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

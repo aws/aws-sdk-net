@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -90,6 +91,10 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
                     if (context.TestExpression("PlatformBranchSummaryList/member", targetDepth))
                     {
                         var unmarshaller = PlatformBranchSummaryUnmarshaller.Instance;
+                        if (response.PlatformBranchSummaryList == null)
+                        {
+                            response.PlatformBranchSummaryList = new List<PlatformBranchSummary>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.PlatformBranchSummaryList.Add(item);
                         continue;

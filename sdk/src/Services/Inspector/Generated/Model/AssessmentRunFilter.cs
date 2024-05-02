@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector.Model
 {
     /// <summary>
@@ -36,10 +37,10 @@ namespace Amazon.Inspector.Model
         private TimestampRange _completionTimeRange;
         private DurationRange _durationRange;
         private string _namePattern;
-        private List<string> _rulesPackageArns = new List<string>();
+        private List<string> _rulesPackageArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TimestampRange _startTimeRange;
         private TimestampRange _stateChangeTimeRange;
-        private List<string> _states = new List<string>();
+        private List<string> _states = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CompletionTimeRange. 
@@ -120,7 +121,7 @@ namespace Amazon.Inspector.Model
         // Check to see if RulesPackageArns property is set
         internal bool IsSetRulesPackageArns()
         {
-            return this._rulesPackageArns != null && this._rulesPackageArns.Count > 0; 
+            return this._rulesPackageArns != null && (this._rulesPackageArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -180,7 +181,7 @@ namespace Amazon.Inspector.Model
         // Check to see if States property is set
         internal bool IsSetStates()
         {
-            return this._states != null && this._states.Count > 0; 
+            return this._states != null && (this._states.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

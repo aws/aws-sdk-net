@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTTwinMaker.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.IoTTwinMaker.Model
     /// </summary>
     public partial class UpdateEntityRequest : AmazonIoTTwinMakerRequest
     {
-        private Dictionary<string, ComponentUpdateRequest> _componentUpdates = new Dictionary<string, ComponentUpdateRequest>();
-        private Dictionary<string, CompositeComponentUpdateRequest> _compositeComponentUpdates = new Dictionary<string, CompositeComponentUpdateRequest>();
+        private Dictionary<string, ComponentUpdateRequest> _componentUpdates = AWSConfigs.InitializeCollections ? new Dictionary<string, ComponentUpdateRequest>() : null;
+        private Dictionary<string, CompositeComponentUpdateRequest> _compositeComponentUpdates = AWSConfigs.InitializeCollections ? new Dictionary<string, CompositeComponentUpdateRequest>() : null;
         private string _description;
         private string _entityId;
         private string _entityName;
@@ -58,7 +59,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if ComponentUpdates property is set
         internal bool IsSetComponentUpdates()
         {
-            return this._componentUpdates != null && this._componentUpdates.Count > 0; 
+            return this._componentUpdates != null && (this._componentUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -77,7 +78,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if CompositeComponentUpdates property is set
         internal bool IsSetCompositeComponentUpdates()
         {
-            return this._compositeComponentUpdates != null && this._compositeComponentUpdates.Count > 0; 
+            return this._compositeComponentUpdates != null && (this._compositeComponentUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

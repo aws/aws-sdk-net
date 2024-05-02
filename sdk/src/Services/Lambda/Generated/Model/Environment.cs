@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lambda.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class Environment
     {
-        private Dictionary<string, string> _variables = new Dictionary<string, string>();
+        private Dictionary<string, string> _variables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Variables. 

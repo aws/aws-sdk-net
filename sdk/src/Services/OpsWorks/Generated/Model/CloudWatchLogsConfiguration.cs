@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.OpsWorks.Model
     public partial class CloudWatchLogsConfiguration
     {
         private bool? _enabled;
-        private List<CloudWatchLogsLogStream> _logStreams = new List<CloudWatchLogsLogStream>();
+        private List<CloudWatchLogsLogStream> _logStreams = AWSConfigs.InitializeCollections ? new List<CloudWatchLogsLogStream>() : null;
 
         /// <summary>
         /// Gets and sets the property Enabled. 
@@ -69,7 +70,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if LogStreams property is set
         internal bool IsSetLogStreams()
         {
-            return this._logStreams != null && this._logStreams.Count > 0; 
+            return this._logStreams != null && (this._logStreams.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
@@ -37,8 +38,8 @@ namespace Amazon.AutoScaling.Model
         private string _autoScalingGroupName;
         private int? _maxRecords;
         private string _nextToken;
-        private List<string> _policyNames = new List<string>();
-        private List<string> _policyTypes = new List<string>();
+        private List<string> _policyNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _policyTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AutoScalingGroupName. 
@@ -118,7 +119,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if PolicyNames property is set
         internal bool IsSetPolicyNames()
         {
-            return this._policyNames != null && this._policyNames.Count > 0; 
+            return this._policyNames != null && (this._policyNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -137,7 +138,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if PolicyTypes property is set
         internal bool IsSetPolicyTypes()
         {
-            return this._policyTypes != null && this._policyTypes.Count > 0; 
+            return this._policyTypes != null && (this._policyTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

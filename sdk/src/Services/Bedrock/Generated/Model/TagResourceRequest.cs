@@ -26,22 +26,23 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Associate tags with a resource. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/what-is-service.html">Tagging
-    /// resources</a> in the Bedrock User Guide.
+    /// Associate tags with a resource. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/tagging.html">Tagging
+    /// resources</a> in the Amazon Bedrock User Guide.
     /// </summary>
     public partial class TagResourceRequest : AmazonBedrockRequest
     {
         private string _resourcearn;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceARN. 
         /// <para>
-        /// The ARN of the resource to tag.
+        /// The Amazon Resource Name (ARN) of the resource to tag.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=1011)]
@@ -73,7 +74,7 @@ namespace Amazon.Bedrock.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MigrationHubOrchestrator.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
     public partial class ListTemplateStepsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TemplateStepSummary> _templateStepSummaryList = new List<TemplateStepSummary>();
+        private List<TemplateStepSummary> _templateStepSummaryList = AWSConfigs.InitializeCollections ? new List<TemplateStepSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         // Check to see if TemplateStepSummaryList property is set
         internal bool IsSetTemplateStepSummaryList()
         {
-            return this._templateStepSummaryList != null && this._templateStepSummaryList.Count > 0; 
+            return this._templateStepSummaryList != null && (this._templateStepSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

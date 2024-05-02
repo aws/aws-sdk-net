@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoTAnalytics.Model
     /// </summary>
     public partial class SampleChannelDataResponse : AmazonWebServiceResponse
     {
-        private List<MemoryStream> _payloads = new List<MemoryStream>();
+        private List<MemoryStream> _payloads = AWSConfigs.InitializeCollections ? new List<MemoryStream>() : null;
 
         /// <summary>
         /// Gets and sets the property Payloads. 
@@ -51,7 +52,7 @@ namespace Amazon.IoTAnalytics.Model
         // Check to see if Payloads property is set
         internal bool IsSetPayloads()
         {
-            return this._payloads != null && this._payloads.Count > 0; 
+            return this._payloads != null && (this._payloads.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

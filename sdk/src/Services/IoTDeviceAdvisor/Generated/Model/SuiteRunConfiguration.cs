@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTDeviceAdvisor.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
     {
         private bool? _parallelRun;
         private DeviceUnderTest _primaryDevice;
-        private List<string> _selectedTestList = new List<string>();
+        private List<string> _selectedTestList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ParallelRun. 
@@ -91,7 +92,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         // Check to see if SelectedTestList property is set
         internal bool IsSetSelectedTestList()
         {
-            return this._selectedTestList != null && this._selectedTestList.Count > 0; 
+            return this._selectedTestList != null && (this._selectedTestList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

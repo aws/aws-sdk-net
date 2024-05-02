@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Backup.Model
 {
     /// <summary>
@@ -44,9 +45,9 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class ControlScope
     {
-        private List<string> _complianceResourceIds = new List<string>();
-        private List<string> _complianceResourceTypes = new List<string>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<string> _complianceResourceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _complianceResourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ComplianceResourceIds. 
@@ -65,7 +66,7 @@ namespace Amazon.Backup.Model
         // Check to see if ComplianceResourceIds property is set
         internal bool IsSetComplianceResourceIds()
         {
-            return this._complianceResourceIds != null && this._complianceResourceIds.Count > 0; 
+            return this._complianceResourceIds != null && (this._complianceResourceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -84,7 +85,7 @@ namespace Amazon.Backup.Model
         // Check to see if ComplianceResourceTypes property is set
         internal bool IsSetComplianceResourceTypes()
         {
-            return this._complianceResourceTypes != null && this._complianceResourceTypes.Count > 0; 
+            return this._complianceResourceTypes != null && (this._complianceResourceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -105,7 +106,7 @@ namespace Amazon.Backup.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

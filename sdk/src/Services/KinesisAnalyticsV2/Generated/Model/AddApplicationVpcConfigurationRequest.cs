@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
     /// 
     ///  
     /// <para>
-    /// Note the following about VPC configurations for Kinesis Data Analytics applications:
+    /// Note the following about VPC configurations for Managed Service for Apache Flink applications:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -43,9 +44,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// When a VPC is added to a Kinesis Data Analytics application, the application can no
-    /// longer be accessed from the Internet directly. To enable Internet access to the application,
-    /// add an Internet gateway to your VPC.
+    /// When a VPC is added to a Managed Service for Apache Flink application, the application
+    /// can no longer be accessed from the Internet directly. To enable Internet access to
+    /// the application, add an Internet gateway to your VPC.
     /// </para>
     ///  </li> </ul>
     /// </summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConnectCases.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ConnectCases.Model
     /// </summary>
     public partial class FieldGroup
     {
-        private List<FieldItem> _fields = new List<FieldItem>();
+        private List<FieldItem> _fields = AWSConfigs.InitializeCollections ? new List<FieldItem>() : null;
         private string _name;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.ConnectCases.Model
         // Check to see if Fields property is set
         internal bool IsSetFields()
         {
-            return this._fields != null && this._fields.Count > 0; 
+            return this._fields != null && (this._fields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CloudWatch.Model
     public partial class Datapoint
     {
         private double? _average;
-        private Dictionary<string, double> _extendedStatistics = new Dictionary<string, double>();
+        private Dictionary<string, double> _extendedStatistics = AWSConfigs.InitializeCollections ? new Dictionary<string, double>() : null;
         private double? _maximum;
         private double? _minimum;
         private double? _sampleCount;
@@ -75,7 +76,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if ExtendedStatistics property is set
         internal bool IsSetExtendedStatistics()
         {
-            return this._extendedStatistics != null && this._extendedStatistics.Count > 0; 
+            return this._extendedStatistics != null && (this._extendedStatistics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

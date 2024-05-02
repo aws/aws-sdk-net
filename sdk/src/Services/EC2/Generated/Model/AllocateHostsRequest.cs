@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class AllocateHostsRequest : AmazonEC2Request
     {
-        private List<string> _assetIds = new List<string>();
+        private List<string> _assetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private AutoPlacement _autoPlacement;
         private string _availabilityZone;
         private string _clientToken;
@@ -46,7 +47,7 @@ namespace Amazon.EC2.Model
         private string _instanceType;
         private string _outpostArn;
         private int? _quantity;
-        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
+        private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
 
         /// <summary>
         /// Gets and sets the property AssetIds. 
@@ -77,7 +78,7 @@ namespace Amazon.EC2.Model
         // Check to see if AssetIds property is set
         internal bool IsSetAssetIds()
         {
-            return this._assetIds != null && this._assetIds.Count > 0; 
+            return this._assetIds != null && (this._assetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -301,7 +302,7 @@ namespace Amazon.EC2.Model
         // Check to see if TagSpecifications property is set
         internal bool IsSetTagSpecifications()
         {
-            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
+            return this._tagSpecifications != null && (this._tagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

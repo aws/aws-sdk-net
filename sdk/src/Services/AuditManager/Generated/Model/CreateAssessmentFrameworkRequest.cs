@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
@@ -35,10 +36,10 @@ namespace Amazon.AuditManager.Model
     public partial class CreateAssessmentFrameworkRequest : AmazonAuditManagerRequest
     {
         private string _complianceType;
-        private List<CreateAssessmentFrameworkControlSet> _controlSets = new List<CreateAssessmentFrameworkControlSet>();
+        private List<CreateAssessmentFrameworkControlSet> _controlSets = AWSConfigs.InitializeCollections ? new List<CreateAssessmentFrameworkControlSet>() : null;
         private string _description;
         private string _name;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ComplianceType. 
@@ -76,7 +77,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if ControlSets property is set
         internal bool IsSetControlSets()
         {
-            return this._controlSets != null && this._controlSets.Count > 0; 
+            return this._controlSets != null && (this._controlSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -133,7 +134,7 @@ namespace Amazon.AuditManager.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,40 +26,47 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDhcpOptions operation.
-    /// Creates a set of DHCP options for your VPC. After creating the set, you must associate
-    /// it with the VPC, causing all existing and new instances that you launch in the VPC
-    /// to use this set of DHCP options. The following are the individual DHCP options you
-    /// can specify. For more information about the options, see <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC
-    /// 2132</a>.
+    /// Creates a custom set of DHCP options. After you create a DHCP option set, you associate
+    /// it with a VPC. After you associate a DHCP option set with a VPC, all existing and
+    /// newly launched instances in the VPC use this set of DHCP options.
     /// 
+    ///  
+    /// <para>
+    /// The following are the individual DHCP options you can specify. For more information,
+    /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
+    /// options sets</a> in the <i>Amazon VPC User Guide</i>.
+    /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <c>domain-name-servers</c> - The IP addresses of up to four domain name servers,
-    /// or AmazonProvidedDNS. The default DHCP option set specifies AmazonProvidedDNS. If
-    /// specifying more than one domain name server, specify the IP addresses in a single
-    /// parameter, separated by commas. To have your instance receive a custom DNS hostname
-    /// as specified in <c>domain-name</c>, you must set <c>domain-name-servers</c> to a custom
-    /// DNS server.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
     ///  <c>domain-name</c> - If you're using AmazonProvidedDNS in <c>us-east-1</c>, specify
-    /// <c>ec2.internal</c>. If you're using AmazonProvidedDNS in another Region, specify
-    /// <c>region.compute.internal</c> (for example, <c>ap-northeast-1.compute.internal</c>).
-    /// Otherwise, specify a domain name (for example, <c>ExampleCompany.com</c>). This value
-    /// is used to complete unqualified DNS hostnames. <b>Important</b>: Some Linux operating
-    /// systems accept multiple domain names separated by spaces. However, Windows and other
-    /// Linux operating systems treat the value as a single domain, which results in unexpected
-    /// behavior. If your DHCP options set is associated with a VPC that has instances with
-    /// multiple operating systems, specify only one domain name.
+    /// <c>ec2.internal</c>. If you're using AmazonProvidedDNS in any other Region, specify
+    /// <c>region.compute.internal</c>. Otherwise, specify a custom domain name. This value
+    /// is used to complete unqualified DNS hostnames.
+    /// </para>
+    ///  
+    /// <para>
+    /// Some Linux operating systems accept multiple domain names separated by spaces. However,
+    /// Windows and other Linux operating systems treat the value as a single domain, which
+    /// results in unexpected behavior. If your DHCP option set is associated with a VPC that
+    /// has instances running operating systems that treat the value as a single domain, specify
+    /// only one domain name.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <c>ntp-servers</c> - The IP addresses of up to four Network Time Protocol (NTP) servers.
+    ///  <c>domain-name-servers</c> - The IP addresses of up to four DNS servers, or AmazonProvidedDNS.
+    /// To specify multiple domain name servers in a single parameter, separate the IP addresses
+    /// using commas. To have your instances receive custom DNS hostnames as specified in
+    /// <c>domain-name</c>, you must specify a custom DNS server.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>ntp-servers</c> - The IP addresses of up to eight Network Time Protocol (NTP)
+    /// servers (four IPv4 addresses and four IPv6 addresses).
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -68,23 +75,25 @@ namespace Amazon.EC2.Model
     ///  </li> <li> 
     /// <para>
     ///  <c>netbios-node-type</c> - The NetBIOS node type (1, 2, 4, or 8). We recommend that
-    /// you specify 2 (broadcast and multicast are not currently supported). For more information
-    /// about these node types, see <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.
+    /// you specify 2. Broadcast and multicast are not supported. For more information about
+    /// NetBIOS node types, see <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.
     /// </para>
-    ///  </li> </ul> 
+    ///  </li> <li> 
     /// <para>
-    /// Your VPC automatically starts out with a set of DHCP options that includes only a
-    /// DNS server that we provide (AmazonProvidedDNS). If you create a set of options, and
-    /// if your VPC has an internet gateway, make sure to set the <c>domain-name-servers</c>
-    /// option either to <c>AmazonProvidedDNS</c> or to a domain name server of your choice.
-    /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
-    /// options sets</a> in the <i>Amazon VPC User Guide</i>.
+    ///  <c>ipv6-address-preferred-lease-time</c> - A value (in seconds, minutes, hours, or
+    /// years) for how frequently a running instance with an IPv6 assigned to it goes through
+    /// DHCPv6 lease renewal. Acceptable values are between 140 and 2147483647 seconds (approximately
+    /// 68 years). If no value is entered, the default lease time is 140 seconds. If you use
+    /// long-term addressing for EC2 instances, you can increase the lease time and avoid
+    /// frequent lease renewal requests. Lease renewal typically occurs when half of the lease
+    /// time has elapsed.
     /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class CreateDhcpOptionsRequest : AmazonEC2Request
     {
-        private List<DhcpConfiguration> _dhcpConfigurations = new List<DhcpConfiguration>();
-        private List<TagSpecification> _tagSpecifications = new List<TagSpecification>();
+        private List<DhcpConfiguration> _dhcpConfigurations = AWSConfigs.InitializeCollections ? new List<DhcpConfiguration>() : null;
+        private List<TagSpecification> _tagSpecifications = AWSConfigs.InitializeCollections ? new List<TagSpecification>() : null;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -116,7 +125,7 @@ namespace Amazon.EC2.Model
         // Check to see if DhcpConfigurations property is set
         internal bool IsSetDhcpConfigurations()
         {
-            return this._dhcpConfigurations != null && this._dhcpConfigurations.Count > 0; 
+            return this._dhcpConfigurations != null && (this._dhcpConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -134,7 +143,7 @@ namespace Amazon.EC2.Model
         // Check to see if TagSpecifications property is set
         internal bool IsSetTagSpecifications()
         {
-            return this._tagSpecifications != null && this._tagSpecifications.Count > 0; 
+            return this._tagSpecifications != null && (this._tagSpecifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

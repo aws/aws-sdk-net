@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.RDS.Model
         private string _optionGroupArn;
         private string _optionGroupDescription;
         private string _optionGroupName;
-        private List<Option> _options = new List<Option>();
+        private List<Option> _options = AWSConfigs.InitializeCollections ? new List<Option>() : null;
         private string _sourceAccountId;
         private string _sourceOptionGroup;
         private string _vpcId;
@@ -188,7 +189,7 @@ namespace Amazon.RDS.Model
         // Check to see if Options property is set
         internal bool IsSetOptions()
         {
-            return this._options != null && this._options.Count > 0; 
+            return this._options != null && (this._options.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IoT.Model
     public partial class ListAuditSuppressionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<AuditSuppression> _suppressions = new List<AuditSuppression>();
+        private List<AuditSuppression> _suppressions = AWSConfigs.InitializeCollections ? new List<AuditSuppression>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.IoT.Model
         // Check to see if Suppressions property is set
         internal bool IsSetSuppressions()
         {
-            return this._suppressions != null && this._suppressions.Count > 0; 
+            return this._suppressions != null && (this._suppressions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

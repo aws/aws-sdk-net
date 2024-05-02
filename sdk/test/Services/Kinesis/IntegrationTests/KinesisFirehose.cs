@@ -150,7 +150,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     Client.DeleteDeliveryStream(DeliveryStreamName);
             }
 
-            catch (Exception e)
+            catch (Exception)
             {}
 
             try
@@ -169,7 +169,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 });
             }
 
-            catch (Exception e)
+            catch (Exception)
             {}
 
             try
@@ -178,7 +178,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 AmazonS3Util.DeleteS3BucketWithObjects(s3Client, BucketName);
             }
 
-            catch(Exception e)
+            catch(Exception)
             {}
         }
 

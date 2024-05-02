@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.OpsWorks.Model
     /// </summary>
     public partial class DescribeRaidArraysResponse : AmazonWebServiceResponse
     {
-        private List<RaidArray> _raidArrays = new List<RaidArray>();
+        private List<RaidArray> _raidArrays = AWSConfigs.InitializeCollections ? new List<RaidArray>() : null;
 
         /// <summary>
         /// Gets and sets the property RaidArrays. 
@@ -50,7 +51,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if RaidArrays property is set
         internal bool IsSetRaidArrays()
         {
-            return this._raidArrays != null && this._raidArrays.Count > 0; 
+            return this._raidArrays != null && (this._raidArrays.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

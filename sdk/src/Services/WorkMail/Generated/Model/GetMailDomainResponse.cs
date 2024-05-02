@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkMail.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.WorkMail.Model
         private bool? _isDefault;
         private bool? _isTestDomain;
         private DnsRecordVerificationStatus _ownershipVerificationStatus;
-        private List<DnsRecord> _records = new List<DnsRecord>();
+        private List<DnsRecord> _records = AWSConfigs.InitializeCollections ? new List<DnsRecord>() : null;
 
         /// <summary>
         /// Gets and sets the property DkimVerificationStatus. 
@@ -128,7 +129,7 @@ namespace Amazon.WorkMail.Model
         // Check to see if Records property is set
         internal bool IsSetRecords()
         {
-            return this._records != null && this._records.Count > 0; 
+            return this._records != null && (this._records.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Route53.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Route53.Model
         /// Enumerable containing all of the ResourceRecordSets
         /// </summary>
         public IPaginatedEnumerable<ResourceRecordSet> ResourceRecordSets => 
-            new PaginatedResultKeyResponse<ListResourceRecordSetsResponse, ResourceRecordSet>(this, (i) => i.ResourceRecordSets);
+            new PaginatedResultKeyResponse<ListResourceRecordSetsResponse, ResourceRecordSet>(this, (i) => i.ResourceRecordSets ?? new List<ResourceRecordSet>());
 
         internal ListResourceRecordSetsPaginator(IAmazonRoute53 client, ListResourceRecordSetsRequest request)
         {
@@ -79,7 +80,7 @@ namespace Amazon.Route53.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListResourceRecordSetsResponse> IPaginator<ListResourceRecordSetsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListResourceRecordSetsResponse> IPaginator<ListResourceRecordSetsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

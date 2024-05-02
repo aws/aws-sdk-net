@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SSMContacts.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.SSMContacts.Model
     /// </summary>
     public partial class Plan
     {
-        private List<string> _rotationIds = new List<string>();
-        private List<Stage> _stages = new List<Stage>();
+        private List<string> _rotationIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Stage> _stages = AWSConfigs.InitializeCollections ? new List<Stage>() : null;
 
         /// <summary>
         /// Gets and sets the property RotationIds. 
@@ -54,7 +55,7 @@ namespace Amazon.SSMContacts.Model
         // Check to see if RotationIds property is set
         internal bool IsSetRotationIds()
         {
-            return this._rotationIds != null && this._rotationIds.Count > 0; 
+            return this._rotationIds != null && (this._rotationIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.SSMContacts.Model
         // Check to see if Stages property is set
         internal bool IsSetStages()
         {
-            return this._stages != null && this._stages.Count > 0; 
+            return this._stages != null && (this._stages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

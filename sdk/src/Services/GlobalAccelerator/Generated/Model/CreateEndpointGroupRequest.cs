@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
@@ -43,7 +44,7 @@ namespace Amazon.GlobalAccelerator.Model
     /// </summary>
     public partial class CreateEndpointGroupRequest : AmazonGlobalAcceleratorRequest
     {
-        private List<EndpointConfiguration> _endpointConfigurations = new List<EndpointConfiguration>();
+        private List<EndpointConfiguration> _endpointConfigurations = AWSConfigs.InitializeCollections ? new List<EndpointConfiguration>() : null;
         private string _endpointGroupRegion;
         private int? _healthCheckIntervalSeconds;
         private string _healthCheckPath;
@@ -51,7 +52,7 @@ namespace Amazon.GlobalAccelerator.Model
         private HealthCheckProtocol _healthCheckProtocol;
         private string _idempotencyToken;
         private string _listenerArn;
-        private List<PortOverride> _portOverrides = new List<PortOverride>();
+        private List<PortOverride> _portOverrides = AWSConfigs.InitializeCollections ? new List<PortOverride>() : null;
         private int? _thresholdCount;
         private float? _trafficDialPercentage;
 
@@ -71,7 +72,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if EndpointConfigurations property is set
         internal bool IsSetEndpointConfigurations()
         {
-            return this._endpointConfigurations != null && this._endpointConfigurations.Count > 0; 
+            return this._endpointConfigurations != null && (this._endpointConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -238,7 +239,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if PortOverrides property is set
         internal bool IsSetPortOverrides()
         {
-            return this._portOverrides != null && this._portOverrides.Count > 0; 
+            return this._portOverrides != null && (this._portOverrides.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

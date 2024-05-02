@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECRPublic.Model
 {
     /// <summary>
@@ -35,11 +36,11 @@ namespace Amazon.ECRPublic.Model
     public partial class RepositoryCatalogData
     {
         private string _aboutText;
-        private List<string> _architectures = new List<string>();
+        private List<string> _architectures = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _description;
         private string _logoUrl;
         private bool? _marketplaceCertified;
-        private List<string> _operatingSystems = new List<string>();
+        private List<string> _operatingSystems = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _usageText;
 
         /// <summary>
@@ -84,7 +85,7 @@ namespace Amazon.ECRPublic.Model
         // Check to see if Architectures property is set
         internal bool IsSetArchitectures()
         {
-            return this._architectures != null && this._architectures.Count > 0; 
+            return this._architectures != null && (this._architectures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -165,7 +166,7 @@ namespace Amazon.ECRPublic.Model
         // Check to see if OperatingSystems property is set
         internal bool IsSetOperatingSystems()
         {
-            return this._operatingSystems != null && this._operatingSystems.Count > 0; 
+            return this._operatingSystems != null && (this._operatingSystems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

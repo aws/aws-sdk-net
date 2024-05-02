@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTEvents.Model
 {
     /// <summary>
@@ -35,8 +36,8 @@ namespace Amazon.IoTEvents.Model
     public partial class NotificationAction
     {
         private NotificationTargetActions _action;
-        private List<EmailConfiguration> _emailConfigurations = new List<EmailConfiguration>();
-        private List<SMSConfiguration> _smsConfigurations = new List<SMSConfiguration>();
+        private List<EmailConfiguration> _emailConfigurations = AWSConfigs.InitializeCollections ? new List<EmailConfiguration>() : null;
+        private List<SMSConfiguration> _smsConfigurations = AWSConfigs.InitializeCollections ? new List<SMSConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property Action. 
@@ -75,7 +76,7 @@ namespace Amazon.IoTEvents.Model
         // Check to see if EmailConfigurations property is set
         internal bool IsSetEmailConfigurations()
         {
-            return this._emailConfigurations != null && this._emailConfigurations.Count > 0; 
+            return this._emailConfigurations != null && (this._emailConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -94,7 +95,7 @@ namespace Amazon.IoTEvents.Model
         // Check to see if SmsConfigurations property is set
         internal bool IsSetSmsConfigurations()
         {
-            return this._smsConfigurations != null && this._smsConfigurations.Count > 0; 
+            return this._smsConfigurations != null && (this._smsConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

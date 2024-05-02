@@ -1,0 +1,142 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated.
+ */
+using AWSSDK.ProtocolTests;
+using AWSSDK.ProtocolTests.Utils;
+using AWSSDK_DotNet.UnitTests.TestTools;
+using Amazon.RestJsonProtocol;
+using Amazon.RestJsonProtocol.Model;
+using Amazon.RestJsonProtocol.Model.Internal.MarshallTransformations;
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Transform;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Text;
+
+namespace AWSSDK.ProtocolTests.RestJson
+{
+    [TestClass]
+    public class TestPayloadStructure
+    {
+        /// <summary>
+        /// Serializes a payload targeting an empty structure
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("RequestTest")]
+        [TestCategory("RestJson")]
+        public void RestJsonHttpWithEmptyStructurePayloadRequest()
+        {
+            // Arrange
+            var request = new TestPayloadStructureRequest
+            {
+            };
+            var config = new AmazonRestJsonProtocolConfig
+            {
+              ServiceURL = "https://test.com/"
+            };
+
+            var marshaller = new TestPayloadStructureRequestMarshaller();
+            // Act
+            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+
+            // Assert
+            var expectedBody = "{}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
+            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
+            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
+            Assert.AreEqual("/payload", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
+            Assert.AreEqual("application/json".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
+        }
+
+        /// <summary>
+        /// Serializes a payload targeting a structure
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("RequestTest")]
+        [TestCategory("RestJson")]
+        public void RestJsonTestPayloadStructureRequest()
+        {
+            // Arrange
+            var request = new TestPayloadStructureRequest
+            {
+                PayloadConfig = new PayloadConfig
+                {
+                    Data = 25,
+                },
+            };
+            var config = new AmazonRestJsonProtocolConfig
+            {
+              ServiceURL = "https://test.com/"
+            };
+
+            var marshaller = new TestPayloadStructureRequestMarshaller();
+            // Act
+            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+
+            // Assert
+            var expectedBody = "{\"data\": 25\n}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
+            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
+            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
+            Assert.AreEqual("/payload", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
+            Assert.AreEqual("application/json".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
+        }
+
+        /// <summary>
+        /// Serializes an request with header members but no payload
+        /// </summary>
+        [TestMethod]
+        [TestCategory("ProtocolTest")]
+        [TestCategory("RequestTest")]
+        [TestCategory("RestJson")]
+        public void RestJsonHttpWithHeadersButNoPayloadRequest()
+        {
+            // Arrange
+            var request = new TestPayloadStructureRequest
+            {
+                TestId = "t-12345",
+            };
+            var config = new AmazonRestJsonProtocolConfig
+            {
+              ServiceURL = "https://test.com/"
+            };
+
+            var marshaller = new TestPayloadStructureRequestMarshaller();
+            // Act
+            var marshalledRequest = ProtocolTestUtils.RunMockRequest(request,marshaller,config);
+
+            // Assert
+            var expectedBody = "{}";
+            JsonProtocolUtils.AssertBody(marshalledRequest, expectedBody);
+            Assert.AreEqual("POST", marshalledRequest.HttpMethod);
+            Uri actualUri = AmazonServiceClient.ComposeUrl(marshalledRequest);
+            Assert.AreEqual("/payload", ProtocolTestUtils.GetEncodedResourcePathFromOriginalString(actualUri));
+            Assert.AreEqual("application/json".Replace(" ",""), marshalledRequest.Headers["Content-Type"].Replace(" ",""));
+            Assert.AreEqual("t-12345".Replace(" ",""), marshalledRequest.Headers["X-Amz-Test-Id"].Replace(" ",""));
+        }
+
+    }
+}

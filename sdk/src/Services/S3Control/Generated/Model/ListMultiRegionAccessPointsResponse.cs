@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3Control.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.S3Control.Model
     /// </summary>
     public partial class ListMultiRegionAccessPointsResponse : AmazonWebServiceResponse
     {
-        private List<MultiRegionAccessPointReport> _accessPoints = new List<MultiRegionAccessPointReport>();
+        private List<MultiRegionAccessPointReport> _accessPoints = AWSConfigs.InitializeCollections ? new List<MultiRegionAccessPointReport>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.S3Control.Model
         // Check to see if AccessPoints property is set
         internal bool IsSetAccessPoints()
         {
-            return this._accessPoints != null && this._accessPoints.Count > 0; 
+            return this._accessPoints != null && (this._accessPoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

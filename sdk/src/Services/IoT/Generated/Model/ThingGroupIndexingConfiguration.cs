@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class ThingGroupIndexingConfiguration
     {
-        private List<Field> _customFields = new List<Field>();
-        private List<Field> _managedFields = new List<Field>();
+        private List<Field> _customFields = AWSConfigs.InitializeCollections ? new List<Field>() : null;
+        private List<Field> _managedFields = AWSConfigs.InitializeCollections ? new List<Field>() : null;
         private ThingGroupIndexingMode _thingGroupIndexingMode;
 
         /// <summary>
@@ -57,7 +58,7 @@ namespace Amazon.IoT.Model
         // Check to see if CustomFields property is set
         internal bool IsSetCustomFields()
         {
-            return this._customFields != null && this._customFields.Count > 0; 
+            return this._customFields != null && (this._customFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -82,7 +83,7 @@ namespace Amazon.IoT.Model
         // Check to see if ManagedFields property is set
         internal bool IsSetManagedFields()
         {
-            return this._managedFields != null && this._managedFields.Count > 0; 
+            return this._managedFields != null && (this._managedFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

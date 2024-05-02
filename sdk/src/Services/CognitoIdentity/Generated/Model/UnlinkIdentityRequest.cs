@@ -27,6 +27,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CognitoIdentity.Model
 {
     /// <summary>
@@ -43,8 +44,8 @@ namespace Amazon.CognitoIdentity.Model
     public partial class UnlinkIdentityRequest : AmazonCognitoIdentityRequest
     {
         private string _identityId;
-        private Dictionary<string, string> _logins = new Dictionary<string, string>();
-        private List<string> _loginsToRemove = new List<string>();
+        private Dictionary<string, string> _logins = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<string> _loginsToRemove = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property IdentityId. 
@@ -81,7 +82,7 @@ namespace Amazon.CognitoIdentity.Model
         // Check to see if Logins property is set
         internal bool IsSetLogins()
         {
-            return this._logins != null && this._logins.Count > 0; 
+            return this._logins != null && (this._logins.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -100,7 +101,7 @@ namespace Amazon.CognitoIdentity.Model
         // Check to see if LoginsToRemove property is set
         internal bool IsSetLoginsToRemove()
         {
-            return this._loginsToRemove != null && this._loginsToRemove.Count > 0; 
+            return this._loginsToRemove != null && (this._loginsToRemove.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

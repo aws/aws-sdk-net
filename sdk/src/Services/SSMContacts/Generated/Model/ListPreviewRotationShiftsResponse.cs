@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SSMContacts.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SSMContacts.Model
     public partial class ListPreviewRotationShiftsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RotationShift> _rotationShifts = new List<RotationShift>();
+        private List<RotationShift> _rotationShifts = AWSConfigs.InitializeCollections ? new List<RotationShift>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.SSMContacts.Model
         // Check to see if RotationShifts property is set
         internal bool IsSetRotationShifts()
         {
-            return this._rotationShifts != null && this._rotationShifts.Count > 0; 
+            return this._rotationShifts != null && (this._rotationShifts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

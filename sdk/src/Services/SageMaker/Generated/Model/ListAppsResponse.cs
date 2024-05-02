@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListAppsResponse : AmazonWebServiceResponse
     {
-        private List<AppDetails> _apps = new List<AppDetails>();
+        private List<AppDetails> _apps = AWSConfigs.InitializeCollections ? new List<AppDetails>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Apps property is set
         internal bool IsSetApps()
         {
-            return this._apps != null && this._apps.Count > 0; 
+            return this._apps != null && (this._apps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

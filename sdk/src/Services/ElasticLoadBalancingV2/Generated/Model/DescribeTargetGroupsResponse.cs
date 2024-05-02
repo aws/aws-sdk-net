@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     public partial class DescribeTargetGroupsResponse : AmazonWebServiceResponse
     {
         private string _nextMarker;
-        private List<TargetGroup> _targetGroups = new List<TargetGroup>();
+        private List<TargetGroup> _targetGroups = AWSConfigs.InitializeCollections ? new List<TargetGroup>() : null;
 
         /// <summary>
         /// Gets and sets the property NextMarker. 
@@ -70,7 +71,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if TargetGroups property is set
         internal bool IsSetTargetGroups()
         {
-            return this._targetGroups != null && this._targetGroups.Count > 0; 
+            return this._targetGroups != null && (this._targetGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

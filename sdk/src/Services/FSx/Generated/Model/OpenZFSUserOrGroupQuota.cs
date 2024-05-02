@@ -26,10 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// The configuration for how much storage a user or group can use on the volume.
+    /// Used to configure quotas that define how much storage a user or group can use on an
+    /// FSx for OpenZFS volume. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-volumes.html#volume-properties">Volume
+    /// properties</a> in the FSx for OpenZFS User Guide.
     /// </summary>
     public partial class OpenZFSUserOrGroupQuota
     {
@@ -40,7 +43,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the user or group.
+        /// The ID of the user or group that the quota applies to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2147483647)]
@@ -59,7 +62,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property StorageCapacityQuotaGiB. 
         /// <para>
-        /// The amount of storage that the user or group can use in gibibytes (GiB).
+        /// The user or group's storage quota, in gibibytes (GiB).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2147483647)]
@@ -78,7 +81,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// A value that specifies whether the quota applies to a user or group.
+        /// Specifies whether the quota applies to a user or group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

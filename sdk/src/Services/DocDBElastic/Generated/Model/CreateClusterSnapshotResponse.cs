@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DocDBElastic.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property Snapshot. 
         /// <para>
-        /// Returns information about the new Elastic DocumentDB snapshot.
+        /// Returns information about the new elastic cluster snapshot.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

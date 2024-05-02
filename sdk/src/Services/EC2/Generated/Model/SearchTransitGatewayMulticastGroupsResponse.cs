@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class SearchTransitGatewayMulticastGroupsResponse : AmazonWebServiceResponse
     {
-        private List<TransitGatewayMulticastGroup> _multicastGroups = new List<TransitGatewayMulticastGroup>();
+        private List<TransitGatewayMulticastGroup> _multicastGroups = AWSConfigs.InitializeCollections ? new List<TransitGatewayMulticastGroup>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.EC2.Model
         // Check to see if MulticastGroups property is set
         internal bool IsSetMulticastGroups()
         {
-            return this._multicastGroups != null && this._multicastGroups.Count > 0; 
+            return this._multicastGroups != null && (this._multicastGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.Backup.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.Backup
 {
     /// <summary>
@@ -4852,8 +4853,9 @@ namespace Amazon.Backup
         ///  
         /// <para>
         /// This action is not supported for the following services: Amazon FSx for Windows File
-        /// Server, Amazon FSx for Lustre, FSx for ONTAP , Amazon FSx for OpenZFS, Amazon DocumentDB
-        /// (with MongoDB compatibility), Amazon RDS, Amazon Aurora, and Amazon Neptune.
+        /// Server, Amazon FSx for Lustre, Amazon FSx for NetApp ONTAP , Amazon FSx for OpenZFS,
+        /// Amazon DocumentDB (with MongoDB compatibility), Amazon RDS, Amazon Aurora, and Amazon
+        /// Neptune.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopBackupJob service method.</param>
@@ -4887,8 +4889,9 @@ namespace Amazon.Backup
         ///  
         /// <para>
         /// This action is not supported for the following services: Amazon FSx for Windows File
-        /// Server, Amazon FSx for Lustre, FSx for ONTAP , Amazon FSx for OpenZFS, Amazon DocumentDB
-        /// (with MongoDB compatibility), Amazon RDS, Amazon Aurora, and Amazon Neptune.
+        /// Server, Amazon FSx for Lustre, Amazon FSx for NetApp ONTAP , Amazon FSx for OpenZFS,
+        /// Amazon DocumentDB (with MongoDB compatibility), Amazon RDS, Amazon Aurora, and Amazon
+        /// Neptune.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopBackupJob service method.</param>

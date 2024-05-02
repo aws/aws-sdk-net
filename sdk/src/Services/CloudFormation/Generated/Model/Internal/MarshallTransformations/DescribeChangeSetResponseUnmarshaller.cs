@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -84,6 +85,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Capabilities/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (response.Capabilities == null)
+                        {
+                            response.Capabilities = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Capabilities.Add(item);
                         continue;
@@ -91,6 +96,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Changes/member", targetDepth))
                     {
                         var unmarshaller = ChangeUnmarshaller.Instance;
+                        if (response.Changes == null)
+                        {
+                            response.Changes = new List<Change>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Changes.Add(item);
                         continue;
@@ -146,6 +155,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("NotificationARNs/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (response.NotificationARNs == null)
+                        {
+                            response.NotificationARNs = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.NotificationARNs.Add(item);
                         continue;
@@ -159,6 +172,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Parameters/member", targetDepth))
                     {
                         var unmarshaller = ParameterUnmarshaller.Instance;
+                        if (response.Parameters == null)
+                        {
+                            response.Parameters = new List<Parameter>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Parameters.Add(item);
                         continue;
@@ -208,6 +225,10 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Tags/member", targetDepth))
                     {
                         var unmarshaller = TagUnmarshaller.Instance;
+                        if (response.Tags == null)
+                        {
+                            response.Tags = new List<Tag>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.Tags.Add(item);
                         continue;

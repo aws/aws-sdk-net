@@ -33,6 +33,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.Signer
 {
     /// <summary>
@@ -1634,6 +1635,11 @@ namespace Amazon.Signer
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// You must ensure the S3 buckets are from the same Region as the signing profile. Cross-Region
+        /// signing isn't supported.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// You must also specify a request token that identifies your request to Signer.
         /// </para>
         ///  </li> </ul> 
@@ -1711,6 +1717,11 @@ namespace Amazon.Signer
         /// <para>
         /// You specify the name of the source and destination buckets when calling the <c>StartSigningJob</c>
         /// operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You must ensure the S3 buckets are from the same Region as the signing profile. Cross-Region
+        /// signing isn't supported.
         /// </para>
         ///  </li> <li> 
         /// <para>

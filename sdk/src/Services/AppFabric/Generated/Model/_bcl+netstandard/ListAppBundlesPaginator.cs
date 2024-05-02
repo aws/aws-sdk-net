@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AppFabric.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.AppFabric.Model
         /// Enumerable containing all of the AppBundleSummaryList
         /// </summary>
         public IPaginatedEnumerable<AppBundleSummary> AppBundleSummaryList => 
-            new PaginatedResultKeyResponse<ListAppBundlesResponse, AppBundleSummary>(this, (i) => i.AppBundleSummaryList);
+            new PaginatedResultKeyResponse<ListAppBundlesResponse, AppBundleSummary>(this, (i) => i.AppBundleSummaryList ?? new List<AppBundleSummary>());
 
         internal ListAppBundlesPaginator(IAmazonAppFabric client, ListAppBundlesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.AppFabric.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListAppBundlesResponse> IPaginator<ListAppBundlesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListAppBundlesResponse> IPaginator<ListAppBundlesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

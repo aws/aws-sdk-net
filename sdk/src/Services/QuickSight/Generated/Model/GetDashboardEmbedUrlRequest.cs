@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -76,7 +77,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class GetDashboardEmbedUrlRequest : AmazonQuickSightRequest
     {
-        private List<string> _additionalDashboardIds = new List<string>();
+        private List<string> _additionalDashboardIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _awsAccountId;
         private string _dashboardId;
         private EmbeddingIdentityType _identityType;
@@ -107,7 +108,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if AdditionalDashboardIds property is set
         internal bool IsSetAdditionalDashboardIds()
         {
-            return this._additionalDashboardIds != null && this._additionalDashboardIds.Count > 0; 
+            return this._additionalDashboardIds != null && (this._additionalDashboardIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

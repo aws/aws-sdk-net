@@ -109,7 +109,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
         
         private static PutObjectLegalHoldRequestMarshaller _instance;
-        
+
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
         public static PutObjectLegalHoldRequestMarshaller Instance
         {
             get

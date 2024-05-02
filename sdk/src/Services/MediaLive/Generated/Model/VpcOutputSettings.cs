@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class VpcOutputSettings
     {
-        private List<string> _publicAddressAllocationIds = new List<string>();
-        private List<string> _securityGroupIds = new List<string>();
-        private List<string> _subnetIds = new List<string>();
+        private List<string> _publicAddressAllocationIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property PublicAddressAllocationIds. List of public address allocation
@@ -52,7 +53,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if PublicAddressAllocationIds property is set
         internal bool IsSetPublicAddressAllocationIds()
         {
-            return this._publicAddressAllocationIds != null && this._publicAddressAllocationIds.Count > 0; 
+            return this._publicAddressAllocationIds != null && (this._publicAddressAllocationIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if SecurityGroupIds property is set
         internal bool IsSetSecurityGroupIds()
         {
-            return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+            return this._securityGroupIds != null && (this._securityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -86,7 +87,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if SubnetIds property is set
         internal bool IsSetSubnetIds()
         {
-            return this._subnetIds != null && this._subnetIds.Count > 0; 
+            return this._subnetIds != null && (this._subnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

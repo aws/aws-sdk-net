@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Chime.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Chime.Model
     {
         private string _channelArn;
         private Identity _invitedBy;
-        private List<Identity> _members = new List<Identity>();
+        private List<Identity> _members = AWSConfigs.InitializeCollections ? new List<Identity>() : null;
         private ChannelMembershipType _type;
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace Amazon.Chime.Model
         // Check to see if Members property is set
         internal bool IsSetMembers()
         {
-            return this._members != null && this._members.Count > 0; 
+            return this._members != null && (this._members.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

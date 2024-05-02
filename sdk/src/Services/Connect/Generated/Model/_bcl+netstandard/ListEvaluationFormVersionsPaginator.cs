@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the EvaluationFormVersionSummaryList
         /// </summary>
         public IPaginatedEnumerable<EvaluationFormVersionSummary> EvaluationFormVersionSummaryList => 
-            new PaginatedResultKeyResponse<ListEvaluationFormVersionsResponse, EvaluationFormVersionSummary>(this, (i) => i.EvaluationFormVersionSummaryList);
+            new PaginatedResultKeyResponse<ListEvaluationFormVersionsResponse, EvaluationFormVersionSummary>(this, (i) => i.EvaluationFormVersionSummaryList ?? new List<EvaluationFormVersionSummary>());
 
         internal ListEvaluationFormVersionsPaginator(IAmazonConnect client, ListEvaluationFormVersionsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Connect.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListEvaluationFormVersionsResponse> IPaginator<ListEvaluationFormVersionsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListEvaluationFormVersionsResponse> IPaginator<ListEvaluationFormVersionsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

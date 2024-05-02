@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FraudDetector.Model
 {
     /// <summary>
@@ -38,16 +39,16 @@ namespace Amazon.FraudDetector.Model
         private string _detectorVersionStatus;
         private string _entityId;
         private string _entityType;
-        private List<EvaluatedExternalModel> _evaluatedExternalModels = new List<EvaluatedExternalModel>();
-        private List<EvaluatedModelVersion> _evaluatedModelVersions = new List<EvaluatedModelVersion>();
+        private List<EvaluatedExternalModel> _evaluatedExternalModels = AWSConfigs.InitializeCollections ? new List<EvaluatedExternalModel>() : null;
+        private List<EvaluatedModelVersion> _evaluatedModelVersions = AWSConfigs.InitializeCollections ? new List<EvaluatedModelVersion>() : null;
         private string _eventId;
         private string _eventTimestamp;
         private string _eventTypeName;
-        private List<EventVariableSummary> _eventVariables = new List<EventVariableSummary>();
-        private List<string> _outcomes = new List<string>();
+        private List<EventVariableSummary> _eventVariables = AWSConfigs.InitializeCollections ? new List<EventVariableSummary>() : null;
+        private List<string> _outcomes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _predictionTimestamp;
         private RuleExecutionMode _ruleExecutionMode;
-        private List<EvaluatedRule> _rules = new List<EvaluatedRule>();
+        private List<EvaluatedRule> _rules = AWSConfigs.InitializeCollections ? new List<EvaluatedRule>() : null;
 
         /// <summary>
         /// Gets and sets the property DetectorId. 
@@ -157,7 +158,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if EvaluatedExternalModels property is set
         internal bool IsSetEvaluatedExternalModels()
         {
-            return this._evaluatedExternalModels != null && this._evaluatedExternalModels.Count > 0; 
+            return this._evaluatedExternalModels != null && (this._evaluatedExternalModels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -175,7 +176,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if EvaluatedModelVersions property is set
         internal bool IsSetEvaluatedModelVersions()
         {
-            return this._evaluatedModelVersions != null && this._evaluatedModelVersions.Count > 0; 
+            return this._evaluatedModelVersions != null && (this._evaluatedModelVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -251,7 +252,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if EventVariables property is set
         internal bool IsSetEventVariables()
         {
-            return this._eventVariables != null && this._eventVariables.Count > 0; 
+            return this._eventVariables != null && (this._eventVariables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -269,7 +270,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if Outcomes property is set
         internal bool IsSetOutcomes()
         {
-            return this._outcomes != null && this._outcomes.Count > 0; 
+            return this._outcomes != null && (this._outcomes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -325,7 +326,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if Rules property is set
         internal bool IsSetRules()
         {
-            return this._rules != null && this._rules.Count > 0; 
+            return this._rules != null && (this._rules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

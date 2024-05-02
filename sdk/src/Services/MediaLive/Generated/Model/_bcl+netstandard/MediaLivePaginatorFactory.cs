@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
@@ -49,6 +50,38 @@ namespace Amazon.MediaLive.Model
         public IListChannelsPaginator ListChannels(ListChannelsRequest request) 
         {
             return new ListChannelsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCloudWatchAlarmTemplateGroups operation
+        ///</summary>
+        public IListCloudWatchAlarmTemplateGroupsPaginator ListCloudWatchAlarmTemplateGroups(ListCloudWatchAlarmTemplateGroupsRequest request) 
+        {
+            return new ListCloudWatchAlarmTemplateGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListCloudWatchAlarmTemplates operation
+        ///</summary>
+        public IListCloudWatchAlarmTemplatesPaginator ListCloudWatchAlarmTemplates(ListCloudWatchAlarmTemplatesRequest request) 
+        {
+            return new ListCloudWatchAlarmTemplatesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListEventBridgeRuleTemplateGroups operation
+        ///</summary>
+        public IListEventBridgeRuleTemplateGroupsPaginator ListEventBridgeRuleTemplateGroups(ListEventBridgeRuleTemplateGroupsRequest request) 
+        {
+            return new ListEventBridgeRuleTemplateGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListEventBridgeRuleTemplates operation
+        ///</summary>
+        public IListEventBridgeRuleTemplatesPaginator ListEventBridgeRuleTemplates(ListEventBridgeRuleTemplatesRequest request) 
+        {
+            return new ListEventBridgeRuleTemplatesPaginator(this.client, request);
         }
 
         /// <summary>
@@ -113,6 +146,14 @@ namespace Amazon.MediaLive.Model
         public IListReservationsPaginator ListReservations(ListReservationsRequest request) 
         {
             return new ListReservationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSignalMaps operation
+        ///</summary>
+        public IListSignalMapsPaginator ListSignalMaps(ListSignalMapsRequest request) 
+        {
+            return new ListSignalMapsPaginator(this.client, request);
         }
     }
 }

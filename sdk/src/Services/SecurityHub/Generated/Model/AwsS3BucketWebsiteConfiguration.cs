@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.SecurityHub.Model
         private string _errorDocument;
         private string _indexDocumentSuffix;
         private AwsS3BucketWebsiteConfigurationRedirectTo _redirectAllRequestsTo;
-        private List<AwsS3BucketWebsiteConfigurationRoutingRule> _routingRules = new List<AwsS3BucketWebsiteConfigurationRoutingRule>();
+        private List<AwsS3BucketWebsiteConfigurationRoutingRule> _routingRules = AWSConfigs.InitializeCollections ? new List<AwsS3BucketWebsiteConfigurationRoutingRule>() : null;
 
         /// <summary>
         /// Gets and sets the property ErrorDocument. 
@@ -107,7 +108,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if RoutingRules property is set
         internal bool IsSetRoutingRules()
         {
-            return this._routingRules != null && this._routingRules.Count > 0; 
+            return this._routingRules != null && (this._routingRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

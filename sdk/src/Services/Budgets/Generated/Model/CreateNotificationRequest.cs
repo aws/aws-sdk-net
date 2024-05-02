@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Budgets.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.Budgets.Model
         private string _accountId;
         private string _budgetName;
         private Notification _notification;
-        private List<Subscriber> _subscribers = new List<Subscriber>();
+        private List<Subscriber> _subscribers = AWSConfigs.InitializeCollections ? new List<Subscriber>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -116,7 +117,7 @@ namespace Amazon.Budgets.Model
         // Check to see if Subscribers property is set
         internal bool IsSetSubscribers()
         {
-            return this._subscribers != null && this._subscribers.Count > 0; 
+            return this._subscribers != null && (this._subscribers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

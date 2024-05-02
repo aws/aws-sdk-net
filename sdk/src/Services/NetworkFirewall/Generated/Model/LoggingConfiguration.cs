@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.NetworkFirewall.Model
     /// </summary>
     public partial class LoggingConfiguration
     {
-        private List<LogDestinationConfig> _logDestinationConfigs = new List<LogDestinationConfig>();
+        private List<LogDestinationConfig> _logDestinationConfigs = AWSConfigs.InitializeCollections ? new List<LogDestinationConfig>() : null;
 
         /// <summary>
         /// Gets and sets the property LogDestinationConfigs. 
@@ -52,7 +53,7 @@ namespace Amazon.NetworkFirewall.Model
         // Check to see if LogDestinationConfigs property is set
         internal bool IsSetLogDestinationConfigs()
         {
-            return this._logDestinationConfigs != null && this._logDestinationConfigs.Count > 0; 
+            return this._logDestinationConfigs != null && (this._logDestinationConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

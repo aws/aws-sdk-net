@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Athena.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Athena.Model
         /// Enumerable containing all of the TableMetadataList
         /// </summary>
         public IPaginatedEnumerable<TableMetadata> TableMetadataList => 
-            new PaginatedResultKeyResponse<ListTableMetadataResponse, TableMetadata>(this, (i) => i.TableMetadataList);
+            new PaginatedResultKeyResponse<ListTableMetadataResponse, TableMetadata>(this, (i) => i.TableMetadataList ?? new List<TableMetadata>());
 
         internal ListTableMetadataPaginator(IAmazonAthena client, ListTableMetadataRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Athena.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListTableMetadataResponse> IPaginator<ListTableMetadataResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListTableMetadataResponse> IPaginator<ListTableMetadataResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

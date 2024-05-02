@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoTWireless.Model
     /// </summary>
     public partial class ListNetworkAnalyzerConfigurationsResponse : AmazonWebServiceResponse
     {
-        private List<NetworkAnalyzerConfigurations> _networkAnalyzerConfigurationList = new List<NetworkAnalyzerConfigurations>();
+        private List<NetworkAnalyzerConfigurations> _networkAnalyzerConfigurationList = AWSConfigs.InitializeCollections ? new List<NetworkAnalyzerConfigurations>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if NetworkAnalyzerConfigurationList property is set
         internal bool IsSetNetworkAnalyzerConfigurationList()
         {
-            return this._networkAnalyzerConfigurationList != null && this._networkAnalyzerConfigurationList.Count > 0; 
+            return this._networkAnalyzerConfigurationList != null && (this._networkAnalyzerConfigurationList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

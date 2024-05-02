@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT1ClickDevicesService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoT1ClickDevicesService.Model
     /// </summary>
     public partial class ListDevicesResponse : AmazonWebServiceResponse
     {
-        private List<DeviceDescription> _devices = new List<DeviceDescription>();
+        private List<DeviceDescription> _devices = AWSConfigs.InitializeCollections ? new List<DeviceDescription>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.IoT1ClickDevicesService.Model
         // Check to see if Devices property is set
         internal bool IsSetDevices()
         {
-            return this._devices != null && this._devices.Count > 0; 
+            return this._devices != null && (this._devices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

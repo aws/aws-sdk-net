@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     public partial class ReleaseSenderIdResponse : AmazonWebServiceResponse
     {
         private string _isoCountryCode;
-        private List<string> _messageTypes = new List<string>();
+        private List<string> _messageTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _monthlyLeasingPrice;
         private bool? _registered;
         private string _registrationId;
@@ -77,7 +78,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if MessageTypes property is set
         internal bool IsSetMessageTypes()
         {
-            return this._messageTypes != null && this._messageTypes.Count > 0; 
+            return this._messageTypes != null && (this._messageTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

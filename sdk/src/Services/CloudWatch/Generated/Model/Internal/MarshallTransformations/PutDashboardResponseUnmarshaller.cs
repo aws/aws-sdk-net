@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -84,6 +85,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("DashboardValidationMessages/member", targetDepth))
                     {
                         var unmarshaller = DashboardValidationMessageUnmarshaller.Instance;
+                        if (response.DashboardValidationMessages == null)
+                        {
+                            response.DashboardValidationMessages = new List<DashboardValidationMessage>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.DashboardValidationMessages.Add(item);
                         continue;

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CloudFront.Model
     public partial class DistributionSummary
     {
         private Aliases _aliases;
-        private List<AliasICPRecordal> _aliasICPRecordals = new List<AliasICPRecordal>();
+        private List<AliasICPRecordal> _aliasICPRecordals = AWSConfigs.InitializeCollections ? new List<AliasICPRecordal>() : null;
         private string _arn;
         private CacheBehaviors _cacheBehaviors;
         private string _comment;
@@ -104,7 +105,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if AliasICPRecordals property is set
         internal bool IsSetAliasICPRecordals()
         {
-            return this._aliasICPRecordals != null && this._aliasICPRecordals.Count > 0; 
+            return this._aliasICPRecordals != null && (this._aliasICPRecordals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -400,7 +401,9 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Staging. 
         /// <para>
-        /// Whether the primary distribution has a staging distribution enabled.
+        /// A Boolean that indicates whether this is a staging distribution. When this value is
+        /// <c>true</c>, this is a staging distribution. When this value is <c>false</c>, this
+        /// is not a staging distribution.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

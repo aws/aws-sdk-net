@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.DataZone.Model
     public partial class ListNotificationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<NotificationOutput> _notifications = new List<NotificationOutput>();
+        private List<NotificationOutput> _notifications = AWSConfigs.InitializeCollections ? new List<NotificationOutput>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -74,7 +75,7 @@ namespace Amazon.DataZone.Model
         // Check to see if Notifications property is set
         internal bool IsSetNotifications()
         {
-            return this._notifications != null && this._notifications.Count > 0; 
+            return this._notifications != null && (this._notifications.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

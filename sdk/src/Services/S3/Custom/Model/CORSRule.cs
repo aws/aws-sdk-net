@@ -25,10 +25,10 @@ namespace Amazon.S3.Model
     public class CORSRule
     {
         private string id;
-        private List<string> allowedMethods = new List<string>();
-        private List<string> allowedOrigins = new List<string>();
-        private List<string> exposeHeaders = new List<string>();
-        private List<string> allowedHeaders = new List<string>();
+        private List<string> allowedMethods = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> allowedOrigins = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> exposeHeaders = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> allowedHeaders = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? maxAgeSeconds;
 
         /// <summary>
@@ -44,7 +44,7 @@ namespace Amazon.S3.Model
         // Check to see if AllowedMethods property is set
         internal bool IsSetAllowedMethods()
         {
-            return this.allowedMethods.Count > 0;
+            return this.allowedMethods != null && (this.allowedMethods.Count > 0 || !AWSConfigs.InitializeCollections);
         }
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace Amazon.S3.Model
         // Check to see if AllowedOrigins property is set
         internal bool IsSetAllowedOrigins()
         {
-            return this.allowedOrigins.Count > 0;
+            return this.allowedOrigins != null && (this.allowedOrigins.Count > 0 || !AWSConfigs.InitializeCollections);
         }
 
         /// <summary>
@@ -98,7 +98,7 @@ namespace Amazon.S3.Model
         // Check to see if ExposeHeaders property is set
         internal bool IsSetExposeHeaders()
         {
-            return this.exposeHeaders.Count > 0;
+            return this.exposeHeaders != null && (this.exposeHeaders.Count > 0 || !AWSConfigs.InitializeCollections);
         }
 
         /// <summary>
@@ -138,7 +138,7 @@ namespace Amazon.S3.Model
         /// <returns>true if AllowedHeaders property is set.</returns>
         internal bool IsSetAllowedHeaders()
         {
-            return (this.AllowedHeaders.Count > 0);
+            return this.allowedHeaders != null && (this.allowedHeaders.Count > 0 || !AWSConfigs.InitializeCollections);
         }
 
 

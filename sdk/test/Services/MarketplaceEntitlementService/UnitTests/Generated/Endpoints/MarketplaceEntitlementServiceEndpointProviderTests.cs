@@ -91,6 +91,21 @@ namespace AWSSDK_DotNet.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("MarketplaceEntitlementService")]
+        [Description("For region cn-northwest-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_cnnorthwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new MarketplaceEntitlementServiceEndpointParameters();
+            parameters["Region"] = "cn-northwest-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonMarketplaceEntitlementServiceEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://entitlement-marketplace.cn-northwest-1.amazonaws.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("MarketplaceEntitlementService")]
         [Description("For region cn-north-1 with FIPS enabled and DualStack enabled")]
         public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {

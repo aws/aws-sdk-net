@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RedshiftServerless.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.RedshiftServerless.Model
         /// Enumerable containing all of the Endpoints
         /// </summary>
         public IPaginatedEnumerable<EndpointAccess> Endpoints => 
-            new PaginatedResultKeyResponse<ListEndpointAccessResponse, EndpointAccess>(this, (i) => i.Endpoints);
+            new PaginatedResultKeyResponse<ListEndpointAccessResponse, EndpointAccess>(this, (i) => i.Endpoints ?? new List<EndpointAccess>());
 
         internal ListEndpointAccessPaginator(IAmazonRedshiftServerless client, ListEndpointAccessRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.RedshiftServerless.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListEndpointAccessResponse> IPaginator<ListEndpointAccessResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListEndpointAccessResponse> IPaginator<ListEndpointAccessResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

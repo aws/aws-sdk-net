@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Neptune.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Neptune.Model
     /// </summary>
     public partial class ValidDBInstanceModificationsMessage
     {
-        private List<ValidStorageOptions> _storage = new List<ValidStorageOptions>();
+        private List<ValidStorageOptions> _storage = AWSConfigs.InitializeCollections ? new List<ValidStorageOptions>() : null;
 
         /// <summary>
         /// Gets and sets the property Storage. 
@@ -52,7 +53,7 @@ namespace Amazon.Neptune.Model
         // Check to see if Storage property is set
         internal bool IsSetStorage()
         {
-            return this._storage != null && this._storage.Count > 0; 
+            return this._storage != null && (this._storage.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -34,15 +35,15 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsEc2LaunchTemplateDataDetails
     {
-        private List<AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails> _blockDeviceMappingSet = new List<AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails>();
+        private List<AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails> _blockDeviceMappingSet = AWSConfigs.InitializeCollections ? new List<AwsEc2LaunchTemplateDataBlockDeviceMappingSetDetails>() : null;
         private AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails _capacityReservationSpecification;
         private AwsEc2LaunchTemplateDataCpuOptionsDetails _cpuOptions;
         private AwsEc2LaunchTemplateDataCreditSpecificationDetails _creditSpecification;
         private bool? _disableApiStop;
         private bool? _disableApiTermination;
         private bool? _ebsOptimized;
-        private List<AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails> _elasticGpuSpecificationSet = new List<AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails>();
-        private List<AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails> _elasticInferenceAcceleratorSet = new List<AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails>();
+        private List<AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails> _elasticGpuSpecificationSet = AWSConfigs.InitializeCollections ? new List<AwsEc2LaunchTemplateDataElasticGpuSpecificationSetDetails>() : null;
+        private List<AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails> _elasticInferenceAcceleratorSet = AWSConfigs.InitializeCollections ? new List<AwsEc2LaunchTemplateDataElasticInferenceAcceleratorSetDetails>() : null;
         private AwsEc2LaunchTemplateDataEnclaveOptionsDetails _enclaveOptions;
         private AwsEc2LaunchTemplateDataHibernationOptionsDetails _hibernationOptions;
         private AwsEc2LaunchTemplateDataIamInstanceProfileDetails _iamInstanceProfile;
@@ -53,16 +54,16 @@ namespace Amazon.SecurityHub.Model
         private string _instanceType;
         private string _kernelId;
         private string _keyName;
-        private List<AwsEc2LaunchTemplateDataLicenseSetDetails> _licenseSet = new List<AwsEc2LaunchTemplateDataLicenseSetDetails>();
+        private List<AwsEc2LaunchTemplateDataLicenseSetDetails> _licenseSet = AWSConfigs.InitializeCollections ? new List<AwsEc2LaunchTemplateDataLicenseSetDetails>() : null;
         private AwsEc2LaunchTemplateDataMaintenanceOptionsDetails _maintenanceOptions;
         private AwsEc2LaunchTemplateDataMetadataOptionsDetails _metadataOptions;
         private AwsEc2LaunchTemplateDataMonitoringDetails _monitoring;
-        private List<AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails> _networkInterfaceSet = new List<AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails>();
+        private List<AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails> _networkInterfaceSet = AWSConfigs.InitializeCollections ? new List<AwsEc2LaunchTemplateDataNetworkInterfaceSetDetails>() : null;
         private AwsEc2LaunchTemplateDataPlacementDetails _placement;
         private AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails _privateDnsNameOptions;
         private string _ramDiskId;
-        private List<string> _securityGroupIdSet = new List<string>();
-        private List<string> _securityGroupSet = new List<string>();
+        private List<string> _securityGroupIdSet = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _securityGroupSet = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _userData;
 
         /// <summary>
@@ -80,7 +81,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if BlockDeviceMappingSet property is set
         internal bool IsSetBlockDeviceMappingSet()
         {
-            return this._blockDeviceMappingSet != null && this._blockDeviceMappingSet.Count > 0; 
+            return this._blockDeviceMappingSet != null && (this._blockDeviceMappingSet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -212,7 +213,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ElasticGpuSpecificationSet property is set
         internal bool IsSetElasticGpuSpecificationSet()
         {
-            return this._elasticGpuSpecificationSet != null && this._elasticGpuSpecificationSet.Count > 0; 
+            return this._elasticGpuSpecificationSet != null && (this._elasticGpuSpecificationSet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -230,7 +231,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if ElasticInferenceAcceleratorSet property is set
         internal bool IsSetElasticInferenceAcceleratorSet()
         {
-            return this._elasticInferenceAcceleratorSet != null && this._elasticInferenceAcceleratorSet.Count > 0; 
+            return this._elasticInferenceAcceleratorSet != null && (this._elasticInferenceAcceleratorSet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -433,7 +434,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if LicenseSet property is set
         internal bool IsSetLicenseSet()
         {
-            return this._licenseSet != null && this._licenseSet.Count > 0; 
+            return this._licenseSet != null && (this._licenseSet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -507,7 +508,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if NetworkInterfaceSet property is set
         internal bool IsSetNetworkInterfaceSet()
         {
-            return this._networkInterfaceSet != null && this._networkInterfaceSet.Count > 0; 
+            return this._networkInterfaceSet != null && (this._networkInterfaceSet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -579,7 +580,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if SecurityGroupIdSet property is set
         internal bool IsSetSecurityGroupIdSet()
         {
-            return this._securityGroupIdSet != null && this._securityGroupIdSet.Count > 0; 
+            return this._securityGroupIdSet != null && (this._securityGroupIdSet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -599,7 +600,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if SecurityGroupSet property is set
         internal bool IsSetSecurityGroupSet()
         {
-            return this._securityGroupSet != null && this._securityGroupSet.Count > 0; 
+            return this._securityGroupSet != null && (this._securityGroupSet.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

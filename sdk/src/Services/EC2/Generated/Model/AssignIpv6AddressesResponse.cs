@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class AssignIpv6AddressesResponse : AmazonWebServiceResponse
     {
-        private List<string> _assignedIpv6Addresses = new List<string>();
-        private List<string> _assignedIpv6Prefixes = new List<string>();
+        private List<string> _assignedIpv6Addresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _assignedIpv6Prefixes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _networkInterfaceId;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.EC2.Model
         // Check to see if AssignedIpv6Addresses property is set
         internal bool IsSetAssignedIpv6Addresses()
         {
-            return this._assignedIpv6Addresses != null && this._assignedIpv6Addresses.Count > 0; 
+            return this._assignedIpv6Addresses != null && (this._assignedIpv6Addresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.EC2.Model
         // Check to see if AssignedIpv6Prefixes property is set
         internal bool IsSetAssignedIpv6Prefixes()
         {
-            return this._assignedIpv6Prefixes != null && this._assignedIpv6Prefixes.Count > 0; 
+            return this._assignedIpv6Prefixes != null && (this._assignedIpv6Prefixes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

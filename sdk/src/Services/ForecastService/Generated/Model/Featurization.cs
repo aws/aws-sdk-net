@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ForecastService.Model
 {
     /// <summary>
@@ -76,7 +77,7 @@ namespace Amazon.ForecastService.Model
     public partial class Featurization
     {
         private string _attributeName;
-        private List<FeaturizationMethod> _featurizationPipeline = new List<FeaturizationMethod>();
+        private List<FeaturizationMethod> _featurizationPipeline = AWSConfigs.InitializeCollections ? new List<FeaturizationMethod>() : null;
 
         /// <summary>
         /// Gets and sets the property AttributeName. 
@@ -118,7 +119,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if FeaturizationPipeline property is set
         internal bool IsSetFeaturizationPipeline()
         {
-            return this._featurizationPipeline != null && this._featurizationPipeline.Count > 0; 
+            return this._featurizationPipeline != null && (this._featurizationPipeline.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,11 +26,14 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteShare operation.
-    /// Deletes a share of an analytics store.
+    /// Deletes a resource share. If you are the resource owner, the subscriber will no longer
+    /// have access to the shared resource. If you are the subscriber, this operation deletes
+    /// your access to the share.
     /// </summary>
     public partial class DeleteShareRequest : AmazonOmicsRequest
     {
@@ -39,7 +42,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property ShareId. 
         /// <para>
-        ///  The ID for the share request to be deleted. 
+        /// The ID for the resource share to be deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

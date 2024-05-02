@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ManagedBlockchainQuery.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// Enumerable containing all of the Contracts
         /// </summary>
         public IPaginatedEnumerable<AssetContract> Contracts => 
-            new PaginatedResultKeyResponse<ListAssetContractsResponse, AssetContract>(this, (i) => i.Contracts);
+            new PaginatedResultKeyResponse<ListAssetContractsResponse, AssetContract>(this, (i) => i.Contracts ?? new List<AssetContract>());
 
         internal ListAssetContractsPaginator(IAmazonManagedBlockchainQuery client, ListAssetContractsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListAssetContractsResponse> IPaginator<ListAssetContractsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListAssetContractsResponse> IPaginator<ListAssetContractsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

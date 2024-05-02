@@ -26,10 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Trace Part which contains input details for action group or knowledge base
+    /// Contains information pertaining to the action group or knowledge base that is being
+    /// invoked.
     /// </summary>
     public partial class InvocationInput
     {
@@ -39,7 +41,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         private string _traceId;
 
         /// <summary>
-        /// Gets and sets the property ActionGroupInvocationInput.
+        /// Gets and sets the property ActionGroupInvocationInput. 
+        /// <para>
+        /// Contains information about the action group to be invoked.
+        /// </para>
         /// </summary>
         public ActionGroupInvocationInput ActionGroupInvocationInput
         {
@@ -54,7 +59,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InvocationType.
+        /// Gets and sets the property InvocationType. 
+        /// <para>
+        /// Specifies whether the agent is invoking an action group or a knowledge base.
+        /// </para>
         /// </summary>
         public InvocationType InvocationType
         {
@@ -69,7 +77,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KnowledgeBaseLookupInput.
+        /// Gets and sets the property KnowledgeBaseLookupInput. 
+        /// <para>
+        /// Contains details about the knowledge base to look up and the query to be made.
+        /// </para>
         /// </summary>
         public KnowledgeBaseLookupInput KnowledgeBaseLookupInput
         {
@@ -84,7 +95,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TraceId.
+        /// Gets and sets the property TraceId. 
+        /// <para>
+        /// The unique identifier of the trace.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=16)]
         public string TraceId

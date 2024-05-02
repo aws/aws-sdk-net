@@ -36,7 +36,7 @@ namespace Amazon.Runtime.Internal.Util
         }
 
         /// <summary>
-        /// Sets or appends <see cref="CompressionEncodingAlgorithm"/> to the request header <see cref="ContentEncodingKeyHeader"/>
+        /// Sets or appends <see cref="CompressionEncodingAlgorithm"/> to the request header <see cref="HeaderKeys.ContentEncodingHeader"/>
         /// </summary>
         /// <param name="request"> The request containing the payload that we want to compress </param>
         /// <param name="compressionEncodingAlgorithm"> Enum containing the value of the compression algortihm </param>

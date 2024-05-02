@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CodeDeploy.Model
     /// </summary>
     public partial class EC2TagSet
     {
-        private List<List<EC2TagFilter>> _ec2TagSetList = new List<List<EC2TagFilter>>();
+        private List<List<EC2TagFilter>> _ec2TagSetList = AWSConfigs.InitializeCollections ? new List<List<EC2TagFilter>>() : null;
 
         /// <summary>
         /// Gets and sets the property Ec2TagSetList. 
@@ -52,7 +53,7 @@ namespace Amazon.CodeDeploy.Model
         // Check to see if Ec2TagSetList property is set
         internal bool IsSetEc2TagSetList()
         {
-            return this._ec2TagSetList != null && this._ec2TagSetList.Count > 0; 
+            return this._ec2TagSetList != null && (this._ec2TagSetList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class CreateInputSecurityGroupRequest : AmazonMediaLiveRequest
     {
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
-        private List<InputWhitelistRuleCidr> _whitelistRules = new List<InputWhitelistRuleCidr>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<InputWhitelistRuleCidr> _whitelistRules = AWSConfigs.InitializeCollections ? new List<InputWhitelistRuleCidr>() : null;
 
         /// <summary>
         /// Gets and sets the property Tags. A collection of key-value pairs.
@@ -49,7 +50,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -64,7 +65,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if WhitelistRules property is set
         internal bool IsSetWhitelistRules()
         {
-            return this._whitelistRules != null && this._whitelistRules.Count > 0; 
+            return this._whitelistRules != null && (this._whitelistRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

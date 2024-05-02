@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Connect.Model
     {
         private long? _approximateTotalCount;
         private string _nextToken;
-        private List<QuickConnect> _quickConnects = new List<QuickConnect>();
+        private List<QuickConnect> _quickConnects = AWSConfigs.InitializeCollections ? new List<QuickConnect>() : null;
 
         /// <summary>
         /// Gets and sets the property ApproximateTotalCount. 
@@ -89,7 +90,7 @@ namespace Amazon.Connect.Model
         // Check to see if QuickConnects property is set
         internal bool IsSetQuickConnects()
         {
-            return this._quickConnects != null && this._quickConnects.Count > 0; 
+            return this._quickConnects != null && (this._quickConnects.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

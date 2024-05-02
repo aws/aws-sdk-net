@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lambda.Model
 {
     /// <summary>
@@ -67,7 +68,7 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class UpdateFunctionCodeRequest : AmazonLambdaRequest
     {
-        private List<string> _architectures = new List<string>();
+        private List<string> _architectures = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _dryRun;
         private string _functionName;
         private string _imageUri;
@@ -95,7 +96,7 @@ namespace Amazon.Lambda.Model
         // Check to see if Architectures property is set
         internal bool IsSetArchitectures()
         {
-            return this._architectures != null && this._architectures.Count > 0; 
+            return this._architectures != null && (this._architectures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -120,7 +121,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionName. 
         /// <para>
-        /// The name of the Lambda function.
+        /// The name or ARN of the Lambda function.
         /// </para>
         ///  
         /// <para>

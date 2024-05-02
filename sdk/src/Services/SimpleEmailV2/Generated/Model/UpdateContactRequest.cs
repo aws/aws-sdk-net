@@ -26,19 +26,27 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateContact operation.
-    /// Updates a contact's preferences for a list. It is not necessary to specify all existing
-    /// topic preferences in the TopicPreferences object, just the ones that need updating.
+    /// Updates a contact's preferences for a list.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// You must specify all existing topic preferences in the <c>TopicPreferences</c> object,
+    /// not just the ones that need updating; otherwise, all your existing preferences will
+    /// be removed.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class UpdateContactRequest : AmazonSimpleEmailServiceV2Request
     {
         private string _attributesData;
         private string _contactListName;
         private string _emailAddress;
-        private List<TopicPreference> _topicPreferences = new List<TopicPreference>();
+        private List<TopicPreference> _topicPreferences = AWSConfigs.InitializeCollections ? new List<TopicPreference>() : null;
         private bool? _unsubscribeAll;
 
         /// <summary>
@@ -112,7 +120,7 @@ namespace Amazon.SimpleEmailV2.Model
         // Check to see if TopicPreferences property is set
         internal bool IsSetTopicPreferences()
         {
-            return this._topicPreferences != null && this._topicPreferences.Count > 0; 
+            return this._topicPreferences != null && (this._topicPreferences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

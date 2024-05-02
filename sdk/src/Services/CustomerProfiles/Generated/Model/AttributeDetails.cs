@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CustomerProfiles.Model
     /// </summary>
     public partial class AttributeDetails
     {
-        private List<AttributeItem> _attributes = new List<AttributeItem>();
+        private List<AttributeItem> _attributes = AWSConfigs.InitializeCollections ? new List<AttributeItem>() : null;
         private string _expression;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.CustomerProfiles.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Panorama.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Panorama.Model
     public partial class ListApplicationInstanceDependenciesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PackageObject> _packageObjects = new List<PackageObject>();
+        private List<PackageObject> _packageObjects = AWSConfigs.InitializeCollections ? new List<PackageObject>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.Panorama.Model
         // Check to see if PackageObjects property is set
         internal bool IsSetPackageObjects()
         {
-            return this._packageObjects != null && this._packageObjects.Count > 0; 
+            return this._packageObjects != null && (this._packageObjects.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

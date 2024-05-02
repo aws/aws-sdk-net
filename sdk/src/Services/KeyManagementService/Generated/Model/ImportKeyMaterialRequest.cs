@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
@@ -49,9 +50,7 @@ namespace Amazon.KeyManagementService.Model
     /// the same key material</a> into that KMS key, but you cannot import different key material.
     /// You might reimport key material to replace key material that expired or key material
     /// that you deleted. You might also reimport key material to change the expiration model
-    /// or expiration date of the key material. Before reimporting key material, if necessary,
-    /// call <a>DeleteImportedKeyMaterial</a> to delete the current imported key material.
-    /// 
+    /// or expiration date of the key material. 
     /// </para>
     ///  
     /// <para>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ServiceCatalog.Model
     /// </summary>
     public partial class DescribeProvisionedProductResponse : AmazonWebServiceResponse
     {
-        private List<CloudWatchDashboard> _cloudWatchDashboards = new List<CloudWatchDashboard>();
+        private List<CloudWatchDashboard> _cloudWatchDashboards = AWSConfigs.InitializeCollections ? new List<CloudWatchDashboard>() : null;
         private ProvisionedProductDetail _provisionedProductDetail;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if CloudWatchDashboards property is set
         internal bool IsSetCloudWatchDashboards()
         {
-            return this._cloudWatchDashboards != null && this._cloudWatchDashboards.Count > 0; 
+            return this._cloudWatchDashboards != null && (this._cloudWatchDashboards.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

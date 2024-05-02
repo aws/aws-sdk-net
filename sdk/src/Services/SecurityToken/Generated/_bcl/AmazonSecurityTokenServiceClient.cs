@@ -33,6 +33,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.SecurityToken
 {
     /// <summary>
@@ -224,10 +225,6 @@ namespace Amazon.SecurityToken
         /// <param name="pipeline"></param>
         protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
-            if(this.Config.RetryMode == RequestRetryMode.Legacy)
-            {
-                pipeline.ReplaceHandler<Amazon.Runtime.Internal.RetryHandler>(new Amazon.Runtime.Internal.RetryHandler(new SecurityTokenServiceRetryPolicy(this.Config)));
-            }
             if(this.Config.RetryMode == RequestRetryMode.Standard)
             {
                 pipeline.ReplaceHandler<Amazon.Runtime.Internal.RetryHandler>(new Amazon.Runtime.Internal.RetryHandler(new SecurityTokenServiceStandardRetryPolicy(this.Config)));

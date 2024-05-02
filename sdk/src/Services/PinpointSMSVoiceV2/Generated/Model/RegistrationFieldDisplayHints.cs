@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         private string _documentationTitle;
         private string _exampleTextValue;
         private string _longDescription;
-        private List<SelectOptionDescription> _selectOptionDescriptions = new List<SelectOptionDescription>();
+        private List<SelectOptionDescription> _selectOptionDescriptions = AWSConfigs.InitializeCollections ? new List<SelectOptionDescription>() : null;
         private string _shortDescription;
         private string _textValidationDescription;
         private string _title;
@@ -129,7 +130,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if SelectOptionDescriptions property is set
         internal bool IsSetSelectOptionDescriptions()
         {
-            return this._selectOptionDescriptions != null && this._selectOptionDescriptions.Count > 0; 
+            return this._selectOptionDescriptions != null && (this._selectOptionDescriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

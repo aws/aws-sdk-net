@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MigrationHubStrategyRecommendations.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
     /// </summary>
     public partial class Heterogeneous
     {
-        private List<string> _targetDatabaseEngine = new List<string>();
+        private List<string> _targetDatabaseEngine = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property TargetDatabaseEngine. 
@@ -51,7 +52,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         // Check to see if TargetDatabaseEngine property is set
         internal bool IsSetTargetDatabaseEngine()
         {
-            return this._targetDatabaseEngine != null && this._targetDatabaseEngine.Count > 0; 
+            return this._targetDatabaseEngine != null && (this._targetDatabaseEngine.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

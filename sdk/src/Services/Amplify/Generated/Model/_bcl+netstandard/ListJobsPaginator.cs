@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Amplify.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Amplify.Model
         /// Enumerable containing all of the JobSummaries
         /// </summary>
         public IPaginatedEnumerable<JobSummary> JobSummaries => 
-            new PaginatedResultKeyResponse<ListJobsResponse, JobSummary>(this, (i) => i.JobSummaries);
+            new PaginatedResultKeyResponse<ListJobsResponse, JobSummary>(this, (i) => i.JobSummaries ?? new List<JobSummary>());
 
         internal ListJobsPaginator(IAmazonAmplify client, ListJobsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Amplify.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListJobsResponse> IPaginator<ListJobsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListJobsResponse> IPaginator<ListJobsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

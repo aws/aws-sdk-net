@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Polly.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Polly.Model
     public partial class ListSpeechSynthesisTasksResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SynthesisTask> _synthesisTasks = new List<SynthesisTask>();
+        private List<SynthesisTask> _synthesisTasks = AWSConfigs.InitializeCollections ? new List<SynthesisTask>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.Polly.Model
         // Check to see if SynthesisTasks property is set
         internal bool IsSetSynthesisTasks()
         {
-            return this._synthesisTasks != null && this._synthesisTasks.Count > 0; 
+            return this._synthesisTasks != null && (this._synthesisTasks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

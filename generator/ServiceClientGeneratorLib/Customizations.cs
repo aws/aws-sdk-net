@@ -422,6 +422,7 @@ namespace ServiceClientGenerator
         public const string GenerateUnmarshallerKey = "generateUnmarshaller";
         public const string SkipUriPropertyValidationKey = "skipUriPropertyValidation";
         public const string OverrideContentTypeKey = "overrideContentType";
+        public const string StopPaginationOnSameTokenKey = "stopPaginationOnSameToken";
 
         JsonData _documentRoot;
 
@@ -1252,6 +1253,8 @@ namespace ServiceClientGenerator
                 modifiers.Documentation = (string)operation[OperationModifiers.DocumentationKey];
             if (operation[OperationModifiers.DeprecatedMessageKey] != null && operation[OperationModifiers.DeprecatedMessageKey].IsString)
                 modifiers.DeprecatedMessage = (string)operation[OperationModifiers.DeprecatedMessageKey];
+            if (operation[OperationModifiers.StopPaginationOnSameTokenKey] != null && operation[OperationModifiers.StopPaginationOnSameTokenKey].IsBoolean)
+                modifiers.StopPaginationOnSameToken = (bool)operation[OperationModifiers.StopPaginationOnSameTokenKey];
 
             if (operation[OperationModifiers.MarshallNameOverrides] != null &&
                 operation[OperationModifiers.MarshallNameOverrides].IsArray)
@@ -1318,6 +1321,7 @@ namespace ServiceClientGenerator
             public const string DeprecatedKey = "deprecated";
             public const string DeprecatedMessageKey = "deprecatedMessage";
             public const string DocumentationKey = "documentation";
+            public const string StopPaginationOnSameTokenKey = "stopPaginationOnSameToken";
 
             // within a marshal override for a shape; one or both may be present
             public const string MarshallLocationName = "marshallLocationName";
@@ -1395,6 +1399,12 @@ namespace ServiceClientGenerator
             }
 
             public string DeprecatedMessage
+            {
+                get;
+                set;
+            }
+
+            public bool StopPaginationOnSameToken
             {
                 get;
                 set;
@@ -1554,7 +1564,7 @@ namespace ServiceClientGenerator
                 /// any code that would be valid within the Amazon[ServiceName]Client
                 /// class for the ServiceName where the override is being made. For 
                 /// example, a valid condition is: 
-                /// "if(this.Config.RetryMode == RequestRetryMode.Legacy)"
+                /// "if(this.Config.RetryMode == RequestRetryMode.Standard)"
                 /// </summary>
                 public string Condition { get; set; }
 

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AppMesh.Model
     /// </summary>
     public partial class VirtualRouterSpec
     {
-        private List<VirtualRouterListener> _listeners = new List<VirtualRouterListener>();
+        private List<VirtualRouterListener> _listeners = AWSConfigs.InitializeCollections ? new List<VirtualRouterListener>() : null;
 
         /// <summary>
         /// Gets and sets the property Listeners. 
@@ -51,7 +52,7 @@ namespace Amazon.AppMesh.Model
         // Check to see if Listeners property is set
         internal bool IsSetListeners()
         {
-            return this._listeners != null && this._listeners.Count > 0; 
+            return this._listeners != null && (this._listeners.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

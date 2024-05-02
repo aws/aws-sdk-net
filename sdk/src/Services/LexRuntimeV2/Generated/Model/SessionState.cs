@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexRuntimeV2.Model
 {
     /// <summary>
@@ -33,12 +34,12 @@ namespace Amazon.LexRuntimeV2.Model
     /// </summary>
     public partial class SessionState
     {
-        private List<ActiveContext> _activeContexts = new List<ActiveContext>();
+        private List<ActiveContext> _activeContexts = AWSConfigs.InitializeCollections ? new List<ActiveContext>() : null;
         private DialogAction _dialogAction;
         private Intent _intent;
         private string _originatingRequestId;
         private RuntimeHints _runtimeHints;
-        private Dictionary<string, string> _sessionAttributes = new Dictionary<string, string>();
+        private Dictionary<string, string> _sessionAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ActiveContexts. 
@@ -58,7 +59,7 @@ namespace Amazon.LexRuntimeV2.Model
         // Check to see if ActiveContexts property is set
         internal bool IsSetActiveContexts()
         {
-            return this._activeContexts != null && this._activeContexts.Count > 0; 
+            return this._activeContexts != null && (this._activeContexts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -151,7 +152,7 @@ namespace Amazon.LexRuntimeV2.Model
         // Check to see if SessionAttributes property is set
         internal bool IsSetSessionAttributes()
         {
-            return this._sessionAttributes != null && this._sessionAttributes.Count > 0; 
+            return this._sessionAttributes != null && (this._sessionAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

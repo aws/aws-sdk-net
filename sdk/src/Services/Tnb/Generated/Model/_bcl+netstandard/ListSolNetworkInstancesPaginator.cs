@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Tnb.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Tnb.Model
         /// Enumerable containing all of the NetworkInstances
         /// </summary>
         public IPaginatedEnumerable<ListSolNetworkInstanceInfo> NetworkInstances => 
-            new PaginatedResultKeyResponse<ListSolNetworkInstancesResponse, ListSolNetworkInstanceInfo>(this, (i) => i.NetworkInstances);
+            new PaginatedResultKeyResponse<ListSolNetworkInstancesResponse, ListSolNetworkInstanceInfo>(this, (i) => i.NetworkInstances ?? new List<ListSolNetworkInstanceInfo>());
 
         internal ListSolNetworkInstancesPaginator(IAmazonTnb client, ListSolNetworkInstancesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Tnb.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListSolNetworkInstancesResponse> IPaginator<ListSolNetworkInstancesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListSolNetworkInstancesResponse> IPaginator<ListSolNetworkInstancesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

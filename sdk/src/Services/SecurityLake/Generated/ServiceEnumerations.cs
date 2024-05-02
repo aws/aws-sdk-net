@@ -85,6 +85,10 @@ namespace Amazon.SecurityLake
         /// </summary>
         public static readonly AwsLogSourceName CLOUD_TRAIL_MGMT = new AwsLogSourceName("CLOUD_TRAIL_MGMT");
         /// <summary>
+        /// Constant EKS_AUDIT for AwsLogSourceName
+        /// </summary>
+        public static readonly AwsLogSourceName EKS_AUDIT = new AwsLogSourceName("EKS_AUDIT");
+        /// <summary>
         /// Constant LAMBDA_EXECUTION for AwsLogSourceName
         /// </summary>
         public static readonly AwsLogSourceName LAMBDA_EXECUTION = new AwsLogSourceName("LAMBDA_EXECUTION");
@@ -104,6 +108,10 @@ namespace Amazon.SecurityLake
         /// Constant VPC_FLOW for AwsLogSourceName
         /// </summary>
         public static readonly AwsLogSourceName VPC_FLOW = new AwsLogSourceName("VPC_FLOW");
+        /// <summary>
+        /// Constant WAF for AwsLogSourceName
+        /// </summary>
+        public static readonly AwsLogSourceName WAF = new AwsLogSourceName("WAF");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

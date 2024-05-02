@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Route53.Model
         private string _nameserver;
         private string _recordName;
         private RRType _recordType;
-        private List<string> _recordData = new List<string>();
+        private List<string> _recordData = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _responseCode;
         private string _protocol;
 
@@ -114,7 +115,7 @@ namespace Amazon.Route53.Model
         // Check to see if RecordData property is set
         internal bool IsSetRecordData()
         {
-            return this._recordData != null && this._recordData.Count > 0; 
+            return this._recordData != null && (this._recordData.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

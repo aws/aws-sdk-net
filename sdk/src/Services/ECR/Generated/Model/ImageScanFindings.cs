@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECR.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.ECR.Model
     /// </summary>
     public partial class ImageScanFindings
     {
-        private List<EnhancedImageScanFinding> _enhancedFindings = new List<EnhancedImageScanFinding>();
-        private List<ImageScanFinding> _findings = new List<ImageScanFinding>();
-        private Dictionary<string, int> _findingSeverityCounts = new Dictionary<string, int>();
+        private List<EnhancedImageScanFinding> _enhancedFindings = AWSConfigs.InitializeCollections ? new List<EnhancedImageScanFinding>() : null;
+        private List<ImageScanFinding> _findings = AWSConfigs.InitializeCollections ? new List<ImageScanFinding>() : null;
+        private Dictionary<string, int> _findingSeverityCounts = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
         private DateTime? _imageScanCompletedAt;
         private DateTime? _vulnerabilitySourceUpdatedAt;
 
@@ -54,7 +55,7 @@ namespace Amazon.ECR.Model
         // Check to see if EnhancedFindings property is set
         internal bool IsSetEnhancedFindings()
         {
-            return this._enhancedFindings != null && this._enhancedFindings.Count > 0; 
+            return this._enhancedFindings != null && (this._enhancedFindings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.ECR.Model
         // Check to see if Findings property is set
         internal bool IsSetFindings()
         {
-            return this._findings != null && this._findings.Count > 0; 
+            return this._findings != null && (this._findings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -90,7 +91,7 @@ namespace Amazon.ECR.Model
         // Check to see if FindingSeverityCounts property is set
         internal bool IsSetFindingSeverityCounts()
         {
-            return this._findingSeverityCounts != null && this._findingSeverityCounts.Count > 0; 
+            return this._findingSeverityCounts != null && (this._findingSeverityCounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CostOptimizationHub.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CostOptimizationHub.Model
     public partial class ResourceCostCalculation
     {
         private ResourcePricing _pricing;
-        private List<Usage> _usages = new List<Usage>();
+        private List<Usage> _usages = AWSConfigs.InitializeCollections ? new List<Usage>() : null;
 
         /// <summary>
         /// Gets and sets the property Pricing. 
@@ -69,7 +70,7 @@ namespace Amazon.CostOptimizationHub.Model
         // Check to see if Usages property is set
         internal bool IsSetUsages()
         {
-            return this._usages != null && this._usages.Count > 0; 
+            return this._usages != null && (this._usages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

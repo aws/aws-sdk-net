@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
@@ -43,8 +44,8 @@ namespace Amazon.ElasticBeanstalk.Model
         private string _platformOwner;
         private PlatformStatus _platformStatus;
         private string _platformVersion;
-        private List<string> _supportedAddonList = new List<string>();
-        private List<string> _supportedTierList = new List<string>();
+        private List<string> _supportedAddonList = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _supportedTierList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property OperatingSystemName. 
@@ -256,7 +257,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if SupportedAddonList property is set
         internal bool IsSetSupportedAddonList()
         {
-            return this._supportedAddonList != null && this._supportedAddonList.Count > 0; 
+            return this._supportedAddonList != null && (this._supportedAddonList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -274,7 +275,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if SupportedTierList property is set
         internal bool IsSetSupportedTierList()
         {
-            return this._supportedTierList != null && this._supportedTierList.Count > 0; 
+            return this._supportedTierList != null && (this._supportedTierList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

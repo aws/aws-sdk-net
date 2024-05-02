@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class DescribeAutomationExecutionsResponse : AmazonWebServiceResponse
     {
-        private List<AutomationExecutionMetadata> _automationExecutionMetadataList = new List<AutomationExecutionMetadata>();
+        private List<AutomationExecutionMetadata> _automationExecutionMetadataList = AWSConfigs.InitializeCollections ? new List<AutomationExecutionMetadata>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if AutomationExecutionMetadataList property is set
         internal bool IsSetAutomationExecutionMetadataList()
         {
-            return this._automationExecutionMetadataList != null && this._automationExecutionMetadataList.Count > 0; 
+            return this._automationExecutionMetadataList != null && (this._automationExecutionMetadataList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

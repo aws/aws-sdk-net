@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.GlueDataBrew.Model
     /// </summary>
     public partial class EntityDetectorConfiguration
     {
-        private List<AllowedStatistics> _allowedStatistics = new List<AllowedStatistics>();
-        private List<string> _entityTypes = new List<string>();
+        private List<AllowedStatistics> _allowedStatistics = AWSConfigs.InitializeCollections ? new List<AllowedStatistics>() : null;
+        private List<string> _entityTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AllowedStatistics. 
@@ -55,7 +56,7 @@ namespace Amazon.GlueDataBrew.Model
         // Check to see if AllowedStatistics property is set
         internal bool IsSetAllowedStatistics()
         {
-            return this._allowedStatistics != null && this._allowedStatistics.Count > 0; 
+            return this._allowedStatistics != null && (this._allowedStatistics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -155,7 +156,7 @@ namespace Amazon.GlueDataBrew.Model
         // Check to see if EntityTypes property is set
         internal bool IsSetEntityTypes()
         {
-            return this._entityTypes != null && this._entityTypes.Count > 0; 
+            return this._entityTypes != null && (this._entityTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

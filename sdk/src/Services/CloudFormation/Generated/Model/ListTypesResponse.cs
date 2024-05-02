@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CloudFormation.Model
     public partial class ListTypesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TypeSummary> _typeSummaries = new List<TypeSummary>();
+        private List<TypeSummary> _typeSummaries = AWSConfigs.InitializeCollections ? new List<TypeSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -74,7 +75,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if TypeSummaries property is set
         internal bool IsSetTypeSummaries()
         {
-            return this._typeSummaries != null && this._typeSummaries.Count > 0; 
+            return this._typeSummaries != null && (this._typeSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

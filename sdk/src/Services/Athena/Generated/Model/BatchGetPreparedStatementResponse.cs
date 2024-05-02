@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Athena.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Athena.Model
     /// </summary>
     public partial class BatchGetPreparedStatementResponse : AmazonWebServiceResponse
     {
-        private List<PreparedStatement> _preparedStatements = new List<PreparedStatement>();
-        private List<UnprocessedPreparedStatementName> _unprocessedPreparedStatementNames = new List<UnprocessedPreparedStatementName>();
+        private List<PreparedStatement> _preparedStatements = AWSConfigs.InitializeCollections ? new List<PreparedStatement>() : null;
+        private List<UnprocessedPreparedStatementName> _unprocessedPreparedStatementNames = AWSConfigs.InitializeCollections ? new List<UnprocessedPreparedStatementName>() : null;
 
         /// <summary>
         /// Gets and sets the property PreparedStatements. 
@@ -51,7 +52,7 @@ namespace Amazon.Athena.Model
         // Check to see if PreparedStatements property is set
         internal bool IsSetPreparedStatements()
         {
-            return this._preparedStatements != null && this._preparedStatements.Count > 0; 
+            return this._preparedStatements != null && (this._preparedStatements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.Athena.Model
         // Check to see if UnprocessedPreparedStatementNames property is set
         internal bool IsSetUnprocessedPreparedStatementNames()
         {
-            return this._unprocessedPreparedStatementNames != null && this._unprocessedPreparedStatementNames.Count > 0; 
+            return this._unprocessedPreparedStatementNames != null && (this._unprocessedPreparedStatementNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

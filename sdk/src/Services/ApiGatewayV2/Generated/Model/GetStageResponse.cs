@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ApiGatewayV2.Model
 {
     /// <summary>
@@ -43,10 +44,10 @@ namespace Amazon.ApiGatewayV2.Model
         private string _description;
         private string _lastDeploymentStatusMessage;
         private DateTime? _lastUpdatedDate;
-        private Dictionary<string, RouteSettings> _routeSettings = new Dictionary<string, RouteSettings>();
+        private Dictionary<string, RouteSettings> _routeSettings = AWSConfigs.InitializeCollections ? new Dictionary<string, RouteSettings>() : null;
         private string _stageName;
-        private Dictionary<string, string> _stageVariables = new Dictionary<string, string>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _stageVariables = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AccessLogSettings. 
@@ -248,7 +249,7 @@ namespace Amazon.ApiGatewayV2.Model
         // Check to see if RouteSettings property is set
         internal bool IsSetRouteSettings()
         {
-            return this._routeSettings != null && this._routeSettings.Count > 0; 
+            return this._routeSettings != null && (this._routeSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -285,7 +286,7 @@ namespace Amazon.ApiGatewayV2.Model
         // Check to see if StageVariables property is set
         internal bool IsSetStageVariables()
         {
-            return this._stageVariables != null && this._stageVariables.Count > 0; 
+            return this._stageVariables != null && (this._stageVariables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -303,7 +304,7 @@ namespace Amazon.ApiGatewayV2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

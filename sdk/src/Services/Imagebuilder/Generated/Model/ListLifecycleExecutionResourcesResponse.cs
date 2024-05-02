@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Imagebuilder.Model
         private string _lifecycleExecutionId;
         private LifecycleExecutionState _lifecycleExecutionState;
         private string _nextToken;
-        private List<LifecycleExecutionResource> _resources = new List<LifecycleExecutionResource>();
+        private List<LifecycleExecutionResource> _resources = AWSConfigs.InitializeCollections ? new List<LifecycleExecutionResource>() : null;
 
         /// <summary>
         /// Gets and sets the property LifecycleExecutionId. 
@@ -110,7 +111,7 @@ namespace Amazon.Imagebuilder.Model
         // Check to see if Resources property is set
         internal bool IsSetResources()
         {
-            return this._resources != null && this._resources.Count > 0; 
+            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

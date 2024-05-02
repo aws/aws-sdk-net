@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Rekognition.Model
         /// Enumerable containing all of the Faces
         /// </summary>
         public IPaginatedEnumerable<Face> Faces => 
-            new PaginatedResultKeyResponse<ListFacesResponse, Face>(this, (i) => i.Faces);
+            new PaginatedResultKeyResponse<ListFacesResponse, Face>(this, (i) => i.Faces ?? new List<Face>());
 
         internal ListFacesPaginator(IAmazonRekognition client, ListFacesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Rekognition.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListFacesResponse> IPaginator<ListFacesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListFacesResponse> IPaginator<ListFacesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GameLift.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class ListComputeResponse : AmazonWebServiceResponse
     {
-        private List<Compute> _computeList = new List<Compute>();
+        private List<Compute> _computeList = AWSConfigs.InitializeCollections ? new List<Compute>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.GameLift.Model
         // Check to see if ComputeList property is set
         internal bool IsSetComputeList()
         {
-            return this._computeList != null && this._computeList.Count > 0; 
+            return this._computeList != null && (this._computeList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

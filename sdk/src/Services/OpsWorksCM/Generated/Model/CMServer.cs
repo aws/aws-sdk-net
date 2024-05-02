@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpsWorksCM.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.OpsWorksCM.Model
         private bool? _disableAutomatedBackup;
         private string _endpoint;
         private string _engine;
-        private List<EngineAttribute> _engineAttributes = new List<EngineAttribute>();
+        private List<EngineAttribute> _engineAttributes = AWSConfigs.InitializeCollections ? new List<EngineAttribute>() : null;
         private string _engineModel;
         private string _engineVersion;
         private string _instanceProfileArn;
@@ -50,13 +51,13 @@ namespace Amazon.OpsWorksCM.Model
         private MaintenanceStatus _maintenanceStatus;
         private string _preferredBackupWindow;
         private string _preferredMaintenanceWindow;
-        private List<string> _securityGroupIds = new List<string>();
+        private List<string> _securityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _serverArn;
         private string _serverName;
         private string _serviceRoleArn;
         private ServerStatus _status;
         private string _statusReason;
-        private List<string> _subnetIds = new List<string>();
+        private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AssociatePublicIpAddress. 
@@ -262,7 +263,7 @@ namespace Amazon.OpsWorksCM.Model
         // Check to see if EngineAttributes property is set
         internal bool IsSetEngineAttributes()
         {
-            return this._engineAttributes != null && this._engineAttributes.Count > 0; 
+            return this._engineAttributes != null && (this._engineAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -437,7 +438,7 @@ namespace Amazon.OpsWorksCM.Model
         // Check to see if SecurityGroupIds property is set
         internal bool IsSetSecurityGroupIds()
         {
-            return this._securityGroupIds != null && this._securityGroupIds.Count > 0; 
+            return this._securityGroupIds != null && (this._securityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -553,7 +554,7 @@ namespace Amazon.OpsWorksCM.Model
         // Check to see if SubnetIds property is set
         internal bool IsSetSubnetIds()
         {
-            return this._subnetIds != null && this._subnetIds.Count > 0; 
+            return this._subnetIds != null && (this._subnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

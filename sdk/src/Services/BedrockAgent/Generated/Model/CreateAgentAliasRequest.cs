@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAgentAlias operation.
-    /// Creates an Alias for an existing Amazon Bedrock Agent
+    /// Creates an alias of an agent that can be used to deploy the agent.
     /// </summary>
     public partial class CreateAgentAliasRequest : AmazonBedrockAgentRequest
     {
@@ -38,11 +39,14 @@ namespace Amazon.BedrockAgent.Model
         private string _agentId;
         private string _clientToken;
         private string _description;
-        private List<AgentAliasRoutingConfigurationListItem> _routingConfiguration = new List<AgentAliasRoutingConfigurationListItem>();
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private List<AgentAliasRoutingConfigurationListItem> _routingConfiguration = AWSConfigs.InitializeCollections ? new List<AgentAliasRoutingConfigurationListItem>() : null;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
-        /// Gets and sets the property AgentAliasName.
+        /// Gets and sets the property AgentAliasName. 
+        /// <para>
+        /// The name of the alias.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string AgentAliasName
@@ -60,7 +64,7 @@ namespace Amazon.BedrockAgent.Model
         /// <summary>
         /// Gets and sets the property AgentId. 
         /// <para>
-        /// Id generated at the server side when an Agent is created
+        /// The unique identifier of the agent.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -77,7 +81,13 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ClientToken.
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A unique, case-sensitive identifier to ensure that the API request completes no more
+        /// than one time. If this token matches a previous request, Amazon Bedrock ignores the
+        /// request, but does not return an error. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+        /// idempotency</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=33, Max=256)]
         public string ClientToken
@@ -93,7 +103,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// A description of the alias of the agent.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
         public string Description
@@ -109,7 +122,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RoutingConfiguration.
+        /// Gets and sets the property RoutingConfiguration. 
+        /// <para>
+        /// Contains details about the routing configuration of the alias.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
         public List<AgentAliasRoutingConfigurationListItem> RoutingConfiguration
@@ -121,11 +137,14 @@ namespace Amazon.BedrockAgent.Model
         // Check to see if RoutingConfiguration property is set
         internal bool IsSetRoutingConfiguration()
         {
-            return this._routingConfiguration != null && this._routingConfiguration.Count > 0; 
+            return this._routingConfiguration != null && (this._routingConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// Any tags that you want to attach to the alias of the agent.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
         {
@@ -136,7 +155,7 @@ namespace Amazon.BedrockAgent.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

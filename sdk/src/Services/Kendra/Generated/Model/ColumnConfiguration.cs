@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -34,11 +35,11 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class ColumnConfiguration
     {
-        private List<string> _changeDetectingColumns = new List<string>();
+        private List<string> _changeDetectingColumns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _documentDataColumnName;
         private string _documentIdColumnName;
         private string _documentTitleColumnName;
-        private List<DataSourceToIndexFieldMapping> _fieldMappings = new List<DataSourceToIndexFieldMapping>();
+        private List<DataSourceToIndexFieldMapping> _fieldMappings = AWSConfigs.InitializeCollections ? new List<DataSourceToIndexFieldMapping>() : null;
 
         /// <summary>
         /// Gets and sets the property ChangeDetectingColumns. 
@@ -56,7 +57,7 @@ namespace Amazon.Kendra.Model
         // Check to see if ChangeDetectingColumns property is set
         internal bool IsSetChangeDetectingColumns()
         {
-            return this._changeDetectingColumns != null && this._changeDetectingColumns.Count > 0; 
+            return this._changeDetectingColumns != null && (this._changeDetectingColumns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -134,7 +135,7 @@ namespace Amazon.Kendra.Model
         // Check to see if FieldMappings property is set
         internal bool IsSetFieldMappings()
         {
-            return this._fieldMappings != null && this._fieldMappings.Count > 0; 
+            return this._fieldMappings != null && (this._fieldMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

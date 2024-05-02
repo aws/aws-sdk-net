@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// Enumerable containing all of the Findings
         /// </summary>
         public IPaginatedEnumerable<ValidatePolicyFinding> Findings => 
-            new PaginatedResultKeyResponse<ValidatePolicyResponse, ValidatePolicyFinding>(this, (i) => i.Findings);
+            new PaginatedResultKeyResponse<ValidatePolicyResponse, ValidatePolicyFinding>(this, (i) => i.Findings ?? new List<ValidatePolicyFinding>());
 
         internal ValidatePolicyPaginator(IAmazonAccessAnalyzer client, ValidatePolicyRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.AccessAnalyzer.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ValidatePolicyResponse> IPaginator<ValidatePolicyResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ValidatePolicyResponse> IPaginator<ValidatePolicyResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

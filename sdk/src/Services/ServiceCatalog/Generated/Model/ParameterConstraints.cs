@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ServiceCatalog.Model
     public partial class ParameterConstraints
     {
         private string _allowedPattern;
-        private List<string> _allowedValues = new List<string>();
+        private List<string> _allowedValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _constraintDescription;
         private string _maxLength;
         private string _maxValue;
@@ -75,7 +76,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if AllowedValues property is set
         internal bool IsSetAllowedValues()
         {
-            return this._allowedValues != null && this._allowedValues.Count > 0; 
+            return this._allowedValues != null && (this._allowedValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

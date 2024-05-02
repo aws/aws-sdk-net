@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ModelPackageValidationSpecification
     {
-        private List<ModelPackageValidationProfile> _validationProfiles = new List<ModelPackageValidationProfile>();
+        private List<ModelPackageValidationProfile> _validationProfiles = AWSConfigs.InitializeCollections ? new List<ModelPackageValidationProfile>() : null;
         private string _validationRole;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ValidationProfiles property is set
         internal bool IsSetValidationProfiles()
         {
-            return this._validationProfiles != null && this._validationProfiles.Count > 0; 
+            return this._validationProfiles != null && (this._validationProfiles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

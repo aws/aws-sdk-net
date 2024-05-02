@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// This operation is supported only for Amazon Kinesis Data Analytics for Apache Flink.
+    /// This operation is supported only for Managed Service for Apache Flink.
     /// </para>
     ///  </note>
     /// </summary>

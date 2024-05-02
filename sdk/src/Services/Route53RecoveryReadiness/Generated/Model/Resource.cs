@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
     {
         private string _componentId;
         private DNSTargetResource _dnsTargetResource;
-        private List<string> _readinessScopes = new List<string>();
+        private List<string> _readinessScopes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _resourceArn;
 
         /// <summary>
@@ -90,7 +91,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
         // Check to see if ReadinessScopes property is set
         internal bool IsSetReadinessScopes()
         {
-            return this._readinessScopes != null && this._readinessScopes.Count > 0; 
+            return this._readinessScopes != null && (this._readinessScopes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class ConversationLogSettings
     {
-        private List<AudioLogSetting> _audioLogSettings = new List<AudioLogSetting>();
-        private List<TextLogSetting> _textLogSettings = new List<TextLogSetting>();
+        private List<AudioLogSetting> _audioLogSettings = AWSConfigs.InitializeCollections ? new List<AudioLogSetting>() : null;
+        private List<TextLogSetting> _textLogSettings = AWSConfigs.InitializeCollections ? new List<TextLogSetting>() : null;
 
         /// <summary>
         /// Gets and sets the property AudioLogSettings. 
@@ -53,7 +54,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if AudioLogSettings property is set
         internal bool IsSetAudioLogSettings()
         {
-            return this._audioLogSettings != null && this._audioLogSettings.Count > 0; 
+            return this._audioLogSettings != null && (this._audioLogSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if TextLogSettings property is set
         internal bool IsSetTextLogSettings()
         {
-            return this._textLogSettings != null && this._textLogSettings.Count > 0; 
+            return this._textLogSettings != null && (this._textLogSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

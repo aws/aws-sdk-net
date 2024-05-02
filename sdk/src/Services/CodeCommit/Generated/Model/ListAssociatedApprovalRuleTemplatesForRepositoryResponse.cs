@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CodeCommit.Model
     /// </summary>
     public partial class ListAssociatedApprovalRuleTemplatesForRepositoryResponse : AmazonWebServiceResponse
     {
-        private List<string> _approvalRuleTemplateNames = new List<string>();
+        private List<string> _approvalRuleTemplateNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.CodeCommit.Model
         // Check to see if ApprovalRuleTemplateNames property is set
         internal bool IsSetApprovalRuleTemplateNames()
         {
-            return this._approvalRuleTemplateNames != null && this._approvalRuleTemplateNames.Count > 0; 
+            return this._approvalRuleTemplateNames != null && (this._approvalRuleTemplateNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Route53Resolver.Model
     public partial class ListResolverConfigsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ResolverConfig> _resolverConfigs = new List<ResolverConfig>();
+        private List<ResolverConfig> _resolverConfigs = AWSConfigs.InitializeCollections ? new List<ResolverConfig>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -79,7 +80,7 @@ namespace Amazon.Route53Resolver.Model
         // Check to see if ResolverConfigs property is set
         internal bool IsSetResolverConfigs()
         {
-            return this._resolverConfigs != null && this._resolverConfigs.Count > 0; 
+            return this._resolverConfigs != null && (this._resolverConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

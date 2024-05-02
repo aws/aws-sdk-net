@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Batch.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Batch.Model
     {
         private int? _index;
         private int? _size;
-        private Dictionary<string, int> _statusSummary = new Dictionary<string, int>();
+        private Dictionary<string, int> _statusSummary = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
 
         /// <summary>
         /// Gets and sets the property Index. 
@@ -90,7 +91,7 @@ namespace Amazon.Batch.Model
         // Check to see if StatusSummary property is set
         internal bool IsSetStatusSummary()
         {
-            return this._statusSummary != null && this._statusSummary.Count > 0; 
+            return this._statusSummary != null && (this._statusSummary.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -133,6 +134,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<AssetBundleImportJobError, AssetBundleImportJobErrorUnmarshaller>(AssetBundleImportJobErrorUnmarshaller.Instance);
                     response.RollbackErrors = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Warnings", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AssetBundleImportJobWarning, AssetBundleImportJobWarningUnmarshaller>(AssetBundleImportJobWarningUnmarshaller.Instance);
+                    response.Warnings = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

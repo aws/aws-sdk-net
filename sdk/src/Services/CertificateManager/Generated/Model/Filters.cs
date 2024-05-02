@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CertificateManager.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.CertificateManager.Model
     /// </summary>
     public partial class Filters
     {
-        private List<string> _extendedKeyUsage = new List<string>();
-        private List<string> _keyTypes = new List<string>();
-        private List<string> _keyUsage = new List<string>();
+        private List<string> _extendedKeyUsage = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _keyTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _keyUsage = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ExtendedKeyUsage. 
@@ -53,7 +54,7 @@ namespace Amazon.CertificateManager.Model
         // Check to see if ExtendedKeyUsage property is set
         internal bool IsSetExtendedKeyUsage()
         {
-            return this._extendedKeyUsage != null && this._extendedKeyUsage.Count > 0; 
+            return this._extendedKeyUsage != null && (this._extendedKeyUsage.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -78,7 +79,7 @@ namespace Amazon.CertificateManager.Model
         // Check to see if KeyTypes property is set
         internal bool IsSetKeyTypes()
         {
-            return this._keyTypes != null && this._keyTypes.Count > 0; 
+            return this._keyTypes != null && (this._keyTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -96,7 +97,7 @@ namespace Amazon.CertificateManager.Model
         // Check to see if KeyUsage property is set
         internal bool IsSetKeyUsage()
         {
-            return this._keyUsage != null && this._keyUsage.Count > 0; 
+            return this._keyUsage != null && (this._keyUsage.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.AWSHealth.Model
         /// Enumerable containing all of the Events
         /// </summary>
         public IPaginatedEnumerable<OrganizationEvent> Events => 
-            new PaginatedResultKeyResponse<DescribeEventsForOrganizationResponse, OrganizationEvent>(this, (i) => i.Events);
+            new PaginatedResultKeyResponse<DescribeEventsForOrganizationResponse, OrganizationEvent>(this, (i) => i.Events ?? new List<OrganizationEvent>());
 
         internal DescribeEventsForOrganizationPaginator(IAmazonAWSHealth client, DescribeEventsForOrganizationRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.AWSHealth.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeEventsForOrganizationResponse> IPaginator<DescribeEventsForOrganizationResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeEventsForOrganizationResponse> IPaginator<DescribeEventsForOrganizationResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EMRServerless.Model
 {
     /// <summary>
@@ -36,6 +37,7 @@ namespace Amazon.EMRServerless.Model
     {
         private string _cpu;
         private string _disk;
+        private string _diskType;
         private string _memory;
 
         /// <summary>
@@ -74,6 +76,26 @@ namespace Amazon.EMRServerless.Model
         internal bool IsSetDisk()
         {
             return this._disk != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DiskType. 
+        /// <para>
+        /// The disk type for every worker instance of the work type. Shuffle optimized disks
+        /// have higher performance characteristics and are better for shuffle heavy workloads.
+        /// Default is <c>STANDARD</c>.
+        /// </para>
+        /// </summary>
+        public string DiskType
+        {
+            get { return this._diskType; }
+            set { this._diskType = value; }
+        }
+
+        // Check to see if DiskType property is set
+        internal bool IsSetDiskType()
+        {
+            return this._diskType != null;
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListCodeRepositoriesResponse : AmazonWebServiceResponse
     {
-        private List<CodeRepositorySummary> _codeRepositorySummaryList = new List<CodeRepositorySummary>();
+        private List<CodeRepositorySummary> _codeRepositorySummaryList = AWSConfigs.InitializeCollections ? new List<CodeRepositorySummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -76,7 +77,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if CodeRepositorySummaryList property is set
         internal bool IsSetCodeRepositorySummaryList()
         {
-            return this._codeRepositorySummaryList != null && this._codeRepositorySummaryList.Count > 0; 
+            return this._codeRepositorySummaryList != null && (this._codeRepositorySummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

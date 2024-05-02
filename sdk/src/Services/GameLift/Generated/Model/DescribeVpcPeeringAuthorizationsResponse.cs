@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GameLift.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class DescribeVpcPeeringAuthorizationsResponse : AmazonWebServiceResponse
     {
-        private List<VpcPeeringAuthorization> _vpcPeeringAuthorizations = new List<VpcPeeringAuthorization>();
+        private List<VpcPeeringAuthorization> _vpcPeeringAuthorizations = AWSConfigs.InitializeCollections ? new List<VpcPeeringAuthorization>() : null;
 
         /// <summary>
         /// Gets and sets the property VpcPeeringAuthorizations. 
@@ -51,7 +52,7 @@ namespace Amazon.GameLift.Model
         // Check to see if VpcPeeringAuthorizations property is set
         internal bool IsSetVpcPeeringAuthorizations()
         {
-            return this._vpcPeeringAuthorizations != null && this._vpcPeeringAuthorizations.Count > 0; 
+            return this._vpcPeeringAuthorizations != null && (this._vpcPeeringAuthorizations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

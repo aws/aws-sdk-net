@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
@@ -43,9 +44,9 @@ namespace Amazon.DeviceFarm.Model
     /// </summary>
     public partial class CustomerArtifactPaths
     {
-        private List<string> _androidPaths = new List<string>();
-        private List<string> _deviceHostPaths = new List<string>();
-        private List<string> _iosPaths = new List<string>();
+        private List<string> _androidPaths = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _deviceHostPaths = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _iosPaths = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AndroidPaths. 
@@ -63,7 +64,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if AndroidPaths property is set
         internal bool IsSetAndroidPaths()
         {
-            return this._androidPaths != null && this._androidPaths.Count > 0; 
+            return this._androidPaths != null && (this._androidPaths.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -82,7 +83,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if DeviceHostPaths property is set
         internal bool IsSetDeviceHostPaths()
         {
-            return this._deviceHostPaths != null && this._deviceHostPaths.Count > 0; 
+            return this._deviceHostPaths != null && (this._deviceHostPaths.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -101,7 +102,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if IosPaths property is set
         internal bool IsSetIosPaths()
         {
-            return this._iosPaths != null && this._iosPaths.Count > 0; 
+            return this._iosPaths != null && (this._iosPaths.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

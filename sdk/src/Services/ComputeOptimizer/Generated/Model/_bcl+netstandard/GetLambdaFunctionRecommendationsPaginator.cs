@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// Enumerable containing all of the LambdaFunctionRecommendations
         /// </summary>
         public IPaginatedEnumerable<LambdaFunctionRecommendation> LambdaFunctionRecommendations => 
-            new PaginatedResultKeyResponse<GetLambdaFunctionRecommendationsResponse, LambdaFunctionRecommendation>(this, (i) => i.LambdaFunctionRecommendations);
+            new PaginatedResultKeyResponse<GetLambdaFunctionRecommendationsResponse, LambdaFunctionRecommendation>(this, (i) => i.LambdaFunctionRecommendations ?? new List<LambdaFunctionRecommendation>());
 
         internal GetLambdaFunctionRecommendationsPaginator(IAmazonComputeOptimizer client, GetLambdaFunctionRecommendationsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ComputeOptimizer.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<GetLambdaFunctionRecommendationsResponse> IPaginator<GetLambdaFunctionRecommendationsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<GetLambdaFunctionRecommendationsResponse> IPaginator<GetLambdaFunctionRecommendationsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

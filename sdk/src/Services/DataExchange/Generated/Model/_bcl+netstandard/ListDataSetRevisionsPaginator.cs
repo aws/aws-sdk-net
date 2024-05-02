@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.DataExchange.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.DataExchange.Model
         /// Enumerable containing all of the Revisions
         /// </summary>
         public IPaginatedEnumerable<RevisionEntry> Revisions => 
-            new PaginatedResultKeyResponse<ListDataSetRevisionsResponse, RevisionEntry>(this, (i) => i.Revisions);
+            new PaginatedResultKeyResponse<ListDataSetRevisionsResponse, RevisionEntry>(this, (i) => i.Revisions ?? new List<RevisionEntry>());
 
         internal ListDataSetRevisionsPaginator(IAmazonDataExchange client, ListDataSetRevisionsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.DataExchange.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListDataSetRevisionsResponse> IPaginator<ListDataSetRevisionsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListDataSetRevisionsResponse> IPaginator<ListDataSetRevisionsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

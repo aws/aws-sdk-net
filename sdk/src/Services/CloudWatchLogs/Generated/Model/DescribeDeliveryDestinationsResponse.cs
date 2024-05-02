@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// </summary>
     public partial class DescribeDeliveryDestinationsResponse : AmazonWebServiceResponse
     {
-        private List<DeliveryDestination> _deliveryDestinations = new List<DeliveryDestination>();
+        private List<DeliveryDestination> _deliveryDestinations = AWSConfigs.InitializeCollections ? new List<DeliveryDestination>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if DeliveryDestinations property is set
         internal bool IsSetDeliveryDestinations()
         {
-            return this._deliveryDestinations != null && this._deliveryDestinations.Count > 0; 
+            return this._deliveryDestinations != null && (this._deliveryDestinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

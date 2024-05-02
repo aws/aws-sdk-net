@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeArtifact.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CodeArtifact.Model
     /// </summary>
     public partial class ListPackageVersionDependenciesResponse : AmazonWebServiceResponse
     {
-        private List<PackageDependency> _dependencies = new List<PackageDependency>();
+        private List<PackageDependency> _dependencies = AWSConfigs.InitializeCollections ? new List<PackageDependency>() : null;
         private PackageFormat _format;
         private string _awsNamespace;
         private string _nextToken;
@@ -57,7 +58,7 @@ namespace Amazon.CodeArtifact.Model
         // Check to see if Dependencies property is set
         internal bool IsSetDependencies()
         {
-            return this._dependencies != null && this._dependencies.Count > 0; 
+            return this._dependencies != null && (this._dependencies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -83,7 +84,7 @@ namespace Amazon.CodeArtifact.Model
         /// Gets and sets the property Namespace. 
         /// <para>
         /// The namespace of the package version that contains the returned dependencies. The
-        /// package version component that specifies its namespace depends on its type. For example:
+        /// package component that specifies its namespace depends on its type. For example:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -91,12 +92,16 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The namespace of an npm package version is its <c>scope</c>. 
+        ///  The namespace of an npm or Swift package version is its <c>scope</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Python and NuGet package versions do not contain a corresponding component, package
-        /// versions of those formats do not have a namespace. 
+        /// The namespace of a generic package is its <c>namespace</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  Python, NuGet, and Ruby package versions do not contain a corresponding component,
+        /// package versions of those formats do not have a namespace. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

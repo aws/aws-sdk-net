@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTTwinMaker.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.IoTTwinMaker.Model
     public partial class PropertyValueEntry
     {
         private EntityPropertyReference _entityPropertyReference;
-        private List<PropertyValue> _propertyValues = new List<PropertyValue>();
+        private List<PropertyValue> _propertyValues = AWSConfigs.InitializeCollections ? new List<PropertyValue>() : null;
 
         /// <summary>
         /// Gets and sets the property EntityPropertyReference. 
@@ -73,7 +74,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if PropertyValues property is set
         internal bool IsSetPropertyValues()
         {
-            return this._propertyValues != null && this._propertyValues.Count > 0; 
+            return this._propertyValues != null && (this._propertyValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

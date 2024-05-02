@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.KinesisVideo.Model
         /// Enumerable containing all of the MappedResourceConfigurationList
         /// </summary>
         public IPaginatedEnumerable<MappedResourceConfigurationListItem> MappedResourceConfigurationList => 
-            new PaginatedResultKeyResponse<DescribeMappedResourceConfigurationResponse, MappedResourceConfigurationListItem>(this, (i) => i.MappedResourceConfigurationList);
+            new PaginatedResultKeyResponse<DescribeMappedResourceConfigurationResponse, MappedResourceConfigurationListItem>(this, (i) => i.MappedResourceConfigurationList ?? new List<MappedResourceConfigurationListItem>());
 
         internal DescribeMappedResourceConfigurationPaginator(IAmazonKinesisVideo client, DescribeMappedResourceConfigurationRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.KinesisVideo.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeMappedResourceConfigurationResponse> IPaginator<DescribeMappedResourceConfigurationResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeMappedResourceConfigurationResponse> IPaginator<DescribeMappedResourceConfigurationResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

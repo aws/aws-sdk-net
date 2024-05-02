@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Polly.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Polly.Model
     /// </summary>
     public partial class ListLexiconsResponse : AmazonWebServiceResponse
     {
-        private List<LexiconDescription> _lexicons = new List<LexiconDescription>();
+        private List<LexiconDescription> _lexicons = AWSConfigs.InitializeCollections ? new List<LexiconDescription>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Polly.Model
         // Check to see if Lexicons property is set
         internal bool IsSetLexicons()
         {
-            return this._lexicons != null && this._lexicons.Count > 0; 
+            return this._lexicons != null && (this._lexicons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

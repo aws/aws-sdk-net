@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.SecurityHub.Model
         private DateTime? _controlStatusUpdatedAt;
         private string _description;
         private string _disabledReason;
-        private List<string> _relatedRequirements = new List<string>();
+        private List<string> _relatedRequirements = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _remediationUrl;
         private SeverityRating _severityRating;
         private string _standardsControlArn;
@@ -152,7 +153,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if RelatedRequirements property is set
         internal bool IsSetRelatedRequirements()
         {
-            return this._relatedRequirements != null && this._relatedRequirements.Count > 0; 
+            return this._relatedRequirements != null && (this._relatedRequirements.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

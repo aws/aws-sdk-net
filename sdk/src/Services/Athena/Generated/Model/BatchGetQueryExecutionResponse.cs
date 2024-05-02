@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Athena.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Athena.Model
     /// </summary>
     public partial class BatchGetQueryExecutionResponse : AmazonWebServiceResponse
     {
-        private List<QueryExecution> _queryExecutions = new List<QueryExecution>();
-        private List<UnprocessedQueryExecutionId> _unprocessedQueryExecutionIds = new List<UnprocessedQueryExecutionId>();
+        private List<QueryExecution> _queryExecutions = AWSConfigs.InitializeCollections ? new List<QueryExecution>() : null;
+        private List<UnprocessedQueryExecutionId> _unprocessedQueryExecutionIds = AWSConfigs.InitializeCollections ? new List<UnprocessedQueryExecutionId>() : null;
 
         /// <summary>
         /// Gets and sets the property QueryExecutions. 
@@ -51,7 +52,7 @@ namespace Amazon.Athena.Model
         // Check to see if QueryExecutions property is set
         internal bool IsSetQueryExecutions()
         {
-            return this._queryExecutions != null && this._queryExecutions.Count > 0; 
+            return this._queryExecutions != null && (this._queryExecutions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.Athena.Model
         // Check to see if UnprocessedQueryExecutionIds property is set
         internal bool IsSetUnprocessedQueryExecutionIds()
         {
-            return this._unprocessedQueryExecutionIds != null && this._unprocessedQueryExecutionIds.Count > 0; 
+            return this._unprocessedQueryExecutionIds != null && (this._unprocessedQueryExecutionIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

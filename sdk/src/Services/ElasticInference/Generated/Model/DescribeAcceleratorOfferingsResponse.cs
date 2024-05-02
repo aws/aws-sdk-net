@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticInference.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ElasticInference.Model
     /// </summary>
     public partial class DescribeAcceleratorOfferingsResponse : AmazonWebServiceResponse
     {
-        private List<AcceleratorTypeOffering> _acceleratorTypeOfferings = new List<AcceleratorTypeOffering>();
+        private List<AcceleratorTypeOffering> _acceleratorTypeOfferings = AWSConfigs.InitializeCollections ? new List<AcceleratorTypeOffering>() : null;
 
         /// <summary>
         /// Gets and sets the property AcceleratorTypeOfferings. 
@@ -51,7 +52,7 @@ namespace Amazon.ElasticInference.Model
         // Check to see if AcceleratorTypeOfferings property is set
         internal bool IsSetAcceleratorTypeOfferings()
         {
-            return this._acceleratorTypeOfferings != null && this._acceleratorTypeOfferings.Count > 0; 
+            return this._acceleratorTypeOfferings != null && (this._acceleratorTypeOfferings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

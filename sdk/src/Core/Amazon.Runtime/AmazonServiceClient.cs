@@ -389,9 +389,6 @@ namespace Amazon.Runtime
                 case RequestRetryMode.Standard:
                     retryPolicy = new StandardRetryPolicy(this.Config);
                     break;
-                case RequestRetryMode.Legacy:
-                    retryPolicy = new DefaultRetryPolicy(this.Config);
-                    break;
                 default:
                     throw new InvalidOperationException("Unknown retry mode");
             }
@@ -562,9 +559,11 @@ namespace Amazon.Runtime
                             "Target resource path [{0}] has bidirectional characters, which are not supported" +
                             "by System.Uri and thus cannot be handled by the .NET SDK.", resourcePath));
 
+#pragma warning disable CS0612,CS0618 // Type or member is obsolete
                 parameterizedPath = string.Concat(AWSSDKUtils.ProtectEncodedSlashUrlEncode(resourcePath, skipEncodingValidPathChars), sb);
+#pragma warning restore CS0612,CS0618 // Type or member is obsolete
             }
-            
+
             var hasSlash = url.AbsoluteUri.EndsWith("/", StringComparison.Ordinal) || parameterizedPath.StartsWith("/", StringComparison.Ordinal);
 
             var strUri = hasSlash

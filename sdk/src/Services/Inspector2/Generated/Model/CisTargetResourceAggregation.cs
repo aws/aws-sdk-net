@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.Inspector2.Model
         private string _scanArn;
         private StatusCounts _statusCounts;
         private string _targetResourceId;
-        private Dictionary<string, List<string>> _targetResourceTags = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _targetResourceTags = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private CisTargetStatus _targetStatus;
         private CisTargetStatusReason _targetStatusReason;
 
@@ -151,7 +152,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if TargetResourceTags property is set
         internal bool IsSetTargetResourceTags()
         {
-            return this._targetResourceTags != null && this._targetResourceTags.Count > 0; 
+            return this._targetResourceTags != null && (this._targetResourceTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

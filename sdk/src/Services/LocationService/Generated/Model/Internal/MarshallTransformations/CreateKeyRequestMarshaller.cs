@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -63,6 +64,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetDescription())
@@ -74,7 +76,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetExpireTime())
                 {
                     context.Writer.WritePropertyName("ExpireTime");
-                    context.Writer.Write(StringUtils.FromDateTimeToISO8601(publicRequest.ExpireTime));
+                    context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ExpireTime));
                 }
 
                 if(publicRequest.IsSetKeyName())

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.LookoutforVision.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.LookoutforVision.Model
         /// Enumerable containing all of the ModelPackagingJobs
         /// </summary>
         public IPaginatedEnumerable<ModelPackagingJobMetadata> ModelPackagingJobs => 
-            new PaginatedResultKeyResponse<ListModelPackagingJobsResponse, ModelPackagingJobMetadata>(this, (i) => i.ModelPackagingJobs);
+            new PaginatedResultKeyResponse<ListModelPackagingJobsResponse, ModelPackagingJobMetadata>(this, (i) => i.ModelPackagingJobs ?? new List<ModelPackagingJobMetadata>());
 
         internal ListModelPackagingJobsPaginator(IAmazonLookoutforVision client, ListModelPackagingJobsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.LookoutforVision.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListModelPackagingJobsResponse> IPaginator<ListModelPackagingJobsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListModelPackagingJobsResponse> IPaginator<ListModelPackagingJobsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

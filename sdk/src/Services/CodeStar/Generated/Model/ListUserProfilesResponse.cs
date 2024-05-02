@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeStar.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CodeStar.Model
     public partial class ListUserProfilesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<UserProfileSummary> _userProfiles = new List<UserProfileSummary>();
+        private List<UserProfileSummary> _userProfiles = AWSConfigs.InitializeCollections ? new List<UserProfileSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.CodeStar.Model
         // Check to see if UserProfiles property is set
         internal bool IsSetUserProfiles()
         {
-            return this._userProfiles != null && this._userProfiles.Count > 0; 
+            return this._userProfiles != null && (this._userProfiles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

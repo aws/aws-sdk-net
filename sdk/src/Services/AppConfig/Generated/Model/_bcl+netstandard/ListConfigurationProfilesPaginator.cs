@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AppConfig.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.AppConfig.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<ConfigurationProfileSummary> Items => 
-            new PaginatedResultKeyResponse<ListConfigurationProfilesResponse, ConfigurationProfileSummary>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListConfigurationProfilesResponse, ConfigurationProfileSummary>(this, (i) => i.Items ?? new List<ConfigurationProfileSummary>());
 
         internal ListConfigurationProfilesPaginator(IAmazonAppConfig client, ListConfigurationProfilesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.AppConfig.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListConfigurationProfilesResponse> IPaginator<ListConfigurationProfilesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListConfigurationProfilesResponse> IPaginator<ListConfigurationProfilesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

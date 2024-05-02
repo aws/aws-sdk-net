@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Drs.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Drs.Model
     /// </summary>
     public partial class DescribeRecoveryInstancesRequestFilters
     {
-        private List<string> _recoveryInstanceIDs = new List<string>();
-        private List<string> _sourceServerIDs = new List<string>();
+        private List<string> _recoveryInstanceIDs = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _sourceServerIDs = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property RecoveryInstanceIDs. 
@@ -53,7 +54,7 @@ namespace Amazon.Drs.Model
         // Check to see if RecoveryInstanceIDs property is set
         internal bool IsSetRecoveryInstanceIDs()
         {
-            return this._recoveryInstanceIDs != null && this._recoveryInstanceIDs.Count > 0; 
+            return this._recoveryInstanceIDs != null && (this._recoveryInstanceIDs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.Drs.Model
         // Check to see if SourceServerIDs property is set
         internal bool IsSetSourceServerIDs()
         {
-            return this._sourceServerIDs != null && this._sourceServerIDs.Count > 0; 
+            return this._sourceServerIDs != null && (this._sourceServerIDs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

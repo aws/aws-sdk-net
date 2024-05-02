@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ConfigService.Model
     public partial class ListResourceEvaluationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ResourceEvaluation> _resourceEvaluations = new List<ResourceEvaluation>();
+        private List<ResourceEvaluation> _resourceEvaluations = AWSConfigs.InitializeCollections ? new List<ResourceEvaluation>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if ResourceEvaluations property is set
         internal bool IsSetResourceEvaluations()
         {
-            return this._resourceEvaluations != null && this._resourceEvaluations.Count > 0; 
+            return this._resourceEvaluations != null && (this._resourceEvaluations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

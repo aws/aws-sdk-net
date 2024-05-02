@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.SageMaker.Model
     public partial class UpdateTrainingJobRequest : AmazonSageMakerRequest
     {
         private ProfilerConfigForUpdate _profilerConfig;
-        private List<ProfilerRuleConfiguration> _profilerRuleConfigurations = new List<ProfilerRuleConfiguration>();
+        private List<ProfilerRuleConfiguration> _profilerRuleConfigurations = AWSConfigs.InitializeCollections ? new List<ProfilerRuleConfiguration>() : null;
         private RemoteDebugConfigForUpdate _remoteDebugConfig;
         private ResourceConfigForUpdate _resourceConfig;
         private string _trainingJobName;
@@ -77,7 +78,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ProfilerRuleConfigurations property is set
         internal bool IsSetProfilerRuleConfigurations()
         {
-            return this._profilerRuleConfigurations != null && this._profilerRuleConfigurations.Count > 0; 
+            return this._profilerRuleConfigurations != null && (this._profilerRuleConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

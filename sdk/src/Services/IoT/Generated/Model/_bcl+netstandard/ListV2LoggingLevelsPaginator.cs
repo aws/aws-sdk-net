@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the LogTargetConfigurations
         /// </summary>
         public IPaginatedEnumerable<LogTargetConfiguration> LogTargetConfigurations => 
-            new PaginatedResultKeyResponse<ListV2LoggingLevelsResponse, LogTargetConfiguration>(this, (i) => i.LogTargetConfigurations);
+            new PaginatedResultKeyResponse<ListV2LoggingLevelsResponse, LogTargetConfiguration>(this, (i) => i.LogTargetConfigurations ?? new List<LogTargetConfiguration>());
 
         internal ListV2LoggingLevelsPaginator(IAmazonIoT client, ListV2LoggingLevelsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.IoT.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListV2LoggingLevelsResponse> IPaginator<ListV2LoggingLevelsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListV2LoggingLevelsResponse> IPaginator<ListV2LoggingLevelsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

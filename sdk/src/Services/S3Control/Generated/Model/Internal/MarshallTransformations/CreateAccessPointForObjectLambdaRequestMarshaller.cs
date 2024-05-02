@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Xml;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -69,64 +70,60 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             var stringWriter = new XMLEncodedStringWriter(CultureInfo.InvariantCulture);
             using (var xmlWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings() { Encoding = System.Text.Encoding.UTF8, OmitXmlDeclaration = true, NewLineHandling = NewLineHandling.Entitize }))
             {   
-                xmlWriter.WriteStartElement("CreateAccessPointForObjectLambdaRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");    
-                
-                if (publicRequest.Configuration != null) 
+                xmlWriter.WriteStartElement("CreateAccessPointForObjectLambdaRequest", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                if (publicRequest.Configuration != null)
                 {
-                    xmlWriter.WriteStartElement("Configuration", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                    xmlWriter.WriteStartElement("Configuration");
                     var publicRequestConfigurationAllowedFeatures = publicRequest.Configuration.AllowedFeatures;
-                    if (publicRequestConfigurationAllowedFeatures != null && publicRequestConfigurationAllowedFeatures.Count > 0) 
-                    {                        
-                        xmlWriter.WriteStartElement("AllowedFeatures", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                    if (publicRequestConfigurationAllowedFeatures != null && (publicRequestConfigurationAllowedFeatures.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    {
+                        xmlWriter.WriteStartElement("AllowedFeatures");
                         foreach (var publicRequestConfigurationAllowedFeaturesValue in publicRequestConfigurationAllowedFeatures) 
                         {
-                            xmlWriter.WriteStartElement("AllowedFeature", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                            xmlWriter.WriteStartElement("AllowedFeature");
                             xmlWriter.WriteValue(publicRequestConfigurationAllowedFeaturesValue);
                             xmlWriter.WriteEndElement();
                         }            
                         xmlWriter.WriteEndElement();            
                     }
                     if(publicRequest.Configuration.IsSetCloudWatchMetricsEnabled())
-                        xmlWriter.WriteElementString("CloudWatchMetricsEnabled", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.Configuration.CloudWatchMetricsEnabled.Value));                 
+                        xmlWriter.WriteElementString("CloudWatchMetricsEnabled", StringUtils.FromBool(publicRequest.Configuration.CloudWatchMetricsEnabled.Value));
 
                     if(publicRequest.Configuration.IsSetSupportingAccessPoint())
-                        xmlWriter.WriteElementString("SupportingAccessPoint", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequest.Configuration.SupportingAccessPoint));                 
+                        xmlWriter.WriteElementString("SupportingAccessPoint", StringUtils.FromString(publicRequest.Configuration.SupportingAccessPoint));
 
                     var publicRequestConfigurationTransformationConfigurations = publicRequest.Configuration.TransformationConfigurations;
-                    if (publicRequestConfigurationTransformationConfigurations != null && publicRequestConfigurationTransformationConfigurations.Count > 0) 
-                    {                        
-                        xmlWriter.WriteStartElement("TransformationConfigurations", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                    if (publicRequestConfigurationTransformationConfigurations != null && (publicRequestConfigurationTransformationConfigurations.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                    {
+                        xmlWriter.WriteStartElement("TransformationConfigurations");
                         foreach (var publicRequestConfigurationTransformationConfigurationsValue in publicRequestConfigurationTransformationConfigurations) 
                         {
-                
-                        if (publicRequestConfigurationTransformationConfigurationsValue != null) 
+                        if (publicRequestConfigurationTransformationConfigurationsValue != null)
                         {
-                            xmlWriter.WriteStartElement("TransformationConfiguration", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                            xmlWriter.WriteStartElement("TransformationConfiguration");
                             var publicRequestConfigurationTransformationConfigurationsValueActions = publicRequestConfigurationTransformationConfigurationsValue.Actions;
-                            if (publicRequestConfigurationTransformationConfigurationsValueActions != null && publicRequestConfigurationTransformationConfigurationsValueActions.Count > 0) 
-                            {                        
-                                xmlWriter.WriteStartElement("Actions", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                            if (publicRequestConfigurationTransformationConfigurationsValueActions != null && (publicRequestConfigurationTransformationConfigurationsValueActions.Count > 0 || !AWSConfigs.InitializeCollections)) 
+                            {
+                                xmlWriter.WriteStartElement("Actions");
                                 foreach (var publicRequestConfigurationTransformationConfigurationsValueActionsValue in publicRequestConfigurationTransformationConfigurationsValueActions) 
                                 {
-                                    xmlWriter.WriteStartElement("Action", "http://awss3control.amazonaws.com/doc/2018-08-20/");
+                                    xmlWriter.WriteStartElement("Action");
                                     xmlWriter.WriteValue(publicRequestConfigurationTransformationConfigurationsValueActionsValue);
                                     xmlWriter.WriteEndElement();
                                 }            
                                 xmlWriter.WriteEndElement();            
                             }
-                
-                            if (publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation != null) 
+                            if (publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation != null)
                             {
-                                xmlWriter.WriteStartElement("ContentTransformation", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
-                
-                                if (publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation.AwsLambda != null) 
+                                xmlWriter.WriteStartElement("ContentTransformation");
+                                if (publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation.AwsLambda != null)
                                 {
-                                    xmlWriter.WriteStartElement("AwsLambda", "http://awss3control.amazonaws.com/doc/2018-08-20/");            
+                                    xmlWriter.WriteStartElement("AwsLambda");
                                     if(publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation.AwsLambda.IsSetFunctionArn())
-                                        xmlWriter.WriteElementString("FunctionArn", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation.AwsLambda.FunctionArn));                 
+                                        xmlWriter.WriteElementString("FunctionArn", StringUtils.FromString(publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation.AwsLambda.FunctionArn));
 
                                     if(publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation.AwsLambda.IsSetFunctionPayload())
-                                        xmlWriter.WriteElementString("FunctionPayload", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromString(publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation.AwsLambda.FunctionPayload));                 
+                                        xmlWriter.WriteElementString("FunctionPayload", StringUtils.FromString(publicRequestConfigurationTransformationConfigurationsValue.ContentTransformation.AwsLambda.FunctionPayload));
 
                                     xmlWriter.WriteEndElement();
                                 }

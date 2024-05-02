@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTEventsData.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoTEventsData.Model
     /// </summary>
     public partial class ListDetectorsResponse : AmazonWebServiceResponse
     {
-        private List<DetectorSummary> _detectorSummaries = new List<DetectorSummary>();
+        private List<DetectorSummary> _detectorSummaries = AWSConfigs.InitializeCollections ? new List<DetectorSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.IoTEventsData.Model
         // Check to see if DetectorSummaries property is set
         internal bool IsSetDetectorSummaries()
         {
-            return this._detectorSummaries != null && this._detectorSummaries.Count > 0; 
+            return this._detectorSummaries != null && (this._detectorSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

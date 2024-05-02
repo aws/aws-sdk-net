@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.DirectoryService.Model
     public partial class DescribeUpdateDirectoryResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<UpdateInfoEntry> _updateActivities = new List<UpdateInfoEntry>();
+        private List<UpdateInfoEntry> _updateActivities = AWSConfigs.InitializeCollections ? new List<UpdateInfoEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.DirectoryService.Model
         // Check to see if UpdateActivities property is set
         internal bool IsSetUpdateActivities()
         {
-            return this._updateActivities != null && this._updateActivities.Count > 0; 
+            return this._updateActivities != null && (this._updateActivities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

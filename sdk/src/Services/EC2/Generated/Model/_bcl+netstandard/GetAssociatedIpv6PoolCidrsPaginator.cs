@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.EC2.Model
         /// Enumerable containing all of the Ipv6CidrAssociations
         /// </summary>
         public IPaginatedEnumerable<Ipv6CidrAssociation> Ipv6CidrAssociations => 
-            new PaginatedResultKeyResponse<GetAssociatedIpv6PoolCidrsResponse, Ipv6CidrAssociation>(this, (i) => i.Ipv6CidrAssociations);
+            new PaginatedResultKeyResponse<GetAssociatedIpv6PoolCidrsResponse, Ipv6CidrAssociation>(this, (i) => i.Ipv6CidrAssociations ?? new List<Ipv6CidrAssociation>());
 
         internal GetAssociatedIpv6PoolCidrsPaginator(IAmazonEC2 client, GetAssociatedIpv6PoolCidrsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.EC2.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<GetAssociatedIpv6PoolCidrsResponse> IPaginator<GetAssociatedIpv6PoolCidrsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<GetAssociatedIpv6PoolCidrsResponse> IPaginator<GetAssociatedIpv6PoolCidrsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

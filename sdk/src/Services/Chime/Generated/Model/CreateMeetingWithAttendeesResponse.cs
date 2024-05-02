@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Chime.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Chime.Model
     /// </summary>
     public partial class CreateMeetingWithAttendeesResponse : AmazonWebServiceResponse
     {
-        private List<Attendee> _attendees = new List<Attendee>();
-        private List<CreateAttendeeError> _errors = new List<CreateAttendeeError>();
+        private List<Attendee> _attendees = AWSConfigs.InitializeCollections ? new List<Attendee>() : null;
+        private List<CreateAttendeeError> _errors = AWSConfigs.InitializeCollections ? new List<CreateAttendeeError>() : null;
         private Meeting _meeting;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.Chime.Model
         // Check to see if Attendees property is set
         internal bool IsSetAttendees()
         {
-            return this._attendees != null && this._attendees.Count > 0; 
+            return this._attendees != null && (this._attendees.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.Chime.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

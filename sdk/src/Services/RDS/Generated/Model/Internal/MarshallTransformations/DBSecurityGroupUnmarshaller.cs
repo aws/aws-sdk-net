@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -75,6 +76,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("EC2SecurityGroups/EC2SecurityGroup", targetDepth))
                     {
                         var unmarshaller = EC2SecurityGroupUnmarshaller.Instance;
+                        if (unmarshalledObject.EC2SecurityGroups == null)
+                        {
+                            unmarshalledObject.EC2SecurityGroups = new List<EC2SecurityGroup>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.EC2SecurityGroups.Add(item);
                         continue;
@@ -82,6 +87,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("IPRanges/IPRange", targetDepth))
                     {
                         var unmarshaller = IPRangeUnmarshaller.Instance;
+                        if (unmarshalledObject.IPRanges == null)
+                        {
+                            unmarshalledObject.IPRanges = new List<IPRange>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.IPRanges.Add(item);
                         continue;

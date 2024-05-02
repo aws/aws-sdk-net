@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EBS.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EBS.Model
     public partial class ListChangedBlocksResponse : AmazonWebServiceResponse
     {
         private int? _blockSize;
-        private List<ChangedBlock> _changedBlocks = new List<ChangedBlock>();
+        private List<ChangedBlock> _changedBlocks = AWSConfigs.InitializeCollections ? new List<ChangedBlock>() : null;
         private DateTime? _expiryTime;
         private string _nextToken;
         private long? _volumeSize;
@@ -72,7 +73,7 @@ namespace Amazon.EBS.Model
         // Check to see if ChangedBlocks property is set
         internal bool IsSetChangedBlocks()
         {
-            return this._changedBlocks != null && this._changedBlocks.Count > 0; 
+            return this._changedBlocks != null && (this._changedBlocks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

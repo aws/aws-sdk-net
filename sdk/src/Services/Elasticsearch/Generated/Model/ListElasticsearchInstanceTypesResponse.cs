@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Elasticsearch.Model
     /// </summary>
     public partial class ListElasticsearchInstanceTypesResponse : AmazonWebServiceResponse
     {
-        private List<string> _elasticsearchInstanceTypes = new List<string>();
+        private List<string> _elasticsearchInstanceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.Elasticsearch.Model
         // Check to see if ElasticsearchInstanceTypes property is set
         internal bool IsSetElasticsearchInstanceTypes()
         {
-            return this._elasticsearchInstanceTypes != null && this._elasticsearchInstanceTypes.Count > 0; 
+            return this._elasticsearchInstanceTypes != null && (this._elasticsearchInstanceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

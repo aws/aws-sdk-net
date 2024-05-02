@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.OpsWorks.Model
     /// </summary>
     public partial class DescribeUserProfilesResponse : AmazonWebServiceResponse
     {
-        private List<UserProfile> _userProfiles = new List<UserProfile>();
+        private List<UserProfile> _userProfiles = AWSConfigs.InitializeCollections ? new List<UserProfile>() : null;
 
         /// <summary>
         /// Gets and sets the property UserProfiles. 
@@ -50,7 +51,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if UserProfiles property is set
         internal bool IsSetUserProfiles()
         {
-            return this._userProfiles != null && this._userProfiles.Count > 0; 
+            return this._userProfiles != null && (this._userProfiles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

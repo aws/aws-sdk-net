@@ -303,12 +303,14 @@ namespace Amazon.S3
                 if (signatureVersionToUse == SignatureVersion.SigV4 && string.IsNullOrEmpty(region))
                     throw new InvalidOperationException("To use AWS4 signing, a region must be specified in the client configuration using the AuthenticationRegion or Region properties, or be determinable from the service URL.");
 
+#pragma warning disable CS0612,CS0618
                 RegionEndpoint endpoint = RegionEndpoint.GetBySystemName(region);
                 var s3SignatureVersionOverride = endpoint.GetEndpointForService("s3", Config.ToGetEndpointForServiceOptions()).SignatureVersionOverride;
                 if (s3SignatureVersionOverride == "4" || s3SignatureVersionOverride == null)
                 {
                     signatureVersionToUse = SignatureVersion.SigV4;
                 }
+#pragma warning restore CS0612,CS0618
 
                 var fallbackToSigV2 = useSigV2Fallback && !AWSConfigsS3.UseSigV4SetExplicitly;
                 if (endpoint?.SystemName == RegionEndpoint.USEast1.SystemName && fallbackToSigV2)
@@ -400,7 +402,9 @@ namespace Amazon.S3
                     signingResult.Result = ComposeUrl(iRequest).AbsoluteUri + signingResult.Authorization;
                     break;
             }
+#pragma warning disable CS0612,CS0618
             string serviceUrl = config.DetermineServiceURL();
+#pragma warning restore CS0612,CS0618
             Protocol protocol = serviceUrl.StartsWith("https", StringComparison.OrdinalIgnoreCase) ? Protocol.HTTPS : Protocol.HTTP;
             var request = iRequest.OriginalRequest as GetPreSignedUrlRequest;
             if (request.Protocol != protocol)
@@ -482,7 +486,7 @@ namespace Amazon.S3
             {
                 httpRequest.Proxy.Credentials = Config.ProxyCredentials;
             }
-            if (httpRequest.Proxy == null)
+            if (httpRequest.Proxy == null && !NoProxyFilter.Instance.Match(httpRequest.RequestUri))
             {
                 if (httpRequest.RequestUri.Scheme == Uri.UriSchemeHttp)
                 {

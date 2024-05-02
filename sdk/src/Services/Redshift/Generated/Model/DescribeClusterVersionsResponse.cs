@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class DescribeClusterVersionsResponse : AmazonWebServiceResponse
     {
-        private List<ClusterVersion> _clusterVersions = new List<ClusterVersion>();
+        private List<ClusterVersion> _clusterVersions = AWSConfigs.InitializeCollections ? new List<ClusterVersion>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Redshift.Model
         // Check to see if ClusterVersions property is set
         internal bool IsSetClusterVersions()
         {
-            return this._clusterVersions != null && this._clusterVersions.Count > 0; 
+            return this._clusterVersions != null && (this._clusterVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

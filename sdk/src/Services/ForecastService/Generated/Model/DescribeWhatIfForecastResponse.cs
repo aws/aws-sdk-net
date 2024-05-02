@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ForecastService.Model
 {
     /// <summary>
@@ -35,12 +36,12 @@ namespace Amazon.ForecastService.Model
     {
         private DateTime? _creationTime;
         private long? _estimatedTimeRemainingInMinutes;
-        private List<string> _forecastTypes = new List<string>();
+        private List<string> _forecastTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _lastModificationTime;
         private string _message;
         private string _status;
         private TimeSeriesReplacementsDataSource _timeSeriesReplacementsDataSource;
-        private List<TimeSeriesTransformation> _timeSeriesTransformations = new List<TimeSeriesTransformation>();
+        private List<TimeSeriesTransformation> _timeSeriesTransformations = AWSConfigs.InitializeCollections ? new List<TimeSeriesTransformation>() : null;
         private string _whatIfAnalysisArn;
         private string _whatIfForecastArn;
         private string _whatIfForecastName;
@@ -100,7 +101,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if ForecastTypes property is set
         internal bool IsSetForecastTypes()
         {
-            return this._forecastTypes != null && this._forecastTypes.Count > 0; 
+            return this._forecastTypes != null && (this._forecastTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -238,7 +239,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if TimeSeriesTransformations property is set
         internal bool IsSetTimeSeriesTransformations()
         {
-            return this._timeSeriesTransformations != null && this._timeSeriesTransformations.Count > 0; 
+            return this._timeSeriesTransformations != null && (this._timeSeriesTransformations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

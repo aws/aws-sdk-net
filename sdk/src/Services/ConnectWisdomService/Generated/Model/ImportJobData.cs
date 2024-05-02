@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConnectWisdomService.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.ConnectWisdomService.Model
         private string _knowledgeBaseArn;
         private string _knowledgeBaseId;
         private DateTime? _lastModifiedTime;
-        private Dictionary<string, string> _metadata = new Dictionary<string, string>();
+        private Dictionary<string, string> _metadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ImportJobStatus _status;
         private string _uploadId;
         private string _url;
@@ -212,7 +213,7 @@ namespace Amazon.ConnectWisdomService.Model
         // Check to see if Metadata property is set
         internal bool IsSetMetadata()
         {
-            return this._metadata != null && this._metadata.Count > 0; 
+            return this._metadata != null && (this._metadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

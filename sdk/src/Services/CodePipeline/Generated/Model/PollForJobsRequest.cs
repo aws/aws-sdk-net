@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
@@ -48,7 +49,7 @@ namespace Amazon.CodePipeline.Model
     {
         private ActionTypeId _actionTypeId;
         private int? _maxBatchSize;
-        private Dictionary<string, string> _queryParam = new Dictionary<string, string>();
+        private Dictionary<string, string> _queryParam = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ActionTypeId. 
@@ -107,7 +108,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if QueryParam property is set
         internal bool IsSetQueryParam()
         {
-            return this._queryParam != null && this._queryParam.Count > 0; 
+            return this._queryParam != null && (this._queryParam.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

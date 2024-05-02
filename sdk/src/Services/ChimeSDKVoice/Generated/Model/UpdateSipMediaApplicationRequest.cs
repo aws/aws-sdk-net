@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ChimeSDKVoice.Model
     /// </summary>
     public partial class UpdateSipMediaApplicationRequest : AmazonChimeSDKVoiceRequest
     {
-        private List<SipMediaApplicationEndpoint> _endpoints = new List<SipMediaApplicationEndpoint>();
+        private List<SipMediaApplicationEndpoint> _endpoints = AWSConfigs.InitializeCollections ? new List<SipMediaApplicationEndpoint>() : null;
         private string _name;
         private string _sipMediaApplicationId;
 
@@ -54,7 +55,7 @@ namespace Amazon.ChimeSDKVoice.Model
         // Check to see if Endpoints property is set
         internal bool IsSetEndpoints()
         {
-            return this._endpoints != null && this._endpoints.Count > 0; 
+            return this._endpoints != null && (this._endpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

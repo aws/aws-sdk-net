@@ -26,19 +26,43 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Provides the configuration information to connect to an Amazon S3 bucket.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Amazon Kendra now supports an upgraded Amazon S3 connector.
+    /// </para>
+    ///  
+    /// <para>
+    /// You must now use the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a>
+    /// object instead of the <c>S3DataSourceConfiguration</c> object to configure your connector.
+    /// </para>
+    ///  
+    /// <para>
+    /// Connectors configured using the older console and API architecture will continue to
+    /// function as configured. However, you won't be able to edit or update them. If you
+    /// want to edit or update your connector configuration, you must create a new connector.
+    /// </para>
+    ///  
+    /// <para>
+    /// We recommended migrating your connector workflow to the upgraded version. Support
+    /// for connectors configured using the older architecture is scheduled to end by June
+    /// 2024.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class S3DataSourceConfiguration
     {
         private AccessControlListConfiguration _accessControlListConfiguration;
         private string _bucketName;
         private DocumentsMetadataConfiguration _documentsMetadataConfiguration;
-        private List<string> _exclusionPatterns = new List<string>();
-        private List<string> _inclusionPatterns = new List<string>();
-        private List<string> _inclusionPrefixes = new List<string>();
+        private List<string> _exclusionPatterns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _inclusionPatterns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _inclusionPrefixes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AccessControlListConfiguration. 
@@ -97,31 +121,51 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ExclusionPatterns. 
         /// <para>
-        /// A list of glob patterns for documents that should not be indexed. If a document that
-        /// matches an inclusion prefix or inclusion pattern also matches an exclusion pattern,
-        /// the document is not indexed.
-        /// </para>
-        ///  
-        /// <para>
-        /// Some <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a>
-        /// are:
+        /// A list of glob patterns (patterns that can expand a wildcard pattern into a list of
+        /// path names that match the given pattern) for certain file names and file types to
+        /// exclude from your index. If a document matches both an inclusion and exclusion prefix
+        /// or pattern, the exclusion prefix takes precendence and the document is not indexed.
+        /// Examples of glob patterns include:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <i>*.png , *.jpg</i> will exclude all PNG and JPEG image files in a directory (files
-        /// with the extensions .png and .jpg).
+        ///  <i>/myapp/config/*</i>—All files inside config directory.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>*internal*</i> will exclude all files in a directory that contain 'internal' in
-        /// the file name, such as 'internal', 'internal_only', 'company_internal'.
+        ///  <i>**/*.png</i>—All .png files in all directories.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>**/*internal*</i> will exclude all internal-related files in a directory and its
-        /// subdirectories.
+        ///  <i>**/*.{png, ico, md}</i>—All .png, .ico or .md files in all directories.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>/myapp/src/**/*.ts</i>—All .ts files inside src directory (and all its subdirectories).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>**/!(*.module).ts</i>—All .ts files but not .module.ts
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>*.png , *.jpg</i>—All PNG and JPEG image files in a directory (files with the
+        /// extensions .png and .jpg).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>*internal*</i>—All files in a directory that contain 'internal' in the file name,
+        /// such as 'internal', 'internal_only', 'company_internal'.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>**/*internal*</i>—All internal-related files in a directory and its subdirectories.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more examples, see <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">Use
+        /// of Exclude and Include Filters</a> in the Amazon Web Services CLI Command Reference.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=250)]
         public List<string> ExclusionPatterns
@@ -133,35 +177,57 @@ namespace Amazon.Kendra.Model
         // Check to see if ExclusionPatterns property is set
         internal bool IsSetExclusionPatterns()
         {
-            return this._exclusionPatterns != null && this._exclusionPatterns.Count > 0; 
+            return this._exclusionPatterns != null && (this._exclusionPatterns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property InclusionPatterns. 
         /// <para>
-        /// A list of glob patterns for documents that should be indexed. If a document that matches
-        /// an inclusion pattern also matches an exclusion pattern, the document is not indexed.
-        /// </para>
-        ///  
-        /// <para>
-        /// Some <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">examples</a>
-        /// are:
+        /// A list of glob patterns (patterns that can expand a wildcard pattern into a list of
+        /// path names that match the given pattern) for certain file names and file types to
+        /// include in your index. If a document matches both an inclusion and exclusion prefix
+        /// or pattern, the exclusion prefix takes precendence and the document is not indexed.
+        /// Examples of glob patterns include:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <i>*.txt</i> will include all text files in a directory (files with the extension
-        /// .txt).
+        ///  <i>/myapp/config/*</i>—All files inside config directory.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>**/*.txt</i> will include all text files in a directory and its subdirectories.
+        ///  <i>**/*.png</i>—All .png files in all directories.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>*tax*</i> will include all files in a directory that contain 'tax' in the file
-        /// name, such as 'tax', 'taxes', 'income_tax'.
+        ///  <i>**/*.{png, ico, md}</i>—All .png, .ico or .md files in all directories.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>/myapp/src/**/*.ts</i>—All .ts files inside src directory (and all its subdirectories).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>**/!(*.module).ts</i>—All .ts files but not .module.ts
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>*.png , *.jpg</i>—All PNG and JPEG image files in a directory (files with the
+        /// extensions .png and .jpg).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>*internal*</i>—All files in a directory that contain 'internal' in the file name,
+        /// such as 'internal', 'internal_only', 'company_internal'.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <i>**/*internal*</i>—All internal-related files in a directory and its subdirectories.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more examples, see <a href="https://docs.aws.amazon.com/cli/latest/reference/s3/#use-of-exclude-and-include-filters">Use
+        /// of Exclude and Include Filters</a> in the Amazon Web Services CLI Command Reference.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=250)]
         public List<string> InclusionPatterns
@@ -173,7 +239,7 @@ namespace Amazon.Kendra.Model
         // Check to see if InclusionPatterns property is set
         internal bool IsSetInclusionPatterns()
         {
-            return this._inclusionPatterns != null && this._inclusionPatterns.Count > 0; 
+            return this._inclusionPatterns != null && (this._inclusionPatterns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -192,7 +258,7 @@ namespace Amazon.Kendra.Model
         // Check to see if InclusionPrefixes property is set
         internal bool IsSetInclusionPrefixes()
         {
-            return this._inclusionPrefixes != null && this._inclusionPrefixes.Count > 0; 
+            return this._inclusionPrefixes != null && (this._inclusionPrefixes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

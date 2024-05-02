@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Chime.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Chime.Model
     /// </summary>
     public partial class ListBotsResponse : AmazonWebServiceResponse
     {
-        private List<Bot> _bots = new List<Bot>();
+        private List<Bot> _bots = AWSConfigs.InitializeCollections ? new List<Bot>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Chime.Model
         // Check to see if Bots property is set
         internal bool IsSetBots()
         {
-            return this._bots != null && this._bots.Count > 0; 
+            return this._bots != null && (this._bots.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

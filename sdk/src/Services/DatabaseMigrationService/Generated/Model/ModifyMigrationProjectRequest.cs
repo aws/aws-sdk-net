@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
@@ -45,8 +46,8 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _migrationProjectIdentifier;
         private string _migrationProjectName;
         private SCApplicationAttributes _schemaConversionApplicationAttributes;
-        private List<DataProviderDescriptorDefinition> _sourceDataProviderDescriptors = new List<DataProviderDescriptorDefinition>();
-        private List<DataProviderDescriptorDefinition> _targetDataProviderDescriptors = new List<DataProviderDescriptorDefinition>();
+        private List<DataProviderDescriptorDefinition> _sourceDataProviderDescriptors = AWSConfigs.InitializeCollections ? new List<DataProviderDescriptorDefinition>() : null;
+        private List<DataProviderDescriptorDefinition> _targetDataProviderDescriptors = AWSConfigs.InitializeCollections ? new List<DataProviderDescriptorDefinition>() : null;
         private string _transformationRules;
 
         /// <summary>
@@ -159,7 +160,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if SourceDataProviderDescriptors property is set
         internal bool IsSetSourceDataProviderDescriptors()
         {
-            return this._sourceDataProviderDescriptors != null && this._sourceDataProviderDescriptors.Count > 0; 
+            return this._sourceDataProviderDescriptors != null && (this._sourceDataProviderDescriptors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -178,7 +179,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if TargetDataProviderDescriptors property is set
         internal bool IsSetTargetDataProviderDescriptors()
         {
-            return this._targetDataProviderDescriptors != null && this._targetDataProviderDescriptors.Count > 0; 
+            return this._targetDataProviderDescriptors != null && (this._targetDataProviderDescriptors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

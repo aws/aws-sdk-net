@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Bedrock.Model
 {
     /// <summary>
@@ -47,7 +48,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property BaseModelArn. 
         /// <para>
-        /// ARN of the base model.
+        /// Amazon Resource Name (ARN) of the base model.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=1011)]
@@ -105,7 +106,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property CustomModelArn. 
         /// <para>
-        /// ARN of the custom model.
+        /// Amazon Resource Name (ARN) of the custom model.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=1011)]
@@ -161,7 +162,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property JobArn. 
         /// <para>
-        /// ARN of the customization job.
+        /// Amazon Resource Name (ARN) of the customization job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1011)]

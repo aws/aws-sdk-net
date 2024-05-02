@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SSMIncidents.Model
 {
     /// <summary>
@@ -36,8 +37,8 @@ namespace Amazon.SSMIncidents.Model
     {
         private string _dedupeString;
         private int? _impact;
-        private Dictionary<string, string> _incidentTags = new Dictionary<string, string>();
-        private List<NotificationTargetItem> _notificationTargets = new List<NotificationTargetItem>();
+        private Dictionary<string, string> _incidentTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<NotificationTargetItem> _notificationTargets = AWSConfigs.InitializeCollections ? new List<NotificationTargetItem>() : null;
         private string _summary;
         private string _title;
 
@@ -137,7 +138,7 @@ namespace Amazon.SSMIncidents.Model
         // Check to see if IncidentTags property is set
         internal bool IsSetIncidentTags()
         {
-            return this._incidentTags != null && this._incidentTags.Count > 0; 
+            return this._incidentTags != null && (this._incidentTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -156,7 +157,7 @@ namespace Amazon.SSMIncidents.Model
         // Check to see if NotificationTargets property is set
         internal bool IsSetNotificationTargets()
         {
-            return this._notificationTargets != null && this._notificationTargets.Count > 0; 
+            return this._notificationTargets != null && (this._notificationTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

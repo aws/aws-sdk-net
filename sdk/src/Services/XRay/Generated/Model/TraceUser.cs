@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.XRay.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.XRay.Model
     /// </summary>
     public partial class TraceUser
     {
-        private List<ServiceId> _serviceIds = new List<ServiceId>();
+        private List<ServiceId> _serviceIds = AWSConfigs.InitializeCollections ? new List<ServiceId>() : null;
         private string _userName;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.XRay.Model
         // Check to see if ServiceIds property is set
         internal bool IsSetServiceIds()
         {
-            return this._serviceIds != null && this._serviceIds.Count > 0; 
+            return this._serviceIds != null && (this._serviceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataSync.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.DataSync.Model
     /// </summary>
     public partial class ListLocationsRequest : AmazonDataSyncRequest
     {
-        private List<LocationFilter> _filters = new List<LocationFilter>();
+        private List<LocationFilter> _filters = AWSConfigs.InitializeCollections ? new List<LocationFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -62,7 +63,7 @@ namespace Amazon.DataSync.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

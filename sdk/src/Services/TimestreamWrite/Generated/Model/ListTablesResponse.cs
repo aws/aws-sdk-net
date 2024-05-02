@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.TimestreamWrite.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.TimestreamWrite.Model
     public partial class ListTablesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Table> _tables = new List<Table>();
+        private List<Table> _tables = AWSConfigs.InitializeCollections ? new List<Table>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.TimestreamWrite.Model
         // Check to see if Tables property is set
         internal bool IsSetTables()
         {
-            return this._tables != null && this._tables.Count > 0; 
+            return this._tables != null && (this._tables.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

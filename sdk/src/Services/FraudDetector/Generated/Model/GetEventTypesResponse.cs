@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FraudDetector.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class GetEventTypesResponse : AmazonWebServiceResponse
     {
-        private List<EventType> _eventTypes = new List<EventType>();
+        private List<EventType> _eventTypes = AWSConfigs.InitializeCollections ? new List<EventType>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if EventTypes property is set
         internal bool IsSetEventTypes()
         {
-            return this._eventTypes != null && this._eventTypes.Count > 0; 
+            return this._eventTypes != null && (this._eventTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

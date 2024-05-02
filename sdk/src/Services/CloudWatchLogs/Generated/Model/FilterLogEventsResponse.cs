@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.CloudWatchLogs.Model
     /// </summary>
     public partial class FilterLogEventsResponse : AmazonWebServiceResponse
     {
-        private List<FilteredLogEvent> _events = new List<FilteredLogEvent>();
+        private List<FilteredLogEvent> _events = AWSConfigs.InitializeCollections ? new List<FilteredLogEvent>() : null;
         private string _nextToken;
-        private List<SearchedLogStream> _searchedLogStreams = new List<SearchedLogStream>();
+        private List<SearchedLogStream> _searchedLogStreams = AWSConfigs.InitializeCollections ? new List<SearchedLogStream>() : null;
 
         /// <summary>
         /// Gets and sets the property Events. 
@@ -52,7 +53,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if Events property is set
         internal bool IsSetEvents()
         {
-            return this._events != null && this._events.Count > 0; 
+            return this._events != null && (this._events.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -96,7 +97,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if SearchedLogStreams property is set
         internal bool IsSetSearchedLogStreams()
         {
-            return this._searchedLogStreams != null && this._searchedLogStreams.Count > 0; 
+            return this._searchedLogStreams != null && (this._searchedLogStreams.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

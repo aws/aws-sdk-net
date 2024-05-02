@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class BatchGetTableOptimizerRequest : AmazonGlueRequest
     {
-        private List<BatchGetTableOptimizerEntry> _entries = new List<BatchGetTableOptimizerEntry>();
+        private List<BatchGetTableOptimizerEntry> _entries = AWSConfigs.InitializeCollections ? new List<BatchGetTableOptimizerEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property Entries. 
@@ -53,7 +54,7 @@ namespace Amazon.Glue.Model
         // Check to see if Entries property is set
         internal bool IsSetEntries()
         {
-            return this._entries != null && this._entries.Count > 0; 
+            return this._entries != null && (this._entries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

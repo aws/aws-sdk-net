@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -46,11 +47,11 @@ namespace Amazon.SageMaker.Model
         private string _hubContentDocument;
         private string _hubContentMarkdown;
         private string _hubContentName;
-        private List<string> _hubContentSearchKeywords = new List<string>();
+        private List<string> _hubContentSearchKeywords = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private HubContentType _hubContentType;
         private string _hubContentVersion;
         private string _hubName;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property DocumentSchemaVersion. 
@@ -184,7 +185,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if HubContentSearchKeywords property is set
         internal bool IsSetHubContentSearchKeywords()
         {
-            return this._hubContentSearchKeywords != null && this._hubContentSearchKeywords.Count > 0; 
+            return this._hubContentSearchKeywords != null && (this._hubContentSearchKeywords.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -260,7 +261,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

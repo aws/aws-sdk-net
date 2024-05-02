@@ -26,15 +26,35 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDetector operation.
-    /// Creates a single Amazon GuardDuty detector. A detector is a resource that represents
-    /// the GuardDuty service. To start using GuardDuty, you must create a detector in each
-    /// Region where you enable the service. You can have only one detector per account per
-    /// Region. All data sources are enabled in a new detector by default.
+    /// Creates a single GuardDuty detector. A detector is a resource that represents the
+    /// GuardDuty service. To start using GuardDuty, you must create a detector in each Region
+    /// where you enable the service. You can have only one detector per account per Region.
+    /// All data sources are enabled in a new detector by default.
     /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// When you don't specify any <c>features</c>, with an exception to <c>RUNTIME_MONITORING</c>,
+    /// all the optional features are enabled by default.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// When you specify some of the <c>features</c>, any feature that is not specified in
+    /// the API call gets enabled by default, with an exception to <c>RUNTIME_MONITORING</c>.
+    /// 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Specifying both EKS Runtime Monitoring (<c>EKS_RUNTIME_MONITORING</c>) and Runtime
+    /// Monitoring (<c>RUNTIME_MONITORING</c>) will cause an error. You can add only one of
+    /// these two features because Runtime Monitoring already includes the threat detection
+    /// for Amazon EKS resources. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/runtime-monitoring.html">Runtime
+    /// Monitoring</a>.
+    /// </para>
     ///  
     /// <para>
     /// There might be regional differences because some data sources might not be available
@@ -48,9 +68,9 @@ namespace Amazon.GuardDuty.Model
         private string _clientToken;
         private DataSourceConfigurations _dataSources;
         private bool? _enable;
-        private List<DetectorFeatureConfiguration> _features = new List<DetectorFeatureConfiguration>();
+        private List<DetectorFeatureConfiguration> _features = AWSConfigs.InitializeCollections ? new List<DetectorFeatureConfiguration>() : null;
         private FindingPublishingFrequency _findingPublishingFrequency;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -131,7 +151,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if Features property is set
         internal bool IsSetFeatures()
         {
-            return this._features != null && this._features.Count > 0; 
+            return this._features != null && (this._features.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -168,7 +188,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

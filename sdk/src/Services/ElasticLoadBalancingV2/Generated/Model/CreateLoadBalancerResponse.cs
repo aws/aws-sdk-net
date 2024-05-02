@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticLoadBalancingV2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// </summary>
     public partial class CreateLoadBalancerResponse : AmazonWebServiceResponse
     {
-        private List<LoadBalancer> _loadBalancers = new List<LoadBalancer>();
+        private List<LoadBalancer> _loadBalancers = AWSConfigs.InitializeCollections ? new List<LoadBalancer>() : null;
 
         /// <summary>
         /// Gets and sets the property LoadBalancers. 
@@ -50,7 +51,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         // Check to see if LoadBalancers property is set
         internal bool IsSetLoadBalancers()
         {
-            return this._loadBalancers != null && this._loadBalancers.Count > 0; 
+            return this._loadBalancers != null && (this._loadBalancers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

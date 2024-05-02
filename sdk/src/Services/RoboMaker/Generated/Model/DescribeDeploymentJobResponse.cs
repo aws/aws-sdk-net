@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RoboMaker.Model
 {
     /// <summary>
@@ -36,14 +37,14 @@ namespace Amazon.RoboMaker.Model
     {
         private string _arn;
         private DateTime? _createdAt;
-        private List<DeploymentApplicationConfig> _deploymentApplicationConfigs = new List<DeploymentApplicationConfig>();
+        private List<DeploymentApplicationConfig> _deploymentApplicationConfigs = AWSConfigs.InitializeCollections ? new List<DeploymentApplicationConfig>() : null;
         private DeploymentConfig _deploymentConfig;
         private DeploymentJobErrorCode _failureCode;
         private string _failureReason;
         private string _fleet;
-        private List<RobotDeployment> _robotDeploymentSummary = new List<RobotDeployment>();
+        private List<RobotDeployment> _robotDeploymentSummary = AWSConfigs.InitializeCollections ? new List<RobotDeployment>() : null;
         private DeploymentStatus _status;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -98,7 +99,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if DeploymentApplicationConfigs property is set
         internal bool IsSetDeploymentApplicationConfigs()
         {
-            return this._deploymentApplicationConfigs != null && this._deploymentApplicationConfigs.Count > 0; 
+            return this._deploymentApplicationConfigs != null && (this._deploymentApplicationConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -190,7 +191,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if RobotDeploymentSummary property is set
         internal bool IsSetRobotDeploymentSummary()
         {
-            return this._robotDeploymentSummary != null && this._robotDeploymentSummary.Count > 0; 
+            return this._robotDeploymentSummary != null && (this._robotDeploymentSummary.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -227,7 +228,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

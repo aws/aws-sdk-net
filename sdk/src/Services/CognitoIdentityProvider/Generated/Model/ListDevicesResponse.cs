@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </summary>
     public partial class ListDevicesResponse : AmazonWebServiceResponse
     {
-        private List<DeviceType> _devices = new List<DeviceType>();
+        private List<DeviceType> _devices = AWSConfigs.InitializeCollections ? new List<DeviceType>() : null;
         private string _paginationToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if Devices property is set
         internal bool IsSetDevices()
         {
-            return this._devices != null && this._devices.Count > 0; 
+            return this._devices != null && (this._devices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -96,6 +97,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ExcludeFilters/member", targetDepth))
                     {
                         var unmarshaller = MetricStreamFilterUnmarshaller.Instance;
+                        if (response.ExcludeFilters == null)
+                        {
+                            response.ExcludeFilters = new List<MetricStreamFilter>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.ExcludeFilters.Add(item);
                         continue;
@@ -109,6 +114,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("IncludeFilters/member", targetDepth))
                     {
                         var unmarshaller = MetricStreamFilterUnmarshaller.Instance;
+                        if (response.IncludeFilters == null)
+                        {
+                            response.IncludeFilters = new List<MetricStreamFilter>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.IncludeFilters.Add(item);
                         continue;
@@ -152,6 +161,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("StatisticsConfigurations/member", targetDepth))
                     {
                         var unmarshaller = MetricStreamStatisticsConfigurationUnmarshaller.Instance;
+                        if (response.StatisticsConfigurations == null)
+                        {
+                            response.StatisticsConfigurations = new List<MetricStreamStatisticsConfiguration>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.StatisticsConfigurations.Add(item);
                         continue;

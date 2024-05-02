@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class ListRefreshSchedulesResponse : AmazonWebServiceResponse
     {
-        private List<RefreshSchedule> _refreshSchedules = new List<RefreshSchedule>();
+        private List<RefreshSchedule> _refreshSchedules = AWSConfigs.InitializeCollections ? new List<RefreshSchedule>() : null;
         private string _requestId;
         private int? _status;
 
@@ -52,7 +53,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if RefreshSchedules property is set
         internal bool IsSetRefreshSchedules()
         {
-            return this._refreshSchedules != null && this._refreshSchedules.Count > 0; 
+            return this._refreshSchedules != null && (this._refreshSchedules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

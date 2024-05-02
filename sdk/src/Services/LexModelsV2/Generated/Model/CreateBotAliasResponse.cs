@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.LexModelsV2.Model
     public partial class CreateBotAliasResponse : AmazonWebServiceResponse
     {
         private string _botAliasId;
-        private Dictionary<string, BotAliasLocaleSettings> _botAliasLocaleSettings = new Dictionary<string, BotAliasLocaleSettings>();
+        private Dictionary<string, BotAliasLocaleSettings> _botAliasLocaleSettings = AWSConfigs.InitializeCollections ? new Dictionary<string, BotAliasLocaleSettings>() : null;
         private string _botAliasName;
         private BotAliasStatus _botAliasStatus;
         private string _botId;
@@ -43,7 +44,7 @@ namespace Amazon.LexModelsV2.Model
         private DateTime? _creationDateTime;
         private string _description;
         private SentimentAnalysisSettings _sentimentAnalysisSettings;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property BotAliasId. 
@@ -80,7 +81,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if BotAliasLocaleSettings property is set
         internal bool IsSetBotAliasLocaleSettings()
         {
-            return this._botAliasLocaleSettings != null && this._botAliasLocaleSettings.Count > 0; 
+            return this._botAliasLocaleSettings != null && (this._botAliasLocaleSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -246,7 +247,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

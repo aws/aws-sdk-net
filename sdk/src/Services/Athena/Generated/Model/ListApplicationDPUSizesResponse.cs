@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Athena.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Athena.Model
     /// </summary>
     public partial class ListApplicationDPUSizesResponse : AmazonWebServiceResponse
     {
-        private List<ApplicationDPUSizes> _applicationDPUSizes = new List<ApplicationDPUSizes>();
+        private List<ApplicationDPUSizes> _applicationDPUSizes = AWSConfigs.InitializeCollections ? new List<ApplicationDPUSizes>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Athena.Model
         // Check to see if ApplicationDPUSizes property is set
         internal bool IsSetApplicationDPUSizes()
         {
-            return this._applicationDPUSizes != null && this._applicationDPUSizes.Count > 0; 
+            return this._applicationDPUSizes != null && (this._applicationDPUSizes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

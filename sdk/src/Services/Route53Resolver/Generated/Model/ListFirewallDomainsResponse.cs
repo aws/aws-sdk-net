@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Route53Resolver.Model
     /// </summary>
     public partial class ListFirewallDomainsResponse : AmazonWebServiceResponse
     {
-        private List<string> _domains = new List<string>();
+        private List<string> _domains = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -56,7 +57,7 @@ namespace Amazon.Route53Resolver.Model
         // Check to see if Domains property is set
         internal bool IsSetDomains()
         {
-            return this._domains != null && this._domains.Count > 0; 
+            return this._domains != null && (this._domains.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

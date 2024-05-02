@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SSMIncidents.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.SSMIncidents.Model
         private string _clientToken;
         private string _eventData;
         private string _eventId;
-        private List<EventReference> _eventReferences = new List<EventReference>();
+        private List<EventReference> _eventReferences = AWSConfigs.InitializeCollections ? new List<EventReference>() : null;
         private DateTime? _eventTime;
         private string _eventType;
         private string _incidentRecordArn;
@@ -129,7 +130,7 @@ namespace Amazon.SSMIncidents.Model
         // Check to see if EventReferences property is set
         internal bool IsSetEventReferences()
         {
-            return this._eventReferences != null && this._eventReferences.Count > 0; 
+            return this._eventReferences != null && (this._eventReferences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

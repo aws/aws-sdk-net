@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.RDS.Model
     /// </summary>
     public partial class DescribeIntegrationsResponse : AmazonWebServiceResponse
     {
-        private List<Integration> _integrations = new List<Integration>();
+        private List<Integration> _integrations = AWSConfigs.InitializeCollections ? new List<Integration>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.RDS.Model
         // Check to see if Integrations property is set
         internal bool IsSetIntegrations()
         {
-            return this._integrations != null && this._integrations.Count > 0; 
+            return this._integrations != null && (this._integrations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

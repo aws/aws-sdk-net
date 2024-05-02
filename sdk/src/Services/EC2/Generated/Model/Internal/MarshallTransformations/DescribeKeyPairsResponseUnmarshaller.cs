@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -58,6 +59,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("keySet/item", targetDepth))
                     {
                         var unmarshaller = KeyPairInfoUnmarshaller.Instance;
+                        if (response.KeyPairs == null)
+                        {
+                            response.KeyPairs = new List<KeyPairInfo>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.KeyPairs.Add(item);
                         continue;

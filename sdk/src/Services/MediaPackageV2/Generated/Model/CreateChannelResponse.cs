@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaPackageV2.Model
 {
     /// <summary>
@@ -38,9 +39,10 @@ namespace Amazon.MediaPackageV2.Model
         private string _channelName;
         private DateTime? _createdAt;
         private string _description;
-        private List<IngestEndpoint> _ingestEndpoints = new List<IngestEndpoint>();
+        private string _eTag;
+        private List<IngestEndpoint> _ingestEndpoints = AWSConfigs.InitializeCollections ? new List<IngestEndpoint>() : null;
         private DateTime? _modifiedAt;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -140,6 +142,26 @@ namespace Amazon.MediaPackageV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ETag. 
+        /// <para>
+        /// The current Entity Tag (ETag) associated with this resource. The entity tag can be
+        /// used to safely make concurrent updates to the resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string ETag
+        {
+            get { return this._eTag; }
+            set { this._eTag = value; }
+        }
+
+        // Check to see if ETag property is set
+        internal bool IsSetETag()
+        {
+            return this._eTag != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IngestEndpoints.
         /// </summary>
         public List<IngestEndpoint> IngestEndpoints
@@ -151,7 +173,7 @@ namespace Amazon.MediaPackageV2.Model
         // Check to see if IngestEndpoints property is set
         internal bool IsSetIngestEndpoints()
         {
-            return this._ingestEndpoints != null && this._ingestEndpoints.Count > 0; 
+            return this._ingestEndpoints != null && (this._ingestEndpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -188,7 +210,7 @@ namespace Amazon.MediaPackageV2.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Translate.Model
 {
     /// <summary>
@@ -50,7 +51,7 @@ namespace Amazon.Translate.Model
         private TranslationSettings _settings;
         private string _sourceLanguageCode;
         private string _targetLanguageCode;
-        private List<string> _terminologyNames = new List<string>();
+        private List<string> _terminologyNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Document. 
@@ -186,7 +187,7 @@ namespace Amazon.Translate.Model
         // Check to see if TerminologyNames property is set
         internal bool IsSetTerminologyNames()
         {
-            return this._terminologyNames != null && this._terminologyNames.Count > 0; 
+            return this._terminologyNames != null && (this._terminologyNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -65,6 +66,7 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetBranch())
@@ -77,6 +79,12 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("ConfigFile");
                     context.Writer.Write(publicRequest.ConfigFile);
+                }
+
+                if(publicRequest.IsSetPublishDeploymentStatus())
+                {
+                    context.Writer.WritePropertyName("PublishDeploymentStatus");
+                    context.Writer.Write(publicRequest.PublishDeploymentStatus);
                 }
 
                 if(publicRequest.IsSetRepositoryLinkId())
@@ -101,6 +109,12 @@ namespace Amazon.CodeStarconnections.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("SyncType");
                     context.Writer.Write(publicRequest.SyncType);
+                }
+
+                if(publicRequest.IsSetTriggerResourceUpdateOn())
+                {
+                    context.Writer.WritePropertyName("TriggerResourceUpdateOn");
+                    context.Writer.Write(publicRequest.TriggerResourceUpdateOn);
                 }
 
                 writer.WriteObjectEnd();

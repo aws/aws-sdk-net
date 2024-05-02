@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -63,6 +64,10 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ExtendedStatistics/entry", targetDepth))
                     {
                         var unmarshaller = new KeyValueUnmarshaller<string, double, StringUnmarshaller, DoubleUnmarshaller>(StringUnmarshaller.Instance, DoubleUnmarshaller.Instance);
+                        if (unmarshalledObject.ExtendedStatistics == null)
+                        {
+                            unmarshalledObject.ExtendedStatistics = new Dictionary<string, double>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ExtendedStatistics.Add(item);
                         continue;

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Greengrass.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Greengrass.Model
     /// </summary>
     public partial class ConnectorDefinitionVersion
     {
-        private List<Connector> _connectors = new List<Connector>();
+        private List<Connector> _connectors = AWSConfigs.InitializeCollections ? new List<Connector>() : null;
 
         /// <summary>
         /// Gets and sets the property Connectors. A list of references to connectors in this
@@ -48,7 +49,7 @@ namespace Amazon.Greengrass.Model
         // Check to see if Connectors property is set
         internal bool IsSetConnectors()
         {
-            return this._connectors != null && this._connectors.Count > 0; 
+            return this._connectors != null && (this._connectors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

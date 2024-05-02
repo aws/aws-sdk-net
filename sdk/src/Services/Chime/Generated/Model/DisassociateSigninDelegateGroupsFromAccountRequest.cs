@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Chime.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Chime.Model
     public partial class DisassociateSigninDelegateGroupsFromAccountRequest : AmazonChimeRequest
     {
         private string _accountId;
-        private List<string> _groupNames = new List<string>();
+        private List<string> _groupNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -73,7 +74,7 @@ namespace Amazon.Chime.Model
         // Check to see if GroupNames property is set
         internal bool IsSetGroupNames()
         {
-            return this._groupNames != null && this._groupNames.Count > 0; 
+            return this._groupNames != null && (this._groupNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

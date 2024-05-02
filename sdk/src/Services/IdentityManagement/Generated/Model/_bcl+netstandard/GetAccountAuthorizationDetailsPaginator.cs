@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
@@ -45,25 +46,25 @@ namespace Amazon.IdentityManagement.Model
         /// Enumerable containing all of the UserDetailList
         /// </summary>
         public IPaginatedEnumerable<UserDetail> UserDetailList => 
-            new PaginatedResultKeyResponse<GetAccountAuthorizationDetailsResponse, UserDetail>(this, (i) => i.UserDetailList);
+            new PaginatedResultKeyResponse<GetAccountAuthorizationDetailsResponse, UserDetail>(this, (i) => i.UserDetailList ?? new List<UserDetail>());
 
         /// <summary>
         /// Enumerable containing all of the GroupDetailList
         /// </summary>
         public IPaginatedEnumerable<GroupDetail> GroupDetailList => 
-            new PaginatedResultKeyResponse<GetAccountAuthorizationDetailsResponse, GroupDetail>(this, (i) => i.GroupDetailList);
+            new PaginatedResultKeyResponse<GetAccountAuthorizationDetailsResponse, GroupDetail>(this, (i) => i.GroupDetailList ?? new List<GroupDetail>());
 
         /// <summary>
         /// Enumerable containing all of the RoleDetailList
         /// </summary>
         public IPaginatedEnumerable<RoleDetail> RoleDetailList => 
-            new PaginatedResultKeyResponse<GetAccountAuthorizationDetailsResponse, RoleDetail>(this, (i) => i.RoleDetailList);
+            new PaginatedResultKeyResponse<GetAccountAuthorizationDetailsResponse, RoleDetail>(this, (i) => i.RoleDetailList ?? new List<RoleDetail>());
 
         /// <summary>
         /// Enumerable containing all of the Policies
         /// </summary>
         public IPaginatedEnumerable<ManagedPolicyDetail> Policies => 
-            new PaginatedResultKeyResponse<GetAccountAuthorizationDetailsResponse, ManagedPolicyDetail>(this, (i) => i.Policies);
+            new PaginatedResultKeyResponse<GetAccountAuthorizationDetailsResponse, ManagedPolicyDetail>(this, (i) => i.Policies ?? new List<ManagedPolicyDetail>());
 
         internal GetAccountAuthorizationDetailsPaginator(IAmazonIdentityManagementService client, GetAccountAuthorizationDetailsRequest request)
         {
@@ -91,7 +92,7 @@ namespace Amazon.IdentityManagement.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<GetAccountAuthorizationDetailsResponse> IPaginator<GetAccountAuthorizationDetailsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<GetAccountAuthorizationDetailsResponse> IPaginator<GetAccountAuthorizationDetailsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

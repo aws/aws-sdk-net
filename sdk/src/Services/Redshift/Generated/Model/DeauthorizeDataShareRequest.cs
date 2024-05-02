@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -61,7 +62,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property DataShareArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the datashare to remove authorization from.
+        /// The namespace Amazon Resource Name (ARN) of the datashare to remove authorization
+        /// from.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=2147483647)]

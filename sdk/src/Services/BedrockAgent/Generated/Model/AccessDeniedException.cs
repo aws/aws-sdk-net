@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// This exception is thrown when a request is denied per access permissions
+    /// The request is denied because of missing access permissions.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

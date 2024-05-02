@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.MediaConvert.Model
         private AccelerationSettings _accelerationSettings;
         private BillingTagsSource _billingTagsSource;
         private string _clientRequestToken;
-        private List<HopDestination> _hopDestinations = new List<HopDestination>();
+        private List<HopDestination> _hopDestinations = AWSConfigs.InitializeCollections ? new List<HopDestination>() : null;
         private string _jobTemplate;
         private int? _priority;
         private string _queue;
@@ -46,8 +47,8 @@ namespace Amazon.MediaConvert.Model
         private JobSettings _settings;
         private SimulateReservedQueue _simulateReservedQueue;
         private StatusUpdateInterval _statusUpdateInterval;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
-        private Dictionary<string, string> _userMetadata = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, string> _userMetadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AccelerationSettings. Optional. Accelerated transcoding
@@ -120,7 +121,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if HopDestinations property is set
         internal bool IsSetHopDestinations()
         {
-            return this._hopDestinations != null && this._hopDestinations.Count > 0; 
+            return this._hopDestinations != null && (this._hopDestinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -264,7 +265,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -282,7 +283,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if UserMetadata property is set
         internal bool IsSetUserMetadata()
         {
-            return this._userMetadata != null && this._userMetadata.Count > 0; 
+            return this._userMetadata != null && (this._userMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

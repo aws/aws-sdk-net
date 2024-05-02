@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the ec2-2016-11-15.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -289,6 +290,11 @@ namespace Amazon.EC2.Model
         /// Paginator for DescribeLocalGatewayVirtualInterfaces operation
         ///</summary>
         IDescribeLocalGatewayVirtualInterfacesPaginator DescribeLocalGatewayVirtualInterfaces(DescribeLocalGatewayVirtualInterfacesRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeMacHosts operation
+        ///</summary>
+        IDescribeMacHostsPaginator DescribeMacHosts(DescribeMacHostsRequest request);
 
         /// <summary>
         /// Paginator for DescribeManagedPrefixLists operation

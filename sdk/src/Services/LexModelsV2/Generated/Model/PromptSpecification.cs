@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -35,9 +36,9 @@ namespace Amazon.LexModelsV2.Model
     {
         private bool? _allowInterrupt;
         private int? _maxRetries;
-        private List<MessageGroup> _messageGroups = new List<MessageGroup>();
+        private List<MessageGroup> _messageGroups = AWSConfigs.InitializeCollections ? new List<MessageGroup>() : null;
         private MessageSelectionStrategy _messageSelectionStrategy;
-        private Dictionary<string, PromptAttemptSpecification> _promptAttemptsSpecification = new Dictionary<string, PromptAttemptSpecification>();
+        private Dictionary<string, PromptAttemptSpecification> _promptAttemptsSpecification = AWSConfigs.InitializeCollections ? new Dictionary<string, PromptAttemptSpecification>() : null;
 
         /// <summary>
         /// Gets and sets the property AllowInterrupt. 
@@ -94,7 +95,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if MessageGroups property is set
         internal bool IsSetMessageGroups()
         {
-            return this._messageGroups != null && this._messageGroups.Count > 0; 
+            return this._messageGroups != null && (this._messageGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -130,7 +131,7 @@ namespace Amazon.LexModelsV2.Model
         // Check to see if PromptAttemptsSpecification property is set
         internal bool IsSetPromptAttemptsSpecification()
         {
-            return this._promptAttemptsSpecification != null && this._promptAttemptsSpecification.Count > 0; 
+            return this._promptAttemptsSpecification != null && (this._promptAttemptsSpecification.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

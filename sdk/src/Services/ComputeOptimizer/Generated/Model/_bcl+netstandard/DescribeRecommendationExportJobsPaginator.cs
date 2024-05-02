@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// Enumerable containing all of the RecommendationExportJobs
         /// </summary>
         public IPaginatedEnumerable<RecommendationExportJob> RecommendationExportJobs => 
-            new PaginatedResultKeyResponse<DescribeRecommendationExportJobsResponse, RecommendationExportJob>(this, (i) => i.RecommendationExportJobs);
+            new PaginatedResultKeyResponse<DescribeRecommendationExportJobsResponse, RecommendationExportJob>(this, (i) => i.RecommendationExportJobs ?? new List<RecommendationExportJob>());
 
         internal DescribeRecommendationExportJobsPaginator(IAmazonComputeOptimizer client, DescribeRecommendationExportJobsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ComputeOptimizer.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeRecommendationExportJobsResponse> IPaginator<DescribeRecommendationExportJobsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeRecommendationExportJobsResponse> IPaginator<DescribeRecommendationExportJobsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

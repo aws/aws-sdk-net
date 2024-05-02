@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3Outposts.Model
 {
     /// <summary>
@@ -44,7 +45,7 @@ namespace Amazon.S3Outposts.Model
         private string _customerOwnedIpv4Pool;
         private string _endpointArn;
         private FailedReason _failedReason;
-        private List<NetworkInterface> _networkInterfaces = new List<NetworkInterface>();
+        private List<NetworkInterface> _networkInterfaces = AWSConfigs.InitializeCollections ? new List<NetworkInterface>() : null;
         private string _outpostsId;
         private string _securityGroupId;
         private EndpointStatus _status;
@@ -174,7 +175,7 @@ namespace Amazon.S3Outposts.Model
         // Check to see if NetworkInterfaces property is set
         internal bool IsSetNetworkInterfaces()
         {
-            return this._networkInterfaces != null && this._networkInterfaces.Count > 0; 
+            return this._networkInterfaces != null && (this._networkInterfaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

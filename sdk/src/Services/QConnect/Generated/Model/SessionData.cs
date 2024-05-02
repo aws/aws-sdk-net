@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QConnect.Model
 {
     /// <summary>
@@ -38,7 +39,8 @@ namespace Amazon.QConnect.Model
         private string _name;
         private string _sessionArn;
         private string _sessionId;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private TagFilter _tagFilter;
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -135,6 +137,24 @@ namespace Amazon.QConnect.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TagFilter. 
+        /// <para>
+        /// An object that can be used to specify Tag conditions.
+        /// </para>
+        /// </summary>
+        public TagFilter TagFilter
+        {
+            get { return this._tagFilter; }
+            set { this._tagFilter = value; }
+        }
+
+        // Check to see if TagFilter property is set
+        internal bool IsSetTagFilter()
+        {
+            return this._tagFilter != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
         /// The tags used to organize, track, or control access for this resource.
@@ -149,7 +169,7 @@ namespace Amazon.QConnect.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

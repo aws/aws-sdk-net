@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -57,6 +58,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Timestamps/member", targetDepth))
                     {
                         var unmarshaller = DateTimeUnmarshaller.Instance;
+                        if (unmarshalledObject.Timestamps == null)
+                        {
+                            unmarshalledObject.Timestamps = new List<DateTime>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Timestamps.Add(item);
                         continue;
@@ -64,6 +69,10 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     if (context.TestExpression("Values/member", targetDepth))
                     {
                         var unmarshaller = DoubleUnmarshaller.Instance;
+                        if (unmarshalledObject.Values == null)
+                        {
+                            unmarshalledObject.Values = new List<double>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Values.Add(item);
                         continue;

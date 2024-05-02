@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
@@ -49,8 +50,8 @@ namespace Amazon.AutoScaling.Model
     /// </summary>
     public partial class DescribeAutoScalingGroupsRequest : AmazonAutoScalingRequest
     {
-        private List<string> _autoScalingGroupNames = new List<string>();
-        private List<Filter> _filters = new List<Filter>();
+        private List<string> _autoScalingGroupNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
         private int? _maxRecords;
         private string _nextToken;
 
@@ -74,7 +75,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AutoScalingGroupNames property is set
         internal bool IsSetAutoScalingGroupNames()
         {
-            return this._autoScalingGroupNames != null && this._autoScalingGroupNames.Count > 0; 
+            return this._autoScalingGroupNames != null && (this._autoScalingGroupNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

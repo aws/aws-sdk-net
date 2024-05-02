@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
@@ -63,8 +64,8 @@ namespace Amazon.AWSHealth.Model
         private string _locale;
         private int? _maxResults;
         private string _nextToken;
-        private List<EntityAccountFilter> _organizationEntityAccountFilters = new List<EntityAccountFilter>();
-        private List<EventAccountFilter> _organizationEntityFilters = new List<EventAccountFilter>();
+        private List<EntityAccountFilter> _organizationEntityAccountFilters = AWSConfigs.InitializeCollections ? new List<EntityAccountFilter>() : null;
+        private List<EventAccountFilter> _organizationEntityFilters = AWSConfigs.InitializeCollections ? new List<EventAccountFilter>() : null;
 
         /// <summary>
         /// Gets and sets the property Locale. 
@@ -145,7 +146,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if OrganizationEntityAccountFilters property is set
         internal bool IsSetOrganizationEntityAccountFilters()
         {
-            return this._organizationEntityAccountFilters != null && this._organizationEntityAccountFilters.Count > 0; 
+            return this._organizationEntityAccountFilters != null && (this._organizationEntityAccountFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -165,7 +166,7 @@ namespace Amazon.AWSHealth.Model
         // Check to see if OrganizationEntityFilters property is set
         internal bool IsSetOrganizationEntityFilters()
         {
-            return this._organizationEntityFilters != null && this._organizationEntityFilters.Count > 0; 
+            return this._organizationEntityFilters != null && (this._organizationEntityFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

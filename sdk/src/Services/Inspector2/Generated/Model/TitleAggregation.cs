@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
@@ -37,8 +38,8 @@ namespace Amazon.Inspector2.Model
         private AggregationResourceType _resourceType;
         private TitleSortBy _sortBy;
         private SortOrder _sortOrder;
-        private List<StringFilter> _titles = new List<StringFilter>();
-        private List<StringFilter> _vulnerabilityIds = new List<StringFilter>();
+        private List<StringFilter> _titles = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
+        private List<StringFilter> _vulnerabilityIds = AWSConfigs.InitializeCollections ? new List<StringFilter>() : null;
 
         /// <summary>
         /// Gets and sets the property FindingType. 
@@ -128,7 +129,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if Titles property is set
         internal bool IsSetTitles()
         {
-            return this._titles != null && this._titles.Count > 0; 
+            return this._titles != null && (this._titles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -147,7 +148,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if VulnerabilityIds property is set
         internal bool IsSetVulnerabilityIds()
         {
-            return this._vulnerabilityIds != null && this._vulnerabilityIds.Count > 0; 
+            return this._vulnerabilityIds != null && (this._vulnerabilityIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

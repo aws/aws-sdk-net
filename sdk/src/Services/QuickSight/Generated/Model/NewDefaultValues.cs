@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -34,10 +35,10 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class NewDefaultValues
     {
-        private List<DateTime> _dateTimeStaticValues = new List<DateTime>();
-        private List<double> _decimalStaticValues = new List<double>();
-        private List<long> _integerStaticValues = new List<long>();
-        private List<string> _stringStaticValues = new List<string>();
+        private List<DateTime> _dateTimeStaticValues = AWSConfigs.InitializeCollections ? new List<DateTime>() : null;
+        private List<double> _decimalStaticValues = AWSConfigs.InitializeCollections ? new List<double>() : null;
+        private List<long> _integerStaticValues = AWSConfigs.InitializeCollections ? new List<long>() : null;
+        private List<string> _stringStaticValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DateTimeStaticValues. 
@@ -55,7 +56,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if DateTimeStaticValues property is set
         internal bool IsSetDateTimeStaticValues()
         {
-            return this._dateTimeStaticValues != null && this._dateTimeStaticValues.Count > 0; 
+            return this._dateTimeStaticValues != null && (this._dateTimeStaticValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if DecimalStaticValues property is set
         internal bool IsSetDecimalStaticValues()
         {
-            return this._decimalStaticValues != null && this._decimalStaticValues.Count > 0; 
+            return this._decimalStaticValues != null && (this._decimalStaticValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -93,7 +94,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if IntegerStaticValues property is set
         internal bool IsSetIntegerStaticValues()
         {
-            return this._integerStaticValues != null && this._integerStaticValues.Count > 0; 
+            return this._integerStaticValues != null && (this._integerStaticValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -112,7 +113,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if StringStaticValues property is set
         internal bool IsSetStringStaticValues()
         {
-            return this._stringStaticValues != null && this._stringStaticValues.Count > 0; 
+            return this._stringStaticValues != null && (this._stringStaticValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

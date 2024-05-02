@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Route53Resolver.Model
     public partial class ListOutpostResolversResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<OutpostResolver> _outpostResolvers = new List<OutpostResolver>();
+        private List<OutpostResolver> _outpostResolvers = AWSConfigs.InitializeCollections ? new List<OutpostResolver>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.Route53Resolver.Model
         // Check to see if OutpostResolvers property is set
         internal bool IsSetOutpostResolvers()
         {
-            return this._outpostResolvers != null && this._outpostResolvers.Count > 0; 
+            return this._outpostResolvers != null && (this._outpostResolvers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

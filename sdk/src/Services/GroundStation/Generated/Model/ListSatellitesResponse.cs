@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GroundStation.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.GroundStation.Model
     public partial class ListSatellitesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SatelliteListItem> _satellites = new List<SatelliteListItem>();
+        private List<SatelliteListItem> _satellites = AWSConfigs.InitializeCollections ? new List<SatelliteListItem>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.GroundStation.Model
         // Check to see if Satellites property is set
         internal bool IsSetSatellites()
         {
-            return this._satellites != null && this._satellites.Count > 0; 
+            return this._satellites != null && (this._satellites.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

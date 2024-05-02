@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.QuickSight.Model
     public partial class DataLabelOptions
     {
         private Visibility _categoryLabelVisibility;
-        private List<DataLabelType> _dataLabelTypes = new List<DataLabelType>();
+        private List<DataLabelType> _dataLabelTypes = AWSConfigs.InitializeCollections ? new List<DataLabelType>() : null;
         private string _labelColor;
         private DataLabelContent _labelContent;
         private FontConfiguration _labelFontConfiguration;
@@ -78,7 +79,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if DataLabelTypes property is set
         internal bool IsSetDataLabelTypes()
         {
-            return this._dataLabelTypes != null && this._dataLabelTypes.Count > 0; 
+            return this._dataLabelTypes != null && (this._dataLabelTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Inspector2.Model
         /// Enumerable containing all of the Vulnerabilities
         /// </summary>
         public IPaginatedEnumerable<Vulnerability> Vulnerabilities => 
-            new PaginatedResultKeyResponse<SearchVulnerabilitiesResponse, Vulnerability>(this, (i) => i.Vulnerabilities);
+            new PaginatedResultKeyResponse<SearchVulnerabilitiesResponse, Vulnerability>(this, (i) => i.Vulnerabilities ?? new List<Vulnerability>());
 
         internal SearchVulnerabilitiesPaginator(IAmazonInspector2 client, SearchVulnerabilitiesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Inspector2.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<SearchVulnerabilitiesResponse> IPaginator<SearchVulnerabilitiesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<SearchVulnerabilitiesResponse> IPaginator<SearchVulnerabilitiesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

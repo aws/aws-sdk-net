@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// </summary>
     public partial class ListPlatformBranchesRequest : AmazonElasticBeanstalkRequest
     {
-        private List<SearchFilter> _filters = new List<SearchFilter>();
+        private List<SearchFilter> _filters = AWSConfigs.InitializeCollections ? new List<SearchFilter>() : null;
         private int? _maxRecords;
         private string _nextToken;
 
@@ -118,7 +119,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

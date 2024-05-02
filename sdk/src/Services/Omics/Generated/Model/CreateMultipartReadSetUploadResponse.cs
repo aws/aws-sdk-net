@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Omics.Model
 {
     /// <summary>
@@ -42,13 +43,13 @@ namespace Amazon.Omics.Model
         private string _sequenceStoreId;
         private FileType _sourceFileType;
         private string _subjectId;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _uploadId;
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        ///  The creation time of the multipart upload. 
+        /// The creation time of the multipart upload.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -67,7 +68,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  The description of the read set. 
+        /// The description of the read set.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -86,7 +87,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property GeneratedFrom. 
         /// <para>
-        ///  The source of the read set. 
+        /// The source of the read set.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=127)]
@@ -105,7 +106,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the read set. 
+        /// The name of the read set.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=127)]
@@ -124,7 +125,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property ReferenceArn. 
         /// <para>
-        ///  The read set source's reference ARN. 
+        /// The read set source's reference ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=127)]
@@ -143,7 +144,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property SampleId. 
         /// <para>
-        ///  The source's sample ID. 
+        /// The source's sample ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=127)]
@@ -162,7 +163,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property SequenceStoreId. 
         /// <para>
-        ///  The sequence store ID for the store that the read set will be created in. 
+        /// The sequence store ID for the store that the read set will be created in.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=36)]
@@ -181,7 +182,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property SourceFileType. 
         /// <para>
-        ///  The file type of the read set source. 
+        /// The file type of the read set source.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -200,7 +201,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property SubjectId. 
         /// <para>
-        ///  The source's subject ID. 
+        /// The source's subject ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=127)]
@@ -219,7 +220,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  The tags to add to the read set. 
+        /// The tags to add to the read set.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
@@ -231,13 +232,13 @@ namespace Amazon.Omics.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property UploadId. 
         /// <para>
-        ///  he ID for the initiated multipart upload. 
+        /// The ID for the initiated multipart upload.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=36)]

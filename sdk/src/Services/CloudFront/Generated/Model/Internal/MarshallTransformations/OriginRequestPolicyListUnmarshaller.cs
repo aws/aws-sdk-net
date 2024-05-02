@@ -30,12 +30,13 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for OriginRequestPolicyList Object
     /// </summary>  
-    public class OriginRequestPolicyListUnmarshaller : IUnmarshaller<OriginRequestPolicyList, XmlUnmarshallerContext>
+    public class OriginRequestPolicyListUnmarshaller : IUnmarshaller<OriginRequestPolicyList, XmlUnmarshallerContext>, IUnmarshaller<OriginRequestPolicyList, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -57,6 +58,10 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("Items/OriginRequestPolicySummary", targetDepth))
                     {
+                        if (unmarshalledObject.Items == null)
+                        {
+                            unmarshalledObject.Items = new List<OriginRequestPolicySummary>();
+                        }
                         var unmarshaller = OriginRequestPolicySummaryUnmarshaller.Instance;
                         unmarshalledObject.Items.Add(unmarshaller.Unmarshall(context));
                         continue;
@@ -86,6 +91,16 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
                 }
             }          
             return unmarshalledObject;
+        }
+        
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>  
+        /// <param name="context"></param>
+        /// <returns></returns>
+        public OriginRequestPolicyList Unmarshall(JsonUnmarshallerContext context)
+        {
+            throw new NotImplementedException();
         }
 
         private static OriginRequestPolicyListUnmarshaller _instance = new OriginRequestPolicyListUnmarshaller();        

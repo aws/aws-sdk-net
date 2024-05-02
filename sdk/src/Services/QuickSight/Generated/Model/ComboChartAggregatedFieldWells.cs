@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -33,10 +34,10 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class ComboChartAggregatedFieldWells
     {
-        private List<MeasureField> _barValues = new List<MeasureField>();
-        private List<DimensionField> _category = new List<DimensionField>();
-        private List<DimensionField> _colors = new List<DimensionField>();
-        private List<MeasureField> _lineValues = new List<MeasureField>();
+        private List<MeasureField> _barValues = AWSConfigs.InitializeCollections ? new List<MeasureField>() : null;
+        private List<DimensionField> _category = AWSConfigs.InitializeCollections ? new List<DimensionField>() : null;
+        private List<DimensionField> _colors = AWSConfigs.InitializeCollections ? new List<DimensionField>() : null;
+        private List<MeasureField> _lineValues = AWSConfigs.InitializeCollections ? new List<MeasureField>() : null;
 
         /// <summary>
         /// Gets and sets the property BarValues. 
@@ -54,7 +55,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if BarValues property is set
         internal bool IsSetBarValues()
         {
-            return this._barValues != null && this._barValues.Count > 0; 
+            return this._barValues != null && (this._barValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Category property is set
         internal bool IsSetCategory()
         {
-            return this._category != null && this._category.Count > 0; 
+            return this._category != null && (this._category.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Colors property is set
         internal bool IsSetColors()
         {
-            return this._colors != null && this._colors.Count > 0; 
+            return this._colors != null && (this._colors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -111,7 +112,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if LineValues property is set
         internal bool IsSetLineValues()
         {
-            return this._lineValues != null && this._lineValues.Count > 0; 
+            return this._lineValues != null && (this._lineValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

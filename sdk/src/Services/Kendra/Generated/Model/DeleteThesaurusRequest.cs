@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteThesaurus operation.
-    /// Deletes an existing Amazon Kendra thesaurus.
+    /// Deletes an Amazon Kendra thesaurus.
     /// </summary>
     public partial class DeleteThesaurusRequest : AmazonKendraRequest
     {

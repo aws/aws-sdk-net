@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.Glue.Model
         private string _functionName;
         private string _ownerName;
         private PrincipalType _ownerType;
-        private List<ResourceUri> _resourceUris = new List<ResourceUri>();
+        private List<ResourceUri> _resourceUris = AWSConfigs.InitializeCollections ? new List<ResourceUri>() : null;
 
         /// <summary>
         /// Gets and sets the property ClassName. 
@@ -130,7 +131,7 @@ namespace Amazon.Glue.Model
         // Check to see if ResourceUris property is set
         internal bool IsSetResourceUris()
         {
-            return this._resourceUris != null && this._resourceUris.Count > 0; 
+            return this._resourceUris != null && (this._resourceUris.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

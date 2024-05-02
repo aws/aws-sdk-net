@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Textract.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Textract.Model
     public partial class HumanLoopActivationOutput
     {
         private string _humanLoopActivationConditionsEvaluationResults;
-        private List<string> _humanLoopActivationReasons = new List<string>();
+        private List<string> _humanLoopActivationReasons = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _humanLoopArn;
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.Textract.Model
         // Check to see if HumanLoopActivationReasons property is set
         internal bool IsSetHumanLoopActivationReasons()
         {
-            return this._humanLoopActivationReasons != null && this._humanLoopActivationReasons.Count > 0; 
+            return this._humanLoopActivationReasons != null && (this._humanLoopActivationReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

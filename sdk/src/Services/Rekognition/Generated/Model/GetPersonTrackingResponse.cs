@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.Rekognition.Model
         private VideoJobStatus _jobStatus;
         private string _jobTag;
         private string _nextToken;
-        private List<PersonDetection> _persons = new List<PersonDetection>();
+        private List<PersonDetection> _persons = AWSConfigs.InitializeCollections ? new List<PersonDetection>() : null;
         private string _statusMessage;
         private Video _video;
         private VideoMetadata _videoMetadata;
@@ -137,7 +138,7 @@ namespace Amazon.Rekognition.Model
         // Check to see if Persons property is set
         internal bool IsSetPersons()
         {
-            return this._persons != null && this._persons.Count > 0; 
+            return this._persons != null && (this._persons.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

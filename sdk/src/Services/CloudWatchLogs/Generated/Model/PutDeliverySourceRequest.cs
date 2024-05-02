@@ -26,13 +26,14 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Container for the parameters to the PutDeliverySource operation.
     /// Creates or updates a logical <i>delivery source</i>. A delivery source represents
     /// an Amazon Web Services resource that sends logs to an logs delivery destination. The
-    /// destination can be CloudWatch Logs, Amazon S3, or Kinesis Data Firehose.
+    /// destination can be CloudWatch Logs, Amazon S3, or Firehose.
     /// 
     ///  
     /// <para>
@@ -86,14 +87,27 @@ namespace Amazon.CloudWatchLogs.Model
         private string _logType;
         private string _name;
         private string _resourceArn;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property LogType. 
         /// <para>
-        /// Defines the type of log that the source is sending. For Amazon CodeWhisperer, the
-        /// valid value is <c>EVENT_LOGS</c>.
+        /// Defines the type of log that the source is sending.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For Amazon CodeWhisperer, the valid value is <c>EVENT_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For IAM Identity Centerr, the valid value is <c>ERROR_LOGS</c>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For Amazon WorkMail, the valid values are <c>ACCESS_CONTROL_LOGS</c>, <c>AUTHENTICATION_LOGS</c>,
+        /// <c>WORKMAIL_AVAILABILITY_PROVIDER_LOGS</c>, and <c>WORKMAIL_MAILBOX_ACCESS_LOGS</c>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string LogType
@@ -170,7 +184,7 @@ namespace Amazon.CloudWatchLogs.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

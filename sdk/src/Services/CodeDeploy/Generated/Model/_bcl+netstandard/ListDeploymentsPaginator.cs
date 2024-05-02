@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.CodeDeploy.Model
         /// Enumerable containing all of the Deployments
         /// </summary>
         public IPaginatedEnumerable<string> Deployments => 
-            new PaginatedResultKeyResponse<ListDeploymentsResponse, string>(this, (i) => i.Deployments);
+            new PaginatedResultKeyResponse<ListDeploymentsResponse, string>(this, (i) => i.Deployments ?? new List<string>());
 
         internal ListDeploymentsPaginator(IAmazonCodeDeploy client, ListDeploymentsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.CodeDeploy.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListDeploymentsResponse> IPaginator<ListDeploymentsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListDeploymentsResponse> IPaginator<ListDeploymentsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

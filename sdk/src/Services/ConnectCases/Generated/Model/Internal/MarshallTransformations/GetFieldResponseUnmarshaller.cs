@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -63,6 +64,18 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("createdTime", targetDepth))
+                {
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.CreatedTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("deleted", targetDepth))
+                {
+                    var unmarshaller = NullableBoolUnmarshaller.Instance;
+                    unmarshalledObject.Deleted = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -79,6 +92,12 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.FieldId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("lastModifiedTime", targetDepth))
+                {
+                    var unmarshaller = NullableDateTimeUnmarshaller.Instance;
+                    unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))

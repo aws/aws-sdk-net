@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -77,7 +78,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// The content of the association document for the managed node(s).
+        /// The content of the association document for the managed nodes.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

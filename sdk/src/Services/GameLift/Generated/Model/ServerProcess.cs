@@ -26,12 +26,13 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// A set of instructions for launching server processes on each instance in a fleet.
-    /// Server processes run either an executable in a custom game build or a Realtime Servers
-    /// script. Server process configurations are part of a fleet's runtime configuration.
+    /// A set of instructions for launching server processes on fleet computes. Server processes
+    /// run either an executable in a custom game build or a Realtime Servers script. Server
+    /// process configurations are part of a fleet's runtime configuration.
     /// </summary>
     public partial class ServerProcess
     {
@@ -43,7 +44,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property ConcurrentExecutions. 
         /// <para>
         /// The number of server processes using this configuration that run concurrently on each
-        /// instance.
+        /// instance or container..
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

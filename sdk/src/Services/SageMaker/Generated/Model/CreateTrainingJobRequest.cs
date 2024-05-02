@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -118,24 +119,25 @@ namespace Amazon.SageMaker.Model
         private AlgorithmSpecification _algorithmSpecification;
         private CheckpointConfig _checkpointConfig;
         private DebugHookConfig _debugHookConfig;
-        private List<DebugRuleConfiguration> _debugRuleConfigurations = new List<DebugRuleConfiguration>();
+        private List<DebugRuleConfiguration> _debugRuleConfigurations = AWSConfigs.InitializeCollections ? new List<DebugRuleConfiguration>() : null;
         private bool? _enableInterContainerTrafficEncryption;
         private bool? _enableManagedSpotTraining;
         private bool? _enableNetworkIsolation;
-        private Dictionary<string, string> _environment = new Dictionary<string, string>();
+        private Dictionary<string, string> _environment = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ExperimentConfig _experimentConfig;
-        private Dictionary<string, string> _hyperParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _hyperParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private InfraCheckConfig _infraCheckConfig;
-        private List<Channel> _inputDataConfig = new List<Channel>();
+        private List<Channel> _inputDataConfig = AWSConfigs.InitializeCollections ? new List<Channel>() : null;
         private OutputDataConfig _outputDataConfig;
         private ProfilerConfig _profilerConfig;
-        private List<ProfilerRuleConfiguration> _profilerRuleConfigurations = new List<ProfilerRuleConfiguration>();
+        private List<ProfilerRuleConfiguration> _profilerRuleConfigurations = AWSConfigs.InitializeCollections ? new List<ProfilerRuleConfiguration>() : null;
         private RemoteDebugConfig _remoteDebugConfig;
         private ResourceConfig _resourceConfig;
         private RetryStrategy _retryStrategy;
         private string _roleArn;
+        private SessionChainingConfig _sessionChainingConfig;
         private StoppingCondition _stoppingCondition;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private TensorBoardOutputConfig _tensorBoardOutputConfig;
         private string _trainingJobName;
         private VpcConfig _vpcConfig;
@@ -214,7 +216,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if DebugRuleConfigurations property is set
         internal bool IsSetDebugRuleConfigurations()
         {
-            return this._debugRuleConfigurations != null && this._debugRuleConfigurations.Count > 0; 
+            return this._debugRuleConfigurations != null && (this._debugRuleConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -306,7 +308,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Environment property is set
         internal bool IsSetEnvironment()
         {
-            return this._environment != null && this._environment.Count > 0; 
+            return this._environment != null && (this._environment.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -357,7 +359,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if HyperParameters property is set
         internal bool IsSetHyperParameters()
         {
-            return this._hyperParameters != null && this._hyperParameters.Count > 0; 
+            return this._hyperParameters != null && (this._hyperParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -415,7 +417,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if InputDataConfig property is set
         internal bool IsSetInputDataConfig()
         {
-            return this._inputDataConfig != null && this._inputDataConfig.Count > 0; 
+            return this._inputDataConfig != null && (this._inputDataConfig.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -470,7 +472,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if ProfilerRuleConfigurations property is set
         internal bool IsSetProfilerRuleConfigurations()
         {
-            return this._profilerRuleConfigurations != null && this._profilerRuleConfigurations.Count > 0; 
+            return this._profilerRuleConfigurations != null && (this._profilerRuleConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -576,6 +578,25 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SessionChainingConfig. 
+        /// <para>
+        /// Contains information about attribute-based access control (ABAC) for the training
+        /// job.
+        /// </para>
+        /// </summary>
+        public SessionChainingConfig SessionChainingConfig
+        {
+            get { return this._sessionChainingConfig; }
+            set { this._sessionChainingConfig = value; }
+        }
+
+        // Check to see if SessionChainingConfig property is set
+        internal bool IsSetSessionChainingConfig()
+        {
+            return this._sessionChainingConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property StoppingCondition. 
         /// <para>
         /// Specifies a limit to how long a model training job can run. It also specifies how
@@ -621,7 +642,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

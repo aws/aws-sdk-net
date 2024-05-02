@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Macie2.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Macie2.Model
     /// </summary>
     public partial class DescribeBucketsRequest : AmazonMacie2Request
     {
-        private Dictionary<string, BucketCriteriaAdditionalProperties> _criteria = new Dictionary<string, BucketCriteriaAdditionalProperties>();
+        private Dictionary<string, BucketCriteriaAdditionalProperties> _criteria = AWSConfigs.InitializeCollections ? new Dictionary<string, BucketCriteriaAdditionalProperties>() : null;
         private int? _maxResults;
         private string _nextToken;
         private BucketSortCriteria _sortCriteria;
@@ -55,7 +56,7 @@ namespace Amazon.Macie2.Model
         // Check to see if Criteria property is set
         internal bool IsSetCriteria()
         {
-            return this._criteria != null && this._criteria.Count > 0; 
+            return this._criteria != null && (this._criteria.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

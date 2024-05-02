@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AlexaForBusiness.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AlexaForBusiness.Model
     /// </summary>
     public partial class SearchAddressBooksResponse : AmazonWebServiceResponse
     {
-        private List<AddressBookData> _addressBooks = new List<AddressBookData>();
+        private List<AddressBookData> _addressBooks = AWSConfigs.InitializeCollections ? new List<AddressBookData>() : null;
         private string _nextToken;
         private int? _totalCount;
 
@@ -52,7 +53,7 @@ namespace Amazon.AlexaForBusiness.Model
         // Check to see if AddressBooks property is set
         internal bool IsSetAddressBooks()
         {
-            return this._addressBooks != null && this._addressBooks.Count > 0; 
+            return this._addressBooks != null && (this._addressBooks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

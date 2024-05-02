@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -40,7 +41,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property EmbedUrl. 
         /// <para>
-        /// The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, or console.
+        /// The embed URL for the Amazon QuickSight dashboard, visual, Q search bar, Generative
+        /// Q&amp;A experience, or console.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]

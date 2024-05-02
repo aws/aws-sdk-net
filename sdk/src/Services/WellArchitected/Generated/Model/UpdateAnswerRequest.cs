@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
@@ -34,13 +35,13 @@ namespace Amazon.WellArchitected.Model
     /// </summary>
     public partial class UpdateAnswerRequest : AmazonWellArchitectedRequest
     {
-        private Dictionary<string, ChoiceUpdate> _choiceUpdates = new Dictionary<string, ChoiceUpdate>();
+        private Dictionary<string, ChoiceUpdate> _choiceUpdates = AWSConfigs.InitializeCollections ? new Dictionary<string, ChoiceUpdate>() : null;
         private bool? _isApplicable;
         private string _lensAlias;
         private string _notes;
         private string _questionId;
         private AnswerReason _reason;
-        private List<string> _selectedChoices = new List<string>();
+        private List<string> _selectedChoices = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _workloadId;
 
         /// <summary>
@@ -59,7 +60,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if ChoiceUpdates property is set
         internal bool IsSetChoiceUpdates()
         {
-            return this._choiceUpdates != null && this._choiceUpdates.Count > 0; 
+            return this._choiceUpdates != null && (this._choiceUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -155,7 +156,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if SelectedChoices property is set
         internal bool IsSetSelectedChoices()
         {
-            return this._selectedChoices != null && this._selectedChoices.Count > 0; 
+            return this._selectedChoices != null && (this._selectedChoices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

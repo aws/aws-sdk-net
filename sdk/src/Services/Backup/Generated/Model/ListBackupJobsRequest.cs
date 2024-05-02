@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Backup.Model
 {
     /// <summary>
@@ -330,6 +331,26 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property ByState. 
         /// <para>
         /// Returns only backup jobs that are in the specified state.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>Completed with issues</c> is a status found only in the Backup console. For API,
+        /// this status refers to jobs with a state of <c>COMPLETED</c> and a <c>MessageCategory</c>
+        /// with a value other than <c>SUCCESS</c>; that is, the status is completed but comes
+        /// with a status message.
+        /// </para>
+        ///  
+        /// <para>
+        /// To obtain the job count for <c>Completed with issues</c>, run two GET requests, and
+        /// subtract the second, smaller number:
+        /// </para>
+        ///  
+        /// <para>
+        /// GET /backup-jobs/?state=COMPLETED
+        /// </para>
+        ///  
+        /// <para>
+        /// GET /backup-jobs/?messageCategory=SUCCESS&amp;state=COMPLETED
         /// </para>
         /// </summary>
         public BackupJobState ByState

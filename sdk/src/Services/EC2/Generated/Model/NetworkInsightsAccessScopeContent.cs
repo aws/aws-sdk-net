@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class NetworkInsightsAccessScopeContent
     {
-        private List<AccessScopePath> _excludePaths = new List<AccessScopePath>();
-        private List<AccessScopePath> _matchPaths = new List<AccessScopePath>();
+        private List<AccessScopePath> _excludePaths = AWSConfigs.InitializeCollections ? new List<AccessScopePath>() : null;
+        private List<AccessScopePath> _matchPaths = AWSConfigs.InitializeCollections ? new List<AccessScopePath>() : null;
         private string _networkInsightsAccessScopeId;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.EC2.Model
         // Check to see if ExcludePaths property is set
         internal bool IsSetExcludePaths()
         {
-            return this._excludePaths != null && this._excludePaths.Count > 0; 
+            return this._excludePaths != null && (this._excludePaths.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.EC2.Model
         // Check to see if MatchPaths property is set
         internal bool IsSetMatchPaths()
         {
-            return this._matchPaths != null && this._matchPaths.Count > 0; 
+            return this._matchPaths != null && (this._matchPaths.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

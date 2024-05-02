@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private DateTime? _createdTime;
         private string _lastModifiedBy;
         private DateTime? _lastModifiedTime;
-        private Dictionary<string, OpsItemDataValue> _operationalData = new Dictionary<string, OpsItemDataValue>();
+        private Dictionary<string, OpsItemDataValue> _operationalData = AWSConfigs.InitializeCollections ? new Dictionary<string, OpsItemDataValue>() : null;
         private string _opsItemId;
         private string _opsItemType;
         private DateTime? _plannedEndTime;
@@ -195,7 +196,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if OperationalData property is set
         internal bool IsSetOperationalData()
         {
-            return this._operationalData != null && this._operationalData.Count > 0; 
+            return this._operationalData != null && (this._operationalData.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

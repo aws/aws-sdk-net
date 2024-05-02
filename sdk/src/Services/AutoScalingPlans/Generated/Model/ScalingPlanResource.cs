@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AutoScalingPlans.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.AutoScalingPlans.Model
         private ScalableDimension _scalableDimension;
         private string _scalingPlanName;
         private long? _scalingPlanVersion;
-        private List<ScalingPolicy> _scalingPolicies = new List<ScalingPolicy>();
+        private List<ScalingPolicy> _scalingPolicies = AWSConfigs.InitializeCollections ? new List<ScalingPolicy>() : null;
         private ScalingStatusCode _scalingStatusCode;
         private string _scalingStatusMessage;
         private ServiceNamespace _serviceNamespace;
@@ -205,7 +206,7 @@ namespace Amazon.AutoScalingPlans.Model
         // Check to see if ScalingPolicies property is set
         internal bool IsSetScalingPolicies()
         {
-            return this._scalingPolicies != null && this._scalingPolicies.Count > 0; 
+            return this._scalingPolicies != null && (this._scalingPolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

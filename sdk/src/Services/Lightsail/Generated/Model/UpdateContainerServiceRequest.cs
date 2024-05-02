@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.Lightsail.Model
         private bool? _isDisabled;
         private ContainerServicePowerName _power;
         private PrivateRegistryAccessRequest _privateRegistryAccess;
-        private Dictionary<string, List<string>> _publicDomainNames = new Dictionary<string, List<string>>();
+        private Dictionary<string, List<string>> _publicDomainNames = AWSConfigs.InitializeCollections ? new Dictionary<string, List<string>>() : null;
         private int? _scale;
         private string _serviceName;
 
@@ -155,7 +156,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if PublicDomainNames property is set
         internal bool IsSetPublicDomainNames()
         {
-            return this._publicDomainNames != null && this._publicDomainNames.Count > 0; 
+            return this._publicDomainNames != null && (this._publicDomainNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

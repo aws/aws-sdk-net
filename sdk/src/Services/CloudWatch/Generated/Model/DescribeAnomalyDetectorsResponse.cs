@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CloudWatch.Model
     /// </summary>
     public partial class DescribeAnomalyDetectorsResponse : AmazonWebServiceResponse
     {
-        private List<AnomalyDetector> _anomalyDetectors = new List<AnomalyDetector>();
+        private List<AnomalyDetector> _anomalyDetectors = AWSConfigs.InitializeCollections ? new List<AnomalyDetector>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if AnomalyDetectors property is set
         internal bool IsSetAnomalyDetectors()
         {
-            return this._anomalyDetectors != null && this._anomalyDetectors.Count > 0; 
+            return this._anomalyDetectors != null && (this._anomalyDetectors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

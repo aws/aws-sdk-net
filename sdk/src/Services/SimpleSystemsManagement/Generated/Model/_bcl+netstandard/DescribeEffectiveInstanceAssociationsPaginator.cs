@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Enumerable containing all of the Associations
         /// </summary>
         public IPaginatedEnumerable<InstanceAssociation> Associations => 
-            new PaginatedResultKeyResponse<DescribeEffectiveInstanceAssociationsResponse, InstanceAssociation>(this, (i) => i.Associations);
+            new PaginatedResultKeyResponse<DescribeEffectiveInstanceAssociationsResponse, InstanceAssociation>(this, (i) => i.Associations ?? new List<InstanceAssociation>());
 
         internal DescribeEffectiveInstanceAssociationsPaginator(IAmazonSimpleSystemsManagement client, DescribeEffectiveInstanceAssociationsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeEffectiveInstanceAssociationsResponse> IPaginator<DescribeEffectiveInstanceAssociationsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeEffectiveInstanceAssociationsResponse> IPaginator<DescribeEffectiveInstanceAssociationsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

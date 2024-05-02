@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Outposts.Model
 {
     /// <summary>
@@ -42,9 +43,9 @@ namespace Amazon.Outposts.Model
     /// </summary>
     public partial class ListOutpostsRequest : AmazonOutpostsRequest
     {
-        private List<string> _availabilityZoneFilter = new List<string>();
-        private List<string> _availabilityZoneIdFilter = new List<string>();
-        private List<string> _lifeCycleStatusFilter = new List<string>();
+        private List<string> _availabilityZoneFilter = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _availabilityZoneIdFilter = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _lifeCycleStatusFilter = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -64,7 +65,7 @@ namespace Amazon.Outposts.Model
         // Check to see if AvailabilityZoneFilter property is set
         internal bool IsSetAvailabilityZoneFilter()
         {
-            return this._availabilityZoneFilter != null && this._availabilityZoneFilter.Count > 0; 
+            return this._availabilityZoneFilter != null && (this._availabilityZoneFilter.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -83,7 +84,7 @@ namespace Amazon.Outposts.Model
         // Check to see if AvailabilityZoneIdFilter property is set
         internal bool IsSetAvailabilityZoneIdFilter()
         {
-            return this._availabilityZoneIdFilter != null && this._availabilityZoneIdFilter.Count > 0; 
+            return this._availabilityZoneIdFilter != null && (this._availabilityZoneIdFilter.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -102,7 +103,7 @@ namespace Amazon.Outposts.Model
         // Check to see if LifeCycleStatusFilter property is set
         internal bool IsSetLifeCycleStatusFilter()
         {
-            return this._lifeCycleStatusFilter != null && this._lifeCycleStatusFilter.Count > 0; 
+            return this._lifeCycleStatusFilter != null && (this._lifeCycleStatusFilter.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

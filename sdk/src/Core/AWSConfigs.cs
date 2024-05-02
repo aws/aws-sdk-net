@@ -86,6 +86,7 @@ namespace Amazon
         internal static string _awsProfileName = GetConfig(AWSProfileNameKey);
         internal static string _awsAccountsLocation = GetConfig(AWSProfilesLocationKey);
         internal static bool _useSdkCache = GetConfigBool(UseSdkCacheKey, defaultValue: true);
+        internal static bool _initializeCollections = GetConfigBool(InitializeCollectionsKey, defaultValue: false);
         // for reading from awsconfigs.xml
         private static object _lock = new object();
         private static List<string> standardConfigs = new List<string>() { "region", "logging", "correctForClockSkew" };
@@ -395,6 +396,34 @@ namespace Amazon
             set { _rootConfig.UseSdkCache = value; }
         }
 
+        #endregion
+
+        #region Initialize Collections
+        /// <summary>
+        /// Key for the InitializeCollections property.
+        /// <seealso cref="Amazon.AWSConfigs.InitializeCollections"/>
+        /// </summary>
+        public const string InitializeCollectionsKey = "AWSInitializeCollections";
+
+        /// <summary>
+        /// When true the collections used on the service API request and response objects are initialized
+        /// to an empty collection. The collections are sent as part of requests when a collection is non-empty.
+        /// 
+        /// Setting InitializeCollections to false means all collections used on the service API request and 
+        /// response objects are initialized to null. The collections are sent as part of requests when
+        /// the collection non-null including an empty collection.
+        /// 
+        /// The default value is true. In the next major version of the SDK the default will change to false.
+        /// This will improve performance not creating unnecessary collection instances and provide more
+        /// control when the collection is sent to the service.
+        /// 
+        /// Setting this property is not thread safe and should only be set at application startup.
+        /// </summary>
+        public static bool InitializeCollections
+        {
+            get { return _rootConfig.InitializeCollections; }
+            set { _rootConfig.InitializeCollections = value; }
+        }
         #endregion
 
         #region AWS Config Sections

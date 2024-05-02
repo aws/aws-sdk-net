@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.EC2.Model
     {
         private int? _maxResults;
         private string _nextToken;
-        private List<string> _spotFleetRequestIds = new List<string>();
+        private List<string> _spotFleetRequestIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -98,7 +99,7 @@ namespace Amazon.EC2.Model
         // Check to see if SpotFleetRequestIds property is set
         internal bool IsSetSpotFleetRequestIds()
         {
-            return this._spotFleetRequestIds != null && this._spotFleetRequestIds.Count > 0; 
+            return this._spotFleetRequestIds != null && (this._spotFleetRequestIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.NetworkFirewall.Model
     /// </summary>
     public partial class ReferenceSets
     {
-        private Dictionary<string, IPSetReference> _ipSetReferences = new Dictionary<string, IPSetReference>();
+        private Dictionary<string, IPSetReference> _ipSetReferences = AWSConfigs.InitializeCollections ? new Dictionary<string, IPSetReference>() : null;
 
         /// <summary>
         /// Gets and sets the property IPSetReferences. 
@@ -50,7 +51,7 @@ namespace Amazon.NetworkFirewall.Model
         // Check to see if IPSetReferences property is set
         internal bool IsSetIPSetReferences()
         {
-            return this._ipSetReferences != null && this._ipSetReferences.Count > 0; 
+            return this._ipSetReferences != null && (this._ipSetReferences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ElastiCache.Model
     public partial class DescribeUserGroupsResponse : AmazonWebServiceResponse
     {
         private string _marker;
-        private List<UserGroup> _userGroups = new List<UserGroup>();
+        private List<UserGroup> _userGroups = AWSConfigs.InitializeCollections ? new List<UserGroup>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -71,7 +72,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if UserGroups property is set
         internal bool IsSetUserGroups()
         {
-            return this._userGroups != null && this._userGroups.Count > 0; 
+            return this._userGroups != null && (this._userGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EC2.Model
     public partial class DescribeInstancesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Reservation> _reservations = new List<Reservation>();
+        private List<Reservation> _reservations = AWSConfigs.InitializeCollections ? new List<Reservation>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.EC2.Model
         // Check to see if Reservations property is set
         internal bool IsSetReservations()
         {
-            return this._reservations != null && this._reservations.Count > 0; 
+            return this._reservations != null && (this._reservations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

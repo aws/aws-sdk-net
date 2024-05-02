@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EC2.Model
     public partial class DescribeReservedInstancesOfferingsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ReservedInstancesOffering> _reservedInstancesOfferings = new List<ReservedInstancesOffering>();
+        private List<ReservedInstancesOffering> _reservedInstancesOfferings = AWSConfigs.InitializeCollections ? new List<ReservedInstancesOffering>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.EC2.Model
         // Check to see if ReservedInstancesOfferings property is set
         internal bool IsSetReservedInstancesOfferings()
         {
-            return this._reservedInstancesOfferings != null && this._reservedInstancesOfferings.Count > 0; 
+            return this._reservedInstancesOfferings != null && (this._reservedInstancesOfferings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

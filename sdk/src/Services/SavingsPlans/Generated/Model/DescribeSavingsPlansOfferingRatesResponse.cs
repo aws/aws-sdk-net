@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SavingsPlans.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SavingsPlans.Model
     public partial class DescribeSavingsPlansOfferingRatesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<SavingsPlanOfferingRate> _searchResults = new List<SavingsPlanOfferingRate>();
+        private List<SavingsPlanOfferingRate> _searchResults = AWSConfigs.InitializeCollections ? new List<SavingsPlanOfferingRate>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.SavingsPlans.Model
         // Check to see if SearchResults property is set
         internal bool IsSetSearchResults()
         {
-            return this._searchResults != null && this._searchResults.Count > 0; 
+            return this._searchResults != null && (this._searchResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

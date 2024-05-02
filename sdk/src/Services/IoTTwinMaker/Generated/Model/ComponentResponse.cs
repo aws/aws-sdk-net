@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTTwinMaker.Model
 {
     /// <summary>
@@ -37,11 +38,11 @@ namespace Amazon.IoTTwinMaker.Model
         private bool? _areAllPropertiesReturned;
         private string _componentName;
         private string _componentTypeId;
-        private Dictionary<string, ComponentSummary> _compositeComponents = new Dictionary<string, ComponentSummary>();
+        private Dictionary<string, ComponentSummary> _compositeComponents = AWSConfigs.InitializeCollections ? new Dictionary<string, ComponentSummary>() : null;
         private string _definedIn;
         private string _description;
-        private Dictionary<string, PropertyResponse> _properties = new Dictionary<string, PropertyResponse>();
-        private Dictionary<string, ComponentPropertyGroupResponse> _propertyGroups = new Dictionary<string, ComponentPropertyGroupResponse>();
+        private Dictionary<string, PropertyResponse> _properties = AWSConfigs.InitializeCollections ? new Dictionary<string, PropertyResponse>() : null;
+        private Dictionary<string, ComponentPropertyGroupResponse> _propertyGroups = AWSConfigs.InitializeCollections ? new Dictionary<string, ComponentPropertyGroupResponse>() : null;
         private Status _status;
         private string _syncSource;
 
@@ -135,7 +136,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if CompositeComponents property is set
         internal bool IsSetCompositeComponents()
         {
-            return this._compositeComponents != null && this._compositeComponents.Count > 0; 
+            return this._compositeComponents != null && (this._compositeComponents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -192,7 +193,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if Properties property is set
         internal bool IsSetProperties()
         {
-            return this._properties != null && this._properties.Count > 0; 
+            return this._properties != null && (this._properties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -210,7 +211,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if PropertyGroups property is set
         internal bool IsSetPropertyGroups()
         {
-            return this._propertyGroups != null && this._propertyGroups.Count > 0; 
+            return this._propertyGroups != null && (this._propertyGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

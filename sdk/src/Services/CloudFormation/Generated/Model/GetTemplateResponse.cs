@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CloudFormation.Model
     /// </summary>
     public partial class GetTemplateResponse : AmazonWebServiceResponse
     {
-        private List<string> _stagesAvailable = new List<string>();
+        private List<string> _stagesAvailable = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _templateBody;
 
         /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if StagesAvailable property is set
         internal bool IsSetStagesAvailable()
         {
-            return this._stagesAvailable != null && this._stagesAvailable.Count > 0; 
+            return this._stagesAvailable != null && (this._stagesAvailable.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

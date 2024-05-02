@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RoboMaker.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.RoboMaker.Model
     public partial class ListRobotsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Robot> _robots = new List<Robot>();
+        private List<Robot> _robots = AWSConfigs.InitializeCollections ? new List<Robot>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -76,7 +77,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if Robots property is set
         internal bool IsSetRobots()
         {
-            return this._robots != null && this._robots.Count > 0; 
+            return this._robots != null && (this._robots.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

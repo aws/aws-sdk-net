@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ListDeviceFleetsResponse : AmazonWebServiceResponse
     {
-        private List<DeviceFleetSummary> _deviceFleetSummaries = new List<DeviceFleetSummary>();
+        private List<DeviceFleetSummary> _deviceFleetSummaries = AWSConfigs.InitializeCollections ? new List<DeviceFleetSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if DeviceFleetSummaries property is set
         internal bool IsSetDeviceFleetSummaries()
         {
-            return this._deviceFleetSummaries != null && this._deviceFleetSummaries.Count > 0; 
+            return this._deviceFleetSummaries != null && (this._deviceFleetSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.EC2.Model
         private string _resourceId;
         private string _resourceOwnerId;
         private TransitGatewayAttachmentResourceType _resourceType;
-        private List<SubnetAssociation> _subnets = new List<SubnetAssociation>();
+        private List<SubnetAssociation> _subnets = AWSConfigs.InitializeCollections ? new List<SubnetAssociation>() : null;
         private string _transitGatewayAttachmentId;
         private string _transitGatewayMulticastDomainId;
 
@@ -109,7 +110,7 @@ namespace Amazon.EC2.Model
         // Check to see if Subnets property is set
         internal bool IsSetSubnets()
         {
-            return this._subnets != null && this._subnets.Count > 0; 
+            return this._subnets != null && (this._subnets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

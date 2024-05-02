@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class ListDashboardVersionsResponse : AmazonWebServiceResponse
     {
-        private List<DashboardVersionSummary> _dashboardVersionSummaryList = new List<DashboardVersionSummary>();
+        private List<DashboardVersionSummary> _dashboardVersionSummaryList = AWSConfigs.InitializeCollections ? new List<DashboardVersionSummary>() : null;
         private string _nextToken;
         private string _requestId;
         private int? _status;
@@ -54,7 +55,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if DashboardVersionSummaryList property is set
         internal bool IsSetDashboardVersionSummaryList()
         {
-            return this._dashboardVersionSummaryList != null && this._dashboardVersionSummaryList.Count > 0; 
+            return this._dashboardVersionSummaryList != null && (this._dashboardVersionSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

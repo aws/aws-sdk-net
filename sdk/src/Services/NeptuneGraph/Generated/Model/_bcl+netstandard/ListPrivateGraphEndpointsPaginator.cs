@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.NeptuneGraph.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.NeptuneGraph.Model
         /// Enumerable containing all of the PrivateGraphEndpoints
         /// </summary>
         public IPaginatedEnumerable<PrivateGraphEndpointSummary> PrivateGraphEndpoints => 
-            new PaginatedResultKeyResponse<ListPrivateGraphEndpointsResponse, PrivateGraphEndpointSummary>(this, (i) => i.PrivateGraphEndpoints);
+            new PaginatedResultKeyResponse<ListPrivateGraphEndpointsResponse, PrivateGraphEndpointSummary>(this, (i) => i.PrivateGraphEndpoints ?? new List<PrivateGraphEndpointSummary>());
 
         internal ListPrivateGraphEndpointsPaginator(IAmazonNeptuneGraph client, ListPrivateGraphEndpointsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.NeptuneGraph.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListPrivateGraphEndpointsResponse> IPaginator<ListPrivateGraphEndpointsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListPrivateGraphEndpointsResponse> IPaginator<ListPrivateGraphEndpointsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

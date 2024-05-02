@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDS.Model
 {
     /// <summary>
@@ -49,7 +50,7 @@ namespace Amazon.RDS.Model
         /// The name of the DB shard group to reboot.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=63)]
         public string DBShardGroupIdentifier
         {
             get { return this._dbShardGroupIdentifier; }

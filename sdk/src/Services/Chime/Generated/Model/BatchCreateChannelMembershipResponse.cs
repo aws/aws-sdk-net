@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Chime.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Chime.Model
     public partial class BatchCreateChannelMembershipResponse : AmazonWebServiceResponse
     {
         private BatchChannelMemberships _batchChannelMemberships;
-        private List<BatchCreateChannelMembershipError> _errors = new List<BatchCreateChannelMembershipError>();
+        private List<BatchCreateChannelMembershipError> _errors = AWSConfigs.InitializeCollections ? new List<BatchCreateChannelMembershipError>() : null;
 
         /// <summary>
         /// Gets and sets the property BatchChannelMemberships. 
@@ -70,7 +71,7 @@ namespace Amazon.Chime.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

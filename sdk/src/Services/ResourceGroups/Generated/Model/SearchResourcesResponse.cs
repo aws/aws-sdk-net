@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.ResourceGroups.Model
     public partial class SearchResourcesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<QueryError> _queryErrors = new List<QueryError>();
-        private List<ResourceIdentifier> _resourceIdentifiers = new List<ResourceIdentifier>();
+        private List<QueryError> _queryErrors = AWSConfigs.InitializeCollections ? new List<QueryError>() : null;
+        private List<ResourceIdentifier> _resourceIdentifiers = AWSConfigs.InitializeCollections ? new List<ResourceIdentifier>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -62,8 +63,7 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property QueryErrors. 
         /// <para>
-        /// A list of <c>QueryError</c> objects. Each error is an object that contains <c>ErrorCode</c>
-        /// and <c>Message</c> structures.
+        /// A list of <c>QueryError</c> objects. Each error contains an <c>ErrorCode</c> and <c>Message</c>.
         /// </para>
         ///  
         /// <para>
@@ -77,6 +77,10 @@ namespace Amazon.ResourceGroups.Model
         /// <para>
         ///  <c>CLOUDFORMATION_STACK_NOT_EXISTING</c> 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>CLOUDFORMATION_STACK_UNASSUMABLE_ROLE </c> 
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public List<QueryError> QueryErrors
@@ -88,7 +92,7 @@ namespace Amazon.ResourceGroups.Model
         // Check to see if QueryErrors property is set
         internal bool IsSetQueryErrors()
         {
-            return this._queryErrors != null && this._queryErrors.Count > 0; 
+            return this._queryErrors != null && (this._queryErrors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -106,7 +110,7 @@ namespace Amazon.ResourceGroups.Model
         // Check to see if ResourceIdentifiers property is set
         internal bool IsSetResourceIdentifiers()
         {
-            return this._resourceIdentifiers != null && this._resourceIdentifiers.Count > 0; 
+            return this._resourceIdentifiers != null && (this._resourceIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

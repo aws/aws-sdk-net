@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AWSMarketplaceMetering.Model
 {
     /// <summary>
@@ -44,7 +45,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         private string _dimension;
         private int? _quantity;
         private DateTime? _timestamp;
-        private List<UsageAllocation> _usageAllocations = new List<UsageAllocation>();
+        private List<UsageAllocation> _usageAllocations = AWSConfigs.InitializeCollections ? new List<UsageAllocation>() : null;
 
         /// <summary>
         /// Gets and sets the property CustomerIdentifier. 
@@ -147,7 +148,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         // Check to see if UsageAllocations property is set
         internal bool IsSetUsageAllocations()
         {
-            return this._usageAllocations != null && this._usageAllocations.Count > 0; 
+            return this._usageAllocations != null && (this._usageAllocations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

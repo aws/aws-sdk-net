@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConnectParticipant.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ConnectParticipant.Model
     public partial class Item
     {
         private string _absoluteTime;
-        private List<AttachmentItem> _attachments = new List<AttachmentItem>();
+        private List<AttachmentItem> _attachments = AWSConfigs.InitializeCollections ? new List<AttachmentItem>() : null;
         private string _contactId;
         private string _content;
         private string _contentType;
@@ -84,7 +85,7 @@ namespace Amazon.ConnectParticipant.Model
         // Check to see if Attachments property is set
         internal bool IsSetAttachments()
         {
-            return this._attachments != null && this._attachments.Count > 0; 
+            return this._attachments != null && (this._attachments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

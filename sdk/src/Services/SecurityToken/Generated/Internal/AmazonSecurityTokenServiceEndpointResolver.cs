@@ -52,7 +52,7 @@ namespace Amazon.SecurityToken.Internal
             result.UseDualStack = config.UseDualstackEndpoint;
             result.UseFIPS = config.UseFIPSEndpoint;
             result.Endpoint = config.ServiceURL;
-            result.UseGlobalEndpoint = config.StsRegionalEndpoints == StsRegionalEndpointsValue.Legacy;
+            result.UseGlobalEndpoint = false;
 
 
             // The region needs to be determined from the ServiceURL if not set.

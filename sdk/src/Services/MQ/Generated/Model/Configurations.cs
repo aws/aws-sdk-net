@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MQ.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.MQ.Model
     public partial class Configurations
     {
         private ConfigurationId _current;
-        private List<ConfigurationId> _history = new List<ConfigurationId>();
+        private List<ConfigurationId> _history = AWSConfigs.InitializeCollections ? new List<ConfigurationId>() : null;
         private ConfigurationId _pending;
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.MQ.Model
         // Check to see if History property is set
         internal bool IsSetHistory()
         {
-            return this._history != null && this._history.Count > 0; 
+            return this._history != null && (this._history.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

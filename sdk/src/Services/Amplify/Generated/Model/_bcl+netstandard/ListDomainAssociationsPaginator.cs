@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Amplify.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Amplify.Model
         /// Enumerable containing all of the DomainAssociations
         /// </summary>
         public IPaginatedEnumerable<DomainAssociation> DomainAssociations => 
-            new PaginatedResultKeyResponse<ListDomainAssociationsResponse, DomainAssociation>(this, (i) => i.DomainAssociations);
+            new PaginatedResultKeyResponse<ListDomainAssociationsResponse, DomainAssociation>(this, (i) => i.DomainAssociations ?? new List<DomainAssociation>());
 
         internal ListDomainAssociationsPaginator(IAmazonAmplify client, ListDomainAssociationsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Amplify.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListDomainAssociationsResponse> IPaginator<ListDomainAssociationsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListDomainAssociationsResponse> IPaginator<ListDomainAssociationsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

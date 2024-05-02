@@ -26,17 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTFleetHub.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
     /// Lists the tags for the specified resource.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// Fleet Hub for AWS IoT Device Management is in public preview and is subject to change.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonIoTFleetHubRequest
     {

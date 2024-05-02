@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
@@ -45,8 +46,8 @@ namespace Amazon.GlobalAccelerator.Model
     public partial class AllowCustomRoutingTrafficRequest : AmazonGlobalAcceleratorRequest
     {
         private bool? _allowAllTrafficToEndpoint;
-        private List<string> _destinationAddresses = new List<string>();
-        private List<int> _destinationPorts = new List<int>();
+        private List<string> _destinationAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<int> _destinationPorts = AWSConfigs.InitializeCollections ? new List<int>() : null;
         private string _endpointGroupArn;
         private string _endpointId;
 
@@ -110,7 +111,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if DestinationAddresses property is set
         internal bool IsSetDestinationAddresses()
         {
-            return this._destinationAddresses != null && this._destinationAddresses.Count > 0; 
+            return this._destinationAddresses != null && (this._destinationAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -130,7 +131,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if DestinationPorts property is set
         internal bool IsSetDestinationPorts()
         {
-            return this._destinationPorts != null && this._destinationPorts.Count > 0; 
+            return this._destinationPorts != null && (this._destinationPorts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

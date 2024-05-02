@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
@@ -36,12 +37,12 @@ namespace Amazon.SecurityLake.Model
     /// </summary>
     public partial class CreateSubscriberRequest : AmazonSecurityLakeRequest
     {
-        private List<string> _accessTypes = new List<string>();
-        private List<LogSourceResource> _sources = new List<LogSourceResource>();
+        private List<string> _accessTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<LogSourceResource> _sources = AWSConfigs.InitializeCollections ? new List<LogSourceResource>() : null;
         private string _subscriberDescription;
         private AwsIdentity _subscriberIdentity;
         private string _subscriberName;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AccessTypes. 
@@ -58,7 +59,7 @@ namespace Amazon.SecurityLake.Model
         // Check to see if AccessTypes property is set
         internal bool IsSetAccessTypes()
         {
-            return this._accessTypes != null && this._accessTypes.Count > 0; 
+            return this._accessTypes != null && (this._accessTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -78,7 +79,7 @@ namespace Amazon.SecurityLake.Model
         // Check to see if Sources property is set
         internal bool IsSetSources()
         {
-            return this._sources != null && this._sources.Count > 0; 
+            return this._sources != null && (this._sources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -155,7 +156,7 @@ namespace Amazon.SecurityLake.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

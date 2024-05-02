@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
@@ -41,11 +42,11 @@ namespace Amazon.MediaConvert.Model
         private HlsRenditionGroupSettings _hlsRenditionGroupSettings;
         private LanguageCode _languageCode;
         private int? _offset;
-        private List<int> _pids = new List<int>();
+        private List<int> _pids = AWSConfigs.InitializeCollections ? new List<int>() : null;
         private int? _programSelection;
         private RemixSettings _remixSettings;
         private AudioSelectorType _selectorType;
-        private List<int> _tracks = new List<int>();
+        private List<int> _tracks = AWSConfigs.InitializeCollections ? new List<int>() : null;
 
         /// <summary>
         /// Gets and sets the property AudioDurationCorrection. Apply audio timing corrections
@@ -193,7 +194,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if Pids property is set
         internal bool IsSetPids()
         {
-            return this._pids != null && this._pids.Count > 0; 
+            return this._pids != null && (this._pids.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -265,7 +266,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if Tracks property is set
         internal bool IsSetTracks()
         {
-            return this._tracks != null && this._tracks.Count > 0; 
+            return this._tracks != null && (this._tracks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

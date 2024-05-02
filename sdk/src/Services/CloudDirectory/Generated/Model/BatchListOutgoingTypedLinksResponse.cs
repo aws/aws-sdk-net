@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CloudDirectory.Model
     public partial class BatchListOutgoingTypedLinksResponse
     {
         private string _nextToken;
-        private List<TypedLinkSpecifier> _typedLinkSpecifiers = new List<TypedLinkSpecifier>();
+        private List<TypedLinkSpecifier> _typedLinkSpecifiers = AWSConfigs.InitializeCollections ? new List<TypedLinkSpecifier>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +70,7 @@ namespace Amazon.CloudDirectory.Model
         // Check to see if TypedLinkSpecifiers property is set
         internal bool IsSetTypedLinkSpecifiers()
         {
-            return this._typedLinkSpecifiers != null && this._typedLinkSpecifiers.Count > 0; 
+            return this._typedLinkSpecifiers != null && (this._typedLinkSpecifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

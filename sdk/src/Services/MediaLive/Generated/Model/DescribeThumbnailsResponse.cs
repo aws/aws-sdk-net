@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class DescribeThumbnailsResponse : AmazonWebServiceResponse
     {
-        private List<ThumbnailDetail> _thumbnailDetails = new List<ThumbnailDetail>();
+        private List<ThumbnailDetail> _thumbnailDetails = AWSConfigs.InitializeCollections ? new List<ThumbnailDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property ThumbnailDetails.
@@ -47,7 +48,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if ThumbnailDetails property is set
         internal bool IsSetThumbnailDetails()
         {
-            return this._thumbnailDetails != null && this._thumbnailDetails.Count > 0; 
+            return this._thumbnailDetails != null && (this._thumbnailDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

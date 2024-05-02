@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.ResilienceHub.Model
     {
         private string _appComponentName;
         private string _description;
-        private List<RecommendationItem> _items = new List<RecommendationItem>();
+        private List<RecommendationItem> _items = AWSConfigs.InitializeCollections ? new List<RecommendationItem>() : null;
         private string _name;
         private string _prerequisite;
         private string _recommendationId;
@@ -95,7 +96,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

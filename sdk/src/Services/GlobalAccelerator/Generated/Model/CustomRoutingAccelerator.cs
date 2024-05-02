@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.GlobalAccelerator.Model
         private string _dnsName;
         private bool? _enabled;
         private IpAddressType _ipAddressType;
-        private List<IpSet> _ipSets = new List<IpSet>();
+        private List<IpSet> _ipSets = AWSConfigs.InitializeCollections ? new List<IpSet>() : null;
         private DateTime? _lastModifiedTime;
         private string _name;
         private CustomRoutingAcceleratorStatus _status;
@@ -176,7 +177,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if IpSets property is set
         internal bool IsSetIpSets()
         {
-            return this._ipSets != null && this._ipSets.Count > 0; 
+            return this._ipSets != null && (this._ipSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

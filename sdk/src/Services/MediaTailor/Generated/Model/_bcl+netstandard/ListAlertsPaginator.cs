@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaTailor.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.MediaTailor.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<Alert> Items => 
-            new PaginatedResultKeyResponse<ListAlertsResponse, Alert>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListAlertsResponse, Alert>(this, (i) => i.Items ?? new List<Alert>());
 
         internal ListAlertsPaginator(IAmazonMediaTailor client, ListAlertsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.MediaTailor.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListAlertsResponse> IPaginator<ListAlertsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListAlertsResponse> IPaginator<ListAlertsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
@@ -54,8 +55,8 @@ namespace Amazon.CloudFormation.Model
         private string _logicalResourceId;
         private ModuleInfo _moduleInfo;
         private string _physicalResourceId;
-        private List<PhysicalResourceIdContextKeyValuePair> _physicalResourceIdContext = new List<PhysicalResourceIdContextKeyValuePair>();
-        private List<PropertyDifference> _propertyDifferences = new List<PropertyDifference>();
+        private List<PhysicalResourceIdContextKeyValuePair> _physicalResourceIdContext = AWSConfigs.InitializeCollections ? new List<PhysicalResourceIdContextKeyValuePair>() : null;
+        private List<PropertyDifference> _propertyDifferences = AWSConfigs.InitializeCollections ? new List<PropertyDifference>() : null;
         private string _resourceType;
         private string _stackId;
         private StackResourceDriftStatus _stackResourceDriftStatus;
@@ -184,7 +185,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if PhysicalResourceIdContext property is set
         internal bool IsSetPhysicalResourceIdContext()
         {
-            return this._physicalResourceIdContext != null && this._physicalResourceIdContext.Count > 0; 
+            return this._physicalResourceIdContext != null && (this._physicalResourceIdContext.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -204,7 +205,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if PropertyDifferences property is set
         internal bool IsSetPropertyDifferences()
         {
-            return this._propertyDifferences != null && this._propertyDifferences.Count > 0; 
+            return this._propertyDifferences != null && (this._propertyDifferences.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

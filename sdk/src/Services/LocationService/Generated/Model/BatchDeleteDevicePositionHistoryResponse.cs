@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LocationService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.LocationService.Model
     /// </summary>
     public partial class BatchDeleteDevicePositionHistoryResponse : AmazonWebServiceResponse
     {
-        private List<BatchDeleteDevicePositionHistoryError> _errors = new List<BatchDeleteDevicePositionHistoryError>();
+        private List<BatchDeleteDevicePositionHistoryError> _errors = AWSConfigs.InitializeCollections ? new List<BatchDeleteDevicePositionHistoryError>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. 
@@ -51,7 +52,7 @@ namespace Amazon.LocationService.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

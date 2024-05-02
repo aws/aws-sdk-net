@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GameLift.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.GameLift.Model
     public partial class LocationAttributes
     {
         private LocationState _locationState;
-        private List<string> _stoppedActions = new List<string>();
+        private List<string> _stoppedActions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private LocationUpdateStatus _updateStatus;
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.GameLift.Model
         // Check to see if StoppedActions property is set
         internal bool IsSetStoppedActions()
         {
-            return this._stoppedActions != null && this._stoppedActions.Count > 0; 
+            return this._stoppedActions != null && (this._stoppedActions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

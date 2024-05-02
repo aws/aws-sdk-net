@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.AWSSupport.Model
     /// </summary>
     public partial class Service
     {
-        private List<Category> _categories = new List<Category>();
+        private List<Category> _categories = AWSConfigs.InitializeCollections ? new List<Category>() : null;
         private string _code;
         private string _name;
 
@@ -55,7 +56,7 @@ namespace Amazon.AWSSupport.Model
         // Check to see if Categories property is set
         internal bool IsSetCategories()
         {
-            return this._categories != null && this._categories.Count > 0; 
+            return this._categories != null && (this._categories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

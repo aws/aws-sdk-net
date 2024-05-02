@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeThesaurus operation.
-    /// Gets information about an existing Amazon Kendra thesaurus.
+    /// Gets information about an Amazon Kendra thesaurus.
     /// </summary>
     public partial class DescribeThesaurusRequest : AmazonKendraRequest
     {

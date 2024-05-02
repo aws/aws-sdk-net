@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class DescribeAvailablePatchesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Patch> _patches = new List<Patch>();
+        private List<Patch> _patches = AWSConfigs.InitializeCollections ? new List<Patch>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Patches property is set
         internal bool IsSetPatches()
         {
-            return this._patches != null && this._patches.Count > 0; 
+            return this._patches != null && (this._patches.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

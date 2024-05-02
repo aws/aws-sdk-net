@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.APIGateway.Model
     /// </summary>
     public partial class PutIntegrationRequest : AmazonAPIGatewayRequest
     {
-        private List<string> _cacheKeyParameters = new List<string>();
+        private List<string> _cacheKeyParameters = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _cacheNamespace;
         private string _connectionId;
         private ConnectionType _connectionType;
@@ -43,8 +44,8 @@ namespace Amazon.APIGateway.Model
         private string _httpMethod;
         private string _integrationHttpMethod;
         private string _passthroughBehavior;
-        private Dictionary<string, string> _requestParameters = new Dictionary<string, string>();
-        private Dictionary<string, string> _requestTemplates = new Dictionary<string, string>();
+        private Dictionary<string, string> _requestParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, string> _requestTemplates = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _resourceId;
         private string _restApiId;
         private int? _timeoutInMillis;
@@ -68,7 +69,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if CacheKeyParameters property is set
         internal bool IsSetCacheKeyParameters()
         {
-            return this._cacheKeyParameters != null && this._cacheKeyParameters.Count > 0; 
+            return this._cacheKeyParameters != null && (this._cacheKeyParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -253,7 +254,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if RequestParameters property is set
         internal bool IsSetRequestParameters()
         {
-            return this._requestParameters != null && this._requestParameters.Count > 0; 
+            return this._requestParameters != null && (this._requestParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -273,7 +274,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if RequestTemplates property is set
         internal bool IsSetRequestTemplates()
         {
-            return this._requestTemplates != null && this._requestTemplates.Count > 0; 
+            return this._requestTemplates != null && (this._requestTemplates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

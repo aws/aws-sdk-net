@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EKS.Model
 {
     /// <summary>
@@ -35,8 +36,8 @@ namespace Amazon.EKS.Model
     /// </summary>
     public partial class UpdateTaintsPayload
     {
-        private List<Taint> _addOrUpdateTaints = new List<Taint>();
-        private List<Taint> _removeTaints = new List<Taint>();
+        private List<Taint> _addOrUpdateTaints = AWSConfigs.InitializeCollections ? new List<Taint>() : null;
+        private List<Taint> _removeTaints = AWSConfigs.InitializeCollections ? new List<Taint>() : null;
 
         /// <summary>
         /// Gets and sets the property AddOrUpdateTaints. 
@@ -53,7 +54,7 @@ namespace Amazon.EKS.Model
         // Check to see if AddOrUpdateTaints property is set
         internal bool IsSetAddOrUpdateTaints()
         {
-            return this._addOrUpdateTaints != null && this._addOrUpdateTaints.Count > 0; 
+            return this._addOrUpdateTaints != null && (this._addOrUpdateTaints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.EKS.Model
         // Check to see if RemoveTaints property is set
         internal bool IsSetRemoveTaints()
         {
-            return this._removeTaints != null && this._removeTaints.Count > 0; 
+            return this._removeTaints != null && (this._removeTaints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Organizations.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Organizations.Model
     public partial class ListPoliciesForTargetResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PolicySummary> _policies = new List<PolicySummary>();
+        private List<PolicySummary> _policies = AWSConfigs.InitializeCollections ? new List<PolicySummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +74,7 @@ namespace Amazon.Organizations.Model
         // Check to see if Policies property is set
         internal bool IsSetPolicies()
         {
-            return this._policies != null && this._policies.Count > 0; 
+            return this._policies != null && (this._policies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

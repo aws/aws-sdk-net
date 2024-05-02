@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Omics.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property EngineLogStream. 
         /// <para>
-        ///  The log stream ARN for the engine log. 
+        /// The log stream ARN for the engine log.
         /// </para>
         /// </summary>
         public string EngineLogStream
@@ -57,7 +58,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property RunLogStream. 
         /// <para>
-        ///  The log stream ARN for the run log. 
+        /// The log stream ARN for the run log.
         /// </para>
         /// </summary>
         public string RunLogStream

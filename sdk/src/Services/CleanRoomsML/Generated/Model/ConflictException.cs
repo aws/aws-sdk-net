@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CleanRoomsML.Model
 {
     /// <summary>
-    /// A resource with that name already exists in this region.
+    /// You can't complete this action because another resource depends on this resource.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

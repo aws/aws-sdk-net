@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -33,14 +34,14 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsElbv2LoadBalancerDetails
     {
-        private List<AvailabilityZone> _availabilityZones = new List<AvailabilityZone>();
+        private List<AvailabilityZone> _availabilityZones = AWSConfigs.InitializeCollections ? new List<AvailabilityZone>() : null;
         private string _canonicalHostedZoneId;
         private string _createdTime;
         private string _dnsName;
         private string _ipAddressType;
-        private List<AwsElbv2LoadBalancerAttribute> _loadBalancerAttributes = new List<AwsElbv2LoadBalancerAttribute>();
+        private List<AwsElbv2LoadBalancerAttribute> _loadBalancerAttributes = AWSConfigs.InitializeCollections ? new List<AwsElbv2LoadBalancerAttribute>() : null;
         private string _scheme;
-        private List<string> _securityGroups = new List<string>();
+        private List<string> _securityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private LoadBalancerState _state;
         private string _type;
         private string _vpcId;
@@ -60,7 +61,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+            return this._availabilityZones != null && (this._availabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -88,10 +89,32 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
-        /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
+        /// This field accepts only the specified formats. Timestamps can end with <c>Z</c> or
+        /// <c>("+" / "-") time-hour [":" time-minute]</c>. The time-secfrac after seconds is
+        /// limited to a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
+        /// timestamp formats with examples:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SSZ</c> (for example, <c>2019-01-31T23:00:00Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</c> (for example, <c>2019-01-31T23:00:00.123456789Z</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS+HH:MM</c> (for example, <c>2024-01-04T15:25:10+17:59</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS-HHMM</c> (for example, <c>2024-01-04T15:25:10-1759</c>)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</c> (for example, <c>2024-01-04T15:25:10.123456789+17:59</c>)
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string CreatedTime
         {
@@ -158,7 +181,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if LoadBalancerAttributes property is set
         internal bool IsSetLoadBalancerAttributes()
         {
-            return this._loadBalancerAttributes != null && this._loadBalancerAttributes.Count > 0; 
+            return this._loadBalancerAttributes != null && (this._loadBalancerAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -194,7 +217,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this._securityGroups != null && this._securityGroups.Count > 0; 
+            return this._securityGroups != null && (this._securityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

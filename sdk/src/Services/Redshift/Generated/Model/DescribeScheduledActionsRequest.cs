@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Redshift.Model
     {
         private bool? _active;
         private DateTime? _endTime;
-        private List<ScheduledActionFilter> _filters = new List<ScheduledActionFilter>();
+        private List<ScheduledActionFilter> _filters = AWSConfigs.InitializeCollections ? new List<ScheduledActionFilter>() : null;
         private string _marker;
         private int? _maxRecords;
         private string _scheduledActionName;
@@ -96,7 +97,7 @@ namespace Amazon.Redshift.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

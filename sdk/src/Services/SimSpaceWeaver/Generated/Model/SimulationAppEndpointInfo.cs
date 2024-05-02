@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimSpaceWeaver.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.SimSpaceWeaver.Model
     public partial class SimulationAppEndpointInfo
     {
         private string _address;
-        private List<SimulationAppPortMapping> _ingressPortMappings = new List<SimulationAppPortMapping>();
+        private List<SimulationAppPortMapping> _ingressPortMappings = AWSConfigs.InitializeCollections ? new List<SimulationAppPortMapping>() : null;
 
         /// <summary>
         /// Gets and sets the property Address. 
@@ -74,7 +75,7 @@ namespace Amazon.SimSpaceWeaver.Model
         // Check to see if IngressPortMappings property is set
         internal bool IsSetIngressPortMappings()
         {
-            return this._ingressPortMappings != null && this._ingressPortMappings.Count > 0; 
+            return this._ingressPortMappings != null && (this._ingressPortMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Chime.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Chime.Model
     public partial class ListChannelMessagesResponse : AmazonWebServiceResponse
     {
         private string _channelArn;
-        private List<ChannelMessageSummary> _channelMessages = new List<ChannelMessageSummary>();
+        private List<ChannelMessageSummary> _channelMessages = AWSConfigs.InitializeCollections ? new List<ChannelMessageSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.Chime.Model
         // Check to see if ChannelMessages property is set
         internal bool IsSetChannelMessages()
         {
-            return this._channelMessages != null && this._channelMessages.Count > 0; 
+            return this._channelMessages != null && (this._channelMessages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

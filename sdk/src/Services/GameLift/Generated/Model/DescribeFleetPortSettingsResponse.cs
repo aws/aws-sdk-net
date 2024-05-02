@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GameLift.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.GameLift.Model
     {
         private string _fleetArn;
         private string _fleetId;
-        private List<IpPermission> _inboundPermissions = new List<IpPermission>();
+        private List<IpPermission> _inboundPermissions = AWSConfigs.InitializeCollections ? new List<IpPermission>() : null;
         private string _location;
         private LocationUpdateStatus _updateStatus;
 
@@ -93,7 +94,7 @@ namespace Amazon.GameLift.Model
         // Check to see if InboundPermissions property is set
         internal bool IsSetInboundPermissions()
         {
-            return this._inboundPermissions != null && this._inboundPermissions.Count > 0; 
+            return this._inboundPermissions != null && (this._inboundPermissions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

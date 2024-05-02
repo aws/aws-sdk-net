@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelBuildingService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// </summary>
     public partial class GetMigrationResponse : AmazonWebServiceResponse
     {
-        private List<MigrationAlert> _alerts = new List<MigrationAlert>();
+        private List<MigrationAlert> _alerts = AWSConfigs.InitializeCollections ? new List<MigrationAlert>() : null;
         private string _migrationId;
         private MigrationStatus _migrationStatus;
         private MigrationStrategy _migrationStrategy;
@@ -66,7 +67,7 @@ namespace Amazon.LexModelBuildingService.Model
         // Check to see if Alerts property is set
         internal bool IsSetAlerts()
         {
-            return this._alerts != null && this._alerts.Count > 0; 
+            return this._alerts != null && (this._alerts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

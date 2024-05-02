@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Neptune.Model
 {
     /// <summary>
@@ -39,9 +40,9 @@ namespace Amazon.Neptune.Model
     /// </summary>
     public partial class ValidStorageOptions
     {
-        private List<DoubleRange> _iopsToStorageRatio = new List<DoubleRange>();
-        private List<Range> _provisionedIops = new List<Range>();
-        private List<Range> _storageSize = new List<Range>();
+        private List<DoubleRange> _iopsToStorageRatio = AWSConfigs.InitializeCollections ? new List<DoubleRange>() : null;
+        private List<Range> _provisionedIops = AWSConfigs.InitializeCollections ? new List<Range>() : null;
+        private List<Range> _storageSize = AWSConfigs.InitializeCollections ? new List<Range>() : null;
         private string _storageType;
 
         /// <summary>
@@ -60,7 +61,7 @@ namespace Amazon.Neptune.Model
         // Check to see if IopsToStorageRatio property is set
         internal bool IsSetIopsToStorageRatio()
         {
-            return this._iopsToStorageRatio != null && this._iopsToStorageRatio.Count > 0; 
+            return this._iopsToStorageRatio != null && (this._iopsToStorageRatio.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -78,7 +79,7 @@ namespace Amazon.Neptune.Model
         // Check to see if ProvisionedIops property is set
         internal bool IsSetProvisionedIops()
         {
-            return this._provisionedIops != null && this._provisionedIops.Count > 0; 
+            return this._provisionedIops != null && (this._provisionedIops.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -96,7 +97,7 @@ namespace Amazon.Neptune.Model
         // Check to see if StorageSize property is set
         internal bool IsSetStorageSize()
         {
-            return this._storageSize != null && this._storageSize.Count > 0; 
+            return this._storageSize != null && (this._storageSize.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

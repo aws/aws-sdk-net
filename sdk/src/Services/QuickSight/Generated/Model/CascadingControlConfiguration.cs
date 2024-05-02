@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class CascadingControlConfiguration
     {
-        private List<CascadingControlSource> _sourceControls = new List<CascadingControlSource>();
+        private List<CascadingControlSource> _sourceControls = AWSConfigs.InitializeCollections ? new List<CascadingControlSource>() : null;
 
         /// <summary>
         /// Gets and sets the property SourceControls. 
@@ -52,7 +53,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if SourceControls property is set
         internal bool IsSetSourceControls()
         {
-            return this._sourceControls != null && this._sourceControls.Count > 0; 
+            return this._sourceControls != null && (this._sourceControls.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

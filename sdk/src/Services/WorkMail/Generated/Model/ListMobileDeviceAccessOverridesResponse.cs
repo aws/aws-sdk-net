@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkMail.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.WorkMail.Model
     public partial class ListMobileDeviceAccessOverridesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<MobileDeviceAccessOverride> _overrides = new List<MobileDeviceAccessOverride>();
+        private List<MobileDeviceAccessOverride> _overrides = AWSConfigs.InitializeCollections ? new List<MobileDeviceAccessOverride>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.WorkMail.Model
         // Check to see if Overrides property is set
         internal bool IsSetOverrides()
         {
-            return this._overrides != null && this._overrides.Count > 0; 
+            return this._overrides != null && (this._overrides.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

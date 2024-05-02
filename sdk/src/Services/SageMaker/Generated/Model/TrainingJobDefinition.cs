@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class TrainingJobDefinition
     {
-        private Dictionary<string, string> _hyperParameters = new Dictionary<string, string>();
-        private List<Channel> _inputDataConfig = new List<Channel>();
+        private Dictionary<string, string> _hyperParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<Channel> _inputDataConfig = AWSConfigs.InitializeCollections ? new List<Channel>() : null;
         private OutputDataConfig _outputDataConfig;
         private ResourceConfig _resourceConfig;
         private StoppingCondition _stoppingCondition;
@@ -56,7 +57,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if HyperParameters property is set
         internal bool IsSetHyperParameters()
         {
-            return this._hyperParameters != null && this._hyperParameters.Count > 0; 
+            return this._hyperParameters != null && (this._hyperParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if InputDataConfig property is set
         internal bool IsSetInputDataConfig()
         {
-            return this._inputDataConfig != null && this._inputDataConfig.Count > 0; 
+            return this._inputDataConfig != null && (this._inputDataConfig.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

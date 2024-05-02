@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Inspector2.Model
         /// Enumerable containing all of the DelegatedAdminAccounts
         /// </summary>
         public IPaginatedEnumerable<DelegatedAdminAccount> DelegatedAdminAccounts => 
-            new PaginatedResultKeyResponse<ListDelegatedAdminAccountsResponse, DelegatedAdminAccount>(this, (i) => i.DelegatedAdminAccounts);
+            new PaginatedResultKeyResponse<ListDelegatedAdminAccountsResponse, DelegatedAdminAccount>(this, (i) => i.DelegatedAdminAccounts ?? new List<DelegatedAdminAccount>());
 
         internal ListDelegatedAdminAccountsPaginator(IAmazonInspector2 client, ListDelegatedAdminAccountsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Inspector2.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListDelegatedAdminAccountsResponse> IPaginator<ListDelegatedAdminAccountsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListDelegatedAdminAccountsResponse> IPaginator<ListDelegatedAdminAccountsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

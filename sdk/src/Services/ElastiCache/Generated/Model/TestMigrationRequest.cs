@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ElastiCache.Model
     /// </summary>
     public partial class TestMigrationRequest : AmazonElastiCacheRequest
     {
-        private List<CustomerNodeEndpoint> _customerNodeEndpointList = new List<CustomerNodeEndpoint>();
+        private List<CustomerNodeEndpoint> _customerNodeEndpointList = AWSConfigs.InitializeCollections ? new List<CustomerNodeEndpoint>() : null;
         private string _replicationGroupId;
 
         /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if CustomerNodeEndpointList property is set
         internal bool IsSetCustomerNodeEndpointList()
         {
-            return this._customerNodeEndpointList != null && this._customerNodeEndpointList.Count > 0; 
+            return this._customerNodeEndpointList != null && (this._customerNodeEndpointList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

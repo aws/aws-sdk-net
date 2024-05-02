@@ -26,23 +26,24 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// The configuration of a Kinesis Data Analytics Studio notebook.
+    /// The configuration of a Managed Service for Apache Flink Studio notebook.
     /// </summary>
     public partial class ZeppelinApplicationConfiguration
     {
         private CatalogConfiguration _catalogConfiguration;
-        private List<CustomArtifactConfiguration> _customArtifactsConfiguration = new List<CustomArtifactConfiguration>();
+        private List<CustomArtifactConfiguration> _customArtifactsConfiguration = AWSConfigs.InitializeCollections ? new List<CustomArtifactConfiguration>() : null;
         private DeployAsApplicationConfiguration _deployAsApplicationConfiguration;
         private ZeppelinMonitoringConfiguration _monitoringConfiguration;
 
         /// <summary>
         /// Gets and sets the property CatalogConfiguration. 
         /// <para>
-        /// The Amazon Glue Data Catalog that you use in queries in a Kinesis Data Analytics Studio
-        /// notebook.
+        /// The Amazon Glue Data Catalog that you use in queries in a Managed Service for Apache
+        /// Flink Studio notebook.
         /// </para>
         /// </summary>
         public CatalogConfiguration CatalogConfiguration
@@ -73,14 +74,14 @@ namespace Amazon.KinesisAnalyticsV2.Model
         // Check to see if CustomArtifactsConfiguration property is set
         internal bool IsSetCustomArtifactsConfiguration()
         {
-            return this._customArtifactsConfiguration != null && this._customArtifactsConfiguration.Count > 0; 
+            return this._customArtifactsConfiguration != null && (this._customArtifactsConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property DeployAsApplicationConfiguration. 
         /// <para>
-        /// The information required to deploy a Kinesis Data Analytics Studio notebook as an
-        /// application with durable state.
+        /// The information required to deploy a Managed Service for Apache Flink Studio notebook
+        /// as an application with durable state.
         /// </para>
         /// </summary>
         public DeployAsApplicationConfiguration DeployAsApplicationConfiguration
@@ -98,7 +99,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property MonitoringConfiguration. 
         /// <para>
-        /// The monitoring configuration of a Kinesis Data Analytics Studio notebook.
+        /// The monitoring configuration of a Managed Service for Apache Flink Studio notebook.
         /// </para>
         /// </summary>
         public ZeppelinMonitoringConfiguration MonitoringConfiguration

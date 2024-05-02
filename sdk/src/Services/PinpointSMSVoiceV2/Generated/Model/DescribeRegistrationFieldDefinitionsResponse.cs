@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PinpointSMSVoiceV2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     public partial class DescribeRegistrationFieldDefinitionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RegistrationFieldDefinition> _registrationFieldDefinitions = new List<RegistrationFieldDefinition>();
+        private List<RegistrationFieldDefinition> _registrationFieldDefinitions = AWSConfigs.InitializeCollections ? new List<RegistrationFieldDefinition>() : null;
         private string _registrationType;
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         // Check to see if RegistrationFieldDefinitions property is set
         internal bool IsSetRegistrationFieldDefinitions()
         {
-            return this._registrationFieldDefinitions != null && this._registrationFieldDefinitions.Count > 0; 
+            return this._registrationFieldDefinitions != null && (this._registrationFieldDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

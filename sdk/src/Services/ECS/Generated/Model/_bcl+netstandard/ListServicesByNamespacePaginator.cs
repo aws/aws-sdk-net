@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ECS.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ECS.Model
         /// Enumerable containing all of the ServiceArns
         /// </summary>
         public IPaginatedEnumerable<string> ServiceArns => 
-            new PaginatedResultKeyResponse<ListServicesByNamespaceResponse, string>(this, (i) => i.ServiceArns);
+            new PaginatedResultKeyResponse<ListServicesByNamespaceResponse, string>(this, (i) => i.ServiceArns ?? new List<string>());
 
         internal ListServicesByNamespacePaginator(IAmazonECS client, ListServicesByNamespaceRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ECS.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListServicesByNamespaceResponse> IPaginator<ListServicesByNamespaceResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListServicesByNamespaceResponse> IPaginator<ListServicesByNamespaceResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

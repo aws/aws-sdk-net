@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.SageMaker.Model
         private string _featureName;
         private FeatureType _featureType;
         private DateTime? _lastModifiedTime;
-        private List<FeatureParameter> _parameters = new List<FeatureParameter>();
+        private List<FeatureParameter> _parameters = AWSConfigs.InitializeCollections ? new List<FeatureParameter>() : null;
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -189,7 +190,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

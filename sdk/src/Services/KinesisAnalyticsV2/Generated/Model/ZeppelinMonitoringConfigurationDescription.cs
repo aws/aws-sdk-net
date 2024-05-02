@@ -26,11 +26,12 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// The monitoring configuration for Apache Zeppelin within a Kinesis Data Analytics Studio
-    /// notebook.
+    /// The monitoring configuration for Apache Zeppelin within a Managed Service for Apache
+    /// Flink Studio notebook.
     /// </summary>
     public partial class ZeppelinMonitoringConfigurationDescription
     {

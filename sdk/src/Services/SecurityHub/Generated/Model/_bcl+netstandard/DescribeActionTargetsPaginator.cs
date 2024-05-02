@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.SecurityHub.Model
         /// Enumerable containing all of the ActionTargets
         /// </summary>
         public IPaginatedEnumerable<ActionTarget> ActionTargets => 
-            new PaginatedResultKeyResponse<DescribeActionTargetsResponse, ActionTarget>(this, (i) => i.ActionTargets);
+            new PaginatedResultKeyResponse<DescribeActionTargetsResponse, ActionTarget>(this, (i) => i.ActionTargets ?? new List<ActionTarget>());
 
         internal DescribeActionTargetsPaginator(IAmazonSecurityHub client, DescribeActionTargetsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.SecurityHub.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeActionTargetsResponse> IPaginator<DescribeActionTargetsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeActionTargetsResponse> IPaginator<DescribeActionTargetsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

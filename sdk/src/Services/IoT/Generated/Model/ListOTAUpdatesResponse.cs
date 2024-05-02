@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IoT.Model
     public partial class ListOTAUpdatesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<OTAUpdateSummary> _otaUpdates = new List<OTAUpdateSummary>();
+        private List<OTAUpdateSummary> _otaUpdates = AWSConfigs.InitializeCollections ? new List<OTAUpdateSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +70,7 @@ namespace Amazon.IoT.Model
         // Check to see if OtaUpdates property is set
         internal bool IsSetOtaUpdates()
         {
-            return this._otaUpdates != null && this._otaUpdates.Count > 0; 
+            return this._otaUpdates != null && (this._otaUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

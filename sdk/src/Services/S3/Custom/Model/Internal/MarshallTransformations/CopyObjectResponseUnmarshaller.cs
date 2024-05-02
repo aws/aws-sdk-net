@@ -29,6 +29,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>
     public class CopyObjectResponseUnmarshaller : S3ReponseUnmarshaller
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context) 
         {   
             CopyObjectResponse response = new CopyObjectResponse();
@@ -124,6 +129,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static CopyObjectResponseUnmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static CopyObjectResponseUnmarshaller Instance
         {
             get

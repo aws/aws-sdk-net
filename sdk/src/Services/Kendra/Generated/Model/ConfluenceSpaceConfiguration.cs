@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -35,9 +36,9 @@ namespace Amazon.Kendra.Model
     {
         private bool? _crawlArchivedSpaces;
         private bool? _crawlPersonalSpaces;
-        private List<string> _excludeSpaces = new List<string>();
-        private List<string> _includeSpaces = new List<string>();
-        private List<ConfluenceSpaceToIndexFieldMapping> _spaceFieldMappings = new List<ConfluenceSpaceToIndexFieldMapping>();
+        private List<string> _excludeSpaces = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _includeSpaces = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<ConfluenceSpaceToIndexFieldMapping> _spaceFieldMappings = AWSConfigs.InitializeCollections ? new List<ConfluenceSpaceToIndexFieldMapping>() : null;
 
         /// <summary>
         /// Gets and sets the property CrawlArchivedSpaces. 
@@ -97,7 +98,7 @@ namespace Amazon.Kendra.Model
         // Check to see if ExcludeSpaces property is set
         internal bool IsSetExcludeSpaces()
         {
-            return this._excludeSpaces != null && this._excludeSpaces.Count > 0; 
+            return this._excludeSpaces != null && (this._excludeSpaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -120,7 +121,7 @@ namespace Amazon.Kendra.Model
         // Check to see if IncludeSpaces property is set
         internal bool IsSetIncludeSpaces()
         {
-            return this._includeSpaces != null && this._includeSpaces.Count > 0; 
+            return this._includeSpaces != null && (this._includeSpaces.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -148,7 +149,7 @@ namespace Amazon.Kendra.Model
         // Check to see if SpaceFieldMappings property is set
         internal bool IsSetSpaceFieldMappings()
         {
-            return this._spaceFieldMappings != null && this._spaceFieldMappings.Count > 0; 
+            return this._spaceFieldMappings != null && (this._spaceFieldMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

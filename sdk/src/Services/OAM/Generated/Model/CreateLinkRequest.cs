@@ -26,11 +26,15 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OAM.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLink operation.
     /// Creates a link between a source account and a sink that you have created in a monitoring
+    /// account. After the link is created, data is sent from the source account to the monitoring
+    /// account. When you create a link, you can optionally specify filters that specify which
+    /// metric namespaces and which log groups are shared from the source account to the monitoring
     /// account.
     /// 
     ///  
@@ -57,9 +61,10 @@ namespace Amazon.OAM.Model
     public partial class CreateLinkRequest : AmazonOAMRequest
     {
         private string _labelTemplate;
-        private List<string> _resourceTypes = new List<string>();
+        private LinkConfiguration _linkConfiguration;
+        private List<string> _resourceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _sinkIdentifier;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property LabelTemplate. 
@@ -100,6 +105,26 @@ namespace Amazon.OAM.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LinkConfiguration. 
+        /// <para>
+        /// Use this structure to optionally create filters that specify that only some metric
+        /// namespaces or log groups are to be shared from the source account to the monitoring
+        /// account.
+        /// </para>
+        /// </summary>
+        public LinkConfiguration LinkConfiguration
+        {
+            get { return this._linkConfiguration; }
+            set { this._linkConfiguration = value; }
+        }
+
+        // Check to see if LinkConfiguration property is set
+        internal bool IsSetLinkConfiguration()
+        {
+            return this._linkConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourceTypes. 
         /// <para>
         /// An array of strings that define which types of data that the source account shares
@@ -116,7 +141,7 @@ namespace Amazon.OAM.Model
         // Check to see if ResourceTypes property is set
         internal bool IsSetResourceTypes()
         {
-            return this._resourceTypes != null && this._resourceTypes.Count > 0; 
+            return this._resourceTypes != null && (this._resourceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -170,7 +195,7 @@ namespace Amazon.OAM.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
@@ -34,19 +35,19 @@ namespace Amazon.ServiceCatalog.Model
     public partial class ProvisionedProductPlanDetails
     {
         private DateTime? _createdTime;
-        private List<string> _notificationArns = new List<string>();
+        private List<string> _notificationArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _pathId;
         private string _planId;
         private string _planName;
         private ProvisionedProductPlanType _planType;
         private string _productId;
         private string _provisioningArtifactId;
-        private List<UpdateProvisioningParameter> _provisioningParameters = new List<UpdateProvisioningParameter>();
+        private List<UpdateProvisioningParameter> _provisioningParameters = AWSConfigs.InitializeCollections ? new List<UpdateProvisioningParameter>() : null;
         private string _provisionProductId;
         private string _provisionProductName;
         private ProvisionedProductPlanStatus _status;
         private string _statusMessage;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private DateTime? _updatedTime;
 
         /// <summary>
@@ -83,7 +84,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if NotificationArns property is set
         internal bool IsSetNotificationArns()
         {
-            return this._notificationArns != null && this._notificationArns.Count > 0; 
+            return this._notificationArns != null && (this._notificationArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -215,7 +216,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if ProvisioningParameters property is set
         internal bool IsSetProvisioningParameters()
         {
-            return this._provisioningParameters != null && this._provisioningParameters.Count > 0; 
+            return this._provisioningParameters != null && (this._provisioningParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -308,7 +309,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

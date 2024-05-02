@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DisassociateNatGatewayAddressRequest : AmazonEC2Request
     {
-        private List<string> _associationIds = new List<string>();
+        private List<string> _associationIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxDrainDurationSeconds;
         private string _natGatewayId;
 
@@ -71,7 +72,7 @@ namespace Amazon.EC2.Model
         // Check to see if AssociationIds property is set
         internal bool IsSetAssociationIds()
         {
-            return this._associationIds != null && this._associationIds.Count > 0; 
+            return this._associationIds != null && (this._associationIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

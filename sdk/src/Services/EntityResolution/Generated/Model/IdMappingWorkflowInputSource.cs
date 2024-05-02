@@ -26,20 +26,22 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// An object containing <c>InputSourceARN</c> and <c>SchemaName</c>.
+    /// An object containing <c>InputSourceARN</c>, <c>SchemaName</c>, and <c>Type</c>.
     /// </summary>
     public partial class IdMappingWorkflowInputSource
     {
         private string _inputSourceARN;
         private string _schemaName;
+        private IdNamespaceType _type;
 
         /// <summary>
         /// Gets and sets the property InputSourceARN. 
         /// <para>
-        /// An Gluetable ARN for the input source table.
+        /// An Glue table ARN for the input source table.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +63,7 @@ namespace Amazon.EntityResolution.Model
         /// The name of the schema to be retrieved.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Min=1, Max=255)]
         public string SchemaName
         {
             get { return this._schemaName; }
@@ -72,6 +74,34 @@ namespace Amazon.EntityResolution.Model
         internal bool IsSetSchemaName()
         {
             return this._schemaName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of ID namespace. There are two types: <c>SOURCE</c> and <c>TARGET</c>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>SOURCE</c> contains configurations for <c>sourceId</c> data that will be processed
+        /// in an ID mapping workflow. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The <c>TARGET</c> contains a configuration of <c>targetId</c> to which all <c>sourceIds</c>
+        /// will resolve to.
+        /// </para>
+        /// </summary>
+        public IdNamespaceType Type
+        {
+            get { return this._type; }
+            set { this._type = value; }
+        }
+
+        // Check to see if Type property is set
+        internal bool IsSetType()
+        {
+            return this._type != null;
         }
 
     }

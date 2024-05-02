@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Transfer.Model
 {
     /// <summary>
@@ -35,9 +36,9 @@ namespace Amazon.Transfer.Model
     {
         private string _arn;
         private string _description;
-        private List<WorkflowStep> _onExceptionSteps = new List<WorkflowStep>();
-        private List<WorkflowStep> _steps = new List<WorkflowStep>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<WorkflowStep> _onExceptionSteps = AWSConfigs.InitializeCollections ? new List<WorkflowStep>() : null;
+        private List<WorkflowStep> _steps = AWSConfigs.InitializeCollections ? new List<WorkflowStep>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _workflowId;
 
         /// <summary>
@@ -95,7 +96,7 @@ namespace Amazon.Transfer.Model
         // Check to see if OnExceptionSteps property is set
         internal bool IsSetOnExceptionSteps()
         {
-            return this._onExceptionSteps != null && this._onExceptionSteps.Count > 0; 
+            return this._onExceptionSteps != null && (this._onExceptionSteps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -114,7 +115,7 @@ namespace Amazon.Transfer.Model
         // Check to see if Steps property is set
         internal bool IsSetSteps()
         {
-            return this._steps != null && this._steps.Count > 0; 
+            return this._steps != null && (this._steps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -134,7 +135,7 @@ namespace Amazon.Transfer.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class BatchGetAutomationRulesResponse : AmazonWebServiceResponse
     {
-        private List<AutomationRulesConfig> _rules = new List<AutomationRulesConfig>();
-        private List<UnprocessedAutomationRule> _unprocessedAutomationRules = new List<UnprocessedAutomationRule>();
+        private List<AutomationRulesConfig> _rules = AWSConfigs.InitializeCollections ? new List<AutomationRulesConfig>() : null;
+        private List<UnprocessedAutomationRule> _unprocessedAutomationRules = AWSConfigs.InitializeCollections ? new List<UnprocessedAutomationRule>() : null;
 
         /// <summary>
         /// Gets and sets the property Rules. 
@@ -51,7 +52,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Rules property is set
         internal bool IsSetRules()
         {
-            return this._rules != null && this._rules.Count > 0; 
+            return this._rules != null && (this._rules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if UnprocessedAutomationRules property is set
         internal bool IsSetUnprocessedAutomationRules()
         {
-            return this._unprocessedAutomationRules != null && this._unprocessedAutomationRules.Count > 0; 
+            return this._unprocessedAutomationRules != null && (this._unprocessedAutomationRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

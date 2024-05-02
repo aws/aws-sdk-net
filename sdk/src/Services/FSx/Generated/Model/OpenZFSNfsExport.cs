@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FSx.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.FSx.Model
     /// </summary>
     public partial class OpenZFSNfsExport
     {
-        private List<OpenZFSClientConfiguration> _clientConfigurations = new List<OpenZFSClientConfiguration>();
+        private List<OpenZFSClientConfiguration> _clientConfigurations = AWSConfigs.InitializeCollections ? new List<OpenZFSClientConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientConfigurations. 
@@ -53,7 +54,7 @@ namespace Amazon.FSx.Model
         // Check to see if ClientConfigurations property is set
         internal bool IsSetClientConfigurations()
         {
-            return this._clientConfigurations != null && this._clientConfigurations.Count > 0; 
+            return this._clientConfigurations != null && (this._clientConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

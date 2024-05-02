@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaConnect.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MediaConnect.Model
     /// </summary>
     public partial class Messages
     {
-        private List<string> _errors = new List<string>();
+        private List<string> _errors = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Errors. A list of errors that might have been generated
@@ -49,7 +50,7 @@ namespace Amazon.MediaConnect.Model
         // Check to see if Errors property is set
         internal bool IsSetErrors()
         {
-            return this._errors != null && this._errors.Count > 0; 
+            return this._errors != null && (this._errors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

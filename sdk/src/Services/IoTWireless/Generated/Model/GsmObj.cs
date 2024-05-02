@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.IoTWireless.Model
     {
         private int? _geranCid;
         private GsmLocalId _gsmLocalId;
-        private List<GsmNmrObj> _gsmNmr = new List<GsmNmrObj>();
+        private List<GsmNmrObj> _gsmNmr = AWSConfigs.InitializeCollections ? new List<GsmNmrObj>() : null;
         private int? _gsmTimingAdvance;
         private int? _lac;
         private int? _mcc;
@@ -95,7 +96,7 @@ namespace Amazon.IoTWireless.Model
         // Check to see if GsmNmr property is set
         internal bool IsSetGsmNmr()
         {
-            return this._gsmNmr != null && this._gsmNmr.Count > 0; 
+            return this._gsmNmr != null && (this._gsmNmr.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

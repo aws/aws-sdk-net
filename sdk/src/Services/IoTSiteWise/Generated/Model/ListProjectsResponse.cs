@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IoTSiteWise.Model
     public partial class ListProjectsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ProjectSummary> _projectSummaries = new List<ProjectSummary>();
+        private List<ProjectSummary> _projectSummaries = AWSConfigs.InitializeCollections ? new List<ProjectSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if ProjectSummaries property is set
         internal bool IsSetProjectSummaries()
         {
-            return this._projectSummaries != null && this._projectSummaries.Count > 0; 
+            return this._projectSummaries != null && (this._projectSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

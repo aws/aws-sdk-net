@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
@@ -35,6 +36,7 @@ namespace Amazon.SimpleEmailV2.Model
     public partial class Message
     {
         private Body _body;
+        private List<MessageHeader> _headers = AWSConfigs.InitializeCollections ? new List<MessageHeader>() : null;
         private Content _subject;
 
         /// <summary>
@@ -55,6 +57,25 @@ namespace Amazon.SimpleEmailV2.Model
         internal bool IsSetBody()
         {
             return this._body != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Headers. 
+        /// <para>
+        /// The list of message headers that will be added to the email message.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=15)]
+        public List<MessageHeader> Headers
+        {
+            get { return this._headers; }
+            set { this._headers = value; }
+        }
+
+        // Check to see if Headers property is set
+        internal bool IsSetHeaders()
+        {
+            return this._headers != null && (this._headers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

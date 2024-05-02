@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.CloudTrail.Model
         private string _eventSource;
         private DateTime? _eventTime;
         private string _readOnly;
-        private List<Resource> _resources = new List<Resource>();
+        private List<Resource> _resources = AWSConfigs.InitializeCollections ? new List<Resource>() : null;
         private string _username;
 
         /// <summary>
@@ -187,7 +188,7 @@ namespace Amazon.CloudTrail.Model
         // Check to see if Resources property is set
         internal bool IsSetResources()
         {
-            return this._resources != null && this._resources.Count > 0; 
+            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

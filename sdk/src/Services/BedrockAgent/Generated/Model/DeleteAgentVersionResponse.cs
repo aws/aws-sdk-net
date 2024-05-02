@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Delete Agent Version Response
+    /// This is the response object from the DeleteAgentVersion operation.
     /// </summary>
     public partial class DeleteAgentVersionResponse : AmazonWebServiceResponse
     {
@@ -38,7 +39,10 @@ namespace Amazon.BedrockAgent.Model
         private string _agentVersion;
 
         /// <summary>
-        /// Gets and sets the property AgentId.
+        /// Gets and sets the property AgentId. 
+        /// <para>
+        /// The unique identifier of the agent that the version belongs to.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string AgentId
@@ -54,7 +58,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AgentStatus.
+        /// Gets and sets the property AgentStatus. 
+        /// <para>
+        /// The status of the agent version.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public AgentStatus AgentStatus
@@ -70,7 +77,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AgentVersion.
+        /// Gets and sets the property AgentVersion. 
+        /// <para>
+        /// The version that was deleted.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string AgentVersion

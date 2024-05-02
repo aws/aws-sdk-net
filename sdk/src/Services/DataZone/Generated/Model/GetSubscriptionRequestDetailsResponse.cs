@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
@@ -41,8 +42,8 @@ namespace Amazon.DataZone.Model
         private string _requestReason;
         private string _reviewerId;
         private SubscriptionRequestStatus _status;
-        private List<SubscribedListing> _subscribedListings = new List<SubscribedListing>();
-        private List<SubscribedPrincipal> _subscribedPrincipals = new List<SubscribedPrincipal>();
+        private List<SubscribedListing> _subscribedListings = AWSConfigs.InitializeCollections ? new List<SubscribedListing>() : null;
+        private List<SubscribedPrincipal> _subscribedPrincipals = AWSConfigs.InitializeCollections ? new List<SubscribedPrincipal>() : null;
         private DateTime? _updatedAt;
         private string _updatedBy;
 
@@ -213,7 +214,7 @@ namespace Amazon.DataZone.Model
         // Check to see if SubscribedListings property is set
         internal bool IsSetSubscribedListings()
         {
-            return this._subscribedListings != null && this._subscribedListings.Count > 0; 
+            return this._subscribedListings != null && (this._subscribedListings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -232,7 +233,7 @@ namespace Amazon.DataZone.Model
         // Check to see if SubscribedPrincipals property is set
         internal bool IsSetSubscribedPrincipals()
         {
-            return this._subscribedPrincipals != null && this._subscribedPrincipals.Count > 0; 
+            return this._subscribedPrincipals != null && (this._subscribedPrincipals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

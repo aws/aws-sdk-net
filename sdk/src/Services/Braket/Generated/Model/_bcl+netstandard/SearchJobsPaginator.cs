@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Braket.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Braket.Model
         /// Enumerable containing all of the Jobs
         /// </summary>
         public IPaginatedEnumerable<JobSummary> Jobs => 
-            new PaginatedResultKeyResponse<SearchJobsResponse, JobSummary>(this, (i) => i.Jobs);
+            new PaginatedResultKeyResponse<SearchJobsResponse, JobSummary>(this, (i) => i.Jobs ?? new List<JobSummary>());
 
         internal SearchJobsPaginator(IAmazonBraket client, SearchJobsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Braket.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<SearchJobsResponse> IPaginator<SearchJobsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<SearchJobsResponse> IPaginator<SearchJobsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

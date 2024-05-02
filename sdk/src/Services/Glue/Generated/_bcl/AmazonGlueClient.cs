@@ -33,6 +33,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.Glue
 {
     /// <summary>
@@ -9707,7 +9708,8 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Retrieves table metadata from the Data Catalog that contains unfiltered metadata.
+        /// Allows a third-party analytical engine to retrieve unfiltered table metadata from
+        /// the Data Catalog.
         /// 
         ///  
         /// <para>
@@ -9753,7 +9755,8 @@ namespace Amazon.Glue
 
 
         /// <summary>
-        /// Retrieves table metadata from the Data Catalog that contains unfiltered metadata.
+        /// Allows a third-party analytical engine to retrieve unfiltered table metadata from
+        /// the Data Catalog.
         /// 
         ///  
         /// <para>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.SecurityLake.Model
     /// </summary>
     public partial class DeleteAwsLogSourceResponse : AmazonWebServiceResponse
     {
-        private List<string> _failed = new List<string>();
+        private List<string> _failed = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Failed. 
@@ -51,7 +52,7 @@ namespace Amazon.SecurityLake.Model
         // Check to see if Failed property is set
         internal bool IsSetFailed()
         {
-            return this._failed != null && this._failed.Count > 0; 
+            return this._failed != null && (this._failed.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

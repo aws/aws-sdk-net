@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.IoTAnalytics.Model
     public partial class BatchPutMessageRequest : AmazonIoTAnalyticsRequest
     {
         private string _channelName;
-        private List<Message> _messages = new List<Message>();
+        private List<Message> _messages = AWSConfigs.InitializeCollections ? new List<Message>() : null;
 
         /// <summary>
         /// Gets and sets the property ChannelName. 
@@ -109,7 +110,7 @@ namespace Amazon.IoTAnalytics.Model
         // Check to see if Messages property is set
         internal bool IsSetMessages()
         {
-            return this._messages != null && this._messages.Count > 0; 
+            return this._messages != null && (this._messages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

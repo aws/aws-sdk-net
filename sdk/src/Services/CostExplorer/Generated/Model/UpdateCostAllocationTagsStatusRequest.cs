@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.CostExplorer.Model
     /// </summary>
     public partial class UpdateCostAllocationTagsStatusRequest : AmazonCostExplorerRequest
     {
-        private List<CostAllocationTagStatusEntry> _costAllocationTagsStatus = new List<CostAllocationTagStatusEntry>();
+        private List<CostAllocationTagStatusEntry> _costAllocationTagsStatus = AWSConfigs.InitializeCollections ? new List<CostAllocationTagStatusEntry>() : null;
 
         /// <summary>
         /// Gets and sets the property CostAllocationTagsStatus. 
@@ -56,7 +57,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if CostAllocationTagsStatus property is set
         internal bool IsSetCostAllocationTagsStatus()
         {
-            return this._costAllocationTagsStatus != null && this._costAllocationTagsStatus.Count > 0; 
+            return this._costAllocationTagsStatus != null && (this._costAllocationTagsStatus.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

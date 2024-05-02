@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
@@ -49,7 +50,7 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class JoinDomainRequest : AmazonStorageGatewayRequest
     {
-        private List<string> _domainControllers = new List<string>();
+        private List<string> _domainControllers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _domainName;
         private string _gatewayARN;
         private string _organizationalUnit;
@@ -73,7 +74,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if DomainControllers property is set
         internal bool IsSetDomainControllers()
         {
-            return this._domainControllers != null && this._domainControllers.Count > 0; 
+            return this._domainControllers != null && (this._domainControllers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

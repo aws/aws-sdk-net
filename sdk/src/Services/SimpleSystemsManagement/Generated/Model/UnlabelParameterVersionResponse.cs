@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </summary>
     public partial class UnlabelParameterVersionResponse : AmazonWebServiceResponse
     {
-        private List<string> _invalidLabels = new List<string>();
-        private List<string> _removedLabels = new List<string>();
+        private List<string> _invalidLabels = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _removedLabels = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property InvalidLabels. 
@@ -52,7 +53,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if InvalidLabels property is set
         internal bool IsSetInvalidLabels()
         {
-            return this._invalidLabels != null && this._invalidLabels.Count > 0; 
+            return this._invalidLabels != null && (this._invalidLabels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if RemovedLabels property is set
         internal bool IsSetRemovedLabels()
         {
-            return this._removedLabels != null && this._removedLabels.Count > 0; 
+            return this._removedLabels != null && (this._removedLabels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

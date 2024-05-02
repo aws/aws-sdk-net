@@ -37,7 +37,10 @@ namespace Amazon.S3.Model
             set { this.inventoryS3BucketDestination = value; }
         }
 
-        // Check to see if S3BucketDestination property is set
+        /// <summary>
+        /// Check to see if S3BucketDestination property is set
+        /// </summary>
+        /// <returns></returns>
         public bool isSetS3BucketDestination()
         {
             return this.inventoryS3BucketDestination != null;

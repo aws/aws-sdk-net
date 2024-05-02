@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -34,6 +35,7 @@ namespace Amazon.Connect.Model
     public partial class UserSearchFilter
     {
         private ControlPlaneTagFilter _tagFilter;
+        private ControlPlaneUserAttributeFilter _userAttributeFilter;
 
         /// <summary>
         /// Gets and sets the property TagFilter.
@@ -48,6 +50,44 @@ namespace Amazon.Connect.Model
         internal bool IsSetTagFilter()
         {
             return this._tagFilter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserAttributeFilter. 
+        /// <para>
+        /// An object that can be used to specify Tag conditions or Hierarchy Group conditions
+        /// inside the SearchFilter.
+        /// </para>
+        ///  
+        /// <para>
+        /// This accepts an <c>OR</c> of <c>AND</c> (List of List) input where:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The top level list specifies conditions that need to be applied with <c>OR</c> operator.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The inner list specifies conditions that need to be applied with <c>AND</c> operator.
+        /// </para>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// Only one field can be populated. This object can’t be used along with TagFilter. Request
+        /// can either contain TagFilter or UserAttributeFilter if SearchFilter is specified,
+        /// combination of both is not supported and such request will throw AccessDeniedException.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public ControlPlaneUserAttributeFilter UserAttributeFilter
+        {
+            get { return this._userAttributeFilter; }
+            set { this._userAttributeFilter = value; }
+        }
+
+        // Check to see if UserAttributeFilter property is set
+        internal bool IsSetUserAttributeFilter()
+        {
+            return this._userAttributeFilter != null;
         }
 
     }

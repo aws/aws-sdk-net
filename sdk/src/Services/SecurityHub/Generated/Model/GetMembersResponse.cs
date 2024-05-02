@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class GetMembersResponse : AmazonWebServiceResponse
     {
-        private List<Member> _members = new List<Member>();
-        private List<Result> _unprocessedAccounts = new List<Result>();
+        private List<Member> _members = AWSConfigs.InitializeCollections ? new List<Member>() : null;
+        private List<Result> _unprocessedAccounts = AWSConfigs.InitializeCollections ? new List<Result>() : null;
 
         /// <summary>
         /// Gets and sets the property Members. 
@@ -51,7 +52,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Members property is set
         internal bool IsSetMembers()
         {
-            return this._members != null && this._members.Count > 0; 
+            return this._members != null && (this._members.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -70,7 +71,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if UnprocessedAccounts property is set
         internal bool IsSetUnprocessedAccounts()
         {
-            return this._unprocessedAccounts != null && this._unprocessedAccounts.Count > 0; 
+            return this._unprocessedAccounts != null && (this._unprocessedAccounts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

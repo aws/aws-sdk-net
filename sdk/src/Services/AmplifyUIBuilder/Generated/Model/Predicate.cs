@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
@@ -34,12 +35,12 @@ namespace Amazon.AmplifyUIBuilder.Model
     /// </summary>
     public partial class Predicate
     {
-        private List<Predicate> _and = new List<Predicate>();
+        private List<Predicate> _and = AWSConfigs.InitializeCollections ? new List<Predicate>() : null;
         private string _field;
         private string _operand;
         private string _operandType;
         private string _operator;
-        private List<Predicate> _or = new List<Predicate>();
+        private List<Predicate> _or = AWSConfigs.InitializeCollections ? new List<Predicate>() : null;
 
         /// <summary>
         /// Gets and sets the property And. 
@@ -56,7 +57,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if And property is set
         internal bool IsSetAnd()
         {
-            return this._and != null && this._and.Count > 0; 
+            return this._and != null && (this._and.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -146,7 +147,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if Or property is set
         internal bool IsSetOr()
         {
-            return this._or != null && this._or.Count > 0; 
+            return this._or != null && (this._or.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

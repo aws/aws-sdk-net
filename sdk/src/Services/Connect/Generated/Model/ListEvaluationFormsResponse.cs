@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Connect.Model
     /// </summary>
     public partial class ListEvaluationFormsResponse : AmazonWebServiceResponse
     {
-        private List<EvaluationFormSummary> _evaluationFormSummaryList = new List<EvaluationFormSummary>();
+        private List<EvaluationFormSummary> _evaluationFormSummaryList = AWSConfigs.InitializeCollections ? new List<EvaluationFormSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.Connect.Model
         // Check to see if EvaluationFormSummaryList property is set
         internal bool IsSetEvaluationFormSummaryList()
         {
-            return this._evaluationFormSummaryList != null && this._evaluationFormSummaryList.Count > 0; 
+            return this._evaluationFormSummaryList != null && (this._evaluationFormSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

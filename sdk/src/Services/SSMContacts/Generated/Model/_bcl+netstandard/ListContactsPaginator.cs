@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SSMContacts.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.SSMContacts.Model
         /// Enumerable containing all of the Contacts
         /// </summary>
         public IPaginatedEnumerable<Contact> Contacts => 
-            new PaginatedResultKeyResponse<ListContactsResponse, Contact>(this, (i) => i.Contacts);
+            new PaginatedResultKeyResponse<ListContactsResponse, Contact>(this, (i) => i.Contacts ?? new List<Contact>());
 
         internal ListContactsPaginator(IAmazonSSMContacts client, ListContactsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.SSMContacts.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListContactsResponse> IPaginator<ListContactsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListContactsResponse> IPaginator<ListContactsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

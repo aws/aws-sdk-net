@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -36,8 +37,8 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class SalesforceKnowledgeArticleConfiguration
     {
-        private List<SalesforceCustomKnowledgeArticleTypeConfiguration> _customKnowledgeArticleTypeConfigurations = new List<SalesforceCustomKnowledgeArticleTypeConfiguration>();
-        private List<string> _includedStates = new List<string>();
+        private List<SalesforceCustomKnowledgeArticleTypeConfiguration> _customKnowledgeArticleTypeConfigurations = AWSConfigs.InitializeCollections ? new List<SalesforceCustomKnowledgeArticleTypeConfiguration>() : null;
+        private List<string> _includedStates = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SalesforceStandardKnowledgeArticleTypeConfiguration _standardKnowledgeArticleTypeConfiguration;
 
         /// <summary>
@@ -56,7 +57,7 @@ namespace Amazon.Kendra.Model
         // Check to see if CustomKnowledgeArticleTypeConfigurations property is set
         internal bool IsSetCustomKnowledgeArticleTypeConfigurations()
         {
-            return this._customKnowledgeArticleTypeConfigurations != null && this._customKnowledgeArticleTypeConfigurations.Count > 0; 
+            return this._customKnowledgeArticleTypeConfigurations != null && (this._customKnowledgeArticleTypeConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -76,7 +77,7 @@ namespace Amazon.Kendra.Model
         // Check to see if IncludedStates property is set
         internal bool IsSetIncludedStates()
         {
-            return this._includedStates != null && this._includedStates.Count > 0; 
+            return this._includedStates != null && (this._includedStates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

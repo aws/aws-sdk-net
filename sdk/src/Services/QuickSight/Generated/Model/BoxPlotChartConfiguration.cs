@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.QuickSight.Model
         private LegendOptions _legend;
         private AxisDisplayOptions _primaryYAxisDisplayOptions;
         private ChartAxisLabelOptions _primaryYAxisLabelOptions;
-        private List<ReferenceLine> _referenceLines = new List<ReferenceLine>();
+        private List<ReferenceLine> _referenceLines = AWSConfigs.InitializeCollections ? new List<ReferenceLine>() : null;
         private BoxPlotSortConfiguration _sortConfiguration;
         private TooltipOptions _tooltip;
         private VisualPalette _visualPalette;
@@ -205,7 +206,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if ReferenceLines property is set
         internal bool IsSetReferenceLines()
         {
-            return this._referenceLines != null && this._referenceLines.Count > 0; 
+            return this._referenceLines != null && (this._referenceLines.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

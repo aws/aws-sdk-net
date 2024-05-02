@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Proton.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Proton.Model
     /// </summary>
     public partial class RepositorySyncAttempt
     {
-        private List<RepositorySyncEvent> _events = new List<RepositorySyncEvent>();
+        private List<RepositorySyncEvent> _events = AWSConfigs.InitializeCollections ? new List<RepositorySyncEvent>() : null;
         private DateTime? _startedAt;
         private RepositorySyncStatus _status;
 
@@ -53,7 +54,7 @@ namespace Amazon.Proton.Model
         // Check to see if Events property is set
         internal bool IsSetEvents()
         {
-            return this._events != null && this._events.Count > 0; 
+            return this._events != null && (this._events.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

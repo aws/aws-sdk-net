@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.AmplifyUIBuilder.Model
     /// </summary>
     public partial class ThemeValue
     {
-        private List<ThemeValues> _children = new List<ThemeValues>();
+        private List<ThemeValues> _children = AWSConfigs.InitializeCollections ? new List<ThemeValues>() : null;
         private string _value;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         // Check to see if Children property is set
         internal bool IsSetChildren()
         {
-            return this._children != null && this._children.Count > 0; 
+            return this._children != null && (this._children.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

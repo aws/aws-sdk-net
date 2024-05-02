@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -35,9 +36,9 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class SplitFields
     {
-        private List<string> _inputs = new List<string>();
+        private List<string> _inputs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
-        private List<List<string>> _paths = new List<List<string>>();
+        private List<List<string>> _paths = AWSConfigs.InitializeCollections ? new List<List<string>>() : null;
 
         /// <summary>
         /// Gets and sets the property Inputs. 
@@ -55,7 +56,7 @@ namespace Amazon.Glue.Model
         // Check to see if Inputs property is set
         internal bool IsSetInputs()
         {
-            return this._inputs != null && this._inputs.Count > 0; 
+            return this._inputs != null && (this._inputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -93,7 +94,7 @@ namespace Amazon.Glue.Model
         // Check to see if Paths property is set
         internal bool IsSetPaths()
         {
-            return this._paths != null && this._paths.Count > 0; 
+            return this._paths != null && (this._paths.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

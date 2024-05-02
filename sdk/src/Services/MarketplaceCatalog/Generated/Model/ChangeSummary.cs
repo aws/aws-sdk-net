@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.MarketplaceCatalog.Model
         private string _details;
         private Amazon.Runtime.Documents.Document _detailsDocument;
         private Entity _entity;
-        private List<ErrorDetail> _errorDetailList = new List<ErrorDetail>();
+        private List<ErrorDetail> _errorDetailList = AWSConfigs.InitializeCollections ? new List<ErrorDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property ChangeName. 
@@ -149,7 +150,7 @@ namespace Amazon.MarketplaceCatalog.Model
         // Check to see if ErrorDetailList property is set
         internal bool IsSetErrorDetailList()
         {
-            return this._errorDetailList != null && this._errorDetailList.Count > 0; 
+            return this._errorDetailList != null && (this._errorDetailList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

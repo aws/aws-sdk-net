@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.SecurityHub.Model
         private string _firewallPolicyArn;
         private bool? _firewallPolicyChangeProtection;
         private bool? _subnetChangeProtection;
-        private List<AwsNetworkFirewallFirewallSubnetMappingsDetails> _subnetMappings = new List<AwsNetworkFirewallFirewallSubnetMappingsDetails>();
+        private List<AwsNetworkFirewallFirewallSubnetMappingsDetails> _subnetMappings = AWSConfigs.InitializeCollections ? new List<AwsNetworkFirewallFirewallSubnetMappingsDetails>() : null;
         private string _vpcId;
 
         /// <summary>
@@ -207,7 +208,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if SubnetMappings property is set
         internal bool IsSetSubnetMappings()
         {
-            return this._subnetMappings != null && this._subnetMappings.Count > 0; 
+            return this._subnetMappings != null && (this._subnetMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

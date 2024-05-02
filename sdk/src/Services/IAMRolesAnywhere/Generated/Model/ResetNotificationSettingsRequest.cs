@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IAMRolesAnywhere.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.IAMRolesAnywhere.Model
     /// </summary>
     public partial class ResetNotificationSettingsRequest : AmazonIAMRolesAnywhereRequest
     {
-        private List<NotificationSettingKey> _notificationSettingKeys = new List<NotificationSettingKey>();
+        private List<NotificationSettingKey> _notificationSettingKeys = AWSConfigs.InitializeCollections ? new List<NotificationSettingKey>() : null;
         private string _trustAnchorId;
 
         /// <summary>
@@ -60,7 +61,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         // Check to see if NotificationSettingKeys property is set
         internal bool IsSetNotificationSettingKeys()
         {
-            return this._notificationSettingKeys != null && this._notificationSettingKeys.Count > 0; 
+            return this._notificationSettingKeys != null && (this._notificationSettingKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

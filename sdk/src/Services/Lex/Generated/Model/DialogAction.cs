@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lex.Model
 {
     /// <summary>
@@ -40,7 +41,7 @@ namespace Amazon.Lex.Model
         private string _intentName;
         private string _message;
         private MessageFormatType _messageFormat;
-        private Dictionary<string, string> _slots = new Dictionary<string, string>();
+        private Dictionary<string, string> _slots = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _slotToElicit;
         private DialogActionType _type;
 
@@ -165,7 +166,7 @@ namespace Amazon.Lex.Model
         // Check to see if Slots property is set
         internal bool IsSetSlots()
         {
-            return this._slots != null && this._slots.Count > 0; 
+            return this._slots != null && (this._slots.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

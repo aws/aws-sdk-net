@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Route53.Model
     {
         private string _id;
         private string _callerReference;
-        private List<string> _nameServers = new List<string>();
+        private List<string> _nameServers = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Empty constructor used to set  properties independently even when a simple constructor is available
@@ -108,7 +109,7 @@ namespace Amazon.Route53.Model
         // Check to see if NameServers property is set
         internal bool IsSetNameServers()
         {
-            return this._nameServers != null && this._nameServers.Count > 0; 
+            return this._nameServers != null && (this._nameServers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

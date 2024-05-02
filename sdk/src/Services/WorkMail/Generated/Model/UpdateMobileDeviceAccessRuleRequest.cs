@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkMail.Model
 {
     /// <summary>
@@ -35,17 +36,17 @@ namespace Amazon.WorkMail.Model
     public partial class UpdateMobileDeviceAccessRuleRequest : AmazonWorkMailRequest
     {
         private string _description;
-        private List<string> _deviceModels = new List<string>();
-        private List<string> _deviceOperatingSystems = new List<string>();
-        private List<string> _deviceTypes = new List<string>();
-        private List<string> _deviceUserAgents = new List<string>();
+        private List<string> _deviceModels = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _deviceOperatingSystems = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _deviceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _deviceUserAgents = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private MobileDeviceAccessRuleEffect _effect;
         private string _mobileDeviceAccessRuleId;
         private string _name;
-        private List<string> _notDeviceModels = new List<string>();
-        private List<string> _notDeviceOperatingSystems = new List<string>();
-        private List<string> _notDeviceTypes = new List<string>();
-        private List<string> _notDeviceUserAgents = new List<string>();
+        private List<string> _notDeviceModels = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _notDeviceOperatingSystems = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _notDeviceTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _notDeviceUserAgents = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _organizationId;
 
         /// <summary>
@@ -83,7 +84,7 @@ namespace Amazon.WorkMail.Model
         // Check to see if DeviceModels property is set
         internal bool IsSetDeviceModels()
         {
-            return this._deviceModels != null && this._deviceModels.Count > 0; 
+            return this._deviceModels != null && (this._deviceModels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -102,7 +103,7 @@ namespace Amazon.WorkMail.Model
         // Check to see if DeviceOperatingSystems property is set
         internal bool IsSetDeviceOperatingSystems()
         {
-            return this._deviceOperatingSystems != null && this._deviceOperatingSystems.Count > 0; 
+            return this._deviceOperatingSystems != null && (this._deviceOperatingSystems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -121,7 +122,7 @@ namespace Amazon.WorkMail.Model
         // Check to see if DeviceTypes property is set
         internal bool IsSetDeviceTypes()
         {
-            return this._deviceTypes != null && this._deviceTypes.Count > 0; 
+            return this._deviceTypes != null && (this._deviceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -140,7 +141,7 @@ namespace Amazon.WorkMail.Model
         // Check to see if DeviceUserAgents property is set
         internal bool IsSetDeviceUserAgents()
         {
-            return this._deviceUserAgents != null && this._deviceUserAgents.Count > 0; 
+            return this._deviceUserAgents != null && (this._deviceUserAgents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -217,7 +218,7 @@ namespace Amazon.WorkMail.Model
         // Check to see if NotDeviceModels property is set
         internal bool IsSetNotDeviceModels()
         {
-            return this._notDeviceModels != null && this._notDeviceModels.Count > 0; 
+            return this._notDeviceModels != null && (this._notDeviceModels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -237,7 +238,7 @@ namespace Amazon.WorkMail.Model
         // Check to see if NotDeviceOperatingSystems property is set
         internal bool IsSetNotDeviceOperatingSystems()
         {
-            return this._notDeviceOperatingSystems != null && this._notDeviceOperatingSystems.Count > 0; 
+            return this._notDeviceOperatingSystems != null && (this._notDeviceOperatingSystems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -257,7 +258,7 @@ namespace Amazon.WorkMail.Model
         // Check to see if NotDeviceTypes property is set
         internal bool IsSetNotDeviceTypes()
         {
-            return this._notDeviceTypes != null && this._notDeviceTypes.Count > 0; 
+            return this._notDeviceTypes != null && (this._notDeviceTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -277,7 +278,7 @@ namespace Amazon.WorkMail.Model
         // Check to see if NotDeviceUserAgents property is set
         internal bool IsSetNotDeviceUserAgents()
         {
-            return this._notDeviceUserAgents != null && this._notDeviceUserAgents.Count > 0; 
+            return this._notDeviceUserAgents != null && (this._notDeviceUserAgents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

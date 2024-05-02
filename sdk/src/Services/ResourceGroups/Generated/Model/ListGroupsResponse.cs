@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.ResourceGroups.Model
     /// </summary>
     public partial class ListGroupsResponse : AmazonWebServiceResponse
     {
-        private List<GroupIdentifier> _groupIdentifiers = new List<GroupIdentifier>();
-        private List<Group> _groups = new List<Group>();
+        private List<GroupIdentifier> _groupIdentifiers = AWSConfigs.InitializeCollections ? new List<GroupIdentifier>() : null;
+        private List<Group> _groups = AWSConfigs.InitializeCollections ? new List<Group>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.ResourceGroups.Model
         // Check to see if GroupIdentifiers property is set
         internal bool IsSetGroupIdentifiers()
         {
-            return this._groupIdentifiers != null && this._groupIdentifiers.Count > 0; 
+            return this._groupIdentifiers != null && (this._groupIdentifiers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.ResourceGroups.Model
         // Check to see if Groups property is set
         internal bool IsSetGroups()
         {
-            return this._groups != null && this._groups.Count > 0; 
+            return this._groups != null && (this._groups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

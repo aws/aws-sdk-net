@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
@@ -35,8 +36,8 @@ namespace Amazon.ElastiCache.Model
     public partial class ModifyUserGroupRequest : AmazonElastiCacheRequest
     {
         private string _userGroupId;
-        private List<string> _userIdsToAdd = new List<string>();
-        private List<string> _userIdsToRemove = new List<string>();
+        private List<string> _userIdsToAdd = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _userIdsToRemove = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property UserGroupId. 
@@ -73,7 +74,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if UserIdsToAdd property is set
         internal bool IsSetUserIdsToAdd()
         {
-            return this._userIdsToAdd != null && this._userIdsToAdd.Count > 0; 
+            return this._userIdsToAdd != null && (this._userIdsToAdd.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.ElastiCache.Model
         // Check to see if UserIdsToRemove property is set
         internal bool IsSetUserIdsToRemove()
         {
-            return this._userIdsToRemove != null && this._userIdsToRemove.Count > 0; 
+            return this._userIdsToRemove != null && (this._userIdsToRemove.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

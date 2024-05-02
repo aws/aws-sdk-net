@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTTwinMaker.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IoTTwinMaker.Model
     /// </summary>
     public partial class ListEntitiesRequest : AmazonIoTTwinMakerRequest
     {
-        private List<ListEntitiesFilter> _filters = new List<ListEntitiesFilter>();
+        private List<ListEntitiesFilter> _filters = AWSConfigs.InitializeCollections ? new List<ListEntitiesFilter>() : null;
         private int? _maxResults;
         private string _nextToken;
         private string _workspaceId;
@@ -59,7 +60,7 @@ namespace Amazon.IoTTwinMaker.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

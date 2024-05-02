@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.QuickSight.Model
         private LayoutElementType _elementType;
         private string _height;
         private LoadingAnimation _loadingAnimation;
-        private List<SheetElementRenderingRule> _renderingRules = new List<SheetElementRenderingRule>();
+        private List<SheetElementRenderingRule> _renderingRules = AWSConfigs.InitializeCollections ? new List<SheetElementRenderingRule>() : null;
         private FreeFormLayoutElementBorderStyle _selectedBorderStyle;
         private Visibility _visibility;
         private string _width;
@@ -174,7 +175,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if RenderingRules property is set
         internal bool IsSetRenderingRules()
         {
-            return this._renderingRules != null && this._renderingRules.Count > 0; 
+            return this._renderingRules != null && (this._renderingRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
@@ -55,10 +56,10 @@ namespace Amazon.TranscribeService.Model
     {
         private string _dataAccessRoleArn;
         private LanguageCode _languageCode;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _vocabularyFilterFileUri;
         private string _vocabularyFilterName;
-        private List<string> _words = new List<string>();
+        private List<string> _words = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
@@ -146,7 +147,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -238,7 +239,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if Words property is set
         internal bool IsSetWords()
         {
-            return this._words != null && this._words.Count > 0; 
+            return this._words != null && (this._words.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

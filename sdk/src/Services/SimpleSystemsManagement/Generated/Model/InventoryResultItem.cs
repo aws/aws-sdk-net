@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     public partial class InventoryResultItem
     {
         private string _captureTime;
-        private List<Dictionary<string, string>> _content = new List<Dictionary<string, string>>();
+        private List<Dictionary<string, string>> _content = AWSConfigs.InitializeCollections ? new List<Dictionary<string, string>>() : null;
         private string _contentHash;
         private string _schemaVersion;
         private string _typeName;
@@ -74,7 +75,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Content property is set
         internal bool IsSetContent()
         {
-            return this._content != null && this._content.Count > 0; 
+            return this._content != null && (this._content.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

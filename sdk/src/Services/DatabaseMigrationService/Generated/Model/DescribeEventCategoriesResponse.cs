@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DatabaseMigrationService.Model
     /// </summary>
     public partial class DescribeEventCategoriesResponse : AmazonWebServiceResponse
     {
-        private List<EventCategoryGroup> _eventCategoryGroupList = new List<EventCategoryGroup>();
+        private List<EventCategoryGroup> _eventCategoryGroupList = AWSConfigs.InitializeCollections ? new List<EventCategoryGroup>() : null;
 
         /// <summary>
         /// Gets and sets the property EventCategoryGroupList. 
@@ -50,7 +51,7 @@ namespace Amazon.DatabaseMigrationService.Model
         // Check to see if EventCategoryGroupList property is set
         internal bool IsSetEventCategoryGroupList()
         {
-            return this._eventCategoryGroupList != null && this._eventCategoryGroupList.Count > 0; 
+            return this._eventCategoryGroupList != null && (this._eventCategoryGroupList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

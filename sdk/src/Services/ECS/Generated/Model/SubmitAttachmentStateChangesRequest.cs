@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECS.Model
 {
     /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class SubmitAttachmentStateChangesRequest : AmazonECSRequest
     {
-        private List<AttachmentStateChange> _attachments = new List<AttachmentStateChange>();
+        private List<AttachmentStateChange> _attachments = AWSConfigs.InitializeCollections ? new List<AttachmentStateChange>() : null;
         private string _cluster;
 
         /// <summary>
@@ -61,7 +62,7 @@ namespace Amazon.ECS.Model
         // Check to see if Attachments property is set
         internal bool IsSetAttachments()
         {
-            return this._attachments != null && this._attachments.Count > 0; 
+            return this._attachments != null && (this._attachments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

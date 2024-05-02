@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.ServiceCatalog.Model
         private string _description;
         private string _id;
         private string _name;
-        private Dictionary<string, string> _provisioningArtifactMetadata = new Dictionary<string, string>();
+        private Dictionary<string, string> _provisioningArtifactMetadata = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property CreatedTime. 
@@ -132,7 +133,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if ProvisioningArtifactMetadata property is set
         internal bool IsSetProvisioningArtifactMetadata()
         {
-            return this._provisioningArtifactMetadata != null && this._provisioningArtifactMetadata.Count > 0; 
+            return this._provisioningArtifactMetadata != null && (this._provisioningArtifactMetadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

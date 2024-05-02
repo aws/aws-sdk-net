@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.OpenSearchService.Model
     /// </summary>
     public partial class ListVpcEndpointAccessResponse : AmazonWebServiceResponse
     {
-        private List<AuthorizedPrincipal> _authorizedPrincipalList = new List<AuthorizedPrincipal>();
+        private List<AuthorizedPrincipal> _authorizedPrincipalList = AWSConfigs.InitializeCollections ? new List<AuthorizedPrincipal>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.OpenSearchService.Model
         // Check to see if AuthorizedPrincipalList property is set
         internal bool IsSetAuthorizedPrincipalList()
         {
-            return this._authorizedPrincipalList != null && this._authorizedPrincipalList.Count > 0; 
+            return this._authorizedPrincipalList != null && (this._authorizedPrincipalList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

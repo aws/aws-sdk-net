@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LocationService.Model
 {
     /// <summary>
@@ -68,7 +69,7 @@ namespace Amazon.LocationService.Model
     public partial class BatchEvaluateGeofencesRequest : AmazonLocationServiceRequest
     {
         private string _collectionName;
-        private List<DevicePositionUpdate> _devicePositionUpdates = new List<DevicePositionUpdate>();
+        private List<DevicePositionUpdate> _devicePositionUpdates = AWSConfigs.InitializeCollections ? new List<DevicePositionUpdate>() : null;
 
         /// <summary>
         /// Gets and sets the property CollectionName. 
@@ -106,7 +107,7 @@ namespace Amazon.LocationService.Model
         // Check to see if DevicePositionUpdates property is set
         internal bool IsSetDevicePositionUpdates()
         {
-            return this._devicePositionUpdates != null && this._devicePositionUpdates.Count > 0; 
+            return this._devicePositionUpdates != null && (this._devicePositionUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

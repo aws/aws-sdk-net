@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IdentityManagement.Model
     /// </summary>
     public partial class GetAccountSummaryResponse : AmazonWebServiceResponse
     {
-        private Dictionary<string, int> _summaryMap = new Dictionary<string, int>();
+        private Dictionary<string, int> _summaryMap = AWSConfigs.InitializeCollections ? new Dictionary<string, int>() : null;
 
         /// <summary>
         /// Gets and sets the property SummaryMap. 
@@ -50,7 +51,7 @@ namespace Amazon.IdentityManagement.Model
         // Check to see if SummaryMap property is set
         internal bool IsSetSummaryMap()
         {
-            return this._summaryMap != null && this._summaryMap.Count > 0; 
+            return this._summaryMap != null && (this._summaryMap.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

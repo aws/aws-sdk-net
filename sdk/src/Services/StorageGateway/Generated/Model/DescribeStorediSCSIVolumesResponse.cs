@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class DescribeStorediSCSIVolumesResponse : AmazonWebServiceResponse
     {
-        private List<StorediSCSIVolume> _storediSCSIVolumes = new List<StorediSCSIVolume>();
+        private List<StorediSCSIVolume> _storediSCSIVolumes = AWSConfigs.InitializeCollections ? new List<StorediSCSIVolume>() : null;
 
         /// <summary>
         /// Gets and sets the property StorediSCSIVolumes. 
@@ -127,7 +128,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if StorediSCSIVolumes property is set
         internal bool IsSetStorediSCSIVolumes()
         {
-            return this._storediSCSIVolumes != null && this._storediSCSIVolumes.Count > 0; 
+            return this._storediSCSIVolumes != null && (this._storediSCSIVolumes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

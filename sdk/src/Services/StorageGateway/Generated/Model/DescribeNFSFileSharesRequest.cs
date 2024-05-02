@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.StorageGateway.Model
     /// </summary>
     public partial class DescribeNFSFileSharesRequest : AmazonStorageGatewayRequest
     {
-        private List<string> _fileShareARNList = new List<string>();
+        private List<string> _fileShareARNList = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property FileShareARNList. 
@@ -53,7 +54,7 @@ namespace Amazon.StorageGateway.Model
         // Check to see if FileShareARNList property is set
         internal bool IsSetFileShareARNList()
         {
-            return this._fileShareARNList != null && this._fileShareARNList.Count > 0; 
+            return this._fileShareARNList != null && (this._fileShareARNList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

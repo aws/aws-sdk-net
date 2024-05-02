@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class SetupHistory
     {
-        private List<SetupExecutionDetails> _executionDetails = new List<SetupExecutionDetails>();
+        private List<SetupExecutionDetails> _executionDetails = AWSConfigs.InitializeCollections ? new List<SetupExecutionDetails>() : null;
         private string _operationId;
         private SetupRequest _request;
         private SetupHistoryResource _resource;
@@ -59,7 +60,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if ExecutionDetails property is set
         internal bool IsSetExecutionDetails()
         {
-            return this._executionDetails != null && this._executionDetails.Count > 0; 
+            return this._executionDetails != null && (this._executionDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

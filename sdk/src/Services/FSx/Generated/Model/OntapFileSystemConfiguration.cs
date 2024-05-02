@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FSx.Model
 {
     /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.FSx.Model
         private string _fsxAdminPassword;
         private int? _haPairs;
         private string _preferredSubnetId;
-        private List<string> _routeTableIds = new List<string>();
+        private List<string> _routeTableIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _throughputCapacity;
         private int? _throughputCapacityPerHAPair;
         private string _weeklyMaintenanceStartTime;
@@ -214,7 +215,7 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The value of <c>HAPairs</c> is less than 1 or greater than 6.
+        /// The value of <c>HAPairs</c> is less than 1 or greater than 12.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -223,7 +224,7 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Min=1, Max=6)]
+        [AWSProperty(Min=1, Max=12)]
         public int? HAPairs
         {
             get { return this._haPairs; }
@@ -268,7 +269,7 @@ namespace Amazon.FSx.Model
         // Check to see if RouteTableIds property is set
         internal bool IsSetRouteTableIds()
         {
-            return this._routeTableIds != null && this._routeTableIds.Count > 0; 
+            return this._routeTableIds != null && (this._routeTableIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -325,7 +326,7 @@ namespace Amazon.FSx.Model
         ///  </li> <li> 
         /// <para>
         /// The value of deployment type is <c>SINGLE_AZ_2</c> and <c>ThroughputCapacity</c> /
-        /// <c>ThroughputCapacityPerHAPair</c> is a valid HA pair (a value between 2 and 6).
+        /// <c>ThroughputCapacityPerHAPair</c> is a valid HA pair (a value between 2 and 12).
         /// </para>
         ///  </li> <li> 
         /// <para>

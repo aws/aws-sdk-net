@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.DynamoDBv2.Model
     public partial class StreamDescription
     {
         private DateTime? _creationRequestDateTime;
-        private List<KeySchemaElement> _keySchema = new List<KeySchemaElement>();
+        private List<KeySchemaElement> _keySchema = AWSConfigs.InitializeCollections ? new List<KeySchemaElement>() : null;
         private string _lastEvaluatedShardId;
-        private List<Shard> _shards = new List<Shard>();
+        private List<Shard> _shards = AWSConfigs.InitializeCollections ? new List<Shard>() : null;
         private string _streamArn;
         private string _streamLabel;
         private StreamStatus _streamStatus;
@@ -77,7 +78,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if KeySchema property is set
         internal bool IsSetKeySchema()
         {
-            return this._keySchema != null && this._keySchema.Count > 0; 
+            return this._keySchema != null && (this._keySchema.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -126,7 +127,7 @@ namespace Amazon.DynamoDBv2.Model
         // Check to see if Shards property is set
         internal bool IsSetShards()
         {
-            return this._shards != null && this._shards.Count > 0; 
+            return this._shards != null && (this._shards.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

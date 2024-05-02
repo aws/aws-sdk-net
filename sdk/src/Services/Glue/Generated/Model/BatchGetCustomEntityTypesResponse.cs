@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class BatchGetCustomEntityTypesResponse : AmazonWebServiceResponse
     {
-        private List<CustomEntityType> _customEntityTypes = new List<CustomEntityType>();
-        private List<string> _customEntityTypesNotFound = new List<string>();
+        private List<CustomEntityType> _customEntityTypes = AWSConfigs.InitializeCollections ? new List<CustomEntityType>() : null;
+        private List<string> _customEntityTypesNotFound = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CustomEntityTypes. 
@@ -52,7 +53,7 @@ namespace Amazon.Glue.Model
         // Check to see if CustomEntityTypes property is set
         internal bool IsSetCustomEntityTypes()
         {
-            return this._customEntityTypes != null && this._customEntityTypes.Count > 0; 
+            return this._customEntityTypes != null && (this._customEntityTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.Glue.Model
         // Check to see if CustomEntityTypesNotFound property is set
         internal bool IsSetCustomEntityTypesNotFound()
         {
-            return this._customEntityTypesNotFound != null && this._customEntityTypesNotFound.Count > 0; 
+            return this._customEntityTypesNotFound != null && (this._customEntityTypesNotFound.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

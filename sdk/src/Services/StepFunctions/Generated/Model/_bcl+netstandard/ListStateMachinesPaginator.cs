@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.StepFunctions.Model
         /// Enumerable containing all of the StateMachines
         /// </summary>
         public IPaginatedEnumerable<StateMachineListItem> StateMachines => 
-            new PaginatedResultKeyResponse<ListStateMachinesResponse, StateMachineListItem>(this, (i) => i.StateMachines);
+            new PaginatedResultKeyResponse<ListStateMachinesResponse, StateMachineListItem>(this, (i) => i.StateMachines ?? new List<StateMachineListItem>());
 
         internal ListStateMachinesPaginator(IAmazonStepFunctions client, ListStateMachinesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.StepFunctions.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListStateMachinesResponse> IPaginator<ListStateMachinesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListStateMachinesResponse> IPaginator<ListStateMachinesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

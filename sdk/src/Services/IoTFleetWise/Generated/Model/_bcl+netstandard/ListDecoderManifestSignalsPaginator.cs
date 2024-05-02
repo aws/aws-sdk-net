@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IoTFleetWise.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.IoTFleetWise.Model
         /// Enumerable containing all of the SignalDecoders
         /// </summary>
         public IPaginatedEnumerable<SignalDecoder> SignalDecoders => 
-            new PaginatedResultKeyResponse<ListDecoderManifestSignalsResponse, SignalDecoder>(this, (i) => i.SignalDecoders);
+            new PaginatedResultKeyResponse<ListDecoderManifestSignalsResponse, SignalDecoder>(this, (i) => i.SignalDecoders ?? new List<SignalDecoder>());
 
         internal ListDecoderManifestSignalsPaginator(IAmazonIoTFleetWise client, ListDecoderManifestSignalsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.IoTFleetWise.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListDecoderManifestSignalsResponse> IPaginator<ListDecoderManifestSignalsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListDecoderManifestSignalsResponse> IPaginator<ListDecoderManifestSignalsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

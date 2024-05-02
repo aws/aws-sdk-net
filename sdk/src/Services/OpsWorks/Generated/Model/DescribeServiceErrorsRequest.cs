@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
@@ -47,7 +48,7 @@ namespace Amazon.OpsWorks.Model
     public partial class DescribeServiceErrorsRequest : AmazonOpsWorksRequest
     {
         private string _instanceId;
-        private List<string> _serviceErrorIds = new List<string>();
+        private List<string> _serviceErrorIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _stackId;
 
         /// <summary>
@@ -86,7 +87,7 @@ namespace Amazon.OpsWorks.Model
         // Check to see if ServiceErrorIds property is set
         internal bool IsSetServiceErrorIds()
         {
-            return this._serviceErrorIds != null && this._serviceErrorIds.Count > 0; 
+            return this._serviceErrorIds != null && (this._serviceErrorIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

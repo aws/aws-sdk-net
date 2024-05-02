@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ServiceCatalog.Model
     public partial class ListResourcesForTagOptionResponse : AmazonWebServiceResponse
     {
         private string _pageToken;
-        private List<ResourceDetail> _resourceDetails = new List<ResourceDetail>();
+        private List<ResourceDetail> _resourceDetails = AWSConfigs.InitializeCollections ? new List<ResourceDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property PageToken. 
@@ -71,7 +72,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if ResourceDetails property is set
         internal bool IsSetResourceDetails()
         {
-            return this._resourceDetails != null && this._resourceDetails.Count > 0; 
+            return this._resourceDetails != null && (this._resourceDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

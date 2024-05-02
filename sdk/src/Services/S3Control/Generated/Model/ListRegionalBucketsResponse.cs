@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.S3Control.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.S3Control.Model
     public partial class ListRegionalBucketsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RegionalBucket> _regionalBucketList = new List<RegionalBucket>();
+        private List<RegionalBucket> _regionalBucketList = AWSConfigs.InitializeCollections ? new List<RegionalBucket>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +70,7 @@ namespace Amazon.S3Control.Model
         // Check to see if RegionalBucketList property is set
         internal bool IsSetRegionalBucketList()
         {
-            return this._regionalBucketList != null && this._regionalBucketList.Count > 0; 
+            return this._regionalBucketList != null && (this._regionalBucketList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

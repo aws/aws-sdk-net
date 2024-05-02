@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GameLift.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.GameLift.Model
     /// </summary>
     public partial class DescribeFleetCapacityResponse : AmazonWebServiceResponse
     {
-        private List<FleetCapacity> _fleetCapacity = new List<FleetCapacity>();
+        private List<FleetCapacity> _fleetCapacity = AWSConfigs.InitializeCollections ? new List<FleetCapacity>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.GameLift.Model
         // Check to see if FleetCapacity property is set
         internal bool IsSetFleetCapacity()
         {
-            return this._fleetCapacity != null && this._fleetCapacity.Count > 0; 
+            return this._fleetCapacity != null && (this._fleetCapacity.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

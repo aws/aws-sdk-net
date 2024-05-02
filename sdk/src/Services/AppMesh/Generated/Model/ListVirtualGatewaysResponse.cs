@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.AppMesh.Model
     public partial class ListVirtualGatewaysResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<VirtualGatewayRef> _virtualGateways = new List<VirtualGatewayRef>();
+        private List<VirtualGatewayRef> _virtualGateways = AWSConfigs.InitializeCollections ? new List<VirtualGatewayRef>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +74,7 @@ namespace Amazon.AppMesh.Model
         // Check to see if VirtualGateways property is set
         internal bool IsSetVirtualGateways()
         {
-            return this._virtualGateways != null && this._virtualGateways.Count > 0; 
+            return this._virtualGateways != null && (this._virtualGateways.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

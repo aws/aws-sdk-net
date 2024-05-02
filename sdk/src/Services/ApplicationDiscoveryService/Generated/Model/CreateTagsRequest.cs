@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
@@ -41,8 +42,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
     /// </summary>
     public partial class CreateTagsRequest : AmazonApplicationDiscoveryServiceRequest
     {
-        private List<string> _configurationIds = new List<string>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<string> _configurationIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property ConfigurationIds. 
@@ -60,7 +61,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         // Check to see if ConfigurationIds property is set
         internal bool IsSetConfigurationIds()
         {
-            return this._configurationIds != null && this._configurationIds.Count > 0; 
+            return this._configurationIds != null && (this._configurationIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -84,7 +85,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

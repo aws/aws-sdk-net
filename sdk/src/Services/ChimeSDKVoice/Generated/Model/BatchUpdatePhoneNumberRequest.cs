@@ -26,15 +26,24 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchUpdatePhoneNumber operation.
-    /// Updates one or more phone numbers.
+    /// Updates phone number product types, calling names, or phone number names. You can
+    /// update one attribute at a time for each <c>UpdatePhoneNumberRequestItem</c>. For example,
+    /// you can update the product type, the calling name, or phone name. 
+    /// 
+    ///  <note> 
+    /// <para>
+    /// You cannot have a duplicate <c>phoneNumberId</c> in a request.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class BatchUpdatePhoneNumberRequest : AmazonChimeSDKVoiceRequest
     {
-        private List<UpdatePhoneNumberRequestItem> _updatePhoneNumberRequestItems = new List<UpdatePhoneNumberRequestItem>();
+        private List<UpdatePhoneNumberRequestItem> _updatePhoneNumberRequestItems = AWSConfigs.InitializeCollections ? new List<UpdatePhoneNumberRequestItem>() : null;
 
         /// <summary>
         /// Gets and sets the property UpdatePhoneNumberRequestItems. 
@@ -52,7 +61,7 @@ namespace Amazon.ChimeSDKVoice.Model
         // Check to see if UpdatePhoneNumberRequestItems property is set
         internal bool IsSetUpdatePhoneNumberRequestItems()
         {
-            return this._updatePhoneNumberRequestItems != null && this._updatePhoneNumberRequestItems.Count > 0; 
+            return this._updatePhoneNumberRequestItems != null && (this._updatePhoneNumberRequestItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Honeycode.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Honeycode.Model
     public partial class GetScreenDataResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private Dictionary<string, ResultSet> _results = new Dictionary<string, ResultSet>();
+        private Dictionary<string, ResultSet> _results = AWSConfigs.InitializeCollections ? new Dictionary<string, ResultSet>() : null;
         private long? _workbookCursor;
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.Honeycode.Model
         // Check to see if Results property is set
         internal bool IsSetResults()
         {
-            return this._results != null && this._results.Count > 0; 
+            return this._results != null && (this._results.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

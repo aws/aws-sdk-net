@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class GetKeyPairsResponse : AmazonWebServiceResponse
     {
-        private List<KeyPair> _keyPairs = new List<KeyPair>();
+        private List<KeyPair> _keyPairs = AWSConfigs.InitializeCollections ? new List<KeyPair>() : null;
         private string _nextPageToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if KeyPairs property is set
         internal bool IsSetKeyPairs()
         {
-            return this._keyPairs != null && this._keyPairs.Count > 0; 
+            return this._keyPairs != null && (this._keyPairs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

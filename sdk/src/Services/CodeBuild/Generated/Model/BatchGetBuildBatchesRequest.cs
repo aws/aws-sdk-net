@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CodeBuild.Model
     /// </summary>
     public partial class BatchGetBuildBatchesRequest : AmazonCodeBuildRequest
     {
-        private List<string> _ids = new List<string>();
+        private List<string> _ids = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Ids. 
@@ -52,7 +53,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if Ids property is set
         internal bool IsSetIds()
         {
-            return this._ids != null && this._ids.Count > 0; 
+            return this._ids != null && (this._ids.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

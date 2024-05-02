@@ -1647,6 +1647,29 @@ namespace AWSSDK_DotNet.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("IdentityManagement")]
+        public void CreateOpenIDConnectProvider_OpenIdIdpCommunicationErrorExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateOpenIDConnectProvider");
+
+            var request = InstantiateClassGenerator.Execute<CreateOpenIDConnectProviderRequest>(operation);
+            var marshaller = new CreateOpenIDConnectProviderRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("OpenIdIdpCommunicationErrorException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CreateOpenIDConnectProviderResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("IdentityManagement")]
         public void CreateOpenIDConnectProvider_ServiceFailureExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("CreateOpenIDConnectProvider");

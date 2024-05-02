@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Panorama.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Panorama.Model
     {
         private DateTime? _createdTime;
         private string _jobId;
-        private List<JobResourceTags> _jobTags = new List<JobResourceTags>();
+        private List<JobResourceTags> _jobTags = AWSConfigs.InitializeCollections ? new List<JobResourceTags>() : null;
         private DateTime? _lastUpdatedTime;
         private string _nodeDescription;
         private string _nodeName;
@@ -43,7 +44,7 @@ namespace Amazon.Panorama.Model
         private string _outputPackageVersion;
         private NodeFromTemplateJobStatus _status;
         private string _statusMessage;
-        private Dictionary<string, string> _templateParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _templateParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private TemplateType _templateType;
 
         /// <summary>
@@ -99,7 +100,7 @@ namespace Amazon.Panorama.Model
         // Check to see if JobTags property is set
         internal bool IsSetJobTags()
         {
-            return this._jobTags != null && this._jobTags.Count > 0; 
+            return this._jobTags != null && (this._jobTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -251,7 +252,7 @@ namespace Amazon.Panorama.Model
         // Check to see if TemplateParameters property is set
         internal bool IsSetTemplateParameters()
         {
-            return this._templateParameters != null && this._templateParameters.Count > 0; 
+            return this._templateParameters != null && (this._templateParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

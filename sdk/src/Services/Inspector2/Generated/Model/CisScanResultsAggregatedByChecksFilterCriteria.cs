@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
@@ -33,12 +34,12 @@ namespace Amazon.Inspector2.Model
     /// </summary>
     public partial class CisScanResultsAggregatedByChecksFilterCriteria
     {
-        private List<CisStringFilter> _accountIdFilters = new List<CisStringFilter>();
-        private List<CisStringFilter> _checkIdFilters = new List<CisStringFilter>();
-        private List<CisNumberFilter> _failedResourcesFilters = new List<CisNumberFilter>();
-        private List<CisStringFilter> _platformFilters = new List<CisStringFilter>();
-        private List<CisSecurityLevelFilter> _securityLevelFilters = new List<CisSecurityLevelFilter>();
-        private List<CisStringFilter> _titleFilters = new List<CisStringFilter>();
+        private List<CisStringFilter> _accountIdFilters = AWSConfigs.InitializeCollections ? new List<CisStringFilter>() : null;
+        private List<CisStringFilter> _checkIdFilters = AWSConfigs.InitializeCollections ? new List<CisStringFilter>() : null;
+        private List<CisNumberFilter> _failedResourcesFilters = AWSConfigs.InitializeCollections ? new List<CisNumberFilter>() : null;
+        private List<CisStringFilter> _platformFilters = AWSConfigs.InitializeCollections ? new List<CisStringFilter>() : null;
+        private List<CisSecurityLevelFilter> _securityLevelFilters = AWSConfigs.InitializeCollections ? new List<CisSecurityLevelFilter>() : null;
+        private List<CisStringFilter> _titleFilters = AWSConfigs.InitializeCollections ? new List<CisStringFilter>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountIdFilters. 
@@ -56,7 +57,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if AccountIdFilters property is set
         internal bool IsSetAccountIdFilters()
         {
-            return this._accountIdFilters != null && this._accountIdFilters.Count > 0; 
+            return this._accountIdFilters != null && (this._accountIdFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if CheckIdFilters property is set
         internal bool IsSetCheckIdFilters()
         {
-            return this._checkIdFilters != null && this._checkIdFilters.Count > 0; 
+            return this._checkIdFilters != null && (this._checkIdFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -94,7 +95,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if FailedResourcesFilters property is set
         internal bool IsSetFailedResourcesFilters()
         {
-            return this._failedResourcesFilters != null && this._failedResourcesFilters.Count > 0; 
+            return this._failedResourcesFilters != null && (this._failedResourcesFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -113,7 +114,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if PlatformFilters property is set
         internal bool IsSetPlatformFilters()
         {
-            return this._platformFilters != null && this._platformFilters.Count > 0; 
+            return this._platformFilters != null && (this._platformFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -132,7 +133,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if SecurityLevelFilters property is set
         internal bool IsSetSecurityLevelFilters()
         {
-            return this._securityLevelFilters != null && this._securityLevelFilters.Count > 0; 
+            return this._securityLevelFilters != null && (this._securityLevelFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -151,7 +152,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if TitleFilters property is set
         internal bool IsSetTitleFilters()
         {
-            return this._titleFilters != null && this._titleFilters.Count > 0; 
+            return this._titleFilters != null && (this._titleFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

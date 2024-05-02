@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.TrustedAdvisor.Model
 {
     /// <summary>
@@ -36,6 +37,7 @@ namespace Amazon.TrustedAdvisor.Model
     public partial class ListOrganizationRecommendationResourcesRequest : AmazonTrustedAdvisorRequest
     {
         private string _affectedAccountId;
+        private ExclusionStatus _exclusionStatus;
         private int? _maxResults;
         private string _nextToken;
         private string _organizationRecommendationIdentifier;
@@ -59,6 +61,24 @@ namespace Amazon.TrustedAdvisor.Model
         internal bool IsSetAffectedAccountId()
         {
             return this._affectedAccountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExclusionStatus. 
+        /// <para>
+        /// The exclusion status of the resource
+        /// </para>
+        /// </summary>
+        public ExclusionStatus ExclusionStatus
+        {
+            get { return this._exclusionStatus; }
+            set { this._exclusionStatus = value; }
+        }
+
+        // Check to see if ExclusionStatus property is set
+        internal bool IsSetExclusionStatus()
+        {
+            return this._exclusionStatus != null;
         }
 
         /// <summary>

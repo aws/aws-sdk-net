@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
@@ -45,13 +46,13 @@ namespace Amazon.CloudWatch.Model
         /// Enumerable containing all of the MetricDataResults
         /// </summary>
         public IPaginatedEnumerable<MetricDataResult> MetricDataResults => 
-            new PaginatedResultKeyResponse<GetMetricDataResponse, MetricDataResult>(this, (i) => i.MetricDataResults);
+            new PaginatedResultKeyResponse<GetMetricDataResponse, MetricDataResult>(this, (i) => i.MetricDataResults ?? new List<MetricDataResult>());
 
         /// <summary>
         /// Enumerable containing all of the Messages
         /// </summary>
         public IPaginatedEnumerable<MessageData> Messages => 
-            new PaginatedResultKeyResponse<GetMetricDataResponse, MessageData>(this, (i) => i.Messages);
+            new PaginatedResultKeyResponse<GetMetricDataResponse, MessageData>(this, (i) => i.Messages ?? new List<MessageData>());
 
         internal GetMetricDataPaginator(IAmazonCloudWatch client, GetMetricDataRequest request)
         {
@@ -79,7 +80,7 @@ namespace Amazon.CloudWatch.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<GetMetricDataResponse> IPaginator<GetMetricDataResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<GetMetricDataResponse> IPaginator<GetMetricDataResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

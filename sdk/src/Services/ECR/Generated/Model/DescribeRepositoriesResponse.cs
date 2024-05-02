@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECR.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ECR.Model
     public partial class DescribeRepositoriesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Repository> _repositories = new List<Repository>();
+        private List<Repository> _repositories = AWSConfigs.InitializeCollections ? new List<Repository>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.ECR.Model
         // Check to see if Repositories property is set
         internal bool IsSetRepositories()
         {
-            return this._repositories != null && this._repositories.Count > 0; 
+            return this._repositories != null && (this._repositories.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

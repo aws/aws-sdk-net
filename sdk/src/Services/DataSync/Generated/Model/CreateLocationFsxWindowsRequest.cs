@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataSync.Model
 {
     /// <summary>
@@ -45,9 +46,9 @@ namespace Amazon.DataSync.Model
         private string _domain;
         private string _fsxFilesystemArn;
         private string _password;
-        private List<string> _securityGroupArns = new List<string>();
+        private List<string> _securityGroupArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _subdirectory;
-        private List<TagListEntry> _tags = new List<TagListEntry>();
+        private List<TagListEntry> _tags = AWSConfigs.InitializeCollections ? new List<TagListEntry>() : null;
         private string _user;
 
         /// <summary>
@@ -147,7 +148,7 @@ namespace Amazon.DataSync.Model
         // Check to see if SecurityGroupArns property is set
         internal bool IsSetSecurityGroupArns()
         {
-            return this._securityGroupArns != null && this._securityGroupArns.Count > 0; 
+            return this._securityGroupArns != null && (this._securityGroupArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -187,7 +188,7 @@ namespace Amazon.DataSync.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.ResourceGroups.Model
     /// </summary>
     public partial class UngroupResourcesResponse : AmazonWebServiceResponse
     {
-        private List<FailedResource> _failed = new List<FailedResource>();
-        private List<PendingResource> _pending = new List<PendingResource>();
-        private List<string> _succeeded = new List<string>();
+        private List<FailedResource> _failed = AWSConfigs.InitializeCollections ? new List<FailedResource>() : null;
+        private List<PendingResource> _pending = AWSConfigs.InitializeCollections ? new List<PendingResource>() : null;
+        private List<string> _succeeded = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Failed. 
@@ -52,7 +53,7 @@ namespace Amazon.ResourceGroups.Model
         // Check to see if Failed property is set
         internal bool IsSetFailed()
         {
-            return this._failed != null && this._failed.Count > 0; 
+            return this._failed != null && (this._failed.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.ResourceGroups.Model
         // Check to see if Pending property is set
         internal bool IsSetPending()
         {
-            return this._pending != null && this._pending.Count > 0; 
+            return this._pending != null && (this._pending.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.ResourceGroups.Model
         // Check to see if Succeeded property is set
         internal bool IsSetSucceeded()
         {
-            return this._succeeded != null && this._succeeded.Count > 0; 
+            return this._succeeded != null && (this._succeeded.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// The identifier of the data source Amazon Q will generate responses from.
+    /// The identifier of the data source Amazon Q Business will generate responses from.
     /// </summary>
     public partial class EligibleDataSource
     {

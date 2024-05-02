@@ -574,12 +574,13 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceEnableKeyRotation()
         {
-            #region to-enable-automatic-rotation-of-key-material-1478629109677
+            #region to-enable-automatic-rotation-of-key-material-1712499675853
 
             var client = new AmazonKeyManagementServiceClient();
             var response = client.EnableKeyRotation(new EnableKeyRotationRequest 
             {
-                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the KMS key whose key material will be rotated annually. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab", // The identifier of the KMS key whose key material will be automatically rotated. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
+                RotationPeriodInDays = 365 // The number of days between each rotation date. Specify a value between 9 and 2560. If no value is specified, the default value is 365 days.
             });
 
 
@@ -817,7 +818,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceGetKeyRotationStatus()
         {
-            #region to-retrieve-the-rotation-status-for-a-cmk-1479172287408
+            #region to-retrieve-the-rotation-status-for-a-kms-key-1712500357701
 
             var client = new AmazonKeyManagementServiceClient();
             var response = client.GetKeyRotationStatus(new GetKeyRotationStatusRequest 
@@ -825,7 +826,11 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
                 KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the KMS key whose key material rotation status you want to retrieve. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
             });
 
-            bool keyRotationEnabled = response.KeyRotationEnabled; // A boolean that indicates the key material rotation status. Returns true when automatic annual rotation of the key material is enabled, or false when it is not.
+            string keyId = response.KeyId; // Identifies the specified symmetric encryption KMS key.
+            bool keyRotationEnabled = response.KeyRotationEnabled; // A boolean that indicates the key material rotation status. Returns true when automatic rotation of the key material is enabled, or false when it is not.
+            DateTime nextRotationDate = response.NextRotationDate; // The next date that the key material will be automatically rotated.
+            DateTime onDemandRotationStartDate = response.OnDemandRotationStartDate; // Identifies the date and time that an in progress on-demand rotation was initiated.
+            int rotationPeriodInDays = response.RotationPeriodInDays; // The number of days between each automatic rotation. The default value is 365 days.
 
             #endregion
         }
@@ -1007,6 +1012,22 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
             List<string> policyNames = response.PolicyNames; // A list of key policy names.
             bool truncated = response.Truncated; // A boolean that indicates whether there are more items in the list. Returns true when there are more items, or false when there are not.
+
+            #endregion
+        }
+
+        public void KeyManagementServiceListKeyRotations()
+        {
+            #region to-retrieve-information-about-all-completed-key-material-rotations-1712585167775
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.ListKeyRotations(new ListKeyRotationsRequest 
+            {
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab"
+            });
+
+            List<RotationsListEntry> rotations = response.Rotations; // A list of key rotations.
+            bool truncated = response.Truncated; // A flag that indicates whether there are more items in the list. When the value is true, the list in this response is truncated. To get more items, pass the value of the NextMarker element in this response to the Marker parameter in a subsequent request.
 
             #endregion
         }
@@ -1209,6 +1230,21 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
                 KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the KMS key associated with the grant. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
             });
 
+
+            #endregion
+        }
+
+        public void KeyManagementServiceRotateKeyOnDemand()
+        {
+            #region to-perform-on-demand-rotation-of-key-material-1712499025700
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.RotateKeyOnDemand(new RotateKeyOnDemandRequest 
+            {
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the KMS key whose key material you want to initiate on-demand rotation on. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
+            });
+
+            string keyId = response.KeyId; // The KMS key that you initiated on-demand rotation on.
 
             #endregion
         }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -61,7 +62,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property OrganizationName. 
         /// <para>
-        /// The name of the organization of the GitHub Enterprise Server (in-premise) account
+        /// The name of the organization of the GitHub Enterprise Server (on-premises) account
         /// you want to connect to. You can find your organization name by logging into GitHub
         /// desktop and selecting <b>Your organizations</b> under your profile picture dropdown.
         /// </para>

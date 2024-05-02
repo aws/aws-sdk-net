@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53RecoveryReadiness.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
     public partial class ListResourceSetsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ResourceSetOutput> _resourceSets = new List<ResourceSetOutput>();
+        private List<ResourceSetOutput> _resourceSets = AWSConfigs.InitializeCollections ? new List<ResourceSetOutput>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +70,7 @@ namespace Amazon.Route53RecoveryReadiness.Model
         // Check to see if ResourceSets property is set
         internal bool IsSetResourceSets()
         {
-            return this._resourceSets != null && this._resourceSets.Count > 0; 
+            return this._resourceSets != null && (this._resourceSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Appflow.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Appflow.Model
     /// </summary>
     public partial class CustomConnectorSourceProperties
     {
-        private Dictionary<string, string> _customProperties = new Dictionary<string, string>();
+        private Dictionary<string, string> _customProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DataTransferApi _dataTransferApi;
         private string _entityName;
 
@@ -53,7 +54,7 @@ namespace Amazon.Appflow.Model
         // Check to see if CustomProperties property is set
         internal bool IsSetCustomProperties()
         {
-            return this._customProperties != null && this._customProperties.Count > 0; 
+            return this._customProperties != null && (this._customProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

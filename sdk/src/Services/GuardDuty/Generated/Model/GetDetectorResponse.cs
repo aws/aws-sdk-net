@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
@@ -35,11 +36,11 @@ namespace Amazon.GuardDuty.Model
     {
         private string _createdAt;
         private DataSourceConfigurationsResult _dataSources;
-        private List<DetectorFeatureConfigurationResult> _features = new List<DetectorFeatureConfigurationResult>();
+        private List<DetectorFeatureConfigurationResult> _features = AWSConfigs.InitializeCollections ? new List<DetectorFeatureConfigurationResult>() : null;
         private FindingPublishingFrequency _findingPublishingFrequency;
         private string _serviceRole;
         private DetectorStatus _status;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _updatedAt;
 
         /// <summary>
@@ -94,7 +95,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if Features property is set
         internal bool IsSetFeatures()
         {
-            return this._features != null && this._features.Count > 0; 
+            return this._features != null && (this._features.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -169,7 +170,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

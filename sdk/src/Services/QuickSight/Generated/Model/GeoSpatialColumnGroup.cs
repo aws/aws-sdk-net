@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class GeoSpatialColumnGroup
     {
-        private List<string> _columns = new List<string>();
+        private List<string> _columns = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private GeoSpatialCountryCode _countryCode;
         private string _name;
 
@@ -53,7 +54,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Columns property is set
         internal bool IsSetColumns()
         {
-            return this._columns != null && this._columns.Count > 0; 
+            return this._columns != null && (this._columns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

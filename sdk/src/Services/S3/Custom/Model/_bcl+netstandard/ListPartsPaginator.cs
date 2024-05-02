@@ -41,7 +41,7 @@ namespace Amazon.S3.Model
         /// Enumerable containing all of the Parts
         /// </summary>
         public IPaginatedEnumerable<PartDetail> Parts => 
-            new PaginatedResultKeyResponse<ListPartsResponse, PartDetail>(this, (i) => i.Parts);
+            new PaginatedResultKeyResponse<ListPartsResponse, PartDetail>(this, (i) => i.Parts ?? new List<PartDetail>());
 
         internal ListPartsPaginator(IAmazonS3 client, ListPartsRequest request)
         {
@@ -69,7 +69,7 @@ namespace Amazon.S3.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListPartsResponse> IPaginator<ListPartsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListPartsResponse> IPaginator<ListPartsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

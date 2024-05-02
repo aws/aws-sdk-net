@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -58,6 +59,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("associatedRoleSet/item", targetDepth))
                     {
                         var unmarshaller = AssociatedRoleUnmarshaller.Instance;
+                        if (response.AssociatedRoles == null)
+                        {
+                            response.AssociatedRoles = new List<AssociatedRole>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.AssociatedRoles.Add(item);
                         continue;

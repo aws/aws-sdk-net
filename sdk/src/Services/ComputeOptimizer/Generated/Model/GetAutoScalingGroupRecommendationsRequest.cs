@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
@@ -41,9 +42,9 @@ namespace Amazon.ComputeOptimizer.Model
     /// </summary>
     public partial class GetAutoScalingGroupRecommendationsRequest : AmazonComputeOptimizerRequest
     {
-        private List<string> _accountIds = new List<string>();
-        private List<string> _autoScalingGroupArns = new List<string>();
-        private List<Filter> _filters = new List<Filter>();
+        private List<string> _accountIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _autoScalingGroupArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
         private int? _maxResults;
         private string _nextToken;
         private RecommendationPreferences _recommendationPreferences;
@@ -72,7 +73,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if AccountIds property is set
         internal bool IsSetAccountIds()
         {
-            return this._accountIds != null && this._accountIds.Count > 0; 
+            return this._accountIds != null && (this._accountIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -90,7 +91,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if AutoScalingGroupArns property is set
         internal bool IsSetAutoScalingGroupArns()
         {
-            return this._autoScalingGroupArns != null && this._autoScalingGroupArns.Count > 0; 
+            return this._autoScalingGroupArns != null && (this._autoScalingGroupArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -109,7 +110,7 @@ namespace Amazon.ComputeOptimizer.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

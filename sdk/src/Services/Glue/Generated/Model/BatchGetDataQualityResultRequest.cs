@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class BatchGetDataQualityResultRequest : AmazonGlueRequest
     {
-        private List<string> _resultIds = new List<string>();
+        private List<string> _resultIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ResultIds. 
@@ -52,7 +53,7 @@ namespace Amazon.Glue.Model
         // Check to see if ResultIds property is set
         internal bool IsSetResultIds()
         {
-            return this._resultIds != null && this._resultIds.Count > 0; 
+            return this._resultIds != null && (this._resultIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

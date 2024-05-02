@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeCatalyst.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CodeCatalyst.Model
     /// </summary>
     public partial class ExecuteCommandSessionConfiguration
     {
-        private List<string> _arguments = new List<string>();
+        private List<string> _arguments = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _command;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.CodeCatalyst.Model
         // Check to see if Arguments property is set
         internal bool IsSetArguments()
         {
-            return this._arguments != null && this._arguments.Count > 0; 
+            return this._arguments != null && (this._arguments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

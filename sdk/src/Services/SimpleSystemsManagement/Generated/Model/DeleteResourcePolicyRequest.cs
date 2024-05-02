@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -43,7 +44,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <para>
     ///  <c>Parameter</c> - The resource policy is used to share a parameter with other accounts
     /// using Resource Access Manager (RAM). For more information about cross-account sharing
-    /// of parameters, see <a href="systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working
+    /// of parameters, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-shared-parameters.html">Working
     /// with shared parameters</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
     /// </para>
     ///  </li> </ul>

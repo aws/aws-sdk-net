@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataSync.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.DataSync.Model
         private DateTime? _creationTime;
         private string _locationArn;
         private string _locationUri;
-        private List<string> _securityGroupArns = new List<string>();
+        private List<string> _securityGroupArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property CreationTime. 
@@ -111,7 +112,7 @@ namespace Amazon.DataSync.Model
         // Check to see if SecurityGroupArns property is set
         internal bool IsSetSecurityGroupArns()
         {
-            return this._securityGroupArns != null && this._securityGroupArns.Count > 0; 
+            return this._securityGroupArns != null && (this._securityGroupArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

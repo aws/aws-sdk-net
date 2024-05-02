@@ -254,6 +254,10 @@ namespace Amazon.ResourceGroups
         /// Constant CLOUDFORMATION_STACK_UNASSUMABLE_ROLE for QueryErrorCode
         /// </summary>
         public static readonly QueryErrorCode CLOUDFORMATION_STACK_UNASSUMABLE_ROLE = new QueryErrorCode("CLOUDFORMATION_STACK_UNASSUMABLE_ROLE");
+        /// <summary>
+        /// Constant RESOURCE_TYPE_NOT_SUPPORTED for QueryErrorCode
+        /// </summary>
+        public static readonly QueryErrorCode RESOURCE_TYPE_NOT_SUPPORTED = new QueryErrorCode("RESOURCE_TYPE_NOT_SUPPORTED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

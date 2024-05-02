@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RoboMaker.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.RoboMaker.Model
     public partial class VPCConfigResponse
     {
         private bool? _assignPublicIp;
-        private List<string> _securityGroups = new List<string>();
-        private List<string> _subnets = new List<string>();
+        private List<string> _securityGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _subnets = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _vpcId;
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if SecurityGroups property is set
         internal bool IsSetSecurityGroups()
         {
-            return this._securityGroups != null && this._securityGroups.Count > 0; 
+            return this._securityGroups != null && (this._securityGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace Amazon.RoboMaker.Model
         // Check to see if Subnets property is set
         internal bool IsSetSubnets()
         {
-            return this._subnets != null && this._subnets.Count > 0; 
+            return this._subnets != null && (this._subnets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

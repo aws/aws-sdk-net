@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EKS.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.EKS.Model
         /// Enumerable containing all of the IdentityProviderConfigs
         /// </summary>
         public IPaginatedEnumerable<IdentityProviderConfig> IdentityProviderConfigs => 
-            new PaginatedResultKeyResponse<ListIdentityProviderConfigsResponse, IdentityProviderConfig>(this, (i) => i.IdentityProviderConfigs);
+            new PaginatedResultKeyResponse<ListIdentityProviderConfigsResponse, IdentityProviderConfig>(this, (i) => i.IdentityProviderConfigs ?? new List<IdentityProviderConfig>());
 
         internal ListIdentityProviderConfigsPaginator(IAmazonEKS client, ListIdentityProviderConfigsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.EKS.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListIdentityProviderConfigsResponse> IPaginator<ListIdentityProviderConfigsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListIdentityProviderConfigsResponse> IPaginator<ListIdentityProviderConfigsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

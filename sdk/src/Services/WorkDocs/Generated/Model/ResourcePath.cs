@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WorkDocs.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.WorkDocs.Model
     /// </summary>
     public partial class ResourcePath
     {
-        private List<ResourcePathComponent> _components = new List<ResourcePathComponent>();
+        private List<ResourcePathComponent> _components = AWSConfigs.InitializeCollections ? new List<ResourcePathComponent>() : null;
 
         /// <summary>
         /// Gets and sets the property Components. 
@@ -50,7 +51,7 @@ namespace Amazon.WorkDocs.Model
         // Check to see if Components property is set
         internal bool IsSetComponents()
         {
-            return this._components != null && this._components.Count > 0; 
+            return this._components != null && (this._components.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

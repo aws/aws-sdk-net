@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
     {
         private string _applicationARN;
         private long? _applicationVersionId;
-        private List<CloudWatchLoggingOptionDescription> _cloudWatchLoggingOptionDescriptions = new List<CloudWatchLoggingOptionDescription>();
+        private List<CloudWatchLoggingOptionDescription> _cloudWatchLoggingOptionDescriptions = AWSConfigs.InitializeCollections ? new List<CloudWatchLoggingOptionDescription>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationARN. 
@@ -59,9 +60,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ApplicationVersionId. 
         /// <para>
-        /// The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics
-        /// updates the <c>ApplicationVersionId</c> each time you change the CloudWatch logging
-        /// options. 
+        /// The new version ID of the SQL-based Kinesis Data Analytics application. Kinesis Data
+        /// Analytics updates the <c>ApplicationVersionId</c> each time you change the CloudWatch
+        /// logging options. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=999999999)]
@@ -80,8 +81,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property CloudWatchLoggingOptionDescriptions. 
         /// <para>
-        /// The descriptions of the current CloudWatch logging options for the Kinesis Data Analytics
-        /// application.
+        /// The descriptions of the current CloudWatch logging options for the SQL-based Kinesis
+        /// Data Analytics application.
         /// </para>
         /// </summary>
         public List<CloudWatchLoggingOptionDescription> CloudWatchLoggingOptionDescriptions
@@ -93,7 +94,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         // Check to see if CloudWatchLoggingOptionDescriptions property is set
         internal bool IsSetCloudWatchLoggingOptionDescriptions()
         {
-            return this._cloudWatchLoggingOptionDescriptions != null && this._cloudWatchLoggingOptionDescriptions.Count > 0; 
+            return this._cloudWatchLoggingOptionDescriptions != null && (this._cloudWatchLoggingOptionDescriptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

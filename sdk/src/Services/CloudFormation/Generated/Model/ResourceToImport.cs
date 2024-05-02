@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CloudFormation.Model
     public partial class ResourceToImport
     {
         private string _logicalResourceId;
-        private Dictionary<string, string> _resourceIdentifier = new Dictionary<string, string>();
+        private Dictionary<string, string> _resourceIdentifier = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _resourceType;
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.CloudFormation.Model
         // Check to see if ResourceIdentifier property is set
         internal bool IsSetResourceIdentifier()
         {
-            return this._resourceIdentifier != null && this._resourceIdentifier.Count > 0; 
+            return this._resourceIdentifier != null && (this._resourceIdentifier.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -82,7 +83,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// The type of resource to import into your stack, such as <c>AWS::S3::Bucket</c>. For
         /// a list of supported resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resource-import-supported-resources.html">Resources
-        /// that support import operations</a> in the CloudFormation User Guide.
+        /// that support import operations</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

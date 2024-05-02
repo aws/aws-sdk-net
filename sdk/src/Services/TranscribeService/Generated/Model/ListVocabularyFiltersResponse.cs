@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.TranscribeService.Model
     public partial class ListVocabularyFiltersResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<VocabularyFilterInfo> _vocabularyFilters = new List<VocabularyFilterInfo>();
+        private List<VocabularyFilterInfo> _vocabularyFilters = AWSConfigs.InitializeCollections ? new List<VocabularyFilterInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -75,7 +76,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if VocabularyFilters property is set
         internal bool IsSetVocabularyFilters()
         {
-            return this._vocabularyFilters != null && this._vocabularyFilters.Count > 0; 
+            return this._vocabularyFilters != null && (this._vocabularyFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

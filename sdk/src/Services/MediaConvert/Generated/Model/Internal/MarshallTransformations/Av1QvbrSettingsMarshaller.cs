@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Av1QvbrSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetQvbrQualityLevel())
             {
                 context.Writer.WritePropertyName("qvbrQualityLevel");
@@ -54,7 +57,14 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetQvbrQualityLevelFineTune())
             {
                 context.Writer.WritePropertyName("qvbrQualityLevelFineTune");
-                context.Writer.Write(requestObject.QvbrQualityLevelFineTune.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.QvbrQualityLevelFineTune.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.QvbrQualityLevelFineTune.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.QvbrQualityLevelFineTune.Value);
+                }
             }
 
         }

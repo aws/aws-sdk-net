@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LicenseManagerUserSubscriptions.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
     /// </summary>
     public partial class UpdateSettings
     {
-        private List<string> _addSubnets = new List<string>();
-        private List<string> _removeSubnets = new List<string>();
+        private List<string> _addSubnets = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _removeSubnets = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _securityGroupId;
 
         /// <summary>
@@ -55,7 +56,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         // Check to see if AddSubnets property is set
         internal bool IsSetAddSubnets()
         {
-            return this._addSubnets != null && this._addSubnets.Count > 0; 
+            return this._addSubnets != null && (this._addSubnets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model
         // Check to see if RemoveSubnets property is set
         internal bool IsSetRemoveSubnets()
         {
-            return this._removeSubnets != null && this._removeSubnets.Count > 0; 
+            return this._removeSubnets != null && (this._removeSubnets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

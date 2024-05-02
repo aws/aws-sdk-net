@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Connect.Model
     public partial class UpdateRoutingProfileQueuesRequest : AmazonConnectRequest
     {
         private string _instanceId;
-        private List<RoutingProfileQueueConfig> _queueConfigs = new List<RoutingProfileQueueConfig>();
+        private List<RoutingProfileQueueConfig> _queueConfigs = AWSConfigs.InitializeCollections ? new List<RoutingProfileQueueConfig>() : null;
         private string _routingProfileId;
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace Amazon.Connect.Model
         // Check to see if QueueConfigs property is set
         internal bool IsSetQueueConfigs()
         {
-            return this._queueConfigs != null && this._queueConfigs.Count > 0; 
+            return this._queueConfigs != null && (this._queueConfigs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

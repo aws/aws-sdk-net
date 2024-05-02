@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
@@ -125,7 +126,7 @@ namespace Amazon.ElasticFileSystem.Model
     /// </summary>
     public partial class CreateReplicationConfigurationRequest : AmazonElasticFileSystemRequest
     {
-        private List<DestinationToCreate> _destinations = new List<DestinationToCreate>();
+        private List<DestinationToCreate> _destinations = AWSConfigs.InitializeCollections ? new List<DestinationToCreate>() : null;
         private string _sourceFileSystemId;
 
         /// <summary>
@@ -145,7 +146,7 @@ namespace Amazon.ElasticFileSystem.Model
         // Check to see if Destinations property is set
         internal bool IsSetDestinations()
         {
-            return this._destinations != null && this._destinations.Count > 0; 
+            return this._destinations != null && (this._destinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

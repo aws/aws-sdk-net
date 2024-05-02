@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Glue.Model
     public partial class ListMLTransformsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<string> _transformIds = new List<string>();
+        private List<string> _transformIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.Glue.Model
         // Check to see if TransformIds property is set
         internal bool IsSetTransformIds()
         {
-            return this._transformIds != null && this._transformIds.Count > 0; 
+            return this._transformIds != null && (this._transformIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

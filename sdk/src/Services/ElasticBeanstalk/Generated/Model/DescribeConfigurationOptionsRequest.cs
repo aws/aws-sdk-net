@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.ElasticBeanstalk.Model
     {
         private string _applicationName;
         private string _environmentName;
-        private List<OptionSpecification> _options = new List<OptionSpecification>();
+        private List<OptionSpecification> _options = AWSConfigs.InitializeCollections ? new List<OptionSpecification>() : null;
         private string _platformArn;
         private string _solutionStackName;
         private string _templateName;
@@ -104,7 +105,7 @@ namespace Amazon.ElasticBeanstalk.Model
         // Check to see if Options property is set
         internal bool IsSetOptions()
         {
-            return this._options != null && this._options.Count > 0; 
+            return this._options != null && (this._options.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

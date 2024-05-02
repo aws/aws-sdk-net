@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class ExplicitHierarchy
     {
-        private List<ColumnIdentifier> _columns = new List<ColumnIdentifier>();
-        private List<DrillDownFilter> _drillDownFilters = new List<DrillDownFilter>();
+        private List<ColumnIdentifier> _columns = AWSConfigs.InitializeCollections ? new List<ColumnIdentifier>() : null;
+        private List<DrillDownFilter> _drillDownFilters = AWSConfigs.InitializeCollections ? new List<DrillDownFilter>() : null;
         private string _hierarchyId;
 
         /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Columns property is set
         internal bool IsSetColumns()
         {
-            return this._columns != null && this._columns.Count > 0; 
+            return this._columns != null && (this._columns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if DrillDownFilters property is set
         internal bool IsSetDrillDownFilters()
         {
-            return this._drillDownFilters != null && this._drillDownFilters.Count > 0; 
+            return this._drillDownFilters != null && (this._drillDownFilters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

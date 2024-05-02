@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using System.Xml;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.S3Control.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -70,16 +71,16 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                 {
                     xmlWriter.WriteStartElement("PublicAccessBlockConfiguration", "http://awss3control.amazonaws.com/doc/2018-08-20/");
                     if(publicRequest.PublicAccessBlockConfiguration.IsSetBlockPublicAcls())
-                        xmlWriter.WriteElementString("BlockPublicAcls", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.BlockPublicAcls.Value));
+                        xmlWriter.WriteElementString("BlockPublicAcls", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.BlockPublicAcls.Value));
 
                     if(publicRequest.PublicAccessBlockConfiguration.IsSetBlockPublicPolicy())
-                        xmlWriter.WriteElementString("BlockPublicPolicy", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.BlockPublicPolicy.Value));
+                        xmlWriter.WriteElementString("BlockPublicPolicy", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.BlockPublicPolicy.Value));
 
                     if(publicRequest.PublicAccessBlockConfiguration.IsSetIgnorePublicAcls())
-                        xmlWriter.WriteElementString("IgnorePublicAcls", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.IgnorePublicAcls.Value));
+                        xmlWriter.WriteElementString("IgnorePublicAcls", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.IgnorePublicAcls.Value));
 
                     if(publicRequest.PublicAccessBlockConfiguration.IsSetRestrictPublicBuckets())
-                        xmlWriter.WriteElementString("RestrictPublicBuckets", "http://awss3control.amazonaws.com/doc/2018-08-20/", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.RestrictPublicBuckets.Value));
+                        xmlWriter.WriteElementString("RestrictPublicBuckets", StringUtils.FromBool(publicRequest.PublicAccessBlockConfiguration.RestrictPublicBuckets.Value));
 
 
                     xmlWriter.WriteEndElement();

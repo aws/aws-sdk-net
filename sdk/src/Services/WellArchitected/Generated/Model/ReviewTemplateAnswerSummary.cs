@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
@@ -34,15 +35,15 @@ namespace Amazon.WellArchitected.Model
     public partial class ReviewTemplateAnswerSummary
     {
         private ReviewTemplateAnswerStatus _answerStatus;
-        private List<ChoiceAnswerSummary> _choiceAnswerSummaries = new List<ChoiceAnswerSummary>();
-        private List<Choice> _choices = new List<Choice>();
+        private List<ChoiceAnswerSummary> _choiceAnswerSummaries = AWSConfigs.InitializeCollections ? new List<ChoiceAnswerSummary>() : null;
+        private List<Choice> _choices = AWSConfigs.InitializeCollections ? new List<Choice>() : null;
         private bool? _isApplicable;
         private string _pillarId;
         private string _questionId;
         private string _questionTitle;
         private QuestionType _questionType;
         private AnswerReason _reason;
-        private List<string> _selectedChoices = new List<string>();
+        private List<string> _selectedChoices = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AnswerStatus. 
@@ -77,7 +78,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if ChoiceAnswerSummaries property is set
         internal bool IsSetChoiceAnswerSummaries()
         {
-            return this._choiceAnswerSummaries != null && this._choiceAnswerSummaries.Count > 0; 
+            return this._choiceAnswerSummaries != null && (this._choiceAnswerSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -92,7 +93,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if Choices property is set
         internal bool IsSetChoices()
         {
-            return this._choices != null && this._choices.Count > 0; 
+            return this._choices != null && (this._choices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -206,7 +207,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if SelectedChoices property is set
         internal bool IsSetSelectedChoices()
         {
-            return this._selectedChoices != null && this._selectedChoices.Count > 0; 
+            return this._selectedChoices != null && (this._selectedChoices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

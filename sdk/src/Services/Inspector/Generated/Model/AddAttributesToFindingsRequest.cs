@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector.Model
 {
     /// <summary>
@@ -35,8 +36,8 @@ namespace Amazon.Inspector.Model
     /// </summary>
     public partial class AddAttributesToFindingsRequest : AmazonInspectorRequest
     {
-        private List<Attribute> _attributes = new List<Attribute>();
-        private List<string> _findingArns = new List<string>();
+        private List<Attribute> _attributes = AWSConfigs.InitializeCollections ? new List<Attribute>() : null;
+        private List<string> _findingArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Attributes. 
@@ -54,7 +55,7 @@ namespace Amazon.Inspector.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.Inspector.Model
         // Check to see if FindingArns property is set
         internal bool IsSetFindingArns()
         {
-            return this._findingArns != null && this._findingArns.Count > 0; 
+            return this._findingArns != null && (this._findingArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

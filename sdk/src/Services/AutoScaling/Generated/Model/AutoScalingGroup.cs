@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.AutoScaling.Model
     {
         private string _autoScalingGroupARN;
         private string _autoScalingGroupName;
-        private List<string> _availabilityZones = new List<string>();
+        private List<string> _availabilityZones = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _capacityRebalance;
         private string _context;
         private DateTime? _createdTime;
@@ -43,14 +44,14 @@ namespace Amazon.AutoScaling.Model
         private int? _defaultInstanceWarmup;
         private int? _desiredCapacity;
         private string _desiredCapacityType;
-        private List<EnabledMetric> _enabledMetrics = new List<EnabledMetric>();
+        private List<EnabledMetric> _enabledMetrics = AWSConfigs.InitializeCollections ? new List<EnabledMetric>() : null;
         private int? _healthCheckGracePeriod;
         private string _healthCheckType;
         private InstanceMaintenancePolicy _instanceMaintenancePolicy;
-        private List<Instance> _instances = new List<Instance>();
+        private List<Instance> _instances = AWSConfigs.InitializeCollections ? new List<Instance>() : null;
         private string _launchConfigurationName;
         private LaunchTemplateSpecification _launchTemplate;
-        private List<string> _loadBalancerNames = new List<string>();
+        private List<string> _loadBalancerNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxInstanceLifetime;
         private int? _maxSize;
         private int? _minSize;
@@ -60,11 +61,11 @@ namespace Amazon.AutoScaling.Model
         private int? _predictedCapacity;
         private string _serviceLinkedRoleARN;
         private string _status;
-        private List<SuspendedProcess> _suspendedProcesses = new List<SuspendedProcess>();
-        private List<TagDescription> _tags = new List<TagDescription>();
-        private List<string> _targetGroupARNs = new List<string>();
-        private List<string> _terminationPolicies = new List<string>();
-        private List<TrafficSourceIdentifier> _trafficSources = new List<TrafficSourceIdentifier>();
+        private List<SuspendedProcess> _suspendedProcesses = AWSConfigs.InitializeCollections ? new List<SuspendedProcess>() : null;
+        private List<TagDescription> _tags = AWSConfigs.InitializeCollections ? new List<TagDescription>() : null;
+        private List<string> _targetGroupARNs = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _terminationPolicies = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<TrafficSourceIdentifier> _trafficSources = AWSConfigs.InitializeCollections ? new List<TrafficSourceIdentifier>() : null;
         private string _vpcZoneIdentifier;
         private WarmPoolConfiguration _warmPoolConfiguration;
         private int? _warmPoolSize;
@@ -123,7 +124,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+            return this._availabilityZones != null && (this._availabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -273,7 +274,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if EnabledMetrics property is set
         internal bool IsSetEnabledMetrics()
         {
-            return this._enabledMetrics != null && this._enabledMetrics.Count > 0; 
+            return this._enabledMetrics != null && (this._enabledMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -346,7 +347,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Instances property is set
         internal bool IsSetInstances()
         {
-            return this._instances != null && this._instances.Count > 0; 
+            return this._instances != null && (this._instances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -401,7 +402,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if LoadBalancerNames property is set
         internal bool IsSetLoadBalancerNames()
         {
-            return this._loadBalancerNames != null && this._loadBalancerNames.Count > 0; 
+            return this._loadBalancerNames != null && (this._loadBalancerNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -593,7 +594,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if SuspendedProcesses property is set
         internal bool IsSetSuspendedProcesses()
         {
-            return this._suspendedProcesses != null && this._suspendedProcesses.Count > 0; 
+            return this._suspendedProcesses != null && (this._suspendedProcesses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -611,7 +612,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -629,7 +630,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if TargetGroupARNs property is set
         internal bool IsSetTargetGroupARNs()
         {
-            return this._targetGroupARNs != null && this._targetGroupARNs.Count > 0; 
+            return this._targetGroupARNs != null && (this._targetGroupARNs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -647,7 +648,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if TerminationPolicies property is set
         internal bool IsSetTerminationPolicies()
         {
-            return this._terminationPolicies != null && this._terminationPolicies.Count > 0; 
+            return this._terminationPolicies != null && (this._terminationPolicies.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -665,7 +666,7 @@ namespace Amazon.AutoScaling.Model
         // Check to see if TrafficSources property is set
         internal bool IsSetTrafficSources()
         {
-            return this._trafficSources != null && this._trafficSources.Count > 0; 
+            return this._trafficSources != null && (this._trafficSources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

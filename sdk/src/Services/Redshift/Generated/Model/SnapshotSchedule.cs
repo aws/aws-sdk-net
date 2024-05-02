@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -35,12 +36,12 @@ namespace Amazon.Redshift.Model
     public partial class SnapshotSchedule
     {
         private int? _associatedClusterCount;
-        private List<ClusterAssociatedToSchedule> _associatedClusters = new List<ClusterAssociatedToSchedule>();
-        private List<DateTime> _nextInvocations = new List<DateTime>();
-        private List<string> _scheduleDefinitions = new List<string>();
+        private List<ClusterAssociatedToSchedule> _associatedClusters = AWSConfigs.InitializeCollections ? new List<ClusterAssociatedToSchedule>() : null;
+        private List<DateTime> _nextInvocations = AWSConfigs.InitializeCollections ? new List<DateTime>() : null;
+        private List<string> _scheduleDefinitions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _scheduleDescription;
         private string _scheduleIdentifier;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property AssociatedClusterCount. 
@@ -75,7 +76,7 @@ namespace Amazon.Redshift.Model
         // Check to see if AssociatedClusters property is set
         internal bool IsSetAssociatedClusters()
         {
-            return this._associatedClusters != null && this._associatedClusters.Count > 0; 
+            return this._associatedClusters != null && (this._associatedClusters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -90,7 +91,7 @@ namespace Amazon.Redshift.Model
         // Check to see if NextInvocations property is set
         internal bool IsSetNextInvocations()
         {
-            return this._nextInvocations != null && this._nextInvocations.Count > 0; 
+            return this._nextInvocations != null && (this._nextInvocations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -108,7 +109,7 @@ namespace Amazon.Redshift.Model
         // Check to see if ScheduleDefinitions property is set
         internal bool IsSetScheduleDefinitions()
         {
-            return this._scheduleDefinitions != null && this._scheduleDefinitions.Count > 0; 
+            return this._scheduleDefinitions != null && (this._scheduleDefinitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -164,7 +165,7 @@ namespace Amazon.Redshift.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

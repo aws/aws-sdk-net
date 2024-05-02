@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.QBusiness.Model
     /// </summary>
     public partial class ListDataSourceSyncJobsResponse : AmazonWebServiceResponse
     {
-        private List<DataSourceSyncJob> _history = new List<DataSourceSyncJob>();
+        private List<DataSourceSyncJob> _history = AWSConfigs.InitializeCollections ? new List<DataSourceSyncJob>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,14 +52,14 @@ namespace Amazon.QBusiness.Model
         // Check to see if History property is set
         internal bool IsSetHistory()
         {
-            return this._history != null && this._history.Count > 0; 
+            return this._history != null && (this._history.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the response is truncated, Amazon Q returns this token. You can use this token
-        /// in any subsequent request to retrieve the next set of jobs.
+        /// If the response is truncated, Amazon Q Business returns this token. You can use this
+        /// token in any subsequent request to retrieve the next set of jobs.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=800)]

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class BatchEnableStandardsRequest : AmazonSecurityHubRequest
     {
-        private List<StandardsSubscriptionRequest> _standardsSubscriptionRequests = new List<StandardsSubscriptionRequest>();
+        private List<StandardsSubscriptionRequest> _standardsSubscriptionRequests = AWSConfigs.InitializeCollections ? new List<StandardsSubscriptionRequest>() : null;
 
         /// <summary>
         /// Gets and sets the property StandardsSubscriptionRequests. 
@@ -59,7 +60,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if StandardsSubscriptionRequests property is set
         internal bool IsSetStandardsSubscriptionRequests()
         {
-            return this._standardsSubscriptionRequests != null && this._standardsSubscriptionRequests.Count > 0; 
+            return this._standardsSubscriptionRequests != null && (this._standardsSubscriptionRequests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

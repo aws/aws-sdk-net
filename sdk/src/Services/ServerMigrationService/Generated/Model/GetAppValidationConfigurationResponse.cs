@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServerMigrationService.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.ServerMigrationService.Model
     /// </summary>
     public partial class GetAppValidationConfigurationResponse : AmazonWebServiceResponse
     {
-        private List<AppValidationConfiguration> _appValidationConfigurations = new List<AppValidationConfiguration>();
-        private List<ServerGroupValidationConfiguration> _serverGroupValidationConfigurations = new List<ServerGroupValidationConfiguration>();
+        private List<AppValidationConfiguration> _appValidationConfigurations = AWSConfigs.InitializeCollections ? new List<AppValidationConfiguration>() : null;
+        private List<ServerGroupValidationConfiguration> _serverGroupValidationConfigurations = AWSConfigs.InitializeCollections ? new List<ServerGroupValidationConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property AppValidationConfigurations. 
@@ -51,7 +52,7 @@ namespace Amazon.ServerMigrationService.Model
         // Check to see if AppValidationConfigurations property is set
         internal bool IsSetAppValidationConfigurations()
         {
-            return this._appValidationConfigurations != null && this._appValidationConfigurations.Count > 0; 
+            return this._appValidationConfigurations != null && (this._appValidationConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.ServerMigrationService.Model
         // Check to see if ServerGroupValidationConfigurations property is set
         internal bool IsSetServerGroupValidationConfigurations()
         {
-            return this._serverGroupValidationConfigurations != null && this._serverGroupValidationConfigurations.Count > 0; 
+            return this._serverGroupValidationConfigurations != null && (this._serverGroupValidationConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

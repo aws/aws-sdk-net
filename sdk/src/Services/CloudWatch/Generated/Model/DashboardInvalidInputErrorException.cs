@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.CloudWatch.Model
     #endif
     public partial class DashboardInvalidInputErrorException : AmazonCloudWatchException
     {
-        private List<DashboardValidationMessage> _dashboardValidationMessages = new List<DashboardValidationMessage>();
+        private List<DashboardValidationMessage> _dashboardValidationMessages = AWSConfigs.InitializeCollections ? new List<DashboardValidationMessage>() : null;
 
         /// <summary>
         /// Constructs a new DashboardInvalidInputErrorException with the specified error
@@ -130,7 +131,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if DashboardValidationMessages property is set
         internal bool IsSetDashboardValidationMessages()
         {
-            return this._dashboardValidationMessages != null && this._dashboardValidationMessages.Count > 0; 
+            return this._dashboardValidationMessages != null && (this._dashboardValidationMessages.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

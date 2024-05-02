@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Schemas.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Schemas.Model
     public partial class ListRegistriesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RegistrySummary> _registries = new List<RegistrySummary>();
+        private List<RegistrySummary> _registries = AWSConfigs.InitializeCollections ? new List<RegistrySummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.Schemas.Model
         // Check to see if Registries property is set
         internal bool IsSetRegistries()
         {
-            return this._registries != null && this._registries.Count > 0; 
+            return this._registries != null && (this._registries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

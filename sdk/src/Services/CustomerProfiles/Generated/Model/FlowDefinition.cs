@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
@@ -39,7 +40,7 @@ namespace Amazon.CustomerProfiles.Model
         private string _flowName;
         private string _kmsArn;
         private SourceFlowConfig _sourceFlowConfig;
-        private List<Task> _tasks = new List<Task>();
+        private List<Task> _tasks = AWSConfigs.InitializeCollections ? new List<Task>() : null;
         private TriggerConfig _triggerConfig;
 
         /// <summary>
@@ -137,7 +138,7 @@ namespace Amazon.CustomerProfiles.Model
         // Check to see if Tasks property is set
         internal bool IsSetTasks()
         {
-            return this._tasks != null && this._tasks.Count > 0; 
+            return this._tasks != null && (this._tasks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

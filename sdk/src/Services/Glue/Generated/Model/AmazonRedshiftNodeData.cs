@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Glue.Model
     {
         private string _accessType;
         private string _action;
-        private List<AmazonRedshiftAdvancedOption> _advancedOptions = new List<AmazonRedshiftAdvancedOption>();
+        private List<AmazonRedshiftAdvancedOption> _advancedOptions = AWSConfigs.InitializeCollections ? new List<AmazonRedshiftAdvancedOption>() : null;
         private Option _catalogDatabase;
         private string _catalogRedshiftSchema;
         private string _catalogRedshiftTable;
@@ -51,12 +52,12 @@ namespace Amazon.Glue.Model
         private string _preAction;
         private string _sampleQuery;
         private Option _schema;
-        private List<Option> _selectedColumns = new List<Option>();
+        private List<Option> _selectedColumns = AWSConfigs.InitializeCollections ? new List<Option>() : null;
         private string _sourceType;
         private string _stagingTable;
         private Option _table;
         private string _tablePrefix;
-        private List<Option> _tableSchema = new List<Option>();
+        private List<Option> _tableSchema = AWSConfigs.InitializeCollections ? new List<Option>() : null;
         private string _tempDir;
         private bool? _upsert;
 
@@ -112,7 +113,7 @@ namespace Amazon.Glue.Model
         // Check to see if AdvancedOptions property is set
         internal bool IsSetAdvancedOptions()
         {
-            return this._advancedOptions != null && this._advancedOptions.Count > 0; 
+            return this._advancedOptions != null && (this._advancedOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -404,7 +405,7 @@ namespace Amazon.Glue.Model
         // Check to see if SelectedColumns property is set
         internal bool IsSetSelectedColumns()
         {
-            return this._selectedColumns != null && this._selectedColumns.Count > 0; 
+            return this._selectedColumns != null && (this._selectedColumns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -495,7 +496,7 @@ namespace Amazon.Glue.Model
         // Check to see if TableSchema property is set
         internal bool IsSetTableSchema()
         {
-            return this._tableSchema != null && this._tableSchema.Count > 0; 
+            return this._tableSchema != null && (this._tableSchema.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

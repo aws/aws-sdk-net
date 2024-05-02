@@ -26,10 +26,14 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Trace contains intermidate response for customer
+    /// Contains one part of the agent's reasoning process and results from calling API actions
+    /// and querying knowledge bases. You can use the trace to understand how the agent arrived
+    /// at the response it provided the customer. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html#trace-enablement">Trace
+    /// enablement</a>.
     /// </summary>
     public partial class Trace
     {
@@ -39,7 +43,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         private PreProcessingTrace _preProcessingTrace;
 
         /// <summary>
-        /// Gets and sets the property FailureTrace.
+        /// Gets and sets the property FailureTrace. 
+        /// <para>
+        /// Contains information about the failure of the interaction.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public FailureTrace FailureTrace
@@ -55,7 +62,11 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OrchestrationTrace.
+        /// Gets and sets the property OrchestrationTrace. 
+        /// <para>
+        /// Details about the orchestration step, in which the agent determines the order in which
+        /// actions are executed and which knowledge bases are retrieved.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public OrchestrationTrace OrchestrationTrace
@@ -71,7 +82,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PostProcessingTrace.
+        /// Gets and sets the property PostProcessingTrace. 
+        /// <para>
+        /// Details about the post-processing step, in which the agent shapes the response..
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public PostProcessingTrace PostProcessingTrace
@@ -87,7 +101,11 @@ namespace Amazon.BedrockAgentRuntime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PreProcessingTrace.
+        /// Gets and sets the property PreProcessingTrace. 
+        /// <para>
+        /// Details about the pre-processing step, in which the agent contextualizes and categorizes
+        /// user inputs.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public PreProcessingTrace PreProcessingTrace

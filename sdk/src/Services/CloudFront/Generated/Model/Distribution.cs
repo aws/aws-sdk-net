@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.CloudFront.Model
     {
         private ActiveTrustedKeyGroups _activeTrustedKeyGroups;
         private ActiveTrustedSigners _activeTrustedSigners;
-        private List<AliasICPRecordal> _aliasICPRecordals = new List<AliasICPRecordal>();
+        private List<AliasICPRecordal> _aliasICPRecordals = AWSConfigs.InitializeCollections ? new List<AliasICPRecordal>() : null;
         private string _arn;
         private DistributionConfig _distributionConfig;
         private string _domainName;
@@ -130,7 +131,7 @@ namespace Amazon.CloudFront.Model
         // Check to see if AliasICPRecordals property is set
         internal bool IsSetAliasICPRecordals()
         {
-            return this._aliasICPRecordals != null && this._aliasICPRecordals.Count > 0; 
+            return this._aliasICPRecordals != null && (this._aliasICPRecordals.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

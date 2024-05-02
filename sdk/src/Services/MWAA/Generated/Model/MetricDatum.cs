@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MWAA.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.MWAA.Model
     [Obsolete("This type is for internal use and not meant for public use. Data set for this type will be ignored.")]
     public partial class MetricDatum
     {
-        private List<Dimension> _dimensions = new List<Dimension>();
+        private List<Dimension> _dimensions = AWSConfigs.InitializeCollections ? new List<Dimension>() : null;
         private string _metricName;
         private StatisticSet _statisticValues;
         private DateTime? _timestamp;
@@ -58,7 +59,7 @@ namespace Amazon.MWAA.Model
         // Check to see if Dimensions property is set
         internal bool IsSetDimensions()
         {
-            return this._dimensions != null && this._dimensions.Count > 0; 
+            return this._dimensions != null && (this._dimensions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RDSDataService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.RDSDataService.Model
     /// </summary>
     public partial class UpdateResult
     {
-        private List<Field> _generatedFields = new List<Field>();
+        private List<Field> _generatedFields = AWSConfigs.InitializeCollections ? new List<Field>() : null;
 
         /// <summary>
         /// Gets and sets the property GeneratedFields. 
@@ -50,7 +51,7 @@ namespace Amazon.RDSDataService.Model
         // Check to see if GeneratedFields property is set
         internal bool IsSetGeneratedFields()
         {
-            return this._generatedFields != null && this._generatedFields.Count > 0; 
+            return this._generatedFields != null && (this._generatedFields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

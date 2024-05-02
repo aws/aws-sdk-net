@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -65,6 +66,7 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
+                writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetMLModelId())
@@ -82,7 +84,14 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetScoreThreshold())
                 {
                     context.Writer.WritePropertyName("ScoreThreshold");
-                    context.Writer.Write(publicRequest.ScoreThreshold.Value);
+                    if(StringUtils.IsSpecialFloatValue(publicRequest.ScoreThreshold.Value))
+                    {
+                        context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.ScoreThreshold.Value));
+                    }
+                    else
+                    {
+                        context.Writer.Write(publicRequest.ScoreThreshold.Value);
+                    }
                 }
 
                 writer.WriteObjectEnd();

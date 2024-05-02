@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -69,6 +70,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("EvalDecisionDetails/entry", targetDepth))
                     {
                         var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                        if (unmarshalledObject.EvalDecisionDetails == null)
+                        {
+                            unmarshalledObject.EvalDecisionDetails = new Dictionary<string, string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.EvalDecisionDetails.Add(item);
                         continue;
@@ -82,6 +87,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("MatchedStatements/member", targetDepth))
                     {
                         var unmarshaller = StatementUnmarshaller.Instance;
+                        if (unmarshalledObject.MatchedStatements == null)
+                        {
+                            unmarshalledObject.MatchedStatements = new List<Statement>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.MatchedStatements.Add(item);
                         continue;
@@ -89,6 +98,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("MissingContextValues/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.MissingContextValues == null)
+                        {
+                            unmarshalledObject.MissingContextValues = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.MissingContextValues.Add(item);
                         continue;
@@ -108,6 +121,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ResourceSpecificResults/member", targetDepth))
                     {
                         var unmarshaller = ResourceSpecificResultUnmarshaller.Instance;
+                        if (unmarshalledObject.ResourceSpecificResults == null)
+                        {
+                            unmarshalledObject.ResourceSpecificResults = new List<ResourceSpecificResult>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ResourceSpecificResults.Add(item);
                         continue;

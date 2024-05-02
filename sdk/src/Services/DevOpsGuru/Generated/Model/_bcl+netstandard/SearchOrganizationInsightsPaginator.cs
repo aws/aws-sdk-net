@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
@@ -45,13 +46,13 @@ namespace Amazon.DevOpsGuru.Model
         /// Enumerable containing all of the ProactiveInsights
         /// </summary>
         public IPaginatedEnumerable<ProactiveInsightSummary> ProactiveInsights => 
-            new PaginatedResultKeyResponse<SearchOrganizationInsightsResponse, ProactiveInsightSummary>(this, (i) => i.ProactiveInsights);
+            new PaginatedResultKeyResponse<SearchOrganizationInsightsResponse, ProactiveInsightSummary>(this, (i) => i.ProactiveInsights ?? new List<ProactiveInsightSummary>());
 
         /// <summary>
         /// Enumerable containing all of the ReactiveInsights
         /// </summary>
         public IPaginatedEnumerable<ReactiveInsightSummary> ReactiveInsights => 
-            new PaginatedResultKeyResponse<SearchOrganizationInsightsResponse, ReactiveInsightSummary>(this, (i) => i.ReactiveInsights);
+            new PaginatedResultKeyResponse<SearchOrganizationInsightsResponse, ReactiveInsightSummary>(this, (i) => i.ReactiveInsights ?? new List<ReactiveInsightSummary>());
 
         internal SearchOrganizationInsightsPaginator(IAmazonDevOpsGuru client, SearchOrganizationInsightsRequest request)
         {
@@ -79,7 +80,7 @@ namespace Amazon.DevOpsGuru.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<SearchOrganizationInsightsResponse> IPaginator<SearchOrganizationInsightsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<SearchOrganizationInsightsResponse> IPaginator<SearchOrganizationInsightsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

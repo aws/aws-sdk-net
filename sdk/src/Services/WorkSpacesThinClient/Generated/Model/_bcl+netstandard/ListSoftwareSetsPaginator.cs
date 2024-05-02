@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.WorkSpacesThinClient.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.WorkSpacesThinClient.Model
         /// Enumerable containing all of the SoftwareSets
         /// </summary>
         public IPaginatedEnumerable<SoftwareSetSummary> SoftwareSets => 
-            new PaginatedResultKeyResponse<ListSoftwareSetsResponse, SoftwareSetSummary>(this, (i) => i.SoftwareSets);
+            new PaginatedResultKeyResponse<ListSoftwareSetsResponse, SoftwareSetSummary>(this, (i) => i.SoftwareSets ?? new List<SoftwareSetSummary>());
 
         internal ListSoftwareSetsPaginator(IAmazonWorkSpacesThinClient client, ListSoftwareSetsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.WorkSpacesThinClient.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListSoftwareSetsResponse> IPaginator<ListSoftwareSetsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListSoftwareSetsResponse> IPaginator<ListSoftwareSetsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

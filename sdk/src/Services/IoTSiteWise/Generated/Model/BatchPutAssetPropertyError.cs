@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.IoTSiteWise.Model
     {
         private BatchPutAssetPropertyValueErrorCode _errorCode;
         private string _errorMessage;
-        private List<TimeInNanos> _timestamps = new List<TimeInNanos>();
+        private List<TimeInNanos> _timestamps = AWSConfigs.InitializeCollections ? new List<TimeInNanos>() : null;
 
         /// <summary>
         /// Gets and sets the property ErrorCode. 
@@ -91,7 +92,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if Timestamps property is set
         internal bool IsSetTimestamps()
         {
-            return this._timestamps != null && this._timestamps.Count > 0; 
+            return this._timestamps != null && (this._timestamps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

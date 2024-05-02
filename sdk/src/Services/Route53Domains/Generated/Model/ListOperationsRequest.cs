@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53Domains.Model
 {
     /// <summary>
@@ -44,9 +45,9 @@ namespace Amazon.Route53Domains.Model
         private int? _maxItems;
         private ListOperationsSortAttributeName _sortBy;
         private SortOrder _sortOrder;
-        private List<string> _status = new List<string>();
+        private List<string> _status = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _submittedSince;
-        private List<string> _type = new List<string>();
+        private List<string> _type = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Marker. 
@@ -146,7 +147,7 @@ namespace Amazon.Route53Domains.Model
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this._status != null && this._status.Count > 0; 
+            return this._status != null && (this._status.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -185,7 +186,7 @@ namespace Amazon.Route53Domains.Model
         // Check to see if Type property is set
         internal bool IsSetType()
         {
-            return this._type != null && this._type.Count > 0; 
+            return this._type != null && (this._type.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

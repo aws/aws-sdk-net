@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -133,6 +134,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.MessagesPerSecond = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OrchestrationSendingRoleArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OrchestrationSendingRoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Platform", targetDepth))

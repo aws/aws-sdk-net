@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Glue.Model
         /// Enumerable containing all of the SecurityConfigurations
         /// </summary>
         public IPaginatedEnumerable<SecurityConfiguration> SecurityConfigurations => 
-            new PaginatedResultKeyResponse<GetSecurityConfigurationsResponse, SecurityConfiguration>(this, (i) => i.SecurityConfigurations);
+            new PaginatedResultKeyResponse<GetSecurityConfigurationsResponse, SecurityConfiguration>(this, (i) => i.SecurityConfigurations ?? new List<SecurityConfiguration>());
 
         internal GetSecurityConfigurationsPaginator(IAmazonGlue client, GetSecurityConfigurationsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Glue.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<GetSecurityConfigurationsResponse> IPaginator<GetSecurityConfigurationsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<GetSecurityConfigurationsResponse> IPaginator<GetSecurityConfigurationsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

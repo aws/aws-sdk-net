@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECS.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.ECS.Model
     /// </summary>
     public partial class UpdateTaskProtectionResponse : AmazonWebServiceResponse
     {
-        private List<Failure> _failures = new List<Failure>();
-        private List<ProtectedTask> _protectedTasks = new List<ProtectedTask>();
+        private List<Failure> _failures = AWSConfigs.InitializeCollections ? new List<Failure>() : null;
+        private List<ProtectedTask> _protectedTasks = AWSConfigs.InitializeCollections ? new List<ProtectedTask>() : null;
 
         /// <summary>
         /// Gets and sets the property Failures. 
@@ -51,7 +52,7 @@ namespace Amazon.ECS.Model
         // Check to see if Failures property is set
         internal bool IsSetFailures()
         {
-            return this._failures != null && this._failures.Count > 0; 
+            return this._failures != null && (this._failures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -83,7 +84,7 @@ namespace Amazon.ECS.Model
         // Check to see if ProtectedTasks property is set
         internal bool IsSetProtectedTasks()
         {
-            return this._protectedTasks != null && this._protectedTasks.Count > 0; 
+            return this._protectedTasks != null && (this._protectedTasks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

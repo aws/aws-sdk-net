@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ParameterValue requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBoolean())
             {
                 context.Writer.WritePropertyName("Boolean");
@@ -54,7 +57,14 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDouble())
             {
                 context.Writer.WritePropertyName("Double");
-                context.Writer.Write(requestObject.Double.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Double.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Double.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Double.Value);
+                }
             }
 
             if(requestObject.IsSetEnum())

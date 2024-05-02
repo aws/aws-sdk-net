@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
@@ -48,7 +49,7 @@ namespace Amazon.Inspector2.Model
         private NetworkReachabilityDetails _networkReachabilityDetails;
         private PackageVulnerabilityDetails _packageVulnerabilityDetails;
         private Remediation _remediation;
-        private List<Resource> _resources = new List<Resource>();
+        private List<Resource> _resources = AWSConfigs.InitializeCollections ? new List<Resource>() : null;
         private Severity _severity;
         private FindingStatus _status;
         private string _title;
@@ -264,7 +265,8 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property LastObservedAt. 
         /// <para>
-        /// The date and time that the finding was last observed.
+        ///  The date and time the finding was last observed. This timestamp for this field remains
+        /// unchanged until a finding is updated. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -354,7 +356,7 @@ namespace Amazon.Inspector2.Model
         // Check to see if Resources property is set
         internal bool IsSetResources()
         {
-            return this._resources != null && this._resources.Count > 0; 
+            return this._resources != null && (this._resources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

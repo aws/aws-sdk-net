@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppRunner.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.AppRunner.Model
     public partial class ListOperationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<OperationSummary> _operationSummaryList = new List<OperationSummary>();
+        private List<OperationSummary> _operationSummaryList = AWSConfigs.InitializeCollections ? new List<OperationSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.AppRunner.Model
         // Check to see if OperationSummaryList property is set
         internal bool IsSetOperationSummaryList()
         {
-            return this._operationSummaryList != null && this._operationSummaryList.Count > 0; 
+            return this._operationSummaryList != null && (this._operationSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

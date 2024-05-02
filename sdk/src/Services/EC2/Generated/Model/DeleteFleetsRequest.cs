@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -46,7 +47,8 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// For <c>instant</c> fleets, EC2 Fleet must terminate the instances when the fleet is
-    /// deleted. A deleted <c>instant</c> fleet with running instances is not supported.
+    /// deleted. Up to 1000 instances can be terminated in a single request to delete <c>instant</c>
+    /// fleets. A deleted <c>instant</c> fleet with running instances is not supported.
     /// </para>
     ///  
     /// <para>
@@ -54,15 +56,21 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// You can delete up to 25 <c>instant</c> fleets in a single request. If you exceed this
-    /// number, no <c>instant</c> fleets are deleted and an error is returned. There is no
-    /// restriction on the number of fleets of type <c>maintain</c> or <c>request</c> that
-    /// can be deleted in a single request.
+    /// You can delete up to 25 fleets of type <c>instant</c> in a single request.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Up to 1000 instances can be terminated in a single request to delete <c>instant</c>
-    /// fleets.
+    /// You can delete up to 100 fleets of type <c>maintain</c> or <c>request</c> in a single
+    /// request.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You can delete up to 125 fleets in a single request, provided you do not exceed the
+    /// quota for each fleet type, as specified above.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If you exceed the specified number of fleets to delete, no fleets are deleted.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -72,13 +80,18 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DeleteFleetsRequest : AmazonEC2Request
     {
-        private List<string> _fleetIds = new List<string>();
+        private List<string> _fleetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private bool? _terminateInstances;
 
         /// <summary>
         /// Gets and sets the property FleetIds. 
         /// <para>
         /// The IDs of the EC2 Fleets.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: In a single request, you can specify up to 25 <c>instant</c> fleet IDs
+        /// and up to 100 <c>maintain</c> or <c>request</c> fleet IDs. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -91,7 +104,7 @@ namespace Amazon.EC2.Model
         // Check to see if FleetIds property is set
         internal bool IsSetFleetIds()
         {
-            return this._fleetIds != null && this._fleetIds.Count > 0; 
+            return this._fleetIds != null && (this._fleetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

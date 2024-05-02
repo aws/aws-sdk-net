@@ -26,22 +26,64 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Knowledge base vector search configuration
+    /// Configurations for how to perform the search query and return results. For more information,
+    /// see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+    /// configurations</a>.
+    /// 
+    ///  
+    /// <para>
+    /// This data type is used in the following API operations:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_Retrieve.html#API_agent-runtime_Retrieve_RequestSyntax">Retrieve
+    /// request</a> – in the <c>vectorSearchConfiguration</c> field
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_RetrieveAndGenerate.html#API_agent-runtime_RetrieveAndGenerate_RequestSyntax">RetrieveAndGenerate
+    /// request</a> – in the <c>vectorSearchConfiguration</c> field
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class KnowledgeBaseVectorSearchConfiguration
     {
+        private RetrievalFilter _filter;
         private int? _numberOfResults;
+        private SearchType _overrideSearchType;
+
+        /// <summary>
+        /// Gets and sets the property Filter. 
+        /// <para>
+        /// Specifies the filters to use on the metadata in the knowledge base data sources before
+        /// returning results. For more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
+        /// configurations</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public RetrievalFilter Filter
+        {
+            get { return this._filter; }
+            set { this._filter = value; }
+        }
+
+        // Check to see if Filter property is set
+        internal bool IsSetFilter()
+        {
+            return this._filter != null;
+        }
 
         /// <summary>
         /// Gets and sets the property NumberOfResults. 
         /// <para>
-        /// Top-K results to retrieve from knowledge base.
+        /// The number of source chunks to retrieve.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=10)]
+        [AWSProperty(Min=1, Max=100)]
         public int? NumberOfResults
         {
             get { return this._numberOfResults; }
@@ -52,6 +94,30 @@ namespace Amazon.BedrockAgentRuntime.Model
         internal bool IsSetNumberOfResults()
         {
             return this._numberOfResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OverrideSearchType. 
+        /// <para>
+        /// By default, Amazon Bedrock decides a search strategy for you. If you're using an Amazon
+        /// OpenSearch Serverless vector store that contains a filterable text field, you can
+        /// specify whether to query the knowledge base with a <c>HYBRID</c> search using both
+        /// vector embeddings and raw text, or <c>SEMANTIC</c> search using only vector embeddings.
+        /// For other vector store configurations, only <c>SEMANTIC</c> search is available. For
+        /// more information, see <a href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-test.html">Test
+        /// a knowledge base</a>.
+        /// </para>
+        /// </summary>
+        public SearchType OverrideSearchType
+        {
+            get { return this._overrideSearchType; }
+            set { this._overrideSearchType = value; }
+        }
+
+        // Check to see if OverrideSearchType property is set
+        internal bool IsSetOverrideSearchType()
+        {
+            return this._overrideSearchType != null;
         }
 
     }

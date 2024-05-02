@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     public partial class CompromisedCredentialsRiskConfigurationType
     {
         private CompromisedCredentialsActionsType _actions;
-        private List<string> _eventFilter = new List<string>();
+        private List<string> _eventFilter = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Actions. 
@@ -71,7 +72,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         // Check to see if EventFilter property is set
         internal bool IsSetEventFilter()
         {
-            return this._eventFilter != null && this._eventFilter.Count > 0; 
+            return this._eventFilter != null && (this._eventFilter.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,22 +26,28 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeFleets operation.
-    /// Describes the specified EC2 Fleets or all of your EC2 Fleets.
+    /// Describes the specified EC2 Fleet or all of your EC2 Fleets.
     /// 
-    ///  
+    ///  <important> 
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#monitor-ec2-fleet">Monitor
+    /// If a fleet is of type <c>instant</c>, you must specify the fleet ID in the request,
+    /// otherwise the fleet does not appear in the response.
+    /// </para>
+    ///  </important> 
+    /// <para>
+    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#monitor-ec2-fleet">Describe
     /// your EC2 Fleet</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DescribeFleetsRequest : AmazonEC2Request
     {
-        private List<Filter> _filters = new List<Filter>();
-        private List<string> _fleetIds = new List<string>();
+        private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
+        private List<string> _fleetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -87,7 +93,7 @@ namespace Amazon.EC2.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -111,7 +117,7 @@ namespace Amazon.EC2.Model
         // Check to see if FleetIds property is set
         internal bool IsSetFleetIds()
         {
-            return this._fleetIds != null && this._fleetIds.Count > 0; 
+            return this._fleetIds != null && (this._fleetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

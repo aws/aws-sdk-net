@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -49,8 +50,8 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DescribeInstanceEventWindowsRequest : AmazonEC2Request
     {
-        private List<Filter> _filters = new List<Filter>();
-        private List<string> _instanceEventWindowIds = new List<string>();
+        private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
+        private List<string> _instanceEventWindowIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -118,7 +119,7 @@ namespace Amazon.EC2.Model
         // Check to see if Filters property is set
         internal bool IsSetFilters()
         {
-            return this._filters != null && this._filters.Count > 0; 
+            return this._filters != null && (this._filters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -136,7 +137,7 @@ namespace Amazon.EC2.Model
         // Check to see if InstanceEventWindowIds property is set
         internal bool IsSetInstanceEventWindowIds()
         {
-            return this._instanceEventWindowIds != null && this._instanceEventWindowIds.Count > 0; 
+            return this._instanceEventWindowIds != null && (this._instanceEventWindowIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class ListInputDevicesResponse : AmazonWebServiceResponse
     {
-        private List<InputDeviceSummary> _inputDevices = new List<InputDeviceSummary>();
+        private List<InputDeviceSummary> _inputDevices = AWSConfigs.InitializeCollections ? new List<InputDeviceSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -48,7 +49,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if InputDevices property is set
         internal bool IsSetInputDevices()
         {
-            return this._inputDevices != null && this._inputDevices.Count > 0; 
+            return this._inputDevices != null && (this._inputDevices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

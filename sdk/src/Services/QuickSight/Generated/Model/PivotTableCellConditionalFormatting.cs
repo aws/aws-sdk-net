@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.QuickSight.Model
     {
         private string _fieldId;
         private PivotTableConditionalFormattingScope _scope;
-        private List<PivotTableConditionalFormattingScope> _scopes = new List<PivotTableConditionalFormattingScope>();
+        private List<PivotTableConditionalFormattingScope> _scopes = AWSConfigs.InitializeCollections ? new List<PivotTableConditionalFormattingScope>() : null;
         private TextConditionalFormat _textFormat;
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if Scopes property is set
         internal bool IsSetScopes()
         {
-            return this._scopes != null && this._scopes.Count > 0; 
+            return this._scopes != null && (this._scopes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

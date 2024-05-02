@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
@@ -49,7 +50,7 @@ namespace Amazon.DirectoryService.Model
         private string _directoryId;
         private int? _limit;
         private string _nextToken;
-        private List<string> _snapshotIds = new List<string>();
+        private List<string> _snapshotIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DirectoryId. 
@@ -124,7 +125,7 @@ namespace Amazon.DirectoryService.Model
         // Check to see if SnapshotIds property is set
         internal bool IsSetSnapshotIds()
         {
-            return this._snapshotIds != null && this._snapshotIds.Count > 0; 
+            return this._snapshotIds != null && (this._snapshotIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

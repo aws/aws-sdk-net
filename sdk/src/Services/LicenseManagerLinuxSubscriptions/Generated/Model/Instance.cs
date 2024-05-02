@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LicenseManagerLinuxSubscriptions.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions.Model
         private string _instanceID;
         private string _instanceType;
         private string _lastUpdatedTime;
-        private List<string> _productCode = new List<string>();
+        private List<string> _productCode = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _region;
         private string _status;
         private string _subscriptionName;
@@ -150,7 +151,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions.Model
         // Check to see if ProductCode property is set
         internal bool IsSetProductCode()
         {
-            return this._productCode != null && this._productCode.Count > 0; 
+            return this._productCode != null && (this._productCode.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

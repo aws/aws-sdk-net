@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ChimeSDKMessaging.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ChimeSDKMessaging.Model
     /// </summary>
     public partial class ListChannelFlowsResponse : AmazonWebServiceResponse
     {
-        private List<ChannelFlowSummary> _channelFlows = new List<ChannelFlowSummary>();
+        private List<ChannelFlowSummary> _channelFlows = AWSConfigs.InitializeCollections ? new List<ChannelFlowSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         // Check to see if ChannelFlows property is set
         internal bool IsSetChannelFlows()
         {
-            return this._channelFlows != null && this._channelFlows.Count > 0; 
+            return this._channelFlows != null && (this._channelFlows.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

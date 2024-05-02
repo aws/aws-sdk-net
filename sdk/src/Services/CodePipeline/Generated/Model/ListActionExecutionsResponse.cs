@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CodePipeline.Model
     /// </summary>
     public partial class ListActionExecutionsResponse : AmazonWebServiceResponse
     {
-        private List<ActionExecutionDetail> _actionExecutionDetails = new List<ActionExecutionDetail>();
+        private List<ActionExecutionDetail> _actionExecutionDetails = AWSConfigs.InitializeCollections ? new List<ActionExecutionDetail>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if ActionExecutionDetails property is set
         internal bool IsSetActionExecutionDetails()
         {
-            return this._actionExecutionDetails != null && this._actionExecutionDetails.Count > 0; 
+            return this._actionExecutionDetails != null && (this._actionExecutionDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

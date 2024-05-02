@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Textract.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.Textract.Model
     /// </summary>
     public partial class LendingSummary
     {
-        private List<DocumentGroup> _documentGroups = new List<DocumentGroup>();
-        private List<string> _undetectedDocumentTypes = new List<string>();
+        private List<DocumentGroup> _documentGroups = AWSConfigs.InitializeCollections ? new List<DocumentGroup>() : null;
+        private List<string> _undetectedDocumentTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DocumentGroups. 
@@ -51,7 +52,7 @@ namespace Amazon.Textract.Model
         // Check to see if DocumentGroups property is set
         internal bool IsSetDocumentGroups()
         {
-            return this._documentGroups != null && this._documentGroups.Count > 0; 
+            return this._documentGroups != null && (this._documentGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.Textract.Model
         // Check to see if UndetectedDocumentTypes property is set
         internal bool IsSetUndetectedDocumentTypes()
         {
-            return this._undetectedDocumentTypes != null && this._undetectedDocumentTypes.Count > 0; 
+            return this._undetectedDocumentTypes != null && (this._undetectedDocumentTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

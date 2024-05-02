@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CloudWatchEvents.Model
     /// </summary>
     public partial class ListApiDestinationsResponse : AmazonWebServiceResponse
     {
-        private List<ApiDestination> _apiDestinations = new List<ApiDestination>();
+        private List<ApiDestination> _apiDestinations = AWSConfigs.InitializeCollections ? new List<ApiDestination>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.CloudWatchEvents.Model
         // Check to see if ApiDestinations property is set
         internal bool IsSetApiDestinations()
         {
-            return this._apiDestinations != null && this._apiDestinations.Count > 0; 
+            return this._apiDestinations != null && (this._apiDestinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class DeleteQueuedReservedInstancesResponse : AmazonWebServiceResponse
     {
-        private List<FailedQueuedPurchaseDeletion> _failedQueuedPurchaseDeletions = new List<FailedQueuedPurchaseDeletion>();
-        private List<SuccessfulQueuedPurchaseDeletion> _successfulQueuedPurchaseDeletions = new List<SuccessfulQueuedPurchaseDeletion>();
+        private List<FailedQueuedPurchaseDeletion> _failedQueuedPurchaseDeletions = AWSConfigs.InitializeCollections ? new List<FailedQueuedPurchaseDeletion>() : null;
+        private List<SuccessfulQueuedPurchaseDeletion> _successfulQueuedPurchaseDeletions = AWSConfigs.InitializeCollections ? new List<SuccessfulQueuedPurchaseDeletion>() : null;
 
         /// <summary>
         /// Gets and sets the property FailedQueuedPurchaseDeletions. 
@@ -51,7 +52,7 @@ namespace Amazon.EC2.Model
         // Check to see if FailedQueuedPurchaseDeletions property is set
         internal bool IsSetFailedQueuedPurchaseDeletions()
         {
-            return this._failedQueuedPurchaseDeletions != null && this._failedQueuedPurchaseDeletions.Count > 0; 
+            return this._failedQueuedPurchaseDeletions != null && (this._failedQueuedPurchaseDeletions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.EC2.Model
         // Check to see if SuccessfulQueuedPurchaseDeletions property is set
         internal bool IsSetSuccessfulQueuedPurchaseDeletions()
         {
-            return this._successfulQueuedPurchaseDeletions != null && this._successfulQueuedPurchaseDeletions.Count > 0; 
+            return this._successfulQueuedPurchaseDeletions != null && (this._successfulQueuedPurchaseDeletions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

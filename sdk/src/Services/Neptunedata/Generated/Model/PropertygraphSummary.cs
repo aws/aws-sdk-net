@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Neptunedata.Model
 {
     /// <summary>
@@ -35,12 +36,12 @@ namespace Amazon.Neptunedata.Model
     /// </summary>
     public partial class PropertygraphSummary
     {
-        private List<string> _edgeLabels = new List<string>();
-        private List<Dictionary<string, long>> _edgeProperties = new List<Dictionary<string, long>>();
-        private List<EdgeStructure> _edgeStructures = new List<EdgeStructure>();
-        private List<string> _nodeLabels = new List<string>();
-        private List<Dictionary<string, long>> _nodeProperties = new List<Dictionary<string, long>>();
-        private List<NodeStructure> _nodeStructures = new List<NodeStructure>();
+        private List<string> _edgeLabels = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Dictionary<string, long>> _edgeProperties = AWSConfigs.InitializeCollections ? new List<Dictionary<string, long>>() : null;
+        private List<EdgeStructure> _edgeStructures = AWSConfigs.InitializeCollections ? new List<EdgeStructure>() : null;
+        private List<string> _nodeLabels = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Dictionary<string, long>> _nodeProperties = AWSConfigs.InitializeCollections ? new List<Dictionary<string, long>>() : null;
+        private List<NodeStructure> _nodeStructures = AWSConfigs.InitializeCollections ? new List<NodeStructure>() : null;
         private long? _numEdgeLabels;
         private long? _numEdgeProperties;
         private long? _numEdges;
@@ -65,7 +66,7 @@ namespace Amazon.Neptunedata.Model
         // Check to see if EdgeLabels property is set
         internal bool IsSetEdgeLabels()
         {
-            return this._edgeLabels != null && this._edgeLabels.Count > 0; 
+            return this._edgeLabels != null && (this._edgeLabels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -84,7 +85,7 @@ namespace Amazon.Neptunedata.Model
         // Check to see if EdgeProperties property is set
         internal bool IsSetEdgeProperties()
         {
-            return this._edgeProperties != null && this._edgeProperties.Count > 0; 
+            return this._edgeProperties != null && (this._edgeProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -103,7 +104,7 @@ namespace Amazon.Neptunedata.Model
         // Check to see if EdgeStructures property is set
         internal bool IsSetEdgeStructures()
         {
-            return this._edgeStructures != null && this._edgeStructures.Count > 0; 
+            return this._edgeStructures != null && (this._edgeStructures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -121,7 +122,7 @@ namespace Amazon.Neptunedata.Model
         // Check to see if NodeLabels property is set
         internal bool IsSetNodeLabels()
         {
-            return this._nodeLabels != null && this._nodeLabels.Count > 0; 
+            return this._nodeLabels != null && (this._nodeLabels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -139,7 +140,7 @@ namespace Amazon.Neptunedata.Model
         // Check to see if NodeProperties property is set
         internal bool IsSetNodeProperties()
         {
-            return this._nodeProperties != null && this._nodeProperties.Count > 0; 
+            return this._nodeProperties != null && (this._nodeProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -158,7 +159,7 @@ namespace Amazon.Neptunedata.Model
         // Check to see if NodeStructures property is set
         internal bool IsSetNodeStructures()
         {
-            return this._nodeStructures != null && this._nodeStructures.Count > 0; 
+            return this._nodeStructures != null && (this._nodeStructures.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

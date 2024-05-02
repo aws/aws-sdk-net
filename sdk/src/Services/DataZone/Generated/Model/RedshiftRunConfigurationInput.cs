@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.DataZone.Model
         private string _dataAccessRole;
         private RedshiftCredentialConfiguration _redshiftCredentialConfiguration;
         private RedshiftStorage _redshiftStorage;
-        private List<RelationalFilterConfiguration> _relationalFilterConfigurations = new List<RelationalFilterConfiguration>();
+        private List<RelationalFilterConfiguration> _relationalFilterConfigurations = AWSConfigs.InitializeCollections ? new List<RelationalFilterConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property DataAccessRole. 
@@ -106,7 +107,7 @@ namespace Amazon.DataZone.Model
         // Check to see if RelationalFilterConfigurations property is set
         internal bool IsSetRelationalFilterConfigurations()
         {
-            return this._relationalFilterConfigurations != null && this._relationalFilterConfigurations.Count > 0; 
+            return this._relationalFilterConfigurations != null && (this._relationalFilterConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

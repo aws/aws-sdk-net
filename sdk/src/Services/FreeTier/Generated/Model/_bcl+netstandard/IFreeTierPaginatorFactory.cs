@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the freetier-2023-09-07.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.FreeTier.Model
 {
     /// <summary>

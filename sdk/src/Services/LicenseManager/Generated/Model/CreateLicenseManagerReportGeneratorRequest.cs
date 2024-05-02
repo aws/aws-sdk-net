@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LicenseManager.Model
 {
     /// <summary>
@@ -39,8 +40,8 @@ namespace Amazon.LicenseManager.Model
         private ReportContext _reportContext;
         private ReportFrequency _reportFrequency;
         private string _reportGeneratorName;
-        private List<Tag> _tags = new List<Tag>();
-        private List<string> _type = new List<string>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<string> _type = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -153,7 +154,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -183,7 +184,7 @@ namespace Amazon.LicenseManager.Model
         // Check to see if Type property is set
         internal bool IsSetType()
         {
-            return this._type != null && this._type.Count > 0; 
+            return this._type != null && (this._type.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

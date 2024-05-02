@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkManager.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.NetworkManager.Model
     /// </summary>
     public partial class ConnectPeerConfiguration
     {
-        private List<ConnectPeerBgpConfiguration> _bgpConfigurations = new List<ConnectPeerBgpConfiguration>();
+        private List<ConnectPeerBgpConfiguration> _bgpConfigurations = AWSConfigs.InitializeCollections ? new List<ConnectPeerBgpConfiguration>() : null;
         private string _coreNetworkAddress;
-        private List<string> _insideCidrBlocks = new List<string>();
+        private List<string> _insideCidrBlocks = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _peerAddress;
         private TunnelProtocol _protocol;
 
@@ -54,7 +55,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if BgpConfigurations property is set
         internal bool IsSetBgpConfigurations()
         {
-            return this._bgpConfigurations != null && this._bgpConfigurations.Count > 0; 
+            return this._bgpConfigurations != null && (this._bgpConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if InsideCidrBlocks property is set
         internal bool IsSetInsideCidrBlocks()
         {
-            return this._insideCidrBlocks != null && this._insideCidrBlocks.Count > 0; 
+            return this._insideCidrBlocks != null && (this._insideCidrBlocks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

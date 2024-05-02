@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the MetricDatumList
         /// </summary>
         public IPaginatedEnumerable<MetricDatum> MetricDatumList => 
-            new PaginatedResultKeyResponse<ListMetricValuesResponse, MetricDatum>(this, (i) => i.MetricDatumList);
+            new PaginatedResultKeyResponse<ListMetricValuesResponse, MetricDatum>(this, (i) => i.MetricDatumList ?? new List<MetricDatum>());
 
         internal ListMetricValuesPaginator(IAmazonIoT client, ListMetricValuesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.IoT.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListMetricValuesResponse> IPaginator<ListMetricValuesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListMetricValuesResponse> IPaginator<ListMetricValuesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

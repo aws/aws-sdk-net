@@ -28,7 +28,7 @@ namespace ServiceClientGenerator.DefaultConfiguration
     public class DefaultConfigurationMode
     {
         /// <summary>
-        /// Identifies a specific configuration mode. Example legacy, mobile, cross-region, etc
+        /// Identifies a specific configuration mode. Example mobile, cross-region, etc
         /// </summary>
         public string Name { get; set; }
         /// <summary>
@@ -37,14 +37,9 @@ namespace ServiceClientGenerator.DefaultConfiguration
         public string Documentation { get; set; }
         /// <summary>
         /// A retry mode specifies how the SDK attempts retries.
-        /// See https://docs.aws.amazon.com/sdkref/latest/guide/setting-global-retry_mode.html
+        /// See https://docs.aws.amazon.com/sdkref/latest/guide/feature-retry-behavior.html
         /// </summary>
         public RequestRetryMode RetryMode { get; set; }
-        /// <summary>
-        /// Specifies how the SDK determines the AWS service endpoint that it uses to talk to the AWS Security Token Service (AWS STS).
-        /// See https://docs.aws.amazon.com/sdkref/latest/guide/setting-global-sts_regional_endpoints.html
-        /// </summary>
-        public StsRegionalEndpointsValue StsRegionalEndpoints { get; set; }
         /// <summary>
         /// Specifies how the SDK determines the AWS service endpoint that it uses to talk to the Amazon S3 for the us-east-1 region
         /// </summary>
@@ -80,10 +75,6 @@ namespace ServiceClientGenerator.DefaultConfiguration
     public enum RequestRetryMode
     {
         /// <summary>
-        /// Legacy request retry strategy.
-        /// </summary>
-        Legacy,
-        /// <summary>
         /// Standardized request retry strategy that is consistent across all SDKs.
         /// </summary>
         Standard,
@@ -92,25 +83,6 @@ namespace ServiceClientGenerator.DefaultConfiguration
         /// and introduces congestion control through client side rate limiting.
         /// </summary>
         Adaptive
-    }
-
-    /// <summary>
-    /// Sts Regional Endpoints Value determines whether or not
-    /// to send the sts request to the regional endpoint or to
-    /// the global sts endpoint
-    /// </summary>
-    /// <remarks>This is a copy of Amazon.Runtime.StsRegionalEndpointsValue</remarks>
-    public enum StsRegionalEndpointsValue
-    {
-        /// <summary>
-        /// Send the request to the global sts endpoint
-        /// if the region is a legacy global region
-        /// </summary>
-        Legacy,
-        /// <summary>
-        /// Send the request to the regional endpoint
-        /// </summary>
-        Regional
     }
 
     /// <summary>

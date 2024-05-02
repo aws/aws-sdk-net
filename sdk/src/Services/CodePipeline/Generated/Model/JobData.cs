@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
@@ -39,8 +40,8 @@ namespace Amazon.CodePipeline.Model
         private AWSSessionCredentials _artifactCredentials;
         private string _continuationToken;
         private EncryptionKey _encryptionKey;
-        private List<Artifact> _inputArtifacts = new List<Artifact>();
-        private List<Artifact> _outputArtifacts = new List<Artifact>();
+        private List<Artifact> _inputArtifacts = AWSConfigs.InitializeCollections ? new List<Artifact>() : null;
+        private List<Artifact> _outputArtifacts = AWSConfigs.InitializeCollections ? new List<Artifact>() : null;
         private PipelineContext _pipelineContext;
 
         /// <summary>
@@ -155,7 +156,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if InputArtifacts property is set
         internal bool IsSetInputArtifacts()
         {
-            return this._inputArtifacts != null && this._inputArtifacts.Count > 0; 
+            return this._inputArtifacts != null && (this._inputArtifacts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -173,7 +174,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if OutputArtifacts property is set
         internal bool IsSetOutputArtifacts()
         {
-            return this._outputArtifacts != null && this._outputArtifacts.Count > 0; 
+            return this._outputArtifacts != null && (this._outputArtifacts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

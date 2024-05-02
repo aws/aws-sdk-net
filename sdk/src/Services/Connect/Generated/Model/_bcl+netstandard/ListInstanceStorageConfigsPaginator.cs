@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the StorageConfigs
         /// </summary>
         public IPaginatedEnumerable<InstanceStorageConfig> StorageConfigs => 
-            new PaginatedResultKeyResponse<ListInstanceStorageConfigsResponse, InstanceStorageConfig>(this, (i) => i.StorageConfigs);
+            new PaginatedResultKeyResponse<ListInstanceStorageConfigsResponse, InstanceStorageConfig>(this, (i) => i.StorageConfigs ?? new List<InstanceStorageConfig>());
 
         internal ListInstanceStorageConfigsPaginator(IAmazonConnect client, ListInstanceStorageConfigsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Connect.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListInstanceStorageConfigsResponse> IPaginator<ListInstanceStorageConfigsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListInstanceStorageConfigsResponse> IPaginator<ListInstanceStorageConfigsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

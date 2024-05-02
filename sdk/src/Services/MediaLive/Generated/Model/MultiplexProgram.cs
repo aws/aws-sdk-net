@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.MediaLive.Model
         private string _channelId;
         private MultiplexProgramSettings _multiplexProgramSettings;
         private MultiplexProgramPacketIdentifiersMap _packetIdentifiersMap;
-        private List<MultiplexProgramPipelineDetail> _pipelineDetails = new List<MultiplexProgramPipelineDetail>();
+        private List<MultiplexProgramPipelineDetail> _pipelineDetails = AWSConfigs.InitializeCollections ? new List<MultiplexProgramPipelineDetail>() : null;
         private string _programName;
 
         /// <summary>
@@ -102,7 +103,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if PipelineDetails property is set
         internal bool IsSetPipelineDetails()
         {
-            return this._pipelineDetails != null && this._pipelineDetails.Count > 0; 
+            return this._pipelineDetails != null && (this._pipelineDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

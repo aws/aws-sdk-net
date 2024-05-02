@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Outposts.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Outposts.Model
     /// </summary>
     public partial class ListAssetsResponse : AmazonWebServiceResponse
     {
-        private List<AssetInfo> _assets = new List<AssetInfo>();
+        private List<AssetInfo> _assets = AWSConfigs.InitializeCollections ? new List<AssetInfo>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Outposts.Model
         // Check to see if Assets property is set
         internal bool IsSetAssets()
         {
-            return this._assets != null && this._assets.Count > 0; 
+            return this._assets != null && (this._assets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

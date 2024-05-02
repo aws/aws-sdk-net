@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SavingsPlans.Model
 {
     /// <summary>
@@ -35,13 +36,13 @@ namespace Amazon.SavingsPlans.Model
     {
         private string _nextToken;
         private string _savingsPlanId;
-        private List<SavingsPlanRate> _searchResults = new List<SavingsPlanRate>();
+        private List<SavingsPlanRate> _searchResults = AWSConfigs.InitializeCollections ? new List<SavingsPlanRate>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
         /// The token to use to retrieve the next page of results. This value is null when there
-        /// are no more results to return. 
+        /// are no more results to return.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -78,7 +79,7 @@ namespace Amazon.SavingsPlans.Model
         /// <summary>
         /// Gets and sets the property SearchResults. 
         /// <para>
-        /// Information about the Savings Plans rates.
+        /// Information about the Savings Plan rates.
         /// </para>
         /// </summary>
         public List<SavingsPlanRate> SearchResults
@@ -90,7 +91,7 @@ namespace Amazon.SavingsPlans.Model
         // Check to see if SearchResults property is set
         internal bool IsSetSearchResults()
         {
-            return this._searchResults != null && this._searchResults.Count > 0; 
+            return this._searchResults != null && (this._searchResults.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

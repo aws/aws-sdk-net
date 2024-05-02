@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -33,12 +34,12 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class RuleGroupSourceStatelessRuleMatchAttributes
     {
-        private List<RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts> _destinationPorts = new List<RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts>();
-        private List<RuleGroupSourceStatelessRuleMatchAttributesDestinations> _destinations = new List<RuleGroupSourceStatelessRuleMatchAttributesDestinations>();
-        private List<int> _protocols = new List<int>();
-        private List<RuleGroupSourceStatelessRuleMatchAttributesSourcePorts> _sourcePorts = new List<RuleGroupSourceStatelessRuleMatchAttributesSourcePorts>();
-        private List<RuleGroupSourceStatelessRuleMatchAttributesSources> _sources = new List<RuleGroupSourceStatelessRuleMatchAttributesSources>();
-        private List<RuleGroupSourceStatelessRuleMatchAttributesTcpFlags> _tcpFlags = new List<RuleGroupSourceStatelessRuleMatchAttributesTcpFlags>();
+        private List<RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts> _destinationPorts = AWSConfigs.InitializeCollections ? new List<RuleGroupSourceStatelessRuleMatchAttributesDestinationPorts>() : null;
+        private List<RuleGroupSourceStatelessRuleMatchAttributesDestinations> _destinations = AWSConfigs.InitializeCollections ? new List<RuleGroupSourceStatelessRuleMatchAttributesDestinations>() : null;
+        private List<int> _protocols = AWSConfigs.InitializeCollections ? new List<int>() : null;
+        private List<RuleGroupSourceStatelessRuleMatchAttributesSourcePorts> _sourcePorts = AWSConfigs.InitializeCollections ? new List<RuleGroupSourceStatelessRuleMatchAttributesSourcePorts>() : null;
+        private List<RuleGroupSourceStatelessRuleMatchAttributesSources> _sources = AWSConfigs.InitializeCollections ? new List<RuleGroupSourceStatelessRuleMatchAttributesSources>() : null;
+        private List<RuleGroupSourceStatelessRuleMatchAttributesTcpFlags> _tcpFlags = AWSConfigs.InitializeCollections ? new List<RuleGroupSourceStatelessRuleMatchAttributesTcpFlags>() : null;
 
         /// <summary>
         /// Gets and sets the property DestinationPorts. 
@@ -55,7 +56,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if DestinationPorts property is set
         internal bool IsSetDestinationPorts()
         {
-            return this._destinationPorts != null && this._destinationPorts.Count > 0; 
+            return this._destinationPorts != null && (this._destinationPorts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Destinations property is set
         internal bool IsSetDestinations()
         {
-            return this._destinations != null && this._destinations.Count > 0; 
+            return this._destinations != null && (this._destinations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Protocols property is set
         internal bool IsSetProtocols()
         {
-            return this._protocols != null && this._protocols.Count > 0; 
+            return this._protocols != null && (this._protocols.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -109,7 +110,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if SourcePorts property is set
         internal bool IsSetSourcePorts()
         {
-            return this._sourcePorts != null && this._sourcePorts.Count > 0; 
+            return this._sourcePorts != null && (this._sourcePorts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -127,7 +128,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if Sources property is set
         internal bool IsSetSources()
         {
-            return this._sources != null && this._sources.Count > 0; 
+            return this._sources != null && (this._sources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -145,7 +146,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if TcpFlags property is set
         internal bool IsSetTcpFlags()
         {
-            return this._tcpFlags != null && this._tcpFlags.Count > 0; 
+            return this._tcpFlags != null && (this._tcpFlags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lex.Model
 {
     /// <summary>
@@ -109,12 +110,12 @@ namespace Amazon.Lex.Model
     /// </summary>
     public partial class PostTextRequest : AmazonLexRequest
     {
-        private List<ActiveContext> _activeContexts = new List<ActiveContext>();
+        private List<ActiveContext> _activeContexts = AWSConfigs.InitializeCollections ? new List<ActiveContext>() : null;
         private string _botAlias;
         private string _botName;
         private string _inputText;
-        private Dictionary<string, string> _requestAttributes = new Dictionary<string, string>();
-        private Dictionary<string, string> _sessionAttributes = new Dictionary<string, string>();
+        private Dictionary<string, string> _requestAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private Dictionary<string, string> _sessionAttributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _userId;
 
         /// <summary>
@@ -139,7 +140,7 @@ namespace Amazon.Lex.Model
         // Check to see if ActiveContexts property is set
         internal bool IsSetActiveContexts()
         {
-            return this._activeContexts != null && this._activeContexts.Count > 0; 
+            return this._activeContexts != null && (this._activeContexts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -225,7 +226,7 @@ namespace Amazon.Lex.Model
         // Check to see if RequestAttributes property is set
         internal bool IsSetRequestAttributes()
         {
-            return this._requestAttributes != null && this._requestAttributes.Count > 0; 
+            return this._requestAttributes != null && (this._requestAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -249,7 +250,7 @@ namespace Amazon.Lex.Model
         // Check to see if SessionAttributes property is set
         internal bool IsSetSessionAttributes()
         {
-            return this._sessionAttributes != null && this._sessionAttributes.Count > 0; 
+            return this._sessionAttributes != null && (this._sessionAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

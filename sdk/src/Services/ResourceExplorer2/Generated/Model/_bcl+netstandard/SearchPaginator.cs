@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ResourceExplorer2.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.ResourceExplorer2.Model
         /// Enumerable containing all of the Resources
         /// </summary>
         public IPaginatedEnumerable<Resource> Resources => 
-            new PaginatedResultKeyResponse<SearchResponse, Resource>(this, (i) => i.Resources);
+            new PaginatedResultKeyResponse<SearchResponse, Resource>(this, (i) => i.Resources ?? new List<Resource>());
 
         internal SearchPaginator(IAmazonResourceExplorer2 client, SearchRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.ResourceExplorer2.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<SearchResponse> IPaginator<SearchResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<SearchResponse> IPaginator<SearchResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

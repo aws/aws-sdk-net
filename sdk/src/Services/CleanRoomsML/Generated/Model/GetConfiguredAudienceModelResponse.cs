@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CleanRoomsML.Model
 {
     /// <summary>
@@ -42,9 +43,9 @@ namespace Amazon.CleanRoomsML.Model
         private int? _minMatchingSeedSize;
         private string _name;
         private ConfiguredAudienceModelOutputConfig _outputConfig;
-        private List<string> _sharedAudienceMetrics = new List<string>();
+        private List<string> _sharedAudienceMetrics = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ConfiguredAudienceModelStatus _status;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private DateTime? _updateTime;
 
         /// <summary>
@@ -240,7 +241,7 @@ namespace Amazon.CleanRoomsML.Model
         // Check to see if SharedAudienceMetrics property is set
         internal bool IsSetSharedAudienceMetrics()
         {
-            return this._sharedAudienceMetrics != null && this._sharedAudienceMetrics.Count > 0; 
+            return this._sharedAudienceMetrics != null && (this._sharedAudienceMetrics.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -278,7 +279,7 @@ namespace Amazon.CleanRoomsML.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

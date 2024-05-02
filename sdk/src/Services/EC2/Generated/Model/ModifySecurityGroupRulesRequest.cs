@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.EC2.Model
     public partial class ModifySecurityGroupRulesRequest : AmazonEC2Request
     {
         private string _groupId;
-        private List<SecurityGroupRuleUpdate> _securityGroupRules = new List<SecurityGroupRuleUpdate>();
+        private List<SecurityGroupRuleUpdate> _securityGroupRules = AWSConfigs.InitializeCollections ? new List<SecurityGroupRuleUpdate>() : null;
 
         /// <summary>
         /// Gets and sets the property GroupId. 
@@ -72,7 +73,7 @@ namespace Amazon.EC2.Model
         // Check to see if SecurityGroupRules property is set
         internal bool IsSetSecurityGroupRules()
         {
-            return this._securityGroupRules != null && this._securityGroupRules.Count > 0; 
+            return this._securityGroupRules != null && (this._securityGroupRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

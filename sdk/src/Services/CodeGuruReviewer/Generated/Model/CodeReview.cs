@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeGuruReviewer.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.CodeGuruReviewer.Model
     /// </summary>
     public partial class CodeReview
     {
-        private List<string> _analysisTypes = new List<string>();
+        private List<string> _analysisTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _associationArn;
         private string _codeReviewArn;
         private ConfigFileState _configFileState;
@@ -67,7 +68,7 @@ namespace Amazon.CodeGuruReviewer.Model
         // Check to see if AnalysisTypes property is set
         internal bool IsSetAnalysisTypes()
         {
-            return this._analysisTypes != null && this._analysisTypes.Count > 0; 
+            return this._analysisTypes != null && (this._analysisTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

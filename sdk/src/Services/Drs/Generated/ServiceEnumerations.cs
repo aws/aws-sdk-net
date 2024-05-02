@@ -1599,6 +1599,56 @@ namespace Amazon.Drs
 
 
     /// <summary>
+    /// Constants used for properties of type ProductCodeMode.
+    /// </summary>
+    public class ProductCodeMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for ProductCodeMode
+        /// </summary>
+        public static readonly ProductCodeMode DISABLED = new ProductCodeMode("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for ProductCodeMode
+        /// </summary>
+        public static readonly ProductCodeMode ENABLED = new ProductCodeMode("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ProductCodeMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ProductCodeMode FindValue(string value)
+        {
+            return FindValue<ProductCodeMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ProductCodeMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RecoveryInstanceDataReplicationInitiationStepName.
     /// </summary>
     public class RecoveryInstanceDataReplicationInitiationStepName : ConstantClass
@@ -2430,6 +2480,68 @@ namespace Amazon.Drs
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ValidationExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VolumeStatus.
+    /// </summary>
+    public class VolumeStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTAINS_MARKETPLACE_PRODUCT_CODES for VolumeStatus
+        /// </summary>
+        public static readonly VolumeStatus CONTAINS_MARKETPLACE_PRODUCT_CODES = new VolumeStatus("CONTAINS_MARKETPLACE_PRODUCT_CODES");
+        /// <summary>
+        /// Constant MISSING_VOLUME_ATTRIBUTES for VolumeStatus
+        /// </summary>
+        public static readonly VolumeStatus MISSING_VOLUME_ATTRIBUTES = new VolumeStatus("MISSING_VOLUME_ATTRIBUTES");
+        /// <summary>
+        /// Constant MISSING_VOLUME_ATTRIBUTES_AND_PRECHECK_UNAVAILABLE for VolumeStatus
+        /// </summary>
+        public static readonly VolumeStatus MISSING_VOLUME_ATTRIBUTES_AND_PRECHECK_UNAVAILABLE = new VolumeStatus("MISSING_VOLUME_ATTRIBUTES_AND_PRECHECK_UNAVAILABLE");
+        /// <summary>
+        /// Constant PENDING for VolumeStatus
+        /// </summary>
+        public static readonly VolumeStatus PENDING = new VolumeStatus("PENDING");
+        /// <summary>
+        /// Constant REGULAR for VolumeStatus
+        /// </summary>
+        public static readonly VolumeStatus REGULAR = new VolumeStatus("REGULAR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VolumeStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VolumeStatus FindValue(string value)
+        {
+            return FindValue<VolumeStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VolumeStatus(string value)
         {
             return FindValue(value);
         }

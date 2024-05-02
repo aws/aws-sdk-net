@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CleanRooms.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CleanRooms.Model
     /// </summary>
     public partial class ListConfiguredTablesResponse : AmazonWebServiceResponse
     {
-        private List<ConfiguredTableSummary> _configuredTableSummaries = new List<ConfiguredTableSummary>();
+        private List<ConfiguredTableSummary> _configuredTableSummaries = AWSConfigs.InitializeCollections ? new List<ConfiguredTableSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.CleanRooms.Model
         // Check to see if ConfiguredTableSummaries property is set
         internal bool IsSetConfiguredTableSummaries()
         {
-            return this._configuredTableSummaries != null && this._configuredTableSummaries.Count > 0; 
+            return this._configuredTableSummaries != null && (this._configuredTableSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

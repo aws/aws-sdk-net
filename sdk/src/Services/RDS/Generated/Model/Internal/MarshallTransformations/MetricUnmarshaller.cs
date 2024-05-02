@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RDS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -69,6 +70,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                     if (context.TestExpression("References/member", targetDepth))
                     {
                         var unmarshaller = MetricReferenceUnmarshaller.Instance;
+                        if (unmarshalledObject.References == null)
+                        {
+                            unmarshalledObject.References = new List<MetricReference>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.References.Add(item);
                         continue;

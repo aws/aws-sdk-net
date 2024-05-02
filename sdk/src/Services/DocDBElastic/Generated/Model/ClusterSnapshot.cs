@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DocDBElastic.Model
 {
     /// <summary>
-    /// Returns information about a specific Elastic DocumentDB snapshot.
+    /// Returns information about a specific elastic cluster snapshot.
     /// </summary>
     public partial class ClusterSnapshot
     {
@@ -40,14 +41,15 @@ namespace Amazon.DocDBElastic.Model
         private string _snapshotArn;
         private string _snapshotCreationTime;
         private string _snapshotName;
+        private SnapshotType _snapshotType;
         private Status _status;
-        private List<string> _subnetIds = new List<string>();
-        private List<string> _vpcSecurityGroupIds = new List<string>();
+        private List<string> _subnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _vpcSecurityGroupIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AdminUserName. 
         /// <para>
-        /// The name of the Elastic DocumentDB cluster administrator.
+        /// The name of the elastic cluster administrator.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -66,7 +68,7 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property ClusterArn. 
         /// <para>
-        /// The arn of the Elastic DocumentDB cluster.
+        /// The ARN identifier of the elastic cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -85,8 +87,7 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property ClusterCreationTime. 
         /// <para>
-        /// The time when the Elastic DocumentDB cluster was created in Universal Coordinated
-        /// Time (UTC).
+        /// The time when the elastic cluster was created in Universal Coordinated Time (UTC).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -105,7 +106,12 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The KMS key identifier to use to encrypt the Elastic DocumentDB cluster.
+        /// The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key.
+        /// If you are creating a cluster using the same Amazon account that owns this KMS encryption
+        /// key, you can use the KMS key alias instead of the ARN as the KMS encryption key. If
+        /// an encryption key is not specified here, Amazon DocumentDB uses the default encryption
+        /// key that KMS creates for your account. Your account has a different default encryption
+        /// key for each Amazon Region. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -124,7 +130,7 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property SnapshotArn. 
         /// <para>
-        /// The arn of the Elastic DocumentDB snapshot
+        /// The ARN identifier of the elastic cluster snapshot.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -143,8 +149,8 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property SnapshotCreationTime. 
         /// <para>
-        /// The time when the Elastic DocumentDB snapshot was created in Universal Coordinated
-        /// Time (UTC).
+        /// The time when the elastic cluster snapshot was created in Universal Coordinated Time
+        /// (UTC).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -163,7 +169,7 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property SnapshotName. 
         /// <para>
-        /// The name of the Elastic DocumentDB snapshot.
+        /// The name of the elastic cluster snapshot.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -180,9 +186,39 @@ namespace Amazon.DocDBElastic.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SnapshotType. 
+        /// <para>
+        /// The type of cluster snapshots to be returned. You can specify one of the following
+        /// values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>automated</c> - Return all cluster snapshots that Amazon DocumentDB has automatically
+        /// created for your Amazon Web Services account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>manual</c> - Return all cluster snapshots that you have manually created for your
+        /// Amazon Web Services account.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public SnapshotType SnapshotType
+        {
+            get { return this._snapshotType; }
+            set { this._snapshotType = value; }
+        }
+
+        // Check to see if SnapshotType property is set
+        internal bool IsSetSnapshotType()
+        {
+            return this._snapshotType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the Elastic DocumentDB snapshot.
+        /// The status of the elastic cluster snapshot.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -201,7 +237,7 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property SubnetIds. 
         /// <para>
-        /// A list of the IDs of subnets associated with the DB cluster snapshot.
+        /// The Amazon EC2 subnet IDs for the elastic cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -214,13 +250,13 @@ namespace Amazon.DocDBElastic.Model
         // Check to see if SubnetIds property is set
         internal bool IsSetSubnetIds()
         {
-            return this._subnetIds != null && this._subnetIds.Count > 0; 
+            return this._subnetIds != null && (this._subnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
         /// Gets and sets the property VpcSecurityGroupIds. 
         /// <para>
-        /// A list of the IDs of the VPC security groups associated with the cluster snapshot.
+        /// A list of EC2 VPC security groups to associate with the elastic cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -233,7 +269,7 @@ namespace Amazon.DocDBElastic.Model
         // Check to see if VpcSecurityGroupIds property is set
         internal bool IsSetVpcSecurityGroupIds()
         {
-            return this._vpcSecurityGroupIds != null && this._vpcSecurityGroupIds.Count > 0; 
+            return this._vpcSecurityGroupIds != null && (this._vpcSecurityGroupIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

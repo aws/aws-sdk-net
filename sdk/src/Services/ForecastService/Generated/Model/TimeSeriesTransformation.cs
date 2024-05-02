@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ForecastService.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.ForecastService.Model
     public partial class TimeSeriesTransformation
     {
         private Action _action;
-        private List<TimeSeriesCondition> _timeSeriesConditions = new List<TimeSeriesCondition>();
+        private List<TimeSeriesCondition> _timeSeriesConditions = AWSConfigs.InitializeCollections ? new List<TimeSeriesCondition>() : null;
 
         /// <summary>
         /// Gets and sets the property Action. 
@@ -75,7 +76,7 @@ namespace Amazon.ForecastService.Model
         // Check to see if TimeSeriesConditions property is set
         internal bool IsSetTimeSeriesConditions()
         {
-            return this._timeSeriesConditions != null && this._timeSeriesConditions.Count > 0; 
+            return this._timeSeriesConditions != null && (this._timeSeriesConditions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -35,8 +36,8 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class GroupMembers
     {
-        private List<MemberGroup> _memberGroups = new List<MemberGroup>();
-        private List<MemberUser> _memberUsers = new List<MemberUser>();
+        private List<MemberGroup> _memberGroups = AWSConfigs.InitializeCollections ? new List<MemberGroup>() : null;
+        private List<MemberUser> _memberUsers = AWSConfigs.InitializeCollections ? new List<MemberUser>() : null;
         private S3Path _s3PathforGroupMembers;
 
         /// <summary>
@@ -56,7 +57,7 @@ namespace Amazon.Kendra.Model
         // Check to see if MemberGroups property is set
         internal bool IsSetMemberGroups()
         {
-            return this._memberGroups != null && this._memberGroups.Count > 0; 
+            return this._memberGroups != null && (this._memberGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -76,7 +77,7 @@ namespace Amazon.Kendra.Model
         // Check to see if MemberUsers property is set
         internal bool IsSetMemberUsers()
         {
-            return this._memberUsers != null && this._memberUsers.Count > 0; 
+            return this._memberUsers != null && (this._memberUsers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

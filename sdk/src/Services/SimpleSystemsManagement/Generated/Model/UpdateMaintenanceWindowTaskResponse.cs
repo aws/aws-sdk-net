@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -42,10 +43,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         private string _name;
         private int? _priority;
         private string _serviceRoleArn;
-        private List<Target> _targets = new List<Target>();
+        private List<Target> _targets = AWSConfigs.InitializeCollections ? new List<Target>() : null;
         private string _taskArn;
         private MaintenanceWindowTaskInvocationParameters _taskInvocationParameters;
-        private Dictionary<string, MaintenanceWindowTaskParameterValueExpression> _taskParameters = new Dictionary<string, MaintenanceWindowTaskParameterValueExpression>();
+        private Dictionary<string, MaintenanceWindowTaskParameterValueExpression> _taskParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, MaintenanceWindowTaskParameterValueExpression>() : null;
         private string _windowId;
         private string _windowTaskId;
 
@@ -244,7 +245,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if Targets property is set
         internal bool IsSetTargets()
         {
-            return this._targets != null && this._targets.Count > 0; 
+            return this._targets != null && (this._targets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -308,7 +309,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if TaskParameters property is set
         internal bool IsSetTaskParameters()
         {
-            return this._taskParameters != null && this._taskParameters.Count > 0; 
+            return this._taskParameters != null && (this._taskParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

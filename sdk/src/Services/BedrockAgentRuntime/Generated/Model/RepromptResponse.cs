@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Observation information if there were reprompts
+    /// Contains details about the agent's response to reprompt the input.
     /// </summary>
     public partial class RepromptResponse
     {
@@ -37,7 +38,10 @@ namespace Amazon.BedrockAgentRuntime.Model
         private string _text;
 
         /// <summary>
-        /// Gets and sets the property Source.
+        /// Gets and sets the property Source. 
+        /// <para>
+        /// Specifies what output is prompting the agent to reprompt the input.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public Source Source
@@ -55,7 +59,7 @@ namespace Amazon.BedrockAgentRuntime.Model
         /// <summary>
         /// Gets and sets the property Text. 
         /// <para>
-        /// Reprompt response text
+        /// The text reprompting the input.
         /// </para>
         /// </summary>
         public string Text

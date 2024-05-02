@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Lambda.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -73,11 +74,7 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
             }
             request.Headers[Amazon.Util.HeaderKeys.ContentLengthHeader] =
                 request.ContentStream.Length.ToString(CultureInfo.InvariantCulture);
-            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "binary/octet-stream"; 
-            if (request.ContentStream != null && request.ContentStream.Length == 0)
-            {
-                request.Headers.Remove(Amazon.Util.HeaderKeys.ContentTypeHeader);
-            }
+            request.Headers[Amazon.Util.HeaderKeys.ContentTypeHeader] = "application/octet-stream";
         
             if (publicRequest.IsSetClientContextBase64()) 
             {

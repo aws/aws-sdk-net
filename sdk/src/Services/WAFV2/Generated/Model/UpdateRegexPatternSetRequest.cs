@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
@@ -96,7 +97,7 @@ namespace Amazon.WAFV2.Model
         private string _id;
         private string _lockToken;
         private string _name;
-        private List<Regex> _regularExpressionList = new List<Regex>();
+        private List<Regex> _regularExpressionList = AWSConfigs.InitializeCollections ? new List<Regex>() : null;
         private Scope _scope;
 
         /// <summary>
@@ -195,7 +196,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if RegularExpressionList property is set
         internal bool IsSetRegularExpressionList()
         {
-            return this._regularExpressionList != null && this._regularExpressionList.Count > 0; 
+            return this._regularExpressionList != null && (this._regularExpressionList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

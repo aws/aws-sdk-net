@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EMRServerless.Model
 {
     /// <summary>
@@ -35,6 +36,7 @@ namespace Amazon.EMRServerless.Model
     {
         private CloudWatchLoggingConfiguration _cloudWatchLoggingConfiguration;
         private ManagedPersistenceMonitoringConfiguration _managedPersistenceMonitoringConfiguration;
+        private PrometheusMonitoringConfiguration _prometheusMonitoringConfiguration;
         private S3MonitoringConfiguration _s3MonitoringConfiguration;
 
         /// <summary>
@@ -72,6 +74,25 @@ namespace Amazon.EMRServerless.Model
         internal bool IsSetManagedPersistenceMonitoringConfiguration()
         {
             return this._managedPersistenceMonitoringConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrometheusMonitoringConfiguration. 
+        /// <para>
+        /// The monitoring configuration object you can configure to send metrics to Amazon Managed
+        /// Service for Prometheus for a job run.
+        /// </para>
+        /// </summary>
+        public PrometheusMonitoringConfiguration PrometheusMonitoringConfiguration
+        {
+            get { return this._prometheusMonitoringConfiguration; }
+            set { this._prometheusMonitoringConfiguration = value; }
+        }
+
+        // Check to see if PrometheusMonitoringConfiguration property is set
+        internal bool IsSetPrometheusMonitoringConfiguration()
+        {
+            return this._prometheusMonitoringConfiguration != null;
         }
 
         /// <summary>

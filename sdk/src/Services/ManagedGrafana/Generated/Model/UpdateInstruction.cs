@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ManagedGrafana.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.ManagedGrafana.Model
     {
         private UpdateAction _action;
         private Role _role;
-        private List<User> _users = new List<User>();
+        private List<User> _users = AWSConfigs.InitializeCollections ? new List<User>() : null;
 
         /// <summary>
         /// Gets and sets the property Action. 
@@ -92,7 +93,7 @@ namespace Amazon.ManagedGrafana.Model
         // Check to see if Users property is set
         internal bool IsSetUsers()
         {
-            return this._users != null && this._users.Count > 0; 
+            return this._users != null && (this._users.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

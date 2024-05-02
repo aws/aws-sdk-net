@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.GuardDuty.Model
     /// </summary>
     public partial class Evidence
     {
-        private List<ThreatIntelligenceDetail> _threatIntelligenceDetails = new List<ThreatIntelligenceDetail>();
+        private List<ThreatIntelligenceDetail> _threatIntelligenceDetails = AWSConfigs.InitializeCollections ? new List<ThreatIntelligenceDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property ThreatIntelligenceDetails. 
@@ -50,7 +51,7 @@ namespace Amazon.GuardDuty.Model
         // Check to see if ThreatIntelligenceDetails property is set
         internal bool IsSetThreatIntelligenceDetails()
         {
-            return this._threatIntelligenceDetails != null && this._threatIntelligenceDetails.Count > 0; 
+            return this._threatIntelligenceDetails != null && (this._threatIntelligenceDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

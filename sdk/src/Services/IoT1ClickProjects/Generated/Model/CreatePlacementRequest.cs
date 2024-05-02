@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT1ClickProjects.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IoT1ClickProjects.Model
     /// </summary>
     public partial class CreatePlacementRequest : AmazonIoT1ClickProjectsRequest
     {
-        private Dictionary<string, string> _attributes = new Dictionary<string, string>();
+        private Dictionary<string, string> _attributes = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _placementName;
         private string _projectName;
 
@@ -54,7 +55,7 @@ namespace Amazon.IoT1ClickProjects.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

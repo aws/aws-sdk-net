@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         private DateTime? _lastExecutionDate;
         private string _resourceCountByStatus;
         private string _status;
-        private List<AlarmStateInformation> _triggeredAlarms = new List<AlarmStateInformation>();
+        private List<AlarmStateInformation> _triggeredAlarms = AWSConfigs.InitializeCollections ? new List<AlarmStateInformation>() : null;
 
         /// <summary>
         /// Gets and sets the property AlarmConfiguration.
@@ -219,7 +220,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         // Check to see if TriggeredAlarms property is set
         internal bool IsSetTriggeredAlarms()
         {
-            return this._triggeredAlarms != null && this._triggeredAlarms.Count > 0; 
+            return this._triggeredAlarms != null && (this._triggeredAlarms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

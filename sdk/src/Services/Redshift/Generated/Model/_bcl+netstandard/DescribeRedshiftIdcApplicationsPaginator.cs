@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Redshift.Model
         /// Enumerable containing all of the RedshiftIdcApplications
         /// </summary>
         public IPaginatedEnumerable<RedshiftIdcApplication> RedshiftIdcApplications => 
-            new PaginatedResultKeyResponse<DescribeRedshiftIdcApplicationsResponse, RedshiftIdcApplication>(this, (i) => i.RedshiftIdcApplications);
+            new PaginatedResultKeyResponse<DescribeRedshiftIdcApplicationsResponse, RedshiftIdcApplication>(this, (i) => i.RedshiftIdcApplications ?? new List<RedshiftIdcApplication>());
 
         internal DescribeRedshiftIdcApplicationsPaginator(IAmazonRedshift client, DescribeRedshiftIdcApplicationsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Redshift.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeRedshiftIdcApplicationsResponse> IPaginator<DescribeRedshiftIdcApplicationsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeRedshiftIdcApplicationsResponse> IPaginator<DescribeRedshiftIdcApplicationsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

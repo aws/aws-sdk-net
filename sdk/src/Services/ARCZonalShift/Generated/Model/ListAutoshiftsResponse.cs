@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ARCZonalShift.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ARCZonalShift.Model
     /// </summary>
     public partial class ListAutoshiftsResponse : AmazonWebServiceResponse
     {
-        private List<AutoshiftSummary> _items = new List<AutoshiftSummary>();
+        private List<AutoshiftSummary> _items = AWSConfigs.InitializeCollections ? new List<AutoshiftSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ARCZonalShift.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

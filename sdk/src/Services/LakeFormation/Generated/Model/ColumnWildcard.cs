@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LakeFormation.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.LakeFormation.Model
     /// </summary>
     public partial class ColumnWildcard
     {
-        private List<string> _excludedColumnNames = new List<string>();
+        private List<string> _excludedColumnNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ExcludedColumnNames. 
@@ -50,7 +51,7 @@ namespace Amazon.LakeFormation.Model
         // Check to see if ExcludedColumnNames property is set
         internal bool IsSetExcludedColumnNames()
         {
-            return this._excludedColumnNames != null && this._excludedColumnNames.Count > 0; 
+            return this._excludedColumnNames != null && (this._excludedColumnNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

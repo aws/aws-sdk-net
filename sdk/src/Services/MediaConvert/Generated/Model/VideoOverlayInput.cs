@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.MediaConvert.Model
     public partial class VideoOverlayInput
     {
         private string _fileInput;
-        private List<VideoOverlayInputClipping> _inputClippings = new List<VideoOverlayInputClipping>();
+        private List<VideoOverlayInputClipping> _inputClippings = AWSConfigs.InitializeCollections ? new List<VideoOverlayInputClipping>() : null;
         private InputTimecodeSource _timecodeSource;
         private string _timecodeStart;
 
@@ -71,7 +72,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if InputClippings property is set
         internal bool IsSetInputClippings()
         {
-            return this._inputClippings != null && this._inputClippings.Count > 0; 
+            return this._inputClippings != null && (this._inputClippings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

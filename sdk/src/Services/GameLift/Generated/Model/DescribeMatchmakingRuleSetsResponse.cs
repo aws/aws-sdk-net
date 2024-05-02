@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GameLift.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.GameLift.Model
     public partial class DescribeMatchmakingRuleSetsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<MatchmakingRuleSet> _ruleSets = new List<MatchmakingRuleSet>();
+        private List<MatchmakingRuleSet> _ruleSets = AWSConfigs.InitializeCollections ? new List<MatchmakingRuleSet>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,7 +73,7 @@ namespace Amazon.GameLift.Model
         // Check to see if RuleSets property is set
         internal bool IsSetRuleSets()
         {
-            return this._ruleSets != null && this._ruleSets.Count > 0; 
+            return this._ruleSets != null && (this._ruleSets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

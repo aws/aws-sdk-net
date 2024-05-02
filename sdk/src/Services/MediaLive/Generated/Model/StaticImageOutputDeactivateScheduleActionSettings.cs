@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.MediaLive.Model
     {
         private int? _fadeOut;
         private int? _layer;
-        private List<string> _outputNames = new List<string>();
+        private List<string> _outputNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property FadeOut. The time in milliseconds for the image to fade
@@ -85,7 +86,7 @@ namespace Amazon.MediaLive.Model
         // Check to see if OutputNames property is set
         internal bool IsSetOutputNames()
         {
-            return this._outputNames != null && this._outputNames.Count > 0; 
+            return this._outputNames != null && (this._outputNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Personalize.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Personalize.Model
     public partial class ListRecipesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<RecipeSummary> _recipes = new List<RecipeSummary>();
+        private List<RecipeSummary> _recipes = AWSConfigs.InitializeCollections ? new List<RecipeSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.Personalize.Model
         // Check to see if Recipes property is set
         internal bool IsSetRecipes()
         {
-            return this._recipes != null && this._recipes.Count > 0; 
+            return this._recipes != null && (this._recipes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

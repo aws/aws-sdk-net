@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Textract.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Textract.Model
     public partial class ExpenseGroupProperty
     {
         private string _id;
-        private List<string> _types = new List<string>();
+        private List<string> _types = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Id. 
@@ -71,7 +72,7 @@ namespace Amazon.Textract.Model
         // Check to see if Types property is set
         internal bool IsSetTypes()
         {
-            return this._types != null && this._types.Count > 0; 
+            return this._types != null && (this._types.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

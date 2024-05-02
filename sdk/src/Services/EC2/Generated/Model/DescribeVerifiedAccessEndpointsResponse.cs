@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EC2.Model
     public partial class DescribeVerifiedAccessEndpointsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<VerifiedAccessEndpoint> _verifiedAccessEndpoints = new List<VerifiedAccessEndpoint>();
+        private List<VerifiedAccessEndpoint> _verifiedAccessEndpoints = AWSConfigs.InitializeCollections ? new List<VerifiedAccessEndpoint>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.EC2.Model
         // Check to see if VerifiedAccessEndpoints property is set
         internal bool IsSetVerifiedAccessEndpoints()
         {
-            return this._verifiedAccessEndpoints != null && this._verifiedAccessEndpoints.Count > 0; 
+            return this._verifiedAccessEndpoints != null && (this._verifiedAccessEndpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

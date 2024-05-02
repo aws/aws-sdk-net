@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FSx.Model
 {
     /// <summary>
@@ -125,7 +126,7 @@ namespace Amazon.FSx.Model
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types">Volume
-        /// types</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.
+        /// types</a> in the Amazon FSx for NetApp ONTAP User Guide.
         /// </para>
         /// </summary>
         public InputOntapVolumeType OntapVolumeType
@@ -146,7 +147,7 @@ namespace Amazon.FSx.Model
         /// Specifies the security style for the volume. If a volume's security style is not specified,
         /// it is automatically set to the root volume's security style. The security style determines
         /// the type of permissions that FSx for ONTAP uses to control data access. For more information,
-        /// see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-volumes.html#volume-security-style">Volume
+        /// see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-security-style">Volume
         /// security style</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>. Specify one
         /// of the following values:
         /// </para>
@@ -164,10 +165,15 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <c>MIXED</c> if the file system is managed by both UNIX and Windows administrators
-        /// and users consist of both NFS and SMB clients.
+        ///  <c>MIXED</c> This is an advanced setting. For more information, see the topic <a
+        /// href="https://docs.netapp.com/us-en/ontap/nfs-admin/security-styles-their-effects-concept.html">What
+        /// the security styles and their effects are</a> in the NetApp Documentation Center.
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-security-style.html">Volume
+        /// security style</a> in the FSx for ONTAP User Guide.
+        /// </para>
         /// </summary>
         public SecurityStyle SecurityStyle
         {
@@ -184,7 +190,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property SizeInBytes. 
         /// <para>
-        /// The configured size of the volume, in bytes.
+        /// Specifies the configured size of the volume, in bytes.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=22517998000000000)]
@@ -203,7 +209,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property SizeInMegabytes. 
         /// <para>
-        /// Specifies the size of the volume, in megabytes (MB), that you are creating.
+        /// Use <c>SizeInBytes</c> instead. Specifies the size of the volume, in megabytes (MB),
+        /// that you are creating.
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated, use SizeInBytes instead")]
@@ -268,7 +275,7 @@ namespace Amazon.FSx.Model
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot
-        /// policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.
+        /// policies</a> in the Amazon FSx for NetApp ONTAP User Guide.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -288,7 +295,12 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property StorageEfficiencyEnabled. 
         /// <para>
         /// Set to true to enable deduplication, compression, and compaction storage efficiency
-        /// features on the volume, or set to false to disable them. This parameter is required.
+        /// features on the volume, or set to false to disable them.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>StorageEfficiencyEnabled</c> is required when creating a <c>RW</c> volume (<c>OntapVolumeType</c>
+        /// set to <c>RW</c>).
         /// </para>
         /// </summary>
         public bool? StorageEfficiencyEnabled
@@ -340,9 +352,10 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property VolumeStyle. 
         /// <para>
-        /// Use to specify the style of an ONTAP volume. For more information about FlexVols and
-        /// FlexGroups, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-types.html">Volume
-        /// types</a> in Amazon FSx for NetApp ONTAP User Guide.
+        /// Use to specify the style of an ONTAP volume. FSx for ONTAP offers two styles of volumes
+        /// that you can use for different purposes, FlexVol and FlexGroup volumes. For more information,
+        /// see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/volume-styles.html">Volume
+        /// styles</a> in the Amazon FSx for NetApp ONTAP User Guide.
         /// </para>
         /// </summary>
         public VolumeStyle VolumeStyle

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class EntityRecognitionConfig
     {
-        private List<EntityTypesListItem> _entityTypes = new List<EntityTypesListItem>();
+        private List<EntityTypesListItem> _entityTypes = AWSConfigs.InitializeCollections ? new List<EntityTypesListItem>() : null;
 
         /// <summary>
         /// Gets and sets the property EntityTypes. 
@@ -51,7 +52,7 @@ namespace Amazon.Comprehend.Model
         // Check to see if EntityTypes property is set
         internal bool IsSetEntityTypes()
         {
-            return this._entityTypes != null && this._entityTypes.Count > 0; 
+            return this._entityTypes != null && (this._entityTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

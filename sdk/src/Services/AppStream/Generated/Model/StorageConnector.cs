@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppStream.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.AppStream.Model
     public partial class StorageConnector
     {
         private StorageConnectorType _connectorType;
-        private List<string> _domains = new List<string>();
+        private List<string> _domains = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _resourceIdentifier;
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.AppStream.Model
         // Check to see if Domains property is set
         internal bool IsSetDomains()
         {
-            return this._domains != null && this._domains.Count > 0; 
+            return this._domains != null && (this._domains.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

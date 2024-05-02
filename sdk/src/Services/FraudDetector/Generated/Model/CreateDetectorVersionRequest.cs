@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FraudDetector.Model
 {
     /// <summary>
@@ -36,11 +37,11 @@ namespace Amazon.FraudDetector.Model
     {
         private string _description;
         private string _detectorId;
-        private List<string> _externalModelEndpoints = new List<string>();
-        private List<ModelVersion> _modelVersions = new List<ModelVersion>();
+        private List<string> _externalModelEndpoints = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<ModelVersion> _modelVersions = AWSConfigs.InitializeCollections ? new List<ModelVersion>() : null;
         private RuleExecutionMode _ruleExecutionMode;
-        private List<Rule> _rules = new List<Rule>();
-        private List<Tag> _tags = new List<Tag>();
+        private List<Rule> _rules = AWSConfigs.InitializeCollections ? new List<Rule>() : null;
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -95,7 +96,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if ExternalModelEndpoints property is set
         internal bool IsSetExternalModelEndpoints()
         {
-            return this._externalModelEndpoints != null && this._externalModelEndpoints.Count > 0; 
+            return this._externalModelEndpoints != null && (this._externalModelEndpoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -113,7 +114,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if ModelVersions property is set
         internal bool IsSetModelVersions()
         {
-            return this._modelVersions != null && this._modelVersions.Count > 0; 
+            return this._modelVersions != null && (this._modelVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -170,7 +171,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if Rules property is set
         internal bool IsSetRules()
         {
-            return this._rules != null && this._rules.Count > 0; 
+            return this._rules != null && (this._rules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -189,7 +190,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

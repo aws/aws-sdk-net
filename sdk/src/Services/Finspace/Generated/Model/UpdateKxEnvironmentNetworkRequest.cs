@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Finspace.Model
 {
     /// <summary>
@@ -43,7 +44,7 @@ namespace Amazon.Finspace.Model
     public partial class UpdateKxEnvironmentNetworkRequest : AmazonFinspaceRequest
     {
         private string _clientToken;
-        private List<CustomDNSServer> _customdnsConfiguration = new List<CustomDNSServer>();
+        private List<CustomDNSServer> _customdnsConfiguration = AWSConfigs.InitializeCollections ? new List<CustomDNSServer>() : null;
         private string _environmentId;
         private TransitGatewayConfiguration _transitGatewayConfiguration;
 
@@ -82,7 +83,7 @@ namespace Amazon.Finspace.Model
         // Check to see if CustomDNSConfiguration property is set
         internal bool IsSetCustomDNSConfiguration()
         {
-            return this._customdnsConfiguration != null && this._customdnsConfiguration.Count > 0; 
+            return this._customdnsConfiguration != null && (this._customdnsConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

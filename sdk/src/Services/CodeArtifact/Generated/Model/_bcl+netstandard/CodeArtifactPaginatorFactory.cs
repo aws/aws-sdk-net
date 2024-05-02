@@ -21,6 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CodeArtifact.Model
 {
     /// <summary>
@@ -36,11 +37,35 @@ namespace Amazon.CodeArtifact.Model
         }
 
         /// <summary>
+        /// Paginator for ListAllowedRepositoriesForGroup operation
+        ///</summary>
+        public IListAllowedRepositoriesForGroupPaginator ListAllowedRepositoriesForGroup(ListAllowedRepositoriesForGroupRequest request) 
+        {
+            return new ListAllowedRepositoriesForGroupPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAssociatedPackages operation
+        ///</summary>
+        public IListAssociatedPackagesPaginator ListAssociatedPackages(ListAssociatedPackagesRequest request) 
+        {
+            return new ListAssociatedPackagesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDomains operation
         ///</summary>
         public IListDomainsPaginator ListDomains(ListDomainsRequest request) 
         {
             return new ListDomainsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPackageGroups operation
+        ///</summary>
+        public IListPackageGroupsPaginator ListPackageGroups(ListPackageGroupsRequest request) 
+        {
+            return new ListPackageGroupsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -81,6 +106,14 @@ namespace Amazon.CodeArtifact.Model
         public IListRepositoriesInDomainPaginator ListRepositoriesInDomain(ListRepositoriesInDomainRequest request) 
         {
             return new ListRepositoriesInDomainPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListSubPackageGroups operation
+        ///</summary>
+        public IListSubPackageGroupsPaginator ListSubPackageGroups(ListSubPackageGroupsRequest request) 
+        {
+            return new ListSubPackageGroupsPaginator(this.client, request);
         }
     }
 }

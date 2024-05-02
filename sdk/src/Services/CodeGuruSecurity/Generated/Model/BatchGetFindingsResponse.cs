@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeGuruSecurity.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.CodeGuruSecurity.Model
     /// </summary>
     public partial class BatchGetFindingsResponse : AmazonWebServiceResponse
     {
-        private List<BatchGetFindingsError> _failedFindings = new List<BatchGetFindingsError>();
-        private List<Finding> _findings = new List<Finding>();
+        private List<BatchGetFindingsError> _failedFindings = AWSConfigs.InitializeCollections ? new List<BatchGetFindingsError>() : null;
+        private List<Finding> _findings = AWSConfigs.InitializeCollections ? new List<Finding>() : null;
 
         /// <summary>
         /// Gets and sets the property FailedFindings. 
@@ -53,7 +54,7 @@ namespace Amazon.CodeGuruSecurity.Model
         // Check to see if FailedFindings property is set
         internal bool IsSetFailedFindings()
         {
-            return this._failedFindings != null && this._failedFindings.Count > 0; 
+            return this._failedFindings != null && (this._failedFindings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -72,7 +73,7 @@ namespace Amazon.CodeGuruSecurity.Model
         // Check to see if Findings property is set
         internal bool IsSetFindings()
         {
-            return this._findings != null && this._findings.Count > 0; 
+            return this._findings != null && (this._findings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(StageDeclaration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetActions())
             {
                 context.Writer.WritePropertyName("actions");
@@ -81,6 +84,17 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("name");
                 context.Writer.Write(requestObject.Name);
+            }
+
+            if(requestObject.IsSetOnFailure())
+            {
+                context.Writer.WritePropertyName("onFailure");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FailureConditionsMarshaller.Instance;
+                marshaller.Marshall(requestObject.OnFailure, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
         }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class ListDimensionsResponse : AmazonWebServiceResponse
     {
-        private List<string> _dimensionNames = new List<string>();
+        private List<string> _dimensionNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.IoT.Model
         // Check to see if DimensionNames property is set
         internal bool IsSetDimensionNames()
         {
-            return this._dimensionNames != null && this._dimensionNames.Count > 0; 
+            return this._dimensionNames != null && (this._dimensionNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

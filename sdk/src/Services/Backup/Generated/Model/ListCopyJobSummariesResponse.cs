@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Backup.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Backup.Model
     public partial class ListCopyJobSummariesResponse : AmazonWebServiceResponse
     {
         private string _aggregationPeriod;
-        private List<CopyJobSummary> _copyJobSummaries = new List<CopyJobSummary>();
+        private List<CopyJobSummary> _copyJobSummaries = AWSConfigs.InitializeCollections ? new List<CopyJobSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -84,7 +85,7 @@ namespace Amazon.Backup.Model
         // Check to see if CopyJobSummaries property is set
         internal bool IsSetCopyJobSummaries()
         {
-            return this._copyJobSummaries != null && this._copyJobSummaries.Count > 0; 
+            return this._copyJobSummaries != null && (this._copyJobSummaries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

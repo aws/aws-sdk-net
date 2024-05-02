@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EKS.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EKS.Model
     /// </summary>
     public partial class InsightCategorySpecificSummary
     {
-        private List<DeprecationDetail> _deprecationDetails = new List<DeprecationDetail>();
+        private List<DeprecationDetail> _deprecationDetails = AWSConfigs.InitializeCollections ? new List<DeprecationDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property DeprecationDetails. 
@@ -52,7 +53,7 @@ namespace Amazon.EKS.Model
         // Check to see if DeprecationDetails property is set
         internal bool IsSetDeprecationDetails()
         {
-            return this._deprecationDetails != null && this._deprecationDetails.Count > 0; 
+            return this._deprecationDetails != null && (this._deprecationDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

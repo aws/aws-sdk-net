@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMakerFeatureStoreRuntime.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
     public partial class BatchGetRecordIdentifier
     {
         private string _featureGroupName;
-        private List<string> _featureNames = new List<string>();
-        private List<string> _recordIdentifiersValueAsString = new List<string>();
+        private List<string> _featureNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _recordIdentifiersValueAsString = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property FeatureGroupName. 
@@ -74,7 +75,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         // Check to see if FeatureNames property is set
         internal bool IsSetFeatureNames()
         {
-            return this._featureNames != null && this._featureNames.Count > 0; 
+            return this._featureNames != null && (this._featureNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -93,7 +94,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         // Check to see if RecordIdentifiersValueAsString property is set
         internal bool IsSetRecordIdentifiersValueAsString()
         {
-            return this._recordIdentifiersValueAsString != null && this._recordIdentifiersValueAsString.Count > 0; 
+            return this._recordIdentifiersValueAsString != null && (this._recordIdentifiersValueAsString.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

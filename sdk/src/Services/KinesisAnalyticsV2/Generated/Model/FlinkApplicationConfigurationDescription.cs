@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes configuration parameters for a Flink-based Kinesis Data Analytics application.
+    /// Describes configuration parameters for a Managed Service for Apache Flink application.
     /// </summary>
     public partial class FlinkApplicationConfigurationDescription
     {
@@ -60,8 +61,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property JobPlanDescription. 
         /// <para>
-        /// The job plan for an application. For more information about the job plan, see <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/internals/job_scheduling.html">Jobs
-        /// and Scheduling</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache
+        /// The job plan for an application. For more information about the job plan, see <a href="https://nightlies.apache.org/flink/flink-docs-release-1.18/internals/job_scheduling.html">Jobs
+        /// and Scheduling</a> in the <a href="https://nightlies.apache.org/flink/flink-docs-release-1.18/">Apache
         /// Flink Documentation</a>. To retrieve the job plan for the application, use the <a>DescribeApplicationRequest$IncludeAdditionalDetails</a>
         /// parameter of the <a>DescribeApplication</a> operation.
         /// </para>

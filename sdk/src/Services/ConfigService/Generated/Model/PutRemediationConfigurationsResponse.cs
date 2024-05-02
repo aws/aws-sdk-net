@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class PutRemediationConfigurationsResponse : AmazonWebServiceResponse
     {
-        private List<FailedRemediationBatch> _failedBatches = new List<FailedRemediationBatch>();
+        private List<FailedRemediationBatch> _failedBatches = AWSConfigs.InitializeCollections ? new List<FailedRemediationBatch>() : null;
 
         /// <summary>
         /// Gets and sets the property FailedBatches. 
@@ -50,7 +51,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if FailedBatches property is set
         internal bool IsSetFailedBatches()
         {
-            return this._failedBatches != null && this._failedBatches.Count > 0; 
+            return this._failedBatches != null && (this._failedBatches.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

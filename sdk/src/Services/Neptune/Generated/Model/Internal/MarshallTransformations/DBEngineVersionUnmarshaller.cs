@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Neptune.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -93,6 +94,10 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ExportableLogTypes/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.ExportableLogTypes == null)
+                        {
+                            unmarshalledObject.ExportableLogTypes = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ExportableLogTypes.Add(item);
                         continue;
@@ -100,6 +105,10 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     if (context.TestExpression("SupportedCharacterSets/CharacterSet", targetDepth))
                     {
                         var unmarshaller = CharacterSetUnmarshaller.Instance;
+                        if (unmarshalledObject.SupportedCharacterSets == null)
+                        {
+                            unmarshalledObject.SupportedCharacterSets = new List<CharacterSet>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SupportedCharacterSets.Add(item);
                         continue;
@@ -107,6 +116,10 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     if (context.TestExpression("SupportedTimezones/Timezone", targetDepth))
                     {
                         var unmarshaller = TimezoneUnmarshaller.Instance;
+                        if (unmarshalledObject.SupportedTimezones == null)
+                        {
+                            unmarshalledObject.SupportedTimezones = new List<Timezone>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SupportedTimezones.Add(item);
                         continue;
@@ -132,6 +145,10 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ValidUpgradeTarget/UpgradeTarget", targetDepth))
                     {
                         var unmarshaller = UpgradeTargetUnmarshaller.Instance;
+                        if (unmarshalledObject.ValidUpgradeTarget == null)
+                        {
+                            unmarshalledObject.ValidUpgradeTarget = new List<UpgradeTarget>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ValidUpgradeTarget.Add(item);
                         continue;

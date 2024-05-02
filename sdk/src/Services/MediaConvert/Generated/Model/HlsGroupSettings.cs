@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
@@ -33,11 +34,11 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class HlsGroupSettings
     {
-        private List<HlsAdditionalManifest> _additionalManifests = new List<HlsAdditionalManifest>();
-        private List<string> _adMarkers = new List<string>();
+        private List<HlsAdditionalManifest> _additionalManifests = AWSConfigs.InitializeCollections ? new List<HlsAdditionalManifest>() : null;
+        private List<string> _adMarkers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private HlsAudioOnlyHeader _audioOnlyHeader;
         private string _baseUrl;
-        private List<HlsCaptionLanguageMapping> _captionLanguageMappings = new List<HlsCaptionLanguageMapping>();
+        private List<HlsCaptionLanguageMapping> _captionLanguageMappings = AWSConfigs.InitializeCollections ? new List<HlsCaptionLanguageMapping>() : null;
         private HlsCaptionLanguageSetting _captionLanguageSetting;
         private HlsCaptionSegmentLengthControl _captionSegmentLengthControl;
         private HlsClientCache _clientCache;
@@ -82,7 +83,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if AdditionalManifests property is set
         internal bool IsSetAdditionalManifests()
         {
-            return this._additionalManifests != null && this._additionalManifests.Count > 0; 
+            return this._additionalManifests != null && (this._additionalManifests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -99,7 +100,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if AdMarkers property is set
         internal bool IsSetAdMarkers()
         {
-            return this._adMarkers != null && this._adMarkers.Count > 0; 
+            return this._adMarkers != null && (this._adMarkers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -150,7 +151,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if CaptionLanguageMappings property is set
         internal bool IsSetCaptionLanguageMappings()
         {
-            return this._captionLanguageMappings != null && this._captionLanguageMappings.Count > 0; 
+            return this._captionLanguageMappings != null && (this._captionLanguageMappings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MigrationHubRefactorSpaces.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
     public partial class ErrorResponse
     {
         private string _accountId;
-        private Dictionary<string, string> _additionalDetails = new Dictionary<string, string>();
+        private Dictionary<string, string> _additionalDetails = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ErrorCode _code;
         private string _message;
         private string _resourceIdentifier;
@@ -74,7 +75,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         // Check to see if AdditionalDetails property is set
         internal bool IsSetAdditionalDetails()
         {
-            return this._additionalDetails != null && this._additionalDetails.Count > 0; 
+            return this._additionalDetails != null && (this._additionalDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

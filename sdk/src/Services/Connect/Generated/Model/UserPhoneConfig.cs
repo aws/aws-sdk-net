@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -41,7 +42,11 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property AfterContactWorkTimeLimit. 
         /// <para>
-        /// The After Call Work (ACW) timeout setting, in seconds.
+        /// The After Call Work (ACW) timeout setting, in seconds. This parameter has a minimum
+        /// value of 0 and a maximum value of 2,000,000 seconds (24 days). Enter 0 if you don't
+        /// want to allocate a specific amount of ACW time. It essentially means an indefinite
+        /// amount of time. When the conversation ends, ACW starts; the agent must choose Close
+        /// contact to end ACW. 
         /// </para>
         ///  <note> 
         /// <para>

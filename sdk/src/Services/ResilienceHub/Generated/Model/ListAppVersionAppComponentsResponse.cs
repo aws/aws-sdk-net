@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ResilienceHub.Model
     public partial class ListAppVersionAppComponentsResponse : AmazonWebServiceResponse
     {
         private string _appArn;
-        private List<AppComponent> _appComponents = new List<AppComponent>();
+        private List<AppComponent> _appComponents = AWSConfigs.InitializeCollections ? new List<AppComponent>() : null;
         private string _appVersion;
         private string _nextToken;
 
@@ -76,7 +77,7 @@ namespace Amazon.ResilienceHub.Model
         // Check to see if AppComponents property is set
         internal bool IsSetAppComponents()
         {
-            return this._appComponents != null && this._appComponents.Count > 0; 
+            return this._appComponents != null && (this._appComponents.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

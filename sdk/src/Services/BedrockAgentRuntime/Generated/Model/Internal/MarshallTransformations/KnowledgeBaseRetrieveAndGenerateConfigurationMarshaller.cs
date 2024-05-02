@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,19 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(KnowledgeBaseRetrieveAndGenerateConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
+            if(requestObject.IsSetGenerationConfiguration())
+            {
+                context.Writer.WritePropertyName("generationConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = GenerationConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.GenerationConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetKnowledgeBaseId())
             {
                 context.Writer.WritePropertyName("knowledgeBaseId");
@@ -55,6 +69,17 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("modelArn");
                 context.Writer.Write(requestObject.ModelArn);
+            }
+
+            if(requestObject.IsSetRetrievalConfiguration())
+            {
+                context.Writer.WritePropertyName("retrievalConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = KnowledgeBaseRetrievalConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.RetrievalConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
         }

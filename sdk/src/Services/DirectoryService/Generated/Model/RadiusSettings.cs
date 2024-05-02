@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.DirectoryService.Model
         private string _displayLabel;
         private int? _radiusPort;
         private int? _radiusRetries;
-        private List<string> _radiusServers = new List<string>();
+        private List<string> _radiusServers = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _radiusTimeout;
         private string _sharedSecret;
         private bool? _useSameUsername;
@@ -135,7 +136,7 @@ namespace Amazon.DirectoryService.Model
         // Check to see if RadiusServers property is set
         internal bool IsSetRadiusServers()
         {
-            return this._radiusServers != null && this._radiusServers.Count > 0; 
+            return this._radiusServers != null && (this._radiusServers.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

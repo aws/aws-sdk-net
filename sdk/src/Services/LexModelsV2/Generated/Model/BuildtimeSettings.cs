@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
@@ -56,7 +57,10 @@ namespace Amazon.LexModelsV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SampleUtteranceGeneration.
+        /// Gets and sets the property SampleUtteranceGeneration. 
+        /// <para>
+        /// Contains specifications for the sample utterance generation feature.
+        /// </para>
         /// </summary>
         public SampleUtteranceGenerationSpecification SampleUtteranceGeneration
         {

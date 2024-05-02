@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.CustomerProfiles.Model
         private string _matchId;
         private MatchType _matchType;
         private string _nextToken;
-        private List<string> _profileIds = new List<string>();
+        private List<string> _profileIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _ruleLevel;
 
         /// <summary>
@@ -136,7 +137,7 @@ namespace Amazon.CustomerProfiles.Model
         // Check to see if ProfileIds property is set
         internal bool IsSetProfileIds()
         {
-            return this._profileIds != null && this._profileIds.Count > 0; 
+            return this._profileIds != null && (this._profileIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

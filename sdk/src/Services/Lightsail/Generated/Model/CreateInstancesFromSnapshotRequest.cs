@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
@@ -42,17 +43,17 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class CreateInstancesFromSnapshotRequest : AmazonLightsailRequest
     {
-        private List<AddOnRequest> _addOns = new List<AddOnRequest>();
-        private Dictionary<string, List<DiskMap>> _attachedDiskMapping = new Dictionary<string, List<DiskMap>>();
+        private List<AddOnRequest> _addOns = AWSConfigs.InitializeCollections ? new List<AddOnRequest>() : null;
+        private Dictionary<string, List<DiskMap>> _attachedDiskMapping = AWSConfigs.InitializeCollections ? new Dictionary<string, List<DiskMap>>() : null;
         private string _availabilityZone;
         private string _bundleId;
-        private List<string> _instanceNames = new List<string>();
+        private List<string> _instanceNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _instanceSnapshotName;
         private IpAddressType _ipAddressType;
         private string _keyPairName;
         private string _restoreDate;
         private string _sourceInstanceName;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private bool? _useLatestRestorableAutoSnapshot;
         private string _userData;
 
@@ -71,7 +72,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if AddOns property is set
         internal bool IsSetAddOns()
         {
-            return this._addOns != null && this._addOns.Count > 0; 
+            return this._addOns != null && (this._addOns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -89,7 +90,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if AttachedDiskMapping property is set
         internal bool IsSetAttachedDiskMapping()
         {
-            return this._attachedDiskMapping != null && this._attachedDiskMapping.Count > 0; 
+            return this._attachedDiskMapping != null && (this._attachedDiskMapping.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -151,7 +152,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if InstanceNames property is set
         internal bool IsSetInstanceNames()
         {
-            return this._instanceNames != null && this._instanceNames.Count > 0; 
+            return this._instanceNames != null && (this._instanceNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -323,7 +324,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -41,7 +42,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Bias. 
         /// <para>
-        /// Metrics that measure bais in a model.
+        /// Metrics that measure bias in a model.
         /// </para>
         /// </summary>
         public Bias Bias

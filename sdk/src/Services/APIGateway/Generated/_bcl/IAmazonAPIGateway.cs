@@ -26,6 +26,7 @@ using System.Collections.Generic;
 using Amazon.Runtime;
 using Amazon.APIGateway.Model;
 
+#pragma warning disable CS1570
 namespace Amazon.APIGateway
 {
     /// <summary>
@@ -6798,7 +6799,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Changes information about a model.
+        /// Changes information about a model. The maximum size of the model is 400 KB.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateModel service method.</param>
         /// 
@@ -6828,7 +6829,7 @@ namespace Amazon.APIGateway
 
 
         /// <summary>
-        /// Changes information about a model.
+        /// Changes information about a model. The maximum size of the model is 400 KB.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateModel service method.</param>
         /// <param name="cancellationToken">

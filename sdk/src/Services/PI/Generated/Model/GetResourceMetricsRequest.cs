@@ -26,13 +26,14 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.PI.Model
 {
     /// <summary>
     /// Container for the parameters to the GetResourceMetrics operation.
     /// Retrieve Performance Insights metrics for a set of data sources over a time period.
-    /// You can provide specific dimension groups and dimensions, and provide aggregation
-    /// and filtering criteria for each group.
+    /// You can provide specific dimension groups and dimensions, and provide filtering criteria
+    /// for each group. You must specify an aggregate function for each metric.
     /// 
     ///  <note> 
     /// <para>
@@ -46,7 +47,7 @@ namespace Amazon.PI.Model
         private DateTime? _endTime;
         private string _identifier;
         private int? _maxResults;
-        private List<MetricQuery> _metricQueries = new List<MetricQuery>();
+        private List<MetricQuery> _metricQueries = AWSConfigs.InitializeCollections ? new List<MetricQuery>() : null;
         private string _nextToken;
         private PeriodAlignment _periodAlignment;
         private int? _periodInSeconds;
@@ -130,7 +131,10 @@ namespace Amazon.PI.Model
         /// Gets and sets the property MetricQueries. 
         /// <para>
         /// An array of one or more queries to perform. Each query must specify a Performance
-        /// Insights metric, and can optionally specify aggregation and filtering criteria.
+        /// Insights metric and specify an aggregate function, and you can provide filtering criteria.
+        /// You must append the aggregate function to the metric. For example, to find the average
+        /// for the metric <c>db.load</c> you must use <c>db.load.avg</c>. Valid values for aggregate
+        /// functions include <c>.avg</c>, <c>.min</c>, <c>.max</c>, and <c>.sum</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=15)]
@@ -143,7 +147,7 @@ namespace Amazon.PI.Model
         // Check to see if MetricQueries property is set
         internal bool IsSetMetricQueries()
         {
-            return this._metricQueries != null && this._metricQueries.Count > 0; 
+            return this._metricQueries != null && (this._metricQueries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

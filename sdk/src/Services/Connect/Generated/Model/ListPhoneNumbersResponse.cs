@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Connect.Model
     public partial class ListPhoneNumbersResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PhoneNumberSummary> _phoneNumberSummaryList = new List<PhoneNumberSummary>();
+        private List<PhoneNumberSummary> _phoneNumberSummaryList = AWSConfigs.InitializeCollections ? new List<PhoneNumberSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +70,7 @@ namespace Amazon.Connect.Model
         // Check to see if PhoneNumberSummaryList property is set
         internal bool IsSetPhoneNumberSummaryList()
         {
-            return this._phoneNumberSummaryList != null && this._phoneNumberSummaryList.Count > 0; 
+            return this._phoneNumberSummaryList != null && (this._phoneNumberSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

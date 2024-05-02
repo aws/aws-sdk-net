@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.CostExplorer.Model
     /// </summary>
     public partial class GetSavingsPlansUtilizationDetailsRequest : AmazonCostExplorerRequest
     {
-        private List<string> _dataType = new List<string>();
+        private List<string> _dataType = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Expression _filter;
         private int? _maxResults;
         private string _nextToken;
@@ -67,7 +68,7 @@ namespace Amazon.CostExplorer.Model
         // Check to see if DataType property is set
         internal bool IsSetDataType()
         {
-            return this._dataType != null && this._dataType.Count > 0; 
+            return this._dataType != null && (this._dataType.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

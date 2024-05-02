@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CustomerProfiles.Model
     /// </summary>
     public partial class ListRuleBasedMatchesResponse : AmazonWebServiceResponse
     {
-        private List<string> _matchIds = new List<string>();
+        private List<string> _matchIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.CustomerProfiles.Model
         // Check to see if MatchIds property is set
         internal bool IsSetMatchIds()
         {
-            return this._matchIds != null && this._matchIds.Count > 0; 
+            return this._matchIds != null && (this._matchIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

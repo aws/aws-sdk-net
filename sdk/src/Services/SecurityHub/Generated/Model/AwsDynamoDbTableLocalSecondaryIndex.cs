@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.SecurityHub.Model
     {
         private string _indexArn;
         private string _indexName;
-        private List<AwsDynamoDbTableKeySchema> _keySchema = new List<AwsDynamoDbTableKeySchema>();
+        private List<AwsDynamoDbTableKeySchema> _keySchema = AWSConfigs.InitializeCollections ? new List<AwsDynamoDbTableKeySchema>() : null;
         private AwsDynamoDbTableProjection _projection;
 
         /// <summary>
@@ -89,7 +90,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if KeySchema property is set
         internal bool IsSetKeySchema()
         {
-            return this._keySchema != null && this._keySchema.Count > 0; 
+            return this._keySchema != null && (this._keySchema.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

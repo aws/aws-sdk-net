@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Snowball.Model
 {
     /// <summary>
@@ -33,10 +34,10 @@ namespace Amazon.Snowball.Model
     /// </summary>
     public partial class ListServiceVersionsResponse : AmazonWebServiceResponse
     {
-        private List<DependentService> _dependentServices = new List<DependentService>();
+        private List<DependentService> _dependentServices = AWSConfigs.InitializeCollections ? new List<DependentService>() : null;
         private string _nextToken;
         private ServiceName _serviceName;
-        private List<ServiceVersion> _serviceVersions = new List<ServiceVersion>();
+        private List<ServiceVersion> _serviceVersions = AWSConfigs.InitializeCollections ? new List<ServiceVersion>() : null;
 
         /// <summary>
         /// Gets and sets the property DependentServices. 
@@ -54,7 +55,7 @@ namespace Amazon.Snowball.Model
         // Check to see if DependentServices property is set
         internal bool IsSetDependentServices()
         {
-            return this._dependentServices != null && this._dependentServices.Count > 0; 
+            return this._dependentServices != null && (this._dependentServices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -112,7 +113,7 @@ namespace Amazon.Snowball.Model
         // Check to see if ServiceVersions property is set
         internal bool IsSetServiceVersions()
         {
-            return this._serviceVersions != null && this._serviceVersions.Count > 0; 
+            return this._serviceVersions != null && (this._serviceVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

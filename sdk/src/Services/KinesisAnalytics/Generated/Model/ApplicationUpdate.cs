@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
@@ -34,10 +35,10 @@ namespace Amazon.KinesisAnalytics.Model
     public partial class ApplicationUpdate
     {
         private string _applicationCodeUpdate;
-        private List<CloudWatchLoggingOptionUpdate> _cloudWatchLoggingOptionUpdates = new List<CloudWatchLoggingOptionUpdate>();
-        private List<InputUpdate> _inputUpdates = new List<InputUpdate>();
-        private List<OutputUpdate> _outputUpdates = new List<OutputUpdate>();
-        private List<ReferenceDataSourceUpdate> _referenceDataSourceUpdates = new List<ReferenceDataSourceUpdate>();
+        private List<CloudWatchLoggingOptionUpdate> _cloudWatchLoggingOptionUpdates = AWSConfigs.InitializeCollections ? new List<CloudWatchLoggingOptionUpdate>() : null;
+        private List<InputUpdate> _inputUpdates = AWSConfigs.InitializeCollections ? new List<InputUpdate>() : null;
+        private List<OutputUpdate> _outputUpdates = AWSConfigs.InitializeCollections ? new List<OutputUpdate>() : null;
+        private List<ReferenceDataSourceUpdate> _referenceDataSourceUpdates = AWSConfigs.InitializeCollections ? new List<ReferenceDataSourceUpdate>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationCodeUpdate. 
@@ -73,7 +74,7 @@ namespace Amazon.KinesisAnalytics.Model
         // Check to see if CloudWatchLoggingOptionUpdates property is set
         internal bool IsSetCloudWatchLoggingOptionUpdates()
         {
-            return this._cloudWatchLoggingOptionUpdates != null && this._cloudWatchLoggingOptionUpdates.Count > 0; 
+            return this._cloudWatchLoggingOptionUpdates != null && (this._cloudWatchLoggingOptionUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace Amazon.KinesisAnalytics.Model
         // Check to see if InputUpdates property is set
         internal bool IsSetInputUpdates()
         {
-            return this._inputUpdates != null && this._inputUpdates.Count > 0; 
+            return this._inputUpdates != null && (this._inputUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -109,7 +110,7 @@ namespace Amazon.KinesisAnalytics.Model
         // Check to see if OutputUpdates property is set
         internal bool IsSetOutputUpdates()
         {
-            return this._outputUpdates != null && this._outputUpdates.Count > 0; 
+            return this._outputUpdates != null && (this._outputUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -127,7 +128,7 @@ namespace Amazon.KinesisAnalytics.Model
         // Check to see if ReferenceDataSourceUpdates property is set
         internal bool IsSetReferenceDataSourceUpdates()
         {
-            return this._referenceDataSourceUpdates != null && this._referenceDataSourceUpdates.Count > 0; 
+            return this._referenceDataSourceUpdates != null && (this._referenceDataSourceUpdates.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

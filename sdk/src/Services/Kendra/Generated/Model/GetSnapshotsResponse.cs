@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kendra.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.Kendra.Model
     public partial class GetSnapshotsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<List<string>> _snapshotsData = new List<List<string>>();
-        private List<string> _snapshotsDataHeader = new List<string>();
+        private List<List<string>> _snapshotsData = AWSConfigs.InitializeCollections ? new List<List<string>>() : null;
+        private List<string> _snapshotsDataHeader = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TimeRange _snapShotTimeFilter;
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.Kendra.Model
         // Check to see if SnapshotsData property is set
         internal bool IsSetSnapshotsData()
         {
-            return this._snapshotsData != null && this._snapshotsData.Count > 0; 
+            return this._snapshotsData != null && (this._snapshotsData.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace Amazon.Kendra.Model
         // Check to see if SnapshotsDataHeader property is set
         internal bool IsSetSnapshotsDataHeader()
         {
-            return this._snapshotsDataHeader != null && this._snapshotsDataHeader.Count > 0; 
+            return this._snapshotsDataHeader != null && (this._snapshotsDataHeader.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

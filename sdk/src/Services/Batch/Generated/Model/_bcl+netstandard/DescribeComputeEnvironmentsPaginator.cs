@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Batch.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Batch.Model
         /// Enumerable containing all of the ComputeEnvironments
         /// </summary>
         public IPaginatedEnumerable<ComputeEnvironmentDetail> ComputeEnvironments => 
-            new PaginatedResultKeyResponse<DescribeComputeEnvironmentsResponse, ComputeEnvironmentDetail>(this, (i) => i.ComputeEnvironments);
+            new PaginatedResultKeyResponse<DescribeComputeEnvironmentsResponse, ComputeEnvironmentDetail>(this, (i) => i.ComputeEnvironments ?? new List<ComputeEnvironmentDetail>());
 
         internal DescribeComputeEnvironmentsPaginator(IAmazonBatch client, DescribeComputeEnvironmentsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Batch.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeComputeEnvironmentsResponse> IPaginator<DescribeComputeEnvironmentsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeComputeEnvironmentsResponse> IPaginator<DescribeComputeEnvironmentsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

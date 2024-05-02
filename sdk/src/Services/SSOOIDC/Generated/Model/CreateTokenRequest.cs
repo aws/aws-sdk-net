@@ -27,6 +27,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SSOOIDC.Model
 {
     /// <summary>
@@ -44,7 +45,7 @@ namespace Amazon.SSOOIDC.Model
         private string _grantType;
         private string _redirectUri;
         private string _refreshToken;
-        private List<string> _scope = new List<string>();
+        private List<string> _scope = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ClientId. 
@@ -224,7 +225,7 @@ namespace Amazon.SSOOIDC.Model
         // Check to see if Scope property is set
         internal bool IsSetScope()
         {
-            return this._scope != null && this._scope.Count > 0; 
+            return this._scope != null && (this._scope.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

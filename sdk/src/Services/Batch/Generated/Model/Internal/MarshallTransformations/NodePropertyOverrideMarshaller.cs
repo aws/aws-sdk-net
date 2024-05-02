@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(NodePropertyOverride requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetContainerOverrides())
             {
                 context.Writer.WritePropertyName("containerOverrides");
@@ -54,6 +57,28 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.ContainerOverrides, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetEcsPropertiesOverride())
+            {
+                context.Writer.WritePropertyName("ecsPropertiesOverride");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EcsPropertiesOverrideMarshaller.Instance;
+                marshaller.Marshall(requestObject.EcsPropertiesOverride, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetInstanceTypes())
+            {
+                context.Writer.WritePropertyName("instanceTypes");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectInstanceTypesListValue in requestObject.InstanceTypes)
+                {
+                        context.Writer.Write(requestObjectInstanceTypesListValue);
+                }
+                context.Writer.WriteArrayEnd();
             }
 
             if(requestObject.IsSetTargetNodes())

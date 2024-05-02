@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DesiredWeightAndCapacity requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDesiredInstanceCount())
             {
                 context.Writer.WritePropertyName("DesiredInstanceCount");
@@ -54,7 +57,14 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDesiredWeight())
             {
                 context.Writer.WritePropertyName("DesiredWeight");
-                context.Writer.Write(requestObject.DesiredWeight.Value);
+                if(StringUtils.IsSpecialFloatValue(requestObject.DesiredWeight.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.DesiredWeight.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.DesiredWeight.Value);
+                }
             }
 
             if(requestObject.IsSetServerlessUpdateConfig())

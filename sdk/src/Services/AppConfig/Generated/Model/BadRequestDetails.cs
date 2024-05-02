@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppConfig.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.AppConfig.Model
     /// </summary>
     public partial class BadRequestDetails
     {
-        private List<InvalidConfigurationDetail> _invalidConfiguration = new List<InvalidConfigurationDetail>();
+        private List<InvalidConfigurationDetail> _invalidConfiguration = AWSConfigs.InitializeCollections ? new List<InvalidConfigurationDetail>() : null;
 
         /// <summary>
         /// Gets and sets the property InvalidConfiguration. 
@@ -52,7 +53,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if InvalidConfiguration property is set
         internal bool IsSetInvalidConfiguration()
         {
-            return this._invalidConfiguration != null && this._invalidConfiguration.Count > 0; 
+            return this._invalidConfiguration != null && (this._invalidConfiguration.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

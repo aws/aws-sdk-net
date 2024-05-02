@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class GetConnectionsResponse : AmazonWebServiceResponse
     {
-        private List<Connection> _connectionList = new List<Connection>();
+        private List<Connection> _connectionList = AWSConfigs.InitializeCollections ? new List<Connection>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Glue.Model
         // Check to see if ConnectionList property is set
         internal bool IsSetConnectionList()
         {
-            return this._connectionList != null && this._connectionList.Count > 0; 
+            return this._connectionList != null && (this._connectionList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

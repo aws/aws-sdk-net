@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -36,10 +37,10 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class DropNullFields
     {
-        private List<string> _inputs = new List<string>();
+        private List<string> _inputs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private NullCheckBoxList _nullCheckBoxList;
-        private List<NullValueField> _nullTextList = new List<NullValueField>();
+        private List<NullValueField> _nullTextList = AWSConfigs.InitializeCollections ? new List<NullValueField>() : null;
 
         /// <summary>
         /// Gets and sets the property Inputs. 
@@ -57,7 +58,7 @@ namespace Amazon.Glue.Model
         // Check to see if Inputs property is set
         internal bool IsSetInputs()
         {
-            return this._inputs != null && this._inputs.Count > 0; 
+            return this._inputs != null && (this._inputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -121,7 +122,7 @@ namespace Amazon.Glue.Model
         // Check to see if NullTextList property is set
         internal bool IsSetNullTextList()
         {
-            return this._nullTextList != null && this._nullTextList.Count > 0; 
+            return this._nullTextList != null && (this._nullTextList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

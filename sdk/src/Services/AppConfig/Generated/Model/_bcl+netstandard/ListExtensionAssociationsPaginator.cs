@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.AppConfig.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.AppConfig.Model
         /// Enumerable containing all of the Items
         /// </summary>
         public IPaginatedEnumerable<ExtensionAssociationSummary> Items => 
-            new PaginatedResultKeyResponse<ListExtensionAssociationsResponse, ExtensionAssociationSummary>(this, (i) => i.Items);
+            new PaginatedResultKeyResponse<ListExtensionAssociationsResponse, ExtensionAssociationSummary>(this, (i) => i.Items ?? new List<ExtensionAssociationSummary>());
 
         internal ListExtensionAssociationsPaginator(IAmazonAppConfig client, ListExtensionAssociationsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.AppConfig.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListExtensionAssociationsResponse> IPaginator<ListExtensionAssociationsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListExtensionAssociationsResponse> IPaginator<ListExtensionAssociationsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KafkaConnect.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.KafkaConnect.Model
     /// </summary>
     public partial class ListCustomPluginsResponse : AmazonWebServiceResponse
     {
-        private List<CustomPluginSummary> _customPlugins = new List<CustomPluginSummary>();
+        private List<CustomPluginSummary> _customPlugins = AWSConfigs.InitializeCollections ? new List<CustomPluginSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.KafkaConnect.Model
         // Check to see if CustomPlugins property is set
         internal bool IsSetCustomPlugins()
         {
-            return this._customPlugins != null && this._customPlugins.Count > 0; 
+            return this._customPlugins != null && (this._customPlugins.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

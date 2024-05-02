@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.DeviceFarm.Model
     public partial class ListTestGridProjectsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TestGridProject> _testGridProjects = new List<TestGridProject>();
+        private List<TestGridProject> _testGridProjects = AWSConfigs.InitializeCollections ? new List<TestGridProject>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if TestGridProjects property is set
         internal bool IsSetTestGridProjects()
         {
-            return this._testGridProjects != null && this._testGridProjects.Count > 0; 
+            return this._testGridProjects != null && (this._testGridProjects.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
@@ -44,8 +45,8 @@ namespace Amazon.WAFV2.Model
     public partial class RuleGroupReferenceStatement
     {
         private string _arn;
-        private List<ExcludedRule> _excludedRules = new List<ExcludedRule>();
-        private List<RuleActionOverride> _ruleActionOverrides = new List<RuleActionOverride>();
+        private List<ExcludedRule> _excludedRules = AWSConfigs.InitializeCollections ? new List<ExcludedRule>() : null;
+        private List<RuleActionOverride> _ruleActionOverrides = AWSConfigs.InitializeCollections ? new List<RuleActionOverride>() : null;
 
         /// <summary>
         /// Gets and sets the property ARN. 
@@ -88,7 +89,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if ExcludedRules property is set
         internal bool IsSetExcludedRules()
         {
-            return this._excludedRules != null && this._excludedRules.Count > 0; 
+            return this._excludedRules != null && (this._excludedRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -106,7 +107,7 @@ namespace Amazon.WAFV2.Model
         /// all actions, to modify how the rule group manages your web traffic.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Max=100)]
         public List<RuleActionOverride> RuleActionOverrides
         {
             get { return this._ruleActionOverrides; }
@@ -116,7 +117,7 @@ namespace Amazon.WAFV2.Model
         // Check to see if RuleActionOverrides property is set
         internal bool IsSetRuleActionOverrides()
         {
-            return this._ruleActionOverrides != null && this._ruleActionOverrides.Count > 0; 
+            return this._ruleActionOverrides != null && (this._ruleActionOverrides.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

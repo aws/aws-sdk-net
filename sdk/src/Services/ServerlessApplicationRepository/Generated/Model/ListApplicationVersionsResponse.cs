@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServerlessApplicationRepository.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
     public partial class ListApplicationVersionsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<VersionSummary> _versions = new List<VersionSummary>();
+        private List<VersionSummary> _versions = AWSConfigs.InitializeCollections ? new List<VersionSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +70,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         // Check to see if Versions property is set
         internal bool IsSetVersions()
         {
-            return this._versions != null && this._versions.Count > 0; 
+            return this._versions != null && (this._versions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ECS.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.ECS.Model
         private string _cluster;
         private ClusterConfiguration _configuration;
         private ClusterServiceConnectDefaultsRequest _serviceConnectDefaults;
-        private List<ClusterSetting> _settings = new List<ClusterSetting>();
+        private List<ClusterSetting> _settings = AWSConfigs.InitializeCollections ? new List<ClusterSetting>() : null;
 
         /// <summary>
         /// Gets and sets the property Cluster. 
@@ -123,7 +124,7 @@ namespace Amazon.ECS.Model
         // Check to see if Settings property is set
         internal bool IsSetSettings()
         {
-            return this._settings != null && this._settings.Count > 0; 
+            return this._settings != null && (this._settings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

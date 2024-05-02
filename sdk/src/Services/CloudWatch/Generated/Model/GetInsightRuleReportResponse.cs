@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
@@ -36,9 +37,9 @@ namespace Amazon.CloudWatch.Model
         private double? _aggregateValue;
         private string _aggregationStatistic;
         private long? _approximateUniqueCount;
-        private List<InsightRuleContributor> _contributors = new List<InsightRuleContributor>();
-        private List<string> _keyLabels = new List<string>();
-        private List<InsightRuleMetricDatapoint> _metricDatapoints = new List<InsightRuleMetricDatapoint>();
+        private List<InsightRuleContributor> _contributors = AWSConfigs.InitializeCollections ? new List<InsightRuleContributor>() : null;
+        private List<string> _keyLabels = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<InsightRuleMetricDatapoint> _metricDatapoints = AWSConfigs.InitializeCollections ? new List<InsightRuleMetricDatapoint>() : null;
 
         /// <summary>
         /// Gets and sets the property AggregateValue. 
@@ -111,7 +112,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if Contributors property is set
         internal bool IsSetContributors()
         {
-            return this._contributors != null && this._contributors.Count > 0; 
+            return this._contributors != null && (this._contributors.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -131,7 +132,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if KeyLabels property is set
         internal bool IsSetKeyLabels()
         {
-            return this._keyLabels != null && this._keyLabels.Count > 0; 
+            return this._keyLabels != null && (this._keyLabels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -149,7 +150,7 @@ namespace Amazon.CloudWatch.Model
         // Check to see if MetricDatapoints property is set
         internal bool IsSetMetricDatapoints()
         {
-            return this._metricDatapoints != null && this._metricDatapoints.Count > 0; 
+            return this._metricDatapoints != null && (this._metricDatapoints.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.IoTAnalytics.Model
     /// </summary>
     public partial class DatastorePartitions
     {
-        private List<DatastorePartition> _partitions = new List<DatastorePartition>();
+        private List<DatastorePartition> _partitions = AWSConfigs.InitializeCollections ? new List<DatastorePartition>() : null;
 
         /// <summary>
         /// Gets and sets the property Partitions. 
@@ -51,7 +52,7 @@ namespace Amazon.IoTAnalytics.Model
         // Check to see if Partitions property is set
         internal bool IsSetPartitions()
         {
-            return this._partitions != null && this._partitions.Count > 0; 
+            return this._partitions != null && (this._partitions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IoT.Model
     public partial class ListThingGroupsForThingResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<GroupNameAndArn> _thingGroups = new List<GroupNameAndArn>();
+        private List<GroupNameAndArn> _thingGroups = AWSConfigs.InitializeCollections ? new List<GroupNameAndArn>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.IoT.Model
         // Check to see if ThingGroups property is set
         internal bool IsSetThingGroups()
         {
-            return this._thingGroups != null && this._thingGroups.Count > 0; 
+            return this._thingGroups != null && (this._thingGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -39,15 +40,15 @@ namespace Amazon.SageMaker.Model
         private bool? _enableInterContainerTrafficEncryption;
         private bool? _enableManagedSpotTraining;
         private bool? _enableNetworkIsolation;
-        private Dictionary<string, string> _environment = new Dictionary<string, string>();
+        private Dictionary<string, string> _environment = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private ParameterRanges _hyperParameterRanges;
         private HyperParameterTuningResourceConfig _hyperParameterTuningResourceConfig;
-        private List<Channel> _inputDataConfig = new List<Channel>();
+        private List<Channel> _inputDataConfig = AWSConfigs.InitializeCollections ? new List<Channel>() : null;
         private OutputDataConfig _outputDataConfig;
         private ResourceConfig _resourceConfig;
         private RetryStrategy _retryStrategy;
         private string _roleArn;
-        private Dictionary<string, string> _staticHyperParameters = new Dictionary<string, string>();
+        private Dictionary<string, string> _staticHyperParameters = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private StoppingCondition _stoppingCondition;
         private HyperParameterTuningJobObjective _tuningObjective;
         private VpcConfig _vpcConfig;
@@ -198,7 +199,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if Environment property is set
         internal bool IsSetEnvironment()
         {
-            return this._environment != null && this._environment.Count > 0; 
+            return this._environment != null && (this._environment.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -255,7 +256,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if InputDataConfig property is set
         internal bool IsSetInputDataConfig()
         {
-            return this._inputDataConfig != null && this._inputDataConfig.Count > 0; 
+            return this._inputDataConfig != null && (this._inputDataConfig.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -365,7 +366,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if StaticHyperParameters property is set
         internal bool IsSetStaticHyperParameters()
         {
-            return this._staticHyperParameters != null && this._staticHyperParameters.Count > 0; 
+            return this._staticHyperParameters != null && (this._staticHyperParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

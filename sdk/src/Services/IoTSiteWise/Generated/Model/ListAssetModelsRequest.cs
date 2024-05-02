@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.IoTSiteWise.Model
     /// </summary>
     public partial class ListAssetModelsRequest : AmazonIoTSiteWiseRequest
     {
-        private List<string> _assetModelTypes = new List<string>();
+        private List<string> _assetModelTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
 
@@ -65,7 +66,7 @@ namespace Amazon.IoTSiteWise.Model
         // Check to see if AssetModelTypes property is set
         internal bool IsSetAssetModelTypes()
         {
-            return this._assetModelTypes != null && this._assetModelTypes.Count > 0; 
+            return this._assetModelTypes != null && (this._assetModelTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

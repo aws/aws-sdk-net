@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ApiGatewayV2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ApiGatewayV2.Model
     /// </summary>
     public partial class GetApisResponse : AmazonWebServiceResponse
     {
-        private List<Api> _items = new List<Api>();
+        private List<Api> _items = AWSConfigs.InitializeCollections ? new List<Api>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ApiGatewayV2.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

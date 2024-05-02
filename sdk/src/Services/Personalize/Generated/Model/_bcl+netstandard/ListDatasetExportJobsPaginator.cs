@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Personalize.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Personalize.Model
         /// Enumerable containing all of the DatasetExportJobs
         /// </summary>
         public IPaginatedEnumerable<DatasetExportJobSummary> DatasetExportJobs => 
-            new PaginatedResultKeyResponse<ListDatasetExportJobsResponse, DatasetExportJobSummary>(this, (i) => i.DatasetExportJobs);
+            new PaginatedResultKeyResponse<ListDatasetExportJobsResponse, DatasetExportJobSummary>(this, (i) => i.DatasetExportJobs ?? new List<DatasetExportJobSummary>());
 
         internal ListDatasetExportJobsPaginator(IAmazonPersonalize client, ListDatasetExportJobsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Personalize.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListDatasetExportJobsResponse> IPaginator<ListDatasetExportJobsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListDatasetExportJobsResponse> IPaginator<ListDatasetExportJobsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

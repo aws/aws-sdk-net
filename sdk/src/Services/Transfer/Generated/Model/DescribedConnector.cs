@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Transfer.Model
 {
     /// <summary>
@@ -38,9 +39,10 @@ namespace Amazon.Transfer.Model
         private As2ConnectorConfig _as2Config;
         private string _connectorId;
         private string _loggingRole;
-        private List<string> _serviceManagedEgressIpAddresses = new List<string>();
+        private string _securityPolicyName;
+        private List<string> _serviceManagedEgressIpAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private SftpConnectorConfig _sftpConfig;
-        private List<Tag> _tags = new List<Tag>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
         private string _url;
 
         /// <summary>
@@ -177,6 +179,25 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SecurityPolicyName. 
+        /// <para>
+        /// The text name of the security policy for the specified connector.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public string SecurityPolicyName
+        {
+            get { return this._securityPolicyName; }
+            set { this._securityPolicyName = value; }
+        }
+
+        // Check to see if SecurityPolicyName property is set
+        internal bool IsSetSecurityPolicyName()
+        {
+            return this._securityPolicyName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ServiceManagedEgressIpAddresses. 
         /// <para>
         /// The list of egress IP addresses of this connector. These IP addresses are assigned
@@ -192,7 +213,7 @@ namespace Amazon.Transfer.Model
         // Check to see if ServiceManagedEgressIpAddresses property is set
         internal bool IsSetServiceManagedEgressIpAddresses()
         {
-            return this._serviceManagedEgressIpAddresses != null && this._serviceManagedEgressIpAddresses.Count > 0; 
+            return this._serviceManagedEgressIpAddresses != null && (this._serviceManagedEgressIpAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -229,7 +250,7 @@ namespace Amazon.Transfer.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

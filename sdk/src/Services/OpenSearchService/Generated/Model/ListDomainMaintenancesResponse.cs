@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.OpenSearchService.Model
     /// </summary>
     public partial class ListDomainMaintenancesResponse : AmazonWebServiceResponse
     {
-        private List<DomainMaintenanceDetails> _domainMaintenances = new List<DomainMaintenanceDetails>();
+        private List<DomainMaintenanceDetails> _domainMaintenances = AWSConfigs.InitializeCollections ? new List<DomainMaintenanceDetails>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.OpenSearchService.Model
         // Check to see if DomainMaintenances property is set
         internal bool IsSetDomainMaintenances()
         {
-            return this._domainMaintenances != null && this._domainMaintenances.Count > 0; 
+            return this._domainMaintenances != null && (this._domainMaintenances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

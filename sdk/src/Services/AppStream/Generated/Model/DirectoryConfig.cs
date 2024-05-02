@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppStream.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.AppStream.Model
         private CertificateBasedAuthProperties _certificateBasedAuthProperties;
         private DateTime? _createdTime;
         private string _directoryName;
-        private List<string> _organizationalUnitDistinguishedNames = new List<string>();
+        private List<string> _organizationalUnitDistinguishedNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ServiceAccountCredentials _serviceAccountCredentials;
 
         /// <summary>
@@ -116,7 +117,7 @@ namespace Amazon.AppStream.Model
         // Check to see if OrganizationalUnitDistinguishedNames property is set
         internal bool IsSetOrganizationalUnitDistinguishedNames()
         {
-            return this._organizationalUnitDistinguishedNames != null && this._organizationalUnitDistinguishedNames.Count > 0; 
+            return this._organizationalUnitDistinguishedNames != null && (this._organizationalUnitDistinguishedNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

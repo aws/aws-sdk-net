@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FraudDetector.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.FraudDetector.Model
     /// </summary>
     public partial class GetExternalModelsResponse : AmazonWebServiceResponse
     {
-        private List<ExternalModel> _externalModels = new List<ExternalModel>();
+        private List<ExternalModel> _externalModels = AWSConfigs.InitializeCollections ? new List<ExternalModel>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if ExternalModels property is set
         internal bool IsSetExternalModels()
         {
-            return this._externalModels != null && this._externalModels.Count > 0; 
+            return this._externalModels != null && (this._externalModels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

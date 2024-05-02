@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class DescribeConfigRulesResponse : AmazonWebServiceResponse
     {
-        private List<ConfigRule> _configRules = new List<ConfigRule>();
+        private List<ConfigRule> _configRules = AWSConfigs.InitializeCollections ? new List<ConfigRule>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if ConfigRules property is set
         internal bool IsSetConfigRules()
         {
-            return this._configRules != null && this._configRules.Count > 0; 
+            return this._configRules != null && (this._configRules.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

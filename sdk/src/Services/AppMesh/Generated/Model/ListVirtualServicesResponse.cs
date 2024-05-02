@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppMesh.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.AppMesh.Model
     public partial class ListVirtualServicesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<VirtualServiceRef> _virtualServices = new List<VirtualServiceRef>();
+        private List<VirtualServiceRef> _virtualServices = AWSConfigs.InitializeCollections ? new List<VirtualServiceRef>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +74,7 @@ namespace Amazon.AppMesh.Model
         // Check to see if VirtualServices property is set
         internal bool IsSetVirtualServices()
         {
-            return this._virtualServices != null && this._virtualServices.Count > 0; 
+            return this._virtualServices != null && (this._virtualServices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

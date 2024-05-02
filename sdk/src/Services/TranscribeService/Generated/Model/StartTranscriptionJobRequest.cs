@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
@@ -76,10 +77,10 @@ namespace Amazon.TranscribeService.Model
         private bool? _identifyLanguage;
         private bool? _identifyMultipleLanguages;
         private JobExecutionSettings _jobExecutionSettings;
-        private Dictionary<string, string> _kmsEncryptionContext = new Dictionary<string, string>();
+        private Dictionary<string, string> _kmsEncryptionContext = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private LanguageCode _languageCode;
-        private Dictionary<string, LanguageIdSettings> _languageIdSettings = new Dictionary<string, LanguageIdSettings>();
-        private List<string> _languageOptions = new List<string>();
+        private Dictionary<string, LanguageIdSettings> _languageIdSettings = AWSConfigs.InitializeCollections ? new Dictionary<string, LanguageIdSettings>() : null;
+        private List<string> _languageOptions = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Media _media;
         private MediaFormat _mediaFormat;
         private int? _mediaSampleRateHertz;
@@ -89,8 +90,8 @@ namespace Amazon.TranscribeService.Model
         private string _outputKey;
         private Settings _settings;
         private Subtitles _subtitles;
-        private List<Tag> _tags = new List<Tag>();
-        private List<ToxicityDetectionSettings> _toxicityDetection = new List<ToxicityDetectionSettings>();
+        private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<ToxicityDetectionSettings> _toxicityDetection = AWSConfigs.InitializeCollections ? new List<ToxicityDetectionSettings>() : null;
         private string _transcriptionJobName;
 
         /// <summary>
@@ -241,7 +242,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if KMSEncryptionContext property is set
         internal bool IsSetKMSEncryptionContext()
         {
-            return this._kmsEncryptionContext != null && this._kmsEncryptionContext.Count > 0; 
+            return this._kmsEncryptionContext != null && (this._kmsEncryptionContext.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -333,7 +334,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if LanguageIdSettings property is set
         internal bool IsSetLanguageIdSettings()
         {
-            return this._languageIdSettings != null && this._languageIdSettings.Count > 0; 
+            return this._languageIdSettings != null && (this._languageIdSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -368,7 +369,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if LanguageOptions property is set
         internal bool IsSetLanguageOptions()
         {
-            return this._languageOptions != null && this._languageOptions.Count > 0; 
+            return this._languageOptions != null && (this._languageOptions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -700,7 +701,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -726,7 +727,7 @@ namespace Amazon.TranscribeService.Model
         // Check to see if ToxicityDetection property is set
         internal bool IsSetToxicityDetection()
         {
-            return this._toxicityDetection != null && this._toxicityDetection.Count > 0; 
+            return this._toxicityDetection != null && (this._toxicityDetection.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

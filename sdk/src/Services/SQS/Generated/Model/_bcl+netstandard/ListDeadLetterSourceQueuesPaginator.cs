@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SQS.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.SQS.Model
         /// Enumerable containing all of the QueueUrls
         /// </summary>
         public IPaginatedEnumerable<string> QueueUrls => 
-            new PaginatedResultKeyResponse<ListDeadLetterSourceQueuesResponse, string>(this, (i) => i.QueueUrls);
+            new PaginatedResultKeyResponse<ListDeadLetterSourceQueuesResponse, string>(this, (i) => i.QueueUrls ?? new List<string>());
 
         internal ListDeadLetterSourceQueuesPaginator(IAmazonSQS client, ListDeadLetterSourceQueuesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.SQS.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListDeadLetterSourceQueuesResponse> IPaginator<ListDeadLetterSourceQueuesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListDeadLetterSourceQueuesResponse> IPaginator<ListDeadLetterSourceQueuesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

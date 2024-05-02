@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
@@ -36,10 +37,10 @@ namespace Amazon.CodeBuild.Model
     public partial class BuildGroup
     {
         private BuildSummary _currentBuildSummary;
-        private List<string> _dependsOn = new List<string>();
+        private List<string> _dependsOn = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _identifier;
         private bool? _ignoreFailure;
-        private List<BuildSummary> _priorBuildSummaryList = new List<BuildSummary>();
+        private List<BuildSummary> _priorBuildSummaryList = AWSConfigs.InitializeCollections ? new List<BuildSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property CurrentBuildSummary. 
@@ -75,7 +76,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if DependsOn property is set
         internal bool IsSetDependsOn()
         {
-            return this._dependsOn != null && this._dependsOn.Count > 0; 
+            return this._dependsOn != null && (this._dependsOn.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -129,7 +130,7 @@ namespace Amazon.CodeBuild.Model
         // Check to see if PriorBuildSummaryList property is set
         internal bool IsSetPriorBuildSummaryList()
         {
-            return this._priorBuildSummaryList != null && this._priorBuildSummaryList.Count > 0; 
+            return this._priorBuildSummaryList != null && (this._priorBuildSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

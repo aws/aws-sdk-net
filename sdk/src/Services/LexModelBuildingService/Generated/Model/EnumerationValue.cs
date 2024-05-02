@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LexModelBuildingService.Model
 {
     /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// </summary>
     public partial class EnumerationValue
     {
-        private List<string> _synonyms = new List<string>();
+        private List<string> _synonyms = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _value;
 
         /// <summary>
@@ -71,7 +72,7 @@ namespace Amazon.LexModelBuildingService.Model
         // Check to see if Synonyms property is set
         internal bool IsSetSynonyms()
         {
-            return this._synonyms != null && this._synonyms.Count > 0; 
+            return this._synonyms != null && (this._synonyms.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

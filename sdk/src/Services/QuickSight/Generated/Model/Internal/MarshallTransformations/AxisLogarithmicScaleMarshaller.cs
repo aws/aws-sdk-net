@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,10 +46,19 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AxisLogarithmicScale requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetBase())
             {
                 context.Writer.WritePropertyName("Base");
-                context.Writer.Write(requestObject.Base.Value);
+                if(StringUtils.IsSpecialDoubleValue(requestObject.Base.Value))
+                {
+                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Base.Value));
+                }
+                else
+                {
+                    context.Writer.Write(requestObject.Base.Value);
+                }
             }
 
         }

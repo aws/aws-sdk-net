@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConnectCampaignService.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.ConnectCampaignService.Model
     /// </summary>
     public partial class PutDialRequestBatchRequest : AmazonConnectCampaignServiceRequest
     {
-        private List<DialRequest> _dialRequests = new List<DialRequest>();
+        private List<DialRequest> _dialRequests = AWSConfigs.InitializeCollections ? new List<DialRequest>() : null;
         private string _id;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ConnectCampaignService.Model
         // Check to see if DialRequests property is set
         internal bool IsSetDialRequests()
         {
-            return this._dialRequests != null && this._dialRequests.Count > 0; 
+            return this._dialRequests != null && (this._dialRequests.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

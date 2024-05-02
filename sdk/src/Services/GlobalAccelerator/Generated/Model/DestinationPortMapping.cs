@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.GlobalAccelerator.Model
     public partial class DestinationPortMapping
     {
         private string _acceleratorArn;
-        private List<SocketAddress> _acceleratorSocketAddresses = new List<SocketAddress>();
+        private List<SocketAddress> _acceleratorSocketAddresses = AWSConfigs.InitializeCollections ? new List<SocketAddress>() : null;
         private SocketAddress _destinationSocketAddress;
         private CustomRoutingDestinationTrafficState _destinationTrafficState;
         private string _endpointGroupArn;
@@ -78,7 +79,7 @@ namespace Amazon.GlobalAccelerator.Model
         // Check to see if AcceleratorSocketAddresses property is set
         internal bool IsSetAcceleratorSocketAddresses()
         {
-            return this._acceleratorSocketAddresses != null && this._acceleratorSocketAddresses.Count > 0; 
+            return this._acceleratorSocketAddresses != null && (this._acceleratorSocketAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

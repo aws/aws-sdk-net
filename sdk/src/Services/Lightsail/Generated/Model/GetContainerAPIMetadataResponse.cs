@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class GetContainerAPIMetadataResponse : AmazonWebServiceResponse
     {
-        private List<Dictionary<string, string>> _metadata = new List<Dictionary<string, string>>();
+        private List<Dictionary<string, string>> _metadata = AWSConfigs.InitializeCollections ? new List<Dictionary<string, string>>() : null;
 
         /// <summary>
         /// Gets and sets the property Metadata. 
@@ -51,7 +52,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if Metadata property is set
         internal bool IsSetMetadata()
         {
-            return this._metadata != null && this._metadata.Count > 0; 
+            return this._metadata != null && (this._metadata.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

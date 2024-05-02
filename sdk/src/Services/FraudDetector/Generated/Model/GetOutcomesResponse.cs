@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.FraudDetector.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.FraudDetector.Model
     public partial class GetOutcomesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Outcome> _outcomes = new List<Outcome>();
+        private List<Outcome> _outcomes = AWSConfigs.InitializeCollections ? new List<Outcome>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +70,7 @@ namespace Amazon.FraudDetector.Model
         // Check to see if Outcomes property is set
         internal bool IsSetOutcomes()
         {
-            return this._outcomes != null && this._outcomes.Count > 0; 
+            return this._outcomes != null && (this._outcomes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

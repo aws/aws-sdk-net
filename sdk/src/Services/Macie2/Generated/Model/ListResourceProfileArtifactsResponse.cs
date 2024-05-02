@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Macie2.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Macie2.Model
     /// </summary>
     public partial class ListResourceProfileArtifactsResponse : AmazonWebServiceResponse
     {
-        private List<ResourceProfileArtifact> _artifacts = new List<ResourceProfileArtifact>();
+        private List<ResourceProfileArtifact> _artifacts = AWSConfigs.InitializeCollections ? new List<ResourceProfileArtifact>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -60,7 +61,7 @@ namespace Amazon.Macie2.Model
         // Check to see if Artifacts property is set
         internal bool IsSetArtifacts()
         {
-            return this._artifacts != null && this._artifacts.Count > 0; 
+            return this._artifacts != null && (this._artifacts.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

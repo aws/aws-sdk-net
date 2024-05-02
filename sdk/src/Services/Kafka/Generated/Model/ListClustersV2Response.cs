@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Kafka.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Kafka.Model
     /// </summary>
     public partial class ListClustersV2Response : AmazonWebServiceResponse
     {
-        private List<Cluster> _clusterInfoList = new List<Cluster>();
+        private List<Cluster> _clusterInfoList = AWSConfigs.InitializeCollections ? new List<Cluster>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Kafka.Model
         // Check to see if ClusterInfoList property is set
         internal bool IsSetClusterInfoList()
         {
-            return this._clusterInfoList != null && this._clusterInfoList.Count > 0; 
+            return this._clusterInfoList != null && (this._clusterInfoList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

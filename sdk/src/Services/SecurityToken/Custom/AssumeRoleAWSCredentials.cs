@@ -73,8 +73,10 @@ namespace Amazon.SecurityToken
         /// </summary>
         /// <param name="disposing">Whether this object is being disposed via a call to Dispose
         /// or garbage collected.</param>
-        protected virtual void Dispose(bool disposing)
+        protected override void Dispose(bool disposing)
         {
+            base.Dispose(disposing);
+
             if (!this._isDisposed)
             {
                 if (disposing && _stsClient != null)
@@ -84,15 +86,6 @@ namespace Amazon.SecurityToken
                 }
                 this._isDisposed = true;
             }
-        }
-
-        /// <summary>
-        /// Disposes of all managed and unmanaged resources.
-        /// </summary>
-        public void Dispose()
-        {
-            this.Dispose(true);
-            GC.SuppressFinalize(this);
         }
 
         #endregion

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Mgn.Model
 {
     /// <summary>
@@ -41,12 +42,12 @@ namespace Amazon.Mgn.Model
         private ReplicationConfigurationEbsEncryption _ebsEncryption;
         private string _ebsEncryptionKeyArn;
         private string _name;
-        private List<ReplicationConfigurationReplicatedDisk> _replicatedDisks = new List<ReplicationConfigurationReplicatedDisk>();
+        private List<ReplicationConfigurationReplicatedDisk> _replicatedDisks = AWSConfigs.InitializeCollections ? new List<ReplicationConfigurationReplicatedDisk>() : null;
         private string _replicationServerInstanceType;
-        private List<string> _replicationServersSecurityGroupsIDs = new List<string>();
+        private List<string> _replicationServersSecurityGroupsIDs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _sourceServerID;
         private string _stagingAreaSubnetId;
-        private Dictionary<string, string> _stagingAreaTags = new Dictionary<string, string>();
+        private Dictionary<string, string> _stagingAreaTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private bool? _useDedicatedReplicationServer;
         private bool? _useFipsEndpoint;
 
@@ -214,7 +215,7 @@ namespace Amazon.Mgn.Model
         // Check to see if ReplicatedDisks property is set
         internal bool IsSetReplicatedDisks()
         {
-            return this._replicatedDisks != null && this._replicatedDisks.Count > 0; 
+            return this._replicatedDisks != null && (this._replicatedDisks.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -252,7 +253,7 @@ namespace Amazon.Mgn.Model
         // Check to see if ReplicationServersSecurityGroupsIDs property is set
         internal bool IsSetReplicationServersSecurityGroupsIDs()
         {
-            return this._replicationServersSecurityGroupsIDs != null && this._replicationServersSecurityGroupsIDs.Count > 0; 
+            return this._replicationServersSecurityGroupsIDs != null && (this._replicationServersSecurityGroupsIDs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -309,7 +310,7 @@ namespace Amazon.Mgn.Model
         // Check to see if StagingAreaTags property is set
         internal bool IsSetStagingAreaTags()
         {
-            return this._stagingAreaTags != null && this._stagingAreaTags.Count > 0; 
+            return this._stagingAreaTags != null && (this._stagingAreaTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

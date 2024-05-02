@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DeviceFarm.Model
     /// </summary>
     public partial class ListNetworkProfilesResponse : AmazonWebServiceResponse
     {
-        private List<NetworkProfile> _networkProfiles = new List<NetworkProfile>();
+        private List<NetworkProfile> _networkProfiles = AWSConfigs.InitializeCollections ? new List<NetworkProfile>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.DeviceFarm.Model
         // Check to see if NetworkProfiles property is set
         internal bool IsSetNetworkProfiles()
         {
-            return this._networkProfiles != null && this._networkProfiles.Count > 0; 
+            return this._networkProfiles != null && (this._networkProfiles.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

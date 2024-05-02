@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Macie2.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.Macie2.Model
     /// </summary>
     public partial class SensitivityInspectionTemplateExcludes
     {
-        private List<string> _managedDataIdentifierIds = new List<string>();
+        private List<string> _managedDataIdentifierIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ManagedDataIdentifierIds. 
@@ -54,7 +55,7 @@ namespace Amazon.Macie2.Model
         // Check to see if ManagedDataIdentifierIds property is set
         internal bool IsSetManagedDataIdentifierIds()
         {
-            return this._managedDataIdentifierIds != null && this._managedDataIdentifierIds.Count > 0; 
+            return this._managedDataIdentifierIds != null && (this._managedDataIdentifierIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

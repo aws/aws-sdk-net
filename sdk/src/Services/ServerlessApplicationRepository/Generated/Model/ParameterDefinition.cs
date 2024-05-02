@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServerlessApplicationRepository.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
     public partial class ParameterDefinition
     {
         private string _allowedPattern;
-        private List<string> _allowedValues = new List<string>();
+        private List<string> _allowedValues = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _constraintDescription;
         private string _defaultValue;
         private string _description;
@@ -44,7 +45,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         private int? _minValue;
         private string _name;
         private bool? _noEcho;
-        private List<string> _referencedByResources = new List<string>();
+        private List<string> _referencedByResources = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _type;
 
         /// <summary>
@@ -80,7 +81,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         // Check to see if AllowedValues property is set
         internal bool IsSetAllowedValues()
         {
-            return this._allowedValues != null && this._allowedValues.Count > 0; 
+            return this._allowedValues != null && (this._allowedValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -286,7 +287,7 @@ namespace Amazon.ServerlessApplicationRepository.Model
         // Check to see if ReferencedByResources property is set
         internal bool IsSetReferencedByResources()
         {
-            return this._referencedByResources != null && this._referencedByResources.Count > 0; 
+            return this._referencedByResources != null && (this._referencedByResources.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

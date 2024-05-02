@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Connect.Model
     public partial class SearchVocabulariesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<VocabularySummary> _vocabularySummaryList = new List<VocabularySummary>();
+        private List<VocabularySummary> _vocabularySummaryList = AWSConfigs.InitializeCollections ? new List<VocabularySummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.Connect.Model
         // Check to see if VocabularySummaryList property is set
         internal bool IsSetVocabularySummaryList()
         {
-            return this._vocabularySummaryList != null && this._vocabularySummaryList.Count > 0; 
+            return this._vocabularySummaryList != null && (this._vocabularySummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

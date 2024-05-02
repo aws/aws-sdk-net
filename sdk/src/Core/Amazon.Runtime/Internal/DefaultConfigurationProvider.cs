@@ -37,7 +37,7 @@ namespace Amazon.Runtime.Internal
         /// <item>Mode matching <paramref name="requestedConfigurationMode"/>.  This should be set via <see cref="ClientConfig.DefaultConfigurationMode"/></item>
         /// <item>The Environment Variable <see cref="DefaultConfigurationProvider.AWS_DEFAULTS_MODE_ENVIRONMENT_VARIABLE"/></item>
         /// <item>Shared config/credential file via <see cref="FallbackInternalConfigurationFactory.DefaultConfigurationModeName"/></item>
-        /// <item><see cref="DefaultConfigurationMode.Legacy"/></item>
+        /// <item><see cref="DefaultConfigurationMode.Standard"/></item>
         /// </list>
         /// </summary>
         /// <remarks>
@@ -99,8 +99,8 @@ namespace Amazon.Runtime.Internal
                 _environmentVariableRetriever.GetEnvironmentVariable(AWS_DEFAULTS_MODE_ENVIRONMENT_VARIABLE) ??
                 // 3) try to get from shared config/credential file
                 FallbackInternalConfigurationFactory.DefaultConfigurationModeName ??
-                // 4) fallback to 'Legacy'
-                DefaultConfigurationMode.Legacy.ToString();
+                // 4) fallback to 'Standard'
+                DefaultConfigurationMode.Standard.ToString();
 
             Logger
                 .GetLogger(GetType())

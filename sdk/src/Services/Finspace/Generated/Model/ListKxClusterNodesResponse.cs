@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Finspace.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Finspace.Model
     public partial class ListKxClusterNodesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<KxNode> _nodes = new List<KxNode>();
+        private List<KxNode> _nodes = AWSConfigs.InitializeCollections ? new List<KxNode>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -70,7 +71,7 @@ namespace Amazon.Finspace.Model
         // Check to see if Nodes property is set
         internal bool IsSetNodes()
         {
-            return this._nodes != null && this._nodes.Count > 0; 
+            return this._nodes != null && (this._nodes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

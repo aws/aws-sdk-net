@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -56,9 +57,9 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class AssociateNatGatewayAddressRequest : AmazonEC2Request
     {
-        private List<string> _allocationIds = new List<string>();
+        private List<string> _allocationIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _natGatewayId;
-        private List<string> _privateIpAddresses = new List<string>();
+        private List<string> _privateIpAddresses = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AllocationIds. 
@@ -76,7 +77,7 @@ namespace Amazon.EC2.Model
         // Check to see if AllocationIds property is set
         internal bool IsSetAllocationIds()
         {
-            return this._allocationIds != null && this._allocationIds.Count > 0; 
+            return this._allocationIds != null && (this._allocationIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -113,7 +114,7 @@ namespace Amazon.EC2.Model
         // Check to see if PrivateIpAddresses property is set
         internal bool IsSetPrivateIpAddresses()
         {
-            return this._privateIpAddresses != null && this._privateIpAddresses.Count > 0; 
+            return this._privateIpAddresses != null && (this._privateIpAddresses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.ServiceCatalog.Model
         private string _acceptLanguage;
         private string _idempotencyToken;
         private string _provisionedProductId;
-        private Dictionary<string, string> _provisionedProductProperties = new Dictionary<string, string>();
+        private Dictionary<string, string> _provisionedProductProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AcceptLanguage. 
@@ -153,7 +154,7 @@ namespace Amazon.ServiceCatalog.Model
         // Check to see if ProvisionedProductProperties property is set
         internal bool IsSetProvisionedProductProperties()
         {
-            return this._provisionedProductProperties != null && this._provisionedProductProperties.Count > 0; 
+            return this._provisionedProductProperties != null && (this._provisionedProductProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

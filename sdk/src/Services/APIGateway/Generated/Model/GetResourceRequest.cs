@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.APIGateway.Model
     /// </summary>
     public partial class GetResourceRequest : AmazonAPIGatewayRequest
     {
-        private List<string> _embed = new List<string>();
+        private List<string> _embed = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _resourceId;
         private string _restApiId;
 
@@ -57,7 +58,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if Embed property is set
         internal bool IsSetEmbed()
         {
-            return this._embed != null && this._embed.Count > 0; 
+            return this._embed != null && (this._embed.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

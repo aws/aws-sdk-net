@@ -26,17 +26,20 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgent.Model
 {
     /// <summary>
-    /// Contains the information of a data source.
+    /// Contains details about a data source.
     /// </summary>
     public partial class DataSource
     {
         private DateTime? _createdAt;
+        private DataDeletionPolicy _dataDeletionPolicy;
         private DataSourceConfiguration _dataSourceConfiguration;
         private string _dataSourceId;
         private string _description;
+        private List<string> _failureReasons = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _knowledgeBaseId;
         private string _name;
         private ServerSideEncryptionConfiguration _serverSideEncryptionConfiguration;
@@ -45,7 +48,10 @@ namespace Amazon.BedrockAgent.Model
         private VectorIngestionConfiguration _vectorIngestionConfiguration;
 
         /// <summary>
-        /// Gets and sets the property CreatedAt.
+        /// Gets and sets the property CreatedAt. 
+        /// <para>
+        /// The time at which the data source was created.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DateTime? CreatedAt
@@ -61,7 +67,28 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DataSourceConfiguration.
+        /// Gets and sets the property DataDeletionPolicy. 
+        /// <para>
+        /// The deletion policy for the data source.
+        /// </para>
+        /// </summary>
+        public DataDeletionPolicy DataDeletionPolicy
+        {
+            get { return this._dataDeletionPolicy; }
+            set { this._dataDeletionPolicy = value; }
+        }
+
+        // Check to see if DataDeletionPolicy property is set
+        internal bool IsSetDataDeletionPolicy()
+        {
+            return this._dataDeletionPolicy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataSourceConfiguration. 
+        /// <para>
+        /// Contains details about how the data source is stored.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DataSourceConfiguration DataSourceConfiguration
@@ -77,7 +104,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DataSourceId.
+        /// Gets and sets the property DataSourceId. 
+        /// <para>
+        /// The unique identifier of the data source.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string DataSourceId
@@ -93,7 +123,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Description.
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// The description of the data source.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
         public string Description
@@ -109,7 +142,29 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property KnowledgeBaseId.
+        /// Gets and sets the property FailureReasons. 
+        /// <para>
+        /// The details of the failure reasons related to the data source.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
+        public List<string> FailureReasons
+        {
+            get { return this._failureReasons; }
+            set { this._failureReasons = value; }
+        }
+
+        // Check to see if FailureReasons property is set
+        internal bool IsSetFailureReasons()
+        {
+            return this._failureReasons != null && (this._failureReasons.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KnowledgeBaseId. 
+        /// <para>
+        /// The unique identifier of the knowledge base to which the data source belongs.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string KnowledgeBaseId
@@ -125,7 +180,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the data source.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Name
@@ -141,7 +199,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServerSideEncryptionConfiguration.
+        /// Gets and sets the property ServerSideEncryptionConfiguration. 
+        /// <para>
+        /// Contains details about the configuration of the server-side encryption.
+        /// </para>
         /// </summary>
         public ServerSideEncryptionConfiguration ServerSideEncryptionConfiguration
         {
@@ -156,7 +217,20 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the data source. The following statuses are possible:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Available – The data source has been created and is ready for ingestion into the knowledge
+        /// base.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Deleting – The data source is being deleted.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public DataSourceStatus Status
@@ -172,7 +246,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UpdatedAt.
+        /// Gets and sets the property UpdatedAt. 
+        /// <para>
+        /// The time at which the data source was last updated.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DateTime? UpdatedAt
@@ -188,7 +265,10 @@ namespace Amazon.BedrockAgent.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VectorIngestionConfiguration.
+        /// Gets and sets the property VectorIngestionConfiguration. 
+        /// <para>
+        /// Contains details about how to ingest the documents in the data source.
+        /// </para>
         /// </summary>
         public VectorIngestionConfiguration VectorIngestionConfiguration
         {

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MigrationHubStrategyRecommendations.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
     public partial class StartImportFileTaskRequest : AmazonMigrationHubStrategyRecommendationsRequest
     {
         private DataSourceType _dataSourceType;
-        private List<Group> _groupId = new List<Group>();
+        private List<Group> _groupId = AWSConfigs.InitializeCollections ? new List<Group>() : null;
         private string _name;
         private string _s3Bucket;
         private string _s3bucketForReportData;
@@ -77,7 +78,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         // Check to see if GroupId property is set
         internal bool IsSetGroupId()
         {
-            return this._groupId != null && this._groupId.Count > 0; 
+            return this._groupId != null && (this._groupId.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,10 +26,11 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// This exception is thrown when the request's input validation fails
+    /// Input validation failed. Check your request parameters and retry the request.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

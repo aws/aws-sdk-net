@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Route53.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Route53.Model
         /// Enumerable containing all of the QueryLoggingConfigs
         /// </summary>
         public IPaginatedEnumerable<QueryLoggingConfig> QueryLoggingConfigs => 
-            new PaginatedResultKeyResponse<ListQueryLoggingConfigsResponse, QueryLoggingConfig>(this, (i) => i.QueryLoggingConfigs);
+            new PaginatedResultKeyResponse<ListQueryLoggingConfigsResponse, QueryLoggingConfig>(this, (i) => i.QueryLoggingConfigs ?? new List<QueryLoggingConfig>());
 
         internal ListQueryLoggingConfigsPaginator(IAmazonRoute53 client, ListQueryLoggingConfigsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Route53.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListQueryLoggingConfigsResponse> IPaginator<ListQueryLoggingConfigsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListQueryLoggingConfigsResponse> IPaginator<ListQueryLoggingConfigsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

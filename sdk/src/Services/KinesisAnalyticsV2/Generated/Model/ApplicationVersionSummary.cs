@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
@@ -58,7 +59,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ApplicationVersionId. 
         /// <para>
-        /// The ID of the application version. Kinesis Data Analytics updates the <c>ApplicationVersionId</c>
+        /// The ID of the application version. Managed Service for Apache Flink updates the <c>ApplicationVersionId</c>
         /// each time you update the application.
         /// </para>
         /// </summary>

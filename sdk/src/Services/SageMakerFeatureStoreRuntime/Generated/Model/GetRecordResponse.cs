@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMakerFeatureStoreRuntime.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
     public partial class GetRecordResponse : AmazonWebServiceResponse
     {
         private string _expiresAt;
-        private List<FeatureValue> _record = new List<FeatureValue>();
+        private List<FeatureValue> _record = AWSConfigs.InitializeCollections ? new List<FeatureValue>() : null;
 
         /// <summary>
         /// Gets and sets the property ExpiresAt. 
@@ -70,7 +71,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         // Check to see if Record property is set
         internal bool IsSetRecord()
         {
-            return this._record != null && this._record.Count > 0; 
+            return this._record != null && (this._record.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

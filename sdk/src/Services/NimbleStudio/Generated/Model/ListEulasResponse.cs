@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.NimbleStudio.Model
     /// </summary>
     public partial class ListEulasResponse : AmazonWebServiceResponse
     {
-        private List<Eula> _eulas = new List<Eula>();
+        private List<Eula> _eulas = AWSConfigs.InitializeCollections ? new List<Eula>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.NimbleStudio.Model
         // Check to see if Eulas property is set
         internal bool IsSetEulas()
         {
-            return this._eulas != null && this._eulas.Count > 0; 
+            return this._eulas != null && (this._eulas.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

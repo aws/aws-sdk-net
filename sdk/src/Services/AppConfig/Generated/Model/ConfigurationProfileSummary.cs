@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppConfig.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.AppConfig.Model
         private string _locationUri;
         private string _name;
         private string _type;
-        private List<string> _validatorTypes = new List<string>();
+        private List<string> _validatorTypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
@@ -160,7 +161,7 @@ namespace Amazon.AppConfig.Model
         // Check to see if ValidatorTypes property is set
         internal bool IsSetValidatorTypes()
         {
-            return this._validatorTypes != null && this._validatorTypes.Count > 0; 
+            return this._validatorTypes != null && (this._validatorTypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

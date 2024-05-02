@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaPackageVod.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.MediaPackageVod.Model
         /// Enumerable containing all of the PackagingConfigurations
         /// </summary>
         public IPaginatedEnumerable<PackagingConfiguration> PackagingConfigurations => 
-            new PaginatedResultKeyResponse<ListPackagingConfigurationsResponse, PackagingConfiguration>(this, (i) => i.PackagingConfigurations);
+            new PaginatedResultKeyResponse<ListPackagingConfigurationsResponse, PackagingConfiguration>(this, (i) => i.PackagingConfigurations ?? new List<PackagingConfiguration>());
 
         internal ListPackagingConfigurationsPaginator(IAmazonMediaPackageVod client, ListPackagingConfigurationsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.MediaPackageVod.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListPackagingConfigurationsResponse> IPaginator<ListPackagingConfigurationsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListPackagingConfigurationsResponse> IPaginator<ListPackagingConfigurationsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

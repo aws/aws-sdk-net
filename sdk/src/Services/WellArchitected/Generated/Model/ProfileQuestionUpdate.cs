@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.WellArchitected.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.WellArchitected.Model
     public partial class ProfileQuestionUpdate
     {
         private string _questionId;
-        private List<string> _selectedChoiceIds = new List<string>();
+        private List<string> _selectedChoiceIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property QuestionId.
@@ -67,7 +68,7 @@ namespace Amazon.WellArchitected.Model
         // Check to see if SelectedChoiceIds property is set
         internal bool IsSetSelectedChoiceIds()
         {
-            return this._selectedChoiceIds != null && this._selectedChoiceIds.Count > 0; 
+            return this._selectedChoiceIds != null && (this._selectedChoiceIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -53,9 +53,10 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
 
         protected override void Dispose(bool disposing)
         {
+#pragma warning disable CS0162
             if (!ReuseTables)
                 RemoveCreatedTables().Wait();
-
+#pragma warning restore CS0162
             base.Dispose(disposing);
             if (Context != null)
                 Context.Dispose();
@@ -188,12 +189,12 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
 
             if (ReuseTables)
             {
-                if (await GetStatus(hashTableName).ConfigureAwait(false) != null)
+                if (await GetStatus(hashTableName) != null)
                 {
                     await WaitForTableStatus(hashTableName, TableStatus.ACTIVE);
                     createHashTable = false;
                 }
-                if (await GetStatus(hashRangeTableName).ConfigureAwait(false) != null)
+                if (await GetStatus(hashRangeTableName) != null)
                 {
                     await WaitForTableStatus(hashRangeTableName, TableStatus.ACTIVE);
                     createHashRangeTable = false;
@@ -353,7 +354,7 @@ namespace Amazon.DNXCore.IntegrationTests.DynamoDB
             TableStatus status = null;
             try
             {
-                status = (await Client.DescribeTableAsync(tableName).ConfigureAwait(false)).Table.TableStatus;
+                status = (await Client.DescribeTableAsync(tableName)).Table.TableStatus;
             }
             catch(ResourceNotFoundException)
             {

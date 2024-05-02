@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -36,10 +37,10 @@ namespace Amazon.Glue.Model
         private bool? _allowSingleColumn;
         private CsvHeaderOption _containsHeader;
         private bool? _customDatatypeConfigured;
-        private List<string> _customDatatypes = new List<string>();
+        private List<string> _customDatatypes = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _delimiter;
         private bool? _disableValueTrimming;
-        private List<string> _header = new List<string>();
+        private List<string> _header = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
         private string _quoteSymbol;
         private CsvSerdeOption _serde;
@@ -113,7 +114,7 @@ namespace Amazon.Glue.Model
         // Check to see if CustomDatatypes property is set
         internal bool IsSetCustomDatatypes()
         {
-            return this._customDatatypes != null && this._customDatatypes.Count > 0; 
+            return this._customDatatypes != null && (this._customDatatypes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -169,7 +170,7 @@ namespace Amazon.Glue.Model
         // Check to see if Header property is set
         internal bool IsSetHeader()
         {
-            return this._header != null && this._header.Count > 0; 
+            return this._header != null && (this._header.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.SageMaker.Model
     {
         private AppType _appType;
         private SpaceCodeEditorAppSettings _codeEditorAppSettings;
-        private List<CustomFileSystem> _customFileSystems = new List<CustomFileSystem>();
+        private List<CustomFileSystem> _customFileSystems = AWSConfigs.InitializeCollections ? new List<CustomFileSystem>() : null;
         private SpaceJupyterLabAppSettings _jupyterLabAppSettings;
         private JupyterServerAppSettings _jupyterServerAppSettings;
         private KernelGatewayAppSettings _kernelGatewayAppSettings;
@@ -94,7 +95,7 @@ namespace Amazon.SageMaker.Model
         // Check to see if CustomFileSystems property is set
         internal bool IsSetCustomFileSystems()
         {
-            return this._customFileSystems != null && this._customFileSystems.Count > 0; 
+            return this._customFileSystems != null && (this._customFileSystems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -148,7 +149,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SpaceStorageSettings. 
         /// <para>
-        /// The storage settings for a private space.
+        /// The storage settings for a space.
         /// </para>
         /// </summary>
         public SpaceStorageSettings SpaceStorageSettings

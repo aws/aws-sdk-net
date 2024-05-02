@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodeCatalyst.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CodeCatalyst.Model
     /// </summary>
     public partial class ListDevEnvironmentSessionsResponse : AmazonWebServiceResponse
     {
-        private List<DevEnvironmentSessionSummary> _items = new List<DevEnvironmentSessionSummary>();
+        private List<DevEnvironmentSessionSummary> _items = AWSConfigs.InitializeCollections ? new List<DevEnvironmentSessionSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.CodeCatalyst.Model
         // Check to see if Items property is set
         internal bool IsSetItems()
         {
-            return this._items != null && this._items.Count > 0; 
+            return this._items != null && (this._items.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

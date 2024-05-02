@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Glue.Model
         /// Enumerable containing all of the Schemas
         /// </summary>
         public IPaginatedEnumerable<SchemaVersionListItem> Schemas => 
-            new PaginatedResultKeyResponse<ListSchemaVersionsResponse, SchemaVersionListItem>(this, (i) => i.Schemas);
+            new PaginatedResultKeyResponse<ListSchemaVersionsResponse, SchemaVersionListItem>(this, (i) => i.Schemas ?? new List<SchemaVersionListItem>());
 
         internal ListSchemaVersionsPaginator(IAmazonGlue client, ListSchemaVersionsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Glue.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListSchemaVersionsResponse> IPaginator<ListSchemaVersionsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListSchemaVersionsResponse> IPaginator<ListSchemaVersionsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

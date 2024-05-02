@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.IdentityManagement.Model
         /// Enumerable containing all of the InstanceProfiles
         /// </summary>
         public IPaginatedEnumerable<InstanceProfile> InstanceProfiles => 
-            new PaginatedResultKeyResponse<ListInstanceProfilesResponse, InstanceProfile>(this, (i) => i.InstanceProfiles);
+            new PaginatedResultKeyResponse<ListInstanceProfilesResponse, InstanceProfile>(this, (i) => i.InstanceProfiles ?? new List<InstanceProfile>());
 
         internal ListInstanceProfilesPaginator(IAmazonIdentityManagementService client, ListInstanceProfilesRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.IdentityManagement.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListInstanceProfilesResponse> IPaginator<ListInstanceProfilesResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListInstanceProfilesResponse> IPaginator<ListInstanceProfilesResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

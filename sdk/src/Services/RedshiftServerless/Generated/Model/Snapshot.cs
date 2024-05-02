@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.RedshiftServerless.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.RedshiftServerless.Model
     /// </summary>
     public partial class Snapshot
     {
-        private List<string> _accountsWithProvisionedRestoreAccess = new List<string>();
-        private List<string> _accountsWithRestoreAccess = new List<string>();
+        private List<string> _accountsWithProvisionedRestoreAccess = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _accountsWithRestoreAccess = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private double? _actualIncrementalBackupSizeInMegaBytes;
         private string _adminPasswordSecretArn;
         private string _adminPasswordSecretKmsKeyId;
@@ -72,7 +73,7 @@ namespace Amazon.RedshiftServerless.Model
         // Check to see if AccountsWithProvisionedRestoreAccess property is set
         internal bool IsSetAccountsWithProvisionedRestoreAccess()
         {
-            return this._accountsWithProvisionedRestoreAccess != null && this._accountsWithProvisionedRestoreAccess.Count > 0; 
+            return this._accountsWithProvisionedRestoreAccess != null && (this._accountsWithProvisionedRestoreAccess.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace Amazon.RedshiftServerless.Model
         // Check to see if AccountsWithRestoreAccess property is set
         internal bool IsSetAccountsWithRestoreAccess()
         {
-            return this._accountsWithRestoreAccess != null && this._accountsWithRestoreAccess.Count > 0; 
+            return this._accountsWithRestoreAccess != null && (this._accountsWithRestoreAccess.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

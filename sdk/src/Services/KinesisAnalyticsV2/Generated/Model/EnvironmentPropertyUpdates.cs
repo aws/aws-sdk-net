@@ -26,15 +26,16 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
-    /// Describes updates to the execution property groups for a Flink-based Kinesis Data
-    /// Analytics application or a Studio notebook.
+    /// Describes updates to the execution property groups for a Managed Service for Apache
+    /// Flink application or a Studio notebook.
     /// </summary>
     public partial class EnvironmentPropertyUpdates
     {
-        private List<PropertyGroup> _propertyGroups = new List<PropertyGroup>();
+        private List<PropertyGroup> _propertyGroups = AWSConfigs.InitializeCollections ? new List<PropertyGroup>() : null;
 
         /// <summary>
         /// Gets and sets the property PropertyGroups. 
@@ -52,7 +53,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         // Check to see if PropertyGroups property is set
         internal bool IsSetPropertyGroups()
         {
-            return this._propertyGroups != null && this._propertyGroups.Count > 0; 
+            return this._propertyGroups != null && (this._propertyGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

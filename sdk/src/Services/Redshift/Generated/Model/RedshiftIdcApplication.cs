@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Redshift.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Redshift.Model
     /// </summary>
     public partial class RedshiftIdcApplication
     {
-        private List<AuthorizedTokenIssuer> _authorizedTokenIssuerList = new List<AuthorizedTokenIssuer>();
+        private List<AuthorizedTokenIssuer> _authorizedTokenIssuerList = AWSConfigs.InitializeCollections ? new List<AuthorizedTokenIssuer>() : null;
         private string _iamRoleArn;
         private string _idcDisplayName;
         private string _idcInstanceArn;
@@ -42,7 +43,7 @@ namespace Amazon.Redshift.Model
         private string _identityNamespace;
         private string _redshiftIdcApplicationArn;
         private string _redshiftIdcApplicationName;
-        private List<ServiceIntegrationsUnion> _serviceIntegrations = new List<ServiceIntegrationsUnion>();
+        private List<ServiceIntegrationsUnion> _serviceIntegrations = AWSConfigs.InitializeCollections ? new List<ServiceIntegrationsUnion>() : null;
 
         /// <summary>
         /// Gets and sets the property AuthorizedTokenIssuerList. 
@@ -59,7 +60,7 @@ namespace Amazon.Redshift.Model
         // Check to see if AuthorizedTokenIssuerList property is set
         internal bool IsSetAuthorizedTokenIssuerList()
         {
-            return this._authorizedTokenIssuerList != null && this._authorizedTokenIssuerList.Count > 0; 
+            return this._authorizedTokenIssuerList != null && (this._authorizedTokenIssuerList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -232,7 +233,7 @@ namespace Amazon.Redshift.Model
         // Check to see if ServiceIntegrations property is set
         internal bool IsSetServiceIntegrations()
         {
-            return this._serviceIntegrations != null && this._serviceIntegrations.Count > 0; 
+            return this._serviceIntegrations != null && (this._serviceIntegrations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Omics.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Omics.Model
     /// </summary>
     public partial class ListReadSetExportJobsResponse : AmazonWebServiceResponse
     {
-        private List<ExportReadSetJobDetail> _exportJobs = new List<ExportReadSetJobDetail>();
+        private List<ExportReadSetJobDetail> _exportJobs = AWSConfigs.InitializeCollections ? new List<ExportReadSetJobDetail>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Omics.Model
         // Check to see if ExportJobs property is set
         internal bool IsSetExportJobs()
         {
-            return this._exportJobs != null && this._exportJobs.Count > 0; 
+            return this._exportJobs != null && (this._exportJobs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.IoT.Model
         /// Enumerable containing all of the BillingGroups
         /// </summary>
         public IPaginatedEnumerable<GroupNameAndArn> BillingGroups => 
-            new PaginatedResultKeyResponse<ListBillingGroupsResponse, GroupNameAndArn>(this, (i) => i.BillingGroups);
+            new PaginatedResultKeyResponse<ListBillingGroupsResponse, GroupNameAndArn>(this, (i) => i.BillingGroups ?? new List<GroupNameAndArn>());
 
         internal ListBillingGroupsPaginator(IAmazonIoT client, ListBillingGroupsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.IoT.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListBillingGroupsResponse> IPaginator<ListBillingGroupsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListBillingGroupsResponse> IPaginator<ListBillingGroupsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

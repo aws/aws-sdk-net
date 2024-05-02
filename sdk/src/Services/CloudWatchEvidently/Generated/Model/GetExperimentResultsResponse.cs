@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CloudWatchEvidently.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.CloudWatchEvidently.Model
     public partial class GetExperimentResultsResponse : AmazonWebServiceResponse
     {
         private string _details;
-        private List<ExperimentReport> _reports = new List<ExperimentReport>();
-        private List<ExperimentResultsData> _resultsData = new List<ExperimentResultsData>();
-        private List<DateTime> _timestamps = new List<DateTime>();
+        private List<ExperimentReport> _reports = AWSConfigs.InitializeCollections ? new List<ExperimentReport>() : null;
+        private List<ExperimentResultsData> _resultsData = AWSConfigs.InitializeCollections ? new List<ExperimentResultsData>() : null;
+        private List<DateTime> _timestamps = AWSConfigs.InitializeCollections ? new List<DateTime>() : null;
 
         /// <summary>
         /// Gets and sets the property Details. 
@@ -74,7 +75,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if Reports property is set
         internal bool IsSetReports()
         {
-            return this._reports != null && this._reports.Count > 0; 
+            return this._reports != null && (this._reports.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -94,7 +95,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if ResultsData property is set
         internal bool IsSetResultsData()
         {
-            return this._resultsData != null && this._resultsData.Count > 0; 
+            return this._resultsData != null && (this._resultsData.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -113,7 +114,7 @@ namespace Amazon.CloudWatchEvidently.Model
         // Check to see if Timestamps property is set
         internal bool IsSetTimestamps()
         {
-            return this._timestamps != null && this._timestamps.Count > 0; 
+            return this._timestamps != null && (this._timestamps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

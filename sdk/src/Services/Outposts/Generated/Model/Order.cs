@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Outposts.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Outposts.Model
     /// </summary>
     public partial class Order
     {
-        private List<LineItem> _lineItems = new List<LineItem>();
+        private List<LineItem> _lineItems = AWSConfigs.InitializeCollections ? new List<LineItem>() : null;
         private DateTime? _orderFulfilledDate;
         private string _orderId;
         private DateTime? _orderSubmissionDate;
@@ -58,7 +59,7 @@ namespace Amazon.Outposts.Model
         // Check to see if LineItems property is set
         internal bool IsSetLineItems()
         {
-            return this._lineItems != null && this._lineItems.Count > 0; 
+            return this._lineItems != null && (this._lineItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

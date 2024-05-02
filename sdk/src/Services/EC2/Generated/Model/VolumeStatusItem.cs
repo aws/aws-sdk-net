@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -33,10 +34,10 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class VolumeStatusItem
     {
-        private List<VolumeStatusAction> _actions = new List<VolumeStatusAction>();
-        private List<VolumeStatusAttachmentStatus> _attachmentStatuses = new List<VolumeStatusAttachmentStatus>();
+        private List<VolumeStatusAction> _actions = AWSConfigs.InitializeCollections ? new List<VolumeStatusAction>() : null;
+        private List<VolumeStatusAttachmentStatus> _attachmentStatuses = AWSConfigs.InitializeCollections ? new List<VolumeStatusAttachmentStatus>() : null;
         private string _availabilityZone;
-        private List<VolumeStatusEvent> _events = new List<VolumeStatusEvent>();
+        private List<VolumeStatusEvent> _events = AWSConfigs.InitializeCollections ? new List<VolumeStatusEvent>() : null;
         private string _outpostArn;
         private string _volumeId;
         private VolumeStatusInfo _volumeStatus;
@@ -56,7 +57,7 @@ namespace Amazon.EC2.Model
         // Check to see if Actions property is set
         internal bool IsSetActions()
         {
-            return this._actions != null && this._actions.Count > 0; 
+            return this._actions != null && (this._actions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -74,7 +75,7 @@ namespace Amazon.EC2.Model
         // Check to see if AttachmentStatuses property is set
         internal bool IsSetAttachmentStatuses()
         {
-            return this._attachmentStatuses != null && this._attachmentStatuses.Count > 0; 
+            return this._attachmentStatuses != null && (this._attachmentStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -110,7 +111,7 @@ namespace Amazon.EC2.Model
         // Check to see if Events property is set
         internal bool IsSetEvents()
         {
-            return this._events != null && this._events.Count > 0; 
+            return this._events != null && (this._events.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

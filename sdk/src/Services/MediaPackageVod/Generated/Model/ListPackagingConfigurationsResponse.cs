@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaPackageVod.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.MediaPackageVod.Model
     public partial class ListPackagingConfigurationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<PackagingConfiguration> _packagingConfigurations = new List<PackagingConfiguration>();
+        private List<PackagingConfiguration> _packagingConfigurations = AWSConfigs.InitializeCollections ? new List<PackagingConfiguration>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. A token that can be used to resume pagination
@@ -65,7 +66,7 @@ namespace Amazon.MediaPackageVod.Model
         // Check to see if PackagingConfigurations property is set
         internal bool IsSetPackagingConfigurations()
         {
-            return this._packagingConfigurations != null && this._packagingConfigurations.Count > 0; 
+            return this._packagingConfigurations != null && (this._packagingConfigurations.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

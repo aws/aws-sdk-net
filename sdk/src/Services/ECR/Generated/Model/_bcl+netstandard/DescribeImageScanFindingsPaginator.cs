@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.ECR.Model
 {
     /// <summary>
@@ -45,13 +46,13 @@ namespace Amazon.ECR.Model
         /// Enumerable containing all of the Findings
         /// </summary>
         public IPaginatedEnumerable<ImageScanFinding> Findings => 
-            new PaginatedResultKeyResponse<DescribeImageScanFindingsResponse, ImageScanFinding>(this, (i) => i.ImageScanFindings.Findings);
+            new PaginatedResultKeyResponse<DescribeImageScanFindingsResponse, ImageScanFinding>(this, (i) => i.ImageScanFindings.Findings ?? new List<ImageScanFinding>());
 
         /// <summary>
         /// Enumerable containing all of the EnhancedFindings
         /// </summary>
         public IPaginatedEnumerable<EnhancedImageScanFinding> EnhancedFindings => 
-            new PaginatedResultKeyResponse<DescribeImageScanFindingsResponse, EnhancedImageScanFinding>(this, (i) => i.ImageScanFindings.EnhancedFindings);
+            new PaginatedResultKeyResponse<DescribeImageScanFindingsResponse, EnhancedImageScanFinding>(this, (i) => i.ImageScanFindings.EnhancedFindings ?? new List<EnhancedImageScanFinding>());
 
         internal DescribeImageScanFindingsPaginator(IAmazonECR client, DescribeImageScanFindingsRequest request)
         {
@@ -79,7 +80,7 @@ namespace Amazon.ECR.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<DescribeImageScanFindingsResponse> IPaginator<DescribeImageScanFindingsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<DescribeImageScanFindingsResponse> IPaginator<DescribeImageScanFindingsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

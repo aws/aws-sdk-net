@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.EC2.Model
     public partial class SearchTransitGatewayRoutesResponse : AmazonWebServiceResponse
     {
         private bool? _additionalRoutesAvailable;
-        private List<TransitGatewayRoute> _routes = new List<TransitGatewayRoute>();
+        private List<TransitGatewayRoute> _routes = AWSConfigs.InitializeCollections ? new List<TransitGatewayRoute>() : null;
 
         /// <summary>
         /// Gets and sets the property AdditionalRoutesAvailable. 
@@ -69,7 +70,7 @@ namespace Amazon.EC2.Model
         // Check to see if Routes property is set
         internal bool IsSetRoutes()
         {
-            return this._routes != null && this._routes.Count > 0; 
+            return this._routes != null && (this._routes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class CostEstimate
     {
-        private List<EstimateByTime> _resultsByTime = new List<EstimateByTime>();
+        private List<EstimateByTime> _resultsByTime = AWSConfigs.InitializeCollections ? new List<EstimateByTime>() : null;
         private string _usageType;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if ResultsByTime property is set
         internal bool IsSetResultsByTime()
         {
-            return this._resultsByTime != null && this._resultsByTime.Count > 0; 
+            return this._resultsByTime != null && (this._resultsByTime.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

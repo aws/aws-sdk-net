@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaPackage.Model
 {
     /// <summary>
@@ -45,9 +46,9 @@ namespace Amazon.MediaPackage.Model
         private MssPackage _mssPackage;
         private Origination _origination;
         private int? _startoverWindowSeconds;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private int? _timeDelaySeconds;
-        private List<string> _whitelist = new List<string>();
+        private List<string> _whitelist = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Authorization.
@@ -236,7 +237,7 @@ namespace Amazon.MediaPackage.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -269,7 +270,7 @@ namespace Amazon.MediaPackage.Model
         // Check to see if Whitelist property is set
         internal bool IsSetWhitelist()
         {
-            return this._whitelist != null && this._whitelist.Count > 0; 
+            return this._whitelist != null && (this._whitelist.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

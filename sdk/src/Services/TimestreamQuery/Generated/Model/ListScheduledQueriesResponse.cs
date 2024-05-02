@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.TimestreamQuery.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.TimestreamQuery.Model
     public partial class ListScheduledQueriesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ScheduledQuery> _scheduledQueries = new List<ScheduledQuery>();
+        private List<ScheduledQuery> _scheduledQueries = AWSConfigs.InitializeCollections ? new List<ScheduledQuery>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.TimestreamQuery.Model
         // Check to see if ScheduledQueries property is set
         internal bool IsSetScheduledQueries()
         {
-            return this._scheduledQueries != null && this._scheduledQueries.Count > 0; 
+            return this._scheduledQueries != null && (this._scheduledQueries.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

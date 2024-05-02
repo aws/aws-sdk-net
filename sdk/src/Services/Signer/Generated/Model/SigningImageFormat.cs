@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Signer.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Signer.Model
     public partial class SigningImageFormat
     {
         private ImageFormat _defaultFormat;
-        private List<string> _supportedFormats = new List<string>();
+        private List<string> _supportedFormats = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property DefaultFormat. 
@@ -71,7 +72,7 @@ namespace Amazon.Signer.Model
         // Check to see if SupportedFormats property is set
         internal bool IsSetSupportedFormats()
         {
-            return this._supportedFormats != null && this._supportedFormats.Count > 0; 
+            return this._supportedFormats != null && (this._supportedFormats.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

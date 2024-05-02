@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.AppRunner.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.AppRunner.Model
     public partial class ListObservabilityConfigurationsResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ObservabilityConfigurationSummary> _observabilityConfigurationSummaryList = new List<ObservabilityConfigurationSummary>();
+        private List<ObservabilityConfigurationSummary> _observabilityConfigurationSummaryList = AWSConfigs.InitializeCollections ? new List<ObservabilityConfigurationSummary>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +74,7 @@ namespace Amazon.AppRunner.Model
         // Check to see if ObservabilityConfigurationSummaryList property is set
         internal bool IsSetObservabilityConfigurationSummaryList()
         {
-            return this._observabilityConfigurationSummaryList != null && this._observabilityConfigurationSummaryList.Count > 0; 
+            return this._observabilityConfigurationSummaryList != null && (this._observabilityConfigurationSummaryList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,19 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AudioDescription requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
+            if(requestObject.IsSetAudioDashRoles())
+            {
+                context.Writer.WritePropertyName("audioDashRoles");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAudioDashRolesListValue in requestObject.AudioDashRoles)
+                {
+                        context.Writer.Write(requestObjectAudioDashRolesListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetAudioNormalizationSettings())
             {
                 context.Writer.WritePropertyName("audioNormalizationSettings");
@@ -94,6 +108,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.CodecSettings, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetDvbDashAccessibility())
+            {
+                context.Writer.WritePropertyName("dvbDashAccessibility");
+                context.Writer.Write(requestObject.DvbDashAccessibility);
             }
 
             if(requestObject.IsSetLanguageCode())

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DAX.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DAX.Model
     /// </summary>
     public partial class DescribeClustersResponse : AmazonWebServiceResponse
     {
-        private List<Cluster> _clusters = new List<Cluster>();
+        private List<Cluster> _clusters = AWSConfigs.InitializeCollections ? new List<Cluster>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.DAX.Model
         // Check to see if Clusters property is set
         internal bool IsSetClusters()
         {
-            return this._clusters != null && this._clusters.Count > 0; 
+            return this._clusters != null && (this._clusters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

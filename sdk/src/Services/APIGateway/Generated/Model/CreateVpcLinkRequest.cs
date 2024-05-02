@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
@@ -38,8 +39,8 @@ namespace Amazon.APIGateway.Model
     {
         private string _description;
         private string _name;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
-        private List<string> _targetArns = new List<string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<string> _targetArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -95,7 +96,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -115,7 +116,7 @@ namespace Amazon.APIGateway.Model
         // Check to see if TargetArns property is set
         internal bool IsSetTargetArns()
         {
-            return this._targetArns != null && this._targetArns.Count > 0; 
+            return this._targetArns != null && (this._targetArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

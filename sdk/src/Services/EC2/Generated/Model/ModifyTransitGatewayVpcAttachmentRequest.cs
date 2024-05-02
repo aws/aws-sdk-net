@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.EC2.Model
 {
     /// <summary>
@@ -34,9 +35,9 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ModifyTransitGatewayVpcAttachmentRequest : AmazonEC2Request
     {
-        private List<string> _addSubnetIds = new List<string>();
+        private List<string> _addSubnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private ModifyTransitGatewayVpcAttachmentRequestOptions _options;
-        private List<string> _removeSubnetIds = new List<string>();
+        private List<string> _removeSubnetIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _transitGatewayAttachmentId;
 
         /// <summary>
@@ -55,7 +56,7 @@ namespace Amazon.EC2.Model
         // Check to see if AddSubnetIds property is set
         internal bool IsSetAddSubnetIds()
         {
-            return this._addSubnetIds != null && this._addSubnetIds.Count > 0; 
+            return this._addSubnetIds != null && (this._addSubnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace Amazon.EC2.Model
         // Check to see if RemoveSubnetIds property is set
         internal bool IsSetRemoveSubnetIds()
         {
-            return this._removeSubnetIds != null && this._removeSubnetIds.Count > 0; 
+            return this._removeSubnetIds != null && (this._removeSubnetIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

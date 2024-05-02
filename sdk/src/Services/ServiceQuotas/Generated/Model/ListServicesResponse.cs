@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ServiceQuotas.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.ServiceQuotas.Model
     public partial class ListServicesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<ServiceInfo> _services = new List<ServiceInfo>();
+        private List<ServiceInfo> _services = AWSConfigs.InitializeCollections ? new List<ServiceInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -73,7 +74,7 @@ namespace Amazon.ServiceQuotas.Model
         // Check to see if Services property is set
         internal bool IsSetServices()
         {
-            return this._services != null && this._services.Count > 0; 
+            return this._services != null && (this._services.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

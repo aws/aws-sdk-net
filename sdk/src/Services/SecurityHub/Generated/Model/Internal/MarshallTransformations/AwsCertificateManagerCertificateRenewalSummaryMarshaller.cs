@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -45,6 +46,8 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsCertificateManagerCertificateRenewalSummary requestObject, JsonMarshallerContext context)
         {
+            if(requestObject == null)
+                return;
             if(requestObject.IsSetDomainValidationOptions())
             {
                 context.Writer.WritePropertyName("DomainValidationOptions");

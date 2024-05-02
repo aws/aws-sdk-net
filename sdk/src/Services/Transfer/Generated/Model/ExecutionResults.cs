@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Transfer.Model
 {
     /// <summary>
@@ -34,8 +35,8 @@ namespace Amazon.Transfer.Model
     /// </summary>
     public partial class ExecutionResults
     {
-        private List<ExecutionStepResult> _onExceptionSteps = new List<ExecutionStepResult>();
-        private List<ExecutionStepResult> _steps = new List<ExecutionStepResult>();
+        private List<ExecutionStepResult> _onExceptionSteps = AWSConfigs.InitializeCollections ? new List<ExecutionStepResult>() : null;
+        private List<ExecutionStepResult> _steps = AWSConfigs.InitializeCollections ? new List<ExecutionStepResult>() : null;
 
         /// <summary>
         /// Gets and sets the property OnExceptionSteps. 
@@ -54,7 +55,7 @@ namespace Amazon.Transfer.Model
         // Check to see if OnExceptionSteps property is set
         internal bool IsSetOnExceptionSteps()
         {
-            return this._onExceptionSteps != null && this._onExceptionSteps.Count > 0; 
+            return this._onExceptionSteps != null && (this._onExceptionSteps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace Amazon.Transfer.Model
         // Check to see if Steps property is set
         internal bool IsSetSteps()
         {
-            return this._steps != null && this._steps.Count > 0; 
+            return this._steps != null && (this._steps.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

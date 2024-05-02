@@ -18,6 +18,7 @@
  */
 using Amazon.Runtime;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>

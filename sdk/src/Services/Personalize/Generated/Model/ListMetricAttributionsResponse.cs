@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Personalize.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Personalize.Model
     /// </summary>
     public partial class ListMetricAttributionsResponse : AmazonWebServiceResponse
     {
-        private List<MetricAttributionSummary> _metricAttributions = new List<MetricAttributionSummary>();
+        private List<MetricAttributionSummary> _metricAttributions = AWSConfigs.InitializeCollections ? new List<MetricAttributionSummary>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.Personalize.Model
         // Check to see if MetricAttributions property is set
         internal bool IsSetMetricAttributions()
         {
-            return this._metricAttributions != null && this._metricAttributions.Count > 0; 
+            return this._metricAttributions != null && (this._metricAttributions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

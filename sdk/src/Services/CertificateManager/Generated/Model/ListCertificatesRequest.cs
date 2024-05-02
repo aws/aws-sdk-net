@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CertificateManager.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.CertificateManager.Model
     /// </summary>
     public partial class ListCertificatesRequest : AmazonCertificateManagerRequest
     {
-        private List<string> _certificateStatuses = new List<string>();
+        private List<string> _certificateStatuses = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private Filters _includes;
         private int? _maxItems;
         private string _nextToken;
@@ -59,7 +60,7 @@ namespace Amazon.CertificateManager.Model
         // Check to see if CertificateStatuses property is set
         internal bool IsSetCertificateStatuses()
         {
-            return this._certificateStatuses != null && this._certificateStatuses.Count > 0; 
+            return this._certificateStatuses != null && (this._certificateStatuses.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

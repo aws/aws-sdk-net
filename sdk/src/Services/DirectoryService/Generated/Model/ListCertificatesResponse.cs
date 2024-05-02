@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DirectoryService.Model
     /// </summary>
     public partial class ListCertificatesResponse : AmazonWebServiceResponse
     {
-        private List<CertificateInfo> _certificatesInfo = new List<CertificateInfo>();
+        private List<CertificateInfo> _certificatesInfo = AWSConfigs.InitializeCollections ? new List<CertificateInfo>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -52,7 +53,7 @@ namespace Amazon.DirectoryService.Model
         // Check to see if CertificatesInfo property is set
         internal bool IsSetCertificatesInfo()
         {
-            return this._certificatesInfo != null && this._certificatesInfo.Count > 0; 
+            return this._certificatesInfo != null && (this._certificatesInfo.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

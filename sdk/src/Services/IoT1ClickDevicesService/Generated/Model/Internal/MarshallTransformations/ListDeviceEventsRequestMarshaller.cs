@@ -30,6 +30,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IoT1ClickDevicesService.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -63,7 +64,7 @@ namespace Amazon.IoT1ClickDevicesService.Model.Internal.MarshallTransformations
             request.AddPathResource("{deviceId}", StringUtils.FromString(publicRequest.DeviceId));
             
             if (publicRequest.IsSetFromTimeStampUtc())
-                request.Parameters.Add("fromTimeStamp", StringUtils.FromDateTimeToISO8601(publicRequest.FromTimeStampUtc));
+                request.Parameters.Add("fromTimeStamp", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.FromTimeStampUtc));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
@@ -72,7 +73,7 @@ namespace Amazon.IoT1ClickDevicesService.Model.Internal.MarshallTransformations
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
             
             if (publicRequest.IsSetToTimeStampUtc())
-                request.Parameters.Add("toTimeStamp", StringUtils.FromDateTimeToISO8601(publicRequest.ToTimeStampUtc));
+                request.Parameters.Add("toTimeStamp", StringUtils.FromDateTimeToISO8601WithOptionalMs(publicRequest.ToTimeStampUtc));
             request.ResourcePath = "/devices/{deviceId}/events";
             request.UseQueryString = true;
 

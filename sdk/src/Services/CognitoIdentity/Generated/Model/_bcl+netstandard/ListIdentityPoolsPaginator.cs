@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoIdentity.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.CognitoIdentity.Model
         /// Enumerable containing all of the IdentityPools
         /// </summary>
         public IPaginatedEnumerable<IdentityPoolShortDescription> IdentityPools => 
-            new PaginatedResultKeyResponse<ListIdentityPoolsResponse, IdentityPoolShortDescription>(this, (i) => i.IdentityPools);
+            new PaginatedResultKeyResponse<ListIdentityPoolsResponse, IdentityPoolShortDescription>(this, (i) => i.IdentityPools ?? new List<IdentityPoolShortDescription>());
 
         internal ListIdentityPoolsPaginator(IAmazonCognitoIdentity client, ListIdentityPoolsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.CognitoIdentity.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListIdentityPoolsResponse> IPaginator<ListIdentityPoolsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListIdentityPoolsResponse> IPaginator<ListIdentityPoolsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

@@ -22,6 +22,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
     /// </summary>
     public class SSES3Unmarshaller : IUnmarshaller<SSES3, XmlUnmarshallerContext>, IUnmarshaller<SSES3, JsonUnmarshallerContext>
     {
+        /// <summary>
+        /// Unmarshaller the response from the service to the response class.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public SSES3 Unmarshall(XmlUnmarshallerContext context)
         {
             SSES3 condition = new SSES3();
@@ -46,6 +51,11 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             return condition;
         }
 
+        /// <summary>
+        /// Not implemented and always returns null.
+        /// </summary>
+        /// <param name="context"></param>
+        /// <returns></returns>
         public SSES3 Unmarshall(JsonUnmarshallerContext context)
         {
             return null;
@@ -53,6 +63,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
         private static SSES3Unmarshaller _instance;
 
+        /// <summary>
+        /// Singleton for the unmarshaller
+        /// </summary>
         public static SSES3Unmarshaller Instance
         {
             get

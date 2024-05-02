@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MQ.Model
 {
     /// <summary>
@@ -33,12 +34,12 @@ namespace Amazon.MQ.Model
     /// </summary>
     public partial class BrokerInstanceOption
     {
-        private List<AvailabilityZone> _availabilityZones = new List<AvailabilityZone>();
+        private List<AvailabilityZone> _availabilityZones = AWSConfigs.InitializeCollections ? new List<AvailabilityZone>() : null;
         private EngineType _engineType;
         private string _hostInstanceType;
         private BrokerStorageType _storageType;
-        private List<string> _supportedDeploymentModes = new List<string>();
-        private List<string> _supportedEngineVersions = new List<string>();
+        private List<string> _supportedDeploymentModes = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _supportedEngineVersions = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
@@ -55,7 +56,7 @@ namespace Amazon.MQ.Model
         // Check to see if AvailabilityZones property is set
         internal bool IsSetAvailabilityZones()
         {
-            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
+            return this._availabilityZones != null && (this._availabilityZones.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -127,7 +128,7 @@ namespace Amazon.MQ.Model
         // Check to see if SupportedDeploymentModes property is set
         internal bool IsSetSupportedDeploymentModes()
         {
-            return this._supportedDeploymentModes != null && this._supportedDeploymentModes.Count > 0; 
+            return this._supportedDeploymentModes != null && (this._supportedDeploymentModes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -145,7 +146,7 @@ namespace Amazon.MQ.Model
         // Check to see if SupportedEngineVersions property is set
         internal bool IsSetSupportedEngineVersions()
         {
-            return this._supportedEngineVersions != null && this._supportedEngineVersions.Count > 0; 
+            return this._supportedEngineVersions != null && (this._supportedEngineVersions.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

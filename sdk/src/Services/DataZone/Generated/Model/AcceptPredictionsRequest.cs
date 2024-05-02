@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DataZone.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.DataZone.Model
     /// </summary>
     public partial class AcceptPredictionsRequest : AmazonDataZoneRequest
     {
-        private List<AcceptChoice> _acceptChoices = new List<AcceptChoice>();
+        private List<AcceptChoice> _acceptChoices = AWSConfigs.InitializeCollections ? new List<AcceptChoice>() : null;
         private AcceptRule _acceptRule;
         private string _clientToken;
         private string _domainIdentifier;
@@ -43,7 +44,11 @@ namespace Amazon.DataZone.Model
         private string _revision;
 
         /// <summary>
-        /// Gets and sets the property AcceptChoices.
+        /// Gets and sets the property AcceptChoices. 
+        /// <para>
+        /// Specifies the prediction (aka, the automatically generated piece of metadata) and
+        /// the target (for example, a column name) that can be accepted.
+        /// </para>
         /// </summary>
         public List<AcceptChoice> AcceptChoices
         {
@@ -54,7 +59,7 @@ namespace Amazon.DataZone.Model
         // Check to see if AcceptChoices property is set
         internal bool IsSetAcceptChoices()
         {
-            return this._acceptChoices != null && this._acceptChoices.Count > 0; 
+            return this._acceptChoices != null && (this._acceptChoices.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -115,7 +120,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Identifier.
+        /// Gets and sets the property Identifier. 
+        /// <para>
+        /// The identifier of the asset.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Identifier
@@ -131,7 +139,10 @@ namespace Amazon.DataZone.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Revision.
+        /// Gets and sets the property Revision. 
+        /// <para>
+        /// The revision that is to be made to the asset.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
         public string Revision

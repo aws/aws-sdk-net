@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace Amazon.DevOpsGuru.Model
     #endif
     public partial class ValidationException : AmazonDevOpsGuruException
     {
-        private List<ValidationExceptionField> _fields = new List<ValidationExceptionField>();
+        private List<ValidationExceptionField> _fields = AWSConfigs.InitializeCollections ? new List<ValidationExceptionField>() : null;
         private ValidationExceptionReason _reason;
 
         /// <summary>
@@ -134,7 +135,7 @@ namespace Amazon.DevOpsGuru.Model
         // Check to see if Fields property is set
         internal bool IsSetFields()
         {
-            return this._fields != null && this._fields.Count > 0; 
+            return this._fields != null && (this._fields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

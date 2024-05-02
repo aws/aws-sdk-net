@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.DocDB.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.DocDB.Model
     /// </summary>
     public partial class DescribeDBInstancesResponse : AmazonWebServiceResponse
     {
-        private List<DBInstance> _dbInstances = new List<DBInstance>();
+        private List<DBInstance> _dbInstances = AWSConfigs.InitializeCollections ? new List<DBInstance>() : null;
         private string _marker;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.DocDB.Model
         // Check to see if DBInstances property is set
         internal bool IsSetDBInstances()
         {
-            return this._dbInstances != null && this._dbInstances.Count > 0; 
+            return this._dbInstances != null && (this._dbInstances.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

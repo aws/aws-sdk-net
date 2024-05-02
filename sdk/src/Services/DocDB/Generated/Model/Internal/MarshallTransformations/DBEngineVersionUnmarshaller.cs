@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.DocDB.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -87,6 +88,10 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ExportableLogTypes/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.ExportableLogTypes == null)
+                        {
+                            unmarshalledObject.ExportableLogTypes = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ExportableLogTypes.Add(item);
                         continue;
@@ -94,6 +99,10 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     if (context.TestExpression("SupportedCACertificateIdentifiers/member", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
+                        if (unmarshalledObject.SupportedCACertificateIdentifiers == null)
+                        {
+                            unmarshalledObject.SupportedCACertificateIdentifiers = new List<string>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.SupportedCACertificateIdentifiers.Add(item);
                         continue;
@@ -113,6 +122,10 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
                     if (context.TestExpression("ValidUpgradeTarget/UpgradeTarget", targetDepth))
                     {
                         var unmarshaller = UpgradeTargetUnmarshaller.Instance;
+                        if (unmarshalledObject.ValidUpgradeTarget == null)
+                        {
+                            unmarshalledObject.ValidUpgradeTarget = new List<UpgradeTarget>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.ValidUpgradeTarget.Add(item);
                         continue;

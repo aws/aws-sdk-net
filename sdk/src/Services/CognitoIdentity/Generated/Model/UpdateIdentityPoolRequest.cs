@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CognitoIdentity.Model
 {
     /// <summary>
@@ -41,14 +42,14 @@ namespace Amazon.CognitoIdentity.Model
     {
         private bool? _allowClassicFlow;
         private bool? _allowUnauthenticatedIdentities;
-        private List<CognitoIdentityProviderInfo> _cognitoIdentityProviders = new List<CognitoIdentityProviderInfo>();
+        private List<CognitoIdentityProviderInfo> _cognitoIdentityProviders = AWSConfigs.InitializeCollections ? new List<CognitoIdentityProviderInfo>() : null;
         private string _developerProviderName;
         private string _identityPoolId;
         private string _identityPoolName;
-        private Dictionary<string, string> _identityPoolTags = new Dictionary<string, string>();
-        private List<string> _openIdConnectProviderARNs = new List<string>();
-        private List<string> _samlProviderARNs = new List<string>();
-        private Dictionary<string, string> _supportedLoginProviders = new Dictionary<string, string>();
+        private Dictionary<string, string> _identityPoolTags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
+        private List<string> _openIdConnectProviderARNs = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _samlProviderARNs = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private Dictionary<string, string> _supportedLoginProviders = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property AllowClassicFlow. 
@@ -105,7 +106,7 @@ namespace Amazon.CognitoIdentity.Model
         // Check to see if CognitoIdentityProviders property is set
         internal bool IsSetCognitoIdentityProviders()
         {
-            return this._cognitoIdentityProviders != null && this._cognitoIdentityProviders.Count > 0; 
+            return this._cognitoIdentityProviders != null && (this._cognitoIdentityProviders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -182,7 +183,7 @@ namespace Amazon.CognitoIdentity.Model
         // Check to see if IdentityPoolTags property is set
         internal bool IsSetIdentityPoolTags()
         {
-            return this._identityPoolTags != null && this._identityPoolTags.Count > 0; 
+            return this._identityPoolTags != null && (this._identityPoolTags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -200,7 +201,7 @@ namespace Amazon.CognitoIdentity.Model
         // Check to see if OpenIdConnectProviderARNs property is set
         internal bool IsSetOpenIdConnectProviderARNs()
         {
-            return this._openIdConnectProviderARNs != null && this._openIdConnectProviderARNs.Count > 0; 
+            return this._openIdConnectProviderARNs != null && (this._openIdConnectProviderARNs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -218,7 +219,7 @@ namespace Amazon.CognitoIdentity.Model
         // Check to see if SamlProviderARNs property is set
         internal bool IsSetSamlProviderARNs()
         {
-            return this._samlProviderARNs != null && this._samlProviderARNs.Count > 0; 
+            return this._samlProviderARNs != null && (this._samlProviderARNs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -237,7 +238,7 @@ namespace Amazon.CognitoIdentity.Model
         // Check to see if SupportedLoginProviders property is set
         internal bool IsSetSupportedLoginProviders()
         {
-            return this._supportedLoginProviders != null && this._supportedLoginProviders.Count > 0; 
+            return this._supportedLoginProviders != null && (this._supportedLoginProviders.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

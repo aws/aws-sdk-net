@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ConfigService.Model
     /// </summary>
     public partial class StartRemediationExecutionResponse : AmazonWebServiceResponse
     {
-        private List<ResourceKey> _failedItems = new List<ResourceKey>();
+        private List<ResourceKey> _failedItems = AWSConfigs.InitializeCollections ? new List<ResourceKey>() : null;
         private string _failureMessage;
 
         /// <summary>
@@ -53,7 +54,7 @@ namespace Amazon.ConfigService.Model
         // Check to see if FailedItems property is set
         internal bool IsSetFailedItems()
         {
-            return this._failedItems != null && this._failedItems.Count > 0; 
+            return this._failedItems != null && (this._failedItems.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

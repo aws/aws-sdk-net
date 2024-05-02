@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ConnectCases.Model
 {
     /// <summary>
@@ -33,9 +34,9 @@ namespace Amazon.ConnectCases.Model
     /// </summary>
     public partial class GetCaseResponse : AmazonWebServiceResponse
     {
-        private List<FieldValue> _fields = new List<FieldValue>();
+        private List<FieldValue> _fields = AWSConfigs.InitializeCollections ? new List<FieldValue>() : null;
         private string _nextToken;
-        private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _templateId;
 
         /// <summary>
@@ -54,7 +55,7 @@ namespace Amazon.ConnectCases.Model
         // Check to see if Fields property is set
         internal bool IsSetFields()
         {
-            return this._fields != null && this._fields.Count > 0; 
+            return this._fields != null && (this._fields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -93,7 +94,7 @@ namespace Amazon.ConnectCases.Model
         // Check to see if Tags property is set
         internal bool IsSetTags()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

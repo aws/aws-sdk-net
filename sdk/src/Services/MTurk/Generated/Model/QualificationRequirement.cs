@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MTurk.Model
 {
     /// <summary>
@@ -38,8 +39,8 @@ namespace Amazon.MTurk.Model
     {
         private HITAccessActions _actionsGuarded;
         private Comparator _comparator;
-        private List<int> _integerValues = new List<int>();
-        private List<Locale> _localeValues = new List<Locale>();
+        private List<int> _integerValues = AWSConfigs.InitializeCollections ? new List<int>() : null;
+        private List<Locale> _localeValues = AWSConfigs.InitializeCollections ? new List<Locale>() : null;
         private string _qualificationTypeId;
         private bool? _requiredToPreview;
 
@@ -119,7 +120,7 @@ namespace Amazon.MTurk.Model
         // Check to see if IntegerValues property is set
         internal bool IsSetIntegerValues()
         {
-            return this._integerValues != null && this._integerValues.Count > 0; 
+            return this._integerValues != null && (this._integerValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -143,7 +144,7 @@ namespace Amazon.MTurk.Model
         // Check to see if LocaleValues property is set
         internal bool IsSetLocaleValues()
         {
-            return this._localeValues != null && this._localeValues.Count > 0; 
+            return this._localeValues != null && (this._localeValues.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

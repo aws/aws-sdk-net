@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.CodePipeline.Model
     /// </summary>
     public partial class ActionType
     {
-        private List<ActionConfigurationProperty> _actionConfigurationProperties = new List<ActionConfigurationProperty>();
+        private List<ActionConfigurationProperty> _actionConfigurationProperties = AWSConfigs.InitializeCollections ? new List<ActionConfigurationProperty>() : null;
         private ActionTypeId _id;
         private ArtifactDetails _inputArtifactDetails;
         private ArtifactDetails _outputArtifactDetails;
@@ -55,7 +56,7 @@ namespace Amazon.CodePipeline.Model
         // Check to see if ActionConfigurationProperties property is set
         internal bool IsSetActionConfigurationProperties()
         {
-            return this._actionConfigurationProperties != null && this._actionConfigurationProperties.Count > 0; 
+            return this._actionConfigurationProperties != null && (this._actionConfigurationProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

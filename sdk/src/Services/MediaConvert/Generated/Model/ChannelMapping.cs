@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class ChannelMapping
     {
-        private List<OutputChannelMapping> _outputChannels = new List<OutputChannelMapping>();
+        private List<OutputChannelMapping> _outputChannels = AWSConfigs.InitializeCollections ? new List<OutputChannelMapping>() : null;
 
         /// <summary>
         /// Gets and sets the property OutputChannels. In your JSON job specification, include
@@ -58,7 +59,7 @@ namespace Amazon.MediaConvert.Model
         // Check to see if OutputChannels property is set
         internal bool IsSetOutputChannels()
         {
-            return this._outputChannels != null && this._outputChannels.Count > 0; 
+            return this._outputChannels != null && (this._outputChannels.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

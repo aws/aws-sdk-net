@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -34,10 +35,10 @@ namespace Amazon.Glue.Model
     public partial class DynamicTransform
     {
         private string _functionName;
-        private List<string> _inputs = new List<string>();
+        private List<string> _inputs = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _name;
-        private List<GlueSchema> _outputSchemas = new List<GlueSchema>();
-        private List<TransformConfigParameter> _parameters = new List<TransformConfigParameter>();
+        private List<GlueSchema> _outputSchemas = AWSConfigs.InitializeCollections ? new List<GlueSchema>() : null;
+        private List<TransformConfigParameter> _parameters = AWSConfigs.InitializeCollections ? new List<TransformConfigParameter>() : null;
         private string _path;
         private string _transformName;
         private string _version;
@@ -77,7 +78,7 @@ namespace Amazon.Glue.Model
         // Check to see if Inputs property is set
         internal bool IsSetInputs()
         {
-            return this._inputs != null && this._inputs.Count > 0; 
+            return this._inputs != null && (this._inputs.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -114,7 +115,7 @@ namespace Amazon.Glue.Model
         // Check to see if OutputSchemas property is set
         internal bool IsSetOutputSchemas()
         {
-            return this._outputSchemas != null && this._outputSchemas.Count > 0; 
+            return this._outputSchemas != null && (this._outputSchemas.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -132,7 +133,7 @@ namespace Amazon.Glue.Model
         // Check to see if Parameters property is set
         internal bool IsSetParameters()
         {
-            return this._parameters != null && this._parameters.Count > 0; 
+            return this._parameters != null && (this._parameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

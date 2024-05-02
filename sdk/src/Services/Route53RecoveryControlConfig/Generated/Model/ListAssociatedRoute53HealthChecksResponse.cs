@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Route53RecoveryControlConfig.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
     /// </summary>
     public partial class ListAssociatedRoute53HealthChecksResponse : AmazonWebServiceResponse
     {
-        private List<string> _healthCheckIds = new List<string>();
+        private List<string> _healthCheckIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Route53RecoveryControlConfig.Model
         // Check to see if HealthCheckIds property is set
         internal bool IsSetHealthCheckIds()
         {
-            return this._healthCheckIds != null && this._healthCheckIds.Count > 0; 
+            return this._healthCheckIds != null && (this._healthCheckIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

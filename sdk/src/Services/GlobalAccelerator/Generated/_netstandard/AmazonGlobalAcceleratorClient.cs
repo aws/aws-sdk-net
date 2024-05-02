@@ -33,6 +33,7 @@ using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 
+#pragma warning disable CS1570
 namespace Amazon.GlobalAccelerator
 {
     /// <summary>
@@ -683,18 +684,35 @@ namespace Amazon.GlobalAccelerator
 
         /// <summary>
         /// Create a cross-account attachment in Global Accelerator. You create a cross-account
-        /// attachment to specify the <i>principals</i> who have permission to add to accelerators
-        /// in their own account the resources in your account that you also list in the attachment.
+        /// attachment to specify the <i>principals</i> who have permission to work with <i>resources</i>
+        /// in accelerators in their own account. You specify, in the same attachment, the resources
+        /// that are shared.
         /// 
         ///  
         /// <para>
         /// A principal can be an Amazon Web Services account number or the Amazon Resource Name
-        /// (ARN) for an accelerator. For account numbers that are listed as principals, to add
-        /// a resource listed in the attachment to an accelerator, you must sign in to an account
-        /// specified as a principal. Then you can add the resources that are listed to any of
-        /// your accelerators. If an accelerator ARN is listed in the cross-account attachment
-        /// as a principal, anyone with permission to make updates to the accelerator can add
-        /// as endpoints resources that are listed in the attachment. 
+        /// (ARN) for an accelerator. For account numbers that are listed as principals, to work
+        /// with a resource listed in the attachment, you must sign in to an account specified
+        /// as a principal. Then, you can work with resources that are listed, with any of your
+        /// accelerators. If an accelerator ARN is listed in the cross-account attachment as a
+        /// principal, anyone with permission to make updates to the accelerator can work with
+        /// resources that are listed in the attachment. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Specify each principal and resource separately. To specify two CIDR address pools,
+        /// list them individually under <c>Resources</c>, and so on. For a command line operation,
+        /// for example, you might use a statement like the following:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c> "Resources": [{"Cidr": "169.254.60.0/24"},{"Cidr": "169.254.59.0/24"}]</c> 
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/cross-account-resources.html">
+        /// Working with cross-account attachments and resources in Global Accelerator</a> in
+        /// the <i> Global Accelerator Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCrossAccountAttachment service method.</param>
@@ -1110,26 +1128,13 @@ namespace Amazon.GlobalAccelerator
         /// Delete a cross-account attachment. When you delete an attachment, Global Accelerator
         /// revokes the permission to use the resources in the attachment from all principals
         /// in the list of principals. Global Accelerator revokes the permission for specific
-        /// resources by doing the following:
+        /// resources.
         /// 
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        /// If the principal is an account ID, Global Accelerator reviews every accelerator in
-        /// the account and removes cross-account endpoints from all accelerators.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If the principal is an accelerator, Global Accelerator reviews just that accelerator
-        /// and removes cross-account endpoints from it.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// If there are overlapping permissions provided by multiple cross-account attachments,
-        /// Global Accelerator only removes endpoints if there are no current cross-account attachments
-        /// that provide access permission. For example, if you delete a cross-account attachment
-        /// that lists an accelerator as a principal, but another cross-account attachment includes
-        /// the account ID that owns that accelerator, endpoints will not be removed from the
-        /// accelerator.
+        /// For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/cross-account-resources.html">
+        /// Working with cross-account attachments and resources in Global Accelerator</a> in
+        /// the <i> Global Accelerator Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCrossAccountAttachment service method.</param>
@@ -2073,7 +2078,14 @@ namespace Amazon.GlobalAccelerator
 
 
         /// <summary>
-        /// List the accounts that have cross-account endpoints.
+        /// List the accounts that have cross-account resources.
+        /// 
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/cross-account-resources.html">
+        /// Working with cross-account attachments and resources in Global Accelerator</a> in
+        /// the <i> Global Accelerator Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCrossAccountResourceAccounts service method.</param>
         /// <param name="cancellationToken">
@@ -2113,7 +2125,7 @@ namespace Amazon.GlobalAccelerator
 
 
         /// <summary>
-        /// List the cross-account endpoints available to add to an accelerator.
+        /// List the cross-account resources available to work with.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCrossAccountResources service method.</param>
         /// <param name="cancellationToken">
@@ -2968,26 +2980,13 @@ namespace Amazon.GlobalAccelerator
         /// <summary>
         /// Update a cross-account attachment to add or remove principals or resources. When you
         /// update an attachment to remove a principal (account ID or accelerator) or a resource,
-        /// Global Accelerator revokes the permission for specific resources by doing the following:
+        /// Global Accelerator revokes the permission for specific resources. 
         /// 
-        ///  <ul> <li> 
+        ///  
         /// <para>
-        /// If the principal is an account ID, Global Accelerator reviews every accelerator in
-        /// the account and removes cross-account endpoints from all accelerators.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If the principal is an accelerator, Global Accelerator reviews just that accelerator
-        /// and removes cross-account endpoints from it.
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// If there are overlapping permissions provided by multiple cross-account attachments,
-        /// Global Accelerator only removes endpoints if there are no current cross-account attachments
-        /// that provide access permission. For example, if you delete a cross-account attachment
-        /// that lists an accelerator as a principal, but another cross-account attachment includes
-        /// the account ID that owns that accelerator, endpoints will not be removed from the
-        /// accelerator.
+        /// For more information, see <a href="https://docs.aws.amazon.com/global-accelerator/latest/dg/cross-account-resources.html">
+        /// Working with cross-account attachments and resources in Global Accelerator</a> in
+        /// the <i> Global Accelerator Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCrossAccountAttachment service method.</param>

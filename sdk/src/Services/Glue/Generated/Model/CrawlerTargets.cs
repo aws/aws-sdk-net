@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -33,14 +34,14 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class CrawlerTargets
     {
-        private List<CatalogTarget> _catalogTargets = new List<CatalogTarget>();
-        private List<DeltaTarget> _deltaTargets = new List<DeltaTarget>();
-        private List<DynamoDBTarget> _dynamoDBTargets = new List<DynamoDBTarget>();
-        private List<HudiTarget> _hudiTargets = new List<HudiTarget>();
-        private List<IcebergTarget> _icebergTargets = new List<IcebergTarget>();
-        private List<JdbcTarget> _jdbcTargets = new List<JdbcTarget>();
-        private List<MongoDBTarget> _mongoDBTargets = new List<MongoDBTarget>();
-        private List<S3Target> _s3Targets = new List<S3Target>();
+        private List<CatalogTarget> _catalogTargets = AWSConfigs.InitializeCollections ? new List<CatalogTarget>() : null;
+        private List<DeltaTarget> _deltaTargets = AWSConfigs.InitializeCollections ? new List<DeltaTarget>() : null;
+        private List<DynamoDBTarget> _dynamoDBTargets = AWSConfigs.InitializeCollections ? new List<DynamoDBTarget>() : null;
+        private List<HudiTarget> _hudiTargets = AWSConfigs.InitializeCollections ? new List<HudiTarget>() : null;
+        private List<IcebergTarget> _icebergTargets = AWSConfigs.InitializeCollections ? new List<IcebergTarget>() : null;
+        private List<JdbcTarget> _jdbcTargets = AWSConfigs.InitializeCollections ? new List<JdbcTarget>() : null;
+        private List<MongoDBTarget> _mongoDBTargets = AWSConfigs.InitializeCollections ? new List<MongoDBTarget>() : null;
+        private List<S3Target> _s3Targets = AWSConfigs.InitializeCollections ? new List<S3Target>() : null;
 
         /// <summary>
         /// Gets and sets the property CatalogTargets. 
@@ -57,7 +58,7 @@ namespace Amazon.Glue.Model
         // Check to see if CatalogTargets property is set
         internal bool IsSetCatalogTargets()
         {
-            return this._catalogTargets != null && this._catalogTargets.Count > 0; 
+            return this._catalogTargets != null && (this._catalogTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -75,7 +76,7 @@ namespace Amazon.Glue.Model
         // Check to see if DeltaTargets property is set
         internal bool IsSetDeltaTargets()
         {
-            return this._deltaTargets != null && this._deltaTargets.Count > 0; 
+            return this._deltaTargets != null && (this._deltaTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -93,7 +94,7 @@ namespace Amazon.Glue.Model
         // Check to see if DynamoDBTargets property is set
         internal bool IsSetDynamoDBTargets()
         {
-            return this._dynamoDBTargets != null && this._dynamoDBTargets.Count > 0; 
+            return this._dynamoDBTargets != null && (this._dynamoDBTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -111,7 +112,7 @@ namespace Amazon.Glue.Model
         // Check to see if HudiTargets property is set
         internal bool IsSetHudiTargets()
         {
-            return this._hudiTargets != null && this._hudiTargets.Count > 0; 
+            return this._hudiTargets != null && (this._hudiTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -129,7 +130,7 @@ namespace Amazon.Glue.Model
         // Check to see if IcebergTargets property is set
         internal bool IsSetIcebergTargets()
         {
-            return this._icebergTargets != null && this._icebergTargets.Count > 0; 
+            return this._icebergTargets != null && (this._icebergTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -147,7 +148,7 @@ namespace Amazon.Glue.Model
         // Check to see if JdbcTargets property is set
         internal bool IsSetJdbcTargets()
         {
-            return this._jdbcTargets != null && this._jdbcTargets.Count > 0; 
+            return this._jdbcTargets != null && (this._jdbcTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -165,7 +166,7 @@ namespace Amazon.Glue.Model
         // Check to see if MongoDBTargets property is set
         internal bool IsSetMongoDBTargets()
         {
-            return this._mongoDBTargets != null && this._mongoDBTargets.Count > 0; 
+            return this._mongoDBTargets != null && (this._mongoDBTargets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -183,7 +184,7 @@ namespace Amazon.Glue.Model
         // Check to see if S3Targets property is set
         internal bool IsSetS3Targets()
         {
-            return this._s3Targets != null && this._s3Targets.Count > 0; 
+            return this._s3Targets != null && (this._s3Targets.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

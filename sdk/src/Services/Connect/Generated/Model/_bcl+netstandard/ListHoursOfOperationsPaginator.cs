@@ -24,7 +24,8 @@ using System.Collections;
 using System.Threading;
 using System.Threading.Tasks;
 using Amazon.Runtime;
- 
+
+#pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model
 {
     /// <summary>
@@ -45,7 +46,7 @@ namespace Amazon.Connect.Model
         /// Enumerable containing all of the HoursOfOperationSummaryList
         /// </summary>
         public IPaginatedEnumerable<HoursOfOperationSummary> HoursOfOperationSummaryList => 
-            new PaginatedResultKeyResponse<ListHoursOfOperationsResponse, HoursOfOperationSummary>(this, (i) => i.HoursOfOperationSummaryList);
+            new PaginatedResultKeyResponse<ListHoursOfOperationsResponse, HoursOfOperationSummary>(this, (i) => i.HoursOfOperationSummaryList ?? new List<HoursOfOperationSummary>());
 
         internal ListHoursOfOperationsPaginator(IAmazonConnect client, ListHoursOfOperationsRequest request)
         {
@@ -73,7 +74,7 @@ namespace Amazon.Connect.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListHoursOfOperationsResponse> IPaginator<ListHoursOfOperationsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListHoursOfOperationsResponse> IPaginator<ListHoursOfOperationsResponse>.PaginateAsync([System.Runtime.CompilerServices.EnumeratorCancellation] CancellationToken cancellationToken)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {

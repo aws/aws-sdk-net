@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkManager.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.NetworkManager.Model
     /// </summary>
     public partial class GetLinksResponse : AmazonWebServiceResponse
     {
-        private List<Link> _links = new List<Link>();
+        private List<Link> _links = AWSConfigs.InitializeCollections ? new List<Link>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if Links property is set
         internal bool IsSetLinks()
         {
-            return this._links != null && this._links.Count > 0; 
+            return this._links != null && (this._links.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class DataSource
     {
-        private List<DataSourceParameters> _alternateDataSourceParameters = new List<DataSourceParameters>();
+        private List<DataSourceParameters> _alternateDataSourceParameters = AWSConfigs.InitializeCollections ? new List<DataSourceParameters>() : null;
         private string _arn;
         private DateTime? _createdTime;
         private string _dataSourceId;
@@ -71,7 +72,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if AlternateDataSourceParameters property is set
         internal bool IsSetAlternateDataSourceParameters()
         {
-            return this._alternateDataSourceParameters != null && this._alternateDataSourceParameters.Count > 0; 
+            return this._alternateDataSourceParameters != null && (this._alternateDataSourceParameters.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

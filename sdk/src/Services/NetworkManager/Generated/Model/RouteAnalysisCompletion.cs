@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.NetworkManager.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.NetworkManager.Model
     public partial class RouteAnalysisCompletion
     {
         private RouteAnalysisCompletionReasonCode _reasonCode;
-        private Dictionary<string, string> _reasonContext = new Dictionary<string, string>();
+        private Dictionary<string, string> _reasonContext = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private RouteAnalysisCompletionResultCode _resultCode;
 
         /// <summary>
@@ -113,7 +114,7 @@ namespace Amazon.NetworkManager.Model
         // Check to see if ReasonContext property is set
         internal bool IsSetReasonContext()
         {
-            return this._reasonContext != null && this._reasonContext.Count > 0; 
+            return this._reasonContext != null && (this._reasonContext.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

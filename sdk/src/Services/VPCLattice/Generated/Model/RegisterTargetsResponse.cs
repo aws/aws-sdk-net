@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.VPCLattice.Model
 {
     /// <summary>
@@ -33,8 +34,8 @@ namespace Amazon.VPCLattice.Model
     /// </summary>
     public partial class RegisterTargetsResponse : AmazonWebServiceResponse
     {
-        private List<Target> _successful = new List<Target>();
-        private List<TargetFailure> _unsuccessful = new List<TargetFailure>();
+        private List<Target> _successful = AWSConfigs.InitializeCollections ? new List<Target>() : null;
+        private List<TargetFailure> _unsuccessful = AWSConfigs.InitializeCollections ? new List<TargetFailure>() : null;
 
         /// <summary>
         /// Gets and sets the property Successful. 
@@ -51,7 +52,7 @@ namespace Amazon.VPCLattice.Model
         // Check to see if Successful property is set
         internal bool IsSetSuccessful()
         {
-            return this._successful != null && this._successful.Count > 0; 
+            return this._successful != null && (this._successful.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -69,7 +70,7 @@ namespace Amazon.VPCLattice.Model
         // Check to see if Unsuccessful property is set
         internal bool IsSetUnsuccessful()
         {
-            return this._unsuccessful != null && this._unsuccessful.Count > 0; 
+            return this._unsuccessful != null && (this._unsuccessful.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

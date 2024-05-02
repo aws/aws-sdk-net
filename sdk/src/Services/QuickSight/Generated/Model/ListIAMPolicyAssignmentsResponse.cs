@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class ListIAMPolicyAssignmentsResponse : AmazonWebServiceResponse
     {
-        private List<IAMPolicyAssignmentSummary> _iamPolicyAssignments = new List<IAMPolicyAssignmentSummary>();
+        private List<IAMPolicyAssignmentSummary> _iamPolicyAssignments = AWSConfigs.InitializeCollections ? new List<IAMPolicyAssignmentSummary>() : null;
         private string _nextToken;
         private string _requestId;
         private int? _status;
@@ -53,7 +54,7 @@ namespace Amazon.QuickSight.Model
         // Check to see if IAMPolicyAssignments property is set
         internal bool IsSetIAMPolicyAssignments()
         {
-            return this._iamPolicyAssignments != null && this._iamPolicyAssignments.Count > 0; 
+            return this._iamPolicyAssignments != null && (this._iamPolicyAssignments.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

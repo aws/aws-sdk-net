@@ -31,6 +31,7 @@ using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using ThirdParty.Json.LitJson;
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -103,6 +104,12 @@ namespace Amazon.DocDBElastic.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SnapshotName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("snapshotType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SnapshotType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))

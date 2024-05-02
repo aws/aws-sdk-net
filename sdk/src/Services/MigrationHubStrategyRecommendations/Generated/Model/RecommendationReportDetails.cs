@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MigrationHubStrategyRecommendations.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
     {
         private DateTime? _completionTime;
         private string _s3Bucket;
-        private List<string> _s3Keys = new List<string>();
+        private List<string> _s3Keys = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private DateTime? _startTime;
         private RecommendationReportStatus _status;
         private string _statusMessage;
@@ -92,7 +93,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         // Check to see if S3Keys property is set
         internal bool IsSetS3Keys()
         {
-            return this._s3Keys != null && this._s3Keys.Count > 0; 
+            return this._s3Keys != null && (this._s3Keys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

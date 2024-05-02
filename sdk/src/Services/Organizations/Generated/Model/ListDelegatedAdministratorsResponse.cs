@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Organizations.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.Organizations.Model
     /// </summary>
     public partial class ListDelegatedAdministratorsResponse : AmazonWebServiceResponse
     {
-        private List<DelegatedAdministrator> _delegatedAdministrators = new List<DelegatedAdministrator>();
+        private List<DelegatedAdministrator> _delegatedAdministrators = AWSConfigs.InitializeCollections ? new List<DelegatedAdministrator>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.Organizations.Model
         // Check to see if DelegatedAdministrators property is set
         internal bool IsSetDelegatedAdministrators()
         {
-            return this._delegatedAdministrators != null && this._delegatedAdministrators.Count > 0; 
+            return this._delegatedAdministrators != null && (this._delegatedAdministrators.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

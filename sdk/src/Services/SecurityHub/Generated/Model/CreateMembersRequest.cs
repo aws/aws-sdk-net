@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
@@ -96,7 +97,7 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class CreateMembersRequest : AmazonSecurityHubRequest
     {
-        private List<AccountDetails> _accountDetails = new List<AccountDetails>();
+        private List<AccountDetails> _accountDetails = AWSConfigs.InitializeCollections ? new List<AccountDetails>() : null;
 
         /// <summary>
         /// Gets and sets the property AccountDetails. 
@@ -115,7 +116,7 @@ namespace Amazon.SecurityHub.Model
         // Check to see if AccountDetails property is set
         internal bool IsSetAccountDetails()
         {
-            return this._accountDetails != null && this._accountDetails.Count > 0; 
+            return this._accountDetails != null && (this._accountDetails.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

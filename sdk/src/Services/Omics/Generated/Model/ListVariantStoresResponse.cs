@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Omics.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Omics.Model
     public partial class ListVariantStoresResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<VariantStoreItem> _variantStores = new List<VariantStoreItem>();
+        private List<VariantStoreItem> _variantStores = AWSConfigs.InitializeCollections ? new List<VariantStoreItem>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -69,7 +70,7 @@ namespace Amazon.Omics.Model
         // Check to see if VariantStores property is set
         internal bool IsSetVariantStores()
         {
-            return this._variantStores != null && this._variantStores.Count > 0; 
+            return this._variantStores != null && (this._variantStores.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

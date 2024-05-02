@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.ApplicationInsights.Model
 {
     /// <summary>
@@ -33,7 +34,7 @@ namespace Amazon.ApplicationInsights.Model
     /// </summary>
     public partial class ListConfigurationHistoryResponse : AmazonWebServiceResponse
     {
-        private List<ConfigurationEvent> _eventList = new List<ConfigurationEvent>();
+        private List<ConfigurationEvent> _eventList = AWSConfigs.InitializeCollections ? new List<ConfigurationEvent>() : null;
         private string _nextToken;
 
         /// <summary>
@@ -51,7 +52,7 @@ namespace Amazon.ApplicationInsights.Model
         // Check to see if EventList property is set
         internal bool IsSetEventList()
         {
-            return this._eventList != null && this._eventList.Count > 0; 
+            return this._eventList != null && (this._eventList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

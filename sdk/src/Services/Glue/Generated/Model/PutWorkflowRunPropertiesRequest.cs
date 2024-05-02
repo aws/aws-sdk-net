@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Glue.Model
 {
     /// <summary>
@@ -38,7 +39,7 @@ namespace Amazon.Glue.Model
     {
         private string _name;
         private string _runId;
-        private Dictionary<string, string> _runProperties = new Dictionary<string, string>();
+        private Dictionary<string, string> _runProperties = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -94,7 +95,7 @@ namespace Amazon.Glue.Model
         // Check to see if RunProperties property is set
         internal bool IsSetRunProperties()
         {
-            return this._runProperties != null && this._runProperties.Count > 0; 
+            return this._runProperties != null && (this._runProperties.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Translate.Model
 {
     /// <summary>
@@ -34,7 +35,7 @@ namespace Amazon.Translate.Model
     public partial class ListTerminologiesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<TerminologyProperties> _terminologyPropertiesList = new List<TerminologyProperties>();
+        private List<TerminologyProperties> _terminologyPropertiesList = AWSConfigs.InitializeCollections ? new List<TerminologyProperties>() : null;
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -71,7 +72,7 @@ namespace Amazon.Translate.Model
         // Check to see if TerminologyPropertiesList property is set
         internal bool IsSetTerminologyPropertiesList()
         {
-            return this._terminologyPropertiesList != null && this._terminologyPropertiesList.Count > 0; 
+            return this._terminologyPropertiesList != null && (this._terminologyPropertiesList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

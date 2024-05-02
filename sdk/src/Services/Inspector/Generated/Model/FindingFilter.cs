@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Inspector.Model
 {
     /// <summary>
@@ -33,14 +34,14 @@ namespace Amazon.Inspector.Model
     /// </summary>
     public partial class FindingFilter
     {
-        private List<string> _agentIds = new List<string>();
-        private List<Attribute> _attributes = new List<Attribute>();
-        private List<string> _autoScalingGroups = new List<string>();
+        private List<string> _agentIds = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Attribute> _attributes = AWSConfigs.InitializeCollections ? new List<Attribute>() : null;
+        private List<string> _autoScalingGroups = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private TimestampRange _creationTimeRange;
-        private List<string> _ruleNames = new List<string>();
-        private List<string> _rulesPackageArns = new List<string>();
-        private List<string> _severities = new List<string>();
-        private List<Attribute> _userAttributes = new List<Attribute>();
+        private List<string> _ruleNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _rulesPackageArns = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<string> _severities = AWSConfigs.InitializeCollections ? new List<string>() : null;
+        private List<Attribute> _userAttributes = AWSConfigs.InitializeCollections ? new List<Attribute>() : null;
 
         /// <summary>
         /// Gets and sets the property AgentIds. 
@@ -60,7 +61,7 @@ namespace Amazon.Inspector.Model
         // Check to see if AgentIds property is set
         internal bool IsSetAgentIds()
         {
-            return this._agentIds != null && this._agentIds.Count > 0; 
+            return this._agentIds != null && (this._agentIds.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -81,7 +82,7 @@ namespace Amazon.Inspector.Model
         // Check to see if Attributes property is set
         internal bool IsSetAttributes()
         {
-            return this._attributes != null && this._attributes.Count > 0; 
+            return this._attributes != null && (this._attributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -102,7 +103,7 @@ namespace Amazon.Inspector.Model
         // Check to see if AutoScalingGroups property is set
         internal bool IsSetAutoScalingGroups()
         {
-            return this._autoScalingGroups != null && this._autoScalingGroups.Count > 0; 
+            return this._autoScalingGroups != null && (this._autoScalingGroups.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -141,7 +142,7 @@ namespace Amazon.Inspector.Model
         // Check to see if RuleNames property is set
         internal bool IsSetRuleNames()
         {
-            return this._ruleNames != null && this._ruleNames.Count > 0; 
+            return this._ruleNames != null && (this._ruleNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -162,7 +163,7 @@ namespace Amazon.Inspector.Model
         // Check to see if RulesPackageArns property is set
         internal bool IsSetRulesPackageArns()
         {
-            return this._rulesPackageArns != null && this._rulesPackageArns.Count > 0; 
+            return this._rulesPackageArns != null && (this._rulesPackageArns.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -183,7 +184,7 @@ namespace Amazon.Inspector.Model
         // Check to see if Severities property is set
         internal bool IsSetSeverities()
         {
-            return this._severities != null && this._severities.Count > 0; 
+            return this._severities != null && (this._severities.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -204,7 +205,7 @@ namespace Amazon.Inspector.Model
         // Check to see if UserAttributes property is set
         internal bool IsSetUserAttributes()
         {
-            return this._userAttributes != null && this._userAttributes.Count > 0; 
+            return this._userAttributes != null && (this._userAttributes.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

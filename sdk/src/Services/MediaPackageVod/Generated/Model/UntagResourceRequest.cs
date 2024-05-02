@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MediaPackageVod.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.MediaPackageVod.Model
     public partial class UntagResourceRequest : AmazonMediaPackageVodRequest
     {
         private string _resourceArn;
-        private List<string> _tagKeys = new List<string>();
+        private List<string> _tagKeys = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ResourceArn. The Amazon Resource Name (ARN) for the resource.
@@ -68,7 +69,7 @@ namespace Amazon.MediaPackageVod.Model
         // Check to see if TagKeys property is set
         internal bool IsSetTagKeys()
         {
-            return this._tagKeys != null && this._tagKeys.Count > 0; 
+            return this._tagKeys != null && (this._tagKeys.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

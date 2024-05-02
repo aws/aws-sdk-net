@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.EC2.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -57,6 +58,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     if (context.TestExpression("gpus/item", targetDepth))
                     {
                         var unmarshaller = GpuDeviceInfoUnmarshaller.Instance;
+                        if (unmarshalledObject.Gpus == null)
+                        {
+                            unmarshalledObject.Gpus = new List<GpuDeviceInfo>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         unmarshalledObject.Gpus.Add(item);
                         continue;

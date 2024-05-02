@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
@@ -34,11 +35,11 @@ namespace Amazon.MemoryDB.Model
     /// </summary>
     public partial class DescribeServiceUpdatesRequest : AmazonMemoryDBRequest
     {
-        private List<string> _clusterNames = new List<string>();
+        private List<string> _clusterNames = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _maxResults;
         private string _nextToken;
         private string _serviceUpdateName;
-        private List<string> _status = new List<string>();
+        private List<string> _status = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property ClusterNames. 
@@ -56,7 +57,7 @@ namespace Amazon.MemoryDB.Model
         // Check to see if ClusterNames property is set
         internal bool IsSetClusterNames()
         {
-            return this._clusterNames != null && this._clusterNames.Count > 0; 
+            return this._clusterNames != null && (this._clusterNames.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>
@@ -135,7 +136,7 @@ namespace Amazon.MemoryDB.Model
         // Check to see if Status property is set
         internal bool IsSetStatus()
         {
-            return this._status != null && this._status.Count > 0; 
+            return this._status != null && (this._status.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

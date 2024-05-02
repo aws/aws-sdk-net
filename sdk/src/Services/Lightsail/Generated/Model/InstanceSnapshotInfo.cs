@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
@@ -35,7 +36,7 @@ namespace Amazon.Lightsail.Model
     {
         private string _fromBlueprintId;
         private string _fromBundleId;
-        private List<DiskInfo> _fromDiskInfo = new List<DiskInfo>();
+        private List<DiskInfo> _fromDiskInfo = AWSConfigs.InitializeCollections ? new List<DiskInfo>() : null;
 
         /// <summary>
         /// Gets and sets the property FromBlueprintId. 
@@ -88,7 +89,7 @@ namespace Amazon.Lightsail.Model
         // Check to see if FromDiskInfo property is set
         internal bool IsSetFromDiskInfo()
         {
-            return this._fromDiskInfo != null && this._fromDiskInfo.Count > 0; 
+            return this._fromDiskInfo != null && (this._fromDiskInfo.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

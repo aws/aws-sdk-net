@@ -26,6 +26,7 @@ using System.Net;
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 
+#pragma warning disable CS0612,CS0618,CS1570
 namespace Amazon.LookoutMetrics.Model
 {
     /// <summary>
@@ -36,7 +37,7 @@ namespace Amazon.LookoutMetrics.Model
     /// </summary>
     public partial class MetricSetDimensionFilter
     {
-        private List<Filter> _filterList = new List<Filter>();
+        private List<Filter> _filterList = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
         private string _name;
 
         /// <summary>
@@ -55,7 +56,7 @@ namespace Amazon.LookoutMetrics.Model
         // Check to see if FilterList property is set
         internal bool IsSetFilterList()
         {
-            return this._filterList != null && this._filterList.Count > 0; 
+            return this._filterList != null && (this._filterList.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
         /// <summary>

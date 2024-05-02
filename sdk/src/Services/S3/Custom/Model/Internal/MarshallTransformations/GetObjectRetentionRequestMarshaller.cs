@@ -82,7 +82,10 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
         }
         
         private static GetObjectRetentionRequestMarshaller _instance;
-        
+
+        /// <summary>
+        /// Singleton for marshaller
+        /// </summary>
         public static GetObjectRetentionRequestMarshaller Instance
         {
             get

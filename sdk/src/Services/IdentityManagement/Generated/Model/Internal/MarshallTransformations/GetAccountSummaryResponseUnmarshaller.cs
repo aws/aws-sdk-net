@@ -29,6 +29,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+#pragma warning disable CS0612,CS0618
 namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -84,6 +85,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                     if (context.TestExpression("SummaryMap/entry", targetDepth))
                     {
                         var unmarshaller = new KeyValueUnmarshaller<string, int, StringUnmarshaller, IntUnmarshaller>(StringUnmarshaller.Instance, IntUnmarshaller.Instance);
+                        if (response.SummaryMap == null)
+                        {
+                            response.SummaryMap = new Dictionary<string, int>();
+                        }
                         var item = unmarshaller.Unmarshall(context);
                         response.SummaryMap.Add(item);
                         continue;

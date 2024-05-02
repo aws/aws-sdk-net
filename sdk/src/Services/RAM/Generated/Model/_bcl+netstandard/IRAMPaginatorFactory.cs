@@ -17,6 +17,7 @@
  * Do not modify this file. This file is generated from the ram-2018-01-04.normal.json service model.
  */
 
+#pragma warning disable CS0612,CS0618
 namespace Amazon.RAM.Model
 {
     /// <summary>
