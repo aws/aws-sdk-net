@@ -1,3 +1,15 @@
+### 3.7.802.0 (2024-05-02 18:36 UTC)
+* DynamoDBv2 (3.7.303.0)
+	* This release adds support to specify an optional, maximum OnDemandThroughput for DynamoDB tables and global secondary indexes in the CreateTable or UpdateTable APIs. You can also override the OnDemandThroughput settings by calling the ImportTable, RestoreFromPointInTime, or RestoreFromBackup APIs.
+* EC2 (3.7.326.0)
+	* This release includes a new API for retrieving the public endorsement key of the EC2 instance's Nitro Trusted Platform Module (NitroTPM).
+* Personalize (3.7.303.0)
+	* This releases ability to delete users and their data, including their metadata and interactions data, from a dataset group.
+* RedshiftServerless (3.7.303.0)
+	* Update Redshift Serverless List Scheduled Actions Output Response to include Namespace Name.
+* S3 (3.7.307.27)
+	* Added support for RequestPayer property in TransferUtility BaseDownloadRequest class.
+
 ### 3.7.801.0 (2024-05-01 18:19 UTC)
 * BedrockAgent (3.7.307.0)
 	* This release adds support for using MongoDB Atlas as a vector store when creating a knowledge base.
