@@ -141,8 +141,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property ServerCertificate. 
         /// <para>
-        /// The self-signed certificate that DataSync uses to securely authenticate with your
-        /// object storage system.
+        /// The certificate chain for DataSync to authenticate with your object storage system
+        /// if the system uses a private or self-signed certificate authority (CA).
         /// </para>
         /// </summary>
         [AWSProperty(Max=32768)]
