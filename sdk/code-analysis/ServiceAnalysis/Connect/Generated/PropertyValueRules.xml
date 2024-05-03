@@ -151,6 +151,11 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.BatchGetAttachedFileMetadataRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.BatchGetFlowAssociationRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -182,6 +187,16 @@
     <min>0</min>
     <max>500</max>
     <pattern>^[\W\S_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CompleteAttachedFileUploadRequest.FileId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CompleteAttachedFileUploadRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateAgentStatusRequest.Description</property>
@@ -681,6 +696,16 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.DeleteAttachedFileRequest.FileId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DeleteAttachedFileRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.DeleteContactEvaluationRequest.EvaluationId</property>
     <min>1</min>
     <max>500</max>
@@ -1149,6 +1174,36 @@
     <property>Amazon.Connect.Model.DismissUserContactRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.GetAttachedFileRequest.FileId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.GetAttachedFileRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.GetAttachedFileRequest.UrlExpiryInSeconds</property>
+    <min>5</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.GetAttachedFileResponse.FileId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.GetAttachedFileResponse.FileName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^\P{C}*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.GetAttachedFileResponse.FileSizeInBytes</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.GetContactAttributesRequest.InitialContactId</property>
@@ -2217,6 +2272,35 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.StartAttachedFileUploadRequest.ClientToken</property>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartAttachedFileUploadRequest.FileName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^\P{C}*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartAttachedFileUploadRequest.FileSizeInBytes</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartAttachedFileUploadRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartAttachedFileUploadRequest.UrlExpiryInSeconds</property>
+    <min>5</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.StartAttachedFileUploadResponse.FileId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.StartChatContactRequest.ChatDurationInMinutes</property>
     <min>60</min>
     <max>10080</max>
@@ -3172,6 +3256,26 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.AttachedFile.FileId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AttachedFile.FileName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^\P{C}*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AttachedFile.FileSizeInBytes</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.AttachedFileError.FileId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.AttachmentReference.Name</property>
     <min>1</min>
     <max>4096</max>
@@ -3398,6 +3502,11 @@
     <min>8</min>
     <max>31</max>
     <pattern>[a-z]{2}(-[a-z]+){1,2}(-[0-9])?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DownloadUrlMetadata.Url</property>
+    <min>1</min>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.EmailReference.Name</property>
@@ -4344,6 +4453,11 @@
     <min>1</min>
     <max>128</max>
     <pattern>(^[\S].*[\S]$)|(^[\S]$)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UploadUrlMetadata.Url</property>
+    <min>1</min>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UrlReference.Name</property>

@@ -1242,6 +1242,56 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  BatchGetAttachedFileMetadata
+
+        internal virtual BatchGetAttachedFileMetadataResponse BatchGetAttachedFileMetadata(BatchGetAttachedFileMetadataRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetAttachedFileMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetAttachedFileMetadataResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetAttachedFileMetadataResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Allows you to retrieve metadata about multiple attached files on an associated resource.
+        /// Each attached file provided in the input list must be associated with the input AssociatedResourceArn.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetAttachedFileMetadata service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetAttachedFileMetadata service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/BatchGetAttachedFileMetadata">REST API Reference for BatchGetAttachedFileMetadata Operation</seealso>
+        public virtual Task<BatchGetAttachedFileMetadataResponse> BatchGetAttachedFileMetadataAsync(BatchGetAttachedFileMetadataRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetAttachedFileMetadataRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetAttachedFileMetadataResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchGetAttachedFileMetadataResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  BatchGetFlowAssociation
 
         internal virtual BatchGetFlowAssociationResponse BatchGetFlowAssociation(BatchGetFlowAssociationRequest request)
@@ -1446,6 +1496,56 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = ClaimPhoneNumberResponseUnmarshaller.Instance;
 
             return InvokeAsync<ClaimPhoneNumberResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CompleteAttachedFileUpload
+
+        internal virtual CompleteAttachedFileUploadResponse CompleteAttachedFileUpload(CompleteAttachedFileUploadRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CompleteAttachedFileUploadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CompleteAttachedFileUploadResponseUnmarshaller.Instance;
+
+            return Invoke<CompleteAttachedFileUploadResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Allows you to confirm that the attached file has been uploaded using the pre-signed
+        /// URL provided in the StartAttachedFileUpload API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CompleteAttachedFileUpload service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CompleteAttachedFileUpload service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CompleteAttachedFileUpload">REST API Reference for CompleteAttachedFileUpload Operation</seealso>
+        public virtual Task<CompleteAttachedFileUploadResponse> CompleteAttachedFileUploadAsync(CompleteAttachedFileUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CompleteAttachedFileUploadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CompleteAttachedFileUploadResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CompleteAttachedFileUploadResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2939,6 +3039,61 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = DeactivateEvaluationFormResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeactivateEvaluationFormResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteAttachedFile
+
+        internal virtual DeleteAttachedFileResponse DeleteAttachedFile(DeleteAttachedFileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAttachedFileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAttachedFileResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAttachedFileResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an attached file along with the underlying S3 Object.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// The attached file is <b>permanently deleted</b> if S3 bucket versioning is not enabled.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAttachedFile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAttachedFile service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteAttachedFile">REST API Reference for DeleteAttachedFile Operation</seealso>
+        public virtual Task<DeleteAttachedFileResponse> DeleteAttachedFileAsync(DeleteAttachedFileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAttachedFileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAttachedFileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteAttachedFileResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6152,6 +6307,57 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = DismissUserContactResponseUnmarshaller.Instance;
 
             return InvokeAsync<DismissUserContactResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetAttachedFile
+
+        internal virtual GetAttachedFileResponse GetAttachedFile(GetAttachedFileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAttachedFileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAttachedFileResponseUnmarshaller.Instance;
+
+            return Invoke<GetAttachedFileResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Provides a pre-signed URL for download of an approved attached file. This API also
+        /// returns metadata about the attached file. It will only return a downloadURL if the
+        /// status of the attached file is <c>APPROVED</c>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAttachedFile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAttachedFile service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetAttachedFile">REST API Reference for GetAttachedFile Operation</seealso>
+        public virtual Task<GetAttachedFileResponse> GetAttachedFileAsync(GetAttachedFileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetAttachedFileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetAttachedFileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetAttachedFileResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -10189,6 +10395,65 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = SendChatIntegrationEventResponseUnmarshaller.Instance;
 
             return InvokeAsync<SendChatIntegrationEventResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartAttachedFileUpload
+
+        internal virtual StartAttachedFileUploadResponse StartAttachedFileUpload(StartAttachedFileUploadRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAttachedFileUploadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAttachedFileUploadResponseUnmarshaller.Instance;
+
+            return Invoke<StartAttachedFileUploadResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Provides a pre-signed Amazon S3 URL in response for uploading your content.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// You may only use this API to upload attachments to a <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_connect-cases_CreateCase.html">Connect
+        /// Case</a>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAttachedFileUpload service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartAttachedFileUpload service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.AccessDeniedException">
+        /// You do not have sufficient permissions to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartAttachedFileUpload">REST API Reference for StartAttachedFileUpload Operation</seealso>
+        public virtual Task<StartAttachedFileUploadResponse> StartAttachedFileUploadAsync(StartAttachedFileUploadRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAttachedFileUploadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAttachedFileUploadResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartAttachedFileUploadResponse>(request, options, cancellationToken);
         }
 
         #endregion

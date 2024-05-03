@@ -35,53 +35,58 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for InvalidRequestException Object
+    /// Response Unmarshaller for CreatedByInfo Object
     /// </summary>  
-    public class InvalidRequestExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidRequestException, JsonUnmarshallerContext>
+    public class CreatedByInfoUnmarshaller : IUnmarshaller<CreatedByInfo, XmlUnmarshallerContext>, IUnmarshaller<CreatedByInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public InvalidRequestException Unmarshall(JsonUnmarshallerContext context)
+        CreatedByInfo IUnmarshaller<CreatedByInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
+            throw new NotImplementedException();
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="errorResponse"></param>
-        /// <returns></returns>
-        public InvalidRequestException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        /// <returns>The unmarshalled object</returns>
+        public CreatedByInfo Unmarshall(JsonUnmarshallerContext context)
         {
+            CreatedByInfo unmarshalledObject = new CreatedByInfo();
             context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
 
-            InvalidRequestException unmarshalledObject = new InvalidRequestException(errorResponse.Message, errorResponse.InnerException,
-                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Reason", targetDepth))
+                if (context.TestExpression("AWSIdentityArn", targetDepth))
                 {
-                    var unmarshaller = InvalidRequestExceptionReasonUnmarshaller.Instance;
-                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AWSIdentityArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ConnectUserArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ConnectUserArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 
-        private static InvalidRequestExceptionUnmarshaller _instance = new InvalidRequestExceptionUnmarshaller();        
+
+        private static CreatedByInfoUnmarshaller _instance = new CreatedByInfoUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InvalidRequestExceptionUnmarshaller Instance
+        public static CreatedByInfoUnmarshaller Instance
         {
             get
             {

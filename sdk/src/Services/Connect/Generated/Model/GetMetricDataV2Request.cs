@@ -616,7 +616,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-greeting-time-agent-historical">Average
-        /// greeting time agent </a> 
+        /// agent greeting time</a> 
         /// </para>
         ///  </dd> <dt>AVG_HANDLE_TIME</dt> <dd> 
         /// <para>
@@ -738,7 +738,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-interruptions-agent-historical">Average
-        /// interruptions agent </a> 
+        /// agent interruptions</a> 
         /// </para>
         ///  </dd> <dt>AVG_INTERRUPTION_TIME_AGENT</dt> <dd> 
         /// <para>
@@ -757,7 +757,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-interruptions-time-agent-historical">Average
-        /// interruption time agent</a> 
+        /// agent interruption time</a> 
         /// </para>
         ///  </dd> <dt>AVG_NON_TALK_TIME</dt> <dd> 
         /// <para>
@@ -844,7 +844,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-talk-time-agent-historical">Average
-        /// talk time agent</a> 
+        /// agent talk time</a> 
         /// </para>
         ///  </dd> <dt>AVG_TALK_TIME_CUSTOMER</dt> <dd> 
         /// <para>
@@ -863,7 +863,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#average-talk-time-customer-historical">Average
-        /// talk time customer</a> 
+        /// customer talk time</a> 
         /// </para>
         ///  </dd> <dt>CASES_CREATED</dt> <dd> 
         /// <para>
@@ -954,7 +954,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-handled-by-connected-to-agent-historical">Contacts
-        /// handled by Connected to agent</a> 
+        /// handled (connected to agent timestamp)</a> 
         /// </para>
         ///  </dd> <dt>CONTACTS_HOLD_ABANDONS</dt> <dd> 
         /// <para>
@@ -1060,7 +1060,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#contacts-queued-by-enqueue-historical">Contacts
-        /// queued by Enqueue</a> 
+        /// queued (enqueue timestamp)</a> 
         /// </para>
         ///  </dd> <dt>CONTACTS_RESOLVED_IN_X</dt> <dd> 
         /// <para>
@@ -1252,8 +1252,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#ttagent-historical">Talk
-        /// time agent percent</a> 
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#ttagent-historical">Agent
+        /// talk time percent</a> 
         /// </para>
         ///  </dd> <dt>PERCENT_TALK_TIME_CUSTOMER</dt> <dd> 
         /// <para>
@@ -1271,8 +1271,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#ttcustomer-historical">Talk
-        /// time customer percent</a> 
+        /// UI name: <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html#ttcustomer-historical">Customer
+        /// talk time percent</a> 
         /// </para>
         ///  </dd> <dt>REOPENED_CASE_ACTIONS</dt> <dd> 
         /// <para>

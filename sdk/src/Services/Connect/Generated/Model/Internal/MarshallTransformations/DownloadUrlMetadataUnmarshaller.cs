@@ -35,53 +35,58 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for InvalidRequestException Object
+    /// Response Unmarshaller for DownloadUrlMetadata Object
     /// </summary>  
-    public class InvalidRequestExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidRequestException, JsonUnmarshallerContext>
+    public class DownloadUrlMetadataUnmarshaller : IUnmarshaller<DownloadUrlMetadata, XmlUnmarshallerContext>, IUnmarshaller<DownloadUrlMetadata, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public InvalidRequestException Unmarshall(JsonUnmarshallerContext context)
+        DownloadUrlMetadata IUnmarshaller<DownloadUrlMetadata, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
+            throw new NotImplementedException();
         }
 
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <param name="errorResponse"></param>
-        /// <returns></returns>
-        public InvalidRequestException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        /// <returns>The unmarshalled object</returns>
+        public DownloadUrlMetadata Unmarshall(JsonUnmarshallerContext context)
         {
+            DownloadUrlMetadata unmarshalledObject = new DownloadUrlMetadata();
             context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
 
-            InvalidRequestException unmarshalledObject = new InvalidRequestException(errorResponse.Message, errorResponse.InnerException,
-                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
-        
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Reason", targetDepth))
+                if (context.TestExpression("Url", targetDepth))
                 {
-                    var unmarshaller = InvalidRequestExceptionReasonUnmarshaller.Instance;
-                    unmarshalledObject.Reason = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Url = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UrlExpiry", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UrlExpiry = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
-          
             return unmarshalledObject;
         }
 
-        private static InvalidRequestExceptionUnmarshaller _instance = new InvalidRequestExceptionUnmarshaller();        
+
+        private static DownloadUrlMetadataUnmarshaller _instance = new DownloadUrlMetadataUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static InvalidRequestExceptionUnmarshaller Instance
+        public static DownloadUrlMetadataUnmarshaller Instance
         {
             get
             {

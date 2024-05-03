@@ -307,6 +307,60 @@ namespace Amazon.Connect
 
 
     /// <summary>
+    /// Constants used for properties of type AttachedFileInvalidRequestExceptionReason.
+    /// </summary>
+    public class AttachedFileInvalidRequestExceptionReason : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant INVALID_FILE_NAME for AttachedFileInvalidRequestExceptionReason
+        /// </summary>
+        public static readonly AttachedFileInvalidRequestExceptionReason INVALID_FILE_NAME = new AttachedFileInvalidRequestExceptionReason("INVALID_FILE_NAME");
+        /// <summary>
+        /// Constant INVALID_FILE_SIZE for AttachedFileInvalidRequestExceptionReason
+        /// </summary>
+        public static readonly AttachedFileInvalidRequestExceptionReason INVALID_FILE_SIZE = new AttachedFileInvalidRequestExceptionReason("INVALID_FILE_SIZE");
+        /// <summary>
+        /// Constant INVALID_FILE_TYPE for AttachedFileInvalidRequestExceptionReason
+        /// </summary>
+        public static readonly AttachedFileInvalidRequestExceptionReason INVALID_FILE_TYPE = new AttachedFileInvalidRequestExceptionReason("INVALID_FILE_TYPE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AttachedFileInvalidRequestExceptionReason(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AttachedFileInvalidRequestExceptionReason FindValue(string value)
+        {
+            return FindValue<AttachedFileInvalidRequestExceptionReason>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AttachedFileInvalidRequestExceptionReason(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BehaviorType.
     /// </summary>
     public class BehaviorType : ConstantClass
@@ -1608,6 +1662,110 @@ namespace Amazon.Connect
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FailureReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FileStatusType.
+    /// </summary>
+    public class FileStatusType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant APPROVED for FileStatusType
+        /// </summary>
+        public static readonly FileStatusType APPROVED = new FileStatusType("APPROVED");
+        /// <summary>
+        /// Constant FAILED for FileStatusType
+        /// </summary>
+        public static readonly FileStatusType FAILED = new FileStatusType("FAILED");
+        /// <summary>
+        /// Constant PROCESSING for FileStatusType
+        /// </summary>
+        public static readonly FileStatusType PROCESSING = new FileStatusType("PROCESSING");
+        /// <summary>
+        /// Constant REJECTED for FileStatusType
+        /// </summary>
+        public static readonly FileStatusType REJECTED = new FileStatusType("REJECTED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FileStatusType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FileStatusType FindValue(string value)
+        {
+            return FindValue<FileStatusType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FileStatusType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FileUseCaseType.
+    /// </summary>
+    public class FileUseCaseType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ATTACHMENT for FileUseCaseType
+        /// </summary>
+        public static readonly FileUseCaseType ATTACHMENT = new FileUseCaseType("ATTACHMENT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FileUseCaseType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FileUseCaseType FindValue(string value)
+        {
+            return FindValue<FileUseCaseType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FileUseCaseType(string value)
         {
             return FindValue(value);
         }
