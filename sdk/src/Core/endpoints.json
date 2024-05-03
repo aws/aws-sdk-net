@@ -9953,6 +9953,16 @@
                 }
               ]
             },
+            "ca-west-1": {
+              "variants": [
+                {
+                  "hostname": "fsx-fips.ca-west-1.amazonaws.com",
+                  "tags": [
+                    "fips"
+                  ]
+                }
+              ]
+            },
             "eu-central-1": {},
             "eu-central-2": {},
             "eu-north-1": {},
@@ -9968,12 +9978,26 @@
               "deprecated": true,
               "hostname": "fsx-fips.ca-central-1.amazonaws.com"
             },
+            "fips-ca-west-1": {
+              "credentialScope": {
+                "region": "ca-west-1"
+              },
+              "deprecated": true,
+              "hostname": "fsx-fips.ca-west-1.amazonaws.com"
+            },
             "fips-prod-ca-central-1": {
               "credentialScope": {
                 "region": "ca-central-1"
               },
               "deprecated": true,
               "hostname": "fsx-fips.ca-central-1.amazonaws.com"
+            },
+            "fips-prod-ca-west-1": {
+              "credentialScope": {
+                "region": "ca-west-1"
+              },
+              "deprecated": true,
+              "hostname": "fsx-fips.ca-west-1.amazonaws.com"
             },
             "fips-prod-us-east-1": {
               "credentialScope": {
@@ -10042,6 +10066,20 @@
               "variants": [
                 {
                   "hostname": "fsx-fips.ca-central-1.amazonaws.com",
+                  "tags": [
+                    "fips"
+                  ]
+                }
+              ]
+            },
+            "prod-ca-west-1": {
+              "credentialScope": {
+                "region": "ca-west-1"
+              },
+              "deprecated": true,
+              "variants": [
+                {
+                  "hostname": "fsx-fips.ca-west-1.amazonaws.com",
                   "tags": [
                     "fips"
                   ]
@@ -21956,6 +21994,7 @@
               "deprecated": true,
               "hostname": "snowball-fips.us-west-2.amazonaws.com"
             },
+            "il-central-1": {},
             "me-central-1": {},
             "sa-east-1": {
               "variants": [
@@ -23656,6 +23695,7 @@
                 }
               ]
             },
+            "ca-west-1": {},
             "eu-central-1": {},
             "eu-central-2": {},
             "eu-north-1": {},
