@@ -49,7 +49,7 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property CreatedTime. 
         /// <para>
-        /// The timestamp for when the resource was created.
+        /// Timestamp at which the resource was created.
         /// </para>
         /// </summary>
         public DateTime CreatedTime
@@ -67,7 +67,7 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property Deleted. 
         /// <para>
-        /// Indicates whether the resource has been deleted.
+        /// Denotes whether or not the resource has been deleted.
         /// </para>
         /// </summary>
         public bool Deleted
@@ -104,7 +104,7 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// The timestamp for when the resource was created or last modified.
+        /// Timestamp at which the resource was created or last modified.
         /// </para>
         /// </summary>
         public DateTime LastModifiedTime

@@ -36,6 +36,7 @@ namespace Amazon.ConnectCases.Model
     {
         private CommentContent _comment;
         private ContactContent _contact;
+        private FileContent _file;
 
         /// <summary>
         /// Gets and sets the property Comment. 
@@ -71,6 +72,24 @@ namespace Amazon.ConnectCases.Model
         internal bool IsSetContact()
         {
             return this._contact != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property File. 
+        /// <para>
+        /// Represents the content of a File to be returned to agents.
+        /// </para>
+        /// </summary>
+        public FileContent File
+        {
+            get { return this._file; }
+            set { this._file = value; }
+        }
+
+        // Check to see if File property is set
+        internal bool IsSetFile()
+        {
+            return this._file != null;
         }
 
     }

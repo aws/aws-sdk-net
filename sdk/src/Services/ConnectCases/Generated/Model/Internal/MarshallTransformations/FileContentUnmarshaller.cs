@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RelatedItemContent Object
+    /// Response Unmarshaller for FileContent Object
     /// </summary>  
-    public class RelatedItemContentUnmarshaller : IUnmarshaller<RelatedItemContent, XmlUnmarshallerContext>, IUnmarshaller<RelatedItemContent, JsonUnmarshallerContext>
+    public class FileContentUnmarshaller : IUnmarshaller<FileContent, XmlUnmarshallerContext>, IUnmarshaller<FileContent, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RelatedItemContent IUnmarshaller<RelatedItemContent, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        FileContent IUnmarshaller<FileContent, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public RelatedItemContent Unmarshall(JsonUnmarshallerContext context)
+        public FileContent Unmarshall(JsonUnmarshallerContext context)
         {
-            RelatedItemContent unmarshalledObject = new RelatedItemContent();
+            FileContent unmarshalledObject = new FileContent();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,22 +64,10 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("comment", targetDepth))
+                if (context.TestExpression("fileArn", targetDepth))
                 {
-                    var unmarshaller = CommentContentUnmarshaller.Instance;
-                    unmarshalledObject.Comment = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("contact", targetDepth))
-                {
-                    var unmarshaller = ContactContentUnmarshaller.Instance;
-                    unmarshalledObject.Contact = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("file", targetDepth))
-                {
-                    var unmarshaller = FileContentUnmarshaller.Instance;
-                    unmarshalledObject.File = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FileArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -87,12 +75,12 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         }
 
 
-        private static RelatedItemContentUnmarshaller _instance = new RelatedItemContentUnmarshaller();        
+        private static FileContentUnmarshaller _instance = new FileContentUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RelatedItemContentUnmarshaller Instance
+        public static FileContentUnmarshaller Instance
         {
             get
             {

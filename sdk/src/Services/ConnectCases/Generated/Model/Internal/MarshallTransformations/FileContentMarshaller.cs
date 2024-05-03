@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RelatedItemTypeFilter Marshaller
+    /// FileContent Marshaller
     /// </summary>
-    public class RelatedItemTypeFilterMarshaller : IRequestMarshaller<RelatedItemTypeFilter, JsonMarshallerContext> 
+    public class FileContentMarshaller : IRequestMarshaller<FileContent, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -44,41 +44,14 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RelatedItemTypeFilter requestObject, JsonMarshallerContext context)
+        public void Marshall(FileContent requestObject, JsonMarshallerContext context)
         {
             if(requestObject == null)
                 return;
-            if(requestObject.IsSetComment())
+            if(requestObject.IsSetFileArn())
             {
-                context.Writer.WritePropertyName("comment");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = CommentFilterMarshaller.Instance;
-                marshaller.Marshall(requestObject.Comment, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetContact())
-            {
-                context.Writer.WritePropertyName("contact");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ContactFilterMarshaller.Instance;
-                marshaller.Marshall(requestObject.Contact, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetFile())
-            {
-                context.Writer.WritePropertyName("file");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = FileFilterMarshaller.Instance;
-                marshaller.Marshall(requestObject.File, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("fileArn");
+                context.Writer.Write(requestObject.FileArn);
             }
 
         }
@@ -86,7 +59,7 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static RelatedItemTypeFilterMarshaller Instance = new RelatedItemTypeFilterMarshaller();
+        public readonly static FileContentMarshaller Instance = new FileContentMarshaller();
 
     }
 }
