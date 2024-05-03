@@ -54,6 +54,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AgentVersion);
             }
 
+            if(requestObject.IsSetProvisionedThroughput())
+            {
+                context.Writer.WritePropertyName("provisionedThroughput");
+                context.Writer.Write(requestObject.ProvisionedThroughput);
+            }
+
         }
 
         /// <summary>

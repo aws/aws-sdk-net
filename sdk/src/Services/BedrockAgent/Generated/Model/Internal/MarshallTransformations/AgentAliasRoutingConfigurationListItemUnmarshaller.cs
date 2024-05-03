@@ -70,6 +70,12 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
                     unmarshalledObject.AgentVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("provisionedThroughput", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProvisionedThroughput = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
