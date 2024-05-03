@@ -3937,6 +3937,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Inspector2")]
+        public void GetCisScanReport_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetCisScanReport");
+
+            var request = InstantiateClassGenerator.Execute<GetCisScanReportRequest>(operation);
+            var marshaller = new GetCisScanReportRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetCisScanReport", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetCisScanReportResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Inspector2")]
         public void GetCisScanReport_ThrottlingExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("GetCisScanReport");
