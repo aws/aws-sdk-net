@@ -32,7 +32,7 @@ namespace Amazon.DirectoryService
     public partial class AmazonDirectoryServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("Directory Service", "3.7.300.85");
+            InternalSDKUtils.BuildUserAgentString("Directory Service", "3.7.300.86");
 
         private string _userAgent = UserAgentString;
         ///<summary>

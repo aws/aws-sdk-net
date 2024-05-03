@@ -1,3 +1,22 @@
+### 3.7.803.0 (2024-05-03 18:24 UTC)
+* BedrockAgent (3.7.308.0)
+	* This release adds support for using Provisioned Throughput with Bedrock Agents.
+* Connect (3.7.317.0)
+	* This release adds 5 new APIs for managing attachments: StartAttachedFileUpload, CompleteAttachedFileUpload, GetAttachedFile, BatchGetAttachedFileMetadata, DeleteAttachedFile. These APIs can be used to programmatically upload and download attachments to Connect resources, like cases.
+* ConnectCases (3.7.304.0)
+	* This feature supports the release of Files related items
+* DataSync (3.7.302.5)
+	* Updated guidance on using private or self-signed certificate authorities (CAs) with AWS DataSync object storage locations.
+* Inspector2 (3.7.304.0)
+	* This release adds CSV format to GetCisScanReport for Inspector v2
+* SageMaker (3.7.321.0)
+	* Amazon SageMaker Inference now supports m6i, c6i, r6i, m7i, c7i, r7i and g5 instance types for Batch Transform Jobs
+* SimpleEmailV2 (3.7.303.0)
+	* Adds support for specifying replacement headers per BulkEmailEntry in SendBulkEmail in SESv2.
+* Core 3.7.303.26
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.802.0 (2024-05-02 18:36 UTC)
 * DynamoDBv2 (3.7.303.0)
 	* This release adds support to specify an optional, maximum OnDemandThroughput for DynamoDB tables and global secondary indexes in the CreateTable or UpdateTable APIs. You can also override the OnDemandThroughput settings by calling the ImportTable, RestoreFromPointInTime, or RestoreFromBackup APIs.
