@@ -1,3 +1,10 @@
+### 3.7.804.0 (2024-05-06 18:20 UTC)
+* MediaLive (3.7.308.0)
+	* AWS Elemental MediaLive now supports configuring how SCTE 35 passthrough triggers segment breaks in HLS and MediaPackage output groups. Previously, messages triggered breaks in all these output groups. The new option is to trigger segment breaks only in groups that have SCTE 35 passthrough enabled.
+* Core 3.7.303.27
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.803.0 (2024-05-03 18:24 UTC)
 * BedrockAgent (3.7.308.0)
 	* This release adds support for using Provisioned Throughput with Bedrock Agents.
