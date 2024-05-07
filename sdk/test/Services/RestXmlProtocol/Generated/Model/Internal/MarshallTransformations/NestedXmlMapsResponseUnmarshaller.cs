@@ -67,12 +67,20 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("flatNestedMap", targetDepth))
                     {
+                        if (response.FlatNestedMap == null)
+                        {
+                            response.FlatNestedMap = new Dictionary<string, Dictionary<string, string>>();
+                        }
                         var unmarshaller = new KeyValueUnmarshaller<string, Dictionary<string, string>, StringUnmarshaller, DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>>(StringUnmarshaller.Instance, new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance));
                         response.FlatNestedMap.Add(unmarshaller.Unmarshall(context));
                         continue;
                     }
                     if (context.TestExpression("nestedMap", targetDepth))
                     {
+                        if (response.NestedMap == null)
+                        {
+                            response.NestedMap = new Dictionary<string, Dictionary<string, string>>();
+                        }
                         var unmarshaller = new DictionaryUnmarshaller<string, Dictionary<string, string>, StringUnmarshaller, DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>>(StringUnmarshaller.Instance, new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance));
                         response.NestedMap = unmarshaller.Unmarshall(context);
                         continue;
