@@ -80,11 +80,13 @@ namespace Amazon.Route53Profiles.Model
         /// <summary>
         /// Gets and sets the property ResourceProperties. 
         /// <para>
-        ///  If you are adding a DNS Firewall rule group, include also a priority in this format:
+        ///  If you are adding a DNS Firewall rule group, include also a priority. The priority
+        /// indicates the processing order for the rule groups, starting with the priority assinged
+        /// the lowest value. 
         /// </para>
         ///  
         /// <para>
-        ///  <c>Key=FirewallRuleGroupPriority,Value=100</c>. 
+        /// The allowed values for priority are between 100 and 9900.
         /// </para>
         /// </summary>
         public string ResourceProperties
