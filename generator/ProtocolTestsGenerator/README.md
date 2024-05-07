@@ -24,16 +24,9 @@ cd ProtocolTestsGenerator
 ```
 ./gradlew :smithy-dotnet-protocol-test:build
 ```
+3. The protocol tests will be outputted to the `sdk/test/ProtocolTests/Generated/<ProtocolName>/dotnet-protocol-test-codegen` folder.
 
-## Running the Test Project
-1. Navigate to the `ProtocolTestsGenerator` directory
+4. To run the tests you can open the AWSSDK.ProtocolTests.Net45.sln and run the tests in Visual Studio or run the following command in the `sdk/test/ProtocolTests` directory.
 ```
-cd ProtocolTestsGenerator
+dotnet test AWSSDK.ProtocolTests.Net45.csproj
 ```
-2. Build the project
-```
-./gradlew :smithy-dotnet-codegen-test:build
-```
-**Note:** Since the core smithy code generator is set up to generate protocol tests only, 
-the `smithy-dotnet-codegen-test` project will not build. If you want to use the test project,
-make sure to include a projection.
