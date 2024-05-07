@@ -30,18 +30,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListRecommendationTemplates operation.
-    /// Lists the recommendation templates for the Resilience Hub applications.
+    /// Container for the parameters to the ListAppAssessmentResourceDrifts operation.
+    /// Indicates the list of resource drifts that were detected while running an assessment.
     /// </summary>
-    public partial class ListRecommendationTemplatesRequest : AmazonResilienceHubRequest
+    public partial class ListAppAssessmentResourceDriftsRequest : AmazonResilienceHubRequest
     {
         private string _assessmentArn;
         private int? _maxResults;
-        private string _name;
         private string _nextToken;
-        private string _recommendationTemplateArn;
-        private bool? _reverseOrder;
-        private List<string> _status = AWSConfigs.InitializeCollections ? new List<string>() : null;
 
         /// <summary>
         /// Gets and sets the property AssessmentArn. 
@@ -52,6 +48,7 @@ namespace Amazon.ResilienceHub.Model
         /// guide.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string AssessmentArn
         {
             get { return this._assessmentArn; }
@@ -67,9 +64,9 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Maximum number of results to include in the response. If more results exist than the
-        /// specified <c>MaxResults</c> value, a token is included in the response so that the
-        /// remaining results can be retrieved.
+        /// Indicates the maximum number of drift results to include in the response. If more
+        /// results exist than the specified <c>MaxResults</c> value, a token is included in the
+        /// response so that the remaining results can be retrieved.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -83,24 +80,6 @@ namespace Amazon.ResilienceHub.Model
         internal bool IsSetMaxResults()
         {
             return this._maxResults.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The name for one of the listed recommendation templates.
-        /// </para>
-        /// </summary>
-        public string Name
-        {
-            get { return this._name; }
-            set { this._name = value; }
-        }
-
-        // Check to see if Name property is set
-        internal bool IsSetName()
-        {
-            return this._name != null;
         }
 
         /// <summary>
@@ -119,62 +98,6 @@ namespace Amazon.ResilienceHub.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property RecommendationTemplateArn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) for a recommendation template.
-        /// </para>
-        /// </summary>
-        public string RecommendationTemplateArn
-        {
-            get { return this._recommendationTemplateArn; }
-            set { this._recommendationTemplateArn = value; }
-        }
-
-        // Check to see if RecommendationTemplateArn property is set
-        internal bool IsSetRecommendationTemplateArn()
-        {
-            return this._recommendationTemplateArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ReverseOrder. 
-        /// <para>
-        /// The default is to sort by ascending <b>startTime</b>. To sort by descending <b>startTime</b>,
-        /// set reverseOrder to <c>true</c>.
-        /// </para>
-        /// </summary>
-        public bool ReverseOrder
-        {
-            get { return this._reverseOrder.GetValueOrDefault(); }
-            set { this._reverseOrder = value; }
-        }
-
-        // Check to see if ReverseOrder property is set
-        internal bool IsSetReverseOrder()
-        {
-            return this._reverseOrder.HasValue; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Status. 
-        /// <para>
-        /// Status of the action.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=4)]
-        public List<string> Status
-        {
-            get { return this._status; }
-            set { this._status = value; }
-        }
-
-        // Check to see if Status property is set
-        internal bool IsSetStatus()
-        {
-            return this._status != null && (this._status.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }
