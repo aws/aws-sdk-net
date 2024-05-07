@@ -20,6 +20,7 @@
 
 using Amazon.Runtime.Internal.Util;
 using System;
+using System.Buffers;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -39,7 +40,6 @@ using System.Threading.Tasks;
 #if NETSTANDARD
 using System.Net.Http;
 using System.Runtime.InteropServices;
-using System.Buffers;
 #endif
 
 namespace Amazon.Util
@@ -768,13 +768,35 @@ namespace Amazon.Util
                 return Convert.ToHexString(data);
             }
 #endif
+
+#if NETCOREAPP3_1_OR_GREATER
+            Func<int, char> converter = lowercase ? (Func<int, char>)ToLowerHex : (Func<int, char>)ToUpperHex;
+
+            return string.Create(data.Length * 2, (data, converter), (chars, state) =>
+            {
+                byte[] data = state.data;
+                Func<int, char> converter = state.converter;
+
+                for (int i = data.Length - 1; i >= 0; i--)
+                {
+                    // Break apart the byte into two four-bit components and
+                    // then convert each into their hexadecimal equivalent.
+                    byte b = data[i];
+                    int hiNibble = b >> 4;
+                    int loNibble = b & 0xF;
+
+                    chars[i * 2] = converter(hiNibble);
+                    chars[i * 2 + 1] = converter(loNibble);
+                }
+            });
+#else
             char[] chars = ArrayPool<char>.Shared.Rent(data.Length * 2);
 
             try
             {
                 Func<int, char> converter = lowercase ? (Func<int, char>)ToLowerHex : (Func<int, char>)ToUpperHex;
 
-                for (int i = 0; i < data.Length; i++)
+                for (int i = data.Length - 1; i >= 0; i--)
                 {
                     // Break apart the byte into two four-bit components and
                     // then convert each into their hexadecimal equivalent.
@@ -792,6 +814,7 @@ namespace Amazon.Util
             {
                 ArrayPool<char>.Shared.Return(chars);
             }
+#endif
         }
 
         /// <summary>
