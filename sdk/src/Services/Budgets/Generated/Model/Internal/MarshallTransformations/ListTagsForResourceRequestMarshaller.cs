@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Budgets.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateBudget Request Marshaller
+    /// ListTagsForResource Request Marshaller
     /// </summary>       
-    public class CreateBudgetRequestMarshaller : IMarshaller<IRequest, CreateBudgetRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListTagsForResourceRequestMarshaller : IMarshaller<IRequest, ListTagsForResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateBudgetRequest)input);
+            return this.Marshall((ListTagsForResourceRequest)input);
         }
 
         /// <summary>
@@ -53,10 +53,10 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateBudgetRequest publicRequest)
+        public IRequest Marshall(ListTagsForResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Budgets");
-            string target = "AWSBudgetServiceGateway.CreateBudget";
+            string target = "AWSBudgetServiceGateway.ListTagsForResource";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-10-20";
@@ -69,53 +69,10 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccountId())
+                if(publicRequest.IsSetResourceARN())
                 {
-                    context.Writer.WritePropertyName("AccountId");
-                    context.Writer.Write(publicRequest.AccountId);
-                }
-
-                if(publicRequest.IsSetBudget())
-                {
-                    context.Writer.WritePropertyName("Budget");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = BudgetMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Budget, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetNotificationsWithSubscribers())
-                {
-                    context.Writer.WritePropertyName("NotificationsWithSubscribers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNotificationsWithSubscribersListValue in publicRequest.NotificationsWithSubscribers)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = NotificationWithSubscribersMarshaller.Instance;
-                        marshaller.Marshall(publicRequestNotificationsWithSubscribersListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetResourceTags())
-                {
-                    context.Writer.WritePropertyName("ResourceTags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestResourceTagsListValue in publicRequest.ResourceTags)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ResourceTagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestResourceTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("ResourceARN");
+                    context.Writer.Write(publicRequest.ResourceARN);
                 }
 
                 writer.WriteObjectEnd();
@@ -126,9 +83,9 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateBudgetRequestMarshaller _instance = new CreateBudgetRequestMarshaller();        
+        private static ListTagsForResourceRequestMarshaller _instance = new ListTagsForResourceRequestMarshaller();        
 
-        internal static CreateBudgetRequestMarshaller GetInstance()
+        internal static ListTagsForResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -136,7 +93,7 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateBudgetRequestMarshaller Instance
+        public static ListTagsForResourceRequestMarshaller Instance
         {
             get
             {

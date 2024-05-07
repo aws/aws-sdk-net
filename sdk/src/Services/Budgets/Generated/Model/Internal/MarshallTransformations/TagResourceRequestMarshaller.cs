@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Budgets.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateBudget Request Marshaller
+    /// TagResource Request Marshaller
     /// </summary>       
-    public class CreateBudgetRequestMarshaller : IMarshaller<IRequest, CreateBudgetRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class TagResourceRequestMarshaller : IMarshaller<IRequest, TagResourceRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -45,7 +45,7 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateBudgetRequest)input);
+            return this.Marshall((TagResourceRequest)input);
         }
 
         /// <summary>
@@ -53,10 +53,10 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateBudgetRequest publicRequest)
+        public IRequest Marshall(TagResourceRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Budgets");
-            string target = "AWSBudgetServiceGateway.CreateBudget";
+            string target = "AWSBudgetServiceGateway.TagResource";
             request.Headers["X-Amz-Target"] = target;
             request.Headers["Content-Type"] = "application/x-amz-json-1.1";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2016-10-20";
@@ -69,37 +69,10 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAccountId())
+                if(publicRequest.IsSetResourceARN())
                 {
-                    context.Writer.WritePropertyName("AccountId");
-                    context.Writer.Write(publicRequest.AccountId);
-                }
-
-                if(publicRequest.IsSetBudget())
-                {
-                    context.Writer.WritePropertyName("Budget");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = BudgetMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Budget, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetNotificationsWithSubscribers())
-                {
-                    context.Writer.WritePropertyName("NotificationsWithSubscribers");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNotificationsWithSubscribersListValue in publicRequest.NotificationsWithSubscribers)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = NotificationWithSubscribersMarshaller.Instance;
-                        marshaller.Marshall(publicRequestNotificationsWithSubscribersListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("ResourceARN");
+                    context.Writer.Write(publicRequest.ResourceARN);
                 }
 
                 if(publicRequest.IsSetResourceTags())
@@ -126,9 +99,9 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateBudgetRequestMarshaller _instance = new CreateBudgetRequestMarshaller();        
+        private static TagResourceRequestMarshaller _instance = new TagResourceRequestMarshaller();        
 
-        internal static CreateBudgetRequestMarshaller GetInstance()
+        internal static TagResourceRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -136,7 +109,7 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateBudgetRequestMarshaller Instance
+        public static TagResourceRequestMarshaller Instance
         {
             get
             {
