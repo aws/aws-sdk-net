@@ -97,6 +97,10 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("Endpoints", targetDepth))
                     {
+                        if (response.Endpoints == null)
+                        {
+                            response.Endpoints = new Dictionary<string, string>();
+                        }
                         var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                         response.Endpoints = unmarshaller.Unmarshall(context);
                         continue;
