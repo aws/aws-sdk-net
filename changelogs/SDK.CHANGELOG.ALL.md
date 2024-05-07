@@ -1,3 +1,13 @@
+### 3.7.805.0 (2024-05-07 18:24 UTC)
+* B2bi (3.7.303.19)
+	* Documentation update to clarify the MappingTemplate definition.
+* Budgets (3.7.301.0)
+	* This release adds tag support for budgets and budget actions.
+* ResilienceHub (3.7.301.0)
+	* AWS Resilience Hub has expanded its drift detection capabilities by introducing a new type of drift detection - application resource drift. This new enhancement detects changes, such as the addition or deletion of resources within the application's input sources.
+* Route53Profiles (3.7.300.9)
+	* Doc only update for Route 53 profiles that fixes some link  issues
+
 ### 3.7.804.0 (2024-05-06 18:20 UTC)
 * MediaLive (3.7.308.0)
 	* AWS Elemental MediaLive now supports configuring how SCTE 35 passthrough triggers segment breaks in HLS and MediaPackage output groups. Previously, messages triggered breaks in all these output groups. The new option is to trigger segment breaks only in groups that have SCTE 35 passthrough enabled.
