@@ -205,7 +205,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property PolicyDescription. 
         /// <para>
-        /// The definition of the Network Firewall firewall policy.
+        /// Your description of the Firewall Manager policy.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

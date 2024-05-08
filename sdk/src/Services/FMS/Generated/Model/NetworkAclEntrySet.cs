@@ -80,8 +80,8 @@ namespace Amazon.FMS.Model
         /// <para>
         /// If forced remediation is disabled, Firewall Manager marks the network ACL as noncompliant
         /// and does not try to remediate. For more information about the remediation behavior,
-        /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html">Network
-        /// access control list (ACL) policies</a> in the <i>Firewall Manager Developer Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html#network-acls-remediation">Remediation
+        /// for managed network ACLs</a> in the <i>Firewall Manager Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -108,8 +108,8 @@ namespace Amazon.FMS.Model
         /// <para>
         /// If forced remediation is disabled, Firewall Manager marks the network ACL as noncompliant
         /// and does not try to remediate. For more information about the remediation behavior,
-        /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html">Network
-        /// access control list (ACL) policies</a> in the <i>Firewall Manager Developer Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/network-acl-policies.html#network-acls-remediation">Remediation
+        /// for managed network ACLs</a> in the <i>Firewall Manager Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
