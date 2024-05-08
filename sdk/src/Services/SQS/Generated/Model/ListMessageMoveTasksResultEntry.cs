@@ -66,7 +66,8 @@ namespace Amazon.SQS.Model
         /// Gets and sets the property ApproximateNumberOfMessagesToMove. 
         /// <para>
         /// The number of messages to be moved from the source queue. This number is obtained
-        /// at the time of starting the message movement task.
+        /// at the time of starting the message movement task and is only included after the message
+        /// movement task is selected to start.
         /// </para>
         /// </summary>
         public long ApproximateNumberOfMessagesToMove

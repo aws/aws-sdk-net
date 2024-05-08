@@ -275,7 +275,7 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The length of <c>MessageGroupId</c> is 128 characters. Valid values: alphanumeric
+        /// The maximum length of <c>MessageGroupId</c> is 128 characters. Valid values: alphanumeric
         /// characters and punctuation <c>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</c>.
         /// </para>
         ///  

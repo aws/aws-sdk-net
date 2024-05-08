@@ -323,10 +323,6 @@ namespace Amazon.SQS
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Currently, only standard queues are supported.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// Only one active message movement task is supported per queue at any given time.
         /// </para>
         ///  </li> </ul> </note>
@@ -1807,10 +1803,6 @@ namespace Amazon.SQS
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Currently, only standard queues are supported.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// Only one active message movement task is supported per queue at any given time.
         /// </para>
         ///  </li> </ul> </note>
@@ -3138,12 +3130,12 @@ namespace Amazon.SQS
 
 
         /// <summary>
-        /// Sets the value of one or more queue attributes. When you change a queue's attributes,
-        /// the change can take up to 60 seconds for most of the attributes to propagate throughout
-        /// the Amazon SQS system. Changes made to the <c>MessageRetentionPeriod</c> attribute
-        /// can take up to 15 minutes and will impact existing messages in the queue potentially
-        /// causing them to be expired and deleted if the <c>MessageRetentionPeriod</c> is reduced
-        /// below the age of existing messages.
+        /// Sets the value of one or more queue attributes, like a policy. When you change a queue's
+        /// attributes, the change can take up to 60 seconds for most of the attributes to propagate
+        /// throughout the Amazon SQS system. Changes made to the <c>MessageRetentionPeriod</c>
+        /// attribute can take up to 15 minutes and will impact existing messages in the queue
+        /// potentially causing them to be expired and deleted if the <c>MessageRetentionPeriod</c>
+        /// is reduced below the age of existing messages.
         /// 
         ///  <note> <ul> <li> 
         /// <para>
@@ -3222,12 +3214,12 @@ namespace Amazon.SQS
 
 
         /// <summary>
-        /// Sets the value of one or more queue attributes. When you change a queue's attributes,
-        /// the change can take up to 60 seconds for most of the attributes to propagate throughout
-        /// the Amazon SQS system. Changes made to the <c>MessageRetentionPeriod</c> attribute
-        /// can take up to 15 minutes and will impact existing messages in the queue potentially
-        /// causing them to be expired and deleted if the <c>MessageRetentionPeriod</c> is reduced
-        /// below the age of existing messages.
+        /// Sets the value of one or more queue attributes, like a policy. When you change a queue's
+        /// attributes, the change can take up to 60 seconds for most of the attributes to propagate
+        /// throughout the Amazon SQS system. Changes made to the <c>MessageRetentionPeriod</c>
+        /// attribute can take up to 15 minutes and will impact existing messages in the queue
+        /// potentially causing them to be expired and deleted if the <c>MessageRetentionPeriod</c>
+        /// is reduced below the age of existing messages.
         /// 
         ///  <note> <ul> <li> 
         /// <para>
@@ -3326,10 +3318,6 @@ namespace Amazon.SQS
         /// queue is the DLQ, while the destination queue can be the original source queue (from
         /// which the messages were driven to the dead-letter-queue), or a custom destination
         /// queue.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Currently, only standard queues support redrive. FIFO queues don't support redrive.
         /// </para>
         ///  </li> <li> 
         /// <para>
