@@ -24,7 +24,7 @@ This project file should not be used as part of a release pipeline.
         <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
 
         <NoWarn>CS1591</NoWarn>
-        <LangVersion Condition="'$(TargetFramework)' == 'netstandard2.0'">8.0</LangVersion>
+        <LangVersion>9.0</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>

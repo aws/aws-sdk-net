@@ -770,43 +770,16 @@ namespace Amazon.Util
 #endif
 
 #if NETCOREAPP3_1_OR_GREATER
-            Func<int, char> converter = lowercase ? (Func<int, char>)ToLowerHex : (Func<int, char>)ToUpperHex;
-
-            return string.Create(data.Length * 2, (data, converter), (chars, state) =>
+            return string.Create(data.Length * 2, (data, lowercase), static (chars, state) =>
             {
-                byte[] data = state.data;
-                Func<int, char> converter = state.converter;
-
-                for (int i = data.Length - 1; i >= 0; i--)
-                {
-                    // Break apart the byte into two four-bit components and
-                    // then convert each into their hexadecimal equivalent.
-                    byte b = data[i];
-                    int hiNibble = b >> 4;
-                    int loNibble = b & 0xF;
-
-                    chars[i * 2] = converter(hiNibble);
-                    chars[i * 2 + 1] = converter(loNibble);
-                }
+                ToHexString(state.data, chars, state.lowercase);
             });
 #else
             char[] chars = ArrayPool<char>.Shared.Rent(data.Length * 2);
 
             try
             {
-                Func<int, char> converter = lowercase ? (Func<int, char>)ToLowerHex : (Func<int, char>)ToUpperHex;
-
-                for (int i = data.Length - 1; i >= 0; i--)
-                {
-                    // Break apart the byte into two four-bit components and
-                    // then convert each into their hexadecimal equivalent.
-                    byte b = data[i];
-                    int hiNibble = b >> 4;
-                    int loNibble = b & 0xF;
-
-                    chars[i * 2] = converter(hiNibble);
-                    chars[i * 2 + 1] = converter(loNibble);
-                }
+                ToHexString(data, chars, lowercase);
 
                 return new string(chars, 0, data.Length * 2);
             }
@@ -1205,6 +1178,23 @@ namespace Amazon.Util
             }
 
             return encoded.ToString();
+        }
+
+        private static void ToHexString(Span<byte> source, Span<char> destination, bool lowercase)
+        {
+            Func<int, char> converter = lowercase ? (Func<int, char>)ToLowerHex : (Func<int, char>)ToUpperHex;
+
+            for (int i = source.Length - 1; i >= 0; i--)
+            {
+                // Break apart the byte into two four-bit components and
+                // then convert each into their hexadecimal equivalent.
+                byte b = source[i];
+                int hiNibble = b >> 4;
+                int loNibble = b & 0xF;
+
+                destination[i * 2] = converter(hiNibble);
+                destination[i * 2 + 1] = converter(loNibble);
+            }
         }
 
         private static char ToUpperHex(int value)

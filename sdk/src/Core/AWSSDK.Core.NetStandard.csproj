@@ -21,12 +21,9 @@
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
 
     <NoWarn>$(NoWarn);CS1591;CA1822</NoWarn>
+    <LangVersion>9.0</LangVersion>
 
     <SignAssembly>True</SignAssembly>
-  </PropertyGroup>
-    <!-- Async Enumerable Compatibility -->
-  <PropertyGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
-    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition="'$(TargetFramework)' == 'net8.0'">
     <WarningsAsErrors>IL2026,IL2075</WarningsAsErrors>

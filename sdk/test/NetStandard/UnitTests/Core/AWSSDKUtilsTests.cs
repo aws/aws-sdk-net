@@ -1,7 +1,4 @@
-﻿using Amazon.Runtime;
-using Amazon.Util;
-using System;
-using System.Collections.Generic;
+﻿using Amazon.Util;
 using System.Text;
 using Xunit;
 
