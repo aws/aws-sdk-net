@@ -1802,7 +1802,7 @@ namespace Amazon.Util
         private TimeSpan _maxDelay;
         private TimeSpan _variance;
         private TimeSpan _baseIncrement;
-        private Random _rand = null;
+        private RandomNumberGenerator _rand = null;
         private int _count = 0;
 
         public JitteredDelay(TimeSpan baseIncrement, TimeSpan variance)
@@ -1815,12 +1815,16 @@ namespace Amazon.Util
             _baseIncrement = baseIncrement;
             _variance = variance;
             _maxDelay = maxDelay;
-            _rand = new System.Random();
+            _rand = RandomNumberGenerator.Create();
         }
 
         public TimeSpan GetRetryDelay(int attemptCount)
         {
-            long ticks = (_baseIncrement.Ticks * (long)Math.Pow(2, attemptCount) + (long)(_rand.NextDouble() * _variance.Ticks));
+            byte[] randomBytes = new byte[8];
+            _rand.GetBytes(randomBytes);
+            long randomLong = BitConverter.ToInt64(randomBytes, 0);
+            double randomDouble = (double)randomLong / long.MaxValue;
+            long ticks = (_baseIncrement.Ticks * (long)Math.Pow(2, attemptCount) + (long)(randomDouble * _variance.Ticks));
             return new TimeSpan(ticks);
         }
 
