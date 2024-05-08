@@ -2077,6 +2077,10 @@ namespace Amazon.CognitoIdentityProvider
         /// </summary>
         public static readonly UserStatusType CONFIRMED = new UserStatusType("CONFIRMED");
         /// <summary>
+        /// Constant EXTERNAL_PROVIDER for UserStatusType
+        /// </summary>
+        public static readonly UserStatusType EXTERNAL_PROVIDER = new UserStatusType("EXTERNAL_PROVIDER");
+        /// <summary>
         /// Constant FORCE_CHANGE_PASSWORD for UserStatusType
         /// </summary>
         public static readonly UserStatusType FORCE_CHANGE_PASSWORD = new UserStatusType("FORCE_CHANGE_PASSWORD");
