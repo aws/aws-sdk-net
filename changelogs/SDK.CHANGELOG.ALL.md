@@ -1,3 +1,17 @@
+### 3.7.806.0 (2024-05-08 18:20 UTC)
+* CognitoIdentityProvider (3.7.305.0)
+	* Add EXTERNAL_PROVIDER enum value to UserStatusType.
+* EC2 (3.7.327.0)
+	* Adding Precision Hardware Clock (PHC) to public API DescribeInstanceTypes
+* ECR (3.7.302.0)
+	* This release adds pull through cache rules support for GitLab container registry in Amazon ECR.
+* FMS (3.7.302.4)
+	* The policy scope resource tag is always a string value, either a non-empty string or an empty string.
+* Polly (3.7.303.0)
+	* Add new engine - generative - that builds the most expressive conversational voices.
+* SQS (3.7.301.0)
+	* This release adds MessageSystemAttributeNames to ReceiveMessageRequest to replace AttributeNames.
+
 ### 3.7.805.0 (2024-05-07 18:24 UTC)
 * B2bi (3.7.303.19)
 	* Documentation update to clarify the MappingTemplate definition.
