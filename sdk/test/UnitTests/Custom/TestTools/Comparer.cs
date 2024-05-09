@@ -53,15 +53,15 @@ namespace AWSSDK_DotNet.UnitTests.TestTools
             if (x == null && y == null)
                 return;
 
-            if (x != null && x.GetType().GetInterfaces().Any(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(ICollection<>)) && !AWSConfigs.InitializeCollections)
+            if (!AWSConfigs.InitializeCollections && x != null && type.GetInterfaces().Any(i => i.IsGenericType && i.GetGenericTypeDefinition() == typeof(ICollection<>)))
             {
                 var expectedCollection = (ICollection)x;
                 var actualCollection = (ICollection)y;
-                if ((expectedCollection.Count == 0 || expectedCollection == null) && (actualCollection == null))
+                if (expectedCollection.Count == 0 && actualCollection == null)
                     return;
             }
 
-            if ((x == null && y != null) || (x != null && y == null))
+            if (x == null ^ y == null)
                 Assert.Fail("Either x or y is null. x={0} y={1}", x, y);
 
 

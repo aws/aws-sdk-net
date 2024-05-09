@@ -95,10 +95,6 @@ namespace Amazon.RestXmlProtocol.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("intEnumMap", targetDepth))
                     {
-                        if (response.IntEnumMap == null)
-                        {
-                            response.IntEnumMap = new Dictionary<string, int>();
-                        }
                         var unmarshaller = new DictionaryUnmarshaller<string, int, StringUnmarshaller, IntUnmarshaller>(StringUnmarshaller.Instance, IntUnmarshaller.Instance);
                         response.IntEnumMap = unmarshaller.Unmarshall(context);
                         continue;
