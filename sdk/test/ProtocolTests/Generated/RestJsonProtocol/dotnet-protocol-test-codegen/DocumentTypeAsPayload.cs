@@ -145,8 +145,6 @@ namespace AWSSDK.ProtocolTests.RestJson
         /// <summary>
         /// Serializes a document as a payload string.
         /// </summary>
-        // This test requires a breaking change, and will be addressed in V4
-        [Ignore]
         [TestMethod]
         [TestCategory("ProtocolTest")]
         [TestCategory("ResponseTest")]

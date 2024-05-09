@@ -329,9 +329,18 @@ namespace <#=this.Config.Namespace#>.Model
                     }
                     else
                     {
+                        if(member.Shape.IsString && (member.MarshallLocation == MarshallLocation.Header || member.MarshallLocation == MarshallLocation.Headers))
+                        {
+#>
+            return !string.IsNullOrEmpty(this.<#=member.VariableName#>);
+<#
+                        }
+                        else
+                        {
 #>
             return this.<#=member.VariableName#> != null;
 <#
+                        }
                     }
 #>
         }

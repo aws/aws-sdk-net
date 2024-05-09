@@ -690,14 +690,17 @@ namespace Amazon.Runtime.Internal.Transform
         {
             this.iUnmarshaller = iUnmarshaller;
         }
-
+        
         public List<I> Unmarshall(XmlUnmarshallerContext context)
         {
             int originalDepth = context.CurrentDepth;
             int targetDepth = originalDepth + 1;
 
             var list = new List<I>();
-            while (context.Read())
+            // If the list is nested, we don't want the current depth to be less than the original depth
+            // because then, context.Read() will return true if there are more elements and all the
+            // list's elements will be unmarshalled as one list instead of multiple nested lists.
+            while (context.Read() && context.CurrentDepth >= originalDepth)
             {
                 if (context.IsStartElement)
                 {

@@ -1143,7 +1143,7 @@ namespace ServiceClientGenerator
             // Rules used to default the format if timestampFormat is not specified.
             // 1. All timestamp values serialized in HTTP headers are formatted using rfc822 by default.
             // 2. All timestamp values serialized in uri and query strings are formatted using iso8601 by default.
-            if (marshallLocation == MarshallLocation.Header)
+            if (marshallLocation == MarshallLocation.Header || marshallLocation == MarshallLocation.Headers)
             {
                 return TimestampFormat.RFC822;
             }
