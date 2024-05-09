@@ -82,6 +82,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
                     unmarshalledObject.DefaultSubstitutions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Headers", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<MessageHeader, MessageHeaderUnmarshaller>(MessageHeaderUnmarshaller.Instance);
+                    unmarshalledObject.Headers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("HtmlPart", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

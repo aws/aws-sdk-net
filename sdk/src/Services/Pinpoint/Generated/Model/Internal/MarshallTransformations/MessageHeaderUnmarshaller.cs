@@ -35,16 +35,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CampaignEmailMessage Object
+    /// Response Unmarshaller for MessageHeader Object
     /// </summary>  
-    public class CampaignEmailMessageUnmarshaller : IUnmarshaller<CampaignEmailMessage, XmlUnmarshallerContext>, IUnmarshaller<CampaignEmailMessage, JsonUnmarshallerContext>
+    public class MessageHeaderUnmarshaller : IUnmarshaller<MessageHeader, XmlUnmarshallerContext>, IUnmarshaller<MessageHeader, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CampaignEmailMessage IUnmarshaller<CampaignEmailMessage, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        MessageHeader IUnmarshaller<MessageHeader, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -54,9 +54,9 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns>The unmarshalled object</returns>
-        public CampaignEmailMessage Unmarshall(JsonUnmarshallerContext context)
+        public MessageHeader Unmarshall(JsonUnmarshallerContext context)
         {
-            CampaignEmailMessage unmarshalledObject = new CampaignEmailMessage();
+            MessageHeader unmarshalledObject = new MessageHeader();
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
@@ -64,34 +64,16 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Body", targetDepth))
+                if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Body = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("FromAddress", targetDepth))
+                if (context.TestExpression("Value", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FromAddress = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Headers", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<MessageHeader, MessageHeaderUnmarshaller>(MessageHeaderUnmarshaller.Instance);
-                    unmarshalledObject.Headers = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("HtmlBody", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HtmlBody = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Title", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Title = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -99,12 +81,12 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
         }
 
 
-        private static CampaignEmailMessageUnmarshaller _instance = new CampaignEmailMessageUnmarshaller();        
+        private static MessageHeaderUnmarshaller _instance = new MessageHeaderUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CampaignEmailMessageUnmarshaller Instance
+        public static MessageHeaderUnmarshaller Instance
         {
             get
             {
