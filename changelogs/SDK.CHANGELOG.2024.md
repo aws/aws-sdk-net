@@ -1,3 +1,18 @@
+### 3.7.807.0 (2024-05-09 20:41 UTC)
+* BedrockAgentRuntime (3.7.306.0)
+	* This release adds support to provide guardrail configuration and modify inference parameters that are then used in RetrieveAndGenerate API in Agents for Amazon Bedrock.
+* Pinpoint (3.7.302.0)
+	* This release adds support for specifying email message headers for Email Templates, Campaigns, Journeys and Send Messages.
+* Route53Resolver (3.7.303.4)
+	* Update the DNS Firewall settings to correct a spelling issue.
+* SsmSap (3.7.302.0)
+	* Added support for application-aware start/stop of SAP applications running on EC2 instances, with SSM for SAP
+* VerifiedPermissions (3.7.306.0)
+	* Adds policy effect and actions fields to Policy API's.
+* Core 3.7.303.28
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.806.0 (2024-05-08 18:20 UTC)
 * CognitoIdentityProvider (3.7.305.0)
 	* Add EXTERNAL_PROVIDER enum value to UserStatusType.

@@ -32,7 +32,7 @@ namespace Amazon.MainframeModernization
     public partial class AmazonMainframeModernizationConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("m2", "3.7.301.12");
+            InternalSDKUtils.BuildUserAgentString("m2", "3.7.301.13");
 
         private string _userAgent = UserAgentString;
         ///<summary>
