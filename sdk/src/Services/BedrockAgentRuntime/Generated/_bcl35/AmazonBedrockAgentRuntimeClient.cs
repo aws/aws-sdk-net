@@ -267,14 +267,16 @@ namespace Amazon.BedrockAgentRuntime
         #region  InvokeAgent
 
         /// <summary>
-        /// Sends a prompt for the agent to process and respond to. Use return control event type
-        /// for function calling.
-        /// 
-        ///  <note> 
+        /// <note> 
         /// <para>
         /// The CLI doesn't support <c>InvokeAgent</c>.
         /// </para>
-        ///  </note> <ul> <li> 
+        ///  </note> 
+        /// <para>
+        /// Sends a prompt for the agent to process and respond to. Note the following fields
+        /// for the request:
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         /// To continue the same conversation with an agent, use the same <c>sessionId</c> value
         /// in the request.
@@ -294,11 +296,8 @@ namespace Amazon.BedrockAgentRuntime
         ///  </li> <li> 
         /// <para>
         /// In the <c>sessionState</c> object, you can include attributes for the session or prompt
-        /// or parameters returned from the action group.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Use return control event type for function calling.
+        /// or, if you configured an action group to return control, results from invocation of
+        /// the action group.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -312,6 +311,11 @@ namespace Amazon.BedrockAgentRuntime
         /// <para>
         /// If you set <c>enableTrace</c> to <c>true</c> in the request, you can trace the agent's
         /// steps and reasoning process that led it to the response.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the action predicted was configured to return control, the response returns parameters
+        /// for the action, elicited from the user, in the <c>returnControl</c> field.
         /// </para>
         ///  </li> <li> 
         /// <para>

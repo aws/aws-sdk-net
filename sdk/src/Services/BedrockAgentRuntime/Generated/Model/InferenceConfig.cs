@@ -30,39 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BedrockAgentRuntime.Model
 {
     /// <summary>
-    /// Contains the body of the API response.
-    /// 
-    ///  
-    /// <para>
-    /// This data type is used in the following API operations:
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// In the <c>returnControlInvocationResults</c> field of the <a href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html#API_agent-runtime_InvokeAgent_RequestSyntax">InvokeAgent
-    /// request</a> 
-    /// </para>
-    ///  </li> </ul>
+    /// The configuration for inference settings when generating responses using RetrieveAndGenerate.
     /// </summary>
-    public partial class ContentBody
+    public partial class InferenceConfig
     {
-        private string _body;
+        private TextInferenceConfig _textInferenceConfig;
 
         /// <summary>
-        /// Gets and sets the property Body. 
+        /// Gets and sets the property TextInferenceConfig. 
         /// <para>
-        /// The body of the API response.
+        ///  Configuration settings specific to text generation while generating responses using
+        /// RetrieveAndGenerate. 
         /// </para>
         /// </summary>
-        public string Body
+        public TextInferenceConfig TextInferenceConfig
         {
-            get { return this._body; }
-            set { this._body = value; }
+            get { return this._textInferenceConfig; }
+            set { this._textInferenceConfig = value; }
         }
 
-        // Check to see if Body property is set
-        internal bool IsSetBody()
+        // Check to see if TextInferenceConfig property is set
+        internal bool IsSetTextInferenceConfig()
         {
-            return this._body != null;
+            return this._textInferenceConfig != null;
         }
 
     }
