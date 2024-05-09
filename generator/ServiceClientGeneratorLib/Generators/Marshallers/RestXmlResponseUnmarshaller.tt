@@ -187,10 +187,6 @@ namespace <#=this.Config.Namespace #>.Model.Internal.MarshallTransformations
 #>
 					if (context.TestExpression("<#=DetermineXmlMarshallName(member)#>", targetDepth))
 					{
-                        if (response.<#=member.PropertyName#> == null)
-                        {
-                            response.<#=member.PropertyName#> = new <#=member.DetermineType()#>();
-                        }
 						var unmarshaller = <#= member.DetermineTypeUnmarshallerInstantiate() #>;
 						response.<#=member.PropertyName#> = unmarshaller.Unmarshall(context);
 						continue;
