@@ -64,6 +64,12 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("actions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ActionIdentifier, ActionIdentifierUnmarshaller>(ActionIdentifierUnmarshaller.Instance);
+                    unmarshalledObject.Actions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("createdDate", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -74,6 +80,12 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = PolicyDefinitionItemUnmarshaller.Instance;
                     unmarshalledObject.Definition = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("effect", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Effect = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("lastUpdatedDate", targetDepth))
