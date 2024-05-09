@@ -30,19 +30,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SsmSap.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListApplications operation.
-    /// Lists all the applications registered with AWS Systems Manager for SAP.
+    /// Container for the parameters to the ListOperationEvents operation.
+    /// Returns a list of operations events.
+    /// 
+    ///  
+    /// <para>
+    /// Available parameters include <c>OperationID</c>, as well as optional parameters <c>MaxResults</c>,
+    /// <c>NextToken</c>, and <c>Filters</c>.
+    /// </para>
     /// </summary>
-    public partial class ListApplicationsRequest : AmazonSsmSapRequest
+    public partial class ListOperationEventsRequest : AmazonSsmSapRequest
     {
         private List<Filter> _filters = AWSConfigs.InitializeCollections ? new List<Filter>() : null;
         private int? _maxResults;
         private string _nextToken;
+        private string _operationId;
 
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// The filter of name, value, and operator.
+        /// Optionally specify filters to narrow the returned operation event items.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid filter names include <c>status</c>, <c>resourceID</c>, and <c>resourceType</c>.
+        /// The valid operator for all three filters is <c>Equals</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -64,6 +76,11 @@ namespace Amazon.SsmSap.Model
         /// The maximum number of results to return with a single call. To retrieve the remaining
         /// results, make another call with the returned nextToken value.
         /// </para>
+        ///  
+        /// <para>
+        /// If you do not specify a value for <c>MaxResults</c>, the request returns 50 items
+        /// per page by default.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
         public int MaxResults
@@ -81,7 +98,8 @@ namespace Amazon.SsmSap.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token for the next page of results.
+        /// The token to use to retrieve the next page of results. This value is null when there
+        /// are no more results to return.
         /// </para>
         /// </summary>
         public string NextToken
@@ -94,6 +112,25 @@ namespace Amazon.SsmSap.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OperationId. 
+        /// <para>
+        /// The ID of the operation.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string OperationId
+        {
+            get { return this._operationId; }
+            set { this._operationId = value; }
+        }
+
+        // Check to see if OperationId property is set
+        internal bool IsSetOperationId()
+        {
+            return this._operationId != null;
         }
 
     }

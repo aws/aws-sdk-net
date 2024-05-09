@@ -894,6 +894,72 @@ namespace Amazon.SsmSap
 
         #endregion
         
+        #region  ListOperationEvents
+
+        /// <summary>
+        /// Returns a list of operations events.
+        /// 
+        ///  
+        /// <para>
+        /// Available parameters include <c>OperationID</c>, as well as optional parameters <c>MaxResults</c>,
+        /// <c>NextToken</c>, and <c>Filters</c>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListOperationEvents service method.</param>
+        /// 
+        /// <returns>The response from the ListOperationEvents service method, as returned by SsmSap.</returns>
+        /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListOperationEvents">REST API Reference for ListOperationEvents Operation</seealso>
+        public virtual ListOperationEventsResponse ListOperationEvents(ListOperationEventsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOperationEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOperationEventsResponseUnmarshaller.Instance;
+
+            return Invoke<ListOperationEventsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListOperationEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListOperationEvents operation on AmazonSsmSapClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListOperationEvents
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListOperationEvents">REST API Reference for ListOperationEvents Operation</seealso>
+        public virtual IAsyncResult BeginListOperationEvents(ListOperationEventsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListOperationEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListOperationEventsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListOperationEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListOperationEvents.</param>
+        /// 
+        /// <returns>Returns a  ListOperationEventsResult from SsmSap.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/ListOperationEvents">REST API Reference for ListOperationEvents Operation</seealso>
+        public virtual ListOperationEventsResponse EndListOperationEvents(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListOperationEventsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListOperations
 
         /// <summary>
@@ -1164,6 +1230,77 @@ namespace Amazon.SsmSap
 
         #endregion
         
+        #region  StartApplication
+
+        /// <summary>
+        /// Request is an operation which starts an application.
+        /// 
+        ///  
+        /// <para>
+        /// Parameter <c>ApplicationId</c> is required.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartApplication service method.</param>
+        /// 
+        /// <returns>The response from the StartApplication service method, as returned by SsmSap.</returns>
+        /// <exception cref="Amazon.SsmSap.Model.ConflictException">
+        /// A conflict has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.ResourceNotFoundException">
+        /// The resource is not available.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/StartApplication">REST API Reference for StartApplication Operation</seealso>
+        public virtual StartApplicationResponse StartApplication(StartApplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartApplicationResponseUnmarshaller.Instance;
+
+            return Invoke<StartApplicationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartApplication operation on AmazonSsmSapClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartApplication
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/StartApplication">REST API Reference for StartApplication Operation</seealso>
+        public virtual IAsyncResult BeginStartApplication(StartApplicationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartApplicationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartApplication.</param>
+        /// 
+        /// <returns>Returns a  StartApplicationResult from SsmSap.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/StartApplication">REST API Reference for StartApplication Operation</seealso>
+        public virtual StartApplicationResponse EndStartApplication(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartApplicationResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  StartApplicationRefresh
 
         /// <summary>
@@ -1229,6 +1366,78 @@ namespace Amazon.SsmSap
         public virtual StartApplicationRefreshResponse EndStartApplicationRefresh(IAsyncResult asyncResult)
         {
             return EndInvoke<StartApplicationRefreshResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StopApplication
+
+        /// <summary>
+        /// Request is an operation to stop an application.
+        /// 
+        ///  
+        /// <para>
+        /// Parameter <c>ApplicationId</c> is required. Parameters <c>StopConnectedEntity</c>
+        /// and <c>IncludeEc2InstanceShutdown</c> are optional.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopApplication service method.</param>
+        /// 
+        /// <returns>The response from the StopApplication service method, as returned by SsmSap.</returns>
+        /// <exception cref="Amazon.SsmSap.Model.ConflictException">
+        /// A conflict has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.InternalServerException">
+        /// An internal error has occurred.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.ResourceNotFoundException">
+        /// The resource is not available.
+        /// </exception>
+        /// <exception cref="Amazon.SsmSap.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/StopApplication">REST API Reference for StopApplication Operation</seealso>
+        public virtual StopApplicationResponse StopApplication(StopApplicationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopApplicationResponseUnmarshaller.Instance;
+
+            return Invoke<StopApplicationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopApplication operation on AmazonSsmSapClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopApplication
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/StopApplication">REST API Reference for StopApplication Operation</seealso>
+        public virtual IAsyncResult BeginStopApplication(StopApplicationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopApplicationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopApplicationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopApplication operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopApplication.</param>
+        /// 
+        /// <returns>Returns a  StopApplicationResult from SsmSap.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-sap-2018-05-10/StopApplication">REST API Reference for StopApplication Operation</seealso>
+        public virtual StopApplicationResponse EndStopApplication(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StopApplicationResponse>(asyncResult);
         }
 
         #endregion

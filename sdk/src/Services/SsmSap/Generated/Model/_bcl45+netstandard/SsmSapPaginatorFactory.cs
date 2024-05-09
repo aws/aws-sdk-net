@@ -61,6 +61,14 @@ namespace Amazon.SsmSap.Model
         }
 
         /// <summary>
+        /// Paginator for ListOperationEvents operation
+        ///</summary>
+        public IListOperationEventsPaginator ListOperationEvents(ListOperationEventsRequest request) 
+        {
+            return new ListOperationEventsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListOperations operation
         ///</summary>
         public IListOperationsPaginator ListOperations(ListOperationsRequest request) 

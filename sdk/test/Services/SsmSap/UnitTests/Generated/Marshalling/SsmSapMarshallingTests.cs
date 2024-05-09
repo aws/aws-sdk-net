@@ -1241,6 +1241,100 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SsmSap")]
+        public void ListOperationEventsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListOperationEvents");
+
+            var request = InstantiateClassGenerator.Execute<ListOperationEventsRequest>(operation);
+            var marshaller = new ListOperationEventsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListOperationEvents", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListOperationEventsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as ListOperationEventsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SsmSap")]
+        public void ListOperationEvents_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListOperationEvents");
+
+            var request = InstantiateClassGenerator.Execute<ListOperationEventsRequest>(operation);
+            var marshaller = new ListOperationEventsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListOperationEvents", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListOperationEventsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SsmSap")]
+        public void ListOperationEvents_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListOperationEvents");
+
+            var request = InstantiateClassGenerator.Execute<ListOperationEventsRequest>(operation);
+            var marshaller = new ListOperationEventsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListOperationEvents", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListOperationEventsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SsmSap")]
         public void ListOperationsMarshallTest()
         {
             var operation = service_model.FindOperation("ListOperations");
@@ -1745,6 +1839,164 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SsmSap")]
+        public void StartApplicationMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartApplication");
+
+            var request = InstantiateClassGenerator.Execute<StartApplicationRequest>(operation);
+            var marshaller = new StartApplicationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("StartApplication", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = StartApplicationResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as StartApplicationResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SsmSap")]
+        public void StartApplication_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartApplication");
+
+            var request = InstantiateClassGenerator.Execute<StartApplicationRequest>(operation);
+            var marshaller = new StartApplicationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartApplication", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartApplicationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SsmSap")]
+        public void StartApplication_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartApplication");
+
+            var request = InstantiateClassGenerator.Execute<StartApplicationRequest>(operation);
+            var marshaller = new StartApplicationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartApplication", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartApplicationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SsmSap")]
+        public void StartApplication_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartApplication");
+
+            var request = InstantiateClassGenerator.Execute<StartApplicationRequest>(operation);
+            var marshaller = new StartApplicationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartApplication", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartApplicationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SsmSap")]
+        public void StartApplication_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartApplication");
+
+            var request = InstantiateClassGenerator.Execute<StartApplicationRequest>(operation);
+            var marshaller = new StartApplicationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartApplication", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartApplicationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SsmSap")]
         public void StartApplicationRefreshMarshallTest()
         {
             var operation = service_model.FindOperation("StartApplicationRefresh");
@@ -1927,6 +2179,164 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
             var response = StartApplicationRefreshResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SsmSap")]
+        public void StopApplicationMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopApplication");
+
+            var request = InstantiateClassGenerator.Execute<StopApplicationRequest>(operation);
+            var marshaller = new StopApplicationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("StopApplication", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = StopApplicationResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as StopApplicationResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SsmSap")]
+        public void StopApplication_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopApplication");
+
+            var request = InstantiateClassGenerator.Execute<StopApplicationRequest>(operation);
+            var marshaller = new StopApplicationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StopApplication", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StopApplicationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SsmSap")]
+        public void StopApplication_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopApplication");
+
+            var request = InstantiateClassGenerator.Execute<StopApplicationRequest>(operation);
+            var marshaller = new StopApplicationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StopApplication", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StopApplicationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SsmSap")]
+        public void StopApplication_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopApplication");
+
+            var request = InstantiateClassGenerator.Execute<StopApplicationRequest>(operation);
+            var marshaller = new StopApplicationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StopApplication", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StopApplicationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SsmSap")]
+        public void StopApplication_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopApplication");
+
+            var request = InstantiateClassGenerator.Execute<StopApplicationRequest>(operation);
+            var marshaller = new StopApplicationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StopApplication", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {HeaderKeys.RequestIdHeader, Guid.NewGuid().ToString()},
+                    {HeaderKeys.XAmzCrc32,"0"},
+                    {HeaderKeys.XAmzErrorType,"ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StopApplicationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
