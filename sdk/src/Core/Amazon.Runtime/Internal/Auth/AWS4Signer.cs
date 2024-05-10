@@ -21,6 +21,7 @@ using System.Globalization;
 using Amazon.Internal;
 using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
+using Amazon.Runtime.Endpoints;
 
 namespace Amazon.Runtime.Internal.Auth
 {
@@ -194,7 +195,10 @@ namespace Amazon.Runtime.Internal.Auth
             ValidateRequest(request);
             var signedAt = InitializeHeaders(request.Headers, request.Endpoint);
             
-            var serviceSigningName = !string.IsNullOrEmpty(request.OverrideSigningServiceName) ? request.OverrideSigningServiceName : DetermineService(clientConfig);
+            var serviceSigningName = !string.IsNullOrEmpty(request.OverrideSigningServiceName) 
+                ? request.OverrideSigningServiceName 
+                : DetermineService(clientConfig, request);
+
             if (serviceSigningName == "s3")
             {
                 // Older versions of the S3 package can be used with newer versions of Core, this guarantees no double encoding will be used.
@@ -705,13 +709,15 @@ namespace Amazon.Runtime.Internal.Auth
             return string.Empty;
         }
 
-        public static string DetermineService(IClientConfig clientConfig)
+        public static string DetermineService(IClientConfig clientConfig, IRequest request)
         {
-            return (!string.IsNullOrEmpty(clientConfig.AuthenticationServiceName)) 
-                ? clientConfig.AuthenticationServiceName
-#pragma warning disable CS0612, CS0618
-                : AWSSDKUtils.DetermineService(clientConfig.DetermineServiceURL());
-#pragma warning restore CS0612,CS0618
+            if ((!string.IsNullOrEmpty(clientConfig.AuthenticationServiceName)))
+                return clientConfig.AuthenticationServiceName;
+
+            var parameters = new ServiceOperationEndpointParameters(request.OriginalRequest);
+            var endpoint = clientConfig.DetermineServiceOperationEndpoint(parameters);
+
+            return AWSSDKUtils.DetermineService(endpoint.URL);
         }
 
         /// <summary>

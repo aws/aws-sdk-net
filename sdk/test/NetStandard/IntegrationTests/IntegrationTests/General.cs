@@ -205,7 +205,7 @@ namespace Amazon.DNXCore.IntegrationTests
             {
                 AWSConfigs.ManualClockCorrection = oldManualClockCorrection;
                 AWSConfigs.CorrectForClockSkew = oldCorrectClockSkew;
-                SetClockSkewCorrection(context.Config, oldClockSkewCorrection);
+                SetClockSkewCorrection(oldClockSkewCorrection);
                 SetUtcNowSource(oldUtcNowSource);
             }
         }
@@ -219,15 +219,15 @@ namespace Amazon.DNXCore.IntegrationTests
             try
             {
                 AWSConfigs.CorrectForClockSkew = true;
-                SetClockSkewCorrection(context.Config, TimeSpan.Zero);
+                SetClockSkewCorrection(TimeSpan.Zero);
                 context.TestAction();
                 Assert.True(context.Config.ClockOffset == TimeSpan.Zero);
 
-                SetClockSkewCorrection(context.Config, IncorrectPositiveClockSkewOffset);
+                SetClockSkewCorrection(IncorrectPositiveClockSkewOffset);
                 context.TestAction();
                 Assert.NotStrictEqual(IncorrectPositiveClockSkewOffset, context.Config.ClockOffset);
 
-                SetClockSkewCorrection(context.Config, IncorrectNegativeClockSkewOffset);
+                SetClockSkewCorrection(IncorrectNegativeClockSkewOffset);
                 context.TestAction();
                 Assert.NotStrictEqual(IncorrectNegativeClockSkewOffset, context.Config.ClockOffset);
 
@@ -237,13 +237,13 @@ namespace Amazon.DNXCore.IntegrationTests
                 AssertExtensions.ExpectException(context.TestAction);
 
                 AWSConfigs.CorrectForClockSkew = true;
-                SetClockSkewCorrection(context.Config, TimeSpan.Zero);
+                SetClockSkewCorrection(TimeSpan.Zero);
                 context.TestAction();
 
                 Console.WriteLine("Simulating negative clock skew");
                 SetUtcNowSource(() => DateTime.UtcNow + IncorrectNegativeClockSkewOffset);
                 AWSConfigs.CorrectForClockSkew = true;
-                SetClockSkewCorrection(context.Config, TimeSpan.Zero);
+                SetClockSkewCorrection(TimeSpan.Zero);
                 context.TestAction();
 
                 AWSConfigs.CorrectForClockSkew = false;
@@ -252,7 +252,7 @@ namespace Amazon.DNXCore.IntegrationTests
             finally
             {
                 AWSConfigs.CorrectForClockSkew = oldCorrectClockSkew;
-                SetClockSkewCorrection(context.Config, oldClockSkewCorrection);
+                SetClockSkewCorrection(oldClockSkewCorrection);
                 SetUtcNowSource(oldUtcNowSource);
             }
         }
@@ -326,10 +326,10 @@ namespace Amazon.DNXCore.IntegrationTests
             var field = typeof(AWSConfigs).GetField("utcNowSource", BindingFlags.Static | BindingFlags.NonPublic);
             field.SetValue(null, source);
         }
-        public static void SetClockSkewCorrection(IClientConfig config, TimeSpan value)
+        public static void SetClockSkewCorrection(TimeSpan value)
         {
-            var func = typeof(CorrectClockSkew).GetTypeInfo().GetMethod("SetClockCorrectionForEndpoint", BindingFlags.Static | BindingFlags.NonPublic);
-            func.Invoke(null, new object[] {config.DetermineServiceURL(), value});
+            var property = typeof(CorrectClockSkew).GetProperty("GlobalClockCorrection", BindingFlags.Static | BindingFlags.NonPublic);
+            property.SetValue(null, value);
         }
         private AbstractAWSSigner GetSigner(object client)
         {

@@ -17,6 +17,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Endpoints;
 using Amazon.S3Control;
 using Amazon.S3Control.Internal;
 using Amazon.S3Control.Model;
@@ -170,17 +171,17 @@ namespace AWSSDK.UnitTests
                 Assert.AreEqual(expectedService, internalRequest.OverrideSigningServiceName);
             }
             
-            var service = DetermineService(clientConfig);
+            var service = DetermineService(clientConfig, internalRequest.OriginalRequest);
             var signingRegion = AWS4Signer.DetermineSigningRegion(clientConfig, service, internalRequest.AlternateEndpoint, internalRequest);
             Assert.AreEqual(expectedRegion, signingRegion);
             Assert.AreEqual(expectedService, internalRequest.OverrideSigningServiceName ?? service);            
         }
 
-        private static string DetermineService(IClientConfig clientConfig)
+        private static string DetermineService(IClientConfig clientConfig, AmazonWebServiceRequest request)
         {
             return (!string.IsNullOrEmpty(clientConfig.AuthenticationServiceName))
                 ? clientConfig.AuthenticationServiceName
-                : AWSSDKUtils.DetermineService(clientConfig.DetermineServiceURL());
+                : AWSSDKUtils.DetermineService(clientConfig.DetermineServiceOperationEndpoint(new ServiceOperationEndpointParameters(request)).URL);
         }
     }
 }

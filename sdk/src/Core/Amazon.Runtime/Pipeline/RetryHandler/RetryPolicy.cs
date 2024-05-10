@@ -407,7 +407,7 @@ namespace Amazon.Runtime
             "RequestInTheFuture",
         };
 
-        private const string clockSkewMessageFormat = "Identified clock skew: local time = {0}, local time with correction = {1}, current clock skew correction = {2}, server time = {3}, service endpoint = {4}.";
+        private const string clockSkewMessageFormat = "Identified clock skew: local time = {0}, local time with correction = {1}, server time = {2}, service endpoint = {3}.";
         private const string clockSkewUpdatedFormat = "Setting clock skew correction: new clock skew correction = {0}, service endpoint = {1}.";
         private const string clockSkewMessageParen = "(";
         private const string clockSkewMessagePlusSeparator = " + ";
@@ -451,7 +451,7 @@ namespace Amazon.Runtime
                     {
                         var newCorrection = serverTime - realNow;
                         Logger.InfoFormat(clockSkewMessageFormat,
-                            realNow, correctedNow, clientConfig.ClockOffset, serverTime, endpoint);
+                            realNow, correctedNow, serverTime, endpoint);
 
                         // Always set the correction, for informational purposes
                         CorrectClockSkew.SetClockCorrectionForEndpoint(endpoint, newCorrection);

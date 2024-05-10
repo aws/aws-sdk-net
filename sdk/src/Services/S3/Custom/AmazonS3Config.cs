@@ -269,28 +269,6 @@ namespace Amazon.S3
         }
 
         /// <summary>
-        /// Given this client configuration, returns the service url
-        /// </summary>
-        /// <returns>The service url in the form of a string</returns>
-        [Obsolete("This operation is obsoleted because as of version 3.7.100 endpoint is resolved using a newer system that uses request level parameters to resolve the endpoint.")]
-        public override string DetermineServiceURL()
-        {
-            if (this.ServiceURL != null)
-            {
-                return this.ServiceURL;
-            }
-
-            var actual = this.RegionEndpoint;
-            if (actual?.SystemName == legacyUSEast1GlobalRegionSystemName && !UseAccelerateEndpoint && !UseDualstackEndpoint
-                && USEast1RegionalEndpointValue == S3UsEast1RegionalEndpointValue.Regional)
-            {
-                actual = RegionEndpoint.GetBySystemName("us-east-1-regional");
-            }
-
-            return GetUrl(this, actual);
-        }
-
-        /// <summary>
         /// If the client is configured to hit us-east-1 with the S3UsEast1RegionalEndpointValue flag not set, 
         /// this method checks whether the environment variable is present or the credential file contains a valid value
         /// </summary>
@@ -308,13 +286,6 @@ namespace Amazon.S3
             }
         }
 
-        internal static string GetUrl(IClientConfig config, RegionEndpoint regionEndpoint)
-        {
-            var endpoint = regionEndpoint.GetEndpointForService(config);
-
-            string url = new Uri(string.Format(CultureInfo.InvariantCulture, "{0}{1}", config.UseHttp ? "http://" : "https://", endpoint.Hostname)).AbsoluteUri;
-            return url;
-        }
         
         /// <summary>
         /// Validate that the config object is properly configured.

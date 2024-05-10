@@ -402,9 +402,11 @@ namespace Amazon.S3
                     signingResult.Result = ComposeUrl(iRequest).AbsoluteUri + signingResult.Authorization;
                     break;
             }
-#pragma warning disable CS0612,CS0618
-            string serviceUrl = config.DetermineServiceURL();
-#pragma warning restore CS0612,CS0618
+
+            var parameters = new ServiceOperationEndpointParameters(iRequest.OriginalRequest);
+            var endpoint = config.DetermineServiceOperationEndpoint(parameters);
+            string serviceUrl = endpoint.URL;
+
             Protocol protocol = serviceUrl.StartsWith("https", StringComparison.OrdinalIgnoreCase) ? Protocol.HTTPS : Protocol.HTTP;
             var request = iRequest.OriginalRequest as GetPreSignedUrlRequest;
             if (request.Protocol != protocol)
@@ -435,7 +437,9 @@ namespace Amazon.S3
             }
             else // SigV4 or SigV4a
             {
-                baselineTime = config.CorrectedUtcNow;
+                var parameters = new ServiceOperationEndpointParameters(request);
+                var endpoint = config.DetermineServiceOperationEndpoint(parameters);
+                baselineTime = CorrectClockSkew.GetCorrectedUtcNowForEndpoint(endpoint.URL);
             }
             return Convert.ToInt64((request.Expires.GetValueOrDefault().ToUniversalTime() - baselineTime).TotalSeconds);
         }

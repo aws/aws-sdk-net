@@ -21,6 +21,7 @@
  */
 
 using Amazon.Runtime;
+using Amazon.Runtime.Endpoints;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Util;
 using Amazon.S3.Model;
@@ -131,10 +132,13 @@ namespace Amazon.S3.Util
                 var request = new GetPreSignedUrlRequest
                 {
                     BucketName = bucketName,
-                    Expires = s3Client.Config.CorrectedUtcNow.ToLocalTime().AddDays(1),
                     Verb = HttpVerb.HEAD,
                     Protocol = Protocol.HTTP
                 };
+
+                var parameters = new ServiceOperationEndpointParameters(request);
+                var endpoint = s3Client.Config.DetermineServiceOperationEndpoint(parameters);
+                request.Expires = CorrectClockSkew.GetCorrectedUtcNowForEndpoint(endpoint.URL).ToLocalTime().AddDays(1);
 
                 return s3Client.GetPreSignedURLInternal(request, false);
             }

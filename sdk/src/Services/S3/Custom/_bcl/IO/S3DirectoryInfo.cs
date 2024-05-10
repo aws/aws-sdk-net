@@ -36,6 +36,7 @@ using Amazon.S3;
 using Amazon.S3.Model;
 using Amazon.Util;
 using Amazon.Util.Internal;
+using Amazon.Runtime.Endpoints;
 
 namespace Amazon.S3.IO
 {
@@ -1219,7 +1220,9 @@ namespace Amazon.S3.IO
         {
             int success = 0;
             bool currentState = false;
-            var start = this.S3Client.Config.CorrectedUtcNow;
+            var endpoint = this.S3Client.Config.DetermineServiceOperationEndpoint(new ServiceOperationEndpointParameters(new ListBucketsRequest()));
+
+            var start = CorrectClockSkew.GetCorrectedUtcNowForEndpoint(endpoint.URL);
             do
             {
                 var buckets = this.S3Client.ListBuckets().Buckets;
@@ -1239,7 +1242,7 @@ namespace Amazon.S3.IO
 
                 Thread.Sleep(EVENTUAL_CONSISTENCY_POLLING_PERIOD);
 
-            } while ((this.S3Client.Config.CorrectedUtcNow - start).TotalMilliseconds < EVENTUAL_CONSISTENCY_MAX_WAIT) ;
+            } while ((CorrectClockSkew.GetCorrectedUtcNowForEndpoint(endpoint.URL) - start).TotalMilliseconds < EVENTUAL_CONSISTENCY_MAX_WAIT) ;
         }
     }
 

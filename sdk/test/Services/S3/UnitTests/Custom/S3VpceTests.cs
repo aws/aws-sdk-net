@@ -14,6 +14,7 @@
  */
 using Amazon;
 using Amazon.Runtime;
+using Amazon.Runtime.Endpoints;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
@@ -132,9 +133,10 @@ namespace AWSSDK.UnitTests
 
         private static string DetermineService(IClientConfig clientConfig)
         {
+            // Use ListBucketsRequest as it is the most basic S3 
             return (!string.IsNullOrEmpty(clientConfig.AuthenticationServiceName))
                 ? clientConfig.AuthenticationServiceName
-                : AWSSDKUtils.DetermineService(clientConfig.DetermineServiceURL());
+                : AWSSDKUtils.DetermineService(clientConfig.DetermineServiceOperationEndpoint(new ServiceOperationEndpointParameters(new ListBucketsRequest())).URL);
         }                
     }
 }

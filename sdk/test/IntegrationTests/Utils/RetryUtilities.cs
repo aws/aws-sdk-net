@@ -31,7 +31,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
                 if (TestClockSkewCorrection)
                 {
                     // set clockskew correction to wrong value
-                    SetIncorrectOffset(client.Config);
+                    SetIncorrectOffset();
                 }
             };
             client.AfterResponseEvent += (s, e) =>
@@ -92,14 +92,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Utils
             }
         }
 
-        private static void SetIncorrectOffset(IClientConfig config)
+        private static void SetIncorrectOffset()
         {
             TimeSpan offset;
             if (SetIncorrectClockOffsetFuture)
                 offset = General.IncorrectPositiveClockSkewOffset;
             else
                 offset = General.IncorrectNegativeClockSkewOffset;
-            General.SetClockSkewCorrection(config, offset);
+            General.SetClockSkewCorrection(offset);
         }
 
         #endregion
