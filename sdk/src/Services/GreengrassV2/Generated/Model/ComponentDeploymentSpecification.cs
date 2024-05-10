@@ -44,7 +44,7 @@ namespace Amazon.GreengrassV2.Model
         /// The version of the component.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Required=true, Min=1, Max=64)]
         public string ComponentVersion
         {
             get { return this._componentVersion; }

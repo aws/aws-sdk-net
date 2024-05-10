@@ -76,6 +76,10 @@ namespace Amazon.GreengrassV2.Model
         /// <para>
         /// The maximum number of results to be returned per paginated request.
         /// </para>
+        ///  
+        /// <para>
+        /// Default: <c>50</c> 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public int MaxResults
