@@ -32,7 +32,7 @@ namespace Amazon.SQS
     public partial class AmazonSQSConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("SQS", "3.7.301.1");
+            InternalSDKUtils.BuildUserAgentString("SQS", "3.7.301.2");
 
         private string _userAgent = UserAgentString;
         ///<summary>

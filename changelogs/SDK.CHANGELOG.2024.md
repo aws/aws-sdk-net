@@ -1,3 +1,16 @@
+### 3.7.808.0 (2024-05-10 18:34 UTC)
+* ApplicationDiscoveryService (3.7.301.0)
+	* add v2 smoke tests and smithy smokeTests trait for SDK testing
+* GreengrassV2 (3.7.301.0)
+	* Mark ComponentVersion in ComponentDeploymentSpecification as required.
+* SageMaker (3.7.322.0)
+	* Introduced support for G6 instance types on Sagemaker Notebook Instances and on SageMaker Studio for JupyterLab and CodeEditor applications.
+* SSOOIDC (3.7.302.0)
+	* Updated request parameters for PKCE support.
+* Core 3.7.303.29
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.807.0 (2024-05-09 20:41 UTC)
 * BedrockAgentRuntime (3.7.306.0)
 	* This release adds support to provide guardrail configuration and modify inference parameters that are then used in RetrieveAndGenerate API in Agents for Amazon Bedrock.
