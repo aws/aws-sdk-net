@@ -203,18 +203,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>ServicePaginatorFactoryInterface.tt</DependentUpon>
     </Compile>
-    <Compile Update="Generators/TestFiles/AWSQueryEC2MarshallingTests.cs">
-      <DependentUpon>AWSQueryEC2MarshallingTests.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Update="Generators/Marshallers/AWSQueryEC2ResponseUnmarshaller.cs">
       <DependentUpon>AWSQueryEC2ResponseUnmarshaller.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Update="Generators/TestFiles/AWSQueryMarshallingTests.cs">
-      <DependentUpon>AWSQueryMarshallingTests.tt</DependentUpon>
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
@@ -268,11 +258,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>EndpointDiscoveryMarshallingTests.tt</DependentUpon>
     </Compile>
-    <Compile Update="Generators/TestFiles/JsonMarshallingTests.cs">
-      <DependentUpon>JsonMarshallingTests.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <Compile Update="Generators/Marshallers/JsonRPCRequestMarshaller.cs">
       <DependentUpon>JsonRPCRequestMarshaller.tt</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -302,11 +287,6 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>PaginatorTests.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Generators/TestFiles/RestMarshallingTests.cs">
-      <DependentUpon>RestMarshallingTests.tt</DependentUpon>
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Update="Generators/Marshallers/RestXmlRequestMarshaller.cs">
       <DependentUpon>RestXmlRequestMarshaller.tt</DependentUpon>
@@ -530,17 +510,9 @@
       <LastGenOutput>EndpointsGenerator.cs</LastGenOutput>
       <Generator>TextTemplatingFilePreprocessor</Generator>
     </None>
-    <None Update="Generators/TestFiles/AWSQueryEC2MarshallingTests.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>AWSQueryEC2MarshallingTests.cs</LastGenOutput>
-    </None>
     <None Update="Generators/Marshallers/AWSQueryEC2ResponseUnmarshaller.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>AWSQueryEC2ResponseUnmarshaller.cs</LastGenOutput>
-    </None>
-    <None Update="Generators/TestFiles/AWSQueryMarshallingTests.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>AWSQueryMarshallingTests.cs</LastGenOutput>
     </None>
     <None Update="Generators/Marshallers/AWSQueryRequestMarshaller.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
@@ -582,10 +554,6 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>EndpointDiscoveryMarshallingTests.cs</LastGenOutput>
     </None>
-    <None Update="Generators/TestFiles/JsonMarshallingTests.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>JsonMarshallingTests.cs</LastGenOutput>
-    </None>
     <None Update="Generators/Marshallers/JsonRPCRequestMarshaller.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>JsonRPCRequestMarshaller.cs</LastGenOutput>
@@ -609,10 +577,6 @@
     <None Update="Generators/TestFiles/PaginatorTests.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>PaginatorTests.cs</LastGenOutput>
-    </None>
-    <None Update="Generators/TestFiles/RestMarshallingTests.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>RestMarshallingTests.cs</LastGenOutput>
     </None>
     <None Update="Generators/Marshallers/RestXmlRequestMarshaller.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
