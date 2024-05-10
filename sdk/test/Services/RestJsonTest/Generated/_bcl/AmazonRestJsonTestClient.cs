@@ -32,6 +32,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
+using Amazon.Runtime.Endpoints;
 
 #pragma warning disable CS1570
 namespace Amazon.RestJsonTest
